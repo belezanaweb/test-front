@@ -1,3 +1,7 @@
+## Frontend Test
+
+Faça um fork deste repositório e finalizar o teste, submeta um pull request para o repositório que nosso time será notificado.
+
 O teste consiste em um checkout simples contendo 3 passos (carrinho, pagamento e sucesso) [Veja o Layout](https://projects.invisionapp.com/prototype/font-test-cji0j0khf005c1t0132358e8k)
 
 ### Requerimentos
