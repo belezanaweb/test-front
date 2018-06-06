@@ -4,6 +4,8 @@ Faça um fork deste repositório e finalizar o teste, submeta um pull request pa
 
 O teste consiste em um checkout simples contendo 3 passos (carrinho, pagamento e sucesso) [Veja o Layout](https://projects.invisionapp.com/prototype/font-test-cji0j0khf005c1t0132358e8k)
 
+**Faça quando quiser/puder (madrugada, fim de semana, etc), mas recomendamos que não gaste mais de 4 horas.**
+
 ### Requerimentos
 
 - Pixel perfect ([nesse link](https://projects.invisionapp.com/prototype/font-test-cji0j0khf005c1t0132358e8k), você pode inspecionar para ver espaçamentos, fonte, tamanho, etc)
