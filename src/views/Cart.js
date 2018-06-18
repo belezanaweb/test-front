@@ -4,6 +4,9 @@ import { connect } from 'react-redux';
 
 import { fetchCart } from '../actions/CartActions';
 
+import { Link } from 'react-router-dom';
+
+
 import ProductResume from './components/ProductResume';
 /** -----------------------------------------------
  * This class provide the cart view
@@ -30,21 +33,28 @@ class Cart extends Component {
 
     }
 
+    formatCurrency(num) {
+        if (num) {
+            var num = num.toFixed(2).split('.');
+            num[0] = "R$ " + num[0].split(/(?=(?:...)*$)/).join('.');            
+            return num[0]+','+num[1];
+        }
+    }
+
     render() {
 
         return (
             <main>
                 <div className="container">
-                    <nav>
-                        <ul>
-                            <div>Sacola</div>
-                            <div>Pagamento</div>
-                            <div>Confirmação</div>
-                        </ul>
+                    <nav className="nav-products">
+                        <Link to="/" className="active col-xs-4">Sacola</Link>
+                        <a className="col-xs-4">Pagamento</a>
+                        <a className="col-xs-4">Confirmação</a>
+                        <div style={{ clear: 'both'}} />
                     </nav>
 
                     <div>
-                        <h1>Produtos</h1>
+                        <h1 className="page-heading">Produtos</h1>
                     </div>
 
                     <div className="product-list">
@@ -55,41 +65,56 @@ class Cart extends Component {
                         <div className="resume-specification">
                             <label>Produtos</label>
                             <div className="currency">
-                                {this.props.subTotal}
+                                {this.formatCurrency(this.props.subTotal)}
                             </div>
                         </div>
                         <div className="resume-specification">
                             <label>Frete</label>
                             <div className="currency">
-                                {this.props.shippingTotal}
+                            {this.formatCurrency(this.props.shippingTotal)}
                             </div>
                         </div>
-                        <div className="resume-specification">
+                        <div className="resume-specification prod-discount">
                             <label>Desconto</label>
                             <div className="currency">
-                                {this.props.discount}
+                            {this.formatCurrency(this.props.discount)}
                             </div>
                         </div>
-                        <div className="resume-specification">
+                        <div className="resume-specification prod-total">
                             <label>Total</label>
                             <div className="currency">
-                                {this.props.total}
+                            {this.formatCurrency(this.props.total)}
                             </div>
                         </div>
+                        <div style={{ clear: 'both'}} />
                     </div>
 
-                    <div className="btn">SEGUIR PARA O PAGAMENTO</div>
+                    <div className="button">
+                        {this.renderBtn()}
+                    </div>
                 </div>
             </main>
 
         )
     }
 
-    
+    renderBtn() {
+        if( this.props.loading_cart) {
+            return (
+                <div className="btn-prod-disabled">SEGUIR PARA O PAGAMENTO</div>                
+            )
+        } else {
+            return(
+                <Link to="/payment" className="btn-prod">SEGUIR PARA O PAGAMENTO</Link>
+            )
+        }
+    }
+
+
     renderProductList() {
-        
+
         return this.props.items.map((item, i) =>
-           <ProductResume key={i} product={item.product} />
+            <ProductResume key={i} product={item.product} />
         )
     }
 
@@ -119,5 +144,5 @@ const mapStateToProps = state => {
 
 //use conector redux to decorate component with variables and methods
 export default connect(mapStateToProps, {
-    fetchCart
+    fetchCart,
 })(Cart);

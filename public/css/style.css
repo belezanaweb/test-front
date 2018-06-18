@@ -13705,3 +13705,6 @@ body {
   background: #fff;
   border-radius: 10px;
 }
+.nav-products a {
+  text-align: center;
+}

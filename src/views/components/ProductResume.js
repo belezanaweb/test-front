@@ -14,19 +14,26 @@ class ProductResume extends Component {
         console.log('   ...product', this.props)
     }
 
+    formatCurrency(num) {
+        if (num) {
+            var num = num.toFixed(2).split('.');
+            num[0] = "R$ " + num[0].split(/(?=(?:...)*$)/).join('.');            
+            return num[0]+','+num[1];
+        }
+    }
 
     render() {
 
         return (
             <div className="product-resume">
                 <div className="product-picture">
-                    {<img alt="" src={this.props.product.imageObjects[0].thumbnail} style={{ width: 300, height: 300 }} />}
+                    {<img alt="" src={this.props.product.imageObjects[0].thumbnail} />}
                 </div>
                 <div className="product-text">
                     {this.props.product.name}
                 </div>
                 <div className="product-price">
-                    {this.props.product.priceSpecification.price}
+                    {this.formatCurrency(this.props.product.priceSpecification.price)}
                 </div>
             </div>
 
@@ -38,5 +45,4 @@ class ProductResume extends Component {
 
 //use conector redux to decorate component with variables and methods
 export default connect(null, {
-
 })(ProductResume);
