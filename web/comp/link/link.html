@@ -1,0 +1,11 @@
+(props.active
+? <span class="bnw--link active">{props.children}</span>
+: <a class="bnw--link link" href="javascript:;"
+		onClick={function(e) {
+			e.preventDefault();
+			props.onClick(e);
+		}}
+	>
+		{props.children}
+	</a>
+)

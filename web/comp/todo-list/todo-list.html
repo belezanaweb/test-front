@@ -1,0 +1,9 @@
+<ul class="bnw--todo-list">
+	{props.todos.map(function(todo, index) { return (
+		<bnw--todo key={index}
+			text={todo.text}
+			completed={todo.completed}
+			onClick={function(evt) {props.onTodoClick(index, evt)}}
+		/>
+	);})}
+</ul>
