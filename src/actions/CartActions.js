@@ -18,7 +18,7 @@ export const fetchCart = () => {
         dispatch({ type: LOADING_CART, payload: true });
 
         
-        fetch("http://www.mocky.io/v2/5b15c4923100004a006f3c07", { //<-- mas consumindo a api com backend deu certo
+        fetch("https://www.mocky.io/v2/5b15c4923100004a006f3c07", { //<-- mas consumindo a api com backend deu certo
             headers: {
                 'accept-charset': 'ISO-8859-1,utf-8;q=0.7,*;q=0.3',
                 'Accept-Encoding': 'gzip, deflate, compress',
