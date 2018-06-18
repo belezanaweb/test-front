@@ -2,6 +2,12 @@ import React, { Component } from 'react';
 
 import { connect } from 'react-redux';
 
+import { 
+    alterCardName,
+    alterCardNumber,
+    alterCardValidate,
+    alterCardCvv
+} from '../actions/PaymentActions';
 
 /** -----------------------------------------------
  * This class provide the Payment view
@@ -38,28 +44,39 @@ class Payment extends Component {
 
                     <div className="form-payment">
 
-                        <div class="form-group">
+                        <div className="form-group">
                             <label htmlFor="card-number">Número do Cartão:</label>
-                            <input type="text" class="form-control"
-                             id="card-number" placeholder="____.____.____.____" />
+                            <input type="text" className="form-control"
+                                value={this.props.card.number}
+                                onChange={(event) => this.props.alterCardNumber(event.target.value)}
+                                id="card-number" placeholder="____.____.____.____" />
 
                         </div>
 
-                        <div class="form-group">
+                        <div className="form-group">
                             <label htmlFor="card-name">Nome do Titular:</label>
-                            <input type="text" class="form-control" id="card-name" placeholder="Como no cartão" />
+                            <input type="text" className="form-control"
+                                value={this.props.card.name}
+                                onChange={(event) => this.props.alterCardName(event.target.value)}
+                                id="card-name" placeholder="Como no cartão" />
 
                         </div>
 
-                        <div class="form-group">
+                        <div className="form-group">
                             <label htmlFor="card-validate">Validade (mês/ano):</label>
-                            <input type="text" class="form-control" id="card-validate" placeholder="__/____" />
+                            <input type="text" className="form-control"
+                                value={this.props.card.validate}
+                                onChange={(event) => this.props.alterCardValidate(event.target.value)}
+                                id="card-validate" placeholder="__/____" />
 
                         </div>
 
-                        <div class="form-group">
-                            <label fohtmlForr="card-cvv">Cvv</label>
-                            <input type="text" class="form-control" id="card-cvv" placeholder="___" />
+                        <div className="form-group">
+                            <label htmlFor="card-cvv">Cvv</label>
+                            <input type="text" className="form-control"
+                                value={this.props.card.cvv}
+                                onChange={(event) => this.props.alterCardCvv(event.target.value)}
+                                id="card-cvv" placeholder="___" />
 
                         </div>
 
@@ -111,6 +128,9 @@ const mapStateToProps = state => {
     const total = state.CartReducer.total;
     const loading_cart = state.CartReducer.loading_cart;
 
+    const card = state.PaymentReducer.card;
+    console.log(card);
+
     return {
         discount,
         id,
@@ -118,12 +138,16 @@ const mapStateToProps = state => {
         subTotal,
         shippingTotal,
         total,
-        loading_cart
+        loading_cart,
+        card
     }
 }
 
 
 //use conector redux to decorate component with variables and methods
 export default connect(mapStateToProps, {
-
+    alterCardName,
+    alterCardNumber,
+    alterCardValidate,
+    alterCardCvv
 })(Payment);
