@@ -14,7 +14,7 @@ import rootReducer from '../reducers'
 const persistConfig = {
   key: 'root',
   storage,
-  whitelist: ['SessionReducer'] //<--- set the reducer to store
+  whitelist: ['SessionReducer','CartReducer'] //<--- set the reducer to store
 }
 
 const persistedReducer = persistReducer(persistConfig, rootReducer)

@@ -13,11 +13,6 @@ import { connect } from 'react-redux';
  */
 class Confirmation extends Component {
 
-    constructor(props) {
-        super(props);
-       
-    }
-
 
     render() {
 
