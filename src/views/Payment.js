@@ -2,12 +2,16 @@ import React, { Component } from 'react';
 
 import { connect } from 'react-redux';
 
-import { 
+import {
     alterCardName,
     alterCardNumber,
     alterCardValidate,
     alterCardCvv
 } from '../actions/PaymentActions';
+
+import { Link } from 'react-router-dom';
+
+import MaskInput from 'react-maskinput';
 
 /** -----------------------------------------------
  * This class provide the Payment view
@@ -25,32 +29,48 @@ class Payment extends Component {
 
     }
 
+    formatCurrency(num) {
+        if (num) {
+            var num = num.toFixed(2).split('.');
+            num[0] = "R$ " + num[0].split(/(?=(?:...)*$)/).join('.');
+            return num[0] + ',' + num[1];
+        }
+    }
+
     render() {
 
         return (
             <main>
                 <div className="container">
-                    <nav>
-                        <ul>
-                            <div>Sacola</div>
-                            <div>Pagamento</div>
-                            <div>Confirmação</div>
-                        </ul>
+                    <nav className="nav-products">
+                        <Link to="/" className="col-xs-4">Sacola</Link>
+                        <Link to="/payment" className="active col-xs-4">Pagamento</Link>
+                        <a className="col-xs-4">Confirmação</a>
+                        <div style={{ clear: 'both' }} />
                     </nav>
 
                     <div>
-                        <h1>Cartão de Crédito</h1>
+                        <h1 className="page-heading">Cartão de Crédito</h1>
                     </div>
 
                     <div className="form-payment">
 
                         <div className="form-group">
                             <label htmlFor="card-number">Número do Cartão:</label>
-                            <input type="text" className="form-control"
+                            {/*<input type="text" className="form-control"
                                 value={this.props.card.number}
                                 onChange={(event) => this.props.alterCardNumber(event.target.value)}
-                                id="card-number" placeholder="____.____.____.____" />
-
+                                id="card-number" placeholder="____.____.____.____" />*/}
+                            <MaskInput
+                                className="form-control"
+                                value={this.props.card.number}
+                                
+                                maskChar='_'
+                                onChange={(event) => this.props.alterCardNumber(event.target.value)}
+                                placeholder="____.____.____.____"
+                                id="card-number"
+                                mask='0000-0000-0000-0000'
+                            />
                         </div>
 
                         <div className="form-group">
@@ -64,56 +84,102 @@ class Payment extends Component {
 
                         <div className="form-group">
                             <label htmlFor="card-validate">Validade (mês/ano):</label>
-                            <input type="text" className="form-control"
+                            {/*<input type="text" className="form-control"
                                 value={this.props.card.validate}
                                 onChange={(event) => this.props.alterCardValidate(event.target.value)}
-                                id="card-validate" placeholder="__/____" />
+                            id="card-validate" placeholder="__/____" />*/}
+                            <MaskInput
+                                className="form-control"
+                                value={this.props.card.validate}
+                                
+                                maskChar='_'
+                                onChange={(event) => this.props.alterCardValidate(event.target.value)}
+                                placeholder="___"
+                                id="card-validate" placeholder="__/____"
+                                mask='00/0000'
+                            />
 
                         </div>
 
                         <div className="form-group">
                             <label htmlFor="card-cvv">Cvv</label>
-                            <input type="text" className="form-control"
+                            {/*<input type="text" className="form-control"
                                 value={this.props.card.cvv}
                                 onChange={(event) => this.props.alterCardCvv(event.target.value)}
-                                id="card-cvv" placeholder="___" />
-
+                                id="card-cvv" placeholder="___" />*/}
+                            <MaskInput
+                                className="form-control"
+                                value={this.props.card.cvv}
+                                
+                                maskChar='_'
+                                onChange={(event) => this.props.alterCardCvv(event.target.value)}
+                                placeholder="___"
+                                id="card-cvv" placeholder="___"
+                                mask='000'
+                            />
                         </div>
 
+                        <div style={{ clear: 'both' }} />
                     </div>
 
                     <div className="resume">
                         <div className="resume-specification">
                             <label>Produtos</label>
                             <div className="currency">
-                                {this.props.subTotal}
+                                {this.formatCurrency(this.props.subTotal)}
                             </div>
                         </div>
                         <div className="resume-specification">
                             <label>Frete</label>
                             <div className="currency">
-                                {this.props.shippingTotal}
+                                {this.formatCurrency(this.props.shippingTotal)}
                             </div>
                         </div>
-                        <div className="resume-specification">
+                        <div className="resume-specification prod-discount">
                             <label>Desconto</label>
                             <div className="currency">
-                                {this.props.discount}
+                                {this.formatCurrency(this.props.discount)}
                             </div>
                         </div>
-                        <div className="resume-specification">
+                        <div className="resume-specification prod-total">
                             <label>Total</label>
                             <div className="currency">
-                                {this.props.total}
+                                {this.formatCurrency(this.props.total)}
                             </div>
                         </div>
+                        <div style={{ clear: 'both' }} />
                     </div>
 
-                    <div className="btn">Finalizar o pedido</div>
+                    <div className="button">
+                        {this.renderBtn()}
+                    </div>
                 </div>
             </main>
         )
     }
+
+    validateForm() {
+        let valid = true;
+
+        if( this.props.card.number.length < 19 ) {
+            valid = false;
+        }
+
+        return valid;
+    }
+
+    renderBtn() {
+        if( !this.validateForm()) {
+            return (
+                <div className="btn-prod-disabled">Finalizar o pedido</div>                
+            )
+        } else {
+            return(
+                <Link to="/confirmation" className="btn-prod">Finalizar o pedido</Link>
+            )
+        }
+    }
+
 
 }
 

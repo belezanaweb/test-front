@@ -1,42 +1,80 @@
-## Frontend Test
+# Frontend Engineer Challenge #
 
-Faça um fork deste repositório e finalizar o teste, submeta um pull request para o repositório que nosso time será notificado.
+### The Demo: https://shop-bela.herokuapp.com/
 
-O teste consiste em um checkout simples contendo 3 passos (carrinho, pagamento e sucesso) [Veja o Layout](https://projects.invisionapp.com/prototype/font-test-cji0j0khf005c1t0132358e8k)
+ 
+### ## - challenges overcome ###
 
-**Faça quando quiser/puder (madrugada, fim de semana, etc), mas recomendamos que não gaste mais de 4 horas.**
+  - Used Reactjs as javascript lib
+  - Used Redux as pattern o padrão mv * se possível
+  - Used Less as CSS preprocessor
+  - Used grund to automatize tasks an organize my code
 
-### Requerimentos
+### ## - Instructions ### 
 
-- Pixel perfect ([nesse link](https://projects.invisionapp.com/prototype/font-test-cji0j0khf005c1t0132358e8k), você pode inspecionar para ver espaçamentos, fonte, tamanho, etc)
-- A aplicação precisa ser responsiva, utilizando o conceito de mobile-first. Use sua imaginação para entregar uma experiência boa no desktop.
-- Renderize cada passo em uma URL única (lib de rotas).
-- Utilize ReactJS/Angular/VueJS/Vanilla
+### 1) Mounting the ambient of development ###
+Assuming that you have nodejs and npm installed.
 
+1 - Clone the repository
+```
+$ git clone git@gitlab.com:leolima_str/iliked.git
+``` 
+2 - go to project folder 
 
-### Passo 1 - Carrinho:
-  - Consuma o [esse endpoint](http://www.mocky.io/v2/5b15c4923100004a006f3c07) e liste os itens do carrinho, bem como o resumo do carrinho;
-  - Persista o conteúdo do JSON para ser usado nas próximas etapas (store do redux é nossa sugestão);
+```
+$ cd Project_folder
+```
+3 - Install dependences
+	
+```
+$ yarn
+```
 
-### Passo 2 - Pagamento: 
-  - Exiba um form com campos de cartão de crédito com validação em cada campo;
-  - Habilite o botão de Finalizar Pedido apenas se o form esteja válido;
+At this momment you can try local
+```
+$ npm start
+```
 
-### Passo 3 - Sucesso: 
-  - Todo o conteúdo deverá ser exibido a partir dos dados persistidos;
-  
-### O que vamos avaliar:
-  - Organização do código;
-  - Mensagens (em inglês) e mudanças nos commits;
-  - Composição/reutilização de componentes;
-  - Testes unitários;
-  - O motivo de ter escolhido cada tech da stack;
-  - Como rodar sua aplicação ;)
+http://localhost:3000/
 
-### Diferenciais:
-  - Split bundle por rota (cada step ter um bundle separado para otimizar a performance);
-  - CSS in JS;
-  - React/Redux;
+### 2) how to Deploy the application ###
 
-### Fim:
-Ao finalizar o teste, submeta um pull request para o repositório que nosso time será notificado. Se tiver alguma observação, escreva no pull request.
+create heroku project 
+
+[https://dashboard.heroku.com/new-app](https://dashboard.heroku.com/new-app)
+	
+get the remote git address from heroku and set it on project 
+```
+$ heroku git:remote -a project-name
+```	
+send it to heroku cloud
+```
+$ git push heroku master
+```	
+Done. teste executing: 
+```
+$ heroku open
+```
+
+--------------
+
+### 3) Testing ###
+to write tests, you can create any file with `.test.js` extension and it will be recognized as test file.
+to run the tests execute:
+```
+$ yarn test
+```
+ps.: Be sure the dependences are installed
+
+### 4) Tasks
+I used Grunt to automate some tasks like: Concatenate and minify files. To optimize images. To compile `less` files, to watch changes. 
+to execute grunt tasks just run on terminal
+```
+$ grunt 
+```
+ps.: Be sure the dependences are installed
+
+### About the code
+tried to finish before 4 hours, maybe in the next time. =)
+
+Thanks for the challenge.

@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 
 import { connect } from 'react-redux';
 
+import { Link } from 'react-router-dom';
+
 import ProductResume from './components/ProductResume';
 /** -----------------------------------------------
  * This class provide the Confirmation view
@@ -24,95 +26,82 @@ class Confirmation extends Component {
         return (
             <main>
                 <div className="container">
-                    <nav>
-                        <ul>
-                            <div>Sacola</div>
-                            <div>Pagamento</div>
-                            <div className="active">Confirmação</div>
-                        </ul>
+                    <nav className="nav-products">
+                        <Link to="/" className="col-xs-4">Sacola</Link>
+                        <Link to="/payment" className="col-xs-4">Pagamento</Link>
+                        <Link to="/confirmation" className="active col-xs-4">Confirmação</Link>
+                        <div style={{ clear: 'both' }} />
                     </nav>
 
+                    <div className="confirmation-box">
+                        <i className="fa fa-check-circle-o confirmation-icon" aria-hidden="true"></i>
+                        <div className="confirmation-label">Compra efetuada com sucesso</div>
+                    </div>
+                    
                     <div>
-                        COMPRA EFETUADA COM SUCESSO
+                        <h1 className="page-heading">Pagamento</h1>
                     </div>
 
-                    <div>
-                        <h1>Pagamento</h1>
-                    </div>
 
                     <div className="form-payment">
 
-                        <div>{this.props.card.number}</div>
+                        <div>****.****.****.{this.props.card.number.substr(-4)}</div>
                         <div>{this.props.card.name}</div>
                         <div>{this.props.card.validate}</div>
 
                     </div>
 
                     <div>
-                        <h1>Produtos</h1>
+                        <h1 className="page-heading">Produtos</h1>
                     </div>
+
                     <div className="product-list">
                         {this.renderProductList()}
                     </div>
 
-                    <div className="resume">
-                        <div className="resume-specification">
-                            <label>Produtos</label>
-                            <div className="currency">
-                                {this.props.subTotal}
-                            </div>
-                        </div>
-                        <div className="resume-specification">
-                            <label>Frete</label>
-                            <div className="currency">
-                                {this.props.shippingTotal}
-                            </div>
-                        </div>
-                        <div className="resume-specification">
-                            <label>Desconto</label>
-                            <div className="currency">
-                                {this.props.discount}
-                            </div>
-                        </div>
-                        <div className="resume-specification">
-                            <label>Total</label>
-                            <div className="currency">
-                                {this.props.total}
-                            </div>
-                        </div>
-                    </div>
+                   
 
                     <div className="resume">
                         <div className="resume-specification">
                             <label>Produtos</label>
                             <div className="currency">
-                                {this.props.subTotal}
+                                {this.formatCurrency(this.props.subTotal)}
                             </div>
                         </div>
                         <div className="resume-specification">
                             <label>Frete</label>
                             <div className="currency">
-                                {this.props.shippingTotal}
+                                {this.formatCurrency(this.props.shippingTotal)}
                             </div>
                         </div>
-                        <div className="resume-specification">
+                        <div className="resume-specification prod-discount">
                             <label>Desconto</label>
                             <div className="currency">
-                                {this.props.discount}
+                                {this.formatCurrency(this.props.discount)}
                             </div>
                         </div>
-                        <div className="resume-specification">
+                        <div className="resume-specification prod-total">
                             <label>Total</label>
                             <div className="currency">
-                                {this.props.total}
+                                {this.formatCurrency(this.props.total)}
                             </div>
                         </div>
+                        <div style={{ clear: 'both' }} />
                     </div>
 
                 </div>
             </main>
 
         )
+    }
+
+    
+    formatCurrency(num) {
+        if (num) {
+            var num = num.toFixed(2).split('.');
+            num[0] = "R$ " + num[0].split(/(?=(?:...)*$)/).join('.');
+            return num[0] + ',' + num[1];
+        }
     }
 
     renderProductList() {

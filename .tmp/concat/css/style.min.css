@@ -13705,6 +13705,144 @@ body {
   background: #fff;
   border-radius: 10px;
 }
+.nav-products {
+  background: #fff;
+  padding: 10px 0;
+  box-shadow: 1px 1px 5px 0 rgba(0, 0, 29, 0.22);
+  /*height: 72px;*/
+}
 .nav-products a {
+  padding-bottom: 0;
+  text-transform: uppercase;
+  color: #d0d0d0;
+  font-family: sans-serif;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: NaNpx;
+  line-height: 16px;
+  text-align: center;
+}
+.nav-products .active {
+  color: #ff6c01;
+}
+.container {
+  padding: 0;
+}
+body {
+  background-color: #EEE;
+}
+.page-heading {
+  color: #999;
+  font-family: sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: NaNpx;
+  line-height: 17px;
+  margin: 0;
+  margin: 15px 20px;
+  text-transform: uppercase;
+}
+.form-payment {
+  text-transform: uppercase;
+}
+.product-list,
+.form-payment {
+  background-color: #FFF;
+  box-shadow: 1px 1px 5px 0 rgba(0, 0, 29, 0.22);
+  margin: 0 10px;
+  padding: 10px 10px 10px 10px ;
+  border-radius: 5px;
+}
+.form-payment label {
+  color: #CCC;
+}
+.form-payment input {
+  box-sizing: border-box;
+  height: 45px;
+  background-color: #FFF;
+  border: 1px solid #E7E7E7;
+  box-shadow: inset 0 0 0px 0 rgba(0, 0, 0, 0.2);
+}
+.product-resume {
+  box-sizing: border-box;
+  height: 90px;
+  border: 1px solid #EEE;
+  margin: 0 0 10px 0;
+  padding: 10px;
+  position: relative;
+}
+.product-picture {
+  width: 65px;
+  height: 65px;
+  float: left;
+}
+.product-text {
+  font-size: 13px;
+}
+.product-price {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  font-weight: bold;
+  font-size: 13px;
+}
+.resume {
+  margin: 20px 10px;
+  padding: 15px;
+  text-transform: uppercase;
+  border: 1px solid #CCC;
+}
+.resume-specification {
+  clear: both;
+}
+.resume-specification label {
+  float: left;
+}
+.resume-specification .currency {
+  float: right;
+}
+.prod-discount {
+  color: #ff6c01;
+}
+.prod-total {
+  font-weight: bold;
+}
+.button {
+  padding: 10px;
+}
+.btn-prod {
+  background-color: #FF6C00;
+  color: #fff;
+  box-shadow: inset 0 -3px 0 0 #D45A00, 0 2px 4px 0 rgba(0, 0, 0, 0.25);
+  width: 100%;
+  padding: 20px 10px;
+  text-align: center;
+  font-size: 17px;
+  font-weight: bold;
+  display: block;
+}
+.btn-prod-disabled {
+  background-color: #DDD;
+  color: #fff;
+  box-shadow: inset 0 -3px 0 0 #cccccc, 0 2px 4px 0 rgba(0, 0, 0, 0.25);
+  width: 100%;
+  padding: 20px 10px;
+  text-align: center;
+  font-size: 17px;
+  font-weight: bold;
+  display: block;
+}
+.confirmation-label {
+  font-size: 17px;
+  color: #FF6C00;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+.confirmation-icon {
+  color: #FF6C00;
+  font-size: 25px !important;
+}
+.confirmation-box {
+  margin: 20px 10px;
   text-align: center;
 }
