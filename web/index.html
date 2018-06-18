@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, user-scalable=no" />
+	<title>Beleza na Web</title>
+	<style>
+		*, *::before, *::after {
+			margin: 0;
+			padding: 0;
+			box-sizing: border-box;
+		}
+		html, body {
+			height: 100%;
+			font-size: 16px;
+			font-family: sans-serif;
+		}
+	</style>
+</head>
+<body>
+	<div id="bnw-mount"></div>
+	<script>
+		var BNW = BNW || {};
+		BNW.BaseUrl = '';
+	</script>
+	<script crossorigin src="//unpkg.com/react@16/umd/react.development.js"></script>
+	<script crossorigin src="//unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
+	<script crossorigin src="//unpkg.com/redux@4.0.0/dist/redux.min.js"></script>
+	<script crossorigin src="//unpkg.com/react-redux@5.0.7/dist/react-redux.min.js"></script>
+	<script crossorigin src="//unpkg.com/prop-types@15.6.1/prop-types.min.js"></script>
+	<script src="js/libs/buble-browser-deps.umd.js"></script>
+	<!-- <script src="js/libs/react-templates.js"></script> -->
+	<!-- <script src="js/libs/localforage.js"></script> -->
+	<!-- <script src="js/libs/vue.js"></script> -->
+	<!-- <script src="js/libs/vue-router.js"></script> -->
+	<!-- <script src="js/libs/vuex.js"></script> -->
+	<!-- <script src="js/libs/vue-text-mask.min.js"></script> -->
+	<script src="js/utils.js"></script>
+	<!-- <script src="js/env.js"></script> -->
+	<!-- <script src="js/services.js"></script> -->
+	<script src="js/store.js"></script>
+	<script src="js/index.js"></script>
+</body>
+</html>
