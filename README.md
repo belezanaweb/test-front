@@ -75,6 +75,6 @@ $ grunt
 ps.: Be sure the dependences are installed
 
 ### About the code
-tried to finish before 4 hours, maybe in the next time. =)
+tried to finish before 4 hours, maybe in the next time.
 
 Thanks for the challenge.
