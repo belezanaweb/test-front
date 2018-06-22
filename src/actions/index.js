@@ -1,12 +1,6 @@
-export const ADD_CART_ITEM = 'ADD_CART_ITEM'
-export const REMOVE_CART_ITEM = 'REMOVE_CART_ITEM'
+export const SET_CART_ITEMS = 'SET_CART_ITEMS'
 
-export const addCartItem = item => ({
-  type: ADD_CART_ITEM,
-  item
-})
-
-export const removeCartItem = id => ({
-  type: REMOVE_CART_ITEM,
-  id
+export const setCartItems = payload => ({
+  type: SET_CART_ITEMS,
+  payload
 })

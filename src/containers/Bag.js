@@ -1,6 +1,6 @@
 import { connect } from 'react-redux'
 import { withRouter } from 'react-router'
-import { addCartItem } from '../actions'
+import { setCartItems } from '../actions'
 
 import Component from '../components/Bag'
 
@@ -9,7 +9,7 @@ const mapStateToProps = (state) => ({
 })
 
 const mapDispatchToProps =  ({
-  addCartItem
+  setCartItems
 })
 
 const Bag = connect(

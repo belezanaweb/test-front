@@ -1,7 +1,9 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
 import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
 
 import { getItems } from './api/cart'
+import { setCartItems } from './actions'
 
 import './App.css';
 
@@ -47,10 +49,10 @@ const Confirmation = (props) => (
 )
 
 
-class App extends Component {
+class AppHolder extends Component {
 
   componentDidMount() {
-    getItems(result => console.log(result))
+    getItems(this.props.setCartItems)
   }
 
   render() {
@@ -71,5 +73,19 @@ class App extends Component {
     );
   }
 }
+
+
+const mapStateToProps = (state) => ({
+  items: state.cart
+})
+
+const mapDispatchToProps =  ({
+  setCartItems
+})
+
+const App = connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(AppHolder)
 
 export default App;
