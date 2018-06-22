@@ -1,0 +1,32 @@
+.items {
+  background: white;
+  box-shadow: 1px 1px 5px 0 rgba(0,0,29,0.22);
+  border-radius: 3px;
+  overflow: auto;
+  color: #212122
+}
+
+.items dt {
+  font-size: 13px;
+  line-height: 16px;
+}
+
+.items div {
+  border: 1px solid #EEE;
+  border-radius: 3px;
+  margin: 12.5px;
+  overflow: auto;
+  padding: 10px
+}
+
+.items .price {
+  font-weight: bold;
+  font-size: 14px;
+  text-align: right;
+  margin-top: 15px
+}
+
+.items .image {
+  float: left;
+  margin-right: 10px
+}

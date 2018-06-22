@@ -18,13 +18,13 @@ O teste consiste em um checkout simples contendo 3 passos (carrinho, pagamento e
   - Consuma o [esse endpoint](http://www.mocky.io/v2/5b15c4923100004a006f3c07) e liste os itens do carrinho, bem como o resumo do carrinho;
   - Persista o conteúdo do JSON para ser usado nas próximas etapas (store do redux é nossa sugestão);
 
-### Passo 2 - Pagamento: 
+### Passo 2 - Pagamento:
   - Exiba um form com campos de cartão de crédito com validação em cada campo;
   - Habilite o botão de Finalizar Pedido apenas se o form esteja válido;
 
-### Passo 3 - Sucesso: 
+### Passo 3 - Sucesso:
   - Todo o conteúdo deverá ser exibido a partir dos dados persistidos;
-  
+
 ### O que vamos avaliar:
   - Organização do código;
   - Mensagens (em inglês) e mudanças nos commits;

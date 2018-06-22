@@ -1,0 +1,54 @@
+.payment {
+  max-width: 640px;
+  margin: 0 auto;
+  padding: 0 10px;
+}
+
+.payment .credit-card {
+  background: white;
+  box-shadow: 1px 1px 5px 0 rgba(0,0,29,0.22);
+  border-radius: 3px;
+  color: #ccc;
+  padding: 10px;
+}
+
+.payment .credit-card label {
+  margin-bottom: 5px;
+  display: inline-block;
+  font-size: 12px;
+  font-weight: bold;
+  line-height: 14px;
+}
+
+.payment .credit-card .field {
+  padding-right: 20px;
+  position: relative;
+}
+
+.payment .credit-card .field {
+  margin-bottom: 20px
+}
+
+.payment input {
+  display: block;
+  width: 100%;
+  border: 1px solid #E7E7E7;
+  box-shadow: inset 0 1px 2px 0 rgba(0,0,0,0.2);
+  border-radius: 3px;
+  padding: 14px 0 12px 13px
+}
+
+.payment input:focus {
+  border-color: #A43287;
+}
+
+.payment .invalid {
+  border-color: #F30;
+}
+
+.payment .error {
+  position: absolute;
+  color: #F30;
+  font-size: 12px;
+  bottom: -17px;
+}
