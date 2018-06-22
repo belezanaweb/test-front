@@ -1,4 +1,4 @@
-const cart = (state = [], action) => {
+const cart = (state = {subTotal: 0, shippingTotal: 0, discount: 0, total: 0, items: []}, action) => {
   switch (action.type) {
     case 'SET_CART_ITEMS':
       return {

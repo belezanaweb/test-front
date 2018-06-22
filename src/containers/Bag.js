@@ -5,7 +5,8 @@ import { setCartItems } from '../actions'
 import Component from '../components/Bag'
 
 const mapStateToProps = (state) => ({
-  items: state.cart
+  cart: state.cart,
+  format: state.format
 })
 
 const mapDispatchToProps =  ({

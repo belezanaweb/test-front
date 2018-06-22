@@ -3,11 +3,15 @@ import { withRouter } from 'react-router'
 
 import Component from '../components/Payment'
 
+import { setPayment } from '../actions'
+
 const mapStateToProps = (state) => ({
-  items: state.cart
+  cart: state.cart,
+  format: state.format
 })
 
 const mapDispatchToProps =  ({
+  setPayment
 })
 
 const Payment = connect(

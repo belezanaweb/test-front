@@ -4,7 +4,9 @@ import { withRouter } from 'react-router'
 import Component from '../components/Confirmation'
 
 const mapStateToProps = (state) => ({
-  items: state.cart
+  cart: state.cart,
+  format: state.format,
+  payment: state.payment
 })
 
 const mapDispatchToProps =  ({

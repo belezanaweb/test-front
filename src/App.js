@@ -1,10 +1,13 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
+import { BrowserRouter as Router, Route } from 'react-router-dom';
 
 import { getItems } from './api/cart'
 import { setCartItems } from './actions'
 
+import Navbar from './Navbar'
+
+import 'gridlex/dist/gridlex.min.css'
 import './App.css';
 
 class DynamicImport extends Component {
@@ -48,7 +51,6 @@ const Confirmation = (props) => (
   </DynamicImport>
 )
 
-
 class AppHolder extends Component {
 
   componentDidMount() {
@@ -59,12 +61,7 @@ class AppHolder extends Component {
     return (
       <Router>
         <div>
-          <nav>
-            <li><Link to="/">Sacola</Link></li>
-            <li><Link to="/payment">Pagamento</Link></li>
-            <li><Link to="/confirmation">Confirmação</Link></li>
-          </nav>
-
+          <Navbar />
           <Route exact path='/' component={Bag} />
           <Route path='/payment' component={Payment} />
           <Route path='/confirmation' component={Confirmation} />

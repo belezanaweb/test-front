@@ -1,0 +1,28 @@
+.total {
+  border: 1px solid #CCC;
+  border-radius: 3px;
+  padding: 15px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+  font-size: 14px;
+}
+
+.total dd, .total dt {
+  position: relative;
+  margin-bottom: 10px;
+}
+
+.total span {
+  position: absolute;
+  right: 0
+}
+
+.total .discount {
+  color: #FF7800
+}
+
+.total dt {
+  font-weight: bold;
+  margin: 16px 0 0 0
+}
