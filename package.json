@@ -1,0 +1,38 @@
+{
+  "name": "test-front",
+  "version": "1.0.0",
+  "description": "belezanaweb frontend challenge",
+  "main": "index.js",
+  "scripts": {
+    "start": "webpack-dev-server --mode development --open --hot",
+    "build": "webpack --mode production"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ricardohan93/test-front.git"
+  },
+  "author": "Ricardo Han",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ricardohan93/test-front/issues"
+  },
+  "homepage": "https://github.com/ricardohan93/test-front#readme",
+  "dependencies": {
+    "react": "^16.4.1",
+    "react-dom": "^16.4.1",
+    "react-redux": "^5.0.7",
+    "react-router-dom": "^4.3.1",
+    "redux": "^4.0.0",
+    "redux-form": "^7.4.2",
+    "redux-thunk": "^2.3.0",
+    "styled-components": "^3.3.3"
+  },
+  "devDependencies": {
+    "babel-core": "^6.26.3",
+    "babel-loader": "^7.1.5",
+    "babel-preset-env": "^1.7.0",
+    "babel-preset-react": "^6.24.1",
+    "webpack": "^4.16.1",
+    "webpack-dev-server": "^3.1.4"
+  }
+}
