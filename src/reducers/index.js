@@ -1,7 +1,8 @@
 import { combineReducers } from 'redux';
+import fetchedData from './reducer_fetchData';
 
 const rootReducer = combineReducers({
-    fetchedData: 'data from api'
+    fetchedData
 });
 
 export default rootReducer;
