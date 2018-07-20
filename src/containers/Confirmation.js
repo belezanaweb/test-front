@@ -1,9 +1,17 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
 
 class Confirmation extends Component {
     render() {
-        return <div>Confirmation</div>
+        console.log(this.props.state)
+        return (
+            <div>{this.props.state.form.PaymentForm.values.cardNumber}</div>
+        ) 
     }
 }
 
-export default Confirmation;
+const mapStateToProps = (state) => ({
+    state: state
+})
+
+export default connect(mapStateToProps)(Confirmation);

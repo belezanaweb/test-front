@@ -3,52 +3,25 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { fetchData } from '../actions/index';
 import { Link } from 'react-router-dom';
+import CartProducts from '../components/CartProducts';
+import CartPrice from '../components/CartPrice';
 
 class Cart extends Component {
 
     componentDidMount() {
-        this.props.fetchData()
+        this.props.fetchData();
     }
-
-    renderProducts = () => {
-        const { data } = this.props;
-        return data.items.map(item => (
-            <article id={item.product.sku}>
-                <div>
-                    <img src={item.product.imageObjects[0].thumbnail} alt={item.product.name} />
-                </div>
-                <div>
-                    <h3>{item.product.name}</h3>
-                    <h4>{item.product.priceSpecification.price}</h4>
-                </div>
-            </article>
-        ))
-    }
-
-    renderPrice = () => {
-        const { data: { discount, shippingTotal, subTotal, total } } = this.props;
-        const totalPriceArr = [subTotal, shippingTotal, discount, total];
-        const totalTitles = ["produtos", "frete", "desconto", "total"];
-
-        return totalPriceArr.map((info, index) => (
-            <div>
-                <p>{totalTitles[index]}</p>
-                <span></span>
-                <p>{info}</p>
-            </div>
-        ))
-    }   
 
     render() {
         console.log(this.props.data)
         return (
-            <main>
-                <h6></h6>
+            <main className="cart">
+                <h6>Produtos</h6>
                 <section>
-                    {this.renderProducts()}
+                    <CartProducts data={this.props.data} />  
                 </section>
                 <section>
-                    {this.renderPrice()}
+                    <CartPrice data={this.props.data} />
                 </section>
                 <Link to='/payment'>proseguir </Link>
             </main>
@@ -61,9 +34,7 @@ const mapDispatchToProps = (dispatch) => {
 } 
 
 const mapStateToProps = (state) => ({
-    data: state.fetchedData.items,
-    loading: state.fetchedData.loading,
-    error: state.fetchedData.error
+    data: state.fetchedData.items
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(Cart);
