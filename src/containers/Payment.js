@@ -1,6 +1,9 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { Field, reduxForm } from 'redux-form';
+import PaymentFields from '../components/PaymentFields';
+import CartPrice from '../components/CartPrice';
+import '../styles/payment.scss';
 import styled from 'styled-components';
 
 const Input = styled.input`
@@ -43,9 +46,9 @@ class Payment extends Component {
         }
         
         return (
-            <div>
+            <div className="input-field__wrapper">
                 <label>{label}:</label>
-                <Input className={inputState()} placeholder={field.placeholder} {...field.input} />
+                <Input className={`input-field ${inputState()}`} placeholder={field.placeholder} {...field.input} />
             </div>
         )
     }
@@ -58,12 +61,15 @@ class Payment extends Component {
     render() {
         const { handleSubmit } = this.props;
         return (
-            <form onSubmit={handleSubmit(this.onSubmit)}>
-                <Field name="cardNumber" label="Número do cartão" placeholder="____ ____ ____ ____" component={this.renderField} />
-                <Field name="personName" label="Nome do titular" placeholder="Como no cartão" component={this.renderField} />
-                <Field name="expire" label="Validade" placeholder="__ / ____" component={this.renderField} />
-                <Field name="cvv" label="CVV" placeholder="___" component={this.renderField} />
-                <button type="submit">Finalizar Pedido</button>
+            <form onSubmit={handleSubmit(this.onSubmit)} className="form">
+                <h6>Cartão de crédito</h6>
+                <section className="form-fields">
+                    <PaymentFields renderField={this.renderField} />
+                </section>
+                <section className="form-price">
+                    <CartPrice data={this.props.data} />
+                </section>
+                <button className="form-btn" type="submit">Finalizar Pedido</button>
             </form>
         )
     }

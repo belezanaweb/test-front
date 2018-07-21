@@ -1,0 +1,96 @@
+.form {
+    height: auto;
+    width: calc(100% - 20px);
+
+    > h6 {
+        color: #999;	
+        font-family: "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+        font-size: 14px;			
+        margin-top: 10px;
+        margin-left: 10px;
+        margin-bottom: 5px;
+        text-transform: uppercase;
+    }
+
+    &-fields {
+        align-items: center;
+        background: #FFF;
+        box-shadow: 0 0 3px rgb(117, 115, 115);
+        display: flex;
+        flex-flow: column wrap;
+        height: 63%;
+        justify-content: space-around;
+        margin-bottom: 20px;
+        width: 100%;
+    }
+
+    &-price {
+        border: 1px solid #CCC;
+        box-sizing: border-box;
+        height: 25%;
+        margin-bottom: 10px;
+        padding-top: 15px;
+        width: 100%;
+    }
+}
+
+.input-field__wrapper {
+    width: calc(100% - 40px);
+    height: auto;
+    margin-bottom: 25px;
+
+    &:nth-child(3) {
+        width: 40%;
+        margin-right: 20px;
+
+        .input-field {
+            width: 100%;
+        }
+    }
+
+    &:nth-child(4) {
+        width: 40%;
+
+        .input-field {
+            width: 100%;
+        }
+    }
+
+    label {
+        /* height: 14px; */
+        width: 262px;
+        color: #CCC;
+        font-family: "Helvetica Neue", "Helvetica", "Arial", sans-serif;	
+        font-size: 12px;
+        font-weight: 700;
+        line-height: 14px;
+        margin-bottom: 5px;
+    }
+}
+
+.input-field {
+    box-sizing: border-box;
+    height: 45px;
+    width: 100%;
+    background-color: #FFF;
+    border: 1px solid #E7E7E7;
+    border-radius: 3px;
+    box-shadow: inset 0 1px 2px 0 rgba(0,0,0,0.2);
+}
+
+.form-btn {
+    height: 60px;
+    display: inline-block;
+    width: 100%;
+    background-color: #FF6C00;
+    box-shadow: inset 0 -3px 0 0 #D45A00, 0 2px 4px 0 rgba(0,0,0,0.25);
+    color: #FFF;
+    font-family: "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+    font-size: 20px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    line-height: 60px;
+    text-align: center;
+    text-decoration: none;
+    text-transform: uppercase;
+}
