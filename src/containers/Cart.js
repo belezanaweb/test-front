@@ -5,6 +5,7 @@ import { fetchData } from '../actions/index';
 import { Link } from 'react-router-dom';
 import CartProducts from '../components/CartProducts';
 import CartPrice from '../components/CartPrice';
+import '../styles/cart.scss';
 
 class Cart extends Component {
 
@@ -15,16 +16,16 @@ class Cart extends Component {
     render() {
         console.log(this.props.data)
         return (
-            <main className="cart">
+            <div className="cart">
                 <h6>Produtos</h6>
-                <section>
+                <section className="cart-products">
                     <CartProducts data={this.props.data} />  
                 </section>
-                <section>
+                <section className="cart-price">
                     <CartPrice data={this.props.data} />
                 </section>
-                <Link to='/payment'>proseguir </Link>
-            </main>
+                <Link className="advance-btn" to='/payment'>Seguir para pagamento</Link>
+            </div>
         ) 
     }
 }

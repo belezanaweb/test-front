@@ -5,7 +5,7 @@ const Heading = styled.header`
     background: #FFF;
     box-sizing: border-box;
     box-shadow: 1px 1px 5px 0 rgba(0,0,29,0.22);
-    height: 72px;
+    height: 50px;
     width: 100%;
 `
 

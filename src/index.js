@@ -2,7 +2,7 @@ import React from "react";
 import { render } from "react-dom";
 import Root from './root';
 import configureStore from './configureStore';
-import './styles/main.scss';
+import './styles/index.scss';
 
 // colocamos toda a lógica de criar um store em outro arquivo
 // subscribe to changes, localStorage, reducers

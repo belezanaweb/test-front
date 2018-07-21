@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import '../styles/cartPrice.scss';
 
 class CartPrice extends Component {
     render() {
@@ -7,10 +8,10 @@ class CartPrice extends Component {
         const totalTitles = ["produtos", "frete", "desconto", "total"];
 
         return totalPriceArr.map((info, index) => (
-            <div key={index}>
-                <p>{totalTitles[index]}</p>
+            <div key={index} className="cart-price__item">
+                <p className="cart-price__key">{totalTitles[index]}</p>
                 <span></span>
-                <p>{info}</p>
+                <p className="cart-price__value">{`R$ ${info}`}</p>
             </div>
         ))
     }   

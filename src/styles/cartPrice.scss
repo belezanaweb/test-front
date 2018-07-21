@@ -1,0 +1,32 @@
+.cart-price__item {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    margin-bottom: 7px;
+    width: 100%;
+
+    &:nth-child(3) {
+        color: #FF7800;
+    }
+
+    &:nth-child(4) {
+        padding-top: 10px;
+        font-weight: 700;
+    }
+}
+
+.cart-price__key {	
+    font-family: "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+    font-size: 14px;		
+    line-height: 17px;
+    text-transform: uppercase;
+    padding-left: 14px;
+}
+
+.cart-price__value {
+    font-family: "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+    font-size: 14px;		
+    line-height: 17px;
+    text-transform: uppercase;
+    padding-right: 14px;
+}
