@@ -1,3 +1,12 @@
+.cart-price {
+    border: 1px solid #CCC;
+    box-sizing: border-box;
+    height: 25%;
+    margin-bottom: 10px;
+    padding-top: 15px;
+    width: 100%;
+}
+
 .cart-price__item {
     display: flex;
     flex-flow: row nowrap;

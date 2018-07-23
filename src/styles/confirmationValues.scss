@@ -1,0 +1,20 @@
+.confirmation-values {
+    padding: 14px 20px 8px 10px;
+
+    > h4 {
+        color: #000;	
+        font-family: "Helvetica Neue", "Helvetica", "Arial", sans-serif;	
+        font-size: 14px;	
+        line-height: 17px;
+        font-weight: 300;
+        text-transform: uppercase;
+    }
+}
+
+.confirmation-infos {
+    height: 73px;
+    width: 100%;
+    background-color: #FFF;
+    box-shadow: 1px 1px 5px 0 rgba(0,0,29,0.22);
+    margin-bottom: 20px;
+}

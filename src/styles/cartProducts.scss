@@ -1,3 +1,15 @@
+.cart-products {
+    align-items: center;
+    background: #FFF;
+    box-shadow: 0 0 3px rgb(117, 115, 115);
+    display: flex;
+    flex-flow: column wrap;
+    height: 63%;
+    justify-content: space-around;
+    margin-bottom: 20px;
+    width: 100%;
+}
+
 .cart-products__item {
     border: 1px solid #EEE;
     border-radius: 2px;

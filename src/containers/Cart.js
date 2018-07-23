@@ -14,16 +14,11 @@ class Cart extends Component {
     }
 
     render() {
-        console.log(this.props.data)
         return (
             <div className="cart">
                 <h6>Produtos</h6>
-                <section className="cart-products">
-                    <CartProducts data={this.props.data} />  
-                </section>
-                <section className="cart-price">
-                    <CartPrice data={this.props.data} />
-                </section>
+                <CartProducts data={this.props.data} />  
+                <CartPrice data={this.props.data} />
                 <Link className="advance-btn" to='/payment'>Seguir para pagamento</Link>
             </div>
         ) 

@@ -7,21 +7,21 @@ import '../styles/payment.scss';
 import styled from 'styled-components';
 
 const Input = styled.input`
-    border: 1px solid #ddd;
-    padding-left: 5px;
-    width: 300px;
     transition: 0.2s cubic-bezier(0.68, -0.55, 0.265, 1.55) all;
+    box-sizing: border-box;
+    box-shadow: inset 0 1px 2px 0 rgba(0,0,0,0.2);
 
     &.error {
-        border-left: 8px solid #D0021B;
+        border: 1px solid #F30;	    
     }
 
     &.pass {
-        border-left: 8px solid #7ED321;
+        border: 1px solid #59E035;	
     }
 
     &:focus {
-        border-left: 8px solid #449CFA;
+        border: 1px solid #A43287;
+        outline: none;
     }
 `
 
@@ -32,7 +32,6 @@ class Payment extends Component {
     }
 
     renderField = (field) => {
-        console.log('what is field', field)
         const { meta: { touched, error }, input: { value }, label } = field;
 
         const inputState = () => {
@@ -54,7 +53,6 @@ class Payment extends Component {
     }
 
     onSubmit = (values) => {
-        console.log('values', values)
         this.props.history.push('/confirmation')
     }
 
@@ -63,13 +61,9 @@ class Payment extends Component {
         return (
             <form onSubmit={handleSubmit(this.onSubmit)} className="form">
                 <h6>Cartão de crédito</h6>
-                <section className="form-fields">
-                    <PaymentFields renderField={this.renderField} />
-                </section>
-                <section className="form-price">
-                    <CartPrice data={this.props.data} />
-                </section>
-                <button className="form-btn" type="submit">Finalizar Pedido</button>
+                <PaymentFields renderField={this.renderField} />
+                <CartPrice data={this.props.data} />
+                <button className="advance-btn" type="submit">Finalizar Pedido</button>
             </form>
         )
     }

@@ -1,5 +1,6 @@
-import React from 'react';
+import React, { Component } from 'react';
 import styled from 'styled-components';
+import { withRouter } from 'react-router'
 
 const Heading = styled.header`
     background: #FFF;
@@ -38,17 +39,21 @@ const ListItems = styled.li`
         color: #FF7800;
     `}
 `
-console.log(window.location)
-const Header = () => (
-    <Heading>
-        <Nav>
-            <UnorderedList>
-                <ListItems active="active">Sacola</ListItems>
-                <ListItems>Pagamento</ListItems>
-                <ListItems>Confirmação</ListItems>
-            </UnorderedList>
-        </Nav>
-    </Heading>
-)
+class Header extends Component {
+    render() {
+        const { location } = this.props
+        return (
+            <Heading>
+                <Nav>
+                    <UnorderedList>
+                        <ListItems active={location.pathname == "/" ? true : false}>Sacola</ListItems>
+                        <ListItems active={location.pathname == "/payment" ? true : false}>Pagamento</ListItems>
+                        <ListItems active={location.pathname == "/confirmation" ? true : false}>Confirmação</ListItems>
+                    </UnorderedList>
+                </Nav>
+            </Heading>
+        )
+    }
+}
 
-export default Header;
+export default withRouter(Header);

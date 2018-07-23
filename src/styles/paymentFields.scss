@@ -1,3 +1,15 @@
+.form-fields {
+    align-items: center;
+    background: #FFF;
+    box-shadow: 0 0 3px rgb(117, 115, 115);
+    display: flex;
+    flex-flow: column wrap;
+    height: 63%;
+    justify-content: space-around;
+    margin-bottom: 20px;
+    width: 100%;
+}
+
 .fields-wrapper {
     display: flex;
     flex-flow: row wrap;

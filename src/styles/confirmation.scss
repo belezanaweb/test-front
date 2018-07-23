@@ -1,0 +1,34 @@
+.confirmation {
+    height: auto;
+    width: calc(100% - 20px);
+    position: relative;
+
+    > h6 {
+        color: #999;	
+        font-family: "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+        font-size: 14px;			
+        margin-top: 10px;
+        margin-left: 10px;
+        margin-bottom: 5px;
+        text-transform: uppercase;
+    }
+}
+
+.success-icon {
+    display: block;
+    margin: 13px auto;
+    width: 36px;
+    height: 36px;
+}
+
+.success-title {
+    height: 17px;
+    color: #FF7800;
+    font-family: "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 17px;
+    text-align: center;
+    text-transform: uppercase;
+    margin-bottom: 21px;
+}
