@@ -5,7 +5,7 @@ import { fetchData } from '../actions/index';
 import { Link } from 'react-router-dom';
 import CartProducts from '../components/CartProducts';
 import CartPrice from '../components/CartPrice';
-import '../styles/cart.scss';
+import '../styles/Cart/cart.scss';
 
 class Cart extends Component {
 

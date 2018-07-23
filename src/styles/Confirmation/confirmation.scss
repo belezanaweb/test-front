@@ -3,6 +3,10 @@
     width: calc(100% - 20px);
     position: relative;
 
+    @media (min-width: 1024px) {
+        width: 40%;
+    }
+
     > h6 {
         color: #999;	
         font-family: "Helvetica Neue", "Helvetica", "Arial", sans-serif;

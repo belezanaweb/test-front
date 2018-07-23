@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import ConfirmationValues from '../components/ConfirmationValues';
 import CartProducts from '../components/CartProducts';
 import CartPrice from '../components/CartPrice';
-import '../styles/confirmation.scss';
+import '../styles/Confirmation/confirmation.scss';
 import Icon from 'svg-react-loader?name=Icon!../icons/success.svg';
 //import Svg from '../icons/success.svg';
 

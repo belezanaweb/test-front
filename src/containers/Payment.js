@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import { Field, reduxForm } from 'redux-form';
 import PaymentFields from '../components/PaymentFields';
 import CartPrice from '../components/CartPrice';
-import '../styles/payment.scss';
+import '../styles/Payment/payment.scss';
 import styled from 'styled-components';
 
 const Input = styled.input`

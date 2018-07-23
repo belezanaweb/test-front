@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import formatMoney from '../services/formatMoney'
-import '../styles/cartProducts.scss';
+import '../styles/Cart/cartProducts.scss';
 
 class CartProducts extends Component {
     render() {

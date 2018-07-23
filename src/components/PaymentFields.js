@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Field } from 'redux-form';
 import { normalizeCardNum, normalizeCardExp, normalizeCardCvv } from '../services/normalizeFields';
-import '../styles/paymentFields.scss';
+import '../styles/Payment/paymentFields.scss';
 
 class PaymentFields extends Component {
 

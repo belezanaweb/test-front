@@ -1,10 +1,9 @@
 import React, { Component } from 'react';
 import formatMoney from '../services/formatMoney'
-import '../styles/cartPrice.scss';
+import '../styles/Cart/cartPrice.scss';
 
 class CartPrice extends Component {
     render() {
-        console.log(this.props.data)
         const { data: { discount, shippingTotal, subTotal, total } } = this.props;
         const totalPriceArr = [subTotal, shippingTotal, discount, total];
         const totalTitles = ["produtos", "frete", "desconto", "total"];
