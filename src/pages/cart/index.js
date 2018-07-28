@@ -12,6 +12,7 @@ import ItemBox from '../../components/ItemBox'
 import ProductBox from '../../components/ProductBox'
 import PurchaseSummaryBox from '../../components/PurchaseSummaryBox'
 import Button from '../../components/Button'
+import Title from '../../components/Title'
 
 class Cart extends React.Component {
   static propTypes = {
@@ -63,7 +64,7 @@ class Cart extends React.Component {
 
     return (
       <Container>
-        <h6 className="title">PRODUTOS</h6>
+        <Title title="PRODUTOS" />
         <ItemBox>
           {items &&
             items.length &&
