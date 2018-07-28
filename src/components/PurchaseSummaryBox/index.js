@@ -1,10 +1,12 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 
 import { formatToReal } from '../../utils/currencyFormat'
 
 import { Container } from './styles'
 
-const PurchaseSummaryBox = ({ data: { subTotal, shippingTotal, discount } }) => {
+const PurchaseSummaryBox = ({ cart }) => {
+  const { subTotal, shippingTotal, discount } = cart.data
   const total = subTotal + shippingTotal - discount
 
   return (
@@ -29,6 +31,15 @@ const PurchaseSummaryBox = ({ data: { subTotal, shippingTotal, discount } }) => 
       </ul>
     </Container>
   )
+}
+
+PurchaseSummaryBox.propTypes = {
+  cart: PropTypes.shape({
+    subTotal: PropTypes.number,
+    shippingTotal: PropTypes.number,
+    discount: PropTypes.number,
+    total: PropTypes.number
+  }).isRequired
 }
 
 export default PurchaseSummaryBox
