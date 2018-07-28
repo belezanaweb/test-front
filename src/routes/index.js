@@ -8,7 +8,7 @@ import Confirmation from '../pages/confirmation'
 
 const Routes = () => (
   <Switch>
-    <Route exact path="/cart" component={Cart} />
+    <Route exact path="/" component={Cart} />
     <Route exact path="/payment" component={Payment} />
     <Route exact path="/confirmation" component={Confirmation} />
   </Switch>

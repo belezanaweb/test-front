@@ -9,7 +9,7 @@ const Header = ({ location }) => (
     <header>
       <nav>
         <List>
-          <ListItem active={location.pathname === '/cart' ? true : false}>SACOLA</ListItem>
+          <ListItem active={location.pathname === '/' ? true : false}>SACOLA</ListItem>
           <ListItem active={location.pathname === '/payment' ? true : false}>PAGAMENTO</ListItem>
           <ListItem active={location.pathname === '/confirmation' ? true : false}>
             CONFIRMAÇÃO
