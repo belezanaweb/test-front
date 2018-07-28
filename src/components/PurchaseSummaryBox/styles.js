@@ -7,6 +7,7 @@ export const Container = styled.div`
   border: 1px solid #ccc;
   padding: 15px;
   align-items: center;
+  margin-bottom: 20px;
 
   p {
     height: 17px;
