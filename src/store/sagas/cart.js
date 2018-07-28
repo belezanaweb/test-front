@@ -7,8 +7,7 @@ import { Creators as CartActions } from '../ducks/cart'
 export function* fetchItems(action) {
   try {
     const { data } = yield call(api.get)
-    console.tron.log(data)
-    //yield put(CartActions.fetchSuccess())
+    yield put(CartActions.fetchSuccess(data))
   } catch (err) {
     console.tron.log(err)
   }
