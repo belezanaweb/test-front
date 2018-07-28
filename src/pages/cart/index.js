@@ -1,4 +1,5 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 import _ from 'lodash'
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
@@ -13,6 +14,28 @@ import PurchaseSummaryBox from '../../components/PurchaseSummaryBox'
 import Button from '../../components/Button'
 
 class Cart extends React.Component {
+  static propTypes = {
+    fetchRequest: PropTypes.func.isRequired,
+    cart: PropTypes.shape({
+      items: PropTypes.arrayOf(
+        PropTypes.shape({
+          product: PropTypes.shape({
+            sku: PropTypes.string,
+            description: PropTypes.string,
+            imageObjects: PropTypes.arrayOf(
+              PropTypes.shape({
+                thumbnail: PropTypes.string
+              })
+            ),
+            priceSpecification: PropTypes.shape({
+              price: PropTypes.number
+            })
+          })
+        })
+      )
+    }).isRequired
+  }
+
   state = {}
 
   componentDidMount() {
@@ -53,7 +76,7 @@ class Cart extends React.Component {
               />
             ))}
         </ItemBox>
-        <PurchaseSummaryBox data={cart.data} />
+        <PurchaseSummaryBox cart={cart} />
         <Button title="SEGUIR PARA O PAGAMENTO" />
       </Container>
     )
