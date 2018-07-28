@@ -5,10 +5,11 @@ import { bindActionCreators } from 'redux'
 
 import { Creators as CartActions } from '../../store/ducks/cart'
 
-import { Container } from './styles'
+import { Container, Loading } from './styles'
 
 import ItemBox from '../../components/ItemBox'
 import ProductBox from '../../components/ProductBox'
+import PurchaseSummaryBox from '../../components/PurchaseSummaryBox'
 
 class Cart extends React.Component {
   state = {}
@@ -21,8 +22,20 @@ class Cart extends React.Component {
   render() {
     const { cart } = this.props
     const {
-      data: { items }
+      data: { items },
+      loading
     } = cart
+
+    if (loading)
+      return (
+        <Loading>
+          <i
+            className="fa fa-spinner fa-pulse fa-5x"
+            aria-hidden="true"
+            style={{ color: '#f94d00' }}
+          />
+        </Loading>
+      )
 
     return (
       <Container>
@@ -39,6 +52,7 @@ class Cart extends React.Component {
               />
             ))}
         </ItemBox>
+        <PurchaseSummaryBox data={cart.data} />
       </Container>
     )
   }
