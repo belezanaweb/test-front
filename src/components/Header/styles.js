@@ -4,6 +4,7 @@ export const Container = styled.div`
   background: #fff;
   height: 72px;
   box-shadow: 1px 1px 5px 0 rgba(0, 0, 29, 0.22);
+  margin-bottom: 10px;
 `
 
 export const List = styled.ul`
