@@ -1,4 +1,5 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 
 import { formatToReal } from '../../utils/currencyFormat'
 
@@ -15,5 +16,15 @@ const ProductBox = ({ thumbnail, description, price }) => (
     </ProductItem>
   </Container>
 )
+
+ProductBox.propTypes = {
+  thumbnail: PropTypes.string,
+  description: PropTypes.string.isRequired,
+  price: PropTypes.number.isRequired
+}
+
+ProductBox.defaultProps = {
+  thumbnail: 'http://via.placeholder.com/50x50'
+}
 
 export default ProductBox
