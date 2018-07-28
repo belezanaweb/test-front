@@ -1,5 +1,7 @@
 import React from 'react'
 
+import { formatToReal } from '../../utils/currencyFormat'
+
 import { Container, ProductItem, ProductDescription } from './styles'
 
 const ProductBox = ({ thumbnail, description, price }) => (
@@ -8,7 +10,7 @@ const ProductBox = ({ thumbnail, description, price }) => (
       <img src={thumbnail} alt={description} />
       <ProductDescription>
         <p className="description">{description}</p>
-        <p className="value">{price}</p>
+        <p className="price">{formatToReal(price)}</p>
       </ProductDescription>
     </ProductItem>
   </Container>

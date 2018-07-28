@@ -37,7 +37,7 @@ export const ProductDescription = styled.section`
     width: 220px;
   }
 
-  .value {
+  .price {
     display: flex;
     justify-content: flex-end;
     height: 17px;

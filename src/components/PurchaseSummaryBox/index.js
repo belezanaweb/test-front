@@ -1,5 +1,7 @@
 import React from 'react'
 
+import { formatToReal } from '../../utils/currencyFormat'
+
 import { Container } from './styles'
 
 const PurchaseSummaryBox = ({ data: { subTotal, shippingTotal, discount } }) => {
@@ -10,19 +12,19 @@ const PurchaseSummaryBox = ({ data: { subTotal, shippingTotal, discount } }) => 
       <ul>
         <li>
           <p>PRODUTOS</p>
-          <p>{subTotal}</p>
+          <p>{formatToReal(subTotal)}</p>
         </li>
         <li>
           <p>FRETE</p>
-          <p>{shippingTotal}</p>
+          <p>{formatToReal(shippingTotal)}</p>
         </li>
         <li className="discount">
           <p>DESCONTO</p>
-          <p>{discount}</p>
+          <p> - {formatToReal(discount)}</p>
         </li>
         <li className="total">
           <p>TOTAL</p>
-          <p>{Number(total).toFixed(1)}</p>
+          <p>{formatToReal(total)}</p>
         </li>
       </ul>
     </Container>
