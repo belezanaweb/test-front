@@ -13,3 +13,10 @@ export const Container = styled.div`
     margin: 0 21px 5px 10px;
   }
 `
+
+export const Loading = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+`
