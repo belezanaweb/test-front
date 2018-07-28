@@ -10,6 +10,7 @@ import { Container, Loading } from './styles'
 import ItemBox from '../../components/ItemBox'
 import ProductBox from '../../components/ProductBox'
 import PurchaseSummaryBox from '../../components/PurchaseSummaryBox'
+import Button from '../../components/Button'
 
 class Cart extends React.Component {
   state = {}
@@ -53,6 +54,7 @@ class Cart extends React.Component {
             ))}
         </ItemBox>
         <PurchaseSummaryBox data={cart.data} />
+        <Button title="SEGUIR PARA O PAGAMENTO" />
       </Container>
     )
   }
