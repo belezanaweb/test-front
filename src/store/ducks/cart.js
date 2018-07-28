@@ -11,7 +11,7 @@ export const Types = {
  * Reducers
  */
 const INITIAL_STATE = {
-  items: [],
+  data: [],
   error: null,
   loading: false
 }
@@ -26,8 +26,9 @@ export default function cart(state = INITIAL_STATE, action) {
     case Types.FETCH_SUCCESS:
       return {
         ...state,
-        items: [...state.items, action.payload.items],
-        error: null
+        data: action.payload.data,
+        error: null,
+        loading: false
       }
     case Types.FETCH_FAILURE:
       return {
@@ -47,9 +48,9 @@ export const Creators = {
   fetchRequest: () => ({
     type: Types.FETCH_REQUEST
   }),
-  fetchSuccess: items => ({
+  fetchSuccess: data => ({
     type: Types.FETCH_SUCCESS,
-    payload: { items }
+    payload: { data }
   }),
   fetchError: error => ({
     type: Types.FETCH_ERROR,
