@@ -2,7 +2,7 @@ let button   = document.getElementsByClassName('btn')[0]
 let labels   = document.getElementsByClassName('label');
 let section  = document.getElementsByClassName('panel')[0];
 let items    = JSON.parse(data.value).items;
-data.value   = '';
+data.value   = "";
 
 let removeClass = (element, className) => {
   element.classList.remove(className);
