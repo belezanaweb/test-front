@@ -5,12 +5,12 @@ let createTemplateProducts = (items, showPrice = true) => {
             ${items.map(item => { 
               return `<div class="col d-flex align-items-end item">
                         <div class="col-3">
-                          <img class="img-fluid" src="${item.product.imageObjects[0].medium}" alt="">
+                          <img class="img-fluid" src="${item.product.imageObjects[0].small}" alt="">
                         </div>
                         <div class="col-9 item-description">
                           <p>${item.product.name.split('- Máscara de Rec')[0]}</p>
                           ${showPrice ? 
-                          `<p class="price">${item.product.priceSpecification.price.toFixed(2).toString().replace('.', ',')}</p>` :
+                          `<p class="price">R$ ${item.product.priceSpecification.price.toFixed(2).toString().replace('.', ',')}</p>` :
                           ''}   
                         </div>
                       </div>`
