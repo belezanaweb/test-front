@@ -25,21 +25,21 @@ let createFormTemplate = () => {
             <form action="">
               <div class="form-group">
                 <label class="field-description">Número do cartão:</label>
-                <input autofocus  placeholder="_ _ _ _-_ _ _ _-_ _ _ _-_ _ _ _" id="numCard" placeholder="" class="form-control" type="text">
+                <input id="inputCard" autofocus  placeholder="_ _ _ _-_ _ _ _-_ _ _ _-_ _ _ _" id="numCard" placeholder="" class="form-control" type="text">
               </div>
               <div class="form-group">
                 <label class="field-description">Nome do títular:</label> 
-                <input placeholder="Como no cartão" class="form-control" id="titular" type="text">
+                <input id="inputTitular" placeholder="Como no cartão" class="form-control" id="titular" type="text">
               </div>
               <div class="form-group inline-block w-50">
                 <label class="field-description">Validade (mês/ano):</label> 
-                <input placeholder="_ _ /_ _ _ _" class="form-control" id="date" type="text"> 
+                <input id="inputDate" placeholder="_ _ /_ _ _ _" class="form-control" id="date" type="text"> 
               </div>
               &nbsp;
               &nbsp;
               <div class="form-group inline-block w-40">
                 <label class="field-description">CVV:</label>
-                <input placeholder="_ _ _" id="cvv" inline-block class="form-control" type="text">
+                <input id="inputCVV" placeholder="_ _ _" id="cvv" inline-block class="form-control" type="text">
               </div>
             </form>
           </div>

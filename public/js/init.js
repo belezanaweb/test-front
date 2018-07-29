@@ -28,6 +28,7 @@ let validateNumCard = (input) => {
 }
 
 let validateTitular = (input) => {
+  console.log(input.value);
   if(!/^[a-zA-Z]{5,}$/.test(input.value)){
     addClass(input, 'input-danger');
     return false;
@@ -59,10 +60,10 @@ let validateCVV = (input) => {
 
 let validateFields = (form) => {
   let fields = {
-    numCard: form.numCard, 
-    titular: form.titular, 
-    date   : form.date, 
-    cvv    : form.cvv
+    numCard: form.inputCard, 
+    titular: form.inputTitular, 
+    date   : form.inputDate, 
+    cvv    : form.inputCVV
   };
 
   let isValidate = [validateNumCard(fields.numCard), validateTitular(fields.titular), 
@@ -76,25 +77,27 @@ let validateFields = (form) => {
 
 let confirmPay = (e) => {
   let info = {
-    numCard : document.forms[0].numCard,
-    titular : document.forms[0].titular,
-    date    : document.forms[0].date,
+    numCard : document.forms[0].inputCard,
+    titular : document.forms[0].inputTitular,
+    date    : document.forms[0].inputDate,
   }
   
-    button.style.display = 'none';
-    section.innerHTML    = createTemplateProducts(items, false);
-    activeLabels(1, 2);
-    createTemplateInfo(info);
-    createIconTemplate();
+  button.style.display = 'none';
+  section.innerHTML    = createTemplateProducts(items, false);
+  activeLabels(1, 2);
+  createTemplateInfo(info);
+  createIconTemplate();
 }
 
 let formPay = function(e) {
   activeLabels(0, 1);
   section.innerHTML = createFormTemplate();
-  let inputs        = Array.prototype.slice.call(document.getElementsByTagName('input'), 0);
 
-  inputs.forEach(input => {
-    input.addEventListener('input', (e) => validateFields(e.target.form));
+  $('#inputCard').mask('0000-0000-0000-0000');
+  $('#inputDate').mask('00/0000');
+  $('#inputCVV').mask('000');
+  $('input').on('input', function(e){
+    this.addEventListener('input', (e) => validateFields(e.target.form));
   });
 
   button.innerHTML = "CONFIRMAR PAGAMENTO";

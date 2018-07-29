@@ -18,6 +18,10 @@
   box-shadow: none;
 }
 
+.img-fluid {
+  max-height: 75px;
+}
+
 .input-danger {
   border: 1px solid red;
 }
