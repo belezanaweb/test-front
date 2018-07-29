@@ -67,7 +67,7 @@ let createIconTemplate = () => {
   div.className = 'row';
   div.innerHTML = `<div class="col icon">
                       <i class="far fa-3x fa-check-circle"></i>
-                      <p class="bold">COMPRA EFETUADA COM SUCESSO</p>
+                      <p class="bold no-margin">COMPRA EFETUADA COM SUCESSO</p>
                   </div>`;
   content.insertBefore(div, content.children[1]);
 }

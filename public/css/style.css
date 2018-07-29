@@ -5,8 +5,8 @@
   background-color: #EEEEEE;
 }
 
-.row, section {
-  margin: 10px 0;
+.row {
+  margin: 0px 0px 10px 0px;
 }
 
 .form-control {
