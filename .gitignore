@@ -1,5 +1,4 @@
 .DS_Store
-build
 node_modules
 logs
 *.log
