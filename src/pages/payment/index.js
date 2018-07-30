@@ -12,6 +12,7 @@ import Title from '../../components/Title'
 import ItemBox from '../../components/ItemBox'
 import PurchaseSummaryBox from '../../components/PurchaseSummaryBox'
 import Button from '../../components/Button'
+import Loading from '../../components/Loading'
 
 class Payment extends React.Component {
   componentDidMount() {
@@ -82,7 +83,7 @@ class Payment extends React.Component {
             </div>
           </form>
         </ItemBox>
-        <PurchaseSummaryBox cart={cart} />
+        {!cart.loading ? <PurchaseSummaryBox cart={cart} /> : <Loading />}
         <Button title="FINALIZAR O PEDIDO" formId="card-form" type="submit" />
       </Container>
     )

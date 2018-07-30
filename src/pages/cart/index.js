@@ -6,13 +6,14 @@ import { bindActionCreators } from 'redux'
 
 import { Creators as CartActions } from '../../store/ducks/cart'
 
-import { Container, Loading } from './styles'
+import { Container } from './styles'
 
 import ItemBox from '../../components/ItemBox'
 import ProductBox from '../../components/ProductBox'
 import PurchaseSummaryBox from '../../components/PurchaseSummaryBox'
 import Button from '../../components/Button'
 import Title from '../../components/Title'
+import Loading from '../../components/Loading'
 
 class Cart extends React.Component {
   static propTypes = {
@@ -51,16 +52,7 @@ class Cart extends React.Component {
       loading
     } = cart
 
-    if (loading)
-      return (
-        <Loading>
-          <i
-            className="fa fa-spinner fa-pulse fa-5x"
-            aria-hidden="true"
-            style={{ color: '#f94d00' }}
-          />
-        </Loading>
-      )
+    if (loading) return <Loading />
 
     return (
       <Container>
