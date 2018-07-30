@@ -65,7 +65,7 @@ class Cart extends React.Component {
     return (
       <Container>
         <Title title="PRODUTOS" />
-        <ItemBox>
+        <ItemBox boxHeight={325}>
           {items &&
             items.length &&
             items.map(item => (
