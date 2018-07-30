@@ -1,4 +1,5 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
 import { bindActionCreators, compose } from 'redux'
 import { withFormik } from 'formik'
@@ -15,6 +16,18 @@ import Button from '../../components/Button'
 import Loading from '../../components/Loading'
 
 class Payment extends React.Component {
+  static propTypes = {
+    cart: PropTypes.shape({
+      loading: PropTypes.bool
+    }).isRequired,
+    history: PropTypes.shape({}).isRequired,
+    fetchRequest: PropTypes.func.isRequired,
+    handleSubmit: PropTypes.func.isRequired,
+    values: PropTypes.shape({}).isRequired,
+    setFieldValue: PropTypes.func.isRequired,
+    errors: PropTypes.shape({}).isRequired
+  }
+
   componentDidMount() {
     const { fetchRequest } = this.props
     fetchRequest()
@@ -111,12 +124,17 @@ export default compose(
     handleSubmit: (values, props) => {
       const { props: componentProps } = props
       const { history } = componentProps
-      history.push('/confirmation')
+      const { cardNumber, cardholderName, cardExpiringDate } = values
+      history.push(
+        `/confirmation?cardNumber=${cardNumber}&cardholderName=${cardholderName}&cardExpiringDate=${cardExpiringDate}`
+      )
     },
     validationSchema: Yup.object().shape({
-      cardNumber: Yup.number()
+      cardNumber: Yup.string()
+        .matches(/\d/, 'Insira apenas valores númericos')
         .typeError('Insira apenas valores númericos')
-        .positive('Digite um número de cartão válido')
+        .min(16, 'Insira um número de cartão válido')
+        .max(19, 'Insira um número de cartão válido')
         .required('Preencha o campo número do cartão'),
       cardholderName: Yup.string().required('Preencha o campo nome do titular'),
       cardExpiringDate: Yup.date('MM/YY')
