@@ -1,42 +1,68 @@
 ## Frontend Test
 
-Faça um fork deste repositório e finalizar o teste, submeta um pull request para o repositório que nosso time será notificado.
+Desafio para vaga de frontend na empresa Beleza na Web 
 
-O teste consiste em um checkout simples contendo 3 passos (carrinho, pagamento e sucesso) [Veja o Layout](https://projects.invisionapp.com/prototype/font-test-cji0j0khf005c1t0132358e8k)
+## Stack
 
-**Faça quando quiser/puder (madrugada, fim de semana, etc), mas recomendamos que não gaste mais de 4 horas.**
+* [React](https://reactjs.org/) 
 
-### Requerimentos
+Tenho trabalhado a mais ou menos 2 anos com React e é uma excelente lib javascript, de todas que 
+já utilizei é a que mais gosto pela produtividade que se ganha no desenvolvimento e pela sua simplicidade além de uma enorme comunidade, React tem dominado o desenvolvimento frontend.
 
-- Pixel perfect ([nesse link](https://projects.invisionapp.com/prototype/font-test-cji0j0khf005c1t0132358e8k), você pode inspecionar para ver espaçamentos, fonte, tamanho, etc)
-- A aplicação precisa ser responsiva, utilizando o conceito de mobile-first. Use sua imaginação para entregar uma experiência boa no desktop.
-- Renderize cada passo em uma URL única (lib de rotas).
-- Utilize ReactJS/Angular/VueJS/Vanilla
+* [Axios](https://github.com/axios/axios)
+
+Lib Http client baseada em promisses, gosto de usar o axios por questão de familiaridade e algumas vatagens sobre a fetch api.
+
+* [Redux](https://redux.js.org/)
+
+Redux é a escolha natural no universo do React, é um container (store) de estados da aplicação, excelente framework, facilita muito o trabalho trazendo produtividade, consistência e robustez na aplicação.
 
 
-### Passo 1 - Carrinho:
-  - Consuma o [esse endpoint](http://www.mocky.io/v2/5b15c4923100004a006f3c07) e liste os itens do carrinho, bem como o resumo do carrinho;
-  - Persista o conteúdo do JSON para ser usado nas próximas etapas (store do redux é nossa sugestão);
+* [Redux Saga](https://redux-saga.js.org/)
 
-### Passo 2 - Pagamento: 
-  - Exiba um form com campos de cartão de crédito com validação em cada campo;
-  - Habilite o botão de Finalizar Pedido apenas se o form esteja válido;
+Comecei a usar essa lib a pouco tempo em alternativa ao redux thunk e estou gostando muito, ela permite organizar as chamadas assíncronas serem distribuídas através de operações baseadas em Sagas e ES6 Function Generators.
 
-### Passo 3 - Sucesso: 
-  - Todo o conteúdo deverá ser exibido a partir dos dados persistidos;
-  
-### O que vamos avaliar:
-  - Organização do código;
-  - Mensagens (em inglês) e mudanças nos commits;
-  - Composição/reutilização de componentes;
-  - Testes unitários;
-  - O motivo de ter escolhido cada tech da stack;
-  - Como rodar sua aplicação ;)
 
-### Diferenciais:
-  - Split bundle por rota (cada step ter um bundle separado para otimizar a performance);
-  - CSS in JS;
-  - React/Redux;
+* [Formik](https://github.com/jaredpalmer/formik)
 
-### Fim:
-Ao finalizar o teste, submeta um pull request para o repositório que nosso time será notificado. Se tiver alguma observação, escreva no pull request.
+Formik é uma excelente lib e muito pequena que ajuda nas principais partes para se trabalhar com formulários, uso em alternativa ao redux form que também ajuda muito no desenvolviento mas não sou muito fan de libs que encapsulam demais e tentam fazer mágica além de manter os estados do form direto no redux o que não acho muito interessante.
+
+* [Styled Components](https://www.styled-components.com/)
+
+Essa lib é demais, leva a estilização para outro nível, ela mantém o css escopado, fazendo uso de components para estilizar a aplicação, fornece uma produtividade incrível. 
+
+* [Prop Types](https://www.npmjs.com/package/prop-types)
+
+Excelente lib para minimizar problemas com tipagem, utilizo para validar o type das propriedades.
+
+* [Yup](https://www.npmjs.com/package/yup)
+
+Uso está lib em conjunto com o formik, ela é utilizada para validar objects schema no javascript.
+
+* [Reactotron](https://github.com/infinitered/reactotron)
+
+Utilizo no desenvolvimento, ele fornece um app para instalar no MacOs, Linux e Windows, para inspecionar projetos React e também React Native, pode ser configurado para potenciaizar a depuração da aplicação, tem lib para configurar com o redux e redux-saga.
+
+* [Duck Pattern](https://github.com/erikras/ducks-modular-redux)
+
+Comecei a utilizar este pattern a pouco tempo mas faz todo o sentido, consiste basicamente em manter as action types, reducers e actions no mesmo arquivo ao invés de criar um diretório para reducers outro para actions. 
+
+## Como rodar o projeto
+
+* Faça uma cópia do projeto para o seu computador 
+
+```
+No terminal digite: git clone git@github.com:cristianomesquita/test-front.git
+```
+
+* Entre no diretório do projeto
+
+```
+Execute o comando yarn ou npm install
+```
+
+* Após a instalação dos pacotes execute o comando abaixo, por padrão a aplicação estará disponível em http://localhost:3000
+
+```
+Execute o comando: yarn start ou npm start
+```
