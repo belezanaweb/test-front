@@ -2,7 +2,7 @@ import styled from 'styled-components'
 
 export const TitleStyles = styled.h6`
   height: 17px;
-  color: #999;
+  color: ${props => props.color};
   font-size: 14px;
   font-weight: 700;
   letter-spacing: NaNpx;
