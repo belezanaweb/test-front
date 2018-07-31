@@ -12,7 +12,7 @@ const Button = ({ title, history, formId }) => (
 
 Button.propTypes = {
   title: PropTypes.string.isRequired,
-  formId: PropTypes.string.isRequired,
+  formId: PropTypes.string,
   history: PropTypes.shape({}).isRequired
 }
 
