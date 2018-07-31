@@ -126,7 +126,9 @@ export default compose(
       const { history } = componentProps
       const { cardNumber, cardholderName, cardExpiringDate } = values
       history.push(
-        `/confirmation?cardNumber=${cardNumber}&cardholderName=${cardholderName}&cardExpiringDate=${cardExpiringDate}`
+        `/confirmation?cardNumber=${cardNumber.substr(
+          -4
+        )}&cardholderName=${cardholderName}&cardExpiringDate=${cardExpiringDate}`
       )
     },
     validationSchema: Yup.object().shape({

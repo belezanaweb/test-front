@@ -79,11 +79,7 @@ class Confirmation extends React.Component {
         <ItemBox boxHeight={73}>
           <div id="customer-info">
             <ul>
-              <li>
-                {cardNumber.length
-                  ? `****.****.****.${cardNumber.substr(-4)}`
-                  : '****.****.****.1234'}
-              </li>
+              <li>{cardNumber.length ? `****.****.****.${cardNumber}` : '****.****.****.1234'}</li>
               <li>{cardholderName ? cardholderName : 'JOSÉ DA SILVA'}</li>
               <li>{cardExpiringDate ? cardExpiringDate : '05/2019'}</li>
             </ul>
