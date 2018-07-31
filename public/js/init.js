@@ -28,7 +28,6 @@ let validateNumCard = (input) => {
 }
 
 let validateTitular = (input) => {
-  console.log(input.value);
   if(!/^[a-zA-Z]{5,}$/.test(input.value)){
     addClass(input, 'input-danger');
     return false;
