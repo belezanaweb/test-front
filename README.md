@@ -9,6 +9,11 @@ Desafio para vaga de frontend na empresa Beleza na Web
 Tenho trabalhado a mais ou menos 2 anos com React e é uma excelente lib javascript, de todas que 
 já utilizei é a que mais gosto pela produtividade que se ganha no desenvolvimento e pela sua simplicidade além de uma enorme comunidade, React tem dominado o desenvolvimento frontend.
 
+* [React Router Dom](https://github.com/ReactTraining/react-router/tree/master/packages/react-router-dom) 
+
+Lib para lidar com as rotas no React, fornece recursos poderosos, não só facilitando o desenvolvimento como otimizando também.
+
+
 * [Axios](https://github.com/axios/axios)
 
 Lib Http client baseada em promisses, gosto de usar o axios por questão de familiaridade e algumas vatagens sobre a fetch api.
