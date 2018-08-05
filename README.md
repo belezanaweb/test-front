@@ -1,42 +1,33 @@
-## Frontend Test
+## Feedback
 
-Faça um fork deste repositório e finalizar o teste, submeta um pull request para o repositório que nosso time será notificado.
+Boa tarde, fiz esse codigo dentro do periodo de 4h(5h se contar o tempo de setup).
+Não consegui terminar todos os requisitos e todas as funcionalidades e não quis extender mais que 4h
+por julgar que a limitação no tempo faz parte do teste.
+Vou deescrever aqui o que eu fiz dos requisitos, o que eu fiz que não era requisito e o que eu deixei de fazer.
 
-O teste consiste em um checkout simples contendo 3 passos (carrinho, pagamento e sucesso) [Veja o Layout](https://projects.invisionapp.com/prototype/font-test-cji0j0khf005c1t0132358e8k)
+### Requerimentos Cumpridos
 
-**Faça quando quiser/puder (madrugada, fim de semana, etc), mas recomendamos que não gaste mais de 4 horas.**
+-Setup Inicial do projeto em react(webpack).
+-Criação e aplicação da store do redux no meu codigo
+-Criação de actions async(usando thunk) para fazer o fetch dos dados
+-Criação de um reducer para salvar os dados que a action deu fetch
+-Criação da primeira tela onde se pode ver os produtos no seu carrinho e o preço.
+-Criação de um menu
+-Consumir os dados da API
 
-### Requerimentos
+### Tecnologias e padrões que resolvi usar
+-Resolvi usar a biblioteca de componentes do material UI
+-Resolvi fazer o fetch nas actions por questão de divisão de responsabilidade, usei o middleware redux-thunk pra isso
+-A organização das pastas seguem um padrão bem comum em react, com alguns outros padrões opcionais
+-Usei redux
+-Usei style in line por questão do tempo e de css não ser minha maior prioridade
 
-- Pixel perfect ([nesse link](https://projects.invisionapp.com/prototype/font-test-cji0j0khf005c1t0132358e8k), você pode inspecionar para ver espaçamentos, fonte, tamanho, etc)
-- A aplicação precisa ser responsiva, utilizando o conceito de mobile-first. Use sua imaginação para entregar uma experiência boa no desktop.
-- Renderize cada passo em uma URL única (lib de rotas).
-- Utilize ReactJS/Angular/VueJS/Vanilla
+### Requerimentos e afazeres não cumpridos
+-Não consegui terminar as outras 2 paginas a tempo
+-Não consegui por tempo aplicar o sistema de rotas ao qual pretendia usar react-router
+-Não consegui fazer unit test
+-Não consegui conferir o css e deixar a pagina pixel perfect
+-Não consegui fazer a troca de paginas no menu(por não haver outras paginas)
+-Não consegui criar arquivos de css separados inves de usar style inline
+-Não consegui testar a aplicação para todas as resoluções, mesmo tendo programado de forma a aceitar a responsividade
 
-
-### Passo 1 - Carrinho:
-  - Consuma o [esse endpoint](http://www.mocky.io/v2/5b15c4923100004a006f3c07) e liste os itens do carrinho, bem como o resumo do carrinho;
-  - Persista o conteúdo do JSON para ser usado nas próximas etapas (store do redux é nossa sugestão);
-
-### Passo 2 - Pagamento: 
-  - Exiba um form com campos de cartão de crédito com validação em cada campo;
-  - Habilite o botão de Finalizar Pedido apenas se o form esteja válido;
-
-### Passo 3 - Sucesso: 
-  - Todo o conteúdo deverá ser exibido a partir dos dados persistidos;
-  
-### O que vamos avaliar:
-  - Organização do código;
-  - Mensagens (em inglês) e mudanças nos commits;
-  - Composição/reutilização de componentes;
-  - Testes unitários;
-  - O motivo de ter escolhido cada tech da stack;
-  - Como rodar sua aplicação ;)
-
-### Diferenciais:
-  - Split bundle por rota (cada step ter um bundle separado para otimizar a performance);
-  - CSS in JS;
-  - React/Redux;
-
-### Fim:
-Ao finalizar o teste, submeta um pull request para o repositório que nosso time será notificado. Se tiver alguma observação, escreva no pull request.
