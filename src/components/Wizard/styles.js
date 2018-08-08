@@ -9,6 +9,10 @@ export const Steps = styled.div`
 
 export const Step = styled.div`
   width: 33.3%;
+  font-weight: bold;
+  color: #CCC;
+  text-transform: uppercase;
+  font-size: 13px;
 
   &:last-child {
     text-align: right;
