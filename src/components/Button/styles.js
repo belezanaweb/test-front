@@ -12,4 +12,5 @@ export const Btn = styled.button`
   font-size: 20px;
   text-transform: uppercase;
   color: #FFF;
+  font-weight: bold;
 `;
