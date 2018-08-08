@@ -37,3 +37,10 @@ export const SectionTitle = styled.h3`
   font-size: 14px;
   padding: 8px 0;
 `;
+
+export const Inner = styled.div`
+  max-width: 320px;
+  width: 100%;
+  margin: 0 auto;
+  position: relative;
+`
