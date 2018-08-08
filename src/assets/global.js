@@ -35,4 +35,5 @@ export const SectionTitle = styled.h3`
   text-transform: uppercase;
   font-weight: bold;
   font-size: 14px;
+  padding: 8px 0;
 `;
