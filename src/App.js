@@ -28,7 +28,6 @@ class App extends Component {
       <Provider store={store}>
         <BrowserRouter basename="/">
           <div>
-            <Wizard />
             <Switch>
               <Routes />
             </Switch>

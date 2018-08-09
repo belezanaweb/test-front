@@ -18,6 +18,12 @@ export const Btn = styled(Link)`
   text-decoration: none;
   transition: all ease .3s;
 
+  &.disable {
+    pointer-events: none;
+    background-color: #b7b7b7;
+    border-bottom-color: #6f6c6a;
+  }
+
   &:hover {
     background-color: #D45A00;
     transition: all ease .3s;

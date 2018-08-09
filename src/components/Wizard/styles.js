@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { Inner } from '../../assets/global';
 
 export const Steps = styled.div`
   background-color: #FFF;
@@ -21,4 +22,8 @@ export const Step = styled.div`
   &:last-child {
     text-align: right;
   }
+`;
+
+export const WizardInner = Inner.extend`
+  display: flex;
 `;

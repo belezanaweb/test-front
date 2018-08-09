@@ -3,13 +3,15 @@ import React from 'react';
 /**
  * Styles
  */
-import { Steps, Step } from './styles';
+import { Steps, Step, WizardInner } from './styles';
 
 const Wizard = () => (
   <Steps>
-    <Step>Sacola</Step>
-    <Step>Pagamento</Step>
-    <Step>Confirmação</Step>
+    <WizardInner>
+      <Step>Sacola</Step>
+      <Step>Pagamento</Step>
+      <Step>Confirmação</Step>
+    </WizardInner>
   </Steps>
 );
 

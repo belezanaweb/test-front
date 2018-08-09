@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 
 /**
  * Styles
@@ -11,13 +11,17 @@ import { Inner } from '../../assets/global'
 import Button from '../../components/Button';
 import ProductsList from '../../components/ProductsList';
 import Summary from '../../components/Summary';
+import Wizard from '../../components/Wizard';
 
 const Cart = () => (
-  <Inner>
-    <ProductsList />
-    <Summary />
-    <Button to="/checkout">Seguir para o pagamento</Button>
-  </Inner>
+  <Fragment>
+    <Wizard current={1} />
+    <Inner>
+      <ProductsList />
+      <Summary />
+      <Button to="/checkout">Seguir para o pagamento</Button>
+    </Inner>
+  </Fragment>
 );
 
 export default Cart;
