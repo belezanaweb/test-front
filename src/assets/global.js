@@ -76,6 +76,7 @@ export const Input = styled.div`
     margin: 0 0 25px 0;
     float: right;
     `}
+
   ${({ medium }) =>
     medium &&
     `
@@ -84,6 +85,16 @@ export const Input = styled.div`
     display: inline-block;
     margin: 0 0 25px 0;
   `}
+
+  &.invalid {
+    input {
+      border-color: #F30;
+    }
+
+    label {
+      color: #F30;
+    }
+  }
 
   label {
     color: #CCC;
@@ -105,8 +116,7 @@ export const Input = styled.div`
     box-shadow: inset 0 1px 2px 0 rgba(0, 0, 0, 0.2);
 
     &:focus {
-      border: 1px solid #A43287;
-      box-shadow: inset 0 1px 2px 0 rgba(0,0,0,0.2);
+      border-color: #A43287;
     }
   }
 `;
