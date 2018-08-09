@@ -10,8 +10,9 @@ const Basket = () => (
   <Container>
     <Content title='Produtos'>
       <Products />
-      <Summary />
     </Content>
+
+    <Summary />
   </Container>
 )
 
