@@ -32,4 +32,15 @@ injectGlobal`
     max-width: 100%;
     height: auto;
   }
+
+  ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  a {
+    text-decoration: none;
+    color: inherit;
+  }
 `
