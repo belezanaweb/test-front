@@ -13,7 +13,7 @@ export const List = styled.ul`
 `
 
 export const Link = styled.a`
-  font-size: 0.92rem;
+  font-size: 0.8125rem;
   font-weight: 700;
   text-transform: uppercase;
   color: #ccc;

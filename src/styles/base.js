@@ -18,7 +18,7 @@ injectGlobal`
 
   body {
     font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-    font-size: 14px;
+    font-size: 16px;
     line-height: 16px;
     text-rendering: optimizeLegibility;
     -webkit-font-smoothing: antialiased;
@@ -42,5 +42,15 @@ injectGlobal`
   a {
     text-decoration: none;
     color: inherit;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    margin-top: 0;
+    margin-bottom: 0;
   }
 `
