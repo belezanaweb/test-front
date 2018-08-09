@@ -13,11 +13,6 @@ import store from "./store";
 import './assets/global'
 
 /**
- * Components
- */
-import Wizard from './components/Wizard';
-
-/**
  * Routes
  */
 import Routes from './routes';

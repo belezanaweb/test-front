@@ -22,6 +22,7 @@ export const Product = styled.div`
 
 export const ProductDetails = styled.div`
   color: #212122;
+  flex: 1;
 `;
 
 export const ProductName = styled.h3`

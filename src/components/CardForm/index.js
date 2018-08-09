@@ -57,13 +57,17 @@ class CardForm extends Component {
   };
 
   verifyInputs() {
-    let inputsInvalids = document.getElementById('payment-form').querySelectorAll('[data-passed="false"]');
-    inputsInvalids = Array.prototype.slice.call(inputsInvalids);
+    const inputsInvalids = document.getElementById('payment-form').querySelectorAll('[data-passed="false"]');
+    const formData = {
+      cardName: document.getElementById('card_name').value,
+      cardNumber: document.getElementById('card_number').value,
+      cardExpiration: document.getElementById('card_validate').value,
+    }
 
     if (inputsInvalids.length > 0) {
       this.props.inValidateForm();
     } else {
-      this.props.validateForm();
+      this.props.validateForm(formData);
     }
   }
 

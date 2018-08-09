@@ -5,12 +5,12 @@ import React from 'react';
  */
 import { Steps, Step, WizardInner } from './styles';
 
-const Wizard = () => (
+const Wizard = props => (
   <Steps>
     <WizardInner>
-      <Step>Sacola</Step>
-      <Step>Pagamento</Step>
-      <Step>Confirmação</Step>
+      <Step current={props.current === 1}>Sacola</Step>
+      <Step current={props.current === 2}>Pagamento</Step>
+      <Step current={props.current === 3}>Confirmação</Step>
     </WizardInner>
   </Steps>
 );

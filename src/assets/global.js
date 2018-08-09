@@ -75,7 +75,7 @@ export const Input = styled.div`
     display: inline-block;
     margin: 0 0 25px 0;
     float: right;
-    `}
+  `}
 
   ${({ medium }) =>
     medium &&

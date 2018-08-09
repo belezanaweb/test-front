@@ -1,5 +1,6 @@
-export const validateForm = () => ({
-  type: "VALIDATE_FORM"
+export const validateForm = data => ({
+  type: "VALIDATE_FORM",
+  payload: { data }
 });
 
 export const inValidateForm = () => ({

@@ -15,6 +15,12 @@ export const Step = styled.div`
   text-transform: uppercase;
   font-size: 13px;
 
+  ${({ current }) =>
+    current &&
+    `
+    color: #FF7800;
+  `}
+
   &:nth-child(2) {
     text-align: center;
   }
