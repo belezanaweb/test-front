@@ -9,6 +9,11 @@ import * as CartActions from "../../store/actions/cart";
 import { InRight } from '../../assets/global';
 import { SummaryDetails, SummaryItem, Off, Total } from './styles'
 
+/**
+ * Utils
+ */
+import { money_format } from '../../utils';
+
 class Summary extends Component {
   constructor(props) {
     super(props);
@@ -23,21 +28,21 @@ class Summary extends Component {
       <SummaryDetails>
         <SummaryItem>
           PRODUTOS
-          <InRight> R$ {this.props.cart.data.subTotal}</InRight>
+          <InRight> R$ {money_format(this.props.cart.data.subTotal, 2, ',', '.')}</InRight>
         </SummaryItem>
         <SummaryItem>
           FRETE
-          <InRight>R$ {this.props.cart.data.shippingTotal}</InRight>
+          <InRight>R$ {money_format(this.props.cart.data.shippingTotal, 2, ',', '.')}</InRight>
         </SummaryItem>
         {this.props.cart.data.discount && (
           <Off>
             Desconto
-            <InRight>- R$ {this.props.cart.data.discount}</InRight>
+            <InRight>- R$ {money_format(this.props.cart.data.discount, 2, ',', '.')}</InRight>
           </Off>
         )}
         <Total>
           TOTAL
-          <InRight>R$ {this.props.cart.data.total}</InRight>
+          <InRight>R$ {money_format(this.props.cart.data.total, 2, ',', '.')}</InRight>
         </Total>
       </SummaryDetails>
     );

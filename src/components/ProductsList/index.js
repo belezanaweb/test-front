@@ -9,6 +9,11 @@ import * as CartActions from "../../store/actions/cart";
 import { SectionTitle } from '../../assets/global';
 import { Products, Product, ProductDetails, ProductName, ProductPrice } from './styles';
 
+/**
+ * Utils
+ */
+import { money_format } from '../../utils';
+
 class ProductsList extends Component {
   constructor(props) {
     super(props);
@@ -31,7 +36,7 @@ class ProductsList extends Component {
                 </figure>
                 <ProductDetails>
                   <ProductName>{item.product.name}</ProductName>
-                  {!this.props.readOnly && <ProductPrice>R$ {item.product.priceSpecification.price}</ProductPrice>}
+                  {!this.props.readOnly && <ProductPrice>R$ {money_format(item.product.priceSpecification.price, 2, ',', '.')}</ProductPrice>}
                 </ProductDetails>
               </Product>
             );
