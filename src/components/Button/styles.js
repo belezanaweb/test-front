@@ -16,4 +16,10 @@ export const Btn = styled(Link)`
   font-weight: bold;
   margin: 20px auto;
   text-decoration: none;
+  transition: all ease .3s;
+
+  &:hover {
+    background-color: #D45A00;
+    transition: all ease .3s;
+  }
 `;

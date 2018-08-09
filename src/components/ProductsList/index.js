@@ -6,8 +6,8 @@ import * as CartActions from "../../store/actions/cart";
 /**
  * Styles
  */
-import { SectionTitle } from '../../assets/global';
-import { Products, Product, ProductDetails, ProductName, ProductPrice } from './styles';
+import { SectionTitle, BoxArea } from '../../assets/global';
+import { Product, ProductDetails, ProductName, ProductPrice } from './styles';
 
 /**
  * Utils
@@ -27,7 +27,7 @@ class ProductsList extends Component {
     return this.props.cart.data.items ? (
       <Fragment>
         <SectionTitle>Produtos</SectionTitle>
-        <Products>
+        <BoxArea>
           {this.props.cart.data.items.map((item, index) => {
             return(
               <Product key={index}>
@@ -41,14 +41,14 @@ class ProductsList extends Component {
               </Product>
             );
           })}
-        </Products>
+        </BoxArea>
       </Fragment>
     ) : (
       <Fragment>
         <SectionTitle>Produtos</SectionTitle>
-        <Products>
+        <BoxArea>
           Carregando...
-        </Products>
+        </BoxArea>
       </Fragment>
     ) ; 
   }

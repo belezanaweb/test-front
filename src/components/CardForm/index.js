@@ -3,13 +3,12 @@ import React, { Fragment } from 'react';
 /**
  * Styles
  */
-import { SectionTitle } from '../../assets/global';
-import { Form, Input, Clear } from './styles';
+import { SectionTitle, BoxArea, Input, Clear } from '../../assets/global';
 
 const CardForm = () => (
   <Fragment>
   <SectionTitle>Pagamento</SectionTitle>
-  <Form>
+  <BoxArea>
     <Input full>
       <label htmlFor="card_number">Número do cartão</label>
         <input type="tel" id="card_number" placeholder="____.____.____.____" />
@@ -27,7 +26,7 @@ const CardForm = () => (
       <input type="tel" id="card_cvv" placeholder="___" />
     </Input>
     <Clear />
-  </Form>
+  </BoxArea>
   </Fragment>
 );
 

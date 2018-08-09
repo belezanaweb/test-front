@@ -3,19 +3,19 @@ import React, { Fragment } from 'react';
 /**
  * Styles
  */
-import { SectionTitle } from '../../assets/global';
-import { PaymentInfos, PaymentInfo } from './styles';
+import { SectionTitle, BoxArea } from '../../assets/global';
+import { PaymentInfo } from './styles';
 
 const PaymentDetails = ({ readOnly }) => (
   <Fragment>
     <SectionTitle>Pagamento</SectionTitle>
-    <PaymentInfos>
+    <BoxArea>
       <PaymentInfo>
         ****.****.****.1234 <br />
         José da Silva <br />
         05/2020
       </PaymentInfo>
-    </PaymentInfos>
+    </BoxArea>
   </Fragment>
 );
 
