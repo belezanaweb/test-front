@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title>Beleza na Web</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
+  <link rel="stylesheet" type="text/css" href="css/style.css" />
+</head>
+<body>
+  <div class="container-fixed"> <!-- labels de processo -->
+    <div class="section no-margin">
+      <div class="labels">
+        <div class="row align-items-center">
+          <div class="col label active">SACOLA</div>
+          <div class="col label">PAGAMENTO</div>
+          <div class="col label">CONFIRMAÇÃO</div>
+        </div>
+      </div>
+    </div>
+    <div class="row align-items-center">
+    <div class="panel col-12 col-md-7"></div> <!-- container onde serão renderizados os produtos -->
+    <div class="col-12 col-md-5"> <!-- container que mostra status da compra -->
+      <div class="status">
+        <div class="row">
+        <div class="inline-block col text-left">
+          <p>PRODUTOS:</p>
+          <p>FRETE:</p>
+          <p class="active">DESCONTO:</p>
+          <p class="bold">TOTAL: </p>
+        </div>
+        <div class="inline-block col text-right">
+          <p>R$ <%=data.subTotal.toFixed(2).toString().replace('.', ',')%></p>
+          <p>R$ <%=data.shippingTotal.toFixed(2).toString().replace('.', ',')%></p>
+          <p class="active">- R$ <%=data.discount.toFixed(2).toString().replace('.', ',')%></p>
+          <p class="bold">R$ <%=data.total.toFixed(2).toString().replace('.', ',')%></p>
+        </div>
+        </div>
+      </div>
+    </div>
+    </div>
+    <div class="section"> <!-- bottão -->
+      <button class="btn btn-block">SEGUIR PARA O PAGAMENTO</button>
+    </div>
+    <br>
+  </div>
+  <input id="data" value="<%=JSON.stringify(data)%>" type="hidden">
+  <script src="js/templates.js"></script>
+  <script src="js/init.js"></script>
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+  <script src="js/jquery-mask.js"></script>
+</body>
+</html>

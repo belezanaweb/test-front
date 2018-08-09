@@ -1,0 +1,156 @@
+.container-fixed {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  margin: 0 auto;
+  max-width: 900px;
+  background-color: #EEEEEE;
+}
+
+.row {
+  margin: 0px 0px 10px 0px;
+}
+
+.form-control {
+  font-size: 13pt;
+}
+
+.form-control:focus {
+  border: 1px solid #A43287;
+  box-shadow: none;
+}
+
+.img-fluid {
+  max-height: 75px;
+}
+
+.input-danger {
+  border: 1px solid red;
+}
+
+.bold {
+  font-weight: 700;
+}
+
+.pay {
+  color: #212122;
+  font-size: 13px;	
+  padding: 10px;	
+  line-height: 16px;
+}
+
+.pay p {
+  font-size: 13.5px;
+  margin: 0px;
+}
+
+.section {
+  margin: 10px;
+}
+
+.labels {
+  line-height: 40px;
+  background-color: white;
+  margin: auto 0;
+  box-shadow: 0px 1px 3px rgba(0,0,0,.2);
+}
+
+.label {
+  text-align: center;
+  font-size: 14px;
+  font-weight: 700;
+  color: #CCC;
+}
+
+.title {
+  font-weight: 700;
+  color:  #999;
+  font-size: 14px;
+}
+
+.item {
+  display:table;
+  border-radius: 3px;
+  padding: 10px;
+  height: 90px;
+  border: 1px solid #EEE;
+  margin: 10px auto;
+}
+
+.items {
+  padding: 10px;
+  margin: 0;
+  background-color: white;
+  box-shadow: 1px 1px 5px 0 rgba(0,0,29,0.22);
+}
+
+.item-description {
+  font-size: 12px;
+  padding: 0px 10px;
+}
+
+.icon {
+  text-align: center;
+  color: #FF7800;
+}
+
+.price {	
+  font-size: 14px;	
+  font-weight: 700;	
+  text-align: right;
+  margin: 0;
+}
+
+.btn {
+  text-align: center;
+  line-height: 40px;
+  height: 60px;	
+  background-color: #FF6C00;	
+  color: #FFF;	
+  font-size: 20px;
+  font-weight: 500;	
+  letter-spacing: 0.5px;	
+  box-shadow: inset 0 -3px 0 0 #D45A00, 0 2px 4px 0 rgba(0,0,0,0.25);
+}
+
+.btn:hover {
+  background-color: #D45A00;
+}
+
+.status {
+  color: #212122;	
+  font-size: 15px;	
+  padding: 10px;
+  line-height: 15px;
+  border: 1px solid #CCC;
+}
+
+.field-description {
+  height: 14px;	
+  width: 262px;	
+  color: #CCC;	
+  font-size: 12px;	
+  font-weight: 700;		
+}
+
+.inline-block {
+  display: inline-block;
+}
+
+.w-40 {
+  width: 40%;
+}
+
+.active {
+  color: #FF7800;
+}
+
+.text-left {
+  text-align: left;
+}
+
+.text-right {
+  text-align: right
+}
+
+.no-margin {
+  margin: 0px;
+}
