@@ -23,6 +23,8 @@ injectGlobal`
     text-rendering: optimizeLegibility;
     -webkit-font-smoothing: antialiased;
     color: #212122;
+
+    background-color: #eee;
   }
 
   img {
