@@ -5,7 +5,7 @@ import Router from './router'
 
 import configureStore from './store'
 
-import './assets/css/base'
+import './styles/base'
 
 const store = configureStore()
 
