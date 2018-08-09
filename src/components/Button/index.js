@@ -6,7 +6,7 @@ import React from 'react';
 import { Btn } from './styles';
 
 const Button = props => (
-  <Btn>
+  <Btn to={props.to}>
     {props.children}
   </Btn>
 );

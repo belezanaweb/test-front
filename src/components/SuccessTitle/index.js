@@ -12,7 +12,7 @@ import { Success } from './styles';
 
 const SuccessTitle = (props) => (
   <Success>
-    <i class="fa fa-check-circle" />
+    <i className="fa fa-check-circle" />
     <h3>{props.children}</h3>
   </Success>
 );

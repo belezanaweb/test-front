@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
-import { Creators as CartActions } from "../../store/ducks/cart";
+import * as CartActions from "../../store/actions/cart";
 
 /**
  * Styles
@@ -15,7 +15,7 @@ class Summary extends Component {
   }
 
   componentDidMount() {
-    this.props.getCartRequest();
+    this.props.cartRequest();
   }
 
   render() {

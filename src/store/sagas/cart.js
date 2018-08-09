@@ -1,13 +1,13 @@
 import { call, put } from "redux-saga/effects";
 import api from "../../services/api";
 
-import { Creators as CartActions } from "../ducks/cart";
+import { cartSuccess } from "../actions/cart";
 
-export function* getCartRequest() {
+export function* cartSendSuccess(action) {
   try {
-    const response = yield call(api.get, "/5b15c4923100004a006f3c07");
-    yield put(CartActions.getCartSuccess(response.data));
-  } catch (err) {
-    console.log(err);
+    const res = yield call(api.get, "/5b15c4923100004a006f3c07");
+    yield put(cartSuccess(res.data));
+  } catch (error) {
+    console.error(error);
   }
 }

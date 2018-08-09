@@ -1,7 +1,7 @@
 import React, { Fragment, Component } from 'react';
 import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
-import { Creators as CartActions } from "../../store/ducks/cart";
+import * as CartActions from "../../store/actions/cart";
 
 /**
  * Styles
@@ -15,53 +15,37 @@ class ProductsList extends Component {
   }
 
   componentDidMount() {
-    this.props.getCartRequest();
+    this.props.cartRequest();
   }
 
   render() {
-    return (
+    return this.props.cart.data.items ? (
       <Fragment>
         <SectionTitle>Produtos</SectionTitle>
         <Products>
-          <Product>
-            <figure>
-              <img src="//placehold.it/65x65" alt="." />
-            </figure>
-            <ProductDetails>
-              <ProductName>L'Oréal Professionnel Expert Absolut Repair Cortex Lipidium</ProductName>
-              {!this.props.readOnly && <ProductPrice>R$ 150,00</ProductPrice>}
-            </ProductDetails>
-          </Product>
-          <Product>
-            <figure>
-              <img src="//placehold.it/65x65" alt="." />
-            </figure>
-            <ProductDetails>
-              <ProductName>L'Oréal Professionnel Expert Absolut Repair Cortex Lipidium</ProductName>
-              {!this.props.readOnly && <ProductPrice>R$ 150,00</ProductPrice>}
-            </ProductDetails>
-          </Product>
-          <Product>
-            <figure>
-              <img src="//placehold.it/65x65" alt="." />
-            </figure>
-            <ProductDetails>
-              <ProductName>L'Oréal Professionnel Expert Absolut Repair Cortex Lipidium</ProductName>
-              {!this.props.readOnly && <ProductPrice>R$ 150,00</ProductPrice>}
-            </ProductDetails>
-          </Product>
-          <Product>
-            <figure>
-              <img src="//placehold.it/65x65" alt="." />
-            </figure>
-            <ProductDetails>
-              <ProductName>L'Oréal Professionnel Expert Absolut Repair Cortex Lipidium</ProductName>
-              {!this.props.readOnly && <ProductPrice>R$ 150,00</ProductPrice>}
-            </ProductDetails>
-          </Product>
+          {this.props.cart.data.items.map((item, index) => {
+            return(
+              <Product key={index}>
+                <figure>
+                  <img src={item.product.imageObjects[0].small} alt={item.product.name} />
+                </figure>
+                <ProductDetails>
+                  <ProductName>{item.product.name}</ProductName>
+                  {!this.props.readOnly && <ProductPrice>R$ {item.product.priceSpecification.price}</ProductPrice>}
+                </ProductDetails>
+              </Product>
+            );
+          })}
         </Products>
       </Fragment>
-    );
+    ) : (
+      <Fragment>
+        <SectionTitle>Produtos</SectionTitle>
+        <Products>
+          Carregando...
+        </Products>
+      </Fragment>
+    ) ; 
   }
 }
 

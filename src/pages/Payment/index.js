@@ -14,7 +14,7 @@ import Summary from '../../components/Summary';
 const Payment = () => (
   <Inner>
     <Summary />
-    <Button>Finalizar o pedido</Button>
+    <Button to="/success">Finalizar o pedido</Button>
   </Inner>
 );
 

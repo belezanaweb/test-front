@@ -16,7 +16,7 @@ const Cart = () => (
   <Inner>
     <ProductsList />
     <Summary />
-    <Button>Seguir para o pagamento</Button>
+    <Button to="/checkout">Seguir para o pagamento</Button>
   </Inner>
 );
 
