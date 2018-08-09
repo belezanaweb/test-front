@@ -2,14 +2,12 @@ import React from 'react'
 
 import Product from './Product'
 
-import { Container } from './styles'
-
 const Products = () => (
-  <Container>
+  <ul>
     <Product />
     <Product />
     <Product />
-  </Container>
+  </ul>
 )
 
 export default Products
