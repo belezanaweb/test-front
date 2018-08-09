@@ -44,7 +44,12 @@ export const Inner = styled.div`
   width: 100%;
   margin: 0 auto;
   position: relative;
-`
+
+  @media (min-width: 1024px) {
+    max-width: 700px;
+  }
+`;
+
 export const InRight = styled.span`
   float: right;
-`
+`;

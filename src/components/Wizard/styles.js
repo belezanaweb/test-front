@@ -14,6 +14,10 @@ export const Step = styled.div`
   text-transform: uppercase;
   font-size: 13px;
 
+  &:nth-child(2) {
+    text-align: center;
+  }
+
   &:last-child {
     text-align: right;
   }
