@@ -6,7 +6,7 @@ import React, { Fragment } from 'react';
 import { SectionTitle } from '../../assets/global';
 import { Products, Product, ProductDetails, ProductName, ProductPrice } from './styles';
 
-const ProductsList = () => (
+const ProductsList = ({ readOnly }) => (
   <Fragment>
     <SectionTitle>Produtos</SectionTitle>
     <Products>
@@ -16,7 +16,7 @@ const ProductsList = () => (
         </figure>
         <ProductDetails>
           <ProductName>L'Oréal Professionnel Expert Absolut Repair Cortex Lipidium</ProductName>
-          <ProductPrice>R$ 150,00</ProductPrice>
+          {!readOnly && <ProductPrice>R$ 150,00</ProductPrice> }
         </ProductDetails>
       </Product>
       <Product>
@@ -25,7 +25,7 @@ const ProductsList = () => (
         </figure>
         <ProductDetails>
           <ProductName>L'Oréal Professionnel Expert Absolut Repair Cortex Lipidium</ProductName>
-          <ProductPrice>R$ 150,00</ProductPrice>
+          {!readOnly && <ProductPrice>R$ 150,00</ProductPrice> }
         </ProductDetails>
       </Product>
       <Product>
@@ -34,7 +34,7 @@ const ProductsList = () => (
         </figure>
         <ProductDetails>
           <ProductName>L'Oréal Professionnel Expert Absolut Repair Cortex Lipidium</ProductName>
-          <ProductPrice>R$ 150,00</ProductPrice>
+          {!readOnly && <ProductPrice>R$ 150,00</ProductPrice> }
         </ProductDetails>
       </Product>
       <Product>
@@ -43,7 +43,7 @@ const ProductsList = () => (
         </figure>
         <ProductDetails>
           <ProductName>L'Oréal Professionnel Expert Absolut Repair Cortex Lipidium</ProductName>
-          <ProductPrice>R$ 150,00</ProductPrice>
+          {!readOnly && <ProductPrice>R$ 150,00</ProductPrice> }
         </ProductDetails>
       </Product>
     </Products>
