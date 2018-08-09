@@ -15,7 +15,6 @@ class ProductsList extends Component {
   }
 
   componentDidMount() {
-    console.log(1);
     this.props.getCartRequest();
   }
 
