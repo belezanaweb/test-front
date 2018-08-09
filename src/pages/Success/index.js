@@ -10,9 +10,11 @@ import { Inner } from '../../assets/global'
  */
 import ProductsList from '../../components/ProductsList';
 import Summary from '../../components/Summary';
+import PaymentDetails from '../../components/PaymentDetails';
 
 const Success = () => (
   <Inner>
+    <PaymentDetails />
     <ProductsList readOnly />
     <Summary />
   </Inner>
