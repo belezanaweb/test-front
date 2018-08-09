@@ -35,7 +35,7 @@ export const SectionTitle = styled.h3`
   text-transform: uppercase;
   font-weight: bold;
   font-size: 14px;
-  padding: 8px 0;
+  padding: 8px 12px;
 `;
 
 export const Inner = styled.div`
@@ -43,4 +43,7 @@ export const Inner = styled.div`
   width: 100%;
   margin: 0 auto;
   position: relative;
+`
+export const InRight = styled.span`
+  float: right;
 `

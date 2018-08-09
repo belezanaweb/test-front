@@ -4,6 +4,7 @@ export const Products = styled.div`
   box-shadow: 1px 1px 5px 0 rgba(0,0,29,0.22);
   background-color: #FFF;
   padding: 12px;
+  margin-bottom: 20px;
 `;
 
 export const Product = styled.div`
