@@ -2,10 +2,6 @@ import React from 'react'
 import Loadable from 'react-loadable'
 import { BrowserRouter, Switch, Route } from 'react-router-dom'
 
-// import Basket from '../pages/basket'
-// import Checkout from '../pages/checkout'
-// import Finish from '../pages/finish'
-
 const Basket = Loadable({
   loader: () => import('../pages/basket'),
   loading: () => <h1>Loading!</h1>
