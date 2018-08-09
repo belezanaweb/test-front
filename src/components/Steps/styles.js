@@ -12,17 +12,9 @@ export const List = styled.ul`
   justify-content: space-between;
 `
 
-export const Link = styled.a`
+export const Item = styled.li`
   font-size: 0.8125rem;
   font-weight: 700;
   text-transform: uppercase;
-  color: #ccc;
-`
-
-export const Item = styled.li`
-  &:first-child {
-    ${Link} {
-      color: #ff7800;
-    }
-  }
+  color: ${props => (props.isActive ? '#ff7800' : '#ccc')};
 `

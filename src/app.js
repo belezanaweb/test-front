@@ -1,7 +1,7 @@
 import React, { Fragment } from 'react'
 import { Provider } from 'react-redux'
 
-import Nav from './components/Nav'
+import Steps from './components/Steps'
 
 import Router from './router'
 
@@ -14,7 +14,7 @@ const store = configureStore()
 const App = () => (
   <Provider store={store}>
     <Fragment>
-      <Nav />
+      <Steps />
       <Router />
     </Fragment>
   </Provider>
