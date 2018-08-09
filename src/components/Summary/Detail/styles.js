@@ -6,8 +6,8 @@ export const Container = styled.li`
 
   font-size: 0.875rem;
   text-transform: uppercase;
-  font-weight: ${props => props.isBold && '700'};
-  color: ${props => props.isHighlight && '#ff7800'};
+  font-weight: ${props => (props.isBold ? '700' : '400')};
+  color: ${props => (props.isHighlight ? '#ff7800' : '#212122')};
 
   &:not(:last-child) {
     margin-bottom: 10px;

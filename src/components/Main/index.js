@@ -5,8 +5,8 @@ import PropTypes from 'prop-types'
 import { getProducts } from '../../store/ducks/cart'
 
 class Main extends PureComponent {
-  componentDidMount () {
-    this.props.getProducts()
+  async componentDidMount () {
+    await this.props.getProducts()
   }
 
   render () {

@@ -1,4 +1,5 @@
 import api from '../../services/api'
+import currency from '../../utils/currency'
 
 const PRODUCTS_REQUEST = 'belezanaweb/card/PRODUCTS_GET'
 const PRODUCTS_SUCCESS = 'belezanaweb/card/PRODUCTS_SUCCESS'
@@ -6,12 +7,13 @@ const PRODUCTS_ERROR = 'belezanaweb/card/PRODUCTS_ERROR'
 
 const initialState = {
   products: {
-    id: undefined,
     items: [],
-    subTotal: 0,
-    shippingTotal: 0,
-    discount: 0,
-    total: 0
+    summary: {
+      subTotal: 0,
+      shippingTotal: 0,
+      discount: 0,
+      total: 0
+    }
   },
   isFetching: false,
   error: undefined
@@ -60,7 +62,25 @@ export const getProducts = () => async dispatch => {
 
   try {
     const { data: response } = await api.get('/5b15c4923100004a006f3c07')
-    dispatch(saveProducts(response))
+
+    const products = {
+      items: response.items.map(item => ({
+        sku: item.product.sku,
+        quantity: item.quantity,
+        name: item.product.name,
+        price: currency.format(item.product.priceSpecification.price),
+        image: item.product.imageObjects[0].medium
+      })),
+      summary: {
+        subTotal: response.subTotal,
+        shippingTotal: response.shippingTotal,
+        discount: response.discount,
+        total: response.total
+      }
+    }
+
+    // console.log(response)
+    dispatch(saveProducts(products))
   } catch (error) {
     const { message } = error
     dispatch(setProductsError(message))

@@ -13,8 +13,10 @@ export const Container = styled.li`
 `
 
 export const Image = styled.div`
-  height: 64px;
   min-width: 64px;
+  min-height: 64px;
+  max-width: 64px;
+  max-height: 64px;
   margin-right: 12px;
 `
 
@@ -30,6 +32,8 @@ export const Description = styled.span`
 `
 
 export const Price = styled.span`
+  margin-top: 15px;
+
   font-size: 0.875rem;
   font-weight: 700;
 `

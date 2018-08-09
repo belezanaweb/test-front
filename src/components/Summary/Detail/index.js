@@ -18,8 +18,8 @@ Detail.defaultProps = {
 Detail.propTypes = {
   title: PropTypes.string.isRequired,
   value: PropTypes.string.isRequired,
-  isHighlight: PropTypes.boolean,
-  isBold: PropTypes.boolean
+  isHighlight: PropTypes.bool,
+  isBold: PropTypes.bool
 }
 
 export default Detail

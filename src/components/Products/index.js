@@ -1,13 +1,30 @@
 import React from 'react'
+import PropTypes from 'prop-types'
+import { connect } from 'react-redux'
 
 import Product from './Product'
 
-const Products = () => (
+const Products = ({ products }) => (
   <ul>
-    <Product />
-    <Product />
-    <Product />
+    {products.map(product => (
+      <Product key={product.sku} {...product} />
+    ))}
   </ul>
 )
 
-export default Products
+Products.propTypes = {
+  products: PropTypes.arrayOf(
+    PropTypes.shape({
+      sku: PropTypes.string,
+      name: PropTypes.string,
+      image: PropTypes.string,
+      price: PropTypes.string
+    })
+  ).isRequired
+}
+
+const mapStateToProps = state => ({
+  products: state.cart.products.items
+})
+
+export default connect(mapStateToProps)(Products)
