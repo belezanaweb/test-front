@@ -13,6 +13,15 @@ export const Product = styled.div`
   display: flex;
   margin-bottom: 15px;
 
+  figure {
+    margin-right: 10px;
+
+    img {
+      height: 65px;
+      width: 65px;
+    }
+  }
+
   &:last-child {
     margin-bottom: 0;
   }
@@ -33,4 +42,5 @@ export const ProductPrice = styled.h4`
   font-size: 14px;
   line-height: 17px;
   font-weight: bold;
+  text-align: right;
 `
