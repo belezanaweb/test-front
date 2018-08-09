@@ -17,10 +17,12 @@ injectGlobal`
   }
 
   body {
-    font-family: sans-serif;
-    font-size: 16px;
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-size: 14px;
+    line-height: 16px;
     text-rendering: optimizeLegibility;
     -webkit-font-smoothing: antialiased;
+    color: #212122;
   }
 
   img {
