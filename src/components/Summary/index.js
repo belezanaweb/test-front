@@ -1,16 +1,31 @@
 import React from 'react'
+import PropTypes from 'prop-types'
+import { connect } from 'react-redux'
 
 import Detail from './Detail'
 
 import { Container } from './styles'
 
-const Summary = () => (
+const Summary = ({ summary: { subTotal, shippingTotal, discount, total } }) => (
   <Container>
-    <Detail title='Produtos' value='R$ 624,80' />
-    <Detail title='Frete' value='R$ 5,30' />
-    <Detail title='Desconto' value='- R$ 30,00' isHighlight />
-    <Detail title='Total' value='R$ 600,10' isBold />
+    <Detail title='Produtos' value={subTotal} />
+    <Detail title='Frete' value={shippingTotal} />
+    <Detail title='Desconto' value={`- ${discount}`} isHighlight />
+    <Detail title='Total' value={total} isBold />
   </Container>
 )
 
-export default Summary
+Summary.propTypes = {
+  summary: PropTypes.shape({
+    subTotal: PropTypes.string,
+    shippingTotal: PropTypes.string,
+    discount: PropTypes.string,
+    total: PropTypes.string
+  }).isRequired
+}
+
+const mapStateToProps = state => ({
+  summary: state.cart.products.summary
+})
+
+export default connect(mapStateToProps)(Summary)
