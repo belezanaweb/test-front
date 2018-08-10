@@ -18,7 +18,7 @@ class Main extends PureComponent {
 
 Main.propTypes = {
   getProducts: PropTypes.func.isRequired,
-  children: PropTypes.arrayOf(PropTypes.node).isRequired
+  children: PropTypes.node.isRequired
 }
 
 const mapDispatchToProps = dispatch => ({
