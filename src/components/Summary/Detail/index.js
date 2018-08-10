@@ -17,7 +17,7 @@ Detail.defaultProps = {
 
 Detail.propTypes = {
   title: PropTypes.string.isRequired,
-  value: PropTypes.string.isRequired,
+  value: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
   isHighlight: PropTypes.bool,
   isBold: PropTypes.bool
 }
