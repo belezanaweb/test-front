@@ -4,13 +4,17 @@ import { connect } from 'react-redux'
 
 import Product from './Product'
 
-const Products = ({ products }) => (
+const Products = ({ products, isFinish }) => (
   <ul>
     {products.map(product => (
-      <Product key={product.sku} {...product} />
+      <Product key={product.sku} {...product} isFinish={isFinish} />
     ))}
   </ul>
 )
+
+Products.defaultProps = {
+  isFinish: false
+}
 
 Products.propTypes = {
   products: PropTypes.arrayOf(
@@ -20,7 +24,8 @@ Products.propTypes = {
       image: PropTypes.string,
       price: PropTypes.string
     })
-  ).isRequired
+  ).isRequired,
+  isFinish: PropTypes.bool
 }
 
 const mapStateToProps = state => ({

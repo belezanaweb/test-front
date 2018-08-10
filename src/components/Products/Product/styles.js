@@ -13,10 +13,10 @@ export const Container = styled.li`
 `
 
 export const Image = styled.div`
-  min-width: 64px;
-  min-height: 64px;
-  max-width: 64px;
-  max-height: 64px;
+  min-width: ${props => (props.isFinish ? '42px' : '64px')};
+  min-height: ${props => (props.isFinish ? '42px' : '64px')};
+  max-width: ${props => (props.isFinish ? '42px' : '64px')};
+  max-height: ${props => (props.isFinish ? '42px' : '64px')};
   margin-right: 12px;
 `
 
