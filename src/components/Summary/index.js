@@ -8,6 +8,7 @@ import { Container } from './styles'
 
 const Summary = ({ summary: { subTotal, shippingTotal, discount, total } }) => (
   <Container>
+    {console.log(typeof subTotal)}
     <Detail title='Produtos' value={subTotal} />
     <Detail title='Frete' value={shippingTotal} />
     <Detail title='Desconto' value={`- ${discount}`} isHighlight />
@@ -17,10 +18,10 @@ const Summary = ({ summary: { subTotal, shippingTotal, discount, total } }) => (
 
 Summary.propTypes = {
   summary: PropTypes.shape({
-    subTotal: PropTypes.string,
-    shippingTotal: PropTypes.string,
-    discount: PropTypes.string,
-    total: PropTypes.string
+    subTotal: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
+    shippingTotal: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
+    discount: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
+    total: PropTypes.oneOfType([PropTypes.string, PropTypes.number])
   }).isRequired
 }
 

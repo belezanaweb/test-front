@@ -72,7 +72,7 @@ export const getProducts = () => async dispatch => {
         image: item.product.imageObjects[0].medium
       })),
       summary: {
-        subTotal: currency.format(response.subTotal),
+        subTotal: String(currency.format(response.subTotal)),
         shippingTotal: currency.format(response.shippingTotal),
         discount: currency.format(response.discount),
         total: currency.format(response.total)
