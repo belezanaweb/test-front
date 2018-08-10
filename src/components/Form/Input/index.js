@@ -1,13 +1,12 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
-import { Container, Label, Error } from './styles'
+import { Container, Label } from './styles'
 
 const Input = ({ label, id, width, hasError, children }) => (
-  <Container width={width}>
+  <Container width={width} hasError={hasError}>
     <Label htmlFor={id}>{label}</Label>
     {children}
-    {hasError && <Error>Error message goes here.</Error>}
   </Container>
 )
 
@@ -20,7 +19,6 @@ Input.propTypes = {
   label: PropTypes.string.isRequired,
   id: PropTypes.string.isRequired,
   width: PropTypes.number,
-  hasError: PropTypes.bool,
   children: PropTypes.node.isRequired
 }
 
