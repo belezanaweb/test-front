@@ -1,6 +1,7 @@
 import React from 'react'
 import Loadable from 'react-loadable'
 import { BrowserRouter, Switch, Route } from 'react-router-dom'
+import Steps from '../components/Steps'
 
 const Basket = Loadable({
   loader: () => import('../pages/basket'),
@@ -19,11 +20,14 @@ const Finish = Loadable({
 
 const Router = () => (
   <BrowserRouter>
-    <Switch>
-      <Route path='/basket' component={Basket} />
-      <Route path='/checkout' component={Checkout} />
-      <Route path='/finish' component={Finish} />
-    </Switch>
+    <div>
+      <Steps />
+      <Switch>
+        <Route path='/basket' component={Basket} />
+        <Route path='/checkout' component={Checkout} />
+        <Route path='/finish' component={Finish} />
+      </Switch>
+    </div>
   </BrowserRouter>
 )
 

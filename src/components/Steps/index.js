@@ -1,7 +1,9 @@
 import React from 'react'
+import { withRouter } from 'react-router-dom'
+
 import { Container, List, Item } from './styles'
 
-const Steps = () => (
+const Steps = props => (
   <Container>
     <List>
       <Item isActive>Sacola</Item>
@@ -11,4 +13,4 @@ const Steps = () => (
   </Container>
 )
 
-export default Steps
+export default withRouter(Steps)
