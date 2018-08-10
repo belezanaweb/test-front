@@ -1,5 +1,13 @@
 import React from 'react'
 
-const Finish = () => <h1>Finish page</h1>
+import Message from '../../components/Message'
+
+import { Container } from './styles'
+
+const Finish = () => (
+  <Container>
+    <Message />
+  </Container>
+)
 
 export default Finish
