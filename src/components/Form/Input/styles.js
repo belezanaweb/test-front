@@ -6,7 +6,7 @@ export const Container = styled.div`
   width: ${props => props.width && props.width}%;
 
   &:not(:last-child) {
-    margin-bottom: 25px;
+    margin-bottom: ${props => (props.margin ? props.margin : 25)}px;
   }
 
   input {

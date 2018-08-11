@@ -5,4 +5,5 @@ export const Container = styled.ul`
   margin-bottom: 20px;
 
   border: 1px solid #ccc;
+  border-radius: 4px;
 `
