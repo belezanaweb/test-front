@@ -1,13 +1,18 @@
 import React from 'react'
+import { connect } from 'react-redux'
 
 import Detail from './Detail'
 
-const Bill = () => (
+const Bill = ({ bill }) => (
   <ul>
-    <Detail value='****.****.****.1234' />
-    <Detail value='José da Silva' />
-    <Detail value='05/2019' />
+    <Detail value={bill.card} />
+    <Detail value={bill.name} />
+    <Detail value={bill.expiration} />
   </ul>
 )
 
-export default Bill
+const mapStateToProps = state => ({
+  bill: state.checkout.data
+})
+
+export default connect(mapStateToProps)(Bill)
