@@ -1,21 +1,23 @@
 import React from 'react'
 import Loadable from 'react-loadable'
 import { BrowserRouter, Switch, Route } from 'react-router-dom'
+
+import Loader from '../components/Loader'
 import Steps from '../components/Steps'
 
 const Basket = Loadable({
   loader: () => import('../pages/basket'),
-  loading: () => <h1>Loading!</h1>
+  loading: () => <Loader full />
 })
 
 const Checkout = Loadable({
   loader: () => import('../pages/checkout'),
-  loading: () => <h1>Loading!</h1>
+  loading: () => <Loader full />
 })
 
 const Finish = Loadable({
   loader: () => import('../pages/finish'),
-  loading: () => <h1>Loading!</h1>
+  loading: () => <Loader full />
 })
 
 const Router = () => (
