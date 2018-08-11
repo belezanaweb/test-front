@@ -7,11 +7,6 @@ export const Group = styled.div`
   justify-content: space-between;
 `
 
-export const Error = styled.span`
-  font-size: 0.75rem;
-  color: #f30;
-`
-
 export const ButtonContainer = styled.div`
   position: absolute;
   left: 0;

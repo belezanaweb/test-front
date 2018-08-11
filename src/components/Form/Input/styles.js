@@ -40,3 +40,8 @@ export const Label = styled.label`
   font-weight: 700;
   color: #ccc;
 `
+
+export const Error = styled.span`
+  font-size: 0.75rem;
+  color: #f30;
+`

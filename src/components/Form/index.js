@@ -9,8 +9,8 @@ import Button from '../Button'
 
 import { Container, Group, ButtonContainer } from './styles'
 
-const Form = ({ values, handleChange }) => (
-  <Container>
+const Form = ({ values, errors, touched, handleSubmit, handleChange, handleBlur }) => (
+  <Container onSubmit={handleSubmit}>
     <Input
       type='text'
       label='Número do cartão:'
@@ -19,6 +19,9 @@ const Form = ({ values, handleChange }) => (
       value={values.card}
       mask={mask.CARD}
       handleChange={handleChange}
+      handleBlur={handleBlur}
+      errors={errors}
+      touched={touched}
       guide={false}
       withMask
     />
@@ -30,6 +33,9 @@ const Form = ({ values, handleChange }) => (
       placeholder='Como no cartão'
       value={values.name}
       handleChange={handleChange}
+      handleBlur={handleBlur}
+      errors={errors}
+      touched={touched}
     />
 
     <Group>
@@ -41,7 +47,10 @@ const Form = ({ values, handleChange }) => (
         value={values.expiration}
         mask={mask.EXPIRATION}
         handleChange={handleChange}
+        handleBlur={handleBlur}
         width={50}
+        errors={errors}
+        touched={touched}
         guide={false}
         withMask
       />
@@ -54,14 +63,17 @@ const Form = ({ values, handleChange }) => (
         mask={mask.CODE}
         value={values.code}
         handleChange={handleChange}
+        handleBlur={handleBlur}
         width={45}
+        errors={errors}
+        touched={touched}
         guide={false}
         withMask
       />
     </Group>
 
     <ButtonContainer>
-      <Button go={false} to='/finish'>
+      <Button type='submit' to='/finish' go={false}>
         Finalize o pedido
       </Button>
     </ButtonContainer>
@@ -70,6 +82,10 @@ const Form = ({ values, handleChange }) => (
 
 Form.propTypes = {
   values: PropTypes.object.isRequired,
-  handleChange: PropTypes.func.isRequired
+  errors: PropTypes.object.isRequired,
+  touched: PropTypes.object.isRequired,
+  handleSubmit: PropTypes.func.isRequired,
+  handleChange: PropTypes.func.isRequired,
+  handleBlur: PropTypes.func.isRequired
 }
 export default Wrapper(Form)
