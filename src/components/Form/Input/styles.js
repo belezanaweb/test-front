@@ -19,7 +19,7 @@ export const Container = styled.div`
 
     border: 1px solid ${props => (props.hasError ? '#f30' : '#e7e7e7')};
     border-radius: 4px;
-    box-shadow: inset 0 1px 2px 0 rgba(0, 0, 0, 0.04);
+    box-shadow: inset 0 1px 2px 0 rgba(0, 0, 0, 0.2);
 
     transition: all 0.2s linear;
 
