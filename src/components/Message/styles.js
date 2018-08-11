@@ -6,6 +6,7 @@ export const Container = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+  margin-bottom: 20px;
 `
 
 export const Icon = styled.span`
@@ -24,6 +25,9 @@ export const Icon = styled.span`
 `
 
 export const Text = styled.p`
+  margin-top: 12px;
+  margin-bottom: 0;
+
   font-size: 0.875rem;
   font-weight: 700;
   text-transform: uppercase;
