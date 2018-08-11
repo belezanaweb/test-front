@@ -11,8 +11,6 @@ import { Container, Group } from './styles'
 
 const Form = ({ values, handleChange }) => (
   <Container>
-    {console.log(values)}
-
     <Input
       type='text'
       label='Número do cartão:'
@@ -62,12 +60,14 @@ const Form = ({ values, handleChange }) => (
       />
     </Group>
 
-    <Button go={false}>Finalize o pedido</Button>
+    <Button go={false} to='/finish'>
+      Finalize o pedido
+    </Button>
   </Container>
 )
 
 Form.propTypes = {
-  values: PropTypes.array.isRequired,
+  values: PropTypes.object.isRequired,
   handleChange: PropTypes.func.isRequired
 }
 export default Wrapper(Form)

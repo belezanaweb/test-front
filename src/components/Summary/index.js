@@ -8,7 +8,6 @@ import { Container } from './styles'
 
 const Summary = ({ summary: { subTotal, shippingTotal, discount, total } }) => (
   <Container>
-    {console.log(typeof subTotal)}
     <Detail title='Produtos' value={subTotal} />
     <Detail title='Frete' value={shippingTotal} />
     <Detail title='Desconto' value={`- ${discount}`} isHighlight />
