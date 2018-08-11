@@ -17,7 +17,7 @@ export const Container = styled.div`
   align-items: center;
   justify-content: center;
   width: 100%;
-  height: ${props => (props.full ? '100vh' : '100%')};
+  min-height: ${props => (props.full ? '100vh' : '300px')};
 `
 
 export const Icon = styled.span`

@@ -43,20 +43,6 @@ export default function greeting (state = initialState, action) {
   }
 }
 
-const requestProducts = () => ({
-  type: PRODUCTS_REQUEST
-})
-
-const saveProducts = products => ({
-  type: PRODUCTS_SUCCESS,
-  payload: { products }
-})
-
-const setProductsError = error => ({
-  type: PRODUCTS_ERROR,
-  payload: { error }
-})
-
 export const getProducts = () => async dispatch => {
   dispatch(requestProducts())
 
@@ -78,11 +64,23 @@ export const getProducts = () => async dispatch => {
         total: currency.format(response.total)
       }
     }
-
-    // console.log(response)
     dispatch(saveProducts(products))
   } catch (error) {
     const { message } = error
     dispatch(setProductsError(message))
   }
 }
+
+const requestProducts = () => ({
+  type: PRODUCTS_REQUEST
+})
+
+const saveProducts = products => ({
+  type: PRODUCTS_SUCCESS,
+  payload: { products }
+})
+
+const setProductsError = error => ({
+  type: PRODUCTS_ERROR,
+  payload: { error }
+})
