@@ -1,28 +1,61 @@
 import React from 'react'
 import PropTypes from 'prop-types'
+import Mask from 'react-text-mask'
 
 import { Container, Label } from './styles'
 
-const Input = ({ label, id, width, margin, hasError, children }) => (
-  <Container width={width} margin={margin} hasError={hasError}>
+const Input = ({
+  type,
+  label,
+  id,
+  placeholder,
+  mask,
+  value,
+  handleChange,
+  width,
+  guide,
+  withMask,
+  hasError
+}) => (
+  <Container hasError={hasError} width={width}>
     <Label htmlFor={id}>{label}</Label>
-    {children}
+
+    {withMask ? (
+      <Mask
+        type={type}
+        id={id}
+        placeholder={placeholder}
+        mask={mask}
+        value={value}
+        onChange={handleChange}
+        guide={guide}
+      />
+    ) : (
+      <input type={type} id={id} value={value} onChange={handleChange} />
+    )}
   </Container>
 )
 
 Input.defaultProps = {
+  mask: [],
   width: 100,
-  margin: 25,
+  guide: false,
+  withMask: false,
   hasError: false
 }
 
 Input.propTypes = {
+  type: PropTypes.string.isRequired,
   label: PropTypes.string.isRequired,
   id: PropTypes.string.isRequired,
+  placeholder: PropTypes.string.isRequired,
+  value: PropTypes.string.isRequired,
+  mask: PropTypes.array,
+  handleChange: PropTypes.func.isRequired,
   width: PropTypes.number,
-  margin: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
-  hasError: PropTypes.bool.isRequired,
-  children: PropTypes.node.isRequired
+  guide: PropTypes.bool,
+  withMask: PropTypes.bool,
+  hasError: PropTypes.bool.isRequired
 }
 
 export default Input
