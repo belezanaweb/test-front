@@ -13,7 +13,9 @@ const Basket = () => (
       <Products />
     </Content>
     <Summary />
-    <Button to='/checkout'>Seguir para o pagamento</Button>
+    <Button to='/checkout' go>
+      Seguir para o pagamento
+    </Button>
   </Container>
 )
 

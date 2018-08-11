@@ -15,6 +15,8 @@ export const Error = styled.span`
 export const ButtonContainer = styled.div`
   position: absolute;
   left: 0;
-  bottom: -228px;
+  bottom: -242px;
   right: 0;
+
+  margin-bottom: 14px;
 `

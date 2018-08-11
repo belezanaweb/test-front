@@ -7,7 +7,7 @@ import Wrapper from './Wrapper'
 import Input from './Input'
 import Button from '../Button'
 
-import { Container, Group } from './styles'
+import { Container, Group, ButtonContainer } from './styles'
 
 const Form = ({ values, handleChange }) => (
   <Container>
@@ -60,9 +60,11 @@ const Form = ({ values, handleChange }) => (
       />
     </Group>
 
-    <Button go={false} to='/finish'>
-      Finalize o pedido
-    </Button>
+    <ButtonContainer>
+      <Button go={false} to='/finish'>
+        Finalize o pedido
+      </Button>
+    </ButtonContainer>
   </Container>
 )
 
