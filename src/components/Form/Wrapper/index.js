@@ -9,7 +9,12 @@ export default withFormik({
     code: ''
   }),
   handleSubmit: (values, { props: { updateCheckout, history } }) => {
-    updateCheckout(values)
+    const data = {
+      ...values,
+      card: `****.****.****.${values.card.substr(-4)}`
+    }
+
+    updateCheckout(data)
     history.push('/finish')
   },
   validationSchema: object().shape({
