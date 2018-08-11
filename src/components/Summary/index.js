@@ -25,7 +25,7 @@ Summary.propTypes = {
 }
 
 const mapStateToProps = state => ({
-  summary: state.cart.products.summary
+  summary: state.basket.products.summary
 })
 
 export default connect(mapStateToProps)(Summary)

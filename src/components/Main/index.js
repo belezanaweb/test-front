@@ -2,7 +2,7 @@ import React, { PureComponent, Fragment } from 'react'
 import { connect } from 'react-redux'
 import PropTypes from 'prop-types'
 
-import { getProducts } from '../../store/ducks/cart'
+import { getProducts } from '../../store/ducks/basket'
 
 class Main extends PureComponent {
   async componentDidMount () {

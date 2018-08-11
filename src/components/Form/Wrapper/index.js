@@ -8,6 +8,10 @@ export default withFormik({
     expiration: '',
     code: ''
   }),
+  handleSubmit: (values, { props: { updateCheckout, history } }) => {
+    updateCheckout(values)
+    history.push('/finish')
+  },
   validationSchema: object().shape({
     card: string()
       .min(19)

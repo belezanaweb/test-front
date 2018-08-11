@@ -1,5 +1,9 @@
 import React from 'react'
 import PropTypes from 'prop-types'
+import { connect } from 'react-redux'
+import { withRouter } from 'react-router-dom'
+
+import { updateCheckout } from '../../store/ducks/checkout'
 
 import mask from '../../constants/mask'
 
@@ -73,9 +77,7 @@ const Form = ({ values, errors, touched, handleSubmit, handleChange, handleBlur 
     </Group>
 
     <ButtonContainer>
-      <Button type='submit' to='/finish' go={false}>
-        Finalize o pedido
-      </Button>
+      <Button type='submit'>Finalize o pedido</Button>
     </ButtonContainer>
   </Container>
 )
@@ -88,4 +90,12 @@ Form.propTypes = {
   handleChange: PropTypes.func.isRequired,
   handleBlur: PropTypes.func.isRequired
 }
-export default Wrapper(Form)
+
+const mapDispatchToProps = dispatch => ({
+  updateCheckout: data => dispatch(updateCheckout(data))
+})
+
+export default connect(
+  null,
+  mapDispatchToProps
+)(withRouter(Wrapper(Form)))

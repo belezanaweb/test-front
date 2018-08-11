@@ -1,9 +1,9 @@
 import { combineReducers } from 'redux'
 
-import cart from './cart'
+import basket from './basket'
 import checkout from './checkout'
 
 export default combineReducers({
-  cart,
+  basket,
   checkout
 })

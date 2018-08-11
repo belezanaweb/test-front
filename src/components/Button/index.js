@@ -4,8 +4,8 @@ import { withRouter } from 'react-router-dom'
 
 import { Container } from './styles'
 
-const Button = ({ to, history, type, disabled, go, children }) => (
-  <Container type={type} onClick={() => go && history.push(to)} disabled={disabled}>
+const Button = ({ to, history, type, disabled, children }) => (
+  <Container type={type} onClick={() => history.push(to)} disabled={disabled}>
     {children}
   </Container>
 )
@@ -16,13 +16,12 @@ Button.defaultProps = {
 }
 
 Button.propTypes = {
-  to: PropTypes.string.isRequired,
+  to: PropTypes.string,
   history: PropTypes.shape({
     push: PropTypes.func
   }).isRequired,
   type: PropTypes.string,
   disabled: PropTypes.bool,
-  go: PropTypes.bool.isRequired,
   children: PropTypes.node.isRequired
 }
 
