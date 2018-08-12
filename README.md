@@ -10,7 +10,8 @@ $ cd test-front
 $ yarn (or npm install) 
 $ yarn start (or npm start)
 ```
-Project is running at http://localhost:3000/basket
+Local preview: http://localhost:3000/basket
+Online preview: https://belezanaweb-carrinho.netlify.com/basket
 
 ## Tools
 
