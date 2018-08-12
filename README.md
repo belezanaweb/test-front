@@ -5,7 +5,7 @@
 ## Getting Started
 
 ```sh
-$ git clone git@github.com:marcosabb/boilerplate-do-boilerplate.git
+$ git clone git@github.com:marcosabb/test-front.git
 $ cd test-front
 $ yarn (or npm install) 
 $ yarn start (or npm start)
