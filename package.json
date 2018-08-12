@@ -26,5 +26,10 @@
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject"
+  },
+  "devDependencies": {
+    "enzyme": "^3.4.1",
+    "enzyme-adapter-react-16": "^1.2.0",
+    "redux-mock-store": "^1.5.3"
   }
 }
