@@ -4,8 +4,6 @@ Desafio para vaga de frontend na empresa Beleza na Web
 
 ## Stack
 
-* [React](https://reactjs.org/) 
-
 Tenho trabalhado a mais ou menos 2 anos com React e é uma excelente lib javascript, de todas que 
 já utilizei é a que mais gosto pela produtividade que se ganha no desenvolvimento e pela sua simplicidade além de uma enorme comunidade, React tem dominado o desenvolvimento frontend.
 
