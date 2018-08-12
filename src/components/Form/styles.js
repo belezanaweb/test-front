@@ -9,9 +9,18 @@ export const Group = styled.div`
 
 export const ButtonContainer = styled.div`
   position: absolute;
-  left: 0;
-  bottom: -242px;
-  right: 0;
+  right: 10px;
 
-  margin-bottom: 14px;
+  @media (max-width: 960px) {
+    left: 10px;
+    bottom: -58px;
+
+    margin-bottom: 14px;
+  }
+
+  @media (min-width: 960px) {
+    top: 186px;
+
+    width: 338px;
+  }
 `
