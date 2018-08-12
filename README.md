@@ -1,34 +1,37 @@
 # Beleza na Web | Carrinho
 
-> :fire: Simple shopping cart app made with React!
+> :fire: Simple shopping cart app made with React and Redux!
 
 ## Getting Started
 
 ```sh
 $ git clone git@github.com:marcosabb/boilerplate-do-boilerplate.git
-$ cd boilerplate-do-boilerplate
-$ rm -rf .git
+$ cd test-front
 $ yarn (or npm install) 
 $ yarn start (or npm start)
 ```
+Project is running at http://localhost:3000/basket
 
-## What's inside it?
+## Tools
 
-- create-react-app
-- react-router-dom
-- redux
-- react-redux
-- redux-thunk
-- axios
-- styled-components
-- styled-normalize
+This project was bootstrapped using my personal [boilerplate](https://github.com/marcosabb/boilerplate-do-boilerplate), that's a boilerplate created using create-react-app.
 
-## Scripts
-
-- `yarn start (or npm start)`: Starts the application on development mode
-- `yarn build (or npm run build)`: Build project to production
-- `yarn test (or npm test)`: Run tests
-- `yarn eject (or npm run eject)`: Eject creat-react-app.
+- **redux** - for state management.
+- **redux-thunk** - for async action creators.
+- **react-redux** - for connect react to redux.
+- **prop-types** - for prop type checking.
+- **react-router-dom** - for routing.
+- **react-loadable** - for route code spliting.
+- **styled-components** - for css-in-js styling.
+- **styled-normalize** - for style reset.
+- **formik** - for form management.
+- **yup** - for form validation.
+- **react-text-mask** - for form input mask.
+- **eslint** - for code lint.
+- **standard** - for code style-guide.
+- **fetch api** - for api connection.
+- **whatwg-fetch** - for fetch polyfill.
+- **intl api** - for currency filter.
 
 ## License
 
