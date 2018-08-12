@@ -1,4 +1,6 @@
-import api from '../../services/api'
+/* global fetch */
+import 'whatwg-fetch'
+
 import currency from '../../utils/currency'
 
 const PRODUCTS_REQUEST = 'belezanaweb/card/PRODUCTS_GET'
@@ -47,10 +49,11 @@ export const getProducts = () => async dispatch => {
   dispatch(requestProducts())
 
   try {
-    const { data: response } = await api.get('/5b15c4923100004a006f3c07')
+    const response = await fetch(`${process.env.REACT_APP_API_URL}/5b15c4923100004a006f3c07`)
+    const data = await response.json()
 
     const products = {
-      items: response.items.map(item => ({
+      items: data.items.map(item => ({
         sku: item.product.sku,
         quantity: item.quantity,
         name: item.product.name,
@@ -58,12 +61,13 @@ export const getProducts = () => async dispatch => {
         image: item.product.imageObjects[0].medium
       })),
       summary: {
-        subTotal: String(currency.format(response.subTotal)),
-        shippingTotal: currency.format(response.shippingTotal),
-        discount: currency.format(response.discount),
-        total: currency.format(response.total)
+        subTotal: String(currency.format(data.subTotal)),
+        shippingTotal: currency.format(data.shippingTotal),
+        discount: currency.format(data.discount),
+        total: currency.format(data.total)
       }
     }
+
     dispatch(saveProducts(products))
   } catch (error) {
     const { message } = error
