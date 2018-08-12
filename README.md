@@ -11,6 +11,7 @@ $ yarn (or npm install)
 $ yarn start (or npm start)
 ```
 Local preview: http://localhost:3000/basket
+
 Online preview: https://belezanaweb-carrinho.netlify.com/basket
 
 ## Tools
