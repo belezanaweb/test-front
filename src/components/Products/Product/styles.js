@@ -24,7 +24,7 @@ export const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  align-items: flex-end;
+  flex: 1;
 `
 
 export const Description = styled.span`
@@ -32,6 +32,7 @@ export const Description = styled.span`
 `
 
 export const Price = styled.span`
+  align-self: flex-end;
   margin-top: 15px;
 
   font-size: 0.875rem;
