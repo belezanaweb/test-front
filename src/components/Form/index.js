@@ -13,8 +13,10 @@ import Button from '../Button'
 
 import { Container, Group, ButtonContainer } from './styles'
 
-const Form = ({ values, errors, touched, handleSubmit, handleChange, handleBlur }) => (
+const Form = ({ values, errors, touched, isValid, handleSubmit, handleChange, handleBlur }) => (
   <Container onSubmit={handleSubmit}>
+    {console.log('errors: ', errors)}
+    {console.log('isValid', isValid)}
     <Input
       type='text'
       label='Número do cartão:'
@@ -77,7 +79,9 @@ const Form = ({ values, errors, touched, handleSubmit, handleChange, handleBlur 
     </Group>
 
     <ButtonContainer>
-      <Button type='submit'>Finalize o pedido</Button>
+      <Button type='submit' disabled={!isValid}>
+        Finalize o pedido
+      </Button>
     </ButtonContainer>
   </Container>
 )
@@ -86,6 +90,7 @@ Form.propTypes = {
   values: PropTypes.object.isRequired,
   errors: PropTypes.object.isRequired,
   touched: PropTypes.object.isRequired,
+  isValid: PropTypes.bool.isRequired,
   handleSubmit: PropTypes.func.isRequired,
   handleChange: PropTypes.func.isRequired,
   handleBlur: PropTypes.func.isRequired

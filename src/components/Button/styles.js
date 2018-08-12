@@ -9,12 +9,12 @@ export const Container = styled.button`
   text-transform: uppercase;
   color: #fff;
 
-  background-color: #ff6c00;
+  background-color: ${props => (props.disabled ? '#d45a00' : '#ff6c00')};
   border: none;
   border-radius: 4px;
   box-shadow: inset 0 -3px 0 0 #d45a00, 0 2px 4px 0 rgba(0, 0, 0, 0.25);
 
-  cursor: pointer;
+  cursor: ${props => (props.disabled ? 'not-allowed' : 'pointer')};
   transition: all 0.2s linear;
 
   &:hover {

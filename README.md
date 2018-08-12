@@ -1,6 +1,6 @@
-# Boilerplate do Boilerplate
+# Beleza na Web | Carrinho
 
-> :fire: My personal boilerplate created using create-react-app!
+> :fire: Simple shopping cart app made with React!
 
 ## Getting Started
 
