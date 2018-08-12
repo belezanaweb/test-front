@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { Fragment } from 'react'
 import Loadable from 'react-loadable'
 import { BrowserRouter, Switch, Route } from 'react-router-dom'
 
@@ -22,14 +22,14 @@ const Finish = Loadable({
 
 const Router = () => (
   <BrowserRouter>
-    <div>
+    <Fragment>
       <Steps />
       <Switch>
         <Route path='/basket' component={Basket} />
         <Route path='/checkout' component={Checkout} />
         <Route path='/finish' component={Finish} />
       </Switch>
-    </div>
+    </Fragment>
   </BrowserRouter>
 )
 

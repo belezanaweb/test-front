@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 
-export const Container = styled.nav`
+export const Container = styled.ul`
   position: sticky;
   top: 0;
   left: 0;
@@ -10,11 +10,6 @@ export const Container = styled.nav`
   padding: 12px 18px;
 
   box-shadow: 1px 1px 5px 0 rgba(0, 0, 29, 0.22);
-`
-
-export const List = styled.ul`
-  display: flex;
-  justify-content: space-between;
 `
 
 export const Item = styled.li`
