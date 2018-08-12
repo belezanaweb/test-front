@@ -6,6 +6,8 @@ export const Container = styled.ul`
   left: 0;
   z-index: 1;
 
+  display: flex;
+  justify-content: space-between;
   background-color: #fff;
   padding: 12px 18px;
 
