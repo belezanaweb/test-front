@@ -52,6 +52,15 @@ Utilizo no desenvolvimento, ele fornece um app para instalar no MacOs, Linux e W
 
 Comecei a utilizar este pattern a pouco tempo mas faz todo o sentido, consiste basicamente em manter as action types, reducers e actions no mesmo arquivo ao invés de criar um diretório para reducers outro para actions. 
 
+## Testes Automatizados
+
+Como desafio adendo fiz alguns testes no componente de Formulário especificamente no input que recebe o número do cartão de crédito conforme solicitado. 
+Utilizando o Jest lib criada pelo facebook que já vem nos scripts do CRA(Create-React-App) e o Enzyme lib da airbnb para potencilizar os testes no React.
+Os testes realizados foram um tanto simples porém aprofundei um pouco mais nos estudos, aprendi sobre o conceito de TDD(Test Driven Development), aprendi sobre criar mocks fiz alguns testes simulando o localStorage por exemplo, aprendi a utilizar o sinon usado para manipular funções no código, testei também o redux-mock-store para para testar componentes conectados ao redux e o redux-saga-tester para testar os sagas, aprendi também como fazer mock de API, snapshots e gerar coverage report.
+Ainda há muito pra aprender existem diversas ferramentas e técnicas de testes além de que somente com a experiência diária vou saber melhor o que testar, quando testar e como testar.
+Mas fiquei satisfeito com o que aprendi até o momento pois no inicio da semana eu não sabia nada sobre testes e não quis apenas pegar alguns exemplos pra complementar o desafio então estudei bastante sobre testes mas reconheço que há muito mais pra estudar e praticar.
+Fica claro agora pra mim a importância de se testar código principalmente se trabalhando em equipe.
+
 ## Como rodar o projeto
 
 * Faça uma cópia do projeto para o seu computador 
