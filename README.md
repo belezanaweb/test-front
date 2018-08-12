@@ -1,6 +1,6 @@
 # Beleza na Web | Carrinho
 
-> :fire: Simple shopping cart app made with React and Redux!
+> :handbag: Simple shopping cart app made with React and Redux!
 
 ## Getting Started
 
