@@ -6,7 +6,7 @@ import Content from '../../components/Content'
 import Products from '../../components/Products'
 import Summary from '../../components/Summary'
 
-import { Container } from './styles'
+import { Container, Wrapper } from './styles'
 
 const Finish = () => (
   <Container>
@@ -17,7 +17,9 @@ const Finish = () => (
     <Content title='Produtos'>
       <Products isFinish />
     </Content>
-    <Summary />
+    <Wrapper>
+      <Summary />
+    </Wrapper>
   </Container>
 )
 

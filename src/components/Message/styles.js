@@ -7,6 +7,10 @@ export const Container = styled.div`
   flex-direction: column;
   align-items: center;
   margin-bottom: 20px;
+
+  @media (min-width: 960px) {
+    width: 100%;
+  }
 `
 
 export const Icon = styled.span`
