@@ -1,4 +1,4 @@
-import { injectGlobal } from 'styled-components'
+import styled, { injectGlobal } from 'styled-components'
 import normalize from 'styled-normalize'
 
 injectGlobal`
@@ -52,5 +52,21 @@ injectGlobal`
   h6 {
     margin-top: 0;
     margin-bottom: 0;
+  }
+`
+
+export const Container = styled.div`
+  @media (min-width: 960px) {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+  }
+`
+
+export const Wrapper = styled.div`
+  @media (min-width: 960px) {
+    width: 960px;
   }
 `

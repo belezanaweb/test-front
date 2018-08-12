@@ -1,9 +1,11 @@
-import React, { Fragment } from 'react'
+import React from 'react'
 import Loadable from 'react-loadable'
 import { BrowserRouter, Switch, Route } from 'react-router-dom'
 
 import Loader from '../components/Loader'
 import Steps from '../components/Steps'
+
+import { Container, Wrapper } from '../styles/base'
 
 const Basket = Loadable({
   loader: () => import('../pages/basket'),
@@ -22,14 +24,16 @@ const Finish = Loadable({
 
 const Router = () => (
   <BrowserRouter>
-    <Fragment>
-      <Steps />
-      <Switch>
-        <Route path='/basket' component={Basket} />
-        <Route path='/checkout' component={Checkout} />
-        <Route path='/finish' component={Finish} />
-      </Switch>
-    </Fragment>
+    <Container>
+      <Wrapper>
+        <Steps />
+        <Switch>
+          <Route path='/basket' component={Basket} />
+          <Route path='/checkout' component={Checkout} />
+          <Route path='/finish' component={Finish} />
+        </Switch>
+      </Wrapper>
+    </Container>
   </BrowserRouter>
 )
 

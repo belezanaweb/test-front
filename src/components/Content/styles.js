@@ -4,10 +4,14 @@ export const Container = styled.div`
   position: relative;
 
   margin-bottom: 20px;
+
+  @media (min-width: 960px) {
+    width: 62%;
+  }
 `
 
 export const Title = styled.h2`
-  margin-bottom: 5px;
+  margin-bottom: 6px;
   margin-left: 12px;
 
   font-size: 0.875rem;

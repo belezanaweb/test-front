@@ -5,17 +5,19 @@ import Products from '../../components/Products'
 import Summary from '../../components/Summary'
 import Button from '../../components/Button'
 
-import { Container } from './styles'
+import { Container, Wrapper } from './styles'
 
 const Basket = () => (
   <Container>
     <Content title='Produtos'>
       <Products />
     </Content>
-    <Summary />
-    <Button to='/checkout' go>
-      Seguir para o pagamento
-    </Button>
+    <Wrapper>
+      <Summary />
+      <Button to='/checkout' go>
+        Seguir para o pagamento
+      </Button>
+    </Wrapper>
   </Container>
 )
 
