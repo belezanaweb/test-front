@@ -1,0 +1,27 @@
+{
+  "name": "belezanaweb",
+  "version": "1.0.0",
+  "description": "Faça um fork deste repositório e finalizar o teste, submeta um pull request para o repositório que nosso time será notificado.",
+  "main": "index.js",
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/princevasconcelos/test-front.git"
+  },
+  "author": "Prince Vasconcelos",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/princevasconcelos/test-front/issues"
+  },
+  "homepage": "https://github.com/princevasconcelos/test-front#readme",
+  "dependencies": {
+    "react": "^16.4.2",
+    "react-dom": "^16.4.2",
+    "react-scripts": "^1.1.5"
+  }
+}
