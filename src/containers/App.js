@@ -10,10 +10,10 @@ const App = () => (
     <Fragment>
       <StepContainer />
       <Switch>
-        <Route exact path='/cart' component={CartContainer}/>
-        <Route path='/payment' component={PaymentContainer} />
-        <Route path='/confirmation' component={ConfirmationContainer} />
-        <Redirect from='/' to='/cart' />
+        <Route exact path='/sacola' component={CartContainer}/>
+        <Route path='/pagamento' component={PaymentContainer} />
+        <Route path='/confirmacao' component={ConfirmationContainer} />
+        <Redirect from='/' to='/sacola' />
       </Switch>
     </Fragment>
   </Router>
