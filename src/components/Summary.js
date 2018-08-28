@@ -1,38 +1,58 @@
 import React from 'react';
 import styled from 'styled-components';
 
+import { formatToReal } from '../utils/currencyFormat';
+
 const Box = styled.div`
   display: flex;
   flex-direction:column;
-  padding: 10px;
-  border: 1px solid red;
+  padding: 1rem;
+  border: var(--border-box);
   margin-top: 2rem;
 `
 
 const SummaryItem = styled.div`
   display: flex;
   justify-content: space-between;
+  font-size: 1.4rem;
+  text-transform: uppercase;
+  color: ${({ active }) => (
+    active
+      ? 'var(--color-orange-1)'
+      : ''
+    )};
+  font-weight: ${({ strong }) => (
+    strong
+      ? 'bolder'
+      : ''
+  )};
+  &:last-child {
+    margin-top: 1rem;
+  }
 `
 
 const Summary = ({
-  data
+  products,
+  shipping,
+  discount,
+  total
 }) => (
   <Box>
     <SummaryItem>
       <span>produtos</span>
-      <span>R$ 624,80</span>
+      <span>{formatToReal(products)}</span>
     </SummaryItem>
     <SummaryItem>
       <span>frete</span>
-      <span>R$ 5,80</span>
+      <span>{formatToReal(shipping)}</span>
     </SummaryItem>
-    <SummaryItem>
+    <SummaryItem active>
       <span>desconto</span>
-      <span>-R$ 30,80</span>
+      <span>{formatToReal(discount)}</span>
     </SummaryItem>
-    <SummaryItem>
+    <SummaryItem strong>
       <span>total</span>
-      <span>R$ 600,80</span>
+      <span>{formatToReal(total)}</span>
     </SummaryItem>
   </Box>
 )
