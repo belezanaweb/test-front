@@ -1,5 +1,10 @@
-import React from 'react';
+import React, { Fragment } from 'react';
+import { connect } from 'react-redux';
+
+import { saveData } from '../actions';
+
 import Box from '../components/Box';
+import Summary from '../components/Summary';
 
 class CartContainer extends React.Component {
 
@@ -8,22 +13,32 @@ class CartContainer extends React.Component {
       .then(res => res.json())
       .then(
         (result) => {
-          console.log(result)
+          this.props.saveData(result);
         }
       )
   }
 
   render() {
     return (
-      <Box title="produtos">
-        <ul>
-          <li>1</li>
-          <li>2</li>
-          <li>3</li>
-        </ul>
-      </Box>
+      <Fragment>
+        <Box title="produtos">
+          <ul>
+            <li>1</li>
+            <li>2</li>
+            <li>3</li>
+          </ul>
+        </Box>
+        <Summary />
+      </Fragment>
     );
   }
 };
 
-export default CartContainer;
+
+
+export default connect(
+  null,
+  {
+    saveData
+  }
+)(CartContainer);
