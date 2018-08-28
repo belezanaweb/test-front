@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import PropTypes from 'prop-types';
 
 import { formatToReal } from '../utils/currencyFormat';
 
@@ -56,5 +57,12 @@ const Summary = ({
     </SummaryItem>
   </Box>
 )
+
+Summary.propTypes = {
+  products: PropTypes.number,
+  shipping: PropTypes.number,
+  discount: PropTypes.number,
+  total: PropTypes.number,
+}
 
 export default Summary;

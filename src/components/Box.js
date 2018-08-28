@@ -1,5 +1,6 @@
 import React, { Fragment } from 'react';
 import styled from 'styled-components';
+import PropTypes from 'prop-types';
 
 const Title = styled.h4`
   color: var(--color-dark-gray-3);
@@ -23,5 +24,10 @@ const Box = ({
     <BoxContent>{children}</BoxContent>
   </Fragment>
 )
+
+Box.propTypes = {
+  title: PropTypes.string,
+  children: PropTypes.object
+}
 
 export default Box;

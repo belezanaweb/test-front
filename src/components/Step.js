@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import PropTypes from 'prop-types';
 
 const StepItem = styled.span`
   color: ${({ isActive }) =>
@@ -18,5 +19,10 @@ const Step = ({
 }) => (
   <StepItem isActive={isActive}>{title}</StepItem>
 );
+
+Step.propTypes = {
+  title: PropTypes.string,
+  isActive: PropTypes.bool
+}
 
 export default Step;
