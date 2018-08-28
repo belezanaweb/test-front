@@ -8,6 +8,8 @@ injectGlobal`
     --color-dark-gray-2: #EEE;
     --color-dark-gray-3: #999;
 
+    --border-box: 1px solid #ccc;
+
     --box-shadow-1: 0 1px 5px 0 rgba(0, 0, 30, .20);
   }
 
