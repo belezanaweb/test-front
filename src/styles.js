@@ -5,8 +5,8 @@ injectGlobal`
   :root {
     --color-orange-1: #FF7800;
     --color-light-gray-1: #CCC;
-    --color-dark-gray-1: #AAA;
     --color-dark-gray-2: #EEE;
+    --color-dark-gray-3: #999;
 
     --box-shadow-1: 0 1px 5px 0 rgba(0, 0, 30, .20);
   }
