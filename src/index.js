@@ -4,22 +4,15 @@ import { Provider } from 'react-redux';
 import { createStore } from 'redux';
 
 import App from './containers/App';
+import rootReducer from './reducers'
 import './styles';
 
-const stepReducer = (state, action) => {
-  switch (action.type) {
-    case 'CHANGE_STEP':
-      return {
-        ...state,
-        step: action.step
-      }
-    default:
-      return state
-  }
-}
+const preloadedState = {}
 
 const store = createStore(
-  stepReducer
+  rootReducer,
+  preloadedState,
+  window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
 )
 
 ReactDOM.render(
