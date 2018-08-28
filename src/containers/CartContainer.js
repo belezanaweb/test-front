@@ -19,6 +19,27 @@ class CartContainer extends React.Component {
   }
 
   render() {
+    const { data } = this.props;
+
+    if (!data) {
+      return <span></span>
+    }
+
+    const {
+      total,
+      subTotal,
+      shippingTotal,
+      discount
+    } = data
+
+    const summaries = [
+      total,
+      subTotal,
+      shippingTotal,
+      discount
+    ];
+
+    console.log(summaries )
     return (
       <Fragment>
         <Box title="produtos">
@@ -28,16 +49,22 @@ class CartContainer extends React.Component {
             <li>3</li>
           </ul>
         </Box>
-        <Summary />
+        <Summary
+          products={subTotal}
+          shipping={shippingTotal}
+          discount={discount}
+          total={total} />
       </Fragment>
     );
   }
 };
 
-
+const mapStateToProps = ({ data }) => ({
+  data
+})
 
 export default connect(
-  null,
+  mapStateToProps,
   {
     saveData
   }
