@@ -32,14 +32,6 @@ class CartContainer extends React.Component {
       discount
     } = data
 
-    const summaries = [
-      total,
-      subTotal,
-      shippingTotal,
-      discount
-    ];
-
-    console.log(summaries )
     return (
       <Fragment>
         <Box title="produtos">
