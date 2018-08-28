@@ -4,6 +4,7 @@ import styled from 'styled-components';
 
 import { saveData } from '../actions';
 
+import Button from '../components/Button';
 import Product from '../components/Product';
 import Box from '../components/Box';
 import Summary from '../components/Summary';
@@ -39,7 +40,7 @@ class CartContainer extends React.Component {
     } = data
 
     const { items } = data;
-    console.log(items)
+
     return (
       <Fragment>
         <Box title="produtos">
@@ -61,6 +62,7 @@ class CartContainer extends React.Component {
           shipping={shippingTotal}
           discount={discount}
           total={total} />
+        <Button title='Seguir para o pagamento' />
       </Fragment>
     );
   }
