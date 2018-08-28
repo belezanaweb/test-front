@@ -1,6 +1,7 @@
 import React from 'react';
 import { withRouter } from 'react-router-dom';
 import styled from 'styled-components';
+import PropTypes from 'prop-types';
 
 import Step from '../components/Step';
 
@@ -29,5 +30,9 @@ const StepContainer = ({
     )}
   </StepList>
 );
+
+StepContainer.propTypes = {
+  location: PropTypes.object
+}
 
 export default withRouter(StepContainer);
