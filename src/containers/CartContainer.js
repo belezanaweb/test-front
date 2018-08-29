@@ -1,6 +1,7 @@
 import React, { Fragment } from 'react';
 import { connect } from 'react-redux';
 import styled from 'styled-components';
+import { withRouter } from 'react-router-dom';
 
 import { saveData } from '../actions';
 
@@ -62,7 +63,10 @@ class CartContainer extends React.Component {
           shipping={shippingTotal}
           discount={discount}
           total={total} />
-        <Button title='Seguir para o pagamento' />
+        <Button title='Seguir para o pagamento'
+          onClickHandler={ () =>
+            this.props.history.push('/pagamento')
+          }  />
       </Fragment>
     );
   }
@@ -72,9 +76,9 @@ const mapStateToProps = ({ data }) => ({
   data
 })
 
-export default connect(
+export default withRouter(connect(
   mapStateToProps,
   {
     saveData
   }
-)(CartContainer);
+)(CartContainer));
