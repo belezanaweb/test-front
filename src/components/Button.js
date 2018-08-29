@@ -26,11 +26,14 @@ const StyledButton = styled.button`
   }
 `
 
-const Button = ({
-  title,
-  onClickHandler
-}) => (
-  <StyledButton onClick={onClickHandler}>{title}</StyledButton>
+const Button = (
+  props
+) => (
+  <StyledButton {...props}
+    onClick={props.onClickHandler}
+  >
+    {props.title}
+  </StyledButton>
 )
 
 Button.propTypes = {
@@ -39,8 +42,7 @@ Button.propTypes = {
 }
 
 Button.defaultProps = {
-  title: 'Click me',
-  onClickHandler: () => console.log('A callback must be passed for onClickHandler')
+  title: 'Button'
 }
 
 export default Button;
