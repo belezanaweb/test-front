@@ -1,11 +1,13 @@
 import React, { Fragment } from 'react';
 import { connect } from 'react-redux';
+import { withRouter } from 'react-router-dom';
 
 import { saveData } from '../actions';
 
 import Box from '../components/Box';
 import Summary from '../components/Summary';
 import Button from '../components/Button';
+import Form from '../components/Form';
 
 class PaymentContainer extends React.Component {
 
@@ -38,14 +40,17 @@ class PaymentContainer extends React.Component {
     return (
       <Fragment>
         <Box title='cartão de crédito'>
-          <span>forms here</span>
+          <Form />
         </Box>
         <Summary
           products={subTotal}
           shipping={shippingTotal}
           discount={discount}
           total={total} />
-        <Button title='finalizar o pedido' />
+        <Button
+          title='finalizar o pedido'
+          type='submit'
+          form='creditCardForm' />
     </Fragment>
     )
   }
@@ -55,9 +60,9 @@ const mapStateToProps = ({ data }) => ({
   data
 });
 
-export default connect(
+export default withRouter(connect(
   mapStateToProps,
   {
     saveData
   }
-)(PaymentContainer);
+)(PaymentContainer));
