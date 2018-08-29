@@ -38,4 +38,9 @@ Button.propTypes = {
   onClickHandler: PropTypes.func
 }
 
+Button.defaultProps = {
+  title: 'Click me',
+  onClickHandler: () => console.log('A callback must be passed for onClickHandler')
+}
+
 export default Button;
