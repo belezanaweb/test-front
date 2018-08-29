@@ -27,13 +27,15 @@ const StyledButton = styled.button`
 `
 
 const Button = ({
-  title
+  title,
+  onClickHandler
 }) => (
-  <StyledButton>{title}</StyledButton>
+  <StyledButton onClick={onClickHandler}>{title}</StyledButton>
 )
 
 Button.propTypes = {
-  title: PropTypes.string.isRequired
+  title: PropTypes.string.isRequired,
+  onClickHandler: PropTypes.func
 }
 
 export default Button;
