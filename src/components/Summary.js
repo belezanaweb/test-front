@@ -62,7 +62,14 @@ Summary.propTypes = {
   products: PropTypes.number,
   shipping: PropTypes.number,
   discount: PropTypes.number,
-  total: PropTypes.number,
+  total: PropTypes.number
+}
+
+Summary.defaultProps = {
+  products: 0,
+  shipping: 0,
+  discount: 0,
+  total: 0
 }
 
 export default Summary;
