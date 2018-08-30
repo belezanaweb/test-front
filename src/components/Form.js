@@ -2,6 +2,9 @@ import React from 'react';
 import { withFormik, Field, Form as FormikForm } from 'formik';
 import * as yup from 'yup';
 import styled from 'styled-components';
+import MaskedInput from 'react-text-mask';
+
+import { cardNumberMask, cardDateMask, cardCCVMask } from '../constraints';
 
 const FormRow = styled.div`
   display: flex;
@@ -60,11 +63,7 @@ const FormRow = styled.div`
 
 const FormColumn = styled.div`
   display: flex;
-  flex-direction: column;
-
-  @media (min-width: 768px)  {
-    flex-direction: row
-  }
+  flex-direction: row;
 
   * { flex: 1 1 auto; }
 `
@@ -79,11 +78,17 @@ const Form = ({
       <Field
         name='cardNumber'
         type='text'
-        placeholder='____.____.____.____'
-        maxLength='16' />
+        maxLength='20'
+        render={({field}) => (
+          <MaskedInput
+            {...field}
+            guide={false}
+            placeholder='____ ____ ____ ____'
+            mask={cardNumberMask} />
+        )}
+      />
       {touched.cardNumber && errors.cardNumber && <span>{errors.cardNumber}</span>}
   </FormRow>
-
   <FormRow error={touched.cardName && errors.cardName}>
     <label>Nome do Titular:</label>
     <Field
@@ -94,14 +99,20 @@ const Form = ({
   </FormRow>
 
   <FormColumn>
-    <FormRow error={touched.cardValidity && errors.cardValidity}>
+    <FormRow error={touched.cardDate && errors.cardDate}>
       <label>Validade (mês/ano):</label>
       <Field
-        name='cardValidity'
+        name='cardDate'
         type='text'
-        placeholder='__/____'
-        maxLength='6' />
-      {touched.cardValidity && errors.cardValidity && <span>{errors.cardValidity}</span>}
+        maxLength='6'
+        render={({field}) => (
+          <MaskedInput
+            {...field}
+            placeholder='__/____'
+            guide={false}
+            mask={cardDateMask} />
+        )} />
+      {touched.cardDate && errors.cardDate && <span>{errors.cardDate}</span>}
     </FormRow>
 
     <FormRow error={touched.cardCCV && errors.cardCCV}>
@@ -109,8 +120,14 @@ const Form = ({
       <Field
         name='cardCCV'
         type='text'
-        placeholder='___'
-        maxLength='3' />
+        maxLength='3'
+        render={({field}) => (
+          <MaskedInput
+            {...field}
+            placeholder='___'
+            guide={false}
+            mask={cardCCVMask} />
+        )} />
       {touched.cardCCV && errors.cardCCV && <span>{errors.cardCCV}</span>}
     </FormRow>
   </FormColumn>
@@ -121,7 +138,7 @@ export default withFormik({
   mapPropsToValues: () => ({
     cardNumber: '',
     cardName: '',
-    cardValidity: '',
+    cardDate: '',
     cardCCV: ''
 
   }),
@@ -136,12 +153,13 @@ export default withFormik({
     cardName: yup
       .string()
       .required('Preencha o campo nome do titular'),
-    cardValidity: yup
+    cardDate: yup
       .date('MM/YYYY')
-      .typeError('Insira uma data válida')
-      .required('Preencha o campo data'),
+      .required('Preencha o campo validade')
+      .min(8, 'Preencha os 8 dígitos'),
     cardCCV: yup
       .string()
       .required('Preencha o campo CCV')
+      .min(3, 'Preencha os 3 dígitos')
   })
 })(Form)
