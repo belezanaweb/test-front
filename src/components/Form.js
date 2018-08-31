@@ -70,7 +70,8 @@ const FormColumn = styled.div`
 
 const Form = ({
   errors,
-  touched
+  touched,
+  submitCallback
 }) => (
   <FormikForm id='creditCardForm'>
     <FormRow error={touched.cardNumber && errors.cardNumber}>
@@ -92,6 +93,7 @@ const Form = ({
   <FormRow error={touched.cardName && errors.cardName}>
     <label>Nome do Titular:</label>
     <Field
+      style={{'textTransform': 'uppercase'}}
       name='cardName'
       type='text'
       placeholder='Como no cartão' />
@@ -143,8 +145,7 @@ export default withFormik({
 
   }),
   handleSubmit: (values, props) => {
-    console.log(values)
-    console.log(props)
+    props.props.submitCallback(values);
   },
   validationSchema: yup.object().shape({
     cardNumber: yup
@@ -154,9 +155,9 @@ export default withFormik({
       .string()
       .required('Preencha o campo nome do titular'),
     cardDate: yup
-      .date('MM/YYYY')
+      .string()
       .required('Preencha o campo validade')
-      .min(8, 'Preencha os 8 dígitos'),
+      .min(7, 'Preencha todos os dígitos'),
     cardCCV: yup
       .string()
       .required('Preencha o campo CCV')
