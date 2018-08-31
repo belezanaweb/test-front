@@ -31,7 +31,7 @@ class PaymentContainer extends React.Component {
     const date = values.cardDate.replace(/\//g, '-');
 
     this.props.history.push(
-      `/confirmacao?numero-cartao=${number}&nome=${name}&data-expiracao=${date}`
+      `/confirmacao?numero-cartao=${number}&nome=${name}&data-expiracao=${date}`, values
     )
   }
 
