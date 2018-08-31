@@ -11,7 +11,6 @@ const Margin = styled.div`
   margin: 2rem 1rem;
 `
 
-
 const App = () => (
   <Router>
     <Fragment>
@@ -19,8 +18,8 @@ const App = () => (
       <Margin>
         <Switch>
           <Route exact path='/sacola' component={CartContainer}/>
-          <Route path='/pagamento' component={PaymentContainer} />
-          <Route path='/confirmacao' component={ConfirmationContainer} />
+          <Route exact path='/pagamento' component={PaymentContainer} />
+          <Route exact path='/confirmacao' component={ConfirmationContainer} />
           <Redirect from='/' to='/sacola' />
         </Switch>
       </Margin>
