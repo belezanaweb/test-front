@@ -25,6 +25,16 @@ class PaymentContainer extends React.Component {
     }
   }
 
+  onSubmitCallback = values => {
+    const number = values.cardNumber.replace(/ /g, '').slice(0, -4);
+    const name = values.cardName.replace(/ /g, '-');
+    const date = values.cardDate.replace(/\//g, '-');
+
+    this.props.history.push(
+      `/confirmacao?numero-cartao=${number}&nome=${name}&data-expiracao=${date}`
+    )
+  }
+
   render() {
     const { data } = this.props;
 
@@ -40,7 +50,7 @@ class PaymentContainer extends React.Component {
     return (
       <Fragment>
         <Box title='cartão de crédito'>
-          <Form />
+          <Form submitCallback={this.onSubmitCallback} />
         </Box>
         <Summary
           products={subTotal}
