@@ -9,6 +9,8 @@ injectGlobal`
 
     --color-black-1: rgba(0, 0, 0, .8);
 
+    --color-purple-1: #983b84;
+
     --color-red-1: #F30;
 
     --color-light-gray-1: #CCC;
@@ -18,6 +20,7 @@ injectGlobal`
     --border-box: 1px solid #ccc;
     --border-light-gray-1: 1px solid #e7e7e7;
     --border-error: 1px solid #f30;
+    --border-focus: 1px solid #983b84;
 
     --box-shadow-1: 0 1px 5px 0 rgba(0, 0, 30, .20);
     --box-shadow-bottom-1: 0 5px #ff6c00;
