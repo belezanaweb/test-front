@@ -15,11 +15,7 @@ const FormRow = styled.div`
     font-size: 1.2rem;
     font-weight: 700;
     margin-left: .3rem;
-    color: ${({error}) => (
-      error
-        ? 'var(--color-red-1)'
-        : 'var(--color-light-gray-1);'
-    )}
+    color: var(--color-light-gray-1);
   }
 
   input {
@@ -33,6 +29,10 @@ const FormRow = styled.div`
     padding: 1rem;
     margin: .5rem 0;
     border-radius: 4px;
+
+    &:focus {
+      border: var(--border-focus);
+    }
 
     ::-webkit-input-placeholder {
       color: #e0e7ee;
