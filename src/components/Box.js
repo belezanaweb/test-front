@@ -29,7 +29,7 @@ const Box = ({
 
 Box.propTypes = {
   title: PropTypes.string,
-  children: PropTypes.object
+  children: PropTypes.any.isRequired
 }
 
 export default Box;
