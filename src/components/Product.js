@@ -4,6 +4,10 @@ import PropTypes from 'prop-types';
 
 import { formatToReal } from '../utils/currencyFormat'
 
+export const ProductList = styled.ul`
+  padding: 1px 0;
+`
+
 const ProductImg = styled.div`
   margin-right: 1rem;
 `
@@ -22,8 +26,7 @@ const ProductDetails = styled.div`
   justify-content: space-between;
   font-size: 1.4rem;
 
-  span:last-child {
-    font-weight: bolder;
+  b {
     align-self: flex-end;
   }
 `
@@ -31,7 +34,8 @@ const ProductDetails = styled.div`
 const Product = ({
   thumbnail,
   name,
-  price
+  price,
+  hidePrice
 }) => (
   <ProductItem>
     <ProductImg>
@@ -39,7 +43,7 @@ const Product = ({
     </ProductImg>
     <ProductDetails>
       <span>{name}</span>
-      <span>{formatToReal(price)}</span>
+      {!hidePrice && <b>{formatToReal(price)}</b>}
     </ProductDetails>
   </ProductItem>
 );
