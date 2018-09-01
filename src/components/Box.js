@@ -8,10 +8,12 @@ const Title = styled.h4`
   margin-left: 1rem;
   font-weight: 700;
   font-size: 1.4rem;
+  margin-top: 1rem;
 `
 
 const BoxContent = styled.div`
   background-color: #fff;
+  border-radius: 4px;
   box-shadow: var(--box-shadow-1)
 `
 
