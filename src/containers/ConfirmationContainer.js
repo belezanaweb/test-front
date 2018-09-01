@@ -1,6 +1,7 @@
 import React, { Fragment } from 'react';
 import { connect } from 'react-redux';
 import styled from 'styled-components';
+import { withRouter } from 'react-router-dom';
 
 import Box from '../components/Box';
 import Loading from '../components/Loading';
@@ -40,11 +41,23 @@ const PaymentDetils = styled.div`
 `
 
 class ConfirmationContainer extends React.Component {
+  constructor(props) {
+    super(props);
+    const params = new URLSearchParams(this.props.location.search);
+    const cardNumber = params.get('numero-cartao').slice(-4);
+    const cardName = params.get('nome').replace('-', ' ').toUpperCase();
+    const cardDate = params.get('data-expiracao')
+
+    this.state = {
+      cardNumber,
+      cardName,
+      cardDate
+    }
+  }
 
   componentDidMount() {
     const { data } = this.props;
     if(!data) {
-      console.log('made request')
       fetch('https://www.mocky.io/v2/5b15c4923100004a006f3c07')
         .then(res => res.json())
         .then(
@@ -78,10 +91,9 @@ class ConfirmationContainer extends React.Component {
         </IconContainer>
         <Box title='pagamento'>
           <PaymentDetils>
-            <span>//todo: pegar as informacoes vindo da rota ao inves do state</span>
-            {/* <span>{location.state.cardNumber.slice(0,-4).replace(/\d/g, '*')} {location.state.cardNumber.slice(-4)}</span>
-            <span>{location.state.cardName}</span>
-            <span>{location.state.cardDate}</span> */}
+            {this.state.cardNumber && <span>****.****.****.{this.state.cardNumber}</span>}
+            {this.state.cardName && <span>{this.state.cardName}</span>}
+            {this.state.cardDate && <span>{this.state.cardDate}</span>}
           </PaymentDetils>
         </Box>
         <Box title="produtos">
@@ -112,9 +124,9 @@ const mapStateToProps = ({ data }) => ({
   data
 })
 
-export default connect(
+export default withRouter(connect(
   mapStateToProps,
   {
     saveData
   }
-)(ConfirmationContainer);
+)(ConfirmationContainer));
