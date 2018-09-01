@@ -1,18 +1,14 @@
 import React, { Fragment } from 'react';
 import { connect } from 'react-redux';
-import styled from 'styled-components';
 import { withRouter } from 'react-router-dom';
 
 import { saveData } from '../actions';
 
 import Button from '../components/Button';
-import Product from '../components/Product';
+import Loading from '../components/Loading';
+import Product, { ProductList } from '../components/Product';
 import Box from '../components/Box';
 import Summary from '../components/Summary';
-
-const ProductList = styled.ul`
-  padding: 1px 0;
-`
 
 class CartContainer extends React.Component {
 
@@ -30,7 +26,7 @@ class CartContainer extends React.Component {
     const { data } = this.props;
 
     if (!data) {
-      return <span></span>
+      return <Loading />
     }
 
     const {

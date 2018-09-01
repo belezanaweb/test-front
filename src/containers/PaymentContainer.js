@@ -5,6 +5,7 @@ import { withRouter } from 'react-router-dom';
 import { saveData } from '../actions';
 
 import Box from '../components/Box';
+import Loading from '../components/Loading';
 import Summary from '../components/Summary';
 import Button from '../components/Button';
 import Form from '../components/Form';
@@ -38,7 +39,9 @@ class PaymentContainer extends React.Component {
   render() {
     const { data } = this.props;
 
-    if (!data) return <span></span>
+    if (!data) {
+      return <Loading />
+    }
 
     const {
       total,
