@@ -41,8 +41,4 @@ Button.propTypes = {
   onClickHandler: PropTypes.func
 }
 
-Button.defaultProps = {
-  title: 'Button'
-}
-
 export default Button;
