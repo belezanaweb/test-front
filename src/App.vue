@@ -63,6 +63,16 @@
       padding-left: 0;
     }
   }
+  .form {
+    font-size: 0.7857rem;
+    color: #ccc;
+  }
+  .form-control {
+    &:focus {
+      border-color: #a43287;
+      box-shadow: none;
+    }
+  }
   ::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
     color: #ccc;
     opacity: 1; /* Firefox */

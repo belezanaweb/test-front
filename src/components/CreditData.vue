@@ -79,16 +79,3 @@ export default {
   directives: { mask },
 };
 </script>
-
-<style scoped lang="scss">
-.form {
-  font-size: 0.7857rem;
-  color: #ccc;
-}
-.form-control {
-  &:focus {
-    border-color: #a43287;
-    box-shadow: none;
-  }
-}
-</style>
