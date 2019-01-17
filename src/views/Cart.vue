@@ -1,5 +1,5 @@
 <template>
-  <div class="text-uppercase px-2">
+  <div class="px-2">
     <Products />
     <Resume />
     <Button

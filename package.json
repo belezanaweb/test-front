@@ -12,6 +12,7 @@
     "bootstrap-vue": "^2.0.0-rc.11",
     "vue": "^2.5.22",
     "vue-router": "^3.0.2",
+    "vue-the-mask": "^0.11.1",
     "vuex": "^3.0.1"
   },
   "devDependencies": {

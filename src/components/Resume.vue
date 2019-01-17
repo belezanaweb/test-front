@@ -1,41 +1,58 @@
 <template>
-  <div class="resume">
+  <div class="text-uppercase resume">
     <b-card class="mb-3">
-      <div class="col-xs-12 col-md-4 offset-md-4 px-1">
-        <div class="row no-gutters justify-content-between">
-          <div class="col-6">
+      <b-col
+        cols="12"
+        md="4"
+        offset-md="4"
+        class="px-1"
+      >
+        <b-row class="no-gutters justify-content-between">
+          <b-col cols="6">
             Produtos
-          </div>
-          <div class="col-6 text-right">
+          </b-col>
+          <b-col
+            cols="6"
+            class="text-right"
+          >
             bb
-          </div>
-        </div>
-        <div class="row no-gutters justify-content-between">
-          <div class="col-6">
+          </b-col>
+        </b-row>
+        <b-row class="no-gutters justify-content-between">
+          <b-col cols="6">
             Frete
-          </div>
-          <div class="col-6 text-right">
+          </b-col>
+          <b-col
+            cols="6"
+            class="text-right"
+          >
             bb
-          </div>
-        </div>
-        <div class="row no-gutters justify-content-between discount">
-          <div class="col-6">
+          </b-col>
+        </b-row>
+        <b-row class="no-gutters justify-content-between discount">
+          <b-col cols="6">
             Desconto
-          </div>
-          <div class="col-6 text-right">
+          </b-col>
+          <b-col
+            cols="6"
+            class="text-right"
+          >
             bb
-          </div>
-        </div>
+          </b-col>
+        </b-row>
         <div class="w-100 d-block mb-2" />
-        <div class="row no-gutters font-weight-bold justify-content-between">
-          <div class="col-6">
+        <b-row class="no-gutters font-weight-bold justify-content-between">
+          <b-col cols="6">
             Total
-          </div>
-          <div class="col-6 text-right">
+          </b-col>
+          <b-col
+            cols="6"
+            class="text-right"
+          >
             bb
-          </div>
-        </div>
-      </div>
+          </b-col>
+        </b-row>
+      </b-col>
     </b-card>
   </div>
 </template>
