@@ -23,6 +23,7 @@
 
 <script>
 document.body.style.backgroundColor = '#eee';
+export default {};
 </script>
 
 <style lang="scss">
