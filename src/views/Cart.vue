@@ -10,7 +10,7 @@
 </template>
 
 <script>
-import { mapActions } from 'vuex'
+import { mapActions } from 'vuex';
 import MockService from '@/services/mock';
 
 import Products from '@/components/Products.vue';
