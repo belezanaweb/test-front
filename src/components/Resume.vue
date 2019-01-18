@@ -15,7 +15,7 @@
             cols="6"
             class="text-right"
           >
-            bb
+            {{ resume.subTotal | currency }}
           </b-col>
         </b-row>
         <b-row class="no-gutters justify-content-between">
@@ -26,7 +26,7 @@
             cols="6"
             class="text-right"
           >
-            bb
+            {{ resume.shippingTotal | currency }}
           </b-col>
         </b-row>
         <b-row class="no-gutters justify-content-between discount">
@@ -37,7 +37,7 @@
             cols="6"
             class="text-right"
           >
-            bb
+            - {{ resume.discount | currency }}
           </b-col>
         </b-row>
         <div class="w-100 d-block mb-2" />
@@ -49,7 +49,7 @@
             cols="6"
             class="text-right"
           >
-            bb
+            {{ resume.total | currency }}
           </b-col>
         </b-row>
       </b-col>
@@ -58,8 +58,13 @@
 </template>
 
 <script>
+import { mapGetters } from 'vuex';
+
 export default {
   name: 'Resume',
+  computed: {
+    ...mapGetters('Cart', ['resume']),
+  },
 };
 </script>
 

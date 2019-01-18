@@ -8,14 +8,17 @@
       class="mb-3 list"
       deck
     >
-      <b-card>
+      <b-card
+        v-for="(data, index) in products"
+        :key="index"
+      >
         <b-row class="no-gutters">
           <b-col
             cols="2"
             align-self="center"
           >
             <b-img
-              src="https://picsum.photos/200/200?image=24"
+              :src="data.product.imageObjects[0].thumbnail"
               fluid
               alt="Responsive image"
             />
@@ -24,12 +27,9 @@
             cols="10"
             class="d-flex flex-column"
           >
-            <b-row class="ml-1 no-gutters">
-              <b-col
-                cols="12"
-                class="text-justify"
-              >
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+            <b-row class="ml-1 no-gutters ">
+              <b-col cols="12">
+                {{ data.product.name }}
               </b-col>
             </b-row>
             <b-row
@@ -40,83 +40,7 @@
                 cols="12"
                 class="text-right font-weight-bold"
               >
-                R$ 225,90
-              </b-col>
-            </b-row>
-          </b-col>
-        </b-row>
-      </b-card>
-      <b-card>
-        <b-row class="no-gutters">
-          <b-col
-            cols="2"
-            align-self="center"
-          >
-            <b-img
-              src="https://picsum.photos/200/200?image=24"
-              fluid
-              alt="Responsive image"
-            />
-          </b-col>
-          <b-col
-            cols="10"
-            class="d-flex flex-column"
-          >
-            <b-row class="ml-1 no-gutters">
-              <b-col
-                cols="12"
-                class="text-justify"
-              >
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-              </b-col>
-            </b-row>
-            <b-row
-              align-v="end"
-              class="no-gutters ml-1 price"
-            >
-              <b-col
-                cols="12"
-                class="text-right font-weight-bold"
-              >
-                R$ 225,90
-              </b-col>
-            </b-row>
-          </b-col>
-        </b-row>
-      </b-card>
-      <b-card>
-        <b-row class="no-gutters">
-          <b-col
-            cols="2"
-            align-self="center"
-          >
-            <b-img
-              src="https://picsum.photos/200/200?image=24"
-              fluid
-              alt="Responsive image"
-            />
-          </b-col>
-          <b-col
-            cols="10"
-            class="d-flex flex-column"
-          >
-            <b-row class="ml-1 no-gutters">
-              <b-col
-                cols="12"
-                class="text-justify"
-              >
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-              </b-col>
-            </b-row>
-            <b-row
-              align-v="end"
-              class="no-gutters ml-1 price"
-            >
-              <b-col
-                cols="12"
-                class="text-right font-weight-bold"
-              >
-                R$ 225,90
+                {{ data.product.priceSpecification.price | currency }}
               </b-col>
             </b-row>
           </b-col>
@@ -127,11 +51,15 @@
 </template>
 
 <script>
+import { mapGetters } from 'vuex';
 import Title from '@/components/Title.vue';
 
 export default {
   name: 'Products',
   components: { Title },
+  computed: {
+    ...mapGetters('Cart', ['products']),
+  },
 };
 </script>
 
