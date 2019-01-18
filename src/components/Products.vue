@@ -1,8 +1,9 @@
 <template>
   <div>
-    <p class="text-uppercase font-weight-bold mb-0 title">
-      Produtos
-    </p>
+    <Title
+      title="Produtos"
+      class="mb-0"
+    />
     <b-card-group
       class="mb-3 list"
       deck
@@ -126,8 +127,11 @@
 </template>
 
 <script>
+import Title from '@/components/Title.vue';
+
 export default {
   name: 'Products',
+  components: { Title },
 };
 </script>
 

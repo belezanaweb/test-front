@@ -49,10 +49,6 @@ document.body.style.backgroundColor = '#eee';
       }
     }
   }
-  .title {
-    padding: 0.3571rem 0 0.1429rem 1rem;
-    color: #999;
-  }
   .card-body {
     padding: 0.5rem;
   }

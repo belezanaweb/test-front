@@ -1,8 +1,9 @@
 <template>
   <div>
-    <p class="text-uppercase font-weight-bold mb-0 title">
-      Cartão de Crédito
-    </p>
+    <Title
+      title="Cartão de crédito"
+      class="mb-0"
+    />
     <b-card class="font-weight-bold mb-3 form">
       <b-form>
         <b-form-group
@@ -73,9 +74,11 @@
 
 <script>
 import { mask } from 'vue-the-mask';
+import Title from '@/components/Title.vue';
 
 export default {
   name: 'CreditData',
   directives: { mask },
+  components: { Title },
 };
 </script>

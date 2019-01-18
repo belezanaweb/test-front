@@ -11,12 +11,16 @@
       <!-- Icons made by Smashicons from https://www.flaticon.com and is licensed by http://creativecommons.org/licenses/by/3.0/ -->
       <!-- eslint-enable -->
     </div>
-    <p class="text-uppercase text-center font-weight-bold mb-2 msg">
-      Compra efetuada com sucesso
-    </p>
-    <p class="text-uppercase font-weight-bold mb-0 title">
-      Pagamento
-    </p>
+    <Title
+      :padding="false"
+      title="Compra efetuada com sucesso"
+      color="#ff7800"
+      class="text-center mb-2"
+    />
+    <Title
+      title="Pagamento"
+      class="mb-0"
+    />
     <b-card>
       <ul class="pl-0 mb-0">
         <li>
@@ -34,15 +38,15 @@
 </template>
 
 <script>
+import Title from '@/components/Title.vue';
+
 export default {
   name: 'OrderConfirm',
+  components: { Title },
 };
 </script>
 
 <style scoped lang="scss">
-.msg {
-  color: #ff7800;
-}
 ul {
   list-style-type: none;
 }
