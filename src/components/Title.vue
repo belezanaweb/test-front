@@ -1,13 +1,11 @@
 <template>
-  <div>
-    <p
-      :class="{ pd: padding }"
-      :style="{ color }"
-      class="text-uppercase font-weight-bold"
-    >
-      {{ title }}
-    </p>
-  </div>
+  <p
+    :class="{ pd: padding }"
+    :style="{ color }"
+    class="text-uppercase font-weight-bold"
+  >
+    {{ title }}
+  </p>
 </template>
 
 <script>
