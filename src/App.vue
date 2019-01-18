@@ -21,11 +21,14 @@
   </div>
 </template>
 
+<script>
+document.body.style.backgroundColor = '#eee';
+</script>
+
 <style lang="scss">
 #app {
   font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
   font-size: 14px;
-  background-color: #eee;
   color: #888;
   .nav {
     background-color: #fff;

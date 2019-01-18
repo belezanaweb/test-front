@@ -16,5 +16,10 @@ export default new Router({
       name: 'payment',
       component: () => import('./views/Payment.vue'),
     },
+    {
+      path: '/success',
+      name: 'success',
+      component: () => import('./views/Success.vue'),
+    },
   ],
 });
