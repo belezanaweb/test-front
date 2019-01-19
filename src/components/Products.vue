@@ -5,7 +5,7 @@
       class="mb-0"
     />
     <b-card-group
-      class="mb-3 list"
+      class="mb-3"
       deck
     >
       <b-card
@@ -18,7 +18,7 @@
             align-self="center"
           >
             <b-img
-              :src="data.product.imageObjects[0].thumbnail"
+              :src="data.product.imageObjects[0].small"
               fluid
               alt="Responsive image"
             />
