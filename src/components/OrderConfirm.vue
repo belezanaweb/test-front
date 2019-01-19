@@ -24,13 +24,13 @@
     <b-card>
       <ul class="pl-0 mb-0">
         <li>
-          ****.****.****.1234
+          ****.****.****.{{ ccNumber.split('.').pop() }}
         </li>
         <li class="text-uppercase">
-          José da Silva
+          {{ name }}
         </li>
         <li>
-          05/2019
+          {{ dtValid }}
         </li>
       </ul>
     </b-card>
@@ -38,11 +38,15 @@
 </template>
 
 <script>
+import { mapFields } from 'vuex-map-fields';
 import Title from '@/components/Title.vue';
 
 export default {
   name: 'OrderConfirm',
   components: { Title },
+  computed: {
+    ...mapFields('Payment', ['ccNumber', 'name', 'dtValid']),
+  },
 };
 </script>
 
