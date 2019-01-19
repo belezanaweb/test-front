@@ -11,6 +11,7 @@
           block
           variant="danger"
           class="text-uppercase font-weight-bold mb-3 button"
+          :disabled="disable"
           @click="$emit(event)"
         >
           {{ title }}
@@ -28,6 +29,10 @@ export default {
       type: String,
       default: '',
     },
+    disable: {
+      type: Boolean,
+      default: false,
+    },
     event: {
       type: String,
       default: 'click',
@@ -43,6 +48,12 @@ export default {
 .btn-danger {
   background-color: #ff7800;
   border-color: #ff7800;
+  /deep/ &:disabled {
+    &:hover {
+      background-color: #dc3545;
+      border-color: #dc3545;
+    }
+  }
   &:hover {
     background-color: #d45a00;
     border-color: #d45a00;
