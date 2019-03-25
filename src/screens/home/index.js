@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
+import './index.css'
 
 import { Link, Route, BrowserRouter, Switch } from 'react-router-dom'
 
@@ -9,7 +10,7 @@ import Grid from '@material-ui/core/Grid'
 import Tabs from '@material-ui/core/Tabs'
 import Tab from '@material-ui/core/Tab'
 
-import { getData } from '../../services'
+//import { getData } from '../../services'
 import Bag from '../bag'
 import Payment from '../payment'
 import Confirmation from '../confirmation'
@@ -31,22 +32,21 @@ class Home extends Component {
     items: []
   }
 
-  componentDidMount() {
-    this._getData()
-  }
+  // componentDidMount() {
+  //   this._getData()
+  // }
 
   handleChange = (event, value) => {
     this.setState({ value })
   }
 
-  async _getData() {
-    const result = await getData()
-    console.log('result', result.id)
-    this.setState({
-      items: result.items,
-      data: result
-    })
-  }
+  // async _getData() {
+  //   const result = await getData()
+  //   this.setState({
+  //     items: result.items,
+  //     data: result
+  //   })
+  // }
 
   render() {
     const { classes } = this.props
@@ -72,16 +72,8 @@ class Home extends Component {
             </Grid>
           </Grid>
           <Switch>
-            <Route
-              path="/"
-              exact={true}
-              component={() => <Bag state={this.state.items} data={this.state.data} />}
-            />
-            <Route
-              path="/bag"
-              exact={true}
-              component={() => <Bag state={this.state.items} data={this.state.data} />}
-            />
+            <Route path="/" exact={true} component={() => <Bag />} />
+            <Route path="/bag" exact={true} component={() => <Bag />} />
             } />
             <Route path="/payment" component={Payment} />
             <Route path="/confirmation" component={Confirmation} />

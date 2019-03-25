@@ -12,8 +12,9 @@ import ListItemText from '@material-ui/core/ListItemText'
 import ListItemAvatar from '@material-ui/core/ListItemAvatar'
 import Avatar from '@material-ui/core/Avatar'
 
+import { getData } from '../../services'
+
 import './index.css'
-import { Link } from 'react-router-dom'
 
 const styles = theme => ({
   root: {
@@ -29,55 +30,33 @@ const styles = theme => ({
 class Bag extends Component {
   constructor(props) {
     super(props)
-    console.log('props', props)
 
     this.state = {
-      price: 0
+      items: [],
+      data: {}
     }
   }
 
   componentDidMount() {
-    this.priceSpecification()
+    this._getData()
   }
 
   changePage() {
     alert('ok')
   }
 
-  priceSpecification() {
-    const { state } = this.props
-    let price = []
-    let discount = []
-    state.map(item => {
-      price.push(item.product.priceSpecification.price)
+  async _getData() {
+    const result = await getData()
 
-      // discount.push(item.product.priceSpecification.discount)
-
-      // discount.find(discount => discount !== 0)
-      // console.log('discount', discount)
-
-      // if (item.product.priceSpecification.discount !== 0) {
-      //   let discount = item.product.priceSpecification.discount
-
-      //   return console.log('discount', price - discount)
-      // }
-
-      return price
+    this.setState({
+      items: result.items,
+      data: result
     })
-
-    var sum = price.reduce(function(a, b) {
-      return a + b
-    }, 0)
-
-    console.log('price', sum)
-
-    this.setState({ price: sum })
   }
 
   render() {
-    const { classes, state, data } = this.props
-    const teste = this.props.data
-    console.log('data', teste)
+    const { classes } = this.props
+    const { items, data } = this.state
 
     return (
       <div>
@@ -99,7 +78,7 @@ class Bag extends Component {
               </p>
               <Paper className={classes.paper}>
                 <List>
-                  {state.map(item => {
+                  {items.map(item => {
                     return (
                       <ListItem
                         key={item.product.name}
@@ -154,7 +133,8 @@ class Bag extends Component {
                   borderStyle: 'solid',
                   borderWidth: 2,
                   borderColor: '#EEE',
-                  marginTop: 10
+                  marginTop: 15,
+                  marginBottom: 15
                 }}
               >
                 <ListItem>
@@ -181,7 +161,7 @@ class Bag extends Component {
                           float: 'right'
                         }}
                       >
-                        R$ {this.state.price}
+                        R$ {data.subTotal}
                       </Typography>
                     }
                   />
@@ -210,7 +190,7 @@ class Bag extends Component {
                           float: 'right'
                         }}
                       >
-                        R$ 5,30
+                        R$ {data.shippingTotal}
                       </Typography>
                     }
                   />
@@ -239,7 +219,7 @@ class Bag extends Component {
                           float: 'right'
                         }}
                       >
-                        R$ -30,00
+                        R$ {data.discount}
                       </Typography>
                     }
                   />
@@ -268,7 +248,7 @@ class Bag extends Component {
                           float: 'right'
                         }}
                       >
-                        R$ 600,10
+                        R$ {data.total}
                       </Typography>
                     }
                   />
