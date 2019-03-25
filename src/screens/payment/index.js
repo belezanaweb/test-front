@@ -3,15 +3,14 @@ import PropTypes from 'prop-types'
 import { withStyles } from '@material-ui/core/styles'
 import Paper from '@material-ui/core/Paper'
 import Grid from '@material-ui/core/Grid'
-import Typography from '@material-ui/core/Typography'
-
-import List from '@material-ui/core/List'
-import ListItem from '@material-ui/core/ListItem'
-import ListItemText from '@material-ui/core/ListItemText'
 
 import ButtonComponent from '../../components/ButtonComponent'
-
+import PaymentComponent from '../../components/PaymentComponent'
 import { getData } from '../../services'
+
+import { connect } from 'react-redux'
+import { bindActionCreators } from 'redux'
+import { productData } from '../../actions'
 
 //import './index.css'
 
@@ -29,6 +28,7 @@ const styles = theme => ({
 class Payment extends Component {
   constructor(props) {
     super(props)
+    console.log('props', props)
 
     this.state = {
       items: [],
@@ -38,6 +38,13 @@ class Payment extends Component {
 
   componentDidMount() {
     this._getData()
+  }
+
+  componentDidUpdate(prevProps, prevState, snapshot) {
+    if (this.props.data !== prevProps.data) {
+      console.log('teste props', this.props.data)
+      //this.fetchData(this.props.userID);
+    }
   }
 
   changePage() {
@@ -54,8 +61,7 @@ class Payment extends Component {
   }
 
   render() {
-    const { classes } = this.props
-    const { data } = this.state
+    const { classes, data } = this.props
 
     return (
       <div>
@@ -78,132 +84,7 @@ class Payment extends Component {
               <Paper className={classes.paper}>
                 <p>Teste</p>
               </Paper>
-              <List
-                style={{
-                  borderStyle: 'solid',
-                  borderWidth: 2,
-                  borderColor: '#EEE',
-                  marginTop: 15,
-                  marginBottom: 15
-                }}
-              >
-                <ListItem>
-                  <ListItemText
-                    primary={
-                      <Typography
-                        style={{
-                          color: '#212122',
-                          fontSize: 14,
-                          fontFamily: 'Helvetica Neue'
-                        }}
-                      >
-                        PRODUTOS
-                      </Typography>
-                    }
-                  />
-                  <ListItemText
-                    primary={
-                      <Typography
-                        style={{
-                          color: '#212122',
-                          fontSize: 14,
-                          fontFamily: 'Helvetica Neue',
-                          float: 'right'
-                        }}
-                      >
-                        R$ {data.subTotal}
-                      </Typography>
-                    }
-                  />
-                </ListItem>
-                <ListItem>
-                  <ListItemText
-                    primary={
-                      <Typography
-                        style={{
-                          color: '#212122',
-                          fontSize: 14,
-                          fontFamily: 'Helvetica Neue'
-                        }}
-                      >
-                        FRETE
-                      </Typography>
-                    }
-                  />
-                  <ListItemText
-                    primary={
-                      <Typography
-                        style={{
-                          color: '#212122',
-                          fontSize: 14,
-                          fontFamily: 'Helvetica Neue',
-                          float: 'right'
-                        }}
-                      >
-                        R$ {data.shippingTotal}
-                      </Typography>
-                    }
-                  />
-                </ListItem>
-                <ListItem>
-                  <ListItemText
-                    primary={
-                      <Typography
-                        style={{
-                          color: '#212122',
-                          fontSize: 14,
-                          fontFamily: 'Helvetica Neue'
-                        }}
-                      >
-                        DESCONTO
-                      </Typography>
-                    }
-                  />
-                  <ListItemText
-                    primary={
-                      <Typography
-                        style={{
-                          color: '#212122',
-                          fontSize: 14,
-                          fontFamily: 'Helvetica Neue',
-                          float: 'right'
-                        }}
-                      >
-                        R$ {data.discount}
-                      </Typography>
-                    }
-                  />
-                </ListItem>
-                <ListItem>
-                  <ListItemText
-                    primary={
-                      <Typography
-                        style={{
-                          color: '#212122',
-                          fontSize: 14,
-                          fontFamily: 'Helvetica Neue'
-                        }}
-                      >
-                        TOTAL
-                      </Typography>
-                    }
-                  />
-                  <ListItemText
-                    primary={
-                      <Typography
-                        style={{
-                          color: '#212122',
-                          fontSize: 14,
-                          fontFamily: 'Helvetica Neue',
-                          float: 'right'
-                        }}
-                      >
-                        R$ {data.total}
-                      </Typography>
-                    }
-                  />
-                </ListItem>
-              </List>
+              <PaymentComponent data={data} />
             </Grid>
 
             <Grid item xs={12} position="fixed" style={{ marginTop: 'auto', bottom: 0 }}>
@@ -220,4 +101,13 @@ Payment.propTypes = {
   classes: PropTypes.object.isRequired
 }
 
-export default withStyles(styles)(Payment)
+const mapDispatchToProps = dispatch => bindActionCreators({ productData }, dispatch)
+
+const mapStateToProps = store => ({
+  data: store.product.data
+})
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(withStyles(styles)(Payment))

@@ -11,6 +11,10 @@ import ListItemText from '@material-ui/core/ListItemText'
 import ListItemAvatar from '@material-ui/core/ListItemAvatar'
 import Avatar from '@material-ui/core/Avatar'
 
+import { connect } from 'react-redux'
+import { bindActionCreators } from 'redux'
+import { productData } from '../../actions'
+
 import ButtonComponent from '../../components/ButtonComponent'
 import { getData } from '../../services'
 
@@ -52,6 +56,8 @@ class Bag extends Component {
       items: result.items,
       data: result
     })
+
+    this.props.productData(this.state.data)
   }
 
   render() {
@@ -270,4 +276,13 @@ Bag.propTypes = {
   classes: PropTypes.object.isRequired
 }
 
-export default withStyles(styles)(Bag)
+const mapDispatchToProps = dispatch => bindActionCreators({ productData }, dispatch)
+
+const mapStateToProps = store => ({
+  data: store.product.data
+})
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(withStyles(styles)(Bag))
