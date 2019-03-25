@@ -3,7 +3,6 @@ import PropTypes from 'prop-types'
 import { withStyles } from '@material-ui/core/styles'
 import Paper from '@material-ui/core/Paper'
 import Grid from '@material-ui/core/Grid'
-import Button from '@material-ui/core/Button'
 import Typography from '@material-ui/core/Typography'
 
 import List from '@material-ui/core/List'
@@ -12,6 +11,7 @@ import ListItemText from '@material-ui/core/ListItemText'
 import ListItemAvatar from '@material-ui/core/ListItemAvatar'
 import Avatar from '@material-ui/core/Avatar'
 
+import ButtonComponent from '../../components/ButtonComponent'
 import { getData } from '../../services'
 
 import './index.css'
@@ -257,22 +257,7 @@ class Bag extends Component {
             </Grid>
 
             <Grid item xs={12} position="fixed" style={{ marginTop: 'auto', bottom: 0 }}>
-              <Button
-                fullWidth={true}
-                variant="contained"
-                size="large"
-                className="MuiButton-contained-241"
-                //onClick={() => this.changePage()}
-                style={{
-                  color: '#FFF',
-                  fontFamily: 'Helvetica Neue',
-                  fontSize: 20,
-                  fontWeight: 700
-                }}
-              >
-                {/* <Link to="./payment">SEGUIR PARA O PAGAMENTO</Link> */}
-                SEGUIR PARA O PAGAMENTO
-              </Button>
+              <ButtonComponent title="SEGUIR PARA O PAGAMENTO" />
             </Grid>
           </Grid>
         </div>
