@@ -13,11 +13,11 @@ import ListItemAvatar from '@material-ui/core/ListItemAvatar'
 import Avatar from '@material-ui/core/Avatar'
 
 import './index.css'
+import { Link } from 'react-router-dom'
 
 const styles = theme => ({
   root: {
-    flexGrow: 1,
-    margin: 10
+    flexGrow: 1
   },
   paper: {
     padding: theme.spacing.unit * 2,
@@ -27,141 +27,275 @@ const styles = theme => ({
 })
 
 class Bag extends Component {
+  constructor(props) {
+    super(props)
+    console.log('props', props)
+
+    this.state = {
+      price: 0
+    }
+  }
+
+  componentDidMount() {
+    this.priceSpecification()
+  }
+
+  changePage() {
+    alert('ok')
+  }
+
+  priceSpecification() {
+    const { state } = this.props
+    let price = []
+    let discount = []
+    state.map(item => {
+      price.push(item.product.priceSpecification.price)
+
+      // discount.push(item.product.priceSpecification.discount)
+
+      // discount.find(discount => discount !== 0)
+      // console.log('discount', discount)
+
+      // if (item.product.priceSpecification.discount !== 0) {
+      //   let discount = item.product.priceSpecification.discount
+
+      //   return console.log('discount', price - discount)
+      // }
+
+      return price
+    })
+
+    var sum = price.reduce(function(a, b) {
+      return a + b
+    }, 0)
+
+    console.log('price', sum)
+
+    this.setState({ price: sum })
+  }
+
   render() {
-    const { classes } = this.props
+    const { classes, state, data } = this.props
+    const teste = this.props.data
+    console.log('data', teste)
+
     return (
-      <div className={classes.root}>
-        <Grid container spacing={24}>
-          <Grid item xs={12}>
-            <p
-              style={{
-                color: '#999',
-                weight: 'bold',
-                fontSize: 14,
-                fontFamily: 'Helvetica Neue',
-                marginLeft: 20,
-                marginRight: 20,
-                height: 17
-              }}
-            >
-              PRODUTOS
-            </p>
-            <Paper className={classes.paper}>
-              <List>
-                <ListItem
-                  alignItems="flex-start"
-                  style={{
-                    borderStyle: 'solid',
-                    borderWidth: 1,
-                    borderColor: '#EEE',
-                    marginBottom: 15
-                  }}
-                >
-                  <ListItemAvatar>
-                    <Avatar alt="Remy Sharp" src="/static/images/avatar/1.jpg" />
-                  </ListItemAvatar>
+      <div>
+        <div className={classes.root}>
+          <Grid container>
+            <Grid item xs={12}>
+              <p
+                style={{
+                  color: '#999',
+                  weight: 'bold',
+                  fontSize: 14,
+                  fontFamily: 'Helvetica Neue',
+                  marginLeft: 20,
+                  marginRight: 20,
+                  height: 17
+                }}
+              >
+                PRODUTOS
+              </p>
+              <Paper className={classes.paper}>
+                <List>
+                  {state.map(item => {
+                    return (
+                      <ListItem
+                        key={item.product.name}
+                        alignItems="flex-start"
+                        style={{
+                          borderStyle: 'solid',
+                          borderWidth: 2,
+                          borderColor: '#EEE',
+                          marginBottom: 10
+                        }}
+                      >
+                        <ListItemAvatar>
+                          <Avatar alt="Remy Sharp" src={item.product.imageObjects[0].thumbnail} />
+                        </ListItemAvatar>
+                        <ListItemText
+                          primary={
+                            <Typography
+                              style={{
+                                color: '#212122',
+                                fontSize: 13,
+                                fontFamily: 'Helvetica Neue'
+                              }}
+                            >
+                              {item.product.name}
+                            </Typography>
+                          }
+                          secondary={
+                            <React.Fragment>
+                              <Typography
+                                component="span"
+                                style={{
+                                  color: '#212122',
+                                  fontSize: 14,
+                                  fontWeight: 700,
+                                  fontFamily: 'Helvetica Neue',
+                                  float: 'right'
+                                  //marginTop: 10
+                                }}
+                              >
+                                R$ {item.product.priceSpecification.price}
+                              </Typography>
+                            </React.Fragment>
+                          }
+                        />
+                      </ListItem>
+                    )
+                  })}
+                </List>
+              </Paper>
+              <List
+                style={{
+                  borderStyle: 'solid',
+                  borderWidth: 2,
+                  borderColor: '#EEE',
+                  marginTop: 10
+                }}
+              >
+                <ListItem>
                   <ListItemText
-                    primary="Brunch this weekend?"
-                    secondary={
-                      <React.Fragment>
-                        <Typography component="span" className={classes.inline} color="textPrimary">
-                          Ali Connors
-                        </Typography>
-                        {" — I'll be in your neighborhood doing errands this…"}
-                      </React.Fragment>
+                    primary={
+                      <Typography
+                        style={{
+                          color: '#212122',
+                          fontSize: 14,
+                          fontFamily: 'Helvetica Neue'
+                        }}
+                      >
+                        PRODUTOS
+                      </Typography>
+                    }
+                  />
+                  <ListItemText
+                    primary={
+                      <Typography
+                        style={{
+                          color: '#212122',
+                          fontSize: 14,
+                          fontFamily: 'Helvetica Neue',
+                          float: 'right'
+                        }}
+                      >
+                        R$ {this.state.price}
+                      </Typography>
                     }
                   />
                 </ListItem>
-                <ListItem
-                  alignItems="flex-start"
-                  style={{
-                    borderStyle: 'solid',
-                    borderWidth: 1,
-                    borderColor: '#EEE',
-                    marginBottom: 15
-                  }}
-                >
-                  <ListItemAvatar>
-                    <Avatar alt="Remy Sharp" src="/static/images/avatar/1.jpg" />
-                  </ListItemAvatar>
+                <ListItem>
                   <ListItemText
-                    primary="Brunch this weekend?"
-                    secondary={
-                      <React.Fragment>
-                        <Typography component="span" className={classes.inline} color="textPrimary">
-                          Ali Connors
-                        </Typography>
-                        {" — I'll be in your neighborhood doing errands this…"}
-                      </React.Fragment>
+                    primary={
+                      <Typography
+                        style={{
+                          color: '#212122',
+                          fontSize: 14,
+                          fontFamily: 'Helvetica Neue'
+                        }}
+                      >
+                        FRETE
+                      </Typography>
+                    }
+                  />
+                  <ListItemText
+                    primary={
+                      <Typography
+                        style={{
+                          color: '#212122',
+                          fontSize: 14,
+                          fontFamily: 'Helvetica Neue',
+                          float: 'right'
+                        }}
+                      >
+                        R$ 5,30
+                      </Typography>
                     }
                   />
                 </ListItem>
-                <ListItem
-                  alignItems="flex-start"
-                  style={{ borderStyle: 'solid', borderWidth: 1, borderColor: '#EEE' }}
-                >
-                  <ListItemAvatar>
-                    <Avatar alt="Remy Sharp" src="/static/images/avatar/1.jpg" />
-                  </ListItemAvatar>
+                <ListItem>
                   <ListItemText
-                    primary="Brunch this weekend?"
-                    secondary={
-                      <React.Fragment>
-                        <Typography component="span" className={classes.inline} color="textPrimary">
-                          Ali Connors
-                        </Typography>
-                        {" — I'll be in your neighborhood doing errands this…"}
-                      </React.Fragment>
+                    primary={
+                      <Typography
+                        style={{
+                          color: '#212122',
+                          fontSize: 14,
+                          fontFamily: 'Helvetica Neue'
+                        }}
+                      >
+                        DESCONTO
+                      </Typography>
+                    }
+                  />
+                  <ListItemText
+                    primary={
+                      <Typography
+                        style={{
+                          color: '#212122',
+                          fontSize: 14,
+                          fontFamily: 'Helvetica Neue',
+                          float: 'right'
+                        }}
+                      >
+                        R$ -30,00
+                      </Typography>
+                    }
+                  />
+                </ListItem>
+                <ListItem>
+                  <ListItemText
+                    primary={
+                      <Typography
+                        style={{
+                          color: '#212122',
+                          fontSize: 14,
+                          fontFamily: 'Helvetica Neue'
+                        }}
+                      >
+                        TOTAL
+                      </Typography>
+                    }
+                  />
+                  <ListItemText
+                    primary={
+                      <Typography
+                        style={{
+                          color: '#212122',
+                          fontSize: 14,
+                          fontFamily: 'Helvetica Neue',
+                          float: 'right'
+                        }}
+                      >
+                        R$ 600,10
+                      </Typography>
                     }
                   />
                 </ListItem>
               </List>
-            </Paper>
-            <List>
-              <ListItem
-                alignItems="flex-start"
+            </Grid>
+
+            <Grid item xs={12} position="fixed" style={{ marginTop: 'auto', bottom: 0 }}>
+              <Button
+                fullWidth={true}
+                variant="contained"
+                size="large"
+                className="MuiButton-contained-241"
+                //onClick={() => this.changePage()}
                 style={{
-                  borderStyle: 'solid',
-                  borderWidth: 1,
-                  borderColor: '#EEE',
-                  marginTop: 15
+                  color: '#FFF',
+                  fontFamily: 'Helvetica Neue',
+                  fontSize: 20,
+                  fontWeight: 700
                 }}
               >
-                <ListItemAvatar>
-                  <Avatar alt="Remy Sharp" src="/static/images/avatar/1.jpg" />
-                </ListItemAvatar>
-                <ListItemText
-                  primary="Brunch this weekend?"
-                  secondary={
-                    <React.Fragment>
-                      <Typography component="span" className={classes.inline} color="textPrimary">
-                        Ali Connors
-                      </Typography>
-                      {" — I'll be in your neighborhood doing errands this…"}
-                    </React.Fragment>
-                  }
-                />
-              </ListItem>
-            </List>
+                {/* <Link to="./payment">SEGUIR PARA O PAGAMENTO</Link> */}
+                SEGUIR PARA O PAGAMENTO
+              </Button>
+            </Grid>
           </Grid>
-
-          <Grid item xs={12} position="fixed" style={{ marginTop: 'auto', bottom: 0 }}>
-            <Button
-              fullWidth={true}
-              variant="contained"
-              size="large"
-              className="MuiButton-contained-241"
-              style={{
-                color: '#FFF',
-                fontFamily: 'Helvetica Neue',
-                fontSize: 20,
-                fontWeight: 700
-              }}
-            >
-              SEGUIR PARA O PAGAMENTO
-            </Button>
-          </Grid>
-        </Grid>
+        </div>
       </div>
     )
   }

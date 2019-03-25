@@ -12,7 +12,7 @@ export default class Routes extends Component {
       <BrowserRouter>
         <Switch>
           <Route path="/" exact={true} component={Home} />
-          <Route path="/bag" exact={true} component={Bag} />
+          <Route path="/bag" component={Bag} />
           <Route path="/payment" component={Payment} />
           <Route path="/confirmation" component={Confirmation} />
         </Switch>

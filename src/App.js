@@ -1,6 +1,6 @@
 import React from 'react'
-import Routes from './routes'
+import Home from './screens/home'
 
-const App = () => <Routes />
+const App = () => <Home />
 
 export default App
