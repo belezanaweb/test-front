@@ -56,7 +56,7 @@ class Home extends Component {
         <div className={classes.root}>
           <Grid container>
             <Grid item xs={12}>
-              <Paper square spacing={24}>
+              <Paper square spacing={12}>
                 <Tabs
                   value={this.state.value}
                   //indicatorColor="primary"

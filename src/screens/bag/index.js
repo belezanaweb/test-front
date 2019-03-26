@@ -22,7 +22,9 @@ import './index.css'
 
 const styles = theme => ({
   root: {
-    flexGrow: 1
+    flexGrow: 1,
+    marginLeft: 10,
+    marginRight: 10
   },
   paper: {
     padding: theme.spacing.unit * 2,

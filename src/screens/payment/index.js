@@ -3,6 +3,7 @@ import PropTypes from 'prop-types'
 import { withStyles } from '@material-ui/core/styles'
 import Paper from '@material-ui/core/Paper'
 import Grid from '@material-ui/core/Grid'
+import TextField from '@material-ui/core/TextField'
 
 import ButtonComponent from '../../components/ButtonComponent'
 import PaymentComponent from '../../components/PaymentComponent'
@@ -16,7 +17,9 @@ import { productData } from '../../actions'
 
 const styles = theme => ({
   root: {
-    flexGrow: 1
+    flexGrow: 1,
+    marginLeft: 10,
+    marginRight: 10
   },
   paper: {
     padding: theme.spacing.unit * 2,
@@ -35,30 +38,7 @@ class Payment extends Component {
       data: {}
     }
   }
-
-  componentDidMount() {
-    this._getData()
-  }
-
-  componentDidUpdate(prevProps, prevState, snapshot) {
-    if (this.props.data !== prevProps.data) {
-      console.log('teste props', this.props.data)
-      //this.fetchData(this.props.userID);
-    }
-  }
-
-  changePage() {
-    alert('ok')
-  }
-
-  async _getData() {
-    const result = await getData()
-
-    this.setState({
-      items: result.items,
-      data: result
-    })
-  }
+  onSubmit = () => {}
 
   render() {
     const { classes, data } = this.props
@@ -82,7 +62,103 @@ class Payment extends Component {
                 CARTÃO DE CREDITO
               </p>
               <Paper className={classes.paper}>
-                <p>Teste</p>
+                <form
+                  className={classes.container}
+                  noValidate
+                  autoComplete="off"
+                  onSubmit={this.onSubmit}
+                >
+                  <Grid container spacing={24}>
+                    <Grid item xs={12}>
+                      <span
+                        style={{
+                          color: '#CCC',
+                          fontFamily: 'Helvetica Neue',
+                          fontSize: 12,
+                          fontWeight: 700,
+                          float: 'left'
+                        }}
+                      >
+                        Número do cartão
+                      </span>
+                      <TextField
+                        id="outlined-full-width"
+                        type="number"
+                        placeholder="____.____.____.____"
+                        fullWidth
+                        margin="normal"
+                        variant="outlined"
+                      />
+                    </Grid>
+                    <Grid item xs={12}>
+                      <span
+                        style={{
+                          color: '#CCC',
+                          fontFamily: 'Helvetica Neue',
+                          fontSize: 12,
+                          fontWeight: 700,
+                          float: 'left'
+                        }}
+                      >
+                        Nome do titular
+                      </span>
+                      <TextField
+                        id="outlined-full-width"
+                        type="number"
+                        placeholder="Como no cartão"
+                        fullWidth
+                        margin="normal"
+                        variant="outlined"
+                      />
+                    </Grid>
+                    <Grid item xs={6}>
+                      <span
+                        style={{
+                          color: '#CCC',
+                          fontFamily: 'Helvetica Neue',
+                          fontSize: 12,
+                          fontWeight: 700,
+                          float: 'left'
+                        }}
+                      >
+                        Validade (mês/ano):
+                      </span>
+                      <TextField
+                        id="outlined-email-input"
+                        placeholder="__/____"
+                        className={classes.textField}
+                        type="text"
+                        name="text"
+                        //autoComplete="email"
+                        margin="normal"
+                        variant="outlined"
+                      />
+                    </Grid>
+                    <Grid item xs={6}>
+                      <span
+                        style={{
+                          color: '#CCC',
+                          fontFamily: 'Helvetica Neue',
+                          fontSize: 12,
+                          fontWeight: 700,
+                          float: 'left'
+                        }}
+                      >
+                        CVV
+                      </span>
+                      <TextField
+                        id="outlined-email-input"
+                        placeholder="___"
+                        className={classes.textField}
+                        type="text"
+                        name="text"
+                        //autoComplete="email"
+                        margin="normal"
+                        variant="outlined"
+                      />
+                    </Grid>
+                  </Grid>
+                </form>
               </Paper>
               <PaymentComponent data={data} />
             </Grid>
