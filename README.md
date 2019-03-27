@@ -11,7 +11,7 @@ O teste consiste em um checkout simples contendo 3 passos (carrinho, pagamento e
 - Pixel perfect ([nesse link](https://projects.invisionapp.com/prototype/font-test-cji0j0khf005c1t0132358e8k), você pode inspecionar para ver espaçamentos, fonte, tamanho, etc)
 - A aplicação precisa ser responsiva, utilizando o conceito de mobile-first. Use sua imaginação para entregar uma experiência boa no desktop.
 - Renderize cada passo em uma URL única (lib de rotas).
-- Utilize ReactJS/Angular/VueJS/Vanilla
+- Utilize ReactJS
 
 
 ### Passo 1 - Carrinho:
