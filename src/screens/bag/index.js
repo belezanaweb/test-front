@@ -16,6 +16,7 @@ import { bindActionCreators } from 'redux'
 import { productData } from '../../actions'
 
 import ButtonComponent from '../../components/ButtonComponent'
+import Header from '../../components/Header'
 import { getData } from '../../services'
 
 import './index.css'
@@ -23,13 +24,28 @@ import './index.css'
 const styles = theme => ({
   root: {
     flexGrow: 1,
-    marginLeft: 10,
-    marginRight: 10
+    padding: 10
   },
   paper: {
     padding: theme.spacing.unit * 2,
     textAlign: 'center',
     color: theme.palette.text.secondary
+  },
+  bag: {
+    flexGrow: 1,
+    textAlign: 'center',
+    color: '#FF7800',
+    fontFamily: 'Helvetica Neue',
+    fontSize: 13,
+    fontWeight: 700
+  },
+  grow: {
+    flexGrow: 1,
+    textAlign: 'center',
+    color: '#CCC',
+    fontFamily: 'Helvetica Neue',
+    fontSize: 13,
+    fontWeight: 700
   }
 })
 
@@ -62,21 +78,26 @@ class Bag extends Component {
     this.props.productData(this.state.data)
   }
 
+  changetab() {
+    this.props.changetab(1)
+  }
+
   render() {
     const { classes } = this.props
     const { items, data } = this.state
 
     return (
-      <div>
+      <div style={{ background: '#EEE' }}>
+        <Header classes={classes} />
         <div className={classes.root}>
           <Grid container>
             <Grid item xs={12}>
               <p
                 style={{
                   color: '#999',
-                  weight: 'bold',
-                  fontSize: 14,
                   fontFamily: 'Helvetica Neue',
+                  fontSize: 14,
+                  fontWeight: 700,
                   marginLeft: 20,
                   marginRight: 20,
                   height: 17
@@ -123,7 +144,6 @@ class Bag extends Component {
                                   fontWeight: 700,
                                   fontFamily: 'Helvetica Neue',
                                   float: 'right'
-                                  //marginTop: 10
                                 }}
                               >
                                 R$ {item.product.priceSpecification.price}
@@ -140,7 +160,7 @@ class Bag extends Component {
                 style={{
                   borderStyle: 'solid',
                   borderWidth: 2,
-                  borderColor: '#EEE',
+                  borderColor: '#CCC',
                   marginTop: 15,
                   marginBottom: 15
                 }}
@@ -208,7 +228,7 @@ class Bag extends Component {
                     primary={
                       <Typography
                         style={{
-                          color: '#212122',
+                          color: '#FF7800',
                           fontSize: 14,
                           fontFamily: 'Helvetica Neue'
                         }}
@@ -221,7 +241,7 @@ class Bag extends Component {
                     primary={
                       <Typography
                         style={{
-                          color: '#212122',
+                          color: '#FF7800',
                           fontSize: 14,
                           fontFamily: 'Helvetica Neue',
                           float: 'right'
@@ -265,7 +285,7 @@ class Bag extends Component {
             </Grid>
 
             <Grid item xs={12} position="fixed" style={{ marginTop: 'auto', bottom: 0 }}>
-              <ButtonComponent title="SEGUIR PARA O PAGAMENTO" />
+              <ButtonComponent to="/payment" go title="SEGUIR PARA O PAGAMENTO" />
             </Grid>
           </Grid>
         </div>

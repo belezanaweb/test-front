@@ -7,6 +7,7 @@ import Grid from '@material-ui/core/Grid'
 import ButtonComponent from '../../components/ButtonComponent'
 import PaymentComponent from '../../components/PaymentComponent'
 import FormPayment from '../../components/FormPayment'
+import Header from '../../components/Header'
 
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
@@ -24,6 +25,22 @@ const styles = theme => ({
     padding: theme.spacing.unit * 2,
     textAlign: 'center',
     color: theme.palette.text.secondary
+  },
+  payment: {
+    flexGrow: 1,
+    textAlign: 'center',
+    color: '#FF7800',
+    fontFamily: 'Helvetica Neue',
+    fontSize: 13,
+    fontWeight: 700
+  },
+  grow: {
+    flexGrow: 1,
+    textAlign: 'center',
+    color: '#CCC',
+    fontFamily: 'Helvetica Neue',
+    fontSize: 13,
+    fontWeight: 700
   }
 })
 
@@ -43,15 +60,16 @@ class Payment extends Component {
 
     return (
       <div>
+        <Header classes={classes} />
         <div className={classes.root}>
           <Grid container>
             <Grid item xs={12}>
               <p
                 style={{
                   color: '#999',
-                  weight: 'bold',
-                  fontSize: 14,
                   fontFamily: 'Helvetica Neue',
+                  fontSize: 14,
+                  fontWeight: 700,
                   marginLeft: 20,
                   marginRight: 20,
                   height: 17
@@ -66,7 +84,7 @@ class Payment extends Component {
             </Grid>
 
             <Grid item xs={12} position="fixed" style={{ marginTop: 'auto', bottom: 0 }}>
-              <ButtonComponent title="FINALIZAR O PEDIDO" />
+              <ButtonComponent to="/confirmation" go title="FINALIZAR O PEDIDO" />
             </Grid>
           </Grid>
         </div>
