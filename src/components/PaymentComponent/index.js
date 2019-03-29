@@ -29,8 +29,8 @@ class PaymentComponent extends Component {
         <List
           style={{
             borderStyle: 'solid',
-            borderWidth: 2,
-            borderColor: '#EEE',
+            borderWidth: 1,
+            borderColor: '#CCC',
             marginTop: 15,
             marginBottom: 15
           }}
@@ -98,7 +98,7 @@ class PaymentComponent extends Component {
               primary={
                 <Typography
                   style={{
-                    color: '#212122',
+                    color: '#FF7800',
                     fontSize: 14,
                     fontFamily: 'Helvetica Neue'
                   }}

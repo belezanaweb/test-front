@@ -17,6 +17,8 @@ import { productData } from '../../actions'
 
 import ButtonComponent from '../../components/ButtonComponent'
 import Header from '../../components/Header'
+import Products from '../../components/Products'
+import PaymentComponent from '../../components/PaymentComponent'
 import { getData } from '../../services'
 
 import './index.css'
@@ -63,10 +65,6 @@ class Bag extends Component {
     this._getData()
   }
 
-  changePage() {
-    alert('ok')
-  }
-
   async _getData() {
     const result = await getData()
 
@@ -78,13 +76,8 @@ class Bag extends Component {
     this.props.productData(this.state.data)
   }
 
-  changetab() {
-    this.props.changetab(1)
-  }
-
   render() {
     const { classes } = this.props
-    const { items, data } = this.state
 
     return (
       <div style={{ background: '#EEE' }}>
@@ -92,198 +85,11 @@ class Bag extends Component {
         <div className={classes.root}>
           <Grid container>
             <Grid item xs={12}>
-              <p
-                style={{
-                  color: '#999',
-                  fontFamily: 'Helvetica Neue',
-                  fontSize: 14,
-                  fontWeight: 700,
-                  marginLeft: 20,
-                  marginRight: 20,
-                  height: 17
-                }}
-              >
-                PRODUTOS
-              </p>
-              <Paper className={classes.paper}>
-                <List>
-                  {items.map(item => {
-                    return (
-                      <ListItem
-                        key={item.product.name}
-                        alignItems="flex-start"
-                        style={{
-                          borderStyle: 'solid',
-                          borderWidth: 2,
-                          borderColor: '#EEE',
-                          marginBottom: 10
-                        }}
-                      >
-                        <ListItemAvatar>
-                          <Avatar alt="Remy Sharp" src={item.product.imageObjects[0].thumbnail} />
-                        </ListItemAvatar>
-                        <ListItemText
-                          primary={
-                            <Typography
-                              style={{
-                                color: '#212122',
-                                fontSize: 13,
-                                fontFamily: 'Helvetica Neue'
-                              }}
-                            >
-                              {item.product.name}
-                            </Typography>
-                          }
-                          secondary={
-                            <React.Fragment>
-                              <Typography
-                                component="span"
-                                style={{
-                                  color: '#212122',
-                                  fontSize: 14,
-                                  fontWeight: 700,
-                                  fontFamily: 'Helvetica Neue',
-                                  float: 'right'
-                                }}
-                              >
-                                R$ {item.product.priceSpecification.price}
-                              </Typography>
-                            </React.Fragment>
-                          }
-                        />
-                      </ListItem>
-                    )
-                  })}
-                </List>
-              </Paper>
-              <List
-                style={{
-                  borderStyle: 'solid',
-                  borderWidth: 2,
-                  borderColor: '#CCC',
-                  marginTop: 15,
-                  marginBottom: 15
-                }}
-              >
-                <ListItem>
-                  <ListItemText
-                    primary={
-                      <Typography
-                        style={{
-                          color: '#212122',
-                          fontSize: 14,
-                          fontFamily: 'Helvetica Neue'
-                        }}
-                      >
-                        PRODUTOS
-                      </Typography>
-                    }
-                  />
-                  <ListItemText
-                    primary={
-                      <Typography
-                        style={{
-                          color: '#212122',
-                          fontSize: 14,
-                          fontFamily: 'Helvetica Neue',
-                          float: 'right'
-                        }}
-                      >
-                        R$ {data.subTotal}
-                      </Typography>
-                    }
-                  />
-                </ListItem>
-                <ListItem>
-                  <ListItemText
-                    primary={
-                      <Typography
-                        style={{
-                          color: '#212122',
-                          fontSize: 14,
-                          fontFamily: 'Helvetica Neue'
-                        }}
-                      >
-                        FRETE
-                      </Typography>
-                    }
-                  />
-                  <ListItemText
-                    primary={
-                      <Typography
-                        style={{
-                          color: '#212122',
-                          fontSize: 14,
-                          fontFamily: 'Helvetica Neue',
-                          float: 'right'
-                        }}
-                      >
-                        R$ {data.shippingTotal}
-                      </Typography>
-                    }
-                  />
-                </ListItem>
-                <ListItem>
-                  <ListItemText
-                    primary={
-                      <Typography
-                        style={{
-                          color: '#FF7800',
-                          fontSize: 14,
-                          fontFamily: 'Helvetica Neue'
-                        }}
-                      >
-                        DESCONTO
-                      </Typography>
-                    }
-                  />
-                  <ListItemText
-                    primary={
-                      <Typography
-                        style={{
-                          color: '#FF7800',
-                          fontSize: 14,
-                          fontFamily: 'Helvetica Neue',
-                          float: 'right'
-                        }}
-                      >
-                        R$ {data.discount}
-                      </Typography>
-                    }
-                  />
-                </ListItem>
-                <ListItem>
-                  <ListItemText
-                    primary={
-                      <Typography
-                        style={{
-                          color: '#212122',
-                          fontSize: 14,
-                          fontFamily: 'Helvetica Neue'
-                        }}
-                      >
-                        TOTAL
-                      </Typography>
-                    }
-                  />
-                  <ListItemText
-                    primary={
-                      <Typography
-                        style={{
-                          color: '#212122',
-                          fontSize: 14,
-                          fontFamily: 'Helvetica Neue',
-                          float: 'right'
-                        }}
-                      >
-                        R$ {data.total}
-                      </Typography>
-                    }
-                  />
-                </ListItem>
-              </List>
+              <Products />
             </Grid>
-
+            <Grid item xs={12}>
+              <PaymentComponent />
+            </Grid>
             <Grid item xs={12} position="fixed" style={{ marginTop: 'auto', bottom: 0 }}>
               <ButtonComponent to="/payment" go title="SEGUIR PARA O PAGAMENTO" />
             </Grid>

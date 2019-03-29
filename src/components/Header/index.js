@@ -25,8 +25,7 @@ const styles = theme => ({
     fontFamily: 'Helvetica Neue',
     fontSize: 13,
     fontWeight: 700
-  },
-  bag: {}
+  }
 })
 
 class Header extends Component {

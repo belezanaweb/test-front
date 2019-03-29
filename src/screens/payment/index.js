@@ -47,7 +47,6 @@ const styles = theme => ({
 class Payment extends Component {
   constructor(props) {
     super(props)
-    console.log('props', props)
 
     this.state = {
       items: [],
@@ -57,9 +56,10 @@ class Payment extends Component {
 
   render() {
     const { classes, data } = this.props
+    console.log('Redux payment', data)
 
     return (
-      <div>
+      <div style={{ background: '#EEE' }}>
         <Header classes={classes} />
         <div className={classes.root}>
           <Grid container>
@@ -80,11 +80,11 @@ class Payment extends Component {
               <Paper className={classes.paper}>
                 <FormPayment />
               </Paper>
-              <PaymentComponent data={data} />
+              <PaymentComponent />
             </Grid>
 
             <Grid item xs={12} position="fixed" style={{ marginTop: 'auto', bottom: 0 }}>
-              <ButtonComponent to="/confirmation" go title="FINALIZAR O PEDIDO" />
+              <ButtonComponent to="/confirmation" go data={data} title="FINALIZAR O PEDIDO" />
             </Grid>
           </Grid>
         </div>
