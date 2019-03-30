@@ -83,6 +83,7 @@ class Products extends Component {
             >
               PRODUTOS
             </p>
+            `
             {this.props.data.items && (
               <Paper className={classes.paper}>
                 <List>

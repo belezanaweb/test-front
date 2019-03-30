@@ -116,10 +116,6 @@ class Confirmation extends Component {
               <Products />
               <PaymentComponent data={data} />
             </Grid>
-
-            {/* <Grid item xs={12} position="fixed" style={{ marginTop: 'auto', bottom: 0 }}>
-              <ButtonComponent to="/confirmation" go title="FINALIZAR O PEDIDO" />
-            </Grid> */}
           </Grid>
         </div>
       </div>
