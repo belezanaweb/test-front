@@ -10,8 +10,7 @@ import Header from '../../components/Header'
 import { withStyles } from '@material-ui/core/styles'
 import Grid from '@material-ui/core/Grid'
 import Paper from '@material-ui/core/Paper'
-import classNames from 'classnames'
-import Icon from '@material-ui/core/Icon'
+import CheckCircleOutlineOutlined from '@material-ui/icons/CheckCircleOutlineOutlined'
 
 const styles = theme => ({
   root: {
@@ -71,6 +70,32 @@ class Confirmation extends Component {
         <div className={classes.root}>
           <Grid container>
             <Grid item xs={12}>
+              <Grid
+                container
+                spacing={16}
+                className={classes.demo}
+                alignItems="center"
+                //direction="row"
+                justify="center"
+              >
+                <Grid alignItems="center" container justify="center" item xs={12}>
+                  <CheckCircleOutlineOutlined
+                    style={{ fontSize: 40, color: '#FF7800', marginTop: 12, marginBottom: -20 }}
+                  />
+                </Grid>
+                <Grid alignItems="center" container justify="center" item xs={12}>
+                  <p
+                    style={{
+                      color: '#FF7800',
+                      fontFamily: 'Helvetica Neue',
+                      fontSize: 14,
+                      fontWeight: 700
+                    }}
+                  >
+                    COMPRA EFETUADA COM SUCESSO
+                  </p>
+                </Grid>
+              </Grid>
               <p
                 style={{
                   color: '#999',
@@ -82,8 +107,9 @@ class Confirmation extends Component {
                   height: 17
                 }}
               >
-                PAGAMENTO check_circle_outiline
-              </p>              
+                PAGAMENTO
+              </p>
+
               <Paper className={classes.paper}>
                 <p>Teste</p>
               </Paper>

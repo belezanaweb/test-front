@@ -56,7 +56,6 @@ class Payment extends Component {
 
   render() {
     const { classes, data } = this.props
-    console.log('Redux payment', data)
 
     return (
       <div style={{ background: '#EEE' }}>

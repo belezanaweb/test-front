@@ -43,8 +43,6 @@ const theme = createMuiTheme({
   }
 })
 
-console.log('theme', theme)
-
 ReactDOM.render(
   <Provider store={Store}>
     <MuiThemeProvider theme={theme}>

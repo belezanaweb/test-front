@@ -2,9 +2,22 @@ import React, { Component } from 'react'
 import Grid from '@material-ui/core/Grid'
 import TextField from '@material-ui/core/TextField'
 
+import { withStyles } from '@material-ui/core/styles'
+
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
 import { productData } from '../../actions'
+
+const styles = theme => ({
+  root: {
+    color: theme.palette.text.primary
+  },
+  icon: {
+    margin: theme.spacing.unit,
+    fontSize: 50,
+    color: '#FF7800'
+  }
+})
 
 class FormPayment extends Component {
   constructor(props) {
@@ -17,7 +30,9 @@ class FormPayment extends Component {
       nome: '',
       validate: '',
       cvv: 0,
-      cardNumber: {}
+      cardnumber: {},
+      value: '',
+      mask: '9999-9999-9999-9999'
     }
   }
 
@@ -44,12 +59,23 @@ class FormPayment extends Component {
     }
 
     this.setState({
-      cardNumber: payload
+      cardnumber: payload
     })
   }
 
+  onChange = event => {
+    var value = event.target.value
+    var newState = {
+      mask: '9999-9999-9999-9999',
+      value: value
+    }
+    if (/^3[47]/.test(value)) {
+      newState.mask = '9999-999999-99999'
+    }
+    this.setState(newState)
+  }
+
   render() {
-    console.log('state', this.state.cardNumber)
     return (
       <div>
         <form noValidate autoComplete="off" onSubmit={this.onSubmit}>
@@ -66,6 +92,7 @@ class FormPayment extends Component {
               >
                 Número do cartão
               </span>
+
               <TextField
                 id="1"
                 onChange={this.handleOnChange}
@@ -161,4 +188,4 @@ const mapStateToProps = store => ({
 export default connect(
   mapStateToProps,
   mapDispatchToProps
-)(FormPayment)
+)(withStyles(styles)(FormPayment))
