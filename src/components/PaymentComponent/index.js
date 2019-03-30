@@ -10,8 +10,6 @@ import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
 import { productData } from '../../actions'
 
-//import './index.css'
-
 class PaymentComponent extends Component {
   constructor(props) {
     super(props)
@@ -24,6 +22,24 @@ class PaymentComponent extends Component {
 
   render() {
     const { data } = this.props
+
+    let subTotal = Number(data.subTotal).toLocaleString('pt-BR', {
+      minimumFractionDigits: 2,
+      maximumFractionDigits: 2
+    })
+    let shippingTotal = Number(data.shippingTotal).toLocaleString('pt-BR', {
+      minimumFractionDigits: 2,
+      maximumFractionDigits: 2
+    })
+    let discount = Number(data.discount).toLocaleString('pt-BR', {
+      minimumFractionDigits: 2,
+      maximumFractionDigits: 2
+    })
+    let total = Number(data.total).toLocaleString('pt-BR', {
+      minimumFractionDigits: 2,
+      maximumFractionDigits: 2
+    })
+
     return (
       <div>
         <List
@@ -59,7 +75,7 @@ class PaymentComponent extends Component {
                     float: 'right'
                   }}
                 >
-                  R$ {data.subTotal}
+                  R$ {subTotal}
                 </Typography>
               }
             />
@@ -88,7 +104,7 @@ class PaymentComponent extends Component {
                     float: 'right'
                   }}
                 >
-                  R$ {data.shippingTotal}
+                  R$ {shippingTotal}
                 </Typography>
               }
             />
@@ -117,7 +133,7 @@ class PaymentComponent extends Component {
                     float: 'right'
                   }}
                 >
-                  R$ {data.discount}
+                  R$ {discount}
                 </Typography>
               }
             />
@@ -146,7 +162,7 @@ class PaymentComponent extends Component {
                     float: 'right'
                   }}
                 >
-                  R$ {data.total}
+                  R$ {total}
                 </Typography>
               }
             />

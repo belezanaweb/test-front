@@ -54,17 +54,9 @@ class Products extends Component {
     }
   }
 
-  // componentDidUpdate(prevProps, prevState) {
-  //   if (this.props.data !== prevProps.data) {
-  //     console.log('this.props.data', this.props.data)
-  //     this.setState({ data: this.props.data })
-  //   }
-  // }
-
   render() {
     const { classes, data } = this.props
-    console.log('redux', data)
-    //const { data } = this.state
+    console.log('data1', data)
 
     return (
       <div style={{ background: '#EEE' }}>
@@ -115,20 +107,22 @@ class Products extends Component {
                             </Typography>
                           }
                           secondary={
-                            <React.Fragment>
-                              <Typography
-                                component="span"
-                                style={{
-                                  color: '#212122',
-                                  fontSize: 14,
-                                  fontWeight: 700,
-                                  fontFamily: 'Helvetica Neue',
-                                  float: 'right'
-                                }}
-                              >
-                                R$ {item.product.priceSpecification.price}
-                              </Typography>
-                            </React.Fragment>
+                            <Typography
+                              component="span"
+                              style={{
+                                color: '#212122',
+                                fontSize: 14,
+                                fontWeight: 700,
+                                fontFamily: 'Helvetica Neue',
+                                float: 'right'
+                              }}
+                            >
+                              R${' '}
+                              {item.product.priceSpecification.price.toLocaleString('pt-BR', {
+                                minimumFractionDigits: 2,
+                                maximumFractionDigits: 2
+                              })}
+                            </Typography>
                           }
                         />
                       </ListItem>

@@ -6,7 +6,7 @@ import { withStyles } from '@material-ui/core/styles'
 
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
-import { productData } from '../../actions'
+import { productData, cardCreditData } from '../../actions'
 
 const styles = theme => ({
   root: {
@@ -53,26 +53,16 @@ class FormPayment extends Component {
 
     let payload = {
       card: this.state.card,
-      nome: this.state.nome,
+      nome: this.state.nome.toUpperCase(),
       validate: this.state.validate,
       cvv: this.state.cvv
     }
 
+    this.props.cardCreditData(payload)
+
     this.setState({
       cardnumber: payload
     })
-  }
-
-  onChange = event => {
-    var value = event.target.value
-    var newState = {
-      mask: '9999-9999-9999-9999',
-      value: value
-    }
-    if (/^3[47]/.test(value)) {
-      newState.mask = '9999-999999-99999'
-    }
-    this.setState(newState)
   }
 
   render() {
@@ -179,10 +169,11 @@ class FormPayment extends Component {
   }
 }
 
-const mapDispatchToProps = dispatch => bindActionCreators({ productData }, dispatch)
+const mapDispatchToProps = dispatch => bindActionCreators({ productData, cardCreditData }, dispatch)
 
 const mapStateToProps = store => ({
-  data: store.product.data
+  data: store.product.data,
+  dataCard: store.product.dataCard
 })
 
 export default connect(

@@ -1,5 +1,6 @@
 const initialState = {
-  data: {}
+  data: {},
+  dataCard: {}
 }
 
 export const product = (state = initialState, action) => {
@@ -8,6 +9,11 @@ export const product = (state = initialState, action) => {
       return {
         ...state,
         data: action.data
+      }
+    case 'CARD_CREDIT_DATA':
+      return {
+        ...state,
+        dataCard: action.dataCard
       }
     default:
       return state
