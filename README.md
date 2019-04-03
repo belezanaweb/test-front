@@ -24,7 +24,7 @@ Container Store para guardar o estado global da aplicação
 
 Para persist o estado da aplicação quando for executado um reflash na view
 
-### `Para rodar o project`
+### `Run project`
 
 * Faça um clone do repositorio
 * cd test-frnot
