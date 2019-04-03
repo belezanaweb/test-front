@@ -46,7 +46,6 @@ const styles = theme => ({
 class Products extends Component {
   constructor(props) {
     super(props)
-    console.log('props', props)
 
     this.state = {
       items: [],
@@ -56,7 +55,6 @@ class Products extends Component {
 
   render() {
     const { classes, data } = this.props
-    console.log('data1', data)
 
     return (
       <div style={{ background: '#EEE' }}>
