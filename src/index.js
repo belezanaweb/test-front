@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import Root from './Root';
 import store from './store/store'
-import * as serviceWorker from './serviceWorker';
+import * as serviceWorker from './core/serviceWorker';
 
 ReactDOM.render(<Root store={store}/>, document.getElementById('root'));
 
