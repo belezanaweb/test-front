@@ -1,14 +1,21 @@
-import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
+/** @jsx jsx */
+import { Component } from 'react';
+import { jsx } from '@emotion/core';
+import styled from '@emotion/styled';
+
+const Test = styled('div')`
+  color: blue;
+  height: 10px;
+  width: 10px;
+`;
 
 class App extends Component {
   render() {
     return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-        </header>
+      <div>
+        <Test>
+          name
+        </Test>
       </div>
     );
   }
