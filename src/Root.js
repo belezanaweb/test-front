@@ -3,13 +3,13 @@ import PropTypes from 'prop-types'
 import { BrowserRouter as Router, Route, Redirect, Switch } from 'react-router-dom'
 import { Provider } from 'react-redux'
 
-import App from './containers/App'
+import Cart from './containers/Cart'
 
 const Root = ({ store }) => (
 	<Provider store={store}>
 		<Router>
 			<Switch>
-				<Route exact path='/' component={App} />
+				<Route exact path='/' component={Cart} />
 				<Redirect to='/' />
 			</Switch>
 		</Router>
