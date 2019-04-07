@@ -7,11 +7,21 @@ import { jsx } from '@emotion/core'
 import styled from '@emotion/styled'
 import * as actionCart from '../actions/cart'
 
-const Test = styled('div')`
-  color: blue;
-  height: 10px;
-  width: 10px;
+import Card from '../components/cart/card'
+
+const Container = styled('div')`
+  height: 720px;
+  width: 360px;
+  background-color: #EEE;
+`
+const CardContainer = styled('div')`
+  height: 325px;
+  width: 341px;
+  border-radius: 3px;
+  background-color: #FFF;
+  box-shadow: 1px 1px 5px 0 rgba(0,0,29,0.22);
 `;
+
 
 class Cart extends Component {
 
@@ -25,16 +35,18 @@ class Cart extends Component {
 
     fetchProductsCart()
   }
+
   render() {
     const { cart } = this.props
-
-    console.log(cart, 'cart')
     return (
-      <div>
-        <Test>
-          Cart
-        </Test>
-      </div>
+      <Container>
+        <CardContainer>
+          {
+            cart.items.map((item, index) =>
+            <Card items={item} key={index} />
+        )}
+        </CardContainer>
+      </Container>
     );
   }
 }
@@ -45,7 +57,6 @@ Cart.propTypes = {
 }
 
 const mapStateToProps = ({ cartReducer }) => {
-  console.log(cartReducer, 'cartReduccer')
   return {
     cart: cartReducer.cart
   }

@@ -6,7 +6,6 @@ import {
 import URL from '../constants/api'
 
 const fetchProductsSuccess = data => {
-  console.log(data, 'data')
   return {
     type: CART_PRODUCTS_SUCCESS,
     payload: data
