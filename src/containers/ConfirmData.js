@@ -9,9 +9,10 @@ import * as actionCart from '../actions/cart'
 
 import Menu from '../components/utils/Menu'
 import Price from '../components/utils/Price'
+import Card from '../components/cart/card'
 
 const Container = styled('div')`
-  height: 720px;
+  height: 740px;
   width: 360px;
   background-color: #EEE;
 `
@@ -21,6 +22,37 @@ const ContainerPayment = styled('div')`
   border-radius: 3px;
   background-color: #FFF;
   box-shadow: 1px 1px 5px 0 rgba(0,0,29,0.22);
+`
+
+const CardContainer = styled('div')`
+  margin: 20px 10px 0 9px;
+  height: 325px;
+  width: 341px;
+  border-radius: 3px;
+  background-color: #FFF;
+  box-shadow: 1px 1px 5px 0 rgba(0,0,29,0.22);
+`;
+
+const TitleSuccess = styled('h1')`
+  height: 17px;
+  width: 266.27px;
+  color: #FF7800;
+  font-family: "Helvetica Neue";
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: NaNpx;
+  line-height: 17px;
+  text-align: center;
+`
+const PaymentParagraph = styled('p')`
+  height: 17px;
+  width: 319px;
+  color: #999;
+  font-family: "Helvetica Neue";
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: NaNpx;
+  line-height: 17px;
 `
 
 class Payment extends Component {
@@ -41,13 +73,20 @@ class Payment extends Component {
     return (
       <Container>
         <Menu />
-        <h1>Compra Efetuada com Sucesso</h1>
-        <h1>Pagamento</h1>
+        <TitleSuccess>Compra Efetuada com Sucesso</TitleSuccess>
+        <PaymentParagraph>Pagamento</PaymentParagraph>
         <ContainerPayment>
           <p>{payment.card}</p>
           <p>{payment.nameCard}</p>
           <p>{payment.validate}</p>
         </ContainerPayment>
+
+        <CardContainer>
+          {
+            cart.items.map((item, index) =>
+            <Card items={item} key={index} />
+          )}
+        </CardContainer>
         <Price 
           total={cart.total}
           subTotal={cart.subTotal}

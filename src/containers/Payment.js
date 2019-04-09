@@ -88,6 +88,17 @@ const ConfirmButton = styled('button')`
   }
 `
 
+const PaymentParagraph = styled('p')`
+  height: 17px;
+  width: 319px;
+  color: #999;
+  font-family: "Helvetica Neue";
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: NaNpx;
+  line-height: 17px;
+`
+
 class Payment extends Component {
 
   state = {
@@ -136,7 +147,7 @@ class Payment extends Component {
     return (
       <Container>
         <Menu />
-        <h1>Cartão de credito</h1>
+        <PaymentParagraph>Cartão de credito</PaymentParagraph>
         <FormContainer>
           <form>
             <label>Número do cartão</label>

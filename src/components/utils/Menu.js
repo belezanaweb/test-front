@@ -55,7 +55,10 @@ const Menu = () => {
           <a href='/' className='sacola'>Sacola</a>
         </li>
         <li>
+          {
+            window.location.pathname &&
           <a href='/' className='pagamento'>Pagamento</a>
+          }
         </li>
         <li>
           <a href='/' className='confirmacao'>Confirmação</a>
