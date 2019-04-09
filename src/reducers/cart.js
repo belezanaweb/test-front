@@ -43,7 +43,6 @@ export default function cart (state = initialState, action) {
       case CART_DATA_SUCCESS:
         return {
           ...state,
-          cart: action.payload,
           payment: action.payload,
           error: null,
         }
