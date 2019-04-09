@@ -5,11 +5,13 @@ import { Provider } from 'react-redux'
 
 import Cart from './containers/Cart'
 import Payment from './containers/Payment'
+import ConfirmData from './containers/ConfirmData'
 
 const Root = ({ store }) => (
 	<Provider store={store}>
 		<Router>
 			<Switch>
+				<Route exact path='/pagamento/confirmado' component={ConfirmData} />
 				<Route exact path='/pagamento' component={Payment} />
 				<Route exact path='/' component={Cart} />
 				<Redirect to='/' />

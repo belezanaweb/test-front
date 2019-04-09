@@ -2,7 +2,8 @@ import {
   CART_PRODUCTS_SUCCESS,
   CART_PRODUCTS_ERROR,
   CART_PAYMENT_SUCCESS,
-  CART_PAYMENT_ERROR
+  CART_PAYMENT_ERROR,
+  CART_DATA_SUCCESS
 } from '../constants/actionTypes'
 
 const initialState = {
@@ -14,7 +15,13 @@ const initialState = {
     subTotal: 0,
     total: 0,
   },
-  error: null
+  payment: {
+    card: '',
+    nameCard: '',
+    validate: '',
+    cvv: ''
+  },
+  error: null,
 }
 
 export default function cart (state = initialState, action) {
@@ -33,6 +40,13 @@ export default function cart (state = initialState, action) {
         cart: null,
         error: action.payload
       }
+      case CART_DATA_SUCCESS:
+        return {
+          ...state,
+          cart: action.payload,
+          payment: action.payload,
+          error: null,
+        }
     default:
       return state
   }

@@ -2,7 +2,8 @@ import {
   CART_PRODUCTS_SUCCESS,
   CART_PRODUCTS_ERROR,
   CART_PAYMENT_SUCCESS,
-  CART_PAYMENT_ERROR
+  CART_PAYMENT_ERROR,
+  CART_DATA_SUCCESS
 } from '../constants/actionTypes'
 
 import URL from '../constants/api'
@@ -46,4 +47,15 @@ export const fetchPayments = (values) => dispatch => {
       .then((res) => res.json())
       .then((response) => dispatch(fetchPaymentSuccess((response))))
       .catch((error) => dispatch(fetchPaymentError((error))))
+}
+
+const fetchDataSuccess = data => {
+  return {
+    type: CART_DATA_SUCCESS,
+    payload: data
+  }
+}
+
+export const fetchData = (values) => dispatch => {
+  dispatch(fetchDataSuccess((values)))
 }

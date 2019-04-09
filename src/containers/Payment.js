@@ -111,7 +111,11 @@ class Payment extends Component {
 
   handleSubmit = (e) => {
     e.preventDefault()
-    console.log(this.state)
+    const { fetchData } = this.props
+    const { card, nameCard, validate, cvv } = this.state
+    const values = { card, nameCard, validate, cvv }
+
+    fetchData(values)
   }
 
   render() {
@@ -126,7 +130,7 @@ class Payment extends Component {
     return (
       <Container>
         <Menu />
-        <h1>Pagamento</h1>
+        <h1>Cartão de credito</h1>
         <FormContainer>
           <form>
             <label>Número do cartão</label>
@@ -170,7 +174,7 @@ class Payment extends Component {
         />
 
         <ConfirmButton onClick={this.handleSubmit}>
-          <Link to='/pagamento'>Finalizar Pedido</Link>
+          <Link to='/pagamento/confirmado'>Finalizar Pedido</Link>
         </ConfirmButton>
       </Container>
     );
@@ -180,7 +184,8 @@ class Payment extends Component {
 Payment.propTypes = {
   cart: PropTypes.object,
   fetchProductsCart: PropTypes.func.isRequired,
-  fetchPayments: PropTypes.func.isRequired
+  fetchPayments: PropTypes.func.isRequired,
+  fetchData:PropTypes.func.isRequired
 }
 
 const mapStateToProps = ({ cartReducer }) => {
