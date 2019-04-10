@@ -17,6 +17,7 @@ const Container = styled('div')`
   background-color: #EEE;
 `
 const ContainerPayment = styled('div')`
+  margin: 20px 10px 0 9px;
   height: 73px;
   width: 340px;
   border-radius: 3px;
@@ -54,6 +55,12 @@ const PaymentParagraph = styled('p')`
   letter-spacing: NaNpx;
   line-height: 17px;
 `
+const Paragraph = styled('p')`
+  color: #000;
+  font-family: "Helvetica Neue";
+  font-size: 14px;
+  line-height: 15px;
+`
 
 class Payment extends Component {
 
@@ -76,9 +83,9 @@ class Payment extends Component {
         <TitleSuccess>Compra Efetuada com Sucesso</TitleSuccess>
         <PaymentParagraph>Pagamento</PaymentParagraph>
         <ContainerPayment>
-          <p>{payment.card}</p>
-          <p>{payment.nameCard}</p>
-          <p>{payment.validate}</p>
+          <Paragraph>{payment.card}</Paragraph>
+          <Paragraph>{payment.nameCard}</Paragraph>
+          <Paragraph>{payment.validate}</Paragraph>
         </ContainerPayment>
 
         <CardContainer>
@@ -101,8 +108,8 @@ class Payment extends Component {
 
 Payment.propTypes = {
   cart: PropTypes.object,
-  fetchProductsCart: PropTypes.func.isRequired,
-  fetchPayments: PropTypes.func.isRequired
+  payment: PropTypes.object,
+  fetchProductsCart: PropTypes.func.isRequired
 }
 
 const mapStateToProps = ({ cartReducer }) => {

@@ -3,10 +3,11 @@ import { Component } from 'react'
 import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
-import { jsx } from '@emotion/core'
+import { jsx, css } from '@emotion/core'
 import styled from '@emotion/styled'
 import * as actionCart from '../actions/cart'
 import { Link } from 'react-router-dom'
+import Cleave from 'cleave.js/react'
 
 import Menu from '../components/utils/Menu'
 import Price from '../components/utils/Price'
@@ -18,14 +19,14 @@ const Container = styled('div')`
 `
 const FormContainer = styled('div')`
   margin: 20px 10px 0 9px;
-  height: 325px;
-  width: 341px;
+  height: 279px;
+  width: 340px;
   border-radius: 3px;
   background-color: #FFF;
   box-shadow: 1px 1px 5px 0 rgba(0,0,29,0.22);
 `
 
-const CreditField = styled('input')`
+const CardField = styled(Cleave)`
   box-sizing: border-box;
   height: 45px;
   width: 320px;
@@ -45,7 +46,10 @@ const NameField = styled('input')`
   box-shadow: inset 0 1px 2px 0 rgba(0,0,0,0.2);
 `
 
-const ValidateField = styled('input')`
+const DateField = styled(Cleave)`
+  display: block;
+  float: left;
+  margin: 17px 0 0 0;
   box-sizing: border-box;
   height: 45px;
   width: 160px;
@@ -55,7 +59,9 @@ const ValidateField = styled('input')`
   box-shadow: inset 0 1px 2px 0 rgba(0,0,0,0.2);
 `
 
-const CvvField = styled('input')`
+const CvvField = styled(Cleave)`
+  display: block;
+  float: right;
   box-sizing: border-box;
   height: 45px;
   width: 140px;
@@ -95,8 +101,55 @@ const PaymentParagraph = styled('p')`
   font-family: "Helvetica Neue";
   font-size: 14px;
   font-weight: 700;
-  letter-spacing: NaNpx;
   line-height: 17px;
+`
+const NumberCard = styled('label')`
+  height: 14px;
+  width: 129.71px;
+  color: #CCC;
+  font-family: "Helvetica Neue";
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 14px;
+`
+const NameCard = styled('label')`
+  height: 14px;
+  width: 262px;
+  color: #CCC;
+  font-family: "Helvetica Neue";
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 14px;
+`
+
+const Cvv = styled('label')`
+  position: relative;
+  right: 90px;
+  height: 14px;
+  width: 138px;
+  color: #CCC;
+  font-family: "Helvetica Neue";
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 14px;
+`
+const Validate = styled('label')`
+  position: relative;
+  right: 160px;
+  height: 14px;
+  width: 158px;
+  color: #CCC;
+  font-family: "Helvetica Neue";
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 14px;
+`
+
+const FieldSet = styled('fieldset')`
+  display: inline-block;
+  border: none;
+  height: 64px;
+  width: 320px;
 `
 
 class Payment extends Component {
@@ -150,37 +203,46 @@ class Payment extends Component {
         <PaymentParagraph>Cartão de credito</PaymentParagraph>
         <FormContainer>
           <form>
-            <label>Número do cartão</label>
-            <CreditField
-              type='text'
-              placeholder='XXXX.XXXX.XXXX.XXXX'
-              name='card'
-              value={card}
-              onChange={this.handleChange}
-            />
-            <label>Nome do titular</label>
-            <NameField
-              type='text'
-              placeholder='como no cartao'
-              name='nameCard'
-              value={nameCard}
-              onChange={this.handleChange}
-            />
-            <ValidateField
-              type='month'
-              required="required"
-              placeholder='validade'
-              name='validate'
-              value={validate}
-              onChange={this.handleChange}
-            />
-            <CvvField
-              type='text'
-              placeholder='cvv'
-              name='cvv'
-              value={cvv}
-              onChange={this.handleChange}
-            />
+            <FieldSet css={css`margin-top: 15px;`}>
+              <NumberCard>Número do cartão:</NumberCard>
+              <CardField
+                options={{creditCard: true}}
+                type='text'
+                placeholder='____-____-____-____'
+                name='card'
+                value={card}
+                onChange={this.handleChange}
+              />
+            </FieldSet>
+            <FieldSet css={css`margin-top: 15px;`}>
+              <NameCard>Nome do titular:</NameCard>
+              <NameField
+                type='text'
+                placeholder='Como no cartao'
+                name='nameCard'
+                value={nameCard}
+                onChange={this.handleChange}
+              />
+            </FieldSet>
+            <FieldSet css={css`margin-top: 5px;`}>
+              <Validate>Validade (mes/ano):</Validate>
+              <DateField
+                options={{ date: true, datePattern: ['m', 'Y']}}
+                placeholder='__/____'
+                name='validate'
+                value={validate}
+                onChange={this.handleChange}
+              />
+              <Cvv>CVV:</Cvv>
+              <CvvField
+                options={{ blocks: [3] }}
+                type='text'
+                placeholder='___'
+                name='cvv'
+                value={cvv}
+                onChange={this.handleChange}
+              />
+            </FieldSet>
           </form>
         </FormContainer>
         <Price 
@@ -202,7 +264,7 @@ Payment.propTypes = {
   cart: PropTypes.object,
   fetchProductsCart: PropTypes.func.isRequired,
   fetchPayments: PropTypes.func.isRequired,
-  fetchData:PropTypes.func.isRequired
+  fetchData: PropTypes.func.isRequired
 }
 
 const mapStateToProps = ({ cartReducer }) => {

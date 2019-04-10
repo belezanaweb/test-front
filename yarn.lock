@@ -2128,6 +2128,10 @@ clean-css@4.2.x:
   dependencies:
     source-map "~0.6.0"
 
+cleave.js@^1.4.10:
+  version "1.4.10"
+  resolved "https://registry.yarnpkg.com/cleave.js/-/cleave.js-1.4.10.tgz#40505827f07c148be6822522504901fca278a445"
+
 cli-cursor@^2.1.0:
   version "2.1.0"
   resolved "https://registry.yarnpkg.com/cli-cursor/-/cli-cursor-2.1.0.tgz#b35dac376479facc3e94747d41d0d0f5238ffcb5"
