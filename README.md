@@ -1,6 +1,6 @@
 # Beleza na Web | Carrinho
 
-> :handbag: Uma simples aplicação de um carrinho de compras utilizando React and Redux!
+> Uma simples aplicação de um carrinho de compras utilizando React and Redux!
 
 ## Getting Started
 
