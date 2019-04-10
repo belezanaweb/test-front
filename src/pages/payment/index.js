@@ -5,6 +5,7 @@ import Billy from '../../components/Billy'
 import Content from '../../components/Content'
 import Products from '../../components/Products'
 import Summary from '../../components/Summary'
+import Botton from '../../components/Botton'
 
 import { Container, Wrapper } from './styles'
 
@@ -19,6 +20,9 @@ const Finish = () => (
     </Content>
     <Wrapper>
       <Summary />
+      <Botton to='/' go>
+        Efetuar nova compra
+      </Botton>
     </Wrapper>
   </Container>
 )

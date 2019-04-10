@@ -52,8 +52,6 @@ export const getProducts = () => async dispatch => {
     const response = await fetch(`${process.env.REACT_APP_API_URL}/5b15c4923100004a006f3c07`)
     const data = await response.json()
 
-    console.log("DATA: ", data.items)
-
     const products = {
       items: data.items.map(item => ({
         sku: item.product.sku,
