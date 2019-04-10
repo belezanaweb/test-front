@@ -28,7 +28,7 @@ const Router = () => (
       <Wrapper>
         <Steps />
         <Switch>
-          <Route path='/cart' component={Cart} />
+          <Route path='/' component={Cart} />
           <Route path='/checkout' component={Checkout} />
           <Route path='/finish' component={Payment} />
         </Switch>

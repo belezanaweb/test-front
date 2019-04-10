@@ -66,7 +66,7 @@ export const getProducts = () => async dispatch => {
         subTotal: String(currency.format(data.subTotal)),
         shippingTotal: currency.format(data.shippingTotal),
         discount: currency.format(data.discount),
-        total: currency.format(data.total)
+        total: currency.format( (data.subTotal + data.shippingTotal) - data.discount )
       }
     }
 

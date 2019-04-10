@@ -14,5 +14,6 @@ export const Wrapper = styled.div`
   @media (min-width: 960px) {
     width: 36%;
     padding-top: 22px;
+    margin-top: -118px;
   }
 `

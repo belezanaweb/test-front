@@ -29,4 +29,7 @@ export const Item = styled.li`
   font-weight: 700;
   text-transform: uppercase;
   color: ${props => (props.isActive ? '#ff7800' : '#ccc')};
+  &.disable{
+    color: #ccc;
+  }
 `

@@ -8,7 +8,7 @@ const isActive = (path, name) => path.replace('/', '') === name
 
 const Steps = ({ location: { pathname } }) => (
   <Container>
-    <Item isActive={isActive(pathname, 'cart')}>Sacola</Item>
+    <Item className={isActive(pathname, 'checkout') ? 'disable' : ''} isActive="isActive">Sacola</Item>
     <Item isActive={isActive(pathname, 'checkout')}>Pagamento</Item>
     <Item isActive={isActive(pathname, 'finish')}>Confirmação</Item>
   </Container>

@@ -1,6 +1,7 @@
 import styled from 'styled-components'
 
 export const Container = styled.section`
+  position: relative;
   padding: 14px 10px;
 
   @media (min-width: 960px) {

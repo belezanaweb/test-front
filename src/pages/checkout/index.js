@@ -1,17 +1,18 @@
 import React from 'react'
 
-// import Content from '../../components/Content'
-// import Products from '../../components/Products'
-// import Summary from '../../components/Summary'
-// import Button from '../../components/Button'
+import Content from '../../components/Content'
+import Form from '../../components/Form'
+import Summary from '../../components/Summary'
 
 import { Container, Wrapper } from './styles'
 
 const Checkout = () => (
   <Container>
-    lista de produtos
+    <Content title='Cartão de Crédito'>
+      <Form />
+    </Content>
     <Wrapper>
-      Sumário
+      <Summary />
     </Wrapper>
   </Container>
 )

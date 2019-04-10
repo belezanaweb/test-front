@@ -1,19 +1,26 @@
 import React from 'react'
 
-// import Content from '../../components/Content'
-// import Products from '../../components/Products'
-// import Summary from '../../components/Summary'
-// import Button from '../../components/Button'
+import Messagem from '../../components/Messagem'
+import Billy from '../../components/Billy'
+import Content from '../../components/Content'
+import Products from '../../components/Products'
+import Summary from '../../components/Summary'
 
 import { Container, Wrapper } from './styles'
 
-const Payment = () => (
+const Finish = () => (
   <Container>
-    lista de produtos
+    <Messagem />
+    <Content title='Pagamento'>
+      <Billy />
+    </Content>
+    <Content title='Produtos'>
+      <Products isFinish />
+    </Content>
     <Wrapper>
-      Sumário
+      <Summary />
     </Wrapper>
   </Container>
 )
 
-export default Payment
+export default Finish
