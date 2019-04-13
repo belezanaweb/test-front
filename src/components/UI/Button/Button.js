@@ -35,7 +35,6 @@ const Button = styled('button')({
   },
   fontFamily: "'Helvetica Neue', Helvetica, Arial, sans-serif",
   fontSize: 20,
-  marginTop: 20,
   '&:hover': {
     boxShadow: [
       {
