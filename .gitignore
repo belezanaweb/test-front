@@ -5,3 +5,4 @@ logs
 *.log
 *.log.*
 
+yarn.lock
