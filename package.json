@@ -3,8 +3,14 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "jss": "^9.8.7",
+    "jss-preset-default": "^4.5.0",
     "react": "^16.8.5",
-    "react-dom": "^16.8.5"
+    "react-dom": "^16.8.5",
+    "react-redux": "^7.0.2",
+    "react-router-dom": "^5.0.0",
+    "redux": "^4.0.1",
+    "styled-jss": "^2.2.3"
   },
   "devDependencies": {
     "react-scripts": "2.1.8"
