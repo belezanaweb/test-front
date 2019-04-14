@@ -17,6 +17,7 @@ import { withRouter } from 'react-router-dom';
 import { connect } from 'react-redux'
 
 import { addPayment } from '../../store/actions/payment';
+import Spinner from '../../components/UI/Spinner/Spinner';
 
 jss.setup(preset())
 
@@ -59,6 +60,7 @@ const dateCheckValidation = {
 
 class PaymentFormPage extends Component {
   state = {
+    submitting: false,
     isFormValid: false,
     formControls: [
       {
@@ -111,8 +113,13 @@ class PaymentFormPage extends Component {
     ]
   }
 
-  placeOrder() {
+  async placeOrder() {
     if (!this.state.isFormValid) return
+
+    // Simulate payment submit
+    this.setState({ submitting: true })
+    await new Promise(resolve => setTimeout(() => resolve(), 3500))
+    this.setState({ submitting: false })
 
     const creditCardNumber = this.state.formControls.find(c => c.name == 'creditCardNumber').value
     const creditCardHolder = this.state.formControls.find(c => c.name == 'creditCardHolder').value
@@ -158,6 +165,7 @@ class PaymentFormPage extends Component {
 
         <TotalizersList />
         <Button disabled={!this.state.isFormValid} onClick={() => this.placeOrder()}>
+          {this.state.submitting ? <Spinner /> : null}
           Finalizar o pedido
         </Button>
       </div>

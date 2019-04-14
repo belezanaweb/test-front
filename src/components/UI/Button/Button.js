@@ -12,6 +12,7 @@ const Button = styled('button')({
   textAlign: 'center',
   borderRadius: 3,
   backgroundColor: '#FF6C00',
+  verticalAlign: 'middle',
   boxShadow: [
     {
       inset: 'inset',
