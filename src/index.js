@@ -6,21 +6,22 @@ import * as serviceWorker from './serviceWorker';
 
 // Libs
 import { BrowserRouter } from 'react-router-dom'
+
+// Redux
 import { Provider } from 'react-redux'
-import { createStore } from 'redux'
+import store from './store/store'
 
 // JSS
 import jss from 'jss'
 import preset from 'jss-preset-default'
 jss.setup(preset())
 
-const store = createStore(state => state)
 const app =
-	<Provider store={store}>
-		<BrowserRouter>
-			<App />
-		</BrowserRouter>
-	</Provider>
+  <Provider store={store}>
+    <BrowserRouter>
+      <App />
+    </BrowserRouter>
+  </Provider>
 
 ReactDOM.render(app, document.getElementById('root'));
 

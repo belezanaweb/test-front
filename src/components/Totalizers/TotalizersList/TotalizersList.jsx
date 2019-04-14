@@ -2,15 +2,9 @@ import React from 'react'
 
 import TotalizersItem from '../TotalizersItem/TotalizersItem';
 import Card from '../../UI/Card/Card';
+import { connect } from 'react-redux'
 
-const TotalizersList = () => {
-  const totalizers = {
-    "subTotal": 624.8,
-    "shippingTotal": 5.3,
-    "discount": 30,
-    "total": 618.9,
-  }
-
+const TotalizersList = ({ totalizers }) => {
   const items = [
     {
       name: 'Produtos',
@@ -48,4 +42,8 @@ const TotalizersList = () => {
   )
 }
 
-export default TotalizersList
+const mapStateToProps = state => ({
+  totalizers: state.cart.totalizers,
+})
+
+export default connect(mapStateToProps)(TotalizersList)
