@@ -21,8 +21,10 @@ const styles = {
     }
   },
   column: {
-    flex: 'auto',
     padding: [0, 5],
+    '&:last-child': {
+      flex: 'auto',
+    }
   },
   thumb: {
     height: 65,
@@ -36,6 +38,7 @@ const styles = {
     height: 32,
     overflow: 'hidden',
     margin: { bottom: 15 },
+    textAlign: 'left',
   },
   productPrice: {
     display: 'block',
@@ -55,7 +58,7 @@ const CartItem = ({
   price,
 }) =>
   <div className={classes.card}>
-    <div className={classes.column}>
+    <div className={classes.column + ' ' + classes.thumb}>
       <img src={thumb} title={name} className={classes.thumb} />
     </div>
     <div className={classes.column}>
