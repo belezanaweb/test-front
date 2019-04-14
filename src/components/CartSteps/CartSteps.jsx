@@ -45,22 +45,22 @@ const styles = {
 
 const { classes } = jss.createStyleSheet(styles).attach()
 
-const CartSteps = ({ match }) => {
+const CartSteps = ({ location }) => {
   const links = [
     {
       text: 'Sacola',
       to: "/checkout/cart",
-      disabled: match.path.indexOf('/placed') > -1,
+      disabled: location.pathname.indexOf('/placed') > -1,
     },
     {
       text: 'Pagamento',
       to: "/checkout/payment",
-      disabled: match.path.indexOf('/payment') === -1,
+      disabled: location.pathname.indexOf('/payment') === -1,
     },
     {
       text: 'Confirmação',
       to: "/checkout/placed",
-      disabled: match.path.indexOf('/placed') === -1,
+      disabled: location.pathname.indexOf('/placed') === -1,
     },
   ]
 
