@@ -8,6 +8,7 @@ jss.setup(preset())
 const styles = {
   block: {
     display: 'block',
+    margin: 0,
   },
   container: {
     width: '100%',
@@ -70,8 +71,8 @@ const styles = {
     display: 'block',
     color: '#F30',
     fontSize: 12,
-    lineHeight: '22px',
-    margin: { bottom: -22 }
+    margin: { top: 3 },
+    lineHeight: '14px',
   }
 }
 
@@ -122,7 +123,6 @@ class Input extends Component {
     const {
       label = '',
       mask = null,
-      ...remainingProps
     } = this.props
 
     let element
@@ -132,6 +132,10 @@ class Input extends Component {
       value: this.state.value,
       onChange: event => this.onInputChange(event)
     }
+
+    const customProps = ['label', 'mask', 'onValid', 'onInvalid', 'validations']
+    const remainingProps = { ...this.props }
+    customProps.forEach(key => { delete remainingProps[key] })
 
     // Check masked input
     if (mask) {
