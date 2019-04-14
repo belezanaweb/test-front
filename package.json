@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "axios": "^0.18.0",
     "jss": "^9.8.7",
     "jss-preset-default": "^4.5.0",
     "react": "^16.8.5",
