@@ -36,6 +36,7 @@ const Button = styled('button')({
   fontFamily: "'Helvetica Neue', Helvetica, Arial, sans-serif",
   fontSize: 20,
   '&:hover': {
+    backgroundColor: '#D45A00',
     boxShadow: [
       {
         inset: 'inset',
@@ -50,7 +51,24 @@ const Button = styled('button')({
         color: 'rgba(0,0,0,0.25)',
       },
     ],
-    backgroundColor: '#D45A00',
+  },
+  '&[disabled], &[disabled]:hover': {
+    backgroundColor: '#CCC',
+    boxShadow: [
+      {
+        inset: 'inset',
+        x: 0,
+        y: -3,
+        blur: 0,
+        color: '#BBB',
+      },
+      {
+        x: 0,
+        y: 2,
+        blur: 4,
+        color: 'rgba(0,0,0,0.25)',
+      },
+    ],
   },
 })
 
