@@ -18,6 +18,19 @@ const styles = {
     fontSize: 14,
     lineHeight: '17px',
     margin: { bottom: 0 },
+  },
+  '@media (min-width: 1024px)': {
+    containerRow: {
+      display: 'flex',
+    },
+    leftContainer: {
+      width: '55%',
+    },
+    rightContainer: {
+      flex: 'auto',
+      padding: { left: 20 },
+      margin: { top: 25 },
+    },
   }
 }
 
@@ -47,19 +60,26 @@ class ConfirmationPage extends Component {
     return (
       <div>
         <BigMessage message="COMPRA EFETUADA COM SUCESSO" />
-        <Title>Pagamento</Title>
-        <Card>
-          <p className={classes.paymentInfo}>{creditCardNumber}</p>
-          <p className={classes.paymentInfo}>{creditCardHolder}</p>
-          <p className={classes.paymentInfo}>{creditCardExpDate}</p>
-        </Card>
 
-        <Title>Produtos</Title>
-        <Card>
-          <CartItemList />
-        </Card>
+        <div className={classes.containerRow}>
+          <div className={classes.leftContainer}>
+            <Title>Pagamento</Title>
+            <Card>
+              <p className={classes.paymentInfo}>{creditCardNumber}</p>
+              <p className={classes.paymentInfo}>{creditCardHolder}</p>
+              <p className={classes.paymentInfo}>{creditCardExpDate}</p>
+            </Card>
 
-        <TotalizersList />
+            <Title>Produtos</Title>
+            <Card>
+              <CartItemList />
+            </Card>
+          </div>
+
+          <div className={classes.rightContainer}>
+            <TotalizersList />
+          </div>
+        </div>
       </div>
     )
   }

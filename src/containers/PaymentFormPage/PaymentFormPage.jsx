@@ -39,6 +39,19 @@ const styles = {
       margin: { top: 0 }
     }
   },
+  '@media (min-width: 1024px)': {
+    containerRow: {
+      display: 'flex',
+    },
+    leftContainer: {
+      width: '55%',
+    },
+    rightContainer: {
+      flex: 'auto',
+      padding: { left: 20 },
+      margin: { top: 25 },
+    },
+  }
 }
 
 const { classes } = jss.createStyleSheet(styles).attach()
@@ -145,29 +158,33 @@ class PaymentFormPage extends Component {
 
   render() {
     return (
-      <div>
-        <Title>Cartão de crédito</Title>
+      <div className={classes.containerRow}>
+        <div className={classes.leftContainer}>
+          <Title>Cartão de crédito</Title>
 
-        <Card>
-          <div className={classes.row}>
-            {this.state.formControls.map((control, index) =>
-              <div className={classes.column} style={{ width: control.width + '%' }} key={control.name}>
-                <Input
-                  name={control.name}
-                  onValid={value => this.updateControl(index, value, true)}
-                  onInvalid={value => this.updateControl(index, value, false)}
-                  {...control.props}
-                />
-              </div>
-            )}
-          </div>
-        </Card>
+          <Card>
+            <div className={classes.row}>
+              {this.state.formControls.map((control, index) =>
+                <div className={classes.column} style={{ width: control.width + '%' }} key={control.name}>
+                  <Input
+                    name={control.name}
+                    onValid={value => this.updateControl(index, value, true)}
+                    onInvalid={value => this.updateControl(index, value, false)}
+                    {...control.props}
+                  />
+                </div>
+              )}
+            </div>
+          </Card>
+        </div>
 
-        <TotalizersList />
-        <Button disabled={!this.state.isFormValid} onClick={() => this.placeOrder()}>
-          {this.state.submitting ? <Spinner /> : null}
-          Finalizar o pedido
+        <div className={classes.rightContainer}>
+          <TotalizersList />
+          <Button disabled={!this.state.isFormValid} onClick={() => this.placeOrder()}>
+            {this.state.submitting ? <Spinner /> : null}
+            Finalizar o pedido
         </Button>
+        </div>
       </div>
     )
   }
