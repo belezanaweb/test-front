@@ -28,6 +28,10 @@ const styles = {
     padding: [12, 0],
     color: '#CCC',
     textTransform: 'uppercase',
+    '&:hover': {
+      color: '#FF7800',
+      textDecoration: 'none',
+    },
   },
   activeLink: {
     color: '#FF7800',
