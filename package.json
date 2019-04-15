@@ -3,10 +3,20 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@emotion/core": "^10.0.10",
+    "@emotion/styled": "^10.0.10",
     "react": "^16.8.5",
-    "react-dom": "^16.8.5"
+    "react-currency-formatter": "^1.1.0",
+    "react-dom": "^16.8.5",
+    "react-redux": "^6.0.1",
+    "react-redux-loading-bar": "^4.2.0",
+    "react-router-dom": "^5.0.0",
+    "redux": "^4.0.1",
+    "redux-thunk": "^2.3.0"
   },
   "devDependencies": {
+    "enzyme": "^3.9.0",
+    "enzyme-adapter-react-16": "^1.12.1",
     "react-scripts": "2.1.8"
   },
   "scripts": {
