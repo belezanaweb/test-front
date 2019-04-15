@@ -13,6 +13,11 @@ const Button = styled('button')({
   borderRadius: 3,
   backgroundColor: '#FF6C00',
   verticalAlign: 'middle',
+  fontFamily: "'Helvetica Neue', Helvetica, Arial, sans-serif",
+  fontSize: 20,
+  border: 0,
+  cursor: 'pointer',
+  outline: 'none',
   boxShadow: [
     {
       inset: 'inset',
@@ -28,14 +33,14 @@ const Button = styled('button')({
       color: 'rgba(0,0,0,0.25)',
     },
   ],
-  border: 0,
   transition: {
     property: 'all',
     duration: '.2s',
     timingFunction: 'ease',
   },
-  fontFamily: "'Helvetica Neue', Helvetica, Arial, sans-serif",
-  fontSize: 20,
+  '&:focus': {
+    outline: 'none',
+  },
   '&:hover': {
     backgroundColor: '#D45A00',
     boxShadow: [
@@ -55,6 +60,7 @@ const Button = styled('button')({
   },
   '&[disabled], &[disabled]:hover': {
     backgroundColor: '#CCC',
+    cursor: 'not-allowed',
     boxShadow: [
       {
         inset: 'inset',
