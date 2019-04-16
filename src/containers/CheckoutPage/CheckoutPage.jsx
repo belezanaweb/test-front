@@ -14,6 +14,7 @@ class CheckoutPage extends Component {
   async componentDidMount() {
     if (this.props.isLoaded) return
 
+    // Load checkout information here, as it will be available in all checkout internal routes
     this.props.toggleLoading(true)
     const cart = await this.getCart()
     this.props.addProducts(cart.items)

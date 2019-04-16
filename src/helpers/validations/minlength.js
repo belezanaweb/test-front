@@ -1,3 +1,7 @@
+/**
+ * Validates minimum length of the input
+ * @param {number} min
+ */
 export default function (min) {
   return {
     type: 'minlength',

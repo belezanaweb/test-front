@@ -1,3 +1,7 @@
+/**
+ * Validate maximum length of the input
+ * @param {number} max
+ */
 export default function (max) {
   return {
     type: 'maxlength',

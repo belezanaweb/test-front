@@ -56,6 +56,7 @@ const styles = {
 
 const { classes } = jss.createStyleSheet(styles).attach()
 
+// As this validation is specific to this form, it doesn't need to be separated as the other validation functions
 const dateCheckValidation = {
   type: 'checkDateValidation',
   handler: text => {
@@ -80,7 +81,7 @@ class PaymentFormPage extends Component {
         name: 'creditCardNumber',
         value: '',
         valid: false,
-        width: 100,
+        width: 100, // Width in percentage
         props: {
           label: 'Número do cartão',
           mask: '####.####.####.####',
@@ -129,7 +130,7 @@ class PaymentFormPage extends Component {
   async placeOrder() {
     if (!this.state.isFormValid) return
 
-    // Simulate payment submit
+    // Simulate payment submit request
     this.setState({ submitting: true })
     await new Promise(resolve => setTimeout(() => resolve(), 3500))
     this.setState({ submitting: false })

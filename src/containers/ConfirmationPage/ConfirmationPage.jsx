@@ -37,11 +37,8 @@ const styles = {
 const { classes } = jss.createStyleSheet(styles).attach()
 
 class ConfirmationPage extends Component {
-  goToPayment() {
-    this.props.history.push('/checkout/payment')
-  }
-
   componentDidMount() {
+    // If the payment information doesn't exists, the order wasn't placed
     if (
       !this.props.creditCardNumber ||
       !this.props.creditCardHolder ||
@@ -52,7 +49,7 @@ class ConfirmationPage extends Component {
 
   render() {
     const {
-      creditCardNumber,
+      creditCardNumber, // The number is already processed by the reducer, so it will show only the last 4 digits
       creditCardHolder,
       creditCardExpDate,
     } = this.props
