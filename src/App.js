@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import CheckoutPage from './containers/CheckoutPage/CheckoutPage';
-import { Switch, Route, Redirect, withRouter } from 'react-router-dom';
+import { Switch, Route, Redirect } from 'react-router-dom';
 
 class App extends Component {
   render() {

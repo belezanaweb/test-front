@@ -59,7 +59,7 @@ const CartItem = ({
 }) =>
   <div className={classes.card}>
     <div className={classes.column + ' ' + classes.thumb}>
-      <img src={thumb} title={name} className={classes.thumb} />
+      <img src={thumb} alt={name} className={classes.thumb} />
     </div>
     <div className={classes.column}>
       <span className={classes.productName}>{name}</span>

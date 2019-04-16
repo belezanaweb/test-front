@@ -134,9 +134,9 @@ class PaymentFormPage extends Component {
     await new Promise(resolve => setTimeout(() => resolve(), 3500))
     this.setState({ submitting: false })
 
-    const creditCardNumber = this.state.formControls.find(c => c.name == 'creditCardNumber').value
-    const creditCardHolder = this.state.formControls.find(c => c.name == 'creditCardHolder').value
-    const creditCardExpDate = this.state.formControls.find(c => c.name == 'creditCardExpDate').value
+    const creditCardNumber = this.state.formControls.find(c => c.name === 'creditCardNumber').value
+    const creditCardHolder = this.state.formControls.find(c => c.name === 'creditCardHolder').value
+    const creditCardExpDate = this.state.formControls.find(c => c.name === 'creditCardExpDate').value
     this.props.addPayment(creditCardNumber, creditCardHolder, creditCardExpDate)
 
     this.props.history.push('/checkout/placed')

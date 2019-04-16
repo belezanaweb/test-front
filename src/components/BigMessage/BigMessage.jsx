@@ -36,7 +36,7 @@ const BigMessage = ({
   message,
 }) =>
   <div className={classes.container}>
-    <img src={success} className={classes.icon} />
+    <img src={success} className={classes.icon} alt="Success" />
     <span className={classes.text}>{message}</span>
   </div>
 

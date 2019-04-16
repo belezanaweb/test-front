@@ -16,7 +16,7 @@ export function payment(state = defaultState, action) {
     case ActionTypeEnum.ADD_PAYMENT:
       // Hides credit card number
       const number = action.data.creditCardNumber.split('.')
-        .map((part, index) => index == 3 ? part : '****')
+        .map((part, index) => index === 3 ? part : '****')
         .join('.')
 
       return {
@@ -25,8 +25,8 @@ export function payment(state = defaultState, action) {
         creditCardHolder: action.data.creditCardHolder,
         creditCardExpDate: action.data.creditCardExpDate,
       }
+    default:
+      return state
   }
-
-  return state
 }
 

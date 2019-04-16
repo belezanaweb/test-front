@@ -46,8 +46,8 @@ export function cart(state = defaultState, action) {
         loaded: true,
         loading: false,
       }
+    default:
+      return state
   }
-
-  return state
 }
 
