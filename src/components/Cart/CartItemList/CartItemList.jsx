@@ -2,7 +2,7 @@ import React from 'react'
 import CartItem from '../CartItem/CartItem';
 import { connect } from 'react-redux'
 
-const CartItemList = ({ items }) =>
+export const CartItemList = ({ items }) =>
   <div>
     {items.map(item =>
       <CartItem

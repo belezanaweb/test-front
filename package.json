@@ -4,6 +4,8 @@
   "private": true,
   "dependencies": {
     "axios": "^0.18.0",
+    "enzyme": "^3.9.0",
+    "enzyme-adapter-react-16": "^1.12.1",
     "jss": "^9.8.7",
     "jss-preset-default": "^4.5.0",
     "react": "^16.8.5",
