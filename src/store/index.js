@@ -1,7 +1,15 @@
 import { createStore } from 'redux';
 
 const initialState = {
-  bagProducts: []
+  bag: {
+    resume: {
+      discount: 0,
+      shippingTotal: 0,
+      subTotal: 0,
+      total: 0
+    },
+    products: []
+  }
 };
 
 const reducers = (state = initialState, action) => {
@@ -9,7 +17,7 @@ const reducers = (state = initialState, action) => {
     case 'UPDATE_BAG':
       return {
         ...state,
-        bagProducts: action.products
+        bag: action.bag,
       };
     default:
       return state;

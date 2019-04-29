@@ -31,6 +31,6 @@ export default connect(mapStateToProps)(Bag);
 
 function mapStateToProps(state) {
   return {
-    products: state.bagProducts
+    products: state.bag.products
   }
 }

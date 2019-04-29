@@ -15,8 +15,16 @@ const API_BAG = 'http://www.mocky.io/v2/5b15c4923100004a006f3c07';
 class App extends Component {
   componentDidMount() {
     axios.get(API_BAG).then(res => {
-      const products = res.data.items || [];
-      this.props.updateBag(products);
+      const bagData = {
+        resume: {
+          discount: res.data.discount || 0,
+          shippingTotal: res.data.shippingTotal || 0,
+          subTotal: res.data.subTotal || 0,
+          total: res.data.total || 0,
+        },
+        products: res.data.items || []
+      };
+      this.props.updateBag(bagData);
     });
   }
 

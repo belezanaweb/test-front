@@ -1,6 +1,6 @@
-export const updateBag = (products) => (
+export const updateBag = (bagData) => (
   {
     type: 'UPDATE_BAG',
-    products: products
+    bag: bagData
   }
 );
