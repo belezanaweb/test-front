@@ -5,7 +5,8 @@ export const theme = {
     orangeDark: '#D45A00',
     purple: '#A43287',
     gray: '#999',
-    grayLight: '#CCC',
+    grayLight: '#EEE',
+    grayMedium: '#CCC',
     black: '#212122',
     white: '#FFF'
   },
