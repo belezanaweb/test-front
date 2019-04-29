@@ -1,14 +1,18 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
+import { Provider } from 'react-redux';
+
+import Routes from './routes';
+import store from './store';
+
 import './App.css';
 
 class App extends Component {
   render() {
     return (
       <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-        </header>
+        <Provider store={store}>
+          <Routes />
+        </Provider>
       </div>
     );
   }
