@@ -9,8 +9,8 @@ const Routes = () => (
   <BrowserRouter>
     <Switch>
       <Route exact path="/" component={Bag} />
-      <Route exact path="/pagamento" component={Payment} />
-      <Route exact path="/sucesso" component={Success} />
+      <Route path="/pagamento" component={Payment} />
+      <Route path="/sucesso" component={Success} />
     </Switch>
   </BrowserRouter>
 );

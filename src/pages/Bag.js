@@ -1,12 +1,25 @@
-import React from 'react';
+import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
-const Bag = ({ products }) => (
-  <div>
-    {products.map(product => (
-      <p>{product.name}</p>
-    ))}
-  </div>
-);
+class Bag extends Component {
 
-export default connect(state => ({ products: state }))(Bag);
+  render() {
+    return (
+      <div>
+        {this.props.products.map(product => (
+          <p key={product.product.sku}>
+            {product.product.name}
+          </p>
+        ))}
+      </div>
+    );
+  }
+}
+
+export default connect(mapStateToProps)(Bag);
+
+function mapStateToProps(state) {
+  return {
+    products: state.bagProducts
+  }
+}
