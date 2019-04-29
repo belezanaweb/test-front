@@ -13,12 +13,14 @@ class Bag extends Component {
         <Header page="bag" />
 
         <Card title="PRODUTOS">
-          {this.props.products.map(product => (
-            <CardProduct
-              key={product.product.sku}
-              product={product.product}
-            />
-          ))}
+          <div>
+            {this.props.products.map(product => (
+              <CardProduct
+                key={product.product.sku}
+                product={product.product}
+              />
+            ))}
+          </div>
         </Card>
       </div>
     );
