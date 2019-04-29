@@ -1,4 +1,5 @@
 import React from 'react';
+import { PropTypes } from 'prop-types';
 
 import {
   Info,
@@ -9,7 +10,7 @@ import {
 } from './styles';
 
 const CardProduct = (props) => (
-  <Container key={props.product.sku}>
+  <Container>
     <ProductImage src={props.product.imageObjects[0].small} alt={props.name} />
     <Info>
       <ProductName>{props.product.name}</ProductName>
@@ -17,5 +18,10 @@ const CardProduct = (props) => (
     </Info>
   </Container>
 );
+
+CardProduct.propTypes = {
+  product: PropTypes.object.isRequired
+};
+
 
 export default CardProduct;
