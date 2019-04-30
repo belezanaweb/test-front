@@ -4,6 +4,7 @@ import { connect } from 'react-redux';
 import Header from '../components/Header';
 import Card from '../components/Card';
 import CardProduct from '../components/CardProduct';
+import CardResume from '../components/CardResume';
 
 class Bag extends Component {
 
@@ -22,6 +23,8 @@ class Bag extends Component {
             ))}
           </div>
         </Card>
+
+        <CardResume resume={this.props.resume} />
       </div>
     );
   }
@@ -31,6 +34,7 @@ export default connect(mapStateToProps)(Bag);
 
 function mapStateToProps(state) {
   return {
+    resume: state.bag.resume,
     products: state.bag.products
   }
 }

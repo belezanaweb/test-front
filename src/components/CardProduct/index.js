@@ -23,5 +23,4 @@ CardProduct.propTypes = {
   product: PropTypes.object.isRequired
 };
 
-
 export default CardProduct;
