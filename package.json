@@ -16,7 +16,8 @@
   "devDependencies": {
     "enzyme": "^3.9.0",
     "enzyme-adapter-react-16": "^1.12.1",
-    "react-scripts": "2.1.8"
+    "react-scripts": "2.1.8",
+    "sinon": "^7.3.2"
   },
   "scripts": {
     "start": "react-scripts start",
