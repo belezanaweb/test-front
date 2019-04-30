@@ -10,8 +10,13 @@ import Link from '../components/Link';
 import { Content } from './styles';
 
 class Bag extends Component {
-  goToPayment() {
-    console.log('siga para /pagamento!!!')
+  constructor(props) {
+    super(props);
+    this.goToPaymentPage = this.goToPaymentPage.bind(this);
+  }
+
+  goToPaymentPage() {
+    this.props.history.push('/pagamento');
   }
 
   render() {
@@ -35,7 +40,7 @@ class Bag extends Component {
 
           <Link
             text="Seguir para o pagamento"
-            actionLink={this.goToPayment}
+            actionLink={this.goToPaymentPage}
           />
         </Content>
       </div>
