@@ -1,9 +1,5 @@
 import styled from 'styled-components';
 
-export const Container = styled.div`
-  padding: 0 10px 0 9px;
-`;
-
 export const Title = styled.p`
   margin: 0;
   height: 32px;

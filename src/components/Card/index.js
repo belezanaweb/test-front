@@ -4,7 +4,6 @@ import { PropTypes } from 'prop-types';
 import {
   Title,
   Content,
-  Container,
 } from './styles';
 
 const getTitle = (title) => {
@@ -18,13 +17,13 @@ const getTitle = (title) => {
 }
 
 const Card = (props) => (
-  <Container>
+  <div>
     {getTitle(props.title)}
 
     <Content>
       {props.children}
     </Content>
-  </Container>
+  </div>
 );
 
 Card.propTypes = {

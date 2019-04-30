@@ -2,9 +2,9 @@ import styled from 'styled-components';
 
 export const Container = styled.div`
   display: flex;
+  margin: 20px 0;
   border-radius: 3px;
   flex-direction: column;
-  margin: 20px 10px 0 9px;
   padding: 14px 12px 12px;
   border: 1px solid ${props => props.theme.color.grayMedium};
 `;
