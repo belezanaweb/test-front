@@ -4,7 +4,7 @@ export const Container = styled.div`
   display: flex;
   height: 90px;
   border-radius: 3px;
-  padding: 11px 10px 13px;
+  padding: 10px 10px 13px;
   border: 1px solid ${props => props.theme.color.grayLight};
   margin-bottom: 15px;
 `;
