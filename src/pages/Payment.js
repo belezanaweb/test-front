@@ -3,11 +3,10 @@ import { connect } from 'react-redux';
 
 import Header from '../components/Header';
 import Card from '../components/Card';
-import CardProduct from '../components/CardProduct';
 import CardResume from '../components/CardResume';
 import Link from '../components/Link';
 
-import { Content } from './styles';
+import { Content, Resume } from './styles';
 
 class Payment extends Component {
   constructor(props) {
@@ -29,12 +28,14 @@ class Payment extends Component {
             <div />
           </Card>
 
-          <CardResume resume={this.props.resume} />
+          <Resume>
+            <CardResume resume={this.props.resume} />
 
-          <Link
-            text="Finalizar o pedido"
-            actionLink={this.goToSucessPage}
-          />
+            <Link
+              text="Finalizar o pedido"
+              actionLink={this.goToSucessPage}
+            />
+          </Resume>
         </Content>
       </div>
     );

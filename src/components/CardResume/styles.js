@@ -26,5 +26,3 @@ export const Text = styled.p`
   color: ${props => props.color ? props.theme.color[props.color] : props.theme.color.black};
   font-weight: ${props => props.bold ? props.bold : 'normal'}
 `;
-
-export const Value = styled(Text)``;

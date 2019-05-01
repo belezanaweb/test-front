@@ -14,6 +14,7 @@ export const theme = {
     main: '"Helvetica Neue", Helvetica, Arial, sans-serif',
   },
   screenSizes: {
-    mobile: 480
+    mobile: 480,
+    tablet: 768
   }
 };

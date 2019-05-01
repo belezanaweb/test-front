@@ -16,6 +16,7 @@ export const ProductImage = styled.img`
 `;
 
 export const Info = styled.div`
+  flex-grow: 1;
   display: flex;
   margin-left: 10px;
   flex-direction: column;
