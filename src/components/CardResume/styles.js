@@ -2,16 +2,16 @@ import styled from 'styled-components';
 
 export const Container = styled.div`
   display: flex;
-  margin: 20px 0;
+  margin: 20px 0 20px;
   border-radius: 3px;
   flex-direction: column;
-  padding: 14px 12px 12px;
+  padding: 14px 12px 11.5px;
   border: 1px solid ${props => props.theme.color.grayMedium};
 `;
 
 export const Info = styled.div`
   display: flex;
-  margin-bottom: 10px;
+  margin-bottom: 9px;
   flex-direction: row;
   justify-content: space-between;
 `;
