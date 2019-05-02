@@ -9,6 +9,15 @@ const initialState = {
       total: 0
     },
     products: []
+  },
+  user: {
+    wallet: {
+      creditCard: {
+        name: '',
+        valid: '',
+        number: '',
+      }
+    }
   }
 };
 
