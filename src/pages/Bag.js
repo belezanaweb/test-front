@@ -53,11 +53,11 @@ class Bag extends Component {
   }
 }
 
-export default connect(mapStateToProps)(Bag);
-
 function mapStateToProps(state) {
   return {
     resume: state.bag.resume,
     products: state.bag.products
   }
 }
+
+export default connect(mapStateToProps)(Bag);

@@ -69,8 +69,6 @@ class Success extends Component {
   }
 }
 
-export default connect(mapStateToProps)(Success);
-
 function mapStateToProps(state) {
   return {
     user: state.user,
@@ -78,3 +76,5 @@ function mapStateToProps(state) {
     products: state.bag.products
   }
 }
+
+export default connect(mapStateToProps)(Success);
