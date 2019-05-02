@@ -1,6 +1,8 @@
 import React from 'react';
 import { PropTypes } from 'prop-types';
 
+import { formatMoney } from '../../utils';
+
 import {
   Info,
   Container,
@@ -15,7 +17,7 @@ const getPrice = (price, showPrice) => {
   }
 
   return (
-    <ProductPrice>R$ {price}</ProductPrice>
+    <ProductPrice>R$ {formatMoney(price)}</ProductPrice>
   );
 }
 
