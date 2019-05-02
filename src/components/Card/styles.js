@@ -24,8 +24,4 @@ export const Content = styled.div`
   ${ContainerCardProduct}:last-child {
     margin-bottom: 0;
   }
-
-  @media(min-width: ${props => props.theme.screenSizes.tablet}px) {
-    min-height: 120px;
-  }
 `;

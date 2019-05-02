@@ -6,7 +6,7 @@ import Card from '../components/Card';
 import CardResume from '../components/CardResume';
 import Link from '../components/Link';
 
-import { Content, Resume } from './styles';
+import { Main, Aside, Container } from './styles';
 
 class Payment extends Component {
   constructor(props) {
@@ -23,20 +23,22 @@ class Payment extends Component {
       <div>
         <Header page="payment" />
 
-        <Content>
-          <Card title="CARTÃO DE CRÉDITO">
-            <div />
-          </Card>
+        <Container>
+          <Main>
+            <Card title="CARTÃO DE CRÉDITO">
+              <div />
+            </Card>
+          </Main>
 
-          <Resume>
+          <Aside>
             <CardResume resume={this.props.resume} />
 
             <Link
               text="Finalizar o pedido"
               actionLink={this.goToSucessPage}
             />
-          </Resume>
-        </Content>
+          </Aside>
+        </Container>
       </div>
     );
   }

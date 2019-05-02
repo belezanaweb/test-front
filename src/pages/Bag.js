@@ -7,7 +7,7 @@ import CardProduct from '../components/CardProduct';
 import CardResume from '../components/CardResume';
 import Link from '../components/Link';
 
-import { Content, Resume } from './styles';
+import { Main, Aside, Container } from './styles';
 
 class Bag extends Component {
   constructor(props) {
@@ -24,28 +24,30 @@ class Bag extends Component {
       <div>
         <Header page="bag" />
 
-        <Content>
-          <Card title="PRODUTOS">
-            <div>
-              {this.props.products.map(product => (
-                <CardProduct
-                  key={product.product.sku}
-                  product={product.product}
-                  showPrice
-                />
-              ))}
-            </div>
-          </Card>
+        <Container>
+          <Main>
+            <Card title="PRODUTOS">
+              <div>
+                {this.props.products.map(product => (
+                  <CardProduct
+                    key={product.product.sku}
+                    product={product.product}
+                    showPrice
+                  />
+                ))}
+              </div>
+            </Card>
+          </Main>
 
-          <Resume>
+          <Aside>
             <CardResume resume={this.props.resume} />
 
             <Link
               text="Seguir para o pagamento"
               actionLink={this.goToPaymentPage}
             />
-          </Resume>
-        </Content>
+          </Aside>
+        </Container>
       </div>
     );
   }
