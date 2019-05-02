@@ -9,7 +9,6 @@ import CardResume from '../components/CardResume';
 import { Main, Aside, Container } from './styles';
 import {
   Result,
-  ContentSuccess,
   IconSuccess,
   TextResult,
   PaymentCard,
@@ -39,7 +38,7 @@ class Success extends Component {
         </Result>
 
         <Container>
-          <ContentSuccess>
+          <Main>
             <Card title="PAGAMENTO">
               <PaymentCard>
                 <p>{this.props.user.wallet.creditCard.number}</p>
@@ -59,7 +58,7 @@ class Success extends Component {
                 ))}
               </div>
             </Card>
-          </ContentSuccess>
+          </Main>
 
           <Aside>
             <CardResume resume={this.props.resume} />

@@ -1,11 +1,5 @@
 import styled from 'styled-components';
 
-export const ContentSuccess = styled.div`
-  flex-grow: 2;
-  display: flex;
-  flex-direction: column;
-`;
-
 export const Result = styled.div`
   margin: 12px 0 11px;
   display: flex;
