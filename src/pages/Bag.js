@@ -31,6 +31,7 @@ class Bag extends Component {
                 <CardProduct
                   key={product.product.sku}
                   product={product.product}
+                  showPrice
                 />
               ))}
             </div>

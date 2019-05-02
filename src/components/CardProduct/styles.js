@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 export const Container = styled.div`
   display: flex;
-  height: 90px;
+  height: ${props => props.thin ? '63' : '90'}px;
   border-radius: 3px;
   padding: 10px 10px 13px;
   border: 1px solid ${props => props.theme.color.grayLight};
@@ -10,8 +10,8 @@ export const Container = styled.div`
 `;
 
 export const ProductImage = styled.img`
-  width: 65px;
-  height: 65px;
+  width: ${props => props.thin ? '42' : '65'}px;
+  height: ${props => props.thin ? '42' : '65'}px;
   align-self: center;
 `;
 

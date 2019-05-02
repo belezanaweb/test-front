@@ -9,17 +9,29 @@ import {
   ProductPrice,
 } from './styles';
 
+const getPrice = (price, showPrice) => {
+  if (!showPrice) {
+    return null;
+  }
+
+  return (
+    <ProductPrice>R$ {price}</ProductPrice>
+  );
+}
+
 const CardProduct = (props) => (
-  <Container>
-    <ProductImage src={props.product.imageObjects[0].small} alt={props.name} />
+  <Container thin={props.thin}>
+    <ProductImage thin={props.thin} src={props.product.imageObjects[0].small} alt={props.name} />
     <Info>
       <ProductName>{props.product.name}</ProductName>
-      <ProductPrice>R$ {props.product.priceSpecification.price}</ProductPrice>
+      {getPrice(props.product.priceSpecification.price, props.showPrice, props.thin)}
     </Info>
   </Container>
 );
 
 CardProduct.propTypes = {
+  thin: PropTypes.bool,
+  showPrice: PropTypes.bool,
   product: PropTypes.object.isRequired
 };
 

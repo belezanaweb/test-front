@@ -23,20 +23,47 @@ const productExample = {
 
 describe('CardProduct', () => {
   it('shows name', () => {
-    const wrapper = shallow(<CardProduct product={productExample} />);
+    const wrapper = shallow(
+      <CardProduct
+        product={productExample}
+      />
+    );
 
     expect(wrapper.find(ProductName).length).toBe(1);
     expect(wrapper.find(ProductName).text()).toBe('Test for BLZ!');
   });
 
-  it('shows price', () => {
-    const wrapper = shallow(<CardProduct product={productExample} />);
+  describe('when price is required', () => {
+    it('shows price', () => {
+      const wrapper = shallow(
+        <CardProduct
+          product={productExample}
+          showPrice
+        />
+      );
 
-    expect(wrapper.find(ProductPrice).text()).toBe('R$ 50.1');
+      expect(wrapper.find(ProductPrice).text()).toBe('R$ 50.1');
+    });
+  });
+
+  describe('when price is not required', () => {
+    it('hide price product', () => {
+      const wrapper = shallow(
+        <CardProduct
+          product={productExample}
+        />
+      );
+
+      expect(wrapper.find(ProductPrice).length).toBe(0);
+    });
   });
 
   it('shows image', () => {
-    const wrapper = shallow(<CardProduct product={productExample} />);
+    const wrapper = shallow(
+      <CardProduct
+        product={productExample}
+      />
+    );
 
     expect(wrapper.find(ProductImage).prop('src')).toEqual('http://lorempixel.com/10/10');
   });
