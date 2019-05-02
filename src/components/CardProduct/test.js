@@ -42,7 +42,7 @@ describe('CardProduct', () => {
         />
       );
 
-      expect(wrapper.find(ProductPrice).text()).toBe('R$ 50.1');
+      expect(wrapper.find(ProductPrice).text()).toBe('R$ 50,10');
     });
   });
 
