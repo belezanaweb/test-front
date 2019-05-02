@@ -28,6 +28,15 @@ const reducers = (state = initialState, action) => {
         ...state,
         bag: action.bag,
       };
+    case 'UPDATE_CARD_USER':
+      return {
+        ...state,
+        user: {
+          wallet: {
+            creditCard: action.creditCard,
+          }
+        }
+      };
     default:
       return state;
   }

@@ -4,3 +4,10 @@ export const updateBag = (bagData) => (
     bag: bagData
   }
 );
+
+export const updateCreditCardUser = (creditCard) => (
+  {
+    type: 'UPDATE_CARD_USER',
+    creditCard: creditCard
+  }
+);
