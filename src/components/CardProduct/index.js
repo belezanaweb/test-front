@@ -1,7 +1,7 @@
 import React from 'react';
 import { PropTypes } from 'prop-types';
 
-import { formatMoney } from '../../utils';
+import { currencyFormatBr } from '../../utils';
 
 import {
   Info,
@@ -17,7 +17,7 @@ const getPrice = (price, showPrice) => {
   }
 
   return (
-    <ProductPrice>R$ {formatMoney(price)}</ProductPrice>
+    <ProductPrice>R$ {currencyFormatBr(price)}</ProductPrice>
   );
 }
 

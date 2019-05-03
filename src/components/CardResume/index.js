@@ -1,7 +1,7 @@
 import React from 'react';
 import { PropTypes } from 'prop-types';
 
-import { formatMoney } from '../../utils';
+import { currencyFormatBr } from '../../utils';
 
 import {
   Text,
@@ -14,19 +14,19 @@ const CardResume = (props) => (
   <Container>
     <Info>
       <Text>PRODUTOS</Text>
-      <Text>R$ {formatMoney(props.resume.subTotal)}</Text>
+      <Text>R$ {currencyFormatBr(props.resume.subTotal)}</Text>
     </Info>
     <Info>
       <Text>FRETE</Text>
-      <Text>R$ {formatMoney(props.resume.shippingTotal)}</Text>
+      <Text>R$ {currencyFormatBr(props.resume.shippingTotal)}</Text>
     </Info>
     <Info>
       <Text color="orange">DESCONTO</Text>
-      <Text color="orange">- R$ {formatMoney(props.resume.discount)}</Text>
+      <Text color="orange">- R$ {currencyFormatBr(props.resume.discount)}</Text>
     </Info>
     <InfoBottom>
       <Text bold={700}>TOTAL</Text>
-      <Text bold={700}>R$ {formatMoney(props.resume.total)}</Text>
+      <Text bold={700}>R$ {currencyFormatBr(props.resume.total)}</Text>
     </InfoBottom>
   </Container>
 );

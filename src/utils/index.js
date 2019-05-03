@@ -1,3 +1,6 @@
-export const formatMoney = (money) => (
-  money.toFixed(2).replace('.', ',')
+export const currencyFormatBr = (number) => (
+  number
+    .toFixed(2)
+    .replace('.', ',')
+    .replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1.')
 )
