@@ -36,7 +36,7 @@ O teste consiste em um checkout simples contendo 3 passos (carrinho, pagamento e
 ### Diferenciais:
   - Split bundle por rota (cada step ter um bundle separado para otimizar a performance);
   - CSS in JS;
-  - React/Redux;
+  - React;
 
 ### Fim:
 Ao finalizar o teste, submeta um pull request para o repositório que nosso time será notificado. Se tiver alguma observação, escreva no pull request.
