@@ -12,9 +12,10 @@ class Cart extends Component {
     super(props);
   }
 
-  componentDidMount = () => {
-    console.log('props:', this.props);
-  }
+  //TODO: remover
+  // componentDidMount = () => {
+  //   console.log('props:', this.props);
+  // }
 
   render() {
     return (

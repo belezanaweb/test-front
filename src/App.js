@@ -7,6 +7,7 @@ import { initCart } from './Store/Actions/CartAction';
 import { connect } from 'react-redux';
 import axios from 'axios';
 import { API } from './Constants';
+import Payment from './Containers/Payment/Payment';
 
 class App extends Component {
 
@@ -30,6 +31,7 @@ class App extends Component {
         <div className={classes.MainContainer}>
           <Switch>
             <Route path="/" exact component={Cart} />
+            <Route path="/payment" component={Payment}/>
           </Switch>
         </div>
       </BrowserRouter>
