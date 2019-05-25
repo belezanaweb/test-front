@@ -11,6 +11,9 @@
 - **Redux**  
   A defesa do `redux` e `react-redux` é parecida com a do `react-router`. São ferramentas que fazem parte do ecossistema React e com isso já temos solucões e cenários para nos ajudar.
 
+- **Axios**  
+  Ótima ferramenta para chamadas ajax. Ele abstrai alguns tratamentos para erros nas __promises__.
+
 ## Flow Application
 
 [https://whimsical.com/8GM5HhbKF6o7VghdvWpCQk](https://whimsical.com/8GM5HhbKF6o7VghdvWpCQk)
