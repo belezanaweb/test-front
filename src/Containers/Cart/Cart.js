@@ -4,6 +4,7 @@ import { connect } from 'react-redux';
 import Auxiliary from '../../Hoc/Auxiliary/Auxiliary';
 import Content  from '../../Components/Content/Content';
 import Item from './Item/Item';
+import Button from '../../Components/Button/Button';
 
 class Cart extends Component {
 
@@ -30,9 +31,17 @@ class Cart extends Component {
         shippingTotal={this.props.cart.shippingTotal}
         discount={this.props.cart.discount}
         total={this.props.cart.total}/>
+        <Button action={this.navigateToPayment}>
+          Seguir para o pagamento
+        </Button>
       </Auxiliary>
     );
   }
+
+  navigateToPayment = () => {
+
+  }
+
 }
 
 const mapStateToProps = state => ({
