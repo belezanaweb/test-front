@@ -1,3 +1,25 @@
 .Total {
-  border: red solid 1px;
+  border: #CCC solid 1px;
+  padding: 10px;
+  border-radius: 3px;
+
+  table {
+    width: 100%;
+    display: table;
+
+    tr {
+    line-height: 25px;
+      &.Orange {
+        color: #FF7800;
+      }
+    }
+
+    td {
+      display: table-cell;
+
+      &:nth-child(2) {
+        text-align: right;
+      }
+    }
+  }
 }

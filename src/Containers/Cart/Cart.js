@@ -5,6 +5,8 @@ import Auxiliary from '../../Hoc/Auxiliary/Auxiliary';
 import Content  from '../../Components/Content/Content';
 import Item from './Item/Item';
 import Button from '../../Components/Button/Button';
+import Title from '../../Components/Title/Title';
+import { TITLE_TYPES } from '../../Constants';
 
 class Cart extends Component {
 
@@ -20,7 +22,7 @@ class Cart extends Component {
   render() {
     return (
       <Auxiliary>
-        <h1>Cart</h1>
+        <Title type={TITLE_TYPES.MAIN}>Produtos</Title>
         <Content>
           {this.props.cart.items.map((item, index) => 
           <Item key={index}
@@ -29,10 +31,10 @@ class Cart extends Component {
             smallImage={item.product.imageObjects["0"].small}/>)}
         </Content>
         <Total subTotal={this.props.cart.subTotal}
-        shippingTotal={this.props.cart.shippingTotal}
-        discount={this.props.cart.discount}
-        total={this.props.cart.total}/>
-        <Button action={this.navigateToPayment}>
+          shippingTotal={this.props.cart.shippingTotal}
+          discount={this.props.cart.discount}
+          total={this.props.cart.total}/>
+          <Button action={this.navigateToPayment}>
           Seguir para o pagamento
         </Button>
       </Auxiliary>
@@ -40,7 +42,7 @@ class Cart extends Component {
   }
 
   navigateToPayment = () => {
-
+    this.props.history.push('/payment');
   }
 
 }

@@ -1,0 +1,37 @@
+.Item {
+  display: flex;
+  box-sizing: border-box;
+  border-radius: 3px;
+  border: 1px solid #EEE;
+  margin-bottom: 15px;
+  padding: 10px;
+  .Col {
+    flex: 1;
+    &:first-child {
+      max-width: 70px;
+    }
+    &:nth-child(2) {
+      padding: 0 5px;
+    }
+    .Image {
+      height: 100%;
+      width: 100%;
+      img {
+        position: relative;
+        max-width: 60px;
+        height: auto;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        clear: both;
+      }
+    }
+
+    p {
+      text-align: right;
+      color: #212122;
+      font-size: 0.813em;
+    }
+  }
+
+}

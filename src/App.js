@@ -8,6 +8,7 @@ import { connect } from 'react-redux';
 import axios from 'axios';
 import { API } from './Constants';
 import Payment from './Containers/Payment/Payment';
+import Success from './Containers/Success/Success';
 
 class App extends Component {
 
@@ -32,6 +33,7 @@ class App extends Component {
           <Switch>
             <Route path="/" exact component={Cart} />
             <Route path="/payment" component={Payment}/>
+            <Route path="/success" component={Success}/>
           </Switch>
         </div>
       </BrowserRouter>

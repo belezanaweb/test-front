@@ -1,19 +1,29 @@
 import React from 'react';
 import classes from './Item.module.scss';
 import PropTypes from 'prop-types';
+import CurrencyFormat from 'react-currency-format';
+import { CURRENCY_PROPS } from '../../../Constants';
 
 const Item = (props) => {
+
   return (
     <div className={classes.Item}>
-      
-      <div className={classes.Image}>
-        <img src={props.smallImage}/>
+
+      <div className={classes.Col}>
+        <div className={classes.Image}>
+          <img src={props.smallImage} />
+        </div>
       </div>
 
-      <div className={classes.Content}>
-        <p>{props.name}</p>
-        <p>{props.price}</p>
+      <div className={classes.Col}>
+        <div className={classes.Content}>
+          <p>{props.name}</p>
+          <p>
+            <CurrencyFormat value={props.price} {...CURRENCY_PROPS}/>
+          </p>
+        </div>
       </div>
+
     </div>
   );
 }
