@@ -1,0 +1,35 @@
+.Header {
+  background-color: #fff;
+  box-shadow: 1px 1px 5px 0 rgba(0, 0, 29, 0.22);
+  position: relative;
+  ul {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0;
+    width: 80%;
+    display: table;
+    li {
+      list-style: none;
+      display: inline-flex;
+      display: table-cell;
+      a {
+        font-weight: bold;
+        font-size: 0.813em;
+        text-align: center;
+        margin: 0 auto;
+        display: block;
+        cursor: pointer;
+        padding-left: 1.97vw;
+        padding-right: 1.97vw;
+        padding: 15px 1.97vw;
+        color: #CCC;
+        text-transform: uppercase;
+        text-decoration: none;
+        &:hover {
+          color: #FF7800;
+        }
+      }
+    }
+  }
+
+}
