@@ -1,7 +1,11 @@
 import { INIT_CART } from '../Actions/ActionTypes';
 
 const initialState = {
-  carts: []
+  items: [],
+  subTotal: 0,
+  shippingTotal: 0,
+  discount: 0,
+  total: 0
 };
 
 export default (state = initialState, action) => {
@@ -9,7 +13,7 @@ export default (state = initialState, action) => {
     case INIT_CART:
       return {
         ...state,
-        carts: action.payload
+        ...action.payload
       }
     default: return state;
   }
