@@ -1,7 +1,8 @@
 {
-  "name": "test-front",
+  "name": "checkout-app-react",
   "version": "0.1.0",
-  "private": true,
+  "private": false,
+  "author": "Thiago Kpelo <thiaokpelo@gmail.com>",
   "dependencies": {
     "axios": "^0.18.0",
     "react": "^16.8.5",
@@ -12,7 +13,17 @@
     "styled-components": "^4.2.0"
   },
   "devDependencies": {
-    "react-scripts": "2.1.8"
+    "@types/jest": "^24.0.13",
+    "@types/node": "^12.0.2",
+    "@types/react": "^16.8.18",
+    "@types/react-dom": "^16.8.4",
+    "@types/styled-components": "^4.1.15",
+    "react-scripts": "2.1.8",
+    "tslint": "^5.16.0",
+    "tslint-config-blvd": "^1.2.1",
+    "tslint-config-prettier": "^1.18.0",
+    "tslint-plugin-prettier": "^2.0.1",
+    "typescript": "^3.4.5"
   },
   "scripts": {
     "start": "react-scripts start",
