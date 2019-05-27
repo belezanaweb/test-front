@@ -1,5 +1,6 @@
 import * as React from 'react';
 import { Link } from 'react-router-dom';
+import { Helmet } from "react-helmet";
 import { connect } from 'react-redux';
 
 import Button from '../../../components/button';
@@ -15,13 +16,19 @@ class CheckoutCart extends React.Component<{ cart: CartType }, {}> {
     const { cart } = this.props;
 
     return (
-      <div>
-        <Section title="Produtos">
-          <CartProducts items={cart!.items} />
-        </Section>
-        <CartResume cart={cart} />
-        <Button as={Link} to="/checkout/payment">Seguir para o pagamento</Button>
-      </div>
+      <React.Fragment>
+        <Helmet>
+          <title>Cart | Checkout</title>
+          <meta name="description" content="Cart step" />
+        </Helmet>
+        <div>
+          <Section title="Produtos">
+            <CartProducts items={cart!.items} />
+          </Section>
+          <CartResume cart={cart} />
+          <Button as={Link} to="/checkout/payment">Seguir para o pagamento</Button>
+        </div>
+      </React.Fragment>
     );
   }
 }

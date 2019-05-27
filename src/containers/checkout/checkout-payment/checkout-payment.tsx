@@ -1,5 +1,6 @@
 import * as React from 'react';
 import { connect } from 'react-redux';
+import Helmet from 'react-helmet';
 
 import Button from '../../../components/button';
 import CartResume from '../../../components/cart-resume';
@@ -36,42 +37,48 @@ class CheckoutPayment extends React.Component<any> {
     const { cart } = this.props;
 
     return (
-      <div>
-        <Section title="Cartão de crédito">
-          <form ref={this.formPayment}>
+      <React.Fragment>
+        <Helmet>
+          <title>Payment | Checkout</title>
+          <meta name="description" content="Payment step" />
+        </Helmet>
+        <div>
+          <Section title="Cartão de crédito">
+            <form ref={this.formPayment}>
 
-            <TextField
-              label="Número do cartão:"
-              id="number-card"
-              name="numberCard"
-              placeholder="____.____.____.____"
-            />
+              <TextField
+                label="Número do cartão:"
+                id="number-card"
+                name="numberCard"
+                placeholder="____.____.____.____"
+              />
 
-            <TextField
-              label="Nome do titular:"
-              id="titular-name-card"
-              name="titularNameCard"
-              placeholder="Igual no cartão"
-            />
+              <TextField
+                label="Nome do titular:"
+                id="titular-name-card"
+                name="titularNameCard"
+                placeholder="Igual no cartão"
+              />
 
-            <TextField
-              label="Validade (mês/ano):"
-              id="validate-card"
-              name="validateCard"
-              placeholder="__/____"
-            />
+              <TextField
+                label="Validade (mês/ano):"
+                id="validate-card"
+                name="validateCard"
+                placeholder="__/____"
+              />
 
-            <TextField
-              label="CVV:"
-              id="cvv-card"
-              name="cvvCard"
-              placeholder="___"
-            />
-          </form>
-        </Section>
-        <CartResume cart={cart} />
-        <Button onClick={this.handleSubmit}>Finalizar o pedido</Button>
-      </div>
+              <TextField
+                label="CVV:"
+                id="cvv-card"
+                name="cvvCard"
+                placeholder="___"
+              />
+            </form>
+          </Section>
+          <CartResume cart={cart} />
+          <Button onClick={this.handleSubmit}>Finalizar o pedido</Button>
+        </div>
+      </React.Fragment>
     );
   }
 }
