@@ -9,6 +9,7 @@ import { TITLE_TYPES } from '../../Constants';
 import validator from 'validator'
 import InputMask from 'react-input-mask';
 import moment from 'moment';
+import { finishShopping } from '../../Store/Actions/PaymentAction';
 import 'moment/locale/pt-br';
 
 class Payment extends Component {
@@ -168,7 +169,9 @@ class Payment extends Component {
 
 
   concludePayment = () => {
-    console.log('concludePayment');
+    const { name, cardNumber, validDate, cvv } = this.state;
+    this.props.finishShopping({ name, cardNumber, validDate, cvv });
+    this.props.history.push('/success');
   }
 
 
@@ -176,7 +179,12 @@ class Payment extends Component {
 }
 
 const mapStateToProps = state => ({
-  cart: state.cart
+  cart: state.cart,
+  user: state.user
 });
 
-export default connect(mapStateToProps, null)(Payment);
+const mapDispatchToProps = dispatch => ({
+  finishShopping: (user) => dispatch(finishShopping(user))
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(Payment);

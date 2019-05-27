@@ -3,7 +3,6 @@ import PropTypes from 'prop-types';
 import classes from './Button.module.scss';
 
 const Button = (props) => {
-  console.log(props);
   return (
     <button className={classes.Button}
       disabled={props.isInvalid}

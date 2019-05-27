@@ -6,28 +6,36 @@ import Total from '../../Components/Total/Total';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import Item from '../Cart/Item/Item';
+import moment from 'moment';
+import 'moment/locale/pt-br';
 
 let Success = (props) => {
 
   const { items, shippingTotal, subTotal, total, discount } = props.cart;
 
-  console.log('items:', items);
 
   return (
     <Auxiliary>
       <h2>Pagamento</h2>
       <Content>
-        <div className={classes.Row}>
+        {
+          props.user.cardNumber ?
+            <Auxiliary>
+              <div className={classes.Row}>
+                {`****.****.****.${props.user.cardNumber.split('.')[3]}`}
+              </div>
 
-        </div>
+              <div className={classes.Row}>
+                {props.user.name}
+              </div>
 
-        <div className={classes.Row}>
-
-        </div>
-
-        <div className={classes.Row}>
-
-        </div>
+              <div className={classes.Row}>
+                {moment().format('L')}
+              </div>
+            </Auxiliary>
+          : <div><small>Pagamento não efetuado, retorne a página de pagamento</small></div>
+        }
+        
       </Content>
       <h2>Produtos</h2>
 
@@ -49,7 +57,8 @@ let Success = (props) => {
 };
 
 const mapStateToProps = state => ({
-  cart: state.cart
+  cart: state.cart,
+  user: state.user
 });
 
 export default connect(mapStateToProps, null)(Success);
