@@ -32,7 +32,9 @@ class CheckoutConfirmation extends React.Component<{ cart: CartType, history: Hi
           <CartFeedback message="Compra efetuada com sucesso" />
           <Section title="Pagamento">
             <span>{cart!.methodPayment && cart!.methodPayment!.numberCard}</span>
+            <br />
             <span>{cart!.methodPayment && cart!.methodPayment!.titularNameCard}</span>
+            <br />
             <span>{cart!.methodPayment && cart!.methodPayment!.validateCard}</span>
           </Section>
           <Section title="Produtos">
