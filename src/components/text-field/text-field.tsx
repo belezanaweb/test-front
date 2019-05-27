@@ -25,7 +25,9 @@ const Input = styled.input`
     box-shadow 0.32s cubic-bezier(0.075, 0.82, 0.165, 1);
 
   &::placeholder {
-    color: #E0E7EE;
+    color: ${props => props.theme && css`
+      ${props.theme.palette.neutral.light};
+    `};
   }
 
   &:focus {
