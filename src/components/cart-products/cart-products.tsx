@@ -5,11 +5,9 @@ import CartProductsItem from '../cart-products-item';
 const CartProducts: React.FC<{
   items: Item[],
 }> = ({ items = [] }) => (
-  <div>
-    {items.length > 0
-      ?items.map((item, index) => <CartProductsItem key={index} item={item} />)
-      : <span>Erro para trazer as informacoes do carrinho, tente novamento mais tarde</span>}
-  </div>
+  <React.Fragment>
+    {items.map((item, index) => <CartProductsItem key={index} item={item} />)}
+  </React.Fragment>
 )
 
 export default CartProducts;

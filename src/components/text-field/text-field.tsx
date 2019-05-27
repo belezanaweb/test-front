@@ -53,6 +53,7 @@ const Label = styled.label<any>`
   flex-direction: column;
 
   width: 100%;
+  margin-bottom: 10px;
 
   color: ${props => props.theme && props.theme.palette.neutral.medium};
   font-size: 12px;

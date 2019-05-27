@@ -2,13 +2,22 @@ import * as React from 'react';
 import { connect } from 'react-redux';
 import Helmet from 'react-helmet';
 
+import CartFeedback from '../../../components/cart-feedback';
 import CartProducts from '../../../components/cart-products';
 import CartResume from '../../../components/cart-resume';
 import Section from '../../../components/section';
 
 import { CartType } from '../../../models/cart.model';
+import { History } from 'history';
 
-class CheckoutConfirmation extends React.Component<{ cart: CartType }, {}> {
+class CheckoutConfirmation extends React.Component<{ cart: CartType, history: History }, {}> {
+
+  componentDidMount() {
+
+    if (!this.props.cart.methodPayment || this.props.cart.methodPayment === {}) {
+      this.props.history.push('/checkout');
+    }
+  }
 
   render() {
     const { cart } = this.props;
@@ -20,11 +29,11 @@ class CheckoutConfirmation extends React.Component<{ cart: CartType }, {}> {
           <meta name="description" content="Confirmation step" />
         </Helmet>
         <div>
-          <div>Compra efetuada com sucesso</div>
+          <CartFeedback message="Compra efetuada com sucesso" />
           <Section title="Pagamento">
-            <span>{cart!.methodPayment!.creditCardNumber}</span>
-            <span>{cart!.methodPayment!.titularNameCard}</span>
-            <span>{cart!.methodPayment!.validateCard}</span>
+            <span>{cart!.methodPayment && cart!.methodPayment!.numberCard}</span>
+            <span>{cart!.methodPayment && cart!.methodPayment!.titularNameCard}</span>
+            <span>{cart!.methodPayment && cart!.methodPayment!.validateCard}</span>
           </Section>
           <Section title="Produtos">
             <CartProducts items={cart.items} />

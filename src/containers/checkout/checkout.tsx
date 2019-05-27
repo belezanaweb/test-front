@@ -10,10 +10,13 @@ import StepHeader from '../../components/step-header';
 import CheckoutCart from './checkout-cart';
 import CheckoutPayment from './checkout-payment';
 import CheckoutConfirmation from './checkout-confirmation';
+import Grid from '../../components/grid';
+import { stepsTypes } from '../../actions/constants';
 
 class CheckoutContainer extends React.Component<{ history: any, cart: CartType, getCart: () => any }, {}> {
 
-  steps = ['cart', 'payment', 'confirmation'];
+  steps = ['cart', 'payment', 'confirmation'].reduce((curr: any[], path: string) =>
+    curr.concat({ label: stepsTypes[path], path }), []);
 
   componentDidMount() {
     this.props.getCart();
@@ -29,15 +32,15 @@ class CheckoutContainer extends React.Component<{ history: any, cart: CartType, 
           <title>Checkout</title>
           <meta name="description" content="Checkout page in steps" />
         </Helmet>
-        <div>
-          <StepHeader steps={this.steps} stepActive={step_active} />
+        <StepHeader steps={this.steps} stepActive={step_active} />
+        <Grid>
           <Switch>
             <Route path="/checkout/cart" component={CheckoutCart} />
             <Route path="/checkout/payment" component={CheckoutPayment} />
             <Route path="/checkout/confirmation" component={CheckoutConfirmation} />
             <Redirect from="*" to={'/checkout/cart'} />
           </Switch>
-        </div>
+        </Grid>
       </React.Fragment>
     );
   }

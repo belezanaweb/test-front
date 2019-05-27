@@ -2,7 +2,7 @@ import * as React from 'react';
 import styled from 'styled-components';
 
 const SectionWrapper = styled.section`
-  margin: 10px auto;
+  margin: 20px auto;
 `
 
 const Card = styled.div`

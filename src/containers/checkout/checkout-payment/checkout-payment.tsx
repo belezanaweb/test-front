@@ -8,8 +8,6 @@ import Section from '../../../components/section';
 import { sentCart } from '../../../actions';
 import TextField from '../../../components/text-field';
 
-// import { CartType } from '../../../models/cart.model';
-
 const formToJSON = (elements: any) => [].reduce.call(elements, (data: any, element: any) => {
   data[element.name] = element.value;
 
@@ -25,8 +23,6 @@ class CheckoutPayment extends React.Component<any> {
   }
 
   handleSubmit = () => {
-    console.dir(this.formPayment.current);
-    console.dir(this.formPayment.current.noValidate);
     const formData = formToJSON(this.formPayment.current.elements);
 
     this.props.sentCart(formData)

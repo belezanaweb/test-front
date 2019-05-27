@@ -1,11 +1,11 @@
 import * as React from 'react';
 import { CartType } from '../../models/cart.model';
 import styled, { css } from 'styled-components';
+import { convertToCurrencyNumber } from '../../utils';
 
 const DefinitionList = styled.dl`
   display: flex;
   flex-wrap: wrap;
-  width: 100%;
   margin: 20px auto;
   padding: 14px;
   border-radius: 3px;
@@ -21,6 +21,7 @@ const TitleItem = styled.dt<any>`
   `};
 
   font-weight: ${props => props.strong ? '700' : 'inherit'};
+  margin-top: ${props => props.strong ? '8px' : 0};
   text-transform: uppercase;
 `
 
@@ -35,11 +36,6 @@ const DetailItem = styled(TitleItem)<any>`
 
   font-weight: ${props => props.strong ? '700' : 'inherit'};
 `
-
-function convertToCurrencyNumber(num: any): any {
-  const numValue = typeof num === 'string' ? parseFloat(num) : num;
-  return numValue && numValue.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' }) || null;
-}
 
 const CartResume: React.FC<{
   cart: CartType,
