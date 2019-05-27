@@ -9,3 +9,9 @@ export const types = {
   SENT_CART_SUCCESS    : 'SENT_CART_SUCCESS',
   SENT_CART_FAILED     : 'SENT_CART_FAILED',
 }
+
+export const stepsTypes = {
+  cart         : 'sacola',
+  payment      : 'pagamento',
+  confirmation : 'confirmacão',
+}
