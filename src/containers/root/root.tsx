@@ -3,7 +3,7 @@ import { Provider } from 'react-redux';
 import { Route, Switch } from 'react-router-dom';
 
 import CheckoutContainer from '../checkout/checkout';
-import { ThemeProvider } from 'styled-components';
+import { ThemeProvider, createGlobalStyle } from 'styled-components';
 
 const theme = {
 
@@ -34,6 +34,8 @@ const theme = {
       dark: '#212121',
     },
 
+    background: '#EEE',
+
     support: {
       error: '#F30',
       success: '',
@@ -44,8 +46,24 @@ const theme = {
   spacing: {},
 }
 
+const GlobalStyle = createGlobalStyle`
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  body {
+    background-color: #EEE;
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+`
+
 const Root: React.FC<any> = ({ store }) => (
   <Provider store={store}>
+    <GlobalStyle />
     <ThemeProvider theme={theme}>
       <Switch>
         <Route path="/checkout" component={CheckoutContainer} />
