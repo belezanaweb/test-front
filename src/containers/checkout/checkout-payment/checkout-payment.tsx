@@ -5,31 +5,33 @@ import Helmet from 'react-helmet';
 import Button from '../../../components/button';
 import CartResume from '../../../components/cart-resume';
 import Section from '../../../components/section';
+import CheckoutPaymentForm from './checkout-payment-form';
+
 import { sentCart } from '../../../actions';
-import TextField from '../../../components/text-field';
-
-const formToJSON = (elements: any) => [].reduce.call(elements, (data: any, element: any) => {
-  data[element.name] = element.value;
-
-  return data;
-}, {});
 
 class CheckoutPayment extends React.Component<any> {
-  formPayment: React.RefObject<any>;
 
-  constructor(props: any) {
-    super(props);
-    this.formPayment = React.createRef();
+  state = {
+    form: {
+      isValid: false,
+      data: null,
+    },
+  }
+
+  handleChange = (form: any) => {
+    console.log(form)
+    this.setState(() => ({ form }))
   }
 
   handleSubmit = () => {
-    const formData = formToJSON(this.formPayment.current.elements);
 
-    this.props.sentCart(formData)
+    console.log(this.state.form.data);
+    this.props.sentCart(this.state.form.data)
     this.props.history!.push('/checkout/confirmation')
   }
 
   render() {
+
     const { cart } = this.props;
 
     return (
@@ -40,39 +42,10 @@ class CheckoutPayment extends React.Component<any> {
         </Helmet>
         <div>
           <Section title="Cartão de crédito">
-            <form ref={this.formPayment}>
-
-              <TextField
-                label="Número do cartão:"
-                id="number-card"
-                name="numberCard"
-                placeholder="____.____.____.____"
-              />
-
-              <TextField
-                label="Nome do titular:"
-                id="titular-name-card"
-                name="titularNameCard"
-                placeholder="Igual no cartão"
-              />
-
-              <TextField
-                label="Validade (mês/ano):"
-                id="validate-card"
-                name="validateCard"
-                placeholder="__/____"
-              />
-
-              <TextField
-                label="CVV:"
-                id="cvv-card"
-                name="cvvCard"
-                placeholder="___"
-              />
-            </form>
+            <CheckoutPaymentForm onFormChange={this.handleChange} />
           </Section>
           <CartResume cart={cart} />
-          <Button onClick={this.handleSubmit}>Finalizar o pedido</Button>
+          <Button onClick={this.handleSubmit} disabled={!this.state.form.isValid}>Finalizar o pedido</Button>
         </div>
       </React.Fragment>
     );

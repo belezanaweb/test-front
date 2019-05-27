@@ -39,6 +39,8 @@ const Input = styled.input`
 `;
 
 const FeedbackText = styled.span`
+  min-height: 14px;
+
   color: inherit;
   font-size: 12px;
   font-weight: normal;
@@ -60,7 +62,7 @@ const Label = styled.label<any>`
   font-weight: 700;
   line-height: 14px;
 
-  ${props => props.error && css`
+  ${props => props.showError && props.error && css`
     ${FeedbackText} {
       color: ${props.theme.palette.support.error};
       opacity: 1;
@@ -74,12 +76,26 @@ const Label = styled.label<any>`
   `};
 `;
 
-const TextField = ({ label, id, error, errorMessage = 'Invalid field', ...props }: any) => (
-  <Label htmlFor={id} error={error}>
-    {label}
-    <Input id={id} {...props} />
-    <FeedbackText>{errorMessage}</FeedbackText>
-  </Label>
-);
+const TextField = ({ label, id, error, errorMessage = 'Invalid field', ...props }: any) => {
+
+  const [isDirty, setDirty] = React.useState(false);
+  const [isFocused, setFocused] = React.useState(false);
+
+  const handleFocus = React.useCallback(() => {
+    setFocused(true);
+  }, []);
+
+  const handleBlur = React.useCallback(() => {
+    setDirty(true);
+  }, []);
+
+  return (
+    <Label htmlFor={id} error={error} showError={isDirty && isFocused}>
+      {label}
+      <Input id={id} {...props} onFocus={handleFocus} onBlur={handleBlur} />
+      <FeedbackText>{errorMessage}</FeedbackText>
+    </Label>
+  );
+}
 
 export default TextField;

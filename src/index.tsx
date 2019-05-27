@@ -5,8 +5,6 @@ import { BrowserRouter as Router } from 'react-router-dom';
 import Root from './containers/root';
 import configureStore from './store/configureStore';
 
-import './index.css';
-
 const store = configureStore();
 
 ReactDOM.render(

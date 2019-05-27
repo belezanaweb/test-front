@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { Provider } from 'react-redux';
-import { Route, Switch } from 'react-router-dom';
+import { Route, Switch, Redirect } from 'react-router-dom';
 
 import CheckoutContainer from '../checkout/checkout';
 import { ThemeProvider, createGlobalStyle } from 'styled-components';
@@ -67,7 +67,7 @@ const Root: React.FC<any> = ({ store }) => (
     <ThemeProvider theme={theme}>
       <Switch>
         <Route path="/checkout" component={CheckoutContainer} />
-        <Route from="*" render={() => <div>Error 404</div>} />
+        <Redirect from="*" to={'/checkout/cart'} />
       </Switch>
     </ThemeProvider>
   </Provider>
