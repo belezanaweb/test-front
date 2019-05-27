@@ -14,6 +14,20 @@
 - **Axios**  
   Ótima ferramenta para chamadas ajax. Ele abstrai alguns tratamentos para erros nas __promises__.
 
+## Steps
+
+1. Application flow
+2. Store model
+3. Fork project
+4. Add dependencies
+5. Scaffolding
+6. Store design and data flow
+7. Tests
+8. Router
+9. Containers
+10. Components
+11. Deploy
+
 ## Flow Application
 
 [https://whimsical.com/8GM5HhbKF6o7VghdvWpCQk](https://whimsical.com/8GM5HhbKF6o7VghdvWpCQk)
