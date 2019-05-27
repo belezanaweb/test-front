@@ -3,9 +3,11 @@ import PropTypes from 'prop-types';
 import classes from './Button.module.scss';
 
 const Button = (props) => {
+  console.log(props);
   return (
     <button className={classes.Button}
-    onClick={props.action}>
+      disabled={props.isInvalid}
+      onClick={props.action}>
       {props.children}
     </button>
   );
@@ -13,6 +15,7 @@ const Button = (props) => {
 
 Button.propTypes = {
   action: PropTypes.func.isRequired,
+  isInvalid: PropTypes.bool
 }
 
 
