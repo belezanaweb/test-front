@@ -8,15 +8,24 @@ import CartResume from '../../../components/cart-resume';
 import Section from '../../../components/section';
 
 import { CartType } from '../../../models/cart.model';
-import { History } from 'history';
 
-class CheckoutConfirmation extends React.Component<{ cart: CartType, history: History }, {}> {
+import { clearPaymentMethod } from '../../../actions';
+
+class CheckoutConfirmation extends React.Component<{
+  cart: CartType,
+  history: any,
+  clearPaymentMethod: () => any
+}, {}> {
 
   componentDidMount() {
 
     if (!this.props.cart.methodPayment || this.props.cart.methodPayment === {}) {
       this.props.history.push('/checkout');
     }
+  }
+
+  componentWillUnmount() {
+    this.props.clearPaymentMethod();
   }
 
   render() {
@@ -50,6 +59,10 @@ class CheckoutConfirmation extends React.Component<{ cart: CartType, history: Hi
 const mapStateToProps = (state: any) =>
   ({ cart: state.cart })
 
+const mapDispatchToProps = (dispatch: any) =>
+  ({ clearPaymentMethod: () => dispatch(clearPaymentMethod()) })
+
 export default connect(
-  mapStateToProps
+  mapStateToProps,
+  mapDispatchToProps
 )(CheckoutConfirmation);

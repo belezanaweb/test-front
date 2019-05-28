@@ -1,3 +1,3 @@
 import { Dispatch } from 'redux';
 
-export const updatePaymentMethod = () => (dispatch: Dispatch) => {}
+export const getPaymentMethod = () => (dispatch: Dispatch) => {}

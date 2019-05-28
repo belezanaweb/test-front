@@ -9,23 +9,28 @@ import CheckoutPaymentForm from './checkout-payment-form';
 
 import { sentCart } from '../../../actions';
 
-class CheckoutPayment extends React.Component<any> {
+const INITIAL_STATE = {
+  form: {
+    isValid: false,
+    data: null,
+  },
+}
 
-  state = {
-    form: {
-      isValid: false,
-      data: null,
-    },
+class CheckoutPayment extends React.Component<any, typeof INITIAL_STATE> {
+
+  state = INITIAL_STATE
+
+  componentWillUnmount() {
+    this.setState(INITIAL_STATE);
   }
 
   handleChange = (form: any) => {
-    console.log(form)
+
     this.setState(() => ({ form }))
   }
 
   handleSubmit = () => {
 
-    console.log(this.state.form.data);
     this.props.sentCart(this.state.form.data)
     this.props.history!.push('/checkout/confirmation')
   }

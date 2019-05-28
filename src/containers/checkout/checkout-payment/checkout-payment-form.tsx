@@ -1,11 +1,18 @@
 import * as React from 'react';
 import TextField from '../../../components/text-field';
+import { formToJSON } from '../../../utils';
+import styled from 'styled-components';
 
-const formToJSON = (elements: any) => [].reduce.call(elements, (data: any, element: any) => {
-  data[element.name] = element.value;
+const FormWrapper = styled.form`
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 -10px;
+`
 
-  return data;
-}, {});
+const FormGroup = styled.div<{ size?: string }>`
+  width: calc(${props => props.size || '100%'} - 20px);
+  margin: 0 10px;
+`
 
 class CheckoutPaymentForm extends React.Component<{
   onFormChange: (data: any) => any
@@ -13,20 +20,18 @@ class CheckoutPaymentForm extends React.Component<{
 
   formPayment: React.RefObject<any>;
 
-  state = {
-    isValid: true,
-    data: null,
-  }
-
   constructor(props: any) {
 
     super(props);
     this.formPayment = React.createRef();
+    this.state = {
+      isValid: true,
+      data: null,
+    }
   }
 
   handleChange = (ev: any) => {
 
-    console.dir(this.formPayment.current.elements[0])
     ev.preventDefault();
     this.setState(() => ({
         isValid: this.isValid(),
@@ -36,12 +41,14 @@ class CheckoutPaymentForm extends React.Component<{
   }
 
   isValid = (): boolean => {
+
     return !Array
       .from(this.formPayment.current.elements)
       .some((el: any) => !el.validity.valid);
   }
 
   getFieldByName = (name: string) => {
+
     return Boolean(this.formPayment.current)
       ? Array
         .from(this.formPayment.current.elements)
@@ -62,54 +69,59 @@ class CheckoutPaymentForm extends React.Component<{
     const { onFormChange, ...rest } = this.props;
 
     return (
-      <form {...rest} ref={this.formPayment}>
-        <TextField
-          label="Número do cartão:"
-          id="number-card"
-          name="numberCard"
-          placeholder="____.____.____.____"
-          onChange={this.handleChange}
-          error={this.validatingField('numberCard')}
-          errorMessage={this.getErrorMessage('numberCard')}
-          pattern="\d{4}\.?\d{4}\.?\d{4}\.?\d{4}"
-          required
-        />
-
-        <TextField
-          label="Nome do titular:"
-          id="titular-name-card"
-          name="titularNameCard"
-          placeholder="Igual no cartão"
-          onChange={this.handleChange}
-          error={this.validatingField('titularNameCard')}
-          errorMessage={this.getErrorMessage('titularNameCard')}
-          required
-        />
-
-        <TextField
-          label="Validade (mês/ano):"
-          id="validate-card"
-          name="validateCard"
-          placeholder="__/____"
-          onChange={this.handleChange}
-          error={this.validatingField('validateCard')}
-          errorMessage={this.getErrorMessage('validateCard')}
-          pattern="\d{2}\/?\d{4}"
-          required
-        />
-
-        <TextField
-          label="CVV:"
-          id="cvv-card"
-          name="cvvCard"
-          placeholder="___"
-          onChange={this.handleChange}
-          error={this.validatingField('cvvCard')}
-          errorMessage={this.getErrorMessage('cvvCard')}
-          pattern="\d{3}"
-          required
-        />
-      </form>
+      <FormWrapper {...rest} ref={this.formPayment}>
+        <FormGroup>
+          <TextField
+            label="Número do cartão:"
+            id="number-card"
+            name="numberCard"
+            placeholder="____.____.____.____"
+            onChange={this.handleChange}
+            error={this.validatingField('numberCard')}
+            errorMessage={this.getErrorMessage('numberCard')}
+            pattern="\d{4}\.?\d{4}\.?\d{4}\.?\d{4}"
+            required
+          />
+        </FormGroup>
+        <FormGroup>
+          <TextField
+            label="Nome do titular:"
+            id="titular-name-card"
+            name="titularNameCard"
+            placeholder="Igual no cartão"
+            onChange={this.handleChange}
+            error={this.validatingField('titularNameCard')}
+            errorMessage={this.getErrorMessage('titularNameCard')}
+            required
+          />
+        </FormGroup>
+        <FormGroup size="50%">
+          <TextField
+            label="Validade (mês/ano):"
+            id="validate-card"
+            name="validateCard"
+            placeholder="__/____"
+            onChange={this.handleChange}
+            error={this.validatingField('validateCard')}
+            errorMessage={this.getErrorMessage('validateCard')}
+            pattern="\d{2}\/?\d{4}"
+            required
+          />
+        </FormGroup>
+        <FormGroup size={'50%'}>
+          <TextField
+            label="CVV:"
+            id="cvv-card"
+            name="cvvCard"
+            placeholder="___"
+            onChange={this.handleChange}
+            error={this.validatingField('cvvCard')}
+            errorMessage={this.getErrorMessage('cvvCard')}
+            pattern="\d{3}"
+            required
+          />
+        </FormGroup>
+      </FormWrapper>
     );
   }
 }

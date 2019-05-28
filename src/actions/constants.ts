@@ -8,6 +8,8 @@ export const types = {
 
   SENT_CART_SUCCESS    : 'SENT_CART_SUCCESS',
   SENT_CART_FAILED     : 'SENT_CART_FAILED',
+
+  CLEAR_PAYMENT_METHOD : 'CLEAR_PAYMENT_METHOD',
 }
 
 export const stepsTypes = {

@@ -31,6 +31,12 @@ export const cart = (state = {}, action?: any) => {
     case types.SENT_CART_FAILED:
       return state;
 
+    case types.CLEAR_PAYMENT_METHOD:
+      return {
+        ...state,
+        methodPayment: null,
+      }
+
     default:
       return state;
   }

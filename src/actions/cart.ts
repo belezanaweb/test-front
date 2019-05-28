@@ -7,7 +7,7 @@ import { types } from './constants';
 export const getCart = () => async (dispatch: Dispatch) => {
 
   try {
-    const result = await Axios.get('http://www.mocky.io/v2/5b15c4923100004a006f3c07');
+    const result = await Axios.get('//www.mocky.io/v2/5b15c4923100004a006f3c07');
     dispatch({
       type: types.REQUEST_CART_SUCCESS,
       payload: result.data,
@@ -27,4 +27,11 @@ export const sentCart = (cartData: CartType) => (dispatch: Dispatch) => {
     type: types.SENT_CART_SUCCESS,
     payload: cartData,
   });
+}
+
+export const clearPaymentMethod = () => (dispatch: Dispatch) => {
+
+  dispatch({
+    type: types.CLEAR_PAYMENT_METHOD,
+  })
 }
