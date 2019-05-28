@@ -8,7 +8,7 @@ import configureStore from './store/configureStore';
 const store = configureStore();
 
 ReactDOM.render(
-  <Router>
+  <Router basename="/checkout-example-react">
     <Root store={store} />
   </Router>
 , document.getElementById('root'));
