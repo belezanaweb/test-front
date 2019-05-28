@@ -15,7 +15,7 @@
 
 ## Public Link
 
-[Checkout Application](https://thiagokpelo.github.io/checkout-example-react)
+[Checkout Application](https://thiagokpelo.github.io/checkout-example-react/#)
 
 ## Stack
 
@@ -49,7 +49,6 @@
 
 ![alt Flow Application](https://i.ibb.co/748JBYC/Screen-Shot-2019-05-27-at-17-41-58.png)
 [https://whimsical.com/8GM5HhbKF6o7VghdvWpCQk](https://whimsical.com/8GM5HhbKF6o7VghdvWpCQk)
-
 
 ## Store Model
 
