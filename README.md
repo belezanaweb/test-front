@@ -2,6 +2,13 @@
 
 ## Run Application
 
+### Git
+
+`$ git clone https://github.com/thiagokpelo/checkout-example-react.git`  
+`$ cd checkout-example-react`  
+
+### Yarn
+
 `$ yarn install`  
 `$ yarn start`  
 `$ https://localhost:3000`
