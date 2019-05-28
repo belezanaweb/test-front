@@ -8,8 +8,15 @@ import CartResume from '../../../components/cart-resume';
 import Section from '../../../components/section';
 
 import { CartType } from '../../../models/cart.model';
-
 import { clearPaymentMethod } from '../../../actions';
+import styled from 'styled-components';
+
+const Span = styled.span`
+  display: block;
+  font-size: 14px;
+  line-height: 17px;
+  text-transform: uppercase;
+`
 
 class CheckoutConfirmation extends React.Component<{
   cart: CartType,
@@ -40,11 +47,9 @@ class CheckoutConfirmation extends React.Component<{
         <div>
           <CartFeedback message="Compra efetuada com sucesso" />
           <Section title="Pagamento">
-            <span>{cart!.methodPayment && cart!.methodPayment!.numberCard}</span>
-            <br />
-            <span>{cart!.methodPayment && cart!.methodPayment!.titularNameCard}</span>
-            <br />
-            <span>{cart!.methodPayment && cart!.methodPayment!.validateCard}</span>
+            <Span>{cart!.methodPayment && cart!.methodPayment!.numberCard}</Span>
+            <Span>{cart!.methodPayment && cart!.methodPayment!.titularNameCard}</Span>
+            <Span>{cart!.methodPayment && cart!.methodPayment!.validateCard}</Span>
           </Section>
           <Section title="Produtos">
             <CartProducts items={cart.items} />

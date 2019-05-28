@@ -71,6 +71,14 @@
 | Form validate                                                        | 2:10:00 |
 | Styled form and actions/reducers adjust                              | 0:13:38 |
 
+## Improvement points
+
+- Typings all project
+- Migrate `paymentMethod` to out `cart` object
+- Transform all variables styles in theme structure
+- Router with redux
+- API module
+
 -----
 
 Developed by [ThiagoKpelo](https://thiagokpelo.dev)

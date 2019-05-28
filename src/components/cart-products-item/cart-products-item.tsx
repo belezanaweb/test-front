@@ -1,5 +1,5 @@
 import * as React from 'react';
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 
 import { Item } from '../../models/item.model';
 import { convertToCurrencyNumber } from '../../utils';
@@ -38,19 +38,27 @@ const Title = styled.h3`
   margin-bottom: 15px;
 `
 
-const Price = styled.strong`
+const Price = styled.strong<{ showPrice: boolean }>`
   display: block;
   text-align: right;
+  opacity: 0;
+  visibility: hidden;
+
+  ${props => props.showPrice && css`
+    opacity: 1;
+    visibility: visible;
+  `}
 `
 
 const CartProductsItem: React.FC<{
   item: Item,
-}> = ({ item }) => (
+  showPrice?: boolean,
+}> = ({ item, showPrice = false }) => (
   <ItemWrapper>
     <Image src={item!.product!.imageObjects[0].thumbnail} /> {/* @Todo - responsive and size image */ }
     <ItemContent>
       <Title>{item.product.name}</Title>
-      <Price>{convertToCurrencyNumber(item.product.priceSpecification.price)}</Price>
+      <Price showPrice={showPrice}>{convertToCurrencyNumber(item.product.priceSpecification.price)}</Price>
     </ItemContent>
   </ItemWrapper>
 )

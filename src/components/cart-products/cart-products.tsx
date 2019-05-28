@@ -4,9 +4,10 @@ import CartProductsItem from '../cart-products-item';
 
 const CartProducts: React.FC<{
   items: Item[],
-}> = ({ items = [] }) => (
+  showPrice?: boolean,
+}> = ({ items = [], showPrice = false }) => (
   <React.Fragment>
-    {items.map((item, index) => <CartProductsItem key={index} item={item} />)}
+    {items.map((item, index) => <CartProductsItem key={index} item={item} showPrice={showPrice} />)}
   </React.Fragment>
 )
 

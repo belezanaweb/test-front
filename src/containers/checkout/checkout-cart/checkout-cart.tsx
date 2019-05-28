@@ -23,7 +23,7 @@ class CheckoutCart extends React.Component<{ cart: CartType }, {}> {
         </Helmet>
         <div>
           <Section title="Produtos">
-            <CartProducts items={cart!.items} />
+            <CartProducts items={cart!.items} showPrice />
           </Section>
           <CartResume cart={cart} />
           <Button as={Link} to="/checkout/payment">Seguir para o pagamento</Button>
