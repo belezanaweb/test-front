@@ -1,5 +1,15 @@
 # Checkout Example React
 
+## Run Application
+
+`$ yarn install`  
+`$ yarn start`  
+`$ https://localhost:3000`
+
+## Public Link
+
+[Checkout Application](https://thiagokpelo.github.io/checkout-example-react)
+
 ## Stack
 
 - **Styled Components**  
@@ -16,22 +26,45 @@
 
 ## Steps
 
-1. Application flow
-2. Store model
-3. Fork project
-4. Add dependencies
-5. Scaffolding
-6. Store design and data flow
-7. Tests
-8. Router
-9. Containers
-10. Components
-11. Deploy
+1. Application flow - OK
+2. Store model - OK
+3. Fork project - OK
+4. Add dependencies - OK
+5. Scaffolding - OK
+6. Store design and data flow - OK
+7. Tests - NOT
+8. Router - OK
+9. Containers - OK
+10. Components - OK
+11. Deploy - NOT
 
 ## Flow Application
 
+![alt Flow Application](https://i.ibb.co/748JBYC/Screen-Shot-2019-05-27-at-17-41-58.png)
 [https://whimsical.com/8GM5HhbKF6o7VghdvWpCQk](https://whimsical.com/8GM5HhbKF6o7VghdvWpCQk)
 
-## Public Link
 
-Checkout Example Link
+## Store Model
+
+![alt Store Model](https://i.ibb.co/FHzhD22/Screen-Shot-2019-05-27-at-11-22-02.png)
+
+## Hours Project
+
+| Task description                                                     | Hours   |
+|--------------------------------------------------------------------- | ------- |
+| Flow design of components on whimsical tool                          | 0:46:15 |
+| Fork the project and install the dependencies                        | 0:12:43 |
+| Writing the defense of tech choice                                   | 0:16:55 |
+| Install typescript, tslint tools and plugins                         | 0:24:37 |
+| Scaffolding                                                          | 1:08:15 |
+| Add Actions, reducers, containers and some componentes without style | 3:05:00 |
+| Styled button                                                        | 0:46:15 |
+| Styled inputs                                                        | 0:37:12 |
+| Styled Cart Resume                                                   | 0:24:00 |
+| Styled app finished                                                  | 2:34:00 |
+| Form validate                                                        | 2:10:00 |
+| Styled form and actions/reducers adjust                              | 0:13:38 |
+
+-----
+
+Developed by [ThiagoKpelo](https://thiagokpelo.dev)
