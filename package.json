@@ -31,6 +31,7 @@
     "@types/redux-logger": "^3.0.7",
     "@types/styled-components": "^4.1.15",
     "@types/webpack-env": "^1.13.9",
+    "gh-pages": "^2.0.1",
     "react-scripts": "2.1.8",
     "redux-logger": "^3.0.6",
     "tslint": "^5.16.0",
