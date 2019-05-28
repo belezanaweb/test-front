@@ -12,6 +12,7 @@ const Button = styled.button<any>`
     ${props.theme.palette.primary.main};
   `};
   border-radius: 3px;
+  border: 0;
 
   color: ${props => props.theme && css`
     ${props.theme.palette.primary.contrastText};
