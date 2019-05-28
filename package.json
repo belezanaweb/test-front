@@ -3,6 +3,11 @@
   "version": "0.1.0",
   "private": false,
   "author": "Thiago Kpelo <thiaokpelo@gmail.com>",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/thiagokpelo/checkout-example-react.git"
+  },
+  "homepage": "https://thiagokpelo.github.io/checkout-example-react",
   "dependencies": {
     "axios": "^0.18.0",
     "react": "^16.8.5",
@@ -40,7 +45,7 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d buid"
+    "deploy": "gh-pages -d build"
   },
   "eslintConfig": {
     "extends": "react-app"
