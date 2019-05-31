@@ -1,9 +1,18 @@
 import React, { Component } from 'react';
 
-// import { Container } from './styles';
+//components
+import Header from './components/Header';
+// import Cart from './pages/Cart';
+
+//styles
+import { Container } from './styles';
 
 export default class Checkout extends Component {
   render() {
-    return <div>Main scene</div>;
+    return(
+      <Container>
+        <Header/>
+      </Container>
+    );
   }
 }

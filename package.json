@@ -5,7 +5,8 @@
   "dependencies": {
     "react": "^16.8.5",
     "react-dom": "^16.8.5",
-    "react-router-dom": "^5.0.0"
+    "react-router-dom": "^5.0.0",
+    "styled-components": "^4.2.1"
   },
   "devDependencies": {
     "react-scripts": "2.1.8"
