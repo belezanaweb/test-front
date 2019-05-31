@@ -4,7 +4,8 @@
   "private": true,
   "dependencies": {
     "react": "^16.8.5",
-    "react-dom": "^16.8.5"
+    "react-dom": "^16.8.5",
+    "react-router-dom": "^5.0.0"
   },
   "devDependencies": {
     "react-scripts": "2.1.8"
@@ -23,5 +24,17 @@
     "not dead",
     "not ie <= 11",
     "not op_mini all"
-  ]
+  ],
+  "description": "Faça um fork deste repositório e finalizar o teste, submeta um pull request para o repositório que nosso time será notificado.",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/samuellevy/test-front.git"
+  },
+  "author": "Samuel Levy",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/samuellevy/test-front/issues"
+  },
+  "homepage": "https://github.com/samuellevy/test-front#readme"
 }
