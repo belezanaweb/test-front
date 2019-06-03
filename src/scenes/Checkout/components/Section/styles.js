@@ -12,5 +12,5 @@ export const Caption = styled.div`
     text-transform: uppercase;
     font-weight: bold;
     color: ${colors.gray};
-    margin: 0 ${metrics.wrapper};
+    margin: 1px ${metrics.wrapper} 0;
 `;

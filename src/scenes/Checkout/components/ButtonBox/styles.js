@@ -3,7 +3,7 @@ import metrics from '../../../../configs/metrics';
 import colors from '../../../../configs/colors';
 
 export const Container = styled.div`
-    margin: ${metrics.wrapper};
+    margin: 15px 10px;
 `;
 
 export const Button = styled.button`
@@ -13,7 +13,7 @@ export const Button = styled.button`
     padding: 18px 0;
     color: ${colors.white};
     font-weight: 700;
-    letter-spacing: 1.12px;
+    letter-spacing: .5px;
     text-transform: uppercase;
     width: 100%;
     line-height: 24px;

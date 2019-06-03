@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 
 import { Container, Item } from './styles';
 
-export default class Total extends Component {
+export default class TotalBox extends Component {
   render() {
     return(
         <Container>

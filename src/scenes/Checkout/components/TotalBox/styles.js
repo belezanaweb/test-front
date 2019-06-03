@@ -6,32 +6,32 @@ import colors from '../../../../configs/colors';
 export const Container = styled.div`
     border-radius: 3px;
     border: 1px solid #CCC;
-    margin: ${metrics.wrapper};
-    padding: 3px 0 11px;
+    margin: 5px 9px;
+    padding: 4px 13px 12px;
 `
 
 export const Line = styled.div`
     display: flex;
-    padding: 9px 12px 0px;
+    padding: 10px 0 0;
     font-size: ${metrics.fonts.size.normal};
     text-transform: uppercase;
     justify-content: space-between;
     &.discount{
-        padding: 8px 12px 0px;
+        padding: 9px 0 0;
         color: ${colors.primary};
     }
     &.total{
-        padding: 16px 12px 0px;
+        padding: 18px 0 0;
         font-weight: bold;
     }
 `
 
 export const Index = styled.div`
-    // padding: 2px;
+    padding: 0;
 `
 
 export const Value = styled.div`
-    // padding: 2px;
+    padding: 0;
 `
 
 export const Item = ({ index, value, type=null, children }) => (

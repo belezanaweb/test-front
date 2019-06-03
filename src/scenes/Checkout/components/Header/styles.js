@@ -12,7 +12,7 @@ export const Container = styled.nav`
   background-color: #FFFFFF;
   border-radius: ${metrics.borderRadius};
   box-shadow: 1px 1px 5px 0 rgba(0,0,29,0.22);
-  padding: 0px 16px 0 21px;
+  padding: 0px 16px 0px 21px;
   letter-spacing: 0px;
 `;
 
