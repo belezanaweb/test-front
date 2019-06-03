@@ -4,7 +4,8 @@ export default {
     fonts:{
         size:{
             small: '13px',
-            normal: '14px'
+            normal: '14px',
+            big: '20px'
         }
     },
     borderRadius: '3px'

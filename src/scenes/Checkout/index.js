@@ -8,6 +8,7 @@ import Header from './components/Header';
 import { Container } from './styles';
 import Cart from './pages/Cart';
 import Total from './components/Total';
+import ButtonBox from './components/ButtonBox';
 
 export default class Checkout extends Component {
   render() {
@@ -16,6 +17,7 @@ export default class Checkout extends Component {
         <Header/>
         <Cart/>
         <Total/>
+        <ButtonBox/>
       </Container>
     );
   }

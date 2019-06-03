@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import metrics from '../../../../configs/metrics';
+import colors from '../../../../configs/colors';
 
 export const Container = styled.div`
     border-radius: 3px;
@@ -17,7 +18,7 @@ export const Line = styled.div`
     justify-content: space-between;
     &.discount{
         padding: 8px 12px 0px;
-        color: tomato;
+        color: ${colors.primary};
     }
     &.total{
         padding: 16px 12px 0px;
