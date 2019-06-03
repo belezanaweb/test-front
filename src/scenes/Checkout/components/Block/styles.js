@@ -1,6 +1,5 @@
 import styled from 'styled-components';
 import React from 'react';
-import StyleSheet from 'react';
 
 import colors from '../../../../configs/colors';
 import metrics from '../../../../configs/metrics';

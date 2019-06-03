@@ -7,6 +7,7 @@ import Header from './components/Header';
 //styles
 import { Container } from './styles';
 import Cart from './pages/Cart';
+import Total from './components/Total';
 
 export default class Checkout extends Component {
   render() {
@@ -14,6 +15,7 @@ export default class Checkout extends Component {
       <Container>
         <Header/>
         <Cart/>
+        <Total/>
       </Container>
     );
   }
