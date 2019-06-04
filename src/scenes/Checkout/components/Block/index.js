@@ -5,7 +5,7 @@ import { Container, Item, Figure, Description } from './styles';
 export default class Block extends Component {
   render() {
     return(
-        <Container>
+        <Container className={this.props.className?this.props.className:""}>
           {this.props.children}
         </Container>
     );

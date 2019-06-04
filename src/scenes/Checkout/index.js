@@ -16,7 +16,7 @@ export default class Checkout extends Component {
     return(
       <Container>
         <Header/>
-        <Cart/>
+        <Payment/>
         <TotalBox/>
         <ButtonBox/>
       </Container>

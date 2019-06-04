@@ -8,10 +8,14 @@ export const Container = styled.div`
     display: relative;
     width: 100%;
     margin: 5px 0;
-    padding: 5px 12px; //fixing padding because layout with little padding out of default
     background-color: ${colors.white};
     border-radius: ${metrics.borderRadius};
     box-shadow: 1px 1px 5px 0 rgba(0,0,29,0.22);
+
+    padding: 5px 10px; //fixing padding because layout with little padding out of default
+    &.cart{
+        padding: 5px 12px; //fixing padding because layout with little padding out of default
+    }
 `;
 
 export const Item = styled.li`

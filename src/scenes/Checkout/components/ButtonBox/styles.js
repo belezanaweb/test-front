@@ -21,4 +21,8 @@ export const Button = styled.button`
     text-align: center;
     outline: none;
     border: none;
+    :hover{
+        background-color: ${colors.primary_shadow}
+        cursor: pointer;
+    }
 `;

@@ -3,7 +3,9 @@ export default {
     secondary: '#FF6C00',
     graylight: '#CCCCCC',
     gray: '#999999',
-    white: '#FFFFFF'
+    white: '#FFFFFF',
+    primary_shadow: '#D45A00',
+    error: '#F30',
 
     // darker: '#111',
     // dark: '#006644',
