@@ -24,11 +24,21 @@ export const Item = styled.li`
     border: 1px #EEE solid;
     border-radius: ${metrics.borderRadius};
     display: inline-flex;
-    margin-top: 7px;
-    margin-bottom: 8px;
+    margin: 7px 0 8px;
     padding: 4px 0px;
     line-height: 16px;
     // align-items: center;
+    &.condensed{
+        margin: 15px 0 6px 0;
+        &:first-child{
+            margin: 10px 0 0 0;
+        }
+        height: 64px;
+        div > img{
+            width: 45px;
+            height: 45px;
+        }
+    }
 `;
 
 export const BoxImage = styled.div`
@@ -67,13 +77,13 @@ export const PriceText = styled.p`
 
 export const Figure = ({ className, src, children }) => (
     <BoxImage>
-        <Image src={src} alt=""/>
+        <Image src={src} alt="" />
     </BoxImage>
 );
 
-export const Description = ({ text, price, children }) => (
+export const Description = ({ text, price, showPrice=true, children }) => (
     <BoxInfo>
         <DescriptionText>{text}</DescriptionText>
-        <PriceText>{price}</PriceText>
+        <PriceText>{showPrice?price:""}</PriceText>
     </BoxInfo>
 );

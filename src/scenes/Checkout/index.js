@@ -9,14 +9,14 @@ import TotalBox from './components/TotalBox';
 import ButtonBox from './components/ButtonBox';
 
 //pages
-import Cart from './pages/Cart';
-import Payment from './pages/Payment';
+import CartBox from './components/CartBox';
+import Page from './pages';
 export default class Checkout extends Component {
   render() {
     return(
       <Container>
         <Header/>
-        <Payment/>
+        <Page component={'Cart'}/>
         <TotalBox/>
         <ButtonBox/>
       </Container>

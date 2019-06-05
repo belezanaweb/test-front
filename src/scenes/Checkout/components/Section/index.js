@@ -7,7 +7,7 @@ export default class Section extends Component {
 
   render() {
     return(
-        <Container>
+        <Container className={this.props.className}>
             <Caption>{this.caption}</Caption>
             {this.props.children}
         </Container>

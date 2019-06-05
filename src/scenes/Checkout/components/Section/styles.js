@@ -3,7 +3,7 @@ import colors from '../../../../configs/colors';
 import metrics from '../../../../configs/metrics';
 
 export const Container = styled.section`
-    margin: 10px;
+    margin: 10px 10px 0;
 `;
 
 export const Caption = styled.div`
