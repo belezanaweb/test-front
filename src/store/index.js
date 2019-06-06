@@ -1,4 +1,6 @@
 import { createStore } from 'redux'
+import axios from 'axios'
+
 const INITIAL_STATE = {
   products: [
     {
@@ -28,7 +30,7 @@ const INITIAL_STATE = {
 }
 
 function reducer(state = INITIAL_STATE, action) {
-  console.log(action)
+  axios.get('http://www.mocky.io/v2/5b15c4923100004a006f3c07').then(res => {})
   return state
 }
 
