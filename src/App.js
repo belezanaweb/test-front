@@ -1,15 +1,20 @@
-import React, { Component } from 'react';
-import { BrowserRouter, Route } from 'react-router-dom';
-import Checkout from './scenes/Checkout';
+import React, { Component } from 'react'
+import { BrowserRouter, Route } from 'react-router-dom'
+import Checkout from './scenes/Checkout'
+
+import { Provider } from 'react-redux'
+import store from './store'
 
 class App extends Component {
   render() {
     return (
-      <BrowserRouter>
-        <Route path="/" component={ Checkout }/>
-      </BrowserRouter>
-    );
+      <Provider store={store}>
+        <BrowserRouter>
+          <Route path="/" component={Checkout} />
+        </BrowserRouter>
+      </Provider>
+    )
   }
 }
 
-export default App;
+export default App
