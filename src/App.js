@@ -1,17 +1,19 @@
-import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { Component } from 'react'
+import Routes from './Routes'
+import { Provider } from 'react-redux'
+import { store, persistor } from './store/configureStore'
+import { PersistGate } from 'redux-persist/integration/react'
 
 class App extends Component {
   render() {
     return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-        </header>
-      </div>
-    );
+      <Provider store={store}>
+        <PersistGate loading={null} persistor={persistor}>
+          <Routes />
+        </PersistGate>
+      </Provider>
+    )
   }
 }
 
-export default App;
+export default App
