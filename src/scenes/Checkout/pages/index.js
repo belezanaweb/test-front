@@ -15,18 +15,14 @@ export default class Page extends Component {
         switch(page){
             case "Cart":
                 return(<Cart></Cart>)
-            break;
             case "Payment":
                 return(<Payment></Payment>)
-            break;
             case "Conclusion":
                 return(<Conclusion></Conclusion>)
-            break;
             default:
                 return(
                     <div></div>
                 )
-            break;
         }
     }
     

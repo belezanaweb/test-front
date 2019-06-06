@@ -1,15 +1,15 @@
-import React, { Component } from 'react';
+import React, { Component } from 'react'
 
-import { CheckIcon } from '../CheckIcon';
-import { Container, Text } from './styles';
+import { CheckIcon } from '../Icons'
+import { Container, Text } from './styles'
 
 export default class ResultBox extends Component {
   render() {
-    return(
-        <Container>
-            <CheckIcon className="icon"/>
-            <Text>{this.props.text}</Text>
-        </Container>
-    );
+    return (
+      <Container>
+        <CheckIcon className="icon" />
+        <Text>{this.props.text}</Text>
+      </Container>
+    )
   }
 }
