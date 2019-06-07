@@ -1,17 +1,25 @@
 const INITIAL_STATE = {
   loading: true,
-  products: [],
-  frete: 5.3,
-  discount: 30
+  cart: {
+    items: []
+  },
+  subTotal: 0,
+  shippingTotal: 0,
+  discount: 0,
+  total: 0
 }
 
 function checkout(state = INITIAL_STATE, action) {
+  console.log(action)
   switch (action.type) {
     case 'GET_DATA':
-      console.log(action.products)
       return {
         ...state,
-        products: action.products.data.items
+        cart: action.cart.data,
+        subTotal: action.cart.data.subTotal,
+        shippingTotal: action.cart.data.shippingTotal,
+        discount: action.cart.data.discount,
+        total: action.cart.data.total
       }
     default:
       return state

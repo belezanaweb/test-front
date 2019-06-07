@@ -5,37 +5,13 @@ import { Container, Item } from './styles'
 import { connect } from 'react-redux'
 
 class TotalBox extends Component {
-  calculateSubTotal = () => {
-    const { products } = this.props
-    var total = 0
-
-    products.map(product => (total += product.price))
-    return total
-  }
-
-  calculateFrete = () => {}
-
-  calculateDiscount = () => {}
-
-  calculateTotal = (frete, discount) => {
-    const subtotal = this.calculateSubTotal()
-    var total = 0
-    total += subtotal
-    total += frete
-    total -= discount
-
-    return total
-  }
-
   render() {
-    const { frete, discount } = this.props
-    const subtotal = this.calculateSubTotal()
-    const total = this.calculateTotal(frete, discount)
+    const { cart, subTotal, shippingTotal, discount, total } = this.props
 
     return (
       <Container>
-        <Item index="Produtos" value={subtotal} />
-        <Item index="Frete" value={frete} />
+        <Item index="Produtos" value={subTotal} />
+        <Item index="Frete" value={shippingTotal} />
         <Item index="Desconto" value={discount} type="discount" />
         <Item index="Total" value={total} type="total" />
       </Container>
@@ -44,7 +20,9 @@ class TotalBox extends Component {
 }
 
 export default connect(state => ({
-  products: state.checkout.products,
-  frete: state.checkout.frete,
-  discount: state.checkout.discount
+  cart: state.checkout.cart,
+  subTotal: state.checkout.subTotal,
+  shippingTotal: state.checkout.shippingTotal,
+  discount: state.checkout.discount,
+  total: state.checkout.total
 }))(TotalBox)

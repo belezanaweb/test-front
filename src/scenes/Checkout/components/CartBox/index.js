@@ -23,25 +23,30 @@ class CartBox extends Component {
   }
 
   setData(data) {
+    console.log(data)
     return {
       type: 'GET_DATA',
-      products: data
+      cart: data
     }
   }
 
+  componentWillMount() {
+    const { dispatch } = this.props
+    this.getData(dispatch)
+  }
+
   render() {
-    const { products, dispatch } = this.props
-    console.log(products)
+    const { cart, dispatch } = this.props
     return (
       <Container>
-        <button onClick={() => this.getData(dispatch)}>Clicar</button>
-        {products.map(product => (
-          <ListItem key={product.id} className={this.props.condensed ? 'condensed' : ''}>
-            <ListFigure src={product.product.imageObjects[0].small} />
+        {/* <button onClick={() => this.getData(dispatch)}>Clicar</button> */}
+        {cart.items.map((item, key) => (
+          <ListItem key={key} className={this.props.condensed ? 'condensed' : ''}>
+            <ListFigure src={item.product.imageObjects[0].small} />
             <ListDescription
               showPrice={this.props.condensed ? false : true}
-              text={product.product.name}
-              price={this.currency(product.product.priceSpecification.price)}
+              text={item.product.name}
+              price={this.currency(item.product.priceSpecification.price)}
             />
           </ListItem>
         ))}
@@ -51,7 +56,7 @@ class CartBox extends Component {
 }
 
 export default connect(state => ({
-  products: state.checkout.products,
+  cart: state.checkout.cart,
   frete: state.checkout.frete,
   discount: state.checkout.discount
 }))(CartBox)
