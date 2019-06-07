@@ -14,7 +14,7 @@ class CartBox extends Component {
 
   render() {
     const { products } = this.props
-
+    console.log(products)
     return (
       <Container>
         {products.map(product => (
@@ -33,7 +33,7 @@ class CartBox extends Component {
 }
 
 export default connect(state => ({
-  products: state.products,
-  frete: state.frete,
-  discount: state.discount
+  products: state.checkout.products,
+  frete: state.checkout.frete,
+  discount: state.checkout.discount
 }))(CartBox)

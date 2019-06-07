@@ -44,7 +44,7 @@ class TotalBox extends Component {
 }
 
 export default connect(state => ({
-  products: state.products,
-  frete: state.frete,
-  discount: state.discount
+  products: state.checkout.products,
+  frete: state.checkout.frete,
+  discount: state.checkout.discount
 }))(TotalBox)
