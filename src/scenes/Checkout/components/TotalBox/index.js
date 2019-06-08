@@ -6,7 +6,7 @@ import { connect } from 'react-redux'
 
 class TotalBox extends Component {
   render() {
-    const { cart, subTotal, shippingTotal, discount, total } = this.props
+    const { subTotal, shippingTotal, discount, total } = this.props
 
     return (
       <Container>
@@ -20,7 +20,6 @@ class TotalBox extends Component {
 }
 
 export default connect(state => ({
-  cart: state.checkout.cart,
   subTotal: state.checkout.subTotal,
   shippingTotal: state.checkout.shippingTotal,
   discount: state.checkout.discount,

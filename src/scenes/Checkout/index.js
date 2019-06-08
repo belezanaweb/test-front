@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 
 //components
+import Flash from './components/Flash'
 import Header from './components/Header'
 
 //styles
@@ -14,6 +15,7 @@ export default class Checkout extends Component {
   render() {
     return (
       <Container>
+        <Flash />
         <Header />
         <Page component={'Cart'} />
         <TotalBox />

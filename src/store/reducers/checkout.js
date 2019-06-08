@@ -6,7 +6,8 @@ const INITIAL_STATE = {
   subTotal: 0,
   shippingTotal: 0,
   discount: 0,
-  total: 0
+  total: 0,
+  flash: false
 }
 
 function checkout(state = INITIAL_STATE, action) {
@@ -20,6 +21,11 @@ function checkout(state = INITIAL_STATE, action) {
         shippingTotal: action.cart.data.shippingTotal,
         discount: action.cart.data.discount,
         total: action.cart.data.total
+      }
+    case 'GET_DATA_ERROR':
+      return {
+        ...state,
+        flash: true
       }
     default:
       return state

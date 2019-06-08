@@ -15,11 +15,16 @@ class CartBox extends Component {
   }
 
   async getData(dispatch) {
-    const dataApi = await axios
-      .get('http://www.mocky.io/v2/5b15c4923100004a006f3c07')
-      .then(response => {
-        dispatch(this.setData(response))
-      })
+    try {
+      await axios
+        .get('http://www.mocky.io/v2/5b15c4923100004a006f3c07')
+        .then(response => {
+          dispatch(this.setData(response))
+        })
+        .catch(error => {
+          dispatch(this.dataGetsError(error))
+        })
+    } catch (error) {}
   }
 
   setData(data) {
@@ -30,13 +35,22 @@ class CartBox extends Component {
     }
   }
 
+  dataGetsError(data) {
+    return {
+      type: 'GET_DATA_ERROR',
+      cart: data,
+      flash: true,
+      message: 'teste'
+    }
+  }
+
   componentWillMount() {
     const { dispatch } = this.props
     this.getData(dispatch)
   }
 
   render() {
-    const { cart, dispatch } = this.props
+    const { cart } = this.props
     return (
       <Container>
         {/* <button onClick={() => this.getData(dispatch)}>Clicar</button> */}
