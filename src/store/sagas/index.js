@@ -1,5 +1,12 @@
-import {all, takeLatest} from 'redux-saga/effects'
+import {all, takeLatest} from 'redux-saga/effects';
+
+import {Types as ProductsTypes} from '../ducks/products';
+
+import {getProducts} from './products';
+
 
 export default function* rootSaga() {
-  return yield all([takeLatest()]);
+  yield all([
+    takeLatest(ProductsTypes.GET_REQUEST, getProducts)
+  ]);
 }
