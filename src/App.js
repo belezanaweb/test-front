@@ -1,13 +1,18 @@
-import React, { Component } from 'react';
+import React, { Component, Fragment} from 'react';
 import {Provider} from 'react-redux'
+import Routes from './routes'
+import GlobalStyle from './styles/global';
 
+import store from './store'
 class App extends Component {
   render() {
     return (
-      <Provider store={store}>
-        <div className="App">
-        </div>
-      </Provider>
+      <Fragment>
+        <Provider store={store}>
+          <GlobalStyle />
+          <Routes />
+        </Provider>
+      </Fragment>
     );
   }
 }
