@@ -8,9 +8,9 @@ class Header extends Component {
   render() {
     return (
       <Container>
-        <Item active={this.props.page == 'Cart' ? true : false}>Sacola</Item>
-        <Item active={this.props.page == 'Payment' ? true : false}>Pagamento</Item>
-        <Item active={this.props.page == 'Conclusion' ? true : false}>Confirmação</Item>
+        <Item active={this.props.page === 'Cart' ? true : false}>Sacola</Item>
+        <Item active={this.props.page === 'Payment' ? true : false}>Pagamento</Item>
+        <Item active={this.props.page === 'Conclusion' ? true : false}>Confirmação</Item>
       </Container>
     )
   }
