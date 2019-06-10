@@ -10,6 +10,8 @@ import ButtonBox from '../../components/ButtonBox'
 
 import { validateCreditCardNumber } from '../../helpers/validation'
 
+import MaskedInput from 'react-maskedinput'
+
 class Payment extends Component {
   state = {
     fields: {
@@ -28,13 +30,13 @@ class Payment extends Component {
 
     if (fields['name'] === '' && fields['name'] != null) {
       formIsValid = false
-      errors['name'] = 'Name cannot be empty'
+      errors['name'] = 'Nome não pode ser vazio'
       //console.log('invalid name')
     }
 
     if (fields['email'] === '' && fields['email'] != null) {
       formIsValid = false
-      errors['email'] = 'Email cannot be empty'
+      errors['email'] = 'E-mail não pode ser vazio'
       //console.log('invalid email')
     }
 
@@ -44,29 +46,29 @@ class Payment extends Component {
       } else {
         console.log('invalid cardnumber')
         formIsValid = false
-        errors['cardnumber'] = 'CardNumber is invalid'
+        errors['cardnumber'] = 'Número do cartão inválido'
       }
     }
 
     if (fields['cardname'] === '' && fields['cardname'] != null) {
       formIsValid = false
-      errors['cardname'] = 'Cardname cannot be empty'
+      errors['cardname'] = 'Nome do titular inválido'
       //console.log('invalid cardname')
     }
 
     if (fields['cardcvv'] === '' && fields['cardcvv'] != null) {
       formIsValid = false
-      errors['cardcvv'] = 'CVV cannot be empty'
+      errors['cardcvv'] = 'CVV inválido'
       //console.log('invalid cardcvv')
     }
 
-    if (fields['cardvalidate'] != null) {
-      var cardvalidate = /^[0-1][0-9]\/\d{4}$/
-      if (cardvalidate.test(fields['cardvalidate'])) {
+    if (fields['cardvalidity'] != null) {
+      var cardvalidity = /^[0-1][0-9]\/\d{4}$/
+      if (cardvalidity.test(fields['cardvalidity'])) {
         console.log('valid cardcvv')
       } else {
         console.log('invalid cardcvv')
-        errors['cardvalidate'] = 'Cardvalidate cannot be empty'
+        errors['cardvalidity'] = 'Validade inválida'
       }
       formIsValid = false
     }
@@ -82,7 +84,8 @@ class Payment extends Component {
   }
 
   validateCreditCardNumber(cardNumber) {
-    var ccNum = cardNumber
+    var ccNum = cardNumber.replace(/\./g, '')
+    console.log(ccNum)
     var visaRegEx = /^(?:4[0-9]{12}(?:[0-9]{3})?)$/
     var mastercardRegEx = /^(?:5[1-5][0-9]{14})$/
     var amexpRegEx = /^(?:3[47][0-9]{13})$/
@@ -113,28 +116,48 @@ class Payment extends Component {
           <Container>
             <InputGroup>
               <Label>Número do cartão:</Label>
-              <Input
+              <MaskedInput
                 placeholder="____.____.____.____"
                 data-type="number"
                 name="cardnumber"
                 onChange={e => this.handleChange(e)}
+                mask={'1111.1111.1111.1111'}
               />
-              <span>{this.state.errors['cardnumber']}</span>
+              <span className={'error'}>{this.state.errors['cardnumber']}</span>
             </InputGroup>
 
             <InputGroup>
               <Label>Nome do Titular:</Label>
-              <Input placeholder="Como no cartão" />
+              <Input
+                placeholder="Como no cartão"
+                name="cardname"
+                onChange={e => this.handleChange(e)}
+              />
+              <span className={'error'}>{this.state.errors['cardname']}</span>
             </InputGroup>
 
             <InputGroup className="validity">
               <Label>Validade (mês/ano):</Label>
-              <Input placeholder="__/____" data-type="number" />
+              <MaskedInput
+                placeholder="__/____"
+                data-type="number"
+                mask={'11/1111'}
+                name="cardvalidity"
+                onChange={e => this.handleChange(e)}
+              />
+              <span className={'error'}>{this.state.errors['cardvalidity']}</span>
             </InputGroup>
 
             <InputGroup className="cvv">
               <Label>CVV:</Label>
-              <Input placeholder="___" data-type="number" />
+              <MaskedInput
+                placeholder="___"
+                data-type="number"
+                name="cardcvv"
+                mask={'111'}
+                onChange={e => this.handleChange(e)}
+              />
+              <span className={'error'}>{this.state.errors['cardcvv']}</span>
             </InputGroup>
           </Container>
         </Block>
