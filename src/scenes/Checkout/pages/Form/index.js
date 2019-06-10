@@ -1,16 +1,8 @@
 import React, { Component } from 'react'
 
-import Section from '../../components/Section'
-import Block from '../../components/Block'
+// import { Container } from './styles';
 
-import { Container, InputGroup, Input, Label } from './styles'
-
-import TotalBox from '../../components/TotalBox'
-import ButtonBox from '../../components/ButtonBox'
-
-import { validateCreditCardNumber } from '../../helpers/validation'
-
-class Payment extends Component {
+export default class Form extends Component {
   state = {
     fields: {
       name: null,
@@ -106,44 +98,98 @@ class Payment extends Component {
     }
   }
 
+  submitForm() {}
+
   render() {
     return (
-      <Section caption="Cartão de Crédito">
-        <Block>
-          <Container>
-            <InputGroup>
-              <Label>Número do cartão:</Label>
-              <Input
-                placeholder="____.____.____.____"
-                data-type="number"
-                name="cardnumber"
-                onChange={e => this.handleChange(e)}
-              />
-              <span>{this.state.errors['cardnumber']}</span>
-            </InputGroup>
+      <div>
+        <form>
+          <div>
+            <label>Nome</label>
+            <input
+              name="name"
+              placeholder="Nome"
+              ref="name"
+              type="text"
+              onChange={e => this.handleChange(e)}
+            />
+            <span>{this.state.errors['name']}</span>
+          </div>
 
-            <InputGroup>
-              <Label>Nome do Titular:</Label>
-              <Input placeholder="Como no cartão" />
-            </InputGroup>
+          <div>
+            <label>E-mail</label>
+            <input
+              name="email"
+              placeholder="E-mail"
+              ref="email"
+              type="text"
+              onChange={e => this.handleChange(e)}
+            />
+            <span>{this.state.errors['email']}</span>
+          </div>
 
-            <InputGroup className="validity">
-              <Label>Validade (mês/ano):</Label>
-              <Input placeholder="__/____" data-type="number" />
-            </InputGroup>
+          <div>
+            <label>Card Number</label>
+            <input
+              name="cardnumber"
+              placeholder="CardNumber"
+              ref="cardnumber"
+              type="text"
+              onChange={e => this.handleChange(e)}
+            />
+            <span>{this.state.errors['cardnumber']}</span>
+          </div>
 
-            <InputGroup className="cvv">
-              <Label>CVV:</Label>
-              <Input placeholder="___" data-type="number" />
-            </InputGroup>
-          </Container>
-        </Block>
+          <div>
+            <label>Nome do titular do cartão</label>
+            <input
+              name="cardname"
+              placeholder="Como no cartão"
+              ref="cardname"
+              type="text"
+              onChange={e => this.handleChange(e)}
+            />
+            <span>{this.state.errors['cardname']}</span>
+          </div>
 
-        <TotalBox />
-        <ButtonBox />
-      </Section>
+          <div>
+            <label>CVV</label>
+            <input
+              name="cardcvv"
+              placeholder="CVV"
+              ref="cardcvv"
+              type="text"
+              onChange={e => this.handleChange(e)}
+            />
+            <span>{this.state.errors['cardcvv']}</span>
+          </div>
+
+          <div>
+            <label>CVV</label>
+            <input
+              name="cardvalidate"
+              placeholder="__/____"
+              ref="cardvalidate"
+              type="text"
+              onChange={e => this.handleChange(e)}
+            />
+            <span>{this.state.errors['cardvalidate']}</span>
+          </div>
+
+          <div>
+            <label>Senha</label>
+            <input name="email" placeholder="Senha" />
+          </div>
+
+          <div>
+            <button
+              onClick={() => {
+                this.submitForm()
+              }}
+            />
+          </div>
+        </form>
+      </div>
     )
   }
 }
-
-export default Payment
