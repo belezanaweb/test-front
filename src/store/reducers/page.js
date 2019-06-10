@@ -1,6 +1,8 @@
 const INITIAL_STATE = {
   loading: true,
   page: 'Cart'
+  // page: 'Payment'
+  // page: 'Conclusion'
 }
 
 function page(state = INITIAL_STATE, action) {

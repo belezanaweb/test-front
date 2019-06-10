@@ -6,8 +6,6 @@ import Header from './components/Header'
 
 //styles
 import { Container } from './styles'
-import TotalBox from './components/TotalBox'
-import ButtonBox from './components/ButtonBox'
 
 import { connect } from 'react-redux'
 
@@ -21,8 +19,6 @@ class Checkout extends Component {
         <Flash />
         <Header />
         <Page component={page} />
-        <TotalBox />
-        <ButtonBox />
       </Container>
     )
   }

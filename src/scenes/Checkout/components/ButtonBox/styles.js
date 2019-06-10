@@ -1,10 +1,10 @@
-import styled from 'styled-components';
-import metrics from '../../../../configs/metrics';
-import colors from '../../../../configs/colors';
+import styled from 'styled-components'
+import metrics from '../../../../configs/metrics'
+import colors from '../../../../configs/colors'
 
 export const Container = styled.div`
-    margin: 15px 10px;
-`;
+  margin: 20px 0;
+`
 
 export const Button = styled.button`
     background-color: ${colors.secondary};
@@ -25,4 +25,4 @@ export const Button = styled.button`
         background-color: ${colors.primary_shadow}
         cursor: pointer;
     }
-`;
+`

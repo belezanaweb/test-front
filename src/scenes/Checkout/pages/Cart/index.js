@@ -4,6 +4,9 @@ import Section from '../../components/Section'
 import Block from '../../components/Block'
 import CartBox from '../../components/CartBox'
 
+import TotalBox from '../../components/TotalBox'
+import ButtonBox from '../../components/ButtonBox'
+
 export default class Cart extends Component {
   render() {
     return (
@@ -11,6 +14,8 @@ export default class Cart extends Component {
         <Block className="cart">
           <CartBox />
         </Block>
+        <TotalBox />
+        <ButtonBox />
       </Section>
     )
   }

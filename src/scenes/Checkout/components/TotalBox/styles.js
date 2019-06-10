@@ -6,8 +6,8 @@ import colors from '../../../../configs/colors'
 export const Container = styled.div`
   border-radius: 3px;
   border: 1px solid #ccc;
-  margin: 15px 9px 5px;
-  padding: 4px 13px 12px;
+  margin: 20px 0px 5px;
+  padding: 4px 12px 12px;
 `
 
 export const Line = styled.div`
