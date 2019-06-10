@@ -1,16 +1,19 @@
-import styled from 'styled-components';
-import colors from '../../../../configs/colors';
-import metrics from '../../../../configs/metrics';
+import styled from 'styled-components'
+import colors from '../../../../configs/colors'
+import metrics from '../../../../configs/metrics'
 
 export const Container = styled.section`
-    margin: 10px 10px 0;
-`;
+  margin: 10px 10px 0;
+  &.content {
+    margin: 15px 10px 16px;
+  }
+`
 
 export const Caption = styled.div`
-    width: 100%;
-    font-size: ${metrics.fonts.size.normal};
-    text-transform: uppercase;
-    font-weight: bold;
-    color: ${colors.gray};
-    margin: 1px ${metrics.wrapper} 0;
-`;
+  width: 100%;
+  font-size: ${metrics.fonts.size.normal};
+  text-transform: uppercase;
+  font-weight: bold;
+  color: ${colors.gray};
+  margin: 1px ${metrics.wrapper} 0;
+`

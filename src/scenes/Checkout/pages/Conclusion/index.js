@@ -8,6 +8,8 @@ import CartBox from '../../components/CartBox'
 
 import ResultBox from '../../components/ResultBox'
 
+import TotalBox from '../../components/TotalBox'
+
 export default class Conclusion extends Component {
   render() {
     return (
@@ -30,6 +32,8 @@ export default class Conclusion extends Component {
           <Block>
             <CartBox condensed={true} />
           </Block>
+
+          <TotalBox />
         </Section>
       </Container>
     )

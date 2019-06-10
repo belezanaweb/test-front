@@ -5,6 +5,9 @@ import Block from '../../components/Block'
 
 import { Container, InputGroup, Input, Label } from './styles'
 
+import TotalBox from '../../components/TotalBox'
+import ButtonBox from '../../components/ButtonBox'
+
 export default class Payment extends Component {
   render() {
     return (
@@ -32,6 +35,9 @@ export default class Payment extends Component {
             </InputGroup>
           </Container>
         </Block>
+
+        <TotalBox />
+        <ButtonBox />
       </Section>
     )
   }
