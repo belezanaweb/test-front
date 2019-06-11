@@ -2,6 +2,10 @@ import React, { Component } from 'react'
 
 import { Container } from './styles'
 
+//components
+import Flash from '../../components/Flash'
+import Header from '../../components/Header'
+
 import Section from '../../components/Section'
 import Block from '../../components/Block'
 import CartBox from '../../components/CartBox'
@@ -10,32 +14,39 @@ import ResultBox from '../../components/ResultBox'
 
 import TotalBox from '../../components/TotalBox'
 
+import { General } from '../../styles'
+
 export default class Conclusion extends Component {
   render() {
     return (
-      <Container>
-        <ResultBox icon="check" text="Compra efetuada com sucesso" />
+      <General>
+        <Flash />
+        <Header />
 
-        <Section caption="Pagamento">
-          <Block>
-            <p className="simple">
-              ****.****.****.1234
-              <br />
-              JOSÉ DA SILVA
-              <br />
-              05/2019
-            </p>
-          </Block>
-        </Section>
+        <Container>
+          <ResultBox icon="check" text="Compra efetuada com sucesso" />
 
-        <Section className="content" caption="Produtos">
-          <Block>
-            <CartBox condensed={true} />
-          </Block>
+          <Section caption="Pagamento">
+            <Block>
+              <p className="simple">
+                ****.****.****.1234
+                <br />
+                JOSÉ DA SILVA
+                <br />
+                05/2019
+              </p>
+            </Block>
+          </Section>
 
-          <TotalBox />
-        </Section>
-      </Container>
+          <Section className="content" caption="Produtos">
+            <Block>
+              <CartBox condensed={true} />
+            </Block>
+
+            <TotalBox />
+          </Section>
+        </Container>
+      </General>
     )
   }
 }

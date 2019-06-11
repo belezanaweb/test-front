@@ -12,17 +12,11 @@ class ButtonBox extends Component {
     }
   }
   render() {
-    const { dispatch } = this.props
+    const { dispatch, caption, onClick } = this.props
 
     return (
       <Container>
-        <Button
-          onClick={() => {
-            dispatch(this.changePage())
-          }}
-        >
-          Seguir para o pagamento
-        </Button>
+        <Button onClick={onClick}>{caption}</Button>
       </Container>
     )
   }

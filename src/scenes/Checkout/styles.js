@@ -1,9 +1,9 @@
-import styled from 'styled-components';
+import styled from 'styled-components'
 
-export const Container = styled.div`
-  background-color: #EEEEEE;
+export const General = styled.div`
+  background-color: #eeeeee;
   display: flex;
   flex-direction: column;
   width: 100%;
   height: 100vh;
-`;
+`

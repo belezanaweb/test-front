@@ -5,21 +5,23 @@ import Flash from './components/Flash'
 import Header from './components/Header'
 
 //styles
-import { Container } from './styles'
-
+import { General } from './styles'
 import { connect } from 'react-redux'
 
 //pages
 import Page from './pages'
 class Checkout extends Component {
+  componentWillMount() {
+    console.log(this.props.match)
+  }
   render() {
     const { page } = this.props
     return (
-      <Container>
+      <General>
         <Flash />
         <Header />
         <Page component={page} />
-      </Container>
+      </General>
     )
   }
 }
