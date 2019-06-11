@@ -85,6 +85,7 @@ class Payment extends Component {
 
   validateCreditCardNumber(cardNumber) {
     var ccNum = cardNumber.replace(/\./g, '')
+    ccNum = ccNum.replace(/\\_/g, '')
     console.log(ccNum)
     var visaRegEx = /^(?:4[0-9]{12}(?:[0-9]{3})?)$/
     var mastercardRegEx = /^(?:5[1-5][0-9]{14})$/

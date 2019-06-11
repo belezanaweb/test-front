@@ -1,7 +1,7 @@
 const INITIAL_STATE = {
   loading: true,
-  // page: 'Cart'
-  page: 'Payment'
+  page: 'Cart'
+  // page: 'Payment'
   // page: 'Conclusion'
 }
 
