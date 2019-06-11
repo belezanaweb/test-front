@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import { connect } from 'react-redux'
 
 //components
 import Flash from '../../components/Flash'
@@ -11,25 +12,32 @@ import CartBox from '../../components/CartBox'
 import TotalBox from '../../components/TotalBox'
 import ButtonBox from '../../components/ButtonBox'
 
-import { General } from '../../styles'
+import * as PageActions from '../../../../store/actions/page'
 
-export default class Cart extends Component {
-  handleButtonBox() {
-    this.props.history.push('/payment')
+class Cart extends Component {
+  handleButtonBox(dispatch) {
+    dispatch(PageActions.changePage('Payment'))
   }
+
   render() {
+    const { dispatch } = this.props
+
     return (
-      <General>
-        <Flash />
-        <Header />
-        <Section caption="Produtos">
-          <Block className="cart">
-            <CartBox />
-          </Block>
-          <TotalBox />
-          <ButtonBox caption={'Seguir para pagamento'} onClick={() => this.handleButtonBox()} />
-        </Section>
-      </General>
+      <Section caption="Produtos">
+        <Block className="cart">
+          <CartBox />
+        </Block>
+        <TotalBox />
+        <ButtonBox
+          caption={'Seguir para pagamento'}
+          page={'Payment'}
+          onClick={() => {
+            this.handleButtonBox(dispatch)
+          }}
+        />
+      </Section>
     )
   }
 }
+
+export default connect(state => ({}))(Cart)

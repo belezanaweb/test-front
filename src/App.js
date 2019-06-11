@@ -5,6 +5,8 @@ import Cart from './scenes/Checkout/pages/Cart'
 import Payment from './scenes/Checkout/pages/Payment'
 import Conclusion from './scenes/Checkout/pages/Conclusion'
 
+import Form from './scenes/Checkout/pages/Form'
+
 import { Provider } from 'react-redux'
 import store from './store'
 
