@@ -8,9 +8,12 @@ import { Container, InputGroup, Input, Label } from './styles'
 import TotalBox from '../../components/TotalBox'
 import ButtonBox from '../../components/ButtonBox'
 
-import { validateCreditCardNumber } from '../../helpers/validation'
+import * as Validations from '../../helpers/validation'
 
 import MaskedInput from 'react-maskedinput'
+
+import * as PageActions from '../../../../store/actions/page'
+import { connect } from 'react-redux'
 
 class Payment extends Component {
   state = {
@@ -41,7 +44,7 @@ class Payment extends Component {
     }
 
     if (fields['cardnumber'] != null) {
-      if (this.validateCreditCardNumber(fields['cardnumber'])) {
+      if (Validations.validateCreditCardNumber(fields['cardnumber'])) {
         console.log('valid cardnumber')
       } else {
         console.log('invalid cardnumber')
@@ -83,34 +86,12 @@ class Payment extends Component {
     this.handleValidations()
   }
 
-  validateCreditCardNumber(cardNumber) {
-    var ccNum = cardNumber.replace(/\./g, '')
-    ccNum = ccNum.replace(/\\_/g, '')
-    console.log(ccNum)
-    var visaRegEx = /^(?:4[0-9]{12}(?:[0-9]{3})?)$/
-    var mastercardRegEx = /^(?:5[1-5][0-9]{14})$/
-    var amexpRegEx = /^(?:3[47][0-9]{13})$/
-    var discovRegEx = /^(?:6(?:011|5[0-9][0-9])[0-9]{12})$/
-    var isValid = false
-
-    if (visaRegEx.test(ccNum)) {
-      isValid = true
-    } else if (mastercardRegEx.test(ccNum)) {
-      isValid = true
-    } else if (amexpRegEx.test(ccNum)) {
-      isValid = true
-    } else if (discovRegEx.test(ccNum)) {
-      isValid = true
-    }
-
-    if (isValid) {
-      return true
-    } else {
-      return false
-    }
+  handleButtonBox(dispatch) {
+    dispatch(PageActions.changePage('Conclusion'))
   }
 
   render() {
+    const { dispatch } = this.props
     return (
       <Section caption="Cartão de Crédito">
         <Block>
@@ -164,10 +145,15 @@ class Payment extends Component {
         </Block>
 
         <TotalBox />
-        <ButtonBox />
+        <ButtonBox
+          caption="Finalizar o pedido"
+          onClick={() => {
+            this.handleButtonBox(dispatch)
+          }}
+        />
       </Section>
     )
   }
 }
 
-export default Payment
+export default connect()(Payment)

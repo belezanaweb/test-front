@@ -5,24 +5,19 @@ import { Container, Button } from './styles'
 import { connect } from 'react-redux'
 
 class ButtonBox extends Component {
-  changePage() {
+  changePage(page) {
     return {
       type: 'CHANGE_PAGE',
-      page: 'Payment'
+      page: page
     }
   }
+
   render() {
-    const { dispatch } = this.props
+    const { dispatch, caption, page, onClick } = this.props
 
     return (
       <Container>
-        <Button
-          onClick={() => {
-            dispatch(this.changePage())
-          }}
-        >
-          Seguir para o pagamento
-        </Button>
+        <Button onClick={onClick}>{caption}</Button>
       </Container>
     )
   }
