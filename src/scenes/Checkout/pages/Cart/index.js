@@ -40,6 +40,7 @@ class Cart extends Component {
             onClick={() => {
               this.handleButtonBox(dispatch)
             }}
+            active={true}
           />
         </Section>
       </General>

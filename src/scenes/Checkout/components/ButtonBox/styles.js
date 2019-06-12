@@ -25,4 +25,7 @@ export const Button = styled.button`
         background-color: ${colors.primary_shadow}
         cursor: pointer;
     }
+    &.disabled{
+      display: none;
+    }
 `

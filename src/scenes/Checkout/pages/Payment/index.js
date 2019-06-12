@@ -32,54 +32,45 @@ class Payment extends Component {
 
   handleValidations() {
     let fields = this.state.fields
-    let formIsValid = true
+    let formIsValid = {}
     let errors = {}
 
-    if (fields['name'] === '' && fields['name'] != null) {
-      formIsValid = false
-      errors['name'] = 'Nome não pode ser vazio'
-      //console.log('invalid name')
+    //card number validation
+    if (!Validations.validateCreditCardNumber(fields['cardnumber'])) {
+      errors['cardnumber'] = 'Número do cartão inválido'
     }
 
-    if (fields['email'] === '' && fields['email'] != null) {
-      formIsValid = false
-      errors['email'] = 'E-mail não pode ser vazio'
-      //console.log('invalid email')
-    }
-
-    if (fields['cardnumber'] != null) {
-      if (Validations.validateCreditCardNumber(fields['cardnumber'])) {
-        //console.log('valid cardnumber')
-      } else {
-        //console.log('invalid cardnumber')
-        formIsValid = false
-        errors['cardnumber'] = 'Número do cartão inválido'
-      }
-    }
-
-    if (fields['cardname'] === '' && fields['cardname'] != null) {
-      formIsValid = false
+    //card name validation
+    if (fields['cardname'] === '' || fields['cardname'] == null) {
       errors['cardname'] = 'Nome do titular inválido'
-      //console.log('invalid cardname')
     }
 
-    if (fields['cardcvv'] === '' && fields['cardcvv'] != null) {
-      formIsValid = false
+    //card cvv validation
+    if (fields['cardcvv'] === '' || fields['cardcvv'] == null) {
       errors['cardcvv'] = 'CVV inválido'
-      //console.log('invalid cardcvv')
     }
 
-    if (fields['cardvalidity'] != null) {
-      var cardvalidity = /^[0-1][0-9]\/\d{4}$/
-      if (cardvalidity.test(fields['cardvalidity'])) {
-        //console.log('valid cardcvv')
-      } else {
-        //console.log('invalid cardcvv')
-        errors['cardvalidity'] = 'Validade inválida'
-      }
+    //card validatity validation
+    var cardvalidity = /^[0-1][0-9]\/\d{4}$/
+    if (cardvalidity.test(fields['cardvalidity'])) {
+      formIsValid = true
+    } else {
+      errors['cardvalidity'] = 'Validade inválida'
       formIsValid = false
     }
 
+    //counting errors
+    var count_errors = 0
+    for (var key in errors) {
+      count_errors++
+    }
+
+    //setting form status
+    if (count_errors > 0) {
+      formIsValid = false
+    } else {
+      formIsValid = true
+    }
     this.setState({ errors: errors, validForm: formIsValid })
   }
 
@@ -162,7 +153,8 @@ class Payment extends Component {
 
           <TotalBox />
           <ButtonBox
-            caption="Finalizar o pedido"
+            caption={'Finalizar o pedido'}
+            active={this.state.validForm ? true : false}
             onClick={() => {
               this.handleButtonBox(dispatch)
             }}
