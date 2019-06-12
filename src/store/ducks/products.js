@@ -5,16 +5,15 @@ export const Types = {
 
 const INITIAL_STATE = {
   shoppingCart: {},
-  items:[],
-  loading: false
+  items:[]
 }
 
 export default function products(state= INITIAL_STATE, action){
   switch (action.type) {
     case Types.GET_REQUEST:
-      return {...state, loading: true}
+      return {...state, }
     case Types.GET_SUCCESS:
-      return {...state, loading: false, shoppingCart: action.shoppingCart, items: action.shoppingCart.items}
+      return {...state, shoppingCart: action.shoppingCart, items: action.shoppingCart.items}
     default:
       return state;
   }
