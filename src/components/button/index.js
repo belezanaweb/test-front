@@ -6,8 +6,8 @@ export default class ActionButton extends Component {
   render() {
     return (
       <Container>
-        <Link to={`/${this.props.routeTo}`}>
-          <Button>
+        <Link className={!this.props.enable ? 'disable-link': ''} to={`/${this.props.routeTo}`}>
+          <Button type={this.props.type} disabled={!this.props.enable}>
             {this.props.content}
           </Button>
         </Link>
