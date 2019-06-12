@@ -8,6 +8,11 @@ export const Container = styled.div`
   border: 1px solid #ccc;
   margin: 20px 0px 5px;
   padding: 4px 12px 12px;
+  @media (min-width: 768px) {
+    width: 30%;
+    margin: 20px 0px 5px;
+    border: none;
+  }
 `
 
 export const Line = styled.div`

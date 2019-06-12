@@ -39,7 +39,7 @@ class Conclusion extends Component {
         <Container>
           <ResultBox icon="check" text="Compra efetuada com sucesso" />
 
-          <Section caption="Pagamento">
+          <Section caption="Pagamento" className={'forceFull'}>
             <Block>
               <p className="simple">
                 {this.hideNumber(card.cardnumber)}

@@ -16,6 +16,10 @@ export const Container = styled.div`
   &.cart {
     padding: 5px 12px; //fixing padding because layout with little padding out of default
   }
+
+  @media (min-width: 768px) {
+    width: 70%;
+  }
 `
 
 export const Item = styled.li`

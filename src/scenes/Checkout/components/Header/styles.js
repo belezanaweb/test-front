@@ -14,6 +14,13 @@ export const Container = styled.nav`
   box-shadow: 1px 1px 5px 0 rgba(0, 0, 29, 0.22);
   padding: 0px 16px 0px 21px;
   letter-spacing: 0px;
+
+  @media (min-width: 768px) {
+    flex-direction: column;
+    height: auto;
+    justify-content: center;
+    width: 20%;
+  }
 `
 
 export const Item = styled.div`
@@ -25,4 +32,7 @@ export const Item = styled.div`
   text-transform: uppercase;
   font-family: 'Helvetica Neue';
   text-align: center;
+  @media (min-width: 768px) {
+    margin: 20px 0;
+  }
 `

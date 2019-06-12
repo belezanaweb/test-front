@@ -1,3 +1,5 @@
+import './assets/scss/main.scss'
+
 import React, { Component } from 'react'
 import { BrowserRouter, Route } from 'react-router-dom'
 import Checkout from './scenes/Checkout'

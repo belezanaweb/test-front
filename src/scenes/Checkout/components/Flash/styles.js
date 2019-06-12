@@ -15,4 +15,7 @@ export const Container = styled.div`
   strong {
     color: #491217;
   }
+  @media (min-width: 768px) {
+    display: none;
+  }
 `

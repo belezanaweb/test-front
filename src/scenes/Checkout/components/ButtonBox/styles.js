@@ -4,6 +4,10 @@ import colors from '../../../../configs/colors'
 
 export const Container = styled.div`
   margin: 20px 0;
+  @media (min-width: 768px) {
+    width: 29%;
+    transform: translateY(-85px);
+  }
 `
 
 export const Button = styled.button`

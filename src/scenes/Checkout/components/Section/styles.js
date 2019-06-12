@@ -7,6 +7,16 @@ export const Container = styled.section`
   &.content {
     margin: 15px 10px 16px;
   }
+  @media (min-width: 768px) {
+    &.forceFull > div {
+      width: 100%;
+    }
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-content: baseline;
+    justify-content: flex-end;
+  }
 `
 
 export const Caption = styled.div`

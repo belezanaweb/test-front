@@ -14,4 +14,8 @@ export const Container = styled.div`
   section.content {
     // margin-top: 15px;
   }
+
+  @media (min-width: 768px) {
+    justify-content: flex-start;
+  }
 `
