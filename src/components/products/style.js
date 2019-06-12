@@ -11,10 +11,10 @@ export const Container = styled.div`
   }
 `;
 
-export const ProductSection = styled.section`
-  box-shadow: 0 0 5px #aba8a8;
-  background: #fff;
-  padding: 5px;
-  width:90%;
-  margin: 5px auto;
-`;
+  export const ProductSection = styled.section`
+    box-shadow: 0 0 5px #aba8a8;
+    background: #fff;
+    padding: 5px;
+    width:90%;
+    margin: 5px auto;
+  `;
