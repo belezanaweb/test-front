@@ -17,17 +17,15 @@ import * as Validations from '../../helpers/validation'
 import MaskedInput from 'react-maskedinput'
 
 import * as PageActions from '../../../../store/actions/page'
+import * as CardActions from '../../../../store/actions/card'
+
 import { connect } from 'react-redux'
 
 import { General } from '../../../Checkout/styles'
 
 class Payment extends Component {
   state = {
-    fields: {
-      name: null,
-      email: null,
-      cardnumber: null
-    },
+    fields: {},
     errors: {},
     validForm: false
   }
@@ -51,9 +49,9 @@ class Payment extends Component {
 
     if (fields['cardnumber'] != null) {
       if (Validations.validateCreditCardNumber(fields['cardnumber'])) {
-        console.log('valid cardnumber')
+        //console.log('valid cardnumber')
       } else {
-        console.log('invalid cardnumber')
+        //console.log('invalid cardnumber')
         formIsValid = false
         errors['cardnumber'] = 'Número do cartão inválido'
       }
@@ -74,9 +72,9 @@ class Payment extends Component {
     if (fields['cardvalidity'] != null) {
       var cardvalidity = /^[0-1][0-9]\/\d{4}$/
       if (cardvalidity.test(fields['cardvalidity'])) {
-        console.log('valid cardcvv')
+        //console.log('valid cardcvv')
       } else {
-        console.log('invalid cardcvv')
+        //console.log('invalid cardcvv')
         errors['cardvalidity'] = 'Validade inválida'
       }
       formIsValid = false
@@ -93,7 +91,16 @@ class Payment extends Component {
   }
 
   handleButtonBox(dispatch) {
+    dispatch(
+      CardActions.storeCard({
+        cardname: this.state.fields['cardname'],
+        cardnumber: this.state.fields['cardnumber'],
+        cardvalidity: this.state.fields['cardvalidity'],
+        cardcvv: this.state.fields['cardcvv']
+      })
+    )
     dispatch(PageActions.changePage('Conclusion'))
+    this.props.history.push('/conclusion')
   }
 
   render() {
@@ -166,4 +173,6 @@ class Payment extends Component {
   }
 }
 
-export default connect()(Payment)
+export default connect(state => ({
+  card: state.card
+}))(Payment)

@@ -16,8 +16,21 @@ import TotalBox from '../../components/TotalBox'
 
 import { General } from '../../styles'
 
-export default class Conclusion extends Component {
+import { connect } from 'react-redux'
+
+class Conclusion extends Component {
+  hideNumber(str) {
+    try {
+      var n = str.lastIndexOf('.')
+      var number = str.replace(/[0-9]/g, '*')
+      var final_number = number.substr(0, n) + str.substr(n)
+      return final_number
+    } catch (e) {
+      return 0
+    }
+  }
   render() {
+    const { card } = this.props
     return (
       <General>
         <Flash />
@@ -29,11 +42,11 @@ export default class Conclusion extends Component {
           <Section caption="Pagamento">
             <Block>
               <p className="simple">
-                ****.****.****.1234
+                {this.hideNumber(card.cardnumber)}
                 <br />
-                JOSÉ DA SILVA
+                {card.cardname}
                 <br />
-                05/2019
+                {card.cardvalidity}
               </p>
             </Block>
           </Section>
@@ -50,3 +63,7 @@ export default class Conclusion extends Component {
     )
   }
 }
+
+export default connect(state => ({
+  card: state.card.data
+}))(Conclusion)

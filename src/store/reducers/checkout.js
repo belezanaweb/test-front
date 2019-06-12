@@ -11,7 +11,7 @@ const INITIAL_STATE = {
 }
 
 function checkout(state = INITIAL_STATE, action) {
-  console.log(action)
+  // console.log(action)
   switch (action.type) {
     case 'GET_DATA':
       return {
