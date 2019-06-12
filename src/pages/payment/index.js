@@ -4,12 +4,10 @@ import React, { Component, Fragment } from 'react';
 import {connect} from 'react-redux'
 import {bindActionCreators} from 'redux'
 
-import Header from '../../components/header'
-import Products from '../../components/products';
-import ValueDescription from '../../components/value-description'
-import Button from '../../components/button/';
-
 import {Creators as ProductsActions} from '../../store/ducks/products'
+
+import CreditCard from '../../components/credit-card';
+import Header from '../../components/header';
 
 class Payment extends Component {
 
@@ -20,14 +18,7 @@ class Payment extends Component {
     return (
       <Fragment>
         <Header activePage="payment" />
-        {/* <Products /> */}
-        <ValueDescription
-          subTotal={this.props.shoppingCart.subTotal}
-          shippingTotal={this.props.shoppingCart.shippingTotal}
-          discount={this.props.shoppingCart.discount}
-          total={this.props.shoppingCart.total}
-        />
-        <Button content={"Finalizar o Pedido"} routeTo={"success"}/>
+        <CreditCard shoppingCart={this.props.shoppingCart} />
       </Fragment>
     );
   }

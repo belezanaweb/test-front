@@ -27,7 +27,11 @@ class ShoppingCart extends Component {
           discount={this.props.shoppingCart.discount}
           total={this.props.shoppingCart.total}
         />
-        <Button content={"Seguir para Pagamento"} routeTo={"payment"}/>
+        <Button
+          type={"button"}
+          content={"Seguir para Pagamento"}
+          routeTo={"payment"}
+          enable={true}/>
       </Fragment>
     );
   }
