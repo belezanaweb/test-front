@@ -19,6 +19,8 @@ import MaskedInput from 'react-maskedinput'
 import * as PageActions from '../../../../store/actions/page'
 import { connect } from 'react-redux'
 
+import { General } from '../../../Checkout/styles'
+
 class Payment extends Component {
   state = {
     fields: {
@@ -97,65 +99,69 @@ class Payment extends Component {
   render() {
     const { dispatch } = this.props
     return (
-      <Section caption="Cartão de Crédito">
-        <Block>
-          <Container>
-            <InputGroup>
-              <Label>Número do cartão:</Label>
-              <MaskedInput
-                placeholder="____.____.____.____"
-                data-type="number"
-                name="cardnumber"
-                onChange={e => this.handleChange(e)}
-                mask={'1111.1111.1111.1111'}
-              />
-              <span className={'error'}>{this.state.errors['cardnumber']}</span>
-            </InputGroup>
+      <General>
+        <Flash />
+        <Header />
+        <Section caption="Cartão de Crédito">
+          <Block>
+            <Container>
+              <InputGroup>
+                <Label>Número do cartão:</Label>
+                <MaskedInput
+                  placeholder="____.____.____.____"
+                  data-type="number"
+                  name="cardnumber"
+                  onChange={e => this.handleChange(e)}
+                  mask={'1111.1111.1111.1111'}
+                />
+                <span className={'error'}>{this.state.errors['cardnumber']}</span>
+              </InputGroup>
 
-            <InputGroup>
-              <Label>Nome do Titular:</Label>
-              <Input
-                placeholder="Como no cartão"
-                name="cardname"
-                onChange={e => this.handleChange(e)}
-              />
-              <span className={'error'}>{this.state.errors['cardname']}</span>
-            </InputGroup>
+              <InputGroup>
+                <Label>Nome do Titular:</Label>
+                <Input
+                  placeholder="Como no cartão"
+                  name="cardname"
+                  onChange={e => this.handleChange(e)}
+                />
+                <span className={'error'}>{this.state.errors['cardname']}</span>
+              </InputGroup>
 
-            <InputGroup className="validity">
-              <Label>Validade (mês/ano):</Label>
-              <MaskedInput
-                placeholder="__/____"
-                data-type="number"
-                mask={'11/1111'}
-                name="cardvalidity"
-                onChange={e => this.handleChange(e)}
-              />
-              <span className={'error'}>{this.state.errors['cardvalidity']}</span>
-            </InputGroup>
+              <InputGroup className="validity">
+                <Label>Validade (mês/ano):</Label>
+                <MaskedInput
+                  placeholder="__/____"
+                  data-type="number"
+                  mask={'11/1111'}
+                  name="cardvalidity"
+                  onChange={e => this.handleChange(e)}
+                />
+                <span className={'error'}>{this.state.errors['cardvalidity']}</span>
+              </InputGroup>
 
-            <InputGroup className="cvv">
-              <Label>CVV:</Label>
-              <MaskedInput
-                placeholder="___"
-                data-type="number"
-                name="cardcvv"
-                mask={'111'}
-                onChange={e => this.handleChange(e)}
-              />
-              <span className={'error'}>{this.state.errors['cardcvv']}</span>
-            </InputGroup>
-          </Container>
-        </Block>
+              <InputGroup className="cvv">
+                <Label>CVV:</Label>
+                <MaskedInput
+                  placeholder="___"
+                  data-type="number"
+                  name="cardcvv"
+                  mask={'111'}
+                  onChange={e => this.handleChange(e)}
+                />
+                <span className={'error'}>{this.state.errors['cardcvv']}</span>
+              </InputGroup>
+            </Container>
+          </Block>
 
-        <TotalBox />
-        <ButtonBox
-          caption="Finalizar o pedido"
-          onClick={() => {
-            this.handleButtonBox(dispatch)
-          }}
-        />
-      </Section>
+          <TotalBox />
+          <ButtonBox
+            caption="Finalizar o pedido"
+            onClick={() => {
+              this.handleButtonBox(dispatch)
+            }}
+          />
+        </Section>
+      </General>
     )
   }
 }

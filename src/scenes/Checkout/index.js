@@ -11,9 +11,6 @@ import { connect } from 'react-redux'
 //pages
 import Page from './pages'
 class Checkout extends Component {
-  componentWillMount() {
-    console.log(this.props.match)
-  }
   render() {
     const { page } = this.props
     return (

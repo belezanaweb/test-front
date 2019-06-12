@@ -14,28 +14,35 @@ import ButtonBox from '../../components/ButtonBox'
 
 import * as PageActions from '../../../../store/actions/page'
 
+import { General } from '../../../Checkout/styles'
+
 class Cart extends Component {
   handleButtonBox(dispatch) {
     dispatch(PageActions.changePage('Payment'))
+    this.props.history.push('/payment')
   }
 
   render() {
     const { dispatch } = this.props
 
     return (
-      <Section caption="Produtos">
-        <Block className="cart">
-          <CartBox />
-        </Block>
-        <TotalBox />
-        <ButtonBox
-          caption={'Seguir para pagamento'}
-          page={'Payment'}
-          onClick={() => {
-            this.handleButtonBox(dispatch)
-          }}
-        />
-      </Section>
+      <General>
+        <Flash />
+        <Header />
+        <Section caption="Produtos">
+          <Block className="cart">
+            <CartBox />
+          </Block>
+          <TotalBox />
+          <ButtonBox
+            caption={'Seguir para pagamento'}
+            page={'Payment'}
+            onClick={() => {
+              this.handleButtonBox(dispatch)
+            }}
+          />
+        </Section>
+      </General>
     )
   }
 }
