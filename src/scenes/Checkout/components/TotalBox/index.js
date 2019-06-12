@@ -6,7 +6,8 @@ import { connect } from 'react-redux'
 
 class TotalBox extends Component {
   render() {
-    const { subTotal, shippingTotal, discount, total } = this.props
+    const { subTotal, shippingTotal, discount } = this.props
+    const total = this.props.subTotal + this.props.shippingTotal - this.props.discount
 
     return (
       <Container>
