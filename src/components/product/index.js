@@ -13,7 +13,7 @@ export default class product extends Component {
   render() {
     return (
       <Container className="product-item">
-        <img src={this.state.product.imageObjects[0].thumbnail} />
+        <img alt={this.state.product.name} src={this.state.product.imageObjects[0].thumbnail} />
         <Description>
           <p>{this.state.product.name}</p>
           <p className="price">{handleMoney(this.state.product.priceSpecification.price)}</p>

@@ -31,7 +31,7 @@ export const Section = styled.section`
   box-shadow: 0 0 5px #aba8a8;
   background: #fff;
   padding: 20px;
-  width:90%;
+  width:83%;
   margin: 5px auto;
   text-transform:uppercase;
   font-family:'Arial'

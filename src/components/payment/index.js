@@ -38,7 +38,7 @@ class Payment extends Component {
   }
 }
 
-const mapStateToProps = state => (console.log(state),{
+const mapStateToProps = state => ({
   payment: state.payment.data
 });
 
