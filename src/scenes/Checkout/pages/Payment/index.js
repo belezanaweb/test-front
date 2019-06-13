@@ -153,6 +153,7 @@ class Payment extends Component {
 
           <TotalBox />
           <ButtonBox
+            id={'paymentButton'}
             caption={'Finalizar o pedido'}
             active={this.state.validForm ? true : false}
             onClick={() => {

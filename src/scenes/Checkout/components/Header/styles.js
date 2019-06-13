@@ -14,6 +14,7 @@ export const Container = styled.nav`
   box-shadow: 1px 1px 5px 0 rgba(0, 0, 29, 0.22);
   padding: 0px 16px 0px 21px;
   letter-spacing: 0px;
+  min-height: 40px;
 
   @media (min-width: 768px) {
     flex-direction: column;
@@ -30,7 +31,6 @@ export const Item = styled.div`
   font-size: ${metrics.fonts.size.small};
   line-height: 16px;
   text-transform: uppercase;
-  font-family: 'Helvetica Neue';
   text-align: center;
   @media (min-width: 768px) {
     margin: 20px 0;

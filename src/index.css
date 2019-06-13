@@ -8,6 +8,7 @@ body {
   -moz-osx-font-smoothing: grayscale;
   position: relative;
   /* width: 360px; */
+  background-color: #eeeeee;
 }
 
 code {

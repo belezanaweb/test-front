@@ -5,6 +5,8 @@ import { connect } from 'react-redux'
 import { Container } from './styles'
 import { ListItem, ListFigure, ListDescription } from '../Block'
 
+import api from '../../../../services/api'
+
 import axios from 'axios'
 
 class CartBox extends Component {
@@ -16,8 +18,7 @@ class CartBox extends Component {
 
   async getData(dispatch) {
     try {
-      await axios
-        .get('http://www.mocky.io/v2/5b15c4923100004a006f3c07')
+      await api
         .then(response => {
           dispatch(this.setData(response))
         })
