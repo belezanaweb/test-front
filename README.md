@@ -1,41 +1,40 @@
 ## Frontend Test
+Test for frontend developer for [BelezaNaWeb](http://github.com/belezanaweb), using ReactJS.
 
-Faça um fork deste repositório e finalizar o teste, submeta um pull request para o repositório que nosso time será notificado.
+### About the candidate
+Author: [Samuel Levy](http://github.com/samuellevy)  
+Resume: [CV](https://gist.github.com/samuellevy/f62a6db1754e49d2caad5c7a208c4fc9)
 
-O teste consiste em um checkout simples contendo 3 passos (carrinho, pagamento e sucesso) [Veja o Layout](https://projects.invisionapp.com/prototype/font-test-cji0j0khf005c1t0132358e8k)
+### Tech used in this project:
+- ReactJS
+- Redux
+- React router
+- Axios
+- CSS in JS with Styled Components
+- Jest
+- Enzyme
 
-**Faça quando quiser/puder (madrugada, fim de semana, etc)**
+### Installation
 
-### Requerimentos
+Clone this project
+```
+git clone https://github.com/samuellevy/test-front
+```
 
-- Pixel perfect ([nesse link](https://projects.invisionapp.com/prototype/font-test-cji0j0khf005c1t0132358e8k), você pode inspecionar para ver espaçamentos, fonte, tamanho, etc)
-- A aplicação precisa ser responsiva, utilizando o conceito de mobile-first. Use sua imaginação para entregar uma experiência boa no desktop.
-- Renderize cada passo em uma URL única (lib de rotas).
+Install project dependecies
+```
+yarn install
+```
 
+### Run
+Test project
+```
+yarn test
+```
 
-### Passo 1 - Carrinho:
-  - Consuma o [esse endpoint](http://www.mocky.io/v2/5b15c4923100004a006f3c07) e liste os itens do carrinho, bem como o resumo do carrinho;
-  - Persista o conteúdo do JSON para ser usado nas próximas etapas (store do redux é nossa sugestão);
+Run app
+```
+yarn start
+```
 
-### Passo 2 - Pagamento: 
-  - Exiba um form com campos de cartão de crédito com validação em cada campo;
-  - Habilite o botão de Finalizar Pedido apenas se o form esteja válido;
-
-### Passo 3 - Sucesso: 
-  - Todo o conteúdo deverá ser exibido a partir dos dados persistidos;
-  
-### O que vamos avaliar:
-  - Organização do código;
-  - Mensagens (em inglês) e mudanças nos commits;
-  - Composição/reutilização de componentes;
-  - Testes unitários;
-  - O motivo de ter escolhido cada tech da stack;
-  - Como rodar sua aplicação ;)
-
-### Diferenciais:
-  - Split bundle por rota (cada step ter um bundle separado para otimizar a performance);
-  - CSS in JS;
-  - React;
-
-### Fim:
-Ao finalizar o teste, submeta um pull request para o repositório que nosso time será notificado. Se tiver alguma observação, escreva no pull request.
+Be happy!
