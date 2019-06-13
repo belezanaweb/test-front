@@ -12,7 +12,7 @@ export default class product extends Component {
 
   render() {
     return (
-      <Container>
+      <Container className="product-item">
         <img src={this.state.product.imageObjects[0].thumbnail} />
         <Description>
           <p>{this.state.product.name}</p>

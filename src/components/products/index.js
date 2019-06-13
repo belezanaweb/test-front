@@ -11,6 +11,7 @@ class Products extends Component {
 
   componentDidMount(){
     this.props.getProductsRequest();
+
   }
 
   render() {

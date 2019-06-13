@@ -16,7 +16,11 @@
     "yup": "^0.24.1"
   },
   "devDependencies": {
-    "react-scripts": "2.1.8"
+    "axios-mock-adapter": "^1.16.0",
+    "enzyme": "^3.9.0",
+    "enzyme-adapter-react-16": "^1.14.0",
+    "react-scripts": "2.1.8",
+    "redux-mock-store": "^1.5.3"
   },
   "scripts": {
     "start": "react-scripts start",
