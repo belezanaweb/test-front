@@ -36,7 +36,7 @@ const ProductsBox = (props) => {
                   />
                 </div>
                 <div className={css(styles.namePriceDiv)}>
-                  <div>
+                  <div className={css(styles.productName)}>
                     {name}
                   </div>
                   <div className={css(styles.price)}>

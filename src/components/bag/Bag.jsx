@@ -1,4 +1,5 @@
-import React, { Component } from 'react';
+import React, { PureComponent } from 'react';
+import { Link } from 'react-router-dom';
 import { css } from 'aphrodite/no-important';
 
 import ProductsBox from './productsBox';
@@ -6,7 +7,7 @@ import CalcBox from './calcBox';
 import styles from './styles';
 import Cart from '../../common/Cart';
 
-class Bag extends Component {
+class Bag extends PureComponent {
 
   objProducts = null;
 
@@ -48,6 +49,12 @@ class Bag extends Component {
           <ProductsBox items={items} />
 
           <CalcBox objProducts={this.objProducts} />
+
+          <div className={css(styles.goPay)}>
+            <Link to="/pagamento" className={css(styles.link)}>
+              SEGUIR PARA O PAGAMENTO
+            </Link>
+          </div>
 
         </div>
       </div>

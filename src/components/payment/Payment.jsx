@@ -1,8 +1,8 @@
-import React, { Component } from 'react';
+import React, { PureComponent } from 'react';
 
 import Cart from '../../common/Cart';
 
-class Payment extends Component {
+class Payment extends PureComponent {
 
   objProducts = null;
 

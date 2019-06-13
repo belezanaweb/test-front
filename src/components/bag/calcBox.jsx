@@ -18,10 +18,19 @@ const CalcBox = (props) => {
 
   return (
 
-    <div>
-
-      {normalizePrice(total)}
-
+    <div className={css(styles.calcBox)}>
+      <div className={css(styles.calcRow)}>
+        <div>PRODUTOS</div><div>{normalizePrice(subTotal)}</div>
+      </div>
+      <div className={css(styles.calcRow)}>
+        <div>FRETE</div><div>{normalizePrice(shippingTotal)}</div>
+      </div>
+      <div className={css(styles.calcRow, styles.orange)}>
+        <div>DESCONTO</div><div>- {normalizePrice(discount)}</div>
+      </div>
+      <div className={css(styles.calcRow, styles.calTotal)}>
+        <div>TOTAL</div><div>{normalizePrice(total)}</div>
+      </div>
     </div>
 
   );
