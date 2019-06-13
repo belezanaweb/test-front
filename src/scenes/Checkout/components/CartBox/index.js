@@ -7,8 +7,6 @@ import { ListItem, ListFigure, ListDescription } from '../Block'
 
 import api from '../../../../services/api'
 
-import axios from 'axios'
-
 class CartBox extends Component {
   currency = number => {
     number = number.toFixed(2).toString()
