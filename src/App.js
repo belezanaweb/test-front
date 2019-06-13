@@ -2,13 +2,10 @@ import './assets/scss/main.scss'
 
 import React, { Component } from 'react'
 import { BrowserRouter, Route } from 'react-router-dom'
-import Checkout from './scenes/Checkout'
 import MainScene from './scenes/MainScene'
 import Cart from './scenes/Checkout/pages/Cart'
 import Payment from './scenes/Checkout/pages/Payment'
 import Conclusion from './scenes/Checkout/pages/Conclusion'
-
-import Form from './scenes/Checkout/pages/Form'
 
 import { Provider } from 'react-redux'
 import store from './store'

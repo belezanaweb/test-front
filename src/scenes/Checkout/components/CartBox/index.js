@@ -28,7 +28,7 @@ class CartBox extends Component {
   }
 
   setData(data) {
-    console.log(data)
+    // console.log(data)
     return {
       type: 'GET_DATA',
       cart: data

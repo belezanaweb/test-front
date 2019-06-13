@@ -13,7 +13,7 @@ class ButtonBox extends Component {
   }
 
   render() {
-    const { dispatch, caption, page, onClick, active } = this.props
+    const { caption, onClick, active } = this.props
 
     return (
       <Container>
