@@ -14,7 +14,7 @@ const ContineButton = (props) => {
 
   return (
 
-    <div className={css(styles.container)} >
+    <div className={css(styles.container)}>
       <Link
         to={link}
         className={css(styles.link)}
