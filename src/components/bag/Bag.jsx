@@ -1,21 +1,22 @@
 import React, { PureComponent } from 'react';
-import { Link } from 'react-router-dom';
 import { css } from 'aphrodite/no-important';
 
-import ProductsBox from './productsBox';
-import CalcBox from './calcBox';
+import ProductsBox from '../productBox/ProductsBox';
+import CalcBox from '../calcBox/CalcBox';
+import ContinueButton from '../continueButton/ContinueButton';
+
 import styles from './styles';
 import Cart from '../../common/Cart';
 
 class Bag extends PureComponent {
 
-  objProducts = null;
+  objProducts = Cart.read();
 
   componentDidMount = async () => {
 
     if (!this.objProducts) {
 
-      this.objProducts = await Cart.get();
+      this.objProducts = await Cart.download();
       this.forceUpdate();
 
     }
@@ -24,37 +25,36 @@ class Bag extends PureComponent {
 
   render() {
 
-    this.objProducts = Cart.getCache();
-
     if (!this.objProducts) {
 
       /**
-       * TODO: aqui pode-se colocar uma mensagem/imagem de "Carregando...",
-       * se achar necessário
+       * TODO: maybe create here a message/image "Carregando..."
        */
       return null;
 
     }
 
-    const { items } = this.objProducts;
+    const {
+      items,
+      error,
+    } = this.objProducts;
+
+    // TODO: do a better error/empty bag handling
+    if (error) return (<div className={css(styles.errorMsg)}>{error}</div>);
+    if (!items) return (<div className={css(styles.errorMsg)}>Sem itens na sacola</div>);
 
     return (
       <div className={css(styles.container)}>
         <div className={css(styles.content)}>
 
-          <div className={css(styles.title)}>
-            PRODUTOS
-          </div>
-
           <ProductsBox items={items} />
 
           <CalcBox objProducts={this.objProducts} />
 
-          <div className={css(styles.goPay)}>
-            <Link to="/pagamento" className={css(styles.link)}>
-              SEGUIR PARA O PAGAMENTO
-            </Link>
-          </div>
+          <ContinueButton
+            link="/pagamento"
+            label="SEGUIR PARA O PAGAMENTO"
+          />
 
         </div>
       </div>

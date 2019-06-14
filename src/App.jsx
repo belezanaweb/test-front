@@ -20,8 +20,8 @@ const Payment = Loadable({
   loading: AppLoading,
 });
 
-const Confirm = Loadable({
-  loader: () => import('./components/confirm/Confirm'),
+const Success = Loadable({
+  loader: () => import('./components/success/Success'),
   loading: AppLoading,
 });
 
@@ -37,7 +37,7 @@ const App = () => (
       />
       <Route path="/sacola" component={Bag} />
       <Route path="/pagamento" component={Payment} />
-      <Route path="/confirma" component={Confirm} />
+      <Route path="/confirma" component={Success} />
     </div>
   </Router>
 );

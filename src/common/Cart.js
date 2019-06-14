@@ -7,30 +7,28 @@ const dataStoreCardId = 'CartObjProducts';
 
 const Cart = {
 
-  getCache: () => DataStore.get(dataStoreCardId),
+  read: () => DataStore.get(dataStoreCardId),
 
-  get: async (force) => {
+  download: async () => {
 
     let objProducts;
 
-    if (!force) objProducts = DataStore.get(dataStoreCardId);
+    try {
 
-    if (force || !objProducts) {
+      /**
+       * Warning: during the development the url was unavailable several times
+       */
+      const { data } = await axios.get(url);
+      objProducts = data || {};
 
-      try {
+    } catch (error) {
 
-        const { data } = await axios.get(url);
-        objProducts = data || {};
-
-      } catch (e) {
-
-        objProducts = {};
-
-      }
-
-      DataStore.set(dataStoreCardId, objProducts);
+      // TODO: do a better error handling
+      objProducts = { error: 'Erro acessando API do carrinho' };
 
     }
+
+    DataStore.set(dataStoreCardId, objProducts);
 
     return objProducts;
 

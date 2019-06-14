@@ -18,7 +18,7 @@ const CalcBox = (props) => {
 
   return (
 
-    <div className={css(styles.calcBox)}>
+    <div className={css(styles.container)}>
       <div className={css(styles.calcRow)}>
         <div>PRODUTOS</div><div>{normalizePrice(subTotal)}</div>
       </div>
