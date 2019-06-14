@@ -37,7 +37,7 @@ const App = () => (
       />
       <Route path="/sacola" component={Bag} />
       <Route path="/pagamento" component={Payment} />
-      <Route path="/confirma" component={Success} />
+      <Route path="/sucesso" component={Success} />
     </div>
   </Router>
 );

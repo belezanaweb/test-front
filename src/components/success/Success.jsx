@@ -4,17 +4,12 @@ import { css } from 'aphrodite/no-important';
 import ProductsBox from '../productBox/ProductsBox';
 import CalcBox from '../calcBox/CalcBox';
 import Cart from '../../common/Cart';
+import DataStore from '../../common/DataStore';
 
 import styles from './styles';
 
 import checkImg from '../../assets/images/check.png';
 import circleImg from '../../assets/images/circle.png';
-
-const mockPayment = {
-  card: '****.****.****.1234',
-  name: 'José da Silva',
-  exp: '05/2019',
-};
 
 class Success extends PureComponent {
 
@@ -47,11 +42,19 @@ class Success extends PureComponent {
       error,
     } = this.objProducts;
 
+    let valueCardMasked = '';
     const {
-      card,
-      name,
-      exp,
-    } = mockPayment;
+      valueCard = '',
+      valueName = '',
+      valueExpires = '',
+    } = DataStore.get('userData') || {};
+
+    if (valueCard) {
+
+      const [,,, valueCardLast] = valueCard.split('.');
+      valueCardMasked = `****.****.****.${valueCardLast || '****'}`;
+
+    }
 
     // TODO: do a better error/empty bag handling
     if (error) return (<div className={css(styles.errorMsg)}>{error}</div>);
@@ -84,14 +87,14 @@ class Success extends PureComponent {
               PAGAMENTO
             </div>
             <div className={css(styles.paymentContent)}>
-              <div>
-                {card}
+              <div className={css(styles.row)}>
+                <div>Número do cartão:</div><div>{valueCardMasked}</div>
               </div>
-              <div>
-                {name.toUpperCase()}
+              <div className={css(styles.row)}>
+                <div>Nome:</div><div>{valueName.toUpperCase()}</div>
               </div>
-              <div>
-                {exp}
+              <div className={css(styles.row)}>
+                <div>Expira em:</div><div>{valueExpires}</div>
               </div>
             </div>
           </div>

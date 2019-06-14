@@ -15,7 +15,7 @@ const menuItems = [
   },
   {
     label: 'CONFIRMAÇÃO',
-    link: '/confirma',
+    link: '/sucesso',
   },
 ];
 

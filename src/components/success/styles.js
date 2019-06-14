@@ -6,6 +6,7 @@ const styles = StyleSheet.create({
     display: 'flex',
     justifyContent: 'center',
     width: '100%',
+    marginBottom: '5px',
   },
   content: {
     width: 'calc(100vw - 20px)',
@@ -46,20 +47,20 @@ const styles = StyleSheet.create({
     marginTop: '10px',
   },
   paymentContent: {
-    // display: 'flex',
-    // justifyContent: 'left',
-    width: 'calc(100% - 20px)',
+    width: '100%',
     borderRadius: '3px',
     backgroundColor: '#ffffff',
     boxShadow: '1px 1px 5px 0 rgba(0,0,29,0.22)',
     marginTop: '10px',
-    padding: '8px 10px',
+    padding: '10px 0',
     fontSize: '14px',
-    lineHeight: '25px',
     color: '#212122',
   },
-
-
+  row: {
+    display: 'flex',
+    justifyContent: 'space-between',
+    margin: '12px 15px',
+  },
 });
 
 export default styles;
