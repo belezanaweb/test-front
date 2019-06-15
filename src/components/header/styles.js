@@ -1,7 +1,5 @@
 import { StyleSheet } from 'aphrodite';
 
-const hMargins = '20px';
-
 const styles = StyleSheet.create({
 
   container: {
@@ -26,9 +24,10 @@ const styles = StyleSheet.create({
     fontFamily: 'Helvetica Neue',
     fontSize: '13px',
     fontWeight: 700,
-    width: `calc(100vw - 2 * ${hMargins})`,
+    width: 'calc(100vw - 40px)',
+    padding: '0 20px',
     '@media (min-width: 1024px)': {
-      width: `calc(1024px - 2 * ${hMargins})`,
+      width: 'calc(1024px - 20px)',
       alignItems: 'center',
       fontSize: '14px',
     },

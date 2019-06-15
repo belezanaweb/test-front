@@ -19,6 +19,8 @@ const Cart = {
 
   download: async () => {
 
+    // return {};
+
     let objProducts;
 
     try {
