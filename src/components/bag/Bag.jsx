@@ -49,15 +49,16 @@ class Bag extends PureComponent {
       <div className={css(styles.container)}>
         <div className={css(styles.content)}>
 
-          <ProductsBox />
-
-          <CalcBox />
-
-          <ContinueButton
-            link="/pagamento"
-            label="SEGUIR PARA O PAGAMENTO"
-          />
-
+          <div className={css(styles.prodCalc)}>
+            <ProductsBox />
+            <CalcBox className={css(styles.calcBox)} />
+          </div>
+          <div className={css(styles.continueDiv)}>
+            <ContinueButton
+              link="/pagamento"
+              label="SEGUIR PARA O PAGAMENTO"
+            />
+          </div>
         </div>
       </div>
     );

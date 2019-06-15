@@ -52,6 +52,10 @@ const styles = StyleSheet.create({
     '::placeholder': {
       color: '#d0d0d0',
     },
+    ':focus': {
+      borderColor: '#a43287',
+      outline: 'none',
+    },
   },
   inputBoxDual: {
     display: 'flex',
@@ -64,6 +68,16 @@ const styles = StyleSheet.create({
     width: '120px',
     '@media (max-width: 359px)': {
       width: '100px',
+    },
+  },
+  continueDiv: {
+    display: 'flex',
+    justifyContent: 'center',
+  },
+  prodCalc: {
+    '@media (min-width: 767px)': {
+      display: 'flex',
+      justifyContent: 'space-between',
     },
   },
 });

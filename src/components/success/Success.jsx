@@ -72,44 +72,53 @@ class Success extends PureComponent {
       <div className={css(styles.container)}>
         <div className={css(styles.content)}>
 
-          <div className={css(styles.successBox)}>
-            <div className={css(styles.successImages)}>
-              <div className={css(styles.checkImageDiv)}>
-                <img
-                  src={checkImg}
-                  alt=""
-                />
+          <div className={css(styles.prodCalc)}>
+
+            <div className={css(styles.prodCalcLeft)}>
+
+              <div className={css(styles.successBox)}>
+                <div className={css(styles.successImages)}>
+                  <div className={css(styles.checkImageDiv)}>
+                    <img
+                      src={checkImg}
+                      alt=""
+                    />
+                  </div>
+                  <img
+                    src={circleImg}
+                    alt=""
+                  />
+                </div>
+                <div>
+                  COMPRA EFETUADA COM SUCESSO
+                </div>
               </div>
-              <img
-                src={circleImg}
-                alt=""
-              />
+
+              <div className={css(styles.paymentBox)}>
+                <div className={css(styles.title)}>
+                  PAGAMENTO
+                </div>
+                <div className={css(styles.paymentContent)}>
+                  <div className={css(styles.row)}>
+                    <div>Número do cartão:</div><div>{valueCardMasked}</div>
+                  </div>
+                  <div className={css(styles.row)}>
+                    <div>Nome:</div><div>{valueName.toUpperCase()}</div>
+                  </div>
+                  <div className={css(styles.row)}>
+                    <div>Expira em:</div><div>{valueExpires}</div>
+                  </div>
+                </div>
+              </div>
+
+              <ProductsBox />
             </div>
-            <div>
-              COMPRA EFETUADA COM SUCESSO
+
+            <div className={css(styles.prodCalcRight)}>
+              <CalcBox className={css(styles.calcBox)} />
             </div>
+
           </div>
-
-          <div className={css(styles.paymentBox)}>
-            <div className={css(styles.title)}>
-              PAGAMENTO
-            </div>
-            <div className={css(styles.paymentContent)}>
-              <div className={css(styles.row)}>
-                <div>Número do cartão:</div><div>{valueCardMasked}</div>
-              </div>
-              <div className={css(styles.row)}>
-                <div>Nome:</div><div>{valueName.toUpperCase()}</div>
-              </div>
-              <div className={css(styles.row)}>
-                <div>Expira em:</div><div>{valueExpires}</div>
-              </div>
-            </div>
-          </div>
-
-          <ProductsBox />
-
-          <CalcBox />
 
         </div>
       </div>

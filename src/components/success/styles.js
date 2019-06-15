@@ -21,6 +21,9 @@ const styles = StyleSheet.create({
     fontSize: '14px',
     fontWeight: 700,
     margin: '12px 0 20px 0',
+    '@media (min-width: 767px)': {
+      marginTop: '30px',
+    },
   },
   successImages: {
     position: 'relative',
@@ -60,6 +63,24 @@ const styles = StyleSheet.create({
     display: 'flex',
     justifyContent: 'space-between',
     margin: '12px 15px',
+  },
+  prodCalc: {
+    '@media (min-width: 767px)': {
+      display: 'flex',
+      justifyContent: 'space-between',
+    },
+  },
+  prodCalcLeft: {
+    maxWidth: '708px',
+    '@media (min-width: 767px)': {
+      marginBottom: '20px',
+    },
+  },
+  prodCalcRight: {
+    '@media (min-width: 767px)': {
+      margin: '109px 12px 0 40px',
+      minWidth: '248px',
+    },
   },
 });
 

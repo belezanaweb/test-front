@@ -125,70 +125,76 @@ class Payment extends PureComponent {
       <div className={css(styles.container)}>
         <div className={css(styles.content)}>
 
-          <div className={css(styles.title)}>
-            CARTÃO DE CRÉDITO
-          </div>
+          <div className={css(styles.prodCalc)}>
 
-          <div className={css(styles.formBox)}>
-            <div className={css(styles.inputBox)}>
-              <div className={css(styles.inputLabel)}>
-                Número do cartão:
+            <div>
+              <div className={css(styles.title)}>
+                CARTÃO DE CRÉDITO
               </div>
-              <MaskedInput
-                className={css(styles.inputBig)}
-                value={valueCardDirty || ''}
-                onChange={this.valueCardChanged}
-                mask={() => this.maskFunction('card')}
-              />
-            </div>
-            <div className={css(styles.inputBox)}>
-              <div className={css(styles.inputLabel)}>
-                Nome do Titular:
-              </div>
-              <input
-                type="text"
-                className={css(styles.inputBig)}
-                value={valueName || ''}
-                onChange={this.valueNameChanged}
-                placeholder="Como no cartão"
-              />
-            </div>
-            <div className={css(styles.inputBox, styles.inputBoxDual)}>
-              <div>
-                <div className={css(styles.inputLabel)}>
-                  Validade (mês/ano):
-                </div>
-                <div>
+              <div className={css(styles.formBox)}>
+                <div className={css(styles.inputBox)}>
+                  <div className={css(styles.inputLabel)}>
+                    Número do cartão:
+                  </div>
                   <MaskedInput
-                    className={css(styles.inputBig, styles.inputExpires)}
-                    value={valueExpiresDirty || ''}
-                    onChange={this.valueExpiresChanged}
-                    mask={() => this.maskFunction('date')}
+                    className={css(styles.inputBig)}
+                    value={valueCardDirty || ''}
+                    onChange={this.valueCardChanged}
+                    mask={() => this.maskFunction('card')}
                   />
                 </div>
-              </div>
-              <div>
-                <div className={css(styles.inputLabel)}>
-                  CVV:
+                <div className={css(styles.inputBox)}>
+                  <div className={css(styles.inputLabel)}>
+                    Nome do Titular:
+                  </div>
+                  <input
+                    type="text"
+                    className={css(styles.inputBig)}
+                    value={valueName || ''}
+                    onChange={this.valueNameChanged}
+                    placeholder="Como no cartão"
+                  />
                 </div>
-                <MaskedInput
-                  className={css(styles.inputBig, styles.inputCV)}
-                  value={valueCvvDirty || ''}
-                  onChange={this.valueCvvChanged}
-                  mask={() => this.maskFunction('cvv')}
-                />
+                <div className={css(styles.inputBox, styles.inputBoxDual)}>
+                  <div>
+                    <div className={css(styles.inputLabel)}>
+                      Validade (mês/ano):
+                    </div>
+                    <div>
+                      <MaskedInput
+                        className={css(styles.inputBig, styles.inputExpires)}
+                        value={valueExpiresDirty || ''}
+                        onChange={this.valueExpiresChanged}
+                        mask={() => this.maskFunction('date')}
+                      />
+                    </div>
+                  </div>
+                  <div>
+                    <div className={css(styles.inputLabel)}>
+                      CVV:
+                    </div>
+                    <MaskedInput
+                      className={css(styles.inputBig, styles.inputCV)}
+                      value={valueCvvDirty || ''}
+                      onChange={this.valueCvvChanged}
+                      mask={() => this.maskFunction('cvv')}
+                    />
+                  </div>
+                </div>
+
               </div>
             </div>
+            <CalcBox />
 
           </div>
 
-          <CalcBox />
-
-          <ContinueButton
-            link="/sucesso"
-            label="FINALIZAR O PEDIDO"
-            enable={this.enableSuccess.enabled}
-          />
+          <div className={css(styles.continueDiv)}>
+            <ContinueButton
+              link="/sucesso"
+              label="FINALIZAR O PEDIDO"
+              enable={this.enableSuccess.enabled}
+            />
+          </div>
 
         </div>
       </div>

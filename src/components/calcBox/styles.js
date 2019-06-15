@@ -11,6 +11,12 @@ const styles = StyleSheet.create({
     padding: '8px 14px',
     fontSize: '14px',
     color: '#212122',
+    height: 'fit-content',
+    '@media (min-width: 767px)': {
+      maxWidth: '250px',
+      marginTop: '36px',
+      marginLeft: '12px',
+    },
   },
   calcRow: {
     display: 'flex',

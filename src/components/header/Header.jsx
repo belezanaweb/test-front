@@ -6,6 +6,8 @@ import DataStore from '../../common/DataStore';
 
 import styles from './styles';
 
+import logo from '../../assets/images/logo.svg';
+
 const menuItems = [
   {
     label: 'SACOLA',
@@ -37,6 +39,12 @@ const Header = () => {
 
     <div className={css(styles.container)}>
       <div className={css(styles.content)}>
+        <div className={css(styles.logo)}>
+          <img
+            src={logo}
+            alt="Beleza na Web"
+          />
+        </div>
         {
           menuItems.map(menuItem => (
             <NavLink

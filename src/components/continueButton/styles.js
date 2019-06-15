@@ -16,9 +16,17 @@ const styles = StyleSheet.create({
     fontWeight: 700,
     letterSpacing: '0.5px',
     lineHeight: '24px',
+    cursor: 'pointer',
     margin: '20px 0 5px 0',
     '@media (max-width: 359px)': {
       fontSize: '18px',
+    },
+    '@media (min-width: 767px)': {
+      width: 'fit-content',
+      padding: '0 40px',
+    },
+    ':hover': {
+      backgroundColor: '#D45A00',
     },
   },
   link: {
