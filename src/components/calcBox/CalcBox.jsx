@@ -1,13 +1,13 @@
 import React from 'react';
 import { css } from 'aphrodite/no-important';
-import PropTypes from 'prop-types';
 
 import normalizePrice from '../../utils/normalizePrice';
+import Cart from '../../common/Cart';
 import styles from './styles';
 
-const CalcBox = (props) => {
+const CalcBox = () => {
 
-  const { objProducts } = props;
+  const objProducts = Cart.shared();
 
   const {
     subTotal,
@@ -26,7 +26,7 @@ const CalcBox = (props) => {
         <div>FRETE</div><div>{normalizePrice(shippingTotal)}</div>
       </div>
       <div className={css(styles.calcRow, styles.orange)}>
-        <div>DESCONTO</div><div>- {normalizePrice(discount)}</div>
+        <div>DESCONTO</div><div>{normalizePrice(-discount)}</div>
       </div>
       <div className={css(styles.calcRow, styles.calTotal)}>
         <div>TOTAL</div><div>{normalizePrice(total)}</div>
@@ -35,10 +35,6 @@ const CalcBox = (props) => {
 
   );
 
-};
-
-CalcBox.propTypes = {
-  objProducts: PropTypes.objectOf(PropTypes.any).isRequired,
 };
 
 export default CalcBox;

@@ -26,7 +26,7 @@ const Success = Loadable({
 });
 
 const App = () => (
-  <Router>
+  <Router basename="/test-front">
     <div>
       <Header />
       <Route

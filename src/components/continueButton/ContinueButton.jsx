@@ -5,31 +5,43 @@ import PropTypes from 'prop-types';
 
 import styles from './styles';
 
-const ContineButton = (props) => {
+const ContinueButton = (props) => {
 
   const {
     link,
     label,
+    enable,
   } = props;
 
   return (
 
-    <div className={css(styles.container)}>
-      <Link
-        to={link}
-        className={css(styles.link)}
-      >
-        {label}
-      </Link>
+    <div className={css(styles.container, enable ? '' : styles.disable)}>
+      {
+        enable ? (
+          <Link
+            to={link}
+            className={css(styles.link)}
+          >
+            {label}
+          </Link>
+        ) : (
+          label
+        )
+      }
     </div>
 
   );
 
 };
 
-ContineButton.propTypes = {
+ContinueButton.propTypes = {
   link: PropTypes.string.isRequired,
   label: PropTypes.string.isRequired,
+  enable: PropTypes.bool,
 };
 
-export default ContineButton;
+ContinueButton.defaultProps = {
+  enable: true,
+};
+
+export default ContinueButton;

@@ -1,29 +1,29 @@
-import React, { Component } from 'react';
+import React, { PureComponent } from 'react';
 import { css } from 'aphrodite/no-important';
 import MaskedInput from 'react-text-mask';
 
 import styles from './styles';
 import Cart from '../../common/Cart';
 import DataStore from '../../common/DataStore';
+import CalcBox from '../calcBox/CalcBox';
 
 import ContinueButton from '../continueButton/ContinueButton';
 
-class Payment extends Component {
+import { isEmptyObj } from '../../utils/isEmpty';
 
-  state = {
-    valueCard: '',
-    valueName: '',
-    valueExpires: '',
-    valueCvv: '',
-  }
+class Payment extends PureComponent {
 
-  objProducts = Cart.read();
+  objProducts = Cart.shared();
+
+  userData = DataStore.shared('userData');
+
+  enableSuccess = DataStore.shared('enableSuccess');
 
   componentDidMount = async () => {
 
-    if (!this.objProducts) {
+    if (isEmptyObj(this.objProducts)) {
 
-      this.objProducts = await Cart.download();
+      await Cart.download();
       this.forceUpdate();
 
     }
@@ -50,52 +50,41 @@ class Payment extends Component {
   valueCardChanged = (event) => {
 
     const { value } = event.target;
-    this.setState({ valueCard: value });
+    this.userData.valueCardDirty = value;
+    this.userData.valueCard = value.replace(/_/g, '');
+    this.forceUpdate();
 
   }
 
   valueNameChanged = (event) => {
 
-    console.log('POS 1')
-
     const { value } = event.target;
-    this.setState({ valueName: value });
+    this.userData.valueName = value;
+    this.forceUpdate();
 
   }
 
   valueExpiresChanged = (event) => {
 
     const { value } = event.target;
-    this.setState({ valueExpires: value });
+    this.userData.valueExpiresDirty = value;
+    this.userData.valueExpires = value.replace(/_/g, '');
+    this.forceUpdate();
 
   }
 
   valueCvvChanged = (event) => {
 
     const { value } = event.target;
-    this.setState({ valueCvv: value });
-
-  }
-
-  saveData = () => {
-
-    const {
-      valueCard,
-      valueName,
-      valueExpires,
-    } = this.state;
-
-    DataStore.set('userData', {
-      valueCard: valueCard.replace(/_/g, ''),
-      valueName,
-      valueExpires: valueExpires.replace(/_/g, ''),
-    });
+    this.userData.valueCvvDirty = value;
+    this.userData.valueCvv = value.replace(/_/g, '');
+    this.forceUpdate();
 
   }
 
   render() {
 
-    if (!this.objProducts) {
+    if (isEmptyObj(this.objProducts)) {
 
       /**
        * TODO: maybe create here a message/image "Carregando..."
@@ -109,18 +98,28 @@ class Payment extends Component {
       error,
     } = this.objProducts;
 
-    const {
-      valueCard,
-      valueName,
-      valueExpires,
-      valueCvv,
-    } = this.state;
-
-    this.saveData();
-
     // TODO: do a better error/empty bag handling
-    if (error) return (<div className={css(styles.errorMsg)}>{error}</div>);
-    if (!items) return (<div className={css(styles.errorMsg)}>Sem itens na sacola</div>);
+    if (error) return (
+      <div className={css(styles.errorMsg)}>{error}</div>
+    );
+    if (!items) return (
+      <div className={css(styles.errorMsg)}>Sem itens na sacola</div>
+    );
+
+    const {
+      valueCardDirty = '',
+      valueCard = '',
+      valueName = '',
+      valueExpiresDirty = '',
+      valueExpires = '',
+      valueCvvDirty = '',
+      valueCvv = '',
+    } = this.userData;
+
+    this.enableSuccess.enabled = valueCard.length === 19
+      && valueExpires.length === 7
+      && valueCvv.length === 3
+      && valueName.length > 4;
 
     return (
       <div className={css(styles.container)}>
@@ -137,7 +136,7 @@ class Payment extends Component {
               </div>
               <MaskedInput
                 className={css(styles.inputBig)}
-                value={valueCard || ''}
+                value={valueCardDirty || ''}
                 onChange={this.valueCardChanged}
                 mask={() => this.maskFunction('card')}
               />
@@ -162,7 +161,7 @@ class Payment extends Component {
                 <div>
                   <MaskedInput
                     className={css(styles.inputBig, styles.inputExpires)}
-                    value={valueExpires || ''}
+                    value={valueExpiresDirty || ''}
                     onChange={this.valueExpiresChanged}
                     mask={() => this.maskFunction('date')}
                   />
@@ -174,7 +173,7 @@ class Payment extends Component {
                 </div>
                 <MaskedInput
                   className={css(styles.inputBig, styles.inputCV)}
-                  value={valueCvv || ''}
+                  value={valueCvvDirty || ''}
                   onChange={this.valueCvvChanged}
                   mask={() => this.maskFunction('cvv')}
                 />
@@ -183,9 +182,12 @@ class Payment extends Component {
 
           </div>
 
+          <CalcBox />
+
           <ContinueButton
             link="/sucesso"
             label="FINALIZAR O PEDIDO"
+            enable={this.enableSuccess.enabled}
           />
 
         </div>

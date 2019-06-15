@@ -25,6 +25,9 @@ const styles = StyleSheet.create({
     textDecoration: 'unset',
     color: 'unset',
   },
+  disable: {
+    opacity: 0.2,
+  },
 });
 
 export default styles;

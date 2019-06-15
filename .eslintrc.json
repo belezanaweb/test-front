@@ -30,6 +30,7 @@
       "no-underscore-dangle": 0,
       "jsx-a11y/click-events-have-key-events": "off",
       "no-return-assign": "off",
-      "curly": "off"
+      "curly": "off",
+      "arrow-body-style": "off"
   }
 }

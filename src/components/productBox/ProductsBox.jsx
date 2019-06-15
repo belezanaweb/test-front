@@ -1,14 +1,15 @@
 import React from 'react';
 import { css } from 'aphrodite/no-important';
-import PropTypes from 'prop-types';
 
+import Cart from '../../common/Cart';
 import ImageLazyLoader from '../../common/imageLazyLoader/ImageLazyLoader';
 import normalizePrice from '../../utils/normalizePrice';
+
 import styles from './styles';
 
-const ProductsBox = (props) => {
+const ProductsBox = () => {
 
-  const { items } = props;
+  const { items } = Cart.shared();
 
   return (
     <div className={css(styles.container)}>
@@ -58,10 +59,6 @@ const ProductsBox = (props) => {
     </div>
   );
 
-};
-
-ProductsBox.propTypes = {
-  items: PropTypes.arrayOf(PropTypes.any).isRequired,
 };
 
 export default ProductsBox;

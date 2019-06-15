@@ -8,15 +8,17 @@ import ContinueButton from '../continueButton/ContinueButton';
 import styles from './styles';
 import Cart from '../../common/Cart';
 
+import { isEmptyObj } from '../../utils/isEmpty';
+
 class Bag extends PureComponent {
 
-  objProducts = Cart.read();
+  objProducts = Cart.shared();
 
   componentDidMount = async () => {
 
-    if (!this.objProducts) {
+    if (isEmptyObj(this.objProducts)) {
 
-      this.objProducts = await Cart.download();
+      await Cart.download();
       this.forceUpdate();
 
     }
@@ -25,7 +27,7 @@ class Bag extends PureComponent {
 
   render() {
 
-    if (!this.objProducts) {
+    if (isEmptyObj(this.objProducts)) {
 
       /**
        * TODO: maybe create here a message/image "Carregando..."
@@ -47,9 +49,9 @@ class Bag extends PureComponent {
       <div className={css(styles.container)}>
         <div className={css(styles.content)}>
 
-          <ProductsBox items={items} />
+          <ProductsBox />
 
-          <CalcBox objProducts={this.objProducts} />
+          <CalcBox />
 
           <ContinueButton
             link="/pagamento"

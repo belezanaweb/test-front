@@ -7,7 +7,15 @@ const dataStoreCardId = 'CartObjProducts';
 
 const Cart = {
 
-  read: () => DataStore.get(dataStoreCardId),
+  shared: () => {
+
+    const data = DataStore.shared(dataStoreCardId);
+
+    return data;
+
+  },
+
+  readOnly: () => DataStore.readOnly(dataStoreCardId),
 
   download: async () => {
 
@@ -24,13 +32,11 @@ const Cart = {
     } catch (error) {
 
       // TODO: do a better error handling
-      objProducts = { error: 'Erro acessando API do carrinho' };
+      return { error: 'Erro acessando API do carrinho' };
 
     }
 
-    DataStore.set(dataStoreCardId, objProducts);
-
-    return objProducts;
+    return DataStore.store(dataStoreCardId, objProducts);
 
   },
 

@@ -8,18 +8,22 @@ import DataStore from '../../common/DataStore';
 
 import styles from './styles';
 
+import { isEmptyObj } from '../../utils/isEmpty';
+
 import checkImg from '../../assets/images/check.png';
 import circleImg from '../../assets/images/circle.png';
 
 class Success extends PureComponent {
 
-  objProducts = Cart.read();
+  objProducts = Cart.shared();
+
+  userData = DataStore.shared('userData');
 
   componentDidMount = async () => {
 
-    if (!this.objProducts) {
+    if (isEmptyObj(this.objProducts)) {
 
-      this.objProducts = await Cart.download();
+      await Cart.download();
       this.forceUpdate();
 
     }
@@ -28,7 +32,7 @@ class Success extends PureComponent {
 
   render() {
 
-    if (!this.objProducts) {
+    if (isEmptyObj(this.objProducts)) {
 
       /**
        * TODO: maybe create here a message/image "Carregando..."
@@ -42,12 +46,20 @@ class Success extends PureComponent {
       error,
     } = this.objProducts;
 
+    // TODO: do a better error/empty bag handling
+    if (error) return (
+      <div className={css(styles.errorMsg)}>{error}</div>
+    );
+    if (!items) return (
+      <div className={css(styles.errorMsg)}>Sem itens na sacola</div>
+    );
+
     let valueCardMasked = '';
     const {
       valueCard = '',
       valueName = '',
       valueExpires = '',
-    } = DataStore.get('userData') || {};
+    } = this.userData;
 
     if (valueCard) {
 
@@ -55,10 +67,6 @@ class Success extends PureComponent {
       valueCardMasked = `****.****.****.${valueCardLast || '****'}`;
 
     }
-
-    // TODO: do a better error/empty bag handling
-    if (error) return (<div className={css(styles.errorMsg)}>{error}</div>);
-    if (!items) return (<div className={css(styles.errorMsg)}>Sem itens na sacola</div>);
 
     return (
       <div className={css(styles.container)}>
@@ -99,9 +107,9 @@ class Success extends PureComponent {
             </div>
           </div>
 
-          <ProductsBox items={items} />
+          <ProductsBox />
 
-          <CalcBox objProducts={this.objProducts} />
+          <CalcBox />
 
         </div>
       </div>
