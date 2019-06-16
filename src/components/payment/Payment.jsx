@@ -15,7 +15,7 @@ class Payment extends PureComponent {
 
   focus = '';
 
-  objProducts = Cart.shared();
+  sharedObjProducts = Cart.shared();
 
   sharedUserData = DataStore.shared('userData');
 
@@ -23,7 +23,7 @@ class Payment extends PureComponent {
 
   componentDidMount = async () => {
 
-    if (isEmptyObj(this.objProducts)) {
+    if (isEmptyObj(this.sharedObjProducts)) {
 
       await Cart.download();
       this.forceUpdate();
@@ -104,7 +104,7 @@ class Payment extends PureComponent {
 
   render() {
 
-    if (isEmptyObj(this.objProducts)) {
+    if (isEmptyObj(this.sharedObjProducts)) {
 
       /**
        * TODO: maybe create here a message/image "Carregando..."
@@ -116,7 +116,7 @@ class Payment extends PureComponent {
     const {
       items,
       error,
-    } = this.objProducts;
+    } = this.sharedObjProducts;
 
     // TODO: do a better error/empty-bag handling
     if (error) return (

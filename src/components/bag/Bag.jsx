@@ -12,11 +12,11 @@ import { isEmptyObj } from '../../utils/isEmpty';
 
 class Bag extends PureComponent {
 
-  objProducts = Cart.shared();
+  sharedObjProducts = Cart.shared();
 
   componentDidMount = async () => {
 
-    if (isEmptyObj(this.objProducts)) {
+    if (isEmptyObj(this.sharedObjProducts)) {
 
       await Cart.download();
       this.forceUpdate();
@@ -27,7 +27,7 @@ class Bag extends PureComponent {
 
   render() {
 
-    if (isEmptyObj(this.objProducts)) {
+    if (isEmptyObj(this.sharedObjProducts)) {
 
       /**
        * TODO: maybe create here a message/image "Carregando..."
@@ -39,7 +39,7 @@ class Bag extends PureComponent {
     const {
       items,
       error,
-    } = this.objProducts;
+    } = this.sharedObjProducts;
 
     // TODO: do a better error/empty bag handling
     if (error) return (<div className={css(styles.errorMsg)}>{error}</div>);

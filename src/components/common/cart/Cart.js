@@ -7,13 +7,7 @@ const dataStoreCardId = 'CartObjProducts';
 
 const Cart = {
 
-  shared: () => {
-
-    const data = DataStore.shared(dataStoreCardId);
-
-    return data;
-
-  },
+  shared: () => DataStore.shared(dataStoreCardId),
 
   readOnly: () => DataStore.readOnly(dataStoreCardId),
 

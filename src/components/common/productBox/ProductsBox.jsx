@@ -9,7 +9,9 @@ import styles from './styles';
 
 const ProductsBox = () => {
 
-  const { items } = Cart.shared();
+  const sharedObjProducts = Cart.shared();
+
+  const { items } = sharedObjProducts;
 
   return (
     <div className={css(styles.container)}>

@@ -15,13 +15,13 @@ import circleImg from '../../assets/images/circle.png';
 
 class Success extends PureComponent {
 
-  objProducts = Cart.shared();
+  sharedObjProducts = Cart.shared();
 
-  userData = DataStore.shared('userData');
+  sharedUserData = DataStore.shared('userData');
 
   componentDidMount = async () => {
 
-    if (isEmptyObj(this.objProducts)) {
+    if (isEmptyObj(this.sharedObjProducts)) {
 
       await Cart.download();
       this.forceUpdate();
@@ -32,7 +32,7 @@ class Success extends PureComponent {
 
   render() {
 
-    if (isEmptyObj(this.objProducts)) {
+    if (isEmptyObj(this.sharedObjProducts)) {
 
       /**
        * TODO: maybe create here a message/image "Carregando..."
@@ -44,7 +44,7 @@ class Success extends PureComponent {
     const {
       items,
       error,
-    } = this.objProducts;
+    } = this.sharedObjProducts;
 
     // TODO: do a better error/empty bag handling
     if (error) return (
@@ -59,7 +59,7 @@ class Success extends PureComponent {
       valueCard = '',
       valueName = '',
       valueExpires = '',
-    } = this.userData;
+    } = this.sharedUserData;
 
     if (valueCard) {
 
