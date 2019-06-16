@@ -17,7 +17,7 @@ class Payment extends PureComponent {
 
   objProducts = Cart.shared();
 
-  userData = DataStore.shared('userData');
+  sharedUserData = DataStore.shared('userData');
 
   sharedEnableSuccess = DataStore.shared('enableSuccess');
 
@@ -52,8 +52,8 @@ class Payment extends PureComponent {
   valueCardChanged = (event) => {
 
     const { value } = event.target;
-    this.userData.valueCardDirty = value;
-    this.userData.valueCard = value.replace(/_/g, '');
+    this.sharedUserData.valueCardDirty = value;
+    this.sharedUserData.valueCard = value.replace(/_/g, '');
     this.forceUpdate();
 
   }
@@ -61,7 +61,7 @@ class Payment extends PureComponent {
   valueNameChanged = (event) => {
 
     const { value } = event.target;
-    this.userData.valueName = value;
+    this.sharedUserData.valueName = value;
     this.forceUpdate();
 
   }
@@ -69,8 +69,8 @@ class Payment extends PureComponent {
   valueExpiresChanged = (event) => {
 
     const { value } = event.target;
-    this.userData.valueExpiresDirty = value;
-    this.userData.valueExpires = value.replace(/_/g, '');
+    this.sharedUserData.valueExpiresDirty = value;
+    this.sharedUserData.valueExpires = value.replace(/_/g, '');
     this.forceUpdate();
 
   }
@@ -78,8 +78,8 @@ class Payment extends PureComponent {
   valueCvvChanged = (event) => {
 
     const { value } = event.target;
-    this.userData.valueCvvDirty = value;
-    this.userData.valueCvv = value.replace(/_/g, '');
+    this.sharedUserData.valueCvvDirty = value;
+    this.sharedUserData.valueCvv = value.replace(/_/g, '');
     this.forceUpdate();
 
   }
@@ -118,7 +118,7 @@ class Payment extends PureComponent {
       error,
     } = this.objProducts;
 
-    // TODO: do a better error/empty bag handling
+    // TODO: do a better error/empty-bag handling
     if (error) return (
       <div className={css(styles.errorMsg)}>{error}</div>
     );
@@ -134,7 +134,7 @@ class Payment extends PureComponent {
       valueExpires = '',
       valueCvvDirty = '',
       valueCvv = '',
-    } = this.userData;
+    } = this.sharedUserData;
 
     const cardValid = valueCard.length === 19;
     const cvvValid = valueCvv.length === 3;
