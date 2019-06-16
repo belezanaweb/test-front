@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-import DataStore from './DataStore';
+import DataStore from '../dataStore/DataStore';
 
 const url = '//www.mocky.io/v2/5b15c4923100004a006f3c07';
 const dataStoreCardId = 'CartObjProducts';

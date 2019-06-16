@@ -2,8 +2,8 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { css } from 'aphrodite/no-important';
 
-import normalizePrice from '../../utils/normalizePrice';
-import Cart from '../../common/Cart';
+import normalizePrice from '../../../utils/normalizePrice';
+import Cart from '../cart/Cart';
 import styles from './styles';
 
 const CalcBox = (props) => {

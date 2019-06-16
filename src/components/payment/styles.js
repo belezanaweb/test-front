@@ -80,6 +80,12 @@ const styles = StyleSheet.create({
       justifyContent: 'space-between',
     },
   },
+  error: {
+    position: 'absolute',
+    color: '#f30',
+    fontSize: '12px',
+    margin: '2px',
+  },
 });
 
 export default styles;

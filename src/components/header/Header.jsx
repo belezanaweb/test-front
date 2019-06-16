@@ -2,7 +2,7 @@ import React from 'react';
 import { css } from 'aphrodite/no-important';
 import { NavLink } from 'react-router-dom';
 
-import DataStore from '../../common/DataStore';
+import DataStore from '../common/dataStore/DataStore';
 
 import styles from './styles';
 

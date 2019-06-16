@@ -1,8 +1,6 @@
 import React from 'react';
 import { css } from 'aphrodite/no-important';
 
-import styles from './styles';
-
 import {
   BrowserRouter as Router,
   Route,
@@ -10,8 +8,10 @@ import {
 } from 'react-router-dom';
 import Loadable from 'react-loadable';
 
+import styles from './styles';
+
 import Header from './components/header/Header';
-import AppLoading from './components/appLoading/AppLoading';
+import AppLoading from './components/common/appLoading/AppLoading';
 
 const Bag = Loadable({
   loader: () => import('./components/bag/Bag'),
@@ -29,7 +29,7 @@ const Success = Loadable({
 });
 
 const App = () => (
-  <Router basename="/test-front">
+  <Router>
     <div className={css(styles.container)}>
       <div className={css(styles.content)}>
         <Header />

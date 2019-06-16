@@ -3,21 +3,23 @@ import { css } from 'aphrodite/no-important';
 import MaskedInput from 'react-text-mask';
 
 import styles from './styles';
-import Cart from '../../common/Cart';
-import DataStore from '../../common/DataStore';
-import CalcBox from '../calcBox/CalcBox';
+import Cart from '../common/cart/Cart';
+import DataStore from '../common/dataStore/DataStore';
+import CalcBox from '../common/calcBox/CalcBox';
 
-import ContinueButton from '../continueButton/ContinueButton';
+import ContinueButton from '../common/continueButton/ContinueButton';
 
 import { isEmptyObj } from '../../utils/isEmpty';
 
 class Payment extends PureComponent {
 
+  focus = '';
+
   objProducts = Cart.shared();
 
   userData = DataStore.shared('userData');
 
-  enableSuccess = DataStore.shared('enableSuccess');
+  sharedEnableSuccess = DataStore.shared('enableSuccess');
 
   componentDidMount = async () => {
 
@@ -35,7 +37,7 @@ class Payment extends PureComponent {
     switch (validationType) {
 
       case 'date':
-        return [/\d/, /\d/, '/', /\d/, /\d/, /\d/, /\d/];
+        return [/[0-1]/, /\d/, '/', /2/, /0/, /\d/, /\d/];
       case 'card':
         return [/\d/, /\d/, /\d/, /\d/, '.', /\d/, /\d/, /\d/, /\d/, '.', /\d/, /\d/, /\d/, /\d/, '.', /\d/, /\d/, /\d/, /\d/];
       case 'cvv':
@@ -82,6 +84,24 @@ class Payment extends PureComponent {
 
   }
 
+  onFocus = (id) => {
+
+    this.focus = id;
+    this.forceUpdate();
+
+  }
+
+  onBlur = (id) => {
+
+    if (this.focus === id) {
+
+      this.focus = '';
+      this.forceUpdate();
+
+    }
+
+  }
+
   render() {
 
     if (isEmptyObj(this.objProducts)) {
@@ -116,10 +136,18 @@ class Payment extends PureComponent {
       valueCvv = '',
     } = this.userData;
 
-    this.enableSuccess.enabled = valueCard.length === 19
-      && valueExpires.length === 7
-      && valueCvv.length === 3
+    const cardValid = valueCard.length === 19;
+    const cvvValid = valueCvv.length === 3;
+    const expiresValid = valueExpires.length === 7;
+
+    this.sharedEnableSuccess.enabled = cardValid
+      && expiresValid
+      && cvvValid
       && valueName.length > 4;
+
+    const errorCard = this.focus !== 'card' && !cardValid && valueCard.length !== 0;
+    const errorCvv = this.focus !== 'cvv' && !cvvValid && valueCvv.length !== 0;
+    const errorExp = this.focus !== 'exp' && !expiresValid && valueExpires.length !== 0;
 
     return (
       <div className={css(styles.container)}>
@@ -141,7 +169,14 @@ class Payment extends PureComponent {
                     value={valueCardDirty || ''}
                     onChange={this.valueCardChanged}
                     mask={() => this.maskFunction('card')}
+                    onFocus={() => this.onFocus('card')}
+                    onBlur={() => this.onBlur('card')}
                   />
+                  {errorCard && (
+                    <div className={css(styles.error)}>
+                      Cartão inválido
+                    </div>
+                  )}
                 </div>
                 <div className={css(styles.inputBox)}>
                   <div className={css(styles.inputLabel)}>
@@ -166,8 +201,15 @@ class Payment extends PureComponent {
                         value={valueExpiresDirty || ''}
                         onChange={this.valueExpiresChanged}
                         mask={() => this.maskFunction('date')}
+                        onFocus={() => this.onFocus('exp')}
+                        onBlur={() => this.onBlur('exp')}
                       />
                     </div>
+                    {errorExp && (
+                      <div className={css(styles.error)}>
+                        Data inválida
+                      </div>
+                    )}
                   </div>
                   <div>
                     <div className={css(styles.inputLabel)}>
@@ -178,7 +220,14 @@ class Payment extends PureComponent {
                       value={valueCvvDirty || ''}
                       onChange={this.valueCvvChanged}
                       mask={() => this.maskFunction('cvv')}
+                      onFocus={() => this.onFocus('cvv')}
+                      onBlur={() => this.onBlur('cvv')}
                     />
+                    {errorCvv && (
+                      <div className={css(styles.error)}>
+                        CVV inválido
+                      </div>
+                    )}
                   </div>
                 </div>
 
@@ -192,7 +241,7 @@ class Payment extends PureComponent {
             <ContinueButton
               link="/sucesso"
               label="FINALIZAR O PEDIDO"
-              enable={this.enableSuccess.enabled}
+              enable={this.sharedEnableSuccess.enabled}
             />
           </div>
 

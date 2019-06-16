@@ -1,9 +1,9 @@
 import React from 'react';
 import { css } from 'aphrodite/no-important';
 
-import Cart from '../../common/Cart';
-import ImageLazyLoader from '../../common/imageLazyLoader/ImageLazyLoader';
-import normalizePrice from '../../utils/normalizePrice';
+import Cart from '../cart/Cart';
+import ImageLazyLoader from '../imageLazyLoader/ImageLazyLoader';
+import normalizePrice from '../../../utils/normalizePrice';
 
 import styles from './styles';
 

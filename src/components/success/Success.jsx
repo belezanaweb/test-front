@@ -1,10 +1,10 @@
 import React, { PureComponent } from 'react';
 import { css } from 'aphrodite/no-important';
 
-import ProductsBox from '../productBox/ProductsBox';
-import CalcBox from '../calcBox/CalcBox';
-import Cart from '../../common/Cart';
-import DataStore from '../../common/DataStore';
+import ProductsBox from '../common/productBox/ProductsBox';
+import CalcBox from '../common/calcBox/CalcBox';
+import Cart from '../common/cart/Cart';
+import DataStore from '../common/dataStore/DataStore';
 
 import styles from './styles';
 
