@@ -742,8 +742,575 @@
             ],
             "gtin": "074469482691",
             "departmentName": "Cabelos"
+        },
+        {
+            "sku": "24410",
+            "name": "L'Oréal Professionnel Expert Absolut Repair Cortex Lipidium - Máscara de Reconstrução 500g",
+            "slugName": "loreal-professionnel-absolut-repair-cortex-lipidium-instant-reconstructing-masque-mascara-500g",
+            "hiddenInCart": false,
+            "gift": false,
+            "surprise": false,
+            "featured": true,
+            "brand": {
+                "name": "L'Oréal Professionnel",
+                "slugName": "loreal-professionnel",
+                "line": {
+                    "name": "Expert Absolut Repair",
+                    "slugName": "expert-absolut-repair"
+                }
+            },
+            "inventory": {
+                "quantity": 17971,
+                "inventories": [
+                    {
+                        "addressLocality": "MOEMA",
+                        "type": "PHYSICAL_STORE",
+                        "quantity": 3,
+                        "priority": 3
+                    },
+                    {
+                        "addressLocality": "SP",
+                        "type": "ECOMMERCE",
+                        "quantity": 0,
+                        "priority": 0
+                    },
+                    {
+                        "addressLocality": "TO",
+                        "type": "ECOMMERCE",
+                        "quantity": 17971,
+                        "priority": 2
+                    },
+                    {
+                        "addressLocality": "TO_VIRTUAL",
+                        "type": "VIRTUAL",
+                        "quantity": 0,
+                        "priority": 5
+                    },
+                    {
+                        "addressLocality": "SP_VIRTUAL",
+                        "type": "VIRTUAL",
+                        "quantity": 0,
+                        "priority": 4
+                    }
+                ]
+            },
+            "priceSpecification": {
+                "price": 139.9,
+                "maxPrice": 265.9,
+                "installments": {
+                    "numberOfPayments": 2,
+                    "monthlyPayment": 69.95,
+                    "maxInstallments": 0
+                },
+                "validPrice": true
+            },
+            "scaleValue": {
+                "unit": "g",
+                "value": 568
+            },
+            "kit": {},
+            "departments": [
+                {
+                    "name": "Cabelos",
+                    "slugName": "cabelos",
+                    "categories": [
+                        {
+                            "name": "Tratamento",
+                            "slugName": "tratamento",
+                            "attributes": [
+                                {
+                                    "id": "A1",
+                                    "name": "Tipos de Cabelo",
+                                    "slugName": "tipos-de-cabelo",
+                                    "values": [
+                                        {
+                                            "id": "V5",
+                                            "name": "Danificados",
+                                            "slugName": "danificados"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "id": "A2",
+                                    "name": "Condição dos Fios",
+                                    "slugName": "condicao-dos-fios",
+                                    "values": [
+                                        {
+                                            "id": "V22",
+                                            "name": "Porosos ou Elásticos",
+                                            "slugName": "porosos-ou-elasticos"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "id": "A3",
+                                    "name": "Desejo de Beleza",
+                                    "slugName": "desejo-de-beleza",
+                                    "values": [
+                                        {
+                                            "id": "V47",
+                                            "name": "Reconstrução",
+                                            "slugName": "reconstrucao"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "id": "A6",
+                                    "name": "Tamanho",
+                                    "slugName": "tamanho",
+                                    "values": [
+                                        {
+                                            "id": "V119",
+                                            "name": "Profissional",
+                                            "slugName": "profissional"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "id": "A7",
+                                    "name": "Público",
+                                    "slugName": "publico",
+                                    "values": [
+                                        {
+                                            "id": "V123",
+                                            "name": "Unissex",
+                                            "slugName": "unissex"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "id": "A8",
+                                    "name": "Produto",
+                                    "slugName": "produto",
+                                    "values": [
+                                        {
+                                            "id": "V127",
+                                            "name": "Máscara Capilar",
+                                            "slugName": "mascara-capilar"
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ],
+            "details": {
+                "shortDescription": "Máscara de tratamento tamanho salão para cabelos danificados. Repara fibras capilares desde seu interior.",
+                "description": "Máscara de <a href=\"/cabelos/reconstrucao-capilar\">reconstrução</a> para cabelos danificados em tamanho de salão. L'Oréal Professionnel Absolut Repair Cortex Lipidium Instant Reconstructing Masque possui fórmula concentrada que proporciona um tratamento instantâneo. Ela restaura, nutre e reconstrói as fibras capilares desvitalizadas desde seu interior. <br><br> L'Oréal Professionnel Absolut Repair Cortex Lipidium Instant Reconstructing Masque penetra nos fios de maneira profunda, promovendo um tratamento eficiente superfície adentro. Ela fortalece, combate a porosidade e o frizz. Seu cabelo fica reparado, saudável e bonito, com brilho e maciez.<br><br>",
+                "result": "Seu cabelo fica recuperado, saudável e bonito, com brilho e maciez.<br><br>Use também&nbsp;<a href=\"/loreal-professionnel-absolut-repair-cortex-lipidium-instant-reconstructing-shampoo-500ml/\">Shampoo&nbsp;Absolut Repair Cortex Lipidium</a> para um tratamento mais completo.",
+                "advice": "Aplique sobre os fios limpos e úmidos, após usar o shampoo. Deixe agir por 3 a 5 minutos e enxágue em seguida."
+            },
+            "presentation": {
+                "value": "500",
+                "unit": "g"
+            },
+            "badge": [
+                "Brinde",
+                "Outlet"
+            ],
+            "imageObjects": [
+                {
+                    "featured": true,
+                    "thumbnail": "https://res.cloudinary.com/beleza-na-web/image/upload/w_50,f_auto,fl_progressive,q_auto:best/v1/imagens/product/24410/d73531f7-d25d-4e5a-b518-4c74e8dc4f08-loreal-professionnel-absolut-repair-cortex-lipidium-instant-reconstructing-masque-mascara-500g.png",
+                    "small": "https://res.cloudinary.com/beleza-na-web/image/upload/w_100,f_auto,fl_progressive,q_auto:best/v1/imagens/product/24410/d73531f7-d25d-4e5a-b518-4c74e8dc4f08-loreal-professionnel-absolut-repair-cortex-lipidium-instant-reconstructing-masque-mascara-500g.png",
+                    "medium": "https://res.cloudinary.com/beleza-na-web/image/upload/w_130,f_auto,fl_progressive,q_auto:best/v1/imagens/product/24410/d73531f7-d25d-4e5a-b518-4c74e8dc4f08-loreal-professionnel-absolut-repair-cortex-lipidium-instant-reconstructing-masque-mascara-500g.png",
+                    "large": "https://res.cloudinary.com/beleza-na-web/image/upload/w_297,f_auto,fl_progressive,q_auto:best/v1/imagens/product/24410/d73531f7-d25d-4e5a-b518-4c74e8dc4f08-loreal-professionnel-absolut-repair-cortex-lipidium-instant-reconstructing-masque-mascara-500g.png",
+                    "extraLarge": "https://res.cloudinary.com/beleza-na-web/image/upload/w_1500,f_auto,fl_progressive,q_auto:best/v1/imagens/product/24410/d73531f7-d25d-4e5a-b518-4c74e8dc4f08-loreal-professionnel-absolut-repair-cortex-lipidium-instant-reconstructing-masque-mascara-500g.png"
+                },
+                {
+                    "featured": false,
+                    "thumbnail": "https://res.cloudinary.com/beleza-na-web/image/upload/w_50,f_auto,fl_progressive,q_auto:best/v1/imagens/product/24410/be07d57c-7e10-4b19-bdbe-048f5eb4aa45-loreal-professionnel-absolut-repair-cortex-lipidium-instant-reconstructing-masque-mascara-500g.png",
+                    "small": "https://res.cloudinary.com/beleza-na-web/image/upload/w_100,f_auto,fl_progressive,q_auto:best/v1/imagens/product/24410/be07d57c-7e10-4b19-bdbe-048f5eb4aa45-loreal-professionnel-absolut-repair-cortex-lipidium-instant-reconstructing-masque-mascara-500g.png",
+                    "medium": "https://res.cloudinary.com/beleza-na-web/image/upload/w_130,f_auto,fl_progressive,q_auto:best/v1/imagens/product/24410/be07d57c-7e10-4b19-bdbe-048f5eb4aa45-loreal-professionnel-absolut-repair-cortex-lipidium-instant-reconstructing-masque-mascara-500g.png",
+                    "large": "https://res.cloudinary.com/beleza-na-web/image/upload/w_297,f_auto,fl_progressive,q_auto:best/v1/imagens/product/24410/be07d57c-7e10-4b19-bdbe-048f5eb4aa45-loreal-professionnel-absolut-repair-cortex-lipidium-instant-reconstructing-masque-mascara-500g.png",
+                    "extraLarge": "https://res.cloudinary.com/beleza-na-web/image/upload/w_1500,f_auto,fl_progressive,q_auto:best/v1/imagens/product/24410/be07d57c-7e10-4b19-bdbe-048f5eb4aa45-loreal-professionnel-absolut-repair-cortex-lipidium-instant-reconstructing-masque-mascara-500g.png"
+                },
+                {
+                    "featured": false,
+                    "thumbnail": "https://res.cloudinary.com/beleza-na-web/image/upload/w_50,f_auto,fl_progressive,q_auto:best/v1/imagens/product/24410/540f7066-7fdc-4d50-bb20-072a4dea0dac-loreal-professionnel-absolut-repair-cortex-lipidium-instant-reconstructing-masque-mascara-500g.png",
+                    "small": "https://res.cloudinary.com/beleza-na-web/image/upload/w_100,f_auto,fl_progressive,q_auto:best/v1/imagens/product/24410/540f7066-7fdc-4d50-bb20-072a4dea0dac-loreal-professionnel-absolut-repair-cortex-lipidium-instant-reconstructing-masque-mascara-500g.png",
+                    "medium": "https://res.cloudinary.com/beleza-na-web/image/upload/w_130,f_auto,fl_progressive,q_auto:best/v1/imagens/product/24410/540f7066-7fdc-4d50-bb20-072a4dea0dac-loreal-professionnel-absolut-repair-cortex-lipidium-instant-reconstructing-masque-mascara-500g.png",
+                    "large": "https://res.cloudinary.com/beleza-na-web/image/upload/w_297,f_auto,fl_progressive,q_auto:best/v1/imagens/product/24410/540f7066-7fdc-4d50-bb20-072a4dea0dac-loreal-professionnel-absolut-repair-cortex-lipidium-instant-reconstructing-masque-mascara-500g.png",
+                    "extraLarge": "https://res.cloudinary.com/beleza-na-web/image/upload/w_1500,f_auto,fl_progressive,q_auto:best/v1/imagens/product/24410/540f7066-7fdc-4d50-bb20-072a4dea0dac-loreal-professionnel-absolut-repair-cortex-lipidium-instant-reconstructing-masque-mascara-500g.png"
+                },
+                {
+                    "featured": false,
+                    "thumbnail": "https://res.cloudinary.com/beleza-na-web/image/upload/w_50,f_auto,fl_progressive,q_auto:best/v1/imagens/products/44094/complementar-10.png",
+                    "small": "https://res.cloudinary.com/beleza-na-web/image/upload/w_100,f_auto,fl_progressive,q_auto:best/v1/imagens/products/44094/complementar-10.png",
+                    "medium": "https://res.cloudinary.com/beleza-na-web/image/upload/w_130,f_auto,fl_progressive,q_auto:best/v1/imagens/products/44094/complementar-10.png",
+                    "large": "https://res.cloudinary.com/beleza-na-web/image/upload/w_297,f_auto,fl_progressive,q_auto:best/v1/imagens/products/44094/complementar-10.png",
+                    "extraLarge": "https://res.cloudinary.com/beleza-na-web/image/upload/w_1500,f_auto,fl_progressive,q_auto:best/v1/imagens/products/44094/complementar-10.png"
+                }
+            ],
+            "gtin": "7898587776776",
+            "benefits": [
+                {
+                    "offerId": "5d03e47785cd1608a292f0b3",
+                    "offerTitle": "Relâmpago Festival Hidratação 65%OFF 15.06.19",
+                    "type": "GIFT",
+                    "target": "CART",
+                    "gifts": []
+                }
+            ],
+            "departmentName": "Cabelos"
+        },
+        {
+            "sku": "5479",
+            "name": "Inoar Argan Oil System - Shampoo 1000ml",
+            "slugName": "shampoo-argan-oil-1l",
+            "hiddenInCart": false,
+            "gift": false,
+            "surprise": false,
+            "featured": true,
+            "brand": {
+                "name": "Inoar",
+                "slugName": "inoar",
+                "line": {
+                    "name": "Argan Oil System",
+                    "slugName": "argan-oil-system"
+                }
+            },
+            "inventory": {
+                "quantity": 337,
+                "inventories": [
+                    {
+                        "addressLocality": "MOEMA",
+                        "type": "PHYSICAL_STORE",
+                        "quantity": 0,
+                        "priority": 3
+                    },
+                    {
+                        "addressLocality": "SP",
+                        "type": "ECOMMERCE",
+                        "quantity": 337,
+                        "priority": 0
+                    },
+                    {
+                        "addressLocality": "TO_VIRTUAL",
+                        "type": "VIRTUAL",
+                        "quantity": 0,
+                        "priority": 5
+                    },
+                    {
+                        "addressLocality": "TO",
+                        "type": "ECOMMERCE",
+                        "quantity": 0,
+                        "priority": 2
+                    },
+                    {
+                        "addressLocality": "SP_VIRTUAL",
+                        "type": "VIRTUAL",
+                        "quantity": 0,
+                        "priority": 4
+                    }
+                ]
+            },
+            "priceSpecification": {
+                "price": 36.9,
+                "maxPrice": 53.9,
+                "installments": {
+                    "numberOfPayments": 1,
+                    "monthlyPayment": 36.9,
+                    "maxInstallments": 0
+                },
+                "validPrice": true
+            },
+            "scaleValue": {
+                "unit": "g",
+                "value": 1162
+            },
+            "kit": {},
+            "departments": [
+                {
+                    "name": "Cabelos",
+                    "slugName": "cabelos",
+                    "categories": [
+                        {
+                            "name": "Shampoo",
+                            "slugName": "shampoo",
+                            "attributes": [
+                                {
+                                    "id": "A1",
+                                    "name": "Tipos de Cabelo",
+                                    "slugName": "tipos-de-cabelo",
+                                    "values": [
+                                        {
+                                            "id": "V14",
+                                            "name": "Normais e Todos os Tipos",
+                                            "slugName": "normais-e-todos-os-tipos"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "id": "A10",
+                                    "name": "Tipos",
+                                    "slugName": "tipos",
+                                    "values": [
+                                        {
+                                            "id": "V140",
+                                            "name": "Uso Diário",
+                                            "slugName": "uso-diario"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "id": "A2",
+                                    "name": "Condição dos Fios",
+                                    "slugName": "condicao-dos-fios",
+                                    "values": [
+                                        {
+                                            "id": "V16",
+                                            "name": "Ressecados",
+                                            "slugName": "ressecados"
+                                        },
+                                        {
+                                            "id": "V28",
+                                            "name": "Opacos ou Sem Vida",
+                                            "slugName": "opacos-ou-sem-vida"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "id": "A3",
+                                    "name": "Desejo de Beleza",
+                                    "slugName": "desejo-de-beleza",
+                                    "values": [
+                                        {
+                                            "id": "V64",
+                                            "name": "Brilho",
+                                            "slugName": "brilho"
+                                        },
+                                        {
+                                            "id": "V63",
+                                            "name": "Maciez e Maleabilidade",
+                                            "slugName": "maciez-e-maleabilidade"
+                                        },
+                                        {
+                                            "id": "V41",
+                                            "name": "Hidratação",
+                                            "slugName": "hidratacao"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "id": "A31",
+                                    "name": "Propriedades",
+                                    "slugName": "propriedades",
+                                    "values": [
+                                        {
+                                            "id": "V747",
+                                            "name": "Vegano",
+                                            "slugName": "vegano"
+                                        },
+                                        {
+                                            "id": "V748",
+                                            "name": "Cruelty Free",
+                                            "slugName": "cruelty-free"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "id": "A6",
+                                    "name": "Tamanho",
+                                    "slugName": "tamanho",
+                                    "values": [
+                                        {
+                                            "id": "V119",
+                                            "name": "Profissional",
+                                            "slugName": "profissional"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "id": "A7",
+                                    "name": "Público",
+                                    "slugName": "publico",
+                                    "values": [
+                                        {
+                                            "id": "V123",
+                                            "name": "Unissex",
+                                            "slugName": "unissex"
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ],
+            "details": {
+                "shortDescription": "Shampoo hidratante para todos tipos de cabelos, principalmente danificados. Repara e dá brilho.",
+                "description": "Shampoo hidratante para todos os tipos de cabelos, principalmente danificados, ressecados e tratados quimicamente. A nova fórmula de <strong>Inoar Argan Oil System</strong> proporciona resistência e força, resgata a flexibilidade e&nbsp;repara a estrutura&nbsp;dos fios.<br><br>",
+                "result": "Cabelos reparados, extremamente macios e flexíveis!",
+                "advice": "Aplique o shampoo nos cabelos molhados massageando com as pontas dos dedos até a formação de espuma abundante. Enxague em seguida. Se necessário repita a operação."
+            },
+            "presentation": {},
+            "badge": [],
+            "imageObjects": [
+                {
+                    "featured": true,
+                    "thumbnail": "https://res.cloudinary.com/beleza-na-web/image/upload/w_50,f_auto,fl_progressive,q_auto:best/v1/imagens/5/inoar-argan-oil-system-shampoo-1000ml-5479-4955799323729769666.png",
+                    "small": "https://res.cloudinary.com/beleza-na-web/image/upload/w_100,f_auto,fl_progressive,q_auto:best/v1/imagens/5/inoar-argan-oil-system-shampoo-1000ml-5479-4955799323729769666.png",
+                    "medium": "https://res.cloudinary.com/beleza-na-web/image/upload/w_130,f_auto,fl_progressive,q_auto:best/v1/imagens/5/inoar-argan-oil-system-shampoo-1000ml-5479-4955799323729769666.png",
+                    "large": "https://res.cloudinary.com/beleza-na-web/image/upload/w_297,f_auto,fl_progressive,q_auto:best/v1/imagens/5/inoar-argan-oil-system-shampoo-1000ml-5479-4955799323729769666.png",
+                    "extraLarge": "https://res.cloudinary.com/beleza-na-web/image/upload/w_1500,f_auto,fl_progressive,q_auto:best/v1/imagens/5/inoar-argan-oil-system-shampoo-1000ml-5479-4955799323729769666.png"
+                },
+                {
+                    "featured": false,
+                    "thumbnail": "https://res.cloudinary.com/beleza-na-web/image/upload/w_50,f_auto,fl_progressive,q_auto:best/v1/imagens/5/5479-complementar-1-5431654591512661415.png",
+                    "small": "https://res.cloudinary.com/beleza-na-web/image/upload/w_100,f_auto,fl_progressive,q_auto:best/v1/imagens/5/5479-complementar-1-5431654591512661415.png",
+                    "medium": "https://res.cloudinary.com/beleza-na-web/image/upload/w_130,f_auto,fl_progressive,q_auto:best/v1/imagens/5/5479-complementar-1-5431654591512661415.png",
+                    "large": "https://res.cloudinary.com/beleza-na-web/image/upload/w_297,f_auto,fl_progressive,q_auto:best/v1/imagens/5/5479-complementar-1-5431654591512661415.png",
+                    "extraLarge": "https://res.cloudinary.com/beleza-na-web/image/upload/w_1500,f_auto,fl_progressive,q_auto:best/v1/imagens/5/5479-complementar-1-5431654591512661415.png"
+                }
+            ],
+            "gtin": "7898581080695",
+            "departmentName": "Cabelos"
+        },
+        {
+            "sku": "37211",
+            "name": "Kit Banho Orgânica Natural Pêssego & Flor de Lótus (6 produtos)",
+            "slugName": "kit-banho-organica-natural-pessego-e-flor-de-lotus-6-produtos",
+            "hiddenInCart": false,
+            "gift": false,
+            "surprise": false,
+            "featured": true,
+            "brand": {
+                "name": "Orgânica",
+                "slugName": "organica",
+                "line": {}
+            },
+            "inventory": {
+                "quantity": 4,
+                "inventories": [
+                    {
+                        "addressLocality": "MOEMA",
+                        "type": "PHYSICAL_STORE",
+                        "quantity": 0,
+                        "priority": 3
+                    },
+                    {
+                        "addressLocality": "SP",
+                        "type": "ECOMMERCE",
+                        "quantity": 4,
+                        "priority": 0
+                    },
+                    {
+                        "addressLocality": "TO_VIRTUAL",
+                        "type": "VIRTUAL",
+                        "quantity": 0,
+                        "priority": 5
+                    },
+                    {
+                        "addressLocality": "TO",
+                        "type": "ECOMMERCE",
+                        "quantity": 0,
+                        "priority": 2
+                    },
+                    {
+                        "addressLocality": "SP_VIRTUAL",
+                        "type": "VIRTUAL",
+                        "quantity": 0,
+                        "priority": 4
+                    }
+                ]
+            },
+            "priceSpecification": {
+                "price": 95.9,
+                "maxPrice": 117.9,
+                "installments": {
+                    "numberOfPayments": 1,
+                    "monthlyPayment": 95.9,
+                    "maxInstallments": 0
+                },
+                "validPrice": true
+            },
+            "scaleValue": {
+                "unit": "g",
+                "value": 1129
+            },
+            "kit": {},
+            "departments": [
+                {
+                    "name": "Corpo e Banho",
+                    "slugName": "corpo-e-banho",
+                    "categories": [
+                        {
+                            "name": "Kits de Tratamento",
+                            "slugName": "kits-de-tratamento",
+                            "attributes": [
+                                {
+                                    "id": "A12",
+                                    "name": "Itens",
+                                    "slugName": "itens",
+                                    "values": [
+                                        {
+                                            "id": "V65",
+                                            "name": "Quatro ou mais",
+                                            "slugName": "quatro-ou-mais"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "id": "A151",
+                                    "name": "Propriedades",
+                                    "slugName": "propriedades",
+                                    "values": [
+                                        {
+                                            "id": "V742",
+                                            "name": "Cruelty Free",
+                                            "slugName": "cruelty-free"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "id": "B21",
+                                    "name": "Tipos",
+                                    "slugName": "tipos",
+                                    "values": [
+                                        {
+                                            "id": "V607",
+                                            "name": "Esfoliantes e Sais de Banho",
+                                            "slugName": "esfoliantes-e-sais-de-banho"
+                                        },
+                                        {
+                                            "id": "V602",
+                                            "name": "Sabonetes",
+                                            "slugName": "sabonetes"
+                                        },
+                                        {
+                                            "id": "V606",
+                                            "name": "Hidratantes",
+                                            "slugName": "hidratantes"
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ],
+            "details": {
+                "shortDescription": "Kit com sabonete líquido e em barra, loção hidratante, luva de banho, pente e escova de cabelo.",
+                "description": "Kit com sabonete líquido e em barra, loção hidratante, luva de banho, pente e escova de cabelo. <strong>Orgânica Banho Natural Pêssego &amp; Flor de Lótus Kit</strong> traz o melhor da natureza para cuidar da sua pele e cabelo com suavidade e bem-estar.<br><br> Todos os itens de&nbsp;Orgânica Banho Natural Pêssego &amp; Flor de Lótus Kit&nbsp;são elaborados com matérias-primas vegetais, limpam e perfumam a pele com delicadeza e conservam a hidratação e a maciez por mais tempo.<br><br> Sem contar que&nbsp;Orgânica Banho Natural Pêssego &amp; Flor de Lótus Kit&nbsp;é livre de álcool, conservantes,&nbsp;corantes e gordura animal para um cuidado muito mais natural para a sua pele.<br><br><strong> Contém</strong><br>- 01 sabonete Líquido Pêssego &amp; Flor de Lótus<br>- 01 sabonete em barra Pêssego &amp; Flor de Lótus<br>- 01 loção hidratante Pêssego &amp; Flor de Lótus<br>- 01 luva para banho de sisal<br>- 01 pente marchetado<br>- 01 escova de cabelo pequena",
+                "result": "Pele com o toque aveludado, agradavelmente perfumada e protegida do ressecamento.",
+                "advice": "Massageie a pele com o sabonete e a luva de sisal com movimentos circulares e enxágue em seguida. Aplique a loção hidratante para deixar a pele sedosa, hidratada e perfumada ao longo do dia."
+            },
+            "presentation": {},
+            "badge": [],
+            "imageObjects": [
+                {
+                    "featured": true,
+                    "thumbnail": "https://res.cloudinary.com/beleza-na-web/image/upload/w_50,f_auto,fl_progressive,q_auto:best/v1/imagens/5/kit-banho-organica-natural-pessego-e-flor-de-lotus-6-produtos-37211-9173828876575326994.png",
+                    "small": "https://res.cloudinary.com/beleza-na-web/image/upload/w_100,f_auto,fl_progressive,q_auto:best/v1/imagens/5/kit-banho-organica-natural-pessego-e-flor-de-lotus-6-produtos-37211-9173828876575326994.png",
+                    "medium": "https://res.cloudinary.com/beleza-na-web/image/upload/w_130,f_auto,fl_progressive,q_auto:best/v1/imagens/5/kit-banho-organica-natural-pessego-e-flor-de-lotus-6-produtos-37211-9173828876575326994.png",
+                    "large": "https://res.cloudinary.com/beleza-na-web/image/upload/w_297,f_auto,fl_progressive,q_auto:best/v1/imagens/5/kit-banho-organica-natural-pessego-e-flor-de-lotus-6-produtos-37211-9173828876575326994.png",
+                    "extraLarge": "https://res.cloudinary.com/beleza-na-web/image/upload/w_1500,f_auto,fl_progressive,q_auto:best/v1/imagens/5/kit-banho-organica-natural-pessego-e-flor-de-lotus-6-produtos-37211-9173828876575326994.png"
+                }
+            ],
+            "gtin": "7896240209975",
+            "departmentName": "Corpo e Banho"
         }
-
-
     ]
 }

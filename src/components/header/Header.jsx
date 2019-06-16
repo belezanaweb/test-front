@@ -19,7 +19,7 @@ const menuItems = [
     link: '/pagamento',
   },
   {
-    label: isHotAccess ? 'CONFIRM.' : 'CONFIRMAÇÃO',
+    label: isHotAccess ? 'CONFIRMA' : 'CONFIRMAÇÃO',
     link: '/sucesso',
     isSuccessLink: true,
   },

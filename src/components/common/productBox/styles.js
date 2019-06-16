@@ -68,6 +68,7 @@ const styles = StyleSheet.create({
   buyIt: {
     display: 'flex',
     justifyContent: 'flex-end',
+    alignItems: 'center',
     width: '100%',
     textAlign: 'right',
     marginRight: '15px',
@@ -81,6 +82,7 @@ const styles = StyleSheet.create({
     width: 'fit-content',
     padding: '2px 13px 4px 13px',
     marginBottom: '3px',
+    marginLeft: '20px',
     cursor: 'pointer',
     ':hover': {
       backgroundColor: '#D45A00',

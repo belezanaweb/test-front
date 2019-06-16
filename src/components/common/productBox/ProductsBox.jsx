@@ -10,15 +10,33 @@ import normalizePrice from '../../../utils/normalizePrice';
 import loadProductsMock from './loadProducts.mock.json';
 
 import styles from './styles';
+import loading from '../../../assets/images/loading.gif';
 
 class ProductsBox extends PureComponent {
 
   isRedirect = false;
 
+  isLoading = {};
+
+  isDeleting = {}
+
   clickedBuy = async (sku) => {
+
+    this.isLoading[sku] = true;
+    this.forceUpdate();
 
     await Cart.add(sku);
     this.isRedirect = '/sacola';
+    this.forceUpdate();
+
+  };
+
+  clickedDelete = async (sku) => {
+
+    this.isLoading[sku] = true;
+    this.forceUpdate();
+
+    await Cart.delete(sku);
     this.forceUpdate();
 
   };
@@ -27,9 +45,24 @@ class ProductsBox extends PureComponent {
 
     if (this.isRedirect) return (<Redirect to={{ pathname: '/sacola' }} />);
 
+    const sharedCart = Cart.shared();
+    const cartSkus = [];
+
     const { isHome } = this.props;
-    const sharedObjProducts = isHome ? loadProductsMock : Cart.shared();
+    const sharedObjProducts = isHome ? loadProductsMock : sharedCart;
     const { items } = sharedObjProducts;
+
+    if (isHome && sharedCart.items) {
+
+      for (let i = 0; i < sharedCart.items.length; i += 1) {
+
+        const item = sharedCart.items[i];
+        const { sku } = item.product || item;
+        cartSkus.push(sku);
+
+      }
+
+    }
 
     return (
       <div className={css(styles.container)}>
@@ -46,6 +79,8 @@ class ProductsBox extends PureComponent {
                 imageObjects,
                 priceSpecification,
               } = item.product || item;
+
+              if (isHome && cartSkus.indexOf(sku) !== -1) return null;
 
               return (
                 <Fragment key={sku}>
@@ -70,6 +105,13 @@ class ProductsBox extends PureComponent {
                   </div>
                   {isHome && (
                     <div className={css(styles.buyIt)}>
+                      <div>
+                        <img
+                          src={loading}
+                          alt=""
+                          style={{ visibility: this.isLoading[sku] ? 'visible' : 'hidden' }}
+                        />
+                      </div>
                       <div
                         className={css(styles.buyButton)}
                         onClick={() => this.clickedBuy(sku)}
@@ -79,6 +121,24 @@ class ProductsBox extends PureComponent {
                       </div>
                     </div>
                   )}
+                  { /* !isHome && (
+                    <div className={css(styles.buyIt)}>
+                      <div>
+                        <img
+                          src={loading}
+                          alt=""
+                          style={{ visibility: this.isDeleting[sku] ? 'visible' : 'hidden' }}
+                        />
+                      </div>
+                      <div
+                        className={css(styles.buyButton)}
+                        onClick={() => this.clickedDelete(sku)}
+                        role="presentation"
+                      >
+                        Retire da sacola
+                      </div>
+                    </div>
+                  ) */ }
                 </Fragment>
               );
 
