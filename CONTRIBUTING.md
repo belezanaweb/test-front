@@ -28,6 +28,8 @@
     - [Jest](http://facebook.github.io/jest/)
       - [React Testing Library](https://testing-library.com/react)
 
+**Aviso: este projeto contém pacotes e/ou funcionalidades não estáveis.**
+
 ## Demais comandos
 
 ### `yarn clean`
@@ -63,6 +65,10 @@ Para foco de desenvolvimento, o ambiente foi configurado para esconder arquivos 
 Com a ajuda da extensão [Toggle Excluded Files](https://marketplace.visualstudio.com/items?itemName=eamodio.toggle-excluded-files) é possível alternar a visibilidade destes arquivos dentro do editor.
 
 ![Toggle Excluded Files Preview](https://raw.githubusercontent.com/eamodio/vscode-toggle-excluded-files/master/images/preview.gif)
+
+### Estilos e _Typeface_
+
+Como visto no layout desenhado, o projeto utiliza uma familia proprietária (Neue Helvetica®) como base. Não sendo possível manter esta consistência (utilizar a mesma fonte para diversos aparelhos e sistemas operacionais) pois não utilizarei esta fonte diretamente e também não está disponível para utilização usando o serviço do **Google Fonts**, optei por manter o código que já existia anteriormente definindo a família tipográfica, localizada no arquivo `src/index.css` (movido para `src/styles/typography.css`).
 
 ### Estrutura de pastas
 

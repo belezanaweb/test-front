@@ -1,0 +1,59 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Loading should render [snapshot] 1`] = `
+@keyframes animation-0 {
+  from {
+    -webkit-transform: rotate(0deg);
+    -ms-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+
+  to {
+    -webkit-transform: rotate(360deg);
+    -ms-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+
+.emotion-2 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  background-color: #282c34;
+  color: white;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  font-size: calc(10px + 2vmin);
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  min-height: 100vh;
+  text-align: center;
+}
+
+.emotion-0 {
+  -webkit-animation: animation-0 infinite 20s linear;
+  animation: animation-0 infinite 20s linear;
+  height: 40vmin;
+  pointer-events: none;
+}
+
+<div>
+  <div
+    class="emotion-2 emotion-3"
+  >
+    <img
+      alt="logo"
+      class="emotion-0 emotion-1"
+      src="logo.svg"
+    />
+  </div>
+</div>
+`;

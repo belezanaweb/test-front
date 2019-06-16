@@ -18,6 +18,18 @@
     "emotion/import-from-emotion": "error",
     "emotion/styled-import": "error",
     "emotion/no-vanilla": "error",
-    "emotion/syntax-preference": ["error", "string"]
+    "emotion/syntax-preference": ["error", "string"],
+    "no-restricted-imports": [
+      "error",
+      {
+        "paths": [{
+          "name": "@emotion/styled",
+          "message": "Please import from @emotion/styled/macro."
+        }],
+        "patterns": [
+          "!@emotion/styled/macro"
+        ]
+      }
+    ]
   }
 }
