@@ -15,7 +15,7 @@ class Payment extends PureComponent {
 
   focus = '';
 
-  forceError = '';
+  forceErrorExp = false;
 
   sharedObjProducts = Cart.shared();
 
@@ -76,22 +76,19 @@ class Payment extends PureComponent {
     this.sharedUserData.valueExpiresDirty = value;
     this.sharedUserData.valueExpires = value.replace(/_/g, '');
 
-    let forceError = '';
+    this.forceErrorExp = false;
 
     if (this.sharedUserData.valueExpires) {
 
       const [mon, year] = this.sharedUserData.valueExpires.split('/');
       const yearArray = year.split('');
 
-      if (this.forceError === 'exp') this.forceError = '';
-
-      if (mon === '00' || parseInt(mon, 10) > 12) forceError = 'exp';
-      else if (yearArray[2] < this.yearArray[2]) forceError = 'exp';
+      if (mon === '00' || parseInt(mon, 10) > 12) this.forceErrorExp = true;
+      else if (yearArray[2] && yearArray[2] < this.yearArray[2]) this.forceErrorExp = true;
       else if (yearArray[2] === this.yearArray[2]
-        && yearArray[3] < this.yearArray[3]) forceError = 'exp';
+        && yearArray[3] && yearArray[3] < this.yearArray[3]) this.forceErrorExp = true;
 
     }
-    this.forceError = forceError;
 
     this.forceUpdate();
 
@@ -167,11 +164,9 @@ class Payment extends PureComponent {
       && cvvValid
       && valueName.length > 4;
 
-    const errorCard = this.forceError === 'card'
-      || (this.focus !== 'card' && !cardValid && valueCard.length !== 0);
-    const errorCvv = this.forceError === 'cvv'
-      || (this.focus !== 'cvv' && !cvvValid && valueCvv.length !== 0);
-    const errorExp = this.forceError === 'exp'
+    const errorCard = this.focus !== 'card' && !cardValid && valueCard.length !== 0;
+    const errorCvv = this.focus !== 'cvv' && !cvvValid && valueCvv.length !== 0;
+    const errorExp = this.forceErrorExp
       || (this.focus !== 'exp' && !expiresValid && valueExpires.length !== 0);
 
     return (
