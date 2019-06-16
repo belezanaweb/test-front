@@ -10,14 +10,14 @@ const CalcBox = (props) => {
 
   const { className } = props;
 
-  const objProducts = Cart.shared();
+  const sharedObjProducts = Cart.shared();
 
   const {
     subTotal,
     shippingTotal,
     discount,
     total,
-  } = objProducts;
+  } = sharedObjProducts;
 
   return (
 
