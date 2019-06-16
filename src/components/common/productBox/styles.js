@@ -65,6 +65,28 @@ const styles = StyleSheet.create({
     lineHeight: '17px',
   },
 
+  buyIt: {
+    display: 'flex',
+    justifyContent: 'flex-end',
+    width: '100%',
+    textAlign: 'right',
+    marginRight: '15px',
+  },
+  buyButton: {
+    borderRadius: '3px',
+    backgroundColor: '#ff6c00',
+    boxShadow: 'inset 0 -3px 0 0 #D45A00, 0 2px 4px 0 rgba(0,0,0,0.25)',
+    color: '#ffffff',
+    fontSize: '14px',
+    width: 'fit-content',
+    padding: '2px 13px 4px 13px',
+    marginBottom: '3px',
+    cursor: 'pointer',
+    ':hover': {
+      backgroundColor: '#D45A00',
+    },
+  },
+
 });
 
 export default styles;

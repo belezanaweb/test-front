@@ -43,7 +43,7 @@ class Bag extends PureComponent {
 
     // TODO: do a better error/empty bag handling
     if (error) return (<div className={css(styles.errorMsg)}>{error}</div>);
-    if (!items) return (<div className={css(styles.errorMsg)}>Sem itens na sacola</div>);
+    if (!items || items.length === 0) return (<div className={css(styles.errorMsg)}>Sem itens na sacola</div>);
 
     return (
       <div className={css(styles.container)}>

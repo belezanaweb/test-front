@@ -13,6 +13,13 @@ import styles from './styles';
 import Header from './components/header/Header';
 import AppLoading from './components/common/appLoading/AppLoading';
 
+import { isHotAccess } from './settings';
+
+const Home = Loadable({
+  loader: () => import('./components/home/Home'),
+  loading: AppLoading,
+});
+
 const Bag = Loadable({
   loader: () => import('./components/bag/Bag'),
   loading: AppLoading,
@@ -33,12 +40,18 @@ const App = () => (
     <div className={css(styles.container)}>
       <div className={css(styles.content)}>
         <Header />
-        <Route
-          exact
-          path="/"
-          /* We do not have a Home Page, so let's set /sacola as default */
-          render={() => (<Redirect to={{ pathname: '/sacola' }} />)}
-        />
+        {
+          isHotAccess ? (
+            <Route exact path="/" component={Home} />
+          ) : (
+            <Route
+              exact
+              path="/"
+              /* We do not have a Home Page, so let's set /sacola as default */
+              render={() => (<Redirect to={{ pathname: '/sacola' }} />)}
+            />
+          )
+        }
         <Route path="/sacola" component={Bag} />
         <Route path="/pagamento" component={Payment} />
         <Route path="/sucesso" component={Success} />

@@ -1,0 +1,749 @@
+{
+    "items": [
+        {
+            "sku": "57138",
+            "name": "Inoar Afro Vegan - Leave-in 300ml",
+            "slugName": "inoar-afro-vegan-leavein-300ml",
+            "hiddenInCart": false,
+            "gift": false,
+            "surprise": false,
+            "featured": true,
+            "brand": {
+                "name": "Inoar",
+                "slugName": "inoar",
+                "line": {
+                    "name": "Afro Vegan",
+                    "slugName": "afro-vegan"
+                }
+            },
+            "inventory": {
+                "quantity": 104,
+                "inventories": [
+                    {
+                        "addressLocality": "SP",
+                        "type": "ECOMMERCE",
+                        "quantity": 104,
+                        "priority": 0
+                    },
+                    {
+                        "addressLocality": "TO_VIRTUAL",
+                        "type": "VIRTUAL",
+                        "quantity": 0,
+                        "priority": 5
+                    },
+                    {
+                        "addressLocality": "MOEMA",
+                        "type": "PHYSICAL_STORE",
+                        "quantity": 0,
+                        "priority": 3
+                    },
+                    {
+                        "addressLocality": "TO",
+                        "type": "ECOMMERCE",
+                        "quantity": 0,
+                        "priority": 2
+                    },
+                    {
+                        "addressLocality": "SP_VIRTUAL",
+                        "type": "VIRTUAL",
+                        "quantity": 0,
+                        "priority": 4
+                    }
+                ]
+            },
+            "priceSpecification": {
+                "price": 20.9,
+                "maxPrice": 29.9,
+                "installments": {
+                    "numberOfPayments": 1,
+                    "monthlyPayment": 20.9,
+                    "maxInstallments": 0
+                },
+                "validPrice": true
+            },
+            "scaleValue": {
+                "unit": "g",
+                "value": 368
+            },
+            "kit": {},
+            "departments": [
+                {
+                    "name": "Cabelos",
+                    "slugName": "cabelos",
+                    "categories": [
+                        {
+                            "name": "Leave-in e Creme para Pentear",
+                            "slugName": "leave-in-e-creme-para-pentear",
+                            "attributes": [
+                                {
+                                    "id": "A1",
+                                    "name": "Tipos de Cabelo",
+                                    "slugName": "tipos-de-cabelo",
+                                    "values": [
+                                        {
+                                            "id": "V1",
+                                            "name": "Cacheados ou Ondulados",
+                                            "slugName": "cacheados-ou-ondulados"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "id": "A24",
+                                    "name": "Produtos para",
+                                    "slugName": "produtos-para",
+                                    "values": [
+                                        {
+                                            "id": "V84",
+                                            "name": "Brilho",
+                                            "slugName": "brilho"
+                                        },
+                                        {
+                                            "id": "V75",
+                                            "name": "Maciez e Desembaraço",
+                                            "slugName": "maciez-e-desembaraco"
+                                        },
+                                        {
+                                            "id": "V81",
+                                            "name": "Cachos Definidos",
+                                            "slugName": "cachos-definidos"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "id": "A4",
+                                    "name": "Propriedades",
+                                    "slugName": "propriedades",
+                                    "values": [
+                                        {
+                                            "id": "V751",
+                                            "name": "Vegano",
+                                            "slugName": "vegano"
+                                        },
+                                        {
+                                            "id": "V752",
+                                            "name": "Cruelty Free",
+                                            "slugName": "cruelty-free"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "id": "A6",
+                                    "name": "Tamanho",
+                                    "slugName": "tamanho",
+                                    "values": [
+                                        {
+                                            "id": "V118",
+                                            "name": "Padrão",
+                                            "slugName": "padrao"
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ],
+            "details": {
+                "shortDescription": "Leave-in para cabelos ondulados, cacheados, crespos e afros. Ajuda a nutrir, hidratar e definir os fios.",
+                "description": "<p>Leave-in para cabelos ondulados, cacheados, crespos e afros. Ajuda a nutrir, hidratar e definir os fios. É ideal para cachos do tipo 4ABC.</p><p><br></p><p>Inoar Afro Vegan Leave-in traz fórmula botânica que mantem a saúde da fibra capilar. Dessa forma, oferece um cuidado que empodera a mulher ao mostrar a verdadeira beleza dos fios extremamente cacheados.</p><p></p>",
+                "result": "Seus cachos ficam nutridos, brilhantes e saudáveis.<p></p>",
+                "advice": "Coloque uma pequena quantidade do leave-in na palma das mãos e passe sobre os cabelos úmidos. Deixe secar naturalmente ou use um difusor.<p></p>"
+            },
+            "presentation": {
+                "value": "300",
+                "unit": "ml"
+            },
+            "badge": [],
+            "imageObjects": [
+                {
+                    "featured": false,
+                    "thumbnail": "https://res.cloudinary.com/beleza-na-web/image/upload/w_50,f_auto,fl_progressive,q_auto:best/v1/imagens/products/57138/57138.png",
+                    "small": "https://res.cloudinary.com/beleza-na-web/image/upload/w_100,f_auto,fl_progressive,q_auto:best/v1/imagens/products/57138/57138.png",
+                    "medium": "https://res.cloudinary.com/beleza-na-web/image/upload/w_130,f_auto,fl_progressive,q_auto:best/v1/imagens/products/57138/57138.png",
+                    "large": "https://res.cloudinary.com/beleza-na-web/image/upload/w_297,f_auto,fl_progressive,q_auto:best/v1/imagens/products/57138/57138.png",
+                    "extraLarge": "https://res.cloudinary.com/beleza-na-web/image/upload/w_1500,f_auto,fl_progressive,q_auto:best/v1/imagens/products/57138/57138.png"
+                },
+                {
+                    "featured": false,
+                    "thumbnail": "https://res.cloudinary.com/beleza-na-web/image/upload/w_50,f_auto,fl_progressive,q_auto:best/v1/imagens/products/57138/57138_b.png",
+                    "small": "https://res.cloudinary.com/beleza-na-web/image/upload/w_100,f_auto,fl_progressive,q_auto:best/v1/imagens/products/57138/57138_b.png",
+                    "medium": "https://res.cloudinary.com/beleza-na-web/image/upload/w_130,f_auto,fl_progressive,q_auto:best/v1/imagens/products/57138/57138_b.png",
+                    "large": "https://res.cloudinary.com/beleza-na-web/image/upload/w_297,f_auto,fl_progressive,q_auto:best/v1/imagens/products/57138/57138_b.png",
+                    "extraLarge": "https://res.cloudinary.com/beleza-na-web/image/upload/w_1500,f_auto,fl_progressive,q_auto:best/v1/imagens/products/57138/57138_b.png"
+                }
+            ],
+            "gtin": "7908124400719",
+            "departmentName": "Cabelos"
+        },
+        {
+            "sku": "38273",
+            "name": "Good Girl Carolina Herrera Eau de Parfum - Perfume Feminino 30ml",
+            "slugName": "good-girl-carolina-herrera-eau-de-parfum-perfume-feminino-30ml",
+            "hiddenInCart": false,
+            "gift": false,
+            "surprise": false,
+            "featured": false,
+            "brand": {
+                "name": "Carolina Herrera",
+                "slugName": "carolina-herrera",
+                "line": {
+                    "name": "Good Girl",
+                    "slugName": "good-girl"
+                }
+            },
+            "inventory": {
+                "quantity": 30,
+                "inventories": [
+                    {
+                        "addressLocality": "TO",
+                        "type": "ECOMMERCE",
+                        "quantity": 30,
+                        "priority": 2
+                    },
+                    {
+                        "addressLocality": "MOEMA",
+                        "type": "PHYSICAL_STORE",
+                        "quantity": 2,
+                        "priority": 3
+                    },
+                    {
+                        "addressLocality": "SP",
+                        "type": "ECOMMERCE",
+                        "quantity": 0,
+                        "priority": 0
+                    },
+                    {
+                        "addressLocality": "TO_VIRTUAL",
+                        "type": "VIRTUAL",
+                        "quantity": 0,
+                        "priority": 5
+                    },
+                    {
+                        "addressLocality": "SP_VIRTUAL",
+                        "type": "VIRTUAL",
+                        "quantity": 0,
+                        "priority": 4
+                    }
+                ]
+            },
+            "priceSpecification": {
+                "price": 299,
+                "maxPrice": 299,
+                "installments": {
+                    "numberOfPayments": 5,
+                    "monthlyPayment": 59.8,
+                    "maxInstallments": 0
+                },
+                "validPrice": true
+            },
+            "scaleValue": {
+                "unit": "g",
+                "value": 167
+            },
+            "kit": {},
+            "departments": [
+                {
+                    "name": "Perfumes",
+                    "slugName": "perfumes",
+                    "categories": [
+                        {
+                            "name": "Feminino",
+                            "slugName": "feminino",
+                            "attributes": [
+                                {
+                                    "id": "A108",
+                                    "name": "Perfil",
+                                    "slugName": "perfil",
+                                    "values": [
+                                        {
+                                            "id": "V531",
+                                            "name": "Urbano",
+                                            "slugName": "urbano"
+                                        },
+                                        {
+                                            "id": "V527",
+                                            "name": "Sedutor",
+                                            "slugName": "sedutor"
+                                        },
+                                        {
+                                            "id": "V532",
+                                            "name": "Sofisticado",
+                                            "slugName": "sofisticado"
+                                        },
+                                        {
+                                            "id": "V536",
+                                            "name": "Sexy",
+                                            "slugName": "sexy"
+                                        },
+                                        {
+                                            "id": "V537",
+                                            "name": "Exuberante",
+                                            "slugName": "exuberante"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "id": "A28",
+                                    "name": "Família Olfativa",
+                                    "slugName": "familia-olfativa",
+                                    "values": [
+                                        {
+                                            "id": "V327",
+                                            "name": "Oriental",
+                                            "slugName": "oriental"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "id": "A29",
+                                    "name": "Concentração",
+                                    "slugName": "concentracao",
+                                    "values": [
+                                        {
+                                            "id": "V331",
+                                            "name": "Eau de Parfum",
+                                            "slugName": "eau-de-parfum"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "id": "A30",
+                                    "name": "Ocasião",
+                                    "slugName": "ocasiao",
+                                    "values": [
+                                        {
+                                            "id": "V348",
+                                            "name": "Balada",
+                                            "slugName": "balada"
+                                        },
+                                        {
+                                            "id": "V343",
+                                            "name": "Noite",
+                                            "slugName": "noite"
+                                        },
+                                        {
+                                            "id": "V347",
+                                            "name": "Ocasião Especial",
+                                            "slugName": "ocasiao-especial"
+                                        },
+                                        {
+                                            "id": "V350",
+                                            "name": "Encontro Romântico",
+                                            "slugName": "encontro-romantico"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "id": "A40",
+                                    "name": "Subfamílias",
+                                    "slugName": "subfamilias",
+                                    "values": [
+                                        {
+                                            "id": "V407",
+                                            "name": "Floral",
+                                            "slugName": "floral"
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ],
+            "details": {
+                "shortDescription": "Perfume feminino oriental floral. Fragrância para a mulher que ama seu lado bom e celebra o lado mau.",
+                "description": "<strong>Good Girl</strong> é um <strong>Perfume Carolina Herrera feminino</strong> oriental floral. Poderoso e sensual, é perfeito para mulher moderna, audaciosa, sexy, elegante e enigmática, que ama seu lado bom e comemora seu lado mau.<br><br><strong>Good Girl Carolina Herrera</strong> empodera as mulheres para que conquistem uma cidade inteira. Por isso pode-se dizer que o perfume é quase \"uma arma\" nas mãos dessa mulher com poderes de super-heroína.<br><br>Não é suficiente atrair olhares, os queixos precisam cair. O tipo de olhar que se busca é aquele vidrado, quase hipnotizado. Quando uma <strong>Good Girl</strong> usa o poder de seu salto alto ela tem a cidade aos seus pés. Sua presença tem o dom de marcar qualquer evento. Ela flerta com o inconsciente, tornando-se inesquecível.<br><br>Com o perfume e os sapatos certos uma mulher pode conquistar o mundo! Não deixe também de experimentar o <a href=\"carolina-herrera-perfume-feminino-212-vip-rose-eau-de-parfum\">212 VIP Rosé</a>, outro sucesso feminino da marca, e de conhecer o <a href=\"good-girl-glitter-collector-carolina-herrera-eau-de-parfum-perfume-feminino-80ml\">Good Girl Glitter Collector Edition</a>, edição limitada da fragrância."
+            },
+            "presentation": {
+                "value": "30",
+                "unit": "ml"
+            },
+            "badge": [
+                "Brinde"
+            ],
+            "imageObjects": [
+                {
+                    "featured": true,
+                    "thumbnail": "https://res.cloudinary.com/beleza-na-web/image/upload/w_50,f_auto,fl_progressive,q_auto:best/v1/imagens/5/good-girl-carolina-herrera-eau-de-parfum-perfume-feminino-30ml-38273-1960525940762131267.jpg",
+                    "small": "https://res.cloudinary.com/beleza-na-web/image/upload/w_100,f_auto,fl_progressive,q_auto:best/v1/imagens/5/good-girl-carolina-herrera-eau-de-parfum-perfume-feminino-30ml-38273-1960525940762131267.jpg",
+                    "medium": "https://res.cloudinary.com/beleza-na-web/image/upload/w_130,f_auto,fl_progressive,q_auto:best/v1/imagens/5/good-girl-carolina-herrera-eau-de-parfum-perfume-feminino-30ml-38273-1960525940762131267.jpg",
+                    "large": "https://res.cloudinary.com/beleza-na-web/image/upload/w_297,f_auto,fl_progressive,q_auto:best/v1/imagens/5/good-girl-carolina-herrera-eau-de-parfum-perfume-feminino-30ml-38273-1960525940762131267.jpg",
+                    "extraLarge": "https://res.cloudinary.com/beleza-na-web/image/upload/w_1500,f_auto,fl_progressive,q_auto:best/v1/imagens/5/good-girl-carolina-herrera-eau-de-parfum-perfume-feminino-30ml-38273-1960525940762131267.jpg"
+                },
+                {
+                    "featured": false,
+                    "thumbnail": "https://res.cloudinary.com/beleza-na-web/image/upload/w_50,f_auto,fl_progressive,q_auto:best/v1/imagens/5/38273-complementar-1-2225503287192367628.jpg",
+                    "small": "https://res.cloudinary.com/beleza-na-web/image/upload/w_100,f_auto,fl_progressive,q_auto:best/v1/imagens/5/38273-complementar-1-2225503287192367628.jpg",
+                    "medium": "https://res.cloudinary.com/beleza-na-web/image/upload/w_130,f_auto,fl_progressive,q_auto:best/v1/imagens/5/38273-complementar-1-2225503287192367628.jpg",
+                    "large": "https://res.cloudinary.com/beleza-na-web/image/upload/w_297,f_auto,fl_progressive,q_auto:best/v1/imagens/5/38273-complementar-1-2225503287192367628.jpg",
+                    "extraLarge": "https://res.cloudinary.com/beleza-na-web/image/upload/w_1500,f_auto,fl_progressive,q_auto:best/v1/imagens/5/38273-complementar-1-2225503287192367628.jpg"
+                },
+                {
+                    "featured": false,
+                    "thumbnail": "https://res.cloudinary.com/beleza-na-web/image/upload/w_50,f_auto,fl_progressive,q_auto:best/v1/imagens/5/38273-complementar-2-5608037011379564881.jpg",
+                    "small": "https://res.cloudinary.com/beleza-na-web/image/upload/w_100,f_auto,fl_progressive,q_auto:best/v1/imagens/5/38273-complementar-2-5608037011379564881.jpg",
+                    "medium": "https://res.cloudinary.com/beleza-na-web/image/upload/w_130,f_auto,fl_progressive,q_auto:best/v1/imagens/5/38273-complementar-2-5608037011379564881.jpg",
+                    "large": "https://res.cloudinary.com/beleza-na-web/image/upload/w_297,f_auto,fl_progressive,q_auto:best/v1/imagens/5/38273-complementar-2-5608037011379564881.jpg",
+                    "extraLarge": "https://res.cloudinary.com/beleza-na-web/image/upload/w_1500,f_auto,fl_progressive,q_auto:best/v1/imagens/5/38273-complementar-2-5608037011379564881.jpg"
+                },
+                {
+                    "featured": false,
+                    "thumbnail": "https://res.cloudinary.com/beleza-na-web/image/upload/w_50,f_auto,fl_progressive,q_auto:best/v1/imagens/5/38273-complementar-3-5300804117094288240.jpg",
+                    "small": "https://res.cloudinary.com/beleza-na-web/image/upload/w_100,f_auto,fl_progressive,q_auto:best/v1/imagens/5/38273-complementar-3-5300804117094288240.jpg",
+                    "medium": "https://res.cloudinary.com/beleza-na-web/image/upload/w_130,f_auto,fl_progressive,q_auto:best/v1/imagens/5/38273-complementar-3-5300804117094288240.jpg",
+                    "large": "https://res.cloudinary.com/beleza-na-web/image/upload/w_297,f_auto,fl_progressive,q_auto:best/v1/imagens/5/38273-complementar-3-5300804117094288240.jpg",
+                    "extraLarge": "https://res.cloudinary.com/beleza-na-web/image/upload/w_1500,f_auto,fl_progressive,q_auto:best/v1/imagens/5/38273-complementar-3-5300804117094288240.jpg"
+                },
+                {
+                    "featured": false,
+                    "thumbnail": "https://res.cloudinary.com/beleza-na-web/image/upload/w_50,f_auto,fl_progressive,q_auto:best/v1/imagens/5/38273-complementar-4-1638258784879068302.jpg",
+                    "small": "https://res.cloudinary.com/beleza-na-web/image/upload/w_100,f_auto,fl_progressive,q_auto:best/v1/imagens/5/38273-complementar-4-1638258784879068302.jpg",
+                    "medium": "https://res.cloudinary.com/beleza-na-web/image/upload/w_130,f_auto,fl_progressive,q_auto:best/v1/imagens/5/38273-complementar-4-1638258784879068302.jpg",
+                    "large": "https://res.cloudinary.com/beleza-na-web/image/upload/w_297,f_auto,fl_progressive,q_auto:best/v1/imagens/5/38273-complementar-4-1638258784879068302.jpg",
+                    "extraLarge": "https://res.cloudinary.com/beleza-na-web/image/upload/w_1500,f_auto,fl_progressive,q_auto:best/v1/imagens/5/38273-complementar-4-1638258784879068302.jpg"
+                },
+                {
+                    "featured": false,
+                    "thumbnail": "https://res.cloudinary.com/beleza-na-web/image/upload/w_50,f_auto,fl_progressive,q_auto:best/v1/imagens/5/38273-complementar-5-8000699548108737371.jpg",
+                    "small": "https://res.cloudinary.com/beleza-na-web/image/upload/w_100,f_auto,fl_progressive,q_auto:best/v1/imagens/5/38273-complementar-5-8000699548108737371.jpg",
+                    "medium": "https://res.cloudinary.com/beleza-na-web/image/upload/w_130,f_auto,fl_progressive,q_auto:best/v1/imagens/5/38273-complementar-5-8000699548108737371.jpg",
+                    "large": "https://res.cloudinary.com/beleza-na-web/image/upload/w_297,f_auto,fl_progressive,q_auto:best/v1/imagens/5/38273-complementar-5-8000699548108737371.jpg",
+                    "extraLarge": "https://res.cloudinary.com/beleza-na-web/image/upload/w_1500,f_auto,fl_progressive,q_auto:best/v1/imagens/5/38273-complementar-5-8000699548108737371.jpg"
+                },
+                {
+                    "featured": false,
+                    "thumbnail": "https://res.cloudinary.com/beleza-na-web/image/upload/w_50,f_auto,fl_progressive,q_auto:best/v1/imagens/5/38273-complementar-6-2854737511306576578.jpg",
+                    "small": "https://res.cloudinary.com/beleza-na-web/image/upload/w_100,f_auto,fl_progressive,q_auto:best/v1/imagens/5/38273-complementar-6-2854737511306576578.jpg",
+                    "medium": "https://res.cloudinary.com/beleza-na-web/image/upload/w_130,f_auto,fl_progressive,q_auto:best/v1/imagens/5/38273-complementar-6-2854737511306576578.jpg",
+                    "large": "https://res.cloudinary.com/beleza-na-web/image/upload/w_297,f_auto,fl_progressive,q_auto:best/v1/imagens/5/38273-complementar-6-2854737511306576578.jpg",
+                    "extraLarge": "https://res.cloudinary.com/beleza-na-web/image/upload/w_1500,f_auto,fl_progressive,q_auto:best/v1/imagens/5/38273-complementar-6-2854737511306576578.jpg"
+                },
+                {
+                    "featured": false,
+                    "thumbnail": "https://res.cloudinary.com/beleza-na-web/image/upload/w_50,f_auto,fl_progressive,q_auto:best/v1/imagens/5/38273-complementar-7-452689935643725654.jpg",
+                    "small": "https://res.cloudinary.com/beleza-na-web/image/upload/w_100,f_auto,fl_progressive,q_auto:best/v1/imagens/5/38273-complementar-7-452689935643725654.jpg",
+                    "medium": "https://res.cloudinary.com/beleza-na-web/image/upload/w_130,f_auto,fl_progressive,q_auto:best/v1/imagens/5/38273-complementar-7-452689935643725654.jpg",
+                    "large": "https://res.cloudinary.com/beleza-na-web/image/upload/w_297,f_auto,fl_progressive,q_auto:best/v1/imagens/5/38273-complementar-7-452689935643725654.jpg",
+                    "extraLarge": "https://res.cloudinary.com/beleza-na-web/image/upload/w_1500,f_auto,fl_progressive,q_auto:best/v1/imagens/5/38273-complementar-7-452689935643725654.jpg"
+                }
+            ],
+            "gtin": "8411061823514",
+            "benefits": [
+                {
+                    "offerId": "5cf1947d4be38b2d7b031934",
+                    "offerTitle": "Home: Card: Carolina Herrera compre e ganhe 8589",
+                    "type": "GIFT",
+                    "target": "PRODUCT",
+                    "gifts": [
+                        {
+                            "sku": "8589",
+                            "name": "212 Sexy Carolina Herrera EDP Perfume Feminino Miniatura 5ml - Brinde",
+                            "slugName": "212-sexy-carolina-herrera-edp-perfume-feminino-miniatura-5ml-brinde",
+                            "hiddenInCart": false,
+                            "gift": true,
+                            "surprise": false,
+                            "featured": true,
+                            "brand": {
+                                "name": "Carolina Herrera",
+                                "slugName": "carolina-herrera",
+                                "line": {}
+                            },
+                            "inventory": {
+                                "quantity": 7,
+                                "inventories": [
+                                    {
+                                        "addressLocality": "MOEMA",
+                                        "type": "PHYSICAL_STORE",
+                                        "quantity": 1,
+                                        "priority": 3
+                                    },
+                                    {
+                                        "addressLocality": "SP",
+                                        "type": "ECOMMERCE",
+                                        "quantity": 0,
+                                        "priority": 0
+                                    },
+                                    {
+                                        "addressLocality": "TO",
+                                        "type": "ECOMMERCE",
+                                        "quantity": 7,
+                                        "priority": 2
+                                    },
+                                    {
+                                        "addressLocality": "TO_VIRTUAL",
+                                        "type": "VIRTUAL",
+                                        "quantity": 0,
+                                        "priority": 5
+                                    },
+                                    {
+                                        "addressLocality": "SP_VIRTUAL",
+                                        "type": "VIRTUAL",
+                                        "quantity": 0,
+                                        "priority": 4
+                                    }
+                                ]
+                            },
+                            "priceSpecification": {
+                                "price": 23.9,
+                                "maxPrice": 23.9,
+                                "installments": {
+                                    "numberOfPayments": 1,
+                                    "monthlyPayment": 23.9,
+                                    "maxInstallments": 0
+                                },
+                                "validPrice": true
+                            },
+                            "scaleValue": {
+                                "unit": "g",
+                                "value": 28
+                            },
+                            "kit": {},
+                            "departments": [
+                                {
+                                    "name": "Perfumes",
+                                    "slugName": "perfumes",
+                                    "categories": [
+                                        {
+                                            "name": "Feminino",
+                                            "slugName": "feminino"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "details": {
+                                "shortDescription": "Perfume feminino oriental floral. Com um toque doce, celebra uma sensualidade charmosa e irresistível.",
+                                "description": ""
+                            },
+                            "presentation": {},
+                            "badge": [],
+                            "imageObjects": [
+                                {
+                                    "featured": true,
+                                    "thumbnail": "https://res.cloudinary.com/beleza-na-web/image/upload/w_50,f_auto,fl_progressive,q_auto:best/v1/imagens/5/brinde-ch-212-sexy-edp-miniatura-8589.jpg",
+                                    "small": "https://res.cloudinary.com/beleza-na-web/image/upload/w_100,f_auto,fl_progressive,q_auto:best/v1/imagens/5/brinde-ch-212-sexy-edp-miniatura-8589.jpg",
+                                    "medium": "https://res.cloudinary.com/beleza-na-web/image/upload/w_130,f_auto,fl_progressive,q_auto:best/v1/imagens/5/brinde-ch-212-sexy-edp-miniatura-8589.jpg",
+                                    "large": "https://res.cloudinary.com/beleza-na-web/image/upload/w_297,f_auto,fl_progressive,q_auto:best/v1/imagens/5/brinde-ch-212-sexy-edp-miniatura-8589.jpg",
+                                    "extraLarge": "https://res.cloudinary.com/beleza-na-web/image/upload/w_1500,f_auto,fl_progressive,q_auto:best/v1/imagens/5/brinde-ch-212-sexy-edp-miniatura-8589.jpg"
+                                }
+                            ],
+                            "gtin": "8411061865521",
+                            "departmentName": "Perfumes"
+                        }
+                    ]
+                }
+            ],
+            "departmentName": "Perfumes"
+        },
+        {
+            "sku": "3019",
+            "name": "Senscience Inner Restore Intensif - Máscara Capilar 50ml",
+            "slugName": "senscience-inner-restore-intesif-deep-repairing-masque-mascara-de-tratamento-50ml",
+            "hiddenInCart": false,
+            "gift": false,
+            "surprise": false,
+            "featured": true,
+            "brand": {
+                "name": "Senscience",
+                "slugName": "senscience",
+                "line": {
+                    "name": "Inner Restore",
+                    "slugName": "inner-restore"
+                }
+            },
+            "inventory": {
+                "quantity": 1433,
+                "inventories": [
+                    {
+                        "addressLocality": "SP",
+                        "type": "ECOMMERCE",
+                        "quantity": 1433,
+                        "priority": 0
+                    },
+                    {
+                        "addressLocality": "TO",
+                        "type": "ECOMMERCE",
+                        "quantity": 0,
+                        "priority": 2
+                    },
+                    {
+                        "addressLocality": "MOEMA",
+                        "type": "PHYSICAL_STORE",
+                        "quantity": 104,
+                        "priority": 3
+                    },
+                    {
+                        "addressLocality": "TO_VIRTUAL",
+                        "type": "VIRTUAL",
+                        "quantity": 0,
+                        "priority": 5
+                    },
+                    {
+                        "addressLocality": "SP_VIRTUAL",
+                        "type": "VIRTUAL",
+                        "quantity": 0,
+                        "priority": 4
+                    }
+                ]
+            },
+            "priceSpecification": {
+                "price": 89.9,
+                "maxPrice": 99.9,
+                "installments": {
+                    "numberOfPayments": 1,
+                    "monthlyPayment": 89.9,
+                    "maxInstallments": 0
+                },
+                "validPrice": true
+            },
+            "scaleValue": {
+                "unit": "g",
+                "value": 64
+            },
+            "kit": {},
+            "departments": [
+                {
+                    "name": "Cabelos",
+                    "slugName": "cabelos",
+                    "categories": [
+                        {
+                            "name": "Tratamento",
+                            "slugName": "tratamento",
+                            "attributes": [
+                                {
+                                    "id": "A1",
+                                    "name": "Tipos de Cabelo",
+                                    "slugName": "tipos-de-cabelo",
+                                    "values": [
+                                        {
+                                            "id": "V5",
+                                            "name": "Danificados",
+                                            "slugName": "danificados"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "id": "A2",
+                                    "name": "Condição dos Fios",
+                                    "slugName": "condicao-dos-fios",
+                                    "values": [
+                                        {
+                                            "id": "V16",
+                                            "name": "Ressecados",
+                                            "slugName": "ressecados"
+                                        },
+                                        {
+                                            "id": "V22",
+                                            "name": "Porosos ou Elásticos",
+                                            "slugName": "porosos-ou-elasticos"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "id": "A3",
+                                    "name": "Desejo de Beleza",
+                                    "slugName": "desejo-de-beleza",
+                                    "values": [
+                                        {
+                                            "id": "V50",
+                                            "name": "Força e Resistência",
+                                            "slugName": "forca-e-resistencia"
+                                        },
+                                        {
+                                            "id": "V64",
+                                            "name": "Brilho",
+                                            "slugName": "brilho"
+                                        },
+                                        {
+                                            "id": "V63",
+                                            "name": "Maciez e Maleabilidade",
+                                            "slugName": "maciez-e-maleabilidade"
+                                        },
+                                        {
+                                            "id": "V47",
+                                            "name": "Reconstrução",
+                                            "slugName": "reconstrucao"
+                                        },
+                                        {
+                                            "id": "V41",
+                                            "name": "Hidratação",
+                                            "slugName": "hidratacao"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "id": "A6",
+                                    "name": "Tamanho",
+                                    "slugName": "tamanho",
+                                    "values": [
+                                        {
+                                            "id": "V117",
+                                            "name": "Miniatura",
+                                            "slugName": "miniatura"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "id": "A7",
+                                    "name": "Público",
+                                    "slugName": "publico",
+                                    "values": [
+                                        {
+                                            "id": "V120",
+                                            "name": "Feminino",
+                                            "slugName": "feminino"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "id": "A8",
+                                    "name": "Produto",
+                                    "slugName": "produto",
+                                    "values": [
+                                        {
+                                            "id": "V127",
+                                            "name": "Máscara Capilar",
+                                            "slugName": "mascara-capilar"
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ],
+            "details": {
+                "shortDescription": "Máscara de reparação profunda para cabelos danificados, grossos e secos. Repõe nutrientes e restaura os fios.",
+                "description": "<strong>Máscara Senscience</strong> de reparação profunda para cabelos danificados, grossos e secos. A fórmula avançada de<strong> Senscience Inner Restore Intensif Deep Masque</strong> repõe <a href=\"/cabelos/nutricao\">nutrição</a> e restaura os fios, fazendo com que fiquem novamente saudáveis, brilhantes e macios.<br><br>Com alto poder de hidratação, suaviza e repara as cutículas danificadas deixando uma luminosidade intensa no seu cabelo. Além disso, a <strong>Máscara Senscience Inner Restore Intensif Deep</strong>&nbsp;recupera dos danos sofridos pela fibra capilar, devolvendo sua força e resistência. O resultado são fios restaurados e hidratados, com a saúde, o brilho, a maciez de volta.<br>",
+                "result": "Seu cabelo fica hidratado, nutrido e restaurado. Tudo isso com saúde, muito brilho e um toque macio.",
+                "advice": "Use o shampoo apropriado Senscience Silk Moisture ou Smooth shampoo. Retire o excesso de umidade do cabelo. Coloque a quantidade desejada da máscara na palma da mão e aplique no cabelo certificando-se de alcançar as pontas. Deixe agir de 2-5 minutos enxágue completamente. Use semanalmente no lugar do Condicionador em cabelos severamente danificados."
+            },
+            "presentation": {
+                "value": "64",
+                "unit": "g"
+            },
+            "badge": [],
+            "imageObjects": [
+                {
+                    "featured": true,
+                    "thumbnail": "https://res.cloudinary.com/beleza-na-web/image/upload/w_50,f_auto,fl_progressive,q_auto:best/v1/imagens/5/senscience-inner-restore-intesif-deep-repairing-masque-mascara-de-tratamento-50ml-3019-7903251722539384904.png",
+                    "small": "https://res.cloudinary.com/beleza-na-web/image/upload/w_100,f_auto,fl_progressive,q_auto:best/v1/imagens/5/senscience-inner-restore-intesif-deep-repairing-masque-mascara-de-tratamento-50ml-3019-7903251722539384904.png",
+                    "medium": "https://res.cloudinary.com/beleza-na-web/image/upload/w_130,f_auto,fl_progressive,q_auto:best/v1/imagens/5/senscience-inner-restore-intesif-deep-repairing-masque-mascara-de-tratamento-50ml-3019-7903251722539384904.png",
+                    "large": "https://res.cloudinary.com/beleza-na-web/image/upload/w_297,f_auto,fl_progressive,q_auto:best/v1/imagens/5/senscience-inner-restore-intesif-deep-repairing-masque-mascara-de-tratamento-50ml-3019-7903251722539384904.png",
+                    "extraLarge": "https://res.cloudinary.com/beleza-na-web/image/upload/w_1500,f_auto,fl_progressive,q_auto:best/v1/imagens/5/senscience-inner-restore-intesif-deep-repairing-masque-mascara-de-tratamento-50ml-3019-7903251722539384904.png"
+                },
+                {
+                    "featured": false,
+                    "thumbnail": "https://res.cloudinary.com/beleza-na-web/image/upload/w_50,f_auto,fl_progressive,q_auto:best/v1/imagens/5/3019-complementar-1-8351838874176932323.png",
+                    "small": "https://res.cloudinary.com/beleza-na-web/image/upload/w_100,f_auto,fl_progressive,q_auto:best/v1/imagens/5/3019-complementar-1-8351838874176932323.png",
+                    "medium": "https://res.cloudinary.com/beleza-na-web/image/upload/w_130,f_auto,fl_progressive,q_auto:best/v1/imagens/5/3019-complementar-1-8351838874176932323.png",
+                    "large": "https://res.cloudinary.com/beleza-na-web/image/upload/w_297,f_auto,fl_progressive,q_auto:best/v1/imagens/5/3019-complementar-1-8351838874176932323.png",
+                    "extraLarge": "https://res.cloudinary.com/beleza-na-web/image/upload/w_1500,f_auto,fl_progressive,q_auto:best/v1/imagens/5/3019-complementar-1-8351838874176932323.png"
+                }
+            ],
+            "gtin": "074469482691",
+            "departmentName": "Cabelos"
+        }
+
+
+    ]
+}

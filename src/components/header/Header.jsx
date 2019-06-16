@@ -3,6 +3,7 @@ import { css } from 'aphrodite/no-important';
 import { NavLink } from 'react-router-dom';
 
 import DataStore from '../common/dataStore/DataStore';
+import { isHotAccess } from '../../settings';
 
 import styles from './styles';
 
@@ -18,11 +19,20 @@ const menuItems = [
     link: '/pagamento',
   },
   {
-    label: 'CONFIRMAÇÃO',
+    label: isHotAccess ? 'CONFIRM.' : 'CONFIRMAÇÃO',
     link: '/sucesso',
     isSuccessLink: true,
   },
 ];
+
+if (isHotAccess) {
+
+  menuItems.unshift({
+    label: 'HOME',
+    link: '/',
+  });
+
+}
 
 const Header = () => {
 
@@ -48,6 +58,7 @@ const Header = () => {
         {
           menuItems.map(menuItem => (
             <NavLink
+              exact
               key={menuItem.label}
               onClick={menuItem.isSuccessLink ? onClick : null}
               to={menuItem.link}
