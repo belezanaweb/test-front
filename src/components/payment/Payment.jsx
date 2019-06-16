@@ -15,7 +15,11 @@ class Payment extends PureComponent {
 
   focus = '';
 
+  forceError = '';
+
   sharedObjProducts = Cart.shared();
+
+  yearArray = (new Date()).getFullYear().toString().split('');
 
   sharedUserData = DataStore.shared('userData');
 
@@ -37,7 +41,7 @@ class Payment extends PureComponent {
     switch (validationType) {
 
       case 'date':
-        return [/[0-1]/, /\d/, '/', /2/, /0/, /\d/, /\d/];
+        return [/[0-1]/, /\d/, '/', /2/, /0/, /[1-9]/, /\d/];
       case 'card':
         return [/\d/, /\d/, /\d/, /\d/, '.', /\d/, /\d/, /\d/, /\d/, '.', /\d/, /\d/, /\d/, /\d/, '.', /\d/, /\d/, /\d/, /\d/];
       case 'cvv':
@@ -71,6 +75,24 @@ class Payment extends PureComponent {
     const { value } = event.target;
     this.sharedUserData.valueExpiresDirty = value;
     this.sharedUserData.valueExpires = value.replace(/_/g, '');
+
+    let forceError = '';
+
+    if (this.sharedUserData.valueExpires) {
+
+      const [mon, year] = this.sharedUserData.valueExpires.split('/');
+      const yearArray = year.split('');
+
+      if (this.forceError === 'exp') this.forceError = '';
+
+      if (mon === '00' || parseInt(mon, 10) > 12) forceError = 'exp';
+      else if (yearArray[2] < this.yearArray[2]) forceError = 'exp';
+      else if (yearArray[2] === this.yearArray[2]
+        && yearArray[3] < this.yearArray[3]) forceError = 'exp';
+
+    }
+    this.forceError = forceError;
+
     this.forceUpdate();
 
   }
@@ -145,9 +167,12 @@ class Payment extends PureComponent {
       && cvvValid
       && valueName.length > 4;
 
-    const errorCard = this.focus !== 'card' && !cardValid && valueCard.length !== 0;
-    const errorCvv = this.focus !== 'cvv' && !cvvValid && valueCvv.length !== 0;
-    const errorExp = this.focus !== 'exp' && !expiresValid && valueExpires.length !== 0;
+    const errorCard = this.forceError === 'card'
+      || (this.focus !== 'card' && !cardValid && valueCard.length !== 0);
+    const errorCvv = this.forceError === 'cvv'
+      || (this.focus !== 'cvv' && !cvvValid && valueCvv.length !== 0);
+    const errorExp = this.forceError === 'exp'
+      || (this.focus !== 'exp' && !expiresValid && valueExpires.length !== 0);
 
     return (
       <div className={css(styles.container)}>
