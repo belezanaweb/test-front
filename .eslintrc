@@ -1,0 +1,23 @@
+{
+  "extends": [
+    "react-app",
+    "standard",
+    "standard-react"
+  ],
+  "plugins": [
+    "emotion",
+    "react-hooks"
+  ],
+  "rules": {
+    "jsx-quotes": ["error", "prefer-double"],
+    "operator-linebreak": ["error", "before"],
+    "import/order": ["error", { "newlines-between": "never" }],
+    "react/react-in-jsx-scope": "off",
+    "react-hooks/rules-of-hooks": "error",
+    "react-hooks/exhaustive-deps": "warn",
+    "emotion/import-from-emotion": "error",
+    "emotion/styled-import": "error",
+    "emotion/no-vanilla": "error",
+    "emotion/syntax-preference": ["error", "string"]
+  }
+}

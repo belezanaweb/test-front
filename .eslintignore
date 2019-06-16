@@ -1,0 +1,14 @@
+# package
+**/package-lock.json
+**/yarn.lock
+**/node_modules/**
+
+# create-react-app
+**/build/**
+
+# jest
+**/coverage/**
+**/__snapshots__/**
+
+# vscode
+**/.vscode/**

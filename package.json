@@ -2,26 +2,41 @@
   "name": "test-front",
   "version": "0.1.0",
   "private": true,
-  "dependencies": {
-    "react": "^16.8.5",
-    "react-dom": "^16.8.5"
-  },
   "devDependencies": {
-    "react-scripts": "2.1.8"
+    "@commitlint/cli": "^8.0.0",
+    "@commitlint/config-conventional": "^8.0.0",
+    "cross-env": "^5.2.0",
+    "eslint": "^5.16.0",
+    "eslint-config-standard": "^12.0.0",
+    "eslint-config-standard-react": "^7.0.2",
+    "eslint-plugin-emotion": "^10.0.7",
+    "eslint-plugin-import": "^2.17.3",
+    "eslint-plugin-node": "^9.1.0",
+    "eslint-plugin-promise": "^4.1.1",
+    "eslint-plugin-react": "^7.13.0",
+    "eslint-plugin-react-hooks": "^1.6.0",
+    "eslint-plugin-standard": "^4.0.0",
+    "husky": "^2.4.1",
+    "jest-silent-reporter": "^0.1.2",
+    "lint-staged": "^8.2.1",
+    "prettier": "^1.18.2",
+    "prettier-eslint-cli": "^4.7.1",
+    "react-scripts": "3.0.1",
+    "rimraf": "^2.6.3"
+  },
+  "dependencies": {
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6"
   },
   "scripts": {
-    "start": "react-scripts start",
     "build": "react-scripts build",
+    "clean": "rimraf build coverage node_modules || :",
+    "eject": "react-scripts eject",
+    "fix": "$npm_execpath run lint -- --fix",
+    "lint": "eslint src",
+    "reset": "$npm_execpath run clean && $npm_execpath install",
+    "start": "react-scripts start",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
-  },
-  "eslintConfig": {
-    "extends": "react-app"
-  },
-  "browserslist": [
-    ">0.2%",
-    "not dead",
-    "not ie <= 11",
-    "not op_mini all"
-  ]
+    "test:ci": "cross-env CI=true $npm_execpath run test -- --color --reporters jest-silent-reporter"
+  }
 }
