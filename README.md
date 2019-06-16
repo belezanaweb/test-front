@@ -48,7 +48,7 @@ O *endpointHot* é um middleware criado para contornar os problemas com CORS no 
 #### Instalando e rodando o projeto localmente.
 ```
 git clone <url do repositório>
-cd test-fornt
+cd test-front
 npm start
 ````
 #### Gerando pacote para deploy.
@@ -58,7 +58,7 @@ npm run build
 Que vai gerar um diretório */build* com todo o conteúdo para ser posto no servidor. No teste em questão, está sendo usado um bucket na AWS.
 
 #### Testes
-Fora gerados alguns testes unitários, para algumas funções críticas.
+Foram gerados alguns testes unitários, para algumas funções críticas.
 ```
 npm run test
 ```
