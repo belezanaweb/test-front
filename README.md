@@ -65,7 +65,11 @@ npm run test
 #### Persistência de conteúdo.
 Visto que era necessário apenas manter valores entre páginas, sem a necessidade de gerenciamento global de estado, foi usada uma solução de *DataStore* otimizada para os requisitos, sem a necessidade de se usar Redux ou Mobx.
 
-A solução pode ser vista no arquivo [*/src/components/common/dataStore/DataStore.js*](./src/components/common/dataStore/DataStore.js).
+A solução pode ser vista no arquivo [*DataStore.js*](./src/components/common/dataStore/DataStore.js).
+
+#### Sobre trechos de código comentados
+Criei no front a possibilidade de retirar itens do carrinho, no entanto o processo de desenvolvimento da comunicação do middleware com o backend da BlzNaWeb estava se tornando muito demorado (não tenho as especificações da API), assim decidi deixar o código do front para análise e possível implementação futura. 
+
 ___
 
 ## Frontend Test
