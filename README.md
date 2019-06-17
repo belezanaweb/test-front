@@ -48,7 +48,7 @@ O *endpointHot* é um middleware criado para contornar os problemas com CORS no 
 #### Instalando e rodando o projeto localmente.
 ```
 git clone <url do repositório>
-cd test-fornt
+cd test-front
 npm start
 ````
 #### Gerando pacote para deploy.
@@ -58,14 +58,18 @@ npm run build
 Que vai gerar um diretório */build* com todo o conteúdo para ser posto no servidor. No teste em questão, está sendo usado um bucket na AWS.
 
 #### Testes
-Fora gerados alguns testes unitários, para algumas funções críticas.
+Foram gerados alguns testes unitários, para algumas funções críticas.
 ```
 npm run test
 ```
 #### Persistência de conteúdo.
 Visto que era necessário apenas manter valores entre páginas, sem a necessidade de gerenciamento global de estado, foi usada uma solução de *DataStore* otimizada para os requisitos, sem a necessidade de se usar Redux ou Mobx.
 
-A solução pode ser vista no arquivo [*/src/components/common/dataStore/DataStore.js*](./src/components/common/dataStore/DataStore.js).
+A solução pode ser vista no arquivo [*DataStore.js*](./src/components/common/dataStore/DataStore.js).
+
+#### Sobre trechos de código comentados
+Criei no front a possibilidade de retirar itens do carrinho, no entanto o processo de desenvolvimento da comunicação do middleware com o backend da BlzNaWeb estava se tornando muito demorado (não tenho as especificações da API), assim decidi deixar o código do front para análise e possível implementação futura. 
+
 ___
 
 ## Frontend Test
