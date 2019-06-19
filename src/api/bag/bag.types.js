@@ -1,4 +1,1 @@
-export const BAGS_ALL = "BAGS_ALL"
-// export const BAGS_ALL = "BAGS_ALL"
-// export const BAGS_ALL = "BAGS_ALL"
-// export const BAGS_ALL = "BAGS_ALL"
+export const BAG_ALL = 'BAG_ALL'

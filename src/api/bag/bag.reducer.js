@@ -1,8 +1,8 @@
-import { BAGS_ALL } from "./bag.types";
+import { BAG_ALL } from "./bag.types";
 
-export default (state = [], action) => {
+export default (state = {}, action) => {
   switch (action.type) {
-    case BAGS_ALL:
+    case BAG_ALL:
       return action.response;
     default:
       return state;
