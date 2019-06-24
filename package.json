@@ -1,6 +1,6 @@
 {
   "name": "test-front",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "private": true,
   "jest": {
     "collectCoverageFrom": [
@@ -22,7 +22,7 @@
     "@storybook/addon-viewport": "^5.1.9",
     "@storybook/addons": "^5.1.9",
     "@storybook/react": "^5.1.9",
-    "@testing-library/react": "^8.0.1",
+    "@testing-library/react": "^8.0.2",
     "@welldone-software/why-did-you-render": "^3.2.1",
     "a11y-checker": "^2.2.1",
     "babel-eslint": "^10.0.2",
