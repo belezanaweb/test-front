@@ -1,0 +1,36 @@
+{
+  "files.exclude": {
+    "**/node_modules": true,
+    "**/.*rc": true,
+    "**/.*ignore": true,
+    "**/.cache": true,
+    "**/.eslint*": true,
+    "**/__snapshots__": true,
+    ".editorconfig": true,
+    ".env*": true,
+    ".vscode/": true,
+    ".yarn-offline/": true,
+    ".yarnrc.example": true,
+    "build": true,
+    "commitlint.config.js": true,
+    "CHANGELOG.md": true,
+    "CONTRIBUTING.md": true,
+    "coverage/": true,
+    "LICENSE": true,
+    "netlify.toml": true,
+    "README.md": true,
+    "src/setupTests.js": true,
+    "src/serviceWorker.js": true,
+    "yarn.lock": true
+  },
+  "eslint.workingDirectories": [
+    {
+      "directory": ".",
+      "changeProcessCWD": true
+    }
+  ],
+  "[markdown]": {
+    "editor.wordWrap": "wordWrapColumn",
+    "editor.wordWrapColumn": 100
+  }
+}

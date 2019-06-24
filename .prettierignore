@@ -1,0 +1,21 @@
+# dotfiles
+.*
+!.storybook
+
+# Package Managers
+package.json
+package-lock.json
+yarn.lock
+
+# Dependencies
+node_modules
+bower_components
+
+# misc
+*.map
+
+# create-react-app
+build
+
+# storybook
+storybook-static

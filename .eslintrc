@@ -1,0 +1,41 @@
+{
+  "parser": "babel-eslint",
+  "extends": [
+    "standard",
+    "standard-react"
+  ],
+  "plugins": [
+    "emotion",
+    "react-hooks"
+  ],
+  "env": {
+    "browser": true,
+    "es6": true,
+    "jest": true,
+    "serviceworker": true
+  },
+  "rules": {
+    "jsx-quotes": ["error", "prefer-double"],
+    "operator-linebreak": ["error", "before", { "overrides": { "=": "ignore" } }],
+    "import/order": ["error", { "newlines-between": "never" }],
+    "react/react-in-jsx-scope": "off",
+    "react-hooks/rules-of-hooks": "error",
+    "react-hooks/exhaustive-deps": "warn",
+    "emotion/import-from-emotion": "error",
+    "emotion/styled-import": "error",
+    "emotion/no-vanilla": "error",
+    "emotion/syntax-preference": ["error", "string"],
+    "no-restricted-imports": [
+      "error",
+      {
+        "paths": [{
+          "name": "@emotion/styled",
+          "message": "Please import from @emotion/styled/macro."
+        }],
+        "patterns": [
+          "!@emotion/styled/macro"
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,140 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`SummarySection should render [snapshot] 1`] = `
+.emotion-16 {
+  -webkit-align-self: flex-start;
+  -ms-flex-item-align: start;
+  align-self: flex-start;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  display: grid;
+  grid-area: auto;
+  grid-gap: 9px 0;
+  grid-template-columns: 2fr 1fr;
+  padding: 14px 12px 12px;
+}
+
+.emotion-0 {
+  color: #212122;
+  font-size: 14px;
+  font-weight: normal;
+  line-height: 17px;
+  margin: 0;
+  padding: 0;
+  text-transform: uppercase;
+  -webkit-letter-spacing: 1px;
+  -moz-letter-spacing: 1px;
+  -ms-letter-spacing: 1px;
+  letter-spacing: 1px;
+}
+
+.emotion-2 {
+  color: #212122;
+  font-size: 14px;
+  font-weight: normal;
+  line-height: 17px;
+  margin: 0;
+  padding: 0;
+  text-transform: uppercase;
+  text-align: right;
+}
+
+.emotion-8 {
+  color: #ff7800;
+  font-size: 14px;
+  font-weight: normal;
+  line-height: 17px;
+  margin: 0;
+  padding: 0;
+  text-transform: uppercase;
+  -webkit-letter-spacing: 1px;
+  -moz-letter-spacing: 1px;
+  -ms-letter-spacing: 1px;
+  letter-spacing: 1px;
+}
+
+.emotion-10 {
+  color: #ff7800;
+  font-size: 14px;
+  font-weight: normal;
+  line-height: 17px;
+  margin: 0;
+  padding: 0;
+  text-transform: uppercase;
+  text-align: right;
+}
+
+.emotion-10::before {
+  content: '-';
+}
+
+.emotion-12 {
+  color: #212122;
+  font-size: 14px;
+  font-weight: bold;
+  line-height: 17px;
+  margin: 0;
+  padding: 6px 0 0;
+  text-transform: uppercase;
+  -webkit-letter-spacing: 1px;
+  -moz-letter-spacing: 1px;
+  -ms-letter-spacing: 1px;
+  letter-spacing: 1px;
+}
+
+.emotion-14 {
+  color: #212122;
+  font-size: 14px;
+  font-weight: bold;
+  line-height: 17px;
+  margin: 0;
+  padding: 6px 0 0;
+  text-transform: uppercase;
+  text-align: right;
+}
+
+<dl
+  class="emotion-16 emotion-17"
+>
+  <dt
+    class="emotion-0 emotion-1"
+  >
+    Produtos
+  </dt>
+  <dd
+    class="emotion-2 emotion-3"
+  >
+    R$624.80
+  </dd>
+  <dt
+    class="emotion-0 emotion-1"
+  >
+    Frete
+  </dt>
+  <dd
+    class="emotion-2 emotion-3"
+  >
+    R$5.30
+  </dd>
+  <dt
+    class="emotion-8 emotion-1"
+  >
+    Desconto
+  </dt>
+  <dd
+    class="emotion-10 emotion-3"
+  >
+    R$30.00
+  </dd>
+  <dt
+    class="emotion-12 emotion-1"
+  >
+    Total
+  </dt>
+  <dd
+    class="emotion-14 emotion-3"
+  >
+    R$618.90
+  </dd>
+</dl>
+`;

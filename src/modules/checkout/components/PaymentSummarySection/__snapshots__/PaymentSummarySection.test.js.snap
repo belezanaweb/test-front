@@ -1,0 +1,66 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`PaymentSummarySection should render [snapshot] 1`] = `
+.emotion-7 {
+  grid-area: auto;
+}
+
+.emotion-7 .emotion-5 {
+  font-size: 14px;
+  line-height: 18px;
+  text-transform: uppercase;
+  white-space: pre;
+}
+
+.emotion-0 {
+  color: #999;
+  font-size: 14px;
+  font-weight: bold;
+  -webkit-letter-spacing: 1px;
+  -moz-letter-spacing: 1px;
+  -ms-letter-spacing: 1px;
+  letter-spacing: 1px;
+  line-height: 17px;
+  padding: 4px 10px;
+  text-transform: uppercase;
+}
+
+.emotion-4 {
+  background-color: #fff;
+  border-radius: 3px;
+  box-shadow: 1px 1px 5px 0 rgba(0,0,29,0.22);
+  padding: 10px 12px;
+}
+
+.emotion-2 {
+  -webkit-letter-spacing: -1px;
+  -moz-letter-spacing: -1px;
+  -ms-letter-spacing: -1px;
+  letter-spacing: -1px;
+}
+
+<section
+  class="emotion-6 emotion-7 emotion-8"
+>
+  <h2
+    class="emotion-0 emotion-1"
+  >
+    Pagamento
+  </h2>
+  <div
+    class="emotion-4 emotion-5"
+  >
+    <span
+      class="emotion-2 emotion-3"
+    >
+      ****.****.****.1234
+    </span>
+    
+
+    José da Silva
+    
+
+    05/2019
+  </div>
+</section>
+`;
