@@ -4,7 +4,7 @@
 
 ## _Demo_
 
-> @todo
+> https://ninetails-challenge-belezanaweb.netlify.com/
 
 ## _Usage_
 
@@ -32,6 +32,10 @@ Executa o [Jest](http://facebook.github.io/jest/) em modo interativo, um _test r
 ### `yarn build`
 
 Cria artefatos otimizados para produção na pasta `build`.
+
+### `yarn storybook`
+
+Roda localmente o [storybook](https://storybook.js.org/), configurado para o projeto.
 
 ## Maiores Informações
 

@@ -47,6 +47,10 @@ Executa o [ESLint](https://eslint.org/) nos arquivos fonte.
 
 Executa o **ESLint**, corrigindo alguns erros triviais em arquivos dentro da pasta `src`.
 
+### `yarn coverage`
+
+Roda o Jest coletando a cobertura de código dos testes.
+
 ## Código de Conduta
 
 Apesar deste projeto ser pessoal e ter um escopo fechado e que talvez não haja necessidade de desenvolvimento por terceiros/externo, ressalto que por parte pública deste projeto (apresentação) este projeto segue o código de conduta do [Contributor Covenant](https://www.contributor-covenant.org/pt-br/version/1/4/code-of-conduct).
@@ -80,6 +84,10 @@ Com a ajuda da extensão [Toggle Excluded Files](https://marketplace.visualstudi
 ### Estilos e _Typeface_
 
 Como visto no layout desenhado, o projeto utiliza uma familia proprietária (Neue Helvetica®) como base. Não sendo possível manter esta consistência (utilizar a mesma fonte para diversos aparelhos e sistemas operacionais) pois não utilizarei esta fonte diretamente e também não está disponível para utilização usando o serviço do **Google Fonts**, optei por manter o código que já existia anteriormente definindo a família tipográfica, localizada no arquivo `src/index.css` (movido para `src/styles/typography.css`).
+
+### _Pixel Perfect_
+
+Sou pessoalmente contra em fazer layouts em _Pixel Perfect_ pois diversas vezes podem ocorrer inconsistências em relação ao _layout_ estático (imagem) e o _layout_ programado. Também faz-se necessárias vários ajustes _hardcoded_ em relação a espaçamentos e disposição de ítens para satisfazer tal desenvolvimento, sempre tendo discrepâncias em relação ao esperado pois há muitas variáveis durante o desenvolvimento como diferenças de renderização entre diversos navegadores ou até mesmo dentre Sistemas Operacionais. Como o layout foi desenvolvido em um ambiente Linux, haverá certas disparidades em relação ao uso de fonte proprietária pela Apple, escolhida como principal pelo layout estático.
 
 ### JavaScript e não TypeScript
 
