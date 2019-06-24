@@ -1,49 +1,23 @@
-import React, { lazy } from 'react'
+import React from 'react'
 import { Router, Redirect } from '@reach/router'
 import { withSuspense } from './hocs/withSuspense'
 import Loading from './components/Loading'
-
-// dynamic lazy routes
-const Checkout = lazy(() =>
-  import(
-    /* webpackChunkName: "checkout" */
-    /* webpackPrefetch: true */
-    /* webpackPreload: true */
-    './pages/checkout'
-  )
-)
-const Cart = lazy(() =>
-  import(
-    /* webpackChunkName: "cart" */
-    /* webpackMode: "lazy" */
-    './pages/checkout/cart'
-  )
-)
-const Confirmation = lazy(() =>
-  import(
-    /* webpackChunkName: "confirmation" */
-    /* webpackMode: "lazy" */
-    './pages/checkout/confirmation'
-  )
-)
-const Payment = lazy(() =>
-  import(
-    /* webpackChunkName: "payment" */
-    /* webpackMode: "lazy" */
-    './pages/checkout/payment'
-  )
-)
+// Routes
+import Checkout from './views/Checkout'
+import Cart from './views/Cart'
+import Payment from './views/Payment'
+import Confirmation from './views/Confirmation'
 
 function App () {
   return (
     <Router>
       <Redirect noThrow from="/" to="/checkout" />
       <Checkout path="/checkout">
-        <Redirect from="/" to="cart" />
         <Cart path="cart" />
-        <Confirmation path="confirmation" />
         <Payment path="payment" />
+        <Confirmation path="confirmation" />
       </Checkout>
+      <Redirect from="/*" to="/checkout" />
     </Router>
   )
 }

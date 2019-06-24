@@ -12,3 +12,6 @@
 
 # vscode
 **/.vscode/**
+
+# storybook
+**/storybook-static/**

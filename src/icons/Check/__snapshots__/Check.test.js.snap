@@ -1,0 +1,31 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Check icon should render [snapshot] 1`] = `
+.emotion-0 {
+  border: 1px solid #ff7800;
+  border-radius: 50%;
+  display: inline-block;
+  height: 37px;
+  margin: 0 auto;
+  position: relative;
+  width: 37px;
+}
+
+.emotion-0::after {
+  border-bottom: 1px solid #ff7800;
+  border-left: 1px solid #ff7800;
+  content: '';
+  height: 10px;
+  left: 0;
+  position: absolute;
+  top: 0;
+  -webkit-transform: rotate(-50deg) translate(-1px,15px);
+  -ms-transform: rotate(-50deg) translate(-1px,15px);
+  transform: rotate(-50deg) translate(-1px,15px);
+  width: 17px;
+}
+
+<i
+  class="emotion-0 emotion-1"
+/>
+`;

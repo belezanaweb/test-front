@@ -1,0 +1,77 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Navigation should render [snapshot] 1`] = `
+.emotion-8 {
+  background: #fff;
+  box-shadow: 1px 1px 5px 0 rgba(0,0,29,0.22);
+  margin-bottom: 10px;
+  width: 100%;
+}
+
+.emotion-6 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  margin: 0 auto;
+  max-width: 768px;
+  padding: 12px 20px;
+}
+
+.emotion-0 {
+  color: #ff7800;
+  display: inline-block;
+  -webkit-flex: 0;
+  -ms-flex: 0;
+  flex: 0;
+  font-size: 13px;
+  font-weight: bold;
+  line-height: 16px;
+  list-style-type: none;
+  text-transform: uppercase;
+}
+
+.emotion-2 {
+  color: #ccc;
+  display: inline-block;
+  -webkit-flex: 0;
+  -ms-flex: 0;
+  flex: 0;
+  font-size: 13px;
+  font-weight: bold;
+  line-height: 16px;
+  list-style-type: none;
+  text-transform: uppercase;
+}
+
+<div
+  class="emotion-8 emotion-9"
+>
+  <ol
+    class="emotion-6 emotion-7"
+  >
+    <li
+      class="emotion-0 emotion-1"
+    >
+      Sacola
+    </li>
+    <li
+      class="emotion-2 emotion-1"
+    >
+      Pagamento
+    </li>
+    <li
+      class="emotion-2 emotion-1"
+    >
+      Confirmação
+    </li>
+  </ol>
+</div>
+`;

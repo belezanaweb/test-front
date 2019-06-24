@@ -1,6 +1,6 @@
 {
+  "parser": "babel-eslint",
   "extends": [
-    "react-app",
     "standard",
     "standard-react"
   ],
@@ -8,9 +8,15 @@
     "emotion",
     "react-hooks"
   ],
+  "env": {
+    "browser": true,
+    "es6": true,
+    "jest": true,
+    "serviceworker": true
+  },
   "rules": {
     "jsx-quotes": ["error", "prefer-double"],
-    "operator-linebreak": ["error", "before"],
+    "operator-linebreak": ["error", "before", { "overrides": { "=": "ignore" } }],
     "import/order": ["error", { "newlines-between": "never" }],
     "react/react-in-jsx-scope": "off",
     "react-hooks/rules-of-hooks": "error",

@@ -6,9 +6,12 @@
   - **[React](https://reactjs.org/)** v16.8+
   - Ferramentas de desenvolvimento
     - [create-react-app](https://github.com/facebook/create-react-app)
+    - [Storybook for React](https://storybook.js.org/)
   - Bibliotecas utilizadas pela Aplicação
     - [emotion](https://emotion.sh) - [CSS-in-JS](https://reactjs.org/docs/faq-styling.html)
     - [Reach Router](https://reach.tech/router)
+  - Outras bibliotecas
+    - [react-credit-card-primitives](https://github.com/ajoslin/react-credit-card-primitives)
 - Coding Style
   - [Standard JavaScript Style](https://standardjs.com/)
   - [Conventional Commits](https://conventionalcommits.org/)
@@ -58,6 +61,14 @@ Analogamente ao ítem anterior, devido à natureza do projeto. Apesar de sugest�
 
 A direção tomada para este projeto foi direcionada à preocupação de funcionalidades com "caminho feliz". Casos de exceção não serão priorizados com a finalidade de fazer algo mais direcionado a uma <abbr title="Prova de Conceito">POC</abbr>.
 
+### SKIP_PREFLIGHT_CHECK=true
+
+Após a instalação do **storybook**, este instalou uma versão mais atual do pacote `babel-loader`, fazendo-se necessário passar tal argumento na hora de rodar os scripts `start` e `build`.
+
+### Utilizar uma biblioteca existente para Cartão de Crédito
+
+Optei por utilizar o [react-credit-card-primitives](https://github.com/ajoslin/react-credit-card-primitives) pois já tive problemas com máscaras e validações de cartões manualmente (alguns possuem inclusive diferente formatação de número, como no caso de cartões American Express e Diners Club).
+
 ### Arquivos não aparecendo no Visual Studio Code
 
 Para foco de desenvolvimento, o ambiente foi configurado para esconder arquivos não diretamente relevantes à codificação.
@@ -70,17 +81,9 @@ Com a ajuda da extensão [Toggle Excluded Files](https://marketplace.visualstudi
 
 Como visto no layout desenhado, o projeto utiliza uma familia proprietária (Neue Helvetica®) como base. Não sendo possível manter esta consistência (utilizar a mesma fonte para diversos aparelhos e sistemas operacionais) pois não utilizarei esta fonte diretamente e também não está disponível para utilização usando o serviço do **Google Fonts**, optei por manter o código que já existia anteriormente definindo a família tipográfica, localizada no arquivo `src/index.css` (movido para `src/styles/typography.css`).
 
-### Estrutura de pastas
-
-A estruturação foi baseada em padrões existentes em _frameworks_ **React** como [Next.js](https://nextjs.org/) e [Gatsby](https://www.gatsbyjs.org/), ferramentas existentes para criação de aplicações dinâmicas com <abbr title="Server Side Rendering">SSR</abbr>.
-
 ### JavaScript e não TypeScript
 
 Acredito que TypeScript é uma ótima ferramenta para codificação colaborativa e mesmo para documentação própria do projeto, além de facilitar o desenvolvimento e ajudar na prevenção de erros. Porém há um custo maior (de tempo, inclusive) para o desenvolvimento voltado a tipagem. Para simplificar e agilizar, optei por não utilizá-lo.
-
-### Arquivos da pasta `src/pages` nomeados em outra convenção
-
-Dado os padrões dos _frameworks_ anteriormente citados, geralmente esta pasta contém arquivos associados à rota.
 
 ### Não ter <abbr title="Continuous Integration">CI</abbr>
 

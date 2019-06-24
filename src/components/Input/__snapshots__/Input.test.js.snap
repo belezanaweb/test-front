@@ -1,0 +1,41 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Input should render [snapshot] 1`] = `
+.emotion-0 {
+  background-color: #fff;
+  border: 1px solid #e7e7e7;
+  border-radius: 3px;
+  box-shadow: inset 0 1px 2px 0 rgba(0,0,0,0.2);
+  color: #212121;
+  display: block;
+  font-size: 16px;
+  line-height: 22px;
+  padding: 11px 12px;
+  width: 100%;
+}
+
+.emotion-0::-webkit-input-placeholder {
+  color: #e0e7ee;
+}
+
+.emotion-0::-moz-placeholder {
+  color: #e0e7ee;
+}
+
+.emotion-0:-ms-input-placeholder {
+  color: #e0e7ee;
+}
+
+.emotion-0::placeholder {
+  color: #e0e7ee;
+}
+
+.emotion-0:focus {
+  border-color: #a43287;
+}
+
+<input
+  class="emotion-0 emotion-1"
+  type="text"
+/>
+`;

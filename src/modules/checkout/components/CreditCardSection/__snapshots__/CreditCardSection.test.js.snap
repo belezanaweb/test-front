@@ -1,0 +1,228 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`CreditCardSection should render [snapshot] 1`] = `
+.emotion-46 {
+  grid-area: auto;
+}
+
+.emotion-0 {
+  color: #999;
+  font-size: 14px;
+  font-weight: bold;
+  -webkit-letter-spacing: 1px;
+  -moz-letter-spacing: 1px;
+  -ms-letter-spacing: 1px;
+  letter-spacing: 1px;
+  line-height: 17px;
+  padding: 4px 10px;
+  text-transform: uppercase;
+}
+
+.emotion-44 {
+  background-color: #fff;
+  border-radius: 3px;
+  box-shadow: 1px 1px 5px 0 rgba(0,0,29,0.22);
+  padding: 10px 12px;
+}
+
+.emotion-42 {
+  display: grid;
+  grid-gap: 20px;
+  grid-template-columns: 9fr 8fr;
+  margin-top: -1px;
+  padding-bottom: 15px;
+}
+
+.emotion-10 {
+  grid-column-start: span 2;
+}
+
+.emotion-4 {
+  font-weight: bold;
+  margin: 0;
+  padding: 0;
+}
+
+.emotion-2 {
+  color: #ccc;
+  font-size: 12px;
+  font-weight: bold;
+  line-height: 12px;
+  padding: 0 2px;
+}
+
+.emotion-8 {
+  margin: 0;
+  padding: 3px 0 0;
+}
+
+.emotion-6 {
+  background-color: #fff;
+  border: 1px solid #e7e7e7;
+  border-radius: 3px;
+  box-shadow: inset 0 1px 2px 0 rgba(0,0,0,0.2);
+  color: #212121;
+  display: block;
+  font-size: 16px;
+  line-height: 22px;
+  padding: 11px 12px;
+  width: 100%;
+}
+
+.emotion-6::-webkit-input-placeholder {
+  color: #e0e7ee;
+}
+
+.emotion-6::-moz-placeholder {
+  color: #e0e7ee;
+}
+
+.emotion-6:-ms-input-placeholder {
+  color: #e0e7ee;
+}
+
+.emotion-6::placeholder {
+  color: #e0e7ee;
+}
+
+.emotion-6:focus {
+  border-color: #a43287;
+}
+
+.emotion-30 {
+  grid-column-start: span 1;
+}
+
+<section
+  class="emotion-46 emotion-47"
+>
+  <h2
+    class="emotion-0 emotion-1"
+  >
+    Cartão de Crédito
+  </h2>
+  <div
+    class="emotion-44 emotion-45"
+  >
+    <dl
+      class="emotion-42 emotion-43"
+    >
+      <div
+        class="emotion-10 emotion-11"
+        span="2"
+      >
+        <dt
+          class="emotion-4 emotion-5"
+        >
+          <label
+            class="emotion-2 emotion-3"
+            for="num"
+          >
+            Número do cartão
+            :
+          </label>
+        </dt>
+        <dd
+          class="emotion-8 emotion-9"
+        >
+          <input
+            aria-invalid=""
+            autocomplete="cardnumber"
+            class="emotion-6 emotion-7"
+            id="num"
+            name="num"
+            placeholder="Card number"
+            type="text"
+            value=""
+          />
+        </dd>
+      </div>
+      <div
+        class="emotion-10 emotion-11"
+        span="2"
+      >
+        <dt
+          class="emotion-4 emotion-5"
+        >
+          <label
+            class="emotion-2 emotion-3"
+            for="name"
+          >
+            Nome do Titular
+            :
+          </label>
+        </dt>
+        <dd
+          class="emotion-8 emotion-9"
+        >
+          <input
+            class="emotion-6 emotion-7"
+            id="name"
+            name="name"
+            type="text"
+          />
+        </dd>
+      </div>
+      <div
+        class="emotion-30 emotion-11"
+      >
+        <dt
+          class="emotion-4 emotion-5"
+        >
+          <label
+            class="emotion-2 emotion-3"
+            for="exp"
+          >
+            Validade (mês/ano)
+            :
+          </label>
+        </dt>
+        <dd
+          class="emotion-8 emotion-9"
+        >
+          <input
+            autocomplete="exp-date"
+            class="emotion-6 emotion-7"
+            id="exp"
+            maxlength="9"
+            name="exp"
+            placeholder="MM / YY"
+            type="text"
+            value=""
+          />
+        </dd>
+      </div>
+      <div
+        class="emotion-30 emotion-11"
+      >
+        <dt
+          class="emotion-4 emotion-5"
+        >
+          <label
+            class="emotion-2 emotion-3"
+            for="cvc"
+          >
+            CVV
+            :
+          </label>
+        </dt>
+        <dd
+          class="emotion-8 emotion-9"
+        >
+          <input
+            autocomplete="cc-csc"
+            class="emotion-6 emotion-7"
+            id="cvc"
+            maxlength="4"
+            name="cvc"
+            pattern="[0-9]{3,4}"
+            placeholder="CVC"
+            type="text"
+            value=""
+          />
+        </dd>
+      </div>
+    </dl>
+  </div>
+</section>
+`;

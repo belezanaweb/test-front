@@ -1,7 +1,7 @@
 import React from 'react'
 import { render } from '@testing-library/react'
 import { axe } from 'jest-axe'
-import Loading from './Loading'
+import Loading from '.'
 
 describe('Loading', () => {
   it('should render [snapshot]', () => {

@@ -1,5 +1,6 @@
 # dotfiles
 .*
+!.storybook
 
 # Package Managers
 package.json
@@ -15,3 +16,6 @@ bower_components
 
 # create-react-app
 build
+
+# storybook
+storybook-static

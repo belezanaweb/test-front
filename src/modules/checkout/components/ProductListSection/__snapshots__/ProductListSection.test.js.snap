@@ -1,0 +1,328 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ProductListSection should render small [snapshot] 1`] = `
+.emotion-30 {
+  grid-area: auto;
+}
+
+.emotion-0 {
+  color: #999;
+  font-size: 14px;
+  font-weight: bold;
+  -webkit-letter-spacing: 1px;
+  -moz-letter-spacing: 1px;
+  -ms-letter-spacing: 1px;
+  letter-spacing: 1px;
+  line-height: 17px;
+  padding: 4px 10px;
+  text-transform: uppercase;
+}
+
+.emotion-28 {
+  background-color: #fff;
+  border-radius: 3px;
+  box-shadow: 1px 1px 5px 0 rgba(0,0,29,0.22);
+  padding: 10px 12px;
+}
+
+.emotion-26 {
+  margin: 0;
+  padding: 0;
+}
+
+.emotion-8 {
+  border: 1px solid #eee;
+  color: #121212;
+  display: grid;
+  grid-gap: 15px 10px;
+  grid-template-areas: 'image name' 'image price';
+  grid-template-columns: max-content 1fr;
+  list-style-type: none;
+  margin: 15px 0;
+  padding: 12px 10px;
+}
+
+.emotion-8:first-of-type {
+  margin-top: 0;
+}
+
+.emotion-8:last-of-type {
+  margin-bottom: 0;
+}
+
+.emotion-2 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  grid-area: image;
+  -webkit-box-pack: end;
+  -webkit-justify-content: flex-end;
+  -ms-flex-pack: end;
+  justify-content: flex-end;
+  height: 65px;
+  width: 65px;
+}
+
+.emotion-2 img {
+  max-height: 100%;
+  max-width: 100%;
+}
+
+.emotion-4 {
+  font-size: 13px;
+  grid-area: name;
+  line-height: 16px;
+}
+
+.emotion-6 {
+  font-size: 14px;
+  font-weight: bold;
+  grid-area: price;
+  line-height: 17px;
+  text-align: right;
+}
+
+<section
+  class="emotion-30 emotion-31"
+>
+  <h2
+    class="emotion-0 emotion-1"
+  >
+    Produtos
+  </h2>
+  <div
+    class="emotion-28 emotion-29"
+  >
+    <ol
+      class="emotion-26 emotion-27"
+    >
+      <li
+        class="emotion-8 emotion-9"
+      >
+        <div
+          class="emotion-2 emotion-3"
+        >
+          <img
+            alt="Imagem ilustrativa do item L'Oréal Professionnel Expert Absolut Repair Cortex Lipidium"
+            src="https://res.cloudinary.com/beleza-na-web/image/upload/f_auto,fl_progressive,q_auto:best/v1/imagens/2/loreal-professionnel-expert-absolut-repair-cortex-lipidium-mascara-de-reconstrucao-500g-24410-963234120108391775.png"
+          />
+        </div>
+        <div
+          class="emotion-4 emotion-5"
+        >
+          L'Oréal Professionnel Expert Absolut Repair Cortex Lipidium
+        </div>
+        <div
+          class="emotion-6 emotion-7"
+        >
+          R$255.90
+        </div>
+      </li>
+      <li
+        class="emotion-8 emotion-9"
+      >
+        <div
+          class="emotion-2 emotion-3"
+        >
+          <img
+            alt="Imagem ilustrativa do item Good Girl Carolina Herrera Eau de Parfum - Perfume Feminino 30ml"
+            src="https://res.cloudinary.com/beleza-na-web/image/upload/f_auto,fl_progressive,q_auto:best/v1/imagens/2/good-girl-carolina-herrera-eau-de-parfum-perfume-feminino-30ml-38273-1960525940762131267.jpg"
+          />
+        </div>
+        <div
+          class="emotion-4 emotion-5"
+        >
+          Good Girl Carolina Herrera Eau de Parfum - Perfume Feminino 30ml
+        </div>
+        <div
+          class="emotion-6 emotion-7"
+        >
+          R$299.00
+        </div>
+      </li>
+      <li
+        class="emotion-8 emotion-9"
+      >
+        <div
+          class="emotion-2 emotion-3"
+        >
+          <img
+            alt="Imagem ilustrativa do item Senscience Inner Restore Intensif - Máscara Capilar 50ml"
+            src="https://res.cloudinary.com/beleza-na-web/image/upload/f_auto,fl_progressive,q_auto:best/v1/imagens/2/senscience-inner-restore-intesif-deep-repairing-masque-mascara-de-tratamento-50ml-3019-7903251722539384904.png"
+          />
+        </div>
+        <div
+          class="emotion-4 emotion-5"
+        >
+          Senscience Inner Restore Intensif - Máscara Capilar 50ml
+        </div>
+        <div
+          class="emotion-6 emotion-7"
+        >
+          R$99.90
+        </div>
+      </li>
+    </ol>
+  </div>
+</section>
+`;
+
+exports[`ProductListSection should render thumbnail [snapshot] 1`] = `
+.emotion-24 {
+  grid-area: auto;
+}
+
+.emotion-0 {
+  color: #999;
+  font-size: 14px;
+  font-weight: bold;
+  -webkit-letter-spacing: 1px;
+  -moz-letter-spacing: 1px;
+  -ms-letter-spacing: 1px;
+  letter-spacing: 1px;
+  line-height: 17px;
+  padding: 4px 10px;
+  text-transform: uppercase;
+}
+
+.emotion-22 {
+  background-color: #fff;
+  border-radius: 3px;
+  box-shadow: 1px 1px 5px 0 rgba(0,0,29,0.22);
+  padding: 10px 12px;
+}
+
+.emotion-20 {
+  margin: 0;
+  padding: 0;
+}
+
+.emotion-4 {
+  font-size: 13px;
+  grid-area: name;
+  line-height: 16px;
+}
+
+.emotion-6 {
+  border: 1px solid #eee;
+  color: #121212;
+  display: grid;
+  grid-gap: 15px 10px;
+  grid-template-areas: 'image name';
+  grid-template-columns: max-content 1fr;
+  list-style-type: none;
+  margin: 12px 0;
+  padding: 12px 10px;
+}
+
+.emotion-6:first-of-type {
+  margin-top: 0;
+}
+
+.emotion-6:last-of-type {
+  margin-bottom: 0;
+}
+
+.emotion-2 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  grid-area: image;
+  -webkit-box-pack: end;
+  -webkit-justify-content: flex-end;
+  -ms-flex-pack: end;
+  justify-content: flex-end;
+  height: 42px;
+  width: 42px;
+}
+
+.emotion-2 img {
+  max-height: 100%;
+  max-width: 100%;
+}
+
+<section
+  class="emotion-24 emotion-25"
+>
+  <h2
+    class="emotion-0 emotion-1"
+  >
+    Produtos
+  </h2>
+  <div
+    class="emotion-22 emotion-23"
+  >
+    <ol
+      class="emotion-20 emotion-21"
+    >
+      <li
+        class="emotion-6 emotion-7"
+      >
+        <div
+          class="emotion-2 emotion-3"
+        >
+          <img
+            alt="Imagem ilustrativa do item L'Oréal Professionnel Expert Absolut Repair Cortex Lipidium"
+            src="https://res.cloudinary.com/beleza-na-web/image/upload/f_auto,fl_progressive,q_auto:best/v1/imagens/1/loreal-professionnel-expert-absolut-repair-cortex-lipidium-mascara-de-reconstrucao-500g-24410-963234120108391775.png"
+          />
+        </div>
+        <div
+          class="emotion-4 emotion-5"
+        >
+          L'Oréal Professionnel Expert Absolut Repair Cortex Lipidium
+        </div>
+      </li>
+      <li
+        class="emotion-6 emotion-7"
+      >
+        <div
+          class="emotion-2 emotion-3"
+        >
+          <img
+            alt="Imagem ilustrativa do item Good Girl Carolina Herrera Eau de Parfum - Perfume Feminino 30ml"
+            src="https://res.cloudinary.com/beleza-na-web/image/upload/f_auto,fl_progressive,q_auto:best/v1/imagens/1/good-girl-carolina-herrera-eau-de-parfum-perfume-feminino-30ml-38273-1960525940762131267.jpg"
+          />
+        </div>
+        <div
+          class="emotion-4 emotion-5"
+        >
+          Good Girl Carolina Herrera Eau de Parfum - Perfume Feminino 30ml
+        </div>
+      </li>
+      <li
+        class="emotion-6 emotion-7"
+      >
+        <div
+          class="emotion-2 emotion-3"
+        >
+          <img
+            alt="Imagem ilustrativa do item Senscience Inner Restore Intensif - Máscara Capilar 50ml"
+            src="https://res.cloudinary.com/beleza-na-web/image/upload/f_auto,fl_progressive,q_auto:best/v1/imagens/1/senscience-inner-restore-intesif-deep-repairing-masque-mascara-de-tratamento-50ml-3019-7903251722539384904.png"
+          />
+        </div>
+        <div
+          class="emotion-4 emotion-5"
+        >
+          Senscience Inner Restore Intensif - Máscara Capilar 50ml
+        </div>
+      </li>
+    </ol>
+  </div>
+</section>
+`;

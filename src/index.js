@@ -7,17 +7,18 @@ import './styles/typography.css'
 // App
 import App from './App'
 import * as serviceWorker from './serviceWorker'
+import { wrapRootElement } from './wrapRootElement'
 
 const rootEl = document.getElementById('root')
 const root = createRoot(rootEl, { hydrate: rootEl.hasChildNodes() })
 const render = root.render.bind(root)
 
-render(<App />)
+render(wrapRootElement({ element: <App /> }))
 
 if (module.hot) {
   module.hot.accept('./App', () => {
     const NextApp = require('./App').default
-    render(<NextApp />)
+    render(wrapRootElement({ element: <NextApp /> }))
   })
 }
 
@@ -27,5 +28,5 @@ if (module.hot) {
 serviceWorker.unregister()
 
 if (process.env.NODE_ENV === 'development') {
-  import('./dev')
+  import(/* webpackChunkName: "dev" */ './dev')
 }
