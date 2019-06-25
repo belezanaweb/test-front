@@ -104,7 +104,7 @@ exports[`SummarySection should render [snapshot] 1`] = `
   <dd
     class="emotion-2 emotion-3"
   >
-    R$624.80
+    R$ 624,80
   </dd>
   <dt
     class="emotion-0 emotion-1"
@@ -114,7 +114,7 @@ exports[`SummarySection should render [snapshot] 1`] = `
   <dd
     class="emotion-2 emotion-3"
   >
-    R$5.30
+    R$ 5,30
   </dd>
   <dt
     class="emotion-8 emotion-1"
@@ -124,7 +124,7 @@ exports[`SummarySection should render [snapshot] 1`] = `
   <dd
     class="emotion-10 emotion-3"
   >
-    R$30.00
+    R$ 30,00
   </dd>
   <dt
     class="emotion-12 emotion-1"
@@ -134,7 +134,7 @@ exports[`SummarySection should render [snapshot] 1`] = `
   <dd
     class="emotion-14 emotion-3"
   >
-    R$618.90
+    R$ 618,90
   </dd>
 </dl>
 `;

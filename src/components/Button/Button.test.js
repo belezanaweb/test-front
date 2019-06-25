@@ -7,4 +7,9 @@ describe('Button', () => {
     const { container } = render(<Button />)
     expect(container.firstChild).toMatchSnapshot()
   })
+
+  it('should render with disabled attribute [snapshot]', () => {
+    const { container } = render(<Button disabled />)
+    expect(container.firstChild).toMatchSnapshot()
+  })
 })

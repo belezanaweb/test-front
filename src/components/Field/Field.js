@@ -62,4 +62,8 @@ Field.Error = styled(Field.Body)`
   padding-right: 2px;
 `
 
+Field.Error.defaultProps = {
+  'data-testid': 'field-error'
+}
+
 export default Field

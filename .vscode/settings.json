@@ -8,6 +8,7 @@
     "**/__snapshots__": true,
     ".editorconfig": true,
     ".env*": true,
+    ".travis.y*ml": true,
     ".vscode/": true,
     ".yarn-offline/": true,
     ".yarnrc.example": true,

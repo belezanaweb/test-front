@@ -22,19 +22,33 @@ function CreditCardSection ({ setCreditCard = () => undefined, ...props }) {
   }, [setCreditCard, state])
 
   const setValue = field => value => setState({ ...state, [field]: value })
+  const handleOnBlur = field => () => {
+    if (state[field] === undefined) {
+      setValue(field)(null)
+    }
+  }
 
   return (
     <CheckoutSection title="Cartão de Crédito" {...props}>
       <CreditCardSection.Container>
         <Number
-          onChange={({ value, valid }) => setValue('num')(valid ? value : null)}
+          onChange={({ value, valid }) =>
+            setValue('num')(valid ? value : num === undefined ? undefined : null)
+          }
           render={({ getInputProps, valid }) => {
             const error =
               !valid && num !== undefined ? 'Número do cartão preenchido incorretamente.' : null
 
             return (
               <Field htmlFor="num" span={2} label="Número do cartão" error={error}>
-                <Input {...getInputProps()} id="num" name="num" hasErrors={!!error} />
+                <Input
+                  {...getInputProps()}
+                  onBlur={handleOnBlur('num')}
+                  id="num"
+                  name="num"
+                  data-testid="field-number"
+                  hasErrors={!!error}
+                />
               </Field>
             )
           }}
@@ -50,13 +64,17 @@ function CreditCardSection ({ setCreditCard = () => undefined, ...props }) {
             type="text"
             id="name"
             name="name"
+            data-testid="field-name"
             onChange={e => setValue('name')(e.target.value)}
+            onBlur={handleOnBlur('name')}
             hasErrors={name !== undefined && !name}
           />
         </Field>
 
         <Expiration
-          onChange={({ month, year, valid }) => setValue('exp')(valid ? `${month}/${year}` : null)}
+          onChange={({ month, year, valid }) =>
+            setValue('exp')(valid ? `${month}/${year}` : exp === undefined ? undefined : null)
+          }
           render={({ getInputProps, valid, error }) => {
             let errorMsg
 
@@ -79,14 +97,23 @@ function CreditCardSection ({ setCreditCard = () => undefined, ...props }) {
 
             return (
               <Field htmlFor="exp" label="Validade (mês/ano)" error={errorMsg}>
-                <Input {...getInputProps()} id="exp" name="exp" hasErrors={!!errorMsg} />
+                <Input
+                  {...getInputProps()}
+                  onBlur={handleOnBlur('exp')}
+                  id="exp"
+                  name="exp"
+                  data-testid="field-exp"
+                  hasErrors={!!errorMsg}
+                />
               </Field>
             )
           }}
         />
 
         <Cvc
-          onChange={({ value, valid }) => setValue('cvc')(valid ? value : null)}
+          onChange={({ value, valid }) =>
+            setValue('cvc')(valid ? value : cvc === undefined ? undefined : null)
+          }
           render={({ getInputProps, valid }) => {
             /* prettier-ignore */
             const error = !valid && cvc !== undefined
@@ -95,7 +122,14 @@ function CreditCardSection ({ setCreditCard = () => undefined, ...props }) {
 
             return (
               <Field htmlFor="cvc" label="CVV" error={error}>
-                <Input {...getInputProps()} id="cvc" name="cvc" hasErrors={!!error} />
+                <Input
+                  {...getInputProps()}
+                  onBlur={handleOnBlur('cvc')}
+                  id="cvc"
+                  name="cvc"
+                  data-testid="field-cvc"
+                  hasErrors={!!error}
+                />
               </Field>
             )
           }}

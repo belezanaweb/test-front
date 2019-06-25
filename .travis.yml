@@ -1,0 +1,12 @@
+language: node_js
+node_js:
+  - 'node'
+  - 'lts/*'
+cache:
+  yarn: true
+install:
+  - yarn reset
+script:
+  - yarn lint
+  - yarn test:ci
+  - yarn build

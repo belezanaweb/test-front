@@ -5,7 +5,7 @@ import CheckIcon from '../../icons/Check'
 function SuccessMessage (props) {
   return (
     <SuccessMessage.Container {...props}>
-      <CheckIcon />
+      <CheckIcon aria-hidden="true" />
       <SuccessMessage.Text>Compra efetuada com sucesso</SuccessMessage.Text>
     </SuccessMessage.Container>
   )

@@ -16,4 +16,16 @@ describe('Field', () => {
     )
     expect(container.firstChild).toMatchSnapshot()
   })
+
+  it('should render with errors [snapshot]', () => {
+    const mockError = 'Campo requerido.'
+    const { container } = render(
+      <ThemeProvider theme={theme}>
+        <Field htmlFor="field" label="Label" error={mockError}>
+          <Input id="field" hasErrors={!!mockError} />
+        </Field>
+      </ThemeProvider>
+    )
+    expect(container.firstChild).toMatchSnapshot()
+  })
 })

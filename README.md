@@ -1,5 +1,7 @@
 # Ninetails - Beleza na Web Code Challenge for Frontend
 
+![Travis CI - master](https://travis-ci.org/ninetails/challenge-belezanaweb.svg?branch=master)
+
 > [README.md original](https://github.com/belezanaweb/test-front/blob/master/README.md)
 
 ## _Demo_
@@ -12,6 +14,7 @@ Para subir localmente a aplicação em modo de desenvolvimento, basta rodar os s
 
 ```sh
 $ yarn reset
+$ cp .env.example .env
 $ yarn start
 ```
 
