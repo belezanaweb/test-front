@@ -29,9 +29,11 @@
     "babel-eslint": "^10.0.2",
     "babel-loader": "^8.0.6",
     "cross-env": "^5.2.0",
+    "cypress": "^3.3.1",
     "eslint": "^6.0.1",
     "eslint-config-standard": "^12.0.0",
     "eslint-config-standard-react": "^7.0.2",
+    "eslint-plugin-cypress": "^2.2.1",
     "eslint-plugin-emotion": "^10.0.14",
     "eslint-plugin-import": "^2.18.0",
     "eslint-plugin-node": "^9.1.0",
@@ -51,7 +53,8 @@
     "prettier-eslint-cli": "^5.0.0",
     "react-perf-devtool": "^3.1.8",
     "react-scripts": "3.0.1",
-    "rimraf": "^2.6.3"
+    "rimraf": "^2.6.3",
+    "start-server-and-test": "^1.9.1"
   },
   "dependencies": {
     "@emotion/core": "^10.0.14",
@@ -69,12 +72,16 @@
     "build": "cross-env SKIP_PREFLIGHT_CHECK=true react-scripts build",
     "clean": "rimraf build coverage node_modules storybook-static || :",
     "coverage": "$npm_execpath run test -- --watchAll=false --all --coverage",
+    "cy": "cypress",
+    "cy:open": "$npm_execpath run cy -- open",
+    "cy:run": "$npm_execpath run cy -- run",
     "fix": "$npm_execpath run lint -- --fix",
     "lint": "eslint src",
     "reset": "$npm_execpath run clean && $npm_execpath install",
     "start": "cross-env SKIP_PREFLIGHT_CHECK=true react-scripts start",
     "storybook": "start-storybook -p 6006",
+    "test": "cross-env SKIP_PREFLIGHT_CHECK=true NODE_PATH=src/dev NODE_ICU_DATA=node_modules/full-icu react-scripts test",
     "test:ci": "cross-env CI=true $npm_execpath run test -- --color --reporters jest-silent-reporter",
-    "test": "cross-env SKIP_PREFLIGHT_CHECK=true NODE_PATH=src/dev NODE_ICU_DATA=node_modules/full-icu react-scripts test"
+    "test:e2e": "cross-env BROWSER=none start-server-and-test start http://localhost:3000 cy:run"
   }
 }
