@@ -8,11 +8,12 @@ import SummarySection from '../../modules/checkout/components/SummarySection'
 function CartComponent ({ order, onProceed = () => undefined }) {
   return (
     <CartComponent.Container>
+      <h1 className="visually-hidden">Sacola</h1>
       {order && order.items && (
         <ProductListSection area="products" image="small" showPrice items={order.items} />
       )}
       <CartComponent.SummarySection area="summary" order={order} />
-      <Button area="next" onClick={onProceed}>
+      <Button area="next" data-testid="button-next" onClick={onProceed}>
         Seguir para o pagamento
       </Button>
     </CartComponent.Container>
@@ -36,6 +37,7 @@ CartComponent.Container = styled.div`
 
   @media screen and (min-width: 1024px) {
     grid-template-areas: 'products summary' 'products next';
+    grid-template-rows: max-content auto;
   }
 `
 

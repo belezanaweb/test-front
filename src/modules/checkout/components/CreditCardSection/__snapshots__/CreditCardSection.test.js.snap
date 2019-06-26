@@ -129,6 +129,7 @@ exports[`CreditCardSection should render [snapshot] 1`] = `
             aria-invalid=""
             autocomplete="cardnumber"
             class="emotion-6 emotion-7"
+            data-testid="field-number"
             id="num"
             name="num"
             placeholder="Card number"
@@ -157,6 +158,7 @@ exports[`CreditCardSection should render [snapshot] 1`] = `
         >
           <input
             class="emotion-6 emotion-7"
+            data-testid="field-name"
             id="name"
             name="name"
             type="text"
@@ -183,6 +185,7 @@ exports[`CreditCardSection should render [snapshot] 1`] = `
           <input
             autocomplete="exp-date"
             class="emotion-6 emotion-7"
+            data-testid="field-exp"
             id="exp"
             maxlength="9"
             name="exp"
@@ -212,6 +215,7 @@ exports[`CreditCardSection should render [snapshot] 1`] = `
           <input
             autocomplete="cc-csc"
             class="emotion-6 emotion-7"
+            data-testid="field-cvc"
             id="cvc"
             maxlength="4"
             name="cvc"

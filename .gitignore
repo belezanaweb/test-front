@@ -207,3 +207,7 @@ storybook-static
 ### Custom ###
 .yarnrc
 .yarn-offline
+cypress/fixtures/example.json
+cypress/integration/examples
+cypress/screenshots
+cypress/videos

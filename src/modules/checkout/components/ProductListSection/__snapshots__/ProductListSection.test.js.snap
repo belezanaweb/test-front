@@ -123,7 +123,7 @@ exports[`ProductListSection should render small [snapshot] 1`] = `
         <div
           class="emotion-6 emotion-7"
         >
-          R$255.90
+          R$ 255,90
         </div>
       </li>
       <li
@@ -145,7 +145,7 @@ exports[`ProductListSection should render small [snapshot] 1`] = `
         <div
           class="emotion-6 emotion-7"
         >
-          R$299.00
+          R$ 299,00
         </div>
       </li>
       <li
@@ -167,7 +167,7 @@ exports[`ProductListSection should render small [snapshot] 1`] = `
         <div
           class="emotion-6 emotion-7"
         >
-          R$99.90
+          R$ 99,90
         </div>
       </li>
     </ol>

@@ -1,3 +1,15 @@
+#### 1.0.2 (2019-06-26)
+
+##### Chores
+
+- updated docs & .travis.yml (c684c8a6)
+- added cypress (f8605960)
+
+##### New Features
+
+- added more tests and adjusts (21799bfa)
+- adding Tests & Travis CI (fc0abd5d)
+
 #### 1.0.1 (2019-06-24)
 
 ##### Chores

@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 import styled from '@emotion/styled/macro'
 import CheckoutSection from '../CheckoutSection'
 
-function formatCardNumber (input) {
+export function formatCardNumber (input) {
   switch (input.length) {
     case 14:
       return `****.******.${input.substr(-4)}`

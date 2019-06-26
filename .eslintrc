@@ -5,11 +5,13 @@
     "standard-react"
   ],
   "plugins": [
+    "cypress",
     "emotion",
     "react-hooks"
   ],
   "env": {
     "browser": true,
+    "cypress/globals": true,
     "es6": true,
     "jest": true,
     "serviceworker": true

@@ -1,14 +1,20 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 import styled from '@emotion/styled/macro'
 import CheckIcon from '../../icons/Check'
 
-function SuccessMessage (props) {
+function SuccessMessage ({ as, ...props }) {
   return (
     <SuccessMessage.Container {...props}>
-      <CheckIcon />
-      <SuccessMessage.Text>Compra efetuada com sucesso</SuccessMessage.Text>
+      <CheckIcon aria-hidden="true" />
+      <SuccessMessage.Text as={as}>Compra efetuada com sucesso</SuccessMessage.Text>
     </SuccessMessage.Container>
   )
+}
+
+SuccessMessage.propTypes = {
+  /* prettier-ignore */
+  'as': PropTypes.oneOfType([PropTypes.string, PropTypes.element])
 }
 
 const primaryColor = ({
