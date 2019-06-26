@@ -9,12 +9,12 @@ import SummarySection from '../../modules/checkout/components/SummarySection'
 function ConfirmationComponent ({ order, payment }) {
   return (
     <ConfirmationComponent.Container>
-      <SuccessMessage area="success" />
+      <SuccessMessage as="h1" area="success" />
       <PaymentSummarySection area="payment" payment={payment} />
       {order && order.items && (
         <ProductListSection area="products" image="thumbnail" items={order.items} />
       )}
-      <ConfirmationComponent.SummarySection area="summary" order={order} />
+      <SummarySection area="summary" order={order} />
     </ConfirmationComponent.Container>
   )
 }
@@ -34,12 +34,7 @@ ConfirmationComponent.Container = styled.div`
 
   @media screen and (min-width: 1024px) {
     grid-template-areas: 'success success' 'products payment' 'products summary';
-  }
-`
-
-ConfirmationComponent.SummarySection = styled(SummarySection)`
-  @media screen and (min-width: 1024px) {
-    margin-top: 25px;
+    grid-template-rows: repeat(2, max-content) auto;
   }
 `
 

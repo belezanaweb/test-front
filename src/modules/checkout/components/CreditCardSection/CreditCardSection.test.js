@@ -1,25 +1,15 @@
 import React from 'react'
-import { render, fireEvent } from '@testing-library/react'
-import { ThemeProvider } from 'emotion-theming'
-import theme from '../../../../theme'
+import { render, fireEvent } from 'test-utils'
 import CreditCardSection from '.'
 
 describe('CreditCardSection', () => {
   it('should render [snapshot]', () => {
-    const { container } = render(
-      <ThemeProvider theme={theme}>
-        <CreditCardSection />
-      </ThemeProvider>
-    )
+    const { container } = render(<CreditCardSection />)
     expect(container.firstChild).toMatchSnapshot()
   })
 
   it('should have no errors on load', () => {
-    const { getAllByTestId } = render(
-      <ThemeProvider theme={theme}>
-        <CreditCardSection />
-      </ThemeProvider>
-    )
+    const { getAllByTestId } = render(<CreditCardSection />)
 
     expect(() => getAllByTestId('field-error')).toThrow()
   })
@@ -29,11 +19,7 @@ describe('CreditCardSection', () => {
 
     beforeEach(() => {
       mockSetCreditCard = jest.fn()
-      rendered = render(
-        <ThemeProvider theme={theme}>
-          <CreditCardSection setCreditCard={mockSetCreditCard} />
-        </ThemeProvider>
-      )
+      rendered = render(<CreditCardSection setCreditCard={mockSetCreditCard} />)
     })
 
     describe('number field', () => {

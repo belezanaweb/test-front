@@ -18,9 +18,10 @@ function CartComponent ({ order, onProceed = () => undefined }) {
 
   return (
     <CartComponent.Container>
+      <h1 className="visually-hidden">Pagamento</h1>
       <CreditCardSection area="creditcard" setCreditCard={setPaymentData} />
       <CartComponent.SummarySection area="summary" order={order} />
-      <Button area="next" disabled={!payment} onClick={handleProceed}>
+      <Button area="next" data-testid="button-next" disabled={!payment} onClick={handleProceed}>
         Finalizar o pedido
       </Button>
     </CartComponent.Container>

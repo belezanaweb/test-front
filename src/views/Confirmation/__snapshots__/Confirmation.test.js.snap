@@ -1,0 +1,283 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Confirmation should render [snapshot] 1`] = `
+.emotion-41 {
+  display: grid;
+  grid-gap: 20px;
+  grid-template-areas: 'success' 'payment' 'products' 'summary';
+  margin: 0 auto;
+  max-width: 1024px;
+  padding: 0 10px;
+}
+
+@media screen and (min-width:1024px) {
+  .emotion-41 {
+    grid-template-areas: 'success success' 'products payment' 'products summary';
+    grid-template-rows: repeat(2,max-content) auto;
+  }
+}
+
+.emotion-4 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  grid-area: success;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.emotion-0 {
+  border: 1px solid #ff7800;
+  border-radius: 50%;
+  display: inline-block;
+  height: 37px;
+  margin: 0 auto;
+  position: relative;
+  width: 37px;
+}
+
+.emotion-0::after {
+  border-bottom: 1px solid #ff7800;
+  border-left: 1px solid #ff7800;
+  content: '';
+  height: 10px;
+  left: 0;
+  position: absolute;
+  top: 0;
+  -webkit-transform: rotate(-50deg) translate(-1px,15px);
+  -ms-transform: rotate(-50deg) translate(-1px,15px);
+  transform: rotate(-50deg) translate(-1px,15px);
+  width: 17px;
+}
+
+.emotion-2 {
+  color: #ff7800;
+  display: inline-block;
+  font-size: 14px;
+  line-height: 16px;
+  font-weight: bold;
+  -webkit-letter-spacing: 1px;
+  -moz-letter-spacing: 1px;
+  -ms-letter-spacing: 1px;
+  letter-spacing: 1px;
+  padding: 14px 0 0;
+  text-transform: uppercase;
+}
+
+.emotion-13 {
+  grid-area: payment;
+}
+
+.emotion-13 .emotion-11 {
+  font-size: 14px;
+  line-height: 18px;
+  text-transform: uppercase;
+  white-space: pre;
+}
+
+.emotion-6 {
+  color: #999;
+  font-size: 14px;
+  font-weight: bold;
+  -webkit-letter-spacing: 1px;
+  -moz-letter-spacing: 1px;
+  -ms-letter-spacing: 1px;
+  letter-spacing: 1px;
+  line-height: 17px;
+  padding: 4px 10px;
+  text-transform: uppercase;
+}
+
+.emotion-10 {
+  background-color: #fff;
+  border-radius: 3px;
+  box-shadow: 1px 1px 5px 0 rgba(0,0,29,0.22);
+  padding: 10px 12px;
+}
+
+.emotion-8 {
+  -webkit-letter-spacing: -1px;
+  -moz-letter-spacing: -1px;
+  -ms-letter-spacing: -1px;
+  letter-spacing: -1px;
+}
+
+.emotion-39 {
+  grid-area: products;
+}
+
+.emotion-35 {
+  margin: 0;
+  padding: 0;
+}
+
+.emotion-21 {
+  border: 1px solid #eee;
+  color: #121212;
+  display: grid;
+  grid-gap: 15px 10px;
+  grid-template-areas: 'image name';
+  grid-template-columns: max-content 1fr;
+  list-style-type: none;
+  margin: 12px 0;
+  padding: 12px 10px;
+}
+
+.emotion-21:first-of-type {
+  margin-top: 0;
+}
+
+.emotion-21:last-of-type {
+  margin-bottom: 0;
+}
+
+.emotion-17 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  grid-area: image;
+  -webkit-box-pack: end;
+  -webkit-justify-content: flex-end;
+  -ms-flex-pack: end;
+  justify-content: flex-end;
+  height: 42px;
+  width: 42px;
+}
+
+.emotion-17 img {
+  max-height: 100%;
+  max-width: 100%;
+}
+
+.emotion-19 {
+  font-size: 13px;
+  grid-area: name;
+  line-height: 16px;
+}
+
+<div>
+  <div
+    class="emotion-41 emotion-42"
+    style="display: none;"
+  >
+    <div
+      class="emotion-4 emotion-5"
+    >
+      <i
+        aria-hidden="true"
+        class="emotion-0 emotion-1"
+      />
+      <h1
+        class="emotion-2 emotion-3"
+      >
+        Compra efetuada com sucesso
+      </h1>
+    </div>
+    <section
+      class="emotion-12 emotion-13 emotion-14"
+    >
+      <h2
+        class="emotion-6 emotion-7"
+      >
+        Pagamento
+      </h2>
+      <div
+        class="emotion-10 emotion-11"
+      >
+        <span
+          class="emotion-8 emotion-9"
+        >
+          ****.****.****.1111
+        </span>
+        
+
+        Test
+        
+
+        5/2020
+      </div>
+    </section>
+    <section
+      class="emotion-39 emotion-14"
+    >
+      <h2
+        class="emotion-6 emotion-7"
+      >
+        Produtos
+      </h2>
+      <div
+        class="emotion-10 emotion-11"
+      >
+        <ol
+          class="emotion-35 emotion-36"
+        >
+          <li
+            class="emotion-21 emotion-22"
+          >
+            <div
+              class="emotion-17 emotion-18"
+            >
+              <img
+                alt="Imagem ilustrativa do item L'Oréal Professionnel Expert Absolut Repair Cortex Lipidium"
+                src="https://res.cloudinary.com/beleza-na-web/image/upload/f_auto,fl_progressive,q_auto:best/v1/imagens/1/loreal-professionnel-expert-absolut-repair-cortex-lipidium-mascara-de-reconstrucao-500g-24410-963234120108391775.png"
+              />
+            </div>
+            <div
+              class="emotion-19 emotion-20"
+            >
+              L'Oréal Professionnel Expert Absolut Repair Cortex Lipidium
+            </div>
+          </li>
+          <li
+            class="emotion-21 emotion-22"
+          >
+            <div
+              class="emotion-17 emotion-18"
+            >
+              <img
+                alt="Imagem ilustrativa do item Good Girl Carolina Herrera Eau de Parfum - Perfume Feminino 30ml"
+                src="https://res.cloudinary.com/beleza-na-web/image/upload/f_auto,fl_progressive,q_auto:best/v1/imagens/1/good-girl-carolina-herrera-eau-de-parfum-perfume-feminino-30ml-38273-1960525940762131267.jpg"
+              />
+            </div>
+            <div
+              class="emotion-19 emotion-20"
+            >
+              Good Girl Carolina Herrera Eau de Parfum - Perfume Feminino 30ml
+            </div>
+          </li>
+          <li
+            class="emotion-21 emotion-22"
+          >
+            <div
+              class="emotion-17 emotion-18"
+            >
+              <img
+                alt="Imagem ilustrativa do item Senscience Inner Restore Intensif - Máscara Capilar 50ml"
+                src="https://res.cloudinary.com/beleza-na-web/image/upload/f_auto,fl_progressive,q_auto:best/v1/imagens/1/senscience-inner-restore-intesif-deep-repairing-masque-mascara-de-tratamento-50ml-3019-7903251722539384904.png"
+              />
+            </div>
+            <div
+              class="emotion-19 emotion-20"
+            >
+              Senscience Inner Restore Intensif - Máscara Capilar 50ml
+            </div>
+          </li>
+        </ol>
+      </div>
+    </section>
+  </div>
+  Loading...
+</div>
+`;

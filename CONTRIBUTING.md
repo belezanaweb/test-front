@@ -93,11 +93,19 @@ Sou pessoalmente contra em fazer layouts em _Pixel Perfect_ pois diversas vezes 
 
 Acredito que TypeScript é uma ótima ferramenta para codificação colaborativa e mesmo para documentação própria do projeto, além de facilitar o desenvolvimento e ajudar na prevenção de erros. Porém há um custo maior (de tempo, inclusive) para o desenvolvimento voltado a tipagem. Para simplificar e agilizar, optei por não utilizá-lo.
 
-### Não ter <abbr title="Continuous Integration">CI</abbr>
+### Testes
 
-Como atualmente não pago nenhum serviço que tenha disponível _Pipelines_ para projetos privados do GitHub, infelizmente este projeto não possui nenhuma ferramenta com esta finalidade. Também configurar algum serviço utilizando **Docker** como o [Jenkins](https://hub.docker.com/_/jenkins/) tomaria tempo para sua configuração dado que não possuo nada previamente pronto. Também estou evitando serviços com tempo de avaliação para evitar problemas com limites de sua utilização.
+Não segui [<abbr title="Test-Driven Development">TDD</abbr>](https://martinfowler.com/bliki/TestDrivenDevelopment.html). A maioria dos testes foram focados em _Snapshots_ e testes comportamentais utilizando _Jest_, principalmente para evitar erros durante renderização de componentes.
 
-Porém o repositório possui **Git Hooks** (utilizando [Husky](https://github.com/typicode/husky)) para assegurar a qualidade deste repositório. Atualmente há 3 _Git Hooks_:
+### Jest Snapshots
+
+O motivo de utilizar Jest Snapshots é para validar manualmente o HTML gerado facilitando em questão de visualização da semântica do código gerado pela aplicação, validando manualmente se o HTML é semântico e válido.
+
+### Continuous Integration
+
+Este repositório está configurado com o [Travis](https://travis-ci.org/) com uma conta gratuita para utilização em projetos públicos no Github.
+
+O repositório também possui **Git Hooks** (utilizando [Husky](https://github.com/typicode/husky)) para assegurar a qualidade deste repositório. Atualmente há 3 _Git Hooks_:
 
 #### commit-msg
 
@@ -122,6 +130,16 @@ Em suma, tento assegurar que:
     Não é _commitado_ código fora do padrão.
     Não sobe para o repositório principal código com testes falhos.
 
-### Jest Snapshots
+### Por que _Yarn_?
 
-O motivo de utilizar Jest Snapshots apesar de não ser relacionado a <abbr title="Test Driven Development">TDD</abbr> é para validar manualmente o HTML gerado facilitando em questão de visualização da semântica do código gerado pela aplicação.
+Apesar das evoluções do [npm](https://www.npmjs.com/), por uma escolha pessoal decidi utilizar o [Yarn](https://yarnpkg.com/) pois gosto de algumas funcionalidades exclusivas deste gerenciador de pacotes.
+
+Mesmo recomendando-o como padrão, todos os scripts estão adaptados para serem utilizados tanto com **yarn** quanto com o **npm**.
+
+#### Offline Mirror
+
+Uma funcionalidade neste repositório que deixei como _opcional_ é o [Offline Mirror](https://yarnpkg.com/blog/2016/11/24/offline-mirror/). Para utilizá-lo, basta rodar o seguinte comando:
+
+```
+$ cp .yarnrc.example .yarnrc
+```

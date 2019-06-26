@@ -1,7 +1,5 @@
 import React from 'react'
-import { render } from '@testing-library/react'
-import { ThemeProvider } from 'emotion-theming'
-import theme from '../../../../theme'
+import { render } from 'test-utils'
 import ProductListSection from '.'
 
 /* prettier-ignore */
@@ -49,20 +47,12 @@ const mockItems = [
 
 describe('ProductListSection', () => {
   it('should render small [snapshot]', () => {
-    const { container } = render(
-      <ThemeProvider theme={theme}>
-        <ProductListSection items={mockItems} image="small" showPrice />
-      </ThemeProvider>
-    )
+    const { container } = render(<ProductListSection items={mockItems} image="small" showPrice />)
     expect(container.firstChild).toMatchSnapshot()
   })
 
   it('should render thumbnail [snapshot]', () => {
-    const { container } = render(
-      <ThemeProvider theme={theme}>
-        <ProductListSection items={mockItems} image="thumbnail" />
-      </ThemeProvider>
-    )
+    const { container } = render(<ProductListSection items={mockItems} image="thumbnail" />)
     expect(container.firstChild).toMatchSnapshot()
   })
 })

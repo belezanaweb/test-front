@@ -1,16 +1,10 @@
 import React from 'react'
-import { render } from '@testing-library/react'
-import { ThemeProvider } from 'emotion-theming'
-import theme from '../../theme'
+import { render } from 'test-utils'
 import SuccessMessage from '.'
 
 describe('SuccessMessage', () => {
   it('should render [snapshot]', () => {
-    const { container } = render(
-      <ThemeProvider theme={theme}>
-        <SuccessMessage />
-      </ThemeProvider>
-    )
+    const { container } = render(<SuccessMessage />)
     expect(container).toMatchSnapshot()
   })
 })
