@@ -26,10 +26,13 @@
   - [Husky](https://github.com/typicode/husky)
   - [lint-staged](https://github.com/okonet/lint-staged)
   - [commitlint](https://conventional-changelog.github.io/commitlint/)
+  - [Travis CI](https://travis-ci.org/)
 - Testes
   - app
     - [Jest](http://facebook.github.io/jest/)
       - [React Testing Library](https://testing-library.com/react)
+  - e2e
+    - [Cypress](https://www.cypress.io/)
 
 **Aviso: este projeto contém pacotes e/ou funcionalidades não estáveis.**
 
@@ -50,6 +53,10 @@ Executa o **ESLint**, corrigindo alguns erros triviais em arquivos dentro da pas
 ### `yarn coverage`
 
 Roda o Jest coletando a cobertura de código dos testes.
+
+### `yarn test:e2e`
+
+Executa a aplicação em modo de desenvolvimento e roda os testes _end-to-end_ utilizando o **Cypress**.
 
 ## Código de Conduta
 
@@ -93,17 +100,36 @@ Sou pessoalmente contra em fazer layouts em _Pixel Perfect_ pois diversas vezes 
 
 Acredito que TypeScript é uma ótima ferramenta para codificação colaborativa e mesmo para documentação própria do projeto, além de facilitar o desenvolvimento e ajudar na prevenção de erros. Porém há um custo maior (de tempo, inclusive) para o desenvolvimento voltado a tipagem. Para simplificar e agilizar, optei por não utilizá-lo.
 
+### Falta de especificação e "bagunça" no nome de _branches_
+
+Reconheço que é uma deficiência minha não ter especificado o projeto antes de sua concepção (_coding_). Isto refletiu em nomes de branches pouco simbólicos e uma _correria_ no final do projeto para adicionar os débitos. Porém também penso sempre na evolução do projeto, tentar sempre melhorar a cada _commit_, não só adicionando funcionalidades quanto também sempre melhorar código e ferramentas do projeto.
+
 ### Testes
 
 Não segui [<abbr title="Test-Driven Development">TDD</abbr>](https://martinfowler.com/bliki/TestDrivenDevelopment.html). A maioria dos testes foram focados em _Snapshots_ e testes comportamentais utilizando _Jest_, principalmente para evitar erros durante renderização de componentes.
 
-### Jest Snapshots
+#### Jest Snapshots
 
 O motivo de utilizar Jest Snapshots é para validar manualmente o HTML gerado facilitando em questão de visualização da semântica do código gerado pela aplicação, validando manualmente se o HTML é semântico e válido.
+
+#### end-to-end
+
+Adicionei no final do projeto utilizando [Cypress](https://www.cypress.io/). Não acho correto porém como não especifiquei o projeto no começo, senti falta em adicioná-lo antes de entregar.
+
+Também adiciono que é necessário estar _online_ pois para os testes _e2e_ faço chamadas para a API, que requer estar conectado à Internet.
 
 ### Continuous Integration
 
 Este repositório está configurado com o [Travis](https://travis-ci.org/) com uma conta gratuita para utilização em projetos públicos no Github.
+
+No momento rodo apenas testes básicos, não incluo _deploy_ por esta ferramenta pois o próprio [Netlify](https://www.netlify.com/) possui uma integração própria com o **Github** de fácil implementação.
+
+Nos testes básicos asseguro:
+
+- que o código está formatado de acordo com as regras do **ESLint**;
+- realizo testes utilizando o **Jest**;
+- realizo o _build_ para validar que a aplicação não quebre durante este processo e
+- realizo testes _end-to-end_ utilizando o **Cypress**
 
 O repositório também possui **Git Hooks** (utilizando [Husky](https://github.com/typicode/husky)) para assegurar a qualidade deste repositório. Atualmente há 3 _Git Hooks_:
 
@@ -119,7 +145,7 @@ Utiliza o [lint-staged](https://github.com/okonet/lint-staged) para rodar ferram
 
 #### pre-push
 
-Roda os testes da aplicação
+Roda os testes da aplicação (não executa os testes _<abbr title="end-to-end">e2e</abbr>_)
 
 #### Filosofia
 

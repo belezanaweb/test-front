@@ -10,3 +10,4 @@ script:
   - yarn lint
   - yarn test:ci
   - yarn build
+  - yarn test:e2e
