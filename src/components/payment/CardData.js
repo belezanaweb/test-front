@@ -8,27 +8,44 @@ export class CardData extends Component {
   }
   render() {
     const cardDataStyle = {
-      backgroundColor: '#EEE',
+      backgroundColor: 'white',
       borderLine: '1px',
       paddingTop: '10px'
     }
-    return (
-      <div className="card" style={cardDataStyle}>
-        <table>
-          <tbody>
-            <tr>
-              <td>{this.props.cardData.creditCard}</td>
-            </tr>
-            <tr>
-              <td>{this.props.cardData.name}</td>
-            </tr>
-            <tr>
-              <td>{this.props.cardData.validate}</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-    )
+    const cardDataTitleStyle = {
+      marginLeft: '13px',
+      paddingTop: '10px',
+      color: 'gray'
+    }
+    if (
+      !(
+        Object.entries(this.props.cardData).length === 0 &&
+        this.props.cardData.constructor === Object
+      )
+    ) {
+      return (
+        <div>
+          <p style={cardDataTitleStyle}>PAGAMENTOS</p>
+          <div className="card" style={cardDataStyle}>
+            <table>
+              <tbody>
+                <tr>
+                  <td>{this.props.cardData.creditCard}</td>
+                </tr>
+                <tr>
+                  <td>{this.props.cardData.name}</td>
+                </tr>
+                <tr>
+                  <td>{this.props.cardData.validate}</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      )
+    } else {
+      return <div />
+    }
   }
 }
 

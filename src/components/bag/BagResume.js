@@ -1,10 +1,16 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import PropTypes from 'prop-types'
+import { getBagItems } from '../../actions/bagActions'
 
 export class BagResume extends Component {
+  componentWillMount() {
+    this.props.getBagItems()
+  }
+
   static propTypes = {
-    bagResume: PropTypes.object.isRequired
+    bagResume: PropTypes.object.isRequired,
+    getBagItems: PropTypes.func.isRequired
   }
 
   render() {
@@ -57,5 +63,5 @@ const mapStateToProps = state => ({
 
 export default connect(
   mapStateToProps,
-  null
+  { getBagItems }
 )(BagResume)

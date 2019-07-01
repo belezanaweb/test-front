@@ -1,9 +1,20 @@
 import React, { Component } from 'react'
+import { connect } from 'react-redux'
+import PropTypes from 'prop-types'
 import BagResume from '../bag/BagResume'
 import BagItemsList from '../bag/BagItemsList'
 import CardData from '../payment/CardData'
+import { getBagItems } from '../../actions/bagActions'
 
-export default class Request extends Component {
+export class Request extends Component {
+  componentWillMount() {
+    this.props.getBagItems()
+  }
+
+  static propTypes = {
+    getBagItems: PropTypes.func.isRequired
+  }
+
   render() {
     const requestStyle = {
       backgroundColor: '#EEE',
@@ -14,7 +25,9 @@ export default class Request extends Component {
     }
 
     const requestTitleStyle = {
-      marginLeft: '13px'
+      marginLeft: '13px',
+      paddingTop: '10px',
+      color: 'gray'
     }
 
     const succededPaymentStyle = {
@@ -25,7 +38,7 @@ export default class Request extends Component {
       <div style={requestStyle}>
         <p style={{ ...requestTitleStyle, ...succededPaymentStyle }}>Compra efetuada com sucesso</p>
         <CardData />
-        <p style={requestTitleStyle}>Produtos</p>
+        <p style={requestTitleStyle}>PRODUTOS</p>
         <BagItemsList showPrice={false} />
         <br />
         <BagResume />
@@ -33,3 +46,8 @@ export default class Request extends Component {
     )
   }
 }
+
+export default connect(
+  null,
+  { getBagItems }
+)(Request)

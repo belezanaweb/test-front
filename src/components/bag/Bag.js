@@ -20,12 +20,14 @@ export class Bag extends Component {
       backgroundColor: '#EEE',
       paddingLeft: '9px',
       paddingRight: '10px',
-      paddingBottom: '100%',
+      paddingBottom: '30px',
       width: '100%'
     }
 
     const bagTitleStyle = {
-      marginLeft: '13px'
+      marginLeft: '13px',
+      paddingTop: '10px',
+      color: 'gray'
     }
     const btnStyle = {
       backgroundColor: 'orange',
@@ -35,7 +37,7 @@ export class Bag extends Component {
 
     return (
       <div style={bagStyle}>
-        <p style={bagTitleStyle}>Produtos</p>
+        <p style={bagTitleStyle}>PRODUTOS</p>
         <BagItemsList showPrice={true} />
         <br />
         <BagResume />

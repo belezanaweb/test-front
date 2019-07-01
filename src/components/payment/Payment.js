@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-import BagResume from '../bag/BagResume'
 import CreditCardForm from './CreditCardForm'
 
 export default class Payment extends Component {
@@ -8,17 +7,19 @@ export default class Payment extends Component {
       backgroundColor: '#EEE',
       paddingLeft: '9px',
       paddingRight: '10px',
-      paddingBottom: '100%',
+      paddingBottom: '38%',
       width: '100%'
     }
     const paymentTitleStyle = {
-      marginLeft: '13px'
+      marginLeft: '13px',
+      paddingTop: '10px',
+      color: 'gray'
     }
     return (
       <div style={paymentStyle}>
-        <p style={paymentTitleStyle}>Cartão de Credito</p>
+        <p style={paymentTitleStyle}>CARTÃO DE CRÉDITO</p>
         <CreditCardForm />
-        <BagResume />
+        <br />
       </div>
     )
   }
