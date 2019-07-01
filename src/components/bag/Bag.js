@@ -31,7 +31,7 @@ export class Bag extends Component {
     return (
       <div style={bagStyle}>
         <p style={bagTitleStyle}>Produtos</p>
-        <BagItemsList />
+        <BagItemsList showPrice={true} />
         <br />
         <BagResume />
         <br />

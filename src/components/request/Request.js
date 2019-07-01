@@ -1,10 +1,31 @@
 import React, { Component } from 'react'
 import BagResume from '../bag/BagResume'
+import BagItemsList from '../bag/BagItemsList'
 
 export default class Request extends Component {
   render() {
+    const requestStyle = {
+      backgroundColor: '#EEE',
+      paddingLeft: '9px',
+      paddingRight: '10px',
+      paddingBottom: '100%',
+      width: '100%'
+    }
+
+    const requestTitleStyle = {
+      marginLeft: '13px'
+    }
+
+    const succededPaymentStyle = {
+      color: 'orange',
+      textAlign: 'center'
+    }
     return (
-      <div>
+      <div style={requestStyle}>
+        <p style={{ ...requestTitleStyle, ...succededPaymentStyle }}>Compra efetuada com sucesso</p>
+        <p style={requestTitleStyle}>Produtos</p>
+        <BagItemsList showPrice={false} />
+        <br />
         <BagResume />
       </div>
     )

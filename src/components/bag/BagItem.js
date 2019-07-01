@@ -4,7 +4,8 @@ import { connect } from 'react-redux'
 
 export class BagItem extends Component {
   static propTypes = {
-    bagItems: PropTypes.array.isRequired
+    bagItems: PropTypes.array.isRequired,
+    showPrice: PropTypes.bool.isRequired
   }
 
   render() {
@@ -18,9 +19,9 @@ export class BagItem extends Component {
       <div>
         {this.props.bagItems.map(item => (
           <div key={item.product.sku} style={bagItemStyle}>
-            <img src={item.product.imageObjects.medium} alt={item.product.name} />
+            <img src={item.product.imageObjects.medium} />
             <p>{item.product.name}</p>
-            <p>R${item.product.priceSpecification.price}</p>
+            {this.props.showPrice ? <p>R${item.product.priceSpecification.price}</p> : ''}
           </div>
         ))}
       </div>

@@ -1,7 +1,8 @@
 import React, { Component } from 'react'
-import { Link } from 'react-router-dom'
+import { connect } from 'react-redux'
+import { addCardData } from '../../actions/paymentActions'
 
-export default class CreditCardForm extends Component {
+export class CreditCardForm extends Component {
   state = {
     creditCard: '',
     name: '',
@@ -13,6 +14,26 @@ export default class CreditCardForm extends Component {
     this.setState({
       [e.target.name]: e.target.value
     })
+  }
+  onSubmit = e => {
+    e.preventDefault()
+    const { creditCard, name, validate, cvv } = this.state
+    const cardData = {
+      creditCard,
+      name,
+      validate,
+      cvv
+    }
+
+    this.props.addCardData(cardData)
+
+    this.setState({
+      creditCard: '',
+      name: '',
+      validate: '',
+      cvv: ''
+    })
+    window.location.href = '/request'
   }
 
   render() {
@@ -62,7 +83,11 @@ export default class CreditCardForm extends Component {
             name !== '' ? (
               validate !== '' ? (
                 cvv !== '' ? (
-                  <Link to="/request">FINALIZAR PEDIDO</Link>
+                  <div className="form-group">
+                    <button type="submit" className="btn btn-primary">
+                      FINALIZAR PEDIDO
+                    </button>
+                  </div>
                 ) : (
                   ''
                 )
@@ -80,3 +105,8 @@ export default class CreditCardForm extends Component {
     )
   }
 }
+
+export default connect(
+  null,
+  { addCardData }
+)(CreditCardForm)

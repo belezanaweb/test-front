@@ -17,25 +17,32 @@ export class BagResume extends Component {
     const allFirstTdStyle = {
       paddingLeft: '20px'
     }
+
+    const discountsStyle = {
+      color: 'orange'
+    }
+    const totalStyle = {
+      fontWeight: 'bold'
+    }
     return (
       <div className="card" style={bagResumeStyle}>
         <table>
           <tbody>
             <tr>
-              <td style={allFirstTdStyle}>Sub-Total</td>
+              <td style={allFirstTdStyle}>PRODUTOS</td>
               <td>R$ {this.props.bagResume.subtotal}</td>
             </tr>
             <tr>
-              <td style={allFirstTdStyle}>Shipping Total</td>
+              <td style={allFirstTdStyle}>FRETE</td>
               <td>R$ {this.props.bagResume.shippingTotal}</td>
             </tr>
             <tr>
-              <td style={allFirstTdStyle}>Discounts</td>
-              <td>R$ {this.props.bagResume.discount}</td>
+              <td style={{ ...allFirstTdStyle, ...discountsStyle }}>DESCONTOS</td>
+              <td style={discountsStyle}>R$ {this.props.bagResume.discount}</td>
             </tr>
             <tr>
-              <td style={allFirstTdStyle}>Total</td>
-              <td>R$ {this.props.bagResume.total}</td>
+              <td style={{ ...allFirstTdStyle, ...totalStyle }}>TOTAL</td>
+              <td style={totalStyle}>R$ {this.props.bagResume.total}</td>
             </tr>
           </tbody>
         </table>
