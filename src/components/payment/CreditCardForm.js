@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import { Link } from 'react-router-dom'
 
 export default class CreditCardForm extends Component {
   state = {
@@ -33,7 +34,7 @@ export default class CreditCardForm extends Component {
             <label>Nome</label>
             <input
               className="form-control"
-              type="number"
+              type="text"
               name="name"
               onChange={this.onChange}
               value={name}
@@ -57,6 +58,23 @@ export default class CreditCardForm extends Component {
               value={cvv}
             />
           </div>
+          {creditCard !== '' ? (
+            name !== '' ? (
+              validate !== '' ? (
+                cvv !== '' ? (
+                  <Link to="/request">FINALIZAR PEDIDO</Link>
+                ) : (
+                  ''
+                )
+              ) : (
+                ''
+              )
+            ) : (
+              ''
+            )
+          ) : (
+            ''
+          )}
         </form>
       </div>
     )

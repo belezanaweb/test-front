@@ -5,6 +5,7 @@ import Header from './layout/Header'
 import Bag from './bag/Bag'
 import { HashRouter as Router, Route, Switch } from 'react-router-dom'
 import Payment from './payment/Payment'
+import Request from './request/Request'
 
 class App extends Component {
   render() {
@@ -17,6 +18,7 @@ class App extends Component {
               <Switch>
                 <Route exact path="/" component={Bag} />
                 <Route exact path="/payment" component={Payment} />
+                <Route exact path="/request" component={Request} />
               </Switch>
             </div>
           </Fragment>
