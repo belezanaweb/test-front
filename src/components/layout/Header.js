@@ -4,9 +4,10 @@ import { Link } from 'react-router-dom'
 export default class Header extends Component {
   render() {
     const linkStyle = {
-      color: 'black',
+      color: 'gray',
       textDecoration: 'none',
-      display: 'inline'
+      display: 'inline',
+      fontSize: '15px'
     }
 
     const nav = {
@@ -17,13 +18,13 @@ export default class Header extends Component {
       <div>
         <nav className="nav" style={nav}>
           <Link to="/" style={linkStyle} className="nav-link">
-            Sacola
+            SACOLA
           </Link>
           <Link to="/payment" style={linkStyle} className="nav-link" href="#">
-            Pagamento
+            PAGAMENTO
           </Link>
           <Link to="/request" style={linkStyle} className="nav-link" href="#">
-            Confirmação
+            CONFIRMAÇÂO
           </Link>
         </nav>
       </div>

@@ -15,13 +15,28 @@ export class BagItem extends Component {
       paddingLeft: '13px',
       paddingRight: '12px'
     }
+
+    const nameStyle = {
+      fontSize: '15px'
+    }
+
+    const priceStyle = {
+      fontWeight: 'bold',
+      textAlign: 'right',
+      fontSize: '15px'
+    }
+
     return (
       <div>
         {this.props.bagItems.map(item => (
           <div key={item.product.sku} style={bagItemStyle}>
             <img src={item.product.imageObjects.medium} alt={item.product.sku} />
-            <p>{item.product.name}</p>
-            {this.props.showPrice ? <p>R${item.product.priceSpecification.price}</p> : ''}
+            <p style={nameStyle}>{item.product.name}</p>
+            {this.props.showPrice ? (
+              <p style={priceStyle}>R$ {item.product.priceSpecification.price}</p>
+            ) : (
+              ''
+            )}
           </div>
         ))}
       </div>
