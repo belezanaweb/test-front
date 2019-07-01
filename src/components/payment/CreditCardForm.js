@@ -33,7 +33,6 @@ export class CreditCardForm extends Component {
       validate: '',
       cvv: ''
     })
-    window.location.href = '/request'
   }
 
   render() {

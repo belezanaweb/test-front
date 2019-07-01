@@ -5,11 +5,17 @@ export default class Header extends Component {
   render() {
     const linkStyle = {
       color: 'black',
-      textDecoration: 'none'
+      textDecoration: 'none',
+      display: 'inline'
+    }
+
+    const nav = {
+      textAlign: 'center',
+      justifyContent: 'center'
     }
     return (
       <div>
-        <nav className="nav">
+        <nav className="nav" style={nav}>
           <Link to="/" style={linkStyle} className="nav-link">
             Sacola
           </Link>

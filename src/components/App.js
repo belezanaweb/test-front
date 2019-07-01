@@ -9,12 +9,15 @@ import Request from './request/Request'
 
 class App extends Component {
   render() {
+    const appStyle = {
+      width: '100%'
+    }
     return (
       <Provider store={store}>
         <Router>
           <Fragment>
             <Header />
-            <div className="container">
+            <div style={appStyle}>
               <Switch>
                 <Route exact path="/" component={Bag} />
                 <Route exact path="/payment" component={Payment} />

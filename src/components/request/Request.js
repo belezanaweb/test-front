@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import BagResume from '../bag/BagResume'
 import BagItemsList from '../bag/BagItemsList'
+import CardData from '../payment/CardData'
 
 export default class Request extends Component {
   render() {
@@ -23,6 +24,7 @@ export default class Request extends Component {
     return (
       <div style={requestStyle}>
         <p style={{ ...requestTitleStyle, ...succededPaymentStyle }}>Compra efetuada com sucesso</p>
+        <CardData />
         <p style={requestTitleStyle}>Produtos</p>
         <BagItemsList showPrice={false} />
         <br />

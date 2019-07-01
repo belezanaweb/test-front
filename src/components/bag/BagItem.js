@@ -19,7 +19,7 @@ export class BagItem extends Component {
       <div>
         {this.props.bagItems.map(item => (
           <div key={item.product.sku} style={bagItemStyle}>
-            <img src={item.product.imageObjects.medium} />
+            <img src={item.product.imageObjects.medium} alt="Product Image Not Found" />
             <p>{item.product.name}</p>
             {this.props.showPrice ? <p>R${item.product.priceSpecification.price}</p> : ''}
           </div>

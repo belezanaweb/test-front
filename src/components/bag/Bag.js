@@ -27,6 +27,11 @@ export class Bag extends Component {
     const bagTitleStyle = {
       marginLeft: '13px'
     }
+    const btnStyle = {
+      backgroundColor: 'orange',
+      width: '100%',
+      color: 'white'
+    }
 
     return (
       <div style={bagStyle}>
@@ -35,7 +40,9 @@ export class Bag extends Component {
         <br />
         <BagResume />
         <br />
-        <Link to="/payment">SEGUIR PARA O PAGAMENTO</Link>
+        <Link to="/payment" className="btn" style={btnStyle}>
+          SEGUIR PARA O PAGAMENTO
+        </Link>
       </div>
     )
   }
