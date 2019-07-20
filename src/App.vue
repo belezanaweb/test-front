@@ -2,8 +2,29 @@
   <div id="app">
     <steps :items="checkoutSteps"></steps>
     <router-view class="router-view"/>
-    <card border>
-    </card>
+
+    <section class="resume-container">
+      <card class="checkout-resume" border>
+        <ul>
+          <li>
+            <span class="label">PRODUTOS</span>
+            <span class="value"> R$ 624,80</span>
+          </li>
+          <li>
+            <span class="label">PRODUTOS</span>
+            <span class="value"> R$ 624,80</span>
+          </li>
+          <li class="discount">
+            <span class="label">PRODUTOS</span>
+            <span class="value"> R$ 624,80</span>
+          </li>
+          <li>
+            <span class="label">TOTAL</span>
+            <span class="value">R$ 600,10</span>
+          </li>
+        </ul>
+      </card>
+    </section>
   </div>
 </template>
 
@@ -61,4 +82,30 @@ h3
   padding 0
   margin-bottom 5px
   margin-left 11px
+
+.checkout-resume 
+  font-size 14px
+
+  ul
+    margin 0
+    padding 0
+    list-style none
+    display flex
+    flex-direction column
+
+  li
+    display flex
+    justify-content space-between
+    padding 4px 0px
+    text-transform uppercase
+
+    &:last-child
+      font-weight bold
+      margin-top 11px
+
+.discount
+  color #FF7800
+
+.resume-container   
+  padding 13px 
 </style>
