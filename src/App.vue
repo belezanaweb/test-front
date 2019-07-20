@@ -22,11 +22,11 @@ export default {
         },
         { 
           label: 'Pagamento',
-          to: '/'
+          to: '/payment'
         },
         { 
           label: 'Confirmação',
-          to: '/'
+          to: '/confimation'
         }
       ]
     }
@@ -36,8 +36,12 @@ export default {
 
 <style lang="stylus">
 #app
-  font-family 'Avenir', Helvetica, Arial, sans-serif
+  font-family 'Helvetica Neue', sans-serif
   -webkit-font-smoothing antialiased
   -moz-osx-font-smoothing grayscale
   color #2c3e50
+
+body 
+  margin 0
+  padding 0
 </style>

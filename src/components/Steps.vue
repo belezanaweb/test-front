@@ -26,14 +26,21 @@ export default {
 </script>
 
 <style scoped lang="stylus">
+.steps 
+  box-shadow: 1px 1px 5px 0 rgba(0,0,29,0.22);
+  padding 15px 10px
+
 ul 
   display flex
   list-style none
   margin 0
   padding 0
   justify-content space-around
-  color #FF7800
   font-weight bold
   text-transform uppercase
   font-size 13px
+  color #CCC
+
+li.router-link-exact-active 
+  color #FF7800
 </style>
