@@ -2,16 +2,20 @@
   <div id="app">
     <steps :items="checkoutSteps"></steps>
     <router-view class="router-view"/>
+    <card border>
+    </card>
   </div>
 </template>
 
 <script>
 import Steps from './components/Steps'
+import Card from './components/ui/Card'
 
 export default {
   name: 'App',
   components: {
-    Steps
+    Steps,
+    Card
   },
   data() {
     return {
