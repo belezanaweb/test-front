@@ -11,12 +11,12 @@
             <span class="value"> R$ 624,80</span>
           </li>
           <li>
-            <span class="label">PRODUTOS</span>
-            <span class="value"> R$ 624,80</span>
+            <span class="label">FRETE</span>
+            <span class="value">R$ 5,30</span>
           </li>
           <li class="discount">
-            <span class="label">PRODUTOS</span>
-            <span class="value"> R$ 624,80</span>
+            <span class="label">DESCONTO</span>
+            <span class="value">- R$ 30,00</span>
           </li>
           <li>
             <span class="label">TOTAL</span>
@@ -66,6 +66,7 @@ export default {
   -moz-osx-font-smoothing grayscale
   color #2c3e50
   background #EEE
+  min-height 100vh
 
 body 
   margin 0
@@ -85,6 +86,7 @@ h3
 
 .checkout-resume 
   font-size 14px
+  padding 13px
 
   ul
     margin 0
@@ -98,14 +100,16 @@ h3
     justify-content space-between
     padding 4px 0px
     text-transform uppercase
+    color #212122
 
     &:last-child
       font-weight bold
       margin-top 11px
 
-.discount
-  color #FF7800
+    &.discount
+      color #FF7800
 
 .resume-container   
   padding 13px 
+  padding-top 7px
 </style>
