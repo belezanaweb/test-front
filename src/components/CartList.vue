@@ -1,9 +1,9 @@
 <template>
   <div class="cart-list">
     <cart-item 
-      v-for="(product, key) in products" 
+      v-for="(item, key) in products" 
       :key="key"
-      :item="product"
+      :item="item.product"
     ></cart-item>
   </div>
 </template>
