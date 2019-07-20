@@ -14,6 +14,24 @@ export default {
     validation: String,
     placeholder: String,
     label: String
+  },
+  data() {
+    return {
+      input_types: {
+        credit_cart: {
+          validation: 'credit_cart',
+          placeholder: 'Número do cartão:',
+        },
+        cvv: {
+          validation: 'digits:3',
+          placeholder: '___',
+        },
+        validity: {
+          validation: 'date_format:MM/yyyy',
+          placeholder: '__/____',
+        }
+      }
+    }
   }
 }
 </script>
