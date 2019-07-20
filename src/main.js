@@ -4,14 +4,14 @@ import router from './router'
 import store from './store'
 
 import VueCurrencyFilter from 'vue-currency-filter'
+import VeeValidate from 'vee-validate';
 
 import './registerServiceWorker'
 
 // Directives
 import './directives'
 
-Vue.use(VueCurrencyFilter,
-{
+Vue.use(VueCurrencyFilter, {
   symbol : 'R$',
   thousandsSeparator: '.',
   fractionCount: 2,
@@ -19,6 +19,9 @@ Vue.use(VueCurrencyFilter,
   symbolPosition: 'front',
   symbolSpacing: true
 })
+
+
+Vue.use(VeeValidate);
 
 Vue.config.productionTip = false
 
