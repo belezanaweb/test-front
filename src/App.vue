@@ -4,7 +4,18 @@
     <router-view class="router-view"/>
     <section class="resume-container">
       <checkout-resume :resume="checkoutResume"></checkout-resume>
-      <checkout-button to='/'>SEGUIR PARA O PAGAMENTO</checkout-button>
+      <checkout-button 
+        v-if="$route.path === '/'" 
+        to='/payment'
+      >
+        SEGUIR PARA O PAGAMENTO
+      </checkout-button>
+      <checkout-button 
+        v-if="$route.path === '/payment'" 
+        to='/confirmation'
+      >
+        FINALIZAR O PEDIDO
+      </checkout-button>
     </section>
   </div>
 </template>
@@ -63,6 +74,9 @@ export default {
   },
   computed: {
     ...mapGetters(['checkoutResume'])
+  },
+  async created() {
+    await this.$store.dispatch('GET_CART')
   }
 }
 </script>

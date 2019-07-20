@@ -29,6 +29,7 @@ export default {
   flex-direction column
 
 .item-image 
+  min-width 65px
   margin-right 11px
 
 .item-name 

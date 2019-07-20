@@ -24,9 +24,6 @@ export default {
   },
   computed: {
     ...mapState(['cart'])
-  },
-  async created() {
-    await this.$store.dispatch('GET_CART')
   }
 }
 </script>
