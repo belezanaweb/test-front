@@ -48,4 +48,13 @@ body
 
 .router-view 
   padding 13px 
+
+h3 
+  color #999
+  font-size 14px
+  text-transform uppercase
+  margin 0
+  padding 0
+  margin-bottom 5px
+  margin-left 11px
 </style>
