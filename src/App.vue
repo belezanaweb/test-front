@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <steps :items="checkoutSteps"></steps>
-    <router-view/>
+    <router-view class="router-view"/>
   </div>
 </template>
 
@@ -40,8 +40,12 @@ export default {
   -webkit-font-smoothing antialiased
   -moz-osx-font-smoothing grayscale
   color #2c3e50
+  background #EEE
 
 body 
   margin 0
   padding 0
+
+.router-view 
+  padding 13px 
 </style>

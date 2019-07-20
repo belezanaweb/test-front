@@ -1,25 +1,29 @@
 <template>
   <div class="bag">
+    <h3>Produtos</h3>
+    <bag-list :products="productsInBag"></bag-list>
   </div>
 </template>
 
 <script>
+import BagList from '../components/BagList'
+
 export default {
   name: 'bag',
+  components: {
+    BagList
+  },
   data() {
     return {
-      checkoutSteps: [
-        { 
-          label: 'Sacola',
-          to: '/'
+      productsInBag: [
+        {
+          id: 1
         },
-        { 
-          label: 'Pagamento',
-          to: '/'
+        {
+          id: 2
         },
-        { 
-          label: 'Confirmação',
-          to: '/'
+        {
+          id: 3
         }
       ]
     }
