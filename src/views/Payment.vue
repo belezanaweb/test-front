@@ -10,14 +10,17 @@
       </div>
       <div class="input-container">
         <form-input 
+          label="Nome do Titular:"
           placeholder="____.____.____.____"
         ></form-input>
       </div>
       <div class="input-container form-group">
         <form-input 
           placeholder="____.____.____.____"
+          label="Validade (mês/ano):"
         ></form-input>
         <form-input 
+          label="CVV"
           placeholder="____.____.____.____"
         ></form-input>
       </div>
@@ -55,6 +58,7 @@ export default {
 .payment-form 
   background #fff
   padding 13px
+  padding-bottom 25px
 
 .input-container + .input-container
   margin-top 25px
