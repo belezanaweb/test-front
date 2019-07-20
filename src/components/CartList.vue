@@ -18,10 +18,6 @@ export default {
   },
   components: {
     CartItem,
-  },
-  data() {
-    return {
-    }
   }
 }
 </script>
