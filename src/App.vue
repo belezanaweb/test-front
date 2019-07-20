@@ -2,16 +2,41 @@
   <div id="app">
     <steps :items="checkoutSteps"></steps>
     <router-view class="router-view"/>
+
+    <section class="resume-container">
+      <card class="checkout-resume" border>
+        <ul>
+          <li>
+            <span class="label">PRODUTOS</span>
+            <span class="value"> R$ 624,80</span>
+          </li>
+          <li>
+            <span class="label">FRETE</span>
+            <span class="value">R$ 5,30</span>
+          </li>
+          <li class="discount">
+            <span class="label">DESCONTO</span>
+            <span class="value">- R$ 30,00</span>
+          </li>
+          <li>
+            <span class="label">TOTAL</span>
+            <span class="value">R$ 600,10</span>
+          </li>
+        </ul>
+      </card>
+    </section>
   </div>
 </template>
 
 <script>
 import Steps from './components/Steps'
+import Card from './components/ui/Card'
 
 export default {
   name: 'App',
   components: {
-    Steps
+    Steps,
+    Card
   },
   data() {
     return {
@@ -41,6 +66,7 @@ export default {
   -moz-osx-font-smoothing grayscale
   color #2c3e50
   background #EEE
+  min-height 100vh
 
 body 
   margin 0
@@ -57,4 +83,33 @@ h3
   padding 0
   margin-bottom 5px
   margin-left 11px
+
+.checkout-resume 
+  font-size 14px
+  padding 13px
+
+  ul
+    margin 0
+    padding 0
+    list-style none
+    display flex
+    flex-direction column
+
+  li
+    display flex
+    justify-content space-between
+    padding 4px 0px
+    text-transform uppercase
+    color #212122
+
+    &:last-child
+      font-weight bold
+      margin-top 11px
+
+    &.discount
+      color #FF7800
+
+.resume-container   
+  padding 13px 
+  padding-top 7px
 </style>

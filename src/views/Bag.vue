@@ -4,9 +4,6 @@
     <card shadow>
       <bag-list :products="productsInBag"></bag-list>
     </card>
-
-    <card border>
-    </card>
   </div>
 </template>
 
