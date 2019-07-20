@@ -14,7 +14,7 @@
           label="Nome do Titular:"
           placeholder="Como no cartão"
           name="titular_name"
-          validation="required"
+          validation="required|alpha"
         ></form-input>
       </div>
       <div class="input-container form-group">
