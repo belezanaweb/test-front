@@ -17,7 +17,7 @@ export default {
     products: Array
   },
   components: {
-    BagItem
+    BagItem,
   },
   data() {
     return {
