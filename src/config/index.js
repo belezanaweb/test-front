@@ -4,6 +4,6 @@ const api = axios.create({
   baseURL: 'http://www.mocky.io/v2'
 })
 
-export default {
+export {
   api
 }

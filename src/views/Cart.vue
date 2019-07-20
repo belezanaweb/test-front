@@ -2,7 +2,7 @@
   <div class="cart">
     <h3>Produtos</h3>
     <card shadow>
-      <cart-list :products="productsInCart"></cart-list>
+      <cart-list :products="cart.items"></cart-list>
     </card>
   </div>
 </template>
@@ -10,6 +10,7 @@
 <script>
 import CartList from '../components/CartList'
 import Card from '../components/ui/Card'
+import { mapState } from "vuex";
 
 export default {
   name: 'cart',
@@ -19,18 +20,13 @@ export default {
   },
   data() {
     return {
-      productsInCart: [
-        {
-          id: 1
-        },
-        {
-          id: 2
-        },
-        {
-          id: 3
-        }
-      ]
     }
+  },
+  computed: {
+    ...mapState(['cart'])
+  },
+  async created() {
+    await this.$store.dispatch('GET_CART')
   }
 }
 </script>
