@@ -3,7 +3,7 @@
     <img width="65px" height="65px" class="item-image" :src="item.imageObjects[0].small"/>
     <div class="info">
       <h4 class="item-name" v-excerpt="60">{{ item.name }}</h4>
-      <span class="item-price">{{ item.priceSpecification.price }}</span>
+      <span class="item-price">{{ item.priceSpecification.price | currency }}</span>
     </div>
   </div>
 </template>
