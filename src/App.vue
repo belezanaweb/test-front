@@ -24,6 +24,8 @@
           </li>
         </ul>
       </card>
+      
+      <checkout-button to='/'>SEGUIR PARA O PAGAMENTO</checkout-button>
     </section>
   </div>
 </template>
@@ -31,12 +33,14 @@
 <script>
 import Steps from './components/Steps'
 import Card from './components/ui/Card'
+import CheckoutButton from './components/CheckoutButton'
 
 export default {
   name: 'App',
   components: {
     Steps,
-    Card
+    Card,
+    CheckoutButton
   },
   data() {
     return {
@@ -112,4 +116,7 @@ h3
 .resume-container   
   padding 13px 
   padding-top 7px
+
+.checkout-button 
+  margin-top 20px
 </style>
