@@ -4,21 +4,24 @@
     <card class="payment-form" shadow>
       <div class="input-container">
         <form-input 
-          placeholder="____.____.____.____"
+          type="credit_card"
           label="Número do cartão:"
         ></form-input>
       </div>
       <div class="input-container">
         <form-input 
-          placeholder="____.____.____.____"
+          label="Nome do Titular:"
+          placeholder="Como no cartão"
         ></form-input>
       </div>
       <div class="input-container form-group">
         <form-input 
-          placeholder="____.____.____.____"
+          type="validity"
+          label="Validade (mês/ano):"
         ></form-input>
         <form-input 
-          placeholder="____.____.____.____"
+          type="cvv"
+          label="CVV:"
         ></form-input>
       </div>
     </card>
@@ -55,9 +58,13 @@ export default {
 .payment-form 
   background #fff
   padding 13px
+  padding-bottom 25px
 
 .input-container + .input-container
   margin-top 25px
+
+.form-input + .form-input
+  margin-left 20px
 
 .form-group 
   display flex
