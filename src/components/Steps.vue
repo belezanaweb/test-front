@@ -29,6 +29,7 @@ export default {
 .steps 
   box-shadow: 1px 1px 5px 0 rgba(0,0,29,0.22);
   padding 15px 10px
+  background #fff
 
 ul 
   display flex
