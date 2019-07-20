@@ -2,9 +2,8 @@
   <div id="app">
     <steps :items="checkoutSteps"></steps>
     <router-view class="router-view"/>
-
     <section class="resume-container">
-      <checkout-resume :items="checkoutResumeItems"></checkout-resume>
+      <checkout-resume :resume="checkoutResume"></checkout-resume>
       <checkout-button to='/'>SEGUIR PARA O PAGAMENTO</checkout-button>
     </section>
   </div>
@@ -15,6 +14,8 @@ import Steps from './components/Steps'
 import Card from './components/ui/Card'
 import CheckoutButton from './components/CheckoutButton'
 import CheckoutResume from './components/CheckoutResume'
+
+import { mapState, mapGetters } from "vuex";
 
 export default {
   name: 'App',
@@ -59,6 +60,9 @@ export default {
         }
       ]
     }
+  },
+  computed: {
+    ...mapGetters(['checkoutResume'])
   }
 }
 </script>

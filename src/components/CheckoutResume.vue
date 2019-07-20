@@ -1,13 +1,21 @@
 <template>
   <card class="checkout-resume" border>
     <ul>
-      <li 
-        v-for="(item, key) in items" 
-        :key="key" 
-        :class="{ discount: item.isDiscount }"
-      >
-        <span class="label">{{ item.label }}</span>
-        <span class="value">{{ item.value }}</span>
+      <li>
+        <span class="label">PRODUTOS</span>
+        <span class="value">{{ resume.subTotal | currency }}</span>
+      </li>
+      <li>
+        <span class="label">FRETE</span>
+        <span class="value">{{ resume.shippingTotal | currency }}</span>
+      </li>
+      <li class="discount">
+        <span class="label">DESCONTO</span>
+        <span class="value">- {{ resume.discount | currency }}</span>
+      </li>
+      <li>
+        <span class="label">TOTAL</span>
+        <span class="value">{{ resume.total | currency }}</span>
       </li>
     </ul>
   </card>
@@ -19,7 +27,7 @@ import Card from './ui/Card'
 export default {
   name: 'checkout-resume',
   props: {
-    items: Array
+    resume: Object
   },
   components: {
     Card

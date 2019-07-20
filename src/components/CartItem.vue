@@ -13,10 +13,6 @@ export default {
   name: 'cart-item',
   props: {
     item: Object
-  },
-  data() {
-    return {
-    }
   }
 }
 </script>

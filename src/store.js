@@ -30,5 +30,15 @@ export default new Vuex.Store({
         console.error(e)
       }
     }
+  },
+  getters: {
+    checkoutResume({ cart }) {
+      return {
+        subTotal: cart.subTotal,
+        shippingTotal: cart.shippingTotal,
+        discount: cart.discount,
+        total: cart.total,
+      }
+    }
   }
 })
