@@ -1,25 +1,25 @@
 <template>
-  <div class="bag">
+  <div class="cart">
     <h3>Produtos</h3>
     <card shadow>
-      <bag-list :products="productsInBag"></bag-list>
+      <cart-list :products="productsInCart"></cart-list>
     </card>
   </div>
 </template>
 
 <script>
-import BagList from '../components/BagList'
+import CartList from '../components/CartList'
 import Card from '../components/ui/Card'
 
 export default {
-  name: 'bag',
+  name: 'cart',
   components: {
-    BagList,
+    CartList,
     Card
   },
   data() {
     return {
-      productsInBag: [
+      productsInCart: [
         {
           id: 1
         },

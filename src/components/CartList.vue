@@ -1,23 +1,23 @@
 <template>
-  <div class="bag-list">
-    <bag-item 
+  <div class="cart-list">
+    <cart-item 
       v-for="(product, key) in products" 
       :key="key"
       :item="product"
-    ></bag-item>
+    ></cart-item>
   </div>
 </template>
 
 <script>
-import BagItem from './BagItem'
+import CartItem from './CartItem'
 
 export default {
-  name: 'bag-list',
+  name: 'cart-list',
   props: {
     products: Array
   },
   components: {
-    BagItem,
+    CartItem,
   },
   data() {
     return {
@@ -27,10 +27,10 @@ export default {
 </script>
 
 <style lang="stylus">
-.bag-list 
+.cart-list 
   background #fff
   padding 13px
 
-.bag-item + .bag-item 
+.cart-item + .cart-item 
   margin-top 15px
 </style>
