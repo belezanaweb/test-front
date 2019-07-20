@@ -28,6 +28,10 @@ export default {
   border-radius 3px
   display flex
 
+.info 
+  display flex
+  flex-direction column
+
 .item-image 
   min-height 65px
   min-width 65px
@@ -45,4 +49,5 @@ export default {
   color: #212122
   font-size 14px
   font-weight bold
+  align-self flex-end
 </style>
