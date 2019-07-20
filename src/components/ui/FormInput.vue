@@ -1,7 +1,7 @@
 <template>
   <div class="form-input">
     <label :for="name">{{ label }}</label>
-    <input :type="type" :name="name" :placeholder="placeholder"/>
+    <input :type="computedInputType" :name="name" :placeholder="computedPlaceholder"/>
   </div>
 </template>
 
@@ -17,20 +17,37 @@ export default {
   },
   data() {
     return {
-      input_types: {
-        credit_cart: {
+      inputTypes: {
+        credit_card: {
           validation: 'credit_cart',
-          placeholder: 'Número do cartão:',
+          placeholder: '____.____.____.____',
+          type: 'text'
         },
         cvv: {
           validation: 'digits:3',
           placeholder: '___',
+          type: 'text'
         },
         validity: {
           validation: 'date_format:MM/yyyy',
           placeholder: '__/____',
+          type: 'text'
         }
       }
+    }
+  },
+  computed: {
+    typeData() {
+      return this.inputTypes[this.type]
+    },
+    computedPlaceholder() {
+      return this.typeData ? this.typeData.placeholder : this.placeholder
+    },
+    computedValidation() {
+      return this.typeData ? this.typeData.validation : this.validation
+    },
+    computedInputType() {
+      return this.typeData ? this.typeData.type : this.type
     }
   }
 }

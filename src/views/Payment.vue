@@ -4,7 +4,7 @@
     <card class="payment-form" shadow>
       <div class="input-container">
         <form-input 
-          placeholder="____.____.____.____"
+          type="credit_card"
           label="Número do cartão:"
         ></form-input>
       </div>
@@ -16,12 +16,12 @@
       </div>
       <div class="input-container form-group">
         <form-input 
-          placeholder="__/____"
+          type="validity"
           label="Validade (mês/ano):"
         ></form-input>
         <form-input 
+          type="cvv"
           label="CVV:"
-          placeholder="___"
         ></form-input>
       </div>
     </card>
