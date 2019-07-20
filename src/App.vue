@@ -63,6 +63,9 @@ export default {
   },
   computed: {
     ...mapGetters(['checkoutResume'])
+  },
+  async created() {
+    await this.$store.dispatch('GET_CART')
   }
 }
 </script>
