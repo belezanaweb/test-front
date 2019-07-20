@@ -27,9 +27,8 @@ input
   background-color #FFF
   border 1px solid #E7E7E7
   box-shadow inset 0 1px 2px 0 rgba(0, 0, 0, 0.2)
-
+  padding 15px 13px
   
-
 label 
   font-size 12px
   color #CCC

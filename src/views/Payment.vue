@@ -63,6 +63,9 @@ export default {
 .input-container + .input-container
   margin-top 25px
 
+.form-input + .form-input
+  margin-left 20px
+
 .form-group 
   display flex
   justify-content space-between
