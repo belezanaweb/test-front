@@ -6,22 +6,27 @@
         <form-input 
           type="credit_card"
           label="Número do cartão:"
+          name="credit_card"
         ></form-input>
       </div>
       <div class="input-container">
         <form-input 
           label="Nome do Titular:"
           placeholder="Como no cartão"
+          name="titular_name"
+          validation="required"
         ></form-input>
       </div>
       <div class="input-container form-group">
         <form-input 
           type="validity"
           label="Validade (mês/ano):"
+          name="card_validity"
         ></form-input>
         <form-input 
           type="cvv"
           label="CVV:"
+          name="card_cvv"
         ></form-input>
       </div>
     </card>

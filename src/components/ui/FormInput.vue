@@ -1,11 +1,21 @@
 <template>
   <div class="form-input">
     <label :for="name">{{ label }}</label>
-    <input :type="computedInputType" :name="name" :placeholder="computedPlaceholder"/>
+    <input 
+      :type="computedInputType" 
+      :name="name" 
+      :placeholder="computedPlaceholder"
+      v-validate="computedValidation"
+      :class="{
+        'required': isRequired,
+      }"
+    />
   </div>
 </template>
 
 <script>
+import { mapFields } from 'vee-validate'
+
 export default {
   name: 'form-input',
   props: {
@@ -19,17 +29,17 @@ export default {
     return {
       inputTypes: {
         credit_card: {
-          validation: 'credit_cart',
+          validation: 'required|credit_card',
           placeholder: '____.____.____.____',
           type: 'text'
         },
         cvv: {
-          validation: 'digits:3',
+          validation: 'required|digits:3',
           placeholder: '___',
           type: 'text'
         },
         validity: {
-          validation: 'date_format:MM/yyyy',
+          validation: 'required|date_format:MM/yyyy',
           placeholder: '__/____',
           type: 'text'
         }
@@ -37,6 +47,7 @@ export default {
     }
   },
   computed: {
+    ...mapFields([ name ]),
     typeData() {
       return this.inputTypes[this.type]
     },
@@ -48,6 +59,13 @@ export default {
     },
     computedInputType() {
       return this.typeData ? this.typeData.type : this.type
+    },
+    isRequired() {
+      return this.fields[this.name] && (
+        this.fields[this.name].required 
+        && this.fields[this.name].touched
+        && !this.fields[this.name].valid
+      ) 
     }
   }
 }
@@ -63,6 +81,10 @@ input
   border 1px solid #E7E7E7
   box-shadow inset 0 1px 2px 0 rgba(0, 0, 0, 0.2)
   padding 15px 13px 12px 13px
+  outline none
+
+  &:focus 
+    border 1px solid #A43287
 
 ::placeholder 
   color: #E0E7EE;
@@ -78,4 +100,7 @@ label
   
   + input 
     margin-top 5px
+  
+.invalid, .required
+  border 1px solid red
 </style>

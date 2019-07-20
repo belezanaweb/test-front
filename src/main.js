@@ -20,8 +20,9 @@ Vue.use(VueCurrencyFilter, {
   symbolSpacing: true
 })
 
-
-Vue.use(VeeValidate);
+Vue.use(VeeValidate, {
+  classes: true
+});
 
 Vue.config.productionTip = false
 
