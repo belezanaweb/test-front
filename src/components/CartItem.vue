@@ -1,9 +1,9 @@
 <template>
   <div class="cart-item">
-    <div class="item-image"></div>
+    <img width="65px" height="65px" class="item-image" :src="item.imageObjects[0].small"/>
     <div class="info">
-      <h4 class="item-name">L'Oréal Professionnel Expert Absolut Repair Cortex Lipidium</h4>
-      <span class="item-price">R$ 225,90</span>
+      <h4 class="item-name">{{ item.name }}</h4>
+      <span class="item-price">{{ item.priceSpecification.price }}</span>
     </div>
   </div>
 </template>
@@ -33,8 +33,6 @@ export default {
   flex-direction column
 
 .item-image 
-  min-height 65px
-  min-width 65px
   margin-right 11px
 
 .item-name 
