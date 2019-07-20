@@ -1,8 +1,11 @@
 <template>
   <div class="bag">
     <h3>Produtos</h3>
-    <card>
+    <card shadow>
       <bag-list :products="productsInBag"></bag-list>
+    </card>
+
+    <card border>
     </card>
   </div>
 </template>
@@ -36,4 +39,6 @@ export default {
 </script>
 
 <style lang="stylus">
+.card + .card
+  margin-top 20px
 </style>
