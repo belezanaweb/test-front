@@ -10,6 +10,7 @@
         'required': isRequired,
       }"
     />
+    <span class="error-message">{{ errorMessage }}</span>
   </div>
 </template>
 
@@ -34,7 +35,7 @@ export default {
           type: 'text'
         },
         cvv: {
-          validation: 'required|digits:3',
+          validation: 'required|numeric|digits:3',
           placeholder: '___',
           type: 'text'
         },
@@ -60,14 +61,31 @@ export default {
     computedInputType() {
       return this.typeData ? this.typeData.type : this.type
     },
+    fildToValidate() {
+      return this.fields[this.name]
+    },
+    isTouched() {
+      return this.fildToValidate && this.fildToValidate.touched
+    },
+    isChanged() {
+      return this.fildToValidate && this.fildToValidate.changed
+    },
+    isInvalid() {
+      return this.fildToValidate && this.fildToValidate.invalid
+    },
     isRequired() {
-      return this.fields[this.name] && (
-        this.fields[this.name].required 
-        && this.fields[this.name].touched
-        && !this.fields[this.name].valid
-      ) 
+      return this.isTouched && this.fildToValidate.required
+    },
+    errorMessage() {
+      if (this.isRequired && !this.isChanged) {
+        return 'Este campo é obrigatório'
+      }
+
+      if (this.isInvalid && this.isTouched) {
+        return 'Valor inválido'
+      }
     }
-  }
+  } 
 }
 </script>
 
@@ -103,4 +121,8 @@ label
   
 .invalid, .required
   border 1px solid red
+
+.error-message 
+  font-size 12px
+  color #F30
 </style>
