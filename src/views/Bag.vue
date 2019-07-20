@@ -1,17 +1,24 @@
 <template>
   <div class="bag">
     <h3>Produtos</h3>
-    <bag-list :products="productsInBag"></bag-list>
+    <card shadow>
+      <bag-list :products="productsInBag"></bag-list>
+    </card>
+
+    <card border>
+    </card>
   </div>
 </template>
 
 <script>
 import BagList from '../components/BagList'
+import Card from '../components/ui/Card'
 
 export default {
   name: 'bag',
   components: {
-    BagList
+    BagList,
+    Card
   },
   data() {
     return {
@@ -32,4 +39,6 @@ export default {
 </script>
 
 <style lang="stylus">
+.card + .card
+  margin-top 20px
 </style>

@@ -1,6 +1,10 @@
 <template>
   <div class="bag-item">
-    {{ item }}
+    <div class="item-image"></div>
+    <div class="info">
+      <h4 class="item-name">L'Oréal Professionnel Expert Absolut Repair Cortex Lipidium</h4>
+      <span class="item-price">R$ 225,90</span>
+    </div>
   </div>
 </template>
 
@@ -19,7 +23,31 @@ export default {
 
 <style lang="stylus">
 .bag-item 
-  border 1px solid #ddd
+  border: 1px solid #EEE;
   padding 12px 10px 14px 10px
   border-radius 3px
+  display flex
+
+.info 
+  display flex
+  flex-direction column
+
+.item-image 
+  min-height 65px
+  min-width 65px
+  margin-right 11px
+
+.item-name 
+  color #212122
+  font-size 13px
+  font-weight 400
+  margin 0
+  padding 0
+  margin-bottom 15px
+
+.item-price
+  color: #212122
+  font-size 14px
+  font-weight bold
+  align-self flex-end
 </style>
