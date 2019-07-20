@@ -1,5 +1,5 @@
 <template>
-  <div class="bag-item">
+  <div class="cart-item">
     <div class="item-image"></div>
     <div class="info">
       <h4 class="item-name">L'Oréal Professionnel Expert Absolut Repair Cortex Lipidium</h4>
@@ -10,7 +10,7 @@
 
 <script>
 export default {
-  name: 'bag-item',
+  name: 'cart-item',
   props: {
     item: Object
   },
@@ -22,7 +22,7 @@ export default {
 </script>
 
 <style lang="stylus">
-.bag-item 
+.cart-item 
   border: 1px solid #EEE;
   padding 12px 10px 14px 10px
   border-radius 3px
