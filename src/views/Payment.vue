@@ -11,17 +11,17 @@
       <div class="input-container">
         <form-input 
           label="Nome do Titular:"
-          placeholder="____.____.____.____"
+          placeholder="Como no cartão"
         ></form-input>
       </div>
       <div class="input-container form-group">
         <form-input 
-          placeholder="____.____.____.____"
+          placeholder="__/____"
           label="Validade (mês/ano):"
         ></form-input>
         <form-input 
-          label="CVV"
-          placeholder="____.____.____.____"
+          label="CVV:"
+          placeholder="___"
         ></form-input>
       </div>
     </card>
