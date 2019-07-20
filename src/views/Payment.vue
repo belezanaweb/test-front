@@ -3,14 +3,23 @@
     <h3>Cartão de crédito</h3>
     <card class="payment-form" shadow>
       <div class="input-container">
-        <form-input placeholder="____.____.____.____"></form-input>
+        <form-input 
+          placeholder="____.____.____.____"
+          label="Número do cartão:"
+        ></form-input>
       </div>
       <div class="input-container">
-        <form-input placeholder="____.____.____.____"></form-input>
+        <form-input 
+          placeholder="____.____.____.____"
+        ></form-input>
       </div>
       <div class="input-container form-group">
-        <form-input placeholder="____.____.____.____"></form-input>
-        <form-input placeholder="____.____.____.____"></form-input>
+        <form-input 
+          placeholder="____.____.____.____"
+        ></form-input>
+        <form-input 
+          placeholder="____.____.____.____"
+        ></form-input>
       </div>
     </card>
   </div>
@@ -48,7 +57,7 @@ export default {
   padding 13px
 
 .input-container + .input-container
-  margin-top 10px
+  margin-top 25px
 
 .form-group 
   display flex

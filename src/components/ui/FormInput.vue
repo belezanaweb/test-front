@@ -1,5 +1,6 @@
 <template>
   <div class="form-input">
+    <label :for="name">{{ label }}</label>
     <input :type="type" :name="name" :placeholder="placeholder"/>
   </div>
 </template>
@@ -11,7 +12,8 @@ export default {
     type: String,
     name: String,
     validation: String,
-    placeholder: String
+    placeholder: String,
+    label: String
   }
 }
 </script>
@@ -26,4 +28,14 @@ input
   border 1px solid #E7E7E7
   box-shadow inset 0 1px 2px 0 rgba(0, 0, 0, 0.2)
 
+  
+
+label 
+  font-size 12px
+  color #CCC
+  line-height 14px
+  font-weight bold
+  
+  + input 
+    margin-top 5px
 </style>
