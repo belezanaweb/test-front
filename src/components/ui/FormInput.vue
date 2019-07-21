@@ -1,21 +1,28 @@
 <template>
   <div class="form-input">
     <label :for="name">{{ label }}</label>
-    <input 
-      :type="computedInputType" 
-      :name="name" 
-      :placeholder="computedPlaceholder"
-      v-validate="computedValidation"
-      :class="{
-        'required': isRequired,
-      }"
-    />
+    <ValidationProvider :rules="computedValidation">
+      <input 
+        :type="computedInputType" 
+        :name="name" 
+        :placeholder="computedPlaceholder"
+        :value="value"
+        :class="{ 'required': isRequired }"
+        @input="updateValue" 
+        @change="updateValue"
+        @blur="$emit('blur')"
+        v-model="fieldValue"
+        v-validate="computedValidation"
+        ref="input"
+      />
+    </ValidationProvider>
+    
     <span class="error-message">{{ errorMessage }}</span>
   </div>
 </template>
 
 <script>
-import { mapFields } from 'vee-validate'
+import { mapFields, ValidationProvider } from 'vee-validate'
 
 export default {
   name: 'form-input',
@@ -24,10 +31,30 @@ export default {
     name: String,
     validation: String,
     placeholder: String,
-    label: String
+    label: String,
+    value: {
+      type: null,
+      default: null
+    },
+    error: {
+      type: String,
+      default: null
+    }
+  },
+  $_veeValidate: {
+    value() {
+      return this.$el.value;
+    },
+    name() {
+      return this.name;
+    }
+  },
+  components: {
+    ValidationProvider
   },
   data() {
     return {
+      fieldValue: null,
       inputTypes: {
         credit_card: {
           validation: 'required|credit_card',
@@ -42,6 +69,10 @@ export default {
         validity: {
           validation: 'required|date_format:MM/yyyy',
           placeholder: '__/____',
+          type: 'text'
+        },
+        name: {
+          validation: 'required|alpha',
           type: 'text'
         }
       }
@@ -85,7 +116,15 @@ export default {
         return 'Valor inválido'
       }
     }
-  } 
+  },
+  mounted() {
+    this.$refs.input.value = this.value
+  },
+  methods: {
+    updateValue(e) {
+      this.$emit("input", e.target.value);
+    }
+  }
 }
 </script>
 
