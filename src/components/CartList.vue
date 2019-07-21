@@ -4,6 +4,7 @@
       v-for="(item, key) in products" 
       :key="key"
       :item="item.product"
+      :small="small"
     ></cart-item>
   </div>
 </template>
@@ -14,7 +15,8 @@ import CartItem from './CartItem'
 export default {
   name: 'cart-list',
   props: {
-    products: Array
+    products: Array,
+    small: Boolean
   },
   components: {
     CartItem,

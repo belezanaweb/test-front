@@ -1,8 +1,8 @@
 <template>
-  <div class="cart">
+  <div class="confirmation">
     <h3>Produtos</h3>
     <card shadow>
-      <cart-list :products="cart.items"></cart-list>
+      <cart-list :products="cart.items" small></cart-list>
     </card>
   </div>
 </template>
@@ -13,7 +13,7 @@ import Card from '../components/ui/Card'
 import { mapState } from "vuex"
 
 export default {
-  name: 'cart',
+  name: 'confirmation',
   components: {
     CartList,
     Card
