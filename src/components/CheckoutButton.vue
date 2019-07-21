@@ -1,8 +1,11 @@
 <template>
   <div class="checkout-button">
-    <router-link :disabled="disabled" tag="button" :to="to">
+    <router-link v-if="to" :disabled="disabled" tag="button" :to="to">
       <slot></slot>
     </router-link>
+    <button v-else :disabled="disabled" tag="button">
+      <slot></slot>
+    </button>
   </div>
 </template>
 
