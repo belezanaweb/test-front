@@ -14,6 +14,10 @@
       class="item-image" 
       :src="item.imageObjects[0].small"
     />
+    <img 
+      class="item-image responsive" 
+      :src="item.imageObjects[0].small"
+    />
     <div class="info">
       <h4 class="item-name" v-excerpt="60">{{ item.name }}</h4>
       <span v-if="!small" class="item-price">{{ item.priceSpecification.price | currency }}</span>
@@ -65,4 +69,24 @@ export default {
   font-size 14px
   font-weight bold
   align-self flex-end
+
+@media screen and (min-width 1080px)
+  .cart-item
+    padding 10px 10px 10px 0px
+    .info 
+      width 100%
+      margin-top 20px
+  
+  .item-image
+    display none
+    min-width auto
+  
+  .responsive
+    display block
+
+  .item-name
+    font-size 0.875rem
+  
+  .item-price
+    align-self flex-start
 </style>
