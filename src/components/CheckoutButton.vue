@@ -18,7 +18,7 @@ export default {
 }
 </script>
 
-<style lang="stylus">
+<style lang="stylus" scoped>
 button
   height 60px
   width 100%
