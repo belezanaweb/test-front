@@ -13,11 +13,20 @@ export default new Vuex.Store({
       shippingTotal: 0,
       discount: 0,
       total: 0
+    },
+    payment: {
+      creditCardNumber: null,
+      cvv: null,
+      validity: null,
+      holderName: null
     }
   },
   mutations: {
     SET_CART(state, { cart }) {
       state.cart = cart
+    },
+    SET_PAYMENT_DATA(state, { payment }) {
+      state.payment = payment
     }
   },
   actions: {
@@ -29,6 +38,9 @@ export default new Vuex.Store({
       } catch (e) {
         console.error(e)
       }
+    },
+    async UPDATE_PAYMENT({ commit }, { payment }) {
+      commit('SET_PAYMENT', { payment })
     }
   },
   getters: {

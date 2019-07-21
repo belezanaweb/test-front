@@ -18,9 +18,9 @@
             type="name"
             label="Nome do Titular:"
             placeholder="Como no cartão"
-            name="titular_name"
+            name="holder_name"
             v-validate="'required|alpha'"
-            v-model="payment.titularName"
+            v-model="payment.holderName"
           ></form-input>
         </div>
 
@@ -68,7 +68,7 @@ export default {
         creditCardNumber: null,
         cvv: null,
         validity: null,
-        titularName: null,
+        holderName: null
       }
     }
   },
@@ -76,10 +76,12 @@ export default {
     ...mapState(['cart'])
   },
   methods: {
-    submit(a) {
-      this.$validator.validate().then((valid) => {
-        console.log(valid)
-      })
+    async submit(a) {
+      const isValid = this.$validator.validate()
+      
+      if (isValid) {
+        this.$store.dispatch('UPDATE_PAYMENT', { payment: this.payment })
+      }
     }
   }
 }
