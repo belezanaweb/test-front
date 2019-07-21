@@ -33,7 +33,7 @@
       />
     </ValidationProvider>
     
-    <span class="error-message">{{ errorMessage }}</span>
+    <div class="error-message">{{ errorMessage }}</div>
   </div>
 </template>
 
@@ -175,8 +175,15 @@ label
   line-height 14px
   font-weight bold
   
-  + input 
+  + span input 
     margin-top 5px
+  
+  @media screen and (min-width 1080px)
+    font-size 14px
+    color #717171
+
+    + span input 
+      margin-top 10px
   
 .invalid, .required
   border 1px solid red
@@ -184,4 +191,6 @@ label
 .error-message 
   font-size 12px
   color #F30
+  height 15px
+  margin-top 2px
 </style>

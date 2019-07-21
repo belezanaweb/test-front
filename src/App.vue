@@ -76,7 +76,9 @@ export default {
     
     .container 
       display flex
-      padding 10px 200px
+      margin 50px 200px 20px 200px
+      border-radius 3px
+      padding 0px 20px 40px 20px
 
     .router-view 
       flex 1
@@ -85,6 +87,18 @@ export default {
     .resume-container
       margin-top 67px
       min-width 360px
+
+    .confirmation
+      margin-top 50px
+
+      + .resume-container
+        margin-top 117px
+
+    .confirmation-message
+      position absolute
+      left 0
+      right 0
+      top 5rem
 
 body 
   margin 0

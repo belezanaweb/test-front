@@ -109,10 +109,12 @@ export default {
 .payment-form 
   background #fff
   padding 13px
-  padding-bottom 25px
 
 .input-container + .input-container
-  margin-top 25px
+  margin-top 10px
+
+  @media screen and (min-width 1080px)
+    margin-top 15px
 
 .form-input + .form-input
   margin-left 20px
@@ -123,4 +125,9 @@ export default {
 
 .credit-card-cvv
   min-width 140px
+
+@media screen and (min-width 1080px)
+  .form-group div
+    width 50%
+    max-width 50%
 </style>

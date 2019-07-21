@@ -70,12 +70,18 @@ export default {
   font-weight bold
   align-self flex-end
 
+.responsive
+  display none
+
 @media screen and (min-width 1080px)
   .cart-item
     padding 10px 10px 10px 0px
     .info 
       width 100%
       margin-top 20px
+    
+    &.small
+      max-height 100px
   
   .item-image
     display none
