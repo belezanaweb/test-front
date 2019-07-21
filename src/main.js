@@ -12,6 +12,10 @@ import './registerServiceWorker'
 // Directives
 import './directives'
 
+import routerMiddleware from './router/middleware'
+
+routerMiddleware({ router, store })
+
 Vue.use(VueCurrencyFilter, {
   symbol : 'R$',
   thousandsSeparator: '.',

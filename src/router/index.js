@@ -10,12 +10,12 @@ export default new Router({
     {
       path: '/',
       name: 'cart',
-      component: () => import(/* webpackChunkName: "cart" */ './views/Cart.vue')
+      component: () => import(/* webpackChunkName: "cart" */ './../views/Cart.vue')
     },
     {
       path: '/payment',
       name: 'payment',
-      component: () => import(/* webpackChunkName: "payment" */ './views/Payment.vue')
+      component: () => import(/* webpackChunkName: "payment" */ './../views/Payment.vue')
     },
     {
       path: '/confirmation',
@@ -23,7 +23,7 @@ export default new Router({
       meta: {
         paymentIsValid: true
       },
-      component: () => import(/* webpackChunkName: "confirmation" */ './views/Confirmation.vue')
+      component: () => import(/* webpackChunkName: "confirmation" */ './../views/Confirmation.vue')
     }
   ]
 })
