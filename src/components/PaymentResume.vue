@@ -1,7 +1,7 @@
 <template>
   <card class="payment-resume" shadow>
     <ul>
-      <li>
+      <li v-hide-digits>
        {{ resume.creditCardNumber }}
       </li>
       <li>
