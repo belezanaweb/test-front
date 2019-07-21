@@ -15,10 +15,10 @@ export default new Vuex.Store({
       total: 0
     },
     payment: {
-      creditCardNumber: null,
+      creditCardNumber: '5424 6812 1309 0412',
       cvv: null,
-      validity: null,
-      holderName: null
+      validity: '05/2019',
+      holderName: 'Gabriel Bibiano'
     },
     paymentFormIsValid: false
   },

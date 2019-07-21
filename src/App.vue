@@ -89,6 +89,7 @@ h3
   padding 0
   margin-bottom 5px
   margin-left 11px
+  margin-top 15px
 
 .resume-container   
   padding 13px 
