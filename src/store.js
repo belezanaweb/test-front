@@ -19,7 +19,8 @@ export default new Vuex.Store({
       cvv: null,
       validity: null,
       holderName: null
-    }
+    },
+    paymentFormIsValid: false
   },
   mutations: {
     SET_CART(state, { cart }) {
@@ -27,6 +28,9 @@ export default new Vuex.Store({
     },
     SET_PAYMENT_DATA(state, { payment }) {
       state.payment = payment
+    },
+    SET_PAYMENT_FORM_VALIDATION(state, { isValid }) {
+      state.paymentFormIsValid = isValid
     }
   },
   actions: {
@@ -41,6 +45,9 @@ export default new Vuex.Store({
     },
     async UPDATE_PAYMENT({ commit }, { payment }) {
       commit('SET_PAYMENT', { payment })
+    },
+    async UPDATE_PAYMENT_FORM_VALIDATION({ commit }, { isValid }) {
+      commit('SET_PAYMENT_FORM_VALIDATION', { isValid })
     }
   },
   getters: {
