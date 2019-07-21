@@ -26,7 +26,7 @@ import Card from './components/ui/Card'
 import CheckoutButton from './components/CheckoutButton'
 import CheckoutResume from './components/CheckoutResume'
 
-import { mapState, mapGetters } from "vuex";
+import { mapState, mapGetters } from "vuex"
 
 export default {
   name: 'App',

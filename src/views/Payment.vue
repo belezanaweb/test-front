@@ -69,11 +69,16 @@ export default {
         cvv: null,
         validity: null,
         holderName: null
-      }
+      },
     }
   },
-  computed: {
-    ...mapState(['cart'])
+  mounted() {
+    this.$watch(
+      _ => this.$refs.observer.ctx.valid,
+      isValid => {
+        this.$store.dispatch('UPDATE_PAYMENT_FORM_VALIDATION', { isValid })
+      }
+    )
   },
   methods: {
     async submit(a) {
@@ -87,7 +92,7 @@ export default {
 }
 </script>
 
-<style lang="stylus">
+<style lang="stylus" scoped>
 .card + .card
   margin-top 20px
 
@@ -107,5 +112,5 @@ export default {
   justify-content space-between
 
 .credit-card-cvv
-  width 230px
+  min-width 140px
 </style>
