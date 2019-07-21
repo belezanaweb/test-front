@@ -1,5 +1,5 @@
 export default {
   bind(el, binding) {
-    el.innerText = `${el.innerText.replace(/\d(?=\d{4})/g, "*")}`
+    el.innerHtml = `${el.innerText.replace(/\d(?=\d{4})/g, "*")}`
   }
 }
