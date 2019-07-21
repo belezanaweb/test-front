@@ -34,7 +34,7 @@ button
   text-align center
   border none
   
-  &:disabled
+  &:disabled, &:hover
     background-color #D45A00
     box-shadow none
 </style>
