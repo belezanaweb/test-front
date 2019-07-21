@@ -7,6 +7,8 @@ import VueCurrencyFilter from 'vue-currency-filter'
 import VeeValidate from 'vee-validate'
 import VueTheMask from 'vue-the-mask'
 
+import eventbus from './eventbus'
+
 import './registerServiceWorker'
 
 // Directives
@@ -14,7 +16,10 @@ import './directives'
 
 import routerMiddleware from './router/middleware'
 
+// Router middleware
 routerMiddleware({ router, store })
+
+Vue.use(eventbus)
 
 Vue.use(VueCurrencyFilter, {
   symbol : 'R$',
