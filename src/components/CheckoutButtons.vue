@@ -10,6 +10,7 @@
       v-if="$route.path === '/payment'" 
       to='/confirmation'
       :disabled="!paymentFormIsValid"
+      @click.native="handlePayementClick"
     >
       FINALIZAR O PEDIDO
     </checkout-button>
@@ -29,6 +30,11 @@ export default {
   computed: {
     ...mapState(['paymentFormIsValid']),
     ...mapGetters(['checkoutResume'])
+  },
+  methods: {
+    handlePayementClick() {
+      this.$eventBus.$emit('jump-to-confirmation')
+    }
   }
 }
 </script>

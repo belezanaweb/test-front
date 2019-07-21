@@ -46,7 +46,6 @@ export default {
     }
   },
   computed: {
-    ...mapState(['paymentFormIsValid']),
     ...mapGetters(['checkoutResume'])
   },
   async created() {

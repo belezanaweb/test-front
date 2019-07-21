@@ -75,6 +75,9 @@ export default {
   },
   created() {
     this.$store.dispatch('UPDATE_PAYMENT_FORM_VALIDATION', { isValid: false })
+    this.$eventBus.$on('jump-to-confirmation', _ => {
+      this.handleSubmit()
+    })
   },
   mounted() {
     this.$watch(
@@ -85,7 +88,7 @@ export default {
     )
   },
   methods: {
-    async handleSubmit(a) {
+    async handleSubmit() {
       const isValid = this.$validator.validate()
       
       if (isValid) {

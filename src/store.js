@@ -44,7 +44,7 @@ export default new Vuex.Store({
       }
     },
     UPDATE_PAYMENT({ commit }, { payment }) {
-      commit('SET_PAYMENT', { payment })
+      commit('SET_PAYMENT_DATA', { payment })
     },
     UPDATE_PAYMENT_FORM_VALIDATION({ commit }, { isValid }) {
       commit('SET_PAYMENT_FORM_VALIDATION', { isValid })
