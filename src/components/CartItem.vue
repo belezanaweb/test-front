@@ -75,13 +75,20 @@ export default {
 
 @media screen and (min-width 1080px)
   .cart-item
-    padding 10px 10px 10px 0px
+    padding 10px 10px 10px 10px
+
     .info 
       width 100%
       margin-top 20px
     
     &.small
       max-height 100px
+
+      .small 
+        display block
+
+      .responsive
+        display none
   
   .item-image
     display none
