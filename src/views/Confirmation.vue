@@ -21,7 +21,6 @@ import Card from '../components/ui/Card'
 import PaymentResume from '../components/PaymentResume'
 import { mapState } from "vuex"
 
-
 export default {
   name: 'confirmation',
   components: {

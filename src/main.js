@@ -4,7 +4,8 @@ import router from './router'
 import store from './store'
 
 import VueCurrencyFilter from 'vue-currency-filter'
-import VeeValidate from 'vee-validate';
+import VeeValidate from 'vee-validate'
+import VueTheMask from 'vue-the-mask'
 
 import './registerServiceWorker'
 
@@ -23,6 +24,8 @@ Vue.use(VueCurrencyFilter, {
 Vue.use(VeeValidate, {
   classes: true
 });
+
+Vue.use(VueTheMask, { masked : false })
 
 Vue.config.productionTip = false
 
