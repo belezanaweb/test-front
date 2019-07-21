@@ -1,10 +1,12 @@
 <template>
   <div id="app">
     <steps :items="checkoutSteps"></steps>
-    <router-view class="router-view"/>
-    <section class="resume-container">
-      <checkout-resume :resume="checkoutResume"></checkout-resume>
-      <checkout-buttons></checkout-buttons>
+    <section class="container">
+      <router-view class="router-view"/>
+      <section class="resume-container">
+        <checkout-resume :resume="checkoutResume"></checkout-resume>
+        <checkout-buttons></checkout-buttons>
+      </section>
     </section>
   </div>
 </template>
@@ -62,6 +64,25 @@ export default {
   color #2c3e50
   background #EEE
   min-height 115vh
+
+  @media screen and (min-width 1080px)
+    padding 40px 100px
+    display flex
+    flex-direction column
+
+    .steps 
+      flex 3
+      max-height 20px
+    
+    .container 
+      display flex
+
+    .router-view 
+      flex 1
+
+    .resume-container
+      margin-top 30px
+      min-width 360px
 
 body 
   margin 0
