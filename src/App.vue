@@ -79,9 +79,10 @@ export default {
 
     .router-view 
       flex 1
+      padding 0px
 
     .resume-container
-      margin-top 30px
+      margin-top 67px
       min-width 360px
 
 body 
@@ -100,6 +101,10 @@ h3
   margin-bottom 5px
   margin-left 11px
   margin-top 15px
+
+  @media screen and (min-width 1080px)
+    font-size 20px
+    margin 30px 0px 20px
 
 .resume-container   
   padding 13px 
