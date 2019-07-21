@@ -50,7 +50,7 @@ export default {
         },
         { 
           label: 'Confirmação',
-          to: '/confimation'
+          to: '/confirmation'
         }
       ],
     }
@@ -79,7 +79,7 @@ body
   padding 0
 
 .router-view 
-  padding 13px 
+  padding 0 13px 13px 13px 
 
 h3 
   color #999
