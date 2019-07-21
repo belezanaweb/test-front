@@ -20,6 +20,9 @@ export default new Router({
     {
       path: '/confirmation',
       name: 'confirmation',
+      meta: {
+        paymentIsValid: true
+      },
       component: () => import(/* webpackChunkName: "confirmation" */ './views/Confirmation.vue')
     }
   ]
