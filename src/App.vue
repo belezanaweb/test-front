@@ -4,19 +4,7 @@
     <router-view class="router-view"/>
     <section class="resume-container">
       <checkout-resume :resume="checkoutResume"></checkout-resume>
-      <checkout-button 
-        v-if="$route.path === '/'" 
-        to='/payment'
-      >
-        SEGUIR PARA O PAGAMENTO
-      </checkout-button>
-      <checkout-button 
-        v-if="$route.path === '/payment'" 
-        to='/confirmation'
-        :disabled="!paymentFormIsValid"
-      >
-        FINALIZAR O PEDIDO
-      </checkout-button>
+      <checkout-buttons></checkout-buttons>
     </section>
   </div>
 </template>
@@ -26,6 +14,7 @@ import Steps from './components/Steps'
 import Card from './components/ui/Card'
 import CheckoutButton from './components/CheckoutButton'
 import CheckoutResume from './components/CheckoutResume'
+import CheckoutButtons from './components/CheckoutButtons'
 
 import { mapState, mapGetters } from "vuex"
 
@@ -35,7 +24,8 @@ export default {
     Steps,
     Card,
     CheckoutButton,
-    CheckoutResume
+    CheckoutResume,
+    CheckoutButtons
   },
   data() {
     return {
@@ -56,7 +46,6 @@ export default {
     }
   },
   computed: {
-    ...mapState(['paymentFormIsValid']),
     ...mapGetters(['checkoutResume'])
   },
   async created() {

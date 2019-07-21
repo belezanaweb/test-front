@@ -32,6 +32,7 @@
             name="card_validity"
             v-validate="'required|date_format:MM/yyyy'"
             v-model="payment.validity"
+            mask="##/####"
           ></form-input>
           <form-input 
             type="cvv"
@@ -40,6 +41,7 @@
             class="credit-card-cvv"
             v-validate="'required|numeric|digits:3'"
             v-model="payment.cvv"
+            mask="###"
           ></form-input>
         </div>
       </ValidationObserver>
@@ -75,6 +77,9 @@ export default {
   },
   created() {
     this.$store.dispatch('UPDATE_PAYMENT_FORM_VALIDATION', { isValid: false })
+    this.$eventBus.$on('jump-to-confirmation', _ => {
+      this.handleSubmit()
+    })
   },
   mounted() {
     this.$watch(
@@ -85,7 +90,7 @@ export default {
     )
   },
   methods: {
-    async handleSubmit(a) {
+    async handleSubmit() {
       const isValid = this.$validator.validate()
       
       if (isValid) {

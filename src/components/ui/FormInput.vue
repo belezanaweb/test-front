@@ -142,12 +142,6 @@ export default {
   },
   methods: {
     updateValue(e) {
-      if (!!this.mask) {
-        this.$emit("input", e)
-
-        return
-      }
-
       this.$emit("input", e.target.value)
     }
   }

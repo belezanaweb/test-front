@@ -10,17 +10,20 @@ export default new Router({
     {
       path: '/',
       name: 'cart',
-      component: () => import(/* webpackChunkName: "cart" */ './views/Cart.vue')
+      component: () => import(/* webpackChunkName: "cart" */ './../views/Cart.vue')
     },
     {
       path: '/payment',
       name: 'payment',
-      component: () => import(/* webpackChunkName: "payment" */ './views/Payment.vue')
+      component: () => import(/* webpackChunkName: "payment" */ './../views/Payment.vue')
     },
     {
       path: '/confirmation',
       name: 'confirmation',
-      component: () => import(/* webpackChunkName: "confirmation" */ './views/Confirmation.vue')
+      meta: {
+        paymentIsValid: true
+      },
+      component: () => import(/* webpackChunkName: "confirmation" */ './../views/Confirmation.vue')
     }
   ]
 })
