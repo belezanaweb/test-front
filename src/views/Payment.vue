@@ -72,6 +72,9 @@ export default {
       },
     }
   },
+  created() {
+    this.$store.dispatch('UPDATE_PAYMENT_FORM_VALIDATION', { isValid: false })
+  },
   mounted() {
     this.$watch(
       _ => this.$refs.observer.ctx.valid,
