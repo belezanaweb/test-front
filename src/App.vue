@@ -50,7 +50,7 @@ export default {
         },
         { 
           label: 'Confirmação',
-          to: '/confimation'
+          to: '/confirmation'
         }
       ],
     }
@@ -72,14 +72,14 @@ export default {
   -moz-osx-font-smoothing grayscale
   color #2c3e50
   background #EEE
-  min-height 100vh
+  min-height 115vh
 
 body 
   margin 0
   padding 0
 
 .router-view 
-  padding 13px 
+  padding 0 13px 13px 13px 
 
 h3 
   color #999
@@ -89,6 +89,7 @@ h3
   padding 0
   margin-bottom 5px
   margin-left 11px
+  margin-top 15px
 
 .resume-container   
   padding 13px 

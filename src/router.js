@@ -16,6 +16,11 @@ export default new Router({
       path: '/payment',
       name: 'payment',
       component: () => import(/* webpackChunkName: "payment" */ './views/Payment.vue')
+    },
+    {
+      path: '/confirmation',
+      name: 'confirmation',
+      component: () => import(/* webpackChunkName: "confirmation" */ './views/Confirmation.vue')
     }
   ]
 })

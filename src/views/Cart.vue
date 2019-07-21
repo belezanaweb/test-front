@@ -10,7 +10,7 @@
 <script>
 import CartList from '../components/CartList'
 import Card from '../components/ui/Card'
-import { mapState } from "vuex";
+import { mapState } from "vuex"
 
 export default {
   name: 'cart',

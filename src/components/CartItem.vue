@@ -1,9 +1,22 @@
 <template>
-  <div class="cart-item">
-    <img width="65px" height="65px" class="item-image" :src="item.imageObjects[0].small"/>
+  <div class="cart-item" :class="{ small: small }">
+    <img 
+      v-if="small" 
+      width="42px" 
+      height="42px" 
+      class="item-image small" 
+      :src="item.imageObjects[0].thumbnail"
+    />
+    <img 
+      v-else
+      width="65px" 
+      height="65px" 
+      class="item-image" 
+      :src="item.imageObjects[0].small"
+    />
     <div class="info">
       <h4 class="item-name" v-excerpt="60">{{ item.name }}</h4>
-      <span class="item-price">{{ item.priceSpecification.price | currency }}</span>
+      <span v-if="!small" class="item-price">{{ item.priceSpecification.price | currency }}</span>
     </div>
   </div>
 </template>
@@ -12,7 +25,8 @@
 export default {
   name: 'cart-item',
   props: {
-    item: Object
+    item: Object,
+    small: Boolean
   }
 }
 </script>
@@ -24,6 +38,9 @@ export default {
   border-radius 3px
   display flex
 
+  &.small 
+    max-height 36px
+
 .info 
   display flex
   flex-direction column
@@ -31,6 +48,9 @@ export default {
 .item-image 
   min-width 65px
   margin-right 11px
+
+  &.small
+    min-width 42px
 
 .item-name 
   color #212122
