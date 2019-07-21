@@ -8,7 +8,6 @@
     </checkout-button>
     <checkout-button 
       v-if="$route.path === '/payment'" 
-      to='/confirmation'
       :disabled="!paymentFormIsValid"
       @click.native="handlePayementClick"
     >

@@ -28,6 +28,7 @@ export default {
 .cart-list 
   background #fff
   padding 13px
+  border-radius 3px
 
 .cart-item + .cart-item 
   margin-top 15px

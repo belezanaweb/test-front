@@ -53,7 +53,7 @@
 import CartList from '../components/CartList'
 import Card from '../components/ui/Card'
 import FormInput from '../components/ui/FormInput'
-import { mapState } from "vuex";
+import { mapState } from "vuex"
 
 import { ValidationObserver } from 'vee-validate'
 
@@ -72,7 +72,7 @@ export default {
         cvv: null,
         validity: null,
         holderName: null
-      },
+      }
     }
   },
   created() {
@@ -94,8 +94,13 @@ export default {
       const isValid = this.$validator.validate()
       
       if (isValid) {
+        this.$eventBus.$emit('loading', { loading: true })
         this.$store.dispatch('UPDATE_PAYMENT', { payment: this.payment })
-        this.$router.push({ path: '/confirmation' })
+
+        setTimeout(() => {
+          this.$router.push({ path: '/confirmation' })
+          this.$eventBus.$emit('loading', { loading: false })
+        }, 2000)
       }
     }
   }
@@ -109,10 +114,12 @@ export default {
 .payment-form 
   background #fff
   padding 13px
-  padding-bottom 25px
 
 .input-container + .input-container
-  margin-top 25px
+  margin-top 10px
+
+  @media screen and (min-width 1080px)
+    margin-top 15px
 
 .form-input + .form-input
   margin-left 20px
@@ -123,4 +130,9 @@ export default {
 
 .credit-card-cvv
   min-width 140px
+
+@media screen and (min-width 1080px)
+  .form-group div
+    width 50%
+    max-width 50%
 </style>
