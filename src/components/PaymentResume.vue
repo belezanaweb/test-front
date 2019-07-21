@@ -2,7 +2,7 @@
   <card class="payment-resume" shadow>
     <ul>
       <li v-hide-digits>
-       {{ resume.creditCardNumber }}
+        {{ resume.creditCardNumber }}
       </li>
       <li>
        {{ resume.holderName }}
@@ -24,10 +24,6 @@ export default {
   },
   components: {
     Card
-  },
-  data() {
-    return {
-    }
   }
 }
 </script>

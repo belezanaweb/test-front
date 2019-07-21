@@ -10,6 +10,7 @@
             name="credit_card"
             v-validate="'required|credit_card'"
             v-model="payment.creditCardNumber"
+            mask="#### #### #### ####"
           ></form-input>
         </div>
         
@@ -19,7 +20,7 @@
             label="Nome do Titular:"
             placeholder="Como no cartão"
             name="holder_name"
-            v-validate="'required|alpha'"
+            v-validate="'required|alpha_spaces'"
             v-model="payment.holderName"
           ></form-input>
         </div>

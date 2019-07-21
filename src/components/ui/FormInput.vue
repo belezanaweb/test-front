@@ -3,6 +3,22 @@
     <label :for="name">{{ label }}</label>
     <ValidationProvider :rules="computedValidation">
       <input 
+        v-if="inputMask"
+        :type="computedInputType" 
+        :name="name" 
+        :placeholder="computedPlaceholder"
+        :value="value"
+        :class="{ 'required': isRequired }"
+        @input="updateValue" 
+        @change="updateValue"
+        @blur="$emit('blur')"
+        v-model="fieldValue"
+        v-validate="computedValidation"
+        ref="input"
+        v-mask="inputMask"
+      />
+      <input 
+        v-else
         :type="computedInputType" 
         :name="name" 
         :placeholder="computedPlaceholder"
@@ -39,7 +55,8 @@ export default {
     error: {
       type: String,
       default: null
-    }
+    },
+    mask: [String, Array]
   },
   $_veeValidate: {
     value() {
@@ -72,7 +89,7 @@ export default {
           type: 'text'
         },
         name: {
-          validation: 'required|alpha',
+          validation: 'required|alpha_spaces',
           type: 'text'
         }
       }
@@ -105,7 +122,7 @@ export default {
       return this.fildToValidate && this.fildToValidate.invalid
     },
     isRequired() {
-      return this.isTouched && this.fildToValidate.required
+      return this.isTouched && this.fildToValidate.required && this.fildToValidate.invalid
     },
     errorMessage() {
       if (this.isRequired && !this.isChanged) {
@@ -115,6 +132,9 @@ export default {
       if (this.isInvalid && this.isTouched) {
         return 'Valor inválido'
       }
+    },
+    inputMask() {
+      return this.mask || ''
     }
   },
   mounted() {
@@ -122,7 +142,13 @@ export default {
   },
   methods: {
     updateValue(e) {
-      this.$emit("input", e.target.value);
+      if (!!this.mask) {
+        this.$emit("input", e)
+
+        return
+      }
+
+      this.$emit("input", e.target.value)
     }
   }
 }
