@@ -101,7 +101,7 @@ export default {
       return this.inputTypes[this.type]
     },
     computedPlaceholder() {
-      return this.typeData ? this.typeData.placeholder : this.placeholder
+      return this.typeData ? this.typeData.placeholder || this.placeholder : this.placeholder
     },
     computedValidation() {
       return this.typeData ? this.typeData.validation : this.validation
