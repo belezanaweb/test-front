@@ -13,10 +13,7 @@
 export default {
   name: 'checkout-button',
   props: {
-    to: {
-      type: String,
-      required: true
-    } ,
+    to: String,
     disabled: Boolean
   }
 }

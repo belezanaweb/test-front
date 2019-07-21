@@ -8,6 +8,7 @@
         <checkout-buttons></checkout-buttons>
       </section>
     </section>
+    <moon-loader class="spinner" :loading="showSpinner" :color="'#fff'"></moon-loader>
   </div>
 </template>
 
@@ -17,6 +18,7 @@ import Card from './components/ui/Card'
 import CheckoutButton from './components/CheckoutButton'
 import CheckoutResume from './components/CheckoutResume'
 import CheckoutButtons from './components/CheckoutButtons'
+import MoonLoader from 'vue-spinner/src/MoonLoader.vue'
 
 import { mapState, mapGetters } from "vuex"
 
@@ -27,7 +29,8 @@ export default {
     Card,
     CheckoutButton,
     CheckoutResume,
-    CheckoutButtons
+    CheckoutButtons,
+    MoonLoader
   },
   data() {
     return {
@@ -45,13 +48,20 @@ export default {
           to: '/confirmation'
         }
       ],
+      showSpinner: false
     }
   },
   computed: {
     ...mapGetters(['checkoutResume'])
   },
   async created() {
+    this.$eventBus.$on('loading', ({ loading }) => {
+      this.showSpinner = loading
+    })
+    
+    this.showSpinner = true
     await this.$store.dispatch('GET_CART')
+    this.showSpinner = false
   }
 }
 </script>
@@ -127,4 +137,15 @@ h3
 
 .checkout-button 
   margin-top 20px
+
+.spinner
+  top: 0;
+  display: flex;
+  justify-content: center;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  right: 0;
+  align-items: center;
+  background #0000006b
 </style>

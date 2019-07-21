@@ -53,7 +53,7 @@
 import CartList from '../components/CartList'
 import Card from '../components/ui/Card'
 import FormInput from '../components/ui/FormInput'
-import { mapState } from "vuex";
+import { mapState } from "vuex"
 
 import { ValidationObserver } from 'vee-validate'
 
@@ -72,7 +72,7 @@ export default {
         cvv: null,
         validity: null,
         holderName: null
-      },
+      }
     }
   },
   created() {
@@ -94,8 +94,13 @@ export default {
       const isValid = this.$validator.validate()
       
       if (isValid) {
+        this.$eventBus.$emit('loading', { loading: true })
         this.$store.dispatch('UPDATE_PAYMENT', { payment: this.payment })
-        this.$router.push({ path: '/confirmation' })
+
+        setTimeout(() => {
+          this.$router.push({ path: '/confirmation' })
+          this.$eventBus.$emit('loading', { loading: false })
+        }, 2000)
       }
     }
   }
