@@ -13,11 +13,24 @@ export default new Vuex.Store({
       shippingTotal: 0,
       discount: 0,
       total: 0
-    }
+    },
+    payment: {
+      creditCardNumber: null,
+      cvv: null,
+      validity: null,
+      holderName: null
+    },
+    paymentFormIsValid: false
   },
   mutations: {
     SET_CART(state, { cart }) {
       state.cart = cart
+    },
+    SET_PAYMENT_DATA(state, { payment }) {
+      state.payment = payment
+    },
+    SET_PAYMENT_FORM_VALIDATION(state, { isValid }) {
+      state.paymentFormIsValid = isValid
     }
   },
   actions: {
@@ -29,6 +42,12 @@ export default new Vuex.Store({
       } catch (e) {
         console.error(e)
       }
+    },
+    UPDATE_PAYMENT({ commit }, { payment }) {
+      commit('SET_PAYMENT', { payment })
+    },
+    UPDATE_PAYMENT_FORM_VALIDATION({ commit }, { isValid }) {
+      commit('SET_PAYMENT_FORM_VALIDATION', { isValid })
     }
   },
   getters: {

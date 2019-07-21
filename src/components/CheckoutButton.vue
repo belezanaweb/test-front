@@ -1,6 +1,6 @@
 <template>
   <div class="checkout-button">
-    <router-link tag="button" :to="to">
+    <router-link :disabled="disabled" tag="button" :to="to">
       <slot></slot>
     </router-link>
   </div>
@@ -13,7 +13,8 @@ export default {
     to: {
       type: String,
       required: true
-    } 
+    } ,
+    disabled: Boolean
   }
 }
 </script>
@@ -31,4 +32,9 @@ button
   letter-spacing 0.5px
   line-height 24px
   text-align center
+  border none
+  
+  &:disabled
+    background-color #D45A00
+    box-shadow none
 </style>

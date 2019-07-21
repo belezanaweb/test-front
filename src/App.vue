@@ -13,6 +13,7 @@
       <checkout-button 
         v-if="$route.path === '/payment'" 
         to='/confirmation'
+        :disabled="!paymentFormIsValid"
       >
         FINALIZAR O PEDIDO
       </checkout-button>
@@ -26,7 +27,7 @@ import Card from './components/ui/Card'
 import CheckoutButton from './components/CheckoutButton'
 import CheckoutResume from './components/CheckoutResume'
 
-import { mapState, mapGetters } from "vuex";
+import { mapState, mapGetters } from "vuex"
 
 export default {
   name: 'App',
@@ -52,27 +53,10 @@ export default {
           to: '/confimation'
         }
       ],
-      checkoutResumeItems: [
-        {
-          label: 'A',
-          value: 123
-        },
-        {
-          label: 'A',
-          value: 123
-        },
-        {
-          label: 'A',
-          value: 123
-        },
-        {
-          label: 'A',
-          value: 123
-        }
-      ]
     }
   },
   computed: {
+    ...mapState(['paymentFormIsValid']),
     ...mapGetters(['checkoutResume'])
   },
   async created() {

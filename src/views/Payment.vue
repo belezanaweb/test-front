@@ -18,9 +18,9 @@
             type="name"
             label="Nome do Titular:"
             placeholder="Como no cartão"
-            name="titular_name"
+            name="holder_name"
             v-validate="'required|alpha'"
-            v-model="payment.titularName"
+            v-model="payment.holderName"
           ></form-input>
         </div>
 
@@ -68,24 +68,35 @@ export default {
         creditCardNumber: null,
         cvv: null,
         validity: null,
-        titularName: null,
-      }
+        holderName: null
+      },
     }
   },
-  computed: {
-    ...mapState(['cart'])
+  created() {
+    this.$store.dispatch('UPDATE_PAYMENT_FORM_VALIDATION', { isValid: false })
+  },
+  mounted() {
+    this.$watch(
+      _ => this.$refs.observer.ctx.valid,
+      isValid => {
+        this.$store.dispatch('UPDATE_PAYMENT_FORM_VALIDATION', { isValid })
+      }
+    )
   },
   methods: {
-    submit(a) {
-      this.$validator.validate().then((valid) => {
-        console.log(valid)
-      })
+    async handleSubmit(a) {
+      const isValid = this.$validator.validate()
+      
+      if (isValid) {
+        this.$store.dispatch('UPDATE_PAYMENT', { payment: this.payment })
+        this.$router.push({ path: '/confirmation' })
+      }
     }
   }
 }
 </script>
 
-<style lang="stylus">
+<style lang="stylus" scoped>
 .card + .card
   margin-top 20px
 
@@ -105,5 +116,5 @@ export default {
   justify-content space-between
 
 .credit-card-cvv
-  width 230px
+  min-width 140px
 </style>
