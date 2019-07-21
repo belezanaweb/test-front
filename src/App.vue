@@ -13,6 +13,7 @@
       <checkout-button 
         v-if="$route.path === '/payment'" 
         to='/confirmation'
+        :disabled="!paymentFormIsValid"
       >
         FINALIZAR O PEDIDO
       </checkout-button>
@@ -52,27 +53,10 @@ export default {
           to: '/confimation'
         }
       ],
-      checkoutResumeItems: [
-        {
-          label: 'A',
-          value: 123
-        },
-        {
-          label: 'A',
-          value: 123
-        },
-        {
-          label: 'A',
-          value: 123
-        },
-        {
-          label: 'A',
-          value: 123
-        }
-      ]
     }
   },
   computed: {
+    ...mapState(['paymentFormIsValid']),
     ...mapGetters(['checkoutResume'])
   },
   async created() {

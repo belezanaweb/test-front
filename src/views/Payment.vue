@@ -81,11 +81,12 @@ export default {
     )
   },
   methods: {
-    async submit(a) {
+    async handleSubmit(a) {
       const isValid = this.$validator.validate()
       
       if (isValid) {
         this.$store.dispatch('UPDATE_PAYMENT', { payment: this.payment })
+        this.$router.push({ path: '/confirmation' })
       }
     }
   }
