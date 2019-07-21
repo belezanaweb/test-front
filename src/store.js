@@ -43,10 +43,10 @@ export default new Vuex.Store({
         console.error(e)
       }
     },
-    async UPDATE_PAYMENT({ commit }, { payment }) {
+    UPDATE_PAYMENT({ commit }, { payment }) {
       commit('SET_PAYMENT', { payment })
     },
-    async UPDATE_PAYMENT_FORM_VALIDATION({ commit }, { isValid }) {
+    UPDATE_PAYMENT_FORM_VALIDATION({ commit }, { isValid }) {
       commit('SET_PAYMENT_FORM_VALIDATION', { isValid })
     }
   },
