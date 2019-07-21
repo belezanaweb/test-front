@@ -32,6 +32,7 @@
             name="card_validity"
             v-validate="'required|date_format:MM/yyyy'"
             v-model="payment.validity"
+            mask="##/####"
           ></form-input>
           <form-input 
             type="cvv"
@@ -40,6 +41,7 @@
             class="credit-card-cvv"
             v-validate="'required|numeric|digits:3'"
             v-model="payment.cvv"
+            mask="###"
           ></form-input>
         </div>
       </ValidationObserver>
