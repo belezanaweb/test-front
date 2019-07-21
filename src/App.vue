@@ -66,9 +66,9 @@ export default {
   min-height 115vh
 
   @media screen and (min-width 1080px)
-    padding 40px 100px
     display flex
     flex-direction column
+    min-height 100vh
 
     .steps 
       flex 3
@@ -76,6 +76,7 @@ export default {
     
     .container 
       display flex
+      padding 10px 200px
 
     .router-view 
       flex 1

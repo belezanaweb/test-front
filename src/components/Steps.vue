@@ -42,6 +42,12 @@ ul
   font-size 13px
   color #CCC
 
-li.router-link-exact-active 
-  color #FF7800
+  @media screen and (min-width 1080px)
+    justify-content space-evenly
+
+li
+  cursor pointer
+  
+  &.router-link-exact-active 
+    color #FF7800
 </style>
