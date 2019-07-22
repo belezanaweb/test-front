@@ -1,4 +1,4 @@
-# beleza-checkout
+# frontend-checkout
 
 ## Project setup
 ```
