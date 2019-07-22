@@ -7,6 +7,8 @@ import VueCurrencyFilter from 'vue-currency-filter'
 import VeeValidate from 'vee-validate'
 import VueTheMask from 'vue-the-mask'
 
+import { VuePlugin } from 'vuera'
+
 import eventbus from './eventbus'
 
 import './registerServiceWorker'
@@ -35,6 +37,8 @@ Vue.use(VeeValidate, {
 });
 
 Vue.use(VueTheMask, { masked : false })
+
+Vue.use(VuePlugin)
 
 Vue.config.productionTip = false
 
