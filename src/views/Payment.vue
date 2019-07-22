@@ -77,7 +77,7 @@ export default {
   },
   created() {
     this.$store.dispatch('UPDATE_PAYMENT_FORM_VALIDATION', { isValid: false })
-    this.$eventBus.$on('jump-to-confirmation', _ => {
+    this.$eventBus.$on('finish-order', _ => {
       this.handleSubmit()
     })
   },

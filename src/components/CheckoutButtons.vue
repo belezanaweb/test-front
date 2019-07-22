@@ -32,7 +32,7 @@ export default {
   },
   methods: {
     handlePayementClick() {
-      this.$eventBus.$emit('jump-to-confirmation')
+      this.$eventBus.$emit('finish-order')
     }
   }
 }
