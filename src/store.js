@@ -51,7 +51,7 @@ export default new Vuex.Store({
     }
   },
   getters: {
-    checkoutResume({ cart }) {
+    checkoutSummary({ cart }) {
       return {
         subTotal: cart.subTotal,
         shippingTotal: cart.shippingTotal,

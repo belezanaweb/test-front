@@ -1,21 +1,21 @@
 <template>
-  <card class="checkout-resume" border>
+  <card class="checkout-summary" border>
     <ul>
       <li>
         <span class="label">PRODUTOS</span>
-        <span class="value">{{ resume.subTotal | currency }}</span>
+        <span class="value">{{ summary.subTotal | currency }}</span>
       </li>
       <li>
         <span class="label">FRETE</span>
-        <span class="value">{{ resume.shippingTotal | currency }}</span>
+        <span class="value">{{ summary.shippingTotal | currency }}</span>
       </li>
       <li class="discount">
         <span class="label">DESCONTO</span>
-        <span class="value">- {{ resume.discount | currency }}</span>
+        <span class="value">- {{ summary.discount | currency }}</span>
       </li>
       <li>
         <span class="label">TOTAL</span>
-        <span class="value">{{ resume.total | currency }}</span>
+        <span class="value">{{ summary.total | currency }}</span>
       </li>
     </ul>
   </card>
@@ -25,9 +25,9 @@
 import Card from './ui/Card'
 
 export default {
-  name: 'checkout-resume',
+  name: 'checkout-summary',
   props: {
-    resume: Object
+    summary: Object
   },
   components: {
     Card
@@ -40,7 +40,7 @@ export default {
 </script>
 
 <style lang="stylus" scoped>
-.checkout-resume 
+.checkout-summary 
   font-size 14px
   padding 13px
 

@@ -3,8 +3,8 @@
     <steps :items="checkoutSteps"></steps>
     <section class="container">
       <router-view class="router-view"/>
-      <section class="resume-container">
-        <checkout-resume :resume="checkoutResume"></checkout-resume>
+      <section class="summary-container">
+        <checkout-summary :summary="checkoutSummary"></checkout-summary>
         <checkout-buttons></checkout-buttons>
       </section>
     </section>
@@ -16,7 +16,7 @@
 import Steps from './components/Steps'
 import Card from './components/ui/Card'
 import CheckoutButton from './components/CheckoutButton'
-import CheckoutResume from './components/CheckoutResume'
+import CheckoutSummary from './components/CheckoutSummary'
 import CheckoutButtons from './components/CheckoutButtons'
 import MoonLoader from 'vue-spinner/src/MoonLoader.vue'
 
@@ -28,7 +28,7 @@ export default {
     Steps,
     Card,
     CheckoutButton,
-    CheckoutResume,
+    CheckoutSummary,
     CheckoutButtons,
     MoonLoader
   },
@@ -52,7 +52,7 @@ export default {
     }
   },
   computed: {
-    ...mapGetters(['checkoutResume'])
+    ...mapGetters(['checkoutSummary'])
   },
   async created() {
     this.$eventBus.$on('loading', ({ loading }) => {
@@ -94,14 +94,14 @@ export default {
       flex 1
       padding 0px
 
-    .resume-container
+    .summary-container
       margin-top 67px
       min-width 360px
 
     .confirmation
       margin-top 50px
 
-      + .resume-container
+      + .summary-container
         margin-top 117px
 
     .confirmation-message
@@ -131,7 +131,7 @@ h3
     font-size 20px
     margin 30px 0px 20px
 
-.resume-container   
+.summary-container   
   padding 13px 
   padding-top 7px
 
