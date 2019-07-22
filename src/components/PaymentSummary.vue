@@ -1,14 +1,14 @@
 <template>
-  <card class="payment-resume" shadow>
+  <card class="payment-summary" shadow>
     <ul>
       <li v-hide-digits>
-        {{ resume.creditCardNumber }}
+        {{ summary.creditCardNumber }}
       </li>
       <li>
-       {{ resume.holderName }}
+       {{ summary.holderName }}
       </li>
       <li>
-       {{ resume.validity }}
+       {{ summary.validity }}
       </li>
     </ul>
   </card>
@@ -18,9 +18,9 @@
 import Card from './ui/Card'
 
 export default {
-  name: 'payment-resume',
+  name: 'payment-summary',
   props: {
-    resume: Object
+    summary: Object
   },
   components: {
     Card
@@ -29,7 +29,7 @@ export default {
 </script>
 
 <style lang="stylus" scoped>
-.payment-resume 
+.payment-summary 
   background-color #fff
   padding 14px 10px 7px 10px
 

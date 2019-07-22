@@ -1,8 +1,8 @@
 import React, { useState } from 'react'
-import { state } from '../store'
+import store from '../store'
 
 export default () => {
-  const [resume] = useState(state.payment)
+  const [summary] = useState(store.state.payment)
 
   const hideDigits = (str) => {
     return str.replace(/.(?=.{5})/g, "*")
@@ -10,16 +10,16 @@ export default () => {
 
   return (
     <>
-      <div style={styles.paymentResume}>
+      <div style={styles.paymentSummary}>
         <ul style={styles.list}>
           <li style={styles.item}>
-            { hideDigits(resume.creditCardNumber) }
+            { hideDigits(summary.creditCardNumber) }
           </li>
           <li style={styles.item}>
-            { resume.holderName }
+            { summary.holderName }
           </li>
           <li style={styles.item}>
-            { resume.validity }
+            { summary.validity }
           </li>
         </ul>
       </div>
@@ -28,7 +28,7 @@ export default () => {
 }
 
 const styles = {
-  paymentResume: {
+  paymentSummary: {
     backgroundColor: '#fff',
     padding: '14px 10px 7px 10px',
     borderRadius: '3px'

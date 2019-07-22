@@ -1,15 +1,15 @@
 import { mount, createLocalVue } from '@vue/test-utils'
-import PaymentResume from '@/components/PaymentResume'
+import PaymentSummary from '@/components/PaymentSummary'
 import hideDigits from '@/directives/hideDigits'
 
 const localVue = createLocalVue()
 
 localVue.directive('hide-digits', hideDigits)
 
-describe('PaymentResume.vue', () => {
+describe('PaymentSummary.vue', () => {
   let wrapper
   const propsData = {
-    resume: {
+    summary: {
       creditCardNumber: '1234 1234 1234 1234',
       holderName: 'Teste teste',
       cvv: '123',
@@ -18,7 +18,7 @@ describe('PaymentResume.vue', () => {
   }
 
   beforeEach(() => {
-    wrapper = mount(PaymentResume, {
+    wrapper = mount(PaymentSummary, {
       propsData,
       localVue
     })
@@ -33,12 +33,12 @@ describe('PaymentResume.vue', () => {
   it('displays credit card number with mask when passed', () => {
     const holderNameItem = wrapper.findAll('li').at(1)
 
-    expect(holderNameItem.text()).toBe(propsData.resume.holderName)
+    expect(holderNameItem.text()).toBe(propsData.summary.holderName)
   })
 
   it('displays credit card number with mask when passed', () => {
     const validityItem = wrapper.findAll('li').at(2)
 
-    expect(validityItem.text()).toBe(propsData.resume.validity)
+    expect(validityItem.text()).toBe(propsData.summary.validity)
   })
 })

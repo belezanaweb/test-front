@@ -28,7 +28,7 @@ export default {
   },
   computed: {
     ...mapState(['paymentFormIsValid']),
-    ...mapGetters(['checkoutResume'])
+    ...mapGetters(['checkoutSummary'])
   },
   methods: {
     handlePayementClick() {
