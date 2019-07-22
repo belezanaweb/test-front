@@ -1,8 +1,8 @@
 import React, { useState } from 'react'
-import store from '../store'
+import { state } from '../store'
 
 export default () => {
-  const [resume] = useState(store.state.payment)
+  const [resume] = useState(state.payment)
 
   const hideDigits = (str) => {
     return str.replace(/.(?=.{5})/g, "*")
