@@ -6,8 +6,13 @@
     </section>
 
     <h3>Pagamento</h3>
-    <payment-resume :resume="payment"></payment-resume>
-
+    <payment-resume 
+      v-if="binaryRandom" 
+      :resume="payment"
+    ></payment-resume>
+    <card v-else shadow>
+      <PaymentResumeReact/>
+    </card>
     <h3>Produtos</h3>
     <card shadow>
       <cart-list :products="cart.items" small></cart-list>
@@ -19,6 +24,7 @@
 import CartList from '../components/CartList'
 import Card from '../components/ui/Card'
 import PaymentResume from '../components/PaymentResume'
+import PaymentResumeReact from '../components/PaymentResumeReact'
 import { mapState } from "vuex"
 
 export default {
@@ -26,14 +32,18 @@ export default {
   components: {
     CartList,
     Card,
-    PaymentResume
+    PaymentResume,
+    PaymentResumeReact
   },
   data() {
     return {
     }
   },
   computed: {
-    ...mapState(['payment', 'cart'])
+    ...mapState(['payment', 'cart']),
+    binaryRandom() {
+      return Math.round(Math.random() * 10) < 5
+    }
   }
 }
 </script>
