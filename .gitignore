@@ -1,7 +1,8 @@
-.DS_Store
-build
-node_modules
-logs
-*.log
-*.log.*
-
+.idea/
+.vscode/
+node_modules/
+npm-debug.log*
+dist/
+dist-bin/
+coverage/
+__snapshots__

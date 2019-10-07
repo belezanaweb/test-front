@@ -1,27 +1,28 @@
 {
-  "name": "test-front",
-  "version": "0.1.0",
-  "private": true,
+  "name": "beleza-na-web",
+  "version": "0.0.1",
+  "description": "Teste Beleza na Web",
+  "main": "index.js",
+  "scripts": {
+    "start": "tsrex start ./react.config.js",
+    "build": "tsrex build ./react.config.js",
+    "test": "tsrex test ./react.config.js"
+  },
+  "author": "D.A.Paula",
+  "license": "MIT",
   "dependencies": {
-    "react": "^16.8.5",
-    "react-dom": "^16.8.5"
+    "clsx": "^1.0.4",
+    "jss": "9.8.7",
+    "jss-plugin-camel-case": "^10.0.0-alpha.7",
+    "jss-plugin-default-unit": "^10.0.0-alpha.7",
+    "jss-plugin-nested": "^10.0.0-alpha.7",
+    "jss-preset-default": "4.5.0",
+    "react-input-mask": "^2.0.4",
+    "tsrex": "0.1.1"
   },
   "devDependencies": {
-    "react-scripts": "2.1.8"
-  },
-  "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
-  },
-  "eslintConfig": {
-    "extends": "react-app"
-  },
-  "browserslist": [
-    ">0.2%",
-    "not dead",
-    "not ie <= 11",
-    "not op_mini all"
-  ]
+    "@types/jss": "^9.5.8",
+    "@types/react-jss": "^8.6.3",
+    "axios-mock-adapter": "^1.16.0"
+  }
 }

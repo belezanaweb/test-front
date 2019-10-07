@@ -1,0 +1,9 @@
+{
+  "extends": "./node_modules/tsrex/tsconfig.json",
+  "compilerOptions": {
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata": true,
+  },
+  "include": ["**/src/**/*"],
+  "exclude": ["node_modules"]
+}
