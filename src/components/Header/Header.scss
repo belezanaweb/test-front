@@ -1,0 +1,22 @@
+@import "../../variables";
+
+.Header {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.9231rem 2.385rem;
+  background-color: $white;
+  box-shadow: 1px 1px 5px 0 rgba(0, 0, 29, 0.22);
+
+  > a {
+    line-height: 16px;
+    font-weight: $bold;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: $gray;
+    transition: color $transition;
+
+    &.active {
+      color: $primary;
+    }
+  }
+}
