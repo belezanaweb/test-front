@@ -1,14 +1,14 @@
 @import "../../variables";
 
 .Header {
+  box-shadow: 1px 1px 5px 0 rgba(0, 0, 29, 0.22);
   display: flex;
   justify-content: space-between;
-  padding: 0.9231rem 2.385rem;
+  padding: 0.9231rem 1.308rem;
   background-color: $white;
-  box-shadow: 1px 1px 5px 0 rgba(0, 0, 29, 0.22);
 
   > a {
-    line-height: 16px;
+    line-height: 1.231rem;
     font-weight: $bold;
     text-transform: uppercase;
     text-decoration: none;
