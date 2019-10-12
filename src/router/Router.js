@@ -10,7 +10,7 @@ export default () => (
   <Router>
     <ScrollToTop>
       <Switch>
-        <LazyRoute component={Cart} />
+        <LazyRoute path="/cart" component={Cart} />
         <LazyRoute path="*" component={Cart} />
       </Switch>
     </ScrollToTop>
