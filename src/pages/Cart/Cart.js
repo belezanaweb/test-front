@@ -1,18 +1,18 @@
 import React, { Component } from 'react'
 import Header from '../../components/Header/Header'
-import './Cart.scss'
+import { Title, CartPage, ProductContainer } from './style'
 
 class Cart extends Component {
     render() {
         return (
-            <div className='Cart'>
+            <CartPage>
                 <Header></Header>
-                <h1>Produtos</h1>
-                <div className='products-container'>
+                <Title>Produtos</Title>
+                <ProductContainer>
                     <div className='product'>
                     </div>
-                </div>
-            </div>
+                </ProductContainer>
+            </CartPage>
         )
     }
 }
