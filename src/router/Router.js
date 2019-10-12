@@ -4,7 +4,7 @@ import ScrollToTop from './ScrollToTop'
 import LazyRoute from './LazyRoute'
 
 /* Pages */
-const Cart = lazy(() => import('../pages/Cart/Cart'))
+const Cart = lazy(() => import('../pages/Cart'))
 
 export default () => (
   <Router>

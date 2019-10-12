@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import Header from '../../components/Header/Header'
+import Header from '../../components/Header'
 import { Title, CartPage, ProductContainer } from './style'
 
 class Cart extends Component {
