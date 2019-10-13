@@ -1,20 +1,25 @@
-.loader {
-  display: inline-block;
+import styled from 'styled-components'
+import theme from 'theme'
+
+export const StyledLoader = styled.div`
   position: relative;
-  width: 64px;
-  height: 64px;
+  width: 10rem;
+  height: 10rem;
+  display: flex;
+  margin: auto;
+  margin-top: 1rem;
 
   div {
     box-sizing: border-box;
     display: block;
     position: absolute;
-    width: 51px;
-    height: 51px;
+    width: 8rem;
+    height: 8rem;
     margin: 6px;
-    border: 6px solid #fff;
+    border: .7rem solid ${theme.primary};
     border-radius: 50%;
     animation: loader 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
-    border-color: #fff transparent transparent transparent;
+    border-color: ${theme.primary} transparent transparent transparent;
   }
 
   div:nth-child(1) {
@@ -26,9 +31,9 @@
   }
 
   div:nth-child(3) {
+
     animation-delay: -0.15s;
   }
-}
 
 @keyframes loader {
   0% {
@@ -38,3 +43,4 @@
     transform: rotate(360deg);
   }
 }
+`

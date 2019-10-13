@@ -1,11 +1,12 @@
 import React, { Component } from 'react'
+import { StyledLoader } from './style'
 
 class Loader extends Component {
-    render() {
-        return (
-            <div className="loader"><div></div><div></div><div></div><div></div></div>
-        )
-    }
+  render() {
+    return (
+      <StyledLoader><div></div><div></div><div></div><div></div></StyledLoader>
+    )
+  }
 }
 
 export default Loader
