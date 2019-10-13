@@ -22,7 +22,6 @@ function Cart() {
       setProducts(products.items);
     }
     fetch()
-    return function () { };
   }, []);
 
   return (
