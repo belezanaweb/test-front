@@ -12,6 +12,8 @@ const theme = {
   borderRadius: '0.2308rem',
   buttonColor: '#FF6C00',
   buttonSecundaryColor: '#D45A00',
+  inputPlaceholderColor: '#E0E7EE',
+  labelColor: '#CCC'
 }
 
 export default theme
