@@ -9,7 +9,7 @@ const INITIAL_STATE = { data: { items: [], shippingTotal: 0, subTotal: 0, total:
 export default function reducer(state = INITIAL_STATE, action) {
   switch (action.type) {
     case Types.LOADING:
-      return { ...state, loading: true }
+      return { ...state, loading: true, hasError: false }
     case Types.ERROR:
       return { ...state, hasError: true, loading: false, error: action.error }
     case Types.SUCCESS:
