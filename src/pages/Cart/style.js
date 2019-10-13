@@ -30,6 +30,11 @@ export const Product = styled.div`
   border-radius: ${theme.borderRadius};
   border: ${theme.border()};
   margin-bottom: 1.1539rem;
+
+  img {
+    width: 65px;
+    height: 65px;
+  }
 `
 
 export const ProductDetails = styled.div`
@@ -40,6 +45,7 @@ export const ProductDetails = styled.div`
 
   p {
     margin-top: 0.07692rem;
+    width: 220px;
     color: ${theme.textColor};
     line-height: 1.231rem;
   }

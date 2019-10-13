@@ -1,7 +1,6 @@
-import React, { Component } from 'react'
-import Header from '../../components/Header'
-import Button from '../../components/Button'
-import Image from '../../components/ImageWrapper'
+import React, { useState, useEffect } from 'react'
+import Header from 'components/Header'
+import Button from 'components/Button'
 import {
   Title,
   CartPage,
@@ -11,62 +10,61 @@ import {
   CartCheckout,
   CheckoutInfo
 } from './style'
+import { format } from 'utils'
+import { cartService } from 'services'
 
-class Cart extends Component {
-  render() {
-    return (
-      <>
-        <Header></Header>
-        <CartPage>
-          <Title>Produtos</Title>
-          <ProductList>
-            <Product>
-              <Image alt='Product' src='/product.test.png' width={65} height={65}></Image>
+function Cart() {
+  const [products, setProducts] = useState([])
+
+  useEffect(() => {
+    async function fetch() {
+      const products = await cartService.getCart()
+      setProducts(products.items);
+    }
+    fetch()
+    return function () { };
+  }, []);
+
+  return (
+    <>
+      <Header></Header>
+      <CartPage>
+        <Title>Produtos</Title>
+        <ProductList>
+          {products.map(({ product }) => (
+            <Product key={product.sku}>
+              <img alt={product.name} src={product.imageObjects[0].small} />
               <ProductDetails>
-                <p>L'Oréal Professionnel Expert Absolut Repair Cortex Lipidium</p>
-                <span>R$ 225,90</span>
+                <p>{product.name}</p>
+                <span>{format.currency(product.priceSpecification.price)}</span>
               </ProductDetails>
             </Product>
-            <Product>
-              <Image alt='Product' src='/product.test.png' width={65} height={65}></Image>
-              <ProductDetails>
-                <p>L'Oréal Professionnel Expert Absolut Repair Cortex Lipidium</p>
-                <span>R$ 225,90</span>
-              </ProductDetails>
-            </Product>
-            <Product>
-              <Image alt='Product' src='/product.test.png' width={65} height={65}></Image>
-              <ProductDetails>
-                <p>L'Oréal Professionnel Expert Absolut Repair Cortex Lipidium</p>
-                <span>R$ 225,90</span>
-              </ProductDetails>
-            </Product>
-          </ProductList>
+          ))}
+        </ProductList>
 
-          <CartCheckout>
-            <CheckoutInfo>
-              <span>Produto</span>
-              <span>R$ 624,80</span>
-            </CheckoutInfo>
-            <CheckoutInfo>
-              <span>Frete</span>
-              <span>R$ 5,30</span>
-            </CheckoutInfo>
-            <CheckoutInfo primary>
-              <span>Desconto</span>
-              <span>- R$ 30,00</span>
-            </CheckoutInfo>
-            <CheckoutInfo>
-              <span>Total</span>
-              <span>R$100,00</span>
-            </CheckoutInfo>
-          </CartCheckout>
+        <CartCheckout>
+          <CheckoutInfo>
+            <span>Produto</span>
+            <span>R$ 624,80</span>
+          </CheckoutInfo>
+          <CheckoutInfo>
+            <span>Frete</span>
+            <span>R$ 5,30</span>
+          </CheckoutInfo>
+          <CheckoutInfo primary>
+            <span>Desconto</span>
+            <span>- R$ 30,00</span>
+          </CheckoutInfo>
+          <CheckoutInfo>
+            <span>Total</span>
+            <span>R$100,00</span>
+          </CheckoutInfo>
+        </CartCheckout>
 
-          <Button>Seguir para o pagamento</Button>
-        </CartPage>
-      </>
-    )
-  }
+        <Button>Seguir para o pagamento</Button>
+      </CartPage>
+    </>
+  )
 }
 
 export default Cart
