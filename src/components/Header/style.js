@@ -9,6 +9,7 @@ export const StyledHeader = styled.header`
     background-color: ${theme.bgColor};
 
     > a {
+      pointer-events: none;
       line-height: 1.231rem;
       font-weight: ${theme.fontWeightBold};
       text-transform: uppercase;
