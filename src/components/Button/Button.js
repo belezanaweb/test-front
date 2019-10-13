@@ -16,9 +16,15 @@ const button = styled.button`
   text-align: center;
   text-transform: uppercase;
   margin-bottom: 7.231rem;
+  cursor: pointer;
 
   &:hover {
     background-color: ${theme.buttonSecundaryColor};
+  }
+
+  &:active {
+    transform: scale(.99);
+    transition: transform ${theme.transition}
   }
 `
 
