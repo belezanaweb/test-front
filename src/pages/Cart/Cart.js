@@ -10,16 +10,18 @@ import {
   CartCheckout,
   CheckoutInfo
 } from './style'
-import { format } from 'utils'
 import { cartService } from 'services'
+import CartProduct from './CartProduct'
+import { format } from 'utils'
 
 function Cart() {
-  const [products, setProducts] = useState([])
+  const [data, setData] = useState({ items: [], shippingTotal: 0, subTotal: 0, total: 0, discount: 0 })
 
   useEffect(() => {
     async function fetch() {
-      const products = await cartService.getCart()
-      setProducts(products.items);
+      const data = await cartService.getCart()
+      console.log(data)
+      setData(data);
     }
     fetch()
   }, []);
@@ -30,33 +32,36 @@ function Cart() {
       <CartPage>
         <Title>Produtos</Title>
         <ProductList>
-          {products.map(({ product }) => (
-            <Product key={product.sku}>
-              <img alt={product.name} src={product.imageObjects[0].small} />
-              <ProductDetails>
-                <p>{product.name}</p>
-                <span>{format.currency(product.priceSpecification.price)}</span>
-              </ProductDetails>
-            </Product>
-          ))}
+          {data.items.map(entry => {
+            const product = new CartProduct(entry.product)
+            return (
+              <Product key={product.sku}>
+                <img alt={product.name} src={product.imageUrl} />
+                <ProductDetails>
+                  <p>{product.name}</p>
+                  <span>{product.priceFormated}</span>
+                </ProductDetails>
+              </Product>
+            )
+          })}
         </ProductList>
 
         <CartCheckout>
           <CheckoutInfo>
             <span>Produto</span>
-            <span>R$ 624,80</span>
+            <span>{format.currency(data.subTotal)}</span>
           </CheckoutInfo>
           <CheckoutInfo>
             <span>Frete</span>
-            <span>R$ 5,30</span>
+            <span>{format.currency(data.shippingTotal)}</span>
           </CheckoutInfo>
           <CheckoutInfo primary>
             <span>Desconto</span>
-            <span>- R$ 30,00</span>
+            <span>- {format.currency(data.discount)}</span>
           </CheckoutInfo>
           <CheckoutInfo>
             <span>Total</span>
-            <span>R$100,00</span>
+            <span>{format.currency(data.total)}</span>
           </CheckoutInfo>
         </CartCheckout>
 
