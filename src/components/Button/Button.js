@@ -15,7 +15,6 @@ const button = styled.button`
   letter-spacing: 0.5px;
   text-align: center;
   text-transform: uppercase;
-  margin-bottom: 7.231rem;
   cursor: pointer;
 
   &:hover {
