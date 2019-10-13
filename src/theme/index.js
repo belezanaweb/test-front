@@ -1,13 +1,17 @@
 const theme = {
-    primary: '#ff7800',
-    transition: '0.3s',
-    bold: 700,
-    inactiveColor: '#ccc',
-    boxShadow: '1px 1px 5px 0 rgba(0, 0, 29, 0.22)',
-    bgColor: '#fff',
-    secundaryBgColor: '#eee',
-    border: `1px solid #eee`,
-    borderRadius: '0.2308rem'
+  primary: '#ff7800',
+  textColor: '#212122',
+  transition: '0.3s',
+  fontWeightBold: 700,
+  inactiveColor: '#ccc',
+  boxShadow: '1px 1px 5px 0 rgba(0, 0, 29, 0.22)',
+  bgColor: '#fff',
+  buttonTextColor: 'white',
+  secundaryBgColor: '#eee',
+  border: (color = '#eee') => `1px solid ${color}`,
+  borderRadius: '0.2308rem',
+  buttonColor: '#FF6C00',
+  buttonSecundaryColor: '#D45A00',
 }
 
 export default theme
