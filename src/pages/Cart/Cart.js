@@ -16,12 +16,14 @@ import CartProduct from './CartProduct'
 import { format } from 'utils'
 import { handleAsyncReduxData } from 'utils/async.utils'
 import { Types } from 'store/duck/cart'
+import Loader from 'components/Loader/Loader'
+import SadFace from 'components/SadFace/SadFace'
 
 function Cart() {
-  const data = useSelector(state => state.cart.data)
+  const { data, loading, hasError } = useSelector(state => state.cart)
   const dispatch = useDispatch()
 
-  useEffect(() => {
+  function init() {
     handleAsyncReduxData(
       cartService.getCart(),
       dispatch,
@@ -31,6 +33,10 @@ function Cart() {
         successActionName: Types.SUCCESS,
       }
     )
+  }
+
+  useEffect(() => {
+    init()
   }, [])
 
   return (
@@ -39,7 +45,9 @@ function Cart() {
       <CartPage>
         <Title>Produtos</Title>
         <ProductList>
-          {data.items.map(entry => {
+          {loading && <Loader />}
+          {hasError && <SadFace retryPromise={init} />}
+          {!loading && !hasError && data.items.map(entry => {
             const product = new CartProduct(entry.product)
             return (
               <Product key={product.sku}>
