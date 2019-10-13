@@ -11,7 +11,7 @@ import {
   CheckoutInfo
 } from './style'
 import { cartService } from 'services'
-import CartProduct from './CartProduct'
+import CartProduct from './CartProduct.model'
 import { format } from 'utils'
 import { handleAsyncReduxData } from 'utils/async.utils'
 import { Types } from 'store/duck/cart'
