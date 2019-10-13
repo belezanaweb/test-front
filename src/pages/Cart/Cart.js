@@ -1,4 +1,5 @@
-import React, { useState, useEffect } from 'react'
+import React, { useEffect } from 'react'
+import { useSelector, useDispatch } from 'react-redux'
 import Header from 'components/Header'
 import Button from 'components/Button'
 import {
@@ -13,17 +14,24 @@ import {
 import { cartService } from 'services'
 import CartProduct from './CartProduct'
 import { format } from 'utils'
+import { handleAsyncReduxData } from 'utils/async.utils'
+import { Types } from 'store/duck/cart'
 
 function Cart() {
-  const [data, setData] = useState({ items: [], shippingTotal: 0, subTotal: 0, total: 0, discount: 0 })
+  const data = useSelector(state => state.cart.data)
+  const dispatch = useDispatch()
 
   useEffect(() => {
-    async function fetch() {
-      const data = await cartService.getCart()
-      setData(data);
-    }
-    fetch()
-  }, []);
+    handleAsyncReduxData(
+      cartService.getCart(),
+      dispatch,
+      {
+        loadingActionName: Types.LOADING,
+        errorActionName: Types.ERROR,
+        successActionName: Types.SUCCESS,
+      }
+    )
+  }, [])
 
   return (
     <>
