@@ -1,7 +1,6 @@
 import React, { useEffect } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 import Header from 'components/Header'
-import Button from 'components/Button'
 import {
   Title,
   CartPage,
@@ -18,6 +17,7 @@ import { handleAsyncReduxData } from 'utils/async.utils'
 import { Types } from 'store/duck/cart'
 import Loader from 'components/Loader/Loader'
 import SadFace from 'components/SadFace/SadFace'
+import FooterButton from 'components/FooterButton/FooterButton'
 
 function Cart() {
   const { data, loading, hasError } = useSelector(state => state.cart)
@@ -61,26 +61,29 @@ function Cart() {
           })}
         </ProductList>
 
-        <CartCheckout>
-          <CheckoutInfo>
-            <span>Produto</span>
-            <span>{format.currency(data.subTotal)}</span>
-          </CheckoutInfo>
-          <CheckoutInfo>
-            <span>Frete</span>
-            <span>{format.currency(data.shippingTotal)}</span>
-          </CheckoutInfo>
-          <CheckoutInfo primary>
-            <span>Desconto</span>
-            <span>- {format.currency(data.discount)}</span>
-          </CheckoutInfo>
-          <CheckoutInfo>
-            <span>Total</span>
-            <span>{format.currency(data.total)}</span>
-          </CheckoutInfo>
-        </CartCheckout>
-
-        <Button>Seguir para o pagamento</Button>
+        {!hasError && !loading &&
+          <>
+            <CartCheckout>
+              <CheckoutInfo>
+                <span>Produto</span>
+                <span>{format.currency(data.subTotal)}</span>
+              </CheckoutInfo>
+              <CheckoutInfo>
+                <span>Frete</span>
+                <span>{format.currency(data.shippingTotal)}</span>
+              </CheckoutInfo>
+              <CheckoutInfo primary>
+                <span>Desconto</span>
+                <span>- {format.currency(data.discount)}</span>
+              </CheckoutInfo>
+              <CheckoutInfo>
+                <span>Total</span>
+                <span>{format.currency(data.total)}</span>
+              </CheckoutInfo>
+            </CartCheckout>
+            <FooterButton to='/payments'>Seguir para o pagamento</FooterButton>
+          </>
+        }
       </CartPage>
     </>
   )
