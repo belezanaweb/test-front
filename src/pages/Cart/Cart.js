@@ -20,7 +20,6 @@ function Cart() {
   useEffect(() => {
     async function fetch() {
       const data = await cartService.getCart()
-      console.log(data)
       setData(data);
     }
     fetch()
