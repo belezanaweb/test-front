@@ -12,6 +12,7 @@ const theme = {
   errorColor: '#F30',
   borderRadius: '0.2308rem',
   buttonColor: '#FF6C00',
+  buttonDisabledColor: '#999',
   buttonSecundaryColor: '#D45A00',
   inputPlaceholderColor: '#E0E7EE',
   labelColor: '#CCC',

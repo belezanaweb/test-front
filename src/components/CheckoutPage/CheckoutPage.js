@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useRef } from 'react'
 import { StyledPage } from './style'
 import Title from 'components/Title/Title'
 import Container from 'components/Container'
@@ -9,12 +9,14 @@ import CheckoutDetail from 'components/CheckoutDetail'
 
 const CheckoutPage = ({ title, nextStep, textButton, onSubmit, ...props }) => {
   const { data, loading, hasError } = useSelector(state => state.cart)
+  const formRef = useRef(null)
+  const disabled = formRef.current === null || !formRef.current.checkValidity()
 
   return (
     <>
       <Header />
       <StyledPage>
-        <form onSubmit={onSubmit} onInvalid={e => e.preventDefault()}>
+        <form onSubmit={onSubmit} ref={formRef}>
           <Title>{title}</Title>
           <Container {...props} />
           {!hasError && !loading &&
@@ -25,7 +27,7 @@ const CheckoutPage = ({ title, nextStep, textButton, onSubmit, ...props }) => {
                 discount={data.discount}
                 total={data.total}
               />
-              <FooterButton>{textButton}</FooterButton>
+              <FooterButton disabled={disabled}>{textButton}</FooterButton>
             </>
           }
         </form>
