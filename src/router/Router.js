@@ -15,8 +15,8 @@ export default () => (
     <Router>
       <ScrollToTop>
         <Switch>
-          <LazyRoute path="/cart" component={Cart} />
-          <LazyRoute path="/payments" component={Payment} />
+          <LazyRoute exact path="/cart" component={Cart} />
+          <LazyRoute exact path="/payments" component={Payment} />
           <Redirect to="/cart" />
         </Switch>
       </ScrollToTop>
