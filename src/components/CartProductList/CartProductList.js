@@ -11,6 +11,8 @@ import {
   ProductDetails,
   Product
 } from './style'
+import Container from 'components/Container'
+import Title from 'components/Title/Title'
 
 const CartProductList = ({ showPrice }) => {
 
@@ -42,18 +44,23 @@ const CartProductList = ({ showPrice }) => {
   }
 
   return (
-    data.items.map(entry => {
-      const product = new CartProduct(entry.product)
-      return (
-        <Product key={product.sku}>
-          <img alt={product.name} src={product.imageUrl} />
-          <ProductDetails>
-            <p>{product.name}</p>
-            {showPrice && <span>{product.priceFormated}</span>}
-          </ProductDetails>
-        </Product>
-      )
-    })
+    <>
+      <Title>Produtos</Title>
+      <Container>
+        {data.items.map(entry => {
+          const product = new CartProduct(entry.product)
+          return (
+            <Product key={product.sku}>
+              <img alt={product.name} src={product.imageUrl} />
+              <ProductDetails>
+                <p>{product.name}</p>
+                {showPrice && <span>{product.priceFormated}</span>}
+              </ProductDetails>
+            </Product>
+          )
+        })}
+      </Container>
+    </>
   )
 }
 

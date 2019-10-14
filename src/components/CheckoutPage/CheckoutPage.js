@@ -1,13 +1,11 @@
 import React, { useRef } from 'react'
 import { StyledPage } from './style'
-import Title from 'components/Title/Title'
-import Container from 'components/Container'
 import { useSelector } from 'react-redux'
 import Header from 'components/Header'
 import FooterButton from 'components/FooterButton'
 import CheckoutDetail from 'components/CheckoutDetail'
 
-const CheckoutPage = ({ title, nextStep, textButton, onSubmit, ...props }) => {
+const CheckoutPage = ({ textButton, onSubmit, children }) => {
   const { data, loading, hasError } = useSelector(state => state.cart)
   const formRef = useRef(null)
   const disabled = formRef.current === null || !formRef.current.checkValidity()
@@ -17,8 +15,7 @@ const CheckoutPage = ({ title, nextStep, textButton, onSubmit, ...props }) => {
       <Header />
       <StyledPage>
         <form onSubmit={onSubmit} ref={formRef}>
-          <Title>{title}</Title>
-          <Container {...props} />
+          {children}
           {!hasError && !loading &&
             <>
               <CheckoutDetail
