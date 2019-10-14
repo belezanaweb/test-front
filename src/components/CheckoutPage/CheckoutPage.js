@@ -5,7 +5,7 @@ import Header from 'components/Header'
 import FooterButton from 'components/FooterButton'
 import CheckoutDetail from 'components/CheckoutDetail'
 
-const CheckoutPage = ({ textButton, onSubmit, children }) => {
+const CheckoutPage = ({ textButton, onSubmit, noFooterButton, children }) => {
   const { data, loading, hasError } = useSelector(state => state.cart)
   const formRef = useRef(null)
   const disabled = formRef.current === null || !formRef.current.checkValidity()
@@ -24,7 +24,7 @@ const CheckoutPage = ({ textButton, onSubmit, children }) => {
                 discount={data.discount}
                 total={data.total}
               />
-              <FooterButton disabled={disabled}>{textButton}</FooterButton>
+              {!noFooterButton && <FooterButton disabled={disabled}>{textButton}</FooterButton>}
             </>
           }
         </form>
