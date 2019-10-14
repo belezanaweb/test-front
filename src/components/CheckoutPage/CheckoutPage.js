@@ -1,4 +1,4 @@
-import React, { useRef } from 'react'
+import React, { useRef, useEffect, useState } from 'react'
 import { StyledPage } from './style'
 import { useSelector } from 'react-redux'
 import Header from 'components/Header'
@@ -7,8 +7,13 @@ import CheckoutDetail from 'components/CheckoutDetail'
 
 const CheckoutPage = ({ textButton, onSubmit, noFooterButton, children }) => {
   const { data, loading, hasError } = useSelector(state => state.cart)
+  const [disabled, setDisabled] = useState(true)
   const formRef = useRef(null)
-  const disabled = formRef.current === null || !formRef.current.checkValidity()
+
+  useEffect(() => {
+    const disabled = formRef.current === null || !formRef.current.checkValidity()
+    setDisabled(disabled)
+  })
 
   return (
     <>
