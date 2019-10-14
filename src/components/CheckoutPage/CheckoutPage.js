@@ -7,26 +7,28 @@ import Header from 'components/Header'
 import FooterButton from 'components/FooterButton'
 import CheckoutDetail from 'components/CheckoutDetail'
 
-const CheckoutPage = ({ title, nextStep, textButton, ...props }) => {
+const CheckoutPage = ({ title, nextStep, textButton, onSubmit, ...props }) => {
   const { data, loading, hasError } = useSelector(state => state.cart)
 
   return (
     <>
       <Header />
       <StyledPage>
-        <Title>{title}</Title>
-        <Container {...props} />
-        {!hasError && !loading &&
-          <>
-            <CheckoutDetail
-              subTotal={data.subTotal}
-              shippingTotal={data.shippingTotal}
-              discount={data.discount}
-              total={data.total}
-            />
-            <FooterButton to={nextStep}>{textButton}</FooterButton>
-          </>
-        }
+        <form onSubmit={onSubmit} onInvalid={e => e.preventDefault()}>
+          <Title>{title}</Title>
+          <Container {...props} />
+          {!hasError && !loading &&
+            <>
+              <CheckoutDetail
+                subTotal={data.subTotal}
+                shippingTotal={data.shippingTotal}
+                discount={data.discount}
+                total={data.total}
+              />
+              <FooterButton>{textButton}</FooterButton>
+            </>
+          }
+        </form>
       </StyledPage>
     </>
   )
