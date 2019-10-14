@@ -3,12 +3,15 @@ import React from 'react'
 import CheckoutPage from 'components/CheckoutPage'
 import CartProductList from 'components/CartProductList'
 
-function Cart() {
+function Cart(props) {
   return (
     <CheckoutPage
       title='Produtos'
-      nextStep='/payments'
       textButton='Seguir para o pagamento'
+      onSubmit={e => {
+        e.preventDefault()
+        props.history.push('/payments')
+      }}
     >
       <CartProductList showPrice />
     </CheckoutPage>
