@@ -17,6 +17,12 @@ const button = styled.button`
   text-transform: uppercase;
   cursor: pointer;
 
+  &:disabled, &:disabled:hover {
+    background-color: ${theme.buttonDisabledColor};
+    box-shadow: none;
+    cursor: not-allowed;
+  }
+
   &:hover {
     background-color: ${theme.buttonSecundaryColor};
   }

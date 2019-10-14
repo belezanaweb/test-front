@@ -1,12 +1,9 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
 import { StyledFooterButton } from './style'
 
-const FooterButton = ({ to, ...props }) => {
+const FooterButton = (props) => {
   return (
-    <Link to={to}>
-      <StyledFooterButton {...props} />
-    </Link>
+    <StyledFooterButton type="submit" {...props} />
   )
 }
 
