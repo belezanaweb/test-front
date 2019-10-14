@@ -1,24 +1,26 @@
-import React, { useRef } from 'react'
+import React, { useRef, useEffect, useState } from 'react'
 import { StyledPage } from './style'
-import Title from 'components/Title/Title'
-import Container from 'components/Container'
 import { useSelector } from 'react-redux'
 import Header from 'components/Header'
 import FooterButton from 'components/FooterButton'
 import CheckoutDetail from 'components/CheckoutDetail'
 
-const CheckoutPage = ({ title, nextStep, textButton, onSubmit, ...props }) => {
+const CheckoutPage = ({ textButton, onSubmit, noFooterButton, children }) => {
   const { data, loading, hasError } = useSelector(state => state.cart)
+  const [disabled, setDisabled] = useState(true)
   const formRef = useRef(null)
-  const disabled = formRef.current === null || !formRef.current.checkValidity()
+
+  useEffect(() => {
+    const disabled = formRef.current === null || !formRef.current.checkValidity()
+    setDisabled(disabled)
+  })
 
   return (
     <>
       <Header />
       <StyledPage>
         <form onSubmit={onSubmit} ref={formRef}>
-          <Title>{title}</Title>
-          <Container {...props} />
+          {children}
           {!hasError && !loading &&
             <>
               <CheckoutDetail
@@ -27,7 +29,7 @@ const CheckoutPage = ({ title, nextStep, textButton, onSubmit, ...props }) => {
                 discount={data.discount}
                 total={data.total}
               />
-              <FooterButton disabled={disabled}>{textButton}</FooterButton>
+              {!noFooterButton && <FooterButton disabled={disabled}>{textButton}</FooterButton>}
             </>
           }
         </form>

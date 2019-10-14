@@ -8,7 +8,7 @@ class Header extends Component {
       <StyledHeader>
         <NavLink to="/cart">Sacola</NavLink>
         <NavLink to="/payments">Pagamento</NavLink>
-        <NavLink to="/confirm">Confirmação</NavLink>
+        <NavLink to="/success">Confirmação</NavLink>
       </StyledHeader>
     )
   }

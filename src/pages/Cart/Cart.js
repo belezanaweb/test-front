@@ -6,7 +6,6 @@ import CartProductList from 'components/CartProductList'
 function Cart(props) {
   return (
     <CheckoutPage
-      title='Produtos'
       textButton='Seguir para o pagamento'
       onSubmit={e => {
         e.preventDefault()

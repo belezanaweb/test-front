@@ -1,9 +1,13 @@
 import React from 'react'
 import { StyledContainer } from './style'
+import Title from 'components/Title/Title'
 
-const Container = (props) => {
+const Container = ({ title, ...props }) => {
   return (
-    <StyledContainer {...props} />
+    <>
+      <Title>{title}</Title>
+      <StyledContainer {...props} />
+    </>
   )
 }
 

@@ -3,7 +3,7 @@ import theme from 'theme'
 
 export const CartCheckout = styled.div`
   padding: 1.154rem 1rem 1rem 1.077rem;
-  margin: 1.538rem 0;
+  margin-bottom: 1.538rem;
   box-sizing: border-box;
   border-radius: ${theme.borderRadius};
   border: ${theme.border('#ccc')};

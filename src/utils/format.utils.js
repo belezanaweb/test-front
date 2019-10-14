@@ -25,3 +25,9 @@ export function cardExpiration(value = '') {
     return digits.slice(0, 2) + '/' + digits.slice(2)
   })
 }
+
+
+export function maskCardNumber(value = '') {
+  const lastFourDigits = value.slice(-4)
+  return '****.****.****.' + lastFourDigits
+}
