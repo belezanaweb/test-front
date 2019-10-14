@@ -6,7 +6,6 @@ import { format } from 'utils'
 import { useForm } from 'utils/form.utils'
 import { pay } from 'services/cart.service'
 import { to } from 'utils/async.utils'
-import Title from 'components/Title/Title'
 import Container from 'components/Container'
 
 const Payment = props => {
@@ -16,7 +15,7 @@ const Payment = props => {
     e.preventDefault()
     const [error] = await to(pay())
     if (!error) {
-      props.history.push('/confirm')
+      props.history.push('/success')
     }
   }
 
@@ -25,8 +24,7 @@ const Payment = props => {
       textButton='Finalizar pedido'
       onSubmit={handleSubmit}
     >
-      <Title>Cartão de Crédito</Title>
-      <Container>
+      <Container title='Cartão de Crédito'>
         <Col col='16'>
           <Input
             label='Número do cartão:'
