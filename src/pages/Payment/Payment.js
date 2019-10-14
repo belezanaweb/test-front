@@ -1,5 +1,6 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import CheckoutPage from 'components/CheckoutPage'
+import { useSelector } from 'react-redux'
 import Input from 'components/Input'
 import Col from 'components/Col'
 import { format } from 'utils'
@@ -10,6 +11,13 @@ import Container from 'components/Container'
 
 const Payment = props => {
   const { handleInputChange, inputs } = useForm('payment')
+  const { data } = useSelector(state => state.cart)
+
+  useEffect(() => {
+    if (data.items.length === 0) {
+      props.history.push('/cart')
+    }
+  }, [])
 
   async function handleSubmit(e) {
     e.preventDefault()
