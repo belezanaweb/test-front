@@ -1,5 +1,19 @@
+*, body, html{
+  box-sizing: border-box;
+}
+
+body{
+  background: #EEE;
+}
+
+input::-webkit-input-placeholder,
+input:-ms-input-placeholder,
+input::placeholder {
+  color: #CCC !important;
+}
+
 .App {
-  text-align: center;
+  /*text-align: center;*/
 }
 
 .App-logo {
