@@ -1,0 +1,30 @@
+.menuContainer {
+	position: relative;
+	background: #fff;
+	padding: 0 10px;
+	width: 100%;
+	left: -10px;
+	margin-bottom: 10px;
+	box-shadow: 0px 0px 7px #000;
+}
+.menuContent a {
+	text-decoration: none;
+}
+
+.menuItem {
+	flex: 1;
+	margin: 10px 12px;
+	color: #cccccc;
+	font-weight: bold;
+	font-size: 14px;
+}
+
+.active {
+	color: #d55901;
+}
+
+.menuContent {
+	display: flex;
+	max-width: 100%;
+	margin: 0 auto;
+}

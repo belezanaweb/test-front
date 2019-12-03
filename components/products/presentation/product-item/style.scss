@@ -1,0 +1,34 @@
+.productItemContainer {
+	display: grid;
+	height: 90px;
+	border: solid 1px #eeeeef;
+	margin: 20px 15px;
+	padding: 10px 15px;
+}
+
+.productContent {
+	display: grid;
+	grid-template-columns: 1fr 3fr;
+}
+.productContent img {
+	max-width: 100%;
+}
+
+.productTextContent {
+	display: flex;
+	flex-wrap: wrap;
+	margin: 0 10px;
+}
+
+.productPrice {
+	flex-direction: row;
+	align-self: flex-end;
+	width: 100%;
+	text-align: right;
+	font-weight: bold;
+}
+
+.productText {
+	flex-direction: row;
+	font-size: 13px;
+}
