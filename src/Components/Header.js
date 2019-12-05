@@ -2,38 +2,32 @@ import React, { Component } from 'react';
 import './Header.css';
 
 class Header extends Component {
-  render() {
-    let items = {
-      "cart": {
-        selected: false,
+  state = {
+    navBarItems: [
+      {
+        key: "cart",
         text: "Sacola"
       },
-      "payment": {
-        selected: false,
+      {
+        key: "payment",
         text: "Pagamento"
       },
-      "confirmation": {
-        selected: false,
-        text: "Confirmacao"
+      {
+        "key": "confirmation",
+        text: "Confirmação"
       }
-    };
+    ]
+  }
 
-    if(items[this.props.selected] !== undefined)
-      items[this.props.selected].selected = true;
-
-    let renderedItems = [];
-    let i = 0;
-    for(let item in items) {
-      renderedItems.push(<li key={i} className={items[item].selected ? 'selected' : ''}>
-        <a href="#">{items[item].text}</a>
-      </li>);
-      i++;
-    }
-
+  render() {
     return(<header className="App-header">
       <nav className="App-navbar">
         <ul>
-          {renderedItems}
+          {this.state.navBarItems.map((navItem) => (
+            <li className={navItem.key === this.props.selected ? 'selected' : ''}>
+              <a href="#">{navItem.text}</a>
+            </li>
+          ))}
         </ul>
       </nav>
     </header>);
