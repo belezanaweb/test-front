@@ -1,23 +1,21 @@
 import React, { Component } from 'react';
 import './App.css';
-import './SharedComponents.css';
+import Product from './Components/Product';
+import Header from './Components/Header';
 
 class App extends Component {
   render() {
+    let productList = [];
+
+    for(let i = 0; i < 3; i ++) {
+      productList.push(<Product key={i} name={"Lorem ipsum dolor sit amet, consectetur adipiscing elit."} />)
+    }
+
     return (
       <div className="App">
-        <header className="App-header">
-          <nav className="App-navbar">
-            <ul>
-              <li className="selected">sacola</li>
-              <li>pagamento</li>
-              <li>confirmação</li>
-            </ul>
-          </nav>
-        </header>
-
+        <Header selected="cart" />
         <section>
-          Content
+          {productList}
         </section>
       </div>
     );

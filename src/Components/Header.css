@@ -1,7 +1,3 @@
-* {
-  font-family: "Helvetica Neue", "Helvetica", "Arial", "sans-serif";
-}
-
 .App-header {
   background-color: white;
   min-height: 6vh;
@@ -40,9 +36,4 @@
 
 .selected {
   color: hsl(33, 100%, 50%) !important;
-}
-
-.btn {
-  font-size: 15px;
-  width: 98vw;
 }

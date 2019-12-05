@@ -1,0 +1,7 @@
+.product-base {
+  color: hsl(0, 0%, 0%);
+  border: 1px hsl(0, 0%, 66%) solid;
+  border-radius: 3px;
+  margin: 5px;
+  font-size: calc(10px + 1.1vmin);
+}
