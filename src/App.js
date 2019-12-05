@@ -8,7 +8,7 @@ class App extends Component {
 
     let productList = [];
     for(let i = 0; i < 3; i ++) {
-      productList.push("Lorem ipsum dolor sit amet, consectetur adipiscing elit. In vel fringilla nulla, eu eleifend arcu. Vivamus auctor et arcu tristique euismod. Aenean laoreet tincidunt nunc.");
+      productList.push("L'Oreal Professionnel Expert Absolut Repair Cortex Lipidium");
     }
 
     return (
