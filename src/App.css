@@ -4,5 +4,8 @@
 
 .App {
   text-align: center;
+  background: hsl(0, 0%, 95%);
+  width: 100vw;
+  height: 100vh;
 }
 

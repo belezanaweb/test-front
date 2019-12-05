@@ -1,0 +1,19 @@
+.product-list {
+
+}
+
+.product-list .product-list-title {
+  text-align: left;
+  margin: calc(10px + 1vmin) 0 0 calc(15px + 1vmin);
+  font-weight: 600;
+  text-transform: uppercase;
+  color: hsl(0, 0%, 68%);
+}
+
+.product-list .product-list-container {
+  background: hsl(0, 0%, 100%);
+  border: 1px solid hsl(0, 0%, 80%);
+  border-radius: 3px;
+  margin: calc(5px + 1vmin);
+  box-shadow: 0 1px #FFFFFF inset, 0 1px 2px hsla(0, 15%, 12%, 0.4);
+}
