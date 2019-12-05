@@ -4,16 +4,17 @@
 
 .product-list .product-list-title {
   text-align: left;
-  margin: calc(10px + 1vmin) 0 0 calc(15px + 1vmin);
+  margin: calc(10px + 1vmin) 0 0 calc(14px + 1.5vmin);
   font-weight: 600;
+  font-size: calc(10px + 1.15vmin);
   text-transform: uppercase;
-  color: hsl(0, 0%, 68%);
+  color: hsl(0, 0%, 60%);
 }
 
 .product-list .product-list-container {
   background: hsl(0, 0%, 100%);
-  border: 1px solid hsl(0, 0%, 80%);
+  border: 1px solid hsl(0, 0%, 93%);
   border-radius: 3px;
-  margin: calc(5px + 1vmin);
-  box-shadow: 0 1px #FFFFFF inset, 0 1px 2px hsla(0, 15%, 12%, 0.4);
+  margin: 3px calc(5px + 1.1vmin) calc(5px + 1vmin);
+  box-shadow: 0 1px #FFFFFF inset, 0 1px 1px hsla(0, 15%, 12%, 0.4);
 }
