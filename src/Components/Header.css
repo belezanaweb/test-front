@@ -1,11 +1,11 @@
 .App-header {
   background-color: white;
-  min-height: 6vh;
+  min-height: 5.35vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(6px + 1.7vmin);
+  font-size: calc(6px + 1.8vmin);
   font-weight: 600;
   color: hsl(0, 0%, 100%);
   box-shadow: 0 1px #FFFFFF inset, 0 1px 3px hsla(0, 15%, 12%, 0.4);
