@@ -1,14 +1,15 @@
 .App-header {
   background-color: white;
-  min-height: 5.35vh;
+  min-height: 6.2vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(6px + 1.8vmin);
+  font-size: calc(10px + 1vmin);
+  letter-spacing: calc(-1px + 0.1vmin);
   font-weight: 600;
   color: hsl(0, 0%, 100%);
-  box-shadow: 0 1px #FFFFFF inset, 0 1px 3px hsla(0, 15%, 12%, 0.4);
+  box-shadow: 0 1px #FFFFFF inset, 0 0 3px hsla(0, 15%, 12%, 0.4);
 }
 
 .App-header .App-navbar {
@@ -34,6 +35,11 @@
   text-transform: uppercase;
 }
 
-.selected {
-  color: hsl(33, 100%, 50%) !important;
+.App-header .App-navbar ul li a {
+  text-decoration: none;
+  color: hsl(0, 0%, 82.5%);
+}
+
+.selected a {
+  color: hsl(28, 100%, 50%) !important;
 }

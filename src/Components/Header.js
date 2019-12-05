@@ -24,7 +24,9 @@ class Header extends Component {
     let renderedItems = [];
     let i = 0;
     for(let item in items) {
-      renderedItems.push(<li key={i} className={items[item].selected ? 'selected' : ''}>{items[item].text}</li>);
+      renderedItems.push(<li key={i} className={items[item].selected ? 'selected' : ''}>
+        <a href="#">{items[item].text}</a>
+      </li>);
       i++;
     }
 
