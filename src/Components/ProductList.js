@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import Product from './Product'
+import ProductListItem from './ProductListItem'
 import './ProductList.css';
 
 class ProductList extends Component {
@@ -10,7 +10,7 @@ class ProductList extends Component {
       <p className="product-list-title">Produtos</p>
       <div className="product-list-container">
         {productList.map((productInfo) => (
-          <Product
+          <ProductListItem
             key={productInfo.product.sku}
             name={productInfo.product.name}
             image={productInfo.product.imageObjects[0].small}
