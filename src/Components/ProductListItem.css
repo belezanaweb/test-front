@@ -28,7 +28,6 @@
   justify-content: space-between;
   flex-direction: column;
   margin-left: 2px;
-  height: 100%;
 }
 
 .product-item .product-item-name {
@@ -42,4 +41,6 @@
 .product-item .product-item-price {
   font-weight: 600;
   text-align: right;
+  align-self: flex-end;
+  justify-self: flex-end;
 }

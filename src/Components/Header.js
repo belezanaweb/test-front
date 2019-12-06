@@ -24,7 +24,7 @@ class Header extends Component {
       <nav className="App-navbar">
         <ul>
           {this.state.navBarItems.map((navItem) => (
-            <li className={navItem.key === this.props.selected ? 'selected' : ''}>
+            <li key={navItem.key} className={navItem.key === this.props.selected ? 'selected' : ''}>
               <a href="#">{navItem.text}</a>
             </li>
           ))}
