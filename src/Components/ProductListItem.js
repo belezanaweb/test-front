@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
-import './Product.css';
+import './ProductListItem.css';
 import placeHolderImage from '../Assets/Images/placeholder64x64.png';
 
-class Product extends Component {
+class ProductListItem extends Component {
   render() {
     return(<div className="product-item">
       <div className="product-item-image">
@@ -16,4 +16,4 @@ class Product extends Component {
   }
 }
 
-export default Product;
+export default ProductListItem;
