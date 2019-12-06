@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
-import './App.css';
-import Header from './Components/Header';
-import ProductList from './Components/ProductList'
+import './Cart.css';
+import Header from '../Components/Header';
+import ProductList from '../Components/ProductList'
 
-class App extends Component {
+class Cart extends Component {
   state = {
     apiResult: []
   }
@@ -28,4 +28,4 @@ class App extends Component {
   }
 }
 
-export default App;
+export default Cart;
