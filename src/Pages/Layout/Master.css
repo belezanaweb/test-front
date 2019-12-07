@@ -1,0 +1,18 @@
+* {
+  font-family: "Helvetica Neue", "Helvetica", "Arial", "sans-serif";
+  text-shadow: unset;
+  margin: 0;
+  padding: 0;
+  text-decoration: unset;
+}
+
+.app-container {
+  text-align: center;
+  background: rgb(238, 238, 238);
+  width: 100vw;
+  height: 100vh;
+}
+
+.app-content {
+  margin: calc(5px + 1.389vmin);
+}

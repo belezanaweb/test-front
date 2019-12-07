@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import './Cart.css';
-import Header from '../Components/Header';
+import '../Components/Button.css';
 import ProductList from '../Components/ProductList'
+import Master from './Layout/Master'
 
 class Cart extends Component {
   state = {
@@ -20,10 +21,12 @@ class Cart extends Component {
 
   render() {
     return (
-      <div className="App">
-        <Header selected="cart" />
-        <ProductList products={this.state.apiResult === undefined ? [] : this.state.apiResult} />
-      </div>
+      <Master current="cart">
+          <div className="cart-container">
+            <ProductList products={this.state.apiResult === undefined ? [] : this.state.apiResult} />
+            <button className="btn">Seguir para o pagamento</button>
+          </div>
+      </Master>
     );
   }
 }

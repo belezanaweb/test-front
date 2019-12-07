@@ -1,10 +1,9 @@
 .product-list {
-
 }
 
 .product-list .product-list-title {
   text-align: left;
-  margin: calc(10px + 1vmin) 0 0 calc(14px + 1.5vmin);
+  margin-left: 10px;
   font-weight: 600;
   font-size: calc(10px + 1.15vmin);
   text-transform: uppercase;
@@ -15,6 +14,29 @@
   background: hsl(0, 0%, 100%);
   border: 1px solid hsl(0, 0%, 93%);
   border-radius: 3px;
-  margin: 3px calc(5px + 1.1vmin) calc(5px + 1vmin);
-  box-shadow: 0 1px #FFFFFF inset, 0 1px 2px hsla(0, 15%, 12%, 0.4);
+  margin: 3px 0 calc(15px + 1.389vmin);
+  box-shadow: 0 1px #FFFFFF inset, 0 1px 2px rgba(35, 26, 26, 0.4);
+}
+
+.product-list-info {
+  margin: calc(5px + 1.389vmin) 0;
+  font-size: calc(10px + 1.1vmin);
+  letter-spacing: -0.1vmin;
+  border: 1px solid hsl(0, 0%, 80%);
+  border-radius: 3px;
+}
+
+.product-list-info div {
+  display: flex;
+  justify-content: space-between;
+  margin: 5px 15px;
+}
+
+.product-list-info div:first-child {
+  margin-top: 15px;
+}
+
+.product-list-info div:last-child {
+  margin-top: 15px;
+  margin-bottom: 15px;
 }

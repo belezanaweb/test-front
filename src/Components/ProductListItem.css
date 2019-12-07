@@ -4,7 +4,7 @@
   border-radius: 3px;
   margin: 12px;
   font-size: calc(10px + 1.1vmin);
-  padding: 8px;
+  padding: 14px;
   display: flex;
   flex: 1;
   flex-direction: row;
@@ -27,15 +27,12 @@
   width: 100%;
   justify-content: space-between;
   flex-direction: column;
-  margin-left: 2px;
 }
 
 .product-item .product-item-name {
   text-align: left;
   font-size: calc(8px + 1.3vmin);
-  margin-top: 2px;
   margin-left: calc(5px + 1.2vmin);
-
 }
 
 .product-item .product-item-price {
