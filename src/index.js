@@ -11,30 +11,41 @@ import {
 import Cart from './Pages/Cart';
 import * as serviceWorker from './serviceWorker';
 import Header from './Components/Header'
+ import Payment from './Pages/Payment'
+
+let routerItems = [
+  {
+    key: "cart",
+    url: "/cart",
+    text: "sacola",
+    component: () => (<Cart />)
+  },
+  {
+    key: "payment",
+    url: "/payment",
+    text: "pagamento",
+    component: () => (<Payment />)
+  },
+  {
+    key: "confirmation",
+    url: "/confirmation",
+    text: "confirmacao",
+    component: () => (<div>Page missing</div>)
+  }
+];
 
 ReactDOM.render(
   <Router>
-    <Header navItems={[
-      {
-        key: "cart",
-        url: "/cart",
-        text: "sacola"
-      }
-    ]} />
-
+    <Header navItems={routerItems} />
 
     <div className="app-container">
       <div className="app-content">
         <Switch>
-          <Route path="/cart">
-            <Cart />
-          </Route>
-          <Route path="/payment">
-            <div>Test</div>
-          </Route>
-          <Route path="/confirmation">
-            <div>Test 2</div>
-          </Route>
+          {routerItems.map((routeItem) => (
+            <Route path={routeItem.url} exact>
+              {routeItem.component}
+            </Route>
+          ))}
         </Switch>
       </div>
     </div>
