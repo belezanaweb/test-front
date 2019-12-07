@@ -41,6 +41,6 @@
   color: rgb(210, 210, 210);
 }
 
-.selected a {
+.selected {
   color: rgb(255, 120, 0) !important;
 }

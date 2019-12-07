@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import './Cart.css';
 import '../Components/Button.css';
 import ProductList from '../Components/ProductList'
-import Master from './Layout/Master'
+import Checkout from './Layout/Checkout'
 
 class Cart extends Component {
   state = {
@@ -21,12 +21,12 @@ class Cart extends Component {
 
   render() {
     return (
-      <Master current="cart">
+      <Checkout current="cart">
           <div className="cart-container">
             <ProductList products={this.state.apiResult === undefined ? [] : this.state.apiResult} />
             <button className="btn">Seguir para o pagamento</button>
           </div>
-      </Master>
+      </Checkout>
     );
   }
 }

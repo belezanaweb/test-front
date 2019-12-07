@@ -6,6 +6,10 @@
   text-decoration: unset;
 }
 
+body {
+  background: rgb(238, 238, 238);
+}
+
 .app-container {
   text-align: center;
   background: rgb(238, 238, 238);
