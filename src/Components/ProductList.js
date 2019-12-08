@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import ProductListItem from './ProductListItem'
 import './ProductList.css';
 import './Text.css'
-import intlUtils from '../Intl.Utils'
+import CartPrice from './CartPrice'
 
 class ProductList extends Component {
 
@@ -25,24 +25,7 @@ class ProductList extends Component {
         ))}
       </div>
 
-      <div className="product-list-info">
-        <div>
-          <span>PRODUTOS</span>
-          <span>{intlUtils.formatCurrency("pt-br", currency, this.props.products.subTotal)}</span>
-        </div>
-        <div>
-          <span>FRETE</span>
-          <span>{intlUtils.formatCurrency("pt-br", currency, this.props.products.shippingTotal)}</span>
-        </div>
-        <div className="text-highlight">
-          <span>DESCONTO</span>
-          <span>- {intlUtils.formatCurrency("pt-br", currency, this.props.products.discount)}</span>
-        </div>
-        <div className="text-bold">
-          <span>TOTAL</span>
-          <span>{intlUtils.formatCurrency("pt-br", currency, (this.props.products.subTotal + this.props.products.shippingTotal) - this.props.products.discount)}</span>
-        </div>
-      </div>
+      <CartPrice products={this.props.products} currency={currency} />
     </section>);
   }
 }
