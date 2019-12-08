@@ -10,7 +10,7 @@ class ProductList extends Component {
     let productList = this.props.products.items === undefined ? [] : this.props.products.items;
 
     return(<section className="product-list">
-      <p className="product-list-title">Produtos</p>
+      <p className="group-title">Produtos</p>
       <div className="product-list-container">
         {productList.map((productInfo) => (
           <ProductListItem

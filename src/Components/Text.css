@@ -5,3 +5,14 @@
 .text-bold {
   font-weight: 600;
 }
+
+.group-title {
+  text-align: left;
+  margin-left: 10px;
+  margin-bottom: 5px;
+
+  font-weight: 600;
+  font-size: calc(10px + 1.15vmin);
+  text-transform: uppercase;
+  color: hsl(0, 0%, 60%);
+}

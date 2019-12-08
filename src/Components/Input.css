@@ -20,6 +20,24 @@
   padding: 15px;
 }
 
+.input-group input:focus {
+  outline: unset;
+  border: 1px solid rgb(164, 50, 135);
+  box-shadow: unset;
+}
+
+.input-group input:invalid {
+  outline: unset;
+  border: 1px solid rgb(243, 9, 13);
+  box-shadow: unset;
+}
+
+.input-group input:valid {
+  outline: unset;
+  border: 1px solid rgb(22, 214, 33);
+  box-shadow: unset;
+}
+
 .input-group input::placeholder {
   color: hsl(0, 0%, 90%);
 }

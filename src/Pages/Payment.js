@@ -9,11 +9,16 @@ import CartPrice from '../Components/CartPrice'
 import { connect } from 'react-redux';
 
 class Payment extends Component{
+  submitForm() {
+    console.log(arguments);
+  }
+
   render() {
     const { productList } = this.props;
 
     return(<Checkout>
-      <form id="paymentForm">
+      <form id="paymentForm" onSubmit={this.submitForm.bind(this)}>
+        <p className="group-title">Cartão de crédito</p>
         <div className="payment-form">
           <div key="creditCard" className="input-group">
             <Input type="creditCard" label="Número do cartao:" required />
@@ -43,9 +48,9 @@ class Payment extends Component{
 
         <CartPrice products={productList} currency="BRL" />
 
-        <input type="submit" className="btn" onClick={() => {
-
-        }} value="finalizar o pedido" disabled />
+        <input type="submit" className="btn" style={{
+          marginTop: '20px'
+        }} value="finalizar o pedido" />
       </form>
     </Checkout>);
   }

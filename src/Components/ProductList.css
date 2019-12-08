@@ -1,15 +1,3 @@
-.product-list {
-}
-
-.product-list .product-list-title {
-  text-align: left;
-  margin-left: 10px;
-  font-weight: 600;
-  font-size: calc(10px + 1.15vmin);
-  text-transform: uppercase;
-  color: hsl(0, 0%, 60%);
-}
-
 .product-list .product-list-container {
   background: hsl(0, 0%, 100%);
   border: 1px solid hsl(0, 0%, 93%);

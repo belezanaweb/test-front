@@ -11,7 +11,6 @@ class Input extends Component {
         placeholder: "",
         class: "input-text",
         validation: function() {
-          console.log(arguments);
         }
       },
       creditCard: {
@@ -20,8 +19,8 @@ class Input extends Component {
         class: "input-creditCard",
         limit: 16,
         validation: function() {
+          arguments[0].target.value = arguments[0].target.value.replace(/[^0-9]/g, '');
           let result = CCValidation.number(arguments[0].target.value);
-
           return result.isPotentiallyValid || result.isValid;
         }
       },
@@ -30,21 +29,26 @@ class Input extends Component {
         placeholder: "0",
         class: "input-text",
         validation: function() {
+          arguments[0].target.value = arguments[0].target.value.replace(/[^0-9]/g, '');
+          return true;
         }
       },
       cvv: {
         type: "text",
         placeholder: "___",
         class: "input-cvv",
+        pattern: "[0-9]{3}",
         limit: 3,
         min: 3,
         validation: function() {
+          arguments[0].target.value = arguments[0].target.value.replace(/[^0-9]/g, '');
         }
       },
       date: {
         type: "text",
         class: "input-date",
         placeholder: "__/__/____",
+        pattern: "([1-9]|[12][0-9]|3[01])\\/(0+[1-9]|1[0-2])\\/?([0-9]{4})",
         validation: function() {
         }
       },
@@ -52,21 +56,38 @@ class Input extends Component {
         type: "text", // check how to month bcuz im dumbb
         class: "input-date",
         placeholder: "__/____",
-        pattern: "([0-1]{2})\\/?([0-9]{4})",
+        pattern: "(0+[1-9]|1[0-2])\\/?([0-9]{4})",
         limit: 7,
         min: 6,
         validation: function() {
+          let curDate = new Date();
+          let month = 0;
+          let year = 0;
+          arguments[0].target.value = arguments[0].target.value
+            .replace(/\//g, '') // only one date marker
+            .replace(/[^0-9]/g, ''); // only numbers
+
           if(arguments[0].target.value.length > 3) {
             if(arguments[0].target.value.substr(2, 1) !== '/') {
-              let tmp = arguments[0].target.value.substr(0, 2);
-              tmp += "/";
-              tmp += arguments[0].target.value.substr(2, arguments[0].target.value.length - 2);
-              arguments[0].target.value = tmp;
+              month = arguments[0].target.value.substr(0, 2);
+              year = arguments[0].target.value.substr(2, arguments[0].target.value.length - 2);
+              arguments[0].target.value = `${month}/${year}`;
+            } else {
+              month = arguments[0].target.value.substr(0, 2);
+              year = arguments[0].target.value.substr(3, arguments[0].target.value.length - 2);
+              arguments[0].target.value = `${month}/${year}`;
             }
           }
+
+          return parseInt(year) > curDate.getFullYear() && parseInt(month) > curDate.getMonth();
         },
       },
     }
+  }
+
+  defaultValidation()
+  {
+    return false;
   }
 
   render() {
@@ -83,9 +104,13 @@ class Input extends Component {
             }
             maxLength={type.limit === undefined ? 64 : type.limit}
             placeholder={this.props.placeholder === undefined ? type.placeholder : this.props.placeholder}
-            onChange={() => {
-              let isValid = type.validation(arguments[0]);
-              console.log(isValid);
+            onChange={(ev) => {
+              let isValid = type.validation(ev);
+              ev.target.checkValidity();
+
+              this.setState({
+                valid: isValid && ev.target.validity.valid
+              })
             }}
             required={this.props.required !== undefined}
             disabled={this.props.disabled !== undefined}
