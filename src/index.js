@@ -1,10 +1,13 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import * as serviceWorker from './serviceWorker';
+
 import './index.css';
+
 import Cart from './Pages/Cart';
-import Header from './Components/Header'
-import Payment from './Pages/Payment'
+import Header from './Components/Header';
+import Payment from './Pages/Payment';
+import Confirmation from './Pages/Confirmation';
 
 import * as store from './store';
 import { PersistGate } from 'redux-persist/integration/react'
@@ -15,7 +18,6 @@ import {
   Switch,
   Route
 } from "react-router-dom";
-
 
 
 
@@ -36,7 +38,7 @@ let routerItems = [
     key: "confirmation",
     url: "/confirmation",
     text: "confirmacao",
-    component: () => (<div>Page missing</div>)
+    component: () => (<Confirmation />)
   }
 ];
 

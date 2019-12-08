@@ -17,7 +17,7 @@ class Payment extends Component{
     const { productList } = this.props;
 
     return(<Checkout>
-      <form id="paymentForm" onSubmit={this.submitForm.bind(this)}>
+      <form id="paymentForm" action="confirmation" onSubmit={this.submitForm.bind(this)}>
         <p className="group-title">Cartão de crédito</p>
         <div className="payment-form">
           <div key="creditCard" className="input-group">
@@ -25,7 +25,7 @@ class Payment extends Component{
           </div>
 
           <div key="cardName" className="input-group">
-            <Input type="text" placeholder="Como no cartão" label="Nome do Titular:" required />
+            <Input type="text" pattern="^\w+" placeholder="Como no cartão" label="Nome do Titular:" required />
           </div>
 
           <div style={{

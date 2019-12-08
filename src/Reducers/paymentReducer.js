@@ -1,14 +1,14 @@
-import { UPDATE_PRODUCT_LIST } from '../Actions/actionTypes'
+import { PAYMENT_INFO } from '../Actions/actionTypes'
 
 const initialState = {
-  productList: []
+  paymentInfo: {}
 };
 
 export const cartReducer = (state = initialState, action) => {
-  if (action.type === UPDATE_PRODUCT_LIST) {
+  if (action.type === PAYMENT_INFO) {
     return {
       ...state,
-      productList: action.productList
+      paymentInfo: action.paymentInfo
     };
   } else {
     return state;

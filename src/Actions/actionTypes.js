@@ -1,1 +1,2 @@
 export const UPDATE_PRODUCT_LIST = 'UPDATE_PRODUCT_LIST';
+export const PAYMENT_INFO = 'PAYMENT_INFO';
