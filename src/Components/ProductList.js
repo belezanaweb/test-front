@@ -8,9 +8,6 @@ class ProductList extends Component {
 
   render() {
     let productList = this.props.products.items === undefined ? [] : this.props.products.items;
-    let currency = "BRL";
-
-    console.log(this.props.products)
 
     return(<section className="product-list">
       <p className="product-list-title">Produtos</p>
@@ -25,7 +22,7 @@ class ProductList extends Component {
         ))}
       </div>
 
-      <CartPrice products={this.props.products} currency={currency} />
+      <CartPrice products={this.props.products} currency="BRL" />
     </section>);
   }
 }

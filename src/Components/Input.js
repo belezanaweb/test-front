@@ -4,6 +4,7 @@ import * as CCValidation from 'card-validator';
 
 class Input extends Component {
   state = {
+    valid: false,
     inputType: {
       text: {
         type: "text",
@@ -74,23 +75,27 @@ class Input extends Component {
     return([
       <label>{this.props.label === undefined ? '' : this.props.label}</label>,
       <input className={type.class}
-      type={type.type}
+            type={type.type}
 
-      minLength={type.min === undefined ?
-          0 :
-          type.min
-      }
-      maxLength={type.limit === undefined ? 64 : type.limit}
-      placeholder={this.props.placeholder === undefined ? type.placeholder : this.props.placeholder}
-      onChange={type.validation.bind(this)}
-      required={this.props.required !== undefined}
-      disabled={this.props.disabled !== undefined}
-      pattern={this.props.pattern !== undefined ?
-          this.props.pattern : // if exists get this ( from caller )
-          type.pattern === undefined ?
-            undefined :
-            type.pattern // if exists get this ( from type )
-      }
+            minLength={type.min === undefined ?
+                0 :
+                type.min
+            }
+            maxLength={type.limit === undefined ? 64 : type.limit}
+            placeholder={this.props.placeholder === undefined ? type.placeholder : this.props.placeholder}
+            onChange={() => {
+              let isValid = type.validation(arguments[0]);
+              console.log(isValid);
+            }}
+            required={this.props.required !== undefined}
+            disabled={this.props.disabled !== undefined}
+            pattern={this.props.pattern !== undefined ?
+                this.props.pattern : // if exists get this ( from caller )
+                type.pattern === undefined ?
+                  undefined :
+                  type.pattern // if exists get this ( from type )
+            }
+            data-valid={this.state.valid}
       />
     ]);
   }

@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import { Component } from 'react';
 import './Checkout.css';
 
 class Checkout extends Component {
