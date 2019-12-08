@@ -1,8 +1,11 @@
 import React, { Component } from 'react';
+import Checkout from './Layout/Checkout'
 
 class Confirmation extends Component {
   render() {
-    return(<div>Confirmation Page</div>)
+    return(<Checkout>
+      Confirmation Page
+    </Checkout>)
   }
 }
 
