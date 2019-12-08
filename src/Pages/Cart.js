@@ -3,6 +3,7 @@ import './Cart.css';
 import '../Components/Button.css';
 import ProductList from '../Components/ProductList'
 import Checkout from './Layout/Checkout'
+import { persistStore } from 'redux-persist';
 
 class Cart extends Component {
   state = {
