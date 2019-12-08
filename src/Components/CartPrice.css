@@ -10,7 +10,7 @@
 .cart-price div {
   display: flex;
   justify-content: space-between;
-  margin: 5px 15px;
+  margin: 10px 15px;
 }
 
 .cart-price div:first-child {

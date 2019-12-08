@@ -4,7 +4,7 @@ const initialState = {
   paymentInfo: {}
 };
 
-export const cartReducer = (state = initialState, action) => {
+export const paymentReducer = (state = initialState, action) => {
   if (action.type === PAYMENT_INFO) {
     return {
       ...state,

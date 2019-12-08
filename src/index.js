@@ -54,7 +54,6 @@ ReactDOM.render(
                 <Route key={routeItem.key} path={routeItem.url} exact component={routeItem.component} />
               ))}
             </Switch>
-
           </PersistGate>
         </div>
       </div>

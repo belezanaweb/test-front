@@ -7,17 +7,27 @@ import Checkout from './Layout/Checkout'
 import CartPrice from '../Components/CartPrice'
 
 import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
+import { paymentConfirm } from '../Actions'
 
 class Payment extends Component{
   submitForm() {
-    console.log(arguments);
+    const form = arguments[0].target;
+    const domElements = form.elements;
+    const { paymentConfirm } = this.props;
+
+    paymentConfirm({
+      cardLastDigits: domElements.namedItem("creditCard").value.substr(11, 4),
+      expireDate: domElements.namedItem("creditCardExpiration").value,
+      cardHolderName: domElements.namedItem("cardHolderName").value
+    });
   }
 
   render() {
     const { productList } = this.props;
 
     return(<Checkout>
-      <form id="paymentForm" action="confirmation" onSubmit={this.submitForm.bind(this)}>
+      <form name="paymentForm" action={"confirmation"} onSubmit={this.submitForm.bind(this)}>
         <p className="group-title">Cartão de crédito</p>
         <div className="payment-form">
           <div key="creditCard" className="input-group">
@@ -25,7 +35,7 @@ class Payment extends Component{
           </div>
 
           <div key="cardName" className="input-group">
-            <Input type="text" pattern="^\w+" placeholder="Como no cartão" label="Nome do Titular:" required />
+            <Input type="text" name={"cardHolderName"} pattern="^[a-zA-Z]+(([',. -][a-zA-Z ])?[a-zA-Z]*)*$" placeholder="Como no cartão" label="Nome do Titular:" required />
           </div>
 
           <div style={{
@@ -61,4 +71,6 @@ const mapStateToProps = store => ({
   productList: store.cartState.productList
 });
 
-export default connect(mapStateToProps)(Payment);
+const mapDispatchToProps = dispatch => bindActionCreators({ paymentConfirm }, dispatch);
+
+export default connect(mapStateToProps, mapDispatchToProps)(Payment);

@@ -86,17 +86,12 @@ class Input extends Component {
     }
   }
 
-  defaultValidation()
-  {
-    return false;
-  }
-
   render() {
     let type = this.state.inputType[this.props.type];
 
     return([
       <label key="description-label">{this.props.label === undefined ? '' : this.props.label}</label>,
-      <input key="" className={type.class}
+      <input key="inputData" name={this.props.name === undefined ? this.props.type : this.props.name} className={type.class}
             type={type.type}
 
             minLength={type.min === undefined ?
