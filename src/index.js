@@ -11,7 +11,7 @@ import {
 import Cart from './Pages/Cart';
 import * as serviceWorker from './serviceWorker';
 import Header from './Components/Header'
- import Payment from './Pages/Payment'
+import Payment from './Pages/Payment'
 
 let routerItems = [
   {
@@ -36,9 +36,8 @@ let routerItems = [
 
 ReactDOM.render(
   <Router>
-    <Header navItems={routerItems} />
-
     <div className="app-container">
+      <Header navItems={routerItems} />
       <div className="app-content">
         <Switch>
           {routerItems.map((routeItem) => (
