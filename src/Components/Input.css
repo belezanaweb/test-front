@@ -1,0 +1,41 @@
+.input-group {
+  display:flex;
+  flex-direction: column;
+  margin-bottom: 15px;
+}
+
+.input-group label {
+  color: hsl(0, 0%, 78%);
+  font-weight: 600;
+  justify-self: left;
+  text-align: left;
+  font-size: calc(10px + .8vmin);
+  margin: 5px;
+}
+
+.input-group input {
+  border-radius: 4px;
+  border: 1px solid rgba(232, 232, 232, 0.5);
+  box-shadow: 0 1px 2px rgba(35, 26, 26, 0.2) inset;
+  padding: 15px;
+}
+
+.input-group input::placeholder {
+  color: hsl(0, 0%, 90%);
+}
+
+.input-group .input-date::placeholder {
+  letter-spacing: calc(1px + .25vmin);
+}
+
+.input-group .input-text {
+  font-size: calc(12px + 1vmin);
+}
+
+.input-group .input-cvv::placeholder {
+  letter-spacing: calc(1px + .25vmin);
+}
+
+.input-group .input-creditCard::placeholder {
+  letter-spacing: calc(1px + .25vmin);
+}
