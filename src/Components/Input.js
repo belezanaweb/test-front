@@ -17,6 +17,7 @@ class Input extends Component {
         type: "text",
         placeholder: "____.____.____.____",
         class: "input-creditCard",
+        pattern: "[0-9]{16}",
         limit: 16,
         validation: function() {
           arguments[0].target.value = arguments[0].target.value.replace(/[^0-9]/g, '');
@@ -94,8 +95,8 @@ class Input extends Component {
     let type = this.state.inputType[this.props.type];
 
     return([
-      <label>{this.props.label === undefined ? '' : this.props.label}</label>,
-      <input className={type.class}
+      <label key="description-label">{this.props.label === undefined ? '' : this.props.label}</label>,
+      <input key="" className={type.class}
             type={type.type}
 
             minLength={type.min === undefined ?

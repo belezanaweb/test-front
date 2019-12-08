@@ -22,7 +22,7 @@
 
 .input-group input:focus {
   outline: unset;
-  border: 1px solid rgb(164, 50, 135);
+  border: 1px solid rgb(164, 50, 135) !important;
   box-shadow: unset;
 }
 
