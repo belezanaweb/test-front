@@ -16,7 +16,7 @@ afterEach(() => {
   container = null;
 });
 
-it('Input renders without crashing', () => {
+it('renders without crashing', () => {
   act(() => {
     render(<Input />, container);
   });

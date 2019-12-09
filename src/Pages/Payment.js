@@ -27,7 +27,7 @@ class Payment extends Component{
     const { productList } = this.props;
 
     return(<Checkout>
-      <form name="paymentForm" action={"confirmation"} onSubmit={this.submitForm.bind(this)}>
+      <form name="paymentForm" method="post" action={"confirmation"} onSubmit={this.submitForm.bind(this)}>
         <p className="group-title">Cartão de crédito</p>
         <div className="payment-form">
           <div key="creditCard" className="input-group">

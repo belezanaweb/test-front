@@ -44,3 +44,9 @@
 .selected {
   color: rgb(255, 120, 0) !important;
 }
+
+@media (orientation: landscape) {
+  .App-header .App-navbar {
+    width: 90%;
+  }
+}

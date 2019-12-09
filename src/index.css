@@ -10,7 +10,7 @@
 }
 
 body {
-  background: rgb(238, 238, 238);
+  background: #fff;
 }
 
 code {
@@ -27,4 +27,22 @@ code {
 
 .app-content {
   margin: calc(5px + 1.389vmin);
+}
+
+@media (orientation: landscape) {
+  .app-container {
+    width: 30vw;
+    height: 100vh;
+  }
+
+  body {
+    display: flex;
+    flex-direction: row;
+
+    justify-content: center;
+    justify-items: center;
+
+    align-content: center;
+    align-items: center;
+  }
 }
