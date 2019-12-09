@@ -5,23 +5,37 @@ import './CartPrice.css';
 class CartPrice extends Component
 {
   render() {
+    const { locale, products, currency } = this.props;
+
     return (
       <div className="cart-price">
         <div>
           <span>PRODUTOS</span>
-          <span>{intlUtils.formatCurrency(this.props.locale === undefined ? "pt-br" : this.props.locale, this.props.currency, this.props.products.subTotal)}</span>
+          <span>{intlUtils.formatCurrency(
+            locale === undefined ? "pt-br" : locale,
+            currency === undefined ? 'brl' : currency,
+            products === undefined ? 0 : products.subTotal)}</span>
         </div>
         <div>
           <span>FRETE</span>
-          <span>{intlUtils.formatCurrency(this.props.locale === undefined ? "pt-br" : this.props.locale, this.props.currency, this.props.products.shippingTotal)}</span>
+          <span>{intlUtils.formatCurrency(
+            locale === undefined ? "pt-br" : locale,
+            currency === undefined ? 'brl' : currency,
+            products === undefined ? 0 : products.shippingTotal)}</span>
         </div>
         <div className="text-highlight">
           <span>DESCONTO</span>
-          <span>- {intlUtils.formatCurrency(this.props.locale === undefined ? "pt-br" : this.props.locale, this.props.currency, this.props.products.discount)}</span>
+          <span>- {intlUtils.formatCurrency(
+            locale === undefined ? "pt-br" : locale,
+            currency === undefined ? 'brl' : currency,
+            products === undefined ? 0 : products.discount)}</span>
         </div>
         <div className="text-bold">
           <span>TOTAL</span>
-          <span>{intlUtils.formatCurrency(this.props.locale === undefined ? "pt-br" : this.props.locale, this.props.currency, (this.props.products.subTotal + this.props.products.shippingTotal) - this.props.products.discount)}</span>
+          <span>{intlUtils.formatCurrency(
+            locale === undefined ? "pt-br" : locale,
+            currency === undefined ? 'brl' : currency,
+            products === undefined ? 0 : (products.subTotal + products.shippingTotal) - products.discount)}</span>
         </div>
       </div>
     );

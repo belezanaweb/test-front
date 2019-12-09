@@ -12,7 +12,8 @@
     "redux-persist": "^6.0.0"
   },
   "devDependencies": {
-    "react-scripts": "2.1.8"
+    "react-scripts": "2.1.8",
+    "react-test-renderer": "^16.12.0"
   },
   "scripts": {
     "start": "react-scripts start",

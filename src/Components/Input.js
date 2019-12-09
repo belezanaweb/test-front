@@ -87,36 +87,43 @@ class Input extends Component {
   }
 
   render() {
-    let type = this.state.inputType[this.props.type];
+    const { inputType, valid } = this.state;
+    const {
+      type, label, name,
+      placeholder, required, disabled,
+      pattern
+    } = this.props;
+
+    let typeObject = inputType[type];
 
     return([
-      <label key="description-label">{this.props.label === undefined ? '' : this.props.label}</label>,
-      <input key="inputData" name={this.props.name === undefined ? this.props.type : this.props.name} className={type.class}
-            type={type.type}
+      <label key="description-label">{label === undefined ? '' : label}</label>,
+      <input key="inputData" name={name === undefined ? type : name} className={typeObject.class}
+            type={typeObject.type}
 
-            minLength={type.min === undefined ?
+            minLength={typeObject.min === undefined ?
                 0 :
-                type.min
+                typeObject.min
             }
-            maxLength={type.limit === undefined ? 64 : type.limit}
-            placeholder={this.props.placeholder === undefined ? type.placeholder : this.props.placeholder}
+            maxLength={typeObject.limit === undefined ? 64 : typeObject.limit}
+            placeholder={placeholder === undefined ? typeObject.placeholder : placeholder}
             onChange={(ev) => {
-              let isValid = type.validation(ev);
+              let isValid = typeObject.validation(ev);
               ev.target.checkValidity();
 
               this.setState({
                 valid: isValid && ev.target.validity.valid
               })
             }}
-            required={this.props.required !== undefined}
-            disabled={this.props.disabled !== undefined}
-            pattern={this.props.pattern !== undefined ?
-                this.props.pattern : // if exists get this ( from caller )
-                type.pattern === undefined ?
+            required={required !== undefined}
+            disabled={disabled !== undefined}
+            pattern={pattern !== undefined ?
+                pattern : // if exists get this ( from caller )
+                typeObject.pattern === undefined ?
                   undefined :
-                  type.pattern // if exists get this ( from type )
+                  typeObject.pattern // if exists get this ( from type )
             }
-            data-valid={this.state.valid}
+            data-valid={valid}
       />
     ]);
   }
