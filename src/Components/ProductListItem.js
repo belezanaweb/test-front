@@ -5,7 +5,7 @@ import intlUtils from '../Intl.Utils'
 
 class ProductListItem extends Component {
   render() {
-    const { image, name, price, compactMode } = this.props;
+    const { image, name, price, compactMode, locale, currency } = this.props;
 
     const isInCompactMode = compactMode !== false;
     return(<div className={isInCompactMode ? "product-item-compact" : "product-item"}>

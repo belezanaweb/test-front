@@ -10,6 +10,8 @@ class ProductList extends Component {
     const { products, compactMode } = this.props;
 
     let productList = products === undefined ? [] : products.items;
+    productList = productList === undefined ? [] : productList;
+
     let isInCompactMode = compactMode !== undefined ? compactMode : false;
 
     return(<section className="product-list">

@@ -28,12 +28,12 @@ class Cart extends Component {
   }
 
   render() {
-    const { productList } = this.state;
+    const { productList } = this.props;
 
     return (
       <Checkout current="cart">
           <div className="cart-container">
-            <ProductList products={productList === undefined ? [] : productList} />
+            <ProductList products={productList} />
             <Link to="payment" className="btn">Seguir para o pagamento</Link>
           </div>
       </Checkout>
