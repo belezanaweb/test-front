@@ -1,14 +1,16 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import * as actionCreators from '../store/actions/index.js';
 import ProductList from '../components/ProdutctList';
 import FinalizeAccount from '../components/FinalizeAccount';
-import { connect } from 'react-redux';
-import * as actionCreators from '../store/actions/index.js'
+import Header from '../components/Header';
+import Button from '../components/Button';
 
 class Cart extends Component {
   render() {
     return (
       <div>
-        Cart
+        <Header />
         <ProductList 
           items={this.props.items}
         />
@@ -18,8 +20,13 @@ class Cart extends Component {
           discount={this.props.discount} 
           total={this.props.total} 
         />
+        <Button label='SEGUIR PARA O PAGAMENTO' handleClick="payment" />
       </div>
     );
+  }
+
+  test = ()=> {
+    console.log('test')
   }
 
   componentDidMount() {

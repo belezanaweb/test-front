@@ -1,22 +1,15 @@
 import React, { Suspense, lazy } from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import {createStore, applyMiddleware} from 'redux';
 import {Provider} from 'react-redux';
-import thunk from 'redux-thunk';
-import reducers from './store/reducers/index.js';
-import * as serviceWorker from './serviceWorker';
-import { BrowserRouter, Switch, Route } from 'react-router-dom';
-import {store, persistor} from './store/index.js';
 import { PersistGate } from 'redux-persist/integration/react'
+import { BrowserRouter, Switch, Route } from 'react-router-dom';
+import * as serviceWorker from './serviceWorker';
+import {store, persistor} from './store/index.js';
 
-
-const App = lazy(() => import('./App.js'));
 const Cart = lazy(() => import('./cart/Cart.js'));
 const Payment = lazy(() => import('./cart/Payment.js'));
 const Success = lazy(() => import('./cart/Success.js'));
-
-// let store = createStore(reducers, applyMiddleware(thunk))
 
 ReactDOM.render(
     <Provider store={store}>
