@@ -24,8 +24,7 @@ ReactDOM.render(
             <BrowserRouter>
                 <Switch>
                     <Suspense fallback={<div>Loading...</div>}>
-                        <Route path='/' exact={true} component={App} />
-                        <Route path='/cart' component={Cart} />
+                        <Route path='/' exact={true} component={Cart} />
                         <Route path='/payment' component={Payment} />
                         <Route path='/success' component={Success} />
                     </Suspense>
