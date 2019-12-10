@@ -11,22 +11,18 @@ class Cart extends Component {
     return (
       <div>
         <Header />
-        <ProductList 
+        <ProductList
           items={this.props.items}
         />
-        <FinalizeAccount 
-          subTotal={this.props.subTotal} 
-          shippingTotal={this.props.shippingTotal} 
-          discount={this.props.discount} 
-          total={this.props.total} 
+        <FinalizeAccount
+          subTotal={this.props.subTotal}
+          shippingTotal={this.props.shippingTotal}
+          discount={this.props.discount}
+          total={this.props.total}
         />
         <Button label='SEGUIR PARA O PAGAMENTO' handleClick="payment" />
       </div>
     );
-  }
-
-  test = ()=> {
-    console.log('test')
   }
 
   componentDidMount() {
