@@ -1,18 +1,21 @@
 import React, { Component } from 'react';
+import { red } from 'chalk';
 class ProductList extends Component {
 
   render() {
     const styles = {
       container: {
         borderWidth: '1px',
-        width: '95%',
+        width: '100%',
+        maxWidth: '800px',
         margin: '10px auto',
         minHeight: '50px',
         borderColor: '#c0c0c0',
         borderStyle: 'solid',
-        WebkitBoxShadow: '0 5px 10px rgba(0, 0, 0, 0.3)',
-        MozBoxShadow: '0 5px 10px rgba(0, 0, 0, 0.3)',
-        boxShadow: '0 5px 10px rgba(0, 0, 0, 0.3)',
+        WebkitBoxShadow: '0 2px 2px rgba(0, 0, 0, 0.3)',
+        MozBoxShadow: '0 2px 2px rgba(0, 0, 0, 0.3)',
+        boxShadow: '0 2px 2px rgba(0, 0, 0, 0.3)',
+        background: '#fff'
       },
       itemContainer: {
         borderWidth: '1px',
@@ -23,29 +26,40 @@ class ProductList extends Component {
         borderStyle: 'solid',
       },
       title: {
-        fontSize: '3.5vw',
+        fontSize: '0.9rem',
         fontWeight: 'none',
-        padding: '10px',
-        height: '50px',
+        padding: '10px 10px 0 0',
+        height: '75px',
+        width: '100%',
+        display: 'table-cell',
       },
       price: {
-        fontSize: '4vw',
+        fontSize: '0.9rem',
         fontWeight: 'bold',
         textAlign: 'right',
-        padding: '20px 5px 10px 0',
+        height: '10px',
+        padding: '2px 15px',
         height: '20px',
       },
+
+      textContainer: {
+        width: '70%',
+        float: 'right',
+        height: '100%',
+        margin: 'auto',
+      },
       imageContainer: {
-        width: '33%',
+        width: '30%',
         float: 'left',
         height: '100%',
       },
-      textContainer: {
-        width: '66%',
-        float: 'left',
-        // height: '100px',
-        display:'table-row',
-        margin: 'auto',
+      img: {
+        width: '100%',
+        maxWidth: '100px',
+        margin: '0 auto',
+      },
+      visibility: {
+        visibility: 'none'
       }
     };
 
@@ -55,19 +69,19 @@ class ProductList extends Component {
       let product = item.product;
       let listItems =
         <div style={styles.itemContainer} key={index} >
-          <div style={styles.imageContainer}> <img src={product.imageObjects[0].small} alt='' height='100%' width='100%' /> </div>
+          <div style={styles.imageContainer}> <img src={product.imageObjects[0].small} alt='' style={styles.img} /> </div>
           <div style={styles.textContainer}>
             <div style={styles.title}> {product.name} </div>
-            <div style={styles.price}> R$ {product.priceSpecification.price} </div>
+            <div className={this.props.hidePrice ? 'hidden' : ''} style={styles.price}> R$ {product.priceSpecification.price} </div>
           </div>
         </div>;
       return listItems;
     });
 
     return (
-        <div style={styles.container} >
-          {produtcts}
-        </div>
+      <div style={styles.container} >
+        {produtcts}
+      </div>
     );
 
   }

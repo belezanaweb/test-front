@@ -22,6 +22,7 @@ class Success extends Component {
         />
         <ProductList
           items={this.props.items}
+          hidePrice={true}
         />
         <FinalizeAccount
           subTotal={this.props.subTotal}
