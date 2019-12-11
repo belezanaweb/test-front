@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import { red } from 'chalk';
 class ProductList extends Component {
 
   render() {
@@ -8,7 +7,7 @@ class ProductList extends Component {
         borderWidth: '1px',
         width: '100%',
         maxWidth: '800px',
-        margin: '10px auto',
+        margin: '0 auto',
         minHeight: '50px',
         borderColor: '#c0c0c0',
         borderStyle: 'solid',
@@ -37,11 +36,9 @@ class ProductList extends Component {
         fontSize: '0.9rem',
         fontWeight: 'bold',
         textAlign: 'right',
-        height: '10px',
         padding: '2px 15px',
         height: '20px',
       },
-
       textContainer: {
         width: '70%',
         float: 'right',
@@ -58,8 +55,11 @@ class ProductList extends Component {
         maxWidth: '100px',
         margin: '0 auto',
       },
-      visibility: {
-        visibility: 'none'
+      head: {
+        fontSize: '0.9rem',
+        fontWeight: 'bold',
+        padding: '5px ',
+        color: '#9c9c9c'
       }
     };
 
@@ -79,8 +79,11 @@ class ProductList extends Component {
     });
 
     return (
-      <div style={styles.container} >
-        {produtcts}
+      <div >
+        <div style={styles.head}>PRODUTOS</div>
+        <div style={styles.container} >
+          {produtcts}
+        </div>
       </div>
     );
 
