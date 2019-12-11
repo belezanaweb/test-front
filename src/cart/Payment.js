@@ -8,11 +8,15 @@ import UserForm from '../components/UserForm'
 
 class Payment extends Component {
   render() {
-    let isDisabled = !this.props.cardNumber;
+    let isDisabled =
+      !this.props.cardName ||
+      !this.props.cardCvv ||
+      !this.props.cardDate ||
+      !this.props.cardNumber;
 
     return (
       <div>
-        <Header  />
+        <Header />
         <UserForm cardNumber={this.props.cardNumber} />
         <FinalizeAccount
           subTotal={this.props.subTotal}
@@ -20,8 +24,11 @@ class Payment extends Component {
           discount={this.props.discount}
           total={this.props.total}
         />
-        {/* <input type="submit" form="userInfo" /> */}
-        <Button label='FINALIZAR O PEDIDO' handleClick='success' disabled={isDisabled} />
+        <Button
+          label='FINALIZAR O PEDIDO'
+          handleClick='success'
+          disabled={isDisabled}
+        />
       </div>
     );
   }

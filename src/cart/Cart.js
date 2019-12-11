@@ -7,6 +7,13 @@ import Header from '../components/Header';
 import Button from '../components/Button';
 
 class Cart extends Component {
+  state = {
+    cardNumber: '',
+    cardNumber: '',
+    cardDate: '',
+    cardCvv: ''
+  };
+
   render() {
     return (
       <div>
@@ -20,13 +27,14 @@ class Cart extends Component {
           discount={this.props.discount}
           total={this.props.total}
         />
-        <Button label='SEGUIR PARA O PAGAMENTO' handleClick="payment" />
+        <Button label='SEGUIR PARA O PAGAMENTO' handleClick='payment' />
       </div>
     );
   }
 
   componentDidMount() {
     this.props.loadData();
+    // this.props.clearDataUser();
   }
 
 }

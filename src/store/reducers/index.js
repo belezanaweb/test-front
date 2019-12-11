@@ -1,29 +1,25 @@
 let defaultState = {
-    items: '',
-    subTotal: '',
-    shippingTotal: '',
-    discount: '',
-    total: ''
+    items: ''
 }
 
 const mainReducer = (state = defaultState, action) => {
     if (action.type === 'CHANGE_DATA') {
         return {
             ...state,
-            items: action.data.items,
-            subTotal: action.data.subTotal,
-            shippingTotal: action.data.shippingTotal,
-            discount: action.data.discount,
-            total: action.data.total
+            items: action.payload.items,
+            subTotal: action.payload.subTotal,
+            shippingTotal: action.payload.shippingTotal,
+            discount: action.payload.discount,
+            total: action.payload.total
         }
     } if (action.type === 'ADD_CARD') {
-        return {...state, cardNumber: action.payload };
+        return { ...state, cardNumber: action.payload };
     } if (action.type === 'ADD_NAME') {
-        return {...state, cardName: action.payload };
+        return { ...state, cardName: action.payload };
     } if (action.type === 'ADD_DATECARD') {
-        return {...state, cardDate: action.payload };
+        return { ...state, cardDate: action.payload };
     } if (action.type === 'ADD_CVV') {
-        return {...state, cardCvv: action.payload };
+        return { ...state, cardCvv: action.payload };
     } else {
         return {
             ...state
