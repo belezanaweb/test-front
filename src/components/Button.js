@@ -1,11 +1,17 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 
-var buttonStyle = {
-  margin: '20px 0',
-  padding: '20px 0',
-  maxWidth: '300px',
-  width: '90%',
+const styles = {
+  container: {
+    width: '100%',
+    margin: '0 auto',
+    textAlign: 'center'
+  },
+  button: {
+    margin: '0 auto 20px auto',
+    width: '100%',
+    maxWidth: '300px'
+  }
 };
 
 class Button extends Component {
@@ -13,11 +19,13 @@ class Button extends Component {
     // let disabled = 'disabled';
     return (
       <Link to={this.props.handleClick}>
-        <button
-          className='btn btn-default'
-          style={buttonStyle} 
-          disabled={this.props.disabled}
-        >{this.props.label}</button>
+        <div style={styles.container} >
+          <button
+            className='btn'
+            style={styles.button}
+            disabled={this.props.disabled}
+          >{this.props.label}</button>
+        </div>
       </Link>
     );
   }

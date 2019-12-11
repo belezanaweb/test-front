@@ -11,7 +11,7 @@ class Cart extends Component {
   render() {
     return (
       <div>
-        <Header />
+        <Header step={1} />
         <ProductList
           items={this.props.items}
         />

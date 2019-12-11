@@ -10,7 +10,7 @@ class Success extends Component {
   render() {
     return (
       <div>
-        <Header />
+        <Header step={3} />
         <div>
         compra efetuada com sucesso
         </div>

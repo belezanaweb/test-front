@@ -16,7 +16,7 @@ class Payment extends Component {
 
     return (
       <div>
-        <Header />
+        <Header step={2} />
         <UserForm 
           cardName={this.props.cardName} 
           cardCvv={this.props.cardCvv} 
