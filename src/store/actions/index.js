@@ -1,5 +1,4 @@
 import axios from 'axios';
-import { className } from 'postcss-selector-parser';
 
 export function loadData() {
     return (dispatch) => {

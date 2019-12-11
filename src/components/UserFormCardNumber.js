@@ -16,7 +16,7 @@ class UserFormCartNumber extends Component {
           id='cardNumber'
           type='text'
           onChange={e => this.validateCardNumber(e.target.value)}
-          value={this.state.cardNumber != '' && this.state.cardNumber != null ? this.state.cardNumber : this.props.cardNumber}
+          value={this.state.cardNumber !== '' && this.state.cardNumber !== null ? this.state.cardNumber : this.props.cardNumber}
           placeholder='____-_____-_____-_____'
           maxLength='19'
         />
@@ -26,7 +26,7 @@ class UserFormCartNumber extends Component {
   }
 
   validateCardNumber = (updateValue) => {
-    updateValue = updateValue.replace(/\-/g, '');
+    updateValue = updateValue.replace(/-/g, '');
     this.maskCardNumber(updateValue)
     let regexdigit = /^\d{16}$/;
     if (updateValue.match(regexdigit)) {

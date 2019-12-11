@@ -11,6 +11,9 @@ class Success extends Component {
     return (
       <div>
         <Header />
+        <div>
+        compra efetuada com sucesso
+        </div>
         <UserInfo
           cardNumber={this.props.cardNumber}
           cardName={this.props.cardName}

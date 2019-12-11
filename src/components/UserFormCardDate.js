@@ -18,8 +18,8 @@ class UserFormCardDate extends Component {
           placeholder='_ _ /_ _ _ _ '
           maxLength='7'
           value={
-            this.state.cardDate != '' &&
-              this.state.cardDate != null ?
+            this.state.cardDate !== '' &&
+              this.state.cardDate !== null ?
               this.state.cardDate :
               this.props.cardDate
           }
@@ -33,7 +33,6 @@ class UserFormCardDate extends Component {
 
     this.maskCardDate(updateValue)
 
-    updateValue = updateValue;
     let regexdigit = /^((0[1-9])|(1[0-2]))\/(\d{4})$/;
 
     if (updateValue.match(regexdigit)) {

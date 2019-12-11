@@ -7,12 +7,6 @@ import Button from '../components/Button';
 import FinalizeAccount from '../components/FinalizeAccount';
 
 class Cart extends Component {
-  state = {
-    cardNumber: '',
-    cardNumber: '',
-    cardDate: '',
-    cardCvv: ''
-  };
 
   render() {
     return (
@@ -34,7 +28,6 @@ class Cart extends Component {
 
   componentDidMount() {
     this.props.loadData();
-    // this.props.clearDataUser();
   }
 
 }

@@ -17,8 +17,8 @@ class UserFormCartName extends Component {
           type='text'
           onChange={e => this.validateCardName(e.target.value)}
           value={
-            this.state.cardName != '' &&
-              this.state.cardName != null ?
+            this.state.cardName !== '' &&
+              this.state.cardName !== null ?
               this.state.cardName :
               this.props.cardName
           }

@@ -17,8 +17,8 @@ class UserFormCartCvv extends Component {
           onChange={e => this.validate(e.target.value)}
           maxLength={3}
           value={
-            this.state.cardCvv != '' &&
-              this.state.cardCvv != null ?
+            this.state.cardCvv !== '' &&
+              this.state.cardCvv !== null ?
               this.state.cardCvv :
               this.props.cardCvv
           }
@@ -30,7 +30,7 @@ class UserFormCartCvv extends Component {
 
   validate = (updateValue) => {
     this.setState({ cardCvv: updateValue })
-    if (updateValue.length == 3) {
+    if (updateValue.length === 3) {
       this.props.addCvv(updateValue)
     } else {
       this.props.addCvv('');
