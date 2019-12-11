@@ -17,7 +17,12 @@ class Payment extends Component {
     return (
       <div>
         <Header />
-        <UserForm cardNumber={this.props.cardNumber} />
+        <UserForm 
+          cardName={this.props.cardName} 
+          cardCvv={this.props.cardCvv} 
+          cardDate={this.props.cardDate} 
+          cardNumber={this.props.cardNumber} 
+        />
         <FinalizeAccount
           subTotal={this.props.subTotal}
           shippingTotal={this.props.shippingTotal}

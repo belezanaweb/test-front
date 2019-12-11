@@ -6,10 +6,10 @@ export function loadData() {
         return axios.get('http://www.mocky.io/v2/5b15c4923100004a006f3c07')
             .then((response) => {
                 dispatch(getData(response.data));
-                dispatch(addCard(null));
-                dispatch(addName(null));
-                dispatch(addDateCard(null));
-                dispatch(addCvv(null));
+                dispatch(addCard(''));
+                dispatch(addName(''));
+                dispatch(addDateCard(''));
+                dispatch(addCvv(''));
             })
     }
 }
