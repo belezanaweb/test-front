@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import * as StoreActions from '../store/actions/index.js';
+import Color from '../components/Colors';
 
 const styles = {
   container: {
@@ -18,13 +19,22 @@ const styles = {
     color: '#c0c0c0',
     fontSize: '11px',
     clear: 'both',
+  },
+  error: {
+    width: '100%',
+    color: Color.orange,
+    fontWeight: 'bold',
+    fontSize: '14px',
+    padding: '0 5px',
+    clear: 'both',
   }
 }
 
 class UserFormCartName extends Component {
 
   state = {
-    cardName: ''
+    cardName: '',
+    error: ''
   };
 
   render() {
@@ -44,6 +54,9 @@ class UserFormCartName extends Component {
               this.props.cardName
           }
         />
+
+        <div style={styles.error}>{this.state.error}</div>
+
       </div>
     );
   }
@@ -53,8 +66,10 @@ class UserFormCartName extends Component {
     this.setState({ cardName: updateValue })
     if (updateValue.length > 5) {
       this.props.addName(updateValue);
+      this.setState({ error: "" })
     } else {
       this.props.addName('');
+      this.setState({ error: "mínimo 6 dígitos" })
     }
   }
 

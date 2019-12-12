@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import * as StoreActions from '../store/actions/index.js';
-
+import Color from '../components/Colors';
 
 const styles = {
   container: {
@@ -20,12 +20,21 @@ const styles = {
     width: '100%',
     color: '#c0c0c0',
     fontSize: '11px',
+  },
+  error: {
+    width: '100%',
+    color: Color.orange,
+    fontWeight: 'bold',
+    fontSize: '14px',
+    padding: '0 5px',
+    clear: 'both',
   }
 }
 
 class UserFormCartCvv extends Component {
   state = {
-    cardCvv: ''
+    cardCvv: '',
+    error: ''
   };
 
   render() {
@@ -45,6 +54,8 @@ class UserFormCartCvv extends Component {
           }
         />
 
+        <div style={styles.error}>{this.state.error}</div>
+
       </div>
     );
   }
@@ -53,8 +64,10 @@ class UserFormCartCvv extends Component {
     this.setState({ cardCvv: updateValue })
     if (updateValue.length === 3) {
       this.props.addCvv(updateValue)
+      this.setState({ error: "" })
     } else {
       this.props.addCvv('');
+      this.setState({ error: "mínimo 3 dígitos" })
     }
   }
 

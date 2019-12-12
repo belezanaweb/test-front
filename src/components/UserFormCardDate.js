@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import * as StoreActions from '../store/actions/index.js';
-
+import Color from '../components/Colors';
 
 const styles = {
   container: {
@@ -22,12 +22,21 @@ const styles = {
     color: '#c0c0c0',
     fontSize: '11px',
     clear: 'both',
+  },
+  error: {
+    width: '100%',
+    color: Color.orange,
+    fontWeight: 'bold',
+    fontSize: '14px',
+    padding: '0 5px',
+    clear: 'both',
   }
 }
 
 class UserFormCardDate extends Component {
   state = {
-    cardDate: ''
+    cardDate: '',
+    error: ''
   };
 
   render() {
@@ -47,6 +56,8 @@ class UserFormCardDate extends Component {
               this.props.cardDate
           }
         />
+        <div style={styles.error}>{this.state.error}</div>
+
 
       </div>
     );
@@ -71,17 +82,15 @@ class UserFormCardDate extends Component {
       dateCard.setDate(dateCard.getDate() + 30);
 
       if (today > dateCard) {
-        console.log('cartão vencido');
-        console.log('block')
+        this.setState({ error: 'cartão vencido' })
+        
       } else {
-        // console.log('data válida')
-        console.log('unblock')
+        this.setState({ error: "" })
         this.props.addDateCard(updateValue);
       }
     } else {
-      // console.log('formato de dada inválido')
+      this.setState({ error: 'formato de dada inválido' })
       this.props.addDateCard('');
-      console.log('block')
     }
   }
 

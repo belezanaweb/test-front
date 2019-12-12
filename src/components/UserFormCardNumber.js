@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import * as StoreActions from '../store/actions/index.js';
-
+import Color from '../components/Colors';
 
 const styles = {
   container: {
@@ -20,15 +20,25 @@ const styles = {
     color: '#c0c0c0',
     fontSize: '11px',
     clear: 'both',
+  },
+  error: {
+    width: '100%',
+    color: Color.orange,
+    fontWeight: 'bold',
+    fontSize: '14px',
+    padding: '0 5px',
+    clear: 'both',
   }
 }
 
 class UserFormCardNumber extends Component {
   state = {
-    cardNumber: ''
+    cardNumber: '',
+    error: ''
   };
-
+  
   render() {
+    
     return (
       <div style={styles.container}>
         <label style={styles.label}>Número do Cartão:</label>
@@ -43,9 +53,12 @@ class UserFormCardNumber extends Component {
           maxLength='19'
         />
 
+        <div style={styles.error}>{this.state.error}</div>
+
       </div>
     );
   }
+
 
   validateCardNumber = (updateValue) => {
     updateValue = updateValue.replace(/-/g, '');
@@ -53,8 +66,10 @@ class UserFormCardNumber extends Component {
     let regexdigit = /^\d{16}$/;
     if (updateValue.match(regexdigit)) {
       this.props.addCard(this.maskCardNumber(updateValue));
+      this.setState({ error: "" })
     } else {
       this.props.addCard('');
+      this.setState({ error: "numero inválido" })
     }
   }
 
