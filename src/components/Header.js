@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import Colors from '../components/Colors'
 
 const styles = {
   container: {
@@ -27,7 +28,7 @@ const styles = {
     padding: '15px 15px 0 15px'
   },
   itemContainerActive: {
-    color: '#fc6e02',
+    color: Colors.orange,
     float: 'left',
     textAlign: 'center',
     padding: '15px 15px 0 15px'

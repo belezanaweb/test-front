@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import Colors from '../components/Colors'
 
 const styles = {
   container: {
@@ -24,7 +25,7 @@ const styles = {
     textAlign: 'right'
   },
   discount: {
-    color: '#fc6e02',
+    color: Colors.orange,
     fontSize: '0.9rem',
     padding: '12px 20px 24px 20px'
   },

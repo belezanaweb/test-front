@@ -3,21 +3,43 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import * as StoreActions from '../store/actions/index.js';
 
-class UserFormCartNumber extends Component {
+
+const styles = {
+  container: {
+    padding: '5px 18px 5px 15px',
+  },
+  input: {
+    width: '100%',
+    height: '40px',
+    border: '2px solid #ccc',
+    textAlign: 'left',
+    textIndent: '20px',
+  },
+  label: {
+    width: '100%',
+    color: '#c0c0c0',
+    fontSize: '11px',
+    clear: 'both',
+  }
+}
+
+class UserFormCardNumber extends Component {
   state = {
     cardNumber: ''
   };
 
   render() {
     return (
-      <div>
+      <div style={styles.container}>
+        <label style={styles.label}>Número do Cartão:</label>
 
         <input
           id='cardNumber'
+          style={styles.input}
           type='text'
           onChange={e => this.validateCardNumber(e.target.value)}
           value={this.state.cardNumber !== '' && this.state.cardNumber !== null ? this.state.cardNumber : this.props.cardNumber}
-          placeholder='____-_____-_____-_____'
+          placeholder='_ _ _ _-_ _ _ _-_ _ _ _-_ _ _ _'
           maxLength='19'
         />
 
@@ -63,4 +85,4 @@ const mapStateToProps = state => ({
 const mapDispatchToProps = dispatch =>
   bindActionCreators(StoreActions, dispatch);
 
-export default connect(mapStateToProps, mapDispatchToProps)(UserFormCartNumber);
+export default connect(mapStateToProps, mapDispatchToProps)(UserFormCardNumber);

@@ -10,6 +10,7 @@ const styles = {
   button: {
     margin: '0 auto 20px auto',
     width: '100%',
+    fontSize: '1.1rem',
     maxWidth: '300px'
   }
 };

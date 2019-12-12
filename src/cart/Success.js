@@ -5,14 +5,25 @@ import * as actionCreators from '../store/actions/index.js'
 import Header from '../components/Header';
 import FinalizeAccount from '../components/FinalizeAccount';
 import UserInfo from '../components/UserInfo';
+import Colors from '../components/Colors';
+
+const styles = {
+  msg: {
+    color: Colors.orange,
+    textAlign: 'center',
+    fontWeight: 'bold',
+    width: '100%',
+    padding: '30px 0 0 0'
+  }
+}
 
 class Success extends Component {
   render() {
     return (
       <div>
         <Header step={3} />
-        <div>
-        compra efetuada com sucesso
+        <div style={styles.msg}>
+          COMPRA EFETUADA COM SUCESSO
         </div>
         <UserInfo
           cardNumber={this.props.cardNumber}

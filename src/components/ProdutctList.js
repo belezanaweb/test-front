@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import Colors from '../components/Colors'
 
 const styles = {
   container: {
@@ -20,7 +21,7 @@ const styles = {
     width: '90%',
     margin: '15px auto',
     minHeight: '110px',
-    borderColor: '#e5e5e5',
+    borderColor: Colors.gray,
     borderStyle: 'solid',
   },
   title: {
