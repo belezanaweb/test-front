@@ -4,6 +4,7 @@ const ButtonStyled = styled.button`
   margin: ${props => (props.center ? '0 auto' : '')};
   border-radius: 3px;
   display: ${props => (props.center ? 'flex' : 'initial')};
+  justify-content: center;
   padding: 18px 20px;
   border: 0;
   text-align: center;

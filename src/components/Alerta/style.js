@@ -15,6 +15,8 @@ const AlertaStyled = styled.div`
     justify-content: flex-start;
     color: black;
     text-align: center;
+    padding-left: 40px;
+    padding-right: 40px;
 
     > div {
       width: 100%;
