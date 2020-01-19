@@ -1,40 +1,40 @@
 /// <reference types="react-scripts" />
 
 interface Cart {
-  id: string;
-  items: [CartItem];
-  subTotal: Number;
-  shippingTotal: Number;
-  discount: Number;
-  total: Number;
+  id: string
+  items?: [CartItem]
+  subTotal: Number
+  shippingTotal: Number
+  discount: Number
+  total: Number
 }
 interface CartItem {
-  quantity: Number;
-  product: Product;
+  quantity: Number
+  product: Product
 }
 
 interface Product {
-  sku: string;
-  name: string;
-  imageObjects: [ImageObject];
-  priceSpecification: Price;
+  sku: string
+  name: string
+  imageObjects: [ImageObject]
+  priceSpecification: Price
 }
 
 interface ImageObject {
-  featured: Boolean;
-  thumbnail: string;
-  small: string;
-  medium: string;
-  large: string;
-  extralarge: string;
-  valid: Boolean;
+  featured: Boolean
+  thumbnail: string
+  small: string
+  medium: string
+  large: string
+  extralarge: string
+  valid: Boolean
 }
 
 interface Price {
-  sku: string;
-  price: Number;
-  originalPrice: Number;
-  maxPrice: Number;
-  percent: Number;
-  discount: Number;
+  sku: string
+  price: Number
+  originalPrice: Number
+  maxPrice: Number
+  percent: Number
+  discount: Number
 }
