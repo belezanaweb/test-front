@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled from 'styled-components'; // eslint-disable-line import/no-extraneous-dependencies
 
 const CardStyled = styled.div`
   border-radius: 3px;

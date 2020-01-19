@@ -1,8 +1,8 @@
-import styled from 'styled-components';
+import styled from 'styled-components'; // eslint-disable-line import/no-extraneous-dependencies
 
 const AlertaStyled = styled.div`
   > div {
-    background: white;
+    background: rgba(255, 255, 255, 0.7);
     background-size: cover;
     width: 100vw;
     height: 100vh;

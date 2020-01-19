@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled from 'styled-components'; // eslint-disable-line import/no-extraneous-dependencies
 
 const LoadingStyled = styled.div`
   .lds-ellipsis {
@@ -13,7 +13,7 @@ const LoadingStyled = styled.div`
     width: 13px;
     height: 13px;
     border-radius: 50%;
-    background: white;
+    background: #ff6c00;
     animation-timing-function: cubic-bezier(0, 1, 1, 0);
   }
   .lds-ellipsis div:nth-child(1) {
@@ -57,7 +57,7 @@ const LoadingStyled = styled.div`
     }
   }
 
-  background: rgba(0, 0, 0, 0.5);
+  background: rgba(255, 255, 255, 0.7);
   background-size: cover;
   width: 100vw;
   height: 100vh;

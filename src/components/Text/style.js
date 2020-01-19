@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled from 'styled-components'; // eslint-disable-line import/no-extraneous-dependencies
 
 const TextStyled = styled.div`
   font-size: ${props => (props.size ? props.size : '13px')};
