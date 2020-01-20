@@ -1,4 +1,4 @@
-import React, { useMemo } from 'react'
+import React, { useContext } from 'react'
 import InputMask from 'react-input-mask'
 
 import useForm from '../../helpers/useForm'
@@ -8,8 +8,12 @@ import CartSummary from '../CartSummary'
 import CheckoutFormContext from '../../context/CheckoutFormContext'
 import formSchema from './formSchema'
 import { useHistory } from 'react-router-dom'
+import { OrderContext } from '../../context/OrderContext'
+import CartContext from '../../context/CartContext'
 
 const CheckoutForm: React.FC = () => {
+  const [order, setOrder] = useContext(OrderContext)
+  const cart = useContext(CartContext)
   const onSubmit = () => {
     // @ts-ignore: Object with any
     const haveErrors = Object.keys(values).filter(key => !values[key].isValid)
@@ -20,6 +24,15 @@ const CheckoutForm: React.FC = () => {
   const history = useHistory()
 
   const sendDataToOrder = () => {
+    // @ts-ignore: Object with any
+    const { creditcard, cardholder, expdate } = values
+    const details = { creditcard, cardholder, expdate }
+    // @ts-ignore: Object with any
+    setOrder({
+      cart,
+      details
+    })
+
     history.push('/pedido')
   }
   return (

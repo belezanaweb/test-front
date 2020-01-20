@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import Router from './routes'
 import CartContext from './context/CartContext'
+import { OrderProvider } from './context/OrderContext'
 
 const App: React.FC = () => {
   const [cart, setCart] = useState({})
@@ -13,7 +14,9 @@ const App: React.FC = () => {
 
   return (
     <CartContext.Provider value={cart}>
-      <Router />
+      <OrderProvider>
+        <Router />
+      </OrderProvider>
     </CartContext.Provider>
   )
 }

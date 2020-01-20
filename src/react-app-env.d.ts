@@ -50,3 +50,10 @@ interface InputValues {
   isValid: Boolean
   value: string
 }
+
+interface Order {
+  cart: Cart
+  creditcard: string
+  cardholder: string
+  expdate: string
+}
