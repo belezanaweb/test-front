@@ -23,7 +23,7 @@ const CheckoutForm: React.FC = () => {
     if (haveErrors[0]) return
     sendDataToOrder()
   }
-  const { values, handleChange, handleSubmit } = useForm(onSubmit, formSchema)
+  const { values, handleChange, handleSubmit, validate } = useForm(onSubmit, formSchema)
   const history = useHistory()
 
   const sendDataToOrder = () => {
@@ -85,7 +85,9 @@ const CheckoutForm: React.FC = () => {
             </div>
           </Card>
           <CartSummary />
-          <Button type="submit">Finalizar o pedido</Button>
+          <Button disabled={!validate} type="submit">
+            Finalizar o pedido
+          </Button>
         </form>
       </CheckoutFormContext.Provider>
     </FormStyle>

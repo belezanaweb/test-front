@@ -5,10 +5,10 @@ const InputField = ({ name, label, children }) => {
   const formValues = useContext(CheckoutFormContext)
   const { isValid } = formValues[name] || {}
   return (
-    <div className={`input-field ${!!formValues[name] && !isValid && 'input-field--error'}`}>
+    <div className={`input-field ${!!formValues[name].value && !isValid && 'input-field--error'}`}>
       <label htmlFor={name}>{label}</label>
       {children}
-      {formValues[name] && !isValid && <span class="message-error">Campo inválido</span>}
+      {formValues[name].value && !isValid && <span class="message-error">Campo inválido</span>}
     </div>
   )
 }
