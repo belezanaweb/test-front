@@ -38,3 +38,15 @@ interface Price {
   percent: Number
   discount: Number
 }
+
+interface Inputs {
+  creditcard: InputValues
+  cardholder: InputValues
+  expdate: InputValues
+  cvv: InputValues
+}
+
+interface InputValues {
+  isValid: Boolean
+  value: string
+}
