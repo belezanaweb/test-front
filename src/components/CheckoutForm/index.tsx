@@ -29,7 +29,8 @@ const CheckoutForm: React.FC = () => {
   const sendDataToOrder = () => {
     // @ts-ignore: Object with any
     const { creditcard, cardholder, expdate } = values
-    const details = { creditcard, cardholder, expdate }
+    const hideCreditCard = creditcard.value.replace(/.(?=.{5})/g, '*').replace(/\./gi, '')
+    const details = { creditcard: { ...creditcard, value: hideCreditCard }, cardholder, expdate }
     // @ts-ignore: Object with any
     setOrder({
       cart,
