@@ -13,7 +13,8 @@
   "globals": {
     "document": false
   },
-  "extends": ["airbnb-base", "prettier"],
+
+  "extends": ["airbnb-base", "prettier", "plugin:cypress/recommended"],
   "plugins": ["babel", "prettier", "jsx-a11y"],
   "rules": {
     "prettier/prettier": "error",
