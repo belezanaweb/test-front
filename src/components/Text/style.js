@@ -1,6 +1,6 @@
 import styled from 'styled-components'; // eslint-disable-line import/no-extraneous-dependencies
 
-const TextStyled = styled.div`
+const TextStyled = styled.p`
   font-size: ${props => (props.size ? props.size : '13px')};
   color: ${props => (props.color ? props.color : 'black')};
   text-align: ${props => (props.center ? 'center' : 'left')};

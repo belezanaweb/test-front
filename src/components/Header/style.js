@@ -14,6 +14,7 @@ const HeaderStyled = styled.header`
     li {
       text-transform: uppercase;
       text-align: center;
+      line-height: 1;
     }
   }
   @media screen and (max-width: 768px) {
