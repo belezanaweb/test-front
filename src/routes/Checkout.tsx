@@ -3,7 +3,7 @@ import CheckoutForm from '../components/CheckoutForm'
 
 const Checkout: React.FC = () => {
   return (
-    <main>
+    <main className="app-main">
       <h1 className="page-title">Cartão de Crédito</h1>
       <CheckoutForm />
     </main>

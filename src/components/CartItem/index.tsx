@@ -1,7 +1,8 @@
 import React, { useMemo } from 'react'
+import { CartItemStyles } from './styles'
 
 interface CartItemProps {
-  data: CartItem;
+  data: CartItem
 }
 
 const CartItem: React.FC<CartItemProps> = ({ data: { product } }) => {
@@ -18,13 +19,13 @@ const CartItem: React.FC<CartItemProps> = ({ data: { product } }) => {
   }, [price])
 
   return (
-    <li>
+    <CartItemStyles>
       <img src={thumbnail} alt={name} />
       <div className="product-details">
         <h3 className="product-name">{name}</h3>
         <span className="product-price">{formatedPrice}</span>
       </div>
-    </li>
+    </CartItemStyles>
   )
 }
 

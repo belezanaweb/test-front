@@ -14,17 +14,19 @@ const Order: React.FC = () => {
   const history = useHistory()
 
   useEffect(() => {
-    if (!order) history.push('/')
+    if (!order) history.push('/carrinho')
   }, [history, order])
   return (
     <>
       {order && (
-        <>
+        <main className="app-main">
           <OrderConfirmation />
+          <h2 className="page-title">Pagamento</h2>
           <OrderDetails details={details} />
+          <h2 className="page-title">Produtos</h2>
           <CartListComponent cart={cart} />
           <CartSummaryComponent cart={cart} />
-        </>
+        </main>
       )}
     </>
   )

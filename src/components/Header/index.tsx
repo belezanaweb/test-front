@@ -1,23 +1,36 @@
-import React from 'react'
-import { Link } from 'react-router-dom'
+import React, { useContext } from 'react'
+import { NavLink } from 'react-router-dom'
+import { HeaderStyle } from './styles'
+import { OrderContext } from '../../context/OrderContext'
 
 const Header: React.FC = () => {
+  const [order] = useContext(OrderContext)
   return (
-    <header>
+    <HeaderStyle>
       <nav>
         <ul>
           <li>
-            <Link to="/">Sacola</Link>
+            <NavLink activeClassName="active" to="/carrinho">
+              Sacola
+            </NavLink>
           </li>
           <li>
-            <Link to="/checkout">Pagamento</Link>
+            <NavLink activeClassName="active" to="/checkout">
+              Pagamento
+            </NavLink>
           </li>
           <li>
-            <Link to="/pedido">Confirmação</Link>
+            {order ? (
+              <NavLink activeClassName="active" to="/pedido">
+                Confirmação
+              </NavLink>
+            ) : (
+              <a>Confirmação</a>
+            )}
           </li>
         </ul>
       </nav>
-    </header>
+    </HeaderStyle>
   )
 }
 

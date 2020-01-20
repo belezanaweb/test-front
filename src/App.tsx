@@ -1,7 +1,11 @@
 import React, { useEffect, useState } from 'react'
+import 'normalize.css'
+import 'flexboxgrid'
+
 import Router from './routes'
 import CartContext from './context/CartContext'
 import { OrderProvider } from './context/OrderContext'
+import { GlobalStyle } from './styles'
 
 const App: React.FC = () => {
   const [cart, setCart] = useState({})
@@ -15,6 +19,7 @@ const App: React.FC = () => {
   return (
     <CartContext.Provider value={cart}>
       <OrderProvider>
+        <GlobalStyle />
         <Router />
       </OrderProvider>
     </CartContext.Provider>

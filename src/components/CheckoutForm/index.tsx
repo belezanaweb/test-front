@@ -10,6 +10,9 @@ import formSchema from './formSchema'
 import { useHistory } from 'react-router-dom'
 import { OrderContext } from '../../context/OrderContext'
 import CartContext from '../../context/CartContext'
+import Card from '../Card'
+import { FormStyle } from './styles'
+import { Button } from '../Button'
 
 const CheckoutForm: React.FC = () => {
   const [order, setOrder] = useContext(OrderContext)
@@ -36,38 +39,55 @@ const CheckoutForm: React.FC = () => {
     history.push('/pedido')
   }
   return (
-    <section className="checkout-form">
+    <FormStyle className="checkout-form">
       <CheckoutFormContext.Provider value={values}>
         <form onSubmit={handleSubmit}>
-          <InputField label="Número do Cartão" name="creditcard">
-            <CreditCardInput handleChange={handleChange} />
-          </InputField>
-          <InputField label="Nome do Titular" name="cardholder">
-            <input
-              required
-              onChange={handleChange}
-              name="cardholder"
-              placeholder="Como no cartão"
-            />
-          </InputField>
-          <InputField label="Validade (mês/ano)" name="expdate">
-            <InputMask
-              required
-              name="expdate"
-              placeholder="__/____"
-              mask="99/9999"
-              onChange={handleChange}
-            />
-          </InputField>
-          <InputField label="CVV" name="cvv">
-            <InputMask required name="cvv" placeholder="___" mask="999" onChange={handleChange} />
-          </InputField>
-
+          <Card>
+            <div className="row">
+              <div className="col-xs-12">
+                <InputField label="Número do Cartão" name="creditcard">
+                  <CreditCardInput handleChange={handleChange} />
+                </InputField>
+              </div>
+              <div className="col-xs-12">
+                <InputField label="Nome do Titular" name="cardholder">
+                  <input
+                    required
+                    onChange={handleChange}
+                    name="cardholder"
+                    placeholder="Como no cartão"
+                  />
+                </InputField>
+              </div>
+              <div className="col-xs-7">
+                <InputField label="Validade (mês/ano)" name="expdate">
+                  <InputMask
+                    required
+                    name="expdate"
+                    placeholder="__/____"
+                    mask="99/9999"
+                    onChange={handleChange}
+                  />
+                </InputField>
+              </div>
+              <div className="col-xs-5">
+                <InputField label="CVV" name="cvv">
+                  <InputMask
+                    required
+                    name="cvv"
+                    placeholder="___"
+                    mask="999"
+                    onChange={handleChange}
+                  />
+                </InputField>
+              </div>
+            </div>
+          </Card>
           <CartSummary />
-          <input type="submit" value="Finalizar o pedido" />
+          <Button type="submit">Finalizar o pedido</Button>
         </form>
       </CheckoutFormContext.Provider>
-    </section>
+    </FormStyle>
   )
 }
 
