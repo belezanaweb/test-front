@@ -12,7 +12,7 @@ const CartItem: React.FC<CartItemProps> = ({ data: { product } }) => {
     imageObjects: images
   } = product
 
-  const { thumbnail } = images[0]
+  const { small } = images[0]
 
   const formatedPrice: string = useMemo(() => {
     return price.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' })
@@ -20,7 +20,7 @@ const CartItem: React.FC<CartItemProps> = ({ data: { product } }) => {
 
   return (
     <CartItemStyles>
-      <img src={thumbnail} alt={name} />
+      <img src={small} alt={name} />
       <div className="product-details">
         <h3 className="product-name">{name}</h3>
         <span className="product-price">{formatedPrice}</span>

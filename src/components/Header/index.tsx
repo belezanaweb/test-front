@@ -10,22 +10,22 @@ const Header: React.FC = () => {
       <nav>
         <ul>
           <li>
-            <NavLink activeClassName="active" to="/carrinho">
+            <NavLink className="nav-item" activeClassName="active" to="/carrinho">
               Sacola
             </NavLink>
           </li>
           <li>
-            <NavLink activeClassName="active" to="/checkout">
+            <NavLink className="nav-item" activeClassName="active" to="/checkout">
               Pagamento
             </NavLink>
           </li>
           <li>
             {order ? (
-              <NavLink activeClassName="active" to="/pedido">
+              <NavLink className="nav-item" activeClassName="active" to="/pedido">
                 Confirmação
               </NavLink>
             ) : (
-              <a>Confirmação</a>
+              <span className="nav-item">Confirmação</span>
             )}
           </li>
         </ul>

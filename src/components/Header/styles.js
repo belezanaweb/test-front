@@ -12,7 +12,7 @@ export const HeaderStyle = styled.header`
     margin: 0;
     justify-content: center;
     align-items: center;
-    a {
+    .nav-item {
       padding: 10px;
       font-size: 0.8rem;
       display: block;
@@ -21,6 +21,9 @@ export const HeaderStyle = styled.header`
       font-weight: bold;
       text-transform: uppercase;
       letter-spacing: 0.7px;
+      @media screen and (min-width: 600px) {
+        font-size: 1rem;
+      }
     }
 
     .active,

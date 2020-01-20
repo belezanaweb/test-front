@@ -15,7 +15,7 @@ import { FormStyle } from './styles'
 import { Button } from '../Button'
 
 const CheckoutForm: React.FC = () => {
-  const [order, setOrder] = useContext(OrderContext)
+  const [, setOrder] = useContext(OrderContext)
   const cart = useContext(CartContext)
   const onSubmit = () => {
     // @ts-ignore: Object with any

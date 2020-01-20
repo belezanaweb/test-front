@@ -19,7 +19,7 @@ const Order: React.FC = () => {
   return (
     <>
       {order && (
-        <main className="app-main">
+        <main className="app-main container">
           <OrderConfirmation />
           <h2 className="page-title">Pagamento</h2>
           <OrderDetails details={details} />

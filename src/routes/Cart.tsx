@@ -8,7 +8,7 @@ const Cart: React.FC = () => {
   const history = useHistory()
 
   return (
-    <main className="app-main">
+    <main className="app-main container">
       <h1 className="page-title">Produtos</h1>
       <CartList />
       <CartSummary />
