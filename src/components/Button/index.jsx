@@ -20,6 +20,7 @@ Text.propTypes = {
   type: PropTypes.string,
   center: PropTypes.bool,
   disabled: PropTypes.bool,
+  onClick: PropTypes.func,
 };
 
 export default Button;

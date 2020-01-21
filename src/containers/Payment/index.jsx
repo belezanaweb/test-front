@@ -2,25 +2,24 @@
 import React, { useEffect, useState } from 'react';
 import { connect, useDispatch, useSelector } from 'react-redux';
 import { Link, Redirect } from 'react-router-dom';
-
 import { Container, Row, Col } from 'react-grid-system';
-
 import DefaultLayout from 'layouts/default';
+
+import { setCardData } from 'store/cart/actions';
 
 import Button from 'components/Button';
 import Text from 'components/Text';
 import Checkout from 'components/Checkout';
-
 import Card from 'components/Card';
 import Input from 'components/Input';
 
-import { setCardData } from 'store/cart/actions';
 import ContainerStyled from '../style';
 
 const Payment = () => {
   useEffect(() => {
     document.title = `Beleza na Web - Pagamento`;
   }, []);
+
   const dispatch = useDispatch();
   const data = useSelector(state => state.cart.data);
 

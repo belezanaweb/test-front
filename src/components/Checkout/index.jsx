@@ -1,6 +1,6 @@
-import React from 'react'; // eslint-disable-line import/no-extraneous-dependencies
-import { Col } from 'react-grid-system'; // eslint-disable-line import/no-extraneous-dependencies
-import { useSelector } from 'react-redux'; // eslint-disable-line import/no-extraneous-dependencies
+import React from 'react';
+import { Col } from 'react-grid-system';
+import { useSelector } from 'react-redux';
 
 import Text from 'components/Text';
 import Card from 'components/Card';

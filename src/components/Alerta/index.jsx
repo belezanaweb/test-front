@@ -6,10 +6,10 @@ import { motion } from 'framer-motion';
 import PropTypes from 'prop-types';
 
 import Text from 'components/Text';
-
-import AlertaStyled from './style';
-import * as AlertActions from 'store/alerta/actions';
 import Button from 'components/Button';
+
+import * as AlertActions from 'store/alerta/actions';
+import AlertaStyled from './style';
 
 class Alerta extends Component {
   render() {

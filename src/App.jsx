@@ -4,7 +4,7 @@ import { ConnectedRouter } from 'connected-react-router';
 import { history } from 'store/Redux';
 import Loading from 'components/Loading';
 
-const Cart = lazy(() => import('./containers/Cart'));
+const Cart = lazy(() => import('containers/Cart'));
 const Payment = lazy(() => import('containers/Payment'));
 const Success = lazy(() => import('containers/Success'));
 

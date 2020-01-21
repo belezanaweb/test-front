@@ -2,8 +2,8 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 import InputMask from 'react-input-mask';
+import Text from 'components/Text';
 import InputStyled from './style';
-import Text from '../Text';
 
 const Input = props => (
   <InputStyled>

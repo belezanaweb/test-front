@@ -2,18 +2,15 @@
 import React, { useEffect } from 'react';
 import { connect, useSelector } from 'react-redux';
 import { Redirect } from 'react-router-dom';
-
 import { Container, Row, Col } from 'react-grid-system';
-
 import DefaultLayout from 'layouts/default';
 
 import Text from 'components/Text';
 import Product from 'components/Product';
-
 import Card from 'components/Card';
 import Checkout from 'components/Checkout';
-import success from '../../utils/img/success.png';
 
+import success from '../../utils/img/success.png';
 import ContainerStyled from '../style';
 
 const Success = () => {

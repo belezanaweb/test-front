@@ -23,6 +23,7 @@ Text.propTypes = {
   color: PropTypes.string,
   center: PropTypes.bool,
   uppercase: PropTypes.bool,
+  className: PropTypes.string,
 };
 
 export default Text;

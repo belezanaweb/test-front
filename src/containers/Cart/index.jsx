@@ -1,17 +1,14 @@
 /* eslint-env browser */
-import React, { useEffect } from 'react'; // eslint-disable-line import/no-extraneous-dependencies
+import React, { useEffect } from 'react';
 import { connect, useDispatch, useSelector } from 'react-redux';
-
 import { Container, Row, Col } from 'react-grid-system';
-
 import { Link } from 'react-router-dom';
+import { getCartData } from 'store/cart/actions';
 import DefaultLayout from 'layouts/default';
 
 import Text from 'components/Text';
 import Button from 'components/Button';
 import Product from 'components/Product';
-
-import { getCartData } from 'store/cart/actions';
 import Card from 'components/Card';
 import Checkout from 'components/Checkout';
 

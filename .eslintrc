@@ -13,7 +13,19 @@
   "globals": {
     "document": false
   },
-
+  "settings": {
+    "import/core-modules": [
+      "react",
+      "redux",
+      "connected-react-router",
+      "react-redux",
+      "react-router-dom",
+      "prop-types",
+      "framer-motion",
+      "react-grid-system",
+      "react-input-mask"
+    ]
+  },
   "extends": ["airbnb-base", "prettier", "plugin:cypress/recommended"],
   "plugins": ["babel", "prettier", "jsx-a11y"],
   "rules": {

@@ -1,4 +1,4 @@
-import React from 'react'; // eslint-disable-line import/no-extraneous-dependencies
+import React from 'react';
 
 import Text from 'components/Text';
 import { maskMoneyPtBr } from '../../utils/mask';
