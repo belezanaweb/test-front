@@ -6,10 +6,11 @@ import history from '~/services/history'
 import { formatPrice } from '~/utils/format'
 
 import BLWButton from '~/components/BLWButton'
+import BLWSingleTitle from '~/components/BLWSingleTitle'
 import ProductCart from '~/components/ProductCart'
 import ProductCartInfo from '~/components/ProductCartInfo'
 
-import { Container } from './styles'
+import { Container, Producs } from './styles'
 
 import * as actions from '~/store/ducks/cart/actions'
 
@@ -31,7 +32,20 @@ class Cart extends Component {
 
     return (
       <Container>
-        <ProductCart productList={cart.items} />
+        <BLWSingleTitle title="Produtos" />
+        {!!cart && cart.length > 0 && (
+          <Producs>
+            {cart.map((productList, index) => {
+              const { name, priceSpecification, imageObjects } = productList.product
+              const configList = {
+                productIMG: imageObjects[0].small,
+                productName: name,
+                productPrice: priceSpecification.priceFormatted
+              }
+              return <ProductCart key={index} {...configList} />
+            })}
+          </Producs>
+        )}
         <div className="sideBar">
           <ProductCartInfo
             total={total}
@@ -39,7 +53,12 @@ class Cart extends Component {
             shippingTotal={shippingTotal}
             discount={discount}
           />
-          <BLWButton type="button" onClick={this.handleCheckout} title="Seguir para o pagamento" />
+          <BLWButton
+            type="button"
+            data-test="BntCheckout"
+            onClick={this.handleCheckout}
+            title="Seguir para o pagamento"
+          />
         </div>
       </Container>
     )
@@ -47,12 +66,12 @@ class Cart extends Component {
 }
 
 const mapStateToProps = state => ({
-  cart: state.cart.data,
-  subTotal: formatPrice(!!state.cart.data.subTotal && state.cart.data.subTotal),
-  shippingTotal: formatPrice(!!state.cart.data.shippingTotal && state.cart.data.shippingTotal),
-  discount: `- ${formatPrice(!!state.cart.data.discount && state.cart.data.discount)}`,
+  cart: !!state.cart.data && state.cart.data.items,
+  subTotal: formatPrice(!!state.cart.data && state.cart.data.subTotal),
+  shippingTotal: formatPrice(!!state.cart.data && state.cart.data.shippingTotal),
+  discount: `- ${formatPrice(!!state.cart.data && state.cart.data.discount)}`,
   total: formatPrice(
-    !!state.cart.data.subTotal &&
+    !!state.cart.data &&
       state.cart.data.subTotal + state.cart.data.shippingTotal - state.cart.data.discount
   )
 })

@@ -1,26 +1,38 @@
-import React from 'react'
+import React, { Component } from 'react'
+import PropTypes from 'prop-types'
 
-import BLWSingleTitle from '~/components/BLWSingleTitle'
+import { Container } from './styles'
 
-import { Producs, Container } from './styles'
+class ProductCart extends Component {
+  render() {
+    const { productIMG, productName, productPrice } = this.props
 
-const ProductCart = ({ productList }) => {
-  const renderProducts = (products, index) => (
-    <div className="produc" key={index}>
-      <img src={products.product.imageObjects[0].small} alt="" />
-      <div>
-        <p className="name">{products.product.limitedName}</p>
-        <p className="price">{products.product.priceSpecification.priceFormatted}</p>
-      </div>
-    </div>
-  )
+    if (!productIMG && !productName && !productPrice) {
+      return null
+    }
 
-  return (
-    <Container>
-      <BLWSingleTitle title="Produtos" />
-      <Producs>{!!productList && productList.map(renderProducts)}</Producs>
-    </Container>
-  )
+    return (
+      <Container data-test="productCartComponent">
+        <div className="produc">
+          <img src={productIMG} alt={productName} data-test="productIMG" />
+          <div>
+            <p className="name" data-test="productName">
+              {productName}
+            </p>
+            <p className="price" data-test="productPrice">
+              {productPrice}
+            </p>
+          </div>
+        </div>
+      </Container>
+    )
+  }
+}
+
+ProductCart.propTypes = {
+  productIMG: PropTypes.string,
+  productName: PropTypes.string,
+  productPrice: PropTypes.string
 }
 
 export default ProductCart

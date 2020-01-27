@@ -18,6 +18,6 @@ const composer =
 
 const store = createStore(rootReducer, composer)
 
-sagaMiddleware.run(rootSaga)
+export const test = sagaMiddleware.run(rootSaga)
 
 export default store

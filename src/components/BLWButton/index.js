@@ -4,7 +4,14 @@ import { Button } from './styles'
 
 const BLWButton = ({ title, onClick, type, disabled, id, className }) => {
   return (
-    <Button type={type} disabled={disabled} onClick={onClick} id={id} className={className}>
+    <Button
+      type={type}
+      onClick={onClick}
+      disabled={disabled}
+      id={id}
+      className={className}
+      data-test="buttonComponent"
+    >
       {title}
     </Button>
   )

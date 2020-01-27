@@ -8,7 +8,7 @@ import { formatPrice } from '~/utils/format'
 
 import { getCartSuccess, getCartFailure } from './actions'
 
-function* getCart() {
+export function* getCart() {
   try {
     const response = yield call(api.get, '/5b15c4923100004a006f3c07')
 
