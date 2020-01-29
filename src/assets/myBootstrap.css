@@ -1,0 +1,19 @@
+.containerList {
+  position: absolute;
+  width: 98%;
+  padding-right: 2px;
+  padding-left: 2px;
+  min-height: 90vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: #c28e8e;
+  color: black;
+}
+
+.headerBW {
+  background-color: #ffffff;
+}
+
+
