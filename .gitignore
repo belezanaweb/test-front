@@ -5,4 +5,4 @@ logs
 *.log
 *.log.*
 coverage
-
+yarn.lock
