@@ -11,61 +11,39 @@
   background-color: #c28e8e;
   color: black;
 }
-
 .headerBW {
   background-color: #ffffff;
 }
-
 .boxItem {
-
   width: 300px;
   height: 145px;
   left: 0px;
   top: 0px;
   
-  /* white */
-  
   background: #FFFFFF;
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
   border-radius: 4px;
-
-
   padding: 10px;
   margin-top: 5px;  
-
   flex-direction: initial;
   align-items: center;
   justify-content: center;
-
-
 }
 
-
 .boxDetailProduct {
-
   width: 300px;
   height: 555px;
   left: 0px;
   top: 0px;
-  
-  /* white */
-  
   background: #FFFFFF;
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
   border-radius: 4px;
-
-
   padding: 10px;
   margin-top: 5px;  
-
   flex-direction: initial;
   align-items: center;
   justify-content: center;
-
-
 }
-
-
 
 /* Create two equal columns that floats next to each other */
 .column {
@@ -90,9 +68,7 @@
   margin-top: 20px;
 }
 
-
 .imageItemBox {
-
   position: relative;
   width: 108px;
   height: 108px;
@@ -117,7 +93,6 @@
   position: relative;
   right: 5px;
   margin-top: 20px;
-  
   font-family: Roboto;
   font-style: normal;
   font-weight: bold;
@@ -125,29 +100,29 @@
   line-height: 16px;
   text-align: center;
   text-transform: uppercase;
-  
   color: #212121;
-  
 }
 
 .descriptionProduct {
   position: relative;
   right: 5px;
-  margin-top: 20px;
-  
+  margin-top: 10px;
   font-family: Roboto;
   font-style: normal;
   font-weight: normal;
   font-size: 12px;
   line-height: 19px;
   /* or 158% */
-  
-  
-  color: #777777;
-    
+  color: #6F6F6F;
 }
 
-
+.fillDescription{
+  height: 140px;
+  background: -webkit-linear-gradient(top, rgb(19, 18, 18)  0%,  rgb(160, 157, 157)  100%);
+  background: linear-gradient(to bottom,  rgb(19, 18, 18)  0%,  rgb(160, 157, 157)  100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
 
 .linkRout {
   outline: none;
@@ -156,6 +131,18 @@
   color: #ffffff;
 }
 
+.linkContinue {
+  outline: none;
+  text-decoration: none;
+  padding: 2px 1px 0;
+  color: #A43287;
+  font-weight: bold;
+  font-family: Roboto;
+  font-style: normal;
+  font-size: 15px;
+  line-height: 19px;
+  /* identical to box height, or 146% */  
+}
 
 .valueItemBox{
   position: relative;
@@ -166,11 +153,6 @@
   font-weight: bold;
   font-size: 14px;
   line-height: 16px;
-  /* identical to box height */
-  
-  
-  /* primary-dark */
-  
   color: #E66100;
 }
 
@@ -184,10 +166,7 @@
   font-weight: normal;
   font-size: 11px;
   line-height: 13px;
-  /* identical to box height */
-  
   text-decoration-line: line-through;
-  
   color: #999999;
 }
 
@@ -200,11 +179,7 @@
   font-weight: 500;
   font-size: 24px;
   line-height: 20px;
-  /* identical to box height, or 83% */
-  
-  
   color: #FF6C00;
-  
 }
 
 .valueParcel{
@@ -216,57 +191,40 @@
   font-weight: normal;
   font-size: 17px;
   line-height: 20px;
-  /* identical to box height, or 118% */
-  
-  
   color: #6F6F6F;  
 }
 
 
 .codItemBox{
-
   position: relative;
   top: 22px;
-
   text-align: center;
   font-family: Roboto;
   font-style: normal;
   font-weight: bold;
   font-size: 10px;
   line-height: 12px;
-  /* identical to box height */
-  
-  
-  /* primary-dark */
-  
   color: rgb(155, 152, 149);
 }
 
 
 .buttonItemBox{
-
   position: relative;
-
   width: 150px;
   margin-top: 0px;
   margin-left: 100px;
   height: 30px;
-  
   font-family: Roboto;
   font-style: normal;
   font-weight: bold;
   font-size: 14px;
   line-height: 16px;
   /* identical to box height */
-  
   display: grid;
   align-items: center;
   align-content: center;
   text-align: center;
   text-transform: uppercase;
-  
-  /* white */
-  
   color: #FFFFFF;
   background: #FF6C00;
   border-radius: 4px;
@@ -275,38 +233,30 @@
 
 
 .buttonDetail{
-
   position: relative;
-
-  width: 150px;
-  margin-top: 0px;
-  margin-left: 100px;
+  width: 100%;
+  margin-top: 30px;
+  margin-left: 0px;
   height: 30px;
-  
   font-family: Roboto;
   font-style: normal;
   font-weight: bold;
   font-size: 14px;
   line-height: 16px;
   /* identical to box height */
-  
   display: grid;
   align-items: center;
   align-content: center;
   text-align: center;
   text-transform: uppercase;
-  
-  /* white */
-  
   color: #FFFFFF;
   background: #FF6C00;
   border-radius: 4px;
- 
 }
 
 
 .titleDetailProduct{
-
+  margin-top: 10px;
   font-family: Roboto;
   font-style: normal;
   font-weight: bold;
@@ -314,7 +264,5 @@
   line-height: 16px;
   text-align: center;
   text-transform: uppercase;
-  
   color: #212121;
-
 }

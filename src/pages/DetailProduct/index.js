@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import api from '../../services/api'
 import { Link } from 'react-router-dom'
-
+import DescriptionProduct from './DescriptionProduct'
 
 const DetailProduct = (props) =>{
     const [list_products, setListProducts ] = useState([])
@@ -23,22 +23,14 @@ const DetailProduct = (props) =>{
 
     const getDetailProduct = ( _sku) =>{
 
-
-      console.log(_sku)
-
       api
       .get('/products/' + _sku)
       .then(  async  (res) => {
           try {
-
             setDataProcuct(res.data)
             if( res.data.imageObjects.length > 0){
               setImagThumbnail( res.data.imageObjects[0].medium  );
             }
-    
-
-            console.log(res.data);
-
           } catch(e) {
               console.log(e)
           }
@@ -56,17 +48,11 @@ const DetailProduct = (props) =>{
     return (
       <div key={dataProduct}>
           <div className="containerList" >
-
-
-
-
-
             <div className="boxDetailProduct">
 
               <div className="row titleDetailProduct">
                     DETALHES DO PRODUTO
               </div>
-
 
               <div className="row textDetailProduct">
                 {dataProduct.details.shortDescription}
@@ -76,9 +62,6 @@ const DetailProduct = (props) =>{
                   <img src={imgThumbnail} /> 
                   
               </div>
-
-
-
               <div className="row valueDetailOld">
                   R$ {dataProduct.priceSpecification.originalPrice}
               </div>
@@ -86,11 +69,6 @@ const DetailProduct = (props) =>{
               <div className="row valueDetail">
                   R$ {dataProduct.priceSpecification.price}
               </div>
-
-
-
-
-
 
               <div className="row ">
                 <div className="column valueParcel">
@@ -110,21 +88,18 @@ const DetailProduct = (props) =>{
 
               </div>
 
-
               <div className="row titleDetailProduct">
                     Descrição do Produto
               </div>
 
               <div className="row descriptionProduct">
-                {dataProduct.details.description}
+                <DescriptionProduct description={dataProduct.details.description} />
               </div>
 
+              <div className="row ">
+                    <a href="#"  className="linkContinue">Continue Lendo</a>
+              </div>
             </div>
-
-
-
-
-
           </div>
       </div>
     )
