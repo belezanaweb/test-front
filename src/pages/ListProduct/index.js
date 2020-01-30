@@ -17,25 +17,26 @@ const ListProduct = ({history}) =>{
 
     const getListProducts = () =>{
 
-      var proxy = 'https://cors-anywhere.herokuapp.com/';
-
       api
-      .get(proxy + '/products?page=1&size=10',
+      .get('/products?page=1&size=10',
 
-        { headers: { 'Content-Type': 'text/html; charset=utf-8',
+        { headers: { 
           'Etag':'W/"4c6d8-s2qt+3wgZdOSzJ6Yl+/9wbzdKIg"',
-          'Origin':'https://pacific-wave-51314.herokuapp.com'
+          "Content-Type": "application/json",
+          "Accept": "application/json"  ,
+          "Server": "Cowboy",
+          "Via": "1.1 vegur"
       } }
       )
       .then(  async  (res) => {
           try {
 
-            console.log(res.data);
+            setListProducts(res.data)
 
             //const _listProcucts = await JSON.parse(res.data);
 
 
-            //console.log(_listProcucts);
+            console.log(res.data);
 
           } catch(e) {
               console.log(e)
@@ -53,7 +54,7 @@ const ListProduct = ({history}) =>{
 
     const rendersLine = record => {
       return (
-          <BoxItem key={record.id}  dadosEmp={record}  />
+          <BoxItem key={record.sku}  dataProduct={record}  />
       )
     }
 
@@ -61,10 +62,6 @@ const ListProduct = ({history}) =>{
 
       <div>
           <div className="containerList" >
-
-
-slkdjklsjdklsjdkls
-
               {
                   list_products.map(rendersLine)
               }

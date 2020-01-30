@@ -4,6 +4,7 @@
   "private": true,
   "dependencies": {
     "axios": "^0.19.2",
+    "cors": "^2.8.5",
     "react": "^16.12.0",
     "react-dom": "^16.12.0",
     "react-router-dom": "^5.1.2",
@@ -13,13 +14,14 @@
     "react-scripts": "3.3.0"
   },
   "scripts": {
-    "start": "react-scripts start",
+    "start": "PORT=8080 react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test"
   },
   "eslintConfig": {
     "extends": "react-app"
   },
+  "proxy": "https://pacific-wave-51314.herokuapp.com/",
   "browserslist": [
     ">0.2%",
     "not dead",
