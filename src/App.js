@@ -1,11 +1,22 @@
-import React from 'react'
-import logo from './logo.svg'
-import './App.css'
+import React from 'react';
+import { BrowserRouter } from 'react-router-dom';
+import { Provider } from 'react-redux';
 
-const App = () => (
-  <div className="App">
-      <img src={logo} className="App-logo" alt="logo" />
-  </div>
-)
+import GlobalStyle from './styles/global';
+import Header from './components/Header';
+import Routes from './routes';
+import store from './store';
 
-export default App
+function App() {
+  return (
+    <Provider store={store}>
+      <BrowserRouter>
+        <Header />
+        <Routes />
+        <GlobalStyle />
+      </BrowserRouter>
+    </Provider>
+  );
+}
+
+export default App;

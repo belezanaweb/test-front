@@ -1,0 +1,67 @@
+{
+  "stock": [
+    {
+      "id": 1,
+      "amount": 3
+    },
+    {
+      "id": 2,
+      "amount": 5
+    },
+    {
+      "id": 3,
+      "amount": 2
+    },
+    {
+      "id": 4,
+      "amount": 1
+    },
+    {
+      "id": 5,
+      "amount": 5
+    },
+    {
+      "id": 6,
+      "amount": 10
+    }
+  ],
+
+  "products": [
+    {
+      "id": 1,
+      "title": "Kit Inoar Cicatrifios Salon Trio (3 Produtos)",
+      "price": 104.7,
+      "image": "https://res.cloudinary.com/beleza-na-web/image/upload/w_1500,f_auto,fl_progressive,q_auto:eco,w_800/v1/imagens/5/kit-inoar-cicatrifios-salon-trio-3-produtos-51160-4555563257007329025.jpg"
+    },
+    {
+      "id": 2,
+      "title": "Kit Wella Professionals Fusion Salon Trio (3 Produtos)",
+      "price": 561.7,
+      "image": "https://res.cloudinary.com/beleza-na-web/image/upload/w_1500,f_auto,fl_progressive,q_auto:eco,w_1800,c_limit/e_trim/v1/imagens/5/kit-wella-professionals-fusion-salon-trio-3-produtos-52261-7410368458079161653.jpg"
+    },
+    {
+      "id": 3,
+      "title": "Senscience True Hue Kit (3 Produtos)",
+      "price": 424.7,
+      "image": "https://res.cloudinary.com/beleza-na-web/image/upload/w_1500,f_auto,fl_progressive,q_auto:eco,w_1800,c_limit/e_trim/v1/imagens/5/senscience-true-hue-kit-3-produtos-3604.jpg"
+    },
+    {
+      "id": 4,
+      "title": "Kit Senscience Silk Moisture Duo (2 Produtos)",
+      "price": 204.8,
+      "image": "https://res.cloudinary.com/beleza-na-web/image/upload/w_1500,f_auto,fl_progressive,q_auto:eco,w_800/v1/imagens/5/kit-senscience-silk-moisture-duo-2-produtos-2784-1348200316617311645.png"
+    },
+    {
+      "id": 5,
+      "title": "Máscara de tratamento para cabelos danificados",
+      "price": 219.9,
+      "image": "https://res.cloudinary.com/beleza-na-web/image/upload/w_1500,f_auto,fl_progressive,q_auto:eco,w_800/v1/imagens/product/52260/436cbdb6-c340-4c46-a98c-849858a7ae69-kit-wella-professionals-fusion-trio-3-produtos.png"
+    },
+    {
+      "id": 6,
+      "title": "Kit Wella Professionals Cronograma Capilar Fios Perfeitos (3 Produtos)",
+      "price": 332.7,
+      "image": "https://res.cloudinary.com/beleza-na-web/image/upload/w_1500,f_auto,fl_progressive,q_auto:eco,w_800/v1/imagens/product/62464/c6307c9c-7edc-44e6-b369-7f8109f29cec-kit-wella-professionals-cronograma-capilar-fios-perfeitos-3-produtos.png"
+    }
+  ]
+}
