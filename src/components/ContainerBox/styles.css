@@ -1,0 +1,25 @@
+.list-container {
+    width: 100%;
+}
+
+.list-name {
+    margin: 0;
+    color: #999;
+    margin-left: 20px;
+    margin-top: 7px;
+    margin-bottom: 7px;
+    font-size: 14px;
+}
+
+.list-container-itens {
+    background-color: #fff;
+    box-shadow: 0px 1px 8px #EEE;
+    margin: 0px 9px;
+    padding-bottom: 12px;
+    display: flex;
+    flex-direction: column;
+    border-radius: 4px;
+    -webkit-box-shadow: 0px 0px 20px -10px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: 0px 0px 20px -10px rgba(0, 0, 0, 0.75);
+    box-shadow: 0px 0px 20px -10px rgba(0, 0, 0, 0.75);
+}
