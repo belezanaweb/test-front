@@ -1,0 +1,18 @@
+button {
+    height: 60px;
+    font-weight: 600;
+    font-size: 20px;
+    background-color: #fd861d;
+    color: #FFF6E6;
+    border: 0;
+    border-radius: 4px;
+    width: 340px;
+    align-self: center;
+    -webkit-box-shadow: 0px 0px 20px -12px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: 0px 0px 20px -12px rgba(0, 0, 0, 0.75);
+    box-shadow: 0px 0px 20px -12px rgba(0, 0, 0, 0.75)
+}
+
+button:hover {
+    background-color: #D45A00;
+}
