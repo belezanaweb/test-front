@@ -1,0 +1,10 @@
+.loading-page {
+    color: #ff7800;
+    font-size: 16px;
+    font-weight: 600;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    margin-top: 100px;
+    margin-bottom: 100px;
+}
