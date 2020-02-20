@@ -1,0 +1,20 @@
+.nav-header-step-container {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    font-weight: 600;
+    font-size: 14px;
+    color: #ccc;
+    height: 10px;
+    background-color: #FFF;
+    -webkit-box-shadow: 0px 0px 20px -12px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: 0px 0px 20px -12px rgba(0, 0, 0, 0.75);
+    box-shadow: 0px 0px 20px -12px rgba(0, 0, 0, 0.75)
+}
+
+.step-selected {
+    color: #ff7800;
+}
