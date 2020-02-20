@@ -1,0 +1,32 @@
+.item-card-container {
+    border: 0.1px solid #EEE;
+    margin-top: 12px;
+    margin-left: 12px;
+    margin-right: 12px;
+    display: flex;
+    color: #000;
+    min-height: 70px;
+    padding: 10px;
+}
+
+.itens-details {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.item-description-text {
+    font-size: 10px;
+    margin: 0;
+}
+
+.item-value-text {
+    margin: 0;
+    align-self: flex-end;
+    font-weight: 600;
+}
+
+.item-img-container {
+    min-width: 70px;
+}
