@@ -1,0 +1,28 @@
+.value-container {
+    border: 1px solid #CCC;
+    margin: 10px;
+    margin-top: 20px;
+    padding: 8px;
+    color: #000;
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+.value-container div {
+    display: flex;
+    justify-content: space-between;
+    height: 25px;
+}
+
+.value-container div p {
+    margin: 4px 0px;
+}
+
+.value-container-discount {
+    color: #fd861d;
+}
+
+.value-container-total {
+    margin-top: 10px;
+    font-weight: 700;
+}
