@@ -6,7 +6,7 @@ import { Normalize } from 'styled-normalize';
 import { Button } from './components';
 import './index.css';
 import theme from './styles/theme';
-import * as serviceWorker from './serviceWorker';
+import * as serviceWorker from './service-worker';
 
 const Strict = () => (
   <StrictMode>

@@ -1,0 +1,32 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Button #render should match a snapshot 1`] = `
+.c0 {
+  width: 100%;
+  height: 3.75rem;
+  background-color: #ff6c00;
+  color: #ffffff;
+  box-shadow: inset 0 -0.188rem 0 0 #d45a00, 0 0.125rem 0.25rem 0 rgba(0,0,0,0.25);
+  border-radius: 0.188rem;
+  border: 0;
+  cursor: pointer;
+  font-family: Helvetica Neue;
+  font-size: 1.25rem;
+  font-weight: 700;
+  line-height: 1.5rem;
+  text-align: center;
+  text-transform: uppercase;
+  -webkit-transition: background-color 0.2s ease;
+  transition: background-color 0.2s ease;
+}
+
+.c0:hover {
+  background-color: #d45a00;
+}
+
+<button
+  className="c0"
+>
+  test
+</button>
+`;
