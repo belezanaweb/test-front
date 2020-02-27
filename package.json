@@ -26,7 +26,7 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "lint": "eslint src/**/*.js"
+    "lint": "eslint 'src/**/*.js'"
   },
   "eslintConfig": {
     "extends": "react-app"
