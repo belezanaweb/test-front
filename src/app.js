@@ -1,7 +1,8 @@
 import React from 'react';
-import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
+import { BrowserRouter as Router, Switch, Route, NavLink } from 'react-router-dom';
 
 import { CheckoutCart, CheckoutPayment, CheckoutConfirmation } from './pages';
+import { Menu } from './components';
 
 const PAGES = [
   {
@@ -24,17 +25,18 @@ const PAGES = [
 function App() {
   return (
     <Router>
-      <ul>
+      <Menu>
         {PAGES.map(({ title, path }) => (
-          <li key={title}>
-            <Link to={path}>{title}</Link>
-          </li>
+          <NavLink to={path} key={title} exact={path === '/'}>
+            {title}
+          </NavLink>
         ))}
-      </ul>
+      </Menu>
+
       <Switch>
         {PAGES.map(({ title, path, page: Page }) => (
           <Route key={title} path={path} exact={path === '/'}>
-            <Page></Page>
+            <Page />
           </Route>
         ))}
       </Switch>

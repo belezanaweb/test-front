@@ -1,0 +1,83 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Menu should match a snapshot 1`] = `
+.c0 {
+  background-color: #fff;
+  box-shadow: 1px 1px 5px 0 rgba(0,0,29,0.22);
+  width: 100%;
+}
+
+.c1 {
+  margin: 0 auto;
+  padding: 0;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  list-style: none;
+  max-width: 400px;
+}
+
+.c1 a {
+  display: block;
+  padding: 0.8rem 0.7rem;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-weight: 700;
+  font-size: 0.844rem;
+  color: #ccc;
+  -webkit-transition: color 0.2s ease;
+  transition: color 0.2s ease;
+}
+
+.c1 a:hover,
+.c1 a.active {
+  color: #ff6c00;
+}
+
+@media (min-width:375px) {
+  .c1 a {
+    padding: 0.8rem 1.2rem;
+  }
+}
+
+<header>
+  <nav
+    className="c0"
+  >
+    <ul
+      className="c1"
+    >
+      <li>
+        <a
+          className="active"
+          href="/"
+        >
+          Sacola
+        </a>
+      </li>
+      <li>
+        <a
+          className={false}
+          href="/pagamento"
+        >
+          Pagamento
+        </a>
+      </li>
+      <li>
+        <a
+          className={false}
+          href="/confirmacao"
+        >
+          Confirmação
+        </a>
+      </li>
+    </ul>
+  </nav>
+</header>
+`;
