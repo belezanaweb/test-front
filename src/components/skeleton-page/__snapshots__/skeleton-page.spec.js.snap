@@ -1,8 +1,14 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`SkeletonPage should match a snapshot 1`] = `
+.c1 {
+  max-width: 998px;
+  margin: 0 auto;
+  padding: 0 0.7rem;
+}
+
 .c0 {
-  padding: 1rem;
+  padding: 1rem 0;
   position: fixed;
   width: 100%;
   height: calc(100% - 40px);
@@ -10,7 +16,7 @@ exports[`SkeletonPage should match a snapshot 1`] = `
   box-sizing: border-box;
 }
 
-.c1 {
+.c2 {
   display: inline-block;
   height: 5.625rem;
   width: 100%;
@@ -22,9 +28,15 @@ exports[`SkeletonPage should match a snapshot 1`] = `
   margin-bottom: 1rem;
 }
 
-.c1:last-child {
+.c2:last-child {
   height: 7.5rem;
   margin-top: 1rem;
+}
+
+@media (min-width:365px) {
+  .c1 {
+    padding: 0 1.2rem;
+  }
 }
 
 <div
@@ -32,15 +44,19 @@ exports[`SkeletonPage should match a snapshot 1`] = `
 >
   <div
     className="c1"
-  />
-  <div
-    className="c1"
-  />
-  <div
-    className="c1"
-  />
-  <div
-    className="c1"
-  />
+  >
+    <div
+      className="c2"
+    />
+    <div
+      className="c2"
+    />
+    <div
+      className="c2"
+    />
+    <div
+      className="c2"
+    />
+  </div>
 </div>
 `;

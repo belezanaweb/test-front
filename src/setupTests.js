@@ -15,12 +15,13 @@ import theme from './styles/theme';
 const getStyledWrapper = (
   Component = () => <div></div>,
   { props = {}, children, renderType = mount } = {}
-) =>
-  renderType(
+) => {
+  return renderType(
     <ThemeProvider theme={theme}>
       <Component {...props}>{children}</Component>
     </ThemeProvider>
   );
+};
 
 const getStyledWrapperJSON = (Component, options) =>
   getStyledWrapper(Component, {

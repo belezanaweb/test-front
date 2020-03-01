@@ -30,7 +30,8 @@ exports[`Menu should match a snapshot 1`] = `
   max-width: 375px;
 }
 
-.c3 a {
+.c3 a,
+.c3 span {
   display: block;
   padding: 0.8rem 0.7rem;
   -webkit-text-decoration: none;
@@ -43,7 +44,8 @@ exports[`Menu should match a snapshot 1`] = `
   transition: color 0.2s ease;
 }
 
-.c3 a.active {
+.c3 a.active,
+.c3 span.active {
   color: #ff6c00;
 }
 
@@ -84,7 +86,8 @@ exports[`Menu should match a snapshot 1`] = `
 }
 
 @media (min-width:375px) {
-  .c3 a {
+  .c3 a,
+  .c3 span {
     padding: 0.8rem 1.2rem;
   }
 }

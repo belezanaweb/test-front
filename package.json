@@ -31,7 +31,8 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test --silent",
+    "test": "react-scripts test --silent --watch=no --watchAll=no",
+    "test:dev": "react-scripts test --coverage",
     "lint": "eslint 'src/**/*.js'"
   },
   "eslintConfig": {
@@ -47,12 +48,18 @@
     "hooks": {
       "commit-msg": "commitlint -E HUSKY_GIT_PARAMS",
       "prepare-commit-msg": "exec < /dev/tty && git cz --hook || true",
-      "pre-commit": "npm run lint -- --quiet"
+      "pre-commit": "npm run lint -- --quiet && npm run test"
     }
   },
   "config": {
     "commitizen": {
       "path": "./node_modules/cz-conventional-changelog"
     }
+  },
+  "jest": {
+    "coveragePathIgnorePatterns": [
+      "src/index",
+      "src/pages.js"
+    ]
   }
 }

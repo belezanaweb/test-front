@@ -4,19 +4,33 @@ import { ThemeProvider } from 'styled-components';
 import { Normalize } from 'styled-normalize';
 
 import './index.css';
-import App from './app';
+
 import theme from './styles/theme';
 import * as serviceWorker from './service-worker';
+import { MemoryRouter, Switch, Route, Redirect } from 'react-router-dom';
 
-const Strict = () => (
-  <>
-    <Normalize />
-    <ThemeProvider theme={theme}>
-      <App />
-    </ThemeProvider>
-  </>
-);
+import { LayoutContainer } from './components';
 
-ReactDOM.render(<Strict />, document.getElementById('root'));
+import pages from './pages';
+
+const App = () => {
+  return (
+    <>
+      <Normalize />
+      <ThemeProvider theme={theme}>
+        <MemoryRouter>
+          <Switch>
+            <Route path="/checkout/cart">
+              <LayoutContainer pages={pages} exact />
+            </Route>
+            <Redirect from="*" exact to="/checkout/cart" />
+          </Switch>
+        </MemoryRouter>
+      </ThemeProvider>
+    </>
+  );
+};
+
+ReactDOM.render(<App />, document.getElementById('root'));
 
 serviceWorker.unregister();

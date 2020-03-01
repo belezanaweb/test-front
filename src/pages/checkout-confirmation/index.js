@@ -1,7 +1,7 @@
 import React from 'react';
 
-function CheckoutConfirmation() {
+const CheckoutConfirmation = function() {
   return <h1>CheckoutConfirmation</h1>;
-}
+};
 
 export default CheckoutConfirmation;

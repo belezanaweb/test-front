@@ -5,7 +5,7 @@ exports[`Button #render should match a snapshot 1`] = `
   width: 100%;
   height: 3.75rem;
   background-color: #ff6c00;
-  color: #ffffff;
+  color: #fff;
   box-shadow: inset 0 -0.188rem 0 0 #d45a00, 0 0.125rem 0.25rem 0 rgba(0,0,0,0.25);
   border-radius: 0.188rem;
   border: 0;
