@@ -5,9 +5,17 @@ exports[`Menu should match a snapshot 1`] = `
   background-color: #fff;
   box-shadow: 1px 1px 5px 0 rgba(0,0,29,0.22);
   width: 100%;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
 }
 
 .c1 {
+  width: 100%;
+}
+
+.c3 {
   margin: 0 auto;
   padding: 0;
   display: -webkit-box;
@@ -19,10 +27,10 @@ exports[`Menu should match a snapshot 1`] = `
   -ms-flex-pack: justify;
   justify-content: space-between;
   list-style: none;
-  max-width: 400px;
+  max-width: 375px;
 }
 
-.c1 a {
+.c3 a {
   display: block;
   padding: 0.8rem 0.7rem;
   -webkit-text-decoration: none;
@@ -35,23 +43,78 @@ exports[`Menu should match a snapshot 1`] = `
   transition: color 0.2s ease;
 }
 
-.c1 a:hover,
-.c1 a.active {
+.c3 a.active {
   color: #ff6c00;
 }
 
+.c2 {
+  display: none;
+}
+
+@media (min-width:768px) {
+  .c0 {
+    padding: 1rem 0;
+  }
+}
+
+@media (min-width:768px) {
+  .c1 {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-align-items: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: justify;
+    -webkit-justify-content: space-between;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    max-width: 998px;
+    margin: 0 auto;
+    padding: 0 1rem;
+  }
+}
+
+@media (min-width:768px) {
+  .c3 {
+    margin: 0 -1.2rem 0 0;
+  }
+}
+
 @media (min-width:375px) {
-  .c1 a {
+  .c3 a {
     padding: 0.8rem 1.2rem;
   }
 }
 
-<header>
+@media (min-width:768px) {
+  .c2 {
+    width: 80px;
+    height: 40px;
+    margin: 0;
+    display: block;
+    background: url(logo.svg) no-repeat 0px -20px;
+    background-size: cover;
+    text-indent: -9999px;
+    font-size: 0;
+  }
+}
+
+<header
+  className="c0"
+>
   <nav
-    className="c0"
+    className="c1"
   >
+    <h1
+      className="c2"
+    >
+      beleza na web
+    </h1>
     <ul
-      className="c1"
+      className="c3"
     >
       <li>
         <a

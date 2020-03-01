@@ -1,7 +1,13 @@
 const colors = {
   primary: '#ff6c00',
   primaryHover: '#d45a00',
-  white: '#ffffff'
+  white: '#fff',
+  gallery: '#eee',
+  silver: '#ccc'
+};
+
+const widths = {
+  container: '998px'
 };
 
 const fonts = {
@@ -13,4 +19,4 @@ const fonts = {
   }
 };
 
-export default { colors, fonts };
+export default { colors, fonts, widths };
