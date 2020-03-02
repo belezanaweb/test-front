@@ -1,12 +1,17 @@
 import React from 'react';
 import { Switch, Route, Redirect, withRouter, NavLink } from 'react-router-dom';
+import { useSelector } from 'react-redux';
 
 import Menu from '../menu';
 import Container from '../container';
+import SkeletonPage from '../skeleton-page';
 
 const Layout = function({ pages, location: { pathname } }) {
+  const showLoader = useSelector(state => state.loader.show);
+
   return (
     <>
+      {showLoader && <SkeletonPage />}
       <Menu>
         {pages.map(({ title, path, disabled }) =>
           disabled ? (

@@ -2,6 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { ThemeProvider } from 'styled-components';
 import { Normalize } from 'styled-normalize';
+import { Provider } from 'react-redux';
 
 import './index.css';
 
@@ -10,24 +11,27 @@ import * as serviceWorker from './service-worker';
 import { MemoryRouter, Switch, Route, Redirect } from 'react-router-dom';
 
 import { LayoutContainer } from './components';
+import { initializeStore } from './store';
 
 import pages from './pages';
 
+const store = initializeStore();
+
 const App = () => {
   return (
-    <>
+    <Provider store={store}>
       <Normalize />
       <ThemeProvider theme={theme}>
         <MemoryRouter>
           <Switch>
             <Route path="/checkout/cart">
-              <LayoutContainer pages={pages} exact />
+              <LayoutContainer pages={pages} />
             </Route>
             <Redirect from="*" exact to="/checkout/cart" />
           </Switch>
         </MemoryRouter>
       </ThemeProvider>
-    </>
+    </Provider>
   );
 };
 
