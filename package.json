@@ -12,7 +12,8 @@
     "redux-devtools-extension": "^2.13.8",
     "redux-thunk": "^2.3.0",
     "styled-components": "^5.0.1",
-    "styled-normalize": "^8.0.7"
+    "styled-normalize": "^8.0.7",
+    "unfetch": "^4.1.0"
   },
   "devDependencies": {
     "@commitlint/cli": "^8.3.5",
@@ -27,6 +28,7 @@
     "eslint-plugin-react": "^7.18.3",
     "eslint-plugin-react-hooks": "^2.5.0",
     "husky": "^4.2.3",
+    "jest-fetch-mock": "^3.0.1",
     "jest-styled-components": "^7.0.0",
     "prettier": "^1.19.1",
     "react-scripts": "^3.4.0",
@@ -36,8 +38,8 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test --silent --watch=no --watchAll=no",
-    "test:dev": "react-scripts test --coverage",
+    "test": "react-scripts test --silent --watch=no --watchAll=no --verbose",
+    "test:dev": "react-scripts test --coverage --verbose",
     "lint": "eslint 'src/**/*.js'"
   },
   "eslintConfig": {
@@ -66,8 +68,9 @@
       "src/index.js",
       "src/pages.js",
       "src/store/index.js",
-      "src/lib/test-utils",
-      "src/service-worker.js"
+      "src/lib/test-utils/*.js",
+      "src/service-worker.js",
+      "src/pages"
     ]
   }
 }

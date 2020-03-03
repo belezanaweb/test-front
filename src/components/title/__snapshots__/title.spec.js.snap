@@ -1,0 +1,14 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Title should match a snapshot 1`] = `
+.c0 {
+  color: #999;
+  font-size: 0.875rem;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+<h2
+  className="c0"
+/>
+`;

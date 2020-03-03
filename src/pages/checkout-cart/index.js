@@ -1,13 +1,18 @@
 import React from 'react';
-import { Button } from '../../components';
 import { useHistory } from 'react-router-dom';
+
+import { Button, CartProductsContainer, Title } from '../../components';
 
 const CheckoutCart = function() {
   const history = useHistory();
 
   return (
     <>
-      <h1>CheckoutCart</h1>
+      <Title>Produtos</Title>
+      <CartProductsContainer />
+
+      <br />
+
       <Button onClick={() => history.replace('/checkout/cart/payment')}>
         Seguir para pagamento
       </Button>

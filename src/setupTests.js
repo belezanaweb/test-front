@@ -1,5 +1,8 @@
 import React from 'react';
 
+import reduxMockStore from 'redux-mock-store';
+import { middlewares } from './store';
+
 import { ThemeProvider } from 'styled-components';
 
 import { configure, mount } from 'enzyme';
@@ -7,6 +10,8 @@ import Adapter from 'enzyme-adapter-react-16';
 import 'jest-styled-components';
 
 import { create } from 'react-test-renderer';
+
+require('jest-fetch-mock').enableMocks();
 
 configure({ adapter: new Adapter() });
 
@@ -32,3 +37,5 @@ const getStyledWrapperJSON = (Component, options) =>
 global.React = React;
 global.getStyledWrapper = getStyledWrapper;
 global.getStyledWrapperJSON = getStyledWrapperJSON;
+
+global.__createTestStore__ = reduxMockStore(middlewares());

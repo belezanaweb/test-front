@@ -1,17 +1,26 @@
+jest.mock('../../store/ducks/cart', () => ({
+  getCart: jest.fn().mockImplementation(() => ({
+    type: Math.random() * 2
+  }))
+}));
+
 import React from 'react';
 import { MemoryRouter, Switch } from 'react-router-dom';
 import { ThemeProvider } from 'styled-components';
 import { mount } from 'enzyme';
 import { Provider } from 'react-redux';
 
-import LayoutContainer from '.';
+import CheckoutContainer from '.';
 
-import createMockedStore from '../../lib/test-utils/mocked-store';
+import createMockedStore, { initialStore } from '../../lib/test-utils/mocked-store';
 
 import theme from '../../styles/theme';
 import pages from '../../pages';
 
+import { getCart } from '../../store/ducks/cart';
+
 const mockedStore = createMockedStore({
+  ...initialStore,
   loader: {
     show: true
   }
@@ -26,22 +35,26 @@ const RouterWrapper = ({
     <ThemeProvider theme={theme}>
       <MemoryRouter initialEntries={[initialEntries]}>
         <Switch>
-          <LayoutContainer pages={pageList} />
+          <CheckoutContainer pages={pageList} />
         </Switch>
       </MemoryRouter>
     </ThemeProvider>
   </Provider>
 );
 
-describe('LayoutContainer', () => {
+describe('CheckoutContainer', () => {
   const wrapper = mount(<RouterWrapper />);
+
+  it('should call `getCart` action to get data cart', () => {
+    expect(getCart).toHaveBeenCalled();
+  });
 
   it('should render three Routes', () => {
     expect(wrapper.find('Route')).toHaveLength(pages.length);
   });
 
   it('should render a Skeleton if `loader.show` to be `true`', () => {
-    expect(wrapper.find('Layout > SkeletonPage')).toHaveLength(1);
+    expect(wrapper.find('CheckoutContainer > SkeletonPage')).toHaveLength(1);
   });
 
   it('should not render a Skeleton if `loader.show` to be `false`', () => {
@@ -55,7 +68,7 @@ describe('LayoutContainer', () => {
       />
     );
 
-    expect(newWrapper.find('Layout > SkeletonPage')).toHaveLength(0);
+    expect(newWrapper.find('CheckoutContainer > SkeletonPage')).toHaveLength(0);
   });
 
   describe('#Menu', () => {

@@ -1,0 +1,14 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Cardboard should match a snapshot 1`] = `
+.c0 {
+  background-color: #fff;
+  padding: 0.75rem;
+  box-shadow: 1px 1px 5px 0 rgba(0,0,29,0.22);
+  border-radius: 3px;
+}
+
+<div
+  className="c0"
+/>
+`;

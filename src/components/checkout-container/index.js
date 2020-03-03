@@ -1,13 +1,21 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Switch, Route, Redirect, withRouter, NavLink } from 'react-router-dom';
-import { useSelector } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
 
 import Menu from '../menu';
 import Container from '../container';
 import SkeletonPage from '../skeleton-page';
 
-const Layout = function({ pages, location: { pathname } }) {
+import { getCart } from '../../store/ducks/cart';
+
+const CheckoutContainer = function({ pages, location: { pathname } }) {
   const showLoader = useSelector(state => state.loader.show);
+
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(getCart());
+  }, []);
 
   return (
     <>
@@ -38,4 +46,4 @@ const Layout = function({ pages, location: { pathname } }) {
   );
 };
 
-export default withRouter(Layout);
+export default withRouter(CheckoutContainer);

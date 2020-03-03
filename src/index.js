@@ -10,7 +10,7 @@ import theme from './styles/theme';
 import * as serviceWorker from './service-worker';
 import { MemoryRouter, Switch, Route, Redirect } from 'react-router-dom';
 
-import { LayoutContainer } from './components';
+import { CheckoutContainer } from './components';
 import { initializeStore } from './store';
 
 import pages from './pages';
@@ -25,7 +25,7 @@ const App = () => {
         <MemoryRouter>
           <Switch>
             <Route path="/checkout/cart">
-              <LayoutContainer pages={pages} />
+              <CheckoutContainer pages={pages} />
             </Route>
             <Redirect from="*" exact to="/checkout/cart" />
           </Switch>

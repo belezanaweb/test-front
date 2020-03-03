@@ -15,6 +15,7 @@ const fonts = {
     family: 'Helvetica Neue'
   },
   weights: {
+    regular: 400,
     bold: 700
   }
 };
