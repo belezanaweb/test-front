@@ -4,12 +4,12 @@ exports[`SkeletonPage should match a snapshot 1`] = `
 .c0 {
   max-width: 998px;
   margin: 0 auto;
-  padding: 0 0.7rem;
+  padding: 0 0.7rem 0.7rem;
 }
 
 @media (min-width:365px) {
   .c0 {
-    padding: 0 1.2rem;
+    padding: 0 1.2rem 1.2rem;
   }
 }
 
