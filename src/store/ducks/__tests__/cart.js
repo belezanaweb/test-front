@@ -8,7 +8,11 @@ const CART_RESPONSE = {
     {
       image: 'medium image'
     }
-  ]
+  ],
+  subTotal: 624.8,
+  shippingTotal: 5.3,
+  discount: 30,
+  total: 618.9
 };
 
 describe('cart', () => {
@@ -42,7 +46,11 @@ describe('cart', () => {
   describe('reducer', () => {
     it('should return the default state', () => {
       expect(reducer(undefined, {})).toEqual({
-        items: []
+        items: [],
+        subTotal: 0,
+        shippingTotal: 0,
+        discount: 0,
+        total: 0
       });
     });
 

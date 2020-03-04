@@ -6,6 +6,7 @@ import CheckoutContainer from './checkout-container';
 import Product, { ProductsGroup } from './product';
 import CartProductsContainer from './cart-products-container';
 import Title from './title';
+import CartResumeContainer from './cart-resume-container';
 
 export {
   Button,
@@ -16,5 +17,6 @@ export {
   Product,
   ProductsGroup,
   CartProductsContainer,
-  Title
+  Title,
+  CartResumeContainer
 };

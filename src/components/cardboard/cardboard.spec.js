@@ -6,4 +6,14 @@ describe('Cardboard', () => {
 
     expect(wrapper).toMatchSnapshot();
   });
+
+  it('should match a snapshot with out prop', () => {
+    const wrapper = getStyledWrapperJSON(Cardboard, {
+      props: {
+        out: true
+      }
+    });
+
+    expect(wrapper).toMatchSnapshot();
+  });
 });

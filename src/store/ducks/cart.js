@@ -9,7 +9,11 @@ export const Types = {
 };
 
 const initialState = {
-  items: []
+  items: [],
+  subTotal: 0,
+  shippingTotal: 0,
+  discount: 0,
+  total: 0
 };
 
 // Reducer

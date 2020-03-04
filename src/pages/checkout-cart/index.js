@@ -1,7 +1,7 @@
 import React from 'react';
 import { useHistory } from 'react-router-dom';
 
-import { Button, CartProductsContainer, Title } from '../../components';
+import { Button, CartProductsContainer, Title, CartResumeContainer } from '../../components';
 
 const CheckoutCart = function() {
   const history = useHistory();
@@ -10,6 +10,10 @@ const CheckoutCart = function() {
     <>
       <Title>Produtos</Title>
       <CartProductsContainer />
+
+      <br />
+
+      <CartResumeContainer />
 
       <br />
 

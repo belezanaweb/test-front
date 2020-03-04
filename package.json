@@ -70,7 +70,8 @@
       "src/store/index.js",
       "src/lib/test-utils/*.js",
       "src/service-worker.js",
-      "src/pages"
+      "src/pages",
+      "src/styles"
     ]
   }
 }

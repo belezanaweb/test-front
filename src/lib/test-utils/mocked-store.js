@@ -69,7 +69,11 @@ export const initialStore = {
           }
         }
       }
-    ]
+    ],
+    subTotal: 624.8,
+    shippingTotal: 5.3,
+    discount: 30,
+    total: 618.9
   }
 };
 
