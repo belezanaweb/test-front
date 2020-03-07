@@ -1,7 +1,14 @@
 import React from 'react';
 
+import { CartProductsContainer, CartResumeContainer } from '../../components';
+
 const CheckoutConfirmation = function() {
-  return <h1>CheckoutConfirmation</h1>;
+  return (
+    <>
+      <CartProductsContainer />
+      <CartResumeContainer />
+    </>
+  );
 };
 
 export default CheckoutConfirmation;

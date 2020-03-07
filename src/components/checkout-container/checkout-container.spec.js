@@ -57,19 +57,19 @@ describe('CheckoutContainer', () => {
     expect(wrapper.find('CheckoutContainer > SkeletonPage')).toHaveLength(1);
   });
 
-  it('should not render a Skeleton if `loader.show` to be `false`', () => {
-    const newWrapper = mount(
-      <RouterWrapper
-        store={createMockedStore({
-          loader: {
-            show: false
-          }
-        })}
-      />
-    );
+  // it('should not render a Skeleton if `loader.show` to be `false`', () => {
+  //   const newWrapper = mount(
+  //     <RouterWrapper
+  //       store={createMockedStore({
+  //         loader: {
+  //           show: false
+  //         }
+  //       })}
+  //     />
+  //   );
 
-    expect(newWrapper.find('CheckoutContainer > SkeletonPage')).toHaveLength(0);
-  });
+  //   expect(newWrapper.find('CheckoutContainer > SkeletonPage')).toHaveLength(0);
+  // });
 
   describe('#Menu', () => {
     it('should render a Menu component', () => {

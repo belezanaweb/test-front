@@ -1,11 +1,15 @@
 import React from 'react';
 import styled from 'styled-components';
+import { useDispatch } from 'react-redux';
+import { useHistory } from 'react-router-dom';
 
 import { Formik } from 'formik';
 import * as Yup from 'yup';
 
 import { Cardboard, TextField, Title, Button } from '..';
 import yupTransformDate from '../../lib/yup-transform-date';
+
+import { doCheckout } from '../../store/ducks/checkout';
 
 const CardRow = styled.div`
   display: flex;
@@ -48,10 +52,25 @@ const cardExpirationDateMask = [/\d/, /\d/, '/', /\d/, /\d/, /\d/, /\d/];
 const cardCVVMask = [/\d/, /\d/, /\d/, /\d/];
 
 const PaymentFormContainer = function({ children }) {
+  const dispatch = useDispatch();
+  const history = useHistory();
+
   return (
     <>
       <Title>Cartão de Crédito</Title>
       <Formik
+        onSubmit={({ card_number, card_holder_name, card_expiration_date, card_cvv }) => {
+          dispatch(
+            doCheckout({
+              card_number,
+              card_holder_name: card_holder_name.toUpperCase(),
+              card_expiration_date,
+              card_cvv
+            })
+          );
+
+          history.push('/checkout/cart/confirmation');
+        }}
         initialValues={{
           card_number: '',
           card_holder_name: '',
@@ -64,7 +83,7 @@ const PaymentFormContainer = function({ children }) {
             .matches(/^[\d.]{17,19}$/, 'O número do cartão é inválido'),
           card_holder_name: Yup.string()
             .required('O nome do titular é obrigatório.')
-            .matches(/^[a-zA-Z]{2,}(?:[a-zA-Z]+){0,2}$/, 'Escreva um nome válido.'),
+            .matches(/^[a-zA-Z]+(([',. -][a-zA-Z ])?[a-zA-Z]*)*$/, 'Escreva um nome válido.'),
           card_expiration_date: Yup.date()
             .transform(yupTransformDate)
             .min(new Date(), 'A validade do cartão está expirada.')
@@ -79,7 +98,7 @@ const PaymentFormContainer = function({ children }) {
           const { values, errors, touched, handleBlur, handleChange, handleSubmit } = props;
 
           return (
-            <form onSubmit={handleSubmit} data-testid="creadit-card-form">
+            <form onSubmit={handleSubmit}>
               <Cardboard>
                 <TextField
                   label="Número do cartão:"
