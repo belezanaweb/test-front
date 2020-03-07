@@ -10,6 +10,10 @@ exports[`Product should match a snapshot 1`] = `
   -webkit-box-align: stretch;
   -ms-flex-align: stretch;
   align-items: stretch;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
   border: 1px solid #ddd;
   border-radius: 3px;
   padding: 0.625rem;
@@ -134,6 +138,10 @@ exports[`ProductsGroup should match a snapshot 1`] = `
   -webkit-box-align: stretch;
   -ms-flex-align: stretch;
   align-items: stretch;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
   border: 1px solid #ddd;
   border-radius: 3px;
   padding: 0.625rem;

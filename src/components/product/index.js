@@ -6,6 +6,7 @@ import { formatToCurrency } from '../../lib/currency';
 const ProductCard = styled.div`
   display: flex;
   align-items: stretch;
+  justify-content: space-between;
 
   border: 1px solid #ddd;
   border-radius: 3px;

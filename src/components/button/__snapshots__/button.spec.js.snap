@@ -13,11 +13,14 @@ exports[`Button #render should match a snapshot 1`] = `
   font-family: Helvetica Neue;
   font-size: 1.25rem;
   font-weight: 700;
-  line-height: 1.5rem;
+  line-height: 3.75rem;
   text-align: center;
   text-transform: uppercase;
   -webkit-transition: background-color 0.2s ease;
   transition: background-color 0.2s ease;
+  display: block;
+  -webkit-text-decoration: none;
+  text-decoration: none;
 }
 
 .c0:hover {

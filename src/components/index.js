@@ -7,6 +7,8 @@ import Product, { ProductsGroup } from './product';
 import CartProductsContainer from './cart-products-container';
 import Title from './title';
 import CartResumeContainer from './cart-resume-container';
+import TextField from './text-field';
+import PaymentFormContainer from './payment-form-container';
 
 export {
   Button,
@@ -18,5 +20,7 @@ export {
   ProductsGroup,
   CartProductsContainer,
   Title,
-  CartResumeContainer
+  CartResumeContainer,
+  TextField,
+  PaymentFormContainer
 };

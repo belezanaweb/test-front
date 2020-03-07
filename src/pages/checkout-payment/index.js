@@ -1,7 +1,15 @@
 import React from 'react';
 
+import { CartResumeContainer, PaymentFormContainer } from '../../components';
+
 const CheckoutPayment = function() {
-  return <h1>CheckoutPayment</h1>;
+  return (
+    <>
+      <PaymentFormContainer>
+        <CartResumeContainer />
+      </PaymentFormContainer>
+    </>
+  );
 };
 
 export default CheckoutPayment;

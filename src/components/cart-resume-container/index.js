@@ -32,13 +32,17 @@ const ResumeLine = styled.p`
     `}
 `;
 
+const ResumeCardboard = styled(Cardboard)`
+  margin: 1.25rem 0;
+`;
+
 const CartResumeContainer = function() {
   const { subTotal = 0, shippingTotal = 0, discount = 0, total = 0 } = useSelector(
     state => state.cart || {}
   );
 
   return (
-    <Cardboard out={true}>
+    <ResumeCardboard out={true}>
       <ResumeLine>
         <span>PRODUTOS</span>
         <span>{formatToCurrency(subTotal)}</span>
@@ -55,7 +59,7 @@ const CartResumeContainer = function() {
         <span>TOTAL</span>
         <span>{formatToCurrency(total)}</span>
       </ResumeLine>
-    </Cardboard>
+    </ResumeCardboard>
   );
 };
 

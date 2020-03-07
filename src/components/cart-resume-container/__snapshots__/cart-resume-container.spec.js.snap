@@ -1,14 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`CartResumeContainer should match a snapshot 1`] = `
-.c0 {
-  padding: 0.75rem;
-  border-radius: 3px;
-  background-color: transparent;
-  border: 1px solid #ddd;
-  box-shadow: none;
-}
-
 .c1 {
   display: -webkit-box;
   display: -webkit-flex;
@@ -63,8 +55,17 @@ exports[`CartResumeContainer should match a snapshot 1`] = `
   margin-top: 0;
 }
 
+.c0 {
+  padding: 0.75rem;
+  border-radius: 3px;
+  background-color: transparent;
+  border: 1px solid #ddd;
+  box-shadow: none;
+  margin: 1.25rem 0;
+}
+
 <div
-  className="c0"
+  className="sc-AxmLO c0"
 >
   <p
     className="c1"

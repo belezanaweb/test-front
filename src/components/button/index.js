@@ -1,6 +1,7 @@
+import React from 'react';
 import styled from 'styled-components';
 
-const StyledButton = styled.button`
+const Button = styled(({ as = <button />, ...props }) => React.cloneElement(as, props))`
   width: 100%;
   height: 3.75rem;
 
@@ -18,14 +19,17 @@ const StyledButton = styled.button`
   font-size: 1.25rem;
   font-weight: ${props => props.theme.fonts.weights.bold};
 
-  line-height: 1.5rem;
+  line-height: 3.75rem;
   text-align: center;
   text-transform: uppercase;
   transition: background-color 0.2s ease;
+
+  display: block;
+  text-decoration: none;
 
   &:hover {
     background-color: ${props => props.theme.colors.primaryHover};
   }
 `;
 
-export default StyledButton;
+export default Button;
