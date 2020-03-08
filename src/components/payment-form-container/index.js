@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useRef, useState } from 'react';
 import styled from 'styled-components';
 import { useDispatch } from 'react-redux';
 import { useHistory } from 'react-router-dom';
@@ -54,22 +54,60 @@ const cardCVVMask = [/\d/, /\d/, /\d/, /\d/];
 const PaymentFormContainer = function({ children }) {
   const dispatch = useDispatch();
   const history = useHistory();
+  const dateField = useRef();
+  const [dateError, setDateError] = useState('');
+
+  const validateDate = () => {
+    const MIN_LENGTH = 7;
+
+    const date = dateField.current.inputElement.value;
+
+    if (date.length === MIN_LENGTH) {
+      const month = parseInt(date.split('/')[0], 10);
+
+      if (month > 12) {
+        return false;
+      }
+
+      return true;
+    }
+
+    return false;
+  };
+
+  const handleDateChange = (event, formikEvent) => {
+    formikEvent(event);
+
+    if (!validateDate()) {
+      setDateError('A data está inválida.');
+    } else {
+      setDateError(null);
+    }
+  };
+
+  const minDate = new Date();
+
+  minDate.setMonth(minDate.getMonth() - 1);
 
   return (
     <>
       <Title>Cartão de Crédito</Title>
       <Formik
         onSubmit={({ card_number, card_holder_name, card_expiration_date, card_cvv }) => {
-          dispatch(
-            doCheckout({
-              card_number,
-              card_holder_name: card_holder_name.toUpperCase(),
-              card_expiration_date,
-              card_cvv
-            })
-          );
-
-          history.push('/checkout/cart/confirmation');
+          if (!validateDate()) {
+            setDateError('A data está inválida.');
+          } else {
+            setDateError(null);
+            dispatch(
+              doCheckout({
+                card_number,
+                card_holder_name: card_holder_name.toUpperCase(),
+                card_expiration_date,
+                card_cvv
+              })
+            );
+            history.push('/checkout/cart/confirmation');
+          }
         }}
         initialValues={{
           card_number: '',
@@ -80,18 +118,18 @@ const PaymentFormContainer = function({ children }) {
         validationSchema={Yup.object().shape({
           card_number: Yup.string()
             .required('O número do cartão é obrigatório.')
-            .matches(/^[\d.]{17,19}$/, 'O número do cartão é inválido'),
+            .matches(/^[\d.]{17,19}$/, 'O número do cartão é inválido.'),
           card_holder_name: Yup.string()
             .required('O nome do titular é obrigatório.')
             .matches(/^[a-zA-Z]+(([',. -][a-zA-Z ])?[a-zA-Z]*)*$/, 'Escreva um nome válido.'),
           card_expiration_date: Yup.date()
             .transform(yupTransformDate)
-            .min(new Date(), 'A validade do cartão está expirada.')
+            .min(minDate, 'A validade do cartão está expirada.')
             .typeError('A data está inválida.')
             .required('A validade do cartão é obrigatória.'),
           card_cvv: Yup.string()
             .matches(/^\d{3,4}$/, 'O CVV deve ter entre 3 e 4 números.')
-            .required('O CVV é obrigatório')
+            .required('O CVV é obrigatório.')
         })}
       >
         {props => {
@@ -127,10 +165,13 @@ const PaymentFormContainer = function({ children }) {
                     id="card_expiration_date"
                     placeholder="__/____"
                     mask={cardExpirationDateMask}
-                    onChange={handleChange}
-                    onBlur={handleBlur}
+                    onChange={event => handleDateChange(event, handleChange)}
+                    onBlur={event => handleDateChange(event, handleBlur)}
                     value={values.card_expiration_date}
-                    error={touched.card_expiration_date && errors.card_expiration_date}
+                    error={
+                      touched.card_expiration_date && (dateError || errors.card_expiration_date)
+                    }
+                    ref={dateField}
                   />
 
                   <TextField

@@ -1,4 +1,4 @@
-import React, { useRef } from 'react';
+import React from 'react';
 import MaskedInput from 'react-text-mask';
 
 import classnames from 'classnames';
@@ -62,9 +62,10 @@ const FormFieldWrapper = styled.div`
   min-height: 5.3125rem;
 `;
 
-const FormField = function({ error, id, defaultValue, label, className, mask, ...restProps }) {
-  const inputRef = useRef(null);
-
+const FormField = React.forwardRef(function(
+  { error, id, defaultValue, label, className, mask, ...restProps },
+  ref
+) {
   const klass = classnames(
     {
       error: error
@@ -78,25 +79,19 @@ const FormField = function({ error, id, defaultValue, label, className, mask, ..
       {mask instanceof Array && mask ? (
         <StyledMaskedInput
           id={id}
-          ref={inputRef}
           mask={mask}
           className={klass}
           defaultValue={defaultValue}
           guide={false}
+          ref={ref}
           {...restProps}
         />
       ) : (
-        <TextInput
-          id={id}
-          ref={inputRef}
-          className={klass}
-          defaultValue={defaultValue}
-          {...restProps}
-        />
+        <TextInput id={id} ref={ref} className={klass} defaultValue={defaultValue} {...restProps} />
       )}
       {error && <ErrorText>{error}</ErrorText>}
     </FormFieldWrapper>
   );
-};
+});
 
 export default FormField;
