@@ -8,6 +8,7 @@ import * as Yup from 'yup';
 
 import { Cardboard, TextField, Title, Button } from '..';
 import yupTransformDate from '../../lib/yup-transform-date';
+import maskCardNumber from '../../lib/mask-card-number';
 
 import { doCheckout } from '../../store/ducks/checkout';
 
@@ -100,7 +101,7 @@ const PaymentFormContainer = function({ children }) {
             setDateError(null);
             dispatch(
               doCheckout({
-                card_number,
+                card_number: maskCardNumber(card_number),
                 card_holder_name: card_holder_name.toUpperCase(),
                 card_expiration_date,
                 card_cvv

@@ -22,6 +22,7 @@ import PaymentFormContainer from '.';
 
 import createMockedStore from '../../lib/test-utils/mocked-store';
 import { doCheckout } from '../../store/ducks/checkout';
+import * as maskCardNumberExports from '../../lib/mask-card-number';
 
 import theme from '../../styles/theme';
 
@@ -106,11 +107,30 @@ describe('PaymentFormContainer', () => {
     });
 
     expect(doCheckout).toHaveBeenCalledWith({
-      card_number: '2222.2222.2222.2222',
+      card_number: '****.****.****.2222',
       card_holder_name: 'LUAN VIEIRA PEREIRA',
       card_expiration_date: '12/2021',
       card_cvv: '444'
     });
+  });
+
+  it('should call `maskCardNumber` to mask card number when form is valid', async () => {
+    const wrapper = mount(<AppWrapper />);
+    const form = wrapper.find('form');
+
+    const spy = jest.spyOn(maskCardNumberExports, 'default');
+
+    const fields = getFields(wrapper);
+
+    await act(async () => {
+      setFieldValues(fields);
+    });
+
+    await act(async () => {
+      form.simulate('submit');
+    });
+
+    expect(spy).toHaveBeenCalledWith('2222.2222.2222.2222');
   });
 
   it('cannot should call `doCheckout` when form is invalid', async () => {

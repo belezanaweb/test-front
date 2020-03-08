@@ -9,6 +9,7 @@ import Title from './title';
 import CartResumeContainer from './cart-resume-container';
 import TextField from './text-field';
 import PaymentFormContainer from './payment-form-container';
+import PayamentDataContainer from './payment-data-container';
 
 export {
   Button,
@@ -22,5 +23,6 @@ export {
   Title,
   CartResumeContainer,
   TextField,
-  PaymentFormContainer
+  PaymentFormContainer,
+  PayamentDataContainer
 };
