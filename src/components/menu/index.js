@@ -11,6 +11,8 @@ const StyledHeader = styled.header`
 
   display: flex;
 
+  overflow-x: hidden;
+
   @media (min-width: 768px) {
     padding: 1rem 0;
   }

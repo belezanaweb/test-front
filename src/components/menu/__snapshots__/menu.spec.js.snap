@@ -9,6 +9,7 @@ exports[`Menu should match a snapshot 1`] = `
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
+  overflow-x: hidden;
 }
 
 .c1 {
