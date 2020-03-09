@@ -1,5 +1,6 @@
 import React, { Children } from 'react';
 import styled from 'styled-components';
+import PropTypes from 'prop-types';
 
 import Logo from '../../logo.svg';
 
@@ -101,6 +102,10 @@ const Menu = function({ children }) {
       </StyledNav>
     </StyledHeader>
   );
+};
+
+Menu.propTypes = {
+  children: PropTypes.node.isRequired
 };
 
 export default Menu;

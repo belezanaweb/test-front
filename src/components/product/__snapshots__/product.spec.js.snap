@@ -269,9 +269,6 @@ exports[`ProductsGroup should match a snapshot 1`] = `
       >
         product 1
       </h3>
-      <span
-        className="c5"
-      />
     </div>
   </div>
   <div

@@ -1,6 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
 
+import PropTypes from 'prop-types';
+
 const Button = styled(({ as = <button />, ...props }) => React.cloneElement(as, props))`
   width: 100%;
   height: 3.75rem;
@@ -31,5 +33,9 @@ const Button = styled(({ as = <button />, ...props }) => React.cloneElement(as, 
     background-color: ${props => props.theme.colors.primaryHover};
   }
 `;
+
+Button.propTypes = {
+  as: PropTypes.any
+};
 
 export default Button;

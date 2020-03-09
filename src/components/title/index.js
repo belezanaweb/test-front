@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import PropTypes from 'prop-types';
 
 const Title = styled.h2`
   color: #999;
@@ -8,5 +9,9 @@ const Title = styled.h2`
 
   text-transform: uppercase;
 `;
+
+Title.propTypes = {
+  children: PropTypes.node.isRequired
+};
 
 export default Title;

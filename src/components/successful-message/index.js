@@ -41,8 +41,8 @@ const SucessfulMessage = function({ children }) {
   );
 };
 
-SucessfulMessage.propTypes = PropTypes.shape({
+SucessfulMessage.propTypes = {
   children: PropTypes.node.isRequired
-});
+};
 
 export default SucessfulMessage;

@@ -55,7 +55,7 @@ describe('ProductsGroup', () => {
     const Container = () => (
       <ProductsGroup>
         {products.map((product, index) => (
-          <Product {...product} key={index} />
+          <Product {...product} showPrice={index === 0 ? false : true} key={index} />
         ))}
       </ProductsGroup>
     );

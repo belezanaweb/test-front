@@ -1,6 +1,8 @@
 import styled, { css } from 'styled-components';
 
-const styledCardboard = styled.div`
+import PropTypes from 'prop-types';
+
+const Cardboard = styled.div`
   padding: 0.75rem;
   border-radius: 3px;
 
@@ -20,4 +22,8 @@ const styledCardboard = styled.div`
     `}
 `;
 
-export default styledCardboard;
+Cardboard.propTypes = {
+  children: PropTypes.node.isRequired
+};
+
+export default Cardboard;

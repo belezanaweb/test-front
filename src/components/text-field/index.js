@@ -1,6 +1,6 @@
 import React from 'react';
 import MaskedInput from 'react-text-mask';
-
+import PropTypes from 'prop-types';
 import classnames from 'classnames';
 
 import styled, { css } from 'styled-components';
@@ -93,5 +93,14 @@ const FormField = React.forwardRef(function(
     </FormFieldWrapper>
   );
 });
+
+FormField.propTypes = {
+  id: PropTypes.string.isRequired,
+  label: PropTypes.string.isRequired,
+  mask: PropTypes.array,
+  className: PropTypes.string,
+  error: PropTypes.string,
+  defaultValue: PropTypes.string
+};
 
 export default FormField;

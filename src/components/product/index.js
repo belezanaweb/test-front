@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import PropTypes from 'prop-types';
 
 import { formatToCurrency } from '../../lib/currency';
 
@@ -89,16 +90,23 @@ export const ProductsGroup = styled.div`
   }
 `;
 
-const Product = function({ image, title, price }) {
+const Product = function({ image, title, price, showPrice = true }) {
   return (
     <ProductCard>
       <ProductImage src={image} />
       <ProductContent>
         <ProductTitle>{title}</ProductTitle>
-        <ProductPrice>{formatToCurrency(price)}</ProductPrice>
+        {showPrice && <ProductPrice>{formatToCurrency(price)}</ProductPrice>}
       </ProductContent>
     </ProductCard>
   );
+};
+
+Product.propTypes = {
+  image: PropTypes.string.isRequired,
+  title: PropTypes.string.isRequired,
+  price: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
+  showPrice: PropTypes.bool
 };
 
 export default Product;
