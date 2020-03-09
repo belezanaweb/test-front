@@ -1,41 +1,21 @@
 ## Frontend Test
 
-Faça um fork deste repositório e finalizar o teste, submeta um pull request para o repositório que nosso time será notificado.
+[http://beleza-na-web-checkout.surge.sh/](http://beleza-na-web-checkout.surge.sh/) confira!
 
-O teste consiste em um checkout simples contendo 3 passos (carrinho, pagamento e sucesso) [Veja o Layout](https://projects.invisionapp.com/prototype/font-test-cji0j0khf005c1t0132358e8k)
+### Como rodar o projeto:
+  - **npm run start**: para rodar em modo de desenvolvimento;
+  - **npm run test**: para rodar os testes;
+  - **npm run test:dev**: para rodar os testes e ter um detalhamento maior (logs, warnings);
+  - **npm run lint**: para validar o código;
+  - **npm run build**: para fazer o build da aplicação na pasta build;
+  - **npm run deploy**: para fazer a entrega da aplicação no [surge](https://surge.sh/);
 
-**Faça quando quiser/puder (madrugada, fim de semana, etc)**
-
-### Requerimentos
-
-- Pixel perfect ([nesse link](https://projects.invisionapp.com/prototype/font-test-cji0j0khf005c1t0132358e8k), você pode inspecionar para ver espaçamentos, fonte, tamanho, etc)
-- A aplicação precisa ser responsiva, utilizando o conceito de mobile-first. Use sua imaginação para entregar uma experiência boa no desktop.
-- Renderize cada passo em uma URL única (lib de rotas).
-
-
-### Passo 1 - Carrinho:
-  - Consuma o [esse endpoint](http://www.mocky.io/v2/5b15c4923100004a006f3c07) e liste os itens do carrinho, bem como o resumo do carrinho;
-  - Persista o conteúdo do JSON para ser usado nas próximas etapas;
-
-### Passo 2 - Pagamento: 
-  - Exiba um form com campos de cartão de crédito com validação em cada campo;
-  - Habilite o botão de Finalizar Pedido apenas se o form esteja válido;
-
-### Passo 3 - Sucesso: 
-  - Todo o conteúdo deverá ser exibido a partir dos dados persistidos;
-  
-### O que vamos avaliar:
-  - Organização do código;
-  - Mensagens (em inglês) e mudanças nos commits;
-  - Composição/reutilização de componentes;
-  - Testes unitários;
-  - O motivo de ter escolhido cada tech da stack;
-  - Como rodar sua aplicação ;)
-
-### Diferenciais:
-  - Split bundle por rota (cada step ter um bundle separado para otimizar a performance);
-  - CSS in JS;
-  - React;
-
-### Fim:
-Ao finalizar o teste, submeta um pull request para o repositório que nosso time será notificado. Se tiver alguma observação, escreva no pull request.
+### Stack:
+  - **redux**: Utilizei para escalar os dados dentro da aplicação e escolhi essa lib por já ter trabalhado com ela antes...
+  - **commitlint e commitizen**: Essas libs são para válidar as mensagens dos commits. Utilizei elas por ter visto um vídeo da [rocketseat](https://rocketseat.com.br/);
+  - **husky**: Para automatizar as tarefas ao tentar fazer commit, com essa ferramente foi possível válidar os commits e rodar os testes unitários antes de comittar;
+  - **jest**: Framework para criar testes unitários... Meio que não escolhi ele, pois ele já vem no CRA e também já havia trabalhado com ele, logo não vi motivo para trocá-lo;
+  - **unfetch**: Utilizei como polyfill do fetch e também por ser mais leve que o axios;
+  - **styled-components**: Utilizei por já ter trabalhado com essa stack antes, mas bem pouco... Os principais ganhos pra mim além do propósito da lib são: não precisar configurar e ter um css semelhante ao do sass;
+  - **react-loadable**: Nunca havia feito code-splitting na "mão", sempre utilizei algum framework para isso, e ao perquisar sobre, encontrei um artigo no [css-tricks](https://css-tricks.com/using-react-loadable-for-code-splitting-by-components-and-routes/) e achei bem fácil de implementar;
+  - **surge**: Para fazer deploy gratuitos. Meio que eu só conhecia essa farramenta para esse fim (e ilimitado) e também é uma ferramenta criar pela comunidade...
