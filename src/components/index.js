@@ -10,6 +10,7 @@ import CartResumeContainer from './cart-resume-container';
 import TextField from './text-field';
 import PaymentFormContainer from './payment-form-container';
 import PayamentDataContainer from './payment-data-container';
+import SuccessfulMessage from './successful-message';
 
 export {
   Button,
@@ -24,5 +25,6 @@ export {
   CartResumeContainer,
   TextField,
   PaymentFormContainer,
-  PayamentDataContainer
+  PayamentDataContainer,
+  SuccessfulMessage
 };

@@ -1,0 +1,40 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`SucessfulMessage should match a snapshot 1`] = `
+.c0 {
+  text-align: center;
+  margin-top: 1rem;
+  margin-bottom: 1.2rem;
+}
+
+.c1 {
+  border: 2px solid #ff6c00;
+  border-radius: 50%;
+  display: inline-block;
+  width: 40px;
+  height: 40px;
+  object-fit: none;
+}
+
+.c2 {
+  color: #ff6c00;
+  text-transform: uppercase;
+  font-weight: 700;
+  font-size: 0.875rem;
+  margin-top: 0.5rem;
+  display: inline-block;
+}
+
+<div
+  className="c0"
+>
+  <img
+    className="c1"
+    src="check.png"
+  />
+  <br />
+  <span
+    className="c2"
+  />
+</div>
+`;
