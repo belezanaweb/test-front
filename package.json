@@ -46,7 +46,8 @@
     "build": "react-scripts build",
     "test": "react-scripts test --silent --watch=no --watchAll=no --verbose",
     "test:dev": "react-scripts test --coverage --verbose",
-    "lint": "eslint 'src/**/*.js'"
+    "lint": "eslint 'src/**/*.js'",
+    "deploy": "npm run build && cd ./build && surge --project `pwd`"
   },
   "eslintConfig": {
     "extends": "react-app"
