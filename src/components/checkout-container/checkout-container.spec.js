@@ -15,7 +15,7 @@ import CheckoutContainer from '.';
 import createMockedStore, { initialStore } from '../../lib/test-utils/mocked-store';
 
 import theme from '../../styles/theme';
-import pages from '../../pages-data';
+import pages from '../../__mocks__/pages-data';
 
 import { getCart } from '../../store/ducks/cart';
 

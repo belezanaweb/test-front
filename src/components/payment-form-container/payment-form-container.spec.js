@@ -23,6 +23,7 @@ import PaymentFormContainer from '.';
 import createMockedStore from '../../lib/test-utils/mocked-store';
 import { doCheckout } from '../../store/ducks/checkout';
 import * as maskCardNumberExports from '../../lib/mask-card-number';
+import { formatNumberToString } from '../../lib/yup-transform-date';
 
 import theme from '../../styles/theme';
 
@@ -35,8 +36,6 @@ const AppWrapper = ({ store = mockedStore }) => (
     </ThemeProvider>
   </Provider>
 );
-
-const formatNumberToString = number => (number < 10 ? '0' + number : number);
 
 const fieldIds = ['card_number', 'card_holder_name', 'card_expiration_date', 'card_cvv'];
 const fieldValues = ['2222.2222.2222.2222', 'LUAN VIEIRA pereira', '12/2021', '444'];
@@ -199,15 +198,10 @@ describe('PaymentFormContainer', () => {
     });
 
     describe('cardExpirationDate', () => {
-      it('should show an invalid message when validity is incorrect', async () => {
+      it('should show an invalid message when the date is expired', async () => {
         const wrapper = mount(<AppWrapper />);
 
-        const date = new Date();
-        date.setMonth(date.getMonth() - 1);
-
-        const expirationDate = `${formatNumberToString(date.getMonth() + 1)}/${date.getFullYear()}`;
-
-        await forceErrorMessage(wrapper, 'card_expiration_date', expirationDate);
+        await forceErrorMessage(wrapper, 'card_expiration_date', '02/2019');
         expect(wrapper.find('form span').text()).toEqual('A validade do cartão está expirada.');
       });
 

@@ -88,8 +88,6 @@ const PaymentFormContainer = function({ children }) {
 
   const minDate = new Date();
 
-  minDate.setMonth(minDate.getMonth() - 1);
-
   return (
     <>
       <Title>Cartão de Crédito</Title>
