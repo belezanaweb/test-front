@@ -74,6 +74,12 @@ export const initialStore = {
     shippingTotal: 5.3,
     discount: 30,
     total: 618.9
+  },
+  checkout: {
+    card_number: '****.****.****.2222',
+    card_holder_name: 'LUAN PEREIRA',
+    card_expiration_date: '12/2021',
+    card_cvv: '333'
   }
 };
 

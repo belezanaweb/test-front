@@ -3,12 +3,14 @@ import React from 'react';
 import {
   CartProductsContainer,
   CartResumeContainer,
-  PayamentDataContainer
+  PayamentDataContainer,
+  SuccessfulMessage
 } from '../../components';
 
 const CheckoutConfirmation = function() {
   return (
     <>
+      <SuccessfulMessage>Compra efetuada com sucesso</SuccessfulMessage>
       <PayamentDataContainer />
       <CartProductsContainer />
       <CartResumeContainer />
