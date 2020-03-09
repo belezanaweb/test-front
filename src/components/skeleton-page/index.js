@@ -7,8 +7,9 @@ const StyledContainer = styled.div`
   padding: 1rem 0;
   position: fixed;
   top: 0;
-  width: 100%;
-  height: calc(100% - 40px);
+  bottom: 0;
+  left: 0;
+  right: 0;
   background-color: #eee;
   box-sizing: border-box;
 `;
