@@ -24,13 +24,19 @@ const Button = styled(({ as = <button />, ...props }) => React.cloneElement(as, 
   line-height: 3.75rem;
   text-align: center;
   text-transform: uppercase;
-  transition: background-color 0.2s ease;
+  transition: opacity 0.2 ease-out, background-color 0.2s ease;
 
   display: block;
   text-decoration: none;
 
   &:hover {
     background-color: ${props => props.theme.colors.primaryHover};
+  }
+
+  &[disabled] {
+    background-color: ${props => props.theme.colors.primaryHover};
+    opacity: 0.5;
+    cursor: text;
   }
 `;
 

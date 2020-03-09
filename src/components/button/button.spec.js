@@ -17,5 +17,14 @@ describe('Button', () => {
 
       expect(wrapper).toMatchSnapshot();
     });
+
+    it('should match a snapshot with disabled status', () => {
+      const wrapper = getStyledWrapperJSON(Button, {
+        children: 'test',
+        disabled: 'disabled'
+      });
+
+      expect(wrapper).toMatchSnapshot();
+    });
   });
 });

@@ -132,7 +132,18 @@ const PaymentFormContainer = function({ children }) {
         })}
       >
         {props => {
-          const { values, errors, touched, handleBlur, handleChange, handleSubmit } = props;
+          const {
+            dirty,
+            isValid,
+            values,
+            errors,
+            touched,
+            handleBlur,
+            handleChange,
+            handleSubmit
+          } = props;
+
+          const disableButton = !dirty || !isValid || dateError;
 
           return (
             <form onSubmit={handleSubmit}>
@@ -146,6 +157,7 @@ const PaymentFormContainer = function({ children }) {
                   onBlur={handleBlur}
                   value={values.card_number}
                   error={touched.card_number && errors.card_number}
+                  autoFocus
                 />
 
                 <TextField
@@ -187,7 +199,10 @@ const PaymentFormContainer = function({ children }) {
               </Cardboard>
 
               {children}
-              <Button type="submit">Finalizar o Pedido</Button>
+
+              <Button disabled={disableButton} type="submit">
+                Finalizar o Pedido
+              </Button>
             </form>
           );
         }}
