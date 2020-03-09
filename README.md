@@ -17,5 +17,6 @@
   - **jest**: Framework para criar testes unitários... Meio que não escolhi ele, pois ele já vem no CRA e também já havia trabalhado com ele, logo não vi motivo para trocá-lo;
   - **unfetch**: Utilizei como polyfill do fetch e também por ser mais leve que o axios;
   - **styled-components**: Utilizei por já ter trabalhado com essa stack antes, mas bem pouco... Os principais ganhos pra mim além do propósito da lib são: não precisar configurar e ter um css semelhante ao do sass;
+  - **formik**: Também é uma ferramenta que eu já havia trabalhado. Essa lib é muito simples e acredito que leve, muito mais leve do que redux-form;
   - **react-loadable**: Nunca havia feito code-splitting na "mão", sempre utilizei algum framework para isso, e ao perquisar sobre, encontrei um artigo no [css-tricks](https://css-tricks.com/using-react-loadable-for-code-splitting-by-components-and-routes/) e achei bem fácil de implementar;
-  - **surge**: Para fazer deploy gratuitos. Meio que eu só conhecia essa farramenta para esse fim (e ilimitado) e também é uma ferramenta criar pela comunidade...
+  - **surge**: Para fazer deploy gratuitos. Meio que eu só conhecia essa farramenta para esse fim (e ilimitado) e também é uma ferramenta criada pela comunidade...
