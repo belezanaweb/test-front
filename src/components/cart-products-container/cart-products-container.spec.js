@@ -12,10 +12,10 @@ import theme from '../../styles/theme';
 
 const mockedStore = createMockedStore();
 
-const AppWrapper = ({ store = mockedStore }) => (
+const AppWrapper = ({ store = mockedStore, showPrices }) => (
   <Provider store={store}>
     <ThemeProvider theme={theme}>
-      <CartProductsContainer />
+      <CartProductsContainer showPrices={showPrices} />
     </ThemeProvider>
   </Provider>
 );
@@ -23,9 +23,15 @@ const AppWrapper = ({ store = mockedStore }) => (
 const TOTAL = 3;
 
 describe('CartProductsContainer', () => {
-  it('should render three Products from store', () => {
+  it('should render three Products from store with price', () => {
     const wrapper = mount(<AppWrapper />);
 
-    expect(wrapper.find('Product')).toHaveLength(TOTAL);
+    expect(wrapper.find('span')).toHaveLength(TOTAL);
+  });
+
+  it('should render three Products from store without prices', () => {
+    const wrapper = mount(<AppWrapper showPrices={false} />);
+
+    expect(wrapper.find('span')).not.toHaveLength(TOTAL);
   });
 });

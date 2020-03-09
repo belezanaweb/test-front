@@ -12,7 +12,7 @@ const CheckoutConfirmation = function() {
     <>
       <SuccessfulMessage>Compra efetuada com sucesso</SuccessfulMessage>
       <PayamentDataContainer />
-      <CartProductsContainer />
+      <CartProductsContainer showPrices={false} />
       <CartResumeContainer />
     </>
   );
