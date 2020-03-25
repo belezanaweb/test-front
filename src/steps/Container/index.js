@@ -1,7 +1,8 @@
 import styled from 'styled-components';
 
 const Container = styled.main`
-	max-width: 992px;
+	margin: auto;
+	max-width: 576px;
 	padding: 1rem;
 	width: 100%;
 `;

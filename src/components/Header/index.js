@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
 
-import { Container, StepLabel } from './styles';
+import { Wrapper, Container, StepLabel } from './styles';
 
 import { getCart } from '../../services/api';
 
@@ -16,11 +16,13 @@ function Header({ dispatch, step }) {
 	}, [dispatch]);
 
 	return (
-		<Container>
-			<StepLabel current={step === 1}>Sacola</StepLabel>
-			<StepLabel current={step === 2}>Pagamento</StepLabel>
-			<StepLabel current={step === 3}>Confirmação</StepLabel>
-		</Container>
+		<Wrapper>
+			<Container>
+				<StepLabel current={step === 1}>Sacola</StepLabel>
+				<StepLabel current={step === 2}>Pagamento</StepLabel>
+				<StepLabel current={step === 3}>Confirmação</StepLabel>
+			</Container>
+		</Wrapper>
 	);
 }
 

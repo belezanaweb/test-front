@@ -4,6 +4,7 @@ const GlobalStyle = createGlobalStyle`
   body {
     background-color: #EEE;
     margin: 0px;
+		overflow-y: scroll;
     padding: 0px;
   }
 

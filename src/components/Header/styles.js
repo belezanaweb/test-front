@@ -1,11 +1,16 @@
 import styled from 'styled-components';
 
-export const Container = styled.header`
-	align-items: center;
+export const Wrapper = styled.header`
 	background-color: #fff;
 	box-shadow: 0px 1px 4px rgba(0, 0, 29, 0.22);
+`;
+
+export const Container = styled.div`
+	align-items: center;
 	display: flex;
 	justify-content: space-between;
+	margin: auto;
+	max-width: 576px;
 	padding: 0.75rem 1.25rem;
 `;
 
