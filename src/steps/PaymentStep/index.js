@@ -3,14 +3,14 @@ import { connect } from 'react-redux';
 
 import Container from '../Container';
 import Section from '../../components/Section';
-import CartDescription from '../../components/CartDescription';
 import Button from '../../components/Button';
-import { Form, Group } from './styles';
+import CartDescription from '../../components/CartDescription';
+import Form from './Form';
 
-function PaymentStep({ dispatch, history }) {
+function PaymentStep({ dispatch, history, validForm }) {
 	const handleClick = useCallback(() => {
-		history.push('/stepThree');
-	}, [history]);
+		if (validForm) history.push('/stepThree');
+	}, [validForm, history]);
 
 	useEffect(() => {
 		dispatch({
@@ -22,27 +22,7 @@ function PaymentStep({ dispatch, history }) {
 	return (
 		<Container>
 			<Section title={'Cartão de crédito'}>
-				<Form>
-					<Group>
-						<label htmlFor="number">Número do cartão:</label>
-						<input type="text" id="number" placeholder="____.____.____.____" />
-					</Group>
-					<Group>
-						<label htmlFor="name">Nome do Titular:</label>
-						<input type="text" id="name" placeholder="Como no cartão" />
-					</Group>
-					<Group container>
-						<Group mr>
-							<label htmlFor="expiration">Validade (mês/ano):</label>
-							<input type="text" id="expiration" placeholder="__/____" />
-						</Group>
-
-						<Group>
-							<label htmlFor="cvv">CVV:</label>
-							<input type="text" id="cvv" placeholder="___" />
-						</Group>
-					</Group>
-				</Form>
+				<Form />
 			</Section>
 			<CartDescription />
 			<Button text="Finalizar o pedido" onClick={handleClick} />
@@ -50,4 +30,7 @@ function PaymentStep({ dispatch, history }) {
 	);
 }
 
-export default connect()(PaymentStep);
+const mapStateToProps = state => ({
+	validForm: state.form.valid
+});
+export default connect(mapStateToProps)(PaymentStep);
