@@ -1,3 +1,13 @@
+# How to run
+Run `yarn start` or access it on [netlify](https://belezanaweb-challenge.netlify.com)
+
+### Made with
+- react
+- react-router-dom
+- styled-components
+- redux
+- axios
+
 ## Frontend Test
 
 Faça um fork deste repositório e finalizar o teste, submeta um pull request para o repositório que nosso time será notificado.
