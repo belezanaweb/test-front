@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { connect } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 
 import Container from '../Container';
 import Section from '../../components/Section';
@@ -9,7 +9,10 @@ import Product from './Product';
 
 import check from '../../assets/img/check.png';
 
-function SuccessStep({ products, dispatch }) {
+export default function SuccessStep() {
+	const dispatch = useDispatch();
+	const products = useSelector(state => state.cart.items || []);
+
 	useEffect(() => {
 		dispatch({
 			type: 'CHANGE_STEP',
@@ -42,9 +45,3 @@ function SuccessStep({ products, dispatch }) {
 		</Container>
 	);
 }
-
-const mapStateToProps = state => ({
-	products: state.cart.items || []
-});
-
-export default connect(mapStateToProps)(SuccessStep);

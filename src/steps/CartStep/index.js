@@ -1,5 +1,5 @@
 import React, { useCallback } from 'react';
-import { connect } from 'react-redux';
+import { useSelector } from 'react-redux';
 
 import Section from '../../components/Section';
 import Button from '../../components/Button';
@@ -8,7 +8,9 @@ import Container from '../Container';
 import Product from './Product';
 import { Products } from './styles';
 
-function CartStep({ products, history }) {
+export default function CartStep({ history }) {
+	const products = useSelector(state => state.cart.items || []);
+
 	const handleClick = useCallback(() => {
 		history.push('/stepTwo');
 	}, [history]);
@@ -28,9 +30,3 @@ function CartStep({ products, history }) {
 		</Container>
 	);
 }
-
-const mapStateToProps = state => ({
-	products: state.cart.items || []
-});
-
-export default connect(mapStateToProps)(CartStep);

@@ -1,5 +1,5 @@
 import React, { useCallback, useEffect } from 'react';
-import { connect } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 
 import Container from '../Container';
 import Section from '../../components/Section';
@@ -7,7 +7,10 @@ import Button from '../../components/Button';
 import CartDescription from '../../components/CartDescription';
 import Form from './Form';
 
-function PaymentStep({ dispatch, history, validForm }) {
+export default function PaymentStep({ history }) {
+	const dispatch = useDispatch();
+	const validForm = useSelector(state => state.form.valid);
+
 	const handleClick = useCallback(() => {
 		if (validForm) history.push('/stepThree');
 	}, [validForm, history]);
@@ -29,8 +32,3 @@ function PaymentStep({ dispatch, history, validForm }) {
 		</Container>
 	);
 }
-
-const mapStateToProps = state => ({
-	validForm: state.form.valid
-});
-export default connect(mapStateToProps)(PaymentStep);

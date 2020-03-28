@@ -1,11 +1,14 @@
 import React, { useEffect } from 'react';
-import { connect } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 
 import { Wrapper, Container, StepLabel } from './styles';
 
 import { getCart } from '../../services/api';
 
-function Header({ dispatch, step }) {
+export default function Header() {
+	const dispatch = useDispatch();
+	const step = useSelector(state => state.step);
+
 	useEffect(() => {
 		getCart().then(({ data: cart }) => {
 			dispatch({
@@ -25,9 +28,3 @@ function Header({ dispatch, step }) {
 		</Wrapper>
 	);
 }
-
-const mapStateToProps = state => ({
-	step: state.step
-});
-
-export default connect(mapStateToProps)(Header);
