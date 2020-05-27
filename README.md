@@ -26,7 +26,7 @@ Veja a seção sobre [deployment](https://facebook.github.io/create-react-app/do
 ### Build
 O projeto é desenvolvido com **React** como uma ferramenta de criação de interface. As opções / transpiler / presentes no projeto também visam essa pilha, mas na conclusão do projeto, a configuração [CRA] (https://github.com/facebook/create-react-app) foi adotada por abstração de sua própria configuração, para poder oferecer melhores resultados de deployment do que os experimentados com um conhecimento que tenho já há algum tempo com Webpack.
 
-> Configurações com o **Next.js** eram a primeira proposta para o projeto. Entretanto devido a alguns problemas no build com o TypeScript não tive uma rápida solução e assim optando por entregar os demais pontos sem SSR, que seria uma entrega adicional. O projeto pode ser verificados em [outra branch](https://github.com/leandrojo/test-front/tree/with-next-js) deste projeto.  
+> Configurações com o **Next.js** eram a primeira proposta para o projeto. Entretanto devido a alguns problemas no build com o TypeScript não tive uma rápida solução e assim optando por entregar os demais pontos sem SSR, que seria uma entrega adicional. O projeto pode ser verificados em [outra repositório](https://github.com/leandrojo/challenge-blz) deste projeto.  
 
 ### TypeScript
 Venho utilizado o TypeScript ao logo desse ano, e venho utilizando sempre que há a opção. Existem diversas vantagens na sua verificação estatica de tipagem. É um excelente helper para o desenvolvimento, além de facilitar a concordância contratual de expectativas (interfaces) dos componentes e models.
@@ -49,4 +49,4 @@ Muitas pontas ficaram soltas, e algumas delas fundamentais. Porém quero manter 
 ## Para o avaliador
 Me dediquei ao projeto tentando entregar um pouco mais que as demais experiências dos possiveis testes. Faço com que a avaliação tenha algo rico para mim e para que vai se dedicar a ler-lo. Espero que goste das escolhas e fico a disposição para sanar qualquer duvida.
 
-> Nota: Os commits, como história, seguem também na [branch original](https://github.com/leandrojo/test-front/tree/with-next-js). 
+> Nota: Os commits, como história, seguem também no [repositório original](https://github.com/leandrojo/challenge-blz). 
