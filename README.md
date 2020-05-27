@@ -1,41 +1,52 @@
-## Frontend Test
+# Challenge Blz
+## Iniciando
+### `yarn`
 
-Faça um fork deste repositório e finalizar o teste, submeta um pull request para o repositório que nosso time será notificado.
+Execute este comando para obter dependências.
 
-O teste consiste em um checkout simples contendo 3 passos (carrinho, pagamento e sucesso) [Veja o Layout](https://projects.invisionapp.com/prototype/font-test-cji0j0khf005c1t0132358e8k)
+### `yarn start`
 
-**Faça quando quiser/puder (madrugada, fim de semana, etc)**
+Executa o aplicativo no modo de desenvolvimento.
+Abra [http://localhost:3000](http://localhost:3000) para visualizá-lo no navegador.
 
-### Requerimentos
+A página será recarregada se você fizer edições.
+Você também verá erros de lint no console.
 
-- Pixel perfect ([nesse link](https://projects.invisionapp.com/prototype/font-test-cji0j0khf005c1t0132358e8k), você pode inspecionar para ver espaçamentos, fonte, tamanho, etc)
-- A aplicação precisa ser responsiva, utilizando o conceito de mobile-first. Use sua imaginação para entregar uma experiência boa no desktop.
-- Renderize cada passo em uma URL única (lib de rotas).
+### `yarn build`
 
+Cria o aplicativo para produção na pasta `build`.
+Ele agrupa corretamente o React no modo de produção e otimiza a construção para obter o melhor desempenho.
+The build is minified and the filenames include the hashes.
+Your app is ready to be deployed!
 
-### Passo 1 - Carrinho:
-  - Consuma o [esse endpoint](http://www.mocky.io/v2/5b15c4923100004a006f3c07) e liste os itens do carrinho, bem como o resumo do carrinho;
-  - Persista o conteúdo do JSON para ser usado nas próximas etapas;
+Veja a seção sobre [deployment](https://facebook.github.io/create-react-app/docs/deployment) para mais informações.
 
-### Passo 2 - Pagamento: 
-  - Exiba um form com campos de cartão de crédito com validação em cada campo;
-  - Habilite o botão de Finalizar Pedido apenas se o form esteja válido;
+## Razões Tecnicas
 
-### Passo 3 - Sucesso: 
-  - Todo o conteúdo deverá ser exibido a partir dos dados persistidos;
-  
-### O que vamos avaliar:
-  - Organização do código;
-  - Mensagens (em inglês) e mudanças nos commits;
-  - Composição/reutilização de componentes;
-  - Testes unitários;
-  - O motivo de ter escolhido cada tech da stack;
-  - Como rodar sua aplicação ;)
+### Build
+O projeto é desenvolvido com **React** como uma ferramenta de criação de interface. As opções / transpiler / presentes no projeto também visam essa pilha, mas na conclusão do projeto, a configuração [CRA] (https://github.com/facebook/create-react-app) foi adotada por abstração de sua própria configuração, para poder oferecer melhores resultados de deployment do que os experimentados com um conhecimento que tenho já há algum tempo com Webpack.
 
-### Diferenciais:
-  - Split bundle por rota (cada step ter um bundle separado para otimizar a performance);
-  - CSS in JS;
-  - React;
+> Configurações com o **Next.js** eram a primeira proposta para o projeto. Entretanto devido a alguns problemas no build com o TypeScript não tive uma rápida solução e assim optando por entregar os demais pontos sem SSR, que seria uma entrega adicional. O projeto pode ser verificados em [outra branch](https://github.com/leandrojo/test-front/tree/with-next-js) deste projeto.  
 
-### Fim:
-Ao finalizar o teste, submeta um pull request para o repositório que nosso time será notificado. Se tiver alguma observação, escreva no pull request.
+### TypeScript
+Venho utilizado o TypeScript ao logo desse ano, e venho utilizando sempre que há a opção. Existem diversas vantagens na sua verificação estatica de tipagem. É um excelente helper para o desenvolvimento, além de facilitar a concordância contratual de expectativas (interfaces) dos componentes e models.
+
+### Rematch/Redux
+Rematch é uma ferramenta de re-abordagem para o redux, este projeto é prepussor ao Redux Toolkit, dando uma certa imperatividade a camada. Opto sempre que não é necessária uma escolha de um processo reativo. Ele retira um pouco a atenção ao padrão PubSub do redux com actions e reducers e centraliza na manipulação a um modelo. Foi utilizando também o plugin persist, um wrapper para o redux-persist.
+
+### Styled Components
+Hoje tem um ano que cedi a resistência de escrever css em arquivos de script. Já utilizava **CSS-in-JS** antes com outras ferramentas no padrão CSSObject, mas o padrão de template string do **Styled-Components** (e **Emotion**) facilitam muito a relação entre os componentes de estilo, condicionais e pseudo-seletores e pseudo-elementos.
+
+## Roadmap
+Muitas pontas ficaram soltas, e algumas delas fundamentais. Porém quero manter essa entrega. Se for fundamental para a avaliação seguirei para os pontos listados abaixo:
+
+* Testes unitários;
+* Ampliar o mecanismo de validação do formulário;
+* Retornar ao Next.js, ou realizar configuração própria para SSR;
+* Implementar BFF;
+* Melhorar o controle da informações sensíveis (cartão de crédito);
+
+## Para o avaliador
+Me dediquei ao projeto tentando entregar um pouco mais que as demais experiências dos possiveis testes. Faço com que a avaliação tenha algo rico para mim e para que vai se dedicar a ler-lo. Espero que goste das escolhas e fico a disposição para sanar qualquer duvida.
+
+> Nota: Os commits, como história, seguem também na [branch original](https://github.com/leandrojo/test-front/tree/with-next-js). 
