@@ -1,0 +1,18 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Feedback /> should render Feedback 1`] = `
+<div>
+  <div
+    class="sc-AxirZ kKJnlT"
+  >
+    <div
+      class="sc-AxiKw cta-dUf"
+    />
+    <span
+      class="sc-AxjAm sc-AxhCb felKbK"
+    >
+      Feedback
+    </span>
+  </div>
+</div>
+`;

@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 
 import Product from '../../types/Product';
-import { toMoney } from '../../utils/money';
+import { toMoney } from '../../utils/number';
 
 import Segment from '../Segment';
 import Text from '../Text';

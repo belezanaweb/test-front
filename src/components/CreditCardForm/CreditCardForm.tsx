@@ -24,14 +24,15 @@ const CreditCardForm = () => {
       <Controller
         as={
           <TextField
+            aria-label="card number"
             label="Número do Cartão:"
             mask={mask}
-            error={errors.number && errors.number.message}
+            error={errors?.number ? errors.number.message : ''}
             placeholder="____.____.____.____"
           />
         }
         name="number"
-        rules={{ required: "Numero do cartão obrigatório." }}
+        rules={{ required: "Número do cartão obrigatório." }}
         control={control}
       />
     );
@@ -42,9 +43,10 @@ const CreditCardForm = () => {
       <Controller
         as={
           <TextField
+            aria-label="name"
             label="Nome do Titular:"
             mask={false}
-            error={errors.name && errors.name.message}
+            error={errors?.name ? errors.name.message : ''}
             placeholder="Como no cartão"
           />
         }
@@ -60,9 +62,10 @@ const CreditCardForm = () => {
       <Controller
         as={
           <TextField
+            aria-label="expiring date"
             label="Validade (mês/ano):"
             mask={[/\d/, /\d/, '/', /\d/, /\d/, /\d/, /\d/]}
-            error={errors.expiringDate && errors.expiringDate.message}
+            error={errors?.expiringDate ? errors.expiringDate.message : ''}
             placeholder="__/____"
           />
         }
@@ -78,7 +81,8 @@ const CreditCardForm = () => {
       <Controller
         as={
           <TextField
-            error={errors.code && errors.code.message}
+            aria-label="code verification"
+            error={errors?.code ? errors.code.message : ''}
             label="CVV:"
             mask={[/\d/, /\d/, /\d/]}
             placeholder="___"
@@ -92,7 +96,7 @@ const CreditCardForm = () => {
   }
 
   return (
-    <StyledForm>
+    <StyledForm aria-label="credit card form">
       <Grid template="1fr" gap="25px" css={{ marginBottom: '25px' }}>
         <Box>
           {renderFieldNumber()}

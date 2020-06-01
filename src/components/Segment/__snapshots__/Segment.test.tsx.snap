@@ -1,0 +1,15 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Segment /> should render Segment 1`] = `
+<div>
+  <div
+    class="sc-AxirZ dHpXsK"
+  >
+    <span
+      class="sc-AxjAm kPvYly"
+    >
+      This is a segment
+    </span>
+  </div>
+</div>
+`;

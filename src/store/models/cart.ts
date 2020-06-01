@@ -1,4 +1,7 @@
+import axios from 'axios';
+
 import Cart from '../../types/Cart';
+
 import { Dispatch } from '..';
 
 interface CartState {
@@ -25,11 +28,13 @@ const cart = {
     async getCart() {
       dispatch.cart.setIsLoading(true);
 
-      const response = await fetch('http://www.mocky.io/v2/5b15c4923100004a006f3c07');
-      const data = await response.json();
+      try {
+        const response = await axios.get('http://www.mocky.io/v2/5b15c4923100004a006f3c07');
 
-      dispatch.cart.setData(data);
-      dispatch.cart.setIsLoading(false);
+        dispatch.cart.setData(response.data);
+      } catch (e) {} finally {
+        dispatch.cart.setIsLoading(false);
+      }
     }
   }),
 };

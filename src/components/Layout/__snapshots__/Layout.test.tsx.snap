@@ -1,0 +1,50 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Layout /> should render Layout 1`] = `
+<div>
+  <div
+    class="sc-AxmLO kqgTeu"
+  >
+    <nav
+      class="sc-AxgMl eSvPIa"
+    >
+      <ol>
+        <li
+          class="sc-AxheI hsfhcz"
+        >
+          <a>
+            Sacola
+          </a>
+        </li>
+        <li
+          class="sc-AxheI hsfhcz"
+        >
+          <a>
+            Pagamento
+          </a>
+        </li>
+        <li
+          class="sc-AxheI hsfhcz"
+        >
+          <a>
+            Confirmação
+          </a>
+        </li>
+      </ol>
+    </nav>
+    <div
+      class="sc-Axmtr gWwcVn"
+    >
+      <div
+        class="sc-AxiKw sc-AxhCb jPYptu"
+      >
+        <span
+          class="sc-AxhUy aBiJA"
+        >
+          Resize Window
+        </span>
+      </div>
+    </div>
+  </div>
+</div>
+`;

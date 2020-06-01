@@ -1,0 +1,33 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Steps /> should render Steps 1`] = `
+<div>
+  <nav
+    class="sc-AxjAm hsLwEa"
+  >
+    <ol>
+      <li
+        class="sc-AxirZ jUyrXq"
+      >
+        <a>
+          Sacola
+        </a>
+      </li>
+      <li
+        class="sc-AxirZ jUyrXq"
+      >
+        <a>
+          Pagamento
+        </a>
+      </li>
+      <li
+        class="sc-AxirZ jUyrXq"
+      >
+        <a>
+          Confirmação
+        </a>
+      </li>
+    </ol>
+  </nav>
+</div>
+`;

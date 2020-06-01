@@ -1,0 +1,11 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Heading /> should render Heading 1`] = `
+<div>
+  <span
+    class="sc-AxjAm sc-AxirZ emCqti"
+  >
+    The quick brown fox jumps over the lazy dog
+  </span>
+</div>
+`;

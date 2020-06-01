@@ -4,9 +4,11 @@ import '@testing-library/jest-dom/extend-expect';
 
 import Box from './Box';
 
-it('should render Box', () => {
-  const { getByText } = render((
-    <Box>Content Wrapped</Box>
-  ));
-  expect('Content Wrapped').toBeInTheDocument();
+describe('<Box />', () => {
+  it('should render Box', () => {
+    const { container } = render(<Box>Box</Box>);
+
+    expect(container)
+      .toHaveTextContent('Box');
+  });
 });
