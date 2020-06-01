@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 
 import Cart from '../../types/Cart';
-import { toMoney } from '../../utils/money';
+import { toMoney } from '../../utils/number';
 
 import Segment from '../Segment';
 import Text from '../Text';
@@ -22,11 +22,12 @@ const Row = styled.div`
 `;
 
 const Col = styled(Text)<{ highlight?: boolean }>`
+  line-height: 17px;
+  text-transform: uppercase;
+
   color: ${({ highlight, theme }) => {
     return highlight ? theme.colors.primaryLight : theme.colors.grayExtraDark;
   }};
-  line-height: 17px;
-  text-transform: uppercase;
 `;
 
 Col.defaultProps = {
@@ -51,7 +52,7 @@ const ResultValue = styled(Text)`
 const ResultKey = ResultValue;
 
 interface TotalProps {
-  data: Omit<Cart, 'items'> | null;
+  data: Omit<Cart, 'id' | 'items'> | null;
 }
 
 export const Total: React.FC<TotalProps> = ({ data }) => {
@@ -62,20 +63,20 @@ export const Total: React.FC<TotalProps> = ({ data }) => {
   return (
     <StyledTotal>
       <Row>
-        <Col>Produtos</Col>
-        <Col>{toMoney(subTotal)}</Col>
+        <Col id="subTotal">Produtos</Col>
+        <Col aria-labelledby="subTotal">{toMoney(subTotal)}</Col>
       </Row>
       <Row>
-        <Col>Frete</Col>
-        <Col>{toMoney(shippingTotal)}</Col>
+        <Col id="shippingTotal">Frete</Col>
+        <Col aria-labelledby="shippingTotal">{toMoney(shippingTotal)}</Col>
       </Row>
       <Row>
-        <Col highlight>Desconto</Col>
-        <Col highlight>{toMoney(discount * -1)}</Col>
+        <Col id="discount" highlight>Desconto</Col>
+        <Col aria-labelledby="discount" highlight>{toMoney(discount * -1)}</Col>
       </Row>
       <Result>
-        <ResultKey>Total</ResultKey>
-        <ResultValue>{toMoney(total)}</ResultValue>
+        <ResultKey id="total">Total</ResultKey>
+        <ResultValue aria-labelledby="total">{toMoney(total)}</ResultValue>
       </Result>
     </StyledTotal>
   );

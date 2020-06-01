@@ -57,11 +57,7 @@ const Step: React.FC<StepProps> = ({ children, to }) => {
   );
 };
 
-interface StepsProps {
-  currentStep?: number;
-}
-
-const Steps: React.FC<StepsProps> = ({ currentStep }) => {
+const Steps: React.FC = () => {
   return (
     <StyledSteps>
       <ol>
@@ -71,10 +67,6 @@ const Steps: React.FC<StepsProps> = ({ currentStep }) => {
       </ol>
     </StyledSteps>
   );
-};
-
-Steps.defaultProps = {
-  currentStep: 1,
 };
 
 export default Steps;

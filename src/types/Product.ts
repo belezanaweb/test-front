@@ -2,13 +2,13 @@ interface Product {
   sku: string;
   name: string;
   imageObjects: {
-    feature: true;
+    feature?: boolean;
     thumbnail: string;
     small: string;
     medium: string;
     large: string;
     extraLarge: string;
-    valid: string;
+    valid?: boolean;
   }[];
   priceSpecification: {
     sku: string;

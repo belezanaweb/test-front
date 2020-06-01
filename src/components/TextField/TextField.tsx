@@ -27,7 +27,7 @@ const ErrorMessage = styled.span`
 `;
 
 interface InputProps extends MaskedInputProps {
-  error: boolean;
+  error: 'true' | 'false';
 }
 
 const Input = styled(MaskedInput)<InputProps>`
@@ -44,9 +44,8 @@ const Input = styled(MaskedInput)<InputProps>`
   outline: none;
   padding: 12px;
   line-height: 19px;
-  width: 100%;
 
-  ${({ error }) => (error && css`
+  ${({ error }) => (error === 'true' && css`
     border-color: ${({ theme }) => theme.colors.danger};
   `)}
 
@@ -76,7 +75,7 @@ const TextField: React.FC<TextFieldProps> = ({ error, inputRef, label, ...props 
   return (
     <StyledTextField>
       <Label>{label}</Label>
-      <Input error={typeof error === 'string'} ref={inputRef} {...props} />
+      <Input error={typeof error === 'string' ? 'true' : 'false'} ref={inputRef} {...props} />
       {renderErrors()}
     </StyledTextField>
   );

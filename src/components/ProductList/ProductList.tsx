@@ -7,8 +7,6 @@ interface ProductListProps {
 }
 
 const ProductList = styled.div<ProductListProps>`
-
-
   ${({ size }) => {
     switch (size) {
       case 'sm':

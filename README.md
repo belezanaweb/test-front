@@ -32,10 +32,10 @@ O projeto é desenvolvido com **React** como uma ferramenta de criação de inte
 Venho utilizado o TypeScript ao logo desse ano, e venho utilizando sempre que há a opção. Existem diversas vantagens na sua verificação estatica de tipagem. É um excelente helper para o desenvolvimento, além de facilitar a concordância contratual de expectativas (interfaces) dos componentes e models.
 
 ### Rematch/Redux
-Rematch é uma ferramenta de re-abordagem para o redux, este projeto é prepussor ao Redux Toolkit, dando uma certa imperatividade a camada. Opto sempre que não é necessária uma escolha de um processo reativo. Ele retira um pouco a atenção ao padrão PubSub do redux com actions e reducers e centraliza na manipulação a um modelo. Foi utilizando também o plugin persist, um wrapper para o redux-persist.
+Rematch é uma ferramenta de re-abordagem para o redux, este projeto é precursor ao Redux Toolkit, dando uma certa imperatividade a camada. Opto sempre que não é necessária uma escolha de um processo reativo. Ele retira um pouco a atenção ao padrão PubSub do redux com actions e reducers e centraliza na manipulação a um modelo. Foi utilizando também o plugin persist, um wrapper para o redux-persist.
 
 ### Styled Components
-Hoje tem um ano que cedi a resistência de escrever css em arquivos de script. Já utilizava **CSS-in-JS** antes com outras ferramentas no padrão CSSObject, mas o padrão de template string do **Styled-Components** (e **Emotion**) facilitam muito a relação entre os componentes de estilo, condicionais e pseudo-seletores e pseudo-elementos.
+Tem por volta de um ano que cedi a resistência de escrever css em arquivos de script. Já utilizava **CSS-in-JS** antes com outras ferramentas no padrão CSSObject, mas o padrão de template string do **Styled-Components** (e **Emotion**) facilitam muito a relação entre os componentes de estilo, condicionais e pseudo-seletores e pseudo-elementos.
 
 ## Roadmap
 Muitas pontas ficaram soltas, e algumas delas fundamentais. Porém quero manter essa entrega. Se for fundamental para a avaliação seguirei para os pontos listados abaixo:
