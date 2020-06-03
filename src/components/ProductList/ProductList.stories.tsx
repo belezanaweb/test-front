@@ -6,7 +6,7 @@ import Card from '../Card';
 
 import ProductList from './ProductList';
 import ProductListItem from './ProductListItem';
-import cart from './__mocks__/cart.json';
+import cart from '../../store/models/__mocks__/cart.json';
 
 const Provider = (storyFn: () => React.ReactNode) => (
   <Theming theme={theme}>
