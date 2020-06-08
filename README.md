@@ -1,6 +1,6 @@
 # Challenge Blz
 
-[![CircleCI](https://circleci.com/gh/circleci/circleci-docs.svg?style=svg)](https://app.circleci.com/pipelines/github/leandrojo/test-front)
+[![CircleCI](https://circleci.com/gh/circleci/circleci-docs.svg?style=svg)](https://app.circleci.com/pipelines/github/leandrojo/test-front) [![codecov](https://codecov.io/gh/leandrojo/test-front/branch/master/graph/badge.svg)](https://codecov.io/gh/leandrojo/test-front)
 
 ## Iniciando
 ### `yarn`
