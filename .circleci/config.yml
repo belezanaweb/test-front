@@ -23,6 +23,6 @@ jobs:
     steps:
       - checkout
       - run: yarn
-      - run: yarn test
+      - run: yarn ci:test
       - codecov/upload:
-          file: coverage/coverage.json
+          file: coverage/coverage-final.json
