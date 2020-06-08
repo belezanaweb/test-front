@@ -44,6 +44,7 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "cross-env NODE_ICU_DATA=node_modules/full-icu react-scripts test src",
+    "ci:test": "cross-env NODE_ICU_DATA=node_modules/full-icu react-scripts test src --watchAll=false --coverage",
     "storybook": "start-storybook -s ./public -p 6006",
     "build-storybook": "build-storybook"
   },
@@ -66,6 +67,7 @@
       "!src/**/index.{ts, tsx}",
       "!<rootDir>/node_modules/",
       "!<rootDir>/**/*.stories.{ts,tsx}"
-    ]
+    ],
+    "coverageReporters": ["json", "lcov"]
   }
 }
