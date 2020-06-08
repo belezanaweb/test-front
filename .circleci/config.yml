@@ -25,4 +25,4 @@ jobs:
       - run: yarn
       - run: yarn test
       - codecov/upload:
-          file: {{ coverage_report_filepath }}
+          file: coverage/coverage.json
