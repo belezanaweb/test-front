@@ -1,27 +1,127 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`<Steps /> should render Steps 1`] = `
+.c0 {
+  background-color: white;
+  border-radius: 0 0 3px 3px;
+  box-shadow: 1px 1px 5px 0 rgba(0,0,29,0.22);
+  height: 40px;
+}
+
+.c0 ol {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  height: 100%;
+  -webkit-box-pack: space-around;
+  -webkit-justify-content: space-around;
+  -ms-flex-pack: space-around;
+  justify-content: space-around;
+  margin: 0;
+  padding: 0;
+}
+
+.c1 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  color: #CCC;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex: 0;
+  -ms-flex: 0;
+  flex: 0;
+  height: 100%;
+  list-style-type: none;
+}
+
+.c1 a {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  color: inherit;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  font-size: 13px;
+  font-weight: 700;
+  height: 100%;
+  line-height: 16px;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+.c2 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  color: #FF7800;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex: 0;
+  -ms-flex: 0;
+  flex: 0;
+  height: 100%;
+  list-style-type: none;
+}
+
+.c2 a {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  color: inherit;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  font-size: 13px;
+  font-weight: 700;
+  height: 100%;
+  line-height: 16px;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
 <div>
   <nav
-    class="sc-AxjAm hsLwEa"
+    class="c0"
   >
     <ol>
       <li
-        class="sc-AxirZ jUyrXq"
+        class="c1"
+        title="Sacola"
       >
         <a>
           Sacola
         </a>
       </li>
       <li
-        class="sc-AxirZ jUyrXq"
+        class="c2"
+        title="Pagamento"
       >
         <a>
           Pagamento
         </a>
       </li>
       <li
-        class="sc-AxirZ jUyrXq"
+        class="c1"
+        title="Confirmação"
       >
         <a>
           Confirmação

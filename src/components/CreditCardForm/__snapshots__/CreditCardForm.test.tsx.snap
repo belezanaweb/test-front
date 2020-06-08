@@ -1,0 +1,253 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`CreditCard Form when adding new valid credit card data should render a credit card form 1`] = `
+<div>
+  <form
+    data-testid="form"
+  >
+    <div
+      aria-label="credit card form"
+      class="sc-Axmtr gOKCDz"
+    >
+      <div
+        class="sc-AxirZ kwknpK"
+      >
+        <div
+          class="sc-AxiKw gmkaqg"
+        >
+          <label
+            class="sc-AxhCb iBaAel"
+          >
+            <span
+              class="sc-AxhUy eJHRhC"
+            >
+              Número do Cartão:
+            </span>
+            <input
+              aria-label="card number"
+              class="sc-AxheI iMdqhP"
+              error="false"
+              name="number"
+              placeholder="____.____.____.____"
+              type="text"
+              value=""
+            />
+            <span
+              class="sc-AxgMl jWUtCp"
+            />
+          </label>
+        </div>
+        <div
+          class="sc-AxiKw gmkaqg"
+        >
+          <label
+            class="sc-AxhCb iBaAel"
+          >
+            <span
+              class="sc-AxhUy eJHRhC"
+            >
+              Nome do Titular:
+            </span>
+            <input
+              aria-label="name"
+              class="sc-AxheI iMdqhP"
+              error="false"
+              name="name"
+              placeholder="Como no cartão"
+              type="text"
+              value=""
+            />
+            <span
+              class="sc-AxgMl jWUtCp"
+            />
+          </label>
+        </div>
+      </div>
+      <div
+        class="sc-AxirZ hkCyoN"
+      >
+        <div
+          class="sc-AxiKw gmkaqg"
+        >
+          <label
+            class="sc-AxhCb iBaAel"
+          >
+            <span
+              class="sc-AxhUy eJHRhC"
+            >
+              Validade (mês/ano):
+            </span>
+            <input
+              aria-label="expiring date"
+              class="sc-AxheI iMdqhP"
+              error="false"
+              name="expiringDate"
+              placeholder="__/____"
+              type="text"
+              value=""
+            />
+            <span
+              class="sc-AxgMl jWUtCp"
+            />
+          </label>
+        </div>
+        <div
+          class="sc-AxiKw gmkaqg"
+        >
+          <label
+            class="sc-AxhCb iBaAel"
+          >
+            <span
+              class="sc-AxhUy eJHRhC"
+            >
+              CVV:
+            </span>
+            <input
+              aria-label="code verification"
+              class="sc-AxheI iMdqhP"
+              error="false"
+              name="code"
+              placeholder="___"
+              type="text"
+              value=""
+            />
+            <span
+              class="sc-AxgMl jWUtCp"
+            />
+          </label>
+        </div>
+      </div>
+    </div>
+  </form>
+</div>
+`;
+
+exports[`CreditCard Form when there are no entries should show an error message when trying to send 1`] = `
+<div>
+  <form
+    data-testid="form"
+  >
+    <div
+      aria-label="credit card form"
+      class="sc-Axmtr gOKCDz"
+    >
+      <div
+        class="sc-AxirZ kwknpK"
+      >
+        <div
+          class="sc-AxiKw gmkaqg"
+        >
+          <label
+            class="sc-AxhCb iBaAel"
+          >
+            <span
+              class="sc-AxhUy eJHRhC"
+            >
+              Número do Cartão:
+            </span>
+            <input
+              aria-label="card number"
+              class="sc-AxheI uuSls"
+              error="true"
+              name="number"
+              placeholder="____.____.____.____"
+              type="text"
+              value=""
+            />
+            <span
+              class="sc-AxgMl jWUtCp"
+            >
+              Número do cartão obrigatório.
+            </span>
+          </label>
+        </div>
+        <div
+          class="sc-AxiKw gmkaqg"
+        >
+          <label
+            class="sc-AxhCb iBaAel"
+          >
+            <span
+              class="sc-AxhUy eJHRhC"
+            >
+              Nome do Titular:
+            </span>
+            <input
+              aria-label="name"
+              class="sc-AxheI uuSls"
+              error="true"
+              name="name"
+              placeholder="Como no cartão"
+              type="text"
+              value=""
+            />
+            <span
+              class="sc-AxgMl jWUtCp"
+            >
+              Nome do titular obrigatório.
+            </span>
+          </label>
+        </div>
+      </div>
+      <div
+        class="sc-AxirZ hkCyoN"
+      >
+        <div
+          class="sc-AxiKw gmkaqg"
+        >
+          <label
+            class="sc-AxhCb iBaAel"
+          >
+            <span
+              class="sc-AxhUy eJHRhC"
+            >
+              Validade (mês/ano):
+            </span>
+            <input
+              aria-label="expiring date"
+              class="sc-AxheI uuSls"
+              error="true"
+              name="expiringDate"
+              placeholder="__/____"
+              type="text"
+              value=""
+            />
+            <span
+              class="sc-AxgMl jWUtCp"
+            >
+              Validade do cartão obrigatório.
+            </span>
+          </label>
+        </div>
+        <div
+          class="sc-AxiKw gmkaqg"
+        >
+          <label
+            class="sc-AxhCb iBaAel"
+          >
+            <span
+              class="sc-AxhUy eJHRhC"
+            >
+              CVV:
+            </span>
+            <input
+              aria-label="code verification"
+              class="sc-AxheI uuSls"
+              error="true"
+              name="code"
+              placeholder="___"
+              type="text"
+              value=""
+            />
+            <span
+              class="sc-AxgMl jWUtCp"
+            >
+              Codígo de verificação obrigatório.
+            </span>
+          </label>
+        </div>
+      </div>
+    </div>
+  </form>
+</div>
+`;

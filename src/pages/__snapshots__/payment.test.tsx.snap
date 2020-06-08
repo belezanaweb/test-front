@@ -1,0 +1,138 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Payment Page should render payment page 1`] = `
+<div>
+  <div
+    class="sc-fznZeY dLKWGd"
+  >
+    <nav
+      class="sc-fzplWN lctvBs"
+    >
+      <ol>
+        <li
+          class="sc-fznyAO jXJCuQ"
+          title="Sacola"
+        >
+          <a>
+            Sacola
+          </a>
+        </li>
+        <li
+          class="sc-fznyAO dKAYU"
+          title="Pagamento"
+        >
+          <a>
+            Pagamento
+          </a>
+        </li>
+        <li
+          class="sc-fznyAO jXJCuQ"
+          title="Confirmação"
+        >
+          <a>
+            Confirmação
+          </a>
+        </li>
+      </ol>
+    </nav>
+    <div
+      class="sc-fznKkj iQEdFx"
+    >
+      <form
+        data-testid="form"
+      >
+        <span
+          class="sc-AxgMl sc-fzpans lfXbBG"
+        >
+          Cartão de Crédito
+        </span>
+        <div
+          class="sc-AxiKw sc-AxhUy hkJMki"
+        >
+          <div
+            data-testid="entries"
+          >
+            <span>
+              Entries
+            </span>
+          </div>
+        </div>
+        <div
+          class="sc-fzokOt sc-fzqNqU ffIUde"
+        >
+          <div
+            class="sc-fzoyTs iRdJNx"
+          >
+            <span
+              class="sc-AxgMl sc-fzoNJl jvFjPf"
+              id="subTotal"
+            >
+              Produtos
+            </span>
+            <span
+              aria-labelledby="subTotal"
+              class="sc-AxgMl sc-fzoNJl jvFjPf"
+            >
+              R$ 624,80
+            </span>
+          </div>
+          <div
+            class="sc-fzoyTs iRdJNx"
+          >
+            <span
+              class="sc-AxgMl sc-fzoNJl jvFjPf"
+              id="shippingTotal"
+            >
+              Frete
+            </span>
+            <span
+              aria-labelledby="shippingTotal"
+              class="sc-AxgMl sc-fzoNJl jvFjPf"
+            >
+              R$ 5,30
+            </span>
+          </div>
+          <div
+            class="sc-fzoyTs iRdJNx"
+          >
+            <span
+              class="sc-AxgMl sc-fzoNJl dYPlFQ"
+              id="discount"
+            >
+              Desconto
+            </span>
+            <span
+              aria-labelledby="discount"
+              class="sc-AxgMl sc-fzoNJl dYPlFQ"
+            >
+              -R$ 30,00
+            </span>
+          </div>
+          <div
+            class="sc-fzoXWK iKJWid"
+          >
+            <span
+              class="sc-AxgMl sc-fzpmMD cHYbdw"
+              id="total"
+            >
+              Total
+            </span>
+            <span
+              aria-labelledby="total"
+              class="sc-AxgMl sc-fzpmMD cHYbdw"
+            >
+              R$ 618,90
+            </span>
+          </div>
+        </div>
+        <button
+          class="sc-AxhCb fdRirk"
+          type="submit"
+        >
+          Finalizar o Pedido
+        </button>
+      </form>
+    </div>
+  </div>
+</div>
+`;

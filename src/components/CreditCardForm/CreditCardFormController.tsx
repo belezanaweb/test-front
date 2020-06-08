@@ -15,7 +15,7 @@ const CreditCardFormController: React.FC<CreditCardFormControllerProps> = ({ chi
 
   return (
     <CreditCardFormContext.Provider value={{ control, register, errors }}>
-      <form onSubmit={handleSubmit(onSubmit)}>
+      <form data-testid="form" onSubmit={handleSubmit(onSubmit)}>
         {children({ errors })}
       </form>
     </CreditCardFormContext.Provider>

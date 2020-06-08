@@ -4,9 +4,10 @@ import theme, { Theming } from '../../theme';
 
 import Card from '../Card';
 
+import cart from '../../store/models/__mocks__/cart.json';
+
 import ProductList from './ProductList';
 import ProductListItem from './ProductListItem';
-import cart from '../../store/models/__mocks__/cart.json';
 
 const Provider = (storyFn: () => React.ReactNode) => (
   <Theming theme={theme}>

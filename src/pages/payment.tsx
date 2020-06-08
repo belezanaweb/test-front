@@ -10,8 +10,8 @@ const Payment: React.FC = () => {
   const { data } = useCart();
   const { save } = useCreditCard();
 
-  const handleSubmit = useCallback(async (payload: any) => {
-    await save(payload);
+  const handleSubmit = useCallback((payload: any) => {
+    save(payload);
     router.push('/success');
   }, [router, save]);
 

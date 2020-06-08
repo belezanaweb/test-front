@@ -34,7 +34,7 @@ const Cart: React.FC = (props) => {
         <Button fluid type="button">Seguir Para o Pagamento</Button>
       </Link>
     </Layout>
-  )
+  );
 };
 
 export default Cart;

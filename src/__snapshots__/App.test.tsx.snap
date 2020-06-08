@@ -1,0 +1,417 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`App should render App in cart 1`] = `
+<div>
+  <div
+    class="sc-fzoLag jRHNZI"
+  >
+    <nav
+      class="sc-fzqBZW kdufKf"
+    >
+      <ol>
+        <li
+          class="sc-fzqNJr beoRzK"
+          title="Sacola"
+        >
+          <a>
+            Sacola
+          </a>
+        </li>
+        <li
+          class="sc-fzqNJr gREgXq"
+          title="Pagamento"
+        >
+          <a>
+            Pagamento
+          </a>
+        </li>
+        <li
+          class="sc-fzqNJr gREgXq"
+          title="Confirmação"
+        >
+          <a>
+            Confirmação
+          </a>
+        </li>
+      </ol>
+    </nav>
+    <div
+      class="sc-fzoyAV biEWFk"
+    >
+      <span
+        class="sc-AxgMl sc-fzokOt kTHzsh"
+      >
+        Produtos
+      </span>
+      <div
+        class="sc-AxiKw sc-AxhUy hkJMki"
+      >
+        <div
+          class="sc-fzqNqU jzgfji"
+        />
+      </div>
+      <a
+        href="/payment"
+      >
+        <button
+          class="sc-AxhCb fdRirk"
+          type="button"
+        >
+          Seguir Para o Pagamento
+        </button>
+      </a>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`App should render App in payment 1`] = `
+<div>
+  <div
+    class="sc-fzoLag jRHNZI"
+  >
+    <nav
+      class="sc-fzqBZW kdufKf"
+    >
+      <ol>
+        <li
+          class="sc-fzqNJr gREgXq"
+          title="Sacola"
+        >
+          <a>
+            Sacola
+          </a>
+        </li>
+        <li
+          class="sc-fzqNJr beoRzK"
+          title="Pagamento"
+        >
+          <a>
+            Pagamento
+          </a>
+        </li>
+        <li
+          class="sc-fzqNJr gREgXq"
+          title="Confirmação"
+        >
+          <a>
+            Confirmação
+          </a>
+        </li>
+      </ol>
+    </nav>
+    <div
+      class="sc-fzoyAV biEWFk"
+    >
+      <form
+        data-testid="form"
+      >
+        <span
+          class="sc-AxgMl sc-fzokOt kTHzsh"
+        >
+          Cartão de Crédito
+        </span>
+        <div
+          class="sc-AxiKw sc-AxhUy hkJMki"
+        >
+          <div
+            aria-label="credit card form"
+            class="sc-fzplWN iKnkhk"
+          >
+            <div
+              class="sc-AxirZ kwknpK"
+            >
+              <div
+                class="sc-AxiKw gmkaqg"
+              >
+                <label
+                  class="sc-AxmLO jXOdOm"
+                >
+                  <span
+                    class="sc-fzozJi kHWZjl"
+                  >
+                    Número do Cartão:
+                  </span>
+                  <input
+                    aria-label="card number"
+                    class="sc-fzpans bVBweO"
+                    error="false"
+                    name="number"
+                    placeholder="____.____.____.____"
+                    type="text"
+                    value=""
+                  />
+                  <span
+                    class="sc-fzoLsD cSHxtm"
+                  />
+                </label>
+              </div>
+              <div
+                class="sc-AxiKw gmkaqg"
+              >
+                <label
+                  class="sc-AxmLO jXOdOm"
+                >
+                  <span
+                    class="sc-fzozJi kHWZjl"
+                  >
+                    Nome do Titular:
+                  </span>
+                  <input
+                    aria-label="name"
+                    class="sc-fzpans bVBweO"
+                    error="false"
+                    name="name"
+                    placeholder="Como no cartão"
+                    type="text"
+                    value=""
+                  />
+                  <span
+                    class="sc-fzoLsD cSHxtm"
+                  />
+                </label>
+              </div>
+            </div>
+            <div
+              class="sc-AxirZ hkCyoN"
+            >
+              <div
+                class="sc-AxiKw gmkaqg"
+              >
+                <label
+                  class="sc-AxmLO jXOdOm"
+                >
+                  <span
+                    class="sc-fzozJi kHWZjl"
+                  >
+                    Validade (mês/ano):
+                  </span>
+                  <input
+                    aria-label="expiring date"
+                    class="sc-fzpans bVBweO"
+                    error="false"
+                    name="expiringDate"
+                    placeholder="__/____"
+                    type="text"
+                    value=""
+                  />
+                  <span
+                    class="sc-fzoLsD cSHxtm"
+                  />
+                </label>
+              </div>
+              <div
+                class="sc-AxiKw gmkaqg"
+              >
+                <label
+                  class="sc-AxmLO jXOdOm"
+                >
+                  <span
+                    class="sc-fzozJi kHWZjl"
+                  >
+                    CVV:
+                  </span>
+                  <input
+                    aria-label="code verification"
+                    class="sc-fzpans bVBweO"
+                    error="false"
+                    name="code"
+                    placeholder="___"
+                    type="text"
+                    value=""
+                  />
+                  <span
+                    class="sc-fzoLsD cSHxtm"
+                  />
+                </label>
+              </div>
+            </div>
+          </div>
+        </div>
+        <button
+          class="sc-AxhCb fdRirk"
+          type="submit"
+        >
+          Finalizar o Pedido
+        </button>
+      </form>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`App should render App in success 1`] = `
+<div>
+  <div
+    class="sc-fzoLag jRHNZI"
+  >
+    <nav
+      class="sc-fzqBZW kdufKf"
+    >
+      <ol>
+        <li
+          class="sc-fzqNJr gREgXq"
+          title="Sacola"
+        >
+          <a>
+            Sacola
+          </a>
+        </li>
+        <li
+          class="sc-fzqNJr gREgXq"
+          title="Pagamento"
+        >
+          <a>
+            Pagamento
+          </a>
+        </li>
+        <li
+          class="sc-fzqNJr beoRzK"
+          title="Confirmação"
+        >
+          <a>
+            Confirmação
+          </a>
+        </li>
+      </ol>
+    </nav>
+    <div
+      class="sc-fzoyAV biEWFk"
+    >
+      <div
+        class="sc-fznyAO jLApxi"
+      >
+        <div
+          class="sc-fznKkj laAbkH"
+        />
+        <span
+          class="sc-AxgMl sc-fznZeY iTQCPi"
+        >
+          Compra Efetuada com Sucesso
+        </span>
+      </div>
+      <span
+        class="sc-AxgMl sc-fzokOt kTHzsh"
+      >
+        Pagamento
+      </span>
+      <div
+        class="sc-AxiKw sc-AxhUy daxRmo"
+      >
+        <div
+          class="sc-Axmtr hBVTto"
+        >
+          <div
+            class="sc-AxjAm gTlBjH"
+            direction="row"
+          >
+            <div
+              class="sc-AxiKw gmkaqg"
+            >
+              <span
+                aria-label="card number"
+                class="sc-AxgMl sc-AxheI cyIPIf"
+              >
+                ****.****.****.undefined
+              </span>
+            </div>
+            <div
+              class="sc-AxiKw gmkaqg"
+            >
+              <span
+                aria-label="name"
+                class="sc-AxgMl sc-AxheI cyIPIf"
+              />
+            </div>
+            <div
+              class="sc-AxiKw gmkaqg"
+            >
+              <span
+                aria-label="expiring date"
+                class="sc-AxgMl sc-AxheI cyIPIf"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+      <span
+        class="sc-AxgMl sc-fzokOt kTHzsh"
+      >
+        Produtos
+      </span>
+      <div
+        class="sc-AxiKw sc-AxhUy hkJMki"
+      >
+        <div
+          class="sc-fzqNqU jbHngq"
+        />
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`App should render default App 1`] = `
+<div>
+  <div
+    class="sc-fzoLag jRHNZI"
+  >
+    <nav
+      class="sc-fzqBZW kdufKf"
+    >
+      <ol>
+        <li
+          class="sc-fzqNJr beoRzK"
+          title="Sacola"
+        >
+          <a>
+            Sacola
+          </a>
+        </li>
+        <li
+          class="sc-fzqNJr gREgXq"
+          title="Pagamento"
+        >
+          <a>
+            Pagamento
+          </a>
+        </li>
+        <li
+          class="sc-fzqNJr gREgXq"
+          title="Confirmação"
+        >
+          <a>
+            Confirmação
+          </a>
+        </li>
+      </ol>
+    </nav>
+    <div
+      class="sc-fzoyAV biEWFk"
+    >
+      <span
+        class="sc-AxgMl sc-fzokOt kTHzsh"
+      >
+        Produtos
+      </span>
+      <div
+        class="sc-AxiKw sc-AxhUy hkJMki"
+      >
+        <div
+          class="sc-fzqNqU jzgfji"
+        />
+      </div>
+      <a
+        href="/payment"
+      >
+        <button
+          class="sc-AxhCb fdRirk"
+          type="button"
+        >
+          Seguir Para o Pagamento
+        </button>
+      </a>
+    </div>
+  </div>
+</div>
+`;

@@ -1,7 +1,7 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 
 import React from 'react';
-import { useLocation, LinkProps } from 'react-router-dom'
+import { useLocation, LinkProps } from 'react-router-dom';
 import styled from 'styled-components';
 
 export const StyledSteps = styled.nav`
@@ -26,6 +26,9 @@ interface StyledStepProps {
 
 export const StyledStep = styled.li<StyledStepProps>`
   align-items: center;
+  color: ${({ active, theme }) => {
+    return active ? theme.colors.primaryLight : theme.colors.gray;
+  }};
   display: flex;
   flex: 0;
   height: 100%;
@@ -33,9 +36,7 @@ export const StyledStep = styled.li<StyledStepProps>`
 
   a {
     align-items: center;
-    color: ${({ active, theme }) => {
-      return active ? theme.colors.primaryLight : theme.colors.gray;
-    }};
+    color: inherit;
     display: inline-flex;
     font-size: 13px;
     font-weight: 700;
@@ -46,12 +47,14 @@ export const StyledStep = styled.li<StyledStepProps>`
   }
 `;
 
-interface StepProps extends LinkProps {}
+interface StepProps extends LinkProps {
+  children: string;
+}
 
 const Step: React.FC<StepProps> = ({ children, to }) => {
   const router = useLocation();
   return (
-    <StyledStep active={router.pathname === to}>
+    <StyledStep active={router.pathname === to} title={children}>
       <a>{children}</a>
     </StyledStep>
   );

@@ -1,0 +1,66 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Cart Page should render cart page 1`] = `
+<div>
+  <div
+    class="sc-fzoLag jRHNZI"
+  >
+    <nav
+      class="sc-fzqBZW kdufKf"
+    >
+      <ol>
+        <li
+          class="sc-fzqNJr beoRzK"
+          title="Sacola"
+        >
+          <a>
+            Sacola
+          </a>
+        </li>
+        <li
+          class="sc-fzqNJr gREgXq"
+          title="Pagamento"
+        >
+          <a>
+            Pagamento
+          </a>
+        </li>
+        <li
+          class="sc-fzqNJr gREgXq"
+          title="Confirmação"
+        >
+          <a>
+            Confirmação
+          </a>
+        </li>
+      </ol>
+    </nav>
+    <div
+      class="sc-fzoyAV biEWFk"
+    >
+      <span
+        class="sc-AxgMl sc-fzokOt kTHzsh"
+      >
+        Produtos
+      </span>
+      <div
+        class="sc-AxiKw sc-AxhUy hkJMki"
+      >
+        <div
+          class="sc-fzqNqU jzgfji"
+        />
+      </div>
+      <a
+        href="/payment"
+      >
+        <button
+          class="sc-AxhCb fdRirk"
+          type="button"
+        >
+          Seguir Para o Pagamento
+        </button>
+      </a>
+    </div>
+  </div>
+</div>
+`;

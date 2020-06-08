@@ -3,13 +3,13 @@ import { useDispatch, useSelector } from 'react-redux';
 import { Dispatch, State } from '../store';
 import { useEffect } from 'react';
 
-const useCosts = () => {
+const useCart = () => {
   const dispatch = useDispatch<Dispatch>();
   const { data, isLoading } = useSelector((state: State) => state.cart);
 
   useEffect(() => {
-    dispatch && dispatch.cart.getCart();
-  }, [dispatch]);
+    dispatch.cart.getCart();
+  }, [data, dispatch]);
 
   return {
     data,
@@ -17,4 +17,4 @@ const useCosts = () => {
   };
 };
 
-export default useCosts;
+export default useCart;

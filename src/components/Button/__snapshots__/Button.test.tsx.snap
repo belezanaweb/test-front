@@ -1,9 +1,36 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`<Button /> should render Button 1`] = `
+.c0 {
+  background-color: #FF7800;
+  border-radius: 3px;
+  border: none;
+  box-shadow: 0 -3px 0 0 #D45A00 inset,0 2px 4px 0 rgba(0,0,0,0.25);
+  color: white;
+  font-family: "Helvetica Neue",sans-serif;
+  font-size: 20px;
+  font-weight: 700;
+  height: 60px;
+  -webkit-letter-spacing: 0.5px;
+  -moz-letter-spacing: 0.5px;
+  -ms-letter-spacing: 0.5px;
+  letter-spacing: 0.5px;
+  line-height: 24px;
+  outline: none;
+  padding: 0 18px;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.c0:focus,
+.c0:hover {
+  background-color: #D45A00;
+  box-shadow: none;
+}
+
 <div>
   <button
-    class="sc-AxjAm cPIwIA"
+    class="c0"
   >
     Button
   </button>
@@ -11,9 +38,37 @@ exports[`<Button /> should render Button 1`] = `
 `;
 
 exports[`<Button /> should render a fluid Button 1`] = `
+.c0 {
+  background-color: #FF7800;
+  border-radius: 3px;
+  border: none;
+  box-shadow: 0 -3px 0 0 #D45A00 inset,0 2px 4px 0 rgba(0,0,0,0.25);
+  color: white;
+  font-family: "Helvetica Neue",sans-serif;
+  font-size: 20px;
+  font-weight: 700;
+  height: 60px;
+  -webkit-letter-spacing: 0.5px;
+  -moz-letter-spacing: 0.5px;
+  -ms-letter-spacing: 0.5px;
+  letter-spacing: 0.5px;
+  line-height: 24px;
+  outline: none;
+  padding: 0 18px;
+  text-align: center;
+  text-transform: uppercase;
+  width: 100%;
+}
+
+.c0:focus,
+.c0:hover {
+  background-color: #D45A00;
+  box-shadow: none;
+}
+
 <div>
   <button
-    class="sc-AxjAm kmuQsj"
+    class="c0"
   >
     Button
   </button>

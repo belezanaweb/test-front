@@ -1,0 +1,385 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<ProductList /> should render ProductListItem on "sm" size. 1`] = `
+.c1 {
+  background-color: transparent;
+  border: 1px solid #CCC;
+  border-radius: 3px;
+  padding: 15px 13px;
+  border-color: #EEE;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  margin-bottom: 15px;
+  padding: 11px 11px 12px;
+}
+
+.c1:last-of-type {
+  margin-bottom: 0;
+}
+
+.c3 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex: 0 65px;
+  -ms-flex: 0 65px;
+  flex: 0 65px;
+}
+
+.c5 {
+  height: 65px;
+}
+
+.c6 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  padding: 0 0 0 10px;
+}
+
+.c7 {
+  color: #999;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  font-family: "Helvetica Neue",sans-serif;
+  font-size: 14px;
+  line-height: 16px;
+  -webkit-letter-spacing: -0.015em;
+  -moz-letter-spacing: -0.015em;
+  -ms-letter-spacing: -0.015em;
+  letter-spacing: -0.015em;
+  color: #212122;
+  font-size: 13px;
+}
+
+.c9 {
+  color: #999;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  font-family: "Helvetica Neue",sans-serif;
+  font-size: 14px;
+  line-height: 16px;
+  -webkit-letter-spacing: -0.015em;
+  -moz-letter-spacing: -0.015em;
+  -ms-letter-spacing: -0.015em;
+  letter-spacing: -0.015em;
+  -webkit-align-self: flex-end;
+  -ms-flex-item-align: end;
+  align-self: flex-end;
+  color: #212122;
+  font-weight: 700;
+  -webkit-letter-spacing: -0.075em;
+  -moz-letter-spacing: -0.075em;
+  -ms-letter-spacing: -0.075em;
+  letter-spacing: -0.075em;
+  line-height: 17px;
+}
+
+.c0 .c2 {
+  -webkit-flex: 0 42px;
+  -ms-flex: 0 42px;
+  flex: 0 42px;
+}
+
+.c0 .c4 {
+  height: 42px;
+}
+
+.c0 .c8 {
+  display: none;
+}
+
+<div>
+  <div
+    class="c0"
+  >
+    <div
+      class="sc-AxjAm c1"
+    >
+      <div
+        class="c2 c3"
+      >
+        <img
+          alt="Imagem Ilustrativa"
+          class="c4 c5"
+          src="https://res.cloudinary.com/beleza-na-web/image/upload/f_auto,fl_progressive,q_auto:best/v1/imagens/4/loreal-professionnel-expert-absolut-repair-cortex-lipidium-mascara-de-reconstrucao-500g-24410-963234120108391775.png"
+        />
+      </div>
+      <div
+        class="c6"
+      >
+        <span
+          class="sc-AxirZ c7"
+        >
+          L'Oréal Professionnel Expert Absolut Repair Cortex Lipidium - Máscara de Reconstrução 500g
+        </span>
+        <span
+          aria-label="price"
+          class="sc-AxirZ c8 c9"
+        >
+          R$ 225,90
+        </span>
+      </div>
+    </div>
+    <div
+      class="sc-AxjAm c1"
+    >
+      <div
+        class="c2 c3"
+      >
+        <img
+          alt="Imagem Ilustrativa"
+          class="c4 c5"
+          src="https://res.cloudinary.com/beleza-na-web/image/upload/f_auto,fl_progressive,q_auto:best/v1/imagens/4/good-girl-carolina-herrera-eau-de-parfum-perfume-feminino-30ml-38273-1960525940762131267.jpg"
+        />
+      </div>
+      <div
+        class="c6"
+      >
+        <span
+          class="sc-AxirZ c7"
+        >
+          Good Girl Carolina Herrera Eau de Parfum - Perfume Feminino 30ml
+        </span>
+        <span
+          aria-label="price"
+          class="sc-AxirZ c8 c9"
+        >
+          R$ 299,00
+        </span>
+      </div>
+    </div>
+    <div
+      class="sc-AxjAm c1"
+    >
+      <div
+        class="c2 c3"
+      >
+        <img
+          alt="Imagem Ilustrativa"
+          class="c4 c5"
+          src="https://res.cloudinary.com/beleza-na-web/image/upload/f_auto,fl_progressive,q_auto:best/v1/imagens/4/senscience-inner-restore-intesif-deep-repairing-masque-mascara-de-tratamento-50ml-3019-7903251722539384904.png"
+        />
+      </div>
+      <div
+        class="c6"
+      >
+        <span
+          class="sc-AxirZ c7"
+        >
+          Senscience Inner Restore Intensif - Máscara Capilar 50ml
+        </span>
+        <span
+          aria-label="price"
+          class="sc-AxirZ c8 c9"
+        >
+          R$ 99,90
+        </span>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`<ProductList /> should render within two products. 1`] = `
+.c0 {
+  background-color: transparent;
+  border: 1px solid #CCC;
+  border-radius: 3px;
+  padding: 15px 13px;
+  border-color: #EEE;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  margin-bottom: 15px;
+  padding: 11px 11px 12px;
+}
+
+.c0:last-of-type {
+  margin-bottom: 0;
+}
+
+.c1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex: 0 65px;
+  -ms-flex: 0 65px;
+  flex: 0 65px;
+}
+
+.c2 {
+  height: 65px;
+}
+
+.c3 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  padding: 0 0 0 10px;
+}
+
+.c4 {
+  color: #999;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  font-family: "Helvetica Neue",sans-serif;
+  font-size: 14px;
+  line-height: 16px;
+  -webkit-letter-spacing: -0.015em;
+  -moz-letter-spacing: -0.015em;
+  -ms-letter-spacing: -0.015em;
+  letter-spacing: -0.015em;
+  color: #212122;
+  font-size: 13px;
+}
+
+.c5 {
+  color: #999;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  font-family: "Helvetica Neue",sans-serif;
+  font-size: 14px;
+  line-height: 16px;
+  -webkit-letter-spacing: -0.015em;
+  -moz-letter-spacing: -0.015em;
+  -ms-letter-spacing: -0.015em;
+  letter-spacing: -0.015em;
+  -webkit-align-self: flex-end;
+  -ms-flex-item-align: end;
+  align-self: flex-end;
+  color: #212122;
+  font-weight: 700;
+  -webkit-letter-spacing: -0.075em;
+  -moz-letter-spacing: -0.075em;
+  -ms-letter-spacing: -0.075em;
+  letter-spacing: -0.075em;
+  line-height: 17px;
+}
+
+<div>
+  <div
+    class=""
+  >
+    <div
+      class="sc-AxjAm c0"
+    >
+      <div
+        class="c1"
+      >
+        <img
+          alt="Imagem Ilustrativa"
+          class="c2"
+          src="https://res.cloudinary.com/beleza-na-web/image/upload/f_auto,fl_progressive,q_auto:best/v1/imagens/4/loreal-professionnel-expert-absolut-repair-cortex-lipidium-mascara-de-reconstrucao-500g-24410-963234120108391775.png"
+        />
+      </div>
+      <div
+        class="c3"
+      >
+        <span
+          class="sc-AxirZ c4"
+        >
+          L'Oréal Professionnel Expert Absolut Repair Cortex Lipidium - Máscara de Reconstrução 500g
+        </span>
+        <span
+          aria-label="price"
+          class="sc-AxirZ c5"
+        >
+          R$ 225,90
+        </span>
+      </div>
+    </div>
+    <div
+      class="sc-AxjAm c0"
+    >
+      <div
+        class="c1"
+      >
+        <img
+          alt="Imagem Ilustrativa"
+          class="c2"
+          src="https://res.cloudinary.com/beleza-na-web/image/upload/f_auto,fl_progressive,q_auto:best/v1/imagens/4/good-girl-carolina-herrera-eau-de-parfum-perfume-feminino-30ml-38273-1960525940762131267.jpg"
+        />
+      </div>
+      <div
+        class="c3"
+      >
+        <span
+          class="sc-AxirZ c4"
+        >
+          Good Girl Carolina Herrera Eau de Parfum - Perfume Feminino 30ml
+        </span>
+        <span
+          aria-label="price"
+          class="sc-AxirZ c5"
+        >
+          R$ 299,00
+        </span>
+      </div>
+    </div>
+    <div
+      class="sc-AxjAm c0"
+    >
+      <div
+        class="c1"
+      >
+        <img
+          alt="Imagem Ilustrativa"
+          class="c2"
+          src="https://res.cloudinary.com/beleza-na-web/image/upload/f_auto,fl_progressive,q_auto:best/v1/imagens/4/senscience-inner-restore-intesif-deep-repairing-masque-mascara-de-tratamento-50ml-3019-7903251722539384904.png"
+        />
+      </div>
+      <div
+        class="c3"
+      >
+        <span
+          class="sc-AxirZ c4"
+        >
+          Senscience Inner Restore Intensif - Máscara Capilar 50ml
+        </span>
+        <span
+          aria-label="price"
+          class="sc-AxirZ c5"
+        >
+          R$ 99,90
+        </span>
+      </div>
+    </div>
+  </div>
+</div>
+`;

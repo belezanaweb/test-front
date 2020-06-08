@@ -75,7 +75,7 @@ const TextField: React.FC<TextFieldProps> = ({ error, inputRef, label, ...props 
   return (
     <StyledTextField>
       <Label>{label}</Label>
-      <Input error={typeof error === 'string' ? 'true' : 'false'} ref={inputRef} {...props} />
+      <Input error={error === '' ? 'false' : 'true'} ref={inputRef} {...props} />
       {renderErrors()}
     </StyledTextField>
   );

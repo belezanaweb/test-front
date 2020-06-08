@@ -2,7 +2,7 @@ import '@testing-library/jest-dom/extend-expect';
 
 import delay from './delay';
 
-describe('delay model', () => {
+describe('function async delay', () => {
   it('should have async/wait support.', async () => {
     const before = new Date().getTime();
 

@@ -43,7 +43,7 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "cross-env NODE_ICU_DATA=node_modules/full-icu react-scripts test",
+    "test": "cross-env NODE_ICU_DATA=node_modules/full-icu react-scripts test src",
     "storybook": "start-storybook -s ./public -p 6006",
     "build-storybook": "build-storybook"
   },
@@ -60,9 +60,10 @@
     "collectCoverageFrom": [
       "src/**/*.{js,jsx,ts,tsx}",
       "!src/serviceWorker.ts",
+      "!src/index.tsx",
       "!src/react-app-env.d.ts",
       "!src/types/*.ts",
-      "!src/**/index.ts",
+      "!src/**/index.{ts, tsx}",
       "!<rootDir>/node_modules/",
       "!<rootDir>/**/*.stories.{ts,tsx}"
     ]

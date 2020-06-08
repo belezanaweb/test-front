@@ -40,7 +40,7 @@ export const ItemName = styled(Text)`
   font-size: 13px;
 `;
 
-export const ItemPrice = styled(Text)`
+export const ItemPrice = styled(Text).attrs({ 'aria-label': 'price' })`
   align-self: flex-end;
   color: ${({ theme }) => theme.colors.grayExtraDark};
   font-weight: 700;

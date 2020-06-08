@@ -10,21 +10,24 @@ exports[`<Layout /> should render Layout 1`] = `
     >
       <ol>
         <li
-          class="sc-AxheI hsfhcz"
+          class="sc-AxheI cjBwOc"
+          title="Sacola"
         >
           <a>
             Sacola
           </a>
         </li>
         <li
-          class="sc-AxheI hsfhcz"
+          class="sc-AxheI cjBwOc"
+          title="Pagamento"
         >
           <a>
             Pagamento
           </a>
         </li>
         <li
-          class="sc-AxheI hsfhcz"
+          class="sc-AxheI cjBwOc"
+          title="Confirmação"
         >
           <a>
             Confirmação

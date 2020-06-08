@@ -40,11 +40,14 @@ Tem por volta de um ano que cedi a resistência de escrever css em arquivos de s
 ## Roadmap
 Muitas pontas ficaram soltas, e algumas delas fundamentais. Porém quero manter essa entrega. Se for fundamental para a avaliação seguirei para os pontos listados abaixo:
 
-* Testes unitários;
 * Ampliar o mecanismo de validação do formulário;
-* Retornar ao Next.js, ou realizar configuração própria para SSR;
 * Implementar BFF;
 * Melhorar o controle da informações sensíveis (cartão de crédito);
+
+## Observações adicionais
+
+* Helvetica Neue só pode ser exibida caso exista previamente no sistema operacional. [fonte](https://webmasters.stackexchange.com/questions/69852/can-i-use-helvetica-neue-font-free-of-charge-in-my-website)
+* Foi retirada do roadmap a técnica SSR por não oferecer vantagens no cenário.
 
 ## Para o avaliador
 Me dediquei ao projeto tentando entregar um pouco mais que as demais experiências dos possiveis testes. Faço com que a avaliação tenha algo rico para mim e para que vai se dedicar a ler-lo. Espero que goste das escolhas e fico a disposição para sanar qualquer duvida.

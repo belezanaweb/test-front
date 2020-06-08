@@ -5,9 +5,9 @@ interface ButtonProps {
 }
 
 const Button = styled.button<ButtonProps>`
+  background-color: ${({ theme }) => theme.colors.primaryLight};
   border-radius: 3px;
   border: none;
-  background-color: ${({ theme }) => theme.colors.primaryLight};
   box-shadow:
     0 -3px 0 0 ${({ theme }) => theme.colors.primaryDark} inset, 0 2px 4px 0 rgba(0,0,0,0.25);
   color: white;
