@@ -15,7 +15,7 @@ export const setCart = (cart) => {
 export const getCart = () => async (dispatch) => {
     try {
         const response = await axios.get(`${baseUrl}`)
-        dispatch(setCart(response))
+        dispatch(setCart(response.data))
     } catch (error) {
         console.error(error)
     }
