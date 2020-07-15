@@ -6,6 +6,8 @@ import { createBrowserHistory } from "history";
 import { createStore, applyMiddleware, compose } from "redux";
 import { generateReducers } from "./reducers";
 import { routerMiddleware } from "connected-react-router";
+import { GlobalStyle } from "./GlobalStyle"
+
 
 export const history = createBrowserHistory();
 
@@ -19,9 +21,12 @@ const middlewares = [
 const store = createStore(generateReducers(history), compose(...middlewares));
 
 export const App = () => (
-  <Provider store={store}>
-    <Router history={history} />
-  </Provider>
+  <>
+  <GlobalStyle/>
+    <Provider store={store}>
+      <Router history={history} />
+    </Provider>
+  </>
 );
 
 export default App;
