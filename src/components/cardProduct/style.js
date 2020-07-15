@@ -12,7 +12,7 @@ export const MainWrapper = styled.div`
 `
 
 export const ImageWrapper = styled.div`
-  align-self: center;
+    align-self: center;
 `
 
 export const InfoWrapper = styled.div` 

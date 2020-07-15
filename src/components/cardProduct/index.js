@@ -1,7 +1,7 @@
 import React from "react"
 import { MainWrapper, ImageWrapper, InfoWrapper } from "./style"
 
-export default function Card (props) {
+export default function CardProduct (props) {
 
     const { sku, name, imageObjects, priceSpecification } = props.cart.product
 

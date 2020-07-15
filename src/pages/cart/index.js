@@ -4,7 +4,7 @@ import { connect } from "react-redux";
 import { getCart } from "../../actions/cart";
 import { routes } from "../../router/index";
 import { push } from "connected-react-router";
-import Card from "../../components/cards"
+import CardProduct from "../../components/cardProduct"
 import CardPrices from "../../components/cardPrices";
 import MainButton from "../../components/mainButton"
 import { MainWrapper, CartWrapper, ProductsWrapper } from "./style"
@@ -24,7 +24,7 @@ class Cart extends Component {
           <ProductsWrapper>
             {this.props.cart &&
               this.props.cart.items.map(item => {
-                return <Card key={item.product.sku} cart={item} />
+                return <CardProduct key={item.product.sku} cart={item} />
               })}
           </ProductsWrapper>
           {this.props.cart && <CardPrices cart={this.props.cart} />}
