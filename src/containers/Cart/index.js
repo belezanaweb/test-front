@@ -1,9 +1,10 @@
-import React, { Fragment, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import { connect } from "react-redux";
 import CardProduct from '../../components/CardProduct';
 import styled from 'styled-components';
-import Button from '../../components/Button'
-import CardTotalShipping from '../../components/CardTotalShipping'
+import Button from '../../components/Button';
+import CardTotalShipping from '../../components/CardTotalShipping';
+import { listCart } from '../../actions/cart';
 
 const Container = styled.div`
   display: flex;
@@ -15,16 +16,48 @@ const Container = styled.div`
 
 const CartPage = props => {
 
+  const [state, setState] = useState({})
+
+  useEffect(() => {
+    props.listCart()
+  })
+
   return (
     <Container>
-      <CardProduct />
-      <CardTotalShipping />
-      <Button children="SEGUIR PARA O PAGAMENTO"/>
+      <CardProduct products={props.cart.items}/>
+      <CardTotalShipping fields={[
+        {
+          name: "PRODUTOS",
+          value: props.cart.subTotal
+        },
+        {
+          name: "FRETE",
+          value: props.cart.shippingTotal
+        },
+        {
+          name: "DESCONTO",
+          value: props.cart.discount,
+          isDiscount: true,
+        },
+        {
+          name: "TOTAL",
+          value: props.cart.total,
+          isTotal: true
+        },
+        ]} />
+      <Button name="SEGUIR PARA O PAGAMENTO"/>
     </Container> 
   )
 }
 
+const mapStateToProps = state => {
+  return {
+    cart: state.cart.cart
+  }
+}
+
 const mapDispatchToProps = dispatch => ({
+  listCart: () => dispatch(listCart()) 
 })
 
-export default connect(null, mapDispatchToProps)(CartPage)
+export default connect(mapStateToProps, mapDispatchToProps)(CartPage)
