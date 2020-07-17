@@ -21,20 +21,18 @@ const Box = styled.div`
     flex-direction: column;
     align-items: center;
     justify-content: space-evenly;
-    padding-top: 3vh;
-    padding-bottom: 3vh;
 `
 
 const Card = (props) => {
     return (
-        <div>
+        <Fragment>
             <Title>
                 {props.title}
             </Title>
             <Box>
                 {props.children}
             </Box> 
-        </div>
+        </Fragment>
 
     )
 }
