@@ -1,7 +1,6 @@
-import React from 'react'; 
-import styled from 'styled-components'; 
+import React from 'react';
+import styled from 'styled-components';
 import Card from './Card';
-import download from './download.png'
 
 const ProductCard = styled.div`
     height: 90px;
@@ -43,43 +42,21 @@ const Infos = styled.div`
 
 const CardProduct = (props) => {
     return (
-        <div>
-            <Card title="PRODUTOS">
+        <Card title="PRODUTOS">
+            {props.products && props.products.map(item => (
                 <ProductCard>
-                    <Image src={download} />
+                    <Image src={item.product.imageObjects[0].medium} />
                     <Infos>
                         <Name>
-                            L'Oréal Professionnel Expert Absolut Repair Cortex Lipidium - Máscara de Reconstrução 500g
+                            {item.product.name}
                         </Name>
                         <Price>
-                            R$ 225,90
+                            R$ {item.product.priceSpecification.price && item.product.priceSpecification.price.toFixed(2)}
                         </Price>
                     </Infos>
                 </ProductCard>
-                <ProductCard>
-                    <Image src={download} />
-                    <Infos>
-                        <Name>
-                            L'Oréal Professionnel Expert Absolut Repair Cortex Lipidium - Máscara de Reconstrução 500g
-                        </Name>
-                        <Price>
-                            R$ 225,90
-                        </Price>
-                    </Infos>
-                </ProductCard>
-                <ProductCard>
-                    <Image src={download} />
-                    <Infos>
-                        <Name>
-                            L'Oréal Professionnel Expert Absolut Repair Cortex Lipidium - Máscara de Reconstrução 500g
-                        </Name>
-                        <Price>
-                            R$ 225,90
-                        </Price>
-                    </Infos>
-                </ProductCard>
-            </Card>
-        </div>
+            ))}
+        </Card>
     )
 }
 
