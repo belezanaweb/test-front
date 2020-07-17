@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import { getCart } from "../../actions/cart";
+import { getCart, setCreditCard } from "../../actions/cart";
 import { routes } from "../../router/index";
 import { push } from "connected-react-router";
 import Header from "../../components/header"
@@ -8,12 +8,17 @@ import CardPrices from "../../components/cardPrices";
 import MainButton from "../../components/mainButton"
 import { PaymentWrapper, InputWrapper, InputGridWrapper } from "./style"
 
-
 class Payment extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      form: {}
+      form: {
+        card: "",
+        name: "",
+        expiration: "",
+        cvv: ""
+      },
+      errors: {}
     }
   }
 
@@ -33,6 +38,12 @@ class Payment extends Component {
     if (newCardNumber.length < 21) {
       this.setState({ form: { ...this.state.form, card: newCardNumber } })
     }
+
+    if (this.state.form.card.length === 18) {
+      this.setState({ errors: { ...this.state.errors, card: true } })
+    } else {
+      this.setState({ errors: { ...this.state.errors, card: false } })
+    }
   };
 
   handleNameChange = event => {
@@ -41,6 +52,12 @@ class Payment extends Component {
     newName = newName.replace(/\d/g, "")
 
     this.setState({ form: { ...this.state.form, name: newName } })
+
+    if (this.state.form.name) {
+      this.setState({ errors: { ...this.state.errors, name: true } })
+    } else {
+      this.setState({ errors: { ...this.state.errors, name: false } })
+    }
   }
 
   handleExpirationChange = event => {
@@ -50,9 +67,17 @@ class Payment extends Component {
     newExpiration = newExpiration.replace(/(\d{2})(\d)/, "$1/$2")
     newExpiration = newExpiration.replace(/(\d{4})(\d)/, "$1/$2")
 
+    const arrayExpiration = newExpiration.split("/")
+
+    if (arrayExpiration[0] <= 12 && arrayExpiration[1] >= 2020 && arrayExpiration[1] <= 2030) {
+      this.setState({ errors: { ...this.state.errors, expiration: true } })
+    } else {
+      this.setState({ errors: { ...this.state.errors, expiration: false } })
+    }
+
     if (newExpiration.length < 8) {
       this.setState({ form: { ...this.state.form, expiration: newExpiration } })
-    } 
+    }
   }
 
   handleCVVChange = event => {
@@ -64,17 +89,23 @@ class Payment extends Component {
     if (newCVV.length < 4) {
       this.setState({ form: { ...this.state.form, cvv: newCVV } })
     }
+
+    if (this.state.form.cvv.length === 2) {
+      this.setState({ errors: { ...this.state.errors, cvv: true } })
+    } else {
+      this.setState({ errors: { ...this.state.errors, cvv: false } })
+    }
   }
 
   handleFormSubmit = event => {
     event.preventDefault();
-    const { card, name, expiration, cvv } = this.state.form
+    const { card, name, expiration, cvv } = this.state.errors
 
-    if (card && name && expiration && cvv) {
-      if (card.length === 19 && expiration.length === 7 && cvv.length === 3 && name) {
-        this.props.goToSuccess()
-      }
+    if (card === true && expiration === true && cvv === true && name === true) {
+      this.props.setCreditCard(this.state.form)
+      this.props.goToSuccess()
     }
+
   }
 
   render() {
@@ -105,7 +136,6 @@ class Payment extends Component {
               />
             </InputWrapper>
 
-
             <InputGridWrapper>
               <label htmlFor={"expiration"}>Validade (mês/ano):</label>
               <input
@@ -130,7 +160,6 @@ class Payment extends Component {
             <MainButton text={"Finalizar o pedido"} type={"submit"} />
           </form>
 
-
         </PaymentWrapper>
       </div>
     );
@@ -143,7 +172,8 @@ const mapStateToProps = (state) => ({
 
 const mapDispatchToProps = (dispatch) => ({
   getCart: () => dispatch(getCart()),
-  goToSuccess: () => dispatch(push(routes.success))
+  goToSuccess: () => dispatch(push(routes.success)),
+  setCreditCard: (cardInfo) => dispatch(setCreditCard(cardInfo))
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(Payment);
