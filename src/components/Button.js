@@ -11,7 +11,7 @@ const Buttons = styled.button`
 `
 const Name = styled.div`
     height: 24px;
-    width: 339px;
+    /* width: 339px; */
     color: #FFF;
     font-family: "Helvetica Neue";
     font-size: 20px;
