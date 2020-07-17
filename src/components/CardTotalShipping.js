@@ -14,21 +14,13 @@ const Type = styled.div`
     grid-area: "type";
     height: 17px;
     width: 124px;
-    color: #212122;
     font-family: "Helvetica Neue";
     font-size: 14px;
     line-height: 17px;
 `
 
-const Price = styled.div`
+const Price = styled(Type)`
     grid-area: "price";
-    height: 17px;
-    width: 124px;
-    color: #212122;
-    font-family: "Helvetica Neue";
-    font-size: 14px;
-    letter-spacing: NaNpx;
-    line-height: 17px;
     text-align: right;
 `
 
@@ -37,43 +29,24 @@ const Line = styled.div`
     display: flex;
     justify-content: space-between;
     padding: 1vh;
+    color: ${props => props.isDiscount ? '#FF7800' : '#212122'};
+    font-weight: ${props => props.isTotal ? 'bold' : null};
 `
 
 const CardTotalShipping = (props) => {
     return (
         <Card>
-            <Line>
-                <Type>
-                    PRODUTOS
-                </Type>
-                <Price>
-                    R$ 624,80
-                </Price>
-            </Line>
-            <Line>
-                <Type>
-                    FRETE
-                </Type>
-                <Price>
-                    R$ 5,30
-                </Price>
-            </Line>
-            <Line>
-                <Type>
-                    DESCONTO
-                </Type>
-                <Price>
-                   - R$ 30,00
-                </Price>
-            </Line>
-            <Line>
-                <Type>
-                    TOTAL
-                </Type>
-                <Price>
-                    R$ 600,10
-                </Price>
-            </Line>
+            {props.fields && props.fields.map(field => (
+                <Line isDiscount={field.isDiscount} isTotal={field.isTotal}>
+                    <Type>
+                        {field.name}
+                    </Type>
+                    <Price>
+                       {field.isDiscount ? '- ' : null}
+                       R$ {field.value && field.value.toFixed(2)}
+                    </Price>
+                </Line>
+            ))}
         </Card>
     )
 }
