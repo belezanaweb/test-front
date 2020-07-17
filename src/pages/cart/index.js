@@ -20,7 +20,7 @@ class Cart extends Component {
       <MainWrapper>
         <Header page={"cart"} />
         <CartWrapper>
-          <h2 onClick={this.props.gotoPayment}>Produtos</h2>
+          <h2>Produtos</h2>
           <ProductsWrapper>
             {this.props.cart &&
               this.props.cart.items.map(item => {

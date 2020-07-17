@@ -30,8 +30,8 @@ class Header extends Component {
     return (
     <MainWrapper page={this.convertStringToNumber(this.props.page)} > 
         <p onClick={this.props.goToCart}>Sacola</p>
-        <p onClick={this.props.gotoPayment}>Pagamento</p>
-        <p onClick={this.props.goToSuccess}>Confirmação</p>
+        <p>Pagamento</p>
+        <p>Confirmação</p>
     </MainWrapper>
     );
   }
@@ -39,9 +39,7 @@ class Header extends Component {
 
 function mapDispatchToProps(dispatch) {
     return {
-        goToCart: () => dispatch(push(routes.cart)),
-        gotoPayment: () => dispatch(push(routes.payment)),
-        goToSuccess: () => dispatch(push(routes.success))
+        goToCart: () => dispatch(push(routes.cart))
     }
 }
 

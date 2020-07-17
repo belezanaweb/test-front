@@ -8,7 +8,7 @@ import Success from "../pages/success"
 
 
 export const routes = {
-  cart: "/cart",
+  cart: "/",
   payment: "/payment",
   success: "/success",
 };

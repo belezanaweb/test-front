@@ -23,7 +23,9 @@ class Payment extends Component {
   }
 
   componentDidMount() {
-    this.props.getCart();
+    if(!this.props.cart) {
+      this.props.getCart()
+    }
   }
 
   handleCardNumberChange = event => {
@@ -39,7 +41,7 @@ class Payment extends Component {
       this.setState({ form: { ...this.state.form, card: newCardNumber } })
     }
 
-    if (this.state.form.card.length === 18) {
+    if (this.state.form.card.length === 18 || this.state.form.card.length === 19) {
       this.setState({ errors: { ...this.state.errors, card: true } })
     } else {
       this.setState({ errors: { ...this.state.errors, card: false } })
@@ -90,7 +92,7 @@ class Payment extends Component {
       this.setState({ form: { ...this.state.form, cvv: newCVV } })
     }
 
-    if (this.state.form.cvv.length === 2) {
+    if (this.state.form.cvv.length === 2 || this.state.form.cvv.length === 3) {
       this.setState({ errors: { ...this.state.errors, cvv: true } })
     } else {
       this.setState({ errors: { ...this.state.errors, cvv: false } })

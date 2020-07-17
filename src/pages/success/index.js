@@ -1,7 +1,8 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
+import { routes } from "../../router/index";
+import { replace } from "connected-react-router";
 import Header from "../../components/header"
-import { getCart } from "../../actions/cart";
 import ImgSuccess from "../../assets/success.png"
 import CardProduct from "../../components/cardProduct";
 import CardPrices from "../../components/cardPrices";
@@ -9,7 +10,16 @@ import { MainWrapper, ImageWrapper, PaymentWrapper, ProductsWrapper } from "./st
 
 class Success extends Component {
 
+  componentDidMount() {
+    if (!this.props.cardInfo) {
+      this.props.gotoPayment()
+    }
+  }
+
   render() {
+    if (!this.props.cardInfo) {
+      return <div> loading </div>
+    }
 
     const { card, name, expiration } = this.props.cardInfo
     const arrayCardNumber = card.split(".")
@@ -47,5 +57,10 @@ const mapStateToProps = (state) => ({
   cardInfo: state.carts.cardInfo
 });
 
+function mapDispatchToProps(dispatch) {
+  return {
+    gotoPayment: () => dispatch(replace(routes.payment)),
+  }
+}
 
-export default connect(mapStateToProps)(Success);
+export default connect(mapStateToProps, mapDispatchToProps)(Success);
