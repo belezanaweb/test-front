@@ -1,12 +1,22 @@
 const initialState = {
-    cart: {}
+    cart: {},
+    payment: {} 
 }
 
 const cart = (state = initialState, action) => {
     switch (action.type) {
-        case "SET_CART" : {
+        case "SET_CART": {
             return {
+                ...state,
                 cart: action.payload.cart
+            }
+        }
+
+        case "SET_PAYMENT": {
+            console.log(action.payload.payment)
+            return {
+                ...state,
+                payment: action.payload.payment
             }
         }
 
