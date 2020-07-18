@@ -25,7 +25,7 @@ const Name = styled.div`
 
 const Button = (props) => {
     return (
-        <Buttons>
+        <Buttons type={props.isSubmit ? 'submit' : 'button'} onClick={props.onClick}>
             <Name>
                 {props.name}
             </Name>
