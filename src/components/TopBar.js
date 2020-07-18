@@ -1,5 +1,7 @@
 import React from 'react'; 
 import styled from 'styled-components'; 
+import { connect } from "react-redux";
+import { routes } from "../containers/Router";
 
 const Wrapper = styled.div`
     height: 9vh;
@@ -15,7 +17,7 @@ const Button = styled.button`
     margin: 0;
     height: 16px;
     width: 101px;
-    color: #CCC;
+    color: ${props => props.isActive ? '#FF7800' : '#CCC'};
     font-size: 13px;
     font-weight: 700;
     line-height: 16px;
@@ -24,18 +26,37 @@ const Button = styled.button`
     border: none;
 `
 
-export default function TopBar(props) {
+const TopBar = (props) => {
+
+    const buttons = [
+        {
+            name: 'SACOLA',
+            pageRouter: routes.root
+        },
+        {
+            name: 'PAGAMENTO',
+            pageRouter: routes.payment
+        },
+        {
+            name: 'CONFIRMAÇÃO',
+            pageRouter: routes.confirmation
+        },
+    ]
     return (
         <Wrapper>
-            <Button>
-               SACOLA 
-            </Button>
-            <Button>
-               PAGAMENTO
-            </Button>
-            <Button>
-               CONFIRMAR 
-            </Button>
+            { buttons.map(button => (
+                <Button isActive={props.currentPage && props.currentPage == button.pageRouter}>
+                    {button.name} 
+                </Button>
+            ))}
         </Wrapper>
     )
 }
+
+const mapStateToProps = state => {
+    return {
+        currentPage: state.menu
+    }
+}
+  
+export default connect(mapStateToProps, null)(TopBar);

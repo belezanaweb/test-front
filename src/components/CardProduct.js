@@ -3,14 +3,13 @@ import styled from 'styled-components';
 import Card from './Card';
 
 const ProductCard = styled.div`
-    height: 90px;
+    height: ${props => props.isRenderPrice ? '90px' : 'none'};
     width: 316px;
     box-sizing: border-box;
     border-radius: 3px;
     border: 1px solid #EEE;
     display: grid;
     grid-template-columns: 30% 70%;
-    margin-top: 2.5vh;
 `
 
 const Image = styled.img`
@@ -24,6 +23,7 @@ const Name = styled.div`
     font-size: 13px;
     font-family: "Helvetica Neue";
     line-height: 16px;
+    padding-top: 1vh;
 `
 
 const Price = styled.div`
@@ -42,17 +42,19 @@ const Infos = styled.div`
 
 const CardProduct = (props) => {
     return (
-        <Card title="PRODUTOS">
+        <Card title="PRODUTOS" heightBox={props.height}>
             {props.products && props.products.map(item => (
-                <ProductCard>
+                <ProductCard isRenderPrice={props.isRenderPrice}>
                     <Image src={item.product.imageObjects[0].medium} />
                     <Infos>
                         <Name>
                             {item.product.name}
                         </Name>
+                        { props.isRenderPrice ? 
                         <Price>
                             R$ {item.product.priceSpecification.price && item.product.priceSpecification.price.toFixed(2)}
-                        </Price>
+                        </Price> 
+                        : null}
                     </Infos>
                 </ProductCard>
             ))}

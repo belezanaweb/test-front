@@ -21,6 +21,7 @@ const Box = styled.div`
     flex-direction: column;
     align-items: center;
     justify-content: space-evenly;
+    height: ${props => props.height};
 `
 
 const Card = (props) => {
@@ -29,7 +30,7 @@ const Card = (props) => {
             <Title>
                 {props.title}
             </Title>
-            <Box>
+            <Box height={props.heightBox}>
                 {props.children}
             </Box> 
         </Fragment>

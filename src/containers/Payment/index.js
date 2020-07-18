@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { connect } from "react-redux";
 import styled from 'styled-components';
 import Button from '../../components/Button';
@@ -7,6 +7,7 @@ import Card from '../../components/Card';
 import { setPayment } from '../../actions/payment';
 import { routes } from "../Router";
 import { push } from "connected-react-router";
+import { setCurrentPage } from '../../actions/menu';
 
 const Container = styled.div`
     display: flex;
@@ -62,16 +63,16 @@ const LabelSmaller = styled.label`
 `
 
 const InputSmaller = styled.input`
-  box-sizing: border-box;
-  height: 45px;
-  width: 140px;
-  border-radius: 3px;
-  background-color: #FFF;
-  border: 1px solid #E7E7E7;
-  padding-left: 1vh;
-  box-shadow: inset 0 1px 2px 0 rgba(0,0,0,0.2);
-  ::placeholder {
-        color: #E0E7EE;
+    box-sizing: border-box;
+    height: 45px;
+    width: 140px;
+    border-radius: 3px;
+    background-color: #FFF;
+    border: 1px solid #E7E7E7;
+    padding-left: 1vh;
+    box-shadow: inset 0 1px 2px 0 rgba(0,0,0,0.2);
+    ::placeholder {
+            color: #E0E7EE;
     }
 `
 
@@ -84,6 +85,12 @@ const PaymentPage = props => {
         cvv: ""
     })
 
+    useEffect(() => {
+        if (props.currentPage === routes.root) {
+            props.goToCart()
+        }
+    })
+
     const handleFieldChange = (event) => {
         const fieldName = event.target.name
         setState({...state, [fieldName]: event.target.value})
@@ -92,8 +99,26 @@ const PaymentPage = props => {
     const onSubmitForm = (event) => {
         event.preventDefault();
         props.setPayment(state);
-        props.goToConfirmation();
+        goToConfirmationPage()
     }
+
+    const maskCartNumber = (value) => {
+        return value
+            .replace(/(\d{4})(\d)/g, "$1.$2")
+            .replace(/(\d{4})(\d)/g, "$1.$2")
+            .replace(/(\d{4})(\d)/g, "$1.$2")
+            .replace(/(\d{4})(\d)/g, "$1.$2")
+    }
+
+    const patternNameCard = () => {
+        return (`^[a-zA-ZàáâäãåąčćęèéêëėįìíîïłńòóôöõøùúûüųūÿýżźñçčšžÀÁÂÄÃÅ
+                    ĄĆČĖĘÈÉÊËÌÍÎÏĮŁŃÒÓÔÖÕØÙÚÛÜŲŪŸÝŻŹÑßÇŒÆČŠŽ∂ð ,.'-]+$`)
+    }
+
+    const goToConfirmationPage = () => {
+        props.goToConfirmation()
+        props.setCurrentPage()
+      }
 
   return (
     <Container>
@@ -109,6 +134,8 @@ const PaymentPage = props => {
                             placeholder="____.____.____.____" 
                             onChange={handleFieldChange}
                             pattern="^[0-9]{4}\.[0-9]{4}\.[0-9]{4}\.[0-9]{4}$"
+                            maxLength="19"
+                            value={maskCartNumber(state.numberCard)}
                             required={true}
                         />
                     </LabelBigger>
@@ -123,6 +150,7 @@ const PaymentPage = props => {
                             placeholder="Como no cartão" 
                             onChange={handleFieldChange}
                             required={true}
+                            pattern={patternNameCard}
                         />
                     </LabelBigger>
                 </BoxBigger>
@@ -132,7 +160,8 @@ const PaymentPage = props => {
                         <InputSmaller 
                             type="text"
                             name="validity" 
-                            value={state.validity} 
+                            value={state.validity.replace(/^([0-9]{2})([0-9]{1,4})$/g, "$1.$2")}
+                            maxLength="7" 
                             placeholder="__.____" 
                             onChange={handleFieldChange}
                             pattern="^[0-9]{2}\.[0-9]{4}$"
@@ -149,6 +178,7 @@ const PaymentPage = props => {
                             onChange={handleFieldChange}
                             pattern="^[0-9]{3}$"
                             required={true}
+                            maxLength="3"
                         />
                     </LabelSmaller>
                 </BoxSmaller>
@@ -160,9 +190,17 @@ const PaymentPage = props => {
   )
 }
 
+const mapStateToProps = state => {
+    return {
+      currentPage: state.menu
+    }
+  }
+
 const mapDispatchToProps = dispatch => ({
     setPayment: (payment) => dispatch(setPayment(payment)),
-    goToConfirmation: () => dispatch(push(routes.confirmation))
+    goToConfirmation: () => dispatch(push(routes.confirmation)),
+    setCurrentPage: () => dispatch(setCurrentPage(routes.confirmation)),
+    goToCart: () => dispatch(push(routes.root))
 })
 
-export default connect(null, mapDispatchToProps)(PaymentPage)
+export default connect(mapStateToProps, mapDispatchToProps)(PaymentPage)
