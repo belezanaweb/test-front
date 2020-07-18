@@ -39,3 +39,23 @@ O teste consiste em um checkout simples contendo 3 passos (carrinho, pagamento e
 
 ### Fim:
 Ao finalizar o teste, submeta um pull request para o repositório que nosso time será notificado. Se tiver alguma observação, escreva no pull request.
+
+
+### Deploy: 
+http://test-front-nauara-melo.surge.sh/
+
+### Como rodar a aplicação: 
+Entre no projeto e instale as dependências através do comando:
+```
+npm install
+```
+Por último, suba a aplicação: 
+```
+npm start
+```
+
+### Linguagens e dependencias utilizadas: 
+- React
+- Redux 
+- Axios
+- Styled Components
