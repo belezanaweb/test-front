@@ -3,11 +3,12 @@ import { ConnectedRouter } from "connected-react-router";
 import { Switch, Route } from "react-router-dom";
 import CartPage from "../Cart";
 import PaymentPage from "../Payment";
-import ConfirmationPage from "../Confirmation";
+import ConfirmationShippingPage from "../Confirmation";
 
 export const routes = {
   root: "/",
   payment: "/payment",
+  confirmation: "/confirmation"
 };
 
 function Router(props) {
@@ -16,6 +17,7 @@ function Router(props) {
       <Switch>
         <Route exact path={routes.root} component={CartPage} />
         <Route exact path={routes.payment} component={PaymentPage} />
+        <Route exact path={routes.confirmation} component={ConfirmationShippingPage} />
       </Switch>
     </ConnectedRouter>
   );
