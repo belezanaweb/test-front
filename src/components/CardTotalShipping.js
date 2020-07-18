@@ -1,5 +1,6 @@
 import React from 'react'; 
 import styled from 'styled-components'; 
+import { connect } from "react-redux";
 
 const Card = styled.div`
     height: 129px;
@@ -34,9 +35,31 @@ const Line = styled.div`
 `
 
 const CardTotalShipping = (props) => {
+
+    const fields = [
+        {
+          name: "PRODUTOS",
+          value: props.cart.subTotal
+        },
+        {
+          name: "FRETE",
+          value: props.cart.shippingTotal
+        },
+        {
+          name: "DESCONTO",
+          value: props.cart.discount,
+          isDiscount: true,
+        },
+        {
+          name: "TOTAL",
+          value: props.cart.total,
+          isTotal: true
+        },
+        ]
+
     return (
         <Card>
-            {props.fields && props.fields.map(field => (
+            {fields && fields.map(field => (
                 <Line isDiscount={field.isDiscount} isTotal={field.isTotal}>
                     <Type>
                         {field.name}
@@ -51,4 +74,10 @@ const CardTotalShipping = (props) => {
     )
 }
 
-export default CardTotalShipping;
+const mapStateToProps = state => {
+    return {
+      cart: state.cart.cart
+    }
+}
+  
+export default connect(mapStateToProps, null)(CardTotalShipping);
