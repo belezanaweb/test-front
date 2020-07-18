@@ -121,7 +121,6 @@ const PaymentPage = props => {
                             name="nameCardholder" 
                             value={state.nameCardholder} 
                             placeholder="Como no cartão" 
-                            /* pattern="^[a-z-A-Z\\s]{3,}$" */
                             onChange={handleFieldChange}
                             required={true}
                         />
