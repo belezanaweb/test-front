@@ -55,7 +55,7 @@ npm start
 ```
 
 ### Linguagens e dependencias utilizadas: 
-- React
-- Redux 
-- Axios
-- Styled Components
+- **React**: Escolhi essa biblioteca por ter mais afinidade, conhecimento e vontade de aprender mais, além do mais, ela facilita na reutilização de componentes, diminuindo o nivel de duplicidade de código.  
+- **Redux**: Usei porque ja fiz alguns projetos e tem como vantagem a utilização de um ponto único de armazenamento de informações no front, facilitando a troca delas entre componentes irmãos e etc.  
+- **Axios**: Utilizei o axios para chamada da funçao assincrona na requisição http, consumindo o endpoint.
+- **Styled Components**: Estilização dos componentes com maior facilidade do uso de propriedades.
