@@ -23,7 +23,7 @@ class Payment extends Component {
   }
 
   componentDidMount() {
-    if(!this.props.cart) {
+    if (!this.props.cart) {
       this.props.getCart()
     }
   }
@@ -118,6 +118,7 @@ class Payment extends Component {
           <h2>Cartão de crédito</h2>
 
           <form onSubmit={this.handleFormSubmit}>
+
             <InputWrapper>
               <label htmlFor={"cardNumber"}>Número do cartão: </label>
               <input
@@ -157,11 +158,9 @@ class Payment extends Component {
                 onChange={this.handleCVVChange}
               />
             </InputGridWrapper>
-
             {this.props.cart && <CardPrices cart={this.props.cart} />}
             <MainButton text={"Finalizar o pedido"} type={"submit"} />
           </form>
-
         </PaymentWrapper>
       </div>
     );

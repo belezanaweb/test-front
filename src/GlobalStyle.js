@@ -9,6 +9,9 @@ export const GlobalStyle = createGlobalStyle`
     }
     :root {
         font-family: 'Helvetica Neue',Helvetica,Arial,sans-serif;
+        background-color: #EEE;
     }
+
+
 
 `

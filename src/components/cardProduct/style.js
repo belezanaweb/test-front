@@ -26,3 +26,17 @@ export const InfoWrapper = styled.div`
         font-weight: bold;
     }
 ` 
+
+export const SmallImage = styled.img ` 
+    @media (min-width: 800px) {
+        display: none;
+    }
+`
+
+export const MediumImage = styled.img`
+    display: none;
+    
+    @media (min-width: 800px) {
+        display: block;
+    }
+`

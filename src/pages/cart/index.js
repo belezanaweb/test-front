@@ -7,7 +7,7 @@ import { push } from "connected-react-router";
 import CardProduct from "../../components/cardProduct"
 import CardPrices from "../../components/cardPrices";
 import MainButton from "../../components/mainButton"
-import { MainWrapper, CartWrapper, ProductsWrapper } from "./style"
+import { CartWrapper, ProductsWrapper } from "./style"
 
 class Cart extends Component {
 
@@ -17,7 +17,7 @@ class Cart extends Component {
 
   render() {
     return (
-      <MainWrapper>
+      <section>
         <Header page={"cart"} />
         <CartWrapper>
           <h2>Produtos</h2>
@@ -27,12 +27,15 @@ class Cart extends Component {
                 return <CardProduct key={item.product.sku} cart={item} />
               })}
           </ProductsWrapper>
-          {this.props.cart && <CardPrices cart={this.props.cart} />}
-          <div onClick={this.props.gotoPayment}>
-            <MainButton text={"seguir para pagamento"} />
+          <div>
+            {this.props.cart && <CardPrices cart={this.props.cart} />}
+            <div onClick={this.props.gotoPayment}>
+              <MainButton text={"seguir para pagamento"} />
+            </div>
           </div>
+
         </CartWrapper>
-      </MainWrapper>
+      </section>
     );
   }
 }

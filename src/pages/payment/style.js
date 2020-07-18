@@ -2,8 +2,11 @@ import styled from "styled-components";
 
 
 export const PaymentWrapper = styled.div`
-    background-color: #EEE;
     padding: 10px;
+
+    @media (min-width: 800px) {
+        padding: 5px 450px;
+    }
 
     h2 {
         color: #999;
@@ -12,8 +15,10 @@ export const PaymentWrapper = styled.div`
         text-transform: uppercase;
         margin-top: 0;
         margin-bottom: 5px;
+        margin-left: 12px;        
     }
 `
+
 
 export const InputWrapper = styled.div` 
     display: flex;
@@ -89,4 +94,4 @@ export const InputGridWrapper = styled.div`
             border-color: #A43287;
         }
     }
-`
+` 
