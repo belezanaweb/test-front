@@ -5,6 +5,7 @@ import styled from 'styled-components';
 import Button from '../../components/Button';
 import CardTotalShipping from '../../components/CardTotalShipping';
 import { listCart } from '../../actions/cart';
+import { setCurrentPage } from '../../actions/menu';
 import { routes } from "../Router";
 import { push } from "connected-react-router";
 
@@ -22,11 +23,16 @@ const CartPage = props => {
     props.listCart()
   })
 
+  const goToPaymentPage = () => {
+    props.goToPayment()
+    props.setCurrentPage()
+  }
+
   return (
     <Container>
-      <CardProduct products={props.cart.items}/>
+      <CardProduct products={props.cart.items} isRenderPrice={true} height="50%"/>
       <CardTotalShipping />
-      <Button name="SEGUIR PARA O PAGAMENTO" onClick={props.goToPayment}/>
+      <Button name="SEGUIR PARA O PAGAMENTO" onClick={goToPaymentPage}/>
     </Container> 
   )
 }
@@ -39,7 +45,8 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => ({
   listCart: () => dispatch(listCart()),
-  goToPayment: () => dispatch(push(routes.payment))
+  goToPayment: () => dispatch(push(routes.payment)),
+  setCurrentPage: () => dispatch(setCurrentPage(routes.payment))
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(CartPage)
