@@ -8,7 +8,7 @@ import CardProduct from "../../components/cardProduct";
 import CardPrices from "../../components/cardPrices";
 import { MainWrapper, ImageWrapper, PaymentWrapper, ProductsWrapper } from "./style"
 
-class Success extends Component {
+export class Success extends Component {
 
   componentDidMount() {
     if (!this.props.cardInfo) {
