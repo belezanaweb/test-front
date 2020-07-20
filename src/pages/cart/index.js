@@ -9,7 +9,7 @@ import CardPrices from "../../components/cardPrices";
 import MainButton from "../../components/mainButton"
 import { CartWrapper, ProductsWrapper } from "./style"
 
-class Cart extends Component {
+export class Cart extends Component {
 
   componentDidMount() {
     this.props.getCart();
@@ -29,7 +29,7 @@ class Cart extends Component {
           </ProductsWrapper>
           <div>
             {this.props.cart && <CardPrices cart={this.props.cart} />}
-            <div onClick={this.props.gotoPayment}>
+            <div id="go-to-payment" onClick={this.props.gotoPayment}>
               <MainButton text={"seguir para pagamento"} />
             </div>
           </div>
