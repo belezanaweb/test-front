@@ -8,7 +8,7 @@ import CardPrices from "../../components/cardPrices";
 import MainButton from "../../components/mainButton"
 import { PaymentWrapper, InputWrapper, InputGridWrapper } from "./style"
 
-class Payment extends Component {
+export class Payment extends Component {
   constructor(props) {
     super(props)
     this.state = {
