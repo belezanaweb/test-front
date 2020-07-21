@@ -111,7 +111,6 @@ export class Payment extends Component {
   }
 
   render() {
-    console.log(this.state.errors)
     return (
       <div>
         <Header page={"payment"} />
