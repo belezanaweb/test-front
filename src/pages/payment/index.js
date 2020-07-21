@@ -6,7 +6,7 @@ import { push } from "connected-react-router";
 import Header from "../../components/header"
 import CardPrices from "../../components/cardPrices";
 import MainButton from "../../components/mainButton"
-import { PaymentWrapper, InputWrapper, InputGridWrapper } from "./style"
+import { PaymentWrapper, InputWrapper, Input, InputGridWrapper } from "./style"
 
 export class Payment extends Component {
   constructor(props) {
@@ -41,7 +41,7 @@ export class Payment extends Component {
       this.setState({ form: { ...this.state.form, card: newCardNumber } })
     }
 
-    if (this.state.form.card.length === 18 || this.state.form.card.length === 19) {
+    if (newCardNumber.length >= 19) {
       this.setState({ errors: { ...this.state.errors, card: true } })
     } else {
       this.setState({ errors: { ...this.state.errors, card: false } })
@@ -55,7 +55,7 @@ export class Payment extends Component {
 
     this.setState({ form: { ...this.state.form, name: newName } })
 
-    if (this.state.form.name) {
+    if (newName) {
       this.setState({ errors: { ...this.state.errors, name: true } })
     } else {
       this.setState({ errors: { ...this.state.errors, name: false } })
@@ -92,7 +92,7 @@ export class Payment extends Component {
       this.setState({ form: { ...this.state.form, cvv: newCVV } })
     }
 
-    if (this.state.form.cvv.length === 2 || this.state.form.cvv.length === 3) {
+    if (newCVV.length >= 3) {
       this.setState({ errors: { ...this.state.errors, cvv: true } })
     } else {
       this.setState({ errors: { ...this.state.errors, cvv: false } })
@@ -111,25 +111,26 @@ export class Payment extends Component {
   }
 
   render() {
+    console.log(this.state.errors)
     return (
       <div>
         <Header page={"payment"} />
         <PaymentWrapper>
           <h2>Cartão de crédito</h2>
-
           <form onSubmit={this.handleFormSubmit}>
-
             <InputWrapper>
-              <label htmlFor={"cardNumber"}>Número do cartão: </label>
-              <input
-                name="cardNumber"
+              <label htmlFor={"card"}>Número do cartão: </label>
+              <Input
+                isError={this.state.form.card && !this.state.errors.card}
+                name="card"
                 type="text"
                 placeholder="____.____.____.____"
                 value={this.state.form.card || ""}
                 onChange={this.handleCardNumberChange}
               />
               <label htmlFor={"nameOnCard"}>Nome do Titular: </label>
-              <input
+              <Input
+                isError={this.state.form.name && !this.state.errors.name}
                 name="nameOnCard"
                 type="text"
                 pattern="[A-Za-z ']{3,}"
@@ -141,7 +142,8 @@ export class Payment extends Component {
 
             <InputGridWrapper>
               <label htmlFor={"expiration"}>Validade (mês/ano):</label>
-              <input
+              <Input
+                isError={this.state.form.expiration && !this.state.errors.expiration}
                 name="expiration"
                 type="text"
                 placeholder="__/____"
@@ -150,7 +152,8 @@ export class Payment extends Component {
               />
 
               <label htmlFor={"CVV"}> CVV: </label>
-              <input
+              <Input
+                isError={this.state.form.cvv && !this.state.errors.cvv}
                 name="CVV"
                 type="text"
                 placeholder="___"

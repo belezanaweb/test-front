@@ -31,31 +31,6 @@ export const InputWrapper = styled.div`
         font-size: 12px;
         font-weight: 700;
     }
-
-
-    input {
-        width: 100%;
-        height: 45px;
-        border-radius: 3px;
-        border: 1px solid #E7E7E7;
-        box-shadow: inset 0 1px 2px 0 rgba(0,0,0,0.2);
-        background-color: #FFF;
-        padding: 12px;
-        font-size: 16px;
-        color: #212121;
-
-        ::placeholder {
-            color: #E0E7EE;
-        }
-
-        :focus {
-            border-color: #A43287;
-        }       
-    }
-
-    input:first-of-type{
-        margin-bottom: 25px;
-    }
 `
 
 export const InputGridWrapper = styled.div` 
@@ -73,25 +48,29 @@ export const InputGridWrapper = styled.div`
         grid-row-start: 1;
     }
 
-
-    input {
-        width: 95%;
-        height: 45px;
-        border-radius: 3px;
-        border: 1px solid #E7E7E7;
-        box-shadow: inset 0 1px 2px 0 rgba(0,0,0,0.2);
-        background-color: #FFF;
-        padding: 12px;
-        font-size: 16px;
-        color: #212121;
-        margin-bottom: 25px;
-
-        ::placeholder {
-            color: #E0E7EE;
-        }
-
-        :focus {
-            border-color: #A43287;
-        }
-    }
 ` 
+
+
+export const Input = styled.input`
+    width: 100%;
+    height: 45px;
+    border-radius: 3px;
+    border: 1px solid ${(props) => props.isError ? "red" : "#E7E7E7"};
+    box-shadow: inset 0 1px 2px 0 rgba(0,0,0,0.2);
+    background-color: #FFF;
+    padding: 12px;
+    font-size: 16px;
+    color: #212121;
+
+    ::placeholder {
+        color: #E0E7EE;
+    }
+
+    :focus {
+        border-color: #A43287;
+    }  
+
+    :first-of-type{
+        margin-bottom: 25px;
+    }     
+`
