@@ -10,7 +10,7 @@ import Button from '../../components/Button';
 import { Title } from '../../components/Title';
 import { Section } from '../../components/Container/Section';
 
-import { ProductListWrapper } from './style';
+import { MainContent } from '../../components/Container/MainContent';
 
 
 function Cart() {
@@ -22,10 +22,10 @@ function Cart() {
           ? <span> carregando... </span>
           : (
             <>
-              <ProductListWrapper>
+              <MainContent>
                 <Title> Produtos </Title>
                 <ProductList items={order?.items || []}/>   
-              </ ProductListWrapper> 
+              </ MainContent> 
               <Resume data={order} >
                 <Button onClick={() => history.push('/payment')}> SEGUIR PARA O PAGAMENTO </Button>
               </Resume>
