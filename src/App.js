@@ -1,20 +1,32 @@
 import React from 'react'
-import logo from './logo.svg'
-import './App.css'
+import { Global } from '@emotion/core'
+import {  withTheme, ThemeProvider } from 'emotion-theming'
 
 import siteTheme from './theme/theme'
 import cssGlobal from './theme/global'
+
+
+// Component
+import Router from "./routes";
+import OrderProvider from './context/OrderContext';
+import PaymentProvider from './context/PaymentProvider';
 
 const GlobalStyle = withTheme(({ theme }) => (
   <Global styles={ cssGlobal(theme) } />
 ))
 
 const App = () => (
-  <div className="App">
+  <>
     <ThemeProvider theme={siteTheme}>
-      <GlobalStyle />
+      <OrderProvider >
+        <PaymentProvider>
+        <GlobalStyle />
+
+        <Router/> 
+        </PaymentProvider>
+      </OrderProvider>
     </ThemeProvider>
-  </div>
+  </>
 )
 
 export default App
