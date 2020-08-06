@@ -16,15 +16,13 @@ const Payment = React.lazy(() => import('./Payment'))
 const OrderPlaced = React.lazy(() => import('./OrderPlaced')) 
 
 export default function Routes() {
-  const { loading } = useOrder();
+  
   const { paymentData } = usePayment();
   
   return (
     <Router basename="/checkout">
       <Layout>
-        <Suspense fallback={
-          loading && <Skeleton />
-        }>
+        <Suspense fallback={ <div> Carregando </div>}>
           <Switch>
             <Route exact path="/" component={() => <Redirect to="/cart" />} />
             <Route path="/cart" component={Cart} />
