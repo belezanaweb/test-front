@@ -14,7 +14,7 @@ const Payment = React.lazy(() => import('./Payment'))
 const OrderPlaced = React.lazy(() => import('./OrderPlaced'))
 
 const LocationDisplay = withRouter(({ location }) => (
-  <div data-testid="location-display">{location.pathname}</div>
+  <div style={{display: 'none'}} data-testid="location-display">{location.pathname}</div>
 ))
 
 export default function Routes() {
