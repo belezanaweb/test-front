@@ -1,4 +1,5 @@
 import styled from '@emotion/styled'
+import { css } from '@emotion/core'
 
 export const Input = styled.input`
   display: block;
@@ -23,7 +24,7 @@ export const Input = styled.input`
 
 
   ${({ theme, error }) => 
-    error && `
+    error && css`
       border: 1px solid ${ theme.colors.warning };
     `
   }

@@ -16,6 +16,5 @@ export default function ProductList({ items }) {
       } 
     </Card>
     
-
   )
 }

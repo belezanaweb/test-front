@@ -65,7 +65,7 @@ function Payment() {
   }
   
   return (
-<Section>
+<Section data-testid="payment">
   {loading 
     ? <span> carregando... </span>
     : (
@@ -81,7 +81,7 @@ function Payment() {
           onSubmit={onSubmit}
           >
             {({ status, isSubmitting, submitForm }) => (
-            <Form>
+            <Form data-testid="form">
               <InputField
                 as={MaskedInput}
                 name="cardNumber"
@@ -90,13 +90,16 @@ function Payment() {
                 placeholder="____.____.____.____"
                 mask={masks.creditCard}
                 guide={false}
+                data-testid="input-cardNumber"
                 
-              />
+                />
               <InputField
                 name="cardName"
                 type="text"
                 label="Nome do titular:"
                 placeholder="Como no cartão"
+                data-testid="input-cardName"
+                
               />
               <SplitContainer >
                 <InputField
@@ -108,6 +111,7 @@ function Payment() {
                   placeholder="__/____"
                   mask={masks.cardExpiress}
                   guide={false}
+                  data-testid="input-cardExpiress"
                 />
                 <InputField
                   as={MaskedInput}
@@ -118,6 +122,7 @@ function Payment() {
                   placeholder="___"
                   guide={false}
                   mask={masks.cvv}
+                  data-testid="input-cvv"
                 />
               </SplitContainer>
             </Form>

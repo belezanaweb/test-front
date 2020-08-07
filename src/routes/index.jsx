@@ -1,6 +1,6 @@
 
 import React, { Suspense }  from "react";
-import { BrowserRouter as Router, Switch, Route, Redirect } from "react-router-dom";
+import { BrowserRouter as Router, Switch, Route, Redirect, withRouter } from "react-router-dom";
 
 // Components
 import Layout from "../components/Layout";
@@ -11,11 +11,15 @@ import { usePayment } from "../context/PaymentProvider";
 // Lazy Component
 const Cart = React.lazy(() => import('./Cart')) 
 const Payment = React.lazy(() => import('./Payment')) 
-const OrderPlaced = React.lazy(() => import('./OrderPlaced')) 
+const OrderPlaced = React.lazy(() => import('./OrderPlaced'))
+
+const LocationDisplay = withRouter(({ location }) => (
+  <div data-testid="location-display">{location.pathname}</div>
+))
 
 export default function Routes() {
   
-  const { paymentData } = usePayment();
+  const { paymentData } = usePayment(); 
   
   return (
     <Router basename="/checkout">
@@ -28,6 +32,7 @@ export default function Routes() {
             <Route path="/order-placed" component={ () => !paymentData.empty ? <OrderPlaced /> : <Redirect to="/payment" /> } />
           </Switch>
         </Suspense>
+        <LocationDisplay />
       </Layout>
     </Router>
   )

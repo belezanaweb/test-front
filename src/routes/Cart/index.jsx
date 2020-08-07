@@ -17,7 +17,7 @@ function Cart() {
   const { order, loading } = useOrder();
   const history = useHistory();
   return (
-    <Section>
+    <Section data-testid="products" id="products">
         {loading 
           ? <span> carregando... </span>
           : (
