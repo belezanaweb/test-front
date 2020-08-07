@@ -10,6 +10,7 @@ export const Input = styled.input`
   box-shadow: inset 0 1px 2px 0 rgba(0,0,0,0.2);
   
   color: ${ ({ theme }) =>  theme.colors.dark };
+  
   padding: 0.75rem 0.875rem;
 
   &::placeholder {
@@ -19,12 +20,20 @@ export const Input = styled.input`
   &:focus {
     border: 1px solid ${ ({ theme }) =>  theme.colors.alert };
   }
+
+
+  ${({ theme, error }) => 
+    error && `
+      border: 1px solid ${ theme.colors.warning };
+    `
+  }
 `
 
 export const Wrapper = styled.div`
   display: flex;
+  flex-direction: column;
   padding-top: 0.5rem;
-
+  width: calc( 100% / ${({ column }) => column });
   &:first-of-type {
     padding-top: 1rem;
   }
