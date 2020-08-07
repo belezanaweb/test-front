@@ -5,6 +5,7 @@ import * as Yup from 'yup';
 import MaskedInput from 'react-text-mask'
 import { useHistory } from 'react-router-dom';
 
+
 import Resume from '../../components/Resume';
 import { Title } from '../../components/Title';
 import { Section } from '../../components/Section';
@@ -13,6 +14,9 @@ import { MainContent } from '../../components/MainContent';
 import Button from '../../components/Button';
 import InputField from '../../components/InputField';
 import { Card } from '../../components/Card';
+
+import { SplitContainer } from './style'
+
 
 function Payment() {
   const { setPaymentData } = usePayment();
@@ -94,26 +98,28 @@ function Payment() {
                 label="Nome do titular:"
                 placeholder="Como no cartão"
               />
-              <InputField
-                as={MaskedInput} 
-                size={8}
-                name="cardExpiress"
-                type="text"
-                label="Validade mês/ano:"
-                placeholder="__/____"
-                mask={masks.cardExpiress}
-                guide={false}
-              />
-              <InputField
-                as={MaskedInput}
-                size={4}
-                name="cvv"
-                type="text"
-                label="CVV:"
-                placeholder="___"
-                guide={false}
-                mask={masks.cvv}
-              />
+              <SplitContainer >
+                <InputField
+                  as={MaskedInput} 
+                  column={1.6}
+                  name="cardExpiress"
+                  type="text"
+                  label="Validade mês/ano:"
+                  placeholder="__/____"
+                  mask={masks.cardExpiress}
+                  guide={false}
+                />
+                <InputField
+                  as={MaskedInput}
+                  column={3}
+                  name="cvv"
+                  type="text"
+                  label="CVV:" 
+                  placeholder="___"
+                  guide={false}
+                  mask={masks.cvv}
+                />
+              </SplitContainer>
             </Form>
             )}
           </Formik> 
