@@ -1,6 +1,6 @@
 import React, { useRef, useState } from 'react'
 import { usePayment } from '../../context/PaymentProvider';
-import { Formik, Form, useFormikContext } from "formik";
+import { Formik, Form } from "formik";
 import * as Yup from 'yup';
 import MaskedInput from 'react-text-mask'
 import { useHistory } from 'react-router-dom';
@@ -14,9 +14,10 @@ import Button from '../../components/Button';
 import InputField from '../../components/InputField';
 import { Card } from '../../components/Card';
 
-function Payment(props) {
+function Payment() {
   const { setPaymentData } = usePayment();
   const { loading, order } = useOrder();
+
   const [ disableBtn, setDisableBtn ] = useState(false);
   const history = useHistory();
   const formRef = useRef()
@@ -54,11 +55,9 @@ function Payment(props) {
   }
 
   const onSubmit = ( values, { setSubmitting, resetForm  }) => {
-
     setDisableBtn(true)
     setPaymentData({ ...values, empty: false })
     history.push('/order-placed')
-
   }
   
   return (
