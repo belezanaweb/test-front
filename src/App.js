@@ -18,11 +18,10 @@ const GlobalStyle = withTheme(({ theme }) => (
 const App = () => (
   <>
     <ThemeProvider theme={siteTheme}>
-      <OrderProvider >
+      <OrderProvider>
         <PaymentProvider>
-        <GlobalStyle />
-
-        <Router/> 
+          <GlobalStyle />
+          <Router /> 
         </PaymentProvider>
       </OrderProvider>
     </ThemeProvider>

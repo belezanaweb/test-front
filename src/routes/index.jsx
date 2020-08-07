@@ -4,10 +4,8 @@ import { BrowserRouter as Router, Switch, Route, Redirect } from "react-router-d
 
 // Components
 import Layout from "../components/Layout";
-import Skeleton from "../components/Skeleton";
 
 // Context Api
-import { useOrder } from "../context/OrderContext";
 import { usePayment } from "../context/PaymentProvider";
 
 // Lazy Component

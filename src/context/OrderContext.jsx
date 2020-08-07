@@ -28,7 +28,7 @@ export default  function OrderProvider ({ children }) {
 
 export const useOrder = function() {
    const orderContext = useContext(OrderContext);
-   const { order,  loading } = orderContext;
+   const { order, loading } = orderContext;
 
    return { order, loading }
 }

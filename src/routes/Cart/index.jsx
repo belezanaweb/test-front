@@ -8,9 +8,9 @@ import ProductList from '../../components/ProductList';
 import Resume from '../../components/Resume';
 import Button from '../../components/Button';
 import { Title } from '../../components/Title';
-import { Section } from '../../components/Container/Section';
+import { Section } from '../../components/Section';
 
-import { MainContent } from '../../components/Container/MainContent';
+import { MainContent } from '../../components/MainContent';
 
 
 function Cart() {

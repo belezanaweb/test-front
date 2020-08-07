@@ -18,6 +18,11 @@ const Button = styled.a`
   &:hover {
     background-color: ${({ theme }) => theme.colors.secondary};
   }
+
+  &[disabled] {
+   pointer-events: none;
+   cursor: default;
+  }
 `
 
 export default Button
