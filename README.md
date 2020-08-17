@@ -1,3 +1,13 @@
+## Para rodar o projeto
+
+Baixe este repositório.
+Acesse a raiz do projeto (ex: c:\teste-front) por um console e execute:
+
+- yarn ou npm i para que possa ser instaladas as dependências do projeto.
+
+- yarn ou npm start para iniciar o projeto
+
+
 ## Frontend Test
 
 Faça um fork deste repositório e finalizar o teste, submeta um pull request para o repositório que nosso time será notificado.

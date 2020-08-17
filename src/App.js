@@ -1,11 +1,13 @@
 import React from 'react'
-import logo from './logo.svg'
-import './App.css'
-
-const App = () => (
-  <div className="App">
-      <img src={logo} className="App-logo" alt="logo" />
-  </div>
-)
+import GlobalStyles from './styles';
+import Routes from './routes'
+import Header from './components/Header'
+const App = () => (  
+  
+  <div>    
+    <GlobalStyles />  
+    <Header />
+    <Routes />     
+  </div>)
 
 export default App
