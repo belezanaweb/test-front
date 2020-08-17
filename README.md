@@ -1,4 +1,4 @@
-## Para rodar o projeto
+# Para rodar o projeto
 
 Baixe este repositório.
 Acesse a raiz do projeto (ex: c:\teste-front) por um console e execute:
@@ -7,6 +7,7 @@ Acesse a raiz do projeto (ex: c:\teste-front) por um console e execute:
 
 - yarn ou npm start para iniciar o projeto
 
+# Sobre o projeto proposto
 
 ## Frontend Test
 
