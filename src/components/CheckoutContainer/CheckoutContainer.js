@@ -1,14 +1,22 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Switch, Route, Redirect, withRouter, NavLink } from 'react-router-dom';
-import { useSelector } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
 
 import Menu from '../Menu';
 import Skeleton from '~/components/Skeleton';
+
+import { getCart } from '~/store/ducks/cart/actions';
 
 import { Container } from './styles';
 
 const CheckoutContainer = function ({ pages, location: { pathname } }) {
   const showLoader = useSelector((state) => state.loader.show);
+
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(getCart());
+  }, [dispatch]);
 
   return (
     <>

@@ -26,6 +26,7 @@
     }
   },
   "dependencies": {
+    "axios": "^0.19.2",
     "babel-plugin-root-import": "^6.5.0",
     "customize-cra": "^1.0.0",
     "react": "^16.12.0",
