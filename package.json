@@ -7,20 +7,44 @@
     "build": "react-scripts build",
     "test": "react-scripts test"
   },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged",
+      "prepare-commit-msg": "exec < /dev/tty && git cz --hook || true",
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
+    }
+  },
+  "lint-staged": {
+    "*.{js,jsx}": [
+      "eslint --fix",
+      "cross-env CI=true yarn test --bail --findRelatedTests"
+    ]
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
+  },
   "dependencies": {
     "react": "^16.12.0",
     "react-dom": "^16.12.0"
   },
   "devDependencies": {
+    "@commitlint/cli": "^8.3.5",
+    "@commitlint/config-conventional": "^8.3.4",
+    "commitizen": "^4.0.3",
+    "cross-env": "^7.0.2",
+    "cz-conventional-changelog": "3.3.0",
     "eslint": "^6.8.0",
     "eslint-config-prettier": "^6.10.0",
     "eslint-plugin-prettier": "^3.1.2",
     "eslint-plugin-react": "^7.18.3",
     "eslint-plugin-react-hooks": "^2.5.0",
+    "husky": "^4.3.0",
+    "lint-staged": "^10.3.0",
     "prettier": "^2.0.5",
     "react-scripts": "3.3.0"
   },
-
   "eslintConfig": {
     "extends": "react-app"
   },
