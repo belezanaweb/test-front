@@ -1,11 +1,25 @@
+@font-face {
+  font-family: 'Helvetica Neue';
+  font-weight: 400;
+  src: url('./assets/fonts/helvetica-neue-regular.woff2');
+}
+
+@font-face {
+  font-family: 'Helvetica Neue';
+  font-weight: 700;
+  src: url('./assets/fonts/helvetica-neue-bold.woff2');
+}
+
 body {
-  margin: 0;
-  padding: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
-    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
-    sans-serif;
+  font-family: "Helvetica Neue";
+  font-size: 16px;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: #eee;
+}
+
+* {
+  box-sizing: border-box;
 }
 
 code {
