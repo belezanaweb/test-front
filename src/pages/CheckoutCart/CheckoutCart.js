@@ -2,15 +2,14 @@ import React from 'react';
 
 import ButtonLink from '~/components/ButtonLink';
 import CartProductsContainer from '~/components/CartProductsContainer';
-import Title from '~/components/Title';
+import CartResumeContainer from '~/components/CartResumeContainer';
 
 const CheckoutCart = () => {
   return (
     <>
-      <Title>Produtos</Title>
       <CartProductsContainer />
 
-      <br />
+      <CartResumeContainer />
 
       <ButtonLink route="/checkout/cart/payment">Seguir para pagamento</ButtonLink>
     </>

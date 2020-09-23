@@ -1,9 +1,9 @@
 import React from 'react';
 
-import { Container } from './styles';
+import { TitleContainer } from './styles';
 
-const Title = () => {
-  return <Container />;
+const Title = ({ children }) => {
+  return <TitleContainer>{children}</TitleContainer>;
 };
 
 export default Title;

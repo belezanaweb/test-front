@@ -9,7 +9,7 @@ import { getCart } from '~/store/ducks/cart/actions';
 
 import { Container } from './styles';
 
-const CheckoutContainer = function ({ pages, location: { pathname } }) {
+const CheckoutContainer = ({ pages, location: { pathname } }) => {
   const showLoader = useSelector((state) => state.loader.show);
 
   const dispatch = useDispatch();

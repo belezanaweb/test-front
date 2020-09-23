@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-export const Container = styled.div`
+export const SkeletonContainer = styled.div`
   max-width: ${(props) => props.theme.widths.container};
   margin: 0 auto;
   padding: 0 0.7rem 0.7rem;
@@ -10,7 +10,7 @@ export const Container = styled.div`
   }
 `;
 
-export const Content = styled.div`
+export const SkeletonContent = styled.div`
   padding: 1rem 0;
   position: fixed;
   top: 0;

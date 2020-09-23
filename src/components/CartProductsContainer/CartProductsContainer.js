@@ -7,7 +7,7 @@ import Title from '~/components/Title';
 
 import { ProductsGroup } from './styles';
 
-const CartProductsContainer = function ({ showPrices = true }) {
+const CartProductsContainer = ({ showPrices = true }) => {
   const cartItems = useSelector((state) => state.cart.items);
 
   return (

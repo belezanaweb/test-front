@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-export const Container = styled.h2`
+export const TitleContainer = styled.h2`
   color: #999;
 
   font-size: 0.875rem;

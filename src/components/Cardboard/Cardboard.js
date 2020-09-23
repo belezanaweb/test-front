@@ -1,9 +1,13 @@
 import React from 'react';
 
-import { Container } from './styles';
+import { CardContainer } from './styles';
 
-const Cardboard = () => {
-  return <Container />;
+const Cardboard = ({ children, out, ...rest }) => {
+  return (
+    <CardContainer {...rest} out={out}>
+      {children}
+    </CardContainer>
+  );
 };
 
 export default Cardboard;

@@ -1,9 +1,9 @@
 import React from 'react';
 
-import { Container } from './styles';
+import { ButtonContainer } from './styles';
 
 const ButtonLink = ({ children, route }) => {
-  return <Container to={route}>{children}</Container>;
+  return <ButtonContainer to={route}>{children}</ButtonContainer>;
 };
 
 export default ButtonLink;

@@ -1,18 +1,18 @@
 import React from 'react';
 
-import { Container, Content, SkeletonPulse } from './styles';
+import { SkeletonContainer, SkeletonContent, SkeletonPulse } from './styles';
 
 const Skeleton = () => {
   return (
-    <Container>
-      <Content>
+    <SkeletonContainer>
+      <SkeletonContent>
         <SkeletonPulse />
         <SkeletonPulse />
         <SkeletonPulse />
         <SkeletonPulse />
         <SkeletonPulse />
-      </Content>
-    </Container>
+      </SkeletonContent>
+    </SkeletonContainer>
   );
 };
 
