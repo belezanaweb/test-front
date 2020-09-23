@@ -10,9 +10,10 @@ import * as serviceWorker from './serviceWorker';
 
 const Strict = () => (
   <StrictMode>
-    <App></App>
     <Normalize />
-    <ThemeProvider theme={theme}></ThemeProvider>
+    <ThemeProvider theme={theme}>
+      <App />
+    </ThemeProvider>
   </StrictMode>
 );
 

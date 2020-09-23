@@ -1,11 +1,47 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
 
-const App = () => (
-  <div className="App">
-    <img src={logo} className="App-logo" alt="logo" />
-  </div>
-);
+import CheckoutCart from './pages/CheckoutCart';
+import CheckoutPayment from './pages/CheckoutPayment';
+import CheckoutConfirmation from './pages/CheckoutConfirmation';
+
+const PAGES = [
+  {
+    title: 'Sacola',
+    path: '/',
+    page: CheckoutCart
+  },
+  {
+    title: 'Pagamento',
+    path: '/pagamento',
+    page: CheckoutPayment
+  },
+  {
+    title: 'Confirmação',
+    path: '/confirmacao',
+    page: CheckoutConfirmation
+  }
+];
+
+function App() {
+  return (
+    <Router>
+      <ul>
+        {PAGES.map(({ title, path }) => (
+          <li key={title}>
+            <Link to={path}>{title}</Link>
+          </li>
+        ))}
+      </ul>
+      <Switch>
+        {PAGES.map(({ title, path, page: Page }) => (
+          <Route key={title} path={path} exact={path === '/'}>
+            <Page></Page>
+          </Route>
+        ))}
+      </Switch>
+    </Router>
+  );
+}
 
 export default App;
