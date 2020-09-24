@@ -5,7 +5,8 @@
   "scripts": {
     "start": "react-app-rewired start",
     "build": "react-app-rewired build",
-    "test": "react-app-rewired test"
+    "test": "react-app-rewired test",
+    "test:coverage": "react-app-rewired test --coverage --watchAll false"
   },
   "husky": {
     "hooks": {
@@ -24,6 +25,18 @@
     "commitizen": {
       "path": "./node_modules/cz-conventional-changelog"
     }
+  },
+  "jest": {
+    "collectCoverageFrom": [
+      "!src/index.js"
+    ],
+    "coverageDirectory": "src/__tests__/coverage",
+    "moduleNameMapper": {
+      "~(.*)$": "<rootDir>/src/$1"
+    },
+    "testMatch": [
+      "**/__tests__/**/*.spec.js"
+    ]
   },
   "dependencies": {
     "axios": "^0.19.2",
@@ -48,9 +61,12 @@
   "devDependencies": {
     "@commitlint/cli": "^8.3.5",
     "@commitlint/config-conventional": "^8.3.4",
+    "@testing-library/react": "^9.5.0",
     "commitizen": "^4.0.3",
     "cross-env": "^7.0.2",
     "cz-conventional-changelog": "3.3.0",
+    "enzyme": "^3.11.0",
+    "enzyme-adapter-react-16": "^1.15.2",
     "eslint": "^6.8.0",
     "eslint-config-prettier": "^6.10.0",
     "eslint-import-resolver-babel-plugin-root-import": "^1.1.1",
@@ -58,9 +74,13 @@
     "eslint-plugin-react": "^7.18.3",
     "eslint-plugin-react-hooks": "^2.5.0",
     "husky": "^4.3.0",
+    "jest-fetch-mock": "^3.0.1",
+    "jest-styled-components": "^7.0.0",
     "lint-staged": "^10.3.0",
     "prettier": "^2.0.5",
-    "react-scripts": "^3.4.0"
+    "react-scripts": "^3.4.0",
+    "react-test-renderer": "^16.13.0",
+    "redux-mock-store": "^1.5.4"
   },
   "eslintConfig": {
     "extends": "react-app"

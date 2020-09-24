@@ -12,7 +12,8 @@
   "globals": {
     "getStyledWrapper": "readonly",
     "getStyledWrapperJSON": "readonly",
-    "getAppWrapped": "readonly"
+    "getAppWrapped": "readonly",
+    "__createTestStore__": "readonly"
   },
   "parser": "babel-eslint",
   "parserOptions": {

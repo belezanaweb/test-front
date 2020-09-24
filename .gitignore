@@ -4,5 +4,5 @@ node_modules
 logs
 *.log
 *.log.*
-coverage
+src/__tests__/coverage
 
