@@ -7,7 +7,7 @@ import Title from '~/components/Title';
 
 import { ProductsGroup } from './styles';
 
-const CartProductsContainer = ({ showPrices = true }) => {
+const CartProductsContainer = () => {
   const cartItems = useSelector((state) => state.cart.items);
 
   return (
@@ -16,13 +16,7 @@ const CartProductsContainer = ({ showPrices = true }) => {
       <Cardboard>
         <ProductsGroup>
           {cartItems.map(({ product: { name, priceSpecification: { price }, imageObjects } }) => (
-            <Product
-              title={name}
-              showPrice={showPrices}
-              price={price}
-              key={name}
-              image={imageObjects[0].medium}
-            />
+            <Product title={name} price={price} key={name} image={imageObjects[0].medium} />
           ))}
         </ProductsGroup>
       </Cardboard>

@@ -10,13 +10,13 @@ import {
   ProductPrice
 } from './styles';
 
-const Product = ({ image, title, price, showPrice = true }) => {
+const Product = ({ image, title, price }) => {
   return (
     <ProductContainer>
       <ProductImage src={image} />
       <ProductContent>
         <ProductTitle>{title}</ProductTitle>
-        {showPrice && <ProductPrice>{formatToCurrency(price)}</ProductPrice>}
+        {<ProductPrice>{formatToCurrency(price)}</ProductPrice>}
       </ProductContent>
     </ProductContainer>
   );
