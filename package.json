@@ -27,15 +27,20 @@
     }
   },
   "jest": {
-    "collectCoverageFrom": [
-      "!src/index.js"
-    ],
     "coverageDirectory": "src/__tests__/coverage",
+    "coveragePathIgnorePatterns": [
+      "src/pages",
+      "src/store/index.js",
+      "src/styles",
+      "src/index.js",
+      "src/serviceWorker.js"
+    ],
     "moduleNameMapper": {
       "~(.*)$": "<rootDir>/src/$1"
     },
-    "testMatch": [
-      "**/__tests__/**/*.spec.js"
+    "testPathIgnorePatterns": [
+      "<rootDir>/src/__tests__/coverage",
+      "<rootDir>/src/__tests__/utils"
     ]
   },
   "dependencies": {
