@@ -13,7 +13,7 @@ import { MemoryRouter, Switch, Route, Redirect } from 'react-router-dom';
 import CheckoutContainer from '~/components/CheckoutContainer';
 import { initializeStore } from './store';
 
-import pages from '~/utils/pages-data';
+import pages from './pages-data';
 
 const store = initializeStore();
 
