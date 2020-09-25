@@ -1,0 +1,32 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Cardboard Component should match a snapshot 1`] = `
+.c0 {
+  padding: 0.75rem;
+  border-radius: 3px;
+  box-shadow: 1px 1px 5px 0 rgba(0,0,29,0.22);
+  background-color: #fff;
+}
+
+<div
+  className="c0"
+>
+  test
+</div>
+`;
+
+exports[`Cardboard Component should match a snapshot with out prop 1`] = `
+.c0 {
+  padding: 0.75rem;
+  border-radius: 3px;
+  background-color: transparent;
+  border: 1px solid #ddd;
+  box-shadow: none;
+}
+
+<div
+  className="c0"
+>
+  test
+</div>
+`;

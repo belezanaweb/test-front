@@ -1,0 +1,115 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`CartResumeContainer Component should match a snapshot 1`] = `
+.c0 {
+  padding: 0.75rem;
+  border-radius: 3px;
+  background-color: transparent;
+  border: 1px solid #ddd;
+  box-shadow: none;
+}
+
+.c1 {
+  margin: 1.25rem 0;
+}
+
+.c2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  margin: 0.75rem 0 0 0;
+  font-size: 0.875rem;
+}
+
+.c2:first-child {
+  margin-top: 0;
+}
+
+.c3 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  margin: 0.75rem 0 0 0;
+  font-size: 0.875rem;
+  color: #ff6c00;
+}
+
+.c3:first-child {
+  margin-top: 0;
+}
+
+.c4 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  margin: 0.75rem 0 0 0;
+  font-size: 0.875rem;
+  font-weight: 700;
+  margin-top: 1rem;
+}
+
+.c4:first-child {
+  margin-top: 0;
+}
+
+<div
+  className="c0 c1"
+>
+  <p
+    className="c2"
+  >
+    <span>
+      PRODUTOS
+    </span>
+    <span>
+      R$ 624.8
+    </span>
+  </p>
+  <p
+    className="c2"
+  >
+    <span>
+      FRETE
+    </span>
+    <span>
+      R$ 5.3
+    </span>
+  </p>
+  <p
+    className="c3"
+  >
+    <span>
+      DESCONTO
+    </span>
+    <span>
+      - 
+      R$ 30
+    </span>
+  </p>
+  <p
+    className="c4"
+  >
+    <span>
+      TOTAL
+    </span>
+    <span>
+      R$ 618.9
+    </span>
+  </p>
+</div>
+`;

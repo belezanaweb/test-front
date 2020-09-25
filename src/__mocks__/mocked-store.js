@@ -1,4 +1,5 @@
 import configureStore from 'redux-mock-store';
+
 import { middlewares } from '~/store';
 
 export const initialStore = {
@@ -77,7 +78,7 @@ export const initialStore = {
   },
   checkout: {
     card_number: '****.****.****.2222',
-    card_holder_name: 'LUAN PEREIRA',
+    card_holder_name: 'HUGO MARCELO',
     card_expiration_date: '12/2021',
     card_cvv: '333'
   }

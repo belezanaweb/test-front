@@ -1,0 +1,5 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Button Link Component should match a snapshot 1`] = `"test"`;
+
+exports[`Button Link Component should match a snapshot with route prop 1`] = `"test"`;
