@@ -1,9 +1,9 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
 
-import Cardboard from '~/components/Cardboard';
-import Product from '~/components/Product';
-import Title from '~/components/Title';
+import Cardboard from '../Cardboard';
+import Product from '../Product';
+import Title from '../Title';
 
 import { ProductsGroup } from './styles';
 

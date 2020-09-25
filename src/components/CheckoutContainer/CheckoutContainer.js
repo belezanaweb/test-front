@@ -3,7 +3,7 @@ import { Switch, Route, Redirect, withRouter, NavLink } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
 
 import Menu from '../Menu';
-import Skeleton from '~/components/Skeleton';
+import Skeleton from '../Skeleton';
 
 import { getCart } from '~/store/ducks/cart/actions';
 

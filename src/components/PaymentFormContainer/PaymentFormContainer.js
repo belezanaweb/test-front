@@ -5,10 +5,10 @@ import { useHistory } from 'react-router-dom';
 import { Formik } from 'formik';
 import * as Yup from 'yup';
 
-import Button from '~/components/Button';
-import Cardboard from '~/components/Cardboard';
-import FormInput from '~/components/FormInput';
-import Title from '~/components/Title';
+import Button from '../Button';
+import Cardboard from '../Cardboard';
+import FormInput from '../FormInput';
+import Title from '../Title';
 
 import maskCardNumber from '~/utils/mask-card-number';
 import yupTransformDate from '~/utils/yup-transform-date';
@@ -17,7 +17,7 @@ import { doCheckout } from '~/store/ducks/checkout/actions';
 
 import { CardRow } from './styles';
 
-const PaymentFormContainer = function ({ children }) {
+const PaymentFormContainer = ({ children }) => {
   const cardNumberMask = [
     /\d/,
     /\d/,

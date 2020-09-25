@@ -1,8 +1,8 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
 
-import Cardboard from '~/components/Cardboard';
-import Title from '~/components/Title';
+import Cardboard from '../Cardboard';
+import Title from '../Title';
 
 const PaymentDataContainer = () => {
   const { card_number, card_holder_name, card_expiration_date } = useSelector(
