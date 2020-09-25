@@ -29,6 +29,8 @@
   "jest": {
     "coverageDirectory": "src/__tests__/coverage",
     "coveragePathIgnorePatterns": [
+      "src/__tests__/coverage",
+      "src/__tests__/utils",
       "src/pages",
       "src/store/index.js",
       "src/styles",
