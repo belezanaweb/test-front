@@ -9,7 +9,7 @@ export function getCart() {
     try {
       dispatch(showLoader());
 
-      const response = await axios.get('http://www.mocky.io/v2/5b15c4923100004a006f3c07');
+      const response = await axios.get('https://www.mocky.io/v2/5b15c4923100004a006f3c07');
       const data = response.data;
 
       dispatch({

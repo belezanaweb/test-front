@@ -29,7 +29,7 @@ describe('Cart Actions', () => {
 
   it('should toggle loader and set cart data', async () => {
     apiMock
-      .onGet('http://www.mocky.io/v2/5b15c4923100004a006f3c07')
+      .onGet('https://www.mocky.io/v2/5b15c4923100004a006f3c07')
       .reply(200, JSON.stringify(CART_RESPONSE));
 
     await store.dispatch(getCart());
