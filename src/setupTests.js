@@ -10,8 +10,6 @@ import { middlewares } from './store';
 
 import theme from './styles/theme';
 
-require('jest-fetch-mock').enableMocks();
-
 configure({ adapter: new Adapter() });
 
 const getStyledWrapper = (

@@ -31,7 +31,7 @@
     "coveragePathIgnorePatterns": [
       "src/__tests__/coverage",
       "src/__tests__/utils",
-      "src/pages",
+      "src/store/ducks/rootReducer.js",
       "src/store/index.js",
       "src/styles",
       "src/index.js",
@@ -41,8 +41,7 @@
       "~(.*)$": "<rootDir>/src/$1"
     },
     "testPathIgnorePatterns": [
-      "<rootDir>/src/__tests__/coverage",
-      "<rootDir>/src/__tests__/utils"
+      "<rootDir>/src/__tests__/coverage"
     ]
   },
   "dependencies": {
@@ -69,6 +68,7 @@
     "@commitlint/cli": "^8.3.5",
     "@commitlint/config-conventional": "^8.3.4",
     "@testing-library/react": "^9.5.0",
+    "axios-mock-adapter": "^1.18.1",
     "commitizen": "^4.0.3",
     "cross-env": "^7.0.2",
     "cz-conventional-changelog": "3.3.0",
@@ -81,7 +81,6 @@
     "eslint-plugin-react": "^7.18.3",
     "eslint-plugin-react-hooks": "^2.5.0",
     "husky": "^4.3.0",
-    "jest-fetch-mock": "^3.0.1",
     "jest-styled-components": "^7.0.0",
     "lint-staged": "^10.3.0",
     "prettier": "^2.0.5",
