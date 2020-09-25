@@ -18,7 +18,7 @@
     <img alt="Repository issues" src="https://img.shields.io/github/issues/hugo-marcelo/test-front.svg">
   </a>
 
-  <img alt="GitHub" src="https://img.shields.io/github/license/lukemorales/test-front.svg">
+  <img alt="GitHub" src="https://img.shields.io/github/license/hugo-marcelo/test-front.svg">
 </p>
 
 <h4 align="center">
