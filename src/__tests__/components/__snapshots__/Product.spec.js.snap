@@ -1,0 +1,129 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Product Component should match a snapshot 1`] = `
+.c0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: stretch;
+  -webkit-box-align: stretch;
+  -ms-flex-align: stretch;
+  align-items: stretch;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  border: 1px solid #ddd;
+  border-radius: 3px;
+  padding: 0.625rem;
+  margin-bottom: 1rem;
+}
+
+.c0:last-child {
+  margin-bottom: 0;
+}
+
+.c1 {
+  -webkit-flex: 0 0 65px;
+  -ms-flex: 0 0 65px;
+  flex: 0 0 65px;
+  width: 65px;
+  margin-right: 0.625rem;
+  margin-top: auto;
+}
+
+.c3 {
+  font-weight: 400;
+  font-size: 0.844rem;
+  margin: 0 0 1.375rem;
+}
+
+.c4 {
+  text-align: right;
+  font-size: 0.875rem;
+  font-weight: 700;
+  display: block;
+}
+
+.c2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+}
+
+@media (min-width:768px) {
+  .c0 {
+    width: 33%;
+    margin-right: 0.75rem;
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-align-items: flex-start;
+    -webkit-box-align: flex-start;
+    -ms-flex-align: flex-start;
+    align-items: flex-start;
+    padding: 1rem;
+  }
+
+  .c0,
+  .c0:last-child {
+    margin-bottom: 0;
+  }
+
+  .c0:last-child {
+    margin-right: 0;
+  }
+}
+
+@media (min-width:768px) {
+  .c1 {
+    margin: 0 auto auto;
+    -webkit-flex: 0 0 130px;
+    -ms-flex: 0 0 130px;
+    flex: 0 0 130px;
+    width: 130px;
+  }
+}
+
+@media (min-width:768px) {
+  .c4 {
+    text-align: left;
+  }
+}
+
+@media (min-width:768px) {
+  .c2 {
+    margin-top: 1rem;
+  }
+}
+
+<div
+  className="c0"
+>
+  <img
+    className="c1"
+    src="image 1"
+  />
+  <div
+    className="c2"
+  >
+    <h3
+      className="c3"
+    >
+      product 1
+    </h3>
+    <span
+      className="c4"
+    />
+  </div>
+</div>
+`;

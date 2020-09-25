@@ -1,0 +1,78 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Skeleton Component should match a snapshot 1`] = `
+.c0 {
+  max-width: 998px;
+  margin: 0 auto;
+  padding: 0 0.7rem 0.7rem;
+}
+
+.c1 {
+  padding: 1rem 0;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: #eee;
+  box-sizing: border-box;
+}
+
+.c2 {
+  display: inline-block;
+  height: 5.625rem;
+  width: 100%;
+  background: linear-gradient(-90deg,#d0cece 0%,#fff 50%,#d0cece 100%);
+  background-size: 400% 400%;
+  -webkit-animation: pulse 1.2s ease-in-out infinite;
+  animation: pulse 1.2s ease-in-out infinite;
+  border-radius: 0.25rem;
+  margin-bottom: 1rem;
+}
+
+.c2:nth-child(1) {
+  height: 2.5rem;
+}
+
+.c2:last-child {
+  height: 7.5rem;
+  margin-top: 1rem;
+}
+
+@media (min-width:365px) {
+  .c0 {
+    padding: 0 1.2rem 1.2rem;
+  }
+}
+
+@media (min-width:768px) {
+  .c2:nth-child(1) {
+    height: 4.5rem;
+    margin-bottom: 2rem;
+  }
+}
+
+<div
+  className="c0"
+>
+  <div
+    className="c1"
+  >
+    <div
+      className="c2"
+    />
+    <div
+      className="c2"
+    />
+    <div
+      className="c2"
+    />
+    <div
+      className="c2"
+    />
+    <div
+      className="c2"
+    />
+  </div>
+</div>
+`;

@@ -1,0 +1,36 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`PaymentDataContainer Component should match a snapshot 1`] = `
+Array [
+  .c0 {
+  color: #999;
+  font-size: 0.875rem;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+<h2
+    className="c0"
+  >
+    Pagamento
+  </h2>,
+  .c0 {
+  padding: 0.75rem;
+  border-radius: 3px;
+  box-shadow: 1px 1px 5px 0 rgba(0,0,29,0.22);
+  background-color: #fff;
+}
+
+<div
+    className="c0"
+  >
+    ****.****.****.2222
+     
+    <br />
+    HUGO MARCELO
+     
+    <br />
+    12/2021
+  </div>,
+]
+`;
