@@ -17,8 +17,7 @@ export const Card = styled.div`
         &:hover {
             border-color: #FF7800;
         }
-    }   
-    
+    }    
 `
 export const ProductImage = styled.img`
     height: 65px;
