@@ -1,4 +1,3 @@
-import axios from 'axios';
 import api from '../../../services/api';
 
 const setProducts = products => ({
@@ -6,12 +5,12 @@ const setProducts = products => ({
   products
 });
 
-const getProducts = () => async (dispatch) => {
+export const getProducts = () => async (dispatch) => {
   try {
     const response = await api.get("/data");
 
-    dispatch(response);
-    console.log(response);
+    dispatch(setProducts(response.data));
+    console.log(setProducts(response.data));
   } catch {
     alert("Ocorreu um erro inesperado. Tente novamente!")
   }

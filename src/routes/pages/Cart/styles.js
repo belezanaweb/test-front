@@ -19,14 +19,23 @@ export const ProductTable = styled.div`
 
   ul {
     list-style-type: none;
-    background: #fff;
+    padding: 12px;
+    border-radius: 3px;
+    background-color: #FFF;
+    box-shadow: 1px 1px 5px 0 rgba(0,0,29,0.22);
 
     li {
       display: flex;
       justify-content: space-between;
       border: 1px solid #eee;
-      margin: 5px 0;
+      margin: 15px 0;
       border-radius: 3px;
+
+
+      img {
+        height: 70px;
+        align-self: center;
+      }
     }
   }
 
@@ -44,9 +53,6 @@ export const ProductTable = styled.div`
       margin-top: 5px;
     }
 
-    img {
-      height: 100px;
-    }
   }
 `
 
