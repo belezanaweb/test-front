@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import * as CartActions from '../../../store/modules/cart/actions';
 import { bindActionCreators } from 'redux';
+import { formatPrice } from '../../../util/format';
 import { ContainerTable, ProductTable, Total } from './styles';
 import Button from '../../../components/Button';
 
@@ -36,19 +37,19 @@ class Cart extends Component {
         <Total>
           <div>
             <span>produtos</span>
-            <span>{cart?.subTotal}</span>
+            <span>{formatPrice(cart?.subTotal)}</span>
           </div>
           <div>
             <span>frete</span>
-            <span>{cart?.shippingTotal}</span>
+            <span>{formatPrice(cart?.shippingTotal)}</span>
           </div>
           <div>
             <span>desconto</span>
-            <span>{cart?.discount}</span>
+            <span>{formatPrice(cart?.discount)}</span>
           </div>
           <div>
             <span>total</span>
-            <span>{cart?.total}</span>
+            <span>{formatPrice(cart?.total)}</span>
           </div>
         </Total>
 
