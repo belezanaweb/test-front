@@ -3,28 +3,15 @@ import React from 'react';
 import { ContainerTable, ProductTable, Total } from './styles';
 import Button from '../../../components/Button'
 
-export default function Cart () {
+export default function Payment () {
   return (
     <ContainerTable>
       <ProductTable>
-        <h1>Produtos</h1>
-
-        <ul>
-        <li>
-          <img src="#" />
-          <span>
-           <p>Lorem ipsum dolor sit amet, rchitecto nam, autem libero adipisci.</p>
-            <strong>R$225,90</strong>
-          </span>
-        </li>
-        <li>
-          <img src="#" />
-          <span>
-           <p>Lorem ipsum dolor sit amet, rchitecto nam, autem libero adipisci.</p>
-            <strong>R$225,90</strong>
-          </span>
-        </li>
-      </ul>
+        <h1>Cartão de crédito</h1>
+        <form action="#">
+          <label htmlFor="#">Número do cartão:</label>
+          <input type="text" placeholder="____.____.____.____"/>
+        </form>
       </ProductTable>
 
       <Total>
