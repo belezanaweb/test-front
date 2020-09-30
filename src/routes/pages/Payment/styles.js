@@ -20,7 +20,7 @@ export const ProductTable = styled.div`
   form {
     background: #fff;
     color: #999;
-    padding: 5px 15px;
+    padding: 12px 15px;
     border-radius: 3px;
     text-align: left;
 
@@ -45,23 +45,21 @@ export const ProductTable = styled.div`
         color: #999;
       }
     }
-  }
-`
-export const Total = styled.div `
-  margin: 5vh 0;
-  padding: 6px 0;
-  width: 100%;
-  text-transform: uppercase;
-  border-radius: 3px;
-  border: 1px solid #CCC;
+    section {
+      display: flex;
+      margin-top: 25px;
 
-  div {
-    display: flex;
-    justify-content: space-between;
-    padding: 9px 12px;
-  }
+      div {
+        width: 100%;
 
-  span:nth-child(2) {
-    text-align: right;
+        input {
+          width: 100%;
+        }
+      }
+
+      div:nth-child(2) {
+        margin-left: 20px;
+      }
+    }
   }
 `

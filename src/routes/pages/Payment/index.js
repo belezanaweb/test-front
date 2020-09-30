@@ -1,7 +1,8 @@
 import React from 'react';
 
-import { ContainerTable, ProductTable, Total } from './styles';
-import Button from '../../../components/Button'
+import { ContainerTable, ProductTable } from './styles';
+import Button from '../../../components/Button';
+import Total from '../../../components/Total';
 
 export default function Payment () {
   return (
@@ -15,21 +16,21 @@ export default function Payment () {
           <label htmlFor="#">Nome do Titular:</label>
           <input type="text" placeholder="Como no cartão"/>
 
-          <label htmlFor="#">Validade (mês/ano):</label>
-          <input type="text" placeholder="__/____"/>
+          <section>
+            <div>
+              <label htmlFor="#">Validade (mês/ano):</label>
+              <input type="text" placeholder="__/____"/>
+             </div>
+            <div>
+              <label htmlFor="#">CVV:</label>
+              <input type="number" placeholder="___"/>
+            </div>
+          </section>
+
         </form>
       </ProductTable>
 
-      <Total>
-        <div>
-          <span>produtos</span>
-          <span>624,80</span>
-        </div>
-        <div>
-          <span>frete</span>
-          <span>5,90</span>
-        </div>
-       </Total>
+      <Total />
 
        <Button>
         Finalizar o pedido
