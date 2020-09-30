@@ -52,7 +52,6 @@ export const ProductTable = styled.div`
     p {
       margin-top: 5px;
     }
-
   }
 `
 
@@ -68,6 +67,16 @@ export const Total = styled.div `
     display: flex;
     justify-content: space-between;
     padding: 9px 12px;
+    font-size: 14px;
+    line-height: 17px;
+  }
+
+  div.discount {
+    color: #FF7800;
+  }
+
+  div.total {
+    font-weight: 700;
   }
 
   span:nth-child(2) {

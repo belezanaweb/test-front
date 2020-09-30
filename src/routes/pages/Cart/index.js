@@ -27,7 +27,7 @@ class Cart extends Component {
                 <img src={prod.imageObjects?.map(img => img.small)} />
                 <span>
                 <p>{prod.name}</p>
-                  <strong>R$225,90</strong>
+                  <strong>{formatPrice(prod.priceSpecification.price)}</strong>
                 </span>
               </li>
             ))}
@@ -43,11 +43,11 @@ class Cart extends Component {
             <span>frete</span>
             <span>{formatPrice(cart?.shippingTotal)}</span>
           </div>
-          <div>
+          <div className="discount">
             <span>desconto</span>
-            <span>{formatPrice(cart?.discount)}</span>
+            <span >{formatPrice(cart?.discount)}</span>
           </div>
-          <div>
+          <div className="total">
             <span>total</span>
             <span>{formatPrice(cart?.total)}</span>
           </div>
