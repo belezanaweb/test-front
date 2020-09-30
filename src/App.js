@@ -1,10 +1,11 @@
 import React from 'react';
-import Cart from './pages/Cart';
+import { BrowserRouter } from 'react-router-dom';
+import Routes from './routes';
 
 const App = () => (
-  <div className="App">
-      <Cart />
-  </div>
+  <BrowserRouter>
+      <Routes />
+  </BrowserRouter>
 )
 
 export default App
