@@ -15,5 +15,9 @@ const Button = styled.button`
   line-height: 24px;
   text-align: center;
   text-transform: uppercase;
+
+  :hover {
+    background: #D45A00;
+  }
 `
 export default Button;

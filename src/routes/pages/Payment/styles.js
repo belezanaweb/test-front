@@ -44,6 +44,10 @@ export const ProductTable = styled.div`
       ::-webkit-input-placeholder {
         color: #999;
       }
+
+      :focus {
+        border: 1px solid #A43287;
+      }
     }
     section {
       display: flex;
