@@ -8,9 +8,9 @@ import {
     MenuContainer,   
     ButtonConfirmation,
     ButtonConfirmationText    
-} from './styled';
+} from './styles';
 import ProductCard from "../../components/ProductCard";
-import TotalAmountContainer from "../../components/TotalContainer";
+import AmountContainer from "../../components/AmountContainer";
 import { useHistory } from "react-router-dom";
 
 const CartPage = (props) => {
@@ -34,7 +34,7 @@ const CartPage = (props) => {
                     <ProductCard/>
                 </ProductsContainer>
 
-                <TotalAmountContainer/>
+                <AmountContainer/>
 
                 <ButtonConfirmation type={'button'} onClick={onClickGoToPayment}>
                     <ButtonConfirmationText>

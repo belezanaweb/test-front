@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import img from "../../assets/img2.jpg";
+import img from "../../assets/images/img2.jpg";
 
 export const PageContainer = styled.div`
     min-height: 100uv;
@@ -45,7 +45,7 @@ export const TextMenu = styled.p`
     height: 16px;
     width: 100vh;
     color: ${props => (props.primary ? '#CCC' : '#FF6C00')};
-    font-family: "Helvetica Neue, sans-serif";
+    font-family: Helvetica;
     font-size: 13px;
     font-weight: 700;
     letter-spacing: NaNpx;
@@ -73,7 +73,7 @@ export const Text = styled.p`
     height: 17px;
     width: 100uv;
     color: #999;
-    font-family: "Helvetica Neue, sans-serif";
+    font-family: Helvetica;
     font-size: 14px;
     font-weight: 700;
     letter-spacing: NaNpx;
@@ -83,8 +83,7 @@ export const Text = styled.p`
     @media(min-width: 400px) {
         color: white;
         font-size: 18px;
-        font-weight: 800;
-        
+        font-weight: 800;        
     }
 `
 export const ButtonConfirmation = styled.button`
@@ -110,7 +109,7 @@ export const ButtonConfirmationText = styled.p`
     height: 24px;
     width: 339px;
     color: #FFF;    
-    font-family: "Helvetica Neue, sans-serif";
+    font-family: Helvetica;
     font-size: 20px;
     font-weight: 700;
     letter-spacing: 0.5px;
@@ -151,7 +150,7 @@ export const Input = styled.input`
     }    
     ::placeholder {
         color: #E7E7E7;
-        font-family: "Helvetica Neue, sans-serif";
+        font-family: Helvetica;
     } 
     
     &.cardNumber {
@@ -207,7 +206,7 @@ export const Label = styled.label`
     height: 14px;
     width: 129.71px;
     color: #CCC;
-    font-family: "Helvetica Neue, sans-serif";
+    font-family: Helvetica;
     font-size: 12px;
     font-weight: 700;
     letter-spacing: NaNpx;
@@ -241,5 +240,4 @@ export const Label = styled.label`
 `
 export const Div = styled.div`
     display: grid;
-
 `

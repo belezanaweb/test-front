@@ -7,7 +7,7 @@ import {
 import CartPage from "../CartPage";
 import PaymentMethodPage from "../PaymentMethodPage";
 import ConfirmationPage from "../ConfirmationPage";
-import GlobalStyle from "../../Style"
+import GlobalStyle from "../../styles"
 
 export default function App(){
   return(

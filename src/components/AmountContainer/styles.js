@@ -19,7 +19,7 @@ export const Text = styled.p`
     height: 17px;
     width: 124px
     color: #212122;
-    font-family: "Helvetica Neue, sans-serif";
+    font-family: Helvetica;
     font-size: 14px;
     letter-spacing: NaNpx;
     line-height: 17px;

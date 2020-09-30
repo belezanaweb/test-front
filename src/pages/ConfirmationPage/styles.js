@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import img from "../../assets/img2.jpg";
+import img from "../../assets/images/img2.jpg";
 
 export const PageContainer = styled.div`
     min-height: 100uv;
@@ -46,7 +46,7 @@ export const TextMenu = styled.p`
     height: 16px;
     width: 100vh;
     color: ${props => (props.primary ? '#CCC' : '#FF6C00')};
-    font-family: "Helvetica Neue, sans-serif";
+    font-family: Helvetica;
     font-size: 13px;
     font-weight: 700;
     letter-spacing: NaNpx;
@@ -74,7 +74,7 @@ export const Text = styled.p`
     height: 17px;
     width: 100uv;
     color: #999;
-    font-family: "Helvetica Neue, sans-serif";
+    font-family: Helvetica;
     font-size: 14px;
     font-weight: 700;
     letter-spacing: NaNpx;
@@ -90,7 +90,7 @@ export const Text = styled.p`
         height: 68px;
         width: 310px;
         color: #000;
-        font-family: "Helvetica Neue, sans-serif";
+        font-family: Helvetica;
         font-size: 14px;
         letter-spacing: NaNpx;
         line-height: 17px;
@@ -101,7 +101,7 @@ export const Text = styled.p`
         height: 17px;
         width: 266.27px;
         color: #FF7800;
-        font-family: "Helvetica Neue";
+        font-family: Helvetica;
         font-size: 14px;
         font-weight: 700;
         letter-spacing: NaNpx;
@@ -112,7 +112,8 @@ export const Text = styled.p`
         @media(min-width: 400px){
             font-size: 22px;
             width: 400px;
-            margin: 20px 10px;            
+            margin: 20px 10px; 
+            color: #15ff00;           
         }
     }
 `

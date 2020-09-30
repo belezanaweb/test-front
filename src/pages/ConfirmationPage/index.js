@@ -8,10 +8,10 @@ import {
     DivImage,
     MenuContainer,
     TextMenu,    
-} from './styled';
+} from './styles';
 import ProductCard from "../../components/ProductCard";
-import TotalAmountContainer from "../../components/TotalContainer";
-import success from "../../assets/success1.png";
+import AmountContainer from "../../components/AmountContainer";
+import success from "../../assets/images/success1.png";
 
 const ConfirmationPage = (props) => {
    
@@ -55,7 +55,7 @@ const ConfirmationPage = (props) => {
                     <ProductCard/>
                 </Container>
 
-                <TotalAmountContainer/>                
+                <AmountContainer/>               
                     
             </MainContainer>                 
         </PageContainer>

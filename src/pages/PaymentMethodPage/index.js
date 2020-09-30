@@ -12,8 +12,8 @@ import {
     Label, 
     Input,
     Div
-} from './styled';
-import TotalAmountContainer from "../../components/TotalContainer";
+} from './styles';
+import AmountContainer from "../../components/AmountContainer";
 import { mask, unMask } from "remask";
 import Swal from "sweetalert2";
 
@@ -135,7 +135,7 @@ const PaymentMethodPage = (props) => {
                         />
                         </Div>                   
                     </Form>                             
-                <TotalAmountContainer/>
+                <AmountContainer/>
                 <ButtonConfirmation  type="submit" onClick={onClickConfirmation}>
                     <ButtonConfirmationText>
                         FINALIZAR O PEDIDO

@@ -1,6 +1,6 @@
 import { createGlobalStyle } from 'styled-components';
-import Helveticawoff from "./assets/fonts/Helvetica.woff";
-import Helveticawoff2 from "./assets/fonts/Helvetica.woff2";
+import Helveticawoff from "../assets/fonts/Helvetica.woff";
+import Helveticawoff2 from "../assets/fonts/Helvetica.woff2";
 
 export default createGlobalStyle`
   * {

@@ -36,7 +36,7 @@ export const ProductTextsimple = styled.p`
     height: 32px;
     width: 220px;
     color: #212122;
-    font-family: "Helvetica Neue, sans-serif";
+    font-family: Helvetica;
     font-size: 13px;
     letter-spacing: NaNpx;
     line-height: 16px;
@@ -53,7 +53,7 @@ export const ProductTextStrong = styled.p`
     height: 17px;
     width: 220px;
     color: #212122;
-    font-family: "Helvetica Neue, sans-serif";
+    font-family: Helvetica;
     font-size: 14px;
     font-weight: 700;
     letter-spacing: NaNpx;
