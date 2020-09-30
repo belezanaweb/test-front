@@ -3,8 +3,7 @@ import axios from 'axios';
 import {
     TotalContainer,
     Text, 
-} from "./styled";
-
+} from "./styles";
 
 const TotalAmountContainer = (props) => {
     const [totalAmount, setTotalAmount] =  useState([])    
@@ -17,7 +16,6 @@ const TotalAmountContainer = (props) => {
         }     
         fetchData()
     }, [])
-
 
     return(
         <>
@@ -34,5 +32,4 @@ const TotalAmountContainer = (props) => {
         </>
     )    
 }
-
 export default TotalAmountContainer

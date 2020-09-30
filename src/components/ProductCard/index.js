@@ -5,7 +5,7 @@ import {
     ProductImage,
     ProductTextsimple,
     ProductTextStrong
-} from "./styled";
+} from "./styles";
 
 const ProductCard = (props) => {
     const [products, setProducts] =  useState([])    
