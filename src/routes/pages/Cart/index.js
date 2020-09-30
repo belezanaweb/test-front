@@ -1,32 +1,45 @@
 import React from 'react';
 
+import { ContainerTable, ProductTable, Total, Button } from './styles';
+
 export default function Cart () {
   return (
-      <table>
-      <thead>
-        <tr>
-          <th>Produtos</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>L'Oréal</td>
-        </tr>
-        <tr>
-          <td>Good Girl</td>
-        </tr>
-      </tbody>
+    <ContainerTable>
+      <ProductTable>
+        <h1>Produtos</h1>
 
-      <tfoot>
-        <tr>
-          <td>produtos</td>
-          <td>624,80</td>
-        </tr>
-        <tr>
-          <td>frete</td>
-          <td>5,90</td>
-        </tr>
-      </tfoot>
-    </table>
+        <ul>
+        <li>
+          <img src="#" />
+          <span>
+           <p>Lorem ipsum dolor sit amet, rchitecto nam, autem libero adipisci.</p>
+            <strong>R$225,90</strong>
+          </span>
+        </li>
+        <li>
+          <img src="#" />
+          <span>
+           <p>Lorem ipsum dolor sit amet, rchitecto nam, autem libero adipisci.</p>
+            <strong>R$225,90</strong>
+          </span>
+        </li>
+      </ul>
+      </ProductTable>
+
+      <Total>
+        <div>
+          <span>produtos</span>
+          <span>624,80</span>
+        </div>
+        <div>
+          <span>frete</span>
+          <span>5,90</span>
+        </div>
+       </Total>
+
+       <Button>
+        Seguir para o pagamento
+       </Button>
+    </ContainerTable>
   )
 }
