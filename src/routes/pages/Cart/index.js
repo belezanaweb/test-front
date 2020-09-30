@@ -1,7 +1,7 @@
 import React from 'react';
 
 import { ContainerTable, ProductTable, Total } from './styles';
-import Button from '../../../components/Button'
+import Button from '../../../components/Button';
 
 export default function Cart () {
   return (

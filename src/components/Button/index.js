@@ -14,5 +14,6 @@ const Button = styled.button`
   letter-spacing: 0.5px;
   line-height: 24px;
   text-align: center;
+  text-transform: uppercase;
 `
 export default Button;

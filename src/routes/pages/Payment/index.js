@@ -11,6 +11,12 @@ export default function Payment () {
         <form action="#">
           <label htmlFor="#">Número do cartão:</label>
           <input type="text" placeholder="____.____.____.____"/>
+
+          <label htmlFor="#">Nome do Titular:</label>
+          <input type="text" placeholder="Como no cartão"/>
+
+          <label htmlFor="#">Validade (mês/ano):</label>
+          <input type="text" placeholder="__/____"/>
         </form>
       </ProductTable>
 
@@ -26,7 +32,7 @@ export default function Payment () {
        </Total>
 
        <Button>
-        Seguir para o pagamento
+        Finalizar o pedido
        </Button>
     </ContainerTable>
   )
