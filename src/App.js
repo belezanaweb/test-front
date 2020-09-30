@@ -1,10 +1,9 @@
-import React from 'react'
-import logo from './logo.svg'
-import './App.css'
+import React from 'react';
+import Cart from './pages/Cart';
 
 const App = () => (
   <div className="App">
-      <img src={logo} className="App-logo" alt="logo" />
+      <Cart />
   </div>
 )
 
