@@ -1,36 +1,49 @@
 import styled from "styled-components";
 
 export const Card = styled.div`
-    height: 90px;
-    width: 316px;
+    height: 22vh;
+    width: 94%;
     border: 1px solid #EEE;
     border-radius: 3px;
-    margin: 12px 12px 13px 13px;
+    margin: 3vh 3vw 3.5vh 3.5vw;
     display: grid;
     grid-template-column: 2fr;
     grid-template-row: 2fr;
 
-
     @media(min-width: 400px){
-        height: 105px;
-        width: 366px;
+        height: 24vh;
+        width: 94%;
         &:hover {
             border-color: #FF7800;
         }
-    }    
+    }  
+    @media(min-width: 500px){
+        height: 24vh;
+        width: 94%;
+        &:hover {
+            border-color: #FF7800;
+        }          
+    } 
+    @media(min-width: 800px){
+        height: 24vh;
+        width: 90%;
+        &:hover {
+            border-color: #FF7800;
+        }
+    }
 `
 export const ProductImage = styled.img`
-    height: 65px;
-    width: 65px;
+    height: 17vh;
+    width: 17vw;
     grid-column: 1/2;
     grid-row: 1/3;
     align-items: center;
-    margin: 11px 11px 14px 10px;
+    margin: 1vh 2vw 2vh 3vh;
 
     @media(min-width: 400px){
-        height: 75px;
-        width: 75px;
-    }
+        height: 20vh;
+        width: 20vh;
+    }    
 `
 export const ProductTextsimple = styled.p`
     height: 32px;
@@ -43,10 +56,15 @@ export const ProductTextsimple = styled.p`
     grid-column: 2/3;
     grid-row: 1/2;
     align-items: center;
-    margin: 12px 10px 15px 0px;
+    margin: 4vh 3vw 2.5vh 0px;
 
     @media(min-width: 400px){
-        font-size: 14px;   
+        justify-self: stretch
+        font-size: 1rem;   
+    }
+    @media(min-width: 800px){
+        justify-self: stretch
+        font-size: 1.2rem;   
     }
 `
 export const ProductTextStrong = styled.p`
@@ -61,7 +79,7 @@ export const ProductTextStrong = styled.p`
     text-align: right;
     grid-column: 2/3;
     grid-row: 2/3;
-    margin: 0px 10px 14px 0px;
+    margin: 0px 3vw 20vh 0px;
 
     media(min-width: 400px){
         font-size: 16px;   

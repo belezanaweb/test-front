@@ -1,18 +1,24 @@
 import styled from "styled-components";
 
 export const TotalContainer = styled.div`
-    height: 100uv;
-    width: 341px;
+    height: 90%;
+    width: 93%;
     border: 1px solid #D8D8D8;
     border-radius: 3px;
-    margin: 0px 10px 0px 9px;
+    margin: 0px 0px 1vw 3vw;
     display: grid;
     grid-templater-column: 2fr;
     grid-template-row: 4fr;
+    background-color: #EEE;
 
     @media(min-width: 400px){
-        width: 400px;
-        background-color: #EEE;
+        width: 90%;        
+    }
+    @media(min-width: 500px){
+        width: 80%;
+    }
+    @media(min-width: 800px){
+        width: 50%;
     }
 `
 export const Text = styled.p`
@@ -20,7 +26,7 @@ export const Text = styled.p`
     width: 124px
     color: #212122;
     font-family: Helvetica;
-    font-size: 14px;
+    font-size: 0.85rem;
     letter-spacing: NaNpx;
     line-height: 17px;
     margin: 0px;

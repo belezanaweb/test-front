@@ -104,7 +104,7 @@ const PaymentMethodPage = (props) => {
                             placeholder={"Como no cartão"}
                             value={nameValue}
                             onChange={onChangeName}
-                            pattern="[A-Za-z ãéÁáêõÕÊíÍçÇÚúüÜ]{3,}"
+                            pattern={["[A-Za-z ãéÁáêõÕÊíÍçÇÚúüÜ]{3,}"]}
                             required 
                         />
                         <Div>
@@ -118,7 +118,7 @@ const PaymentMethodPage = (props) => {
                             placeholder={"_ _/_ _ _ _"}
                             value={expirationDateValue}
                             onChange={onChangeExpirationDate}
-                            pattern="/^(0?[1-9]|1[0-2])\/(20)?\d{4}$/"
+                            pattern={["/^(0[1-9]|1[0-2])\/(20)\d{2}$/"]}
                             required 
                         />
                         <Label className="cvv">

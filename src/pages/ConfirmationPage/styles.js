@@ -2,19 +2,21 @@ import styled from "styled-components";
 import img from "../../assets/images/img2.jpg";
 
 export const PageContainer = styled.div`
-    min-height: 100uv;
-    min-width: 100uv;
-    margin: 0px;
-    background-color: #EEE;
-    
-    @media(min-width: 400px){
-        margin: 0px 40px; 
+    min-height: 100vh;
+    min-width: 80vw;
+    background-color: #EEE; 
+
+    @media(min-width: 400px){        
+        background-color: #999;
+    }
+    @media(min-width: 700px){
+        margin: 0px 7vh; 
         background-color: #999;
     }
 `
 export const MainContainer = styled.div`
-    min-width: 100uv; 
-    min-height: 100uv;   
+    min-width: 80vw;  
+    min-height: 100vh;   
     display: flex;
     flex-direction: column; 
     flex-wrap: wrap;   
@@ -29,33 +31,43 @@ export const MainContainer = styled.div`
     }
 `
 export const MenuContainer = styled.nav`
-    height: 40px;
-    width: 100uv;
+    height: 9vh;
+    width: 100vw;
     border-radius: 3px;
     background-color: #FFF;
     box-shadow: 1px 1px 5px 0 rgba(0,0,29,0.22);
     display: flex;
-    justify-content: space-evenly; 
-    
+    justify-content: space-evenly;
+
     @media(min-width: 400px) {
-        height: 70px;
+        height: 10vh;
+        width: 100vw;
+        align-items: center;
+    }
+    @media(min-width: 700px) {
+        height: 12vh;
+        width: 100%;
         align-items: center;
     }
 `
 export const TextMenu = styled.p`
-    height: 16px;
-    width: 100vh;
+    height: 16px ;
+    width: 100vw;
     color: ${props => (props.primary ? '#CCC' : '#FF6C00')};
     font-family: Helvetica;
-    font-size: 13px;
+    font-size: 0.8rem;
     font-weight: 700;
     letter-spacing: NaNpx;
     line-height: 16px;
     text-align: center;
     border: none;    
     background-color: #FFF; 
-    
+
     @media(min-width: 400px) {
+        font-size: 1rem;        
+        font-weight: 800;
+    }
+    @media(min-width: 700px) {
         font-size: 18px;
         font-weight: 800;
     }
@@ -71,19 +83,20 @@ export const TextMenu = styled.p`
     }
 `
 export const Text = styled.p`
-    height: 17px;
-    width: 100uv;
+    height: 4vh;
+    width: 30vw;
     color: #999;
     font-family: Helvetica;
     font-size: 14px;
     font-weight: 700;
     letter-spacing: NaNpx;
     line-height: 17px;
-    margin: 6px 21px 0px 20px;
+    margin: 3vh 10vw 2vh 3vw;  
 
-    @media(min-width: 400px){
+    @media(min-width: 400px) {
         color: white;
-        font-size: 18px;
+        font-size: 1.3rem;
+        font-weight: 800;
     }
    
     &.textInformationsBlack {
@@ -95,7 +108,14 @@ export const Text = styled.p`
         letter-spacing: NaNpx;
         line-height: 17px;
         margin: 20px 10px;
-        display: flex;        
+        display: flex;  
+        
+        @media(min-width: 400px){
+            font-size: 4.5vh;
+        }
+        @media(min-width: 500px){
+            font-size: 5vh;
+        }
     }
     &.textConfirmationOrange {
         height: 17px;
@@ -110,34 +130,68 @@ export const Text = styled.p`
         margin: 11.08px 47.73px 20.43px 46px;
 
         @media(min-width: 400px){
-            font-size: 22px;
-            width: 400px;
-            margin: 20px 10px; 
+            font-size: 5.5vh;
+            width: 90%;
+            font-weight: 800;
+            margin: 3vh 3vw; 
             color: #15ff00;           
+        }        
+        @media(min-width: 500px){
+            width: 80%;
+            font-size: 5.5vh;
+            font-weight: 800;
+            margin: 3vh 3vw; 
+            color: #15ff00;
+        }
+        @media(min-width: 800px){
+            font-size: 5.5vh;
+            width: 50%;
+            font-weight: 800;
+            margin: 3vh 3vw; 
+            color: #15ff00;
         }
     }
 `
 export const Container = styled.div`
     border-radius: 3px;
     background-color: #FFF;    
-    margin: 5px 10px 10px 9px;
+    margin: 1vh 3vh 4vh 3vw;
 
     &.products{
-        height: 100uv;
-        width: 340px;
-
+        height: 67vh;
+        width: 93%;
+        border-radius: 3px;
+        background-color: #FFF;   
+        margin: 1vh 3vh 4vh 3vw;
+        
         @media(min-width: 400px){
-            height: 375px;
-            width: 400px;
+            height: 85vh;
+            width: 90%;            
+        }
+        @media(min-width: 500px){
+            height: 85vh;
+            width: 80%;
+        }
+        @media(min-width: 800px){
+            height: 85vh;
+            width: 50%;
         }
     }
     &.clientInformations {
-        height: 73px;
-        width: 340px;
+        height: 20vh;
+        width: 93%;        
         
         @media(min-width: 400px){
-            height: 85px;
-            width: 400px;
+            height: 25vh;
+            width: 90%;            
+        }
+        @media(min-width: 500px){
+            height: 30vh;
+            width: 80%;
+        }
+        @media(min-width: 800px){
+            height: 32vh;
+            width: 50%;
         }
     }      
 `

@@ -2,18 +2,21 @@ import styled from "styled-components";
 import img from "../../assets/images/img2.jpg";
 
 export const PageContainer = styled.div`
-    min-height: 100uv;
-    min-width: 100uv;
-    background-color: #EEE;  
-
-    @media(min-width: 400px){
-        margin: 0px 40px; 
+    mmin-height: 100vh;
+    min-width: 80vw;
+    background-color: #EEE; 
+    
+    @media(min-width: 400px){        
+        background-color: #999;
+    }
+    @media(min-width: 700px){
+        margin: 0px 7vh; 
         background-color: #999;
     }        
 `
 export const MainContainer = styled.div`
-    min-width: 100uv;
-    min-height: 100uv;     
+    min-width: 80vw;   
+    min-height: 100vh;     
     display: flex;   
     flex-direction: column; 
     flex-wrap: wrap;
@@ -28,33 +31,43 @@ export const MainContainer = styled.div`
     }
 `
 export const MenuContainer = styled.nav`
-    height: 40px;
-    width: 100uv;
+    height: 9vh;
+    width: 100vw;
     border-radius: 3px;
     background-color: #FFF;
     box-shadow: 1px 1px 5px 0 rgba(0,0,29,0.22);
     display: flex;
     justify-content: space-evenly;
-    
+
     @media(min-width: 400px) {
-        height: 70px;
+        height: 10vh;
+        width: 100vw;
+        align-items: center;
+    }
+    @media(min-width: 700px) {
+        height: 12vh;
+        width: 100%;
         align-items: center;
     }
 `
 export const TextMenu = styled.p`
-    height: 16px;
-    width: 100vh;
+    height: 16px ;
+    width: 100vw;
     color: ${props => (props.primary ? '#CCC' : '#FF6C00')};
     font-family: Helvetica;
-    font-size: 13px;
+    font-size: 0.8rem;
     font-weight: 700;
     letter-spacing: NaNpx;
     line-height: 16px;
     text-align: center;
     border: none;    
-    background-color: #FFF;
-    
+    background-color: #FFF; 
+
     @media(min-width: 400px) {
+        font-size: 1rem;        
+        font-weight: 800;
+    }
+    @media(min-width: 700px) {
         font-size: 18px;
         font-weight: 800;
     }
@@ -70,35 +83,47 @@ export const TextMenu = styled.p`
     }
 `
 export const Text = styled.p`
-    height: 17px;
-    width: 100uv;
+    height: 4vh;
+    width: 60vw;
     color: #999;
     font-family: Helvetica;
     font-size: 14px;
     font-weight: 700;
     letter-spacing: NaNpx;
     line-height: 17px;
-    margin: 6px 21px 0px 20px;
+    margin: 3vh 10vw 2vh 3vw;  
 
     @media(min-width: 400px) {
         color: white;
-        font-size: 18px;
-        font-weight: 800;        
+        font-size: 1.3rem;
+        font-weight: 800;
     }
 `
 export const ButtonConfirmation = styled.button`
-    height: 60px;
-    width: 341px;
+    height: 13vh;
+    width: 93%;
     border-radius: 3px;
     border: none;
     background-color: #FF6C00;
     box-shadow: inset 0 -3px 0 0 #D45A00, 0 2px 4px 0 rgba(0,0,0,0.25);   
-    margin: 20px 10px 94px 9px;
+    margin: 2vh 0px 20vh 3vw;
     display:flex;
     justify-content: center;
 
     @media(min-width: 400px){
-        width: 400px;
+        width: 90%;
+        height: 15vh;
+        margin: 2vh 0px 20vh 3vw;
+    }
+    @media(min-width: 500px){
+        width: 80%;
+        height: 15vh;
+        margin: 2vh 0px 20vh 3vw;
+    }
+    @media(min-width: 800px){        
+        width: 50%;
+        height: 15vh;
+        margin: 2vh 0px 20vh 3vw;
     }
 
     &:hover {
@@ -115,28 +140,37 @@ export const ButtonConfirmationText = styled.p`
     letter-spacing: 0.5px;
     line-height: 24px;
     text-align: center;
-    margin: 18px 1px 18px 1px;
+    margin: 3vh 0px 2vh 0px;
     border: none;
 
     @media(min-width: 400px){
-        font-size: 22px;
+        margin: 3vh 0px 2vh 0px;
+        font-size: 23px;
         font-weight: 700;
     }
 `
 export const Form = styled.div`
-    height: 279px;
-    width: 340px;
+    height: 80vh;
+    width: 93%;
     border-radius: 3px;
     background-color: #FFF;
     box-shadow: 1px 1px 5px 0 rgba(0,0,29,0.22);
     display: grid;
     grid-templater-column: 2fr;
     grid-template-row: 6fr;
-    margin: 5px 10px 20px 9px; 
+    margin: 1vh 3vw 5vh 3vw; 
 
     @media(min-width: 400px){
-        height: 300px;
-        width: 400px;
+        height: 90vh;
+        width: 90%;
+    }
+    @media(min-width: 500px){
+        height: 90vh;
+        width: 80%;
+    }
+    @media(min-width: 800px){
+        height: 90vh;
+        width: 50%;
     }
 `
 export const Input = styled.input`
@@ -154,51 +188,87 @@ export const Input = styled.input`
     } 
     
     &.cardNumber {
-        height: 50px;
-        width: 320px;
+        height: 13vh;
+        width: 87vw;
         grid-column: 1/3;
         grid-row: 2/3;
-        margin: 0px 10px 25px 10px; 
+        margin: 0px 0vw 5vh 3vw; 
         padding: 14px 88px 12px 13px;
         
         @media(min-width: 400px){
-            width: 380px;
+            width: 83vw;
+        }
+        @media(min-width: 500px){
+            width: 74vw;
+        }
+        @media(min-width: 700px){
+            width: 68vw;
+        }
+        @media(min-width: 800px){
+            width: 40vw;
         }
     }
     &.name {
-        height: 50px;
-        width: 320px;
+        height: 13vh;
+        width: 86.5vw;
         grid-column: 1/3;
         grid-row: 4/5;
-        margin: 0px 10px 25px 10px;
-        padding: 15px 88px 12px 13px;
+        margin: 0px 0vw 5vh 3vw;
+        padding: 14px 0px 12px 5px;
 
         @media(min-width: 400px){
-            width: 380px;
+            width: 83vw;
+        }
+        @media(min-width: 500px){
+            width: 74vw;
+        }
+        @media(min-width: 700px){
+            width: 68vw;
+        }
+        @media(min-width: 800px){
+            width: 40vw;
         }
     }
     &.cvv {
-        height: 50px;
-        width: 145px;
+        height: 13vh;
+        width: 40vw;
         grid-column: 2/3;
         grid-row: 6/7;
-        margin: 0px 10px 25px 20px;
+        margin: 0px 3vw 5vh 0vw;
         padding: 15px 0px 12px 11px;
 
         @media(min-width: 400px){
-            width: 180px;
+            width: 40vw;
+        }
+        @media(min-width: 500px){
+            width: 35.5vw;
+        }
+        @media(min-width: 700px){
+            width: 32.5vw;
+        }
+        @media(min-width: 800px){
+            width: 18.5vw;
         }
     }
     &.expirationDate {
-        height: 50px;
-        width: 145px; 
+        height: 13vh;
+        width: 40vw; 
         grid-column: 1/2;
         grid-row: 6/7; 
-        margin: 0px 0px 25px 10px;
-        padding: 13px 14px 13px 13px;
+        margin: 0px 3vw 5vh 3vw;
+        padding: 13px 0px 5px 10px;
 
         @media(min-width: 400px){
-            width: 180px;
+            width: 40vw;
+        }
+        @media(min-width: 500px){
+            width: 35.5vw;
+        }
+        @media(min-width: 700px){
+            width: 32.5vw;
+        }
+        @media(min-width: 800px){
+            width: 18.5vw;
         }
     }
 `
@@ -212,30 +282,29 @@ export const Label = styled.label`
     letter-spacing: NaNpx;
     line-height: 14px;
     display: flex;
+    margin: 3vh 50vw 1vh 5vw;
 
     @media(min-width: 400px){
-        font-size: 14px;
-    }
+        font-size: 0.9rem;
+    }    
 
     &.cardNumber {
         grid-column: 1/3;
-        grid-row: 1/2;
-        margin: 12px 198.29px 5px 10px;        
+        grid-row: 1/2;                
     }
     &.name {
         grid-column: 1/3;
-        grid-row: 3/4;
-        margin: 0px 66px 9px 12px;
+        grid-row: 3/4;       
     }
     &.cvv {
         grid-column: 2/3;
         grid-row: 5/6;
-        margin: 0px 10px 9px 22px;       
+        margin: 3vh 2vw;       
     }
     &.expirationDate {
         grid-column: 1/2;
         grid-row: 5/6;
-        margin: 0px 0px 9px 10px;       
+        margin: 3vh 4vw;       
     }
 `
 export const Div = styled.div`
