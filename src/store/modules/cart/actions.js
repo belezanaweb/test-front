@@ -31,6 +31,7 @@ export const validationData = ({ numberCard, holder, validity, cvv }) => (dispat
     }
 
     dispatch(setCardData(body))
+    console.log(setCardData(body))
 
   } catch {
     alert("Ocorreu um erro inesperado. Tente novamente!")

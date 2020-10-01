@@ -14,10 +14,10 @@ function Input({ name, ...rest }) {
   }, [fieldName, registerField]);
 
   return (
-    <div>
-      <input ref={inputRef} onFocus={clearError} {...rest} />
+    <>
+      <input ref={inputRef} isErrored={!!error} onFocus={clearError} {...rest} />
      {error && <span>{error}</span>}
-    </div>
+    </>
   )
 }
 

@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 import { Form as Unform} from '@unform/web';
 
 export const ContainerTable = styled.div`
@@ -19,7 +19,7 @@ export const ProductTable = styled.div`
   }
 `
 export const Form = styled(Unform) `
-   > div {
+  > div {
     background: #fff;
     color: #999;
     padding: 12px 15px;
@@ -56,6 +56,7 @@ export const Form = styled(Unform) `
         border: 1px solid #A43287;
       }
     }
+
     section {
       display: flex;
       margin-top: 25px;
@@ -76,11 +77,6 @@ export const Form = styled(Unform) `
       /* div:nth-child(2) {
         margin-left: 20px;
       } */
-
-      span {
-        color: #F30;
-        font-size: 12px;
-      }
     }
    }
 `;
