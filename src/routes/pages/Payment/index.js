@@ -85,5 +85,4 @@ function Payment() {
 const mapDispatchToProps = dispatch =>
     bindActionCreators( CartActions , dispatch);
 
-
 export default connect(null, mapDispatchToProps )(Payment);

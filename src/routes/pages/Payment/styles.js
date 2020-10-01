@@ -73,10 +73,6 @@ export const Form = styled(Unform) `
         font-size: 12px;
       }
       }
-
-      /* div:nth-child(2) {
-        margin-left: 20px;
-      } */
     }
    }
 `;
