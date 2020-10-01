@@ -26,7 +26,7 @@ class Total extends Component {
         </div>
         <div className="discount">
           <span>desconto</span>
-          <span >{formatPrice(cart?.discount)}</span>
+          <span >- {formatPrice(cart?.discount)}</span>
         </div>
         <div className="total">
           <span>total</span>
