@@ -1,12 +1,5 @@
 import styled, { createGlobalStyle } from 'styled-components'
 
-export const AppWrapper = styled.div`
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  background-color: #EEE;
-`
-
 export const GlobalStyle = createGlobalStyle`
   *{
     margin: 0;
@@ -16,11 +9,18 @@ export const GlobalStyle = createGlobalStyle`
   }
 `
 
+export const AppWrapper = styled.div`
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background-color: #EEE;
+`
+
 export const Content = styled.div`
   display: grid;
   align-content: flex-start;
   justify-content: center;
-  gap: 10px;
-  padding: 10px;
+  justify-items: center;
+  gap: 20px;
   flex-grow: 1;
 `
