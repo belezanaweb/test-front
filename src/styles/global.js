@@ -1,6 +1,10 @@
-import {  createGlobalStyle} from 'styled-components'
+import {  createGlobalStyle} from 'styled-components';
 
 export default createGlobalStyle`
+@font-face {
+    font-family: 'Helvetica Neue';
+    src: url('../public/helvetica-neue-lt-com-45-light.ttf');
+}
  * {
      margin: 0;
      padding: 0;
@@ -12,7 +16,7 @@ export default createGlobalStyle`
      -webkit-font-smoothing: antialiased;
  }
  body, input, button {
-     font: 14px Roboto, sans-serif;
+     font: 14px 'Helvetica Neue', sans-serif;
  }
  #root {
      max-width: 1020px;
