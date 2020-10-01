@@ -19,11 +19,17 @@ export const ProductTable = styled.div`
   }
 `
 export const Form = styled(Unform) `
+   > div {
     background: #fff;
     color: #999;
     padding: 12px 15px;
     border-radius: 3px;
     text-align: left;
+
+    > span {
+        color: #F30;
+        font-size: 12px;
+    }
 
     label {
       display: block;
@@ -60,10 +66,21 @@ export const Form = styled(Unform) `
         input {
           width: 100%;
         }
+
+        >span {
+        color: #F30;
+        font-size: 12px;
+      }
       }
 
       /* div:nth-child(2) {
         margin-left: 20px;
       } */
+
+      span {
+        color: #F30;
+        font-size: 12px;
+      }
     }
+   }
 `;
