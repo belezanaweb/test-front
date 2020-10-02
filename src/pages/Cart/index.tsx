@@ -2,10 +2,12 @@ import React from 'react';
 
 import { Container } from './styles';
 
+import Header from 'components/Header';
+
 const Cart: React.FC = () => {
   return (
     <Container>
-      <h1>Cart</h1>
+      <Header />
     </Container>
   );
 };
