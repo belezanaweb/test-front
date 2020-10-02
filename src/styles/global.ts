@@ -4,14 +4,17 @@ export default createGlobalStyle`
   :root {
     --color-white: #FFFFFF;
     --color-black: #000000;
-    --font-family-primary: Helvetica, sans-serif;
+    --color-orange: #FF6C00;
+    --color-orange-dark: #D45A00;
+    --color-background: #EEEEEE;
+    --font-primary: 'Helvetica Neue', Helvetica, Arial, sans-serif;
   }
 
   * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: var(--font-family-primary);
+    font-family: var(--font-primary);
     outline: none;
   }
 
