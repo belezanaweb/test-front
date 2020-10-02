@@ -1,0 +1,3 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ProductCard o Product card está sendo corretamente renderizado 1`] = `ShallowWrapper {}`;
