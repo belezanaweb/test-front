@@ -20,6 +20,7 @@ export default createGlobalStyle`
   }
 
   body {
+    background-color: var(--color-background);
     color: var(--color-black);
     min-height: 100vh;
   }
