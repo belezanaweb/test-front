@@ -1,11 +1,11 @@
 import React from 'react'
-import { Content } from '../../AppStyle'
+import { PagesWrapper } from '../../AppStyle'
 import Header from '../../components/Header'
 
 const Payment = () => (
-  <Content>
+  <PagesWrapper>
     <Header selectedPage={"payment"} />
-  </Content>
+  </PagesWrapper>
 )
 
 export default Payment

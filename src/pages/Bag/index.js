@@ -1,11 +1,13 @@
 import React from 'react'
-import { Content } from '../../AppStyle'
+import { PagesWrapper } from '../../AppStyle'
 import Header from '../../components/Header'
 
-const Bag = () => (
-  <Content>
-    <Header selectedPage={"bag"} />
-  </Content>
-)
+const Bag = () => {
+  return (
+    <PagesWrapper>
+      <Header selectedPage={"bag"} />
+    </PagesWrapper>
+  )
+}
 
 export default Bag

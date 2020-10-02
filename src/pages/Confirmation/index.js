@@ -1,11 +1,11 @@
 import React from 'react'
-import { Content } from '../../AppStyle'
+import { PagesWrapper } from '../../AppStyle'
 import Header from '../../components/Header'
 
 const Confirmation = () => (
-  <Content>
+  <PagesWrapper>
     <Header selectedPage={"confirmation"} />
-  </Content>
+  </PagesWrapper>
 )
 
 export default Confirmation

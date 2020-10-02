@@ -16,7 +16,7 @@ export const AppWrapper = styled.div`
   background-color: #EEE;
 `
 
-export const Content = styled.div`
+export const PagesWrapper = styled.div`
   display: grid;
   align-content: flex-start;
   justify-content: center;
