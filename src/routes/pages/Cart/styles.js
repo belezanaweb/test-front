@@ -31,6 +31,9 @@ export const ProductTable = styled.div`
       margin: 15px 0;
       border-radius: 3px;
 
+      p {
+        text-align: left;
+      }
 
       img {
         height: 70px;

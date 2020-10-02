@@ -7,6 +7,7 @@ import * as Yup from 'yup';
 import Input from '../../../container/Input';
 import Button from '../../../components/Button';
 import Total from '../../../components/Total';
+import Header from '../../../components/Header';
 import {  validationData } from '../../../store/modules/cart/actions';
 import { maskCardValidity, maskNumberCreditCard } from '../../../util/maks';
 import { ContainerTable, ProductTable, Form } from './styles';
@@ -47,6 +48,7 @@ function Payment() {
 
   return (
     <ContainerTable>
+      <Header />
       <ProductTable>
         <h1>Cartão de crédito</h1>
         <Form ref={formRef} onSubmit={handleSubmit}>
@@ -72,9 +74,10 @@ function Payment() {
 
           <Total />
 
-          <Button type="submit">
-          Finalizar o pedido
-          </Button>
+            <Button type="submit">
+                  Finalizar o pedido
+            </Button>
+
         </Form>
       </ProductTable>
 

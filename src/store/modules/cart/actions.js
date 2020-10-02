@@ -1,4 +1,5 @@
 import api from '../../../services/api';
+import { push} from "connected-react-router";
 
 const setProducts = products => ({
   type: "SET_PRODUCTS",
@@ -15,13 +16,13 @@ export const getProducts = () => async (dispatch) => {
     const response = await api.get("/data");
 
     dispatch(setProducts(response.data));
-    console.log(setProducts(response.data));
+    dispatch(push("/success"))
   } catch {
     alert("Ocorreu um erro inesperado. Tente novamente!")
   }
 }
 
-export const validationData = ({ numberCard, holder, validity, cvv }) => (dispatch) => {
+export const validationData = ( {numberCard, holder, validity, cvv} ) => async (dispatch) => {
   try {
     const body = {
       numberCard,
