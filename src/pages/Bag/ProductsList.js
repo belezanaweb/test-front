@@ -14,7 +14,10 @@ const ProductsList = () => {
                         <Img src={item.product.imageObjects[0].small} alt={item.product.name} />
                         <CardDetails>
                             <label>{item.product.name}</label>
-                            <Price>R$ {item.product.priceSpecification.price}</Price>
+                            <Price>R$ {item.product.priceSpecification.price
+                                .toFixed(2)
+                                .replace(".", ",")}
+                            </Price>
                         </CardDetails>
                     </CardWrapper>
                 )

@@ -4,6 +4,7 @@ import Header from '../../components/Header'
 import BackgroundBlock from '../../components/BackgroundBlock'
 import styled from 'styled-components'
 import ProductsList from './ProductsList'
+import CartSummary from '../../components/CartSummary'
 
 const Content = styled.div`
   width: 100%;
@@ -19,6 +20,7 @@ const Bag = () => {
       <Header selectedPage={"bag"} />
       <Content>
         <BackgroundBlock title={"PRODUTOS"} boxContent={<ProductsList />} />
+        <CartSummary />
       </Content>
     </PagesWrapper>
   )
