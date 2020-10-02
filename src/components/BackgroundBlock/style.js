@@ -8,8 +8,7 @@ export const BoxWrapper = styled.div`
 
 export const Content = styled.div`
   width: 100%;
-  max-width: 600px;
-  padding: 10px;
+  padding: 12px;
   background-color: white;
   box-shadow: 1px 1px 5px 0 rgba(0,0,29,0.22);
   border-radius: 3px;
