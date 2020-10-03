@@ -2,11 +2,9 @@ import React from 'react';
 
 import Products from '../components/Products';
 import PurchaseInfo from '../components/PurchaseInfo';
-import Style from '../styles/Root';
+import { Container, Button, Title, Flex } from '../styles/Root';
 
 function Cart() {
-
-  const { Container, Button, Title, Flex } = Style;
 
   return (
     <Container>

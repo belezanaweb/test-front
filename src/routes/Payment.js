@@ -1,11 +1,25 @@
 import React from 'react';
 
-function Payment() {
+import CreditCardForm from '../components/CreditCardForm';
+import PurchaseInfo from '../components/PurchaseInfo';
+import { Container, Button, Title, Flex } from '../styles/Root';
+
+function Cart() {
+
   return (
-    <div>
-      <h1>Pagamento</h1>
-    </div>
+    <Container>
+      <Title>Cartão de crédito</Title>
+
+      <Flex>
+        <CreditCardForm />
+        <div>
+          <PurchaseInfo />
+          <Button>Finalizar o pedido</Button>
+        </div>
+      </Flex>
+
+    </Container>
   )
 }
 
-export default Payment;
+export default Cart;
