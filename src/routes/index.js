@@ -1,28 +1,24 @@
 // eslint-disable-next-line
-import React from 'react';
-
-import Cart from './Cart';
-import Payment from './Payment';
-import Success from './Success';
+import React, { lazy } from 'react';
 
 export const routes = [
   {
     id: "cart",
     path: "/cart",
     exact: true,
-    component: Cart
+    component: lazy(() => import('./Cart'))
   },
   {
     id: "payment",
     path: "/payment",
     exact: true,
-    component: Payment
+    component: lazy(() => import('./Payment'))
   },
   {
     id: "success",
     path: "/success",
     exact: true,
-    component: Success
+    component: lazy(() => import('./Success'))
   }
 ]
 
