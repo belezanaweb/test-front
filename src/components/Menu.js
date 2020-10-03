@@ -1,11 +1,10 @@
 import React from 'react';
 import { withRouter } from "react-router";
 
-import TabsCSS from '../styles/Tabs';
+import { Container, Tabs, Tab } from '../styles/Tabs';
 
-function Tabs(props) {
+function Menu(props) {
 
-  const { Container, Tabs, Tab } = TabsCSS;
   const path = props.location.pathname.replace("/","");
   const tabs = [
     { id: "cart", text: "Sacola" },
@@ -32,4 +31,4 @@ function Tabs(props) {
   )
 }
 
-export default withRouter(Tabs);
+export default withRouter(Menu);

@@ -1,10 +1,8 @@
 import React from "react";
 
-import Purchase from '../styles/Purchase';
+import { Container, Info, Discount, Total } from '../styles/Purchase';
 
 function PurchaseInfo() {
-
-  const { Container, Info, Discount, Total } = Purchase;
 
   return (
     <Container>

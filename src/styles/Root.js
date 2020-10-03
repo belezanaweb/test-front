@@ -1,6 +1,6 @@
 import styled, { createGlobalStyle } from 'styled-components';
 
-const Global = createGlobalStyle`
+export const Global = createGlobalStyle`
   * {
     padding: 0;
     margin: 0;
@@ -12,18 +12,18 @@ const Global = createGlobalStyle`
     background: #EEE;
   }
 `
-const NotFound = styled.h1`
+export const NotFound = styled.h1`
   text-align: center;
   margin-top: 30px;
 `;
 
-const Container = styled.div`
+export const Container = styled.div`
   padding: 10px;
   max-width: 960px;
   margin: auto;
 `;
 
-const Flex = styled.div`
+export const Flex = styled.div`
   display: flex;
   flex-direction: column;
   margin: auto;
@@ -34,7 +34,7 @@ const Flex = styled.div`
   }
 `
 
-const Title = styled.h1`
+export const Title = styled.h1`
  font-size: 14px;
  color: #999;
  margin-bottom: 5px;
@@ -42,7 +42,7 @@ const Title = styled.h1`
  text-transform: uppercase;
 `;
 
-const Button = styled.button`
+export const Button = styled.button`
   display: block;
   margin: auto;
   width: 100%;

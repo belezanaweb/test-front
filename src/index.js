@@ -3,12 +3,12 @@ import ReactDOM from 'react-dom';
 import { BrowserRouter } from 'react-router-dom';
 
 import App from './App';
-import Style from './styles/Root';
+import { Global } from './styles/Root';
 import * as serviceWorker from './serviceWorker';
 
 ReactDOM.render(
   <StrictMode>
-    <Style.Global />
+    <Global />
     <BrowserRouter>
       <App />
     </BrowserRouter>

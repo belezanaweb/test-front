@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-const Container = styled.div`
+export const Container = styled.div`
   display: flex;
   flex-direction: column;
 
@@ -10,14 +10,14 @@ const Container = styled.div`
   }
 `;
 
-const List = styled.ul`
+export const List = styled.ul`
   padding: 12px;
   background: white;
   box-shadow:  1px 1px 5px 0 rgba(0,0,29,0.22);
   border-radius: 3px;
 `;
 
-const Product = styled.li`
+export const Product = styled.li`
   display: flex;
   flex-direction: row;
   list-style: none;
@@ -31,22 +31,22 @@ const Product = styled.li`
   }
 `;
 
-const Image = styled.img`
+export const Image = styled.img`
   margin-right: 10px;
 `;
 
-const Info = styled.div`
+export const Info = styled.div`
   display: flex;
   flex-direction: column;
   flex: 1;
 `;
 
-const Description = styled.p`
+export const Description = styled.p`
   font-size: 13px;
   line-height: 16px;
 `;
 
-const Price = styled.p`
+export const Price = styled.p`
   margin-top: 15px;
   font-weight: bold;
   text-align: right;

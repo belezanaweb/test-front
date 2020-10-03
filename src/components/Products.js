@@ -1,10 +1,8 @@
 import React from "react";
 
-import ProductsCSS from '../styles/Products';
+import { Container, List, Product, Image, Info, Description, Price } from '../styles/Products';
 
 function Products() {
-
-  const { Container, List, Product, Image, Info, Description, Price} = ProductsCSS;
 
   return (
     <Container>
