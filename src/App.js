@@ -1,11 +1,18 @@
-import React from 'react'
-import logo from './logo.svg'
-import './App.css'
+import React from 'react';
+import { Switch, Route, Redirect } from 'react-router-dom';
 
-const App = () => (
-  <div className="App">
-      <img src={logo} className="App-logo" alt="logo" />
-  </div>
-)
+import routes from './routes';
 
-export default App
+function App() {
+  return (
+    <Switch>
+      <Route path="/" exact component={() => <Redirect to={routes[0].path} />} />
+      { routes.map(route => <Route key={route.id} path={route.path} exact={route.exact} component={route.component} />)}
+      <Route>
+        <h1>Não encontrado</h1>
+      </Route>
+    </Switch>
+  );
+}
+
+export default App;
