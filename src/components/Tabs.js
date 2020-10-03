@@ -1,10 +1,11 @@
 import React from 'react';
 import { withRouter } from "react-router";
 
-import { TabsContainer, Tabs, Tab } from './styled';
+import TabsCSS from '../styles/Tabs';
 
-function Steps(props) {
+function Tabs(props) {
 
+  const { Container, Tabs, Tab } = TabsCSS;
   const path = props.location.pathname.replace("/","");
   const tabs = [
     { id: "cart", text: "Sacola" },
@@ -13,7 +14,7 @@ function Steps(props) {
   ]
 
   return(
-    <TabsContainer>
+    <Container>
       <Tabs>
         {
           tabs.map(
@@ -27,8 +28,8 @@ function Steps(props) {
           )
         }
       </Tabs>
-    </TabsContainer>
+    </Container>
   )
 }
 
-export default withRouter(Steps);
+export default withRouter(Tabs);

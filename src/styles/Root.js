@@ -1,6 +1,6 @@
 import styled, { createGlobalStyle } from 'styled-components';
 
-export const GlobalCSS = createGlobalStyle`
+const Global = createGlobalStyle`
   * {
     padding: 0;
     margin: 0;
@@ -12,15 +12,39 @@ export const GlobalCSS = createGlobalStyle`
     background: #EEE;
   }
 `
+const NotFound = styled.h1`
+  text-align: center;
+  margin-top: 30px;
+`;
 
-export const Container = styled.div`
+const Container = styled.div`
   padding: 10px;
   max-width: 960px;
   margin: auto;
 `;
 
-export const Button = styled.button`
+const Flex = styled.div`
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+
+  @media(min-width: 769px){
+    flex-direction: row;
+    justify-content: space-between;
+  }
+`
+
+const Title = styled.h1`
+ font-size: 14px;
+ color: #999;
+ margin-bottom: 5px;
+ line-height: 17px;
+ text-transform: uppercase;
+`;
+
+const Button = styled.button`
   display: block;
+  margin: auto;
   width: 100%;
   max-width: 360px;
   height: 60px;
@@ -44,3 +68,12 @@ export const Button = styled.button`
     padding: 0 16px;
   }
 `
+
+export default {
+  Global,
+  Container,
+  NotFound,
+  Flex,
+  Title,
+  Button
+}
