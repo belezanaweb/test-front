@@ -5,6 +5,7 @@ import { Container, Content } from './styles';
 import Header from 'components/Header';
 import Products from 'components/Products';
 import Price from 'components/Price';
+import Button from 'components/Button';
 
 const Cart: React.FC = () => {
   return (
@@ -13,6 +14,7 @@ const Cart: React.FC = () => {
       <Content>
         <Products />
         <Price />
+        <Button>SEGUIR PARA O PAGAMENTO</Button>
       </Content>
     </Container>
   );
