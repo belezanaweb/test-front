@@ -1,6 +1,8 @@
 import styled from 'styled-components';
 
 export const Container = styled.div`
+  flex: .5;
+  height: 130px;
   margin-top: 20px;
   margin-bottom: 20px;
   padding: 15px;
