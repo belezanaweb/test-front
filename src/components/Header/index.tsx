@@ -1,6 +1,7 @@
 import React from 'react';
 import { useHistory } from 'react-router';
 
+import { GlobalContainer } from 'styles/global';
 import { Container, Item } from './styles';
 
 const Header: React.FC = () => {
@@ -9,11 +10,11 @@ const Header: React.FC = () => {
 
   return (
     <Container>
-      <div>
+      <GlobalContainer>
         <Item selected={currentPath === '/cart'}>SACOLA</Item>
         <Item selected={currentPath === '/payment'}>PAGAMENTO</Item>
         <Item selected={currentPath === '/success'}>CONFIRMAÇÃO</Item>
-      </div>
+      </GlobalContainer>
     </Container>
   );
 };

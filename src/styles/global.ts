@@ -1,4 +1,4 @@
-import { createGlobalStyle } from 'styled-components';
+import styled, { createGlobalStyle } from 'styled-components';
 
 export default createGlobalStyle`
   :root {
@@ -25,5 +25,14 @@ export default createGlobalStyle`
     background-color: var(--color-background);
     color: var(--color-black);
     min-height: 100vh;
+  }
+`;
+
+export const GlobalContainer = styled.div`
+  margin: 0 auto;
+  width: var(--mobile-min-height-container);
+
+  @media screen and (max-width: 340px) {
+    width: 100%;
   }
 `;

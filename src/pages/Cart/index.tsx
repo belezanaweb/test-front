@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { Container, Content } from './styles';
+import { GlobalContainer } from 'styles/global';
 
 import Header from 'components/Header';
 import Products from 'components/Products';
@@ -9,14 +9,14 @@ import Button from 'components/Button';
 
 const Cart: React.FC = () => {
   return (
-    <Container>
+    <>
       <Header />
-      <Content>
+      <GlobalContainer>
         <Products />
         <Price />
         <Button>SEGUIR PARA O PAGAMENTO</Button>
-      </Content>
-    </Container>
+      </GlobalContainer>
+    </>
   );
 };
 
