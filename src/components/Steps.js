@@ -1,7 +1,7 @@
 import React from 'react';
 import { withRouter } from "react-router";
 
-import { Tabs, Tab } from './styled';
+import { TabsContainer, Tabs, Tab } from './styled';
 
 function Steps(props) {
 
@@ -12,7 +12,23 @@ function Steps(props) {
     { id: "success", text: "Confirmação" }
   ]
 
-  return <Tabs>{ tabs.map(tab => <Tab key={tab.id} active={ path === tab.id ? true : false }>{tab.text}</Tab>) }</Tabs>
+  return(
+    <TabsContainer>
+      <Tabs>
+        {
+          tabs.map(
+            tab =>
+              <Tab
+                key={tab.id}
+                active={ path === tab.id ? true : false }
+              >
+                {tab.text}
+              </Tab>
+          )
+        }
+      </Tabs>
+    </TabsContainer>
+  )
 }
 
 export default withRouter(Steps);

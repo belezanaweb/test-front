@@ -1,8 +1,14 @@
-import { GlobalCSS } from './Global';
-import { Tabs, Tab } from './Tabs';
+import { GlobalCSS, Container, Button } from './Global';
+import { TabsContainer, Tabs, Tab } from './Tabs';
+
+import CartStyle from './routes/Cart';
 
 export {
   GlobalCSS,
+  Container,
+  Button,
+  TabsContainer,
   Tabs,
-  Tab
+  Tab,
+  CartStyle
 }

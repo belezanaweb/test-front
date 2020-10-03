@@ -1,13 +1,19 @@
 import styled from 'styled-components';
 
+export const TabsContainer = styled.div`
+  background: white;
+  margin: auto;
+  box-shadow: 1px 1px 5px 0 rgba(0,0,29,0.22);
+`
+
 export const Tabs = styled.ul`
   display: flex;
   flex-direction: row;
   align-items: center;
-  justify-content: center;
-  box-shadow: 1px 1px 5px 0 rgba(0,0,29,0.22);
-  padding: 12px;
-  background: white;
+  justify-content: space-between;
+  padding: 12px 18px;
+  max-width: 360px;
+  margin: auto;
 `;
 
 export const Tab = styled.li`
@@ -16,6 +22,5 @@ export const Tab = styled.li`
   font-size: 13px;
   color: ${props => props.active ? '#FF7800' : '#CCC'};
   line-height: 16px;
-  padding: 0 12px;
   text-transform: uppercase;
 `
