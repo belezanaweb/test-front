@@ -7,11 +7,11 @@ jest.mock("axios");
 const wrapper = shallow(<ProductCard/>)
 
 describe('ProductCard', () => {
-    it('o Product card está sendo corretamente renderizado', () => {                     
+    it('product card is rendering correctly', () => {                     
         expect(wrapper.exists()).toBeTruthy();
         expect(wrapper).toMatchSnapshot();
     });
-    it('o Product image renderizado corretamente', () => {
+    it('card is receiving the product image', () => {
         expect(wrapper.find("ProductImage")).toBeTruthy();
     });
     it('should fetch products', async() => {
@@ -19,6 +19,6 @@ describe('ProductCard', () => {
             axios.get('http://www.mocky.io/v2/5b15c4923100004a006f3c07');         
         }
         expect(fetchData).toBeTruthy();
-        expect(fetchData).toBeDefined();        
-    })
+        expect(fetchData).toBeDefined();  
+    });
 })
