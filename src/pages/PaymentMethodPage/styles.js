@@ -149,7 +149,7 @@ export const ButtonConfirmationText = styled.p`
         font-weight: 700;
     }
 `
-export const Form = styled.div`
+export const Form = styled.form`
     height: 80vh;
     width: 93%;
     border-radius: 3px;
@@ -179,6 +179,12 @@ export const Input = styled.input`
     background-color: #FFF;
     border: 1px solid #E7E7E7;
     box-shadow: inset 0 1px 2px 0 rgba(0,0,0,0.2);
+    font-size: 1rem;
+
+    @media(min-width: 700px){
+        font-size: 1.5rem;
+    }
+
     :focus{
         border: 1px solid #a43287;
     }    
