@@ -1,7 +1,8 @@
 import React from "react";
 import { shallow } from "enzyme";
-import { render, fireEvent, getByText } from "@testing-library/react"
+import { render, fireEvent } from "@testing-library/react"
 import CartPage from "./index.js";
+import { MemoryRouter } from 'react-router-dom';
 
 describe('CartPage', () => {
     const wrapper = shallow(<CartPage/>)
@@ -15,5 +16,5 @@ describe('CartPage', () => {
     });
     it('the confirmation button is rendering correctly', () => {
         expect(wrapper.find("ButtonConfirmation")).toBeTruthy();
-    });
+    });   
 })

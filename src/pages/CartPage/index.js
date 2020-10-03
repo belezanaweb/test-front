@@ -36,7 +36,8 @@ const CartPage = (props) => {
 
                 <AmountContainer/>
 
-                <ButtonConfirmation 
+                <ButtonConfirmation
+                    className="buttonConfirmation" 
                     type={'button'} 
                     onClick={onClickGoToPayment}
                 >
