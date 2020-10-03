@@ -135,17 +135,17 @@ export const ButtonConfirmation = styled.button`
 
     @media(min-width: 400px){
         width: 90%;
-        height: 12vh;
+        height: 11vh;
         margin: 2vh 0px 20vh 3vw;
     }
     @media(min-width: 500px){
         width: 80%;
-        height: 12vh;
+        height: 11vh;
         margin: 2vh 0px 20vh 3vw;
     }
     @media(min-width: 800px){        
         width: 50%;
-        height: 12vh;
+        height: 10vh;
         margin: 2vh 0px 20vh 3vw;
     }
     

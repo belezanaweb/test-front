@@ -1,9 +1,9 @@
 import React from 'react'
 import { shallow } from 'enzyme'
 import { MemoryRouter } from 'react-router-dom'
-import { CartPage } from "../CartPage";
-import { PaymentMethodPage } from "../PaymentMethodPage";
-import { ConfirmationPage } from "../ConfirmationPage";
+import CartPage from "../CartPage";
+import PaymentMethodPage from "../PaymentMethodPage";
+import ConfirmationPage from "../ConfirmationPage";
 
 describe('App', () => {
 it('cart page rendering', () => {
