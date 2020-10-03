@@ -7,9 +7,15 @@ interface ItemProps {
 export const Container = styled.div`
   background: var(--color-white);
   box-shadow: 1px 1px 5px 0 rgba(0,0,29,0.22);
-  display: flex;
-  justify-content: space-between;
-  padding: 12px 20px;
+  padding: 12px 0;
+
+  & > div {
+    display: flex;
+    justify-content: space-between;
+    padding-left: 11px;
+    margin: 0 auto;
+    width: var(--mobile-min-height-container);
+  }
 `;
 
 export const Item = styled.span<ItemProps>`

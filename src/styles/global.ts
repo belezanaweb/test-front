@@ -10,6 +10,7 @@ export default createGlobalStyle`
     --color-orange-dark: #D45A00;
     --color-background: #EEEEEE;
     --font-primary: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    --mobile-min-height-container: 341px;
   }
 
   * {

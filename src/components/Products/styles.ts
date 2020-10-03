@@ -1,8 +1,6 @@
 import styled from 'styled-components';
 
 export const Container = styled.div`
-  padding: 0 10px 0 9px;
-
   h1 {
     color: var(--color-gray-dark);
     font-size: 14px;

@@ -9,9 +9,11 @@ const Header: React.FC = () => {
 
   return (
     <Container>
-      <Item selected={currentPath === '/cart'}>SACOLA</Item>
-      <Item selected={currentPath === '/payment'}>PAGAMENTO</Item>
-      <Item selected={currentPath === '/success'}>CONFIRMAÇÃO</Item>
+      <div>
+        <Item selected={currentPath === '/cart'}>SACOLA</Item>
+        <Item selected={currentPath === '/payment'}>PAGAMENTO</Item>
+        <Item selected={currentPath === '/success'}>CONFIRMAÇÃO</Item>
+      </div>
     </Container>
   );
 };
