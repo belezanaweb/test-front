@@ -1,3 +1,3 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`PaymentMethodPage o payment method page está sendo corretamente renderizado 1`] = `ShallowWrapper {}`;
+exports[`PaymentMethodPage Payment method page is rendering correctly 1`] = `ShallowWrapper {}`;

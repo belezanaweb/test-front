@@ -36,7 +36,10 @@ const CartPage = (props) => {
 
                 <AmountContainer/>
 
-                <ButtonConfirmation type={'button'} onClick={onClickGoToPayment}>
+                <ButtonConfirmation 
+                    type={'button'} 
+                    onClick={onClickGoToPayment}
+                >
                     <ButtonConfirmationText>
                         SEGUIR PARA O PAGAMENTO
                     </ButtonConfirmationText>

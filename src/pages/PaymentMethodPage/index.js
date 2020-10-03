@@ -86,6 +86,7 @@ const PaymentMethodPage = (props) => {
                             Número do cartão
                         </Label>
                         <Input 
+                            data-testid="cardNumber"
                             name="cardNumber"
                             type={"text"}
                             className="cardNumber"
@@ -97,7 +98,8 @@ const PaymentMethodPage = (props) => {
                         <Label className="name">
                             Nome do títular
                         </Label>
-                        <Input 
+                        <Input
+                            data-testid="name" 
                             name="name"
                             type={"text"}
                             className="name"
@@ -112,6 +114,7 @@ const PaymentMethodPage = (props) => {
                             Validade (mês/ano)
                         </Label>
                         <Input 
+                            data-testid="expirationDate"
                             name="expirationDate"
                             type={"text"}
                             className="expirationDate" 
@@ -124,7 +127,8 @@ const PaymentMethodPage = (props) => {
                         <Label className="cvv">
                             CVV
                         </Label>
-                        <Input 
+                        <Input
+                            data-testid="cvv" 
                             name="cvv"
                             type={"text"}
                             className="cvv"
@@ -136,7 +140,11 @@ const PaymentMethodPage = (props) => {
                         </Div>                   
                     </Form>                             
                 <AmountContainer/>
-                <ButtonConfirmation  type="submit" onClick={onClickConfirmation}>
+                <ButtonConfirmation 
+                    data-testid="buttonConfirmation"
+                    type="submit" 
+                    onClick={onClickConfirmation}
+                >
                     <ButtonConfirmationText>
                         FINALIZAR O PEDIDO
                     </ButtonConfirmationText>

@@ -1,22 +1,26 @@
 import React from "react";
 import { shallow } from "enzyme";
+import { act } from '@testing-library/react-hooks';
 import CartPage from "./index.js";
 
-const renderedPage = shallow(<CartPage/>)
-
 describe('CartPage', () => {
+    const wrapper = shallow(<CartPage/>)
+
     it('o Cart page está sendo corretamente renderizado', () => {                     
-        expect(renderedPage.exists()).toBeTruthy();
-        expect(renderedPage).toMatchSnapshot();
+        expect(wrapper.exists()).toBeTruthy();
+        expect(wrapper).toMatchSnapshot();
     });
     it('o Products container renderizado corretamente', () => {
-        expect(renderedPage.find("ProductsContainer")).toBeTruthy();
+        expect(wrapper.find("ProductsContainer")).toBeTruthy();
     });
-    it('O Botão de confirmação está renderizando e clicando', () => {
-        expect(renderedPage.find("ButtonConfirmation")).toBeTruthy();
+    it('O Botão de confirmação está renderizando', () => {
+        expect(wrapper.find("ButtonConfirmation")).toBeTruthy();
     });
     it('o botão de confirmação está recebendo click', () => {
-        expect(renderedPage.find("ButtonConfirmation"));
+        // const spy = jest.spyOn(CartPage,"onClickGoToPayment");
+        // CartPage.onClickGoToPayment();
+        
+        // expect(spy).toBeCalled();               
     });
 
 })
