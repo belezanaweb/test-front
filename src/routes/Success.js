@@ -1,39 +1,41 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 
-import Products from '../components/Products';
-import PurchaseInfo from '../components/PurchaseInfo';
+import { Products, PurchaseInfo } from '../components';
 import { RootCSS, SuccessCSS } from '../styles';
 
-function Success() {
+function Success({ purchase }) {
 
   const { Container, Title, Flex } = RootCSS;
   const { Content, CreditCard, Done } = SuccessCSS;
 
   return (
     <Container>
+      {
+        purchase.products &&
+        <Fragment>
+          <Done>
+            <img src="/images/success.png" alt="Compra efetuada"/>
+            <p>Compra Efetuada com sucesso</p>
+          </Done>
 
-      <Done>
-        <img src="/images/success.png" alt="Compra efetuada"/>
-        <p>Compra Efetuada com sucesso</p>
-      </Done>
+          <Flex>
 
-      <Flex>
+            <Content>
+              <Title>Pagamento</Title>
+              <CreditCard>
+                <p>****.****.****.1234</p>
+                <p>JOSÉ DA SILVA</p>
+                <p>05/2019</p>
+              </CreditCard>
+              <Title>Produtos</Title>
+              <Products items={purchase.products} />
+            </Content>
 
-        <Content>
-          <Title>Pagamento</Title>
-          <CreditCard>
-            <p>****.****.****.1234</p>
-            <p>JOSÉ DA SILVA</p>
-            <p>05/2019</p>
-          </CreditCard>
-          <Title>Produtos</Title>
-          <Products />
-        </Content>
+            <PurchaseInfo info={purchase.info} />
 
-        <PurchaseInfo />
-
-      </Flex>
-
+          </Flex>
+        </Fragment>
+      }
     </Container>
   )
 }

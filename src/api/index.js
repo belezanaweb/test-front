@@ -1,12 +1,11 @@
-const API = {
-  baseUrl: 'http://www.mocky.io/v2',
-  endpoints: {
-    getProducts: '5b15c4923100004a006f3c07'
-  }
-};
+import axios from 'axios';
 
-const GetProductsList = () => fetch(`${API}/${API.endpoints.getProducts}`);
+const API = axios.create({
+  baseURL: 'http://www.mocky.io/v2'
+});
 
-export default {
-  GetProductsList
+const GetPurchase = () => API.get('/5b15c4923100004a006f3c07')
+
+export {
+  GetPurchase
 };

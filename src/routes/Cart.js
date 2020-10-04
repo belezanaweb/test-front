@@ -1,25 +1,27 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 
-import Products from '../components/Products';
-import PurchaseInfo from '../components/PurchaseInfo';
+import { Products, PurchaseInfo } from '../components';
 import { RootCSS } from '../styles';
 
-function Cart() {
+function Cart({ purchase }) {
 
   const { Container, Button, Title, Flex } = RootCSS;
 
   return (
     <Container>
-      <Title>Produtos</Title>
-
-      <Flex>
-        <Products />
-        <div>
-          <PurchaseInfo />
-          <Button>Seguir para o pagamento</Button>
-        </div>
-      </Flex>
-
+      {
+        purchase.products &&
+        <Fragment>
+          <Title>Produtos</Title>
+          <Flex>
+            <Products items={purchase.products} />
+            <div>
+              <PurchaseInfo info={purchase.info}/>
+              <Button>Seguir para o pagamento</Button>
+            </div>
+          </Flex>
+        </Fragment>
+      }
     </Container>
   )
 }
