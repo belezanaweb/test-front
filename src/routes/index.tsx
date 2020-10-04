@@ -2,6 +2,7 @@ import React from 'react';
 import { BrowserRouter, Switch, Route, Redirect } from 'react-router-dom';
 
 import Cart from 'pages/Cart';
+import Payment from 'pages/Payment';
 
 const Routes = () => (
   <BrowserRouter>
@@ -10,6 +11,7 @@ const Routes = () => (
         <Redirect to="/cart" />
       </Route>
       <Route exact path="/cart" component={Cart} />
+      <Route exact path="/payment" component={Payment} />
     </Switch>
   </BrowserRouter>
 );
