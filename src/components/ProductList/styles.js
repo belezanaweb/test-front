@@ -24,5 +24,10 @@ export const ContentContainer = styled.div`
   background-color: #FFF;
   border-radius: 3px;
   box-shadow: 1px 1px 5px 0 rgba(0,0,29,0.22);
+  @media only screen and (min-width: 1024px) {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content:space-between;
+  }
 `
 

@@ -15,6 +15,7 @@ export const Container = styled.div`
     grid-column:1/2;
     grid-row: 1/3;
   }
+
   p{
     height: 100%;
     width: 100%;
@@ -36,6 +37,31 @@ export const Container = styled.div`
     align-items: flex-end;
     grid-column:2/3;
     grid-row: 2/3;
+  }
+
+  @media only screen and (max-width: 360px) {
+    img {
+      width: ${props => props.widthImg || "90%"};
+    }
+    }
+  
+  @media only screen and (min-width: 400px) {
+    height: 20vw;
+    img {
+      width: ${props => props.widthImg || "75%"};
+    }
+  }
+
+  @media only screen and (min-width: 1024px) {
+    height: 45vh;
+    gap: 16px;
+    width: 30%;
+    display:flex;
+    flex-direction: column;
+    img{
+      align-self: center;
+      width: 100px;
+    }
   }
 `
 

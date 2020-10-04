@@ -19,6 +19,15 @@ export const Container = styled.div`
     line-height: 16px;
     text-align: center;
 }
+
+  @media only screen and (max-width: 360px) {
+  span{font-size: 12px;}
+  }
+
+  @media only screen and (min-width: 1024px) {
+    height: 6vh;
+  }
+
 `
 export const SpanCart = styled.span`
   &&{

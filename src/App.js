@@ -32,6 +32,9 @@ export const ContainerContent = styled.div`
   flex-direction: column;
   gap:6vw;
   transition: 0.7s;
+  @media only screen and (min-width: 1024px) {
+    gap:3vw;
+  }
 `
 
 const App = () => {

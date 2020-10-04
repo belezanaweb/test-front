@@ -9,6 +9,11 @@ export const Container = styled.div`
     border-radius: 3px;
     border: 1px solid #CCC;
     gap: 3vw;
+    @media only screen and (min-width: 1024px) {
+        padding-top: 2vw;
+        padding-bottom: 2vw;
+        gap:1vw;
+    }
 `
 
 export const LineContainer = styled.div`
