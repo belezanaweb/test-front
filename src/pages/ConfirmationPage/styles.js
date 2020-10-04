@@ -111,10 +111,12 @@ export const Text = styled.p`
         display: flex;  
         
         @media(min-width: 400px){
-            font-size: 4.5vh;
+            font-size: 3.5vh;
+            line-height: 5vh;
         }
         @media(min-width: 500px){
-            font-size: 5vh;
+            font-size: 4.5vh;
+            line-height: 5vh;
         }
     }
     &.textConfirmationOrange {
@@ -130,7 +132,7 @@ export const Text = styled.p`
         margin: 11.08px 47.73px 20.43px 46px;
 
         @media(min-width: 400px){
-            font-size: 5.5vh;
+            font-size: 3.5vh;
             width: 90%;
             font-weight: 800;
             margin: 3vh 3vw; 
@@ -138,13 +140,13 @@ export const Text = styled.p`
         }        
         @media(min-width: 500px){
             width: 80%;
-            font-size: 5.5vh;
+            font-size: 4.5vh;
             font-weight: 800;
             margin: 3vh 3vw; 
             color: #15ff00;
         }
         @media(min-width: 800px){
-            font-size: 5.5vh;
+            font-size: 4.5vh;
             width: 50%;
             font-weight: 800;
             margin: 3vh 3vw; 
@@ -158,7 +160,7 @@ export const Container = styled.div`
     margin: 1vh 3vh 4vh 3vw;
 
     &.products{
-        height: 67vh;
+        height: 75vh;
         width: 93%;
         border-radius: 3px;
         background-color: #FFF;   
