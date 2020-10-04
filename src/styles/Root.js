@@ -78,9 +78,15 @@ const Button = styled.button`
   letter-spacing: 0.5px;
   line-height: 24px;
   text-align: center;
+  text-decoration: none;
 
   &:hover{
     background: #D45A00;
+  }
+
+  &:disabled{
+    background: #CCC;
+    box-shadow: inset 0 -3px 0 0 #CCC, 0 2px 4px 0 rgba(0,0,0,0.25);
   }
 
   @media(min-width: 769px){

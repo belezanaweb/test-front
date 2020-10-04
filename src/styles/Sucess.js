@@ -40,6 +40,7 @@ const CreditCard = styled.div`
   p{
     font-size: 14px;
     line-height: 17px;
+    text-transform: uppercase;
   }
 `;
 
