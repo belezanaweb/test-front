@@ -2,7 +2,7 @@ import RootCSS from './Root';
 import CreditCardFormCSS from './CreditCardForm';
 import ProductsCSS from './Products';
 import PurchaseCSS from './Purchase';
-import SuccessCSS from './Sucess';
+import SuccessCSS from './Success';
 import TabsCSS from './Tabs';
 
 export {
