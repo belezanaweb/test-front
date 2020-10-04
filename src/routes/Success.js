@@ -4,15 +4,13 @@ import { Redirect } from 'react-router-dom';
 import { Products, PurchaseInfo } from '../components';
 import { RootCSS, SuccessCSS } from '../styles';
 
-function Success({ purchase }) {
+function Success({ purchase, location }) {
 
   const { Container, Title, Flex } = RootCSS;
   const { Content, CreditCard, Done } = SuccessCSS;
-  const cardInfo = JSON.parse(sessionStorage.getItem('bnwnumber'));
 
   return (
     <Container>
-      { !purchase.products && <Redirect to="/" /> }
       {
         purchase.products &&
         <Fragment>
@@ -26,11 +24,11 @@ function Success({ purchase }) {
             <Content>
               <Title>Pagamento</Title>
               {
-                cardInfo &&
+                location.state.cardInfo &&
                 <CreditCard>
-                  <p>{cardInfo.last}</p>
-                  <p>{cardInfo.name}</p>
-                  <p>{cardInfo.date}</p>
+                  <p>{location.state.cardInfo.last}</p>
+                  <p>{location.state.cardInfo.name}</p>
+                  <p>{location.state.cardInfo.date}</p>
                 </CreditCard>
               }
               <Title>Produtos</Title>
@@ -42,6 +40,7 @@ function Success({ purchase }) {
           </Flex>
         </Fragment>
       }
+      { !purchase.products && <Redirect to="/" /> }
     </Container>
   )
 }

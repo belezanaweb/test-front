@@ -82,8 +82,7 @@ function CreditCardForm({ setValidForm }){
         date: dateRef.current.value,
         name: nameRef.current.value
       }
-      sessionStorage.setItem('bnwnumber',JSON.stringify(cardInfo));
-      setValidForm(true);
+      setValidForm(cardInfo);
     } else {
       setValidForm(false);
     }

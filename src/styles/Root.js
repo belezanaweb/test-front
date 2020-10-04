@@ -1,4 +1,5 @@
 import styled, { createGlobalStyle } from 'styled-components';
+import { Link } from 'react-router-dom';
 
 const Global = createGlobalStyle`
   * {
@@ -61,12 +62,12 @@ const Title = styled.h1`
  text-transform: uppercase;
 `;
 
-const Button = styled.button`
+const Button = styled(Link)`
   display: block;
   margin: auto;
   width: 100%;
   max-width: 360px;
-  height: 60px;
+  padding: 20px 0;
   background: #FF6C00;
   box-shadow: inset 0 -3px 0 0 #D45A00, 0 2px 4px 0 rgba(0,0,0,0.25);
   border: none;

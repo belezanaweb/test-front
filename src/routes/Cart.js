@@ -1,5 +1,4 @@
 import React, { Fragment } from 'react';
-import { useHistory } from 'react-router-dom';
 
 import { Products, PurchaseInfo } from '../components';
 import { RootCSS } from '../styles';
@@ -7,9 +6,6 @@ import { RootCSS } from '../styles';
 function Cart({ purchase }) {
 
   const { Container, Button, Title, Flex } = RootCSS;
-  const history = useHistory();
-
-  const Payment = () => history.push('/payment');
 
   return (
     <Container>
@@ -21,7 +17,7 @@ function Cart({ purchase }) {
             <Products items={purchase.products} />
             <div>
               <PurchaseInfo info={purchase.info}/>
-              <Button onClick={Payment}>Seguir para o pagamento</Button>
+              <Button to="/payment">Seguir para o pagamento</Button>
             </div>
           </Flex>
         </Fragment>

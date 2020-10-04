@@ -1,12 +1,12 @@
 import React, { Fragment, Suspense, useState, useEffect } from "react";
-import { Switch, Route, Redirect } from "react-router-dom";
+import { Switch, Route, Redirect, withRouter } from "react-router-dom";
 
 import routes from "./routes";
 import { Menu, Context } from "./components";
 import { RootCSS } from "./styles";
 import { GetPurchase } from "./api";
 
-function App() {
+function App(props) {
   const { Provider, Consumer } = Context;
   const { Loading, NotFound } = RootCSS;
   const [ purchase, setPurchase ] = useState({});
@@ -38,7 +38,7 @@ function App() {
                     key={route.id}
                     path={route.path}
                     exact={route.exact}
-                    component={() => <route.component purchase={purchase} />}
+                    component={() => <route.component purchase={purchase} {...props} />}
                   />
                 ))
             }
@@ -53,4 +53,4 @@ function App() {
   );
 }
 
-export default App;
+export default withRouter(App);
