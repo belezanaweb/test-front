@@ -4,6 +4,7 @@ export const ProductsListWrapper = styled.div`
   width: 100%;
   display: grid;
   gap: 15px;
+  font-size: 13px;
 `
 
 export const CardWrapper = styled.div`

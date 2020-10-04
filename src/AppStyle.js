@@ -24,3 +24,11 @@ export const PagesWrapper = styled.div`
   gap: 20px;
   flex-grow: 1;
 `
+
+export const PagesContent = styled.form`
+  width: 100%;
+  max-width: 600px;
+  padding: 0 10px;
+  display: grid;
+  gap: 20px;
+`

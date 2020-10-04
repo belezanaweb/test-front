@@ -17,5 +17,6 @@ export const Content = styled.div`
 export const Title = styled.div`
   padding: 0 10px;
   color: #999;
+  font-size: 14px;
   font-weight: bold;
 `

@@ -6,6 +6,7 @@ export const CartSummaryWrapper = styled.div`
   padding: 15px;
   display: grid;
   gap: 16px;
+  font-size: 14px;
 `
 
 export const InitialDetails = styled.div`

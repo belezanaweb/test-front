@@ -19,6 +19,7 @@ export const HeaderWrapper = styled.div`
 
 export const Text = styled.label`
   cursor: pointer;
+  font-size: 14px;
   color: ${props => {
     if (props.isOrange) {
       return "#FF7800"
