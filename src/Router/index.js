@@ -7,6 +7,7 @@ import { ContainerContent } from '../App'
 const SplashScreen = lazy(() => import('../pages/SplashScreen'));
 const Cart = lazy(() => import('../pages/Cart'));
 const Payment = lazy(() => import('../pages/Payment'));
+const Success = lazy(() => import('../pages/Success'));
 
 const Router = () => {
     return (
@@ -19,6 +20,9 @@ const Router = () => {
                     </Route>
                     <Route exact path="/payment" component={Payment}>
                     </Route>
+                    <Route exact path="/success" component={Success}>
+                    </Route>
+                    <Redirect to='/' />
                 </Switch>
             </Suspense>
         </BrowserRouter>
