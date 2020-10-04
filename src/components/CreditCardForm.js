@@ -21,7 +21,7 @@ function CreditCardForm({ setValidForm }){
     if(value === ""){
       setCardStatus('initial');
     } else {
-      if(CardValidator.number(value).isPotentiallyValid){
+      if(CardValidator.number(value).card && value.length >= 16){
         setCardStatus('valid');
       } else {
         setCardStatus('error');
