@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-export const Container = styled.div`
+const Container = styled.div`
   position: sticky;
   top: 0;
   background: white;
@@ -8,7 +8,7 @@ export const Container = styled.div`
   box-shadow: 1px 1px 5px 0 rgba(0,0,29,0.22);
 `
 
-export const Tabs = styled.ul`
+const Tabs = styled.ul`
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -18,7 +18,7 @@ export const Tabs = styled.ul`
   margin: auto;
 `;
 
-export const Tab = styled.li`
+const Tab = styled.li`
   list-style: none;
   font-weight: bold;
   font-size: 13px;

@@ -3,8 +3,10 @@ import ReactDOM from 'react-dom';
 import { BrowserRouter } from 'react-router-dom';
 
 import App from './App';
-import { Global } from './styles/Root';
+import { RootCSS } from './styles';
 import * as serviceWorker from './serviceWorker';
+
+const { Global } = RootCSS;
 
 ReactDOM.render(
   <StrictMode>

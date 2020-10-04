@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-export const Container = styled.div`
+const Container = styled.div`
   flex: .5;
   height: 130px;
   margin-top: 20px;
@@ -12,7 +12,7 @@ export const Container = styled.div`
     margin-top: 0;
   }
 `;
-export const Info = styled.div`
+const Info = styled.div`
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -26,14 +26,14 @@ export const Info = styled.div`
   }
 `;
 
-export const Discount = styled(Info)`
+const Discount = styled(Info)`
   p{
     color: #FF7800;
     margin-bottom: 16px;
   }
 `;
 
-export const Total = styled(Info)`
+const Total = styled(Info)`
   p{
     font-weight: bold;
     margin-bottom: 0;

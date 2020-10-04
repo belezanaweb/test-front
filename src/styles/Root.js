@@ -1,6 +1,6 @@
 import styled, { createGlobalStyle } from 'styled-components';
 
-export const Global = createGlobalStyle`
+const Global = createGlobalStyle`
   * {
     padding: 0;
     margin: 0;
@@ -12,7 +12,7 @@ export const Global = createGlobalStyle`
     background: #EEE;
   }
 `
-export const Loading = styled.div`
+const Loading = styled.div`
   display: block;
   margin: 16px auto;
   border: 4px solid #f3f3f3;
@@ -30,18 +30,18 @@ export const Loading = styled.div`
   }
 `
 
-export const NotFound = styled.h1`
+const NotFound = styled.h1`
   text-align: center;
   margin-top: 30px;
 `;
 
-export const Container = styled.div`
+const Container = styled.div`
   padding: 10px;
   max-width: 960px;
   margin: auto;
 `;
 
-export const Flex = styled.div`
+const Flex = styled.div`
   display: flex;
   flex-direction: column;
   margin: auto;
@@ -52,7 +52,7 @@ export const Flex = styled.div`
   }
 `
 
-export const Title = styled.h1`
+const Title = styled.h1`
  font-size: 14px;
  color: #999;
  margin-bottom: 5px;
@@ -61,7 +61,7 @@ export const Title = styled.h1`
  text-transform: uppercase;
 `;
 
-export const Button = styled.button`
+const Button = styled.button`
   display: block;
   margin: auto;
   width: 100%;
@@ -92,6 +92,7 @@ export default {
   Global,
   Container,
   NotFound,
+  Loading,
   Flex,
   Title,
   Button

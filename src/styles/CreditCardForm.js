@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const Container = styled.div`
+const Container = styled.div`
   display: flex;
   flex-direction: column;
 
@@ -10,14 +10,14 @@ export const Container = styled.div`
   }
 `;
 
-export const Form = styled.form`
+const Form = styled.form`
   padding: 12px;
   background: white;
   box-shadow: 1px 1px 5px 0 rgba(0, 0, 29, 0.22);
   border-radius: 3px;
 `;
 
-export const FormGroup = styled.div`
+const FormGroup = styled.div`
   display: block;
   margin-bottom: 25px;
 
@@ -41,7 +41,7 @@ export const FormGroup = styled.div`
   }
 `;
 
-export const FormGroupFlex = styled.div`
+const FormGroupFlex = styled.div`
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -66,7 +66,7 @@ export const FormGroupFlex = styled.div`
   }
 `;
 
-export const Label = styled.label`
+const Label = styled.label`
   display: block;
   font-size: 12px;
   font-weight: bold;
@@ -75,7 +75,7 @@ export const Label = styled.label`
   margin-bottom: 5px;
 `;
 
-export const FormField = styled.input`
+const FormField = styled.input`
   width: 100%;
   height: 45px;
   padding: 0 13px;
@@ -97,3 +97,12 @@ export const FormField = styled.input`
     color: #e0e7ee;
   }
 `;
+
+export default {
+  Container,
+  Form,
+  FormGroup,
+  FormGroupFlex,
+  Label,
+  FormField
+}

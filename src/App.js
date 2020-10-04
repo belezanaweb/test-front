@@ -3,9 +3,11 @@ import { Switch, Route, Redirect } from 'react-router-dom';
 
 import routes from './routes';
 import Menu from './components/Menu';
-import { NotFound, Loading } from './styles/Root';
+import { RootCSS } from './styles';
 
 function App() {
+
+  const { Loading, NotFound } = RootCSS;
 
   return (
     <>

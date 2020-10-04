@@ -1,10 +1,11 @@
 import React from 'react';
 import { withRouter } from "react-router";
 
-import { Container, Tabs, Tab } from '../styles/Tabs';
+import { TabsCSS } from '../styles';
 
 function Menu(props) {
 
+  const { Container, Tabs, Tab } = TabsCSS;
   const path = props.location.pathname.replace("/","");
   const tabs = [
     { id: "cart", text: "Sacola" },

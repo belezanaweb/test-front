@@ -1,10 +1,10 @@
 import styled from 'styled-components';
 
-export const Content = styled.div`
+const Content = styled.div`
   flex: 1;
 `;
 
-export const Done = styled.div`
+const Done = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -27,7 +27,7 @@ export const Done = styled.div`
   }
 `;
 
-export const CreditCard = styled.div`
+const CreditCard = styled.div`
   padding: 12px;
   background: white;
   box-shadow:  1px 1px 5px 0 rgba(0,0,29,0.22);
@@ -42,3 +42,9 @@ export const CreditCard = styled.div`
     line-height: 17px;
   }
 `;
+
+export default {
+  Content,
+  Done,
+  CreditCard
+}

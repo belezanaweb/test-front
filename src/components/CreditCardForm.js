@@ -1,8 +1,10 @@
 import React from 'react';
 
-import { Container, Form, FormGroup, FormGroupFlex, Label, FormField } from '../styles/CreditCardForm';
+import { CreditCardFormCSS } from '../styles';
 
 function CreditCardForm(){
+
+  const { Container, Form, FormGroup, FormGroupFlex, Label, FormField } = CreditCardFormCSS;
 
   return(
     <Container>

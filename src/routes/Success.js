@@ -2,10 +2,12 @@ import React from 'react';
 
 import Products from '../components/Products';
 import PurchaseInfo from '../components/PurchaseInfo';
-import { Container, Title, Flex } from '../styles/Root';
-import { Content, CreditCard, Done } from '../styles/Sucess';
+import { RootCSS, SuccessCSS } from '../styles';
 
 function Success() {
+
+  const { Container, Title, Flex } = RootCSS;
+  const { Content, CreditCard, Done } = SuccessCSS;
 
   return (
     <Container>

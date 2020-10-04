@@ -2,10 +2,10 @@ import React from 'react';
 
 import CreditCardForm from '../components/CreditCardForm';
 import PurchaseInfo from '../components/PurchaseInfo';
-import { Container, Button, Title, Flex } from '../styles/Root';
+import { RootCSS } from '../styles';
 
 function Cart() {
-
+  const { Container, Button, Title, Flex } = RootCSS;
   return (
     <Container>
       <Title>Cartão de crédito</Title>
