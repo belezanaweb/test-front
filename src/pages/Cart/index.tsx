@@ -1,4 +1,7 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import { useHistory } from 'react-router-dom';
+
+import { ResumeContext } from 'context/resume';
 
 import { GlobalContainer } from 'styles/global';
 
@@ -8,13 +11,22 @@ import Price from 'components/Price';
 import Button from 'components/Button';
 
 const Cart: React.FC = () => {
+  const history = useHistory();
+  const { handleSetCartItems } = useContext(ResumeContext);
+
+  const handleSubmit = () => {
+    history.push('/payment');
+  };
+
   return (
     <>
       <Header />
       <GlobalContainer>
         <Products />
         <Price />
-        <Button>SEGUIR PARA O PAGAMENTO</Button>
+        <form onSubmit={handleSubmit}>
+          <Button type="submit">SEGUIR PARA O PAGAMENTO</Button>
+        </form>
       </GlobalContainer>
     </>
   );
