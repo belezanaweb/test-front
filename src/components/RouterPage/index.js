@@ -5,13 +5,11 @@ const RouterPage = () => {
     const history = useHistory();
 
     useEffect(() => {
-        setTimeout(() => {
-            history.push("/cart")
-        }, 2000)
+        history.push("/cart")
     }) 
 
     return (
-        <h1>Ops, pagina não encontrada! Redirecionando para o carrinho...</h1>
+        <></>
     )
 }
 
