@@ -1,11 +1,13 @@
-import React from 'react'
-import logo from './logo.svg'
-import './App.css'
+import React, { useState, useEffect } from 'react'
+import Router from "./routes/routes"
 
-const App = () => (
-  <div className="App">
-      <img src={logo} className="App-logo" alt="logo" />
-  </div>
-)
+const App = () => {
+
+  return (
+    <div className="App">
+        <Router />
+    </div>
+  )
+}
 
 export default App
