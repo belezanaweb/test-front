@@ -44,3 +44,25 @@ yarn
 yarn build
 yarn serve
 ```
+
+### Épicos e tarefas do projeto
+
+- **BNW1 - Layout das páginas**
+  - Estrutura base
+  - Tabs
+  - Carrinho - Celular
+  - Carrinho - Desktop
+  - Pagamento - Celular
+  - Pagamento - Desktop
+  - Sucesso - Celular
+  - Sucesso - Desktop
+- **BNW2 - Informação da compra**
+  - Consumir endpoint
+  - Persistir (ContextAPI)
+- **BNW3 - Testes unitários**
+- **BNW4 - Split bundle**
+  - Dividir o bundle com base nas rotas
+  - Criar servidor para rodar a aplicação
+- **BNW5 - Formulário**
+  - Validação dos campos
+  - Passando as infos do cartão para a tela de sucesso
