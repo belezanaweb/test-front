@@ -45,11 +45,11 @@ const CardDetails = () => {
                         name="expiringDate"
                         value={form.expiringDate}
                         mask="99/9999"
-                        pattern="^(1[0-2]|0[1-9]|\d)/(20\d{2}|19\d{2}|0(?!0)\d|[1-9]\d)$"
+                        pattern="^(1[0-2]|0[1-9]|\d)/(20[2-9][0-9]|[2-9][1-9])$"
                         required
                     />
                     {(!form.expiringDate ||
-                        !/(1[0-2]|0[1-9]|\d)-(20\d{2}|19\d{2}|0(?!0)\d|[1-9]\d)/.test(form.expiringDate)) &&
+                        !/(1[0-2]|0[1-9]|\d)-(20[2-9][0-9]|[2-9][1-9])/.test(form.expiringDate)) &&
                         <ErrorMessage>Invalid Field</ErrorMessage>}
                 </Content>
                 <Content>
