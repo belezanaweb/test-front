@@ -4,6 +4,7 @@ import { Switch, Route, BrowserRouter } from "react-router-dom";
 import CartPage from "../components/CartPage";
 import PaymentPage from "../components/PaymentPage";
 import SuccessPage from "../components/SuccessPage";
+import RouterPage from "../components/RouterPage";
 
 const Router = (props) => {
     return (
@@ -17,6 +18,9 @@ const Router = (props) => {
                 </Route>
                 <Route exact path="/success">
                     <SuccessPage />
+                </Route>
+                <Route path="*">
+                    <RouterPage />
                 </Route>
             </Switch>
         </BrowserRouter>
