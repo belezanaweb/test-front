@@ -7,7 +7,7 @@ function PaymentData(props) {
 
     return (
         <Container>
-            <p>{cardContext.card.number}</p>
+            <p>****.****.****.{cardContext.card.number.slice(15, 19)}</p>
             <p>{cardContext.card.name}</p>
             <p>{cardContext.card.validity}</p>
         </Container>
