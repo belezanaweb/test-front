@@ -17,4 +17,19 @@ describe('Input Component', () => {
 
     expect(inputElement).toBeTruthy();
   });
+
+  it('sould be able to show an error', () => {
+    const { getByTestId } = render(
+      <Input
+        label="Insira seu nome"
+        placeholder="Nome"
+        error="Nome inválido"
+        register={jest.fn()}
+      />
+    );
+
+    const errorElement = getByTestId('input-error');
+
+    expect(errorElement).toBeTruthy();
+  });
 });

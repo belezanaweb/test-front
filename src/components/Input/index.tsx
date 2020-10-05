@@ -13,7 +13,7 @@ const Input: React.FC<InputProps> = ({ label, error, register, ...rest }) => {
     <Container>
       <label htmlFor={rest.id}>{label}</label>
       <InputElement {...rest} ref={register} error={error} />
-      <small>{error}</small>
+      <small data-testid="input-error">{error}</small>
     </Container>
   );
 };
