@@ -26,22 +26,20 @@ const Success: React.FC = () => {
     <>
       <Header />
       <GlobalContainer>
-        <Container>
-          <Message>
-            <img src={SuccessIcon} alt="Círculo laranja com um check"/>
-            <h1>COMPRA EFETUADA COM SUCESSO</h1>
-          </Message>
-          <PaymentInfoElement>
-            <h2>PAGAMENTO</h2>
-            <div>
-              <p>****.****.****.{paymentInfo?.lastCardNumber}</p>
-              <p>{paymentInfo?.cardName}</p>
-              <p>{paymentInfo?.cardVality}</p>
-            </div>
-          </PaymentInfoElement>
-          <Products />
-          <Price />
-        </Container>
+        <Message>
+          <img src={SuccessIcon} alt="Círculo laranja com um check"/>
+          <h1>COMPRA EFETUADA COM SUCESSO</h1>
+        </Message>
+        <PaymentInfoElement>
+          <h2>PAGAMENTO</h2>
+          <div>
+            <p>****.****.****.{paymentInfo?.lastCardNumber}</p>
+            <p>{paymentInfo?.cardName}</p>
+            <p>{paymentInfo?.cardVality}</p>
+          </div>
+        </PaymentInfoElement>
+        <Products />
+        <Price />
       </GlobalContainer>
     </>
   );

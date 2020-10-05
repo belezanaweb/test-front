@@ -13,6 +13,23 @@ export const Container = styled.div`
     display: flex;
     justify-content: space-between;
     padding-left: 11px;
+
+    img {
+      display: none;
+    }
+
+    @media screen and (min-width: 768px) {
+      display: flex;
+      padding: 20px 0;
+
+      img {
+        display: initial;
+        position: absolute;
+        left: 40px;
+        top: 25px;
+        width: 70px;
+      }
+    }
   }
 `;
 

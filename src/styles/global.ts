@@ -36,4 +36,13 @@ export const GlobalContainer = styled.div`
   @media screen and (max-width: 340px) {
     width: 100%;
   }
+
+  @media screen and (min-width: 768px) {
+    width: 60%;
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    align-items: self-start;
+    grid-gap: 40px;
+    padding: 40px;
+  }
 `;
