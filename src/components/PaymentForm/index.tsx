@@ -1,28 +1,26 @@
-import React from 'react';
+import React, { useContext } from 'react';
 
 import { useForm } from "react-hook-form";
 import { useNormalize } from "hooks/normalize";
+import { PaymentContext } from 'context/payment';
 
 import { Container, Form, DoubleInputs } from './styles';
 
 import Input from 'components/Input';
 
-type FormData = {
-  cardNumber: string,
-  cardName: string,
-  cardVality: string,
-  cardCVV: string,
-}
+import { PaymentInfo } from 'models/payment';
 
 const PaymentForm: React.FC = () => {
-  const { register, handleSubmit, errors } = useForm<FormData>({
+  const { handleSetPaymentInfo } = useContext(PaymentContext);
+  const { register, handleSubmit, errors } = useForm<PaymentInfo>({
     mode: 'onChange',
     shouldFocusError: false
   });
   const { normalizeCardNumber, normalizeDate } = useNormalize();
 
-  const onValidate = (data: FormData) => {
-    console.log('validated!', data.cardName);
+  const onValidate = (data: PaymentInfo) => {
+    data.isValid = true;
+    handleSetPaymentInfo(data);
   };
 
   return (

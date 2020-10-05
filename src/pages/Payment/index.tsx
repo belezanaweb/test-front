@@ -1,5 +1,7 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { useHistory } from 'react-router-dom';
+
+import { PaymentContext } from 'context/payment';
 
 import { GlobalContainer } from 'styles/global';
 
@@ -9,6 +11,7 @@ import Price from 'components/Price';
 import Button from 'components/Button';
 
 const Payment: React.FC = () => {
+  const { paymentInfo } = useContext(PaymentContext);
   const history = useHistory();
 
   return (
@@ -17,7 +20,12 @@ const Payment: React.FC = () => {
       <GlobalContainer>
         <PaymentForm />
         <Price />
-        <Button type="submit" disabled>FINALIZAR O PEDIDO</Button>
+        <Button
+          type="submit"
+          disabled={!paymentInfo?.isValid}
+        >
+          FINALIZAR O PEDIDO
+        </Button>
       </GlobalContainer>
     </>
   );

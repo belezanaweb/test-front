@@ -17,4 +17,9 @@ export const Container = styled.button`
   &:hover, &:active {
     background: var(--color-orange-dark);
   }
+
+  &:disabled {
+    background: var(--color-gray);
+    box-shadow: inset 0 -3px 0 0 var(--color-gray-dark), 0 2px 4px 0 rgba(0,0,0,0.25);
+  }
 `;
