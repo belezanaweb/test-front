@@ -16,18 +16,19 @@ type FormData = {
 
 const PaymentForm: React.FC = () => {
   const { register, handleSubmit, errors } = useForm<FormData>({
-    mode: 'onChange'
+    mode: 'onChange',
+    shouldFocusError: false
   });
   const { normalizeCardNumber, normalizeDate } = useNormalize();
 
-  const onValidate = () => {
-    console.log('validated!');
+  const onValidate = (data: FormData) => {
+    console.log('validated!', data.cardName);
   };
 
   return (
     <Container>
       <h1>CARTÃO DE CRÉDITO</h1>
-      <Form onSubmit={handleSubmit(onValidate)}>
+      <Form onChange={handleSubmit(onValidate)}>
         <Input
           label="Número do cartão:"
           placeholder="____.____.____.____"
