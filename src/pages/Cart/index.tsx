@@ -25,7 +25,7 @@ const Cart: React.FC = () => {
     });
   }, [handleSetCartResume]);
 
-  const handleSubmit = () => {
+  const handleNextStep = () => {
     history.push('/payment');
   };
 
@@ -36,9 +36,7 @@ const Cart: React.FC = () => {
         <GlobalContainer>
           <Products />
           <Price />
-          <form onSubmit={handleSubmit}>
-            <Button type="submit">SEGUIR PARA O PAGAMENTO</Button>
-          </form>
+          <Button type="button" onClick={handleNextStep}>SEGUIR PARA O PAGAMENTO</Button>
         </GlobalContainer>
       )}
     </>
