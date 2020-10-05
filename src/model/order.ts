@@ -8,6 +8,7 @@ export interface IOrder {
         imageObjects: [
           {
             thumbnail: string
+            small: string
           }
         ]
         priceSpecification: {

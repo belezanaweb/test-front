@@ -1,3 +1,4 @@
+import { formatToBRL } from 'brazilian-values'
 import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { IOrder } from '../../model/order'
@@ -5,7 +6,7 @@ import { RootState } from '../../redux'
 import { fetchOrder } from '../../redux/ducks/order'
 import { setStep } from '../../redux/ducks/steps'
 import { ContainerStyled, ContentStyled } from '../../styles/global'
-import { ProdctBagStyled } from './styles'
+import { ProdctBagStyled, ProductItemStyled } from './styles'
 
 const ProductBag: React.FC = () => {
   const dispatch = useDispatch()
@@ -26,7 +27,17 @@ const ProductBag: React.FC = () => {
           {order &&
             order.items.length > 0 &&
             order.items.map((item) => {
-              return <span> a</span>
+              return (
+                <ProductItemStyled>
+                  <img src={item.product.imageObjects[0].small} alt={item.product.name} />
+                  <div>
+                    {item.product.name.substring(0, 60)}
+                    <div className="price">
+                      {formatToBRL(item.product.priceSpecification.originalPrice)}
+                    </div>
+                  </div>
+                </ProductItemStyled>
+              )
             })}
         </ContentStyled>
       </ProdctBagStyled>

@@ -44,9 +44,12 @@ export default createGlobalStyle`
 `
 
 export const ContainerStyled = styled.div`
-  width: 90vw;
   margin-right: auto;
   margin-left: auto;
+  width: 70vw;
+  @media (max-width: 991.98px) {
+    width: 90vw;
+  }
 `
 
 export const DFlexStyled = styled.div<{ justifyContent: string; alignItems: string }>`
