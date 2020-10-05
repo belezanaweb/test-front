@@ -1,16 +1,12 @@
-import React, { useEffect, useReducer } from 'react';
-
+import React, { useReducer } from 'react';
 import './App.css'
 
-import { initialStateCart, cartReducer } from './reducers/cart';
-import { initialStateCard, cardReducer } from './reducers/card';
+import CartProvider from './provider/CartProvider'
+import CardProvider from './provider/CardProvider'
+import Router from './Router/index';
 
 import { createGlobalStyle } from 'styled-components'
 import styled from 'styled-components'
-
-import Router from './Router/index';
-import CartContext from './contexts/CartContext';
-import CardContext from './contexts/CardContext';
 
 const GlobalStyle = createGlobalStyle`
   * {
@@ -38,16 +34,14 @@ export const ContainerContent = styled.div`
 `
 
 const App = () => {
-  const [stateCart, dispatchCart] = useReducer(cartReducer, initialStateCart);
-  const [stateCard, dispatchCard] = useReducer(cardReducer, initialStateCard);
 
   return (
-    <CartContext.Provider value={{ cart: stateCart.cart, dispatch: dispatchCart }}>
-      <CardContext.Provider value={{ card: stateCard, dispatch: dispatchCard }}>
+    <CartProvider>
+      <CardProvider>
           <GlobalStyle />
           <Router />
-      </CardContext.Provider>
-    </CartContext.Provider>
+      </CardProvider>
+    </CartProvider>
   );
 }
 export default App;
