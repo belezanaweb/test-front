@@ -1,7 +1,8 @@
-import React, { useContext } from 'react';
+import React, { useContext, useEffect } from 'react';
 import { useHistory } from 'react-router-dom';
 
 import { PaymentContext } from 'context/payment';
+import { ResumeContext } from 'context/resume';
 
 import { GlobalContainer } from 'styles/global';
 
@@ -12,7 +13,12 @@ import Button from 'components/Button';
 
 const Payment: React.FC = () => {
   const { paymentInfo } = useContext(PaymentContext);
+  const { cartResume } = useContext(ResumeContext);
   const history = useHistory();
+
+  useEffect(() => {
+    if (!cartResume) history.push('/cart');
+  }, [cartResume, history]);
 
   const handleSubmit = () => {
     history.push('/success');
