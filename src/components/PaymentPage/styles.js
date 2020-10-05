@@ -1,42 +1,94 @@
 import styled from "styled-components";
 
-export const ProductCard = styled.div`
-    display: flex;
-    width: 92.63%; /* width: 316px ; */
-    height: 90px;
-    border-radius: 3px;
-    border: 1px solid #EEE;
-    padding-top: 12px;
-    margin-bottom: 12px;
-
-`
-export const ProductCardImg = styled.img`
-    width: 65px; /** 65px */;
-    height: 65px; /** 65px */;
-
-`
-export const ProductContentWrapper = styled.div`
-    width: 100%; /* 220px */
-    margin-left: 16px;
-    margin-right: 16px;
+export const InputCardContainer = styled.div`
+    width: 95%;
     display: flex;
     flex-direction: column;
-    height: 80px; /* 65px */
+    align-items: left;
 `
 
-export const ProductCardText = styled.p`  
-    margin: 0;
-    font-size: 13px;
-    line-height: 16px;
-    color: #212122;
-`
-export const ProductPriceText = styled.p`
-    width: 100%;
-    color: #212122;
-    font-size: 14px;
+export const InputLabel = styled.label`
+    height: 14px;
+    width: 36.11%; /* 130px */
+    color: #CCC;
+    font-size: 12px;
     font-weight: 700;
-    line-height: 17px;
-    text-align: right;
-    margin-bottom: 0;
+    line-height: 14px;
+    text-align: left;
+    padding-bottom: 2px;
 `
 
+export const InputLabelWrapper = styled.div`
+    display: flex;
+    justify-content: space-between;
+    width: 95%;
+`
+
+export const Input = styled.input`
+    box-sizing: border-box;
+    height: 45px;
+    width: 99%; /* 320px */
+    border-radius: 3px;
+    background-color: #FFF;
+    border: 1px solid #E7E7E7;
+    box-shadow: inset 0 1px 2px 0 rgba(0,0,0,0.2);
+
+    &:focus {
+        outline-color: #A43287;
+    }
+
+    &:invalid {
+        outline-color: #F30;
+    }
+`
+
+export const InputExpirationDate = styled.input`
+    box-sizing: border-box;
+    height: 45px;
+    width: 56%; /* 180px */
+    border-radius: 3px;
+    background-color: #FFF;
+    border: 1px solid #E7E7E7;
+    box-shadow: inset 0 1px 2px 0 rgba(0,0,0,0.2);
+
+    &:focus {
+        outline-color: #A43287;
+    }
+`
+
+export const InputCode = styled.input`
+    box-sizing: border-box;
+    height: 45px;
+    width: 39.5%; /* 125px */
+    border-radius: 3px;
+    background-color: #FFF;
+    border: 1px solid #E7E7E7;
+    box-shadow: inset 0 1px 2px 0 rgba(0,0,0,0.2);
+
+    &:focus {
+        outline-color: #A43287;
+    }
+`
+
+export const ExpirationAndCodeWrapper = styled.div`
+    display: flex;
+    width: 99%; 
+    justify-content: space-between;
+`
+
+export const ErrorMessage = styled.p`
+    color: #F30;
+    font-size: 12px;
+    line-height: 14px;
+    margin: 0;
+
+`
+
+export const ErrorContainer = styled.div`
+    display: flex;
+    width: 99%; 
+    justify-content: space-between;
+    margin: 3px 0 23px 0;
+
+
+`
