@@ -5,7 +5,7 @@ import CartPage from "../components/CartPage";
 import PaymentPage from "../components/PaymentPage";
 import SuccessPage from "../components/SuccessPage";
 
-const Router = () => {
+const Router = (props) => {
     return (
         <BrowserRouter>
             <Switch>
@@ -13,7 +13,7 @@ const Router = () => {
                     <CartPage />
                 </Route>
                 <Route exact path="/payment">
-                    <PaymentPage />
+                    <PaymentPage handleContextForm={props.handleContextForm}/>
                 </Route>
                 <Route exact path="/success">
                     <SuccessPage />
