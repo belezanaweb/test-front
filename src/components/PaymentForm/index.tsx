@@ -67,6 +67,10 @@ const PaymentForm: React.FC = () => {
             minLength: {
               value: 6,
               message: 'Digite um nome válido'
+            },
+            pattern: {
+              value: /^[a-zA-Z ]+$/,
+              message: 'Digite um nome válido'
             }
           })}
           error={errors.cardName?.message}
@@ -88,6 +92,10 @@ const PaymentForm: React.FC = () => {
               minLength: {
                 value: 7,
                 message: 'Digite uma data válida'
+              },
+              pattern: {
+                value: /^(0[1-9]|1[0-2])\/?([0-9]{4}|[0-9]{2})$/,
+                message: 'Digite uma data válida'
               }
             })}
             error={errors.cardVality?.message}
@@ -103,6 +111,10 @@ const PaymentForm: React.FC = () => {
               required: true,
               minLength: {
                 value: 3,
+                message: 'Digite um código válido'
+              },
+              pattern: {
+                value: /^[0-9]+$/,
                 message: 'Digite um código válido'
               }
             })}
