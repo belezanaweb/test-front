@@ -1,12 +1,17 @@
 import React from 'react';
 import logo from '../../logo.svg';
-import '../../App.css';
-import {Container} from './styles';
+import { useHistory } from "react-router-dom";
+import { Container } from './styles';
 
-const SplashScreen = () => (
-  <Container>
+function SplashScreen() {
+  const history = useHistory();
+  setTimeout(() => {
+    history.push("/cart")
+  }, 3000);
+  return (
+    <Container>
       <img src={logo} alt="logo" />
-  </Container>
-)
-
+    </Container>
+  )
+}
 export default SplashScreen
