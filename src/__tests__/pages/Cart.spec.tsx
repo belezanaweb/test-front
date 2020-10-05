@@ -1,5 +1,5 @@
 import React from 'react';
-import { render, fireEvent, act, waitFor } from '@testing-library/react';
+import { render, fireEvent, waitFor } from '@testing-library/react';
 import { Router, Route } from 'react-router';
 import { createMemoryHistory } from 'history';
 import { ResumeProvider } from 'context/resume';
@@ -34,12 +34,12 @@ describe('Cart Page', () => {
       </ResumeProvider>
     );
 
-    setTimeout(() => {
+    await waitFor(() => {
       const buttonElement = getByText('SEGUIR PARA O PAGAMENTO');
 
       fireEvent.click(buttonElement);
 
-      expect(mockedHistoryPush).toHaveBeenCalledWith('/payment')
-    }, 5000);
+      expect(mockedHistoryPush).toHaveBeenCalledWith('/payment');
+    });
   });
 });
