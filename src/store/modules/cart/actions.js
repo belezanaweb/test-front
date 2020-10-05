@@ -1,11 +1,11 @@
 import api from '../../../services/api';
 
-const setProducts = products => ({
+export const setProducts = products => ({
   type: "SET_PRODUCTS",
   products
 });
 
-const setCardData = data => ({
+export const setCardData = data => ({
   type: "SET_CARD_DATA",
   data
 })

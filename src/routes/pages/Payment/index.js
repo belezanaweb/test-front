@@ -11,6 +11,7 @@ import {  validationData } from '../../../store/modules/cart/actions';
 import { maskCardValidity, maskNumberCreditCard } from '../../../util/maks';
 import { ContainerTable, ProductTable, Form } from './styles';
 import {useHistory} from "react-router-dom";
+import Header from '../../../components/Header';
 
 function Payment() {
   const formRef = useRef(null);
@@ -50,31 +51,55 @@ function Payment() {
 
   return (
     <ContainerTable>
+      <Header page={2}/>
+
       <ProductTable>
         <h1>Cartão de crédito</h1>
         <Form ref={formRef} onSubmit={handleSubmit}>
 
           <div>
             <label htmlFor="#">Número do cartão:</label>
-            <Input id="credit_card" onKeyUp={maskNumberCreditCard} name="numberCard" type="text" placeholder="____.____.____.____" />
+            <Input
+              id="credit_card"
+              onKeyUp={maskNumberCreditCard}
+              name="numberCard"
+              type="text"
+              placeholder="____.____.____.____"
+              maxlength="19"
+            />
 
             <label htmlFor="#">Nome do Titular:</label>
-            <Input type="text" name="holder" placeholder="Como no cartão"/>
+            <Input
+              type="text"
+              name="holder"
+              placeholder="Como no cartão"
+            />
 
             <section>
               <div>
                 <label htmlFor="#">Validade (mês/ano):</label>
-                <Input id="validity_card" name="validity" onKeyUp={maskCardValidity} type="text" placeholder="__/____"/>
+                <Input
+                  id="validity_card"
+                  name="validity"
+                  onKeyUp={maskCardValidity}
+                  type="text" placeholder="__/____"
+                  maxlength="7"
+                />
               </div>
               <div>
                 <label htmlFor="#">CVV:</label>
-                <Input type="text" name="cvv" placeholder="___"/>
+                <Input
+                  type="text"
+                  name="cvv"
+                  placeholder="___"
+                  maxlength="3"
+                />
               </div>
             </section>
           </div>
 
           <Total />
-            <Button type="submit">
+            <Button type="submit" >
               Finalizar o pedido
             </Button>
         </Form>

@@ -5,6 +5,7 @@ import { connect } from 'react-redux';
 import * as CartActions from '../../../store/modules/cart/actions';
 import { bindActionCreators } from 'redux';
 import { Container } from './styles';
+import Header from '../../../components/Header';
 
 class Success extends Component {
 
@@ -19,6 +20,7 @@ class Success extends Component {
 
     return (
       <Container>
+        <Header page={3} />
         <AiOutlineCheckCircle />
         <h1>Compra efetuada com sucesso</h1>
 

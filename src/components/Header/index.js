@@ -1,23 +1,13 @@
 import React from 'react';
 import { Container } from './styles';
 
-function Header() {
-  return(
-    <Container>
-      <li><button
-          activeClassName="navbar__link--active"
-          className="navbar__link">
-           Sacola
-      </button></li>
+function Header({page}) {
 
-      <li><button
-          activeClassName="navbar__link--active"
-          className="navbar__link"
-      >Pagamento</button></li>
-      <li><button
-          activeClassName="navbar__link--active"
-          className="navbar__link"
-      >Confirmação</button></li>
+  return(
+    <Container index={page}>
+      <button  >Sacola</button>
+     <button >Pagamento</button>
+     <button >Confirmação</button>
     </Container>
   );
 }

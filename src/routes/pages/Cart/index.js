@@ -7,6 +7,7 @@ import { ContainerTable, ProductTable } from './styles';
 import Button from '../../../components/Button';
 import Total from '../../../components/Total';
 import { Link } from 'react-router-dom';
+import Header from '../../../components/Header';
 
 class Cart extends Component {
 
@@ -19,6 +20,8 @@ class Cart extends Component {
 
     return (
       <ContainerTable>
+               <Header page={1} />
+
         <ProductTable>
           <h1>Produtos</h1>
 
