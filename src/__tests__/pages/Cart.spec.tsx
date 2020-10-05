@@ -27,11 +27,11 @@ describe('Cart Page', () => {
   it('sould be able to go to payment page', async () => {
     const history = createMemoryHistory();
     const { getByText } = render(
-      <ResumeProvider>
-        <Router history={history}>
-          <Route component={Cart} />
-        </Router>
-      </ResumeProvider>
+      <Router history={history}>
+        <Route component={Cart} />
+      </Router>, {
+        wrapper: ResumeProvider
+      }
     );
 
     await waitFor(() => {
