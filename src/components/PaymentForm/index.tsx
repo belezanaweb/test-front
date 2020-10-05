@@ -19,7 +19,14 @@ const PaymentForm: React.FC = () => {
   const { normalizeCardNumber, normalizeDate } = useNormalize();
 
   const onValidate = (data: PaymentInfo) => {
+    const lastCardNumber = data.cardNumber?.split(" ").pop();
+
+    if (!lastCardNumber) return;
+
+    data.lastCardNumber = lastCardNumber;
     data.isValid = true;
+    delete data.cardNumber;
+
     handleSetPaymentInfo(data);
   };
 
