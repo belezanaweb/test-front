@@ -12,12 +12,35 @@ Fork do repositório [belezanaweb/test-front](https://github.com/belezanaweb/tes
 - [Nock](https://github.com/nock/nock)
 - [Express](https://github.com/expressjs/express)
 
+
+### Rodando os testes
+
+Faça:
+
+```
+npm test
+```
+
+Se tiver o *yarn* instalado, faça:
+
+```
+yarn test
+```
+
 ### Rodando o projeto
 
-Faça os comandos:
+Faça:
 
 ```
 npm install
 npm build
 npm serve
+```
+
+Se tiver o *yarn* instalado, faça:
+
+```
+yarn
+yarn build
+yarn serve
 ```
