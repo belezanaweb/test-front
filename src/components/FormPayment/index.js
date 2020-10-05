@@ -100,7 +100,7 @@ function FormPayment(props) {
         setValue('name', form.name)
         setValue('validity', form.validity)
         setValue('cvv', form.cvv)
-        if (!(theme.number && theme.name && theme.validity && theme.cvv)) {
+        if ((!(theme.number || theme.name || theme.validity || theme.cvv) && (form.number !== '' && form.name !== '' && form.validity !== '' && form.cvv !== ''))) {
             setValue('valid', true)
         } else {
             setValue('valid', false)
