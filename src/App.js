@@ -21,6 +21,9 @@ function App(props) {
         total: data.total
       }
     }));
+    return () => {
+      setPurchase({});
+    }
   }, []);
 
   return (

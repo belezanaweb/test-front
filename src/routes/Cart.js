@@ -17,7 +17,7 @@ function Cart({ purchase }) {
             <Products items={purchase.products} />
             <div>
               <PurchaseInfo info={purchase.info}/>
-              <Button to="/payment">Seguir para o pagamento</Button>
+              <Button to="/payment" data-testid="toPayment">Seguir para o pagamento</Button>
             </div>
           </Flex>
         </Fragment>

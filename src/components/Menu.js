@@ -15,7 +15,7 @@ function Menu({ location }) {
 
   return(
     <Container>
-      <Tabs>
+      <Tabs data-testid="tabs">
         {
           tabs.map(
             tab =>

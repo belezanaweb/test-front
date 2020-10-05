@@ -100,6 +100,7 @@ function CreditCardForm({ setValidForm }){
             ref={creditRef}
             maxLength={20}
             onChange={CreditCardChange}
+            data-testid="credit-card"
           />
         </FormGroup>
 
@@ -111,6 +112,7 @@ function CreditCardForm({ setValidForm }){
             ref={nameRef}
             onChange={NameChange}
             onKeyUp={validateForm}
+            data-testid="name"
           />
         </FormGroup>
 
@@ -124,6 +126,7 @@ function CreditCardForm({ setValidForm }){
                   maxLength={7}
                   onChange={DateChange}
                   onKeyUp={validateForm}
+                  data-testid="date"
                 />
               </FormGroup>
 
@@ -136,6 +139,7 @@ function CreditCardForm({ setValidForm }){
                   ref={cvvRef}
                   onChange={CVVChange}
                   onKeyUp={validateForm}
+                  data-testid="cvv"
                 />
               </FormGroup>
           </FormGroupFlex>

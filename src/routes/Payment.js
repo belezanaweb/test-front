@@ -16,7 +16,7 @@ function Cart({ purchase }) {
         purchase.info &&
         <Fragment>
           <Title>Cartão de crédito</Title>
-          <Flex>
+          <Flex data-testid="payment-screen">
             <CreditCardForm setValidForm={setValidForm} />
             <div>
               <PurchaseInfo info={purchase.info} />

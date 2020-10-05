@@ -1,9 +1,15 @@
-import React from 'react';
+import React from "react";
+import { BrowserRouter as Router } from 'react-router-dom';
 import { render } from '@testing-library/react';
+
 import App from '../App';
 
-test('renders learn react link', () => {
-  const { getByText } = render(<App />);
-  const linkElement = getByText(/learn react/i);
-  expect(linkElement).toBeInTheDocument();
-});
+const Application = () => <Router><App /></Router>;
+
+describe('Test run the application', () => {
+  it('should show the Tabs on the screen', () => {
+    const { getByTestId } = render(<Application />);
+    const Tabs = getByTestId('tabs');
+    expect(Tabs).toBeInTheDocument();
+  })
+})
