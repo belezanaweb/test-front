@@ -1,9 +1,8 @@
 import React from "react";
 import CartPage from "./index";
-import PaymentPage from "../PaymentPage"
-import { render, screen, waitFor } from "@testing-library/react";
+import { render, screen } from "@testing-library/react";
 import { createMemoryHistory } from 'history';
-import { Router, MemoryRouter, Route } from "react-router-dom";
+import { Router } from "react-router-dom";
 import "@testing-library/jest-dom/extend-expect";
 import userEvent from "@testing-library/user-event";
 
@@ -27,13 +26,6 @@ describe("Elements renders successfully", () => {
     })
 })
 
-const renderComponent = () => 
-    render(<MemoryRouter initialEntries={["/cart"]}>  
-    <Route exact path="/cart">
-        <CartPage />
-    </Route>
- </MemoryRouter>
-)
 
 describe("CartPage buttons works properly", () => {
     test("Header button is functional", async () => {
