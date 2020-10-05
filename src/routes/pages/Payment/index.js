@@ -7,14 +7,15 @@ import * as Yup from 'yup';
 import Input from '../../../container/Input';
 import Button from '../../../components/Button';
 import Total from '../../../components/Total';
-import Header from '../../../components/Header';
 import {  validationData } from '../../../store/modules/cart/actions';
 import { maskCardValidity, maskNumberCreditCard } from '../../../util/maks';
 import { ContainerTable, ProductTable, Form } from './styles';
+import {useHistory} from "react-router-dom";
 
 function Payment() {
   const formRef = useRef(null);
   const dispatch = useDispatch();
+  const history = useHistory();
 
   const handleSubmit = async (data) => {
     try {
@@ -29,9 +30,10 @@ function Payment() {
         abortEarly: false,
       });
 
-      dispatch(validationData(data));
-
       formRef.current.setErrors({});
+
+      dispatch(validationData(data));
+      dispatch(history.replace("/success"))
 
     } catch (err) {
       if (err instanceof Yup.ValidationError) {
@@ -48,14 +50,13 @@ function Payment() {
 
   return (
     <ContainerTable>
-      <Header />
       <ProductTable>
         <h1>Cartão de crédito</h1>
         <Form ref={formRef} onSubmit={handleSubmit}>
 
           <div>
             <label htmlFor="#">Número do cartão:</label>
-            <Input id="credit_card" onKeyUp={maskNumberCreditCard} name="numberCard" type="text" placeholder="____.____.____.____"/>
+            <Input id="credit_card" onKeyUp={maskNumberCreditCard} name="numberCard" type="text" placeholder="____.____.____.____" />
 
             <label htmlFor="#">Nome do Titular:</label>
             <Input type="text" name="holder" placeholder="Como no cartão"/>
@@ -73,11 +74,9 @@ function Payment() {
           </div>
 
           <Total />
-
             <Button type="submit">
-                  Finalizar o pedido
+              Finalizar o pedido
             </Button>
-
         </Form>
       </ProductTable>
 
@@ -86,6 +85,6 @@ function Payment() {
 }
 
 const mapDispatchToProps = dispatch =>
-    bindActionCreators( CartActions , dispatch);
+  bindActionCreators( CartActions , dispatch)
 
 export default connect(null, mapDispatchToProps )(Payment);

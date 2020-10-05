@@ -4,6 +4,7 @@ import { Form as Unform} from '@unform/web';
 export const ContainerTable = styled.div`
   margin-top: 2vw;
   text-align: center;
+
 `;
 
 export const ProductTable = styled.div`
@@ -27,8 +28,8 @@ export const Form = styled(Unform) `
     text-align: left;
 
     > span {
-        color: #F30;
-        font-size: 12px;
+      color: #F30;
+      font-size: 12px;
     }
 
     label {
@@ -45,7 +46,7 @@ export const Form = styled(Unform) `
       border-radius: 3px;
       color: #999;
       background-color: #FFF;
-      border: 1px solid #E7E7E7;
+      border: 1px solid  ${props => props.isErrored ? '#F30' : '#E7E7E7'};
       box-shadow: inset 0 1px 2px 0 rgba(0,0,0,0.2);
 
       ::-webkit-input-placeholder {
@@ -55,6 +56,7 @@ export const Form = styled(Unform) `
       :focus {
         border: 1px solid #A43287;
       }
+
     }
 
     section {

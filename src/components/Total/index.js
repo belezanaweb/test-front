@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import { formatPrice } from '../../util/format';
 import * as CartActions from '../../store/modules/cart/actions';
 import { bindActionCreators } from 'redux';
-import { Container } from './styles'
+import { Container } from './styles';
 
 class Total extends Component {
 
@@ -30,7 +30,7 @@ class Total extends Component {
         </div>
         <div className="total">
           <span>total</span>
-          <span>{formatPrice(cart?.total)}</span>
+          <span>{formatPrice(cart?.subTotal + cart?.shippingTotal - cart?.discount )}</span>
         </div>
       </Container>
     )

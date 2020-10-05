@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled, {css} from 'styled-components';
 
 export const Container = styled.ul`
   display: flex;
@@ -15,12 +15,17 @@ export const Container = styled.ul`
       border: none;
       background: transparent;
       text-transform: uppercase;
-      color: #CCC;
+      color: #ccc;
+      /*color: ${props => props.isActive  ?  "orange" : "#ccc"};*/
       font-family: "Helvetica Neue", sans-serif;
       font-size: 13px;
       font-weight: 700;
       line-height: 16px;
       text-align: center;
     }
+
+    button.navbar__link{
+      color: orange;
+  }
   }
 `;

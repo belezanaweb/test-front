@@ -6,6 +6,7 @@ import { formatPrice } from '../../../util/format';
 import { ContainerTable, ProductTable } from './styles';
 import Button from '../../../components/Button';
 import Total from '../../../components/Total';
+import { Link } from 'react-router-dom';
 
 class Cart extends Component {
 
@@ -35,10 +36,11 @@ class Cart extends Component {
         </ProductTable>
 
         <Total />
-
-        <Button>
-          Seguir para o pagamento
-        </Button>
+        <Link to="/payment">
+          <Button type="submit">
+            Seguir para o pagamento
+          </Button>
+        </Link>
       </ContainerTable>
     )
   }

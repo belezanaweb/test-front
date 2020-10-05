@@ -15,7 +15,7 @@ class Success extends Component {
   render() {
     const {data, cart} = this.props;
     const allProductsCart = cart?.items.map(item => item.product);
-    console.log(data)
+    const arrayNumberCard = data?.numberCard.split(".");
 
     return (
       <Container>
@@ -25,9 +25,9 @@ class Success extends Component {
       <section>
         <h1>Pagamento</h1>
         <div className="payment">
-          <p>****.****.****.1234</p>
-          <p>José da Silva</p>
-          <p>05/2019</p>
+          <p>****.****.****.{arrayNumberCard[3]}</p>
+          <p>{data.holder}</p>
+          <p>{data.numberCard}</p>
         </div>
       </section>
 
@@ -42,7 +42,6 @@ class Success extends Component {
             </li>
             ))}
         </ul>
-
       </section>
 
       <Total />

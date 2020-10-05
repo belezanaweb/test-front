@@ -11,11 +11,11 @@ function Input({ name, ...rest }) {
       ref: inputRef.current,
       path: 'value'
     });
-  }, [fieldName, registerField]);
+  }, [ fieldName, registerField]);
 
   return (
     <>
-      <input ref={inputRef} isErrored={!!error} onFocus={clearError} {...rest} />
+      <input ref={inputRef} onFocus={clearError}  isErrored={!!error} {...rest} />
      {error && <span>{error}</span>}
     </>
   )

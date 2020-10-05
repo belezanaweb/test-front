@@ -1,5 +1,7 @@
 import api from '../../../services/api';
 import { push} from "connected-react-router";
+// import {useHistory} from "react-router-dom";
+// const history = useHistory();
 
 const setProducts = products => ({
   type: "SET_PRODUCTS",
@@ -14,9 +16,8 @@ const setCardData = data => ({
 export const getProducts = () => async (dispatch) => {
   try {
     const response = await api.get("/data");
-
     dispatch(setProducts(response.data));
-    dispatch(push("/success"))
+
   } catch {
     alert("Ocorreu um erro inesperado. Tente novamente!")
   }
@@ -32,7 +33,7 @@ export const validationData = ( {numberCard, holder, validity, cvv} ) => async (
     }
 
     dispatch(setCardData(body))
-    console.log(setCardData(body))
+   // console.log(setCardData(body))
 
   } catch {
     alert("Ocorreu um erro inesperado. Tente novamente!")
