@@ -6,16 +6,12 @@ import {
   Link
 } from "react-router-dom";
 
-import logo from './logo.svg'
-
 import Basket from './pages/Basket/Basket'
 import Confirmation from './pages/Confirmation/Confirmation'
 import Payment from './pages/Payment/Payment'
 
-import './App.css'
-
 const App = () => (
-  <div className="App">    
+  <div>    
     <Router>
       <div>
         <ul>
@@ -52,8 +48,6 @@ const App = () => (
         </Switch>
       </div>
     </Router>
-
-    <img src={logo} className="App-logo" alt="logo" />
   </div>
 )
 
