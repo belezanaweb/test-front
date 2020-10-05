@@ -1,4 +1,4 @@
-import React, { useContext, useEffect } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import { useHistory } from 'react-router-dom';
 import api from 'services/api';
 
@@ -14,12 +14,14 @@ import Price from 'components/Price';
 import Button from 'components/Button';
 
 const Cart: React.FC = () => {
+  const [loading, setLoading] = useState(true);
   const history = useHistory();
   const { handleSetCartResume } = useContext(ResumeContext);
 
   useEffect(() => {
     api.get<CartInterface>('/5b15c4923100004a006f3c07').then((response) => {
       handleSetCartResume(response.data);
+      setLoading(false);
     });
   }, [handleSetCartResume]);
 
@@ -30,13 +32,15 @@ const Cart: React.FC = () => {
   return (
     <>
       <Header />
-      <GlobalContainer>
-        <Products />
-        <Price />
-        <form onSubmit={handleSubmit}>
-          <Button type="submit">SEGUIR PARA O PAGAMENTO</Button>
-        </form>
-      </GlobalContainer>
+      {!loading && (
+        <GlobalContainer>
+          <Products />
+          <Price />
+          <form onSubmit={handleSubmit}>
+            <Button type="submit">SEGUIR PARA O PAGAMENTO</Button>
+          </form>
+        </GlobalContainer>
+      )}
     </>
   );
 };
