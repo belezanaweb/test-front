@@ -8,6 +8,7 @@ export default createGlobalStyle`
     --color-gray-dark: #999;
     --color-orange: #FF6C00;
     --color-orange-dark: #D45A00;
+    --color-error: #F30000;
     --color-background: #EEEEEE;
     --font-primary: 'Helvetica Neue', Helvetica, Arial, sans-serif;
     --mobile-min-height-container: 341px;
