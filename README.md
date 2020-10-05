@@ -16,6 +16,19 @@ teste realizado para vaga de desenvolvedora Front-end Jr na Beleza na Web.
 - CSS in JS
 - React
 
+## Techs utilizadas
+A aplicação foi toda desenvolvida em React.JS
+- **Context+Reducer** 
+persistir os dados e utiliza-los em toda aplicação
+- **Styled Components**
+Alternativa para estilização sem utilizar arquivos CSS, o principal diferencial no styled componentes é a utilização de props no estilo.
+- **Material-ui**
+O material-ui possui diversos componentes prontos disponíveis. Na aplicação utilizou-se os icons, que são simples, objetivos e intuitivos.
+- **React-router**
+simplicidade na criação das rotas
+- **Code-Splitting**
+otimizar a performance com lazy+suspense
+
 ## Como rodar
 1. clone o repositório
 `git clone https://github.com/meltammy/test-front.git`
