@@ -28,7 +28,8 @@ O material-ui possui diversos componentes prontos disponíveis. Na aplicação u
 simplicidade na criação das rotas
 - **Code-Splitting**
 otimizar a performance com lazy+suspense
-
+- **axios**
+consumo de APIs
 ## Como rodar
 1. clone o repositório
 `git clone https://github.com/meltammy/test-front.git`
