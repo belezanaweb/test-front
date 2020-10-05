@@ -1,0 +1,9 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Confirmation Page Renders with title 1`] = `
+<DocumentFragment>
+  <h2>
+    Confirmação
+  </h2>
+</DocumentFragment>
+`;
