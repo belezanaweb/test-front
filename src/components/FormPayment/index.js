@@ -3,14 +3,13 @@ import CardContext from '../../contexts/CardContext';
 import { Container, ContentContainer, InputContainer } from './styles';
 import { useForm } from '../../hooks/useForm';
 import { useValidateInput } from '../../hooks/useValidateInput';
-
 function FormPayment(props) {
     const cardContext = useContext(CardContext);
     const { form, onChange } = useForm({
-        number: cardContext.card.number,
-        name: cardContext.card.name,
-        validity: cardContext.card.validity,
-        cvv: cardContext.card.cvv
+        number: '',
+        name: '',
+        validity: '',
+        cvv: ''
     });
     const { isANum, onlyNumber, onlyLetters, theme, changeTheme } = useValidateInput({
         number: '',
@@ -71,7 +70,7 @@ function FormPayment(props) {
                         onChange(name, value);
                     }
                     if ((month <= 12) && (year >= yearNow)) {
-                        if (year = yearNow) {
+                        if (year === yearNow) {
                             if (MonthNow <= month) {
                                 changeTheme(name, false)
                             } else {
