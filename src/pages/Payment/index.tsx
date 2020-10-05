@@ -14,6 +14,10 @@ const Payment: React.FC = () => {
   const { paymentInfo } = useContext(PaymentContext);
   const history = useHistory();
 
+  const handleSubmit = () => {
+    history.push('/success');
+  };
+
   return (
     <>
       <Header />
@@ -23,6 +27,7 @@ const Payment: React.FC = () => {
         <Button
           type="submit"
           disabled={!paymentInfo?.isValid}
+          onClick={handleSubmit}
         >
           FINALIZAR O PEDIDO
         </Button>
