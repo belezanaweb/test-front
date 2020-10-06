@@ -3,7 +3,7 @@ import { DFlexStyled } from '../../styles/global'
 
 export const PaymentStyled = styled('section')`
   padding: 2rem 0;
-  FORM {
+  form {
     display: flex;
   }
   h3 {
@@ -13,7 +13,6 @@ export const PaymentStyled = styled('section')`
 
   @media (min-width: 992px) {
     form {
-      align-items: center;
       > div {
         flex: 1;
         &:not(:last-child) {

@@ -1,16 +1,16 @@
-import { formatToBRL } from 'brazilian-values'
 import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { useHistory } from 'react-router-dom'
 import Button from '../../components/Button'
+import ProductList from '../../components/ProductList'
 import ResumeOrder from '../../components/ResumeOrder'
 import { IOrder } from '../../model/order'
 import { RootState } from '../../redux'
 import { setDisplay } from '../../redux/ducks/loading'
 import { fetchOrder } from '../../redux/ducks/order'
 import { setStep } from '../../redux/ducks/steps'
-import { ContainerStyled, ContentStyled } from '../../styles/global'
-import { ProdctBagStyled, ProductItemStyled } from './styles'
+import { ContainerStyled } from '../../styles/global'
+import { ProdctBagStyled } from './styles'
 
 const ProductBag: React.FC = () => {
   const dispatch = useDispatch()
@@ -33,24 +33,7 @@ const ProductBag: React.FC = () => {
     <ContainerStyled>
       <ProdctBagStyled>
         <div>
-          <h3>Produtos</h3>
-          <ContentStyled>
-            {order &&
-              order.items.length > 0 &&
-              order.items.map((item) => {
-                return (
-                  <ProductItemStyled key={item.product.sku}>
-                    <img src={item.product.imageObjects[0].small} alt={item.product.name} />
-                    <div>
-                      {item.product.name.substring(0, 60)}
-                      <div className="price">
-                        {formatToBRL(item.product.priceSpecification.originalPrice)}
-                      </div>
-                    </div>
-                  </ProductItemStyled>
-                )
-              })}
-          </ContentStyled>
+          <ProductList />
         </div>
         <div>
           <ResumeOrder />

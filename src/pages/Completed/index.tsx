@@ -1,14 +1,17 @@
 import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { useHistory } from 'react-router-dom'
+import { FaRegCheckCircle } from 'react-icons/fa'
 import ResumeOrder from '../../components/ResumeOrder'
 import { IOrder } from '../../model/order'
 import { IPayment } from '../../model/payment'
 import { RootState } from '../../redux'
 import { setDisplay } from '../../redux/ducks/loading'
 import { setStep } from '../../redux/ducks/steps'
-import { ContainerStyled, ContentStyled } from '../../styles/global'
-import { ProdctBagStyled, ProductItemStyled } from './styles'
+import { ContainerStyled, ContentStyled, TextColorStyled } from '../../styles/global'
+import { ProdctBagStyled } from '../ProductBag/styles'
+import { CompletedStyled } from './styles'
+import ProductList from '../../components/ProductList'
 
 const Completed: React.FC = () => {
   const dispatch = useDispatch()
@@ -26,17 +29,23 @@ const Completed: React.FC = () => {
     dispatch(setStep(3))
   }, [dispatch])
 
-  // useEffect(() => {
-  //   if (!order) {
-  //     dispatch(setDisplay(true))
-  //     history.push('/')
-  //   }
-  // }, [dispatch, history, order])
+  useEffect(() => {
+    if (!order) {
+      dispatch(setDisplay(true))
+      history.push('/')
+    }
+  }, [dispatch, history, order])
 
   return (
     <ContainerStyled>
       <ProdctBagStyled>
         <div>
+          <CompletedStyled>
+            <FaRegCheckCircle color="#FF7800" size="40px" />
+            <h3>
+              <TextColorStyled color="#FF7800">COMPRA EFETUADA COM SUCESSO</TextColorStyled>
+            </h3>
+          </CompletedStyled>
           <h3>Pagamento</h3>
           <ContentStyled>
             {payment && (
@@ -49,19 +58,7 @@ const Completed: React.FC = () => {
           </ContentStyled>
         </div>
         <div>
-          <h3>Produtos</h3>
-          <ContentStyled>
-            {order &&
-              order.items.length > 0 &&
-              order.items.map((item) => {
-                return (
-                  <ProductItemStyled key={item.product.sku}>
-                    <img src={item.product.imageObjects[0].small} alt={item.product.name} />
-                    <div>{item.product.name.substring(0, 60)}</div>
-                  </ProductItemStyled>
-                )
-              })}
-          </ContentStyled>
+          <ProductList />
 
           <ResumeOrder />
         </div>

@@ -25,7 +25,6 @@ const Payment: React.FC = () => {
   const { handleSubmit, errors, values, handleChange } = useFormik({
     initialValues,
     validationSchema,
-    validateOnChange: false,
     onSubmit: (form) => {
       dispatch(savePayment(form))
       history.push('/completed')
@@ -59,12 +58,14 @@ const Payment: React.FC = () => {
                 value={values.cardNumber}
                 maxLength={19}
                 mask="9999.9999.9999.9999"
+                placeholder="____.____.____.____"
               />
               <InputText
                 label="Nome do Titular:"
                 onChange={handleChange}
                 textError={errors.name}
                 hasError={!!errors.name}
+                placeholder="Como no cartão"
                 name="name"
                 value={values.name}
                 maxLength={100}
@@ -79,6 +80,7 @@ const Payment: React.FC = () => {
                   value={values.validity}
                   maxLength={5}
                   mask="99/99"
+                  placeholder="__/__"
                 />
                 <InputText
                   label="CVV:"

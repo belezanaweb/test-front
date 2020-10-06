@@ -10,7 +10,6 @@ export const ProdctBagStyled = styled('section')`
   }
 
   @media (min-width: 992px) {
-    align-items: center;
     > div {
       flex: 1;
       &:not(:last-child) {

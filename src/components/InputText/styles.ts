@@ -22,6 +22,9 @@ export const InputStyled = styled.div<{ error: boolean }>`
       border: 1px solid #a43287;
       box-shadow: inset 0 1px 2px 0 rgba(0, 0, 0, 0.2);
     }
+    &::placeholder {
+      color: #e0e7ee;
+    }
     ${(props) =>
       props.error &&
       css`

@@ -2,10 +2,22 @@ import styled, { css } from 'styled-components'
 import { DFlexStyled } from '../../styles/global'
 
 export const ResumeOrderStyled = styled.div`
-  border-radius: 3px;
-  border: 1px solid #ccc;
-  padding: ${(props) => props.theme.spacing};
-  margin-bottom: ${(props) => props.theme.spacing};
+  > div {
+    border-radius: 3px;
+    border: 1px solid #ccc;
+    padding: ${(props) => props.theme.spacing};
+    margin-bottom: ${(props) => props.theme.spacing};
+  }
+  h3 {
+    text-transform: uppercase;
+    color: ${(props) => props.theme.colors.textGrey};
+    margin-bottom: ${(props) => props.theme.spacing};
+  }
+  @media (max-width: 991.98px) {
+    h3 {
+      display: none;
+    }
+  }
 `
 
 interface DFlexExtendsProps {

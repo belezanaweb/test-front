@@ -8,7 +8,6 @@ export const ButtonStyled = styled.button`
   display: block;
   color: ${(props) => props.theme.colors.text};
   text-align: center;
-  vertical-align: middle;
   -webkit-user-select: none;
   user-select: none;
   background-color: transparent;
@@ -18,6 +17,7 @@ export const ButtonStyled = styled.button`
     border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
   width: 100%;
   font-size: 1.54rem !important;
+  text-transform: uppercase;
   &.primary {
     background-color: ${(props) => props.theme.colors.primary};
     border-color: ${(props) => props.theme.colors.primary};

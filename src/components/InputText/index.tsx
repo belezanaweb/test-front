@@ -7,7 +7,8 @@ import { TextColorStyled } from '../../styles/global'
 interface IProps {
   name: string
   label?: string
-  value?: any
+  placeholder?: string
+  value?: string | number
   type?: string
   textError: string | undefined
   hasError: boolean
@@ -23,6 +24,7 @@ const InputText: React.FC<IProps> = ({
   onChange,
   textError,
   hasError,
+  placeholder,
   maxLength,
   type,
   mask
@@ -45,6 +47,7 @@ const InputText: React.FC<IProps> = ({
         onChange={changeValue}
         value={value}
         maxLength={maxLength}
+        placeholder={placeholder}
       />
       {hasError && (
         <div className="error">
@@ -59,6 +62,7 @@ InputText.propTypes = {
   label: PropTypes.string,
   name: PropTypes.string.isRequired,
   type: PropTypes.string,
+  placeholder: PropTypes.string,
   value: PropTypes.string,
   maxLength: PropTypes.number,
   textError: PropTypes.string,
@@ -71,6 +75,7 @@ InputText.defaultProps = {
   label: '',
   maxLength: 50,
   textError: '',
+  placeholder: '',
   type: 'text',
   value: '',
   mask: ''

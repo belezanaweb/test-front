@@ -14,22 +14,25 @@ const ResumeOrder: React.FC = () => {
     <ResumeOrderStyled>
       {order && (
         <>
-          <DFlexExtended justifyContent="space-between">
-            <span>Produtos</span>
-            <span> {formatToBRL(order.subTotal)}</span>
-          </DFlexExtended>
-          <DFlexExtended justifyContent="space-between">
-            <span>Frete</span>
-            <span> {formatToBRL(order.shippingTotal)}</span>
-          </DFlexExtended>
-          <DFlexExtended justifyContent="space-between" textColor="#FF7800">
-            <span>Desconto</span>
-            <span>{`- ${formatToBRL(order.discount)}`}</span>
-          </DFlexExtended>
-          <DFlexExtended justifyContent="space-between" bold>
-            <span>Total</span>
-            <span> {formatToBRL(order.total)}</span>
-          </DFlexExtended>
+          <h3>Resumo do pedido</h3>
+          <div>
+            <DFlexExtended justifyContent="space-between">
+              <span>Produtos</span>
+              <span>{formatToBRL(order.subTotal)}</span>
+            </DFlexExtended>
+            <DFlexExtended justifyContent="space-between">
+              <span>Frete</span>
+              <span>{formatToBRL(order.shippingTotal)}</span>
+            </DFlexExtended>
+            <DFlexExtended justifyContent="space-between" textColor="#FF7800">
+              <span>Desconto</span>
+              <span>{`- ${formatToBRL(order.discount)}`}</span>
+            </DFlexExtended>
+            <DFlexExtended justifyContent="space-between" bold>
+              <span>Total</span>
+              <span>{formatToBRL(order.total)}</span>
+            </DFlexExtended>
+          </div>
         </>
       )}
     </ResumeOrderStyled>
