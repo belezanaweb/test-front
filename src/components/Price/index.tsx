@@ -11,7 +11,7 @@ const Price: React.FC = () => {
   const { formatPrice } = usePrice();
 
   return (
-    <Container>
+    <Container data-testid="price-container">
       {cartResume && (
         <>
           <ValueInfo>
