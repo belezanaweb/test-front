@@ -1,0 +1,29 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Navigation Component renders links 1`] = `
+<DocumentFragment>
+  <nav
+    class="Navigation__StyledNav-u006e5-0 hArzdN"
+  >
+    <a
+      aria-current="page"
+      class="Navigation__StyledLink-u006e5-1 ARZgt active"
+      href="/"
+    >
+      Sacola
+    </a>
+    <a
+      class="Navigation__StyledLink-u006e5-1 ARZgt"
+      href="/pagamento"
+    >
+      Pagamento
+    </a>
+    <a
+      class="Navigation__StyledLink-u006e5-1 ARZgt"
+      href="/confirmacao"
+    >
+      Confirmação
+    </a>
+  </nav>
+</DocumentFragment>
+`;
