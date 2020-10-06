@@ -5,7 +5,7 @@ import { PaymentContext } from 'context/payment';
 import { ResumeContext } from 'context/resume';
 
 import { GlobalContainer } from 'styles/global';
-import { Container, Message, PaymentInfoElement } from './styles';
+import { Message, PaymentInfoElement } from './styles';
 
 import SuccessIcon from 'assets/success.png';
 
