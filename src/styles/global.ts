@@ -51,11 +51,16 @@ export const ContainerStyled = styled.div`
     width: 90vw;
   }
 `
-
-export const DFlexStyled = styled.div<{ justifyContent: string; alignItems: string }>`
+export interface DflexProps {
+  justifyContent?: string
+  alignItems?: string
+  flexDirecton?: string
+}
+export const DFlexStyled = styled.div<DflexProps>`
   display: flex;
   justify-content: ${(props) => (props.justifyContent ? props.justifyContent : 'start')};
   align-items: ${(props) => (props.alignItems ? props.alignItems : 'start')};
+  flex-direction: ${(props) => (props.flexDirecton ? props.flexDirecton : 'row')};
 `
 
 export const TextColorStyled = styled.span<{ color: string }>`
@@ -93,5 +98,5 @@ export const ContentStyled = styled.div`
   border-radius: 3px;
   box-shadow: 1px 1px 5px 0 rgba(0, 0, 29, 0.22);
   padding: ${(props) => props.theme.spacing};
-  margin: ${(props) => props.theme.spacing} 0;
+  margin: ${(props) => props.theme.spacing} 0 2rem 0;
 `
