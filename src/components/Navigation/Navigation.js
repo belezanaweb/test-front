@@ -14,7 +14,6 @@ const StyledNav = styled.nav`
 
 const StyledLink = styled(NavLink)`
   color: #ccc;
-  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
   font-size: 13px;
   font-weight: 700;
   text-transform: uppercase;
