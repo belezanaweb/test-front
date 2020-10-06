@@ -20,7 +20,7 @@ jest.mock('hooks/price', () => {
 });
 
 describe('Price Component', () => {
-  it('sould be able to render cart price info', async () => {
+  it('should be able to render cart price info', async () => {
     apiMock.onGet('5b15c4923100004a006f3c07').reply(200, {
       "items": [
         {

@@ -4,7 +4,7 @@ import { render, fireEvent } from '@testing-library/react';
 import Input from 'components/Input';
 
 describe('Input Component', () => {
-  it('sould be able to render an input', () => {
+  it('should be able to render an input', () => {
     const { getByPlaceholderText } = render(
       <Input
         label="Insira seu nome"
@@ -18,7 +18,7 @@ describe('Input Component', () => {
     expect(inputElement).toBeTruthy();
   });
 
-  it('sould be able to show an error', () => {
+  it('should be able to show an error', () => {
     const { getByTestId } = render(
       <Input
         label="Insira seu nome"

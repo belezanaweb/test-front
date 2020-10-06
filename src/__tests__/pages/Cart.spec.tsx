@@ -24,7 +24,7 @@ describe('Cart Page', () => {
     mockedHistoryPush.mockClear();
   });
 
-  it('sould be able to go to payment page', async () => {
+  it('should be able to go to payment page', async () => {
     const history = createMemoryHistory();
     const { getByText } = render(
       <Router history={history}>
