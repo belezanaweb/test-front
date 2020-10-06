@@ -1,7 +1,40 @@
 import React from 'react'
+import styled from 'styled-components/macro'
+
+import data from '../../data/endpoint.json'
+
+import Product from '../../components/Product/Product'
+
+const StyledProductList = styled.div`
+  display: flex;
+  flex-flow: column;
+  justify-content: space-between;
+  border-radius: 3px;
+  background-color: #fff;
+  box-shadow: 1px 1px 5px 0 rgba(0, 0, 29, 0.22);
+  padding: 12px 12px 0 13px;
+  margin: 10px 10px 10px 9px;
+`
+
+const StyledPageTitle = styled.h2`
+  color: #999;
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 17px;
+  text-transform: uppercase;
+  margin-left: 20px;
+  margin-bottom: -7px;
+`
+
+const products = data.items.map((item) => <Product product={item.product} key={item.product.sku} />)
 
 function Basket() {
-  return <h2>Sacola</h2>;
+  return (
+    <>
+      <StyledPageTitle>Produtos</StyledPageTitle>
+      <StyledProductList>{products}</StyledProductList>
+    </>
+  )
 }
 
 export default Basket

@@ -7,19 +7,19 @@ exports[`Navigation Component renders links 1`] = `
   >
     <a
       aria-current="page"
-      class="Navigation__StyledLink-u006e5-1 ARZgt active"
+      class="Navigation__StyledLink-u006e5-1 idEkrh active"
       href="/"
     >
       Sacola
     </a>
     <a
-      class="Navigation__StyledLink-u006e5-1 ARZgt"
+      class="Navigation__StyledLink-u006e5-1 idEkrh"
       href="/pagamento"
     >
       Pagamento
     </a>
     <a
-      class="Navigation__StyledLink-u006e5-1 ARZgt"
+      class="Navigation__StyledLink-u006e5-1 idEkrh"
       href="/confirmacao"
     >
       Confirmação

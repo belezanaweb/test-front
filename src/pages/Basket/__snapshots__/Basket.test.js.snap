@@ -2,8 +2,77 @@
 
 exports[`Basket Page Renders with title 1`] = `
 <DocumentFragment>
-  <h2>
-    Sacola
+  <h2
+    class="Basket__StyledPageTitle-sc-6wc8y6-1 ckTRBq"
+  >
+    Produtos
   </h2>
+  <div
+    class="Basket__StyledProductList-sc-6wc8y6-0 jZBMbf"
+  >
+    <div
+      class="Product__StyledProduct-wun1w2-0 fVLvfH"
+    >
+      <img
+        alt="L'Oréal Professionnel Expert Absolut Repair Cortex Lipidium"
+        class="Product__StyledProductImg-wun1w2-2 cetBqs"
+        src="https://res.cloudinary.com/beleza-na-web/image/upload/f_auto,fl_progressive,q_auto:best/v1/imagens/2/loreal-professionnel-expert-absolut-repair-cortex-lipidium-mascara-de-reconstrucao-500g-24410-963234120108391775.png"
+      />
+      <div>
+        <p
+          class="Product__StyledProductName-wun1w2-1 fTfnil"
+        >
+          L'Oréal Professionnel Expert Absolut Repair Cortex Lipidium
+        </p>
+        <span
+          class="Product__StyledProductPrice-wun1w2-3 dJWezn"
+        >
+          R$225.90
+        </span>
+      </div>
+    </div>
+    <div
+      class="Product__StyledProduct-wun1w2-0 fVLvfH"
+    >
+      <img
+        alt="Good Girl Carolina Herrera Eau de Parfum - Perfume Feminino 30ml"
+        class="Product__StyledProductImg-wun1w2-2 cetBqs"
+        src="https://res.cloudinary.com/beleza-na-web/image/upload/f_auto,fl_progressive,q_auto:best/v1/imagens/2/good-girl-carolina-herrera-eau-de-parfum-perfume-feminino-30ml-38273-1960525940762131267.jpg"
+      />
+      <div>
+        <p
+          class="Product__StyledProductName-wun1w2-1 fTfnil"
+        >
+          Good Girl Carolina Herrera Eau de Parfum - Perfume Feminino 30ml
+        </p>
+        <span
+          class="Product__StyledProductPrice-wun1w2-3 dJWezn"
+        >
+          R$299.00
+        </span>
+      </div>
+    </div>
+    <div
+      class="Product__StyledProduct-wun1w2-0 fVLvfH"
+    >
+      <img
+        alt="Senscience Inner Restore Intensif - Máscara Capilar 50ml"
+        class="Product__StyledProductImg-wun1w2-2 cetBqs"
+        src="https://res.cloudinary.com/beleza-na-web/image/upload/f_auto,fl_progressive,q_auto:best/v1/imagens/2/senscience-inner-restore-intesif-deep-repairing-masque-mascara-de-tratamento-50ml-3019-7903251722539384904.png"
+      />
+      <div>
+        <p
+          class="Product__StyledProductName-wun1w2-1 fTfnil"
+        >
+          Senscience Inner Restore Intensif - Máscara Capilar 50ml
+        </p>
+        <span
+          class="Product__StyledProductPrice-wun1w2-3 dJWezn"
+        >
+          R$99.90
+        </span>
+      </div>
+    </div>
+  </div>
 </DocumentFragment>
 `;
