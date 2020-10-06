@@ -1,5 +1,5 @@
 import axios from "axios";
-import { setCardData, setProducts } from './actions';
+import { getProducts, setCardData, setProducts } from './actions';
 
 describe("Testing Cart Actions", () => {
   test("setCardData", () => {
@@ -34,4 +34,5 @@ describe("Testing Cart Actions", () => {
     expect(action.type).toBe("SET_PRODUCTS")
     expect(action.products).toBe(mockCart)
 })
+
 })

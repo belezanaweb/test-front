@@ -36,9 +36,6 @@
   "jest": {
     "collectCoverageFrom": [
       "src/**/*.{ts,tsx,js,jsx}"
-    ],
-    "testMatch": [
-      "<rootDir>/__tests__/**/?(*.)(spec|test).js?(x)"
     ]
   },
   "eslintConfig": {
