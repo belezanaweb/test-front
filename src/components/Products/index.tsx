@@ -20,7 +20,7 @@ const Products: React.FC = () => {
     <Container>
       <h1>Produtos</h1>
       <ProductsContainer>
-        <Product>
+        <Product data-testid="product-container">
           {cartResume && (
             cartResume.items.map((item) => (
               <div key={item.product.sku}>
