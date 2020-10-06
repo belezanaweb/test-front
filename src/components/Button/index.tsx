@@ -1,6 +1,6 @@
 import React, { FormEvent } from 'react'
 import PropTypes from 'prop-types'
-import { ButtonStyled } from './styled'
+import { ButtonStyled } from './styles'
 
 type types = 'primary' | 'default' | 'link' | 'outline' | 'secondary'
 interface IProps {

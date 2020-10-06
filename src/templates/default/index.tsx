@@ -6,12 +6,14 @@ import GlobalStyle from '../../styles/global'
 import light from '../../styles/themes/light'
 import { DefaultStyled } from './styles'
 import Steps from '../../components/Steps'
+import Loading from '../../components/Loading'
 
 const Body: React.FC = ({ children }) => {
   return (
     <ThemeProvider theme={light}>
       <DefaultStyled>
         <GlobalStyle />
+        <Loading />
         <Steps />
         {children}
       </DefaultStyled>

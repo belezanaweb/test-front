@@ -4,6 +4,7 @@ export interface IOrder {
     {
       quantity: number
       product: {
+        sku: string
         name: string
         imageObjects: [
           {
