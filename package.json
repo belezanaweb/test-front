@@ -12,9 +12,12 @@
 		"@types/react-dom": "^16.9.0",
 		"@types/react-router-dom": "^5.1.5",
 		"@types/styled-components": "^5.1.2",
+		"@types/yup": "^0.29.7",
 		"axios": "^0.19.2",
 		"brazilian-values": "^0.8.0",
-		"polished": "^3.6.7",
+		"formik": "^2.1.7",
+		"mask-js": "^2.1.0",
+		"moment": "^2.29.1",
 		"prop-types": "^15.7.2",
 		"react": "^16.13.1",
 		"react-dom": "^16.13.1",
@@ -26,7 +29,8 @@
 		"redux": "^4.0.5",
 		"redux-thunk": "^2.3.0",
 		"styled-components": "^5.1.1",
-		"typescript": "~3.7.2"
+		"typescript": "~3.7.2",
+		"yup": "^0.29.3"
 	},
 	"scripts": {
 		"start": "react-scripts start",

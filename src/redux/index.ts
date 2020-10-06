@@ -3,11 +3,13 @@ import thunk from 'redux-thunk'
 import { stepReducer } from './ducks/steps'
 import { orderReducer } from './ducks/order'
 import { loadingReducer } from './ducks/loading'
+import { paymentReducer } from './ducks/payment'
 
 export const rootReducer = combineReducers({
   stepReducer,
   orderReducer,
-  loadingReducer
+  loadingReducer,
+  paymentReducer
 })
 
 const store = createStore(rootReducer, applyMiddleware(thunk))
