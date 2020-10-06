@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React, { useState } from "react";
 import { makeStyles } from '@material-ui/core/styles';
 import Paper from '@material-ui/core/Paper';
 import Tabs from '@material-ui/core/Tabs';
@@ -7,7 +7,7 @@ import Tab from '@material-ui/core/Tab';
 
 const useStyles = makeStyles({
     root: {
-      flexGrow: 1,
+        flexGrow: 1,
     },
     style: {
         fontFamily: "Helvetica",
@@ -15,7 +15,7 @@ const useStyles = makeStyles({
         fontWeight: "bold",
         color: "#CCC",
     },
-  });
+});
 
 const MenuTabs = () => {
 
@@ -23,8 +23,8 @@ const MenuTabs = () => {
     const [value, setValue] = useState(0);
 
     const handleChange = (event, newValue) => {
-    setValue(newValue);
-  };
+        setValue(newValue);
+    };
 
     return (
         <div>
@@ -36,11 +36,11 @@ const MenuTabs = () => {
                     textColor="primary"
                     centered
                 >
-                    <Tab className={classes.style} label="SACOLA" />
-                    <Tab className={classes.style} label="PAGAMENTO" />
-                    <Tab className={classes.style} label="CONFIRMAÇÃO" />
+                    <Tab className={classes.style} value="cart" label="SACOLA" />
+                    <Tab className={classes.style} value="payment" label="PAGAMENTO" />
+                    <Tab className={classes.style} value="success" label="CONFIRMAÇÃO" />
                 </Tabs>
-                </Paper>
+            </Paper>
         </div>
     )
 }

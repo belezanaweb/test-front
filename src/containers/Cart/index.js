@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
-import MenuTabs from "../../components/MenuTabs"
+import MenuTabs from "../../components/MenuTabs";
+import ContainerTotalPrice from "../../components/ContainerTotalPrice";
 import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
 import Paper from '@material-ui/core/Paper';
@@ -31,124 +32,82 @@ const useStyles = makeStyles((theme) => ({
     '& > *': {
       margin: theme.spacing(3),
       width: theme.spacing(100),
-    },
-    submit: {
-      justifyContent: 'center',
-      display: 'flex',
-      
-    },
-    total: {
-      display: 'flex',
-    '& > *': {
-      margin: theme.spacing(1),
-      width: theme.spacing(16),
-      height: theme.spacing(16),
-    },
-    },
-    paper: {
-      padding: theme.spacing(1),
-      textAlign: 'center',
-      color: theme.palette.text.secondary,
-    },
-  }
-}));
+    }
+  },
+  submit: {
+    justifyContent: 'center',
+    display: 'flex',
+  },
+}
+));
 
 const Cart = (props) => {
-    const history = useHistory();
-    const classes = useStyles();
-    const [products, setProducts] = useState("");
+  const history = useHistory();
+  const classes = useStyles();
+  const [products, setProducts] = useState("");
 
-    useEffect(() => {
-        axios.get(baseUrl).then((response) => {
-          setProducts(response.data);
-        });
-      }, []);
+  useEffect(() => {
+    axios.get(baseUrl).then((response) => {
+      setProducts(response.data);
+    });
+  }, []);
 
-    const goToPayment = () => {
-      history.push("/payment")
-    }
+  const goToPayment = () => {
+    history.push("/payment")
+  }
 
-    const total = products.subTotal + products.shippingTotal - products.discount;
-
-    return (
-        <div>
-            <MenuTabs />
-              <Typography
-                  color="secondary"
-                  variant="h4"
-                  display= "inline"
-              >
-                  Produtos
-              </Typography>
-              <div className={classes.root}>
-                <Paper elevation={3}>
-                  {products.items && products.items.map(products =>(
-                    <ContainerProducts>
-                      <Grid container spacing={2}>
-                        <Grid item>
-                        {products.product.imageObjects.map(image => (
-                          <img src={image.medium}/>
-                        ))}
-                        </Grid>
-                        <Grid item xs={12} sm container>
-                          <Grid item xs container direction="column" spacing={2}>
-                            <Grid item xs>
-                              <h5>{products.product.name}</h5>
-                            </Grid>
-                            <Grid 
-                              item
-                              justify="flex-end"
-                            >
-                              <p>{products.product.priceSpecification.price.toLocaleString('pt-br',{style: 'currency', currency:'BRL'})}</p>
-                            </Grid>
-                          </Grid>
-                        </Grid>
-                      </Grid>
-                    </ContainerProducts>
-                    ))}
-                    </Paper>
-                    <Paper variant="outlined" >
-                      <Grid container spacing={3}>
-                        <Grid item xs={6}>
-                          <Paper className={classes.paper}>PRODUTOS</Paper>
-                        </Grid>
-                        <Grid item xs={6}>
-                          <Paper className={classes.paper}>{products.subTotal && products.subTotal.toLocaleString('pt-br',{style: 'currency', currency:'BRL'})}</Paper>
-                        </Grid>
-                        <Grid item xs={6}>
-                          <Paper className={classes.paper}>FRETE</Paper>
-                        </Grid>
-                        <Grid item xs={6}>
-                          <Paper className={classes.paper}>{products.shippingTotal && products.shippingTotal.toLocaleString('pt-br',{style: 'currency', currency:'BRL'})}</Paper>
-                        </Grid>
-                        <Grid item xs={6}>
-                          <Paper className={classes.paper}>DESCONTO</Paper>
-                        </Grid>
-                        <Grid item xs={6}>
-                          <Paper className={classes.paper}>-{products.discount && products.discount.toLocaleString('pt-br',{style: 'currency', currency:'BRL'})}</Paper>
-                        </Grid>
-                        <Grid item xs={6}>
-                          <Paper className={classes.paper}>TOTAL</Paper>
-                        </Grid>
-                        <Grid item xs={6}>
-                          <Paper className={classes.paper}>{total.toLocaleString('pt-br',{style: 'currency', currency:'BRL'})}</Paper>
-                        </Grid>
-                      </Grid>
-                    </Paper>
-                    <Button
-                      fullWidth
-                      type="submit"
-                      variant="contained"
-                      size="large"
-                      style={{ background:"#FF7800" }}
-                      className={classes.submit}
-                      onClick={goToPayment}
+  return (
+    <div>
+      <MenuTabs />
+      <div className={classes.root}>
+        <Typography
+          color="secondary"
+          variant="h4"
+          display="inline"
+        >
+          PRODUTOS
+                </Typography>
+        <Paper elevation={3}>
+          {products.items && products.items.map(products => (
+            <ContainerProducts>
+              <Grid container spacing={2}>
+                <Grid item>
+                  {products.product.imageObjects.map(image => (
+                    <img src={image.medium} alt="object-product" />
+                  ))}
+                </Grid>
+                <Grid item xs={12} sm container>
+                  <Grid item xs container direction="column" spacing={2}>
+                    <Grid item xs>
+                      <h5>{products.product.name}</h5>
+                    </Grid>
+                    <Grid
+                      item
+                      justify="flex-end"
                     >
-                      SEGUIR PARA O PAGAMENTO
-                    </Button>
-                </div>
-        </div>
-    )
+                      <p>{products.product.priceSpecification.price.toLocaleString('pt-br', { style: 'currency', currency: 'BRL' })}</p>
+                    </Grid>
+                  </Grid>
+                </Grid>
+              </Grid>
+            </ContainerProducts>
+          ))}
+        </Paper>
+        <ContainerTotalPrice />
+        <Button
+          fullWidth
+          type="submit"
+          variant="contained"
+          size="large"
+          style={{ background: "#FF7800" }}
+          className={classes.submit}
+          onClick={goToPayment}
+        >
+          SEGUIR PARA O PAGAMENTO
+                      </Button>
+      </div>
+    </div>
+  )
 }
 
 export default Cart;

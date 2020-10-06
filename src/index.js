@@ -11,7 +11,7 @@ import Success from './containers/Success';
 const Router = () => {
     return (
         <MuiThemeProvider theme={Theme}>
-          <CssBaseline />
+            <CssBaseline />
             <BrowserRouter>
                 <Switch>
                     <Route exact path="/">
@@ -30,7 +30,7 @@ const Router = () => {
                     </Route>
                 </Switch>
             </BrowserRouter>
-          </MuiThemeProvider>
+        </MuiThemeProvider>
     );
 }
 
