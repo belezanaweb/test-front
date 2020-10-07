@@ -2,29 +2,9 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import styled from 'styled-components/macro'
 
+import Box from '../../components/Box/Box'
 import ProductReview from '../../components/ProductReview/ProductReview'
 import Total from '../../components/Total/Total'
-
-const StyledBox = styled.div`
-  display: flex;
-  flex-flow: column;
-  justify-content: space-between;
-  border-radius: 3px;
-  background-color: #fff;
-  box-shadow: 1px 1px 5px 0 rgba(0, 0, 29, 0.22);
-  padding: 12px 12px 0 13px;
-  margin: 10px 10px 19px 9px;
-`
-
-const StyledPageTitle = styled.h2`
-  color: #999;
-  font-size: 14px;
-  font-weight: 700;
-  line-height: 17px;
-  text-transform: uppercase;
-  margin-left: 20px;
-  margin-bottom: -7px;
-`
 
 const StyledSuccess = styled.h2`
   color: #ff7800;
@@ -42,22 +22,22 @@ const StyledData = styled.p`
   padding: 2px 0;
 `
 
-function Confirmation({ paymentData, data }) {
-  const products = data.items?.map((item) => (
+function Confirmation({ paymentData, data = {} }) {
+  const products = data?.items?.map((item) => (
     <ProductReview product={item.product} key={item.product.sku} />
   ))
   return (
     <>
       <StyledSuccess>Compra efetuada com sucesso</StyledSuccess>
-      <StyledPageTitle>Pagamento</StyledPageTitle>
-      <StyledBox>
+
+      <Box title={'Pagamento'}>
         <StyledData>{paymentData?.cardNumber.slice(-4)}</StyledData>
         <StyledData>{paymentData?.name}</StyledData>
         <StyledData>{paymentData?.date}</StyledData>
-      </StyledBox>
+      </Box>
 
-      <StyledPageTitle>Produtos</StyledPageTitle>
-      <StyledBox>{products}</StyledBox>
+      <Box title="Produtos">{products}</Box>
+
       <Total
         subTotal={data.subTotal}
         shippingTotal={data.shippingTotal}

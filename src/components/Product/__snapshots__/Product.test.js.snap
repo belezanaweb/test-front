@@ -10,14 +10,16 @@ exports[`Product Component renders links 1`] = `
       class="Product__StyledProductImg-wun1w2-2 cetBqs"
       src="https://res.cloudinary.com/beleza-na-web/image/upload/f_auto,fl_progressive,q_auto:best/v1/imagens/2/loreal-professionnel-expert-absolut-repair-cortex-lipidium-mascara-de-reconstrucao-500g-24410-963234120108391775.png"
     />
-    <div>
+    <div
+      class="Product__StyledProductInfo-wun1w2-3 iArXix"
+    >
       <p
         class="Product__StyledProductName-wun1w2-1 fTfnil"
       >
         L'Oréal Professionnel Expert Absolut Repair Cortex Lipidium
       </p>
       <span
-        class="Product__StyledProductPrice-wun1w2-3 dJWezn"
+        class="Product__StyledProductPrice-wun1w2-4 lbIjhk"
       >
         R$ 225,90
       </span>

@@ -29,6 +29,10 @@ const StyledProductImg = styled.img`
   margin-top: 7px;
 `
 
+const StyledProductInfo = styled.div`
+  width: 100%;
+`
+
 const StyledProductPrice = styled.span`
   margin-right: 3px;
   font-size: 14px;
@@ -42,10 +46,10 @@ function Product({ product }) {
   return (
     <StyledProduct>
       <StyledProductImg src={product.imageObjects[0].small} alt={product.name} />
-      <div>
+      <StyledProductInfo>
         <StyledProductName>{product.name}</StyledProductName>
         <StyledProductPrice>{brl(product.priceSpecification.price)}</StyledProductPrice>
-      </div>
+      </StyledProductInfo>
     </StyledProduct>
   )
 }
