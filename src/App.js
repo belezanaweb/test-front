@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React, { Suspense, lazy, useState, useEffect } from 'react'
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
 import styled from 'styled-components/macro'
 
@@ -7,10 +7,11 @@ import { apiData } from './api/api'
 import Navigation from './components/Navigation/Navigation'
 
 import Basket from './pages/Basket/Basket'
-import Confirmation from './pages/Confirmation/Confirmation'
-import Payment from './pages/Payment/Payment'
 
 import { createGlobalStyle } from 'styled-components'
+
+const Payment = lazy(() => import('./pages/Payment/Payment'))
+const Confirmation = lazy(() => import('./pages/Confirmation/Confirmation'))
 
 const GlobalStyles = createGlobalStyle`
   * {
@@ -41,17 +42,19 @@ const App = () => {
       <StyledPage>
         <Router>
           <Navigation />
-          <Switch>
-            <Route exact path="/">
-              <Basket data={data} />
-            </Route>
-            <Route path="/pagamento">
-              <Payment setPaymentData={setPaymentData} />
-            </Route>
-            <Route path="/confirmacao">
-              <Confirmation paymentData={paymentData} data={data} />
-            </Route>
-          </Switch>
+          <Suspense fallback={<div>Loading...</div>}>
+            <Switch>
+              <Route exact path="/">
+                <Basket data={data} />
+              </Route>
+              <Route path="/pagamento">
+                <Payment setPaymentData={setPaymentData} />
+              </Route>
+              <Route path="/confirmacao">
+                <Confirmation paymentData={paymentData} data={data} />
+              </Route>
+            </Switch>
+          </Suspense>
         </Router>
       </StyledPage>
     </>
