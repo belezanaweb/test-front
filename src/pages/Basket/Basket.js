@@ -6,8 +6,9 @@ import data from '../../data/endpoint.json'
 
 import Product from '../../components/Product/Product'
 import Total from '../../components/Total/Total'
+import Button from '../../components/Button/Button'
 
-const StyledProductList = styled.div`
+const StyledBox = styled.div`
   display: flex;
   flex-flow: column;
   justify-content: space-between;
@@ -28,40 +29,21 @@ const StyledPageTitle = styled.h2`
   margin-bottom: -7px;
 `
 
-const StyledButton = styled.button`
-  border-radius: 3px;
-  background-color: #ff6c00;
-  box-shadow: inset 0 -3px 0 0 #d45a00, 0 2px 4px 0 rgba(0, 0, 0, 0.25);
-  color: #fff;
-  font-size: 20px;
-  font-weight: 700;
-  letter-spacing: 0.5px;
-  text-align: center;
-  text-transform: uppercase;
-  border: none;
-  margin: 0 auto;
-  display: flex;
-  padding: 20px 18px 16px 18px;
-`
-
 const products = data.items.map((item) => <Product product={item.product} key={item.product.sku} />)
 
 function Basket() {
   const history = useHistory()
-
   return (
     <>
       <StyledPageTitle>Produtos</StyledPageTitle>
-      <StyledProductList>{products}</StyledProductList>
+      <StyledBox>{products}</StyledBox>
       <Total
         subTotal={data.subTotal}
         shippingTotal={data.shippingTotal}
         discount={data.discount}
         total={data.total}
       />
-      <StyledButton type="button" onClick={() => history.push('/pagamento')}>
-        Seguir para o pagamento
-      </StyledButton>
+      <Button handleClick={() => history.push('/pagamento')} text={'Seguir para o pagamento'} />
     </>
   )
 }

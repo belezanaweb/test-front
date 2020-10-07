@@ -2,8 +2,132 @@
 
 exports[`Payment Page Renders with title 1`] = `
 <DocumentFragment>
-  <h2>
-    Pagamento
+  <h2
+    class="Payment__StyledPageTitle-k343ez-0 hHjtHH"
+  >
+    Cartão de crédito
   </h2>
+  <form>
+    <div
+      class="Payment__StyledBox-k343ez-1 dObvgT"
+    >
+      <div>
+        <label
+          class="Payment__StyledLabel-k343ez-2 fglfJn"
+          for="cardNumber"
+        >
+          Número do cartão:
+        </label>
+        <input
+          autocomplete="off"
+          class="Payment__StyledInput-k343ez-3 ighMjI"
+          id="cardNumber"
+          maxlength="16"
+          name="cardNumber"
+          placeholder="____.____.____.____"
+          value=""
+        />
+      </div>
+      <div>
+        <label
+          class="Payment__StyledLabel-k343ez-2 fglfJn"
+          for="name"
+        >
+          Nome do Titular:
+        </label>
+        <input
+          class="Payment__StyledInput-k343ez-3 ighMjI"
+          id="name"
+          name="name"
+          placeholder="Como no cartão"
+          value=""
+        />
+      </div>
+      <div>
+        <label
+          class="Payment__StyledLabel-k343ez-2 fglfJn"
+          for="date"
+        >
+          Validade mês/ano):
+        </label>
+        <input
+          class="Payment__StyledInput-k343ez-3 ighMjI"
+          id="date"
+          maxlength="7"
+          name="date"
+          placeholder="_ _ / _ _ _ _"
+          value=""
+        />
+      </div>
+      <div>
+        <label
+          class="Payment__StyledLabel-k343ez-2 fglfJn"
+          for="cvv"
+        >
+          CVV:
+        </label>
+        <input
+          autocomplete="off"
+          class="Payment__StyledInput-k343ez-3 ighMjI"
+          id="cvv"
+          maxlength="3"
+          name="cvv"
+          placeholder="_ _ _"
+          value=""
+        />
+      </div>
+    </div>
+    <div
+      class="Total__StyledTotal-sc-4ywkhv-0 hmXNNq"
+    >
+      <p
+        class="Total__StyledTotalRow-sc-4ywkhv-1 eHCEJD"
+      >
+        <span>
+          PRODUTOS
+        </span>
+        <span>
+          R$ 624,80
+        </span>
+      </p>
+      <p
+        class="Total__StyledTotalRow-sc-4ywkhv-1 eHCEJD"
+      >
+        <span>
+          FRETE
+        </span>
+        <span>
+          R$ 5,30
+        </span>
+      </p>
+      <p
+        class="Total__StyledTotalRow-sc-4ywkhv-1 Total__StyledTotalRowDiscount-sc-4ywkhv-2 eHCEJD jxNTuf"
+      >
+        <span>
+          DESCONTO
+        </span>
+        <span>
+          - R$ 30,00
+        </span>
+      </p>
+      <p
+        class="Total__StyledTotalRow-sc-4ywkhv-1 Total__StyledTotalRowTotal-sc-4ywkhv-3 eHCEJD biziwy"
+      >
+        <span>
+          TOTAL
+        </span>
+        <span>
+          R$ 600,10
+        </span>
+      </p>
+    </div>
+    <button
+      class="Button__StyledButton-sc-1vikqwd-0 dNzGGX"
+      disabled=""
+      type="button"
+    >
+      Finalizar o pedido
+    </button>
+  </form>
 </DocumentFragment>
 `;

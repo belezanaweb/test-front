@@ -8,7 +8,7 @@ exports[`Basket Page Renders with title 1`] = `
     Produtos
   </h2>
   <div
-    class="Basket__StyledProductList-sc-6wc8y6-0 iCJrdK"
+    class="Basket__StyledBox-sc-6wc8y6-0 iULRji"
   >
     <div
       class="Product__StyledProduct-wun1w2-0 fVLvfH"
@@ -119,7 +119,7 @@ exports[`Basket Page Renders with title 1`] = `
     </p>
   </div>
   <button
-    class="Basket__StyledButton-sc-6wc8y6-2 iNCOzz"
+    class="Button__StyledButton-sc-1vikqwd-0 dNzGGX"
     type="button"
   >
     Seguir para o pagamento

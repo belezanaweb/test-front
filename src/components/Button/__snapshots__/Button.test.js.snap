@@ -1,0 +1,21 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Button Component renders a button 1`] = `
+<DocumentFragment>
+  <button
+    class="Button__StyledButton-sc-1vikqwd-0 dNzGGX"
+    type="button"
+  />
+</DocumentFragment>
+`;
+
+exports[`Button Component renders a button with path and text 1`] = `
+<DocumentFragment>
+  <button
+    class="Button__StyledButton-sc-1vikqwd-0 dNzGGX"
+    type="button"
+  >
+    bar
+  </button>
+</DocumentFragment>
+`;
