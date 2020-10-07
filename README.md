@@ -6,11 +6,11 @@ Fork do [rep](https://github.com/belezanaweb/test-front)
 
 
 ### O que eu tô usando?
-- Typescrip 🤔 (ainda to aprendendo)
+- Typescript 🤔 (ainda to aprendendo)
 - React/ React Hooks
 - Redux 
 - React Router Dom
-- Styled Components heart_eyes
+- Styled Components 
 - axios
 - Formulário: Formik + Yup
 
@@ -19,7 +19,7 @@ Fork do [rep](https://github.com/belezanaweb/test-front)
 #### `npm install`
 #### `npm run start`
 
-ou melhor
+ou se preferir:
 
 #### `yarn install`
 #### `yarn start`
