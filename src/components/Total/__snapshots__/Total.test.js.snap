@@ -1,0 +1,50 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Total Component renders links 1`] = `
+<DocumentFragment>
+  <div
+    class="Total__StyledTotal-sc-4ywkhv-0 KqqRY"
+  >
+    <p
+      class="Total__StyledTotalRow-sc-4ywkhv-1 eHCEJD"
+    >
+      <span>
+        PRODUTOS
+      </span>
+      <span>
+        R$ 624,80
+      </span>
+    </p>
+    <p
+      class="Total__StyledTotalRow-sc-4ywkhv-1 eHCEJD"
+    >
+      <span>
+        FRETE
+      </span>
+      <span>
+        R$ 5,30
+      </span>
+    </p>
+    <p
+      class="Total__StyledTotalRow-sc-4ywkhv-1 Total__StyledTotalRowDiscount-sc-4ywkhv-2 eHCEJD jxNTuf"
+    >
+      <span>
+        DESCONTO
+      </span>
+      <span>
+        - R$ 30,00
+      </span>
+    </p>
+    <p
+      class="Total__StyledTotalRow-sc-4ywkhv-1 Total__StyledTotalRowTotal-sc-4ywkhv-3 eHCEJD biziwy"
+    >
+      <span>
+        TOTAL
+      </span>
+      <span>
+        R$ 600,10
+      </span>
+    </p>
+  </div>
+</DocumentFragment>
+`;

@@ -4,6 +4,7 @@ import styled from 'styled-components/macro'
 import data from '../../data/endpoint.json'
 
 import Product from '../../components/Product/Product'
+import Total from '../../components/Total/Total'
 
 const StyledProductList = styled.div`
   display: flex;
@@ -13,7 +14,7 @@ const StyledProductList = styled.div`
   background-color: #fff;
   box-shadow: 1px 1px 5px 0 rgba(0, 0, 29, 0.22);
   padding: 12px 12px 0 13px;
-  margin: 10px 10px 10px 9px;
+  margin: 10px 10px 19px 9px;
 `
 
 const StyledPageTitle = styled.h2`
@@ -33,6 +34,12 @@ function Basket() {
     <>
       <StyledPageTitle>Produtos</StyledPageTitle>
       <StyledProductList>{products}</StyledProductList>
+      <Total
+        subTotal={data.subTotal}
+        shippingTotal={data.shippingTotal}
+        discount={data.discount}
+        total={data.total}
+      />
     </>
   )
 }
