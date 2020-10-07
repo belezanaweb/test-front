@@ -14,6 +14,8 @@ Fork do [rep](https://github.com/belezanaweb/test-front)
 - axios
 - Formulário: Formik + Yup
 
+(escolhi essas tecnologias, pois acho que trabalham bem juntas e porque tem uma comunidade ativa)
+
 ### Para rodar o projeto:
 
 #### `npm install`
