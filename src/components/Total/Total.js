@@ -8,7 +8,7 @@ const StyledTotal = styled.div`
   box-sizing: border-box;
   border-radius: 3px;
   border: 1px solid #ccc;
-  margin: 10px;
+  margin: 10px 10px 21px;
   padding: 0 12px 15px 12px;
 `
 

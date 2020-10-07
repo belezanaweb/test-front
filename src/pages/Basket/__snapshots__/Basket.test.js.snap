@@ -75,7 +75,7 @@ exports[`Basket Page Renders with title 1`] = `
     </div>
   </div>
   <div
-    class="Total__StyledTotal-sc-4ywkhv-0 KqqRY"
+    class="Total__StyledTotal-sc-4ywkhv-0 hmXNNq"
   >
     <p
       class="Total__StyledTotalRow-sc-4ywkhv-1 eHCEJD"
@@ -118,5 +118,11 @@ exports[`Basket Page Renders with title 1`] = `
       </span>
     </p>
   </div>
+  <button
+    class="Basket__StyledButton-sc-6wc8y6-2 iNCOzz"
+    type="button"
+  >
+    Seguir para o pagamento
+  </button>
 </DocumentFragment>
 `;
