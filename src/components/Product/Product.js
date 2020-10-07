@@ -2,6 +2,8 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import styled from 'styled-components/macro'
 
+import { brl } from '../../helpers/currency'
+
 const StyledProduct = styled.div`
   display: flex;
   background-color: #fff;
@@ -37,15 +39,12 @@ const StyledProductPrice = styled.span`
 `
 
 function Product({ product }) {
-  const price = new Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'BRL' }).format(
-    product.priceSpecification.price
-  )
   return (
     <StyledProduct>
       <StyledProductImg src={product.imageObjects[0].small} alt={product.name} />
       <div>
         <StyledProductName>{product.name}</StyledProductName>
-        <StyledProductPrice>{price}</StyledProductPrice>
+        <StyledProductPrice>{brl(product.priceSpecification.price)}</StyledProductPrice>
       </div>
     </StyledProduct>
   )

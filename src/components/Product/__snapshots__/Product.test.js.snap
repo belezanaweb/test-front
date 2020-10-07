@@ -19,7 +19,7 @@ exports[`Product Component renders links 1`] = `
       <span
         class="Product__StyledProductPrice-wun1w2-3 dJWezn"
       >
-        R$225.90
+        R$ 225,90
       </span>
     </div>
   </div>
