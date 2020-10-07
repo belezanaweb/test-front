@@ -1,29 +1,28 @@
-import React from "react";
-import { Switch, Route, BrowserRouter} from "react-router-dom";
-import HomePage from "../HomePage";
-import BagPage from "../BagPage";
-import PaymentPage from "../PaymentPage";
-import ConfirmPage from "../ConfirmPage";
+import React from 'react'
+import { Switch, Route, BrowserRouter } from 'react-router-dom'
+import HomePage from '../HomePage'
+import BagPage from '../BagPage'
+import PaymentPage from '../PaymentPage'
+import ConfirmPage from '../ConfirmPage'
 
 const Router = () => {
-
   return (
     <BrowserRouter>
       <Switch>
-      <Route exact path="/">
-          <HomePage/>
+        <Route exact path="/">
+          <HomePage />
         </Route>
 
         <Route exact path="/bag">
-          <BagPage/>
+          <BagPage />
         </Route>
 
         <Route exact path="/payment">
-          <PaymentPage/>
+          <PaymentPage />
         </Route>
 
         <Route exact path="/confirm">
-          <ConfirmPage/>
+          <ConfirmPage />
         </Route>
       </Switch>
     </BrowserRouter>
