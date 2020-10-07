@@ -6,7 +6,7 @@ Fork do [rep](https://github.com/belezanaweb/test-front)
 
 
 ### O que eu tô usando?
-- Typescrip 🤔 (ainda to aprendendo)
+- Typescript 🤔 (ainda to aprendendo)
 - React/ React Hooks
 - Redux 
 - React Router Dom
