@@ -2,8 +2,6 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import styled from 'styled-components/macro'
 
-import data from '../../data/endpoint.json'
-
 import ProductReview from '../../components/ProductReview/ProductReview'
 import Total from '../../components/Total/Total'
 
@@ -44,11 +42,10 @@ const StyledData = styled.p`
   padding: 2px 0;
 `
 
-const products = data.items.map((item) => (
-  <ProductReview product={item.product} key={item.product.sku} />
-))
-
-function Confirmation({ paymentData }) {
+function Confirmation({ paymentData, data }) {
+  const products = data.items?.map((item) => (
+    <ProductReview product={item.product} key={item.product.sku} />
+  ))
   return (
     <>
       <StyledSuccess>Compra efetuada com sucesso</StyledSuccess>

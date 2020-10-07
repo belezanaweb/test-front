@@ -1,6 +1,8 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
 import styled from 'styled-components/macro'
+
+import { apiData } from './api/api'
 
 import Navigation from './components/Navigation/Navigation'
 
@@ -27,6 +29,11 @@ const App = () => {
     name: '',
     date: ''
   })
+  const [data, setData] = useState({})
+
+  useEffect(() => {
+    apiData().then(({ data }) => setData(data))
+  }, [])
 
   return (
     <>
@@ -36,13 +43,13 @@ const App = () => {
           <Navigation />
           <Switch>
             <Route exact path="/">
-              <Basket />
+              <Basket data={data} />
             </Route>
             <Route path="/pagamento">
               <Payment setPaymentData={setPaymentData} />
             </Route>
             <Route path="/confirmacao">
-              <Confirmation paymentData={paymentData} />
+              <Confirmation paymentData={paymentData} data={data} />
             </Route>
           </Switch>
         </Router>

@@ -124,7 +124,7 @@ exports[`Payment Page Renders with title 1`] = `
     <button
       class="Button__StyledButton-sc-1vikqwd-0 dNzGGX"
       disabled=""
-      type="button"
+      type="submit"
     >
       Finalizar o pedido
     </button>

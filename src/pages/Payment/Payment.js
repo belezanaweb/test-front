@@ -87,7 +87,6 @@ function Payment({ setPaymentData }) {
   }
 
   function submit(values) {
-    console.log('submit -> values', values)
     setPaymentData(values)
     history.push('/confirmacao')
   }
@@ -191,6 +190,7 @@ function Payment({ setPaymentData }) {
                 total={data.total}
               />
               <Button
+                type={'submit'}
                 disabled={!isValid}
                 text={'Finalizar o pedido'}
                 handleClick={() => submit(values)}

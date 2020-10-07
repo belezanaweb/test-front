@@ -28,9 +28,13 @@ const StyledButton = styled.button`
   }
 `
 
-function Button({ handleClick, text, disabled = false }) {
+function Button({ handleClick, text, type, disabled = false }) {
   return (
-    <StyledButton type="button" onClick={handleClick} disabled={disabled ? disabled : ''}>
+    <StyledButton
+      type={type ? type : 'button'}
+      onClick={handleClick}
+      disabled={disabled ? disabled : ''}
+    >
       {text}
     </StyledButton>
   )

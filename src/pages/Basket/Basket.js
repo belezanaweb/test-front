@@ -2,8 +2,6 @@ import React from 'react'
 import styled from 'styled-components/macro'
 import { useHistory } from 'react-router-dom'
 
-import data from '../../data/endpoint.json'
-
 import Product from '../../components/Product/Product'
 import Total from '../../components/Total/Total'
 import Button from '../../components/Button/Button'
@@ -29,10 +27,11 @@ const StyledPageTitle = styled.h2`
   margin-bottom: -7px;
 `
 
-const products = data.items.map((item) => <Product product={item.product} key={item.product.sku} />)
-
-function Basket() {
+function Basket({ data }) {
   const history = useHistory()
+  const products = data.items?.map((item) => (
+    <Product product={item.product} key={item.product.sku} />
+  ))
   return (
     <>
       <StyledPageTitle>Produtos</StyledPageTitle>
