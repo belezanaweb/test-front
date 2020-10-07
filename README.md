@@ -10,7 +10,7 @@ Fork do [rep](https://github.com/belezanaweb/test-front)
 - React/ React Hooks
 - Redux 
 - React Router Dom
-- Styled Components heart_eyes
+- Styled Components 
 - axios
 - Formulário: Formik + Yup
 
