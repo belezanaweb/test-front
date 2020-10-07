@@ -2,14 +2,12 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import styled from 'styled-components/macro'
 
-import { brl } from '../../helpers/currency'
-
 const StyledProduct = styled.div`
   display: flex;
   background-color: #fff;
   border-radius: 3px;
   border: 1px solid #eee;
-  padding: 4px 6px 4px 10px;
+  padding: 4px 6px 2px 10px;
   margin-bottom: 15px;
 `
 
@@ -18,44 +16,33 @@ const StyledProductName = styled.p`
   font-size: 13px;
   line-height: 16px;
   word-spacing: 0.9px;
-  margin-top: 7px;
+  margin-top: 10px;
   margin-bottom: 17px;
 `
 
 const StyledProductImg = styled.img`
-  width: 64px;
+  width: 44px;
   height: 100%;
-  margin-right: 10px;
+  margin-right: 8px;
   margin-top: 7px;
 `
 
-const StyledProductPrice = styled.span`
-  margin-right: 3px;
-  font-size: 14px;
-  font-weight: 700;
-  line-height: 17px;
-  float: right;
-  margin-bottom: 7px;
-`
-
-function Product({ product }) {
+function ProductReview({ product }) {
   return (
     <StyledProduct>
-      <StyledProductImg src={product.imageObjects[0].small} alt={product.name} />
+      <StyledProductImg src={product.imageObjects[0].thumbnail} alt={product.name} />
       <div>
         <StyledProductName>{product.name}</StyledProductName>
-        <StyledProductPrice>{brl(product.priceSpecification.price)}</StyledProductPrice>
       </div>
     </StyledProduct>
   )
 }
 
-Product.propTypes = {
+ProductReview.propTypes = {
   product: PropTypes.shape({
     name: PropTypes.string,
-    price: PropTypes.number,
     imageObjects: PropTypes.array
   }).isRequired
 }
 
-export default Product
+export default ProductReview

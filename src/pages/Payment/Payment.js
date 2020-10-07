@@ -54,7 +54,7 @@ const StyledInput = styled.input`
   }
 `
 
-function Payment() {
+function Payment({ setPaymentData }) {
   const history = useHistory()
 
   function isValidCreditCard(value) {
@@ -84,6 +84,12 @@ function Payment() {
 
   function styleError(error) {
     return error ? { borderColor: 'red' } : {}
+  }
+
+  function submit(values) {
+    console.log('submit -> values', values)
+    setPaymentData(values)
+    history.push('/confirmacao')
   }
 
   return (
@@ -116,7 +122,7 @@ function Payment() {
           return errors
         }}
         onSubmit={(values, { setSubmitting }) => {
-          history.push('/confirmacao')
+          submit(values)
         }}
         initialErrors={{ cardNumber: '', name: '', date: '', cvv: '' }}
       >
@@ -187,7 +193,7 @@ function Payment() {
               <Button
                 disabled={!isValid}
                 text={'Finalizar o pedido'}
-                handleClick={() => history.push('/confirmacao')}
+                handleClick={() => submit(values)}
               />
             </form>
           )

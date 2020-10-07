@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
 import styled from 'styled-components/macro'
 
@@ -21,26 +21,34 @@ const StyledPage = styled.div`
   min-height: 100vh;
 `
 
-const App = () => (
-  <>
-    <GlobalStyles />
-    <StyledPage>
-      <Router>
-        <Navigation />
-        <Switch>
-          <Route exact path="/">
-            <Basket />
-          </Route>
-          <Route path="/pagamento">
-            <Payment />
-          </Route>
-          <Route path="/confirmacao">
-            <Confirmation />
-          </Route>
-        </Switch>
-      </Router>
-    </StyledPage>
-  </>
-)
+const App = () => {
+  const [paymentData, setPaymentData] = useState({
+    cardNumber: '',
+    name: '',
+    date: ''
+  })
+
+  return (
+    <>
+      <GlobalStyles />
+      <StyledPage>
+        <Router>
+          <Navigation />
+          <Switch>
+            <Route exact path="/">
+              <Basket />
+            </Route>
+            <Route path="/pagamento">
+              <Payment setPaymentData={setPaymentData} />
+            </Route>
+            <Route path="/confirmacao">
+              <Confirmation paymentData={paymentData} />
+            </Route>
+          </Switch>
+        </Router>
+      </StyledPage>
+    </>
+  )
+}
 
 export default App

@@ -2,8 +2,135 @@
 
 exports[`Confirmation Page Renders with title 1`] = `
 <DocumentFragment>
-  <h2>
-    Confirmação
+  <h2
+    class="Confirmation__StyledSuccess-sc-69oww9-2 ckNbvO"
+  >
+    Compra efetuada com sucesso
   </h2>
+  <h2
+    class="Confirmation__StyledPageTitle-sc-69oww9-1 cZXmkT"
+  >
+    Pagamento
+  </h2>
+  <div
+    class="Confirmation__StyledBox-sc-69oww9-0 dqWBav"
+  >
+    <p
+      class="Confirmation__StyledData-sc-69oww9-3 hCyoqC"
+    >
+      1234
+    </p>
+    <p
+      class="Confirmation__StyledData-sc-69oww9-3 hCyoqC"
+    >
+      ASDF QWER
+    </p>
+    <p
+      class="Confirmation__StyledData-sc-69oww9-3 hCyoqC"
+    >
+      12/2040
+    </p>
+  </div>
+  <h2
+    class="Confirmation__StyledPageTitle-sc-69oww9-1 cZXmkT"
+  >
+    Produtos
+  </h2>
+  <div
+    class="Confirmation__StyledBox-sc-69oww9-0 dqWBav"
+  >
+    <div
+      class="ProductReview__StyledProduct-sc-2kzi8k-0 jOZocn"
+    >
+      <img
+        alt="L'Oréal Professionnel Expert Absolut Repair Cortex Lipidium"
+        class="ProductReview__StyledProductImg-sc-2kzi8k-2 SwLGV"
+        src="https://res.cloudinary.com/beleza-na-web/image/upload/f_auto,fl_progressive,q_auto:best/v1/imagens/1/loreal-professionnel-expert-absolut-repair-cortex-lipidium-mascara-de-reconstrucao-500g-24410-963234120108391775.png"
+      />
+      <div>
+        <p
+          class="ProductReview__StyledProductName-sc-2kzi8k-1 jeElbh"
+        >
+          L'Oréal Professionnel Expert Absolut Repair Cortex Lipidium
+        </p>
+      </div>
+    </div>
+    <div
+      class="ProductReview__StyledProduct-sc-2kzi8k-0 jOZocn"
+    >
+      <img
+        alt="Good Girl Carolina Herrera Eau de Parfum - Perfume Feminino 30ml"
+        class="ProductReview__StyledProductImg-sc-2kzi8k-2 SwLGV"
+        src="https://res.cloudinary.com/beleza-na-web/image/upload/f_auto,fl_progressive,q_auto:best/v1/imagens/1/good-girl-carolina-herrera-eau-de-parfum-perfume-feminino-30ml-38273-1960525940762131267.jpg"
+      />
+      <div>
+        <p
+          class="ProductReview__StyledProductName-sc-2kzi8k-1 jeElbh"
+        >
+          Good Girl Carolina Herrera Eau de Parfum - Perfume Feminino 30ml
+        </p>
+      </div>
+    </div>
+    <div
+      class="ProductReview__StyledProduct-sc-2kzi8k-0 jOZocn"
+    >
+      <img
+        alt="Senscience Inner Restore Intensif - Máscara Capilar 50ml"
+        class="ProductReview__StyledProductImg-sc-2kzi8k-2 SwLGV"
+        src="https://res.cloudinary.com/beleza-na-web/image/upload/f_auto,fl_progressive,q_auto:best/v1/imagens/1/senscience-inner-restore-intesif-deep-repairing-masque-mascara-de-tratamento-50ml-3019-7903251722539384904.png"
+      />
+      <div>
+        <p
+          class="ProductReview__StyledProductName-sc-2kzi8k-1 jeElbh"
+        >
+          Senscience Inner Restore Intensif - Máscara Capilar 50ml
+        </p>
+      </div>
+    </div>
+  </div>
+  <div
+    class="Total__StyledTotal-sc-4ywkhv-0 hmXNNq"
+  >
+    <p
+      class="Total__StyledTotalRow-sc-4ywkhv-1 eHCEJD"
+    >
+      <span>
+        PRODUTOS
+      </span>
+      <span>
+        R$ 624,80
+      </span>
+    </p>
+    <p
+      class="Total__StyledTotalRow-sc-4ywkhv-1 eHCEJD"
+    >
+      <span>
+        FRETE
+      </span>
+      <span>
+        R$ 5,30
+      </span>
+    </p>
+    <p
+      class="Total__StyledTotalRow-sc-4ywkhv-1 Total__StyledTotalRowDiscount-sc-4ywkhv-2 eHCEJD jxNTuf"
+    >
+      <span>
+        DESCONTO
+      </span>
+      <span>
+        - R$ 30,00
+      </span>
+    </p>
+    <p
+      class="Total__StyledTotalRow-sc-4ywkhv-1 Total__StyledTotalRowTotal-sc-4ywkhv-3 eHCEJD biziwy"
+    >
+      <span>
+        TOTAL
+      </span>
+      <span>
+        R$ 600,10
+      </span>
+    </p>
+  </div>
 </DocumentFragment>
 `;
