@@ -1,8 +1,10 @@
 import React, { useState, useEffect } from 'react'
+import { useHistory } from 'react-router-dom'
 import axios from 'axios'
 
 function BagPage() {
   const [cart, setCart] = useState('')
+  const history = useHistory()
   const baseUrl = 'http://www.mocky.io/v2/5b15c4923100004a006f3c07'
 
   console.log(cart)
@@ -10,6 +12,8 @@ function BagPage() {
   useEffect(() => {
     if (!cart) {
       getCart()
+    } else {
+      localStorage.setItem('infoCart', JSON.stringify(cart))
     }
   }, [cart])
 
@@ -20,6 +24,10 @@ function BagPage() {
     } catch (error) {
       alert('Erro ocorrido!')
     }
+  }
+
+  const goToPayment = () => {
+    history.push('/payment')
   }
 
   const listProductsCart =
@@ -49,6 +57,7 @@ function BagPage() {
           </div>
         )}
       </div>
+      <button onClick={goToPayment}>SEGUIR PARA O PAGAMENTO</button>
     </div>
   )
 }
