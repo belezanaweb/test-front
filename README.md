@@ -19,7 +19,7 @@ Fork do [rep](https://github.com/belezanaweb/test-front)
 #### `npm install`
 #### `npm run start`
 
-ou melhor
+ou se preferir:
 
 #### `yarn install`
 #### `yarn start`
