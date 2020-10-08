@@ -7,7 +7,7 @@ function BagPage() {
   const history = useHistory()
   const baseUrl = 'http://www.mocky.io/v2/5b15c4923100004a006f3c07'
 
-  console.log(cart)
+  const total = cart.subTotal + cart.shippingTotal - cart.discount
 
   useEffect(() => {
     if (!cart) {
@@ -53,7 +53,7 @@ function BagPage() {
             <p>Produtos: {cart.subTotal.toFixed(2)}</p>
             <p>Frete: {cart.shippingTotal.toFixed(2)}</p>
             <p>Desconto: {cart.discount.toFixed(2)}</p>
-            <p>Total: {cart.total.toFixed(2)}</p>
+            <p>Total: {total.toFixed(2)}</p>
           </div>
         )}
       </div>

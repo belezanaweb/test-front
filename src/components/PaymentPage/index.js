@@ -10,10 +10,12 @@ function PaymentPage() {
   const [cardValidate, setCardValidate] = useState()
   const [cvv, setCvv] = useState()
 
+  const total = infoCart.subTotal + infoCart.shippingTotal - infoCart.discount
+
   const infoUser = {
     number: cardNumber,
     user: userName,
-    card: cardValidate,
+    cardValidate: cardValidate,
     cvv: cvv
   }
 
@@ -87,7 +89,7 @@ function PaymentPage() {
             <p>Produtos: {infoCart.subTotal.toFixed(2)}</p>
             <p>Frete: {infoCart.shippingTotal.toFixed(2)}</p>
             <p>Desconto: {infoCart.discount.toFixed(2)}</p>
-            <p>Total: {infoCart.total.toFixed(2)}</p>
+            <p>Total: {total.toFixed(2)}</p>
           </div>
           <button type="submit">FINALIZAR O PEDIDO</button>
         </form>
