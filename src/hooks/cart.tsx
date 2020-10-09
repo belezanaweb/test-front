@@ -1,4 +1,10 @@
-import React, { createContext, useCallback, useContext, useState } from 'react';
+import React, {
+  createContext,
+  useCallback,
+  useContext,
+  useEffect,
+  useState,
+} from 'react';
 import { Cart } from '../@types/cart';
 import { CartMapper } from '../mappers';
 import api from '../services/api';
@@ -11,13 +17,27 @@ interface CartContextData {
 const CartContext = createContext<CartContextData>({} as CartContextData);
 
 const CartProvider: React.FC = ({ children }) => {
-  const [cart, setCart] = useState<Cart>();
+  const [cart, setCart] = useState<Cart>(() => {
+    const cartCached = localStorage.getItem('@test:cart');
+
+    if (cartCached) {
+      return JSON.parse(cartCached);
+    }
+
+    return null;
+  });
+
+  useEffect(() => {}, [cart]);
 
   const load = useCallback(() => {
     api
       .get('/5b15c4923100004a006f3c07')
       .then(response => {
-        setCart(CartMapper.format(response.data));
+        const cartData = CartMapper.format(response.data);
+
+        localStorage.setItem('@test:cart', JSON.stringify(cartData));
+
+        setCart(cartData);
       })
       .catch(error => {
         console.log(`Error: `, error);

@@ -1,4 +1,4 @@
-import styled, { css } from 'styled-components';
+import styled from 'styled-components';
 import BaseButton from '../../components/Button';
 
 interface SummaryItemProps {
@@ -86,13 +86,6 @@ export const ProductValue = styled.div`
   font-size: 14px;
   font-weight: 700;
   text-align: right;
-`;
-
-export const Summary = styled.div`
-  border: 1px solid #ccc;
-  border-radius: 3px;
-  padding: 12px;
-  width: 100%;
 `;
 
 export const Title = styled.h2`

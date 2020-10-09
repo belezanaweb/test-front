@@ -1,5 +1,4 @@
 import styled, { css } from 'styled-components';
-import BaseButton from '../../components/Button';
 
 interface SummaryItemProps {
   highlight?: boolean;

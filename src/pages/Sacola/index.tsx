@@ -21,7 +21,11 @@ const Sacola: React.FC = () => {
   const { cart, load: loadCart } = useCart();
   const history = useHistory();
 
-  useEffect(() => loadCart(), [loadCart]);
+  useEffect(() => {
+    if (!cart) {
+      loadCart();
+    }
+  }, [cart, loadCart]);
 
   const handleGoToPagamento = useCallback(() => {
     history.push('/pagamento');
