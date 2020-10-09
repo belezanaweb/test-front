@@ -7,6 +7,8 @@ import { createStore, applyMiddleware, compose } from 'redux';
 import { routerMiddleware } from 'connected-react-router';
 import generateReducers from '../../reducers';
 import Router from '../Router';
+import Global from '../../styles/global';
+import TopBar from '../../components/TopBar';
 
 export const history = createBrowserHistory();
 
@@ -19,9 +21,11 @@ const middlewares = [
 
 const store = createStore(generateReducers(history), compose(...middlewares));
 
-export const App = () => (
+const App = () => (
 
   <Provider store={store}>
+    <TopBar />
+    <Global />
     <Router history={history} />
   </Provider>
 );
