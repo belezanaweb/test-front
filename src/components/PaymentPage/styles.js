@@ -22,7 +22,7 @@ export const RectangleSteps = styled.div`
 export const TextBag = styled.span`
   height: 16px;
   width: 61px;
-  color: #ff7800;
+  color: #ccc;
   font-family: 'Helvetica Neue';
   font-size: 13px;
   font-weight: 700;
@@ -35,7 +35,7 @@ export const TextBag = styled.span`
 export const TextPayment = styled.span`
   height: 16px;
   width: 89px;
-  color: #ccc;
+  color: #ff7800;
   font-family: 'Helvetica Neue';
   font-size: 13px;
   font-weight: 700;
@@ -57,7 +57,6 @@ export const TextConfirm = styled.span`
   text-align: center;
   margin: 44px 29px 12px 0px;
 `
-
 export const Background = styled.div`
   height: 720px;
   width: 360px;
@@ -68,34 +67,23 @@ export const RectangleBackground = styled.div`
   background-color: #eee;
   margin: 10px 13px 0px 0px;
 `
-
-export const Products = styled.div`
+export const ContainerForm = styled.div`
   height: 347px;
   width: 341px;
 
   margin: 10px 23px 323px 23px;
 `
-export const RectangleProducts = styled.div`
+export const ContainerRectangleForm = styled.div`
   height: 325px;
   width: 341px;
   border-radius: 3px;
   background-color: #fff;
   box-shadow: 1px 1px 5px 0 rgba(0, 0, 29, 0.22);
-
+  display: flex;
+  flex-direction: column;
   margin-top: 5px;
 `
-
-export const Product = styled.div`
-  box-sizing: border-box;
-  height: 90px;
-  width: 316px;
-  border-radius: 3px;
-  border: 1px solid #eee;
-  margin: 12px 12px 0px 13px;
-  display: flex;
-`
-
-export const TextProducts = styled.div`
+export const TextCreditCard = styled.div`
   height: 17px;
   width: 319px;
   color: #999;
@@ -107,35 +95,162 @@ export const TextProducts = styled.div`
   margin: 0px 11px 0px 11px;
   padding-top: 10px;
 `
-
-export const ImageProduct = styled.img`
-  height: 65px;
-  width: 65px;
-  margin: 11px 11px 14px 0px;
-`
-export const NameProduct = styled.p`
-  height: 32px;
-  width: 220px;
-  color: #212122;
+export const TextCardNumber = styled.p`
+  height: 14px;
+  width: 129.71px;
+  color: #ccc;
   font-family: 'Helvetica Neue';
-  font-size: 13px;
-  letter-spacing: NaNpx;
-  line-height: 16px;
-  margin: 12px 10px 46px 40px;
-`
-export const PriceProduct = styled.p`
-  height: 17px;
-  width: 220px;
-  color: #212122;
-  font-family: 'Helvetica Neue';
-  font-size: 14px;
+  font-size: 12px;
   font-weight: 700;
   letter-spacing: NaNpx;
-  line-height: 17px;
-  text-align: right;
-  margin: -25px 10px 46px 10px;
+  line-height: 14px;
 `
 
+export const TextUserName = styled.p`
+  height: 14px;
+  width: 262px;
+  color: #ccc;
+  font-family: 'Helvetica Neue';
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: NaNpx;
+  line-height: 14px;
+`
+export const TextCardValidate = styled.p`
+  height: 14px;
+  width: 158px;
+  color: #ccc;
+  font-family: 'Helvetica Neue';
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: NaNpx;
+  line-height: 14px;
+`
+export const TextCvv = styled.p`
+  height: 14px;
+  width: 138px;
+  color: #ccc;
+  font-family: 'Helvetica Neue';
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: NaNpx;
+  line-height: 14px;
+`
+export const Input1 = styled.input`
+  box-sizing: border-box;
+  height: 45px;
+  width: 320px;
+  border-radius: 3px;
+  background-color: #fff;
+  border: 1px solid #e7e7e7;
+  box-shadow: inset 0 1px 2px 0 rgba(0, 0, 0, 0.2);
+  &::placeholder {
+    height: 19px;
+    width: 219px;
+    color: #e0e7ee;
+    font-family: 'Helvetica Neue';
+    font-size: 16px;
+    letter-spacing: 1.37px;
+    line-height: 19px;
+  }
+  &:focus {
+    border: 2px solid #a43287;
+    outline: none;
+    box-shadow: none;
+  }
+  &:invalid {
+    border: 1px solid red;
+  }
+`
+export const Input2 = styled.input`
+  box-sizing: border-box;
+  height: 45px;
+  width: 320px;
+  border-radius: 3px;
+  background-color: #fff;
+  border: 1px solid #e7e7e7;
+  box-shadow: inset 0 1px 2px 0 rgba(0, 0, 0, 0.2);
+  &::placeholder {
+    height: 19px;
+    width: 219px;
+    color: #e0e7ee;
+    font-family: 'Helvetica Neue';
+    font-size: 16px;
+    letter-spacing: NaNpx;
+    line-height: 19px;
+  }
+  &:focus {
+    border: 1px solid #a43287;
+    outline: none;
+    box-shadow: none;
+  }
+  &:invalid {
+    border: 1px solid red;
+  }
+`
+export const Input3 = styled.input`
+  box-sizing: border-box;
+  height: 45px;
+  width: 160px;
+  border-radius: 3px;
+  background-color: #fff;
+  border: 1px solid #e7e7e7;
+  box-shadow: inset 0 1px 2px 0 rgba(0, 0, 0, 0.2);
+  &::placeholder {
+    height: 19px;
+    width: 133px;
+    color: #e0e7ee;
+    font-family: 'Helvetica Neue';
+    font-size: 16px;
+    letter-spacing: 1.37px;
+    line-height: 19px;
+  }
+  &:focus {
+    border: 1px solid #a43287;
+    outline: none;
+    box-shadow: none;
+  }
+  &:invalid {
+    border: 1px solid red;
+  }
+`
+export const Input4 = styled.input`
+  box-sizing: border-box;
+  height: 45px;
+  width: 140px;
+  border-radius: 3px;
+  background-color: #fff;
+  border: 1px solid #e7e7e7;
+  box-shadow: inset 0 1px 2px 0 rgba(0, 0, 0, 0.2);
+  &::placeholder {
+    height: 19px;
+    width: 133px;
+    color: #e0e7ee;
+    font-family: 'Helvetica Neue';
+    font-size: 16px;
+    letter-spacing: 1.37px;
+    line-height: 19px;
+  }
+  &:focus {
+    border: 1px solid #a43287;
+    outline: none;
+    box-shadow: none;
+  }
+  &:invalid {
+    border: 1px solid red;
+  }
+`
+export const ContainerCardNumber = styled.div`
+  margin-left: 10px;
+`
+export const ContainerUserName = styled.div`
+  margin-left: 10px;
+`
+
+export const ContainerValidate = styled.div`
+  display: flex;
+  justify-content: space-around;
+`
 export const Total = styled.div`
   box-sizing: border-box;
   height: 129px;
@@ -250,8 +365,7 @@ export const TextPriceTotal = styled.span`
   line-height: 17px;
   text-align: right;
 `
-
-export const Button = styled.div`
+export const Button = styled.button`
   height: 60px;
   width: 341px;
   border-radius: 3px;
@@ -266,9 +380,16 @@ export const Button = styled.div`
     background-color: #d45a00;
   }
   cursor: pointer;
+  outline: none;
+  box-shadow: none;
+  border: none;
+  &:focus {
+    outline: none;
+    box-shadow: none;
+  }
 `
 
-export const TextGoToPayment = styled.div`
+export const TextFinish = styled.div`
   height: 24px;
   width: 339px;
   color: #fff;
@@ -278,5 +399,4 @@ export const TextGoToPayment = styled.div`
   letter-spacing: 0.5px;
   line-height: 24px;
   text-align: center;
-  padding-top: 18px;
 `

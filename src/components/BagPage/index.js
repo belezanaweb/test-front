@@ -84,6 +84,7 @@ function BagPage() {
           <TextConfirm>CONFIRMAÇÃO</TextConfirm>
         </RectangleSteps>
       </Steps>
+
       <RectangleBackground>
         <Products>
           <TextProducts>PRODUTOS</TextProducts>
@@ -101,7 +102,7 @@ function BagPage() {
                 </Container2>
                 <Container3>
                   <TextDiscount>DESCONTO</TextDiscount>
-                  <TextPriceDiscount>R$ {cart.discount.toFixed(2)}</TextPriceDiscount>
+                  <TextPriceDiscount>- R$ {cart.discount.toFixed(2)}</TextPriceDiscount>
                 </Container3>
                 <Container4>
                   <TextTotal>TOTAL</TextTotal>
