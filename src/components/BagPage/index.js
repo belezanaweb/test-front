@@ -69,7 +69,9 @@ function BagPage() {
           <ImageProduct src={image.small} alt="product"></ImageProduct>
           <div>
             <NameProduct>{item.product.name}</NameProduct>
-            <PriceProduct>R$ {item.product.priceSpecification.price.toFixed(2)}</PriceProduct>
+            <PriceProduct>
+              R$ {item.product.priceSpecification.price.toFixed(2).replace('.', ',')}
+            </PriceProduct>
           </div>
         </Product>
       ))
@@ -93,19 +95,25 @@ function BagPage() {
               <div>
                 <Container1>
                   <TextTotalProducts>PRODUTOS</TextTotalProducts>
-                  <TextPriceProducts>R$ {cart.subTotal.toFixed(2)}</TextPriceProducts>
+                  <TextPriceProducts>
+                    R$ {cart.subTotal.toFixed(2).replace('.', ',')}
+                  </TextPriceProducts>
                 </Container1>
                 <Container2>
                   <TextShipment>FRETE</TextShipment>
-                  <TextPriceShipment>R$ {cart.shippingTotal.toFixed(2)}</TextPriceShipment>
+                  <TextPriceShipment>
+                    R$ {cart.shippingTotal.toFixed(2).replace('.', ',')}
+                  </TextPriceShipment>
                 </Container2>
                 <Container3>
                   <TextDiscount>DESCONTO</TextDiscount>
-                  <TextPriceDiscount>- R$ {cart.discount.toFixed(2)}</TextPriceDiscount>
+                  <TextPriceDiscount>
+                    - R$ {cart.discount.toFixed(2).replace('.', ',')}
+                  </TextPriceDiscount>
                 </Container3>
                 <Container4>
                   <TextTotal>TOTAL</TextTotal>
-                  <TextPriceTotal>R$ {total.toFixed(2)} </TextPriceTotal>
+                  <TextPriceTotal>R$ {total.toFixed(2).replace('.', ',')} </TextPriceTotal>
                 </Container4>
               </div>
             )}

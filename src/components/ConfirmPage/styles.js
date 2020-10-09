@@ -16,7 +16,7 @@ export const RectangleSteps = styled.div`
   border-radius: 3px;
   background-color: #fff;
   box-shadow: 1px 1px 5px 0 rgba(0, 0, 29, 0.22);
-  margin-bottom: 680px;
+  /* margin-bottom: 680px; */
   padding-top: 8px;
 `
 export const TextBag = styled.span`
@@ -66,7 +66,6 @@ export const RectangleBackground = styled.div`
   height: 100%;
   width: 385px;
   background-color: #eee;
-  margin: 0px 13px 0px 0px;
 `
 export const ContainerPayment = styled.div`
   height: 103px;
@@ -95,7 +94,6 @@ export const TextUserInfo = styled.p`
   font-family: 'Helvetica Neue';
   font-size: 14px;
   letter-spacing: NaNpx;
-
   margin: 0;
 `
 
@@ -277,7 +275,6 @@ export const TextPriceTotal = styled.span`
 export const RectangleSucessfull = styled.div`
   height: 67.57px;
   width: 266.27px;
-  margin-top: 32px;
 `
 export const TextSucessfull = styled.p`
   height: 17px;
@@ -299,5 +296,5 @@ export const Shape = styled.p`
   display: flex;
   align-items: center;
   justify-content: center;
-  margin: 0px 160px 11px 160px;
+  margin: 50px 160px 11px 160px;
 `

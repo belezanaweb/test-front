@@ -89,48 +89,31 @@ function ConfirmPage() {
             <Total>
               <Container1>
                 <TextTotalProducts>PRODUTOS</TextTotalProducts>
-                <TextPriceProducts>R$ {infoCart.subTotal.toFixed(2)}</TextPriceProducts>
+                <TextPriceProducts>
+                  R$ {infoCart.subTotal.toFixed(2).replace('.', ',')}
+                </TextPriceProducts>
               </Container1>
               <Container2>
                 <TextShipment>FRETE</TextShipment>
-                <TextPriceShipment>R$ {infoCart.shippingTotal.toFixed(2)}</TextPriceShipment>
+                <TextPriceShipment>
+                  R$ {infoCart.shippingTotal.toFixed(2).replace('.', ',')}
+                </TextPriceShipment>
               </Container2>
               <Container3>
                 <TextDiscount>DESCONTO</TextDiscount>
-                <TextPriceDiscount>- R$ {infoCart.discount.toFixed(2)}</TextPriceDiscount>
+                <TextPriceDiscount>
+                  - R$ {infoCart.discount.toFixed(2).replace('.', ',')}
+                </TextPriceDiscount>
               </Container3>
               <Container4>
                 <TextTotal>TOTAL</TextTotal>
-                <TextPriceTotal>R$ {total.toFixed(2)} </TextPriceTotal>
+                <TextPriceTotal>R$ {total.toFixed(2).replace('.', ',')} </TextPriceTotal>
               </Container4>
             </Total>
-
-            {/* <Button>
-            <div>
-              <TextGoToPayment>SEGUIR PARA O PAGAMENTO</TextGoToPayment>
-            </div>
-          </Button> */}
           </Products>
         </ContainerPayment>
       </RectangleBackground>
     </MainContainer>
-    // <div>
-    // <div>Pagamento</div>
-    // <div>
-    //   <p>{infoUser.number}</p>
-    //   <p>{infoUser.user}</p>
-    //   <p>{infoUser.cardValidate}</p>
-    // </div>
-    //   <div>Produtos</div>
-    //   <div>{listProductsCart}</div>
-    //   <hr></hr>
-    //   <div>
-    //     <p>Produtos: {infoCart.subTotal.toFixed(2)}</p>
-    //     <p>Frete: {infoCart.shippingTotal.toFixed(2)}</p>
-    //     <p>Desconto: {infoCart.discount.toFixed(2)}</p>
-    //     <p>Total: {total.toFixed(2)}</p>
-    //   </div>
-    // </div>
   )
 }
 

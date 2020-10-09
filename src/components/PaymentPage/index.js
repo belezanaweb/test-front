@@ -150,19 +150,25 @@ function PaymentPage() {
             <Total>
               <Container1>
                 <TextTotalProducts>PRODUTOS</TextTotalProducts>
-                <TextPriceProducts>R$ {infoCart.subTotal.toFixed(2)}</TextPriceProducts>
+                <TextPriceProducts>
+                  R$ {infoCart.subTotal.toFixed(2).replace('.', ',')}
+                </TextPriceProducts>
               </Container1>
               <Container2>
                 <TextShipment>FRETE</TextShipment>
-                <TextPriceShipment>R$ {infoCart.shippingTotal.toFixed(2)}</TextPriceShipment>
+                <TextPriceShipment>
+                  R$ {infoCart.shippingTotal.toFixed(2).replace('.', ',')}
+                </TextPriceShipment>
               </Container2>
               <Container3>
                 <TextDiscount>DESCONTO</TextDiscount>
-                <TextPriceDiscount>- R$ {infoCart.discount.toFixed(2)}</TextPriceDiscount>
+                <TextPriceDiscount>
+                  - R$ {infoCart.discount.toFixed(2).replace('.', ',')}
+                </TextPriceDiscount>
               </Container3>
               <Container4>
                 <TextTotal>TOTAL</TextTotal>
-                <TextPriceTotal>R$ {total.toFixed(2)} </TextPriceTotal>
+                <TextPriceTotal>R$ {total.toFixed(2).replace('.', ',')} </TextPriceTotal>
               </Container4>
             </Total>
 
