@@ -9,7 +9,7 @@ const CardProduct = (props) => {
   const { height, products, isRenderPrice } = props;
 
   return (
-    <Card title="PRODUTOS" heightBox={height}>
+    <Card title="PRODUTOS" heightBox={height} paddingBox="4vh">
       {products && products.map((item) => (
         <ProductCard isRenderPrice={isRenderPrice} key={item.id}>
           <Image teste={item.product.imageObjects[0]} />

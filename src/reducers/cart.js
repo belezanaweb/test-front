@@ -1,5 +1,6 @@
 const initialState = {
   cart: {},
+  payment: {},
 };
 
 const cart = (state = initialState, action) => {
@@ -8,6 +9,13 @@ const cart = (state = initialState, action) => {
       return {
         ...state,
         cart: action.payload.cart,
+      };
+    }
+
+    case 'SET_PAYMENT': {
+      return {
+        ...state,
+        payment: action.payload.payment,
       };
     }
 

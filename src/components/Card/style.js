@@ -19,17 +19,14 @@ export const Box = styled.div`
     flex-direction: column;
     align-items: center;
     justify-content: space-evenly;
-/*     height: ${(props) => props.height}; */
-    padding: 4vh;
+    padding: ${(props) => props.padding};
     gap: 1vh;
 
     @media (min-width: 1024px) {
         width: 90%;
         align-self: self-start;
-        grid-area: "card"
-        display: grid; 
-        grid-template-columns: 30% 70%; 
-        padding: 5px;
+        display: grid;
+        padding: 4vh;
     } 
 `;
 
