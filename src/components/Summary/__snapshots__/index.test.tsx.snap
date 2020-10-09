@@ -1,0 +1,141 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Summary /> should be able to render correctly 1`] = `
+<body>
+  <div>
+    <div
+      class="sc-bdnylx iooCkk"
+    >
+      <p
+        class="sc-gtssRu bpiFrI"
+      >
+        Produtos
+        <span>
+          R$ 610,00
+        </span>
+      </p>
+      <p
+        class="sc-gtssRu bpiFrI"
+      >
+        Frete
+        <span>
+          R$ 0,00
+        </span>
+      </p>
+      <p
+        class="sc-gtssRu eiTdvO"
+      >
+        Desconto
+        <span>
+          R$ 10,00
+        </span>
+      </p>
+      <p
+        class="sc-gtssRu hiEsPq"
+      >
+        Total
+        <span>
+          R$ 600,00
+        </span>
+      </p>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`<Summary /> should be able to render correctly when not discount 1`] = `
+<body>
+  <div>
+    <div
+      class="sc-bdnylx iooCkk"
+    >
+      <p
+        class="sc-gtssRu bpiFrI"
+      >
+        Produtos
+        <span>
+          R$ 610,00
+        </span>
+      </p>
+      <p
+        class="sc-gtssRu bpiFrI"
+      >
+        Frete
+        <span>
+          R$ 0,00
+        </span>
+      </p>
+      <p
+        class="sc-gtssRu hiEsPq"
+      >
+        Total
+        <span>
+          R$ 600,00
+        </span>
+      </p>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`<Summary /> should be able to render correctly when not shipping 1`] = `
+<body>
+  <div>
+    <div
+      class="sc-bdnylx iooCkk"
+    >
+      <p
+        class="sc-gtssRu bpiFrI"
+      >
+        Produtos
+        <span>
+          R$ 610,00
+        </span>
+      </p>
+      <p
+        class="sc-gtssRu eiTdvO"
+      >
+        Desconto
+        <span>
+          R$ 10,00
+        </span>
+      </p>
+      <p
+        class="sc-gtssRu hiEsPq"
+      >
+        Total
+        <span>
+          R$ 600,00
+        </span>
+      </p>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`<Summary /> should be able to render correctly when not shipping and discount 1`] = `
+<body>
+  <div>
+    <div
+      class="sc-bdnylx iooCkk"
+    >
+      <p
+        class="sc-gtssRu bpiFrI"
+      >
+        Produtos
+        <span>
+          R$ 610,00
+        </span>
+      </p>
+      <p
+        class="sc-gtssRu hiEsPq"
+      >
+        Total
+        <span>
+          R$ 600,00
+        </span>
+      </p>
+    </div>
+  </div>
+</body>
+`;

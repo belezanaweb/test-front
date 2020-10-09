@@ -95,49 +95,6 @@ export const Summary = styled.div`
   width: 100%;
 `;
 
-export const SummaryItem = styled.p<SummaryItemProps>`
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-
-  & + p:not(:last-child) {
-    margin-top: 10px;
-  }
-  &:last-child {
-    margin-top: 16px;
-  }
-
-  ${props =>
-    props.highlight &&
-    css`
-      &,
-      span {
-        color: #ff7800;
-      }
-    `}
-
-  ${props =>
-    props.bolder &&
-    css`
-      &,
-      span {
-        font-weight: 700;
-      }
-    `}
-`;
-
-export const SummaryItemText = styled.span`
-  font-size: 14px;
-  text-align: left;
-  text-transform: uppercase;
-`;
-
-export const SummaryItemValue = styled.span`
-  font-size: 14px;
-  text-align: right;
-  text-transform: uppercase;
-`;
-
 export const Title = styled.h2`
   color: #999;
   font-family: 'Helvetica Neue';

@@ -1,8 +1,10 @@
 import React, { useCallback, useEffect } from 'react';
 import { useHistory } from 'react-router-dom';
 import { Cart, CartItem } from '../../@types/cart';
+import Summary from '../../components/Summary';
 import { useCart } from '../../hooks/cart';
 import {
+  Button,
   Complement,
   Container,
   Content,
@@ -12,28 +14,23 @@ import {
   ProductName,
   Products,
   ProductValue,
-  Summary,
-  SummaryItem,
   Title,
-  Button,
 } from './styles';
 
 const Sacola: React.FC = () => {
   const { cart, load: loadCart } = useCart();
   const history = useHistory();
 
-  useEffect(() => {
-    loadCart();
-  }, [loadCart]);
+  useEffect(() => loadCart(), [loadCart]);
 
   const handleGoToPagamento = useCallback(() => {
     history.push('/pagamento');
   }, [history]);
 
-  const renderContent = (cart: Cart) => (
+  const renderContent = ({ items, prices }: Cart) => (
     <Content>
       <Products>
-        {cart.items.map(({ product }: CartItem) => (
+        {items.map(({ product }: CartItem) => (
           <ProductItem key={product.sku}>
             <ProductImage src={product.imageUrl} />
             <ProductInfo>
@@ -47,28 +44,12 @@ const Sacola: React.FC = () => {
       </Products>
 
       <Complement>
-        <Summary>
-          <SummaryItem>
-            Produtos
-            <span>{cart.prices.subTotalFormatted}</span>
-          </SummaryItem>
-          {cart.prices.shippingTotal && (
-            <SummaryItem>
-              Frete
-              <span>{cart.prices.shippingTotalFormatted}</span>
-            </SummaryItem>
-          )}
-          {cart.prices.discount && (
-            <SummaryItem highlight>
-              Desconto
-              <span>{cart.prices.discountFormatted}</span>
-            </SummaryItem>
-          )}
-          <SummaryItem bolder>
-            Total
-            <span>{cart.prices.totalFormatted}</span>
-          </SummaryItem>
-        </Summary>
+        <Summary
+          subTotal={prices.subTotalFormatted}
+          shippingTotal={prices.shippingTotalFormatted}
+          discount={prices.discountFormatted}
+          total={prices.totalFormatted}
+        />
 
         <Button onClick={handleGoToPagamento}>Seguir para o pagamento</Button>
       </Complement>
