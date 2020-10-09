@@ -11,8 +11,8 @@ export const Steps = styled.div`
 `
 
 export const RectangleSteps = styled.div`
-  height: 72px;
-  width: 384px;
+  height: 33px;
+  width: 385px;
   border-radius: 3px;
   background-color: #fff;
   box-shadow: 1px 1px 5px 0 rgba(0, 0, 29, 0.22);
@@ -66,12 +66,12 @@ export const RectangleBackground = styled.div`
   height: 100%;
   width: 385px;
   background-color: #eee;
-  margin: 10px 13px 0px 0px;
+  margin: 0px 13px 0px 0px;
 `
 export const ContainerPayment = styled.div`
   height: 103px;
   width: 340px;
-  padding-top: 20px;
+  padding-top: 5px;
   margin: 10px 23px 323px 23px;
 `
 export const TextContainerPayment = styled.div`
@@ -113,18 +113,17 @@ export const Products = styled.div`
   margin: 10px 23px 323px 0px;
 `
 export const RectangleProducts = styled.div`
-  height: 325px;
+  height: 250px;
   width: 341px;
   border-radius: 3px;
   background-color: #fff;
   box-shadow: 1px 1px 5px 0 rgba(0, 0, 29, 0.22);
-
-  margin-top: 5px;
+  padding-top: 10px;
 `
 
 export const Product = styled.div`
   box-sizing: border-box;
-  height: 90px;
+  height: 64px;
   width: 316px;
   border-radius: 3px;
   border: 1px solid #eee;
@@ -146,8 +145,8 @@ export const TextProducts = styled.div`
 `
 
 export const ImageProduct = styled.img`
-  height: 65px;
-  width: 65px;
+  height: 42px;
+  width: 42px;
   margin: 11px 11px 14px 0px;
 `
 export const NameProduct = styled.p`
@@ -273,4 +272,32 @@ export const TextPriceTotal = styled.span`
   letter-spacing: NaNpx;
   line-height: 17px;
   text-align: right;
+`
+
+export const RectangleSucessfull = styled.div`
+  height: 67.57px;
+  width: 266.27px;
+  margin-top: 32px;
+`
+export const TextSucessfull = styled.p`
+  height: 17px;
+  width: 266.27px;
+  color: #ff7800;
+  font-family: 'Helvetica Neue';
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: NaNpx;
+  line-height: 17px;
+  text-align: center;
+  margin-left: 47px;
+`
+export const Shape = styled.p`
+  height: 39.51px;
+  width: 39.51px;
+  border-radius: 50%;
+  border: 2px solid #ff7800;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0px 160px 11px 160px;
 `

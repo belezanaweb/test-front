@@ -33,8 +33,12 @@ import {
   Container4,
   TextContainerPayment,
   TextUserInfo,
-  ContainerUserInfo
+  ContainerUserInfo,
+  Shape,
+  RectangleSucessfull,
+  TextSucessfull
 } from './styles'
+import Image1 from './images/image1.png'
 
 function ConfirmPage() {
   const infoUser = JSON.parse(window.localStorage.getItem('infoUser'))
@@ -48,23 +52,28 @@ function ConfirmPage() {
     item.product.imageObjects.map((image) => (
       <Product>
         <ImageProduct src={image.small} alt="product"></ImageProduct>
-        <div>
-          <NameProduct>{item.product.name}</NameProduct>
-        </div>
+        <NameProduct>{item.product.name}</NameProduct>
       </Product>
     ))
   )
 
   return (
     <MainContainer>
-      <Steps>
-        <RectangleSteps>
-          <TextBag>SACOLA</TextBag>
-          <TextPayment>PAGAMENTO</TextPayment>
-          <TextConfirm>CONFIRMAÇÃO</TextConfirm>
-        </RectangleSteps>
-      </Steps>
       <RectangleBackground>
+        <Steps>
+          <RectangleSteps>
+            <TextBag>SACOLA</TextBag>
+            <TextPayment>PAGAMENTO</TextPayment>
+            <TextConfirm>CONFIRMAÇÃO</TextConfirm>
+          </RectangleSteps>
+        </Steps>
+        <RectangleSucessfull>
+          <Shape>
+            <img src={Image1} alt="sucessfull"></img>
+          </Shape>
+          <TextSucessfull>COMPRA EFETUADA COM SUCESSO</TextSucessfull>
+        </RectangleSucessfull>
+
         <ContainerPayment>
           <TextContainerPayment>PAGAMENTO</TextContainerPayment>
           <RectangleContainerPayment>

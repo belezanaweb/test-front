@@ -13,7 +13,9 @@ function HomePage() {
   return (
     <div className="App">
       <img src={logo} className="App-logo" alt="logo" />
-      <button onClick={goToBag}>Sacola</button>
+      <button className="styleb" onClick={goToBag}>
+        SACOLA
+      </button>
     </div>
   )
 }

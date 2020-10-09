@@ -11,8 +11,8 @@ export const Steps = styled.div`
 `
 
 export const RectangleSteps = styled.div`
-  height: 72px;
-  width: 384px;
+  height: 33px;
+  width: 385px;
   border-radius: 3px;
   background-color: #fff;
   box-shadow: 1px 1px 5px 0 rgba(0, 0, 29, 0.22);
@@ -65,12 +65,12 @@ export const RectangleBackground = styled.div`
   height: 100%;
   width: 385px;
   background-color: #eee;
-  margin: 10px 13px 0px 0px;
+  margin: 0px 13px 0px 0px;
 `
 export const ContainerForm = styled.div`
   height: 347px;
   width: 341px;
-
+  padding-top: 10px;
   margin: 10px 23px 323px 23px;
 `
 export const ContainerRectangleForm = styled.div`

@@ -85,15 +85,14 @@ function PaymentPage() {
 
   return (
     <MainContainer>
-      <Steps>
-        <RectangleSteps>
-          <TextBag>SACOLA</TextBag>
-          <TextPayment>PAGAMENTO</TextPayment>
-          <TextConfirm>CONFIRMAÇÃO</TextConfirm>
-        </RectangleSteps>
-      </Steps>
-
       <RectangleBackground>
+        <Steps>
+          <RectangleSteps>
+            <TextBag>SACOLA</TextBag>
+            <TextPayment>PAGAMENTO</TextPayment>
+            <TextConfirm>CONFIRMAÇÃO</TextConfirm>
+          </RectangleSteps>
+        </Steps>
         <ContainerForm>
           <TextCreditCard>CARTÃO DE CRÉDITO</TextCreditCard>
           <form onSubmit={handleSubmit}>

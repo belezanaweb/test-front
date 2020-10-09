@@ -77,15 +77,14 @@ function BagPage() {
 
   return (
     <MainContainer>
-      <Steps>
-        <RectangleSteps>
-          <TextBag>SACOLA</TextBag>
-          <TextPayment>PAGAMENTO</TextPayment>
-          <TextConfirm>CONFIRMAÇÃO</TextConfirm>
-        </RectangleSteps>
-      </Steps>
-
       <RectangleBackground>
+        <Steps>
+          <RectangleSteps>
+            <TextBag>SACOLA</TextBag>
+            <TextPayment>PAGAMENTO</TextPayment>
+            <TextConfirm>CONFIRMAÇÃO</TextConfirm>
+          </RectangleSteps>
+        </Steps>
         <Products>
           <TextProducts>PRODUTOS</TextProducts>
           <RectangleProducts>{listProductsCart}</RectangleProducts>
