@@ -23,6 +23,17 @@ export const Content = styled.div`
   }
 `;
 
+export const Complement = styled.aside`
+  margin-top: 20px;
+  width: 100%;
+
+  @media (min-width: 600px) {
+    margin-top: 0;
+    margin-left: 20px;
+    max-width: 300px;
+  }
+`;
+
 export const Products = styled.ul`
   border-radius: 3px;
   background-color: #fff;
@@ -36,8 +47,18 @@ export const ProductItem = styled.li`
   border-radius: 3px;
   padding: 12px;
 
+  transition: background-color 0.5s;
+
   display: flex;
   flex-direction: row;
+
+  & + li {
+    margin-top: 16px;
+  }
+
+  &:hover {
+    background-color: #efefef;
+  }
 `;
 
 export const ProductInfo = styled.div`
@@ -66,18 +87,11 @@ export const ProductValue = styled.div`
   text-align: right;
 `;
 
-export const Summary = styled.aside`
+export const Summary = styled.div`
   border: 1px solid #ccc;
   border-radius: 3px;
-  margin-top: 20px;
   padding: 12px;
   width: 100%;
-
-  @media (min-width: 600px) {
-    margin-top: 0;
-    margin-left: 20px;
-    max-width: 300px;
-  }
 `;
 
 export const SummaryItem = styled.p<SummaryItemProps>`
@@ -89,7 +103,6 @@ export const SummaryItem = styled.p<SummaryItemProps>`
     margin-top: 10px;
   }
   &:last-child {
-    font-weight: 700;
     margin-top: 16px;
   }
 
@@ -99,6 +112,15 @@ export const SummaryItem = styled.p<SummaryItemProps>`
       &,
       span {
         color: #ff7800;
+      }
+    `}
+
+  ${props =>
+    props.bolder &&
+    css`
+      &,
+      span {
+        font-weight: 700;
       }
     `}
 `;

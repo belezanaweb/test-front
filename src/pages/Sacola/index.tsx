@@ -1,12 +1,15 @@
-import React from 'react';
+import React, { useEffect } from 'react';
+import { Cart, CartItem } from '../../@types/cart';
+import { useCart } from '../../hooks/cart';
 import {
+  Complement,
   Container,
   Content,
   ProductImage,
+  ProductInfo,
   ProductItem,
   ProductName,
   Products,
-  ProductInfo,
   ProductValue,
   Summary,
   SummaryItem,
@@ -14,42 +17,61 @@ import {
 } from './styles';
 
 const Sacola: React.FC = () => {
-  return (
-    <Container>
-      <Title>Produtos</Title>
+  const { cart, load: loadCart } = useCart();
 
-      <Content>
-        <Products>
-          <ProductItem>
-            <ProductImage src="https://res.cloudinary.com/beleza-na-web/image/upload/f_auto,fl_progressive,q_auto:best/v1/imagens/2/loreal-professionnel-expert-absolut-repair-cortex-lipidium-mascara-de-reconstrucao-500g-24410-963234120108391775.png" />
+  useEffect(() => {
+    loadCart();
+  }, [loadCart]);
+
+  const renderContent = (cart: Cart) => (
+    <Content>
+      <Products>
+        {cart.items.map(({ product }: CartItem) => (
+          <ProductItem key={product.sku}>
+            <ProductImage src={product.imageUrl} />
             <ProductInfo>
-              <ProductName>
-                L'Oréal Professionnel Expert Absolut Repair Cortex Lipidium
-              </ProductName>
-              <ProductValue>R$ 225,90</ProductValue>
+              <ProductName>{product.name}</ProductName>
+              <ProductValue>
+                {product.priceSpecification.priceFormatted}
+              </ProductValue>
             </ProductInfo>
           </ProductItem>
-        </Products>
+        ))}
+      </Products>
 
+      <Complement>
         <Summary>
           <SummaryItem>
             Produtos
-            <span>R$ 624,80</span>
+            <span>{cart.prices.subTotalFormatted}</span>
           </SummaryItem>
-          <SummaryItem>
-            Frete
-            <span>R$ 5,30</span>
-          </SummaryItem>
-          <SummaryItem highlight>
-            Desconto
-            <span>R$ 30,00</span>
-          </SummaryItem>
-          <SummaryItem>
+          {cart.prices.shippingTotal && (
+            <SummaryItem>
+              Frete
+              <span>{cart.prices.shippingTotalFormatted}</span>
+            </SummaryItem>
+          )}
+          {cart.prices.discount && (
+            <SummaryItem highlight>
+              Desconto
+              <span>{cart.prices.discountFormatted}</span>
+            </SummaryItem>
+          )}
+          <SummaryItem bolder>
             Total
-            <span>R$ 600,10</span>
+            <span>{cart.prices.totalFormatted}</span>
           </SummaryItem>
         </Summary>
-      </Content>
+      </Complement>
+    </Content>
+  );
+
+  const renderLoading = () => <p>Loading...</p>;
+
+  return (
+    <Container>
+      <Title>Produtos</Title>
+      {cart ? renderContent(cart) : renderLoading()}
     </Container>
   );
 };
