@@ -11,7 +11,6 @@ const Container = styled.div`
     justify-content: center;
     flex-direction: row;
     align-items: flex-start;
-    height: 100%;
   }
 `;
 
