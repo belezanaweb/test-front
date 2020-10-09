@@ -7,14 +7,19 @@ interface ContainerProps {
 
 export const Container = styled(BaseLink)<ContainerProps>`
   cursor: pointer;
-  font-family: 'Helvetica Neue';
+
   font-size: 13px;
   font-weight: 700;
-  letter-spacing: NaNpx;
   line-height: 16px;
   text-align: center;
   text-decoration: none;
   text-transform: uppercase;
+
+  transition: color 0.2s;
+
+  &:hover {
+    color: #999;
+  }
 
   color: ${props => (props.mode === 'active' ? '#FF7800' : '#CCC')};
 `;
