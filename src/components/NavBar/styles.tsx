@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { NavLink as BaseLink } from 'react-router-dom';
 
 export const Container = styled.nav`
   background-color: #fff;
@@ -15,4 +16,26 @@ export const Content = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-around;
+`;
+
+export const Link = styled(BaseLink)`
+  cursor: pointer;
+  color: #ccc;
+
+  font-size: 13px;
+  font-weight: 700;
+  line-height: 16px;
+  text-align: center;
+  text-decoration: none;
+  text-transform: uppercase;
+
+  transition: color 0.2s;
+
+  &:hover {
+    color: #999;
+  }
+
+  &.active {
+    color: #ff7800;
+  }
 `;

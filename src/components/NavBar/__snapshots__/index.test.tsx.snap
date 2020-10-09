@@ -1,0 +1,103 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<NavBar /> should be able to render correctly 1`] = `
+<body>
+  <div>
+    <nav
+      class="sc-bdnylx lofZTY"
+    >
+      <div
+        class="sc-gtssRu INDRx"
+      >
+        <a
+          aria-current="page"
+          class="sc-dlnjPT izVtUi active"
+          href="/"
+        >
+          Sacola
+        </a>
+        <a
+          class="sc-dlnjPT izVtUi"
+          href="/pagamento"
+        >
+          Pagamento
+        </a>
+        <a
+          class="sc-dlnjPT izVtUi"
+          href="/confirmacao"
+        >
+          Confirmação
+        </a>
+      </div>
+    </nav>
+  </div>
+</body>
+`;
+
+exports[`<NavBar /> should be able to render correctly when confirmacao 1`] = `
+<body>
+  <div>
+    <nav
+      class="sc-bdnylx lofZTY"
+    >
+      <div
+        class="sc-gtssRu INDRx"
+      >
+        <a
+          class="sc-dlnjPT izVtUi"
+          href="/"
+        >
+          Sacola
+        </a>
+        <a
+          class="sc-dlnjPT izVtUi"
+          href="/pagamento"
+        >
+          Pagamento
+        </a>
+        <a
+          aria-current="page"
+          class="sc-dlnjPT izVtUi active"
+          href="/confirmacao"
+        >
+          Confirmação
+        </a>
+      </div>
+    </nav>
+  </div>
+</body>
+`;
+
+exports[`<NavBar /> should be able to render correctly when pagamento 1`] = `
+<body>
+  <div>
+    <nav
+      class="sc-bdnylx lofZTY"
+    >
+      <div
+        class="sc-gtssRu INDRx"
+      >
+        <a
+          class="sc-dlnjPT izVtUi"
+          href="/"
+        >
+          Sacola
+        </a>
+        <a
+          aria-current="page"
+          class="sc-dlnjPT izVtUi active"
+          href="/pagamento"
+        >
+          Pagamento
+        </a>
+        <a
+          class="sc-dlnjPT izVtUi"
+          href="/confirmacao"
+        >
+          Confirmação
+        </a>
+      </div>
+    </nav>
+  </div>
+</body>
+`;
