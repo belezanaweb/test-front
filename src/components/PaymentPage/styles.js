@@ -154,13 +154,14 @@ export const Input1 = styled.input`
     line-height: 19px;
   }
   &:focus {
-    border: 2px solid #a43287;
+    border: 1px solid #a43287;
     outline: none;
     box-shadow: none;
   }
   &:invalid {
     border: 1px solid red;
   }
+  padding-left: 13px;
 `
 export const Input2 = styled.input`
   box-sizing: border-box;
@@ -187,6 +188,7 @@ export const Input2 = styled.input`
   &:invalid {
     border: 1px solid red;
   }
+  padding-left: 13px;
 `
 export const Input3 = styled.input`
   box-sizing: border-box;
@@ -213,6 +215,7 @@ export const Input3 = styled.input`
   &:invalid {
     border: 1px solid red;
   }
+  padding-left: 13px;
 `
 export const Input4 = styled.input`
   box-sizing: border-box;
@@ -239,6 +242,7 @@ export const Input4 = styled.input`
   &:invalid {
     border: 1px solid red;
   }
+  padding-left: 13px;
 `
 export const ContainerCardNumber = styled.div`
   margin-left: 10px;

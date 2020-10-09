@@ -100,12 +100,15 @@ function PaymentPage() {
             <ContainerRectangleForm>
               <ContainerCardNumber>
                 <TextCardNumber>Numero do Cartão:</TextCardNumber>
+
                 <Input1
                   type="text"
                   required
                   placeholder="____.____.____.____"
+                  pattern="\d{4}([.]\d{4}){3}"
                   value={cardNumber}
                   onChange={handleInputCardNumber}
+                  title="Digite no formato correto ****.****.****.****"
                 ></Input1>
               </ContainerCardNumber>
               <ContainerUserName>
@@ -127,6 +130,8 @@ function PaymentPage() {
                     placeholder="__/____"
                     value={cardValidate}
                     onChange={handleInputCardValidate}
+                    pattern="\d{2}[/]\d{4}"
+                    title="Formato de data de nascimento MM/AAAA"
                   ></Input3>
                 </div>
                 <div>
@@ -137,6 +142,8 @@ function PaymentPage() {
                     placeholder="___"
                     value={cvv}
                     onChange={handleInputCvv}
+                    pattern="[0-9]{3}"
+                    title="Número de segurança com 3 dígitos"
                   ></Input4>
                 </div>
               </ContainerValidate>
