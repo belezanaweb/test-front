@@ -1,0 +1,41 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Button /> should be able to render correctly 1`] = `
+<body>
+  <div>
+    <button
+      class="sc-bdnylx gAlZQz"
+      role="button"
+    >
+      Button
+    </button>
+  </div>
+</body>
+`;
+
+exports[`<Button /> should be able to render correctly when disabled 1`] = `
+<body>
+  <div>
+    <button
+      class="sc-bdnylx gAlZQz"
+      disabled=""
+      role="button"
+    >
+      Button
+    </button>
+  </div>
+</body>
+`;
+
+exports[`<Button /> should be able to render correctly when mouse enter 1`] = `
+<body>
+  <div>
+    <button
+      class="sc-bdnylx gAlZQz"
+      role="button"
+    >
+      Button
+    </button>
+  </div>
+</body>
+`;

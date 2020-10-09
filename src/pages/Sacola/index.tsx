@@ -1,4 +1,5 @@
-import React, { useEffect } from 'react';
+import React, { useCallback, useEffect } from 'react';
+import { useHistory } from 'react-router-dom';
 import { Cart, CartItem } from '../../@types/cart';
 import { useCart } from '../../hooks/cart';
 import {
@@ -14,14 +15,20 @@ import {
   Summary,
   SummaryItem,
   Title,
+  Button,
 } from './styles';
 
 const Sacola: React.FC = () => {
   const { cart, load: loadCart } = useCart();
+  const history = useHistory();
 
   useEffect(() => {
     loadCart();
   }, [loadCart]);
+
+  const handleGoToPagamento = useCallback(() => {
+    history.push('/pagamento');
+  }, [history]);
 
   const renderContent = (cart: Cart) => (
     <Content>
@@ -62,6 +69,8 @@ const Sacola: React.FC = () => {
             <span>{cart.prices.totalFormatted}</span>
           </SummaryItem>
         </Summary>
+
+        <Button onClick={handleGoToPagamento}>Seguir para o pagamento</Button>
       </Complement>
     </Content>
   );

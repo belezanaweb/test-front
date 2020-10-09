@@ -1,4 +1,5 @@
 import styled, { css } from 'styled-components';
+import BaseButton from '../../components/Button';
 
 interface SummaryItemProps {
   highlight?: boolean;
@@ -145,4 +146,9 @@ export const Title = styled.h2`
   line-height: 17px;
   margin: 10px;
   text-transform: uppercase;
+`;
+
+export const Button = styled(BaseButton)`
+  margin-top: 20px;
+  width: 100%;
 `;
