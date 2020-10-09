@@ -31,7 +31,7 @@ const TopBar = (props) => {
         <Imagem src={logo} />
       </Logo>
       { buttons.map((button) => (
-        <Button isActive={currentPage === button.pageRouter} key={button}>
+        <Button isActive={currentPage === button.pageRouter} key={button.name}>
           {button.name}
         </Button>
       ))}

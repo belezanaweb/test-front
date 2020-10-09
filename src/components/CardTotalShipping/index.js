@@ -33,7 +33,7 @@ const CardTotalShipping = (props) => {
   return (
     <Card>
       {fields && fields.map((field) => (
-        <Line isDiscount={field.isDiscount} isTotal={field.isTotal} key={field}>
+        <Line isDiscount={field.isDiscount} isTotal={field.isTotal} key={field.name}>
           <Type>
             {field.name}
           </Type>
