@@ -1,11 +1,13 @@
-import React from 'react'
-import logo from './logo.svg'
-import './App.css'
+import React from 'react';
+import { BrowserRouter as Router } from 'react-router-dom';
+import NavBar from './components/NavBar';
+import Routes from './routes';
 
 const App = () => (
-  <div className="App">
-      <img src={logo} className="App-logo" alt="logo" />
-  </div>
-)
+  <Router>
+    <NavBar />
+    <Routes />
+  </Router>
+);
 
-export default App
+export default App;
