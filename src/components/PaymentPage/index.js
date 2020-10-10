@@ -42,7 +42,9 @@ import {
 function PaymentPage() {
   const infoCart = JSON.parse(window.localStorage.getItem('infoCart'))
   const history = useHistory()
+  console.log(infoCart)
 
+  // const [infoCart, setInfoCart] = useState(JSON.parse(window.localStorage.getItem('infoCart')))
   const [cardNumber, setCardNumber] = useState()
   const [userName, setUserName] = useState()
   const [cardValidate, setCardValidate] = useState()
