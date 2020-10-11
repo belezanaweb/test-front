@@ -1,10 +1,10 @@
 import React from 'react';
-import {Typography} from '@material-ui/core'
+import HeaderDetailsCartSteps from './components/HeaderDetailsCartSteps'
 
 export default () =>{
     return(
         <>
-        <Typography>Teste</Typography>
+        <HeaderDetailsCartSteps/>
         </>
     )
 }
