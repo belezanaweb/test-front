@@ -21,8 +21,8 @@ const Card = (props) => {
 
 Card.propTypes = {
   title: PropTypes.string.isRequired,
-  heightBox: PropTypes.number.isRequired,
-  children: PropTypes.node.isRequired,
+  heightBox: PropTypes.number,
+  children: PropTypes.node,
   paddingBox: PropTypes.string,
   gridAreaName: PropTypes.string,
 };
@@ -30,6 +30,8 @@ Card.propTypes = {
 Card.defaultProps = {
   paddingBox: '',
   gridAreaName: '',
+  children: null,
+  heightBox: '',
 };
 
 export default Card;
