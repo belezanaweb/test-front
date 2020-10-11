@@ -1,11 +1,15 @@
 import React from 'react'
-import logo from './logo.svg'
 import './App.css'
+import { ThemeProvider } from '@material-ui/core/styles';
+import theme from './theme';
 
-const App = () => (
-  <div className="App">
-      <img src={logo} className="App-logo" alt="logo" />
-  </div>
-)
+function App() {
+  return (
+    <ThemeProvider theme={theme}>
+      teste
+    </ThemeProvider>
+  );
+}
 
-export default App
+export default App;
+
