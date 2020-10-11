@@ -13,7 +13,7 @@ const theme = createMuiTheme({
      },
     },
     typography: {
-        fontFamily: 'Ubuntu',
+        fontFamily: 'Arimo',
         fontSize: 13,
     },
     overrides: {
