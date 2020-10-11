@@ -2,7 +2,7 @@ import React, {useState} from 'react';
 import HeaderDetailsCartSteps from './components/HeaderDetailsCartSteps';
 import { Container} from '@material-ui/core'
 import Step1 from './step1'
-import Step2 from './step2'
+import Step2 from './components/step2'
 import Step3 from './step3'
 
 const renderStep = (step, setStepActive) =>{

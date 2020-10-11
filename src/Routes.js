@@ -1,8 +1,9 @@
 import React from 'react'
-import {BrowserRouter , Switch , Route} from 'react-router-dom'
-import ShoppingCart from './ShoppingCart'
-import Payment from './ShoppingCart'
-import Confirmation from './ShoppingCart'
+import {BrowserRouter , Switch , Route, Redirect} from 'react-router-dom'
+import ShoppingCart from './pages/Cart'
+import Payment from './pages/Cart'
+import Confirmation from './pages/Cart'
+import NotFound from './pages/404'
 
 const Routes = () =>{
     return(
@@ -11,6 +12,8 @@ const Routes = () =>{
                 <Route exact path="/" component={ShoppingCart}></Route>
                 <Route exact path="/pagamento" component={Payment}></Route>
                 <Route exact path="/confirmacao" component={Confirmation}></Route>
+                <Route path="/404" component={NotFound} />
+                <Redirect to="/404" />
             </Switch>
         </BrowserRouter>
     )
