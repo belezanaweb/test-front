@@ -15,8 +15,11 @@ export const Container = styled.div`
 `;
 
 export const Form = styled.form`
-    display: grid;
-    grid-template-areas: "card information-shipping";
+
+    @media (min-width: 1024px) {
+        display: grid;
+        grid-template-areas: "card information-shipping";
+    }
 `;
 
 export const InputBigger = styled.input`
