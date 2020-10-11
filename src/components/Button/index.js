@@ -17,7 +17,11 @@ const Button = (props) => {
 Button.propTypes = {
   name: PropTypes.string.isRequired,
   onClick: PropTypes.func.isRequired,
-  isSubmit: PropTypes.bool.isRequired,
+  isSubmit: PropTypes.bool,
+};
+
+Button.defaultProps = {
+  isSubmit: false,
 };
 
 export default Button;

@@ -34,9 +34,14 @@ const CardProduct = (props) => {
 };
 
 CardProduct.propTypes = {
-  height: PropTypes.number.isRequired,
+  height: PropTypes.number,
   products: PropTypes.objectOf.isRequired,
-  isRenderPrice: PropTypes.func.isRequired,
+  isRenderPrice: PropTypes.func,
+};
+
+CardProduct.defaultProps = {
+  height: '',
+  isRenderPrice: false,
 };
 
 export default CardProduct;
