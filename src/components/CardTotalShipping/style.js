@@ -14,7 +14,7 @@ export const Card = styled.div`
     padding: 1vh;
 
     @media (min-width: 1024px) {
-        grid-area: "cardPrice"
+        grid-area: card-shipping;
     } 
 `;
 
