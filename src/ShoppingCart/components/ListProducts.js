@@ -4,6 +4,7 @@ import List from '@material-ui/core/List';
 import ListItem from '@material-ui/core/ListItem';
 import ListItemText from '@material-ui/core/ListItemText';
 import { Paper } from '@material-ui/core';
+import formatter from 'helpers/moneyFormatter'
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -56,7 +57,7 @@ export default function Products({listItens}) {
         {listItens && listItens.map(item =>(
           <ListItem key={item.product.name} className={classes.listItem} disableGutters={true}>
           <img src={item.product.imageObjects[0].thumbnail} alt={item.product.name}/>
-          <ListItemText primary={item.product.name} secondary={`R$ ${item.product.priceSpecification.originalPrice}`} className={classes.listItemText} />
+          <ListItemText primary={item.product.name} secondary={item ? formatter(item.product.priceSpecification.originalPrice): '-'} className={classes.listItemText} />
           </ListItem>
         ))}
       </List>
