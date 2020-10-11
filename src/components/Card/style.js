@@ -26,11 +26,12 @@ export const Box = styled.div`
         width: 90%;
         align-self: self-start;
         display: grid;
-        padding: 4vh;
+        padding: 5vh;
     } 
 `;
 
 export const Container = styled.div`
     display: grid;
     grid-gap: 5%;
+    grid-area: ${(props) => props.gridArea || 'card'};
 `;
