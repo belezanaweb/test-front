@@ -4,11 +4,11 @@ import { Title, Box, Container } from './style';
 
 const Card = (props) => {
   const {
-    title, heightBox, children, paddingBox,
+    title, heightBox, children, paddingBox, gridAreaName,
   } = props;
 
   return (
-    <Container>
+    <Container gridArea={gridAreaName}>
       <Title>
         {title}
       </Title>
@@ -24,10 +24,12 @@ Card.propTypes = {
   heightBox: PropTypes.number.isRequired,
   children: PropTypes.node.isRequired,
   paddingBox: PropTypes.string,
+  gridAreaName: PropTypes.string,
 };
 
 Card.defaultProps = {
   paddingBox: '',
+  gridAreaName: '',
 };
 
 export default Card;

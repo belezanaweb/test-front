@@ -15,6 +15,7 @@ import {
   BoxSmaller,
   LabelBigger,
   LabelSmaller,
+  Form,
 } from './style';
 
 const PaymentPage = (props) => {
@@ -66,7 +67,7 @@ const PaymentPage = (props) => {
 
   return (
     <Container>
-      <form>
+      <Form onSubmit={onSubmitForm}>
         <Card title="CARTÃO DE CRÉDITO">
           <BoxBigger>
             <LabelBigger>
@@ -126,8 +127,8 @@ const PaymentPage = (props) => {
             </LabelSmaller>
           </BoxSmaller>
         </Card>
-      </form>
-      <InformationShipping nameButton="FINALIZAR PEDIDO" onClick={onSubmitForm} />
+        <InformationShipping nameButton="FINALIZAR PEDIDO" isSubmit />
+      </Form>
     </Container>
   );
 };

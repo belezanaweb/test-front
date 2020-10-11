@@ -14,6 +14,11 @@ export const Container = styled.div`
   }
 `;
 
+export const Form = styled.form`
+    display: grid;
+    grid-template-areas: "card information-shipping";
+`;
+
 export const InputBigger = styled.input`
     box-sizing: border-box;
     height: 45px;

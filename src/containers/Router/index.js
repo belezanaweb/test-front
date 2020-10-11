@@ -5,6 +5,7 @@ import ReactRouterPropTypes from 'react-router-prop-types';
 import routes from '../../enums/routes';
 import CartPage from '../Cart';
 import PaymentPage from '../Payment';
+import ConfirmationPage from '../Confirmation';
 
 function Router(props) {
   const { history } = props;
@@ -14,6 +15,7 @@ function Router(props) {
       <Switch>
         <Route exact path={routes.root} component={CartPage} />
         <Route exact path={routes.payment} component={PaymentPage} />
+        <Route exact path={routes.confirmation} component={ConfirmationPage} />
       </Switch>
     </ConnectedRouter>
   );
