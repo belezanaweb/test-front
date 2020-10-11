@@ -34,7 +34,7 @@ export default ({setStepActive}) =>{
             <Typography variant="body2" style={{padding: '10px 0 5px 0', fontWeight: 700, fontSize: '0.875rem', color: '#999', textTransform: 'uppercase'}}>Produtos</Typography>
             <Products listItens={listItens}/>
             <ListProductsAmount amount={amountProducts}/>
-            <Button color="primary" variant="contained" style={{marginTop: '20px'}} onClick={handlePayment}>Seguir para o pagamento</Button>
+            <Button color="primary" variant="contained" style={{marginTop: '20px', boxShadow: 'inset 0 -3px 0 0 #D45A00, 0 2px 4px 0 rgba(0,0,0,0.25)'}} onClick={handlePayment}>Seguir para o pagamento</Button>
         </>
     )
 }
