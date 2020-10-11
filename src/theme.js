@@ -12,9 +12,14 @@ const theme = createMuiTheme({
       main: '#212122',  
      },
     },
+    grey:{
+      200: '#EEE'
+    },
+    shape:{
+      borderRadius: 3
+    },
     typography: {
-        fontFamily: 'Arimo',
-        fontSize: 13,
+        fontFamily: 'Helvetica',
     },
     overrides: {
       MuiContainer: {
