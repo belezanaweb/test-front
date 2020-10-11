@@ -3,11 +3,13 @@ import Products from './components/ListProducts';
 import ListProductsAmount from './components/ListProductsAmount';
 import {Button, Typography} from '@material-ui/core';
 import getData from './services';
+import {useHistory} from 'react-router-dom'
 
-export default () =>{
+export default ({setStepActive}) =>{
 
     const [listItens, setListItens] = useState(null)
     const [amountProducts, setAmountProducts] = useState({})
+    const history = useHistory()
 
     useEffect(()=>{
       getData()
@@ -22,12 +24,17 @@ export default () =>{
           })
     },[])
 
+    const handlePayment = () =>{
+        setStepActive(1);
+        history.push('/pagamento');
+    }
+
     return(
         <>
             <Typography variant="body2" style={{padding: '10px 0 5px 0', fontWeight: 700, fontSize: '0.875rem', color: '#999', textTransform: 'uppercase'}}>Produtos</Typography>
             <Products listItens={listItens}/>
             <ListProductsAmount amount={amountProducts}/>
-            <Button color="primary" variant="contained" style={{marginTop: '20px'}}>Seguir para o pagamento</Button>
+            <Button color="primary" variant="contained" style={{marginTop: '20px'}} onClick={handlePayment}>Seguir para o pagamento</Button>
         </>
     )
 }

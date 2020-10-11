@@ -26,16 +26,20 @@ const useStyles = makeStyles((theme) => ({
   }
 }));
 
-export default function BasicButtonGroup() {
+const menu = [
+  { titulo: 'Sacola'}, 
+  {titulo: 'Pagamento'}, 
+  {titulo: 'Confirmação'}
+]
+
+export default function Steps({stepActive}) {
   const classes = useStyles();
-
-  const active = true;
-
+  
   return (
     <div className={classes.root}>
-        <Typography variant="body1" className={active ? 'active' : ''}>Sacola</Typography>
-        <Typography variant="body1">Pagamento</Typography>
-        <Typography variant="body1">Confirmação</Typography>
+        {menu.map((item, index) =>(
+          <Typography variant="body1" key={item.titulo} className={index === stepActive ? 'active' : ''}>{item.titulo}</Typography>
+        ))}
     </div>
   );
 }
