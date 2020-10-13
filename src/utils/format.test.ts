@@ -1,4 +1,4 @@
-import { formatPrice } from './format';
+import { formatPrice, obfuscateCreditCardNumbers } from './format';
 
 describe('formatPrice', () => {
   it('should be able format currency correctly', () => {
@@ -9,15 +9,34 @@ describe('formatPrice', () => {
     const price4 = 100.0;
 
     // Act
-    const price1Formatted1 = formatPrice(price1);
-    const price1Formatted2 = formatPrice(price2);
-    const price1Formatted3 = formatPrice(price3);
-    const price1Formatted4 = formatPrice(price4);
+    const formattedPrice1 = formatPrice(price1);
+    const formattedPrice2 = formatPrice(price2);
+    const formattedPrice3 = formatPrice(price3);
+    const formattedPrice4 = formatPrice(price4);
 
     // Asert
-    expect(price1Formatted1).toBe('R$0,00');
-    expect(price1Formatted2).toBe('R$0,50');
-    expect(price1Formatted3).toBe('R$1,00');
-    expect(price1Formatted4).toBe('R$100,00');
+    expect(formattedPrice1).toBe('R$0,00');
+    expect(formattedPrice2).toBe('R$0,50');
+    expect(formattedPrice3).toBe('R$1,00');
+    expect(formattedPrice4).toBe('R$100,00');
+  });
+});
+
+describe('obfuscateCreditCardNumbers', () => {
+  it('should be able format credit card number', () => {
+    // Arrange
+    const number1 = '1111.2222.3333.4444';
+    const number2 = '1111.2222.3333.44';
+    const number3 = '';
+
+    // Act
+    const formattedNumber1 = obfuscateCreditCardNumbers(number1);
+    const formattedNumber2 = obfuscateCreditCardNumbers(number2);
+    const formattedNumber3 = obfuscateCreditCardNumbers(number3);
+
+    // Asert
+    expect(formattedNumber1).toBe('****.****.****.4444');
+    expect(formattedNumber2).toBe('****.****.**33.44');
+    expect(formattedNumber3).toBe('');
   });
 });

@@ -1,10 +1,4 @@
-import React, {
-  createContext,
-  useCallback,
-  useContext,
-  useEffect,
-  useState,
-} from 'react';
+import React, { createContext, useCallback, useContext, useState } from 'react';
 import { Cart } from '../@types/cart';
 import { CartMapper } from '../mappers';
 import api from '../services/api';
@@ -26,8 +20,6 @@ const CartProvider: React.FC = ({ children }) => {
 
     return null;
   });
-
-  useEffect(() => {}, [cart]);
 
   const load = useCallback(() => {
     api

@@ -29,20 +29,20 @@ export const Container = styled.div<ContainerProps>`
     ${props =>
       props.isErrored &&
       css`
-        border-color: #c53030;
+        border-color: #f30;
       `}
 
     ${props =>
       props.isFocused &&
       css`
-        border-color: #999;
-        color: #999;
+        border-color: #a43287;
+        color: #212121;
       `}
 
     ${props =>
       props.isFilled &&
       css`
-        color: #111;
+        color: #212121;
       `}
 
     &::placeholder {
@@ -56,8 +56,8 @@ export const Container = styled.div<ContainerProps>`
   }
 
   > span {
-    color: #c53030;
-    font-size: 10px;
-    margin: 8px 0;
+    color: #f30;
+    font-size: 12px;
+    margin: 4px 0;
   }
 `;

@@ -1,11 +1,6 @@
 import styled from 'styled-components';
 import BaseButton from '../../components/Button';
 
-interface SummaryItemProps {
-  highlight?: boolean;
-  bolder?: boolean;
-}
-
 export const Container = styled.main`
   padding: 10px;
   margin: 0 auto;
@@ -38,7 +33,6 @@ export const Complement = styled.aside`
 
 export const Title = styled.h2`
   color: #999;
-  font-family: 'Helvetica Neue';
   font-size: 14px;
   font-weight: 700;
   line-height: 17px;
@@ -51,14 +45,10 @@ export const Button = styled(BaseButton)`
   width: 100%;
 `;
 
-export const CreditCard = styled.div`
-  border-radius: 3px;
-  background-color: #fff;
-  box-shadow: 1px 1px 5px 0 rgba(0, 0, 29, 0.22);
-  padding: 12px;
+export const CreditCard = styled.section`
   width: 100%;
 
-  > form > div + div {
+  form > div + div {
     margin-top: 8px;
   }
 `;

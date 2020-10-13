@@ -59,6 +59,7 @@ const Input: React.FC<InputProps> = ({
           id={fieldName}
           type={type}
           mask={mask}
+          maskChar={null}
           ref={inputRef}
           defaultValue={defaultValue}
           onFocus={handleInputFocus}

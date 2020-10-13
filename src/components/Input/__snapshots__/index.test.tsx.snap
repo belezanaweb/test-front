@@ -5,7 +5,7 @@ exports[`<Input /> should be able to render correctly 1`] = `
   <div>
     <form>
       <div
-        class="sc-bdnylx hWagWo input"
+        class="sc-bdnylx jyvzMl input"
       >
         <input
           id="name"
@@ -23,7 +23,7 @@ exports[`<Input /> should be able to render correctly when disabled 1`] = `
   <div>
     <form>
       <div
-        class="sc-bdnylx hWagWo input"
+        class="sc-bdnylx jyvzMl input"
       >
         <input
           disabled=""
@@ -42,7 +42,7 @@ exports[`<Input /> should be able to render correctly within label 1`] = `
   <div>
     <form>
       <div
-        class="sc-bdnylx hWagWo input"
+        class="sc-bdnylx jyvzMl input"
       >
         <label
           for="name"

@@ -1,12 +1,15 @@
 import { FormHandles } from '@unform/core';
 import { Form } from '@unform/web';
-import React, { useCallback, useEffect, useRef, useState } from 'react';
-import { Redirect } from 'react-router-dom';
+import React, { useCallback, useRef, useState } from 'react';
+import { Redirect, useHistory } from 'react-router-dom';
 import * as Yup from 'yup';
 import { Cart } from '../../@types/cart';
+import Box from '../../components/Box';
 import Input from '../../components/Input';
 import Summary from '../../components/Summary';
+import Title from '../../components/Title';
 import { useCart } from '../../hooks/cart';
+import { useCheckout } from '../../hooks/checkout';
 import { formatErrors } from '../../utils/errors';
 import {
   Button,
@@ -15,7 +18,6 @@ import {
   Content,
   CreditCard,
   InputGroup,
-  Title,
 } from './styles';
 
 interface CreditCardData {
@@ -26,10 +28,10 @@ interface CreditCardData {
 }
 
 const initialData: CreditCardData = {
-  numeroCartao: '1234123412341234',
-  nomeTitular: 'Alex Tavella',
-  validate: '1022',
-  cvv: '321',
+  numeroCartao: '',
+  nomeTitular: '',
+  validate: '',
+  cvv: '',
 };
 
 const schema = Yup.object().shape({
@@ -47,7 +49,7 @@ const schema = Yup.object().shape({
     }),
   validate: Yup.string()
     .required('Validade é obrigatório')
-    .matches(/[0-9]{2}\/?[0-9]{2}/, {
+    .matches(/[0-9]{2}\/?[0-9]{4}/, {
       excludeEmptyString: true,
       message: 'Validade está incompleto',
     }),
@@ -61,6 +63,9 @@ const schema = Yup.object().shape({
 
 const Pagamento: React.FC = () => {
   const { cart } = useCart();
+  const { finish } = useCheckout();
+
+  const history = useHistory();
 
   const formRef = useRef<FormHandles | null>(null);
 
@@ -88,67 +93,82 @@ const Pagamento: React.FC = () => {
 
       setIsDisabled(false);
     } catch (error) {
-      if (error instanceof Yup.ValidationError) {
-        formRef.current?.setErrors(formatErrors(error));
-        return;
-      }
-
       setIsDisabled(true);
     }
   }, []);
 
-  const handleSubmit = useCallback(async (data: CreditCardData) => {
-    try {
-      formRef.current?.setErrors({});
+  const handleSubmit = useCallback(
+    async (data: CreditCardData) => {
+      try {
+        formRef.current?.setErrors({});
 
-      await schema.validate(data, {
-        abortEarly: false,
-      });
+        await schema.validate(data, {
+          abortEarly: false,
+        });
 
-      // const { numeroCartao, nomeTitular, validate, cvv } = data;
-    } catch (error) {
-      if (error instanceof Yup.ValidationError) {
-        formRef.current?.setErrors(formatErrors(error));
-        return;
+        const { numeroCartao, nomeTitular, validate, cvv } = data;
+
+        finish(cart!, {
+          numeroCartao,
+          nomeTitular,
+          validate,
+          cvv,
+        });
+
+        history.push('/confirmacao');
+      } catch (error) {
+        if (error instanceof Yup.ValidationError) {
+          formRef.current?.setErrors(formatErrors(error));
+          return;
+        }
+
+        alert('Errro ao realizar compra, Confira os dados e tente novamente!');
       }
-
-      alert('Errro ao realizar compra, Confira os dados e tente novamente!');
-    }
-  }, []);
-
-  useEffect(() => {
-    handleChange();
-  }, [handleChange]);
+    },
+    [cart, finish, history],
+  );
 
   const renderContent = ({ prices }: Cart) => (
     <Content>
       <CreditCard>
-        <Form
-          ref={formRef}
-          onSubmit={handleSubmit}
-          onChange={handleChange}
-          initialData={initialData}>
-          <Input
-            name="numeroCartao"
-            label="Número do cartão:"
-            placeholder="____.____.____.____"
-            mask="9999.9999.9999.9999"
-          />
-          <Input
-            name="nomeTitular"
-            label="Nome do Titular:"
-            placeholder="Como no cartão"
-          />
-          <InputGroup>
+        <Title>Cartão de Crédito</Title>
+        <Box>
+          <Form
+            ref={formRef}
+            onSubmit={handleSubmit}
+            onChange={handleChange}
+            initialData={initialData}>
             <Input
-              name="validate"
-              label="Validade (mês/ano):"
-              placeholder="__/__"
-              mask="99/99"
+              type="tel"
+              name="numeroCartao"
+              label="Número do cartão:"
+              placeholder="____.____.____.____"
+              mask="9999.9999.9999.9999"
             />
-            <Input name="cvv" label="CVV:" placeholder="___" mask="999" />
-          </InputGroup>
-        </Form>
+            <Input
+              type="text"
+              name="nomeTitular"
+              label="Nome do Titular:"
+              placeholder="Como no cartão"
+            />
+            <InputGroup>
+              <Input
+                type="tel"
+                name="validate"
+                label="Validade (mês/ano):"
+                placeholder="__/____"
+                mask="99/9999"
+              />
+              <Input
+                type="tel"
+                name="cvv"
+                label="CVV:"
+                placeholder="___"
+                mask="999"
+              />
+            </InputGroup>
+          </Form>
+        </Box>
       </CreditCard>
 
       <Complement>
@@ -172,12 +192,7 @@ const Pagamento: React.FC = () => {
     return <Redirect to="/" />;
   }
 
-  return (
-    <Container>
-      <Title>Pagamento</Title>
-      {renderContent(cart)}
-    </Container>
-  );
+  return <Container>{renderContent(cart)}</Container>;
 };
 
 export default Pagamento;
