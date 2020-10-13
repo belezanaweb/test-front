@@ -29,7 +29,7 @@
 
 No terminal, clone o projeto: 
 ```
-git clone
+git clone https://github.com/nauaramelo/test-front.git
 ```
 Entre na pasta do projeto e instale as dependências através do comando:
 ```
@@ -47,11 +47,11 @@ npm test
 #### Linguagens, dependencias e libs utilizadas :books:
 
 - [Node](https://nodejs.org/en/)
-- [React](https://pt-br.reactjs.org/)
-- [Styled Components](https://styled-components.com/)
-- [Eslint](https://eslint.org/)
-- [Commitlint](https://commitlint.js.org/#/)
-- [Husky](https://typicode.github.io/husky/#/)
+- [React](https://pt-br.reactjs.org/):Escolhi essa biblioteca por ter mais afinidade, conhecimento e vontade de aprender mais, além do mais, ela facilita na reutilização de componentes, diminuindo o nivel de duplicidade de código.
+- [Styled Components](https://styled-components.com/): Estilização dos componentes com maior facilidade do uso de propriedades.
+- [Eslint](https://eslint.org/): Utilizei para padronização do código, uma vez que ele analisa e aponta os erros encontrados. 
+- [Commitlint](https://commitlint.js.org/#/): Padronização dos commits.
+- [Husky](https://typicode.github.io/husky/#/): Utilizado para forçar a padronização dos commits (commitlint seguindo convertional commit) e do codigo (eslint configurando baseado no airbnb)
 
 #### Requerimentos
 
