@@ -38,7 +38,7 @@ const useStyles = makeStyles((theme) => ({
 export default () =>{
     const [stepActive, setStepActive] = useState(0)
     const history = useHistory()
-    const [data, setData] = useState(null)
+    const [data, setData] = useState({})
     const classes = useStyles();
 
     const [listItens, setListItens] = useState(null)

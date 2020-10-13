@@ -5,8 +5,7 @@ import Payment from './pages/Cart'
 import Confirmation from './pages/Cart'
 import NotFound from './pages/404'
 
-const Routes = () =>{
-    return(
+export default() =>(
         <BrowserRouter>
             <Switch>
                 <Route exact path="/" component={ShoppingCart}></Route>
@@ -16,7 +15,4 @@ const Routes = () =>{
                 <Redirect to="/404" />
             </Switch>
         </BrowserRouter>
-    )
-}
-
-export default Routes;
+)
