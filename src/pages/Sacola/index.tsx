@@ -1,20 +1,22 @@
 import React, { useCallback, useEffect } from 'react';
 import { useHistory } from 'react-router-dom';
 import { Cart, CartItem } from '../../@types/cart';
+import Box from '../../components/Box';
 import Summary from '../../components/Summary';
+import Title from '../../components/Title';
 import { useCart } from '../../hooks/cart';
 import {
   Button,
   Complement,
   Container,
   Content,
+  Loading,
   ProductImage,
   ProductInfo,
   ProductItem,
   ProductName,
   Products,
   ProductValue,
-  Title,
 } from './styles';
 
 const Sacola: React.FC = () => {
@@ -34,17 +36,20 @@ const Sacola: React.FC = () => {
   const renderContent = ({ items, prices }: Cart) => (
     <Content>
       <Products>
-        {items.map(({ product }: CartItem) => (
-          <ProductItem key={product.sku}>
-            <ProductImage src={product.imageUrl} />
-            <ProductInfo>
-              <ProductName>{product.name}</ProductName>
-              <ProductValue>
-                {product.priceSpecification.priceFormatted}
-              </ProductValue>
-            </ProductInfo>
-          </ProductItem>
-        ))}
+        <Title>Produtos</Title>
+        <Box>
+          {items.map(({ product }: CartItem) => (
+            <ProductItem key={product.sku}>
+              <ProductImage src={product.imageUrl} />
+              <ProductInfo>
+                <ProductName>{product.name}</ProductName>
+                <ProductValue>
+                  {product.priceSpecification.priceFormatted}
+                </ProductValue>
+              </ProductInfo>
+            </ProductItem>
+          ))}
+        </Box>
       </Products>
 
       <Complement>
@@ -60,14 +65,9 @@ const Sacola: React.FC = () => {
     </Content>
   );
 
-  const renderLoading = () => <p>Loading...</p>;
+  const renderLoading = () => <Loading>Loading...</Loading>;
 
-  return (
-    <Container>
-      <Title>Produtos</Title>
-      {cart ? renderContent(cart) : renderLoading()}
-    </Container>
-  );
+  return <Container>{cart ? renderContent(cart) : renderLoading()}</Container>;
 };
 
 export default Sacola;

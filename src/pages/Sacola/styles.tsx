@@ -32,10 +32,6 @@ export const Complement = styled.aside`
 `;
 
 export const Products = styled.ul`
-  border-radius: 3px;
-  background-color: #fff;
-  box-shadow: 1px 1px 5px 0 rgba(0, 0, 29, 0.22);
-  padding: 12px;
   width: 100%;
 `;
 
@@ -84,17 +80,15 @@ export const ProductValue = styled.div`
   text-align: right;
 `;
 
-export const Title = styled.h2`
-  color: #999;
-  font-family: 'Helvetica Neue';
-  font-size: 14px;
-  font-weight: 700;
-  line-height: 17px;
-  margin: 10px;
-  text-transform: uppercase;
-`;
-
 export const Button = styled(BaseButton)`
   margin-top: 20px;
   width: 100%;
+`;
+
+export const Loading = styled.span`
+  color: #d1d1d1;
+  display: block;
+  font-weight: 500;
+  text-align: center;
+  margin: 20px 0;
 `;
