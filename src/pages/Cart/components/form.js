@@ -72,20 +72,20 @@ export default function PaymentInputs(props) {
   const [errorDate, setErrorDate] = useState(false);
   const [errorCCNumber, setErrorCCNumber] = useState(false);
 
-  const dataAtual = new Date();
+  const todayDate = new Date();
 
   useEffect(()=>{
     if(!cardExpiration) return;
     if(cardExpiration.length === 7){
-      const format = new Date(`${cardExpiration.split('/').reverse().join(',')},${dataAtual.getDate()+1}`);
-      if(format.getTime() < dataAtual.getTime() || isNaN(Date.parse(format))){
+      const format = new Date(`${cardExpiration.split('/').reverse().join(',')},${todayDate.getDate()+1}`);
+      if(format.getTime() < todayDate.getTime() || isNaN(Date.parse(format))){
         setErrorDate(true)
       }
       else{
         setErrorDate(false)
       }
     }
-  },[cardExpiration,dataAtual])
+  },[cardExpiration,todayDate])
 
   useEffect(()=>{
     if(cardNumber.length > 0 && cardNumber.length !== 19){
