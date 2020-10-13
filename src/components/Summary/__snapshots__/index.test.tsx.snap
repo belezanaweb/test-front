@@ -7,7 +7,7 @@ exports[`<Summary /> should be able to render correctly 1`] = `
       class="sc-bdnylx iooCkk"
     >
       <p
-        class="sc-gtssRu bpiFrI"
+        class="sc-gtssRu enyTtb"
       >
         Produtos
         <span>
@@ -15,7 +15,7 @@ exports[`<Summary /> should be able to render correctly 1`] = `
         </span>
       </p>
       <p
-        class="sc-gtssRu bpiFrI"
+        class="sc-gtssRu enyTtb"
       >
         Frete
         <span>
@@ -23,7 +23,7 @@ exports[`<Summary /> should be able to render correctly 1`] = `
         </span>
       </p>
       <p
-        class="sc-gtssRu eiTdvO"
+        class="sc-gtssRu dGpvll"
       >
         Desconto
         <span>
@@ -31,7 +31,7 @@ exports[`<Summary /> should be able to render correctly 1`] = `
         </span>
       </p>
       <p
-        class="sc-gtssRu hiEsPq"
+        class="sc-gtssRu WYARZ"
       >
         Total
         <span>
@@ -50,7 +50,7 @@ exports[`<Summary /> should be able to render correctly when not discount 1`] = 
       class="sc-bdnylx iooCkk"
     >
       <p
-        class="sc-gtssRu bpiFrI"
+        class="sc-gtssRu enyTtb"
       >
         Produtos
         <span>
@@ -58,7 +58,7 @@ exports[`<Summary /> should be able to render correctly when not discount 1`] = 
         </span>
       </p>
       <p
-        class="sc-gtssRu bpiFrI"
+        class="sc-gtssRu enyTtb"
       >
         Frete
         <span>
@@ -66,7 +66,7 @@ exports[`<Summary /> should be able to render correctly when not discount 1`] = 
         </span>
       </p>
       <p
-        class="sc-gtssRu hiEsPq"
+        class="sc-gtssRu WYARZ"
       >
         Total
         <span>
@@ -85,7 +85,7 @@ exports[`<Summary /> should be able to render correctly when not shipping 1`] = 
       class="sc-bdnylx iooCkk"
     >
       <p
-        class="sc-gtssRu bpiFrI"
+        class="sc-gtssRu enyTtb"
       >
         Produtos
         <span>
@@ -93,7 +93,7 @@ exports[`<Summary /> should be able to render correctly when not shipping 1`] = 
         </span>
       </p>
       <p
-        class="sc-gtssRu eiTdvO"
+        class="sc-gtssRu dGpvll"
       >
         Desconto
         <span>
@@ -101,7 +101,7 @@ exports[`<Summary /> should be able to render correctly when not shipping 1`] = 
         </span>
       </p>
       <p
-        class="sc-gtssRu hiEsPq"
+        class="sc-gtssRu WYARZ"
       >
         Total
         <span>
@@ -120,7 +120,7 @@ exports[`<Summary /> should be able to render correctly when not shipping and di
       class="sc-bdnylx iooCkk"
     >
       <p
-        class="sc-gtssRu bpiFrI"
+        class="sc-gtssRu enyTtb"
       >
         Produtos
         <span>
@@ -128,7 +128,7 @@ exports[`<Summary /> should be able to render correctly when not shipping and di
         </span>
       </p>
       <p
-        class="sc-gtssRu hiEsPq"
+        class="sc-gtssRu WYARZ"
       >
         Total
         <span>

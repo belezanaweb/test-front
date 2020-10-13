@@ -1,0 +1,61 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Input /> should be able to render correctly 1`] = `
+<body>
+  <div>
+    <form>
+      <div
+        class="sc-bdnylx hWagWo input"
+      >
+        <input
+          id="name"
+          type="text"
+          value=""
+        />
+      </div>
+    </form>
+  </div>
+</body>
+`;
+
+exports[`<Input /> should be able to render correctly when disabled 1`] = `
+<body>
+  <div>
+    <form>
+      <div
+        class="sc-bdnylx hWagWo input"
+      >
+        <input
+          disabled=""
+          id="name"
+          type="text"
+          value=""
+        />
+      </div>
+    </form>
+  </div>
+</body>
+`;
+
+exports[`<Input /> should be able to render correctly within label 1`] = `
+<body>
+  <div>
+    <form>
+      <div
+        class="sc-bdnylx hWagWo input"
+      >
+        <label
+          for="name"
+        >
+          Name:
+        </label>
+        <input
+          id="name"
+          type="text"
+          value=""
+        />
+      </div>
+    </form>
+  </div>
+</body>
+`;

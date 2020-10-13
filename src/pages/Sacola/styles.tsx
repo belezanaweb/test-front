@@ -1,14 +1,10 @@
 import styled from 'styled-components';
 import BaseButton from '../../components/Button';
 
-interface SummaryItemProps {
-  highlight?: boolean;
-  bolder?: boolean;
-}
-
 export const Container = styled.main`
   padding: 10px;
   margin: 0 auto;
+  max-width: 800px;
   width: 100%;
 `;
 

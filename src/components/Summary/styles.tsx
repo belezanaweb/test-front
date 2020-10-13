@@ -13,6 +13,8 @@ export const Container = styled.div`
 `;
 
 export const SummaryItem = styled.p<SummaryItemProps>`
+  text-transform: uppercase;
+
   display: flex;
   flex-direction: row;
   justify-content: space-between;
