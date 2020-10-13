@@ -10,7 +10,6 @@ const useStyles = makeStyles((theme) => ({
     padding: `${theme.spacing(1.875)}px ${theme.spacing(1.625)}px ${theme.spacing(1.625)}px ${theme.spacing(1.75)}px`,
     flexDirection: 'column',
     alignItems: 'initial',
-    marginBottom: theme.spacing(2.5),
     '& p:last-child':{
       fontWeight: 700,
     }

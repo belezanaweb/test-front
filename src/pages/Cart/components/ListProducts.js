@@ -49,7 +49,7 @@ const useStyles = makeStyles((theme) => ({
   }
 }));
 
-export default function Products({listItens}) {
+export default function Products({listItens, small}) {
   const classes = useStyles();
   return (
     <Paper  elevation={3}>
@@ -57,7 +57,7 @@ export default function Products({listItens}) {
         {listItens && listItens.map(item =>(
           <ListItem key={item.product.name} className={classes.listItem} disableGutters={true}>
           <img src={item.product.imageObjects[0].thumbnail} alt={item.product.name}/>
-          <ListItemText primary={item.product.name} secondary={item ? formatter(item.product.priceSpecification.originalPrice): '-'} className={classes.listItemText} />
+          <ListItemText primary={item.product.name} secondary={!small && (item ? formatter(item.product.priceSpecification.originalPrice): '-')} className={classes.listItemText} />
           </ListItem>
         ))}
       </List>

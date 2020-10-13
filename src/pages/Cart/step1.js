@@ -17,7 +17,7 @@ export default (props) =>{
             <TitleStep title="Produtos"/>
             <Products listItens={props.data.listItens}/>
             <ListProductsAmount amount={props.data.amountProducts}/>
-            <Button color="primary" variant="contained" onClick={handlePayment}>Seguir para o pagamento</Button>
+            <Button color="primary" variant="contained" onClick={handlePayment} style={{ marginTop: '20px'}}>Seguir para o pagamento</Button>
         </>
     )
 }

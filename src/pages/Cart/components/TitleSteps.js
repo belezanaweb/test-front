@@ -4,7 +4,7 @@ import {Typography} from '@material-ui/core';
 
 const useStyles = makeStyles((theme) => ({
     root: {
-        padding: '10px 0 5px 0', 
+        padding: '10px 0 5px 10px', 
         fontWeight: 700, 
         fontSize: '0.875rem', 
         color: '#999', 

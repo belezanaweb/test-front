@@ -1,6 +1,7 @@
 import React, {useEffect, useState} from 'react';
-import { makeStyles} from '@material-ui/core';
+import { makeStyles, Typography} from '@material-ui/core';
 import { useForm } from "react-hook-form";
+import {useHistory} from 'react-router-dom';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -29,17 +30,19 @@ const useStyles = makeStyles((theme) => ({
       backgroundColor: '#FFF',
       border: '1px solid #E7E7E7',
       boxShadow: 'inset 0 1px 2px 0 rgba(0,0,0,0.2)',
-      marginBottom: theme.spacing(3.125),
       padding: `${theme.spacing(2)}px`,
       '&::placeholder':{
         color: '#E0E7EE'
       }
-    }
+    },
   },
   formFooter:{
     display: 'grid',
     gridTemplateColumns: '1fr 1fr',
     columnGap: theme.spacing(2.5)
+  },
+  dividers:{
+    marginBottom: theme.spacing(3.125),
   }
   }));
 
@@ -55,7 +58,7 @@ const useStyles = makeStyles((theme) => ({
     const regex = /^(\d{0,2})(\d{0,4})$/g
     const onlyNumbers = value.replace(/[^\d]/g, '')
     return onlyNumbers.replace(regex, (regex, $1, $2) =>
-      [$1, $2].filter(group => !!group).join(' ')
+      [$1, $2].filter(group => !!group).join('/')
     )
   }
 
@@ -65,44 +68,61 @@ export default function PaymentInputs(props) {
   const [cardName, setCardName] = useState('')
   const [cardExpiration, setCardExpiration] = useState('')
   const [cardCVV, setCardCVV] = useState('')
-
+  const history = useHistory();
   const [errorDate, setErrorDate] = useState(false);
+  const [errorCCNumber, setErrorCCNumber] = useState(false);
 
-  const data = new Date();
-  let year = data.getFullYear();
-
+  const dataAtual = new Date();
 
   useEffect(()=>{
     if(!cardExpiration) return;
     if(cardExpiration.length === 7){
-      if(cardExpiration.split(' ')[0] > 12 || cardExpiration.split(' ')[1] < year){
+      const format = new Date(`${cardExpiration.split('/').reverse().join(',')},${dataAtual.getDate()+1}`);
+      if(format.getTime() < dataAtual.getTime() || isNaN(Date.parse(format))){
         setErrorDate(true)
       }
       else{
         setErrorDate(false)
       }
     }
-  },[year,cardExpiration])
-
-  const { register, handleSubmit } = useForm();
-  const [formData, setFormData] = useState(null)
-  const onSubmit = data =>  setFormData(data);
+  },[cardExpiration,dataAtual])
 
   useEffect(()=>{
-    // props.handleForm(formData)
-    if(cardNumber !== "" && cardName !== "" && cardExpiration !== "" && cardCVV !== "" && !errorDate){
-      props.handleForm(false)
+    if(cardNumber.length > 0 && cardNumber.length !== 19){
+      setErrorCCNumber(true)
     }else{
-      props.handleForm(true)
+      setErrorCCNumber(false)
     }
-  },[formData, props, cardNumber, cardName, cardExpiration, cardCVV, errorDate])
+  },[cardNumber.length])
+
+  const { register, handleSubmit } = useForm();
+  const onSubmit = data =>  {
+    if(!data) return;
+    history.push({pathname: '/confirmacao', state: data})
+  }
+
+  useEffect(()=>{
+    if(cardNumber !== "" && !errorCCNumber && cardName !== "" && cardExpiration !== "" && cardCVV !== "" && !errorDate){
+      props.enabled(false)
+    }else{
+      props.enabled(true)
+    }
+  },[props, cardNumber, cardName, cardExpiration, cardCVV, errorDate, errorCCNumber])
 
   return (
-    <form id='formCredicCard' className={classes.root} onSubmit={handleSubmit(onSubmit)}>
+    <form id='formCredicCard' className={classes.root} onSubmit={handleSubmit(onSubmit)} action="POST">
+      
+      <div className={classes.dividers}>
       <label>Número do cartão:</label>
       <input placeholder="____ ____ ____ ____" ref={register} onChange={e=> setCardNumber(formatCardNumber(e.target.value))} value={cardNumber} maxLength="19" name="ccNumber"/>
+      {errorCCNumber && <Typography variant="caption" style={{color: 'red'}}>Preencha todos os dígitos</Typography>}
+      </div>
+
+      <div className={classes.dividers}>
       <label>Nome do Titular:</label>
       <input placeholder="Como no cartão" name="ccName" ref={register}  onChange={ e=> setCardName(e.target.value)} value={cardName}/>
+      </div>
+
       <div className={classes.formFooter}>
         <div>
           <label>Validade (mês/ano):</label>
@@ -114,7 +134,7 @@ export default function PaymentInputs(props) {
             name="ccExpirateDate"
             ref={register}
             />
-            {errorDate && 'Data inválida'}
+            {errorDate && <Typography variant="caption" style={{color: 'red'}}>Data inválida</Typography>}
         </div>
         <div>
           <label>CVV:</label>
