@@ -1,9 +1,12 @@
 import React from 'react';
-
-// import { Container } from './styles';
+import { Container } from './styles';
 
 const NotFound: React.FC = () => {
-  return <h1>NotFound</h1>;
+  return (
+    <Container>
+      <strong>404</strong>
+    </Container>
+  );
 };
 
 export default NotFound;
