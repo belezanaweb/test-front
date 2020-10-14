@@ -2,6 +2,7 @@ import React, { useCallback, useEffect } from 'react';
 import { useHistory } from 'react-router-dom';
 import { Cart, CartItem } from '../../@types/cart';
 import Box from '../../components/Box';
+import Loading from '../../components/Loading';
 import Summary from '../../components/Summary';
 import Title from '../../components/Title';
 import { useCart } from '../../hooks/cart';
@@ -10,7 +11,6 @@ import {
   Complement,
   Container,
   Content,
-  Loading,
   ProductImage,
   ProductInfo,
   ProductItem,
