@@ -60,12 +60,12 @@ export const InputGroup = styled.div`
   flex-direction: row;
   justify-content: space-between;
 
-  > .input {
+  > div {
     margin: 0;
-  }
 
-  > .input:first-child {
-    width: 60%;
-    margin-right: 10px;
+    &:first-child {
+      width: 60%;
+      margin-right: 10px;
+    }
   }
 `;

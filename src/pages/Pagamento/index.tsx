@@ -93,8 +93,6 @@ const Pagamento: React.FC = () => {
         cvv,
       };
 
-      console.log('data', data);
-
       await schema.validate(data, {
         abortEarly: false,
       });
@@ -102,7 +100,6 @@ const Pagamento: React.FC = () => {
       setIsDisabled(false);
     } catch (error) {
       // console.log('error', error);
-
       setIsDisabled(true);
     }
   }, []);
