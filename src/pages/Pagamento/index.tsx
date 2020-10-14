@@ -49,7 +49,7 @@ const schema = Yup.object().shape({
     }),
   validate: Yup.string()
     .required('Validade é obrigatório')
-    .matches(/[0-9]{2}\/?[0-9]{4}/, {
+    .matches(/(0[1-9]|1[012])\/?(20[2-9][0-9])/, {
       excludeEmptyString: true,
       message: 'Validade está incompleto',
     }),
@@ -60,6 +60,12 @@ const schema = Yup.object().shape({
       message: 'CVV está incompleto',
     }),
 });
+
+const masks = {
+  numeroCartao: '9999.9999.9999.9999',
+  validade: '99/9999',
+  cvv: '999',
+};
 
 const Pagamento: React.FC = () => {
   const { cart } = useCart();
@@ -87,12 +93,16 @@ const Pagamento: React.FC = () => {
         cvv,
       };
 
+      console.log('data', data);
+
       await schema.validate(data, {
         abortEarly: false,
       });
 
       setIsDisabled(false);
     } catch (error) {
+      // console.log('error', error);
+
       setIsDisabled(true);
     }
   }, []);
@@ -143,7 +153,7 @@ const Pagamento: React.FC = () => {
               name="numeroCartao"
               label="Número do cartão:"
               placeholder="____.____.____.____"
-              mask="9999.9999.9999.9999"
+              mask={masks.numeroCartao}
             />
             <Input
               type="text"
@@ -157,14 +167,14 @@ const Pagamento: React.FC = () => {
                 name="validate"
                 label="Validade (mês/ano):"
                 placeholder="__/____"
-                mask="99/9999"
+                mask={masks.validade}
               />
               <Input
                 type="tel"
                 name="cvv"
                 label="CVV:"
                 placeholder="___"
-                mask="999"
+                mask={masks.cvv}
               />
             </InputGroup>
           </Form>

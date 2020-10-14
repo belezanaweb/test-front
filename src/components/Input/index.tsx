@@ -47,38 +47,39 @@ const Input: React.FC<InputProps> = ({
     setIsFocused(false);
   }, []);
 
+  const renderInputMask = (mask: string) => (
+    <ReactInputMask
+      id={fieldName}
+      type={type}
+      mask={mask}
+      ref={inputRef}
+      defaultValue={defaultValue}
+      onFocus={handleInputFocus}
+      onBlur={handleInputBlur}
+      {...rest}
+    />
+  );
+
+  const renderInput = () => (
+    <input
+      id={fieldName}
+      type={type}
+      ref={inputRef}
+      defaultValue={defaultValue}
+      onFocus={handleInputFocus}
+      onBlur={handleInputBlur}
+      {...rest}
+    />
+  );
+
   return (
-    <Container
-      className="input"
-      isFocused={isFocused}
-      isFilled={isFilled}
-      isErrored={!!error}>
-      {label && <label htmlFor={fieldName}>{label}</label>}
-      {!!mask ? (
-        <ReactInputMask
-          id={fieldName}
-          type={type}
-          mask={mask}
-          maskChar={null}
-          ref={inputRef}
-          defaultValue={defaultValue}
-          onFocus={handleInputFocus}
-          onBlur={handleInputBlur}
-          {...rest}
-        />
-      ) : (
-        <input
-          id={fieldName}
-          type={type}
-          ref={inputRef}
-          defaultValue={defaultValue}
-          onFocus={handleInputFocus}
-          onBlur={handleInputBlur}
-          {...rest}
-        />
-      )}
-      {error && <span className="error">{error}</span>}
-    </Container>
+    <React.StrictMode>
+      <Container isFocused={isFocused} isFilled={isFilled} isErrored={!!error}>
+        {label && <label htmlFor={fieldName}>{label}</label>}
+        {!!mask ? renderInputMask(mask) : renderInput()}
+        {error && <span className="error">{error}</span>}
+      </Container>
+    </React.StrictMode>
   );
 };
 

@@ -16,14 +16,15 @@ export const Container = styled.div<ContainerProps>`
   }
 
   > input {
-    display: block;
     background-color: #fff;
     border: 1px solid #e7e7e7;
     border-radius: 3px;
     box-shadow: inset 0 1px 2px 0 rgba(0, 0, 0, 0.2);
     color: #ccc;
+    display: block;
     height: 45px;
     padding: 12px;
+    text-transform: uppercase;
     width: 100%;
 
     ${props =>
