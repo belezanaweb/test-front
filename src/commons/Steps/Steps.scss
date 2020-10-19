@@ -1,0 +1,19 @@
+@import '../../assets/sass/colors';
+
+.steps {
+  width: 100%;
+  height: 36px;
+  background: #fff;
+  box-shadow: 0 2px 5px #ccc;
+  padding: 0 31px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  &__item {
+    font-size: 13px;
+    font-weight: 700;
+    line-height: 16px;
+    color: $primaryColor;
+    text-transform: uppercase;
+  }
+}

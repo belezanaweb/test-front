@@ -1,11 +1,33 @@
 import React from 'react'
-import logo from './logo.svg'
-import './App.css'
+
+// Global Sass
+import './assets/sass/_resets.scss'
+import './assets/sass/_font.scss'
+
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route
+} from "react-router-dom"
+
+// Commons
+import Steps from './commons/Steps'
+
+//Screens
+import Sacola from './screens/Sacola'
 
 const App = () => (
-  <div className="App">
-      <img src={logo} className="App-logo" alt="logo" />
-  </div>
+
+    <Router>
+
+      <Steps />
+
+      <Switch>
+        <Route path="/"> <Sacola /></Route>
+      </Switch>
+
+    </Router>
+
 )
 
 export default App
