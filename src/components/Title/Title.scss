@@ -1,0 +1,14 @@
+@import '../../assets/sass/colors';
+
+.title {
+  width: 100%;
+  height: auto;
+  display: block;
+  padding: 10px 10px 5px 10px;
+  &__text {
+    font-size: 14px;
+    text-transform: uppercase;
+    font-weight: 700;
+    color: $darkGrayColor;
+  }
+}

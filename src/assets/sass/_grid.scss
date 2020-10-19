@@ -1,0 +1,27 @@
+@import './colors';
+
+.container {
+  width: 100%;
+  height: auto;
+  display: block;
+  position: relative;
+  &__content {
+    width: 100%;
+    height: auto;
+    display: block;
+    position: relative;
+    margin: 0 auto;
+    padding: 0 10px;
+  }
+}
+.card {
+  width: 100%;
+  height: auto;
+  display: block;
+  position: relative;
+  margin: 0;
+  padding: 12px;
+  background: #fff;
+  border-radius: 3px;
+  box-shadow: $boxShadow;
+}

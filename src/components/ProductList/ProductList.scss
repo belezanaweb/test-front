@@ -1,0 +1,46 @@
+@import '../../assets/sass/colors';
+
+.product-list {
+  width: 100%;
+  height: auto;
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  margin: 0;
+  position: relative;
+  border-radius: 3px;
+  border: 1px solid #EEEEEE;
+  padding: 11px 10px 14px 10px;
+  &__thumb {
+    width: 65px;
+    height: 65px;
+    display: block;
+    flex: none;
+    img {
+      width: 100%;
+    }
+  }
+  &__content {
+    width: 100%;
+    height: auto;
+    position: relative;
+    margin: 0;
+    padding-left: 11px;
+  }
+  &__title {
+    font-size: 13px;
+    line-height: 16px;
+    font-weight: 400;
+    color: $graphiteColor;
+  }
+  &__price {
+    font-weight: 700;
+    color: $graphiteColor;
+    width: 100%;
+    text-align: right;
+    display: block;
+    margin-top: 15px;
+    font-size: 14px;
+    line-height: 17px;
+  }
+}

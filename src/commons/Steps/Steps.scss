@@ -4,7 +4,7 @@
   width: 100%;
   height: 36px;
   background: #fff;
-  box-shadow: 0 2px 5px #ccc;
+  box-shadow: $boxShadow;
   padding: 0 31px;
   display: flex;
   align-items: center;
@@ -13,7 +13,11 @@
     font-size: 13px;
     font-weight: 700;
     line-height: 16px;
+    color: #CCCCCC;
     color: $primaryColor;
     text-transform: uppercase;
+    &--active {
+      color: $primaryColor;
+    }
   }
 }

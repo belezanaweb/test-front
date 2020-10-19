@@ -2,6 +2,7 @@ import React from 'react'
 
 // Global Sass
 import './assets/sass/_resets.scss'
+import './assets/sass/_grid.scss'
 import './assets/sass/_font.scss'
 
 import {
@@ -23,7 +24,11 @@ const App = () => (
       <Steps />
 
       <Switch>
-        <Route path="/"> <Sacola /></Route>
+
+        <Route path="/" props>
+          <Sacola />
+        </Route>
+
       </Switch>
 
     </Router>
