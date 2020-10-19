@@ -2,12 +2,7 @@ import React from 'react'
 
 import './ProductList.scss'
 
-const priceFormat = new Intl.NumberFormat('pt-BR', {
-  style: 'currency',
-  currency: 'BRL',
-  minimumFractionDigits: 2,
-  prefix: 'R$ ',
-})
+import { priceFormat } from '../../utils/priceFormat'
 
 const ProductList = (props) => {
 
@@ -23,7 +18,7 @@ const ProductList = (props) => {
             <h3 className="product-list__title">
               { item.product.name }
             </h3>
-            <span className="product-list__price">{ priceFormat.format( item.product.priceSpecification.price ) }</span>
+            <span className="product-list__price">{ priceFormat( item.product.priceSpecification.price ) }</span>
           </div>
         </div>
       ))}

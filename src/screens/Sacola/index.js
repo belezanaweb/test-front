@@ -6,6 +6,8 @@ import Checkout from '../../api/checkout'
 // components
 import Title from '../../components/Title'
 import ProductList from '../../components/ProductList'
+import PricesList from '../../components/PricesList'
+import Button from '../../components/Button'
 
 const checkout = new Checkout()
 
@@ -31,9 +33,13 @@ const Sacola = () => {
 
       <div className="container__content">
 
-        <Title title="Produtos" />
+      <Title title="Produtos" />
 
-        <ProductList items={ checkoutState.items }/>
+      <ProductList items={ checkoutState.items }/>
+
+      { checkoutState && <PricesList items={ checkoutState } /> }
+
+      <Button />
 
       </div>
 

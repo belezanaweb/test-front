@@ -1,0 +1,23 @@
+@import '../../assets/sass/colors';
+
+.prices-list {
+  &__item {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 9px;
+  }
+  &__text {
+    font-size: 14px;
+    line-height: 17px;
+    color: $graphiteColor;
+    text-transform: uppercase;
+    &--bold {
+      font-weight: 700;
+    }
+    &--discount {
+      color: $primaryColor;
+    }
+  }
+}

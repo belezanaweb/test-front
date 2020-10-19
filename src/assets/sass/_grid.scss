@@ -24,4 +24,10 @@
   background: #fff;
   border-radius: 3px;
   box-shadow: $boxShadow;
+  margin-bottom: 20px;
+  &--outline {
+    background: none;
+    border: 1px solid $grayColor;
+    background: $lightGrayColor;
+  }
 }
