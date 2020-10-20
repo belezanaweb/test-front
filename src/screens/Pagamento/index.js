@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { useForm } from 'react-hook-form';
-import { CardMask, DataMask } from '../../utils/masks'
-
+import { CardMask, DataMask, HideCardMask } from '../../utils/masks'
+import { useHistory } from 'react-router-dom'
 // components
 import Title from '../../components/Title'
 import PricesList from '../../components/PricesList'
@@ -12,6 +12,8 @@ import Checkout from '../../api/checkout'
 const checkout = new Checkout()
 
 const Pagamento = () => {
+
+  const history = useHistory()
 
   const [checkoutState, setCheckoutState] = useState('')
   const { register, handleSubmit, errors } = useForm()
@@ -35,7 +37,11 @@ const Pagamento = () => {
     if(errors.length >= 1) {
       return
     } else {
-      console.log('Envia: ', data)
+      let today = new Date().toLocaleDateString()
+      window.localStorage.setItem('cardNumber', HideCardMask(cardNumberState))
+      window.localStorage.setItem('name', cardNameState)
+      window.localStorage.setItem('date', today)
+      history.push("/confirmacao");
     }
   }
 
@@ -121,7 +127,7 @@ const Pagamento = () => {
                     name="cvv"
                     maxLength="3"
                     value={ cardCvvState }
-                    ref={ register({ required: true, minLength: 10 } )}
+                    ref={ register({ required: true, minLength: 3 } )}
                     onChange={ (e) => { setCardCvvState(e.target.value.replace(/\D/g, '')) } }
                   />
                   { errors.cvv && <span className="input-erro">Campo Obrigatório</span> }

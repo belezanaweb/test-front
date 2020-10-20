@@ -19,6 +19,7 @@ import Steps from './commons/Steps'
 //Screens
 import Sacola from './screens/Sacola'
 import Pagamento from './screens/Pagamento'
+import Confirmacao from './screens/Confirmacao'
 
 const App = () => (
 
@@ -27,6 +28,10 @@ const App = () => (
       <Steps />
 
       <Switch>
+
+        <Route path="/confirmacao">
+          <Confirmacao />
+        </Route>
 
         <Route path="/pagamento">
           <Pagamento />

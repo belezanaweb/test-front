@@ -11,3 +11,7 @@ export const DataMask = value => {
     .replace(/\D/g, '')
     .replace(/(\d{2})(\d)/,"$1/$2")
 }
+export const HideCardMask = value => {
+  value = value.split('.')
+  return '****.****.****.' + value[3]
+}
