@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { useForm } from 'react-hook-form';
-import { CardMask } from '../../utils/masks'
+import { CardMask, DataMask } from '../../utils/masks'
 
 // components
 import Title from '../../components/Title'
@@ -14,15 +14,23 @@ const checkout = new Checkout()
 const Pagamento = () => {
 
   const [checkoutState, setCheckoutState] = useState('')
+  const { register, handleSubmit, errors } = useForm()
+
+  // Inputs States
   const [cardNumberState, setCardNumberState] = useState('')
   const [cardNameState, setCardNameState] = useState('')
+  const [cardDataState, setCardDataState] = useState('')
+  const [cardCvvState, setCardCvvState] = useState('')
 
+  // Masks
   const cardMask = (e) => {
     setCardNumberState( CardMask(e) )
   }
+  const dataMask = (e) => {
+    setCardDataState ( DataMask(e) )
+  }
 
-  const { register, handleSubmit, errors } = useForm()
-
+  // Send Informations
   const onSubmit = data => {
     if(errors.length >= 1) {
       return
@@ -88,14 +96,35 @@ const Pagamento = () => {
                   <label className="container-input__label">
                     Validade (mês/ano):
                   </label>
-                  <input mask="99/9999" placeholder="__/____" className="container-input__input" type="text" />
+                  <input
+                    mask="99/9999"
+                    placeholder="__/____"
+                    className="container-input__input"
+                    type="text"
+                    name="data"
+                    value={ cardDataState }
+                    maxLength="7"
+                    ref={ register({ required: true, maxLength: 7 } )}
+                    onChange={ (e) => { dataMask(e.target.value) } }
+                  />
+                  { errors.data && <span className="input-erro">Campo Obrigatório</span> }
                 </div>
 
                 <div className="container-input">
                   <label className="container-input__label">
                     CVV:
                   </label>
-                  <input mask="999" placeholder="___" className="container-input__input" type="text" />
+                  <input
+                    placeholder="___"
+                    className="container-input__input"
+                    type="text"
+                    name="cvv"
+                    maxLength="3"
+                    value={ cardCvvState }
+                    ref={ register({ required: true, minLength: 10 } )}
+                    onChange={ (e) => { setCardCvvState(e.target.value.replace(/\D/g, '')) } }
+                  />
+                  { errors.cvv && <span className="input-erro">Campo Obrigatório</span> }
                 </div>
 
               </div>
