@@ -1,41 +1,24 @@
-## Frontend Test
+# Rodrigo Godoy - Front-end
 
-Faça um fork deste repositório e finalizar o teste, submeta um pull request para o repositório que nosso time será notificado.
+Para instalar o projeto, basta rodar no terminal
 
-O teste consiste em um checkout simples contendo 3 passos (carrinho, pagamento e sucesso) [Veja o Layout](https://projects.invisionapp.com/prototype/font-test-cji0j0khf005c1t0132358e8k)
+```
+npm i
+```
 
-**Faça quando quiser/puder (madrugada, fim de semana, etc)**
+Para rodar no seu local, rode o comando
 
-### Requerimentos
+```
+npm start
+```
 
-- Pixel perfect ([nesse link](https://projects.invisionapp.com/prototype/font-test-cji0j0khf005c1t0132358e8k), você pode inspecionar para ver espaçamentos, fonte, tamanho, etc)
-- A aplicação precisa ser responsiva, utilizando o conceito de mobile-first. Use sua imaginação para entregar uma experiência boa no desktop.
-- Renderize cada passo em uma URL única (lib de rotas).
+## Considerações
+Em uma segunda versão, seria o ideal melhorar as verificações em pagamento, como por exemplo, não deixar que o usuário digite uma data inferior ao dia atual em data de validade do cartão. Também seria melhor utilizar o redux para não fazer três requisições na API, pensei em gravar no localStorage mas acredito que não teria muita segurança, já que o usuário poderia trocar os valores no localStorage, mesmo que a API na hora do pagamento bloqueie esse tipo de alteração, não seria muito bom deixar essa opção de qualquer maneira.
+
+Comecei utilizando o Styled Components, porém ainda não tenho tanta familiaridade com ele, e acabaria acrescentando um tempo maior no prazo de entrega, e talvez o código não seguiria boas práticas.
+
+Não criei os testes unitários, porque ainda estou estudando e aprendendo sobre e não tenho o conhecimento necessário para incluir bons testes (ainda).
+
+Tentei ao máximo não utilizar bibliotecas e plugins externos apenas para o teste, assim posso mostrar melhor meus conhecimentos, mas acredito que em alguns momentos do projeto acelerariam o desenvolvimento, mas mesmo assim, colocaria com cautela é claro (rs).
 
 
-### Passo 1 - Carrinho:
-  - Consuma o [esse endpoint](http://www.mocky.io/v2/5b15c4923100004a006f3c07) e liste os itens do carrinho, bem como o resumo do carrinho;
-  - Persista o conteúdo do JSON para ser usado nas próximas etapas;
-
-### Passo 2 - Pagamento: 
-  - Exiba um form com campos de cartão de crédito com validação em cada campo;
-  - Habilite o botão de Finalizar Pedido apenas se o form esteja válido;
-
-### Passo 3 - Sucesso: 
-  - Todo o conteúdo deverá ser exibido a partir dos dados persistidos;
-  
-### O que vamos avaliar:
-  - Organização do código;
-  - Mensagens (em inglês) e mudanças nos commits;
-  - Composição/reutilização de componentes;
-  - Testes unitários;
-  - O motivo de ter escolhido cada tech da stack;
-  - Como rodar sua aplicação ;)
-
-### Diferenciais:
-  - Split bundle por rota (cada step ter um bundle separado para otimizar a performance);
-  - CSS in JS;
-  - React;
-
-### Fim:
-Ao finalizar o teste, submeta um pull request para o repositório que nosso time será notificado. Se tiver alguma observação, escreva no pull request.
