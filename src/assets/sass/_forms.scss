@@ -1,0 +1,52 @@
+@import './colors';
+
+.container-input-flex {
+  width: 100%;
+  height: auto;
+  display: flex;
+  justify-content: space-between;
+  .container-input:first-child {
+    padding-right: 10px;
+  }
+  .container-input:last-child {
+    padding-left: 10px;
+  }
+}
+.input-erro {
+  font-size: 12px;
+  color: #e52d2d;
+  margin: 3px 0;
+}
+.container-input {
+  width: 100%;
+  height: auto;
+  display: block;
+  position: relative;
+  margin-bottom: 25px;
+  &__label {
+    font-size: 12px;
+    line-height: 14px;
+    color: $grayColor;
+    font-weight: 700;
+    margin-bottom: 5px;
+    display: block;
+  }
+  &__input {
+    width: 100%;
+    height: 45px;
+    border-radius: 3px;
+    border: 1px solid $mediumGrayColor;
+    font-size: 16px;
+    letter-spacing: 1.37px;
+    color: $inputColors;
+    padding: 0 13px;
+    font-weight: 400;
+    color: $darkGrayColor;
+    &::placeholder {
+      color: $inputColors;
+    }
+    &:focus {
+      outline: 0;
+    }
+  }
+}

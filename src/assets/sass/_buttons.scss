@@ -1,4 +1,4 @@
-@import '../../assets/sass/colors';
+@import './colors';
 
 .botao {
   width: 100%;
@@ -10,9 +10,12 @@
   font-weight: 700;
   color: #fff;
   background: $primaryColor;
-  display: block;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   text-transform: uppercase;
   border: 0;
   box-shadow: 0 2px 4px rgba(0, 0, 0, .25), #D45A00 0 -3px 0 inset;
   border-radius: 3px;
+  text-decoration: none;
 }

@@ -1,19 +1,10 @@
-import React, {useEffect} from 'react'
+import React from 'react'
 
 import './PricesList.scss'
 
 import { priceFormat } from '../../utils/priceFormat'
 
 const PricesList = (props) => {
-  useEffect( () => {
-
-    async function getData() {
-      console.log(props)
-    }
-
-    getData()
-
-  }, [props])
 
   return (
 

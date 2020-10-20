@@ -6,6 +6,8 @@
     "axios": "^0.20.0",
     "react": "^16.12.0",
     "react-dom": "^16.12.0",
+    "react-hook-form": "^6.9.4",
+    "react-input-mask": "^3.0.0-alpha.2",
     "react-router-dom": "^5.2.0"
   },
   "devDependencies": {

@@ -4,6 +4,8 @@ import React from 'react'
 import './assets/sass/_resets.scss'
 import './assets/sass/_grid.scss'
 import './assets/sass/_font.scss'
+import './assets/sass/_forms.scss'
+import './assets/sass/_buttons.scss'
 
 import {
   BrowserRouter as Router,
@@ -16,6 +18,7 @@ import Steps from './commons/Steps'
 
 //Screens
 import Sacola from './screens/Sacola'
+import Pagamento from './screens/Pagamento'
 
 const App = () => (
 
@@ -25,7 +28,11 @@ const App = () => (
 
       <Switch>
 
-        <Route path="/" props>
+        <Route path="/pagamento">
+          <Pagamento />
+        </Route>
+
+        <Route path="/">
           <Sacola />
         </Route>
 

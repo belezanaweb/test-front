@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react'
+import { Link } from 'react-router-dom'
 
 //API
 import Checkout from '../../api/checkout'
@@ -7,7 +8,6 @@ import Checkout from '../../api/checkout'
 import Title from '../../components/Title'
 import ProductList from '../../components/ProductList'
 import PricesList from '../../components/PricesList'
-import Button from '../../components/Button'
 
 const checkout = new Checkout()
 
@@ -33,13 +33,22 @@ const Sacola = () => {
 
       <div className="container__content">
 
-      <Title title="Produtos" />
+        <Title title="Produtos" />
 
-      <ProductList items={ checkoutState.items }/>
+        <ProductList items={ checkoutState.items }/>
 
-      { checkoutState && <PricesList items={ checkoutState } /> }
+        { checkoutState && <PricesList items={ checkoutState } /> }
 
-      <Button />
+        <Link
+          className="botao"
+          onClick={ ()=> {
+            window.localStorage.removeItem('id')
+            window.localStorage.setItem('id', checkoutState.id)
+          } }
+          to={{ pathname: '/pagamento' }}
+        >
+          seguir para o pagamento
+        </Link>
 
       </div>
 
