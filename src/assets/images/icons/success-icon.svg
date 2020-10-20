@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="80" height="80" viewBox="0 0 80 80">
+  <g id="Grupo_1" data-name="Grupo 1" transform="translate(-237 -334)">
+    <g id="Elipse_1" data-name="Elipse 1" transform="translate(237 334)" fill="none" stroke="#ff7800" stroke-width="3">
+      <circle cx="40" cy="40" r="40" stroke="none"/>
+      <circle cx="40" cy="40" r="38.5" fill="none"/>
+    </g>
+    <path id="Caminho_1" data-name="Caminho 1" d="M190.518,332.8l14.869,11.979,23.561-26.94" transform="translate(67.982 42.662)" fill="none" stroke="#ff7800" stroke-linecap="round" stroke-linejoin="round" stroke-width="3"/>
+  </g>
+</svg>
