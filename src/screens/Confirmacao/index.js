@@ -38,27 +38,39 @@ const Confirmacao = () => {
           <h1 className="success__title">compra efetuada com sucesso</h1>
         </div>
 
-        <Title title="Pagamento" />
+        <div className="container__flex-desktop">
 
-        <div className="card">
+          <div className="container">
 
-          <div className="card-information">
-            <span className="card-information__text">
-              { window.localStorage.getItem('cardNumber') }
-            </span>
-            <span className="card-information__text">
-              { window.localStorage.getItem('name') }
-            </span>
-            <span className="card-information__text">
-              { window.localStorage.getItem('date') }
-            </span>
+            <Title title="Pagamento" />
+
+            <div className="card">
+
+              <div className="card-information">
+                <span className="card-information__text">
+                  { window.localStorage.getItem('cardNumber') }
+                </span>
+                <span className="card-information__text">
+                  { window.localStorage.getItem('name') }
+                </span>
+                <span className="card-information__text">
+                  { window.localStorage.getItem('date') }
+                </span>
+              </div>
+
+            </div>
+
+          </div>
+
+          <div className="container">
+
+            <Title title="Produtos" />
+
+            <ProductList items={ checkoutState.items }/>
+
           </div>
 
         </div>
-
-        <Title title="Produtos" />
-
-        <ProductList items={ checkoutState.items }/>
 
         <PricesList items={ checkoutState } />
 

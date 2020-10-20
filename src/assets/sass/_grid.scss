@@ -2,9 +2,11 @@
 
 .container {
   width: 100%;
+  max-width: 980px;
   height: auto;
   display: block;
   position: relative;
+  margin: 0 auto;
   &__content {
     width: 100%;
     height: auto;
@@ -12,6 +14,24 @@
     position: relative;
     margin: 0 auto;
     padding: 0 10px;
+  }
+  &__flex-desktop {
+    @media screen and (min-width: 768px) {
+      display: flex;
+      div {
+        margin-right: 20px;
+        &:last-child {
+          margin-right: 0;
+        }
+      }
+      .container {
+        min-height: 100%;
+        margin-bottom: 20px;
+        .card {
+          min-height: calc(100% - 29px);
+        }
+      }
+    }
   }
 }
 .card {

@@ -1,6 +1,10 @@
 @import '../../assets/sass/colors';
 
 .prices-list {
+  @media screen and (min-width: 768px) {
+    max-width: 340px;
+    margin-left: auto;
+  }
   &__item {
     width: 100%;
     display: flex;

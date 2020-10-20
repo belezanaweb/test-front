@@ -18,4 +18,9 @@
   box-shadow: 0 2px 4px rgba(0, 0, 0, .25), #D45A00 0 -3px 0 inset;
   border-radius: 3px;
   text-decoration: none;
+  @media screen and (min-width: 768px) {
+    max-width: 340px;
+    margin-right: 0;
+    margin-left: auto;
+  }
 }

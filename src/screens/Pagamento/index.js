@@ -62,81 +62,85 @@ const Pagamento = () => {
 
           <Title title="Cartão de Crédito" />
 
-          <div className="card credit-card">
+          <div className="container__flex-desktop">
 
-              <div className="container-input">
-                <label className="container-input__label">
-                  Número do cartão:
-                </label>
-                <input
-                  placeholder="____.____.____.____"
-                  className="container-input__input"
-                  type="text"
-                  name="card"
-                  value={ cardNumberState }
-                  onChange={ (e) => { cardMask(e.target.value) } }
-                  ref={ register({ required: true, minLength: 19 } )}
-                  maxLength="19"
-                />
-                { errors.card && <span className="input-erro">Campo Obrigatório</span> }
-              </div>
-
-              <div className="container-input">
-                <label className="container-input__label">
-                  Nome do Titular:
-                </label>
-                <input
-                  className="container-input__input"
-                  placeholder="Como no cartão"
-                  name="name"
-                  value={ cardNameState }
-                  ref={ register({ required: true, minLength: 10 } )}
-                  onChange={ (e) => { setCardNameState(e.target.value) } }
-                />
-                { errors.name && <span className="input-erro">Campo Obrigatório</span> }
-              </div>
-
-              <div className="container-input-flex">
+            <div className="card credit-card">
 
                 <div className="container-input">
                   <label className="container-input__label">
-                    Validade (mês/ano):
+                    Número do cartão:
                   </label>
                   <input
-                    mask="99/9999"
-                    placeholder="__/____"
+                    placeholder="____.____.____.____"
                     className="container-input__input"
                     type="text"
-                    name="data"
-                    value={ cardDataState }
-                    maxLength="7"
-                    ref={ register({ required: true, maxLength: 7 } )}
-                    onChange={ (e) => { dataMask(e.target.value) } }
+                    name="card"
+                    value={ cardNumberState }
+                    onChange={ (e) => { cardMask(e.target.value) } }
+                    ref={ register({ required: true, minLength: 19 } )}
+                    maxLength="19"
                   />
-                  { errors.data && <span className="input-erro">Campo Obrigatório</span> }
+                  { errors.card && <span className="input-erro">Campo Obrigatório</span> }
                 </div>
 
                 <div className="container-input">
                   <label className="container-input__label">
-                    CVV:
+                    Nome do Titular:
                   </label>
                   <input
-                    placeholder="___"
                     className="container-input__input"
-                    type="text"
-                    name="cvv"
-                    maxLength="3"
-                    value={ cardCvvState }
-                    ref={ register({ required: true, minLength: 3 } )}
-                    onChange={ (e) => { setCardCvvState(e.target.value.replace(/\D/g, '')) } }
+                    placeholder="Como no cartão"
+                    name="name"
+                    value={ cardNameState }
+                    ref={ register({ required: true, minLength: 10 } )}
+                    onChange={ (e) => { setCardNameState(e.target.value) } }
                   />
-                  { errors.cvv && <span className="input-erro">Campo Obrigatório</span> }
+                  { errors.name && <span className="input-erro">Campo Obrigatório</span> }
                 </div>
 
-              </div>
+                <div className="container-input-flex">
+
+                  <div className="container-input">
+                    <label className="container-input__label">
+                      Validade (mês/ano):
+                    </label>
+                    <input
+                      mask="99/9999"
+                      placeholder="__/____"
+                      className="container-input__input"
+                      type="text"
+                      name="data"
+                      value={ cardDataState }
+                      maxLength="7"
+                      ref={ register({ required: true, maxLength: 7 } )}
+                      onChange={ (e) => { dataMask(e.target.value) } }
+                    />
+                    { errors.data && <span className="input-erro">Campo Obrigatório</span> }
+                  </div>
+
+                  <div className="container-input">
+                    <label className="container-input__label">
+                      CVV:
+                    </label>
+                    <input
+                      placeholder="___"
+                      className="container-input__input"
+                      type="text"
+                      name="cvv"
+                      maxLength="3"
+                      value={ cardCvvState }
+                      ref={ register({ required: true, minLength: 3 } )}
+                      onChange={ (e) => { setCardCvvState(e.target.value.replace(/\D/g, '')) } }
+                    />
+                    { errors.cvv && <span className="input-erro">Campo Obrigatório</span> }
+                  </div>
+
+                </div>
+            </div>
+
+            <PricesList items={ checkoutState } />
+
           </div>
-
-          <PricesList items={ checkoutState } />
 
           <button
             className="botao"
