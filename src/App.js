@@ -4,8 +4,8 @@ import './App.css'
 
 const App = () => (
   <div className="App">
-      <img src={logo} className="App-logo" alt="logo" />
-      Beleza Na Web
+    <img src={logo} className="App-logo" alt="logo" />
+    Beleza Na Web
   </div>
 )
 
