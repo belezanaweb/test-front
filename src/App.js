@@ -1,11 +1,24 @@
 import React from 'react'
-import logo from './logo.svg'
-import './App.css'
+import { Provider } from 'react-redux';
+import { HashRouter } from 'react-router-dom';
+
+import GlobalStyle from './styles/global';
+import { store } from './store';
+import history from './services/history';
+import Routes from './routes';
+import NavBar from './components/NavBar';
 
 const App = () => (
-  <div className="App">
-      <img src={logo} className="App-logo" alt="logo" />
-  </div>
-)
+  <Provider store={store}>
+    <HashRouter history={history}>
+      <NavBar />
 
+      <div className="App">
+          <Routes />
+
+          <GlobalStyle />
+      </div>
+    </HashRouter>
+  </Provider>
+)
 export default App

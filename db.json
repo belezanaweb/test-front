@@ -1,0 +1,54 @@
+{
+  "creditCards": [
+    {
+      "id": 1,
+      "name": "Diego Chagas",
+      "number": "333333333333333333333333333",
+      "expiration": "10/2020",
+      "cvv": "333"
+    },
+    {
+      "id": 2,
+      "name": "dkajfdsljfsdlkj",
+      "number": "391084309843209832109",
+      "expiration": "11/2023",
+      "cvv": "999"
+    },
+    {
+      "type": "POST_CREDIT_CARD_REQUEST",
+      "payload": {
+        "data": {
+          "number": "3430948309483043809",
+          "name": "iegigfdklgfkgkfgfkgk",
+          "expiration": "10/2033",
+          "cvv": "393"
+        }
+      },
+      "id": 3
+    },
+    {
+      "type": "POST_CREDIT_CARD_REQUEST",
+      "payload": {
+        "data": {
+          "number": "439841093840239808098409",
+          "name": "dkfjaflsjfldsj lkj ;adlfj;dsj;ldsajd;sl",
+          "expiration": "10/2033",
+          "cvv": "333"
+        }
+      },
+      "id": 4
+    },
+    {
+      "type": "POST_CREDIT_CARD_REQUEST",
+      "payload": {
+        "data": {
+          "number": "3498034809483209483094",
+          "name": "Carlos Daniel",
+          "expiration": "10/2033",
+          "cvv": "393"
+        }
+      },
+      "id": 5
+    }
+  ]
+}
