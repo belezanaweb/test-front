@@ -3,16 +3,34 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "react": "^16.12.0",
-    "react-dom": "^16.12.0"
+    "react": "^17.0.0",
+    "react-dom": "^17.0.0"
   },
   "devDependencies": {
-    "react-scripts": "3.3.0"
+    "@testing-library/jest-dom": "^5.11.4",
+    "@testing-library/react": "^11.1.0",
+    "@testing-library/user-event": "^12.1.8",
+    "@types/jest": "^26.0.15",
+    "@types/node": "^14.14.0",
+    "@types/react": "^16.9.53",
+    "@types/react-dom": "^16.9.8",
+    "commitizen": "^4.2.2",
+    "eslint-config-prettier": "^6.13.0",
+    "eslint-plugin-prettier": "^3.1.4",
+    "eslint-plugin-react": "^7.21.5",
+    "eslint-plugin-react-hooks": "^4.2.0",
+    "husky": "^4.3.0",
+    "jest-environment-jsdom-sixteen": "^1.0.3",
+    "lint-staged": "^10.4.2",
+    "prettier": "^2.1.2",
+    "react-scripts": "3.4.4",
+    "typescript": "^4.0.3"
   },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test"
+    "test": "react-scripts test --env=jest-environment-jsdom-sixteen",
+    "lint": "eslint --fix --max-warnings=0"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -22,5 +40,16 @@
     "not dead",
     "not ie <= 11",
     "not op_mini all"
-  ]
+  ],
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged",
+      "prepare-commit-msg": "exec < /dev/tty && git cz --hook || true"
+    }
+  },
+  "lint-staged": {
+    "*.{ts,tsx}": [
+      "npm run lint"
+    ]
+  }
 }
