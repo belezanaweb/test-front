@@ -1,3 +1,5 @@
 import React from 'react'
 
-export const CartTable = () => <h1>CartTable</h1>
+import * as S from './CartTable.styled'
+
+export const CartTable = () => <S.CartTable>CartTable</S.CartTable>

@@ -5,7 +5,8 @@
   "dependencies": {
     "react": "^17.0.0",
     "react-dom": "^17.0.0",
-    "react-router-dom": "^5.2.0"
+    "react-router-dom": "^5.2.0",
+    "styled-components": "^5.2.0"
   },
   "devDependencies": {
     "@babel/core": "^7.12.3",
@@ -23,6 +24,7 @@
     "@types/react": "^16.9.53",
     "@types/react-dom": "^16.9.8",
     "@types/react-router-dom": "^5.1.6",
+    "@types/styled-components": "^5.1.4",
     "babel-loader": "^8.1.0",
     "commitizen": "^4.2.2",
     "eslint-config-prettier": "^6.13.0",
@@ -67,6 +69,7 @@
   },
   "resolutions": {
     "react": "^17.0.0",
-    "react-dom": "^17.0.0"
+    "react-dom": "^17.0.0",
+    "styled-components": "^5"
   }
 }

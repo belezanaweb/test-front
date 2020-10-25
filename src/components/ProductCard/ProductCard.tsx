@@ -1,3 +1,5 @@
 import React from 'react'
 
-export const ProductCard = () => <h1>ProductCard</h1>
+import * as S from './ProductCard.styled'
+
+export const ProductCard = () => <S.ProductCard>ProductCard</S.ProductCard>

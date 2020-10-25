@@ -1,3 +1,5 @@
 import React from 'react'
 
-export const Button = () => <h1>Button</h1>
+import * as S from './Button.styled'
+
+export const Button = () => <S.Button>Button</S.Button>

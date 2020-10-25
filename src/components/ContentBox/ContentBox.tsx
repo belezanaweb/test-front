@@ -1,3 +1,5 @@
 import React from 'react'
 
-export const ContentBox = () => <h1>ContentBox</h1>
+import * as S from './ContentBox.styled'
+
+export const ContentBox = () => <S.ContentBox>ContentBox</S.ContentBox>

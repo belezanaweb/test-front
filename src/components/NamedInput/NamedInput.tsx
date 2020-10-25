@@ -1,3 +1,5 @@
 import React from 'react'
 
-export const NamedInput = () => <h1>NamedInput</h1>
+import * as S from './NamedInput.styled'
+
+export const NamedInput = () => <S.NamedInput>NamedInput</S.NamedInput>

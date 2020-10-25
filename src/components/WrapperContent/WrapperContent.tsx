@@ -1,3 +1,5 @@
 import React from 'react'
 
-export const WrapperContent = () => <h1>WrapperContent</h1>
+import * as S from './WrapperContent.styled'
+
+export const WrapperContent = () => <S.WrapperContent>WrapperContent</S.WrapperContent>

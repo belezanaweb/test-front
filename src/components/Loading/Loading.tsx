@@ -1,3 +1,5 @@
 import React from 'react'
 
-export const Loading = () => <h1>Loading...</h1>
+import * as S from './Loading.styled'
+
+export const Loading = () => <S.Loading>Loading...</S.Loading>

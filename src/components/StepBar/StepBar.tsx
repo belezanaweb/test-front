@@ -1,3 +1,5 @@
 import React from 'react'
 
-export const StepBar = () => <h1>StepBar</h1>
+import * as S from './StepBar.styled'
+
+export const StepBar = () => <S.StepBar>StepBar</S.StepBar>

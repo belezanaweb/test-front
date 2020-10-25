@@ -1,3 +1,5 @@
 import React from 'react'
 
-export const Input = () => <h1>Input</h1>
+import * as S from './Input.styled'
+
+export const Input = () => <S.Input />
