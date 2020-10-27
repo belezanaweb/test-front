@@ -1,58 +1,37 @@
 import React from 'react'
-import { BrowserRouter as Router } from 'react-router-dom'
 import { render, screen, waitFor } from '@testing-library/react'
 
-import Routes from './'
+import App from '../App'
 
-test('render Loading component', () => {
-  render(
-    <Router>
-      <Routes />
-    </Router>
-  )
+describe('<Routes />', () => {
+  it('should render Loading component', () => {
+    render(<App />)
+    expect(screen.getByText(/loading/i)).toBeInTheDocument()
+  })
 
-  expect(screen.getByText(/loading/i)).toBeInTheDocument()
-})
+  it('should render Cart', async () => {
+    render(<App />)
+    await waitFor(() => expect(screen.getByText(/cart/i)).toBeInTheDocument())
+  })
 
-test('render Cart', async () => {
-  render(
-    <Router>
-      <Routes />
-    </Router>
-  )
+  it('should render Payment', async () => {
+    window.history.pushState({}, 'Test page', '/pagamento')
+    render(<App />)
 
-  await waitFor(() => expect(screen.getByText(/cart/i)).toBeInTheDocument())
-})
+    await waitFor(() => expect(screen.getByText(/payment/i)).toBeInTheDocument())
+  })
 
-test('render Payment', async () => {
-  window.history.pushState({}, 'Test page', '/pagamento')
-  render(
-    <Router>
-      <Routes />
-    </Router>
-  )
+  it('should render Success', async () => {
+    window.history.pushState({}, 'Test page', '/sucesso')
+    render(<App />)
 
-  await waitFor(() => expect(screen.getByText(/payment/i)).toBeInTheDocument())
-})
+    await waitFor(() => expect(screen.getByText(/success/i)).toBeInTheDocument())
+  })
 
-test('render Success', async () => {
-  window.history.pushState({}, 'Test page', '/sucesso')
-  render(
-    <Router>
-      <Routes />
-    </Router>
-  )
+  it('should render NotFound', async () => {
+    window.history.pushState({}, 'Test page', '/paymm')
+    render(<App />)
 
-  await waitFor(() => expect(screen.getByText(/success/i)).toBeInTheDocument())
-})
-
-test('render NotFound', async () => {
-  window.history.pushState({}, 'Test page', '/paymm')
-  render(
-    <Router>
-      <Routes />
-    </Router>
-  )
-
-  await waitFor(() => expect(screen.getByText(/notfound/i)).toBeInTheDocument())
+    await waitFor(() => expect(screen.getByText(/notfound/i)).toBeInTheDocument())
+  })
 })
