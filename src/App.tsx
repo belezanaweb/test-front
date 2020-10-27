@@ -6,12 +6,14 @@ import { ThemeProvider } from 'styled-components'
 import Routes from './routes'
 import store from './redux/store'
 import theme from './theme'
+import GlobalStyle from './styles'
 
 function App() {
   return (
     <Provider store={store}>
       <React.StrictMode>
         <ThemeProvider theme={theme}>
+          <GlobalStyle />
           <Router>
             <Routes />
           </Router>
