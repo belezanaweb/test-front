@@ -1,5 +1,17 @@
 import styled from 'styled-components/macro'
 
-export const StepBar = styled.p`
-  font-size: 20px;
+import { IStyledStep } from './interface'
+
+export const StepBar = styled.ul`
+  display: flex;
+  justify-content: space-between;
+`
+
+export const Step = styled.li<IStyledStep>`
+  color: ${({ isActive, theme }) => (isActive ? theme.colors.activeLighten : theme.colors.base)};
+  font-size: 1.3rem;
+  font-weight: bold;
+  padding: 0.8rem 0.7rem;
+  transition: color 0.2s ease 0s;
+  text-transform: uppercase;
 `

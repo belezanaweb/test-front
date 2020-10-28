@@ -16,6 +16,10 @@ const GlobalStyle = createGlobalStyle`
     max-width: 100%;
     display: block;
   }
+
+  li {
+    list-style: none;
+  }
 `
 
 export default GlobalStyle
