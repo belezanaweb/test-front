@@ -7,4 +7,6 @@ export default {
   component: CartTable
 }
 
-export const Default: React.FC<{}> = () => <CartTable />
+export const Default: React.FC<{}> = () => (
+  <CartTable subTotal={500} shippingTotal={10} discount={20} total={600} />
+)
