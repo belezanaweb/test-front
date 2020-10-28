@@ -6,7 +6,6 @@ export const Message = styled.span`
 `
 export const Label = styled.label`
   color: ${({ theme }) => theme.colors.base};
-  font-family: ${({ theme }) => theme.font};
   font-size: 1.2rem;
   font-weight: bold;
   line-height: 1.4rem;
