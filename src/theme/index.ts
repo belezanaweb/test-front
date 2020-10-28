@@ -4,12 +4,14 @@ export default {
     active: '#FF6C00',
     activeLighten: '#FF7800',
     activeDarken: '#D45A00',
+    auxiliary: '#E7E7E7',
+    auxiliaryLighten: '#E0E7EE',
+    auxiliaryDarken: '#EEEEEE',
     base: '#CCCCCC',
     baseAux: '#999999',
     baseDarken: '#212122',
     baseLighten: '#FFFFFF',
-    auxiliary: '#E7E7E7',
-    auxiliaryLighten: '#E0E7EE',
-    auxiliaryDarken: '#EEEEEE'
+    focus: '#A43287',
+    error: '#FF3300'
   }
 }

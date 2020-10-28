@@ -4,12 +4,14 @@ export interface ITheme {
     active: string
     activeLighten: string
     activeDarken: string
+    auxiliary: string
+    auxiliaryLighten: string
+    auxiliaryDarken: string
     base: string
     baseAux: string
     baseDarken: string
     baseLighten: string
-    auxiliary: string
-    auxiliaryLighten: string
-    auxiliaryDarken: string
+    focus: string
+    error: string
   }
 }
