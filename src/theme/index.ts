@@ -1,13 +1,15 @@
 export default {
   font: 'Helvetica Neue, Helvetica, Arial, sans-serif',
   colors: {
-    primary: '#FF6C00',
-    primaryLighten: '#FF7800',
-    primaryDarken: '#D45A00',
-    secondary: '#212122',
-    secondaryLighten: '#999999',
+    active: '#FF6C00',
+    activeLighten: '#FF7800',
+    activeDarken: '#D45A00',
+    base: '#CCCCCC',
+    baseAux: '#999999',
+    baseDarken: '#212122',
+    baseLighten: '#FFFFFF',
     auxiliary: '#E7E7E7',
-    auxiliaryLighten: '#EEEEEE',
-    auxiliaryDarken: '#CCCCCC'
+    auxiliaryLighten: '#E0E7EE',
+    auxiliaryDarken: '#EEEEEE'
   }
 }

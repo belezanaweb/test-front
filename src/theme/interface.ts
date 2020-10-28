@@ -1,11 +1,13 @@
 export interface ITheme {
   font: string
   colors: {
-    primary: string
-    primaryLighten: string
-    primaryDarken: string
-    secondary: string
-    secondaryLighten: string
+    active: string
+    activeLighten: string
+    activeDarken: string
+    base: string
+    baseAux: string
+    baseDarken: string
+    baseLighten: string
     auxiliary: string
     auxiliaryLighten: string
     auxiliaryDarken: string
