@@ -1,26 +1,28 @@
 import React from 'react'
-import { useDispatch } from 'react-redux'
 
-import { setData } from '../../redux/ducks/creditCard'
+import { IPaymentPage } from './interface'
 
-export const Payment = () => {
-  const dispatch = useDispatch()
+import Button from '../../components/Button'
+import CartTable from '../../components/CartTable'
 
-  const handleSubmit = () => {
-    dispatch(
-      setData({
-        holder: 'Fulano de Tal',
-        number: 92737321837183,
-        expirationDate: new Date().getTime(),
-        cvv: 234
-      })
-    )
-  }
+import { FormBuilder } from '../../components/Form'
+import { fields } from '../../components/Form/data'
+import Title from '../../components/Title'
 
+export const Payment = ({ productData, handleSubmit }: IPaymentPage) => {
   return (
     <>
-      <h1>Payment</h1>
-      <button onClick={() => handleSubmit()}>Finalizar pedido</button>
+      <Title>Cartão de crédito</Title>
+
+      <FormBuilder onSubmit={handleSubmit} fieldsList={fields}>
+        <CartTable
+          subTotal={productData.subTotal}
+          shippingTotal={productData.shippingTotal}
+          discount={productData.discount}
+          total={productData.total}
+        />
+        <Button type="submit">Finalizar o pedido</Button>
+      </FormBuilder>
     </>
   )
 }

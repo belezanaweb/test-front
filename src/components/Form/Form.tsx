@@ -11,7 +11,7 @@ interface IForm {
   onSubmit: (values: any, formikHelpers: FormikHelpers<any>) => void | Promise<any>
 }
 
-export const FormBuilder: FC<IForm> = ({ fieldsList, onSubmit }) => {
+export const FormBuilder: FC<IForm> = ({ fieldsList, onSubmit, children }) => {
   const validation = new Validation(fieldsList)
 
   const handleValidation = (values: {}) => {
@@ -32,31 +32,38 @@ export const FormBuilder: FC<IForm> = ({ fieldsList, onSubmit }) => {
   const initialValues = getInitialValues()
 
   return (
-    <Formik
-      initialValues={initialValues}
-      validate={handleValidation}
-      validateOnChange={false}
-      onSubmit={onSubmit}
-    >
-      <S.Form>
-        {fieldsList.map((field, index) => {
-          return (
-            <S.FieldWrapper key={index} className={`field-${field.id}`}>
-              <S.Label htmlFor={field.id}>{`${field.label}:`}</S.Label>
-              <Field
-                id={field.id}
-                type={field.type}
-                placeholder={field.placeholder}
-                name={field.id}
-                mask={field.mask}
-                component={Input}
-              />
-              <ErrorMessage name={field.id}>{(msg) => <S.Message>{msg}</S.Message>}</ErrorMessage>
-            </S.FieldWrapper>
-          )
-        })}
-      </S.Form>
-    </Formik>
+    <>
+      <Formik
+        initialValues={initialValues}
+        validate={handleValidation}
+        validateOnChange={false}
+        onSubmit={onSubmit}
+      >
+        <S.Form>
+          <S.FormContentBox>
+            {fieldsList.map((field, index) => {
+              return (
+                <S.FieldWrapper key={index} className={`field-${field.id}`}>
+                  <S.Label htmlFor={field.id}>{`${field.label}:`}</S.Label>
+                  <Field
+                    id={field.id}
+                    type={field.type}
+                    placeholder={field.placeholder}
+                    name={field.id}
+                    mask={field.mask}
+                    component={Input}
+                  />
+                  <ErrorMessage name={field.id}>
+                    {(msg) => <S.Message>{msg}</S.Message>}
+                  </ErrorMessage>
+                </S.FieldWrapper>
+              )
+            })}
+          </S.FormContentBox>
+          {children}
+        </S.Form>
+      </Formik>
+    </>
   )
 }
 

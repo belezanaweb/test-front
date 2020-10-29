@@ -36,9 +36,6 @@ export const fields: IFields[] = [
       {
         type: 'min',
         value: 16
-      },
-      {
-        type: 'only_numbers'
       }
     ]
   },

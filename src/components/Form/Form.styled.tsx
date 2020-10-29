@@ -6,17 +6,25 @@ export const Message = styled.span`
 `
 export const Label = styled.label`
   color: ${({ theme }) => theme.colors.base};
+  display: inline-block;
   font-size: 1.2rem;
   font-weight: bold;
   line-height: 1.4rem;
-  margin-bottom: 0.3125rem;
+  margin-bottom: 0.5rem;
 `
 
 export const FieldWrapper = styled.div`
   margin-bottom: 2.5rem;
 `
 
-export const Form = styled(ExternalForm)`
+export const Form = styled(ExternalForm)``
+
+export const FormContentBox = styled.section`
+  background-color: ${({ theme }) => theme.colors.baseLighten};
+  border-radius: 0.3rem;
+  box-shadow: 0.1rem 0.1rem 0.5rem 0 rgba(0, 0, 29, 0.22);
+  padding: 1.2rem;
+
   display: grid;
   grid-template-columns: 50% 50%;
   grid-template-rows: auto;

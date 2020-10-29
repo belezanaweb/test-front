@@ -5,7 +5,7 @@ import Loading from '../components/Loading'
 import NotFound from '../pages/NotFound'
 
 const CartContainer = React.lazy(() => import('../redux/containers/CartContainer'))
-const Payment = React.lazy(() => import('../pages/Payment'))
+const PaymentContainer = React.lazy(() => import('../redux/containers/PaymentContainer'))
 const Success = React.lazy(() => import('../pages/Success'))
 
 export const Routes = () => {
@@ -13,7 +13,7 @@ export const Routes = () => {
     <Suspense fallback={<Loading />}>
       <Switch>
         <Route path="/" exact component={CartContainer} />
-        <Route path="/pagamento" component={Payment} />
+        <Route path="/pagamento" component={PaymentContainer} />
         <Route path="/sucesso" component={Success} />
         <Route path="*">
           <NotFound />
