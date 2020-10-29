@@ -7,6 +7,7 @@ import Routes from './routes'
 import store from './redux/store'
 import theme from './theme'
 import GlobalStyle from './styles'
+import Layout from './layouts'
 
 function App() {
   return (
@@ -15,7 +16,9 @@ function App() {
         <ThemeProvider theme={theme}>
           <GlobalStyle />
           <Router>
-            <Routes />
+            <Layout>
+              <Routes />
+            </Layout>
           </Router>
         </ThemeProvider>
       </React.StrictMode>
