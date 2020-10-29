@@ -17,7 +17,11 @@ export const FieldWrapper = styled.div`
   margin-bottom: 2.5rem;
 `
 
-export const Form = styled(ExternalForm)``
+export const Form = styled(ExternalForm)`
+  @media (min-width: 768px) {
+    display: flex;
+  }
+`
 
 export const FormContentBox = styled.section`
   background-color: ${({ theme }) => theme.colors.baseLighten};
@@ -48,5 +52,10 @@ export const FormContentBox = styled.section`
 
   .field-cvv {
     grid-area: row3b;
+  }
+
+  @media (min-width: 768px) {
+    margin-right: 2rem;
+    width: 60%;
   }
 `

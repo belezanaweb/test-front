@@ -19,3 +19,27 @@ export const PaymentText = styled.p`
   font-size: 1.4rem;
   line-height: 1.7rem;
 `
+
+export const SuccessData = styled.div`
+  @media (min-width: 768px) {
+    display: flex;
+    flex-direction: row;
+  }
+`
+
+export const SuccessProduct = styled.div`
+  @media (min-width: 768px) {
+    margin-right: 2rem;
+    width: 60%;
+  }
+`
+
+export const SuccessTable = styled.div`
+  @media (min-width: 768px) {
+    width: 40%;
+
+    section {
+      margin-top: 0;
+    }
+  }
+`

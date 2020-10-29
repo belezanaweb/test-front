@@ -17,6 +17,7 @@ export const Success = ({ productData, productItems, cardData }: ISuccessPage) =
         <Check width={40} height={40} fill="#FF7800" />
         <S.SuccessText>Compra efetuada com sucesso</S.SuccessText>
       </S.SuccessWrapper>
+
       <Title>Pagamento</Title>
       <ContentBox>
         <S.PaymentText>{hideCardFirstNumbers(cardData.number.toString())}</S.PaymentText>
@@ -24,23 +25,29 @@ export const Success = ({ productData, productItems, cardData }: ISuccessPage) =
         <S.PaymentText>{cardData.expirationDate}</S.PaymentText>
       </ContentBox>
       <Title>Produtos</Title>
-      <ContentBox>
-        {productItems.map((item) => {
-          return (
-            <ProductCard
-              key={item.product.sku}
-              name={item.product.name}
-              imageObjects={item.product.imageObjects}
-            />
-          )
-        })}
-      </ContentBox>
-      <CartTable
-        subTotal={productData.subTotal}
-        shippingTotal={productData.shippingTotal}
-        discount={productData.discount}
-        total={productData.total}
-      />
+      <S.SuccessData>
+        <S.SuccessProduct>
+          <ContentBox>
+            {productItems.map((item) => {
+              return (
+                <ProductCard
+                  key={item.product.sku}
+                  name={item.product.name}
+                  imageObjects={item.product.imageObjects}
+                />
+              )
+            })}
+          </ContentBox>
+        </S.SuccessProduct>
+        <S.SuccessTable>
+          <CartTable
+            subTotal={productData.subTotal}
+            shippingTotal={productData.shippingTotal}
+            discount={productData.discount}
+            total={productData.total}
+          />
+        </S.SuccessTable>
+      </S.SuccessData>
     </>
   )
 }

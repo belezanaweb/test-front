@@ -1,6 +1,7 @@
 import styled from 'styled-components/macro'
 
 export const ProductCard = styled.div`
+  align-items: center;
   background-color: ${({ theme }) => theme.colors.baseLighten};
   border: 1px solid ${({ theme }) => theme.colors.base};
   border-radius: 0.3rem;
@@ -16,7 +17,9 @@ export const ProductCard = styled.div`
 
 export const ProductImage = styled.img`
   margin-right: 1.5rem;
-  flex: 0 0 7rem;
+  @media (min-width: 768px) {
+    width: 20rem;
+  }
 `
 
 export const ProductDescWrapper = styled.div``
