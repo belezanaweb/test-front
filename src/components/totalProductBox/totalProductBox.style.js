@@ -4,10 +4,11 @@ const TotalProductContainer = styled.div`
   box-sizing: border-box;
   border-radius: 3px;
   border: 1px solid #ccc;
-  margin: 20px 10px;
+  margin: 20px 0px;
   display: grid;
   grid-gap: 8px;
   padding: 10px;
+  text-transform: uppercase;
 `
 
 const ValueItem = styled.div`

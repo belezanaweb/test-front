@@ -1,13 +1,17 @@
 import React, { useEffect } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
+import PropTypes from 'prop-types'
+
 import Paper from '../../components/paper'
 import ProductBox from '../../components/productBox'
 import TotalProductBox from '../../components/totalProductBox'
 import ProductsContainer from './bag.style'
+import Button from '../../components/button'
+
 import getBagProducts from './bag.service'
 import LOAD_BAG from '../../store/actions/bag'
 
-const Bag = () => {
+const Bag = ({ history }) => {
   const bag = useSelector((state) => state.bag)
   const dispatch = useDispatch()
 
@@ -19,6 +23,10 @@ const Bag = () => {
 
     getProducts()
   }, [dispatch])
+
+  const goToPaymentPage = () => {
+    history.push('/payment')
+  }
 
   return (
     <>
@@ -42,10 +50,21 @@ const Bag = () => {
             subTotal={bag.subTotal}
             shippingTotal={bag.shippingTotal}
           />
+          <Button onClick={() => goToPaymentPage()}>Seguir para o pagamento</Button>
         </>
       )}
     </>
   )
+}
+
+Bag.defaultProps = {
+  history: {}
+}
+
+Bag.propTypes = {
+  history: PropTypes.shape({
+    push: PropTypes.func.isRequired
+  })
 }
 
 export default Bag

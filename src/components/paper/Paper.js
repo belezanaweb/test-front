@@ -4,10 +4,10 @@ import PaperContainer from './paper.style'
 import Title from '../title'
 
 const Paper = ({ title, children }) => (
-  <>
+  <div>
     {title && <Title>{title}</Title>}
     <PaperContainer>{children}</PaperContainer>
-  </>
+  </div>
 )
 
 Paper.defaultProps = {
