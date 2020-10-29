@@ -21,16 +21,17 @@ const Payment = ({ history }) => {
   const dispatch = useDispatch()
 
   useEffect(() => {
+    if (!bag || !bag.items) {
+      history.push('/')
+    }
+  }, [bag, history])
+
+  useEffect(() => {
     dispatch({
       type: CHANGE_POSITION,
       breadcrumbLabel: 'pagamento'
     })
   }, [dispatch])
-
-  if (!bag || !bag.items) {
-    history.push('/')
-    return false
-  }
 
   const handleName = (event) => {
     const { value, name } = event.target
@@ -43,7 +44,7 @@ const Payment = ({ history }) => {
       type: SAVE_CREDIT_CARD,
       creditCard: { ...values }
     })
-    history.push('/')
+    history.push('/confirmation')
   }
 
   const required = 'Campo obrigatório'
