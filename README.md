@@ -42,7 +42,13 @@ Os padrões citados aqui são os mais simples e que podem passar desapercebido.
 
 ### Para rodar o projeto
 
-Basta utilizar: 
+Basta clonar:
+`git@github.com:RSPereira/test-front.git`
+
+Instalar suas dependências:
+`npm install`
+
+Depois é só iniciar com: 
 `npm start`
 
 Para os testes:
