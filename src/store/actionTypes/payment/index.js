@@ -1,0 +1,3 @@
+const SAVE_CREDIT_CARD = 'SAVE_CREDIT_CARD'
+
+export default SAVE_CREDIT_CARD

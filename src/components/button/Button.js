@@ -3,9 +3,10 @@ import PropTypes from 'prop-types'
 import { ButtonContainer, Text } from './button.style'
 
 const Button = (props) => {
-  const { children, onClick } = props
+  const { children } = props
+
   return (
-    <ButtonContainer onClick={onClick}>
+    <ButtonContainer {...props}>
       <Text>{children}</Text>
     </ButtonContainer>
   )

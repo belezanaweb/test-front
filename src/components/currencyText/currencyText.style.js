@@ -8,4 +8,8 @@ const Prefix = styled.div`
   margin-right: 4px;
 `
 
-export { CurrencyContainer, Prefix }
+const Minus = styled.div`
+  margin-right: 4px;
+`
+
+export { CurrencyContainer, Prefix, Minus }

@@ -15,7 +15,7 @@ const ButtonContainer = styled.button`
   }
 `
 
-const Text = styled.label`
+const Text = styled.div`
   color: #fff;
   font-size: 20px;
   font-weight: 700;
@@ -23,6 +23,9 @@ const Text = styled.label`
   line-height: 24px;
   text-align: center;
   text-transform: uppercase;
+  :hover {
+    cursor: pointer;
+  }
 `
 
 export { ButtonContainer, Text }

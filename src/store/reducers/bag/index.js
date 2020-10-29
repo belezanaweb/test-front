@@ -1,13 +1,13 @@
-import LOAD_BAG from '../../actions/bag'
+import LOAD_BAG from '../../actionTypes/bag'
 
-const INITIAL_STATE = []
+const INITIAL_STATE = {}
 
 function bagReducer(state = INITIAL_STATE, { type, bag }) {
   switch (type) {
     case LOAD_BAG:
       return {
         ...state,
-        bag
+        ...bag
       }
     default:
       return state

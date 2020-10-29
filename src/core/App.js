@@ -1,26 +1,36 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import './App.css'
-import { Provider } from 'react-redux'
+import { useSelector, useDispatch } from 'react-redux'
 
 import Breadcrumb from '../components/breadcrumb'
 import { AppContainer, AppRouter } from './app.style'
 import getBreadcrumbItems from '../components/breadcrumb/breadcrumb.service'
-import store from '../store'
 import Routers from './router'
+import { LOAD_BREADCRUMB } from '../store/actionTypes/breadcrumb'
 
-const breadcrumbitems = getBreadcrumbItems()
+const App = () => {
+  const breadcrumb = useSelector((state) => state.breadcrumb)
+  const dispatch = useDispatch()
 
-const App = () => (
-  <>
-    <Provider store={store}>
-      <Breadcrumb items={breadcrumbitems} />
+  useEffect(() => {
+    async function getBreadcrumb() {
+      const data = getBreadcrumbItems()
+      dispatch({ type: LOAD_BREADCRUMB, breadcrumb: data })
+    }
+
+    getBreadcrumb()
+  }, [dispatch])
+
+  return (
+    <>
+      <Breadcrumb items={breadcrumb} />
       <AppContainer>
         <AppRouter>
           <Routers />
         </AppRouter>
       </AppContainer>
-    </Provider>
-  </>
-)
+    </>
+  )
+}
 
 export default App

@@ -12,12 +12,12 @@ const Paper = ({ title, children }) => (
 
 Paper.defaultProps = {
   title: '',
-  children: PropTypes.objectOf(PropTypes.object)
+  children: PropTypes.any
 }
 
 Paper.propTypes = {
   title: PropTypes.string,
-  children: PropTypes.objectOf(PropTypes.any)
+  children: PropTypes.oneOfType([PropTypes.string, PropTypes.element, PropTypes.array])
 }
 
 export default Paper

@@ -1,5 +1,10 @@
 import styled from 'styled-components'
 
+const ProductsContainer = styled.div`
+  display: grid;
+  grid-gap: 15px;
+`
+
 const ProductContainer = styled.div`
   border-radius: 3px;
   border: 1px solid #eee;
@@ -38,4 +43,11 @@ const ProductPriceContainer = styled.div`
   justify-content: flex-end;
 `
 
-export { ProductContainer, ProductImage, ProductDescription, ProductPriceContainer, ProductDetails }
+export {
+  ProductsContainer,
+  ProductContainer,
+  ProductImage,
+  ProductDescription,
+  ProductPriceContainer,
+  ProductDetails
+}

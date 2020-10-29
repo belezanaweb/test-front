@@ -1,7 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { TotalProductContainer, ValueItem } from './totalProductBox.style'
-import CurrencyText from '../currencyText'
+import CurrencyText from '../../components/currencyText'
 
 const TotalProductBox = (props) => {
   const { total, subTotal, discount, shippingTotal } = props
@@ -19,7 +19,7 @@ const TotalProductBox = (props) => {
         {items.map((item) => (
           <ValueItem isTotal={item.isTotal} isDiscount={item.isDiscount} key={item.label}>
             <span>{item.label}</span>
-            <CurrencyText value={item.value} />
+            <CurrencyText showMinusSimbol={item.isDiscount} value={item.value} />
           </ValueItem>
         ))}
       </TotalProductContainer>

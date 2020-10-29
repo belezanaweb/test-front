@@ -15,7 +15,7 @@ const Breadcrumb = (props = {}) => {
       <BreadcrumbItemBox>
         {breadcrumbItems &&
           breadcrumbItems.map((breadcrumbItem) => (
-            <BreadcrumbItem isSelected={breadcrumbItem.isSelected} key={breadcrumbItem.id}>
+            <BreadcrumbItem isSelected={breadcrumbItem.isSelected} key={breadcrumbItem.label}>
               {breadcrumbItem.label}
             </BreadcrumbItem>
           ))}

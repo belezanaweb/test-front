@@ -1,17 +1,14 @@
 const getBreadcrumbItems = () => [
   {
-    id: 1,
-    label: 'Sacola',
+    label: 'sacola',
     isSelected: true
   },
   {
-    id: 2,
-    label: 'Pagamento',
+    label: 'pagamento',
     isSelected: false
   },
   {
-    id: 3,
-    label: 'Confirmação',
+    label: 'confirmação',
     isSelected: false
   }
 ]

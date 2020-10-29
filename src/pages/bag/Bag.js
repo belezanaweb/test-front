@@ -3,13 +3,13 @@ import { useSelector, useDispatch } from 'react-redux'
 import PropTypes from 'prop-types'
 
 import Paper from '../../components/paper'
-import ProductBox from '../../components/productBox'
-import TotalProductBox from '../../components/totalProductBox'
-import ProductsContainer from './bag.style'
+import ProductBox from '../../pageComponents/productBox'
+import TotalProductBox from '../../pageComponents/totalProductBox'
 import Button from '../../components/button'
 
 import getBagProducts from './bag.service'
-import LOAD_BAG from '../../store/actions/bag'
+import LOAD_BAG from '../../store/actionTypes/bag'
+import { CHANGE_POSITION } from '../../store/actionTypes/breadcrumb'
 
 const Bag = ({ history }) => {
   const bag = useSelector((state) => state.bag)
@@ -21,6 +21,11 @@ const Bag = ({ history }) => {
       dispatch({ type: LOAD_BAG, bag: data })
     }
 
+    dispatch({
+      type: CHANGE_POSITION,
+      breadcrumbLabel: 'sacola'
+    })
+
     getProducts()
   }, [dispatch])
 
@@ -30,19 +35,10 @@ const Bag = ({ history }) => {
 
   return (
     <>
-      {bag && bag.items.length > 0 && (
+      {bag && bag.items && bag.items.length > 0 && (
         <>
           <Paper title="Produtos" padding="12px 12px 13px 13px">
-            <ProductsContainer>
-              {bag.items.map((item) => (
-                <ProductBox
-                  key={item.product.sku}
-                  image={item.product.imageObjects[0].medium}
-                  description={item.product.name}
-                  price={item.product.priceSpecification.price}
-                />
-              ))}
-            </ProductsContainer>
+            <ProductBox products={bag.items} />
           </Paper>
           <TotalProductBox
             total={bag.total}
