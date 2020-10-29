@@ -4,21 +4,23 @@ Mesmo sendo o projeto bem simples, a escolha da stack foi pensada em que ele pos
 
 ## Definição das techs da stack utilizada com seus motivos
 
-- Commitizen (Será utilizado para padronização dos commits)
-- Eslint (Será o Lint responsável pela sintaxe do nosso código)
-- Jest (Será o framework de teste)
-- Prettier (Será o responsável por manter o padrão da formatação do nosso código)
-- React (Lib de maior afinidade e também apontada como diferencial)
-- React-router-dom (Para criação das URLs únicas que é um requisito e com code split)
-- React-testing-library (Será a lib utilizada para testar os componentes react)
-- Redux (Lib para persistência dos dados)
-- Storybook (Será a ferramenta utilizada para criação do styleguide)
-- Styled-components (Será o CSS-in-JS utilizado e apontado como diferencial)
-- Typescript (Para tipar o conteúdo)
+- [Commitizen](https://github.com/commitizen/cz-cli) (Será utilizado para padronização dos commits)
+- [Eslint](https://eslint.org/) (Será o Lint responsável pela sintaxe do nosso código)
+- [Formik](https://formik.org/docs/overview) (Será responsável por facilitar a criação do formulário)
+- [Jest](https://jestjs.io/) (Será o framework de teste)
+- [Prettier](https://prettier.io/) (Será o responsável por manter o padrão da formatação do nosso código)
+- [React](https://pt-br.reactjs.org/) (Lib de maior afinidade e também apontada como diferencial)
+- [React-router-dom](https://reactrouter.com/web/guides/quick-start) (Para criação das URLs únicas que é um requisito e com code split)
+- [React-testing-library](https://github.com/testing-library/react-testing-library) (Será a lib utilizada para testar os componentes react)
+- [Redux](https://redux.js.org/) (Lib para persistência dos dados)
+- [Storybook](https://storybook.js.org/) (Será a ferramenta utilizada para criação do styleguide)
+- [Styled-components](https://styled-components.com/) (Será o CSS-in-JS utilizado e apontado como diferencial)
+- [Validatorjs](https://www.npmjs.com/package/validatorjs) (Será o responsável pelas validações do formulário)
+- [Typescript](https://www.typescriptlang.org/) (Para tipar o conteúdo)
 
 ### Padrões adotados
 
-Os padrões citados aqui são os para as coisas mais simples e que podem passar desapercebido.
+Os padrões citados aqui são os mais simples e que podem passar desapercebido.
 
 1. Nomenclatura 
 
@@ -51,4 +53,7 @@ Para o lint:
 
 Para o build:
 `npm run build`
+
+Para o storybook:
+`npm run storybook`
 
