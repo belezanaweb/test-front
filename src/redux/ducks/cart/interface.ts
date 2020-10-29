@@ -1,5 +1,5 @@
-interface IImages {
-  feature: boolean
+export interface IImages {
+  featured: boolean
   thumbnail: string
   small: string
   medium: string
@@ -8,9 +8,9 @@ interface IImages {
   valid: boolean
 }
 
-interface IPriceSpec {
+export interface IPriceSpec {
   sku: string
-  prince: number
+  price: number
   originalPrice: number
   maxPrice: number
   percent: number
