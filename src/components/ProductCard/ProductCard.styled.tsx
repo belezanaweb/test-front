@@ -1,11 +1,17 @@
 import styled from 'styled-components/macro'
 
 export const ProductCard = styled.div`
+  background-color: ${({ theme }) => theme.colors.baseLighten};
   border: 1px solid ${({ theme }) => theme.colors.base};
   border-radius: 0.3rem;
   display: flex;
   justify-content: space-between;
   padding: 1rem;
+  margin-bottom: 1.5rem;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
 `
 
 export const ProductImage = styled.img`

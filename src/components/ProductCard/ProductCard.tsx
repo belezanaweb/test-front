@@ -10,7 +10,7 @@ export const ProductCard = (props: IProductCard) => {
   return (
     <S.ProductCard>
       <S.ProductImage
-        srcSet={`${images.small} 360w, ${images.medium} 768w, ${images.large} 1200w, ${images.extraLarge} 1980w`}
+        srcSet={`${images.small} 360w, ${images.medium} 768w, ${images.large} 1200w`}
         src={images.small}
         alt={props.name}
       />

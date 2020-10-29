@@ -4,6 +4,7 @@ export const CartTable = styled.section`
   border: 1px solid ${({ theme }) => theme.colors.base};
   border-radius: 0.3rem;
   padding: 1.5rem;
+  margin: 2rem 0;
 `
 
 export const CartLine = styled.p`
