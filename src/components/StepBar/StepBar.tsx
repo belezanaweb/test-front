@@ -1,18 +1,14 @@
 import React, { FC } from 'react'
+import { useRouteMatch } from 'react-router-dom'
 
-import { IStepBar } from './interface'
 import * as S from './StepBar.styled'
 
-export const StepBar: FC<IStepBar> = ({ steps }) => {
+export const StepBar: FC = () => {
   return (
     <S.StepBar>
-      {steps.map((step, index) => {
-        return (
-          <S.Step key={`step-${index}`} isActive={step.isActive}>
-            {step.name}
-          </S.Step>
-        )
-      })}
+      <S.Step isActive={useRouteMatch('/')?.isExact}>Sacola</S.Step>
+      <S.Step isActive={useRouteMatch('/pagamento')?.isExact}>Pagamento</S.Step>
+      <S.Step isActive={useRouteMatch('/sucesso')?.isExact}>Confirmação</S.Step>
     </S.StepBar>
   )
 }

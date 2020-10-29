@@ -7,12 +7,4 @@ export default {
   component: StepBar
 }
 
-export const Default: React.FC<{}> = () => (
-  <StepBar
-    steps={[
-      { name: 'Sacola', isActive: false },
-      { name: 'Pagamento', isActive: true },
-      { name: 'Confirmação', isActive: false }
-    ]}
-  />
-)
+export const Default: React.FC<{}> = () => <StepBar />

@@ -5,13 +5,13 @@ import { IStyledStep } from './interface'
 export const StepBar = styled.ul`
   display: flex;
   justify-content: space-between;
+  padding: 1.2rem 2.5rem;
 `
 
 export const Step = styled.li<IStyledStep>`
   color: ${({ isActive, theme }) => (isActive ? theme.colors.activeLighten : theme.colors.base)};
   font-size: 1.3rem;
   font-weight: bold;
-  padding: 0.8rem 0.7rem;
   transition: color 0.2s ease 0s;
   text-transform: uppercase;
 `
