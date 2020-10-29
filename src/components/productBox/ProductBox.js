@@ -7,13 +7,16 @@ import {
   ProductDescription,
   ProductPriceContainer
 } from './productBox.style'
+import CurrencyText from '../currencyText'
 
 const ProductBox = ({ image, description, price }) => (
   <ProductContainer>
     <ProductImage src={image} />
     <ProductDetails>
       <ProductDescription>{description}</ProductDescription>
-      <ProductPriceContainer>{price}</ProductPriceContainer>
+      <ProductPriceContainer>
+        <CurrencyText value={price} />
+      </ProductPriceContainer>
     </ProductDetails>
   </ProductContainer>
 )
