@@ -1,23 +1,44 @@
-import React, { useEffect } from 'react'
-import { useDispatch, useSelector } from 'react-redux'
+import React from 'react'
+import { useHistory } from 'react-router-dom'
 
-import { RootState } from '../../redux/store'
-import { fetchCartProducts } from '../../redux/ducks/cart'
+import { ICartPage } from './interface'
 
-export const Cart = () => {
-  const dispatch = useDispatch()
-  const cart = useSelector((state: RootState) => state.cart)
+import Button from '../../components/Button'
+import CartTable from '../../components/CartTable'
+import ContentBox from '../../components/ContentBox'
+import ProductCard from '../../components/ProductCard'
+import Title from '../../components/Title'
 
-  useEffect(() => {
-    dispatch(fetchCartProducts())
-  }, [dispatch])
+export const Cart = ({ productItems, productData }: ICartPage) => {
+  const history = useHistory()
+
+  const handleClick = () => {
+    history.push('/pagamento')
+  }
 
   return (
     <>
-      <h1>Cart</h1>
-      {cart?.data?.items?.map((item) => {
-        return <p key={item.product.sku}>{item.product.name}</p>
-      })}
+      <Title>Produtos</Title>
+
+      <ContentBox>
+        {productItems.map((item) => {
+          return (
+            <ProductCard
+              key={item.product.sku}
+              name={item.product.name}
+              imageObjects={item.product.imageObjects}
+              priceSpecification={item.product.priceSpecification}
+            />
+          )
+        })}
+      </ContentBox>
+      <CartTable
+        subTotal={productData.subTotal}
+        shippingTotal={productData.shippingTotal}
+        discount={productData.discount}
+        total={productData.total}
+      />
+      <Button onClick={handleClick}>Seguir para o pagamento</Button>
     </>
   )
 }

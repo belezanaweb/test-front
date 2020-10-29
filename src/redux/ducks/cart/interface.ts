@@ -24,7 +24,7 @@ interface IProduct {
   priceSpecification: IPriceSpec
 }
 
-interface IItens {
+export interface IItens {
   quantity: number
   product: IProduct
 }
