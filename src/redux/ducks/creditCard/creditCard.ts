@@ -5,7 +5,7 @@ import { ICreditCard } from './interface'
 const initialState: ICreditCard = {
   holder: '',
   number: 0,
-  expirationDate: new Date().getTime(),
+  expirationDate: '',
   cvv: 0
 }
 

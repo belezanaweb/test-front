@@ -1,0 +1,98 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<CartTable /> should match a snapshot 1`] = `
+.c0 {
+  border: 1px solid #CCCCCC;
+  border-radius: 0.3rem;
+  padding: 1.5rem;
+  margin: 2rem 0;
+}
+
+.c1 {
+  color: #212122;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  font-size: 1.4rem;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  line-height: 1.7rem;
+  margin-bottom: 0.8rem;
+  text-transform: uppercase;
+}
+
+.c2 {
+  color: #FF7800;
+}
+
+.c3 {
+  font-weight: bold;
+  margin-bottom: 0;
+  margin-top: 1.8rem;
+}
+
+<section
+  class="c0"
+>
+  <p
+    class="c1"
+  >
+    <span
+      class="CartItem-g9xbhw-4"
+    >
+      Produtos
+    </span>
+    <span
+      class="CartItem-g9xbhw-4"
+    >
+      R$ 500.00
+    </span>
+  </p>
+  <p
+    class="c1"
+  >
+    <span
+      class="CartItem-g9xbhw-4"
+    >
+      Frete
+    </span>
+    <span
+      class="CartItem-g9xbhw-4"
+    >
+      R$ 10.00
+    </span>
+  </p>
+  <p
+    class="c1 c2"
+  >
+    <span
+      class="CartItem-g9xbhw-4"
+    >
+      Desconto
+    </span>
+    <span
+      class="CartItem-g9xbhw-4"
+    >
+      - 
+      R$ 20.00
+    </span>
+  </p>
+  <p
+    class="c1 c3"
+  >
+    <span
+      class="CartItem-g9xbhw-4"
+    >
+      Total
+    </span>
+    <span
+      class="CartItem-g9xbhw-4"
+    >
+      R$ 600.00
+    </span>
+  </p>
+</section>
+`;

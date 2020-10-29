@@ -33,15 +33,6 @@ export const fields = [
     label: 'Nome da mãe'
   },
   {
-    id: 'account.cpf',
-    label: 'CPF',
-    validations: [
-      {
-        type: 'check_cpf'
-      }
-    ]
-  },
-  {
     id: 'account.phone.areaCode',
     label: 'Código de área',
     validations: [

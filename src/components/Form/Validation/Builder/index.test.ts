@@ -26,6 +26,6 @@ describe('Validation Builder', () => {
   })
 
   it('should return correct data', () => {
-    expect(builder.formatValidation(fields[4])).toHaveProperty('rules', correctData)
+    expect(builder.formatValidation(fields[3])).toHaveProperty('rules', correctData)
   })
 })

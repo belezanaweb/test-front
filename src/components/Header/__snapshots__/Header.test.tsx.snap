@@ -1,0 +1,61 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Header /> should match a snapshot 1`] = `
+.c0 {
+  box-shadow: 0.1rem 0.1rem 0.5rem 0 rgba(0,0,29,0.22);
+}
+
+.c1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  padding: 1.2rem 2.5rem;
+}
+
+.c2 {
+  color: #FF7800;
+  font-size: 1.3rem;
+  font-weight: bold;
+  -webkit-transition: color 0.2s ease 0s;
+  transition: color 0.2s ease 0s;
+  text-transform: uppercase;
+}
+
+.c3 {
+  color: #CCCCCC;
+  font-size: 1.3rem;
+  font-weight: bold;
+  -webkit-transition: color 0.2s ease 0s;
+  transition: color 0.2s ease 0s;
+  text-transform: uppercase;
+}
+
+<header
+  class="c0"
+>
+  <ul
+    class="c1"
+  >
+    <li
+      class="c2"
+    >
+      Sacola
+    </li>
+    <li
+      class="c3"
+    >
+      Pagamento
+    </li>
+    <li
+      class="c3"
+    >
+      Confirmação
+    </li>
+  </ul>
+</header>
+`;

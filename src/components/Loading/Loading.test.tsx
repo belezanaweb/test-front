@@ -3,8 +3,10 @@ import { render, screen } from '@testing-library/react'
 
 import Loading from './'
 
-test('render Loading component', () => {
-  render(<Loading />)
+describe('<Loading />', () => {
+  it('should render Loading component', () => {
+    render(<Loading />)
 
-  expect(screen.getByText(/Loading/i)).toBeInTheDocument()
+    expect(screen.getByText(/Loading/i)).toBeInTheDocument()
+  })
 })

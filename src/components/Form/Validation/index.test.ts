@@ -14,10 +14,10 @@ describe('Validation', () => {
   })
 
   it('should have property error', () => {
-    expect(validator.validate(values)).toHaveProperty('errors')
+    expect(validator.validateForm(values)).toHaveProperty('errors')
   })
 
   it('should validade fields and return errors', () => {
-    expect(validator.validate(values)).toEqual(formErrors)
+    expect(validator.validateForm(values)).toEqual(formErrors)
   })
 })

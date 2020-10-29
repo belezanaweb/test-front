@@ -1,0 +1,79 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<ProductCard /> should match a snapshot 1`] = `
+.c0 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  background-color: #FFFFFF;
+  border: 1px solid #CCCCCC;
+  border-radius: 0.3rem;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  padding: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.c0:last-child {
+  margin-bottom: 0;
+}
+
+.c1 {
+  margin-right: 1.5rem;
+}
+
+.c2 {
+  color: #212122;
+  font-size: 1.3rem;
+  font-weight: normal;
+  line-height: 1.6rem;
+  margin-bottom: 1.5rem;
+}
+
+.c3 {
+  color: #212122;
+  display: block;
+  font-size: 1.4rem;
+  font-weight: bold;
+  line-height: 1.7rem;
+  text-align: right;
+}
+
+@media (min-width:768px) {
+  .c1 {
+    width: 20rem;
+  }
+}
+
+<div
+  class="c0"
+>
+  <img
+    alt="Good Girl Carolina Herrera Eau de Parfum - Perfume Feminino 30ml"
+    class="c1"
+    src="https://res.cloudinary.com/beleza-na-web/image/upload/f_auto,fl_progressive,q_auto:best/v1/imagens/2/good-girl-carolina-herrera-eau-de-parfum-perfume-feminino-30ml-38273-1960525940762131267.jpg"
+    srcset="https://res.cloudinary.com/beleza-na-web/image/upload/f_auto,fl_progressive,q_auto:best/v1/imagens/2/good-girl-carolina-herrera-eau-de-parfum-perfume-feminino-30ml-38273-1960525940762131267.jpg 360w, https://res.cloudinary.com/beleza-na-web/image/upload/f_auto,fl_progressive,q_auto:best/v1/imagens/6/good-girl-carolina-herrera-eau-de-parfum-perfume-feminino-30ml-38273-1960525940762131267.jpg 768w, https://res.cloudinary.com/beleza-na-web/image/upload/f_auto,fl_progressive,q_auto:best/v1/imagens/4/good-girl-carolina-herrera-eau-de-parfum-perfume-feminino-30ml-38273-1960525940762131267.jpg 1200w"
+  />
+  <div
+    class="ProductDescWrapper-sc-1vyd8kb-2"
+  >
+    <h2
+      class="c2"
+    >
+      Good Girl Carolina Herrera Eau de Parfum - Perfume Feminino 30ml
+    </h2>
+    <span
+      class="c3"
+    >
+      R$ 299.00
+    </span>
+  </div>
+</div>
+`;

@@ -11,21 +11,23 @@ describe('<Routes />', () => {
 
   it('should render Cart', async () => {
     render(<App />)
-    await waitFor(() => expect(screen.getByText(/cart/i)).toBeInTheDocument())
+    await waitFor(() => expect(screen.getByText(/seguir para o pagamento/i)).toBeInTheDocument())
   })
 
   it('should render Payment', async () => {
     window.history.pushState({}, 'Test page', '/pagamento')
     render(<App />)
 
-    await waitFor(() => expect(screen.getByText(/payment/i)).toBeInTheDocument())
+    await waitFor(() => expect(screen.getByText(/cartão de crédito/i)).toBeInTheDocument())
   })
 
   it('should render Success', async () => {
     window.history.pushState({}, 'Test page', '/sucesso')
     render(<App />)
 
-    await waitFor(() => expect(screen.getByText(/success/i)).toBeInTheDocument())
+    await waitFor(() =>
+      expect(screen.getByText(/Compra efetuada com sucesso/i)).toBeInTheDocument()
+    )
   })
 
   it('should render NotFound', async () => {
