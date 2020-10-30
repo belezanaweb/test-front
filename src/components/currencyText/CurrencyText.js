@@ -5,7 +5,6 @@ import { CurrencyContainer, Prefix, Minus } from './currencyText.style'
 
 const CurrencyText = (props) => {
   const { value, showMinusSimbol } = props
-  const normalizedNumber = value.toFixed(2)
 
   return (
     <CurrencyContainer>
@@ -13,10 +12,11 @@ const CurrencyText = (props) => {
 
       <Prefix>R$</Prefix>
       <NumberFormat
-        value={normalizedNumber}
+        value={value}
         displayType="text"
-        thousandSeparator
         fixedDecimalScale
+        decimalScale={2}
+        decimalSeparator=","
       />
     </CurrencyContainer>
   )

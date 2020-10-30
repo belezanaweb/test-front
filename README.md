@@ -1,41 +1,32 @@
-## Frontend Test
+### Beleza na Web
 
-Faça um fork deste repositório e finalizar o teste, submeta um pull request para o repositório que nosso time será notificado.
+## O projeto
 
-O teste consiste em um checkout simples contendo 3 passos (carrinho, pagamento e sucesso) [Veja o Layout](https://projects.invisionapp.com/prototype/font-test-cji0j0khf005c1t0132358e8k)
+O projeto tem, como objetivo, proporcionar uma experiência de compra, a partir dos produtos na "sacola".
+Dessa forma, é possível visualizar os produtos na sacola de compras, prosseguir para o pagamento e, após isso,
+uma tela de confirmação com todos os produtos e valores totais.
 
-**Faça quando quiser/puder (madrugada, fim de semana, etc)**
+## Como iniciar a aplicação
+Para iniciar a aplicação em ambiente de desenvolvimento, execute os seguintes comandos:
 
-### Requerimentos
+* instale todas as dependências da aplicação com `npm install`
+* inicie o ambiente com `npm run start`
 
-- Pixel perfect ([nesse link](https://projects.invisionapp.com/prototype/font-test-cji0j0khf005c1t0132358e8k), você pode inspecionar para ver espaçamentos, fonte, tamanho, etc)
-- A aplicação precisa ser responsiva, utilizando o conceito de mobile-first. Use sua imaginação para entregar uma experiência boa no desktop.
-- Renderize cada passo em uma URL única (lib de rotas).
+### Stack principal
+- React
 
+### Stacks utilizadas
 
-### Passo 1 - Carrinho:
-  - Consuma o [esse endpoint](http://www.mocky.io/v2/5b15c4923100004a006f3c07) e liste os itens do carrinho, bem como o resumo do carrinho;
-  - Persista o conteúdo do JSON para ser usado nas próximas etapas;
+- react-hook-form: utilizado para o formulário de pagamento;
+- react-input-mask: utilizado para inserir máscaras nos campos do formulário;
+- react-number-format: responsável pela formatação de moeda em textos;
+- redux: armazenador de estado da aplicação, como: dados da sacola e dados do cartão;
+- react-router-dom: controlador de rotas da aplicação;
+- styled-components: responsável pelo estilo dos componentes;
+- prop-types: utilizado para colocar tipos nas propriedades passadas para os componentes;
+- axios: responsável pela comunicação com API.
 
-### Passo 2 - Pagamento: 
-  - Exiba um form com campos de cartão de crédito com validação em cada campo;
-  - Habilite o botão de Finalizar Pedido apenas se o form esteja válido;
+### Testes
 
-### Passo 3 - Sucesso: 
-  - Todo o conteúdo deverá ser exibido a partir dos dados persistidos;
-  
-### O que vamos avaliar:
-  - Organização do código;
-  - Mensagens (em inglês) e mudanças nos commits;
-  - Composição/reutilização de componentes;
-  - Testes unitários;
-  - O motivo de ter escolhido cada tech da stack;
-  - Como rodar sua aplicação ;)
-
-### Diferenciais:
-  - Split bundle por rota (cada step ter um bundle separado para otimizar a performance);
-  - CSS in JS;
-  - React;
-
-### Fim:
-Ao finalizar o teste, submeta um pull request para o repositório que nosso time será notificado. Se tiver alguma observação, escreva no pull request.
+Os testes se encontram dentro da pasta *tests*, dentro de cada componente na pasta *components*
+- pacote utilizado: @testing-library/react

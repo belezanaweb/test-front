@@ -4,13 +4,13 @@ import { Provider } from 'react-redux'
 import store from '../store'
 import App from './App'
 
-test('renders breadcrumb correctly', () => {
+test('renders app with breadcrumb correctly', () => {
   const { getByText } = render(
     <Provider store={store}>
       <App />
     </Provider>
   )
-  const breadCrumb = getByText('sacola')
+  const breadcrumb = getByText('sacola')
 
-  expect(breadCrumb).toBeInTheDocument()
+  expect(breadcrumb).toBeInTheDocument()
 })

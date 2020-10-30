@@ -18,7 +18,7 @@ Paper.defaultProps = {
 
 Paper.propTypes = {
   title: PropTypes.string,
-  children: PropTypes.oneOfType([PropTypes.string, PropTypes.element, PropTypes.array]),
+  children: PropTypes.oneOfType([PropTypes.any]),
   spacedTitle: PropTypes.bool
 }
 
