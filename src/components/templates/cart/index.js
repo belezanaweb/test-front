@@ -1,10 +1,10 @@
 import styled from 'styled-components';
-import ButtonCta from '../atoms/buttons/cta';
 import {useEffect, useState} from 'react';
 import {useSetRecoilState} from 'recoil';
-import {cartData} from '../../store/cart'
-import TotalTable from '../organism/totalTable';
-import ProductsList from '../organism/productsList';
+import {cartData} from '../../../store/cart'
+import TotalTable from '../../organism/totalTable';
+import ProductsList from '../../organism/productsList';
+import ButtonCta from '../../atoms/buttons/cta';
 
 const CartTemplate = ({children}) => {
 	const setData= useSetRecoilState(cartData);
@@ -20,7 +20,6 @@ const CartTemplate = ({children}) => {
 			setData(data)
 			setLoading(false)
 		});
-
 	}
 
 	useEffect(()=>{
