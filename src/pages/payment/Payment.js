@@ -128,7 +128,7 @@ const Payment = ({ history }) => {
               shippingTotal={bag.shippingTotal}
             />
             <Button disabled={!isValid} type="submit">
-              Finalizar o pedido {isValid}
+              Finalizar o pedido
             </Button>
           </form>
         </>
