@@ -5,5 +5,14 @@
   "singleQuote": true,
   "trailingComma": "none",
   "jsxBracketSameLine": false,
-  "semi": false
+  "parser": "babel",
+  "semi": false,
+  "overrides": [
+    {
+      "files": "*.css",
+      "options": {
+        "parser": "css"
+      }
+    }
+  ]
 }
