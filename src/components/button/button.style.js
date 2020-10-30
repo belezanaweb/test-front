@@ -1,5 +1,18 @@
 import styled from 'styled-components'
 
+const Text = styled.div`
+  color: #fff;
+  font-size: 20px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  line-height: 24px;
+  text-align: center;
+  text-transform: uppercase;
+  :hover {
+    cursor: pointer;
+  }
+`
+
 const ButtonContainer = styled.button`
   width: 100%;
   border-radius: 3px;
@@ -14,18 +27,13 @@ const ButtonContainer = styled.button`
     cursor: pointer;
     background-color: #d45a00;
   }
-`
-
-const Text = styled.div`
-  color: #fff;
-  font-size: 20px;
-  font-weight: 700;
-  letter-spacing: 0.5px;
-  line-height: 24px;
-  text-align: center;
-  text-transform: uppercase;
-  :hover {
-    cursor: pointer;
+  :disabled {
+    ${Text} {
+      cursor: unset;
+    }
+    background-color: #ccc;
+    box-shadow: none;
+    cursor: unset;
   }
 `
 

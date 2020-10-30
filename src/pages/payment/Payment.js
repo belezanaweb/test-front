@@ -15,7 +15,9 @@ import { CHANGE_POSITION } from '../../store/actionTypes/breadcrumb'
 import SAVE_CREDIT_CARD from '../../store/actionTypes/payment'
 
 const Payment = ({ history }) => {
-  const { register, handleSubmit, trigger, errors, setValue } = useForm()
+  const { register, handleSubmit, trigger, errors, setValue, formState } = useForm()
+
+  const { isValid } = formState
 
   const bag = useSelector((state) => state.bag)
   const dispatch = useDispatch()
@@ -125,7 +127,9 @@ const Payment = ({ history }) => {
               subTotal={bag.subTotal}
               shippingTotal={bag.shippingTotal}
             />
-            <Button type="submit">Finalizar o pedido</Button>
+            <Button disabled={!isValid} type="submit">
+              Finalizar o pedido {isValid}
+            </Button>
           </form>
         </>
       )}
