@@ -21,6 +21,7 @@ const HeaderStyled = styled.header`
 	height:42px;
 	border-radius:3px;
 	box-shadow: 1px 1px 5px rgba(0,0,29,0.22);
+	background:#fff;
 	ul{
 		width:100%;
 		box-sizing:border-box;

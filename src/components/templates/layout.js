@@ -20,6 +20,8 @@ const GlobalStyle = createGlobalStyle`
 	html {
 		margin: 0;
 		scroll-behavior: smooth;
+		height:100%;
+
 		display: block;
 		background: #fff;
 		font-family: ${({ theme }) => theme.fontFamily};
@@ -29,7 +31,7 @@ const GlobalStyle = createGlobalStyle`
 		padding:0;
 		margin:0;
 		font-family: ${({ theme }) => theme.fontFamily};
-
+		box-sizing:border-box;
 	}
 	body {
 		margin: 0;
@@ -37,6 +39,9 @@ const GlobalStyle = createGlobalStyle`
 		font-feature-settings: "kern";
 		font-kerning: normal;
 		-webkit-font-smoothing: antialiased;
+		background:#eee;
+		height: 100%;
+
 		button,
 		input {
 			font-family: 'Helvetica', sans-serif;
@@ -45,9 +50,8 @@ const GlobalStyle = createGlobalStyle`
 `
 
 const Main = styled.main`
-	background:#eee;
 	display:flex;
 	flex-flow:row wrap;
 	box-sizing:border-box;
-	min-height:100vh;
+	height:100%;
 `

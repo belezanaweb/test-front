@@ -1,12 +1,13 @@
 import Layout from '../../components/templates/layout';
 import Header from '../../components/templates/header';
-import dynamic from 'next/dynamic';
+// import dynamic from 'next/dynamic';
 
-const CartContainer = dynamic(() => import('../../components/organism/cart'),{
-	ssr: false,
-	loading: () => <div>...loading</div>
-});
+// const CartTemplate = dynamic(() => import('../../components/templates/cart'),{
+// 	ssr: false,
+// 	loading: () => <div>...loading</div>
+// });
 
+import CartTemplate from '../../components/templates/cart'
 import Head from 'next/head';
 
 const Cart = () => {
@@ -17,7 +18,7 @@ const Cart = () => {
 			</Head>
 			<Header page={1}/>
 			<Layout>
-				  <CartContainer />
+				  <CartTemplate />
 			</Layout>
 		</>
 	)
