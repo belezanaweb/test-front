@@ -1,0 +1,59 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders ProductCard 1`] = `
+.c0 {
+  display: grid;
+  grid-gap: 11px 15px;
+  grid-template-columns: 65px 1fr;
+  grid-template-rows: 1fr 1fr;
+  padding: 12px 10px 14px;
+  border: 1px solid #eee;
+  border-radius: 3px;
+}
+
+.c1 {
+  width: 65px;
+  height: 65px;
+  object-fit: contain;
+  object-position: 50% 100%;
+  grid-row: span 2;
+}
+
+.c2 {
+  margin: 0;
+  color: #212122;
+  font-size: 13px;
+  font-weight: normal;
+  line-height: 1.23076923076923;
+}
+
+.c3 {
+  display: block;
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 1.21428571428571;
+  text-align: right;
+}
+
+<div>
+  <article
+    class="c0"
+  >
+    <img
+      alt="Teste"
+      class="c1"
+      src="http://localhost.test"
+    />
+    <h2
+      class="c2"
+    >
+      Teste
+    </h2>
+    <span
+      class="c3"
+    >
+      R$ 123.45
+    </span>
+  </article>
+</div>
+`;
