@@ -1,0 +1,120 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders PurchaseSummary 1`] = `
+.c0 {
+  display: grid;
+  grid-gap: 9px;
+  padding: 15px 13px 13px 14px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  color: #212122;
+  font-size: 14px;
+  line-height: 1.21428571428571;
+}
+
+.c1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -webkit-align-items: flex-start;
+  -webkit-box-align: flex-start;
+  -ms-flex-align: flex-start;
+  align-items: flex-start;
+  margin: 0;
+}
+
+.c2 {
+  text-transform: uppercase;
+}
+
+.c3 {
+  text-align: right;
+  margin: 0;
+}
+
+.c4 {
+  color: #ff7800;
+}
+
+.c5 {
+  margin-top: 7px;
+  font-weight: 700;
+}
+
+<div>
+  <section
+    class="c0"
+  >
+    <dl
+      class="c1"
+    >
+      <dt
+        class="c2"
+      >
+        Produtos
+      </dt>
+      <dd
+        class="c3"
+      >
+        <span>
+          R$ 123.45
+        </span>
+      </dd>
+    </dl>
+    <dl
+      class="c1"
+    >
+      <dt
+        class="c2"
+      >
+        Frete
+      </dt>
+      <dd
+        class="c3"
+      >
+        <span>
+          R$ 345.67
+        </span>
+      </dd>
+    </dl>
+    <dl
+      class="c1 c4"
+    >
+      <dt
+        class="c2"
+      >
+        Desconto
+      </dt>
+      <dd
+        class="c3"
+      >
+        − 
+        <span>
+          R$ 37.02
+        </span>
+      </dd>
+    </dl>
+    <dl
+      class="c1 c5"
+    >
+      <dt
+        class="c2"
+      >
+        Total
+      </dt>
+      <dd
+        class="c3"
+      >
+        <span>
+          R$ 432.10
+        </span>
+      </dd>
+    </dl>
+  </section>
+</div>
+`;
