@@ -1,0 +1,44 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders SuccessAlert 1`] = `
+.c0 {
+  display: grid;
+  justify-items: center;
+  grid-gap: 11px;
+  grid-column-end: span 2;
+}
+
+.c2 {
+  margin: 0;
+  color: #ff7800;
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 1.21428571428571;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.c1 {
+  width: 40px;
+  height: 40px;
+  object-fit: contain;
+  object-position: 50% 50%;
+}
+
+<div>
+  <section
+    class="c0"
+  >
+    <img
+      aria-hidden="true"
+      class="c1"
+      src="/images/icon-checkmark-circle.png"
+    />
+    <h1
+      class="c2"
+    >
+      Teste
+    </h1>
+  </section>
+</div>
+`;
