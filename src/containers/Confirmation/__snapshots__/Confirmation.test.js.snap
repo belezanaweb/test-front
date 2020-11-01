@@ -1,0 +1,409 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders Confirmation 1`] = `
+.c11 {
+  padding: 12px 12px 13px 13px;
+  border-radius: 3px;
+  background-color: #fff;
+  box-shadow: 1px 1px 5px 0 rgba(0,0,29,0.22);
+}
+
+.c10 {
+  display: block;
+  margin: 0 0 5px 13px;
+  color: #999;
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 1.21428571428571;
+  text-transform: uppercase;
+}
+
+.c13 {
+  display: grid;
+  grid-gap: 15px;
+}
+
+.c14 {
+  display: grid;
+  grid-gap: 11px 15px;
+  grid-template-columns: 65px 1fr;
+  grid-template-rows: 1fr 1fr;
+  padding: 12px 10px 14px;
+  border: 1px solid #eee;
+  border-radius: 3px;
+}
+
+.c15 {
+  width: 65px;
+  height: 65px;
+  object-fit: contain;
+  object-position: 50% 100%;
+  grid-row: span 2;
+}
+
+.c16 {
+  margin: 0;
+  color: #212122;
+  font-size: 13px;
+  font-weight: normal;
+  line-height: 1.23076923076923;
+}
+
+.c17 {
+  display: block;
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 1.21428571428571;
+  text-align: right;
+}
+
+.c19 {
+  display: grid;
+  grid-gap: 9px;
+  padding: 15px 13px 13px 14px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  color: #212122;
+  font-size: 14px;
+  line-height: 1.21428571428571;
+}
+
+.c20 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -webkit-align-items: flex-start;
+  -webkit-box-align: flex-start;
+  -ms-flex-align: flex-start;
+  align-items: flex-start;
+  margin: 0;
+}
+
+.c21 {
+  text-transform: uppercase;
+}
+
+.c22 {
+  text-align: right;
+  margin: 0;
+}
+
+.c23 {
+  color: #ff7800;
+}
+
+.c24 {
+  margin-top: 7px;
+  font-weight: 700;
+}
+
+.c1 {
+  width: 100%;
+  margin-bottom: 10px;
+  padding: 12px 0;
+  background-color: #fff;
+  box-shadow: 1px 1px 5px 0 rgba(0,0,29,0.22);
+}
+
+.c2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  max-width: 1024px;
+  margin: 0 auto;
+  padding: 0 20px;
+  list-style: none;
+}
+
+.c3 {
+  display: block;
+  color: #ccc;
+  font-size: 13px;
+  font-weight: 700;
+  line-height: 1.23076923076923;
+  text-transform: uppercase;
+}
+
+.c4 {
+  display: block;
+  color: #ccc;
+  font-size: 13px;
+  font-weight: 700;
+  line-height: 1.23076923076923;
+  text-transform: uppercase;
+  color: #ff7800;
+}
+
+.c12 {
+  color: #000;
+}
+
+.c6 {
+  display: grid;
+  justify-items: center;
+  grid-gap: 11px;
+  grid-column-end: span 2;
+}
+
+.c8 {
+  margin: 0;
+  color: #ff7800;
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 1.21428571428571;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.c7 {
+  width: 40px;
+  height: 40px;
+  object-fit: contain;
+  object-position: 50% 50%;
+}
+
+.c0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.c5 {
+  -webkit-box-flex: 1;
+  -webkit-flex-grow: 1;
+  -ms-flex-positive: 1;
+  flex-grow: 1;
+  display: grid;
+  grid-gap: 20px;
+  padding: 0 9px 20px;
+  width: 100%;
+  max-width: 1024px;
+  margin: 0 auto;
+}
+
+.c9 {
+  display: grid;
+  -webkit-align-content: start;
+  -ms-flex-line-pack: start;
+  align-content: start;
+  grid-gap: 20px;
+}
+
+.c18 {
+  display: grid;
+  -webkit-align-content: start;
+  -ms-flex-line-pack: start;
+  align-content: start;
+  grid-gap: 20px;
+}
+
+@media only screen and (min-width:768px) {
+  .c5 {
+    margin-top: 40px;
+    grid-template-columns: 1fr 340px;
+  }
+}
+
+@media only screen and (min-width:768px) {
+  .c18 {
+    margin-top: 20px;
+  }
+}
+
+<div>
+  <main
+    class="c0"
+  >
+    <div
+      class="c1"
+    >
+      <ul
+        class="c2"
+      >
+        <li
+          class="c3"
+        >
+          Sacola
+        </li>
+        <li
+          class="c3"
+        >
+          Pagamento
+        </li>
+        <li
+          class="c4"
+        >
+          Confirmação
+        </li>
+      </ul>
+    </div>
+    <div
+      class="c5"
+    >
+      <section
+        class="c6"
+      >
+        <img
+          aria-hidden="true"
+          class="c7"
+          src="/images/icon-checkmark-circle.png"
+        />
+        <h1
+          class="c8"
+        >
+          Compra efetuada com sucesso
+        </h1>
+      </section>
+      <div
+        class="c9"
+      >
+        <section
+          class=""
+        >
+          <h1
+            class="c10"
+          >
+            Pagamento
+          </h1>
+          <div
+            class="c11 c12"
+          >
+            <div>
+              ****.****.****.1234
+            </div>
+            <div>
+              João da Silva
+            </div>
+            <div>
+              05/2019
+            </div>
+          </div>
+        </section>
+        <section
+          class=""
+        >
+          <h1
+            class="c10"
+          >
+            Produtos
+          </h1>
+          <div
+            class="c11 c13"
+          >
+            <article
+              class="c14"
+            >
+              <img
+                alt="Teste"
+                class="c15"
+                src="http://localhost.test"
+              />
+              <h2
+                class="c16"
+              >
+                Teste
+              </h2>
+              <span
+                class="c17"
+              >
+                R$ 123.45
+              </span>
+            </article>
+          </div>
+        </section>
+      </div>
+      <aside
+        class="c18"
+      >
+        <section
+          class="c19"
+        >
+          <dl
+            class="c20"
+          >
+            <dt
+              class="c21"
+            >
+              Produtos
+            </dt>
+            <dd
+              class="c22"
+            >
+              <span>
+                R$ 123.45
+              </span>
+            </dd>
+          </dl>
+          <dl
+            class="c20"
+          >
+            <dt
+              class="c21"
+            >
+              Frete
+            </dt>
+            <dd
+              class="c22"
+            >
+              <span>
+                R$ 345.67
+              </span>
+            </dd>
+          </dl>
+          <dl
+            class="c20 c23"
+          >
+            <dt
+              class="c21"
+            >
+              Desconto
+            </dt>
+            <dd
+              class="c22"
+            >
+              − 
+              <span>
+                R$ 37.02
+              </span>
+            </dd>
+          </dl>
+          <dl
+            class="c20 c24"
+          >
+            <dt
+              class="c21"
+            >
+              Total
+            </dt>
+            <dd
+              class="c22"
+            >
+              <span>
+                R$ 432.10
+              </span>
+            </dd>
+          </dl>
+        </section>
+      </aside>
+    </div>
+  </main>
+</div>
+`;
