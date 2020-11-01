@@ -3,18 +3,19 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "@testing-library/jest-dom": "^4.2.4",
-    "@testing-library/react": "^9.3.2",
-    "@testing-library/user-event": "^7.1.2",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
-    "react-scripts": "3.4.4"
+    "react-router-dom": "^5.2.0",
+    "react-scripts": "3.4.4",
+    "react-text-mask": "^5.4.3",
+    "styled-components": "^5.2.1",
+    "use-async-resource": "^2.2.0"
   },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test",
-    "coverage": "react-scripts test --coverage --watchAll=false",
+    "test": "react-scripts test --env=jest-environment-jsdom-sixteen",
+    "coverage": "react-scripts test --coverage --watchAll=false --env=jest-environment-jsdom-sixteen",
     "eject": "react-scripts eject"
   },
   "eslintConfig": {
@@ -43,7 +44,13 @@
     ]
   },
   "devDependencies": {
+    "@testing-library/jest-dom": "^4.2.4",
+    "@testing-library/react": "^11.1.0",
+    "@testing-library/user-event": "^7.1.2",
     "husky": "^4.3.0",
+    "jest-environment-jsdom-sixteen": "^1.0.3",
+    "jest-fetch-mock": "^3.0.3",
+    "jest-styled-components": "^7.0.3",
     "lint-staged": "^10.4.2",
     "prettier": "^2.1.2"
   }
