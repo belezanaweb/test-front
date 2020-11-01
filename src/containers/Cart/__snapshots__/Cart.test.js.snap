@@ -1,0 +1,391 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders Cart 1`] = `
+<div>
+  <div>
+    Testing...
+  </div>
+</div>
+`;
+
+exports[`renders Cart 2`] = `
+<div>
+  .c20 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  padding: 18px;
+  width: 100%;
+  min-height: 60px;
+  border: 0;
+  border-radius: 3px;
+  background-color: #ff6c00;
+  color: #fff;
+  font-size: 20px;
+  font-weight: 700;
+  -webkit-letter-spacing: 0.5px;
+  -moz-letter-spacing: 0.5px;
+  -ms-letter-spacing: 0.5px;
+  letter-spacing: 0.5px;
+  line-height: 1.2;
+  text-align: center;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  text-transform: uppercase;
+  box-shadow: inset 0 -3px 0 0 #d45a00,0 2px 4px 0 rgba(0,0,0,0.25);
+  cursor: pointer;
+}
+
+.c20:hover,
+.c20:active {
+  background-color: #d45a00;
+  box-shadow: none;
+}
+
+.c7 {
+  padding: 12px 12px 13px 13px;
+  border-radius: 3px;
+  background-color: #fff;
+  box-shadow: 1px 1px 5px 0 rgba(0,0,29,0.22);
+}
+
+.c6 {
+  display: block;
+  margin: 0 0 5px 13px;
+  color: #999;
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 1.21428571428571;
+  text-transform: uppercase;
+}
+
+.c8 {
+  display: grid;
+  grid-gap: 15px;
+}
+
+.c9 {
+  display: grid;
+  grid-gap: 11px 15px;
+  grid-template-columns: 65px 1fr;
+  grid-template-rows: 1fr 1fr;
+  padding: 12px 10px 14px;
+  border: 1px solid #eee;
+  border-radius: 3px;
+}
+
+.c10 {
+  width: 65px;
+  height: 65px;
+  object-fit: contain;
+  object-position: 50% 100%;
+  grid-row: span 2;
+}
+
+.c11 {
+  margin: 0;
+  color: #212122;
+  font-size: 13px;
+  font-weight: normal;
+  line-height: 1.23076923076923;
+}
+
+.c12 {
+  display: block;
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 1.21428571428571;
+  text-align: right;
+}
+
+.c14 {
+  display: grid;
+  grid-gap: 9px;
+  padding: 15px 13px 13px 14px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  color: #212122;
+  font-size: 14px;
+  line-height: 1.21428571428571;
+}
+
+.c15 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -webkit-align-items: flex-start;
+  -webkit-box-align: flex-start;
+  -ms-flex-align: flex-start;
+  align-items: flex-start;
+  margin: 0;
+}
+
+.c16 {
+  text-transform: uppercase;
+}
+
+.c17 {
+  text-align: right;
+  margin: 0;
+}
+
+.c18 {
+  color: #ff7800;
+}
+
+.c19 {
+  margin-top: 7px;
+  font-weight: 700;
+}
+
+.c1 {
+  width: 100%;
+  margin-bottom: 10px;
+  padding: 12px 0;
+  background-color: #fff;
+  box-shadow: 1px 1px 5px 0 rgba(0,0,29,0.22);
+}
+
+.c2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  max-width: 1024px;
+  margin: 0 auto;
+  padding: 0 20px;
+  list-style: none;
+}
+
+.c3 {
+  display: block;
+  color: #ccc;
+  font-size: 13px;
+  font-weight: 700;
+  line-height: 1.23076923076923;
+  text-transform: uppercase;
+  color: #ff7800;
+}
+
+.c4 {
+  display: block;
+  color: #ccc;
+  font-size: 13px;
+  font-weight: 700;
+  line-height: 1.23076923076923;
+  text-transform: uppercase;
+}
+
+.c0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.c5 {
+  -webkit-box-flex: 1;
+  -webkit-flex-grow: 1;
+  -ms-flex-positive: 1;
+  flex-grow: 1;
+  display: grid;
+  grid-gap: 20px;
+  padding: 0 9px 20px;
+  width: 100%;
+  max-width: 1024px;
+  margin: 0 auto;
+}
+
+.c13 {
+  display: grid;
+  -webkit-align-content: start;
+  -ms-flex-line-pack: start;
+  align-content: start;
+  grid-gap: 20px;
+}
+
+@media only screen and (min-width:768px) {
+  .c5 {
+    margin-top: 40px;
+    grid-template-columns: 1fr 340px;
+  }
+}
+
+@media only screen and (min-width:768px) {
+  .c13 {
+    margin-top: 20px;
+  }
+}
+
+<main
+    class="c0"
+  >
+    <div
+      class="c1"
+    >
+      <ul
+        class="c2"
+      >
+        <li
+          class="c3"
+        >
+          Sacola
+        </li>
+        <li
+          class="c4"
+        >
+          Pagamento
+        </li>
+        <li
+          class="c4"
+        >
+          Confirmação
+        </li>
+      </ul>
+    </div>
+    <div
+      class="c5"
+    >
+      <section
+        class=""
+      >
+        <h1
+          class="c6"
+        >
+          Produtos
+        </h1>
+        <div
+          class="c7 c8"
+        >
+          <article
+            class="c9"
+          >
+            <img
+              alt="Teste"
+              class="c10"
+              src="http://localhost.test"
+            />
+            <h2
+              class="c11"
+            >
+              Teste
+            </h2>
+            <span
+              class="c12"
+            >
+              R$ 123.45
+            </span>
+          </article>
+        </div>
+      </section>
+      <aside
+        class="c13"
+      >
+        <section
+          class="c14"
+        >
+          <dl
+            class="c15"
+          >
+            <dt
+              class="c16"
+            >
+              Produtos
+            </dt>
+            <dd
+              class="c17"
+            >
+              <span>
+                R$ 123.45
+              </span>
+            </dd>
+          </dl>
+          <dl
+            class="c15"
+          >
+            <dt
+              class="c16"
+            >
+              Frete
+            </dt>
+            <dd
+              class="c17"
+            >
+              <span>
+                R$ 345.67
+              </span>
+            </dd>
+          </dl>
+          <dl
+            class="c15 c18"
+          >
+            <dt
+              class="c16"
+            >
+              Desconto
+            </dt>
+            <dd
+              class="c17"
+            >
+              − 
+              <span>
+                R$ 37.02
+              </span>
+            </dd>
+          </dl>
+          <dl
+            class="c15 c19"
+          >
+            <dt
+              class="c16"
+            >
+              Total
+            </dt>
+            <dd
+              class="c17"
+            >
+              <span>
+                R$ 432.10
+              </span>
+            </dd>
+          </dl>
+        </section>
+        <a
+          href="/pagamento"
+        >
+          <button
+            class="c20"
+          >
+            Seguir para o pagamento
+          </button>
+        </a>
+      </aside>
+    </div>
+  </main>
+</div>
+`;
