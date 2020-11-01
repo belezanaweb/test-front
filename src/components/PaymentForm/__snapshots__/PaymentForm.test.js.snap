@@ -1,0 +1,211 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders PaymentForm 1`] = `
+.c1 {
+  padding: 12px 12px 13px 13px;
+  border-radius: 3px;
+  background-color: #fff;
+  box-shadow: 1px 1px 5px 0 rgba(0,0,29,0.22);
+}
+
+.c0 {
+  display: block;
+  margin: 0 0 5px 13px;
+  color: #999;
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 1.21428571428571;
+  text-transform: uppercase;
+}
+
+.c3 {
+  display: grid;
+  grid-gap: 5px;
+}
+
+.c8 {
+  display: none;
+  margin-top: 3px;
+  color: #f30;
+  font-size: 12px;
+  line-height: 1.166666667;
+}
+
+.c6 {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  height: 45px;
+  padding: 13px;
+  border: 1px solid #e7e7e7;
+  border-radius: 3px;
+  background-color: #fff;
+  font-size: 16px;
+  line-height: 1.1875;
+  box-shadow: inset 0 1px 2px 0 rgba(0,0,0,0.2);
+}
+
+.c6::-webkit-input-placeholder {
+  color: #e0e7ee;
+}
+
+.c6::-moz-placeholder {
+  color: #e0e7ee;
+}
+
+.c6:-ms-input-placeholder {
+  color: #e0e7ee;
+}
+
+.c6::placeholder {
+  color: #e0e7ee;
+}
+
+.c6:focus {
+  border-color: #a43287;
+}
+
+.c6:invalid:not(:placeholder-shown) {
+  border-color: #f30;
+}
+
+.c6:invalid:not(:placeholder-shown) + .c7 {
+  display: block;
+}
+
+.c5 {
+  display: block;
+  margin-left: 2px;
+  color: #ccc;
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 1.16666666666667;
+}
+
+.c2 {
+  display: grid;
+  grid-template-columns: 52.45901% 1fr;
+  grid-gap: 25px 20px;
+}
+
+.c4 {
+  grid-column-end: span 2;
+}
+
+<div>
+  <section
+    class=""
+  >
+    <h1
+      class="c0"
+    >
+      Cartão de Crédito
+    </h1>
+    <form
+      class="c1 c2"
+      id="_form"
+      method="POST"
+    >
+      <div
+        class="c3 c4"
+      >
+        <label
+          class="c5"
+          for="_input_credit_card"
+        >
+          Número do cartão:
+        </label>
+        <input
+          autocomplete="cc-number"
+          class="c6"
+          id="_input_credit_card"
+          name="cardnumber"
+          pattern="\\\\d{4}\\\\.\\\\d{4}\\\\.\\\\d{4}\\\\.\\\\d{4}"
+          placeholder="____.____.____.____"
+          required=""
+          value=""
+        />
+        <div
+          class="c7 c8"
+        >
+          Número do cartão de crédito inválido
+        </div>
+      </div>
+      <div
+        class="c3 c4"
+      >
+        <label
+          class="c5"
+          for="_input_name"
+        >
+          Nome do titular:
+        </label>
+        <input
+          autocomplete="cc-name"
+          class="c6"
+          id="_input_name"
+          name="ccname"
+          placeholder="Como no cartão"
+          required=""
+          value=""
+        />
+        <div
+          class="c7 c8"
+        >
+          Invalid Field
+        </div>
+      </div>
+      <div
+        class="c3"
+      >
+        <label
+          class="c5"
+          for="_input_expiry_date"
+        >
+          Validade (mês/ano):
+        </label>
+        <input
+          autocomplete="cc-exp"
+          class="c6"
+          id="_input_expiry_date"
+          name="cc-exp"
+          pattern="\\\\d{2}/\\\\d{4}"
+          placeholder="__/____"
+          required=""
+          value=""
+        />
+        <div
+          class="c7 c8"
+        >
+          Validade do cartão de crédito inválida
+        </div>
+      </div>
+      <div
+        class="c3"
+      >
+        <label
+          class="c5"
+          for="_input_cvc"
+        >
+          CVV:
+        </label>
+        <input
+          autocomplete="cc-csc"
+          class="c6"
+          id="_input_cvc"
+          name="cvc"
+          pattern="\\\\d{3}"
+          placeholder="___"
+          required=""
+          value=""
+        />
+        <div
+          class="c7 c8"
+        >
+          CVV do cartão de crédito inválido
+        </div>
+      </div>
+    </form>
+  </section>
+</div>
+`;
