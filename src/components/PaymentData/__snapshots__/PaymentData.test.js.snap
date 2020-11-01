@@ -1,0 +1,49 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders PaymentData 1`] = `
+.c1 {
+  padding: 12px 12px 13px 13px;
+  border-radius: 3px;
+  background-color: #fff;
+  box-shadow: 1px 1px 5px 0 rgba(0,0,29,0.22);
+}
+
+.c0 {
+  display: block;
+  margin: 0 0 5px 13px;
+  color: #999;
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 1.21428571428571;
+  text-transform: uppercase;
+}
+
+.c2 {
+  color: #000;
+}
+
+<div>
+  <section
+    class=""
+  >
+    <h1
+      class="c0"
+    >
+      Pagamento
+    </h1>
+    <div
+      class="c1 c2"
+    >
+      <div>
+        ****.****.****.1234
+      </div>
+      <div>
+        João da Silva
+      </div>
+      <div>
+        05/2019
+      </div>
+    </div>
+  </section>
+</div>
+`;
