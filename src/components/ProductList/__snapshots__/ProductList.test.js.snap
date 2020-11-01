@@ -1,0 +1,94 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders PaymentForm 1`] = `
+.c1 {
+  padding: 12px 12px 13px 13px;
+  border-radius: 3px;
+  background-color: #fff;
+  box-shadow: 1px 1px 5px 0 rgba(0,0,29,0.22);
+}
+
+.c0 {
+  display: block;
+  margin: 0 0 5px 13px;
+  color: #999;
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 1.21428571428571;
+  text-transform: uppercase;
+}
+
+.c2 {
+  display: grid;
+  grid-gap: 15px;
+}
+
+.c3 {
+  display: grid;
+  grid-gap: 11px 15px;
+  grid-template-columns: 65px 1fr;
+  grid-template-rows: 1fr 1fr;
+  padding: 12px 10px 14px;
+  border: 1px solid #eee;
+  border-radius: 3px;
+}
+
+.c4 {
+  width: 65px;
+  height: 65px;
+  object-fit: contain;
+  object-position: 50% 100%;
+  grid-row: span 2;
+}
+
+.c5 {
+  margin: 0;
+  color: #212122;
+  font-size: 13px;
+  font-weight: normal;
+  line-height: 1.23076923076923;
+}
+
+.c6 {
+  display: block;
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 1.21428571428571;
+  text-align: right;
+}
+
+<div>
+  <section
+    class=""
+  >
+    <h1
+      class="c0"
+    >
+      Produtos
+    </h1>
+    <div
+      class="c1 c2"
+    >
+      <article
+        class="c3"
+      >
+        <img
+          alt="Teste"
+          class="c4"
+          src="http://localhost.test"
+        />
+        <h2
+          class="c5"
+        >
+          Teste
+        </h2>
+        <span
+          class="c6"
+        >
+          R$ 123.45
+        </span>
+      </article>
+    </div>
+  </section>
+</div>
+`;
