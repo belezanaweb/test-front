@@ -1,50 +1,30 @@
 {
-  "name": "test-front",
-  "version": "0.1.0",
-  "private": true,
-  "dependencies": {
-    "@testing-library/jest-dom": "^4.2.4",
-    "@testing-library/react": "^9.3.2",
-    "@testing-library/user-event": "^7.1.2",
-    "react": "^17.0.1",
-    "react-dom": "^17.0.1",
-    "react-scripts": "3.4.4"
-  },
-  "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "coverage": "react-scripts test --coverage --watchAll=false",
-    "eject": "react-scripts eject"
-  },
-  "eslintConfig": {
-    "extends": "react-app"
-  },
-  "lint-staged": {
-    "src/**/*.{js,jsx,ts,tsx,json,css,scss,md}": [
-      "prettier --write"
-    ]
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged"
+    "name": "src",
+    "version": "0.1.0",
+    "private": true,
+    "scripts": {
+        "dev": "node server.js",
+        "build": "next build",
+        "start": "next build && NODE_ENV=production node server.js",
+        "test": "jest --watch",
+        "test:ci": "jest --ci"
+    },
+    "dependencies": {
+        "@koa/router": "^9.4.0",
+        "koa": "^2.13.0",
+        "next": "^10.0.0",
+        "react": "^17.0.1",
+        "react-dom": "^17.0.1",
+        "react-maskinput": "^3.2.0",
+        "recoil": "^0.0.13",
+        "styled-components": "^5.2.0"
+    },
+    "devDependencies": {
+        "@testing-library/jest-dom": "^5.1.0",
+        "@testing-library/react": "^9.4.0",
+        "babel-jest": "^25.1.0",
+        "identity-obj-proxy": "^3.0.0",
+        "jest": "^25.1.0",
+        "react-test-renderer": "^16.12.0"
     }
-  },
-  "browserslist": {
-    "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
-    ],
-    "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
-    ]
-  },
-  "devDependencies": {
-    "husky": "^4.3.0",
-    "lint-staged": "^10.4.2",
-    "prettier": "^2.1.2"
-  }
 }

@@ -1,41 +1,59 @@
-## Frontend Test
+### Como startar o projeto .
 
-Faça um fork deste repositório e finalizar o teste, submeta um pull request para o repositório que nosso time será notificado.
-
-O teste consiste em um checkout simples contendo 3 passos (carrinho, pagamento e sucesso) [Veja o Layout](https://projects.invisionapp.com/prototype/font-test-cji0j0khf005c1t0132358e8k)
-
-**Faça quando quiser/puder (madrugada, fim de semana, etc)**
-
-### Requerimentos
-
-- Pixel perfect ([nesse link](https://projects.invisionapp.com/prototype/font-test-cji0j0khf005c1t0132358e8k), você pode inspecionar para ver espaçamentos, fonte, tamanho, etc)
-- A aplicação precisa ser responsiva, utilizando o conceito de mobile-first. Use sua imaginação para entregar uma experiência boa no desktop.
-- Renderize cada passo em uma URL única (lib de rotas).
+```bash
+npm run prod
+# or development mode
+npm run dev
+```
 
 
-### Passo 1 - Carrinho:
-  - Consuma o [esse endpoint](http://www.mocky.io/v2/5b15c4923100004a006f3c07) e liste os itens do carrinho, bem como o resumo do carrinho;
-  - Persista o conteúdo do JSON para ser usado nas próximas etapas;
 
-### Passo 2 - Pagamento: 
-  - Exiba um form com campos de cartão de crédito com validação em cada campo;
-  - Habilite o botão de Finalizar Pedido apenas se o form esteja válido;
+### Stack.
+- Next.js (React Framework) ;
+>  Como se tratava de um e-commerce é legal ter um framework que facilite o projeto ser server side também, por questões de seo etc..
+- Recoil.js ( State Management ) ;
+- Styled-Component.js ;
+- Jest (testes);
+- Koa.js (server para rotas SSR) ;
 
-### Passo 3 - Sucesso: 
-  - Todo o conteúdo deverá ser exibido a partir dos dados persistidos;
-  
-### O que vamos avaliar:
-  - Organização do código;
-  - Mensagens (em inglês) e mudanças nos commits;
-  - Composição/reutilização de componentes;
-  - Testes unitários;
-  - O motivo de ter escolhido cada tech da stack;
-  - Como rodar sua aplicação ;)
+### Desenvolvimento.
+- Componentes criados no modelo de Atomic Design  ;
+- React.hooks ;
+- Tenho conhecimento em TS também mas pelo questão de tempo achei melhor não ir por esse caminho.
 
-### Diferenciais:
-  - Split bundle por rota (cada step ter um bundle separado para otimizar a performance);
-  - CSS in JS;
-  - React;
 
-### Fim:
-Ao finalizar o teste, submeta um pull request para o repositório que nosso time será notificado. Se tiver alguma observação, escreva no pull request.
+
+
+
+
+
+This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+
+## Getting Started
+
+First, run the development server:
+
+```bash
+npm run dev
+# or
+yarn dev
+```
+
+Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+
+You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+
+## Learn More
+
+To learn more about Next.js, take a look at the following resources:
+
+- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
+- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+
+You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+
+## Deploy on Vercel
+
+The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/import?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+
+Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
