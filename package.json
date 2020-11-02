@@ -20,6 +20,7 @@
         "styled-components": "^5.2.0"
     },
     "devDependencies": {
+        "@babel/core": "^7.12.3",
         "@testing-library/jest-dom": "^5.1.0",
         "@testing-library/react": "^9.4.0",
         "babel-jest": "^25.1.0",

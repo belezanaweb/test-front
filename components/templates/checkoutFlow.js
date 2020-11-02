@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import Skeletons from '../atoms/skeletons';
 import dynamic from 'next/dynamic';
-import { useRecoilState } from 'recoil';
+import { useRecoilState,useSetRecoilState } from 'recoil';
 import {headerPage, cartData} from '../../store/cart'
 import { useEffect, useState } from 'react';
 
@@ -21,7 +21,7 @@ const SuccessTemplate = dynamic(() => import('../organism/success'),{
 
 const CheckoutFlow = ({children, startPage}) => {
 
-    const [header, setChangeHeader] = useRecoilState(headerPage);
+    const setChangeHeader = useSetRecoilState(headerPage);
     const [page, setPage] = useState(startPage);
 	const [data, setData] = useRecoilState(cartData);
 //	const [loading, setLoading] = useState(true)

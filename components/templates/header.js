@@ -1,7 +1,7 @@
 
 import styled from 'styled-components';
 import {useRecoilState} from 'recoil'
-import {headerPage} from '../../store/cart';
+import {headerPage} from '../../../store/cart';
 import {useEffect} from 'react';
 const Header = ({page}) => {
 
