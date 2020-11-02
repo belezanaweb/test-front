@@ -20,19 +20,20 @@ const Payment = () => {
   const onSubmitHandler = (event) => {
     event.preventDefault()
 
-    if (!isValid) return
+    /* istanbul ignore else */
+    if (isValid) {
+      const formData = new FormData(formRef.current)
 
-    const formData = new FormData(formRef.current)
+      const ccNumber = formData.get('cardnumber')
+      const ccName = formData.get('ccname')
+      const ccExpiry = formData.get('cc-exp')
 
-    const ccNumber = formData.get('cardnumber')
-    const ccName = formData.get('ccname')
-    const ccExpiry = formData.get('cc-exp')
+      paymentContext.dispatch.ccNumber(ccNumber)
+      paymentContext.dispatch.ccName(ccName)
+      paymentContext.dispatch.ccExpiry(ccExpiry)
 
-    paymentContext.dispatch.ccNumber(ccNumber)
-    paymentContext.dispatch.ccName(ccName)
-    paymentContext.dispatch.ccExpiry(ccExpiry)
-
-    history.push('/confirmacao')
+      history.push('/confirmacao')
+    }
   }
 
   return (

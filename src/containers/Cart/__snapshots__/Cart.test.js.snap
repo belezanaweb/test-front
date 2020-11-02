@@ -51,6 +51,11 @@ exports[`renders Cart 2`] = `
   box-shadow: none;
 }
 
+.c20:disabled {
+  background-color: #ccc;
+  box-shadow: none;
+}
+
 .c7 {
   padding: 12px 12px 13px 13px;
   border-radius: 3px;
