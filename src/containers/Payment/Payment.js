@@ -1,4 +1,4 @@
-import React, { useContext, useRef } from 'react'
+import React, { useContext, useState, useRef } from 'react'
 import { useHistory } from 'react-router-dom'
 import { PaymentContext } from '../../store/PaymentStore'
 import { Button } from '../../components/Button/Button'
@@ -11,9 +11,16 @@ const Payment = () => {
   const formRef = useRef()
   const history = useHistory()
   const paymentContext = useContext(PaymentContext)
+  const [isValid, setIsValid] = useState(false)
+
+  const onChangeHandler = () => {
+    setIsValid([...formRef.current.elements].every((el) => el.checkValidity()))
+  }
 
   const onSubmitHandler = (event) => {
     event.preventDefault()
+
+    if (!isValid) return
 
     const formData = new FormData(formRef.current)
 
@@ -32,10 +39,10 @@ const Payment = () => {
     <Layout>
       <Stepper steps={steps} />
       <LayoutGrid>
-        <PaymentForm ref={formRef} onSubmit={onSubmitHandler} />
+        <PaymentForm ref={formRef} onSubmit={onSubmitHandler} onChange={onChangeHandler} />
         <LayoutAside>
           <PurchaseSummary {...summary} />
-          <Button type="submit" form="_form">
+          <Button type="submit" form="_form" disabled={!isValid}>
             Finalizar o pedido
           </Button>
         </LayoutAside>
