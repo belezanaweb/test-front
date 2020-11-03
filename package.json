@@ -23,9 +23,12 @@
         "@babel/core": "^7.12.3",
         "@testing-library/jest-dom": "^5.1.0",
         "@testing-library/react": "^9.4.0",
-        "babel-jest": "^25.1.0",
+        "babel-jest": "^26.6.2",
+        "enzyme": "^3.11.0",
+        "enzyme-adapter-react-15": "^1.4.2",
+        "enzyme-adapter-react-16": "^1.15.5",
         "identity-obj-proxy": "^3.0.0",
-        "jest": "^25.1.0",
+        "jest": "^26.6.2",
         "react-test-renderer": "^16.12.0"
     }
 }

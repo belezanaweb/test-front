@@ -1,12 +1,13 @@
 ### Como startar o projeto .
 
 ```bash
-npm
-npm run start
+yarn 
+yarn start
 # or development mode
-npm run dev
+yarn dev
 ```
-
+- caso não tenha yarn instalado globalmente
+https://classic.yarnpkg.com/pt-BR/docs/install
 
 ### Stack.
 - Next.js (React Framework) ;

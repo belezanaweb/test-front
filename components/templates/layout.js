@@ -41,7 +41,7 @@ const GlobalStyle = createGlobalStyle`
 		-webkit-font-smoothing: antialiased;
 		background:#eee;
 		height: auto;
-    min-height: 100vh;
+  	  min-height: 100vh;
 
 		button,
 		input {
@@ -55,8 +55,9 @@ const Main = styled.main`
 	flex-flow:row wrap;
 	box-sizing:border-box;
 	height:100%;
+	max-width: 480px;
+
 	@media(min-width:1024px){
-		max-width: 480px;
 		margin: auto;
 	}
 `

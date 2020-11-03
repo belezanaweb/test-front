@@ -1,5 +1,5 @@
 import Layout from '../../components/templates/layout';
-import Header from '../../components/templates/header';
+import Header from '../../components/templates//header';
 import CheckoutFlow from '../../components/templates/checkoutFlow'
 import Head from 'next/head';
 
