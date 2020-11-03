@@ -5,7 +5,6 @@ import Head from 'next/head';
 
 const Cart = () => {
 
-
     return (
 		<>
 			<Head>
