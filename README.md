@@ -5,6 +5,8 @@ yarn
 yarn start
 # or development mode
 yarn dev
+# test 
+yarn test
 ```
 - caso não tenha yarn instalado globalmente
 https://classic.yarnpkg.com/pt-BR/docs/install
