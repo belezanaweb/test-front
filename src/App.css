@@ -8,3 +8,6 @@
   font-size: calc(10px + 2vmin);
   color: white;
 }
+.app-container {
+  padding: 10px 10px;
+}
