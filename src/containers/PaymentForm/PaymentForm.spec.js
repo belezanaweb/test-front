@@ -11,7 +11,6 @@ describe('PaymentForm component', () => {
         <PaymentForm />
       </Provider>
     )
-
     expect(component.exists()).toBe(true)
   })
 })

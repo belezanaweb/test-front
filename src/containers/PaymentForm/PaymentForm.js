@@ -109,7 +109,7 @@ export default function PaymentForm(props) {
             label="Número do cartão:"
             type="text"
             onChange={(e) => validateCreditCard(e)}
-            maxlength={19}
+            maxlength={16}
             placeHolder="____.____.____.____"
           />
           <BInput
