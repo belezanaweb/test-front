@@ -16,7 +16,13 @@ const Button = styled.button`
     outline-style: none;
     background-color: #d45a00;
   }
+
+  @media (min-width: 900px) {
+    width: 470px;
+  }
 `
+
+Button.displayName = 'button'
 
 export default function BButton(props) {
   function onClick(e) {

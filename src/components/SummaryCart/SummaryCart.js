@@ -1,5 +1,6 @@
 import React from 'react'
-import styled, { css } from 'styled-components'
+import styled from 'styled-components'
+import { formatCurrency } from './../../utils/utils'
 import * as palette from './../../styles/variables'
 
 const Container = styled.div`
@@ -11,6 +12,9 @@ const Container = styled.div`
   align-content: space-around;
   max-height: 90px;
   padding: 15px;
+  @media (min-width: 900px) {
+    width: 437px;
+  }
 `
 const Line = styled.div`
   display: flex;
@@ -31,27 +35,28 @@ const TotalText = styled(DescText)`
   font-weight: bold;
 `
 
-export default class SummaryCart extends React.Component {
-  render() {
-    return (
-      <Container>
-        <Line>
-          <DescText>{'PRODUTOS'}</DescText>
-          <DescText>{'R$ 300,00'}</DescText>
-        </Line>
-        <Line>
-          <DescText>{'FRETE'}</DescText>
-          <DescText>{'R$ 5,30'}</DescText>
-        </Line>
-        <Line>
-          <DiscountText>{'DESCONTO'}</DiscountText>
-          <DiscountText>{'- R$ 30,00'}</DiscountText>
-        </Line>
-        <Line>
-          <TotalText>{'TOTAL'}</TotalText>
-          <TotalText>{'R$ 300,00'}</TotalText>
-        </Line>
-      </Container>
-    )
-  }
+export default function SummaryCart(props) {
+  const { shippingTotal, discount, subTotal } = props.info
+  const total = subTotal + shippingTotal - discount
+
+  return (
+    <Container>
+      <Line>
+        <DescText>{'PRODUTOS'}</DescText>
+        <DescText>{subTotal ? formatCurrency(subTotal) : null}</DescText>
+      </Line>
+      <Line>
+        <DescText>{'FRETE'}</DescText>
+        <DescText>{shippingTotal ? formatCurrency(shippingTotal) : null}</DescText>
+      </Line>
+      <Line>
+        <DiscountText>{'DESCONTO'}</DiscountText>
+        <DiscountText>{discount ? `- ${formatCurrency(discount)}` : null}</DiscountText>
+      </Line>
+      <Line>
+        <TotalText>{'TOTAL'}</TotalText>
+        <TotalText>{total ? formatCurrency(total) : null}</TotalText>
+      </Line>
+    </Container>
+  )
 }

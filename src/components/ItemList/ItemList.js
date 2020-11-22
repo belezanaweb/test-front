@@ -1,5 +1,6 @@
 import React from 'react'
-import styled, { css } from 'styled-components'
+import styled from 'styled-components'
+import { formatCurrency } from './../../utils/utils'
 import * as palette from './../../styles/variables'
 
 const ImageItem = styled.img`
@@ -23,6 +24,7 @@ const PriceItem = styled.p`
   font-family: ${palette.FONT_FAMILY};
   text-align: right;
   margin: 0;
+  font-weight: bold;
 `
 
 const Container = styled.div`
@@ -52,9 +54,13 @@ export default class Header extends React.Component {
         />
         <ContainerText>
           <DescItem>{this.props.item ? this.props.item.name : null}</DescItem>
-          <PriceItem>
-            {this.props.item ? `R$ ${this.props.item.priceSpecification.price}` : null}
-          </PriceItem>
+          {!this.props.present ? (
+            <PriceItem>
+              {this.props.item
+                ? `R$ ${formatCurrency(this.props.item.priceSpecification.price)}`
+                : null}
+            </PriceItem>
+          ) : null}
         </ContainerText>
       </Container>
     )

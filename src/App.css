@@ -11,3 +11,10 @@
 .app-container {
   padding: 10px 10px;
 }
+
+@media only screen and (min-width: 900px) {
+  .app-container {
+    width: 80%;
+    margin: 0 auto;
+  }
+}

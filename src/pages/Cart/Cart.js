@@ -1,5 +1,6 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect } from 'react'
 import { useHistory } from 'react-router-dom'
+import { useSelector, useDispatch } from 'react-redux'
 import styled from 'styled-components'
 import * as palette from './../../styles/variables'
 import ItemList from './../../components/ItemList/ItemList'
@@ -16,6 +17,15 @@ const Container = styled.div`
   background-color: ${palette.BACKGROUND_CONTAINERS};
 `
 
+const BottomContainer = styled.div`
+  @media (min-width: 900px) {
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+    flex-direction: column;
+  }
+`
+
 const TitleCart = styled.h1`
   margin-left: 12px;
   font-size: ${palette.FONTSIZE_2};
@@ -24,13 +34,14 @@ const TitleCart = styled.h1`
   color: #999;
 `
 export default function Cart(props) {
-  const [products, setProduct] = useState(null)
+  const dispatch = useDispatch()
+  const cart = useSelector((state) => state.data)
   let history = useHistory()
 
   function searchProducts() {
     Services.getProducts()
       .then((res) => {
-        setProduct(res.items)
+        dispatch({ type: 'ADD_CART', data: res })
       })
       .catch((error) => {
         return error
@@ -49,10 +60,12 @@ export default function Cart(props) {
     <>
       <TitleCart> PRODUTOS </TitleCart>
       <Container>
-        {products && products.map((e) => <ItemList key={e.product.sku} item={e.product} />)}
+        {cart.items && cart.items.map((e) => <ItemList key={e.product.sku} item={e.product} />)}
       </Container>
-      <SummaryCart />
-      <BButton onClick={() => toPayment()}> {'SEGUIR PARA O PAGAMENTO'} </BButton>
+      <BottomContainer>
+        <SummaryCart info={cart} />
+        <BButton onClick={() => toPayment()}> {'SEGUIR PARA O PAGAMENTO'} </BButton>
+      </BottomContainer>
     </>
   )
 }
