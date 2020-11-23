@@ -6,6 +6,7 @@ import BButton from '../../components/Button/Button'
 import BInput from '../../components/Input/Input'
 import SummaryCart from '../../components/SummaryCart/SummaryCart'
 import * as palette from './../../styles/variables'
+import { formatCardNumber, formatValidThru } from './../../utils/utils'
 
 const Container = styled.div`
   display: flex;
@@ -61,6 +62,7 @@ export default function PaymentForm(props) {
   }
 
   function validateCreditCard(cardNumber) {
+    setCreditCard(cardNumber)
     if (cardNumber.length < 16) return false
     var numSum = 0
     var value
@@ -109,8 +111,9 @@ export default function PaymentForm(props) {
             label="Número do cartão:"
             type="text"
             onChange={(e) => validateCreditCard(e)}
-            maxlength={16}
+            maxlength={19}
             placeHolder="____.____.____.____"
+            value={formatCardNumber(creditCard)}
           />
           <BInput
             label="Nome do Titular:"
@@ -127,7 +130,8 @@ export default function PaymentForm(props) {
               maxlength={7}
               width="160px"
               placeHolder="__/____"
-              onChange={(e) => setValidThru(e)}
+              onChange={(e) => setValidThru(formatValidThru(e))}
+              value={validThru}
             />
           </HalfContainter>
           <HalfContainter>

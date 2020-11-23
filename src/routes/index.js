@@ -7,6 +7,7 @@ import Checkout from './../pages/Checkout/Checkout'
 export default function Routes(props) {
   return (
     <Switch>
+      <Route path={'/'} exact component={Cart} />
       <Route path={'/cart'} exact component={Cart} />
       <Route path={'/payment'} exact component={Payment} />
       <Route path={'/checkout'} exact component={Checkout} />

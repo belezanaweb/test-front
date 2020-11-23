@@ -74,7 +74,7 @@ export default function Checkout(props) {
     const last4Characters = creditCard.substr(-4)
     const firstCharacter = creditCard.substr(0, '*')
     const maskingCharacters = creditCard.substr(1, creditCard.length - 5).replace(/\d/g, '*')
-    return `${firstCharacter}${maskingCharacters}.${last4Characters}`
+    return `${firstCharacter}${maskingCharacters}${last4Characters}`
   }
 
   return (

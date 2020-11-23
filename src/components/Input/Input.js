@@ -54,6 +54,7 @@ export default function BInput(props) {
           onChange(e.target.value)
         }}
         placeholder={props.placeHolder ? props.placeHolder : null}
+        value={props.value}
       />
     </Container>
   )
