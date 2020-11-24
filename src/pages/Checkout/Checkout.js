@@ -6,15 +6,8 @@ import iconCheck from './../../assets/icons/check-circle.svg'
 import * as palette from './../../styles/variables'
 import SummaryCart from '../../components/SummaryCart/SummaryCart'
 import ItemList from './../../components/ItemList/ItemList'
-
-const Container = styled.div`
-  display: flex;
-  justify-content: space-around;
-  padding: 18px 12px;
-  box-shadow: 1px 1px 5px 0px rgba(0, 0, 29, 0.22);
-  flex-direction: column;
-  background-color: ${palette.BACKGROUND_CONTAINERS};
-`
+import { SideContainer, PageContainer, Container } from './../../components/styles'
+import Header from '../../components/Header/Header'
 
 const TitleCart = styled.h1`
   margin-left: 12px;
@@ -50,14 +43,16 @@ const ApprovedText = styled.span`
   color: #000;
 `
 
-const PageContainer = styled.div``
-
-const BottomContainer = styled.div`
+const CustomSideContainer = styled(SideContainer)`
   @media (min-width: 900px) {
-    display: flex;
-    justify-content: flex-end;
-    align-items: flex-end;
-    flex-direction: column;
+    margin: 35px 0 7px 10px;
+    width: 40%;
+  }
+`
+
+const LeftSideContainer = styled.div`
+  @media (min-width: 900px) {
+    max-width: 50%;
   }
 `
 
@@ -78,28 +73,32 @@ export default function Checkout(props) {
   }
 
   return (
-    <PageContainer>
+    <>
+      <Header />
       <ApprovedContainer>
         <IconCheck src={iconCheck} />
         <ApprovedDesc> {'COMPRA EFETUADA COM SUCESSO'}</ApprovedDesc>
       </ApprovedContainer>
-
-      <TitleCart> PAGAMENTO </TitleCart>
-      <Container>
-        <ApprovedText>
-          {data.userInfo.creditCard ? maskify(data.userInfo.creditCard) : null}
-        </ApprovedText>
-        <ApprovedText>{data.userInfo.name}</ApprovedText>
-        <ApprovedText>{data.userInfo.validThru}</ApprovedText>
-      </Container>
-      <TitleCart> PRODUTOS </TitleCart>
-      <Container>
-        {data.data.items &&
-          data.data.items.map((e) => <ItemList key={e.product.sku} item={e.product} present />)}
-      </Container>
-      <BottomContainer>
-        <SummaryCart info={data.data} />
-      </BottomContainer>
-    </PageContainer>
+      <PageContainer>
+        <LeftSideContainer>
+          <TitleCart> PAGAMENTO </TitleCart>
+          <Container>
+            <ApprovedText>
+              {data.userInfo.creditCard ? maskify(data.userInfo.creditCard) : null}
+            </ApprovedText>
+            <ApprovedText>{data.userInfo.name}</ApprovedText>
+            <ApprovedText>{data.userInfo.validThru}</ApprovedText>
+          </Container>
+          <TitleCart> PRODUTOS </TitleCart>
+          <Container>
+            {data.data.items &&
+              data.data.items.map((e) => <ItemList key={e.product.sku} item={e.product} present />)}
+          </Container>
+        </LeftSideContainer>
+        <CustomSideContainer>
+          <SummaryCart info={data.data} />
+        </CustomSideContainer>
+      </PageContainer>
+    </>
   )
 }

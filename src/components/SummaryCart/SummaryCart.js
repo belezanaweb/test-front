@@ -8,12 +8,14 @@ const Container = styled.div`
   flex-direction: column;
   border: 1px solid #ccc;
   border-radius: 3px;
-  margin: 7px 0;
+  margin: 20px 0 7px 0;
   align-content: space-around;
   max-height: 90px;
   padding: 15px;
   @media (min-width: 900px) {
-    width: 437px;
+    width: 93%;
+    margin: 0px 0 7px 0;
+    padding: 13px;
   }
 `
 const Line = styled.div`

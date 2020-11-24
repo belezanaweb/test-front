@@ -1,5 +1,5 @@
 import React from 'react'
-import styled, { css } from 'styled-components'
+import styled from 'styled-components'
 import * as palette from './../../styles/variables'
 
 const Button = styled.button`
@@ -11,6 +11,7 @@ const Button = styled.button`
   font-size: 20px;
   height: 60px;
   box-shadow: 0 3px 0 0 #d45a00;
+  outline-style: none;
 
   &:hover {
     outline-style: none;
@@ -18,7 +19,7 @@ const Button = styled.button`
   }
 
   @media (min-width: 900px) {
-    width: 470px;
+    width: 100%;
   }
 `
 

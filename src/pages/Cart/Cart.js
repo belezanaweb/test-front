@@ -7,24 +7,8 @@ import ItemList from './../../components/ItemList/ItemList'
 import Services from './../../services/productsServices'
 import SummaryCart from '../../components/SummaryCart/SummaryCart'
 import BButton from '../../components/Button/Button'
-
-const Container = styled.div`
-  display: flex;
-  justify-content: space-around;
-  padding: 18px 12px;
-  box-shadow: 1px 1px 5px 0px rgba(0, 0, 29, 0.22);
-  flex-direction: column;
-  background-color: ${palette.BACKGROUND_CONTAINERS};
-`
-
-const BottomContainer = styled.div`
-  @media (min-width: 900px) {
-    display: flex;
-    justify-content: flex-end;
-    align-items: flex-end;
-    flex-direction: column;
-  }
-`
+import { SideContainer, PageContainer, Container } from './../../components/styles'
+import Header from '../../components/Header/Header'
 
 const TitleCart = styled.h1`
   margin-left: 12px;
@@ -58,14 +42,17 @@ export default function Cart(props) {
 
   return (
     <>
+      <Header />
       <TitleCart> PRODUTOS </TitleCart>
-      <Container>
-        {cart.items && cart.items.map((e) => <ItemList key={e.product.sku} item={e.product} />)}
-      </Container>
-      <BottomContainer>
-        <SummaryCart info={cart} />
-        <BButton onClick={() => toPayment()}> {'SEGUIR PARA O PAGAMENTO'} </BButton>
-      </BottomContainer>
+      <PageContainer>
+        <Container>
+          {cart.items && cart.items.map((e) => <ItemList key={e.product.sku} item={e.product} />)}
+        </Container>
+        <SideContainer>
+          <SummaryCart info={cart} />
+          <BButton onClick={() => toPayment()}> {'SEGUIR PARA O PAGAMENTO'} </BButton>
+        </SideContainer>
+      </PageContainer>
     </>
   )
 }

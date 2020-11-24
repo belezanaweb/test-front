@@ -5,17 +5,8 @@ import styled from 'styled-components'
 import BButton from '../../components/Button/Button'
 import BInput from '../../components/Input/Input'
 import SummaryCart from '../../components/SummaryCart/SummaryCart'
-import * as palette from './../../styles/variables'
 import { formatCardNumber, formatValidThru } from './../../utils/utils'
-
-const Container = styled.div`
-  display: flex;
-  justify-content: space-around;
-  padding: 6px 12px 0 12px;
-  box-shadow: 1px 1px 5px 0px rgba(0, 0, 29, 0.22);
-  flex-direction: column;
-  background-color: ${palette.BACKGROUND_CONTAINERS};
-`
+import { SideContainer, PageContainer, Container } from './../../components/styles'
 
 const Line = styled.div`
   display: flex;
@@ -33,15 +24,6 @@ const HalfContainter = styled.div`
   width: 40%;
 `
 
-const BottomContainer = styled.div`
-  @media (min-width: 900px) {
-    display: flex;
-    justify-content: flex-end;
-    align-items: flex-end;
-    flex-direction: column;
-  }
-`
-
 Container.displayName = 'paymentForm'
 
 export default function PaymentForm(props) {
@@ -49,12 +31,14 @@ export default function PaymentForm(props) {
   const dispatch = useDispatch()
   const [name, setName] = useState('')
   const [creditCard, setCreditCard] = useState('')
+  const [creditCardError, setCreditCardError] = useState('')
   const [cvv, setCvv] = useState('')
   const [validThru, setValidThru] = useState('')
   const data = useSelector((state) => state.data)
 
   useEffect(() => {
     if (!data.id) history.push('/cart')
+    dispatch({ type: 'ADD_USER_INFO', data: {} })
   }, [])
 
   function toCheckout() {
@@ -63,48 +47,46 @@ export default function PaymentForm(props) {
 
   function validateCreditCard(cardNumber) {
     setCreditCard(cardNumber)
-    if (cardNumber.length < 16) return false
-    var numSum = 0
-    var value
-    for (var i = 0; i < 16; ++i) {
-      if (i % 2 === 0) {
-        value = 2 * cardNumber[i]
-        if (value >= 10) {
-          value = Math.floor(value / 10) + (value % 10)
-        }
-      } else {
-        value = +cardNumber[i]
-      }
-      numSum += value
-    }
+    const num = cardNumber.replace(/\s/g, '')
+    let arr = (num + '')
+      .split('')
+      .reverse()
+      .map((x) => parseInt(x))
+    let lastDigit = arr.splice(0, 1)[0]
+    let sum = arr.reduce((acc, val, i) => (i % 2 !== 0 ? acc + val : acc + ((val * 2) % 9) || 9), 0)
+    sum += lastDigit
     setCreditCard(cardNumber)
-    return numSum % 10 === 0
+    return sum % 10 === 0
   }
 
   function handleSubmit() {
-    const info = {
-      name,
-      creditCard,
-      validThru,
-      cvv
-    }
-    dispatch({ type: 'ADD_USER_INFO', data: info })
     if (validateFields()) {
+      const info = {
+        name,
+        creditCard,
+        validThru,
+        cvv
+      }
+      dispatch({ type: 'ADD_USER_INFO', data: info })
       toCheckout()
     }
   }
 
   function validateFields() {
+    if (!validateCreditCard(creditCard)) {
+      setCreditCardError('Cartão de crédito inválido')
+      setCreditCard('')
+      return false
+    }
     if (!name) return false
-    if (!creditCard) return false
     if (!validThru) return false
-    if (!cvv) return false
+    if (!cvv || cvv.length < 3) return false
 
     return true
   }
 
   return (
-    <>
+    <PageContainer>
       <Container>
         <Line>
           <BInput
@@ -114,6 +96,7 @@ export default function PaymentForm(props) {
             maxlength={19}
             placeHolder="____.____.____.____"
             value={formatCardNumber(creditCard)}
+            error={creditCardError}
           />
           <BInput
             label="Nome do Titular:"
@@ -145,10 +128,10 @@ export default function PaymentForm(props) {
           </HalfContainter>
         </DoubleFieldsLine>
       </Container>
-      <BottomContainer>
+      <SideContainer>
         <SummaryCart info={data} />
         <BButton onClick={() => handleSubmit()}> {'FINALIZAR O PEDIDO'} </BButton>
-      </BottomContainer>
-    </>
+      </SideContainer>
+    </PageContainer>
   )
 }

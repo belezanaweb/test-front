@@ -36,6 +36,12 @@ const Container = styled.div`
   margin-bottom: 25px;
   width: 100%;
 `
+const ErrorMessage = styled.p`
+  line-height: 14px;
+  font-size: 12px;
+  color: #f30;
+  margin: 5px 0 0 0;
+`
 
 export default function BInput(props) {
   function onChange(e) {
@@ -56,6 +62,7 @@ export default function BInput(props) {
         placeholder={props.placeHolder ? props.placeHolder : null}
         value={props.value}
       />
+      <ErrorMessage>{props.error ? props.error : null} </ErrorMessage>
     </Container>
   )
 }
