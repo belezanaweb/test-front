@@ -1,0 +1,18 @@
+{
+  "compact": true,
+  "presets": [
+    [
+      "@babel/env",
+      {
+        "modules": false,
+        "useBuiltIns": "entry",
+        "corejs": 3.6,
+        "targets": {
+          "node": "current"
+        }
+      }
+    ],
+    "@babel/react",
+    "@babel/typescript"
+  ]
+}
