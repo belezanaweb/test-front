@@ -51,6 +51,14 @@ Mensagem de confirmação de `merge` no Git
 - React Testing Library
 - Cypress
 
+## Storybook
+
+Comando utilizado para adicionar o storybook:
+
+```bash
+npx -p @storybook/cli sb init
+```
+
 ## Instruções
 
 ### Frontend Test

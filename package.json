@@ -7,7 +7,9 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "coverage": "react-scripts test --coverage --watchAll=false",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "storybook": "start-storybook -p 9000 -s public",
+    "build-storybook": "build-storybook -s public"
   },
   "dependencies": {
     "axios": "0.21.0",
@@ -25,7 +27,18 @@
   },
   "devDependencies": {
     "@babel/core": "7.12.10",
-    "@storybook/react": "6.1.11",
+    "@storybook/addon-actions": "6.1.11",
+    "@storybook/addon-backgrounds": "6.1.11",
+    "@storybook/addon-docs": "6.1.11",
+    "@storybook/addon-essentials": "^6.1.11",
+    "@storybook/addon-knobs": "6.1.11",
+    "@storybook/addon-links": "^6.1.11",
+    "@storybook/addon-viewport": "6.1.11",
+    "@storybook/addons": "6.1.11",
+    "@storybook/node-logger": "^6.1.11",
+    "@storybook/preset-create-react-app": "^3.1.5",
+    "@storybook/react": "^6.1.11",
+    "@storybook/theming": "6.1.11",
     "@testing-library/jest-dom": "5.11.6",
     "@testing-library/react": "11.2.2",
     "@testing-library/user-event": "12.6.0",
@@ -37,6 +50,7 @@
     "@types/react-router-dom": "5.1.6",
     "@types/styled-components": "5.1.5",
     "babel-loader": "8.2.2",
+    "babel-preset-react-app": "10.0.0",
     "eslint-config-prettier": "7.0.0",
     "husky": "4.3.6",
     "lint-staged": "10.5.3",
