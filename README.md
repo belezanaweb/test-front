@@ -2,6 +2,10 @@
 
 ## Pré-requisitos
 
+- [Node = v15.3.0](https://nodejs.org/en/)
+- NPM >= v7.0.14
+- [Yarn >= v1.22.5](https://yarnpkg.com/en/docs/install#linux-tab)
+
 ## Atualizar dependências
 
 Para atualizar todas as dependências para sua versão `major` mais recente, foi executado:
@@ -10,6 +14,42 @@ Para atualizar todas as dependências para sua versão `major` mais recente, foi
 npx npm-check-updates -u
 npm install
 ```
+
+## .gitconfig
+
+Mensagem de confirmação de `merge` no Git
+
+```bash
+[alias]
+  mergelogmsg = "!f() { var=$(git symbolic-ref --short HEAD) && printf 'Merge branch %s into %s\n\n::SUMMARY::\nBranch %s commits:\n' $1 $var $1 > temp_merge_msg && git log --format=format:'%s' $var..$1 >> temp_merge_msg && printf '\n\nBranch %s commits:\n' $var >> temp_merge_msg && git log --format=format:'%s' $1..$var >> temp_merge_msg && printf '\n\n* * * * * * * * * * * * * * * * * * * * * * * * *\n::DETAILS::\n' >> temp_merge_msg && git log --left-right $var...$1 >> temp_merge_msg && git merge --no-ff --no-commit $1 && git commit -eF temp_merge_msg; rm -f temp_merge_msg;}; f"
+```
+
+## Stacks
+
+- Typescript
+
+- React
+- React Router Dom
+- Redux
+- Styled Components
+- Stylelint Processor Styled Components
+- React Hook Form
+- Axios
+- React Helmet
+
+- Express
+
+- Eslint
+- Prettier
+
+- Storybook
+
+- Husky
+- Webpack
+
+- Jest
+- React Testing Library
+- Cypress
 
 ## Instruções
 
