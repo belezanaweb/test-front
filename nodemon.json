@@ -1,0 +1,5 @@
+{
+  "watch": ["src/server/index.ts", "src/middleware/**", "nodemon.json"],
+  "exec": "NODE_ENV=development node ./dist/server",
+  "ext": "tsx ts js json"
+}
