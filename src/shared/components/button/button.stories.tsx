@@ -14,7 +14,6 @@ const Template: Story<IButtonProps> = (args) => <Button {...args} />
 
 export const Primary = Template.bind({})
 Primary.args = {
-  primary: true,
   children: 'Button'
 }
 
