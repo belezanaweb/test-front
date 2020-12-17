@@ -50,18 +50,18 @@ router.get('*', async (req, res, next) => {
 
   return res.send(`
     <!DOCTYPE html>
-    <html lang="en">
+    <html lang="pt-br">
     <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-        <meta http-equiv="X-UA-Compatible" content="ie=edge">
-        <title>TS REACT STARTER</title>
-        ${tags.links}
-        ${tags.styles}
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+      <meta http-equiv="X-UA-Compatible" content="ie=edge">
+      <title>Grupo Boticário</title>
+      ${tags.links}
+      ${tags.styles}
     </head>
     <body>
-        <div id="root">${renderToString(jsx)}</div>
-        ${tags.scripts}
+      <div id="root">${renderToString(jsx)}</div>
+      ${tags.scripts}
     </body>
     </html>
   `);
