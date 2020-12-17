@@ -1,31 +1,38 @@
-import React from 'react'
-import { Helmet } from 'react-helmet-async'
-import { Route, Switch } from 'react-router-dom'
+import * as React from 'react';
+import { Store } from 'redux';
+import { useEffect } from 'react';
+import { useStore } from 'react-redux';
+import { useLocation } from 'react-router-dom';
+import { matchRoutes, renderRoutes } from 'react-router-config';
+import { LoadableComponent } from '@loadable/component';
 
-import favicon from './assets/favicon.ico'
+import { routes } from './routes';
+import AppLayout from './layouts/app';
 
-import Home from './screens/home'
-import NotFound from './screens/not-found'
-import Layout from './layouts/app'
-
-import routes from './routes'
-
-const App: React.FC<any> = () => {
-  return (
-    <div>
-      <Helmet
-        defaultTitle="Grupo Boticário"
-        titleTemplate="%s – Grupo Boticário"
-        link={[{ rel: 'icon', type: 'image/ico', href: favicon }]}
-      />
-      <Layout>
-        <Switch>
-          <Route exact={true} path={routes.home} component={Home} />
-          <Route path="*" component={NotFound} />
-        </Switch>
-      </Layout>
-    </div>
-  )
+if (typeof Proxy === 'undefined') {
+  // eslint-disable-next-line @typescript-eslint/no-var-requires
+  require('immer').enableES5();
 }
 
-export default App
+function App() {
+  const store = useStore();
+  const location = useLocation();
+
+  useEffect(() => {
+    if (typeof window !== 'undefined') {
+      App.getInitialProps(store, location.pathname, location.search);
+    }
+  }, [location]);
+
+  return <AppLayout>{renderRoutes(routes)}</AppLayout>;
+}
+
+App.getInitialProps = (store: Store, path: string, search: string): Promise<unknown>[] => {
+  return matchRoutes(routes, path).map(({ route, match }) =>
+    (route.component as LoadableComponent<any>).load().then(({ default: comp }: any) => {
+      return comp.preload?.({ store, match, search }) || Promise.resolve();
+    })
+  );
+};
+
+export default App;

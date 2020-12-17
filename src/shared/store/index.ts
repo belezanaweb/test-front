@@ -1,39 +1,34 @@
-import { createStore, applyMiddleware, Store, compose } from 'redux'
-import createSagaMiddleware from 'redux-saga'
+import { applyMiddleware, compose, createStore, Store } from 'redux';
+import createSagaMiddleware, { END, Task } from 'redux-saga';
 
-import rootReducer from './root-reducer'
-import rootSaga from './root-saga'
+import rootReducer, { AppState } from './reducers';
+import rootSaga from './sagas';
 
-export interface ApplicationState {}
-
-type StoreParams = {
-  initialState?: { [key: string]: any },
-  middleware?: any[]
+interface AppContext {
+  isServer?: boolean;
 }
 
-export const configureStore = ({ initialState, middleware = [] }: StoreParams) => {
-  const devtools =
-    typeof window !== 'undefined' &&
-    typeof window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ === 'function' &&
-    window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__({ actionsBlacklist: [] })
-
-  const composeEnhancers = devtools || compose
-  const sagaMiddleware = createSagaMiddleware()
-  const enhancer = composeEnhancers(applyMiddleware(...[sagaMiddleware].concat(...middleware)))
-
-  const store: Store<ApplicationState> = createStore(rootReducer(), initialState, enhancer)
-
-  if (process.env.NODE_ENV !== 'production') {
-    if (module.hot) {
-      module.hot.accept('./root-reducer', () =>
-        store.replaceReducer(require('./root-reducer').default)
-      )
-    }
-  }
-
-  sagaMiddleware.run(rootSaga)
-
-  return store
+export interface ReduxStore extends Store<AppState> {
+  run: Task;
+  close: () => END;
 }
 
-export default configureStore
+const prod = process.env.NODE_ENV === 'production';
+
+function configureStore(context: AppContext, appState?: AppState): ReduxStore {
+  const devtools = !context.isServer && window.__REDUX_DEVTOOLS_EXTENSION__;
+
+  const sagaMiddleware = createSagaMiddleware();
+
+  const enhancer = compose(applyMiddleware(sagaMiddleware), !prod && devtools ? devtools() : (f: unknown) => f);
+
+  const store = createStore(rootReducer, appState, enhancer) as ReduxStore;
+
+  store.run = sagaMiddleware.run(rootSaga);
+  store.close = () => store.dispatch(END);
+
+  return store;
+}
+
+export { AppState } from './reducers';
+export default configureStore;

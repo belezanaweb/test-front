@@ -1,13 +1,15 @@
-import React from 'react'
+import * as React from 'react';
 
-interface Props {
+interface AppLayoutProps {
   children: React.ReactNode;
 }
 
-const AppLayout: React.FC<Props> = ({ children }: Props) => (
-  <div>
-    <div>{children}</div>
-  </div>
-)
+function AppLayout({ children }: AppLayoutProps) {
+  return (
+    <>
+      <main>{children}</main>
+    </>
+  );
+}
 
-export default AppLayout
+export default AppLayout;

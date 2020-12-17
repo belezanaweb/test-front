@@ -1,50 +1,27 @@
-// import React from 'react';
-import path from 'path'
-import express from 'express'
-import cors from 'cors'
-import manifestHelpers from 'express-manifest-helpers'
-import bodyParser from 'body-parser'
-import paths from '../../scripts/config/paths'
-// import { configureStore } from '../shared/store';
-import errorHandler from './middleware/error-handler'
-import serverRenderer from './middleware/server-renderer'
-import addStore from './middleware/add-store'
+import * as express from 'express';
+import { resolve } from 'path';
+import renderer from './middleware/renderer';
+import { webpackDevMiddleware, webpackHotMiddleware } from './middleware/HMR';
 
-require('dotenv').config()
+const isProd = process.env.NODE_ENV === 'production';
+const app = express();
 
-const app = express()
-// const app = express.default();
+app.disable('etag');
+app.disable('x-powered-by');
 
-// Use Nginx or Apache to serve static assets in production or remove the if() around the following
-// lines to use the express.static middleware to serve assets for production (not recommended!)
-// if (process.env.NODE_ENV === 'development') {
-app.use(paths.publicPath, express.static(path.join(paths.clientBuild, paths.publicPath)))
-// }
+if (!isProd) {
+  app.use(webpackDevMiddleware);
+  app.use(webpackHotMiddleware);
+}
 
-app.use(cors())
+app.use(express.static(resolve('./public'), { index: false }));
 
-app.use(bodyParser.json())
-app.use(bodyParser.urlencoded({ extended: true }))
+app.use(express.static(resolve('./build'), { index: false }));
 
-app.use(addStore)
+app.use(renderer);
 
-const manifestPath = path.join(paths.clientBuild, paths.publicPath)
+const port = process.env.PORT || 3000;
 
-app.use(
-  manifestHelpers({
-    manifestPath: `${manifestPath}/manifest.json`
-  })
-)
-
-app.use(serverRenderer())
-
-app.use(errorHandler)
-
-app.listen(process.env.PORT || 3000, () => {
-  console.log(
-    `[${new Date().toISOString()}]`,
-    `App is running: http://localhost:${process.env.PORT || 3000}`
-  )
-})
-
-export default app
+app.listen(port, () => {
+  console.log(`🚀 Server running on port: ${port} 🚀`);
+});
