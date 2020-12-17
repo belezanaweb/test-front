@@ -1,5 +1,5 @@
-import styled, { css } from 'styled-components/macro'
-import { IButtonStyles } from './button.interface'
+import styled, { css } from 'styled-components/macro';
+import { IButtonStyles } from './button.interface';
 
 const base: any = {
   style: css`
@@ -14,13 +14,10 @@ const base: any = {
   `,
   large: css`
     padding: 6px 12px;
-  `
-}
+  `,
+};
 
-export const Button =
-  styled.button <
-  IButtonStyles >
-  `
+export const Button = styled.button<IButtonStyles>`
   ${base.style}
   ${(props) => base[props.size]}
-`
+`;

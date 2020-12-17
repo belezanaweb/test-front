@@ -1,28 +1,31 @@
 import { INITIAL_VIEWPORTS } from '@storybook/addon-viewport';
 import { ThemeProvider } from 'styled-components';
 import { StoryContext, StoryGetter, StoryWrapper } from '@storybook/addons';
+import { GlobalStyle } from '../src/shared/styles/global';
+import globalTheme from '../src/shared/styles/theme';
 
 const globals = {
   colors: {
     dark: '#333',
     light: '#fff'
-  }
+  },
+  ...globalTheme,
 }
 
 export const darkTheme = {
   name: 'dark',
   background: globals.colors.black,
-  globals
+  ...globals,
 }
 
 export const lightTheme = {
   name: 'light',
   background: globals.colors.white,
-  globals
+  ...globals,
 }
 
 const getTheme = (theme) => {
-  if (theme == 'dark') {
+  if (theme === 'dark') {
     return darkTheme;
   } else {
     return lightTheme;
@@ -69,6 +72,7 @@ const withThemeProvider = (Story,context) => {
   const theme = getTheme(context.globals.theme);
   return (
     <ThemeProvider theme={theme}>
+      <GlobalStyle />
       <Story {...context} />
     </ThemeProvider>
   )

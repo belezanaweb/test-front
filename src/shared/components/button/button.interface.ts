@@ -1,4 +1,4 @@
-export type TSize = 'small' | 'medium' | 'large'
+export type TSize = 'small' | 'medium' | 'large';
 
 export interface IButtonProps extends HTMLButtonElement {
   size?: TSize;
