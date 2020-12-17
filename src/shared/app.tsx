@@ -7,6 +7,10 @@ import { matchRoutes, renderRoutes } from 'react-router-config';
 import { LoadableComponent } from '@loadable/component';
 
 import { routes } from './routes';
+
+import { ThemeProvider } from 'styled-components';
+import { GlobalStyle } from './styles/global';
+import globalTheme from './styles/theme';
 import AppLayout from './layouts/app';
 
 if (typeof Proxy === 'undefined') {
@@ -24,7 +28,12 @@ function App() {
     }
   }, [location]);
 
-  return <AppLayout>{renderRoutes(routes)}</AppLayout>;
+  return (
+    <ThemeProvider theme={globalTheme}>
+      <GlobalStyle />
+      <AppLayout>{renderRoutes(routes)}</AppLayout>
+    </ThemeProvider>
+  );
 }
 
 App.getInitialProps = (store: Store, path: string, search: string): Promise<unknown>[] => {
