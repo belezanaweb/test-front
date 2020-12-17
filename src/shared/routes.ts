@@ -1,27 +1,24 @@
-/* eslint-disable security/detect-object-injection */
-const routes = {
-  home: '/'
+import * as React from 'react';
+import loadable from '@loadable/component';
+
+const HomePage = loadable(() => import('./screens/home'));
+const ErrorPage = loadable(() => import('./screens/not-found'));
+
+export interface RouteConfig {
+  path: string;
+  exact?: boolean;
+  routes?: RouteConfig[];
+  component: React.ComponentType;
 }
 
-export const getRoute = (
-  path: string,
-  params?: { [key: string]: string | number },
-  routesConfig: any = routes
-) =>
-  path.split('.').reduce((routeBranch: any, pathItem: string) => {
-    if (routeBranch && routeBranch[pathItem]) {
-      const route = routeBranch[pathItem]
-      if (typeof route === 'string') {
-        if (!params || typeof params === 'undefined') {
-          return route
-        }
-
-        return Object.entries(params).reduce((replaced, [key, value]) => {
-          return replaced.replace(`:${key}`, String(value))
-        }, route)
-      }
-      return routeBranch[pathItem]
-    }
-  }, routesConfig)
-
-export default routes
+export const routes: RouteConfig[] = [
+  {
+    path: '/',
+    exact: true,
+    component: HomePage,
+  },
+  {
+    path: '*',
+    component: ErrorPage,
+  },
+];
