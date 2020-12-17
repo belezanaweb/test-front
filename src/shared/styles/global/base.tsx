@@ -3,6 +3,7 @@ import { css } from 'styled-components';
 const base = css`
   html {
     background: ${(props) => props.theme.global.primary.backgroundColor};
+    font-size: 62.5%;
   }
 
   body {
