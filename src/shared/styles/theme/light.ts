@@ -1,7 +1,7 @@
 export const light = {
   global: {
     primary: {
-      backgroundColor: '#fff',
+      backgroundColor: '#eee',
     },
   },
   button: {
@@ -25,6 +25,44 @@ export const light = {
     },
     error: {
       color: '#f30',
+    },
+  },
+  title: {
+    color: '#999',
+  },
+  panel: {
+    body: {
+      backgroundColor: '#fff',
+      shadowColor: '#00001d38',
+    },
+  },
+  card: {
+    backgroundColor: '#fff',
+    borderColor: '#eee',
+    title: {
+      color: '#212121',
+    },
+    price: {
+      color: '#212121',
+    },
+  },
+  cartSummary: {
+    borderColor: '#ccc',
+    label: {
+      color: '#212121',
+    },
+    value: {
+      color: '#212121',
+    },
+    discount: {
+      color: '#ff7800',
+    },
+  },
+  checkout: {
+    navbar: {
+      item: {
+        color: '#ccc',
+      },
     },
   },
 };

@@ -1,33 +1,9 @@
 import { combineReducers } from 'redux';
 
+import carts from './carts/reducer';
+
 export interface AppState {
-  cart: {
-    data: {
-      id: '',
-      username: '',
-      name: '',
-      email: ''
-    },
-    loading: false
-  },
-  payment: {
-    data: {
-      id: '',
-      username: '',
-      name: '',
-      email: ''
-    },
-    loading: false
-  },
-  success: {
-    data: {
-      id: '',
-      username: '',
-      name: '',
-      email: ''
-    },
-    loading: false
-  }
+  carts: ReturnType<typeof carts>
 }
 
-export default combineReducers({});
+export default combineReducers({ carts });

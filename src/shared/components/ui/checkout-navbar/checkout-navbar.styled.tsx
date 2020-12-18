@@ -10,7 +10,7 @@ export const CheckoutNavbar = styled.div`
 `;
 
 export const CheckoutNavbarItem = styled.a<ICheckoutNavbarItemStyles>`
-  color: #ccc;
+  color: ${(props) => props.theme.checkout.navbar.item.color};
   font-size: 1.3rem;
   font-weight: 700;
   text-transform: uppercase;

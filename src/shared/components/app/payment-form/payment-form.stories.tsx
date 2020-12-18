@@ -12,4 +12,3 @@ export default {
 const Template: Story = (args) => <PaymentForm {...args} />;
 
 export const Default = Template.bind({});
-Default.args = {};

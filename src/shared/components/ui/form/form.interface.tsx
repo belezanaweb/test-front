@@ -1,18 +1,18 @@
 import * as React from 'react';
 
 export interface IFormProps {
-  children: any;
+  children: JSX.Element | string;
   onSubmit: () => void;
 }
 
 export interface IFormGroupProps {
-  children: any;
+  children: JSX.Element | string;
   error?: string;
 }
 
 export interface IFormLabelProps {
   htmlFor: string;
-  children: any;
+  children: JSX.Element | string;
 }
 
 export interface IFormFieldProps {

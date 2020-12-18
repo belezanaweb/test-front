@@ -100,6 +100,7 @@
     "postcss-loader": "4.0.4",
     "postcss-preset-env": "6.7.0",
     "prettier": "2.1.2",
+    "redux-mock-store": "1.5.4",
     "sass-loader": "10.0.5",
     "style-loader": "2.0.0",
     "ts-loader": "8.0.7",
