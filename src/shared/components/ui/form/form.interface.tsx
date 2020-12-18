@@ -1,5 +1,3 @@
-import { ReactNode } from 'react';
-
 export interface IFormProps {
   children: any;
   onSubmit: () => void;
@@ -7,8 +5,7 @@ export interface IFormProps {
 
 export interface IFormGroupProps {
   children: any;
-  error: boolean;
-  errorMessage: string;
+  error?: string;
 }
 
 export interface IFormLabelProps {
@@ -19,6 +16,13 @@ export interface IFormLabelProps {
 export interface IFormFieldProps {
   id?: string;
   name?: string;
-  ref?: any;
+  inputRef?: any;
   type: string;
+  placeholder?: string;
+  value?: string;
+  error?: boolean;
+}
+
+export interface IFieldStyles {
+  error?: boolean;
 }

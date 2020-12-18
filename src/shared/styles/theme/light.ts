@@ -17,9 +17,14 @@ export const light = {
     },
     field: {
       backgroundColor: '#fff',
-      color: '#333',
+      color: '#212121',
       borderColor: '#e7e7e7',
+      borderColor_focus: '#a43287',
       shadowColor: '#00000033',
+      placeholderColor: '#e0e7ee',
+    },
+    error: {
+      color: '#f30',
     },
   },
 };

@@ -1,5 +1,7 @@
 import styled from 'styled-components/macro';
 
+import { IFieldStyles } from './form.interface';
+
 export const Group = styled.p`
   margin-bottom: 2.5rem;
 `;
@@ -12,13 +14,28 @@ export const Label = styled.label`
   margin-bottom: 0.5rem;
 `;
 
-export const Field = styled.input`
+export const Field = styled.input<IFieldStyles>`
   border-radius: 3px;
   background-color: ${(props) => props.theme.form.field.backgroundColor};
   border: 1px solid ${(props) => props.theme.form.field.borderColor};
   box-shadow: inset 0 1px 2px 0 ${(props) => props.theme.form.field.shadowColor};
   color: ${(props) => props.theme.form.field.color};
   font-size: 1.6rem;
+  outline: none;
   padding: 1.2rem;
   width: 100%;
+
+  &:focus {
+    border-color: ${(props) => props.theme.form.field.borderColor_focus};
+  }
+
+  ${(props) => props.error && `border-color: ${props.theme.form.error.color}; box-shadow: none;`};
+`;
+
+export const Error = styled.span`
+  color: ${(props) => props.theme.form.error.color};
+  display: block;
+  font-size: 1.2rem;
+  line-height: 1.1;
+  margin-top: 2px;
 `;
