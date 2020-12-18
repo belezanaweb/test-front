@@ -26,7 +26,7 @@ const schema = yup.object().shape({
   securityCode: yup.string().min(3, 'Mínimo 3 números').max(4, 'Máximo 4 números').required('Campo obrigatório'),
 });
 
-export const PaymentForm = ({ html }: { html: JSX.Element }) => {
+export const PaymentForm = ({ html }: { html?: JSX.Element }) => {
   const { register, handleSubmit, errors } = useForm<TPaymentData>({
     resolver: yupResolver(schema),
   });
@@ -123,7 +123,7 @@ export const PaymentForm = ({ html }: { html: JSX.Element }) => {
             </GridCol>
           </>
         </Grid>
-        {html}
+        {html && html}
         <Button type="submit" block={true}>
           Finalizar o pedido
         </Button>

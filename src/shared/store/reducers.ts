@@ -1,9 +1,9 @@
 import { combineReducers } from 'redux';
 
-import cart from './cart/reducer';
+import carts from './carts/reducer';
 
 export interface AppState {
-  cart: ReturnType<typeof cart>
+  carts: ReturnType<typeof carts>
 }
 
-export default combineReducers({ cart });
+export default combineReducers({ carts });

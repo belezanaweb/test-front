@@ -4,14 +4,20 @@ import { Cart } from '../../services/cart.interface';
 
 interface CartState {
   cart: BaseState<Cart>;
+  carts: BaseState<Cart[]>;
 }
 
 const initialState: CartState = {
   cart: {
     data: null,
     loading: false,
+    error: ''
+  },
+  carts: {
+    data: null,
+    loading: false,
     error: '',
-  }
+  },
 };
 
 export default (state: CartState = initialState, action: CartAction) =>
@@ -29,6 +35,19 @@ export default (state: CartState = initialState, action: CartAction) =>
       case types.LOAD_CART_FAILURE:
         draft.cart.error = action.error;
         draft.cart.loading = false;
+        break;
+      case types.LOAD_CARTS_REQUEST:
+        draft.carts.loading = true;
+        draft.carts.data = null;
+        draft.carts.error = '';
+        break;
+      case types.LOAD_CARTS_SUCCESS:
+        draft.carts.data = action.data;
+        draft.carts.loading = false;
+        break;
+      case types.LOAD_CARTS_FAILURE:
+        draft.carts.error = action.error;
+        draft.carts.loading = false;
         break;
       default:
         break;

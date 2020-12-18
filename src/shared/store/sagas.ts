@@ -1,7 +1,7 @@
 import { all, fork } from 'redux-saga/effects';
 
-import cart from './cart/saga';
+import carts from './carts/saga';
 
 export default function* () {
-  yield all([fork(cart)]);
+  yield all([fork(carts)]);
 }

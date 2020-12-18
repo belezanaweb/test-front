@@ -2,7 +2,7 @@ import * as React from 'react';
 import { useSelector } from 'react-redux';
 import { AppState } from '../../store';
 
-import { actions } from '../../store/cart/action';
+import { actions } from '../../store/carts/action';
 
 import Panel from '../../components/ui/panel';
 import Title from '../../components/ui/title';
@@ -10,13 +10,13 @@ import Card from '../../components/ui/card';
 import CartSummary from '../../components/ui/cart-summary';
 import Button from '../../components/ui/button';
 
-const Cart = () => {
-  const { data, loading } = useSelector((state: AppState) => state.cart);
+function Cart() {
+  const { data: cart, loading } = useSelector((state: AppState) => state.carts.cart);
 
   return loading ? (
     <p>loading...</p>
   ) : (
-    data && (
+    cart && (
       <>
         <Panel title={<Title>Produtos</Title>}>
           <>
@@ -48,12 +48,12 @@ const Cart = () => {
   );
 };
 
-Cart.preload = async ({ store, match }: { store: any; match: any }) => {
-  const cart = store.getState().cart;
+(Cart as Container<{ id: string }>).preload = async ({ store, match }) => {
+  const cart = store.getState().carts.cart;
   const cartId = match.params.id;
   const needFetch = !cart.data || cart.data.id !== cartId;
   if (needFetch && !cart.loading) {
-    store.dispatch(actions.loadCartRequest(cartId));
+    store.dispatch(actions.loadCartRequest('5b15c4923100004a006f3c07')); // cartId
   }
 };
 
