@@ -1,13 +1,15 @@
 import styled from 'styled-components/macro';
 
-export const Card = styled.article`
+import { IImageStyles } from './card.interface';
+
+export const Card = styled.article<IImageStyles>`
   background: ${(props) => props.theme.card.backgroundColor};
   border: 0.1rem solid ${(props) => props.theme.card.borderColor};
   border-radius: 0.3rem;
   display: flex;
   flex-direction: row;
   margin-top: 1.5rem;
-  min-height: 9rem;
+  min-height: ${(props) => (props.presentation ? '6.4rem' : '9rem')};
   padding: 1rem;
 
   &:first-child {
@@ -15,26 +17,26 @@ export const Card = styled.article`
   }
 `;
 
-export const Figure = styled.figure`
-  height: 6.5rem;
-  width: 6.5rem;
+export const Figure = styled.figure<IImageStyles>`
+  height: ${(props) => (props.presentation ? '4.2rem' : '6.5rem')};
+  width: ${(props) => (props.presentation ? '4.2rem' : '6.5rem')};
 `;
 
-export const Image = styled.img`
-  height: 6.5rem;
-  width: 6.5rem;
+export const Image = styled.img<IImageStyles>`
+  height: ${(props) => (props.presentation ? '4.2rem' : '6.5rem')};
+  width: ${(props) => (props.presentation ? '4.2rem' : '6.5rem')};
 `;
 
-export const Description = styled.dl`
-  padding-bottom: 2rem;
+export const Description = styled.dl<IImageStyles>`
+  padding-bottom: ${(props) => (props.presentation ? '0' : '2rem')};
   padding-left: 1rem;
   position: relative;
 `;
 
-export const Title = styled.dt`
+export const Title = styled.dt<IImageStyles>`
   color: ${(props) => props.theme.card.title.color};
   font-size: 1.3rem;
-  margin-bottom: 1.5rem;
+  margin-bottom: ${(props) => (props.presentation ? '0' : '1.5rem')};
 `;
 
 export const Price = styled.dd`
