@@ -4,7 +4,7 @@ import { IFormGroupProps } from './form.interface';
 import * as Styled from './form.styled';
 
 export const FormGroup: React.FC<IFormGroupProps> = ({ children, error }) => (
-  <Styled.Group>
+  <Styled.Group error={error}>
     {children}
     {error && <Styled.Error>{error}</Styled.Error>}
   </Styled.Group>

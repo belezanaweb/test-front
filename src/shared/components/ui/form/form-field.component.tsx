@@ -11,6 +11,16 @@ export const FormField: React.FC<IFormFieldProps> = ({
   placeholder,
   value,
   error,
+  onChange,
 }) => (
-  <Styled.Field id={id} name={name} ref={inputRef} type={type} placeholder={placeholder} value={value} error={error} />
+  <Styled.Field
+    id={id}
+    name={name}
+    ref={inputRef}
+    type={type}
+    placeholder={placeholder}
+    value={value}
+    error={error}
+    onChange={onChange}
+  />
 );

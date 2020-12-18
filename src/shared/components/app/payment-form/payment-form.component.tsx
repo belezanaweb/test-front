@@ -9,16 +9,21 @@ import { TPaymentData } from './payment-form.interface';
 import Form, { FormGroup, FormLabel, FormField } from '../../ui/form';
 import Button from '../../ui/button';
 
+import utils from '../../../utils';
+
 const schema = yup.object().shape({
   name: yup.string().required('O nome é obrigatório').min(3, 'Mínimo 3 caracteres').trim(),
   creditCardNumber: yup
     .string()
     .required('O número do cartão é obrigatório')
-    .test('required', 'O número do cartão é inválido', (value) => valid.number(value).isValid),
-  expires: yup.number().required('A validade é obrigatória').typeError('Apenas números'),
+    .test('required', 'O número do cartão é inválido', (value) => valid.number(value?.replace(/ /g, '')).isValid),
+  expires: yup
+    .string()
+    .min(7, 'Mínimo 6 números')
+    .required('A validade é obrigatória')
+    .test('required', 'O validade é inválida', (value) => value?.replace(/[/]/g, '').length === 6),
   securityCode: yup
-    .number()
-    .typeError('Apenas números')
+    .string()
     .min(3, 'Mínimo 3 números')
     .max(4, 'Máximo 4 números')
     .required('O código de segurança é obrigatório'),
@@ -33,7 +38,10 @@ export const PaymentForm = () => {
     console.log('data', data);
   }, []);
 
-  console.log(errors);
+  const [creditCardNumber, setCreditCardNumber] = React.useState('');
+  const [securityCode, setSecurityCode] = React.useState('');
+  const [name, setName] = React.useState('');
+  const [expires, setExpires] = React.useState('');
 
   return (
     <Form onSubmit={handleSubmit(onSubmit)}>
@@ -44,8 +52,14 @@ export const PaymentForm = () => {
             type="text"
             id="creditCardNumber"
             name="creditCardNumber"
+            placeholder="____-____-____-____"
             inputRef={register}
+            onChange={(event: React.ChangeEvent<HTMLInputElement>) => {
+              const { value } = event.target;
+              setCreditCardNumber(utils.mask.creditCardNumber(value));
+            }}
             error={!!errors.creditCardNumber}
+            value={creditCardNumber}
           />
         </FormGroup>
         <FormGroup error={errors.name?.message}>
@@ -57,20 +71,43 @@ export const PaymentForm = () => {
             name="name"
             inputRef={register}
             error={!!errors.name}
+            onChange={(event: React.ChangeEvent<HTMLInputElement>) => {
+              const { value } = event.target;
+              setName(utils.mask.name(value));
+            }}
+            value={name}
           />
         </FormGroup>
         <FormGroup error={errors.expires?.message}>
           <FormLabel htmlFor="expires">Validade (mês/ano):</FormLabel>
-          <FormField type="text" id="expires" name="expires" inputRef={register} error={!!errors.expires} />
+          <FormField
+            placeholder="__/____"
+            type="text"
+            id="expires"
+            name="expires"
+            inputRef={register}
+            error={!!errors.expires}
+            onChange={(event: React.ChangeEvent<HTMLInputElement>) => {
+              const { value } = event.target;
+              setExpires(utils.mask.expires(value));
+            }}
+            value={expires}
+          />
         </FormGroup>
         <FormGroup error={errors.securityCode?.message}>
           <FormLabel htmlFor="securityCode">CVV:</FormLabel>
           <FormField
+            placeholder="___"
             type="text"
             id="securityCode"
             name="securityCode"
             inputRef={register}
             error={!!errors.securityCode}
+            onChange={(event: React.ChangeEvent<HTMLInputElement>) => {
+              const { value } = event.target;
+              setSecurityCode(utils.mask.securityCode(value));
+            }}
+            value={securityCode}
           />
         </FormGroup>
         <Button type="submit" block={true}>

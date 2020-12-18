@@ -1,9 +1,11 @@
 import styled from 'styled-components/macro';
 
-import { IFieldStyles } from './form.interface';
+import { IFieldStyles, IGroupStyles } from './form.interface';
 
-export const Group = styled.p`
+export const Group = styled.p<IGroupStyles>`
   margin-bottom: 2.5rem;
+
+  ${(props) => props.error && `margin-bottom: 1rem;`};
 `;
 
 export const Label = styled.label`

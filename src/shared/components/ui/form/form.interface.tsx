@@ -1,3 +1,5 @@
+import * as React from 'react';
+
 export interface IFormProps {
   children: any;
   onSubmit: () => void;
@@ -21,8 +23,13 @@ export interface IFormFieldProps {
   placeholder?: string;
   value?: string;
   error?: boolean;
+  onChange?: (event: React.ChangeEvent<HTMLInputElement>) => void;
 }
 
 export interface IFieldStyles {
   error?: boolean;
+}
+
+export interface IGroupStyles {
+  error?: string;
 }
