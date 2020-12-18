@@ -39,7 +39,7 @@ function App() {
 App.getInitialProps = (store: Store, path: string, search: string): Promise<unknown>[] => {
   return matchRoutes(routes, path).map(({ route, match }) =>
     (route.component as LoadableComponent<any>).load().then(({ default: comp }: any) => {
-      return comp.preload?.({ store, match, search }) || Promise.resolve();
+      return (comp as Container<typeof match.params>).preload?.({ store, match, search }) || Promise.resolve();
     })
   );
 };

@@ -2,6 +2,8 @@ import * as React from 'react';
 import { useSelector } from 'react-redux';
 import { AppState } from '../../store';
 
+import { actions } from '../../store/cart/action';
+
 import Panel from '../../components/ui/panel';
 import Title from '../../components/ui/title';
 import Card from '../../components/ui/card';
@@ -49,10 +51,10 @@ const Cart = () => {
 Cart.preload = async ({ store, match }: { store: any; match: any }) => {
   const cart = store.getState().cart;
   const cartId = match.params.id;
-  //const needFetch = !cart.data || cart.data.id !== Number(cartId);
-  //if (needFetch && !cart.loading) {
-  //store.dispatch(actions.loadCartRequest(cartId));
-  //}
+  const needFetch = !cart.data || cart.data.id !== cartId;
+  if (needFetch && !cart.loading) {
+    store.dispatch(actions.loadCartRequest(cartId));
+  }
 };
 
 export default Cart;
