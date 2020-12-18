@@ -4,7 +4,7 @@ export type TButtonStyleType = 'primary';
 
 export interface IButtonProps {
   size?: TButtonSize;
-  children: any;
+  children: JSX.Element | string;
   type?: TButtonType;
   block?: boolean;
   styleType?: TButtonStyleType;

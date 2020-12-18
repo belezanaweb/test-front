@@ -7,7 +7,7 @@ import globalTheme from '../src/shared/styles/theme';
 const globals = {
   colors: {
     dark: '#333',
-    light: '#fff'
+    light: '#eee'
   },
   ...globalTheme,
 }

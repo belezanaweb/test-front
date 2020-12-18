@@ -1,9 +1,9 @@
 export interface ICheckoutNavbarProps {
-  children: any,
+  children: JSX.Element | string;
 }
 
 export interface ICheckoutNavbarItemProps {
-  children: any,
+  children: JSX.Element | string;
   selected?: boolean;
 }
 

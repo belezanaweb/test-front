@@ -1,9 +1,9 @@
 export interface IGridProps {
-  children?: any,
+  children: JSX.Element | string;
 }
 
 export interface IGridColProps {
-  children?: any,
+  children: JSX.Element | string;
   xs?: number;
   md?: number;
   lg?: number;

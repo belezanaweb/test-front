@@ -1,7 +1,7 @@
 export const light = {
   global: {
     primary: {
-      backgroundColor: '#fff',
+      backgroundColor: '#eee',
     },
   },
   button: {
@@ -25,6 +25,22 @@ export const light = {
     },
     error: {
       color: '#f30',
+    },
+  },
+  title: {
+    color: '#999',
+  },
+  panel: {
+    body: {
+      backgroundColor: '#fff',
+      shadowColor: '#00001d38',
+    },
+  },
+  checkout: {
+    navbar: {
+      item: {
+        color: '#ccc',
+      },
     },
   },
 };
