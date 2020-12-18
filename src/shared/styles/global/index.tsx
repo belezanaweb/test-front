@@ -6,6 +6,5 @@ import base from './base';
 
 export const GlobalStyle = createGlobalStyle`
   ${reset}
-  ${fonts}
   ${base}
 `;

@@ -46,7 +46,7 @@ function Cart() {
       </>
     )
   );
-};
+}
 
 (Cart as Container<{ id: string }>).preload = async ({ store, match }) => {
   const cart = store.getState().carts.cart;
