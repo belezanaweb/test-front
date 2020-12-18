@@ -8,25 +8,22 @@ import { TPaymentData } from './payment-form.interface';
 
 import Form, { FormGroup, FormLabel, FormField } from '../../ui/form';
 import Button from '../../ui/button';
+import Grid, { GridCol } from '../../ui/grid';
 
 import utils from '../../../utils';
 
 const schema = yup.object().shape({
-  name: yup.string().required('O nome é obrigatório').min(3, 'Mínimo 3 caracteres').trim(),
+  name: yup.string().required('Campo obrigatório').min(3, 'Mínimo 3 caracteres').trim(),
   creditCardNumber: yup
     .string()
-    .required('O número do cartão é obrigatório')
+    .required('Campo obrigatório')
     .test('required', 'O número do cartão é inválido', (value) => valid.number(value?.replace(/ /g, '')).isValid),
   expires: yup
     .string()
     .min(7, 'Mínimo 6 números')
-    .required('A validade é obrigatória')
+    .required('Campo obrigatório')
     .test('required', 'O validade é inválida', (value) => value?.replace(/[/]/g, '').length === 6),
-  securityCode: yup
-    .string()
-    .min(3, 'Mínimo 3 números')
-    .max(4, 'Máximo 4 números')
-    .required('O código de segurança é obrigatório'),
+  securityCode: yup.string().min(3, 'Mínimo 3 números').max(4, 'Máximo 4 números').required('Campo obrigatório'),
 });
 
 export const PaymentForm = () => {
@@ -78,38 +75,44 @@ export const PaymentForm = () => {
             value={name}
           />
         </FormGroup>
-        <FormGroup error={errors.expires?.message}>
-          <FormLabel htmlFor="expires">Validade (mês/ano):</FormLabel>
-          <FormField
-            placeholder="__/____"
-            type="text"
-            id="expires"
-            name="expires"
-            inputRef={register}
-            error={!!errors.expires}
-            onChange={(event: React.ChangeEvent<HTMLInputElement>) => {
-              const { value } = event.target;
-              setExpires(utils.mask.expires(value));
-            }}
-            value={expires}
-          />
-        </FormGroup>
-        <FormGroup error={errors.securityCode?.message}>
-          <FormLabel htmlFor="securityCode">CVV:</FormLabel>
-          <FormField
-            placeholder="___"
-            type="text"
-            id="securityCode"
-            name="securityCode"
-            inputRef={register}
-            error={!!errors.securityCode}
-            onChange={(event: React.ChangeEvent<HTMLInputElement>) => {
-              const { value } = event.target;
-              setSecurityCode(utils.mask.securityCode(value));
-            }}
-            value={securityCode}
-          />
-        </FormGroup>
+        <Grid>
+          <GridCol xs={6}>
+            <FormGroup error={errors.expires?.message}>
+              <FormLabel htmlFor="expires">Validade (mês/ano):</FormLabel>
+              <FormField
+                placeholder="__/____"
+                type="text"
+                id="expires"
+                name="expires"
+                inputRef={register}
+                error={!!errors.expires}
+                onChange={(event: React.ChangeEvent<HTMLInputElement>) => {
+                  const { value } = event.target;
+                  setExpires(utils.mask.expires(value));
+                }}
+                value={expires}
+              />
+            </FormGroup>
+          </GridCol>
+          <GridCol xs={5} xsOffset={1}>
+            <FormGroup error={errors.securityCode?.message}>
+              <FormLabel htmlFor="securityCode">CVV:</FormLabel>
+              <FormField
+                placeholder="___"
+                type="text"
+                id="securityCode"
+                name="securityCode"
+                inputRef={register}
+                error={!!errors.securityCode}
+                onChange={(event: React.ChangeEvent<HTMLInputElement>) => {
+                  const { value } = event.target;
+                  setSecurityCode(utils.mask.securityCode(value));
+                }}
+                value={securityCode}
+              />
+            </FormGroup>
+          </GridCol>
+        </Grid>
         <Button type="submit" block={true}>
           Finalizar o pedido
         </Button>

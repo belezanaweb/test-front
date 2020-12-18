@@ -31,6 +31,19 @@ export const Field = styled.input<IFieldStyles>`
     border-color: ${(props) => props.theme.form.field.borderColor_focus};
   }
 
+  &::placeholder {
+    color: ${(props) => props.theme.form.field.placeholderColor};
+    opacity: 1;
+  }
+
+  &:-ms-input-placeholder {
+    color: ${(props) => props.theme.form.field.placeholderColor};
+  }
+
+  &::-ms-input-placeholder {
+    color: ${(props) => props.theme.form.field.placeholderColor};
+  }
+
   ${(props) => props.error && `border-color: ${props.theme.form.error.color}; box-shadow: none;`};
 `;
 
