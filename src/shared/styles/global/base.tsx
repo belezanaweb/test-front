@@ -8,6 +8,7 @@ const base = css`
 
   body {
     font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-weight: 400;
     margin: 0;
     padding: 0;
   }

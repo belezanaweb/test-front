@@ -36,6 +36,28 @@ export const light = {
       shadowColor: '#00001d38',
     },
   },
+  card: {
+    backgroundColor: '#fff',
+    borderColor: '#eee',
+    title: {
+      color: '#212121',
+    },
+    price: {
+      color: '#212121',
+    },
+  },
+  cartSummary: {
+    borderColor: '#ccc',
+    label: {
+      color: '#212121',
+    },
+    value: {
+      color: '#212121',
+    },
+    discount: {
+      color: '#ff7800',
+    },
+  },
   checkout: {
     navbar: {
       item: {
