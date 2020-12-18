@@ -1,0 +1,4 @@
+export interface ITitleProps {
+  children: JSX.Element | string;
+  tag?: 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6';
+}
