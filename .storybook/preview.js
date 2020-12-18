@@ -3,6 +3,41 @@ import { ThemeProvider } from 'styled-components';
 import { StoryContext, StoryGetter, StoryWrapper } from '@storybook/addons';
 import { GlobalStyle } from '../src/shared/styles/global';
 import globalTheme from '../src/shared/styles/theme';
+import { Provider } from 'react-redux';
+import configureStore from 'redux-mock-store';
+
+const middlewares = [];
+const mockStore = configureStore(middlewares);
+const initialState = {
+  cart: {
+    data: {
+      id: '',
+      username: '',
+      name: '',
+      email: '',
+    },
+    loading: false,
+  },
+  payment: {
+    data: {
+      id: '',
+      username: '',
+      name: '',
+      email: '',
+    },
+    loading: false,
+  },
+  success: {
+    data: {
+      id: '',
+      username: '',
+      name: '',
+      email: '',
+    },
+    loading: false,
+  }
+};
+const store = mockStore(initialState);
 
 const globals = {
   colors: {
@@ -71,10 +106,12 @@ export const parameters = {
 const withThemeProvider = (Story,context) => {
   const theme = getTheme(context.globals.theme);
   return (
-    <ThemeProvider theme={theme}>
-      <GlobalStyle />
-      <Story {...context} />
-    </ThemeProvider>
+    <Provider store={store}>
+      <ThemeProvider theme={theme}>
+        <GlobalStyle />
+        <Story {...context} />
+      </ThemeProvider>
+    </Provider>
   )
 }
 

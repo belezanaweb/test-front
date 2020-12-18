@@ -26,7 +26,7 @@ const schema = yup.object().shape({
   securityCode: yup.string().min(3, 'Mínimo 3 números').max(4, 'Máximo 4 números').required('Campo obrigatório'),
 });
 
-export const PaymentForm = () => {
+export const PaymentForm = ({ html }: { html: JSX.Element }) => {
   const { register, handleSubmit, errors } = useForm<TPaymentData>({
     resolver: yupResolver(schema),
   });
@@ -44,75 +44,86 @@ export const PaymentForm = () => {
     <Form onSubmit={handleSubmit(onSubmit)}>
       <>
         <FormGroup error={errors.creditCardNumber?.message}>
-          <FormLabel htmlFor="creditCardNumber">Número do cartão:</FormLabel>
-          <FormField
-            type="text"
-            id="creditCardNumber"
-            name="creditCardNumber"
-            placeholder="____-____-____-____"
-            inputRef={register}
-            onChange={(event: React.ChangeEvent<HTMLInputElement>) => {
-              const { value } = event.target;
-              setCreditCardNumber(utils.mask.creditCardNumber(value));
-            }}
-            error={!!errors.creditCardNumber}
-            value={creditCardNumber}
-          />
+          <>
+            <FormLabel htmlFor="creditCardNumber">Número do cartão:</FormLabel>
+            <FormField
+              type="text"
+              id="creditCardNumber"
+              name="creditCardNumber"
+              placeholder="____-____-____-____"
+              inputRef={register}
+              onChange={(event: React.ChangeEvent<HTMLInputElement>) => {
+                const { value } = event.target;
+                setCreditCardNumber(utils.mask.creditCardNumber(value));
+              }}
+              error={!!errors.creditCardNumber}
+              value={creditCardNumber}
+            />
+          </>
         </FormGroup>
         <FormGroup error={errors.name?.message}>
-          <FormLabel htmlFor="name">Nome do Titular:</FormLabel>
-          <FormField
-            placeholder="Como no cartão"
-            type="text"
-            id="name"
-            name="name"
-            inputRef={register}
-            error={!!errors.name}
-            onChange={(event: React.ChangeEvent<HTMLInputElement>) => {
-              const { value } = event.target;
-              setName(utils.mask.name(value));
-            }}
-            value={name}
-          />
+          <>
+            <FormLabel htmlFor="name">Nome do Titular:</FormLabel>
+            <FormField
+              placeholder="Como no cartão"
+              type="text"
+              id="name"
+              name="name"
+              inputRef={register}
+              error={!!errors.name}
+              onChange={(event: React.ChangeEvent<HTMLInputElement>) => {
+                const { value } = event.target;
+                setName(utils.mask.name(value));
+              }}
+              value={name}
+            />
+          </>
         </FormGroup>
         <Grid>
-          <GridCol xs={6}>
-            <FormGroup error={errors.expires?.message}>
-              <FormLabel htmlFor="expires">Validade (mês/ano):</FormLabel>
-              <FormField
-                placeholder="__/____"
-                type="text"
-                id="expires"
-                name="expires"
-                inputRef={register}
-                error={!!errors.expires}
-                onChange={(event: React.ChangeEvent<HTMLInputElement>) => {
-                  const { value } = event.target;
-                  setExpires(utils.mask.expires(value));
-                }}
-                value={expires}
-              />
-            </FormGroup>
-          </GridCol>
-          <GridCol xs={5} xsOffset={1}>
-            <FormGroup error={errors.securityCode?.message}>
-              <FormLabel htmlFor="securityCode">CVV:</FormLabel>
-              <FormField
-                placeholder="___"
-                type="text"
-                id="securityCode"
-                name="securityCode"
-                inputRef={register}
-                error={!!errors.securityCode}
-                onChange={(event: React.ChangeEvent<HTMLInputElement>) => {
-                  const { value } = event.target;
-                  setSecurityCode(utils.mask.securityCode(value));
-                }}
-                value={securityCode}
-              />
-            </FormGroup>
-          </GridCol>
+          <>
+            <GridCol xs={6}>
+              <FormGroup error={errors.expires?.message}>
+                <>
+                  <FormLabel htmlFor="expires">Validade (mês/ano):</FormLabel>
+                  <FormField
+                    placeholder="__/____"
+                    type="text"
+                    id="expires"
+                    name="expires"
+                    inputRef={register}
+                    error={!!errors.expires}
+                    onChange={(event: React.ChangeEvent<HTMLInputElement>) => {
+                      const { value } = event.target;
+                      setExpires(utils.mask.expires(value));
+                    }}
+                    value={expires}
+                  />
+                </>
+              </FormGroup>
+            </GridCol>
+            <GridCol xs={5} xsOffset={1}>
+              <FormGroup error={errors.securityCode?.message}>
+                <>
+                  <FormLabel htmlFor="securityCode">CVV:</FormLabel>
+                  <FormField
+                    placeholder="___"
+                    type="text"
+                    id="securityCode"
+                    name="securityCode"
+                    inputRef={register}
+                    error={!!errors.securityCode}
+                    onChange={(event: React.ChangeEvent<HTMLInputElement>) => {
+                      const { value } = event.target;
+                      setSecurityCode(utils.mask.securityCode(value));
+                    }}
+                    value={securityCode}
+                  />
+                </>
+              </FormGroup>
+            </GridCol>
+          </>
         </Grid>
+        {html}
         <Button type="submit" block={true}>
           Finalizar o pedido
         </Button>
