@@ -1,0 +1,34 @@
+.navbar {
+  height: 40px;
+  background-color: var(--white);
+  position: fixed;
+  top: 0;
+  width: 100%;
+  padding: 0 10px;
+  box-shadow: 0 5px 5px rgba(0, 0, 0, 0.1);
+}
+
+.navbar ul {
+  display: flex;
+  justify-content: space-between;
+  margin: 0;
+  padding: 0 10px;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.navbar ul li {
+  line-height: 40px;
+  text-transform: uppercase;
+}
+
+.navbar ul li a {
+  color: var(--light-gray);
+  font-size: 0.8em;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.navbar ul li.active a {
+  color: var(--primary);
+}
