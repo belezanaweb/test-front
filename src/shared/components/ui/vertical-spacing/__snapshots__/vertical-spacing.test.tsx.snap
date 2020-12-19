@@ -1,0 +1,14 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<VerticalSpacing /> should render component with default props and match snapshot 1`] = `
+.c0 {
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+
+<div
+  class="c0"
+>
+  VerticalSpacing
+</div>
+`;
