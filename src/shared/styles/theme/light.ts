@@ -4,6 +4,10 @@ export const light = {
       backgroundColor: '#eee',
     },
   },
+  header: {
+    backgroundColor: '#fff',
+    shadowColor: '#00001d38',
+  },
   button: {
     primary: {
       backgroundColor: '#ff6c00',

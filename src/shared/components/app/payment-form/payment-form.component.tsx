@@ -26,13 +26,14 @@ const schema = yup.object().shape({
   securityCode: yup.string().min(3, 'Mínimo 3 números').max(4, 'Máximo 4 números').required('Campo obrigatório'),
 });
 
-export const PaymentForm = ({ html }: { html?: JSX.Element }) => {
+export const PaymentForm = ({ html, onClick = () => {} }: { html?: JSX.Element; onClick?: () => void }) => {
   const { register, handleSubmit, errors } = useForm<TPaymentData>({
     resolver: yupResolver(schema),
   });
 
   const onSubmit = React.useCallback((data: TPaymentData) => {
     console.log('data', data);
+    onClick();
   }, []);
 
   const [creditCardNumber, setCreditCardNumber] = React.useState('');

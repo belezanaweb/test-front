@@ -1,5 +1,6 @@
 import * as React from 'react';
 import { useSelector } from 'react-redux';
+import { useHistory } from 'react-router-dom';
 import { AppState } from '../../store';
 
 import { actions } from '../../store/carts/action';
@@ -15,6 +16,8 @@ import utils from '../../utils';
 
 function Cart() {
   const { data: cart, loading } = useSelector((state: AppState) => state.carts.cart);
+  const history = useHistory();
+  const handleClick = () => history.push('/pagamento/5b15c4923100004a006f3c07');
 
   return loading ? (
     <p>loading...</p>
@@ -48,7 +51,7 @@ function Cart() {
             total={utils.format.currency.toBRL(618.9)}
           />
         </VerticalSpacing>
-        <Button>Seguir para o pagamento</Button>
+        <Button onClick={handleClick}>Seguir para o pagamento</Button>
       </>
     )
   );

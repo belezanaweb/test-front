@@ -3,8 +3,9 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
+    "open": "./node_modules/.bin/open-cli http://localhost:3000/carrinho/5b15c4923100004a006f3c07",
     "start": "nodemon",
-    "prestart": "npm run build:server && npm run build:client",
+    "prestart": "npm run build:server && npm run build:client && npm run open",
     "build:client": "NODE_ENV=development webpack --config config/webpack.client.config.js",
     "build:server": "NODE_ENV=development webpack --config config/webpack.server.config.js",
     "start:prod": "npm run build:prod && NODE_ENV=production node ./dist/server",
@@ -95,6 +96,7 @@
     "mini-css-extract-plugin": "1.2.1",
     "node-sass": "5.0.0",
     "nodemon": "2.0.6",
+    "open-cli": "6.0.1",
     "postcss": "8.1.4",
     "postcss-flexbugs-fixes": "5.0.0",
     "postcss-loader": "4.0.4",
