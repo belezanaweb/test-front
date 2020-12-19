@@ -23,6 +23,7 @@ export const Field = styled.input<IFieldStyles>`
   box-shadow: inset 0 1px 2px 0 ${(props) => props.theme.form.field.shadowColor};
   color: ${(props) => props.theme.form.field.color};
   font-size: 1.6rem;
+  font-weight: 400;
   outline: none;
   padding: 1.2rem;
   width: 100%;
