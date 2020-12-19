@@ -13,7 +13,11 @@ function Success() {
   return (
     <div>
       <VerticalSpacing bottom="medium">
-        <PaymentSummary creditCardNumber="****.****.****.1234" name="José da Silva" expires="05/2019" />
+        <PaymentSummary
+          creditCardNumber={utils.replace.numbers('1234.1234.1234.1234', 0, 14, '*')}
+          name="José da Silva"
+          expires="05/2019"
+        />
       </VerticalSpacing>
 
       <Panel title={<Title>Produtos</Title>}>
