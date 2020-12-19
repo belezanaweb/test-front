@@ -1,0 +1,18 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Title /> should render component with default props and match snapshot 1`] = `
+.c0 {
+  color: #999;
+  font-size: 1.4rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  text-transform: uppercase;
+}
+
+<h1
+  class="c0"
+  role="heading"
+>
+  Title
+</h1>
+`;
