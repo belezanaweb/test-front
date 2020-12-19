@@ -20,7 +20,7 @@ function Cart() {
   const handleClick = () => history.push('/pagamento/5b15c4923100004a006f3c07');
 
   return loading ? (
-    <p>loading...</p>
+    <p>carregando...</p>
   ) : (
     cart && (
       <>
@@ -51,7 +51,7 @@ function Cart() {
             total={utils.format.currency.toBRL(618.9)}
           />
         </VerticalSpacing>
-        <Button onClick={handleClick}>Seguir para o pagamento</Button>
+        <Button onClick={handleClick} block={true}>Seguir para o pagamento</Button>
       </>
     )
   );

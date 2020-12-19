@@ -13,7 +13,15 @@ export const light = {
       backgroundColor: '#ff6c00',
       backgroundColor_hover: '#d45a00',
       color: '#fff',
+      shadowColor_1: '#d45a00',
+      shadowColor_2: '#00000040',
     },
+    disabled: {
+      backgroundColor: '#ccc',
+      color: '#afafaf',
+      shadowColor_1: '#afafaf',
+      shadowColor_2: '#fff',
+    }
   },
   form: {
     label: {

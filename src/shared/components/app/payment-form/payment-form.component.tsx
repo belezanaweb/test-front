@@ -40,6 +40,18 @@ export const PaymentForm = ({ html, onClick = () => {} }: { html?: JSX.Element; 
   const [securityCode, setSecurityCode] = React.useState('');
   const [name, setName] = React.useState('');
   const [expires, setExpires] = React.useState('');
+  const [enableSubmit, setEnableSubmit] = React.useState(false);
+
+  schema
+  .isValid({
+    creditCardNumber,
+    securityCode,
+    name,
+    expires,
+  })
+  .then((valid) => {
+    setEnableSubmit(valid);
+  });
 
   return (
     <Form onSubmit={handleSubmit(onSubmit)}>
@@ -125,7 +137,7 @@ export const PaymentForm = ({ html, onClick = () => {} }: { html?: JSX.Element; 
           </>
         </Grid>
         {html && html}
-        <Button type="submit" block={true}>
+        <Button type="submit" block={true} disabled={!enableSubmit}>
           Finalizar o pedido
         </Button>
       </>

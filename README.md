@@ -2,13 +2,13 @@
 
 ## Pré-requisitos
 
-- [Node = v15.3.0](https://nodejs.org/en/)
+- [Node >= v15.3.0](https://nodejs.org/en/)
 - NPM >= v7.0.14
 - [Yarn >= v1.22.5](https://yarnpkg.com/en/docs/install#linux-tab)
 
 ## Atualizar dependências
 
-Para atualizar todas as dependências para sua versão `major` mais recente, foi executado:
+Para atualizar todas as dependências para a versão `major` mais recente, foi executado:
 
 ```bash
 npx npm-check-updates -u
@@ -59,6 +59,13 @@ Comando utilizado para adicionar o storybook:
 npx -p @storybook/cli sb init
 ```
 
+## Dados para o formulário
+
+- **Número**: `5132588813937988`
+- **Nome**: `Hemerson Vianna`
+- **Validade**: `09/2022`
+- **CVV**: `473`
+
 ## Instruções
 
 ### Frontend Test
@@ -76,17 +83,19 @@ O teste consiste em um checkout simples contendo 3 passos (carrinho, pagamento e
 - Renderize cada passo em uma URL única (lib de rotas).
 
 - **Passo 1 - Carrinho**:
+
   - Consuma o [esse endpoint](http://www.mocky.io/v2/5b15c4923100004a006f3c07) e liste os itens do carrinho, bem como o resumo do carrinho;
   - Persista o conteúdo do JSON para ser usado nas próximas etapas;
 
 - **Passo 2 - Pagamento**:
+
   - Exiba um form com campos de cartão de crédito com validação em cada campo;
   - Habilite o botão de Finalizar Pedido apenas se o form esteja válido;
 
 - **Passo 3 - Sucesso**:
   - Todo o conteúdo deverá ser exibido a partir dos dados persistidos;
-  
 - **O que vamos avaliar**:
+
   - Organização do código;
   - Mensagens (em inglês) e mudanças nos commits;
   - Composição/reutilização de componentes;
