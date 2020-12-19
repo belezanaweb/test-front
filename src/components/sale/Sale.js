@@ -1,7 +1,6 @@
 import React from 'react'
 import style from './sale.module.css'
-import Formatters from '../../util/Formatters'
-import Total from '../total/Total'
+import { formatPrice } from '../../helpers/Formatters'
 
 const Sale = ({ sale }) => {
   return (
@@ -19,15 +18,13 @@ const Sale = ({ sale }) => {
               <div className={style.content}>
                 <p className={style.description}>{item.product.name}</p>
                 <p className={style.value}>
-                  {Formatters.formatPrice(item.product.priceSpecification.price)}
+                  {formatPrice(item.product.priceSpecification.price)}
                 </p>
               </div>
             </article>
           ))}
         </div>
       </section>
-
-      <Total sale={sale} />
     </>
   )
 }

@@ -1,3 +1,88 @@
+.cardForm {
+  max-width: 600px;
+  width: calc(100vw - 20px);
+  margin: 0 auto;
+}
+
+.cardForm,
+.cardForm header {
+  margin: 0 10px;
+}
+
+.cardForm header h2 {
+  text-transform: uppercase;
+  color: var(--gray);
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.cardForm .card {
+  background-color: var(--white);
+  margin-top: 5px;
+  border-radius: 3px;
+  padding: 10px;
+  color: var(--black);
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  box-shadow: 1px 1px 5px 0 rgba(0, 0, 29, 0.22);
+}
+
+.cardForm .field {
+  min-width: 100%;
+  margin-bottom: 8px;
+}
+
+.cardForm .field.expiry,
+.cardForm .field.cvv {
+  min-width: 48%;
+  width: 48%;
+}
+
+.cardForm .field label {
+  display: block;
+  font-size: 12px;
+  color: var(--light-gray);
+  line-height: 14px;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+.cardForm .field input {
+  display: block;
+  width: 100%;
+  height: 45px;
+  line-height: 45px;
+  font-size: 16px;
+  color: var(--black);
+  border: 1px solid var(--light-gray);
+  border-radius: 3px;
+  line-height: 14px;
+  padding: 0 13px;
+  outline: none;
+}
+
+.cardForm .field.error input {
+  border-color: var(--error) !important;
+}
+
+.cardForm .field input:active,
+.cardForm .field input:focus {
+  border: 1px solid var(--focus);
+}
+
+.cardForm .field input::placeholder {
+  color: var(--light-gray);
+}
+
+.cardForm .field .error {
+  display: block;
+  color: var(--error);
+  font-size: 12px;
+  margin-top: 5px;
+  height: 17px;
+}
+
 .cta {
   max-width: 600px;
   width: calc(100vw - 20px);
@@ -11,11 +96,21 @@
   color: white;
   border: none;
   box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.2), inset 0 -2px 0 0 rgba(0, 0, 0, 0.2);
-  max-width: 340px;
+  max-width: 400px;
   width: 100%;
   height: 60px;
   line-height: 60px;
   font-size: 20px;
   text-transform: uppercase;
   font-weight: bold;
+  cursor: pointer;
+}
+
+.cta .ctaButton:hover {
+  background-color: var(--dark-orange);
+}
+
+.cta .ctaButton:disabled {
+  background-color: var(--primary);
+  opacity: .5;
 }

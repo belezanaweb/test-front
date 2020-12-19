@@ -1,1 +1,2 @@
-export const FILL_SALE = 'sale/fill';
+export const SAVE_SALE = 'sale/save';
+export const SAVE_CARD = 'card/save';

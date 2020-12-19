@@ -1,4 +1,4 @@
-import { FILL_SALE } from '../actions/actionTypes'
+import { SAVE_SALE } from '../actions/actionTypes'
 
 const initialState = {
   sale: null
@@ -6,7 +6,7 @@ const initialState = {
 
 export const saleReducer = (state = initialState, action) => {
   switch (action.type) {
-    case FILL_SALE:
+    case SAVE_SALE:
       return {
         ...state,
         sale: action.sale

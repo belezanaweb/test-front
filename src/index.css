@@ -2,11 +2,14 @@
   --primary: #ff6c00;
   --secondary: #d25900;
   --orange: #ff7800;
+  --dark-orange: #d45a00;
   --background: #eeeeee;
   --white: #ffffff;
   --gray: #999999;
   --light-gray: #CCCCCC;
   --black: #212122;
+  --focus: #a43287;
+  --error: #ff3300;
 }
 
 body {

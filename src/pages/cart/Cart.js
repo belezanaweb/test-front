@@ -1,28 +1,31 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect } from 'react'
 import Swal from 'sweetalert2'
-import { useDispatch } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
 import { useHistory } from 'react-router-dom'
 
 import style from './cart.module.css'
 
 import Sale from '../../components/sale/Sale'
 import SaleService from '../../services/SaleService'
-import { fillSale } from '../../states/actions'
+import { saveSale } from '../../states/actions'
+import Total from '../../components/total/Total'
 
 const Cart = () => {
-  const [sale, setSale] = useState()
 
+  const sale = useSelector((state) => {
+    return state.saleState.sale
+  })
   const dispatch = useDispatch()
   const history = useHistory()
 
   useEffect(() => {
+    if (!sale)
     SaleService.loadData()
       .then((saleData) => {
-        setSale(saleData.data)
-        dispatch(fillSale(saleData.data))
+        dispatch(saveSale(saleData.data))
       })
       .catch(() => showLoadDataError())
-  }, [dispatch])
+  }, [sale, dispatch])
 
   const showLoadDataError = () => {
     Swal.fire({
@@ -42,6 +45,7 @@ const Cart = () => {
     return (
       <div>
         <Sale sale={sale} />
+        <Total sale={sale} />
         <section className={style.cta}>
           <button className={style.ctaButton} onClick={handleGoToPayment}>
             Seguir para o pagamento

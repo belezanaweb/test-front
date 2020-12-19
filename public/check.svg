@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="40px" height="40px" viewBox="0 0 100 100" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 50 (54983) - http://www.bohemiancoding.com/sketch -->
+    <title>44. Check</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="44.-Check" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round">
+        <g transform="translate(2.000000, 2.000000)" stroke="#FF7800" stroke-width="4">
+            <path d="M48,96 C74.509668,96 96,74.509668 96,48 C96,21.490332 74.509668,0 48,0 C21.490332,0 0,21.490332 0,48 C0,74.509668 21.490332,96 48,96 Z" id="Layer-1"></path>
+            <polyline id="Layer-2" points="27.7058857 47.0210276 42.0345786 61.4826208 67.9945661 35.4382535"></polyline>
+        </g>
+    </g>
+</svg>

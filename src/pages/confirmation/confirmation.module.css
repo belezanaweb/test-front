@@ -1,0 +1,50 @@
+.success {
+  text-align: center;
+  width: 100%;
+}
+
+.success h3 {
+  text-transform: uppercase;
+  color: var(--orange);
+  font-size: 14px;
+  line-height: 17px;
+  margin: 14px 0 10px;
+  font-weight: bold;
+}
+
+.creditCard {
+  max-width: 600px;
+  width: calc(100vw - 20px);
+  margin: 0 auto 20px;
+}
+
+.creditCard header {
+  margin: 0 10px;
+}
+
+.creditCard header h2 {
+  text-transform: uppercase;
+  color: var(--gray);
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.creditCard .card {
+  background-color: var(--white);
+  margin-top: 5px;
+  border-radius: 3px;
+  padding: 10px;
+  color: var(--black);
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  box-shadow: 1px 1px 5px 0 rgba(0, 0, 29, 0.22);
+}
+
+.creditCard .card p {
+  font-size: 14px;
+  color: #000000;
+  line-height: 17px;
+  text-transform: uppercase;
+}
