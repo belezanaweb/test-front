@@ -9,32 +9,11 @@ import configureStore from 'redux-mock-store';
 const middlewares = [];
 const mockStore = configureStore(middlewares);
 const initialState = {
-  cart: {
-    data: {
-      id: '',
-      username: '',
-      name: '',
-      email: '',
-    },
-    loading: false,
-  },
-  payment: {
-    data: {
-      id: '',
-      username: '',
-      name: '',
-      email: '',
-    },
-    loading: false,
-  },
-  success: {
-    data: {
-      id: '',
-      username: '',
-      name: '',
-      email: '',
-    },
-    loading: false,
+  carts: {
+    cart: {
+      data: null,
+      loading: false,
+    }
   }
 };
 const store = mockStore(initialState);

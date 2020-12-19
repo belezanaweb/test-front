@@ -1,6 +1,6 @@
 import * as React from 'react';
 
-import CartSummary from '../../components/ui/cart-summary';
+import CartSummary from '../../components/app/cart-summary';
 import PaymentForm from '../../components/app/payment-form';
 
 const Payment = () => {

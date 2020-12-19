@@ -3,7 +3,7 @@ import * as React from 'react';
 import Panel from '../../components/ui/panel';
 import Title from '../../components/ui/title';
 import Card from '../../components/ui/card';
-import CartSummary from '../../components/ui/cart-summary';
+import CartSummary from '../../components/app/cart-summary';
 import PaymentSummary from '../../components/app/payment-summary';
 
 function Success() {
