@@ -10,7 +10,7 @@ export const Card: React.FC<ICardProps> = ({ image, title, price, presentation =
     </Styled.Figure>
     <Styled.Description presentation={presentation}>
       <Styled.Title presentation={presentation}>{title}</Styled.Title>
-      {!presentation && <Styled.Price>R$ {price}</Styled.Price>}
+      {!presentation && <Styled.Price>{price}</Styled.Price>}
     </Styled.Description>
   </Styled.Card>
 );

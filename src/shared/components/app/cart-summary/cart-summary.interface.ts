@@ -1,6 +1,6 @@
 export interface ICartSummaryProps {
-  subTotal: number;
-  shippingTotal: number;
-  discount: number;
-  total: number;
+  subTotal: string;
+  shippingTotal: string;
+  discount: string;
+  total: string;
 }

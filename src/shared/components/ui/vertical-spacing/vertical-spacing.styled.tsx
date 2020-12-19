@@ -30,5 +30,5 @@ const base: any = {
 export const VerticalSpacing = styled.div<IVerticalSpacingStyles>`
   ${(props) => !props.top && !props.bottom && base.top[props.size] && base.bottom[props.size]};
   ${(props) => props.top && base.top[props.top]};
-  ${(props) => props.bottom && base.top[props.bottom]};
+  ${(props) => props.bottom && base.bottom[props.bottom]};
 `;

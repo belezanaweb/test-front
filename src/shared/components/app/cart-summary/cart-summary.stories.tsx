@@ -5,6 +5,8 @@ import { Story } from '@storybook/react/types-6-0';
 import { ICartSummaryProps } from './cart-summary.interface';
 import { CartSummary } from './cart-summary.component';
 
+import utils from '../../../utils';
+
 export default {
   title: 'Cart Summary',
   component: CartSummary,
@@ -14,8 +16,8 @@ const Template: Story<ICartSummaryProps> = (args) => <CartSummary {...args} />;
 
 export const Default = Template.bind({});
 Default.args = {
-  subTotal: 624.8,
-  shippingTotal: 5.3,
-  discount: 30,
-  total: 618.9,
+  subTotal: utils.format.currency.toBRL(6624.8),
+  shippingTotal: utils.format.currency.toBRL(65.3),
+  discount: utils.format.currency.toBRL(630),
+  total: utils.format.currency.toBRL(6618.9),
 };

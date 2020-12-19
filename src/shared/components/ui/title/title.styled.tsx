@@ -5,5 +5,5 @@ export const Title = styled.div`
   font-size: 1.4rem;
   font-weight: 700;
   margin-bottom: 0.5rem;
-  text-tranform: uppercase;
+  text-transform: uppercase;
 `;

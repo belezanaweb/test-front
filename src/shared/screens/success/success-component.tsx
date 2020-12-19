@@ -5,13 +5,17 @@ import Title from '../../components/ui/title';
 import Card from '../../components/ui/card';
 import CartSummary from '../../components/app/cart-summary';
 import PaymentSummary from '../../components/app/payment-summary';
+import VerticalSpacing from '../../components/ui/vertical-spacing';
+
+import utils from '../../utils';
 
 function Success() {
   return (
     <div>
-      <PaymentSummary creditCardNumber="****.****.****.1234" name="José da Silva" expires="05/2019" />
-      <br />
-      <br />
+      <VerticalSpacing bottom="medium">
+        <PaymentSummary creditCardNumber="****.****.****.1234" name="José da Silva" expires="05/2019" />
+      </VerticalSpacing>
+
       <Panel title={<Title>Produtos</Title>}>
         <>
           <Card
@@ -31,13 +35,14 @@ function Success() {
           />
         </>
       </Panel>
-      <br />
-      <br />
-      <CartSummary subTotal={624.8} shippingTotal={5.3} discount={30} total={618.9} />
-      <br />
-      <br />
-      <br />
-      <br />
+      <VerticalSpacing top="medium" bottom="large">
+        <CartSummary
+          subTotal={utils.format.currency.toBRL(624.8)}
+          shippingTotal={utils.format.currency.toBRL(5.3)}
+          discount={utils.format.currency.toBRL(30)}
+          total={utils.format.currency.toBRL(618.9)}
+        />
+      </VerticalSpacing>
     </div>
   );
 }
