@@ -2,9 +2,9 @@ import * as React from 'react';
 import loadable from '@loadable/component';
 
 const HomePage = loadable(() => import('./screens/home'));
-const CartPage = loadable(() => import('./screens/cart/cart-component'));
-const PaymentPage = loadable(() => import('./screens/payment/payment-component'));
-const SuccessPage = loadable(() => import('./screens/success/success-component'));
+const CartPage = loadable(() => import('./screens/cart'));
+const PaymentPage = loadable(() => import('./screens/payment'));
+const SuccessPage = loadable(() => import('./screens/success'));
 const ErrorPage = loadable(() => import('./screens/not-found'));
 
 export interface RouteConfig {

@@ -1,25 +1,60 @@
 import * as React from 'react';
 import { useSelector } from 'react-redux';
-import { renderRoutes, RouteConfig } from 'react-router-config';
+import { useHistory } from 'react-router-dom';
 import { AppState } from '../../store';
+
 import { actions } from '../../store/carts/action';
 
-interface CartsPageProps {
-  route?: RouteConfig;
-}
+import Panel from '../../components/ui/panel';
+import Title from '../../components/ui/title';
+import Card from '../../components/ui/card';
+import CartSummary from '../../components/app/cart-summary';
+import Button from '../../components/ui/button';
+import VerticalSpacing from '../../components/ui/vertical-spacing';
+import Loading from '../../components/ui/loading';
 
-function CartsPage({ route }: CartsPageProps) {
-  return (
-    <>
-      {renderRoutes(route?.routes)}
-    </>
+import utils from '../../utils';
+
+function Cart() {
+  const { data: cart, loading } = useSelector((state: AppState) => state.carts.cart);
+  const history = useHistory();
+  const handleClick = () => history.push('/pagamento/5b15c4923100004a006f3c07');
+
+  return loading ? <Loading /> : (
+    cart && (
+      <>
+        <Panel title={<Title>Produtos</Title>}>
+          <>
+            {[...cart?.items].map((item) =>
+              <Card
+                title={item.product.name}
+                price={utils.format.currency.toBRL(item.product.priceSpecification.price)}
+                image={item.product.imageObjects[0].thumbnail}
+              />
+            )}
+          </>
+        </Panel>
+        <VerticalSpacing>
+          <CartSummary
+            subTotal={utils.format.currency.toBRL(cart.subTotal)}
+            shippingTotal={utils.format.currency.toBRL(cart.shippingTotal)}
+            discount={utils.format.currency.toBRL(cart.discount)}
+            total={utils.format.currency.toBRL(cart.total)}
+          />
+        </VerticalSpacing>
+        <Button onClick={handleClick} block={true}>Seguir para o pagamento</Button>
+      </>
+    )
   );
 }
 
-(CartsPage as Container<CartsPageProps>).preload = async ({ store }) => {
-  if (!store.getState().carts.carts.data) {
-    store.dispatch(actions.loadCartsRequest());
+(Cart as Container<{ id: string }>).preload = async ({ store, match }) => {
+  const cart = store.getState().carts.cart;
+  const cartId = match.params.id;
+  const needFetch = !cart.data || cart.data.id !== cartId;
+  if (needFetch && !cart.loading) {
+    store.dispatch(actions.loadCartRequest(cartId));
   }
 };
 
-export default CartsPage;
+export default Cart;
