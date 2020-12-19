@@ -4,4 +4,5 @@ export type TPaymentData = {
   expires: string;
   securityCode: string;
   html?: JSX.Element | string;
+  onClick?: () => void
 };

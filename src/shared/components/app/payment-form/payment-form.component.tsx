@@ -26,19 +26,32 @@ const schema = yup.object().shape({
   securityCode: yup.string().min(3, 'Mínimo 3 números').max(4, 'Máximo 4 números').required('Campo obrigatório'),
 });
 
-export const PaymentForm = ({ html }: { html?: JSX.Element }) => {
+export const PaymentForm = ({ html, onClick = () => {} }: { html?: JSX.Element; onClick?: () => void }) => {
   const { register, handleSubmit, errors } = useForm<TPaymentData>({
     resolver: yupResolver(schema),
   });
 
   const onSubmit = React.useCallback((data: TPaymentData) => {
     console.log('data', data);
+    onClick();
   }, []);
 
   const [creditCardNumber, setCreditCardNumber] = React.useState('');
   const [securityCode, setSecurityCode] = React.useState('');
   const [name, setName] = React.useState('');
   const [expires, setExpires] = React.useState('');
+  const [enableSubmit, setEnableSubmit] = React.useState(false);
+
+  schema
+  .isValid({
+    creditCardNumber,
+    securityCode,
+    name,
+    expires,
+  })
+  .then((valid) => {
+    setEnableSubmit(valid);
+  });
 
   return (
     <Form onSubmit={handleSubmit(onSubmit)}>
@@ -124,7 +137,7 @@ export const PaymentForm = ({ html }: { html?: JSX.Element }) => {
           </>
         </Grid>
         {html && html}
-        <Button type="submit" block={true}>
+        <Button type="submit" block={true} disabled={!enableSubmit}>
           Finalizar o pedido
         </Button>
       </>

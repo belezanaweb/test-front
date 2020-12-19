@@ -23,7 +23,7 @@ export interface Product {
     sku: string;
     name: string;
     imageObjects: Images[];
-    priceSpecification: PriceSpecification[];
+    priceSpecification: PriceSpecification;
   }
 }
 

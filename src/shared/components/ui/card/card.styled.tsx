@@ -8,6 +8,7 @@ export const Card = styled.article<IImageStyles>`
   border-radius: 0.3rem;
   display: flex;
   flex-direction: row;
+  justify-content: space-between;
   margin-top: 1.5rem;
   min-height: ${(props) => (props.presentation ? '6.4rem' : '9rem')};
   padding: 1rem;
