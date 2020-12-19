@@ -26,7 +26,7 @@ const Payment = () => {
 
   useEffect(() => {
     dispatch(saveCard(null))
-  }, [])
+  }, [dispatch])
 
   const [card, setCard] = useState({
     number: '',
@@ -69,6 +69,8 @@ const Payment = () => {
         break
       case 'cvv':
         newErrors = { ...errors, cvv: validateCreditCardCvv(value) }
+        break
+      default:
         break
     }
 
@@ -163,7 +165,7 @@ const Payment = () => {
         </section>
         {sale ? <Total sale={sale} /> : ''}
         <section className={styles.cta}>
-          <button className={styles.ctaButton} type="submit" disabled={isValid == 'INVALID'}>
+          <button className={styles.ctaButton} type="submit" disabled={isValid === 'INVALID'}>
             Finalizar o pedido
           </button>
         </section>
