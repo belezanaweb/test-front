@@ -1,74 +1,40 @@
 import React, { useEffect, useState } from 'react'
-import axios from 'axios'
+import Swal from 'sweetalert2'
+
 import style from './cart.module.css'
+
+import Sale from '../../components/sale/Sale'
+import SaleService from '../../services/SaleService'
 
 const Cart = () => {
   const [sale, setSale] = useState(null)
 
+  //Hook executed after component is rendered, used here for load data
   useEffect(() => {
-    axios('http://www.mocky.io/v2/5b15c4923100004a006f3c07').then((saleData) => {
-      setSale(saleData.data)
-    })
+    SaleService.loadData()
+      .then((saleData) => setSale(saleData.data))
+      .catch(() =>
+        Swal.fire({
+          icon:'error',
+          title:'Ops!',
+          text:'Não foi possível recuperar os dados da sua compra, tente novamente mais tarde.',
+          confirmButtonColor: '#ff6c00',
+          confirmButtonText: 'Fechar',
+        })
+      )
   }, [])
-
-  const formatPrice = (value) => {
-    if (isNaN(value)) return value
-
-    return value.toLocaleString('pt-br', { style: 'currency', currency: 'BRL' })
-  }
 
   if (sale) {
     return (
       <div>
-        <section className={style.items}>
-          <header>
-            <h2>Produtos</h2>
-          </header>
-          <div className={style.card}>
-            {sale.items.map((item, index) => (
-              <article className={style.item} key={index}>
-                <div className={style.thumbnail}>
-                  <img src={item.product.imageObjects[0].thumbnail} alt={item.product.name} />
-                </div>
-                <div className={style.content}>
-                  <p className={style.description}>{item.product.name}</p>
-                  <p className={style.value}>
-                    {formatPrice(item.product.priceSpecification.price)}
-                  </p>
-                </div>
-              </article>
-            ))}
-          </div>
-        </section>
-
-        <section className={style.calculations}>
-          <ul>
-            <li>
-              <span className={style.label}>Produtos</span>
-              <span className={style.value}>{formatPrice(sale.subTotal)}</span>
-            </li>
-            <li>
-              <span className={style.label}>Frete</span>
-              <span className={style.value}>{formatPrice(sale.shippingTotal)}</span>
-            </li>
-            <li className={style.discount}>
-              <span className={style.label}>Desconto</span>
-              <span className={style.value}>{formatPrice(-sale.discount)}</span>
-            </li>
-            <li className={style.total}>
-              <span className={style.label}>Total</span>
-              <span className={style.value}>{formatPrice(sale.subTotal + sale.shippingTotal - sale.discount)}</span>
-            </li>
-          </ul>
-        </section>
+        <Sale sale={sale} />
         <section className={style.cta}>
           <button className={style.ctaButton}>Seguir para o pagamento</button>
         </section>
       </div>
     )
-  } else {
-    return <h3>Carregando...</h3>
   }
+  return <h3 className={style.loadMessage}>Carregando...</h3>
 }
 
 export default Cart

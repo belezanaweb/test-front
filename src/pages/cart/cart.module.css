@@ -1,102 +1,7 @@
-.items, .calculations, .cta {
+.cta {
   max-width: 600px;
   width: calc(100vw - 20px);
   margin: 0 auto;
-}
-
-.items, .items header {
-  margin: 0 10px;
-}
-
-.items header h2 {
-  text-transform: uppercase;
-  color: var(--gray);
-  font-size: 14px;
-  font-weight: bold;
-}
-
-.items .card {
-  background-color: var(--white);
-  margin-top: 5px;
-  border-radius: 3px;
-  padding: 10px;
-  color: var(--black);
-}
-
-.items .item {
-  display: flex;
-  justify-content: space-between;
-  border: 1px solid var(--background);
-  border-radius: 3px;
-  margin-bottom: 15px;
-  padding: 12px 10px;
-}
-
-.items .item:last-child {
-  margin-bottom: 0;
-}
-
-.items .item .thumbnail {
-  min-width: 65px;
-  height: 65px;
-  margin-right: 10px;
-}
-
-.items .item .thumbnail img {
-  display: block;
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
-}
-
-.items .item .content {
-  min-width: calc(100% - 75px);
-}
-
-.items .item .content .description {
-  font-size: 13px;
-  line-height: 16px;
-  text-align: right;
-}
-
-.items .item .content .value {
-  font-size: 14px;
-  text-align: right;
-  font-weight: bold;
-  margin-top: 15px;
-}
-
-.calculations {
-  margin: 20px 10px;
-  padding: 10px;
-  border: 1px solid var(--light-gray);
-}
-
-.calculations ul {
-  display: flex;
-  flex-direction: column;
-}
-
-.calculations ul li{
-  display: flex;
-  justify-content: space-between;
-  color: var(--black);
-  margin-bottom: 10px;
-  font-size: 14px;
-  text-transform: uppercase;
-}
-
-.calculations ul li.discount{
-  color: var(--orange);
-}
-
-.calculations ul li.total{
-  margin-bottom: 0;
-  margin-top: 5px;
-  font-weight: bold;
-}
-
-.cta {
   text-align: center;
   margin-bottom: 20px;
 }
@@ -113,4 +18,15 @@
   font-size: 20px;
   text-transform: uppercase;
   font-weight: bold;
+}
+
+.loadMessage {
+  position: fixed;
+  top: calc(50% - 30px);
+  width: 100vw;
+  height: 30px;
+  line-height: 30px;
+  text-align: center;
+  text-transform: uppercase;
+  color: var(--black);
 }
