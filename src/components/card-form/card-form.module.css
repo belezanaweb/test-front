@@ -1,0 +1,33 @@
+.cardForm {
+  max-width: 600px;
+  width: calc(100vw - 20px);
+  margin: 0 auto;
+}
+
+.cardForm, .cardForm header {
+  margin: 0 10px;
+}
+
+.cardForm header h2 {
+  text-transform: uppercase;
+  color: var(--gray);
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.cardForm .card {
+  background-color: var(--white);
+  margin-top: 5px;
+  border-radius: 3px;
+  padding: 10px;
+  color: var(--black);
+}
+
+.cardForm .field {
+  display: flex;
+  justify-content: space-between;
+  border: 1px solid var(--background);
+  border-radius: 3px;
+  margin-bottom: 15px;
+  padding: 12px 10px;
+}

@@ -1,6 +1,7 @@
 import React from 'react'
 import style from './sale.module.css'
 import Formatters from '../../util/Formatters'
+import Total from '../total/Total'
 
 const Sale = ({ sale }) => {
   return (
@@ -26,28 +27,7 @@ const Sale = ({ sale }) => {
         </div>
       </section>
 
-      <section className={style.calculations}>
-        <ul>
-          <li>
-            <span className={style.label}>Produtos</span>
-            <span className={style.value}>{Formatters.formatPrice(sale.subTotal)}</span>
-          </li>
-          <li>
-            <span className={style.label}>Frete</span>
-            <span className={style.value}>{Formatters.formatPrice(sale.shippingTotal)}</span>
-          </li>
-          <li className={style.discount}>
-            <span className={style.label}>Desconto</span>
-            <span className={style.value}>{Formatters.formatPrice(-sale.discount)}</span>
-          </li>
-          <li className={style.total}>
-            <span className={style.label}>Total</span>
-            <span className={style.value}>
-              {Formatters.formatPrice(sale.subTotal + sale.shippingTotal - sale.discount)}
-            </span>
-          </li>
-        </ul>
-      </section>
+      <Total sale={sale} />
     </>
   )
 }

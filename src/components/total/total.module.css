@@ -1,0 +1,32 @@
+.calculations {
+  max-width: 600px;
+  width: calc(100vw - 20px);
+  margin: 0 auto;
+  margin: 20px 10px;
+  padding: 10px;
+  border: 1px solid var(--light-gray);
+}
+
+.calculations ul {
+  display: flex;
+  flex-direction: column;
+}
+
+.calculations ul li{
+  display: flex;
+  justify-content: space-between;
+  color: var(--black);
+  margin-bottom: 10px;
+  font-size: 14px;
+  text-transform: uppercase;
+}
+
+.calculations ul li.discount{
+  color: var(--orange);
+}
+
+.calculations ul li.total{
+  margin-bottom: 0;
+  margin-top: 5px;
+  font-weight: bold;
+}

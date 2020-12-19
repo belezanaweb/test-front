@@ -1,21 +1,28 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
-import style from './navbar.module.css'
+import { Link, useLocation } from 'react-router-dom'
+import classNames from 'classnames/bind'
 
-const Navbar = () => (
-  <nav className={style.navbar}>
-    <ul>
-      <li className={style.active}>
-        <Link to="/">Sacola</Link>
-      </li>
-      <li>
-        <Link to="/payment">Pagamento</Link>
-      </li>
-      <li>
-        <Link to="/confirmation">Confirmação</Link>
-      </li>
-    </ul>
-  </nav>
-)
+import styles from './navbar.module.css'
+
+const cx = classNames.bind(styles)
+
+const Navbar = () => {
+  const location = useLocation()
+  return (
+    <nav className={styles.navbar}>
+      <ul>
+        <li className={cx({ active: location.pathname === '/' })}>
+          <Link to="/">Sacola</Link>
+        </li>
+        <li className={cx({ active: location.pathname === '/payment' })}>
+          <Link to="/payment">Pagamento</Link>
+        </li>
+        <li className={cx({ active: location.pathname === '/confirmation' })}>
+          <Link to="/confirmation">Confirmação</Link>
+        </li>
+      </ul>
+    </nav>
+  )
+}
 
 export default Navbar
