@@ -1,0 +1,9 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Form /> should render component with default props and match snapshot 1`] = `
+<form
+  role="form"
+>
+  From
+</form>
+`;
