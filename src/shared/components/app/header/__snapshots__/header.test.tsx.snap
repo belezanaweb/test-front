@@ -1,0 +1,16 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Header /> should render component with default props and match snapshot 1`] = `
+.c0 {
+  background: #fff;
+  box-shadow: 1px 1px 5px 0 #00001d38;
+  padding: 1rem;
+}
+
+<header
+  class="c0"
+  role="banner"
+>
+  Header
+</header>
+`;
