@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { useSelector } from 'react-redux';
-import { AppState } from '../../store';
+import { ApplicationState } from '../../store';
 
 import Panel from '../../components/ui/panel';
 import Title from '../../components/ui/title';
@@ -13,7 +13,7 @@ import Loading from '../../components/ui/loading';
 import utils from '../../utils';
 
 function Success() {
-  const { data: cart, loading } = useSelector((state: AppState) => state.carts.cart);
+  const { data: cart, loading } = useSelector((state: ApplicationState) => state.cart);
 
   return loading ? <Loading /> : (
     cart && (

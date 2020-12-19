@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { useHistory } from 'react-router-dom';
 import { useSelector } from 'react-redux';
-import { AppState } from '../../store';
+import { ApplicationState } from '../../store';
 
 import CartSummary from '../../components/app/cart-summary';
 import PaymentForm from '../../components/app/payment-form';
@@ -11,7 +11,7 @@ import Loading from '../../components/ui/loading';
 import utils from '../../utils';
 
 const Payment = () => {
-  const { data: cart, loading } = useSelector((state: AppState) => state.carts.cart);
+  const { data: cart, loading } = useSelector((state: ApplicationState) => state.cart);
   const history = useHistory();
   const handleClick = () => history.push(`/sucesso/${cart?.id}`);
 

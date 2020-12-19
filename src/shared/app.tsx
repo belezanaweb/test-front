@@ -13,11 +13,6 @@ import { GlobalStyle } from './styles/global';
 import globalTheme from './styles/theme';
 import AppLayout from './layouts/app';
 
-if (typeof Proxy === 'undefined') {
-  // eslint-disable-next-line @typescript-eslint/no-var-requires
-  require('immer').enableES5();
-}
-
 function App() {
   const store = useStore();
   const location = useLocation();
