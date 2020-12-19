@@ -17,6 +17,7 @@
     "storybook": "start-storybook -p 9000 -s ./public,./static",
     "build-storybook": "build-storybook -s public",
     "test": "jest --coverage",
+    "test:update": "jest --updateSnapshot",
     "test:watch": "jest --watch"
   },
   "dependencies": {
