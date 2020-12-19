@@ -26,29 +26,21 @@ function Cart() {
       <>
         <Panel title={<Title>Produtos</Title>}>
           <>
-            <Card
-              title="L'Oréal Professionnel Expert Absolut Repair Cortex Lipidium - Máscara de Reconstrução 500g"
-              price={utils.format.currency.toBRL(6225.9)}
-              image="https://res.cloudinary.com/beleza-na-web/image/upload/f_auto,fl_progressive,q_auto:best/v1/imagens/1/loreal-professionnel-expert-absolut-repair-cortex-lipidium-mascara-de-reconstrucao-500g-24410-963234120108391775.png"
-            />
-            <Card
-              title="L'Oréal Professionnel Expert Absolut Repair Cortex Lipidium - Máscara de Reconstrução 500g"
-              price={utils.format.currency.toBRL(6225.9)}
-              image="https://res.cloudinary.com/beleza-na-web/image/upload/f_auto,fl_progressive,q_auto:best/v1/imagens/1/loreal-professionnel-expert-absolut-repair-cortex-lipidium-mascara-de-reconstrucao-500g-24410-963234120108391775.png"
-            />
-            <Card
-              title="L'Oréal Professionnel Expert Absolut Repair Cortex Lipidium - Máscara de Reconstrução 500g"
-              price={utils.format.currency.toBRL(6225.9)}
-              image="https://res.cloudinary.com/beleza-na-web/image/upload/f_auto,fl_progressive,q_auto:best/v1/imagens/1/loreal-professionnel-expert-absolut-repair-cortex-lipidium-mascara-de-reconstrucao-500g-24410-963234120108391775.png"
-            />
+            {[...cart?.items].map((item) =>
+              <Card
+                title={item.product.name}
+                price={utils.format.currency.toBRL(item.product.priceSpecification.price)}
+                image={item.product.imageObjects[0].thumbnail}
+              />
+            )}
           </>
         </Panel>
         <VerticalSpacing>
           <CartSummary
-            subTotal={utils.format.currency.toBRL(624.8)}
-            shippingTotal={utils.format.currency.toBRL(5.3)}
-            discount={utils.format.currency.toBRL(30)}
-            total={utils.format.currency.toBRL(618.9)}
+            subTotal={utils.format.currency.toBRL(cart.subTotal)}
+            shippingTotal={utils.format.currency.toBRL(cart.shippingTotal)}
+            discount={utils.format.currency.toBRL(cart.discount)}
+            total={utils.format.currency.toBRL(cart.total)}
           />
         </VerticalSpacing>
         <Button onClick={handleClick} block={true}>Seguir para o pagamento</Button>
@@ -62,7 +54,7 @@ function Cart() {
   const cartId = match.params.id;
   const needFetch = !cart.data || cart.data.id !== cartId;
   if (needFetch && !cart.loading) {
-    store.dispatch(actions.loadCartRequest('5b15c4923100004a006f3c07')); // cartId
+    store.dispatch(actions.loadCartRequest(cartId));
   }
 };
 
