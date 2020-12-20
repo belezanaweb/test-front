@@ -29,6 +29,7 @@ export interface Product {
 
 export interface Cart {
   id: string;
+  cartId: string;
   items: Product[];
   subTotal: number;
   shippingTotal: number;

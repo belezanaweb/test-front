@@ -30,6 +30,7 @@ function Success() {
           <>
             {[...cart?.items].map((item) =>
               <Card
+                key={item.product.sku}
                 title={item.product.name}
                 presentation={true}
                 image={item.product.imageObjects[0].thumbnail}

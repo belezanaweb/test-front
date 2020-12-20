@@ -13,7 +13,7 @@ import utils from '../../utils';
 const Payment = () => {
   const { data: cart, loading } = useSelector((state: ApplicationState) => state.cart);
   const history = useHistory();
-  const handleClick = () => history.push(`/sucesso/${cart?.id}`);
+  const handleClick = () => history.push(`/sucesso/${cart?.cartId}`);
 
   return loading ? <Loading /> : (
     cart && (

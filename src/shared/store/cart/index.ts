@@ -12,7 +12,7 @@ const reducer: Reducer<CartState> = (state = INITIAL_STATE, action) => {
     case CartTypes.LOAD_REQUEST:
       return {...state, loading: true };
     case CartTypes.LOAD_SUCCESS:
-      return {...state, data: action.payload.data, loading: false };
+      return {...state, data: {...action.payload.data, cartId: action.payload.cartId }, loading: false };
     case CartTypes.LOAD_FAILURE:
       return {...state, error: action.payload.error, loading: false };
     default:

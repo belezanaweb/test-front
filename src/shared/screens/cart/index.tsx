@@ -18,7 +18,7 @@ import utils from '../../utils';
 function Cart() {
   const { data: cart, loading } = useSelector((state: ApplicationState) => state.cart);
   const history = useHistory();
-  const handleClick = () => history.push(`/pagamento/${cart?.id}`);
+  const handleClick = () => history.push(`/pagamento/${cart?.cartId}`);
 
   return loading ? <Loading /> : (
     cart && (
@@ -27,6 +27,7 @@ function Cart() {
           <>
             {[...cart?.items].map((item) =>
               <Card
+                key={item.product.sku}
                 title={item.product.name}
                 price={utils.format.currency.toBRL(item.product.priceSpecification.price)}
                 image={item.product.imageObjects[0].thumbnail}

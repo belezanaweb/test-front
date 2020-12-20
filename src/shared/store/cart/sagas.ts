@@ -7,7 +7,7 @@ import { CartTypes } from './types';
 function* loadCart({ payload: { id } }: ReturnType<typeof loadCartRequest>) {
   try {
     const { data } = yield call(loadCartApi, id);
-    yield put(loadCartSuccess(data));
+    yield put(loadCartSuccess(data, id));
   } catch (e) {
     yield put(loadCartFailure(e.response?.data.message));
   }
