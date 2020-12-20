@@ -12,6 +12,7 @@ export const Var = css`
 
   --gray: #e7e7e7;
   --purple: #a43287;
+  --white: #fff;
 
   --border-color: var(--gray);
 

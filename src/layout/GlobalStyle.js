@@ -8,17 +8,17 @@ export const GlobalStyle = createGlobalStyle`
     ${variables}
   }
 
-  html,body,#root{
+  html,body{
     font-family: 'Helvetica Neue',Helvetica,Arial,sans-serif;
     height: 100%;
     overflow: auto;
   }
 
   #root{
-    align-items: center;
     display: flex;
     flex-direction: column;
     font-size: var(--font);
+    height: auto;
     justify-content: center;
   }
 `
