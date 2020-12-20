@@ -5,6 +5,7 @@ import rootReducer from './root-reducer';
 import rootSaga from './root-saga';
 
 import { CartState } from './cart/types';
+import { FormsState } from  './forms/types';
 
 interface AppContext {
   isServer?: boolean;
@@ -12,6 +13,7 @@ interface AppContext {
 
 export interface ApplicationState {
   cart: CartState;
+  forms: FormsState;
 }
 
 export interface ReduxStore extends Store<ApplicationState> {

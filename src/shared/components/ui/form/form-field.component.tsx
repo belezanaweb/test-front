@@ -23,7 +23,7 @@ export const FormField: React.FC<IFormFieldProps> = ({
     if (mask) {
       valueFormatted = mask(valueFormatted);
     }
-    console.log(valueFormatted, 'valueFormatted');
+
     setInputValue(valueFormatted);
 
     if (onChange) {

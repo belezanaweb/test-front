@@ -30,16 +30,15 @@ const schema = yup.object().shape({
   securityCode: yup.string().min(3, 'Mínimo 3 números').max(4, 'Máximo 4 números').required('Campo obrigatório'),
 });
 
-export const PaymentForm = ({ html, onClick }: { html?: JSX.Element; onClick?: () => void }) => {
+export const PaymentForm = ({ html, onClick }: { html?: JSX.Element; onClick?: (data: any) => any }) => {
   const { register, handleSubmit, errors } = useForm<TPaymentData>({
     mode: 'onBlur',
     resolver: yupResolver(schema),
   });
 
   const onSubmit = React.useCallback((data: TPaymentData) => {
-    console.log('data', data);
     if (onClick) {
-      onClick();
+      onClick(data);
     }
   }, []);
 

@@ -16,19 +16,20 @@ import utils from '../../utils';
 
 function Success() {
   const { data: cart, loading } = useSelector((state: ApplicationState) => state.cart);
+  const { payment } = useSelector((state: ApplicationState) => state.forms);
 
   return loading ? (
     <Loading />
   ) : (
     cart && (
       <>
-        <VerticalSpacing bottom="medium">
+        {payment && <VerticalSpacing bottom="medium">
           <PaymentSummary
-            creditCardNumber={utils.replace.numbers('1234.1234.1234.1234', 0, 14, '*')}
-            name="José da Silva"
-            expires="05/2019"
+            creditCardNumber={utils.replace.numbers(payment.creditCardNumber.replace(/ /g, '.'), 0, 14, '*')}
+            name={payment.name}
+            expires={payment.expires}
           />
-        </VerticalSpacing>
+        </VerticalSpacing>}
 
         <Panel title={<Title>Produtos</Title>}>
           <>

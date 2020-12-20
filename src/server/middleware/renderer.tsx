@@ -16,7 +16,7 @@ const statsFile = resolve('./build/loadable-stats.json');
 
 router.get('*', async (req: any, res, next) => {
   const context = {};
-  const store = configureStore({ isServer: true });
+  const store = configureStore({ isServer: true }, { cart: { data: null, loading: false, error: false }, forms: { payment: JSON.parse(req.universalCookies.cookies.form) } });
   const sagaPromises = store.run.toPromise();
 
   await Promise.all(App.getInitialProps(store, req.path, req.url.replace(req.path, '')));
