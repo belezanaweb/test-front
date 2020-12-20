@@ -35,7 +35,7 @@ const Confirmation = () => {
 
           <section className={styles.creditCard}>
             <header>
-              <h2>Cartão de Crédito</h2>
+              <h2>Pagamento</h2>
             </header>
             <div className={styles.card}>
               <p>****.****.****.{card.number.split('.')[3]}</p>
@@ -44,7 +44,7 @@ const Confirmation = () => {
             </div>
           </section>
 
-          <Sale sale={sale} />
+          <Sale sale={sale} showPrice={false} />
           <Total sale={sale} />
         </>
       )}
