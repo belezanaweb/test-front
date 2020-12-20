@@ -1,4 +1,6 @@
-:root {
+import { css } from 'styled-components'
+
+export const Var = css`
   --primary: #ff6c00;
   --primary-darken: #d45a00;
   --primary-contrast: #fff;
@@ -24,13 +26,6 @@
   --font: 14px;
   --font-lg: 16px;
   --font-xl: 20px;
-}
+`
 
-.App {
-  align-items: center;
-  display: flex;
-  flex-direction: column;
-  font-size: var(--font);
-  justify-content: center;
-  min-height: 100vh;
-}
+export default Var
