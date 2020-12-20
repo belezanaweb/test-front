@@ -11,8 +11,8 @@ import Total from '../../components/total/Total'
 import {
   validateCreditCard,
   validateCreditCardExpiry,
-  validateName,
-  validateCreditCardCvv
+  validateCreditCardCvv,
+  validateCustomerName
 } from '../../helpers/Validators'
 import { formatCardExpiry } from '../../helpers/Formatters'
 import { saveCard } from '../../states/actions'
@@ -62,7 +62,7 @@ const Payment = () => {
         newErrors = { ...errors, number: validateCreditCard(value) }
         break
       case 'name':
-        newErrors = { ...errors, name: validateName(value) }
+        newErrors = { ...errors, name: validateCustomerName(value) }
         break
       case 'expiry':
         newErrors = { ...errors, expiry: validateCreditCardExpiry(value) }
@@ -121,10 +121,10 @@ const Payment = () => {
             </div>
 
             <div className={cx('field', 'name', { error: !!errors.name.message })}>
-              <label htmlFor="input-number">Nome do Titular:</label>
+              <label htmlFor="input-name">Nome do Titular:</label>
               <input
                 type="text"
-                id="input-number"
+                id="input-name"
                 name="name"
                 placeholder="Como no cartão"
                 value={card.name}
@@ -134,11 +134,11 @@ const Payment = () => {
             </div>
 
             <div className={cx('field', 'expiry', { error: !!errors.expiry.message })}>
-              <label htmlFor="input-number">Validade (mês/ano):</label>
+              <label htmlFor="input-expiry">Validade (mês/ano):</label>
               <NumberFormat
                 format={formatCardExpiry}
                 type="text"
-                id="input-number"
+                id="input-expiry"
                 name="expiry"
                 placeholder="__/____"
                 value={card.expiry}
@@ -148,12 +148,12 @@ const Payment = () => {
             </div>
 
             <div className={cx('field', 'cvv', { error: !!errors.cvv.message })}>
-              <label htmlFor="input-number">CVV:</label>
+              <label htmlFor="input-cvv">CVV:</label>
               <NumberFormat
                 format="###"
                 mask="_"
                 type="text"
-                id="input-number"
+                id="input-cvv"
                 name="cvv"
                 placeholder="___"
                 value={card.cvv}
@@ -163,7 +163,7 @@ const Payment = () => {
             </div>
           </div>
         </section>
-        {sale ? <Total sale={sale} /> : ''}
+        {sale && <Total sale={sale} />}
         <section className={styles.cta}>
           <button className={styles.ctaButton} type="submit" disabled={isValid === 'INVALID'}>
             Finalizar o pedido

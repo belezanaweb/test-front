@@ -39,7 +39,7 @@ export const validateCreditCardCvv = (cvv) => {
 }
 
 
-export const validateName = (name) => {
+export const validateCustomerName = (name) => {
   return name.length < 5
     ? { valid: false, message: 'Deve conter 5 ou mais caracters.' }
     : { valid: true, message: '' }

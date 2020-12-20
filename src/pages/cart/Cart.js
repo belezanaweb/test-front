@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import Swal from 'sweetalert2'
 import { useDispatch, useSelector } from 'react-redux'
 import { useHistory } from 'react-router-dom'
@@ -11,6 +11,7 @@ import { saveSale } from '../../states/actions'
 import Total from '../../components/total/Total'
 
 const Cart = () => {
+  const [loadMessage, setLoadMessage] = useState('Carregando...')
 
   const sale = useSelector((state) => {
     return state.saleState.sale
@@ -20,14 +21,15 @@ const Cart = () => {
 
   useEffect(() => {
     if (!sale)
-    SaleService.loadData()
-      .then((saleData) => {
-        dispatch(saveSale(saleData.data))
-      })
-      .catch(() => showLoadDataError())
+      SaleService.loadData()
+        .then((saleData) => {
+          dispatch(saveSale(saleData.data))
+        })
+        .catch((error) => showLoadDataError())
   }, [sale, dispatch])
 
   const showLoadDataError = () => {
+    setLoadMessage('Não foi possivel carregar os dados.')
     Swal.fire({
       icon: 'error',
       title: 'Ops!',
@@ -54,7 +56,7 @@ const Cart = () => {
       </div>
     )
   }
-  return <h3 className={style.loadMessage}>Carregando...</h3>
+  return <h3 className={style.loadMessage}>{loadMessage}</h3>
 }
 
 export default Cart
