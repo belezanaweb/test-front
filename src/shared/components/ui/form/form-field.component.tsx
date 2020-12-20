@@ -9,18 +9,38 @@ export const FormField: React.FC<IFormFieldProps> = ({
   inputRef,
   type = 'text',
   placeholder,
-  value,
+  initialValue = '',
   error,
   onChange,
-}) => (
-  <Styled.Field
-    id={id}
-    name={name}
-    ref={inputRef}
-    type={type}
-    placeholder={placeholder}
-    value={value}
-    error={error}
-    onChange={onChange}
-  />
-);
+  mask,
+}) => {
+  const [inputValue, setInputValue] = React.useState<string>(initialValue);
+
+  const handleChange = (evt: React.ChangeEvent<HTMLInputElement>) => {
+    const { value } = evt.target;
+    let valueFormatted = value;
+
+    if (mask) {
+      valueFormatted = mask(valueFormatted);
+    }
+    console.log(valueFormatted, 'valueFormatted');
+    setInputValue(valueFormatted);
+
+    if (onChange) {
+      onChange(valueFormatted);
+    }
+  };
+
+  return (
+    <Styled.Field
+      id={id}
+      name={name}
+      ref={inputRef}
+      type={type}
+      placeholder={placeholder}
+      value={inputValue}
+      error={error}
+      onChange={handleChange}
+    />
+  );
+};

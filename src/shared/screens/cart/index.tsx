@@ -20,19 +20,21 @@ function Cart() {
   const history = useHistory();
   const handleClick = () => history.push(`/pagamento/${cart?.cartId}`);
 
-  return loading ? <Loading /> : (
+  return loading ? (
+    <Loading />
+  ) : (
     cart && (
       <>
         <Panel title={<Title>Produtos</Title>}>
           <>
-            {[...cart?.items].map((item) =>
+            {[...cart?.items].map((item) => (
               <Card
                 key={item.product.sku}
                 title={item.product.name}
                 price={utils.format.currency.toBRL(item.product.priceSpecification.price)}
                 image={item.product.imageObjects[0].thumbnail}
               />
-            )}
+            ))}
           </>
         </Panel>
         <VerticalSpacing>
@@ -43,7 +45,9 @@ function Cart() {
             total={utils.format.currency.toBRL(cart.total)}
           />
         </VerticalSpacing>
-        <Button onClick={handleClick} block={true}>Seguir para o pagamento</Button>
+        <Button onClick={handleClick} block={true}>
+          Seguir para o pagamento
+        </Button>
       </>
     )
   );

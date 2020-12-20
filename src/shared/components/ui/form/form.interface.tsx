@@ -21,9 +21,10 @@ export interface IFormFieldProps {
   inputRef?: any;
   type: string;
   placeholder?: string;
-  value?: string;
+  initialValue?: string;
   error?: boolean;
-  onChange?: (event: React.ChangeEvent<HTMLInputElement>) => void;
+  onChange?: (value: string) => void;
+  mask?: (value: string) => string;
 }
 
 export interface IFieldStyles {

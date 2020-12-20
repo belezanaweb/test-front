@@ -17,23 +17,30 @@ const schema = yup.object().shape({
   creditCardNumber: yup
     .string()
     .required('Campo obrigatório')
-    .test('required', 'O número do cartão é inválido', (value) => valid.number(value?.replace(/ /g, '')).isValid),
+    .test(
+      'required',
+      'O número do cartão é inválido',
+      (value) => valid.number(value?.replace(/ /g, '').trim()).isValid
+    ),
   expires: yup
     .string()
     .min(7, 'Mínimo 6 números')
     .required('Campo obrigatório')
-    .test('required', 'O validade é inválida', (value) => value?.replace(/[/]/g, '').length === 6),
+    .test('required', 'O validade é inválida', (value) => value?.replace(/[/]/g, '').trim().length === 6),
   securityCode: yup.string().min(3, 'Mínimo 3 números').max(4, 'Máximo 4 números').required('Campo obrigatório'),
 });
 
-export const PaymentForm = ({ html, onClick = () => {} }: { html?: JSX.Element; onClick?: () => void }) => {
+export const PaymentForm = ({ html, onClick }: { html?: JSX.Element; onClick?: () => void }) => {
   const { register, handleSubmit, errors } = useForm<TPaymentData>({
+    mode: 'onBlur',
     resolver: yupResolver(schema),
   });
 
   const onSubmit = React.useCallback((data: TPaymentData) => {
     console.log('data', data);
-    onClick();
+    if (onClick) {
+      onClick();
+    }
   }, []);
 
   const [creditCardNumber, setCreditCardNumber] = React.useState('');
@@ -42,16 +49,21 @@ export const PaymentForm = ({ html, onClick = () => {} }: { html?: JSX.Element; 
   const [expires, setExpires] = React.useState('');
   const [enableSubmit, setEnableSubmit] = React.useState(false);
 
+  const handleCreditCardNumberChange = (value: string) => setCreditCardNumber(value);
+  const handleNameChange = (value: string) => setName(value);
+  const handleExpiresChange = (value: string) => setExpires(value);
+  const handleSecurityCodeChange = (value: string) => setSecurityCode(value);
+
   schema
-  .isValid({
-    creditCardNumber,
-    securityCode,
-    name,
-    expires,
-  })
-  .then((valid) => {
-    setEnableSubmit(valid);
-  });
+    .isValid({
+      creditCardNumber,
+      securityCode,
+      name,
+      expires,
+    })
+    .then((valid) => {
+      setEnableSubmit(valid);
+    });
 
   return (
     <Form onSubmit={handleSubmit(onSubmit)}>
@@ -65,12 +77,10 @@ export const PaymentForm = ({ html, onClick = () => {} }: { html?: JSX.Element; 
               name="creditCardNumber"
               placeholder="____-____-____-____"
               inputRef={register}
-              onChange={(event: React.ChangeEvent<HTMLInputElement>) => {
-                const { value } = event.target;
-                setCreditCardNumber(utils.mask.creditCardNumber(value));
-              }}
+              onChange={handleCreditCardNumberChange}
+              mask={utils.mask.creditCardNumber}
               error={!!errors.creditCardNumber}
-              value={creditCardNumber}
+              initialValue={creditCardNumber}
             />
           </>
         </FormGroup>
@@ -84,11 +94,9 @@ export const PaymentForm = ({ html, onClick = () => {} }: { html?: JSX.Element; 
               name="name"
               inputRef={register}
               error={!!errors.name}
-              onChange={(event: React.ChangeEvent<HTMLInputElement>) => {
-                const { value } = event.target;
-                setName(utils.mask.name(value));
-              }}
-              value={name}
+              onChange={handleNameChange}
+              mask={utils.mask.name}
+              initialValue={name}
             />
           </>
         </FormGroup>
@@ -105,11 +113,9 @@ export const PaymentForm = ({ html, onClick = () => {} }: { html?: JSX.Element; 
                     name="expires"
                     inputRef={register}
                     error={!!errors.expires}
-                    onChange={(event: React.ChangeEvent<HTMLInputElement>) => {
-                      const { value } = event.target;
-                      setExpires(utils.mask.expires(value));
-                    }}
-                    value={expires}
+                    onChange={handleExpiresChange}
+                    mask={utils.mask.expires}
+                    initialValue={expires}
                   />
                 </>
               </FormGroup>
@@ -125,11 +131,9 @@ export const PaymentForm = ({ html, onClick = () => {} }: { html?: JSX.Element; 
                     name="securityCode"
                     inputRef={register}
                     error={!!errors.securityCode}
-                    onChange={(event: React.ChangeEvent<HTMLInputElement>) => {
-                      const { value } = event.target;
-                      setSecurityCode(utils.mask.securityCode(value));
-                    }}
-                    value={securityCode}
+                    onChange={handleSecurityCodeChange}
+                    mask={utils.mask.securityCode}
+                    initialValue={securityCode}
                   />
                 </>
               </FormGroup>

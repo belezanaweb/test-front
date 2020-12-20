@@ -13,4 +13,3 @@ export default {
 const Template: Story<ILoadingProps> = (args) => <Loading {...args} />;
 
 export const Default = Template.bind({});
-

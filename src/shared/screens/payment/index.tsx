@@ -17,26 +17,28 @@ const Payment = () => {
   const history = useHistory();
   const handleClick = () => history.push(`/sucesso/${cart?.cartId}`);
 
-  return loading ? <Loading /> : (
+  return loading ? (
+    <Loading />
+  ) : (
     cart && (
-    <>
-      <PaymentForm
-        html={
-          <VerticalSpacing>
-            <CartSummary
-              subTotal={utils.format.currency.toBRL(cart.subTotal)}
-              shippingTotal={utils.format.currency.toBRL(cart.shippingTotal)}
-              discount={utils.format.currency.toBRL(cart.discount)}
-              total={utils.format.currency.toBRL(cart.total)}
-            />
-          </VerticalSpacing>
-        }
-        onClick={handleClick}
-      />
-    </>
+      <>
+        <PaymentForm
+          html={
+            <VerticalSpacing>
+              <CartSummary
+                subTotal={utils.format.currency.toBRL(cart.subTotal)}
+                shippingTotal={utils.format.currency.toBRL(cart.shippingTotal)}
+                discount={utils.format.currency.toBRL(cart.discount)}
+                total={utils.format.currency.toBRL(cart.total)}
+              />
+            </VerticalSpacing>
+          }
+          onClick={handleClick}
+        />
+      </>
     )
   );
-}
+};
 
 (Payment as Container<{ id: string }>).preload = async ({ store, match }) => {
   const cart = store.getState().cart;

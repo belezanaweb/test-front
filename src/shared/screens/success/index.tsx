@@ -17,7 +17,9 @@ import utils from '../../utils';
 function Success() {
   const { data: cart, loading } = useSelector((state: ApplicationState) => state.cart);
 
-  return loading ? <Loading /> : (
+  return loading ? (
+    <Loading />
+  ) : (
     cart && (
       <>
         <VerticalSpacing bottom="medium">
@@ -30,14 +32,14 @@ function Success() {
 
         <Panel title={<Title>Produtos</Title>}>
           <>
-            {[...cart?.items].map((item) =>
+            {[...cart?.items].map((item) => (
               <Card
                 key={item.product.sku}
                 title={item.product.name}
                 presentation={true}
                 image={item.product.imageObjects[0].thumbnail}
               />
-            )}
+            ))}
           </>
         </Panel>
         <VerticalSpacing top="medium" bottom="large">
