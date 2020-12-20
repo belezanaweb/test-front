@@ -5,6 +5,7 @@ import { Provider } from 'react-redux';
 import { StaticRouter } from 'react-router-dom';
 import { renderToStaticMarkup, renderToString } from 'react-dom/server';
 import { ChunkExtractor } from '@loadable/server';
+import { CookiesProvider } from 'react-cookie';
 
 import App from '../../shared/app';
 import configureStore from '../../shared/store';
@@ -13,7 +14,7 @@ const router = express.Router();
 
 const statsFile = resolve('./build/loadable-stats.json');
 
-router.get('*', async (req, res, next) => {
+router.get('*', async (req: any, res, next) => {
   const context = {};
   const store = configureStore({ isServer: true });
   const sagaPromises = store.run.toPromise();
@@ -23,11 +24,13 @@ router.get('*', async (req, res, next) => {
   const extractor = new ChunkExtractor({ statsFile, entrypoints: ['client'] });
 
   const jsx = extractor.collectChunks(
-    <Provider store={store}>
-      <StaticRouter location={req.url} context={context}>
-        <App />
-      </StaticRouter>
-    </Provider>
+    <CookiesProvider cookies={req.universalCookies}>
+      <Provider store={store}>
+        <StaticRouter location={req.url} context={context}>
+          <App />
+        </StaticRouter>
+      </Provider>
+    </CookiesProvider>
   );
 
   renderToStaticMarkup(jsx);

@@ -3,6 +3,8 @@ import { useHistory } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import { ApplicationState } from '../../store';
 
+import * as actions from '../../store/cart/actions';
+
 import CartSummary from '../../components/app/cart-summary';
 import PaymentForm from '../../components/app/payment-form';
 import VerticalSpacing from '../../components/ui/vertical-spacing';
@@ -35,5 +37,14 @@ const Payment = () => {
     )
   );
 }
+
+(Payment as Container<{ id: string }>).preload = async ({ store, match }) => {
+  const cart = store.getState().cart;
+  const cartId = match.params.id;
+  const needFetch = !cart.data || cart.data.cartId !== cartId;
+  if (needFetch && !cart.loading) {
+    store.dispatch(actions.loadCartRequest(cartId));
+  }
+};
 
 export default Payment;
