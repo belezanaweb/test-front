@@ -7,11 +7,11 @@ const base: any = {
     border: none;
     cursor: pointer;
     font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-
   `,
   primary: (theme: any) => css`
     background: ${theme.button.primary.backgroundColor};
-    box-shadow: inset 0 -3px 0 0 ${theme.button.primary.shadowColor_1}, 0 2px 4px 0 ${theme.button.primary.shadowColor_2};
+    box-shadow: inset 0 -3px 0 0 ${theme.button.primary.shadowColor_1},
+      0 2px 4px 0 ${theme.button.primary.shadowColor_2};
     color: ${theme.button.primary.color};
     text-transform: uppercase;
     font-size: 2rem;
@@ -20,7 +20,8 @@ const base: any = {
     transition: all 0.5s ease-in-out;
 
     &:hover {
-      box-shadow: inset 0 -50px 0 0 ${theme.button.primary.shadowColor_1}, 0 2px 4px 0 ${theme.button.primary.shadowColor_2};
+      box-shadow: inset 0 -50px 0 0 ${theme.button.primary.shadowColor_1},
+        0 2px 4px 0 ${theme.button.primary.shadowColor_2};
     }
   `,
   small: css`
@@ -34,8 +35,14 @@ const base: any = {
   `,
   disabled: (theme: any) => css`
     background: ${theme.button.disabled.backgroundColor};
-    box-shadow: inset 0 -3px 0 0 ${theme.button.disabled.shadowColor_1}, 0 2px 4px 0 ${theme.button.disabled.shadowColor_2};
+    box-shadow: inset 0 -3px 0 0 ${theme.button.disabled.shadowColor_1},
+      0 2px 4px 0 ${theme.button.disabled.shadowColor_2};
     color: ${theme.button.disabled.color};
+
+    &:hover {
+      box-shadow: inset 0 -3px 0 0 ${theme.button.disabled.shadowColor_1},
+        0 2px 4px 0 ${theme.button.disabled.shadowColor_2};
+    }
   `,
 };
 

@@ -1,0 +1,18 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Panel /> should render component with default props and match snapshot 1`] = `
+.c0 {
+  background: #fff;
+  border-radius: 0.3rem;
+  box-shadow: 1px 1px 5px 0 #00001d38;
+  padding: 1rem;
+}
+
+<div>
+  <div
+    class="c0"
+  >
+    Panel
+  </div>
+</div>
+`;

@@ -1,0 +1,86 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Card /> should render component with default props and match snapshot 1`] = `
+.c0 {
+  background: #fff;
+  border: 0.1rem solid #eee;
+  border-radius: 0.3rem;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  margin-top: 1.5rem;
+  min-height: 9rem;
+  padding: 1rem;
+}
+
+.c0:first-child {
+  margin-top: 0;
+}
+
+.c1 {
+  height: 6.5rem;
+  width: 6.5rem;
+}
+
+.c2 {
+  height: 6.5rem;
+  width: 6.5rem;
+}
+
+.c3 {
+  padding-bottom: 2rem;
+  padding-left: 1rem;
+  position: relative;
+}
+
+.c4 {
+  color: #212121;
+  font-size: 1.3rem;
+  margin-bottom: 1.5rem;
+}
+
+.c5 {
+  color: #212121;
+  font-size: 1.4rem;
+  font-weight: 700;
+  position: absolute;
+  bottom: 0.4rem;
+  right: 1rem;
+}
+
+<article
+  class="c0"
+>
+  <figure
+    class="c1"
+  >
+    <img
+      alt="L'Oréal Professionnel Expert Absolut Repair Cortex Lipidium - Máscara de Reconstrução 500g"
+      class="c2"
+      src="https://res.cloudinary.com/beleza-na-web/image/upload/f_auto,fl_progressive,q_auto:best/v1/imagens/1/loreal-professionnel-expert-absolut-repair-cortex-lipidium-mascara-de-reconstrucao-500g-24410-963234120108391775.png"
+    />
+  </figure>
+  <dl
+    class="c3"
+  >
+    <dt
+      class="c4"
+    >
+      L'Oréal Professionnel Expert Absolut Repair Cortex Lipidium - Máscara de Reconstrução 500g
+    </dt>
+    <dd
+      class="c5"
+    >
+      R$ 225,90
+    </dd>
+  </dl>
+</article>
+`;

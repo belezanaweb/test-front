@@ -1,21 +1,29 @@
 import { applyMiddleware, compose, createStore, Store } from 'redux';
 import createSagaMiddleware, { END, Task } from 'redux-saga';
 
-import rootReducer, { AppState } from './reducers';
-import rootSaga from './sagas';
+import rootReducer from './root-reducer';
+import rootSaga from './root-saga';
+
+import { CartState } from './cart/types';
+import { FormsState } from  './forms/types';
 
 interface AppContext {
   isServer?: boolean;
 }
 
-export interface ReduxStore extends Store<AppState> {
+export interface ApplicationState {
+  cart: CartState;
+  forms: FormsState;
+}
+
+export interface ReduxStore extends Store<ApplicationState> {
   run: Task;
   close: () => END;
 }
 
 const prod = process.env.NODE_ENV === 'production';
 
-function configureStore(context: AppContext, appState?: AppState): ReduxStore {
+function configureStore(context: AppContext, appState?: ApplicationState): ReduxStore {
   const devtools = !context.isServer && window.__REDUX_DEVTOOLS_EXTENSION__;
 
   const sagaMiddleware = createSagaMiddleware();
@@ -30,5 +38,4 @@ function configureStore(context: AppContext, appState?: AppState): ReduxStore {
   return store;
 }
 
-export { AppState } from './reducers';
 export default configureStore;

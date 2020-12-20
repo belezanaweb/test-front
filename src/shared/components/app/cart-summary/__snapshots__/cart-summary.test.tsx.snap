@@ -1,0 +1,102 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<CartSummary /> should render component with default props and match snapshot 1`] = `
+.c0 {
+  border: 0.1rem solid #ccc;
+  border-radius: 0.3rem;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-flex-flow: wrap row;
+  -ms-flex-flow: wrap row;
+  flex-flow: wrap row;
+  overflow: hidden;
+  padding: 1.5rem 1.2rem;
+  margin-bottom: -0.8rem;
+  width: 100%;
+}
+
+.c1 {
+  color: #212121;
+  font-size: 1.4rem;
+  margin-bottom: 0.8rem;
+  text-transform: uppercase;
+  width: 50%;
+}
+
+.c2 {
+  color: #212121;
+  font-size: 1.4rem;
+  margin-bottom: 0.8rem;
+  text-align: right;
+  width: 50%;
+}
+
+.c3 {
+  color: #ff7800;
+}
+
+.c4 {
+  color: #ff7800;
+}
+
+.c5 {
+  font-weight: 700;
+  margin-bottom: 0;
+}
+
+.c6 {
+  font-weight: 700;
+  margin-bottom: 0;
+}
+
+<dl
+  class="c0"
+>
+  <dt
+    class="c1"
+  >
+    Produtos
+  </dt>
+  <dd
+    class="c2"
+  >
+    R$ 6.624,80
+  </dd>
+  <dt
+    class="c1"
+  >
+    Frete
+  </dt>
+  <dd
+    class="c2"
+  >
+    R$ 65,30
+  </dd>
+  <dt
+    class="c1 c3"
+  >
+    Desconto
+  </dt>
+  <dd
+    class="c2 c4"
+  >
+    - 
+    R$ 630,00
+  </dd>
+  <dt
+    class="c1 c5"
+  >
+    Total
+  </dt>
+  <dd
+    class="c2 c6"
+  >
+    R$ 6.618,90
+  </dd>
+</dl>
+`;

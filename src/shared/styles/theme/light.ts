@@ -21,7 +21,7 @@ export const light = {
       color: '#afafaf',
       shadowColor_1: '#afafaf',
       shadowColor_2: '#fff',
-    }
+    },
   },
   form: {
     label: {

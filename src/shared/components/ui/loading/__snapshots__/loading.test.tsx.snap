@@ -1,0 +1,82 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Loading /> should render component with default props and match snapshot 1`] = `
+.c0 {
+  width: 30px;
+  height: 30px;
+  position: relative;
+  overflow: hidden;
+  -webkit-animation: hWuqhH 2.4s linear infinite;
+  animation: hWuqhH 2.4s linear infinite;
+}
+
+.c0 > div {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  position: absolute;
+  background-color: #ff6c00;
+  -webkit-animation: dfNaGE 2.4s linear infinite alternate;
+  animation: dfNaGE 2.4s linear infinite alternate;
+}
+
+.c0 > div:nth-of-type(1) {
+  -webkit-animation-delay: 0s;
+  animation-delay: 0s;
+}
+
+.c0 > div:nth-of-type(2) {
+  -webkit-animation-delay: 0.7999999999999999s;
+  animation-delay: 0.7999999999999999s;
+}
+
+.c0 > div:nth-of-type(3) {
+  -webkit-animation-delay: 1.5999999999999999s;
+  animation-delay: 1.5999999999999999s;
+}
+
+.c0 > div:nth-of-type(4) {
+  -webkit-animation-delay: 2.4s;
+  animation-delay: 2.4s;
+}
+
+.c1 {
+  left: 0;
+  top: 0;
+}
+
+.c2 {
+  right: 0;
+  top: 0;
+}
+
+.c3 {
+  left: 0;
+  bottom: 0;
+}
+
+.c4 {
+  right: 0;
+  bottom: 0;
+}
+
+<div
+  class="c0"
+  color="#ff6c00"
+  speed="2.4"
+  style="margin: auto; position: absolute; left: 0px; right: 0px; top: 0px; bottom: 0px;"
+>
+  <div
+    class="c1"
+  />
+  <div
+    class="c2"
+  />
+  <div
+    class="c3"
+  />
+  <div
+    class="c4"
+  />
+</div>
+`;

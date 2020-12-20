@@ -1,0 +1,116 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<PaymentSummary /> should render component with default props and match snapshot 1`] = `
+.c0 {
+  color: #000;
+  font-size: 1.4rem;
+  font-weight: 400;
+  line-height: 1.2;
+  outline: none;
+  text-transform: uppercase;
+}
+
+.c1 {
+  color: #ff7800;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  font-size: 1.4rem;
+  font-weight: 700;
+  margin-bottom: 2rem;
+  line-height: 1.2;
+  outline: none;
+  text-transform: uppercase;
+}
+
+.c2 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  border: 2px solid #ff7800;
+  border-radius: 50%;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  fill: #ff7800;
+  height: 4rem;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  margin-bottom: 1rem;
+  width: 4rem;
+}
+
+.c4 {
+  background: #fff;
+  border-radius: 0.3rem;
+  box-shadow: 1px 1px 5px 0 #00001d38;
+  padding: 1rem;
+}
+
+.c3 {
+  color: #999;
+  font-size: 1.4rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  text-transform: uppercase;
+}
+
+<div
+  class="c0"
+>
+  <div
+    class="c1"
+  >
+    <div
+      class="c2"
+    >
+      <svg
+        fill="#ff7800"
+        viewBox="0 0 100 70.05"
+        width="20"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M98.59 1.41a4.816 4.816 0 00-6.81 0L38.65 62.07 8.21 36.53a4.816 4.816 0 00-6.81 6.81l32.9 25.55c1.88 1.88 7.37 1.31 9.25-.56L98.59 8.21c1.88-1.87 1.88-4.92 0-6.8z"
+        />
+      </svg>
+    </div>
+    Compra Efetuada com sucesso
+  </div>
+  <div>
+    <h3
+      class="c3"
+      role="heading"
+    >
+      Pagamento
+    </h3>
+    <div
+      class="c4"
+    >
+      <ul>
+        <li>
+          ****.****.****.1234
+        </li>
+        <li>
+          José da Silva
+        </li>
+        <li>
+          05/2019
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+`;

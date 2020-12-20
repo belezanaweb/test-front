@@ -5,6 +5,7 @@ import { useStore } from 'react-redux';
 import { useLocation } from 'react-router-dom';
 import { matchRoutes, renderRoutes } from 'react-router-config';
 import { LoadableComponent } from '@loadable/component';
+import { CookiesProvider } from 'react-cookie';
 
 import { routes } from './routes';
 
@@ -12,11 +13,6 @@ import { ThemeProvider } from 'styled-components';
 import { GlobalStyle } from './styles/global';
 import globalTheme from './styles/theme';
 import AppLayout from './layouts/app';
-
-if (typeof Proxy === 'undefined') {
-  // eslint-disable-next-line @typescript-eslint/no-var-requires
-  require('immer').enableES5();
-}
 
 function App() {
   const store = useStore();
@@ -29,10 +25,12 @@ function App() {
   }, [location]);
 
   return (
-    <ThemeProvider theme={globalTheme}>
-      <GlobalStyle />
-      <AppLayout>{renderRoutes(routes)}</AppLayout>
-    </ThemeProvider>
+    <CookiesProvider>
+      <ThemeProvider theme={globalTheme}>
+        <GlobalStyle />
+        <AppLayout>{renderRoutes(routes)}</AppLayout>
+      </ThemeProvider>
+    </CookiesProvider>
   );
 }
 
