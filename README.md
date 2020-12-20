@@ -16,7 +16,7 @@ Ao seguir os passos do checkout, o usuário verá os dados persistidos no estado
 
 No formulário de pagamento, os dados submetidos pelo usuário, são colocados no estado aplicação. Assim, sendo possível ser acessado na navegação SPA, na página de sucesso. Caso o usuário atualize a página, os dados não se perderam, pois estão persistidos nos cookies (Apenas para apresentação de recurso para o desafio, no cenário real, acredito que o front não deveria/precisaria guardar esses dados, sendo um retorno da API na etapa de sucesso).
 
-## Stacks
+## Tecnologias da stack
 
 - **TypeScript**: [Estende o JavaScript adicionando tipos e economiza tempo, detectando erros e fornecendo correções](https://www.typescriptlang.org/pt/)
 
@@ -37,6 +37,7 @@ No formulário de pagamento, os dados submetidos pelo usuário, são colocados n
 - \-\-\-\-\-\-\-\
 - **Eslint**: [Linter para evitar erros na escrito do código, com grande quantidade de regras pré-definidas e é completamente customizável através de plugins](https://eslint.org/)
 - **Prettier**: [Formatador de códigos com suporte a muitas linguagens e possui integração com a maioria dos editores de código](https://prettier.io/)
+- **Commit Lint**: [Para validar o padrão das mensagens dos commits](https://commitlint.js.org/#/)
 - \-\-\-\-\-\-\-\
 - **Storybook**: [Executa paralelamente à aplicação em desenvolvimento, onde é possível ver cada componente isoladamente ou não](https://storybook.js.org/)
 - \-\-\-\-\-\-\-\
