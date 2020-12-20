@@ -58,7 +58,7 @@
   },
   "jest": {
     "coverageReporters": [
-      "jest-junit"
+      "text"
     ]
   }
 }

@@ -104,6 +104,27 @@ describe('Payment', () => {
     expect(screen.getByLabelText('CVV:')).toBeInTheDocument()
   })
 
+  test('renders and submit credit card data without fill form ', async () => {
+    const history = createMemoryHistory()
+
+    render(
+      <ReduxProvider>
+        <Router history={history}>
+          <Switch>
+            <Route exact path="/" component={Payment} />
+            <Route path="/confirmation" component={Confirmation} />
+          </Switch>
+        </Router>
+      </ReduxProvider>
+    )
+
+    await waitFor(() => screen.getByText('Finalizar o pedido'))
+
+    fireEvent.click(screen.getByText('Finalizar o pedido'))
+
+    expect(mockHistoryPush).not.toHaveBeenCalled()
+  })
+
   test('renders and submit credit card data ', async () => {
     const history = createMemoryHistory()
 
