@@ -1,3 +1,24 @@
+# Para rodar a aplicação
+**Instalar as dependencias:**
+
+`yarn install`
+
+**Rodar a aplicação**
+
+`yarn start`
+
+**Rodar testes**
+
+`yarn test`
+
+**Rodar relatório de cobertura de testes**
+
+`yarn coverage`
+
+### Foi um ótimo teste, obrigado pela oportunidade!
+
+----------
+
 ## Frontend Test
 
 Faça um fork deste repositório e finalizar o teste, submeta um pull request para o repositório que nosso time será notificado.
