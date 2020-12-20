@@ -1,5 +1,6 @@
 # Para rodar a aplicação
-**Instalar as dependencias:**
+
+**Instalar as dependências:**
 
 `yarn install`
 
