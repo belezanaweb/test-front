@@ -5,7 +5,7 @@ import Input from '../../components/Input'
 import * as S from './style'
 
 const required = 'Campo obrigatório'
-const CreditCard = ({ register, errors }) => (
+const CreditCard = ({ register = (_) => _, errors }) => (
   <S.Wrapper>
     <Input
       type="tel"
