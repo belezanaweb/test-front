@@ -45,6 +45,15 @@ No formulário de pagamento, os dados submetidos pelo usuário, são colocados n
 - **Jest**: [Framework de teste unitário em JS criado pelo Facebook a partir do framework Jasmine](https://jestjs.io/)
 - **React Testing Library**: [Conjunto de ferramentas para testes dos componentes](https://testing-library.com/docs/react-testing-library/intro/)
 
+## Estrutura de um componente
+
+- index.ts
+- [name].component.tsx
+- [name].interface.ts
+- [name].styled.tsx
+- [name].test.tsx
+- [name].stores.tsx
+
 ## Comandos para a avaliação do projeto
 
 Instalar as dependências
