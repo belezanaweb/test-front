@@ -2,7 +2,7 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import styled from 'styled-components'
 import Button from '../components/Button'
-import Produtos from '../containers/Produtos'
+import Products from '../containers/Products'
 import Total from '../containers/Total'
 
 const Content = styled.div`
@@ -13,7 +13,7 @@ const Content = styled.div`
 
 const App = () => (
   <Content>
-    <Produtos />
+    <Products />
     <Total />
     <Button as={Link} to="/payment">
       Seguir para o pagamento

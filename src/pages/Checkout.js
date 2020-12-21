@@ -2,7 +2,7 @@ import React from 'react'
 import styled from 'styled-components'
 
 import Alert from '../components/Alert'
-import Produtos from '../containers/Produtos'
+import Products from '../containers/Products'
 import Payment from '../containers/Payment'
 
 import Total from '../containers/Total'
@@ -20,7 +20,7 @@ const App = () => (
       <div>COMPRA EFETUADA COM SUCESSO</div>
     </Alert>
     <Payment />
-    <Produtos condensed />
+    <Products condensed />
     <Total />
   </Container>
 )
