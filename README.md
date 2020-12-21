@@ -1,41 +1,33 @@
-## Frontend Test
+## Installation
 
-Faça um fork deste repositório e finalizar o teste, submeta um pull request para o repositório que nosso time será notificado.
+You need the [node](https://nodejs.org/en/download/) to run this project, this example was created for the version `v12.18.3`.
 
-O teste consiste em um checkout simples contendo 3 passos (carrinho, pagamento e sucesso) [Veja o Layout](https://projects.invisionapp.com/prototype/font-test-cji0j0khf005c1t0132358e8k)
+### Run application
 
-**Faça quando quiser/puder (madrugada, fim de semana, etc)**
+```bash
+npm install
+npm start
+```
 
-### Requerimentos
+## Folder structure
 
-- Pixel perfect ([nesse link](https://projects.invisionapp.com/prototype/font-test-cji0j0khf005c1t0132358e8k), você pode inspecionar para ver espaçamentos, fonte, tamanho, etc)
-- A aplicação precisa ser responsiva, utilizando o conceito de mobile-first. Use sua imaginação para entregar uma experiência boa no desktop.
-- Renderize cada passo em uma URL única (lib de rotas).
+```
+public - Static file serving
+src/
+  |___components - UI components
+  |___containers - UI components that have business rules
+  |___docs - Documentation and documentation assets
+  |___utils - Functions utils
+  |___layout - UI components that are displayed on all pages of the site
+  |___pages - Pages that reflect the browser address
+  |___reducers - Reducer/Actions
+```
 
 
-### Passo 1 - Carrinho:
-  - Consuma o [esse endpoint](http://www.mocky.io/v2/5b15c4923100004a006f3c07) e liste os itens do carrinho, bem como o resumo do carrinho;
-  - Persista o conteúdo do JSON para ser usado nas próximas etapas;
+## Stacks
 
-### Passo 2 - Pagamento: 
-  - Exiba um form com campos de cartão de crédito com validação em cada campo;
-  - Habilite o botão de Finalizar Pedido apenas se o form esteja válido;
-
-### Passo 3 - Sucesso: 
-  - Todo o conteúdo deverá ser exibido a partir dos dados persistidos;
-  
-### O que vamos avaliar:
-  - Organização do código;
-  - Mensagens (em inglês) e mudanças nos commits;
-  - Composição/reutilização de componentes;
-  - Testes unitários;
-  - O motivo de ter escolhido cada tech da stack;
-  - Como rodar sua aplicação ;)
-
-### Diferenciais:
-  - Split bundle por rota (cada step ter um bundle separado para otimizar a performance);
-  - CSS in JS;
-  - React;
-
-### Fim:
-Ao finalizar o teste, submeta um pull request para o repositório que nosso time será notificado. Se tiver alguma observação, escreva no pull request.
+- react-hook-form: To validate form;
+- react-imask: To apply mask into inputs;
+- redux: To keep store of applications;
+- react-router-dom: To control router;
+- styled-components: To apply Style into App;
