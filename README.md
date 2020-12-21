@@ -8,8 +8,6 @@
 
 ## Introdução
 
-Meu nome é Hemerson Vianna. Sou desevolvedor Front-end e estou na área web desde 2008.
-
 O desafio foi feito seguindo as intruções passadas, utilizando SSR (Server-Side Rendering).
 
 Ao seguir os passos do checkout, o usuário verá os dados persistidos no estado da aplicação. Em cada etapa do checkout, se o usuário atualizar a página, os dados serão pegos novamente na API (Trazendo para o cenário real, seria a comunicação constante com a API, devido a constante mudanças ou por inatividade do usuário).
@@ -120,7 +118,7 @@ Comando utilizado para adicionar o storybook:
 npx -p @storybook/cli sb init
 ```
 
-## Instruções
+## Instruções do desafio
 
 ### Frontend Test
 

@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`<Grid /> should render component with default props and match snapshot 1`] = `
+exports[`<Grid /> should render Grid component with default props and match snapshot 1`] = `
 .c0 {
   display: -webkit-box;
   display: -webkit-flex;
@@ -19,5 +19,17 @@ exports[`<Grid /> should render component with default props and match snapshot 
   class="c0"
 >
   Grid
+</div>
+`;
+
+exports[`<Grid /> should render GridCol component with default props and match snapshot 1`] = `
+.c0 {
+  width: 100%;
+}
+
+<div
+  class="c0"
+>
+  GridCol
 </div>
 `;

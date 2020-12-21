@@ -1,9 +1,90 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`<Form /> should render component with default props and match snapshot 1`] = `
+exports[`<Form /> should render Form component with default props and match snapshot 1`] = `
 <form
   role="form"
 >
   From
 </form>
+`;
+
+exports[`<FormField /> should render FormField component with default props and match snapshot 1`] = `
+.c0 {
+  border-radius: 3px;
+  background-color: #fff;
+  border: 1px solid #e7e7e7;
+  box-shadow: inset 0 1px 2px 0 #00000033;
+  color: #212121;
+  font-size: 1.6rem;
+  font-weight: 400;
+  outline: none;
+  padding: 1.2rem;
+  width: 100%;
+}
+
+.c0:focus {
+  border-color: #a43287;
+}
+
+.c0::-webkit-input-placeholder {
+  color: #e0e7ee;
+  opacity: 1;
+}
+
+.c0::-moz-placeholder {
+  color: #e0e7ee;
+  opacity: 1;
+}
+
+.c0:-ms-input-placeholder {
+  color: #e0e7ee;
+  opacity: 1;
+}
+
+.c0::placeholder {
+  color: #e0e7ee;
+  opacity: 1;
+}
+
+.c0:-ms-input-placeholder {
+  color: #e0e7ee;
+}
+
+.c0::-ms-input-placeholder {
+  color: #e0e7ee;
+}
+
+<input
+  class="c0"
+  type="text"
+  value=""
+/>
+`;
+
+exports[`<FormGroup /> should render FormGroup component with default props and match snapshot 1`] = `
+.c0 {
+  margin-bottom: 2.5rem;
+}
+
+<p
+  class="c0"
+>
+  Group
+</p>
+`;
+
+exports[`<FormLabel /> should render FormLabel component with default props and match snapshot 1`] = `
+.c0 {
+  font-size: 1.2rem;
+  display: block;
+  color: #ccc;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
+<label
+  class="c0"
+>
+  Label
+</label>
 `;

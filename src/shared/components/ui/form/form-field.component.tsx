@@ -13,6 +13,7 @@ export const FormField: React.FC<IFormFieldProps> = ({
   error,
   onChange,
   mask,
+  role,
 }) => {
   const [inputValue, setInputValue] = React.useState<string>(initialValue);
 
@@ -41,6 +42,7 @@ export const FormField: React.FC<IFormFieldProps> = ({
       value={inputValue}
       error={error}
       onChange={handleChange}
+      role={role}
     />
   );
 };
