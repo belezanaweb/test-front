@@ -16,7 +16,8 @@ export const Var = css`
 
   --border-color: var(--gray);
 
-  --spacing-sm: 5px;
+  --spacing-xs: 5px;
+  --spacing-sm: 8px;
   --spacing: 12px;
   --spacing-lg: 18px;
 

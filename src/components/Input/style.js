@@ -5,7 +5,7 @@ export const Label = styled.span`
   color: var(--text-secondary);
   font-weight: 700;
   line-height: 1.15em;
-  margin-bottom: var(--spacing-sm);
+  margin-bottom: var(--spacing-xs);
 `
 
 export const Input = styled(IMaskInput)`

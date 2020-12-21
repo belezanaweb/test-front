@@ -14,6 +14,15 @@ export const GlobalStyle = createGlobalStyle`
     overflow: auto;
   }
 
+  h1, h2{
+  color: #999;
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 17px;
+  margin: 5px;
+  text-transform: uppercase;
+  }
+
   #root{
     display: flex;
     flex-direction: column;

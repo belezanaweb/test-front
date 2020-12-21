@@ -6,7 +6,7 @@ export const Item = styled.li`
   font-weight: 700;
 
   a {
-    color: ${(p) => (p.active ? 'var(--primary)' : 'var(--text)-secondary')};
+    color: ${(p) => (p.active ? 'var(--primary)' : 'var(--text-secondary)')};
     text-decoration: none;
   }
 `
