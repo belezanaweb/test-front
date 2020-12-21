@@ -11,7 +11,7 @@ export interface IFormGroupProps {
 }
 
 export interface IFormLabelProps {
-  htmlFor: string;
+  htmlFor?: string;
   children: JSX.Element | string;
 }
 
@@ -19,12 +19,13 @@ export interface IFormFieldProps {
   id?: string;
   name?: string;
   inputRef?: any;
-  type: string;
+  type?: string;
   placeholder?: string;
   initialValue?: string;
   error?: boolean;
   onChange?: (value: string) => void;
   mask?: (value: string) => string;
+  role?: string;
 }
 
 export interface IFieldStyles {

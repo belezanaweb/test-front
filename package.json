@@ -1,16 +1,14 @@
 {
   "name": "test-front",
   "version": "0.1.0",
-  "private": true,
+  "main": "dist/server",
   "scripts": {
     "open": "./node_modules/.bin/open-cli http://localhost:3000/carrinho/5b15c4923100004a006f3c07",
-    "dev": "NODE_ENV=production node ./dist/server",
-    "start": "nodemon",
-    "prestart": "npm run build:server && npm run build:client",
-    "poststart": "npm run open",
+    "dev": "nodemon",
+    "predev": "npm run build:server && npm run build:client && npm run open",
     "build:client": "NODE_ENV=development webpack --config config/webpack.client.config.js",
     "build:server": "NODE_ENV=development webpack --config config/webpack.server.config.js",
-    "start:prod": "npm run build:prod && NODE_ENV=production node ./dist/server",
+    "start": "npm run build:prod && npm run open && NODE_ENV=production node ./dist/server",
     "build:prod": "npm run build:prod-server && npm run build:prod-client",
     "build:prod-client": "NODE_ENV=production webpack --mode production --config config/webpack.client.config.js",
     "build:prod-server": "NODE_ENV=production webpack --mode production --config config/webpack.server.config.js",
@@ -32,6 +30,7 @@
     "cookie-parser": "1.4.5",
     "cors": "2.8.5",
     "dotenv": "8.2.0",
+    "esm": "3.2.25",
     "express": "4.17.1",
     "react": "17.0.1",
     "react-app-polyfill": "2.0.0",
@@ -53,6 +52,8 @@
   "devDependencies": {
     "@babel/core": "7.12.10",
     "@babel/preset-env": "7.12.11",
+    "@commitlint/cli": "11.0.0",
+    "@commitlint/config-conventional": "11.0.0",
     "@jest/types": "26.6.2",
     "@loadable/babel-plugin": "5.13.2",
     "@loadable/webpack-plugin": "5.14.0",
@@ -92,7 +93,7 @@
     "@typescript-eslint/parser": "4.6.1",
     "babel-loader": "8.2.2",
     "babel-plugin-styled-components": "1.12.0",
-    "babel-preset-react-app": "10.0.0",
+    "babel-preset-react-app": "9.0.0",
     "css-loader": "5.0.0",
     "cssnano": "4.1.10",
     "eslint": "7.12.1",
@@ -132,7 +133,8 @@
   },
   "husky": {
     "hooks": {
-      "pre-commit": "npm run lint"
+      "pre-commit": "npm run lint",
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
     }
   }
 }

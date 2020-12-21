@@ -9,14 +9,14 @@ describe('Utils', () => {
   })
 
   describe('Replace', () => {
-    it('should return', () => {
+    it('should return with changed digits', () => {
       expect(utils.replace.numbers('1234.1234.1234.1244', 0, 14, '*')).toBe('****.****.****.1244');
       expect(utils.replace.numbers('1234.1234.1234.1244', 10, 11, '*')).toBe('1234.1234.**34.1244');
     })
   })
 
   describe('Mask', () => {
-    it('should return', () => {
+    it('should return with masked values', () => {
       expect(utils.mask.creditCardNumber('123445tywqa')).toBe('1234 45');
       expect(utils.mask.expires('212021')).toBe('21/2021');
       expect(utils.mask.name('Hemer1234son 1234Via3411nna')).toBe('Hemerson Vianna');
