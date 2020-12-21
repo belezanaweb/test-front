@@ -8,7 +8,7 @@
     "predev": "npm run build:server && npm run build:client && npm run open",
     "build:client": "NODE_ENV=development webpack --config config/webpack.client.config.js",
     "build:server": "NODE_ENV=development webpack --config config/webpack.server.config.js",
-    "start": "npm run build:prod && NODE_ENV=production node ./dist/server",
+    "start": "npm run build:prod && npm run open && NODE_ENV=production node ./dist/server",
     "build:prod": "npm run build:prod-server && npm run build:prod-client",
     "build:prod-client": "NODE_ENV=production webpack --mode production --config config/webpack.client.config.js",
     "build:prod-server": "NODE_ENV=production webpack --mode production --config config/webpack.server.config.js",
