@@ -1,4 +1,5 @@
 import { combineReducers } from 'redux'
+import mask from '../utils/maskCreditCardNumber'
 
 const name = 'CARD'
 
@@ -13,7 +14,7 @@ export const types = {
 }
 
 const data = (state = initialState.data, { type, payload }) =>
-  type === types.SAVE ? payload : state
+  type !== types.SAVE ? state : { ...payload, cardNumber: mask(payload.cardNumber) }
 
 const isLoading = (state = initialState.isLoading, { type }) => {
   const mapping = {

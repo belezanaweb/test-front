@@ -1,33 +1,32 @@
 import React from 'react'
 import { useSelector } from 'react-redux'
+import formatCurrency from '../../utils/formatCurrency'
 import * as S from './style'
 
-const format = (() => {
-  const f = new Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'BRL' })
-  return (val = '') => f.format(val)
-})()
-
-const App = () => {
+const App = ({ condensed }) => {
   const {
     data: { items = [] }
   } = useSelector((e) => e.products)
 
   return (
-    <S.Wrapper>
-      {items.map(({ product: { name, sku, imageObjects, priceSpecification } } = {}) => {
-        const [img] = imageObjects
-        const price = format(priceSpecification.price)
-        return (
-          <S.Product key={sku}>
-            <img alt={name} src={img.small} />
-            <S.Details>
-              {name}
-              <S.Price>{price}</S.Price>
-            </S.Details>
-          </S.Product>
-        )
-      })}
-    </S.Wrapper>
+    <section>
+      <h1>Produtos</h1>
+      <S.Container condensed>
+        {items.map(({ product: { name, sku, imageObjects, priceSpecification } } = {}) => {
+          const [img] = imageObjects
+          const price = formatCurrency(priceSpecification.price)
+          return (
+            <S.Product key={sku}>
+              <img alt={name} src={img.small} />
+              <S.Details>
+                {name}
+                {condensed && <S.Price>{price}</S.Price>}
+              </S.Details>
+            </S.Product>
+          )
+        })}
+      </S.Container>
+    </section>
   )
 }
 
