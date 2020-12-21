@@ -1,12 +1,16 @@
 import React, { StrictMode } from 'react'
 import ReactDOM from 'react-dom'
-import './index.css'
+import { Provider } from 'react-redux'
+
 import App from './App'
+import store from './store'
 import * as serviceWorker from './serviceWorker'
 
 const Strict = () => (
   <StrictMode>
-    <App />
+    <Provider store={store}>
+      <App />
+    </Provider>
   </StrictMode>
 )
 
