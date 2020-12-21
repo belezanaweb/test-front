@@ -1,7 +1,7 @@
 {
   "name": "test-front",
   "version": "0.1.0",
-  "main": "src/server",
+  "main": "dist/server",
   "scripts": {
     "open": "./node_modules/.bin/open-cli http://localhost:3000/carrinho/5b15c4923100004a006f3c07",
     "dev": "nodemon",
@@ -30,6 +30,7 @@
     "cookie-parser": "1.4.5",
     "cors": "2.8.5",
     "dotenv": "8.2.0",
+    "esm": "3.2.25",
     "express": "4.17.1",
     "react": "17.0.1",
     "react-app-polyfill": "2.0.0",
@@ -92,7 +93,7 @@
     "@typescript-eslint/parser": "4.6.1",
     "babel-loader": "8.2.2",
     "babel-plugin-styled-components": "1.12.0",
-    "babel-preset-react-app": "10.0.0",
+    "babel-preset-react-app": "9.0.0",
     "css-loader": "5.0.0",
     "cssnano": "4.1.10",
     "eslint": "7.12.1",
