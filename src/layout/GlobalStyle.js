@@ -9,6 +9,7 @@ export const GlobalStyle = createGlobalStyle`
   }
 
   html,body{
+    background: #EEE;
     font-family: 'Helvetica Neue',Helvetica,Arial,sans-serif;
     height: 100%;
     overflow: auto;

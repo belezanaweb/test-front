@@ -9,10 +9,10 @@ export const Label = styled.span`
 `
 
 export const Input = styled(IMaskInput)`
-  box-sizing: border-box;
-  border-radius: var(--border-radius);
   border: 1px solid var(${({ isInvalid }) => (isInvalid ? '--danger' : '--border-color')});
+  border-radius: var(--border-radius);
   box-shadow: inset 0 1px 2px 0 rgba(0, 0, 0, 0.2);
+  box-sizing: border-box;
   color: var(--gray);
   font-size: var(--font-lg);
   line-height: 20px;
