@@ -2,8 +2,8 @@
 
 ## Pré-requisitos
 
-- [Node >= v15.3.0](https://nodejs.org/en/)
-- NPM >= v7.0.14
+- [Node >= v15.4.0](https://nodejs.org/en/)
+- NPM >= v7.0.15
 - [Yarn >= v1.22.5](https://yarnpkg.com/en/docs/install#linux-tab)
 
 ## Introdução
@@ -66,16 +66,16 @@ yarn
 Visualizar a aplicação rodando no ambiente de produção
 
 ```bash
-# ou npx yarn start:prod
-yarn start:prod
+# ou npx yarn start
+yarn start
 # Será aberto automaticamente no navegador a URL: http://localhost:3000/carrinho/5b15c4923100004a006f3c07
 ```
 
 Visualizar a aplicação rodando no ambiente de desenvolvimento
 
 ```bash
-# ou npx yarn start
-yarn start
+# ou npx yarn dev
+yarn dev
 # Será aberto automaticamente no navegador a URL: http://localhost:3000/carrinho/5b15c4923100004a006f3c07
 ```
 

@@ -23,13 +23,15 @@ function Success() {
   ) : (
     cart && (
       <>
-        {payment && <VerticalSpacing bottom="medium">
-          <PaymentSummary
-            creditCardNumber={utils.replace.numbers(payment.creditCardNumber.replace(/ /g, '.'), 0, 14, '*')}
-            name={payment.name}
-            expires={payment.expires}
-          />
-        </VerticalSpacing>}
+        {payment && (
+          <VerticalSpacing bottom="medium">
+            <PaymentSummary
+              creditCardNumber={utils.replace.numbers(payment.creditCardNumber.replace(/ /g, '.'), 0, 14, '*')}
+              name={payment.name}
+              expires={payment.expires}
+            />
+          </VerticalSpacing>
+        )}
 
         <Panel title={<Title>Produtos</Title>}>
           <>
