@@ -20,7 +20,7 @@ const App = () => (
       <div>COMPRA EFETUADA COM SUCESSO</div>
     </Alert>
     <Payment />
-    <Produtos />
+    <Produtos condensed />
     <Total />
   </Container>
 )

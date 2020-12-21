@@ -17,7 +17,7 @@ export const GlobalStyle = createGlobalStyle`
 
   h1, h2{
   color: #999;
-  font-size: 14px;
+  font-size: var(--font);
   font-weight: 700;
   line-height: 17px;
   margin: 5px;

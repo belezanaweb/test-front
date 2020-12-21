@@ -13,9 +13,9 @@ const Button = styled.button`
   outline: none;
   padding: var(--spacing-lg);
   text-align: center;
+  text-decoration: none;
   text-transform: uppercase;
   transition: var(--transition) background-color;
-  width: 100%;
   will-change: background-color;
 
   &:hover {

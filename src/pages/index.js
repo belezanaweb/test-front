@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 import styled from 'styled-components'
 import Button from '../components/Button'
 import Produtos from '../containers/Produtos'
@@ -14,7 +15,9 @@ const App = () => (
   <Content>
     <Produtos />
     <Total />
-    <Button>Seguir para o pagamento</Button>
+    <Button as={Link} to="/payment">
+      Seguir para o pagamento
+    </Button>
   </Content>
 )
 

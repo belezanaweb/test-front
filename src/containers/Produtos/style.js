@@ -25,6 +25,7 @@ export const Details = styled.div`
 `
 
 export const Container = styled(Paper)`
+  border-radius: var(--border-radius);
   display: grid;
   gap: 15px;
   padding: var(--spacing);

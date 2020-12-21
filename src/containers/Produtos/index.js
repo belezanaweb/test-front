@@ -11,7 +11,7 @@ const App = ({ condensed }) => {
   return (
     <section>
       <h1>Produtos</h1>
-      <S.Container condensed>
+      <S.Container condensed={condensed}>
         {items.map(({ product: { name, sku, imageObjects, priceSpecification } } = {}) => {
           const [img] = imageObjects
           const price = formatCurrency(priceSpecification.price)
@@ -20,7 +20,7 @@ const App = ({ condensed }) => {
               <img alt={name} src={img.small} />
               <S.Details>
                 {name}
-                {condensed && <S.Price>{price}</S.Price>}
+                {!condensed && <S.Price>{price}</S.Price>}
               </S.Details>
             </S.Product>
           )
