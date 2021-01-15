@@ -1,0 +1,42 @@
+[debug] [2021-01-15T19:09:57.084Z] ----------------------------------------------------------------------
+[debug] [2021-01-15T19:09:57.086Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\boama\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js init
+[debug] [2021-01-15T19:09:57.086Z] CLI Version:   9.2.0
+[debug] [2021-01-15T19:09:57.087Z] Platform:      win32
+[debug] [2021-01-15T19:09:57.087Z] Node Version:  v12.16.2
+[debug] [2021-01-15T19:09:57.088Z] Time:          Fri Jan 15 2021 16:09:57 GMT-0300 (GMT-03:00)
+[debug] [2021-01-15T19:09:57.088Z] ----------------------------------------------------------------------
+[debug] [2021-01-15T19:09:57.088Z] 
+[debug] [2021-01-15T19:09:57.094Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2021-01-15T19:09:57.095Z] > authorizing via signed-in user
+[info] 
+     ######## #### ########  ######## ########     ###     ######  ########
+     ##        ##  ##     ## ##       ##     ##  ##   ##  ##       ##
+     ######    ##  ########  ######   ########  #########  ######  ######
+     ##        ##  ##    ##  ##       ##     ## ##     ##       ## ##
+     ##       #### ##     ## ######## ########  ##     ##  ######  ########
+
+You're about to initialize a Firebase project in this directory:
+
+  D:\jobs\teste-boticario\test-front
+
+[debug] [2021-01-15T19:10:16.098Z] ----------------------------------------------------------------------
+[debug] [2021-01-15T19:10:16.100Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\boama\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js init
+[debug] [2021-01-15T19:10:16.100Z] CLI Version:   9.2.0
+[debug] [2021-01-15T19:10:16.100Z] Platform:      win32
+[debug] [2021-01-15T19:10:16.100Z] Node Version:  v12.16.2
+[debug] [2021-01-15T19:10:16.102Z] Time:          Fri Jan 15 2021 16:10:16 GMT-0300 (GMT-03:00)
+[debug] [2021-01-15T19:10:16.102Z] ----------------------------------------------------------------------
+[debug] [2021-01-15T19:10:16.102Z] 
+[debug] [2021-01-15T19:10:16.108Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2021-01-15T19:10:16.109Z] > authorizing via signed-in user
+[info] 
+     ######## #### ########  ######## ########     ###     ######  ########
+     ##        ##  ##     ## ##       ##     ##  ##   ##  ##       ##
+     ######    ##  ########  ######   ########  #########  ######  ######
+     ##        ##  ##    ##  ##       ##     ## ##     ##       ## ##
+     ##       #### ##     ## ######## ########  ##     ##  ######  ########
+
+You're about to initialize a Firebase project in this directory:
+
+  D:\jobs\teste-boticario\test-front
+
