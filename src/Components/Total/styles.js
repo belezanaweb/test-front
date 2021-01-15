@@ -11,15 +11,23 @@ export const PriceBox = styled.div`
     font-family: 'Helvetica Neue';
     color: ${(props) => (props.discount ? '#FF7800' : '#212122')};
     text-align: right;
-    &:last-child {
-      font-weight: bold;
-    }
   }
   .text {
     color: ${(props) => (props.discount ? '#FF7800' : '#212122')};
     margin-top: 5px;
     font-family: 'Helvetica Neue';
-    &:nth-child(7) {
+  }
+
+  .desconto {
+    .price,
+    .text {
+      color: #ff7800;
+      font-size: 15px;
+    }
+  }
+  .preco {
+    .price,
+    .text {
       font-weight: bold;
     }
   }

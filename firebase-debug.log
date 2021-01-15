@@ -40,3 +40,53 @@ You're about to initialize a Firebase project in this directory:
 
   D:\jobs\teste-boticario\test-front
 
+[debug] [2021-01-15T19:15:44.284Z] ----------------------------------------------------------------------
+[debug] [2021-01-15T19:15:44.286Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\boama\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js init
+[debug] [2021-01-15T19:15:44.286Z] CLI Version:   9.2.0
+[debug] [2021-01-15T19:15:44.286Z] Platform:      win32
+[debug] [2021-01-15T19:15:44.286Z] Node Version:  v12.16.2
+[debug] [2021-01-15T19:15:44.288Z] Time:          Fri Jan 15 2021 16:15:44 GMT-0300 (GMT-03:00)
+[debug] [2021-01-15T19:15:44.288Z] ----------------------------------------------------------------------
+[debug] [2021-01-15T19:15:44.288Z] 
+[debug] [2021-01-15T19:15:44.294Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2021-01-15T19:15:44.295Z] > authorizing via signed-in user
+[info] 
+     ######## #### ########  ######## ########     ###     ######  ########
+     ##        ##  ##     ## ##       ##     ##  ##   ##  ##       ##
+     ######    ##  ########  ######   ########  #########  ######  ######
+     ##        ##  ##    ##  ##       ##     ## ##     ##       ## ##
+     ##       #### ##     ## ######## ########  ##     ##  ######  ########
+
+You're about to initialize a Firebase project in this directory:
+
+  D:\jobs\teste-boticario\test-front
+
+[info] 
+=== Project Setup
+[info] 
+[info] First, let's associate this project directory with a Firebase project.
+[info] You can create multiple project aliases by running firebase use --add, 
+[info] but for now we'll just set up a default project.
+[info] 
+[info] i  If you want to create a project in a Google Cloud organization or folder, please use "firebase projects:create" instead, and return to this command when you've created the project. 
+[debug] [2021-01-15T19:16:08.974Z] ----------------------------------------------------------------------
+[debug] [2021-01-15T19:16:08.977Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\boama\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js init
+[debug] [2021-01-15T19:16:08.977Z] CLI Version:   9.2.0
+[debug] [2021-01-15T19:16:08.977Z] Platform:      win32
+[debug] [2021-01-15T19:16:08.977Z] Node Version:  v12.16.2
+[debug] [2021-01-15T19:16:08.978Z] Time:          Fri Jan 15 2021 16:16:08 GMT-0300 (GMT-03:00)
+[debug] [2021-01-15T19:16:08.978Z] ----------------------------------------------------------------------
+[debug] [2021-01-15T19:16:08.979Z] 
+[debug] [2021-01-15T19:16:08.985Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2021-01-15T19:16:08.985Z] > authorizing via signed-in user
+[info] 
+     ######## #### ########  ######## ########     ###     ######  ########
+     ##        ##  ##     ## ##       ##     ##  ##   ##  ##       ##
+     ######    ##  ########  ######   ########  #########  ######  ######
+     ##        ##  ##    ##  ##       ##     ## ##     ##       ## ##
+     ##       #### ##     ## ######## ########  ##     ##  ######  ########
+
+You're about to initialize a Firebase project in this directory:
+
+  D:\jobs\teste-boticario\test-front
+
