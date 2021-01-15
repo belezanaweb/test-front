@@ -13,6 +13,7 @@ export const Navbar = styled.header`
     max-width: 500px;
     margin-left: 0px !important;
     margin-right: 0px !important;
+    margin: 0 auto !important;
     .col-4 {
       padding: 0px !important;
     }
