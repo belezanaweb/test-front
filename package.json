@@ -15,18 +15,19 @@
     "styled-components": "^5.2.1"
   },
   "scripts": {
-    "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test",
     "coverage": "react-scripts test --coverage --watchAll=false",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "lint": "eslint --fix --max-warnings=0",
+    "start": "react-scripts start",
+    "test": "react-scripts test --env=jest-environment-jsdom-sixteen"
   },
   "eslintConfig": {
     "extends": "react-app"
   },
   "lint-staged": {
-    "src/**/*.{js,jsx,ts,tsx,json,css,scss,md}": [
-      "prettier --write"
+    "*.{ts,tsx}": [
+      "npm run lint"
     ]
   },
   "husky": {
@@ -48,15 +49,23 @@
   },
   "devDependencies": {
     "@testing-library/jest-dom": "^4.2.4",
-    "@testing-library/react": "^9.3.2",
+    "@testing-library/react": "^11.2.3",
     "@testing-library/user-event": "^7.1.2",
+    "@types/jest": "^26.0.15",
     "@types/react": "^16.9.53",
     "@types/react-dom": "^16.9.8",
     "@types/react-redux": "^7.1.9",
     "@types/react-router-dom": "^5.1.6",
     "@types/react-text-mask": "^5.4.6",
     "@types/styled-components": "^5.1.4",
+    "@types/testing-library__jest-dom": "^5.9.5",
+    "eslint-config-prettier": "^6.13.0",
+    "eslint-plugin-prettier": "^3.1.4",
+    "eslint-plugin-react": "^7.21.5",
+    "eslint-plugin-react-hooks": "^4.2.0",
     "husky": "^4.3.0",
+    "jest-environment-jsdom-sixteen": "^1.0.3",
+    "jest-styled-components": "^7.0.3",
     "lint-staged": "^10.4.2",
     "prettier": "^2.1.2",
     "typedoc": "^0.19.2",
