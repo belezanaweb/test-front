@@ -20,5 +20,5 @@
     "jsx": "preserve"
   },
   "exclude": ["node_modules"],
-  "include": ["react-app-env.d.ts", "src/**/*.d.ts", "**/*.ts", "**/*.tsx"]
+  "include": ["react-app-env.d.ts", "**/*.ts", "**/*.tsx"]
 }
