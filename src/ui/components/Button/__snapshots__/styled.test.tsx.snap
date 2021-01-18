@@ -1,0 +1,44 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Header /> styles <S.Header /> should have expected style rules 1`] = `
+.c0 {
+  background-color: #FF6C00;
+  border: none;
+  border-radius: 0.3rem;
+  box-shadow: inset 0 -0.3rem 0 0 #D45A00,0 0.2rem 0.4rem 0 rgba(0,0,0,0.25);
+  color: #FFFFFF;
+  cursor: pointer;
+  font-size: 2rem;
+  font-weight: bold;
+  -webkit-letter-spacing: 0.05rem;
+  -moz-letter-spacing: 0.05rem;
+  -ms-letter-spacing: 0.05rem;
+  letter-spacing: 0.05rem;
+  line-height: 2.4rem;
+  margin: auto;
+  padding: 1.8rem 0;
+  -webkit-transition: background-color 0.3s ease;
+  transition: background-color 0.3s ease;
+  text-align: center;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  text-transform: uppercase;
+  width: 100%;
+}
+
+.c0:hover {
+  background-color: #D45A00;
+}
+
+.c0:disabled {
+  background-color: #CCCCCC;
+  box-shadow: none;
+  cursor: not-allowed;
+}
+
+<button
+  class="c0"
+>
+  Dummy content
+</button>
+`;
