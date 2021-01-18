@@ -9,9 +9,7 @@
 ![Uses Javascript as programming language](https://sabe.io/classes/javascript/icon.png)
 [![Documentation built by TypeDoc](https://typedoc.org/images/logo-128.png 'Documentation built by TypeDoc')](https://typedoc.org)
 
-| Build Status                                                                                 | Built By                                                                              | We Love                                                                         |
-| --------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------- |
-| ![BuildStatus](https://img.shields.io/badge/Build-Passing-brightgreen.svg 'Building Status') | ![BuiltBy](https://img.shields.io/badge/TypeScript-Lovers-black.svg 'img.shields.io') | ![ForTheBadge](https://img.shields.io/badge/Using-Badges-red.svg 'ForTheBadge') |
+![BuildStatus](https://img.shields.io/badge/Build-Passing-brightgreen.svg 'Building Status') ![BuiltBy](https://img.shields.io/badge/TypeScript-Lovers-black.svg 'img.shields.io') ![ForTheBadge](https://img.shields.io/badge/Using-Badges-red.svg 'ForTheBadge')
 
 [![Conventional Commits](https://img.shields.io/badge/Conventional%20Commits-1.0.0-yellow.svg)](https://conventionalcommits.org)
 [![Commitizen friendly](https://img.shields.io/badge/commitizen-friendly-brightgreen.svg)](http://commitizen.github.io/cz-cli/)
