@@ -89,7 +89,11 @@ const Payment = ({ productData, onSubmit }: IPaymentPage) => {
             discount={productData.discount}
             total={productData.total}
           />
-          <Button type="button" onClick={handleSubmit(submitForm)}>
+          <Button
+            type="button"
+            onClick={handleSubmit(submitForm)}
+            disabled={!!Object.keys(errors).length}
+          >
             Finalizar o pedido
           </Button>
         </SP.TotalWrapper>
