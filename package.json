@@ -23,7 +23,8 @@
     "eject": "react-scripts eject",
     "lint": "eslint --fix --max-warnings=0",
     "start": "react-scripts start",
-    "test": "react-scripts test --env=jest-environment-jsdom-sixteen"
+    "test": "react-scripts test --env=jest-environment-jsdom-sixteen",
+    "serve": "npm run build && npx serve -s build"
   },
   "eslintConfig": {
     "extends": "react-app"
