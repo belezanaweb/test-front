@@ -13,7 +13,6 @@ const PaymentContainer = () => {
   const data = useSelector((state: RootState) => state.cart)
 
   const handleSubmit = (formData: IPayment) => {
-    console.log(formData)
     dispatch(save(formData))
     history.push('/summary')
   }
