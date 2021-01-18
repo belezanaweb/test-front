@@ -1,0 +1,7 @@
+{
+  "mode": "file",
+  "out": "docs",
+  "target": "es6",
+  "theme": "minimal",
+  "exclude": "**/*+(.test|.spec|.e2e).*"
+}

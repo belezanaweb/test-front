@@ -17,7 +17,9 @@
   },
   "scripts": {
     "build": "react-scripts build",
+    "postbuild": "npm run docs",
     "coverage": "react-scripts test --coverage --watchAll=false",
+    "docs": "typedoc --options typedoc.json ./src",
     "eject": "react-scripts eject",
     "lint": "eslint --fix --max-warnings=0",
     "start": "react-scripts start",
