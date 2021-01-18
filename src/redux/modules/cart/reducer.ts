@@ -1,5 +1,3 @@
-// TODO: Analisar utilização do @types/redux-actions
-// afim de enformar validação de TS
 import { handleActions, Action } from 'redux-actions'
 
 import * as type from './actionTypes'
