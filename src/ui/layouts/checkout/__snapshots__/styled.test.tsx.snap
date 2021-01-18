@@ -1,0 +1,25 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Main /> styles <S.Main /> should have expected style rules 1`] = `
+.c0 {
+  padding: 0 1rem;
+}
+
+@media (min-width:360px) {
+  .c0 {
+    padding: 0 2rem;
+  }
+}
+
+@media (min-width:768px) {
+  .c0 {
+    padding: 0 3rem;
+  }
+}
+
+<main
+  class="c0"
+>
+  Dummy content
+</main>
+`;

@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Header /> styles <S.Header /> should have expected style rules 1`] = `
+.c0 {
+  box-shadow: 0.1rem 0.1rem 0.5rem 0 rgba(0,0,29,0.22);
+}
+
+<header
+  class="c0"
+>
+  Dummy content
+</header>
+`;

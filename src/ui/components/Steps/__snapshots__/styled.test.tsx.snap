@@ -1,0 +1,55 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Steps /> styles <S.Step /> should have expected style rules with active status 1`] = `
+.c0 {
+  color: #FF7800;
+  font-size: 1.3rem;
+  font-weight: bold;
+  -webkit-transition: color 0.2s ease 0s;
+  transition: color 0.2s ease 0s;
+  text-transform: uppercase;
+}
+
+<li
+  class="c0"
+>
+  Dummy content
+</li>
+`;
+
+exports[`<Steps /> styles <S.Step /> should use base color when is inactive 1`] = `
+.c0 {
+  color: #CCCCCC;
+  font-size: 1.3rem;
+  font-weight: bold;
+  -webkit-transition: color 0.2s ease 0s;
+  transition: color 0.2s ease 0s;
+  text-transform: uppercase;
+}
+
+<li
+  class="c0"
+>
+  Dummy content
+</li>
+`;
+
+exports[`<Steps /> styles <S.Steps /> should have expected style rules 1`] = `
+.c0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  padding: 1.2rem 2.5rem;
+}
+
+<ul
+  class="c0"
+>
+  Dummy content
+</ul>
+`;

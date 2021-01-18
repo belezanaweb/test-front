@@ -1,0 +1,53 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<StepBar /> should match a snapshot 1`] = `
+.c0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  padding: 1.2rem 2.5rem;
+}
+
+.c1 {
+  color: #FF7800;
+  font-size: 1.3rem;
+  font-weight: bold;
+  -webkit-transition: color 0.2s ease 0s;
+  transition: color 0.2s ease 0s;
+  text-transform: uppercase;
+}
+
+.c2 {
+  color: #CCCCCC;
+  font-size: 1.3rem;
+  font-weight: bold;
+  -webkit-transition: color 0.2s ease 0s;
+  transition: color 0.2s ease 0s;
+  text-transform: uppercase;
+}
+
+<ul
+  class="c0"
+>
+  <li
+    class="c1"
+  >
+    Sacola
+  </li>
+  <li
+    class="c2"
+  >
+    Pagamento
+  </li>
+  <li
+    class="c2"
+  >
+    Confirmação
+  </li>
+</ul>
+`;
