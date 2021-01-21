@@ -1,17 +1,16 @@
 import React from 'react'
 import { useHistory } from 'react-router-dom'
 
-import { ICartScreen } from './types'
-
 import Button from '../../ui/components/Button'
 import ContentBox from '../../ui/components/ContentBox'
-import ProductCard from '../../ui/components/ProductCard'
-import ProductList from '../../ui/components/ProductList'
 import Title from '../../ui/components/Title'
+
+import ProductListContainer from '../../redux/containers/ProductListContainer'
+import CartValuesContainer from '../../redux/containers/CartValuesContainer'
 
 import * as S from './styled'
 
-const Cart = ({ products, productData }: ICartScreen) => {
+const Cart = () => {
   const history = useHistory()
 
   const handleClick = () => {
@@ -24,25 +23,11 @@ const Cart = ({ products, productData }: ICartScreen) => {
       <S.Wrapper>
         <S.ProductsListWrapper>
           <ContentBox>
-            {products.map((product) => {
-              return (
-                <ProductCard
-                  key={product.product.sku}
-                  name={product.product.name}
-                  images={product.product.imageObjects}
-                  priceData={product.product.priceSpecification}
-                />
-              )
-            })}
+            <ProductListContainer />
           </ContentBox>
         </S.ProductsListWrapper>
         <S.TotalWrapper>
-          <ProductList
-            subTotal={productData.subTotal}
-            shippingTotal={productData.shippingTotal}
-            discount={productData.discount}
-            total={productData.total}
-          />
+          <CartValuesContainer />
           <Button onClick={handleClick}>Seguir para o pagamento</Button>
         </S.TotalWrapper>
       </S.Wrapper>

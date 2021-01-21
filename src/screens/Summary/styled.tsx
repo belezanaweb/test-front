@@ -14,12 +14,6 @@ export const SummaryText = styled.p`
   text-transform: uppercase;
 `
 
-export const PaymentText = styled.p`
-  color: ${({ theme }) => theme.colors.baseDark};
-  font-size: 1.4rem;
-  line-height: 1.7rem;
-`
-
 export const SummaryData = styled.div`
   @media (min-width: 768px) {
     display: flex;

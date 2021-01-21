@@ -6,13 +6,14 @@ import { IPaymentPage } from './types'
 
 import Button from '../../ui/components/Button'
 import { Input } from '../../ui/components/Input/styled'
-import ProductList from '../../ui/components/ProductList'
 import Title from '../../ui/components/Title'
+
+import CartValuesContainer from '../../redux/containers/CartValuesContainer'
 
 import * as SP from './styled'
 import * as S from './components/Form/styled'
 
-const Payment = ({ productData, onSubmit }: IPaymentPage) => {
+const Payment = ({ onSubmit }: IPaymentPage) => {
   const { control, errors, register, handleSubmit } = useForm()
 
   const submitForm = (data: any) => {
@@ -95,12 +96,7 @@ const Payment = ({ productData, onSubmit }: IPaymentPage) => {
         </S.FormContent>
 
         <SP.TotalWrapper>
-          <ProductList
-            subTotal={productData.subTotal}
-            shippingTotal={productData.shippingTotal}
-            discount={productData.discount}
-            total={productData.total}
-          />
+          <CartValuesContainer />
           <Button
             type="button"
             onClick={handleSubmit(submitForm)}

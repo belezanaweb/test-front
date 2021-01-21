@@ -1,18 +1,17 @@
 import React from 'react'
 import { ReactComponent as SuccessIcon } from '../../ui/assets/img/success.svg'
 
-import { ISummaryPage } from './types'
-
-import ProductList from '../../ui/components/ProductList'
 import ContentBox from '../../ui/components/ContentBox'
-import ProductCard from '../../ui/components/ProductCard'
 import Title from '../../ui/components/Title'
-import { hideCreditCardNumbers } from '../../shared/helpers'
+
+import ProductListContainer from '../../redux/containers/ProductListContainer'
+import CartValuesContainer from '../../redux/containers/CartValuesContainer'
+import CardDataContainer from '../../redux/containers/CardDataContainer'
 
 import theme from '../../ui/theme'
 import * as S from './styled'
 
-const Summary = ({ productData, products, cardData }: ISummaryPage) => {
+const Summary = () => {
   return (
     <>
       <S.SummaryWrapper>
@@ -22,32 +21,17 @@ const Summary = ({ productData, products, cardData }: ISummaryPage) => {
 
       <Title>Pagamento</Title>
       <ContentBox>
-        <S.PaymentText>{hideCreditCardNumbers(cardData.number.toString())}</S.PaymentText>
-        <S.PaymentText>{cardData.holder}</S.PaymentText>
-        <S.PaymentText>{cardData.expirationDate}</S.PaymentText>
+        <CardDataContainer />
       </ContentBox>
       <Title>Produtos</Title>
       <S.SummaryData>
         <S.SummaryProduct>
           <ContentBox>
-            {products.map((product) => {
-              return (
-                <ProductCard
-                  key={product.product.sku}
-                  name={product.product.name}
-                  images={product.product.imageObjects}
-                />
-              )
-            })}
+            <ProductListContainer />
           </ContentBox>
         </S.SummaryProduct>
         <S.SummaryTable>
-          <ProductList
-            subTotal={productData.subTotal}
-            shippingTotal={productData.shippingTotal}
-            discount={productData.discount}
-            total={productData.total}
-          />
+          <CartValuesContainer />
         </S.SummaryTable>
       </S.SummaryData>
     </>

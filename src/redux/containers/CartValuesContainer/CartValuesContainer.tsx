@@ -4,19 +4,24 @@ import { useDispatch, useSelector } from 'react-redux'
 import { RootState } from '../../store'
 import { getProducts } from '../../modules/cart/actions'
 
-import Cart from '../../../screens/Cart'
+import ProductList from '../../../ui/components/ProductList'
 
-const CartContainer = () => {
+const CartValuesContainer = () => {
   const dispatch = useDispatch()
   const data = useSelector((state: RootState) => state.cart)
-
-  const { items, ...rest } = data
 
   useEffect(() => {
     dispatch(getProducts())
   }, [dispatch])
 
-  return <Cart products={items} productData={rest} />
+  return (
+    <ProductList
+      subTotal={data.subTotal}
+      shippingTotal={data.shippingTotal}
+      discount={data.discount}
+      total={data.total}
+    />
+  )
 }
 
-export default CartContainer
+export default CartValuesContainer
