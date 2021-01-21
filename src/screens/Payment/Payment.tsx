@@ -1,5 +1,6 @@
 import React from 'react'
-import { useForm } from 'react-hook-form'
+import { useForm, Controller } from 'react-hook-form'
+import InputMask from 'react-input-mask'
 
 import { IPaymentPage } from './types'
 
@@ -12,11 +13,17 @@ import * as SP from './styled'
 import * as S from './components/Form/styled'
 
 const Payment = ({ productData, onSubmit }: IPaymentPage) => {
-  const { errors, register, handleSubmit } = useForm()
+  const { control, errors, register, handleSubmit } = useForm()
 
   const submitForm = (data: any) => {
     onSubmit(data)
   }
+
+  // Registers controlled fields after component did mount
+  React.useEffect(() => {
+    register({ name: 'number', type: 'text' }, { required: true, pattern: /[0-9 ]{19}/ })
+    register({ name: 'expirationDate', type: 'text' }, { required: true, pattern: /[0-9/]{5}/ })
+  }, [register])
 
   return (
     <>
@@ -25,20 +32,18 @@ const Payment = ({ productData, onSubmit }: IPaymentPage) => {
         <S.FormContent>
           <S.InputWrapper className="input-number">
             <S.Label>Número do cartão:</S.Label>
-            <Input
-              ref={register({ required: true, minLength: 16, maxLength: 16 })}
-              type="text"
+            <Controller
+              as={(props) => <InputMask {...props} className="input" />}
+              control={control}
+              mask="9999 9999 9999 9999"
               name="number"
-              error={errors.number}
+              hasErrors={!!errors.number}
             />
             {errors.number?.type === 'required' && (
               <S.InputMessage>O número do cartão é obrigatório</S.InputMessage>
             )}
-            {errors.number?.type === 'minLength' && (
+            {errors.number?.type === 'pattern' && (
               <S.InputMessage>O número do cartão precisa ter 16 dígitos</S.InputMessage>
-            )}
-            {errors.number?.type === 'maxLength' && (
-              <S.InputMessage>O número do cartão precisa ter no máximo 16 dígitos</S.InputMessage>
             )}
           </S.InputWrapper>
           <S.InputWrapper className="input-holder">
@@ -54,13 +59,19 @@ const Payment = ({ productData, onSubmit }: IPaymentPage) => {
           </S.InputWrapper>
           <S.InputWrapper className="input-expirationDate">
             <S.Label>Validade (mês/ano):</S.Label>
-            <Input
-              ref={register({ required: true })}
-              type="text"
+            <Controller
+              as={(props) => <InputMask {...props} className="input" />}
+              control={control}
+              mask="99/99"
               name="expirationDate"
-              error={errors.expirationDate}
+              hasErrors={!!errors.number}
             />
-            {errors.expirationDate && <S.InputMessage>A validade é obritória</S.InputMessage>}
+            {errors.expirationDate?.type === 'required' && (
+              <S.InputMessage>A validade é obritória</S.InputMessage>
+            )}
+            {errors.expirationDate?.type === 'pattern' && (
+              <S.InputMessage>A validade precisa ter o mês e o ano (MM/AA)</S.InputMessage>
+            )}
           </S.InputWrapper>
           <S.InputWrapper className="input-cvv">
             <S.Label>CVV:</S.Label>
@@ -69,6 +80,7 @@ const Payment = ({ productData, onSubmit }: IPaymentPage) => {
               type="text"
               name="cvv"
               error={errors.cvv}
+              maxLength={4}
             />
             {errors.cvv?.type === 'required' && (
               <S.InputMessage>O CVV é obrigatório</S.InputMessage>
