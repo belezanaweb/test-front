@@ -1,4 +1,4 @@
-export interface IProductList {
+export interface IValuesBox {
   discount: number;
   subTotal: number;
   shippingTotal: number;

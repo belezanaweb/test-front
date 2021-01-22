@@ -4,7 +4,7 @@ import { useDispatch, useSelector } from 'react-redux'
 import { RootState } from '../../store'
 import { getProducts } from '../../modules/cart/actions'
 
-import ProductList from '../../../ui/components/ProductList'
+import ProductList from '../../../ui/components/ValuesBox'
 
 const CartValuesContainer = () => {
   const dispatch = useDispatch()
