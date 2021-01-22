@@ -38,7 +38,6 @@ const Payment = ({ onSubmit }: IPaymentPage) => {
               control={control}
               mask="9999 9999 9999 9999"
               name="number"
-              hasErrors={!!errors.number}
             />
             {errors.number?.type === 'required' && (
               <S.InputMessage>O número do cartão é obrigatório</S.InputMessage>
@@ -65,7 +64,6 @@ const Payment = ({ onSubmit }: IPaymentPage) => {
               control={control}
               mask="99/99"
               name="expirationDate"
-              hasErrors={!!errors.number}
             />
             {errors.expirationDate?.type === 'required' && (
               <S.InputMessage>A validade é obritória</S.InputMessage>
