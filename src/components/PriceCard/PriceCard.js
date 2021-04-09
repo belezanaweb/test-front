@@ -15,7 +15,7 @@ const PriceCard = ({ subTotal, shipping, discount }) => {
       <div>
         <GreyTitle>R$ {subTotal}</GreyTitle>
         <GreyTitle>R$ {shipping}</GreyTitle>
-        <OrangeTitle>R$ {discount}</OrangeTitle>
+        <OrangeTitle>- R$ {discount}</OrangeTitle>
         <BoldTitle>R$ {total}</BoldTitle>
       </div>
     </PriceContainer>

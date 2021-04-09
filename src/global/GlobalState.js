@@ -11,7 +11,6 @@ const GlobalState = (props) => {
     axios
       .get(`${baseURL}`)
       .then((response) => {
-        console.log(response.data.items)
         setCart(response.data)
         setProducts(response.data.items)
       })
