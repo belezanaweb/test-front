@@ -41,6 +41,7 @@ export const FormContainer = styled.form`
   display: flex;
   flex-direction: column;
   justify-content: center;
+  align-items: center;
   gap: 0.2em;
   padding: 1em;
   border-radius: 4px;
@@ -61,5 +62,13 @@ export const InputLabel = styled.p`
   font-size: 12px;
   font-weight: 700;
   letter-spacing: NaNpx;
-  line-height: 14px;
+  line-height: 16px;
+  display: flex;
+  align-self: start;
+  padding-left: 1em;
+  margin: 0.2em;
+`
+
+export const InvisibleButton = styled.button`
+  display: none;
 `

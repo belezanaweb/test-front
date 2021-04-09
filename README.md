@@ -42,6 +42,8 @@ npm start
 - axios (para conectar com a API)
 - styled-components (para estilizar)
 
-### Obs: não deu tempo de realizar testes e de deixar responsivo :(
+### Obs:
+Não deu tempo de realizar testes e de deixar responsivo :( 
+Para mandar o form de pagamento, precisa clicar no enter e dai no botão de baixo
 
 *Desenvolvido com 🧡 por Nicole Zolnier*

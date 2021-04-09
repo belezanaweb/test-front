@@ -3,9 +3,18 @@ import { useHistory } from 'react-router'
 import Loading from '../../components/Loading'
 import PriceCard from '../../components/PriceCard/PriceCard'
 import GlobalStateContext from '../../global/GlobalStateContext'
-import { Button, FormContainer, Input, InputLabel, MainContainer, Title } from './styles'
+import {
+  Button,
+  FormContainer,
+  Input,
+  InputLabel,
+  InvisibleButton,
+  MainContainer,
+  Title
+} from './styles'
 import { useForm } from '../../hooks/useForm'
 import { maskCardNumber } from '../../services/mask'
+import { goToConfirmation } from '../../router/coordinator'
 
 const PaymentScreen = () => {
   const history = useHistory()
@@ -71,7 +80,7 @@ const PaymentScreen = () => {
             onChange={onChange}
             pattern="\d{3}$"
           />
-          <button type="submit">enviar</button>
+          <InvisibleButton type="submit">enviar</InvisibleButton>
         </FormContainer>
         {cart ? (
           <PriceCard
@@ -82,7 +91,7 @@ const PaymentScreen = () => {
         ) : (
           <Loading />
         )}
-        <Button onSubmit={handleSubmission} type="submit">
+        <Button onSubmit={handleSubmission} onClick={() => goToConfirmation(history)} type="submit">
           FINALIZAR PEDIDO
         </Button>
       </MainContainer>
