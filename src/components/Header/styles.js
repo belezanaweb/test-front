@@ -1,13 +1,15 @@
 import styled from 'styled-components'
 
 export const HeaderContainer = styled.div`
-  height: 60px;
+  height: 7vh;
   width: 100%;
   background-color: white;
   box-shadow: 0px 2px 11px 1px rgba(0, 0, 29, 0.22);
   display: flex;
   justify-content: space-around;
   align-items: center;
+  cursor: pointer;
+  margin: 0;
 `
 export const SectionOrange = styled.p`
   color: #ff7800;
