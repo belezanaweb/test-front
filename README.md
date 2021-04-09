@@ -21,8 +21,6 @@ O teste consiste em um checkout simples contendo 3 passos (carrinho, pagamento e
 
 ### Passo 3 - Sucesso: 
   - Todo o conteúdo deverá ser exibido a partir dos dados persistidos;
-  
-### Link do Surge: https://test-front-nz.surge.sh/
 
 ### Como rodar o projeto:
 1- clone ese repositório

@@ -1,4 +1,4 @@
-import React, { useContext, useEffect } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import { useHistory } from 'react-router'
 import Loading from '../../components/Loading'
 import PriceCard from '../../components/PriceCard/PriceCard'
@@ -21,6 +21,7 @@ const PaymentScreen = () => {
   const { cart, getProducts, setUserCard } = useContext(GlobalStateContext)
   const { form, onChange } = useForm({ cardNumber: '', name: '', date: '', cvv: '' })
   const formatedCardNumber = maskCardNumber(form.cardNumber)
+  const [loadButton, setLoadButton] = useState(false)
 
   useEffect(() => {
     getProducts()
@@ -34,6 +35,7 @@ const PaymentScreen = () => {
       date: form.date
     }
     setUserCard(data)
+    setLoadButton(true)
   }
 
   return (
@@ -91,9 +93,17 @@ const PaymentScreen = () => {
         ) : (
           <Loading />
         )}
-        <Button onSubmit={handleSubmission} onClick={() => goToConfirmation(history)} type="submit">
-          FINALIZAR PEDIDO
-        </Button>
+        {loadButton ? (
+          <Button
+            onSubmit={handleSubmission}
+            onClick={() => goToConfirmation(history)}
+            type="submit"
+          >
+            FINALIZAR PEDIDO
+          </Button>
+        ) : (
+          <div></div>
+        )}
       </MainContainer>
     </div>
   )
