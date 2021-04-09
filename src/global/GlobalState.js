@@ -6,6 +6,7 @@ import { baseURL } from '../constants/urls'
 const GlobalState = (props) => {
   const [cart, setCart] = useState({})
   const [products, setProducts] = useState([])
+  const [userCard, setUserCard] = useState({})
 
   const getProducts = () => {
     axios
@@ -17,7 +18,7 @@ const GlobalState = (props) => {
       .catch((error) => alert(error.message))
   }
 
-  const data = { cart, products, getProducts }
+  const data = { cart, products, getProducts, userCard, setUserCard }
 
   return <GlobalStateContext.Provider value={data}>{props.children}</GlobalStateContext.Provider>
 }
