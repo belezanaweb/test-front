@@ -4,18 +4,19 @@ import { useHistory } from 'react-router'
 import Header from '../../components/Header/Header'
 import NextStepButton from '../../components/NextStepButton/NextStepButton'
 import ProductCard from '../../components/ProductCard/ProductCard'
+import TotalCard from '../../components/TotalCard/TotalCard'
 import { goToPaymentPage } from '../../router/Coordinator'
 import { ProductsContainer } from './styles'
 
 const CartPage = () => {
   const history = useHistory()
   const [cart, setCart] = useState()
+
   useEffect(() => {
     axios
       .get('http://www.mocky.io/v2/5b15c4923100004a006f3c07')
       .then((res) => {
-        console.log(res.data.items)
-        setCart(res.data.items)
+        setCart(res.data)
       })
       .catch((err) => {
         console.log(err)
@@ -28,7 +29,7 @@ const CartPage = () => {
       PRODUTOS
       <ProductsContainer>
         {cart &&
-          cart.map((item) => {
+          cart.items.map((item) => {
             return (
               <ProductCard
                 key={item.product.sku}
@@ -39,6 +40,14 @@ const CartPage = () => {
             )
           })}
       </ProductsContainer>
+      {cart && (
+        <TotalCard
+          subTotal={cart.subTotal}
+          shippingTotal={cart.shippingTotal}
+          discount={cart.discount}
+          total={cart.total}
+        />
+      )}
       <NextStepButton text="SEGUIR PARA O PAGAMENTO" onClick={() => goToPaymentPage(history)} />
     </div>
   )
