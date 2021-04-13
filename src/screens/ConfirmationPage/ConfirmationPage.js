@@ -1,7 +1,13 @@
 import React from 'react'
+import Header from '../../components/Header/Header'
 
 const ConfirmationPage = () => {
-  return <div>CONFIRMAÇÃO</div>
+  return (
+    <div>
+      <Header />
+      CONFIRMAÇÃO
+    </div>
+  )
 }
 
 export default ConfirmationPage
