@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import Header from '../../components/Header/Header'
+import Subtitle from '../../components/Subtitle/Subtitle'
 import TotalCard from '../../components/TotalCard/TotalCard'
 
 const ConfirmationPage = () => {
@@ -12,7 +13,8 @@ const ConfirmationPage = () => {
   return (
     <div>
       <Header />
-      CONFIRMAÇÃO
+      <Subtitle text="PAGAMENTO" />
+      <Subtitle text="PRODUTOS" />
       {cart && (
         <TotalCard
           subTotal={cart.subTotal}

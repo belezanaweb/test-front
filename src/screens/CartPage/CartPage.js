@@ -4,6 +4,7 @@ import { useHistory } from 'react-router'
 import Header from '../../components/Header/Header'
 import NextStepButton from '../../components/NextStepButton/NextStepButton'
 import ProductCard from '../../components/ProductCard/ProductCard'
+import Subtitle from '../../components/Subtitle/Subtitle'
 import TotalCard from '../../components/TotalCard/TotalCard'
 import { goToPaymentPage } from '../../router/Coordinator'
 import { ProductsContainer } from './styles'
@@ -27,7 +28,7 @@ const CartPage = () => {
   return (
     <div>
       <Header />
-      PRODUTOS
+      <Subtitle text="PRODUTOS" />
       <ProductsContainer>
         {cart &&
           cart.items.map((item) => {

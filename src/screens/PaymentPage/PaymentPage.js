@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { useHistory } from 'react-router'
 import Header from '../../components/Header/Header'
 import NextStepButton from '../../components/NextStepButton/NextStepButton'
+import Subtitle from '../../components/Subtitle/Subtitle'
 import TotalCard from '../../components/TotalCard/TotalCard'
 import { goToConfirmationPage } from '../../router/Coordinator'
 
@@ -16,7 +17,7 @@ const PaymentPage = () => {
   return (
     <div>
       <Header />
-      PAGAMENTO
+      <Subtitle text="CARTÃO DE CRÉDITO" />
       {cart && (
         <TotalCard
           subTotal={cart.subTotal}
