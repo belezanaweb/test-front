@@ -1,7 +1,12 @@
 import React from 'react'
+import Header from '../../components/Header/Header'
 
 function ConfirmationScreen() {
-  return <div>Tela de Confirmação</div>
+  return (
+    <div>
+      <Header />
+    </div>
+  )
 }
 
 export default ConfirmationScreen

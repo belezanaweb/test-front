@@ -6,6 +6,7 @@ import GlobalStateContext from './globalStateContext'
 const GlobalState = (props) => {
   const [cart, setCart] = useState({})
   const [products, setProducts] = useState([])
+  const [useCard, setUseCard] = useState({})
 
   const getProducts = () => {
     axios
@@ -17,7 +18,7 @@ const GlobalState = (props) => {
       .catch((error) => alert(error.message))
   }
 
-  const data = { cart, products, getProducts, setCart, setProducts }
+  const data = { cart, products, getProducts, setCart, setProducts, useCard, setUseCard }
 
   return <GlobalStateContext.Provider value={data}>{props.children}</GlobalStateContext.Provider>
 }

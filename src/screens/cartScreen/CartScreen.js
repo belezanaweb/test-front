@@ -5,7 +5,8 @@ import { goToPayment } from '../../routers/Coordinator'
 import ProductCard from '../../components/ProductCard/ProductCard'
 import GlobalStateContext from '../../global/globalStateContext'
 import { Button, Text } from './styled'
-import button from '../../assets/image/button.png'
+import Header from '../../components/Header/Header'
+import Loading from '../../components/Loading'
 
 function CartScreen() {
   const history = useHistory()
@@ -17,9 +18,12 @@ function CartScreen() {
 
   return (
     <div>
+      <Header />
       <Text>PRODUTOS</Text>
 
-      {cart ? (
+      {cart === 0 ? (
+        <Loading />
+      ) : (
         <div>
           <ProductCard products={products} />
           <PriceCard
@@ -28,10 +32,8 @@ function CartScreen() {
             discount={cart.discount}
             total={cart.total}
           />
-          <Button src={button} onClick={() => goToPayment(history)} />
+          <Button onClick={() => goToPayment(history)}>SEGUIR PARA PAGAMENTO</Button>
         </div>
-      ) : (
-        <p>Carregando...</p>
       )}
     </div>
   )

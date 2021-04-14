@@ -1,28 +1,31 @@
+import React from 'react'
 import { useHistory } from 'react-router'
+import { goToCart, goToConfirmation, goToPayment } from '../../routers/Coordinator'
+import { GreyText, HeaderContainer, OrangeText } from './styled'
 
-const Header = (props) => {
+const Header = () => {
   const history = useHistory()
 
   return (
-    <div>
+    <HeaderContainer>
       {history.location.pathname === '/cart' ? (
-        <p onClick={() => goToCart(history)}>SACOLA</p>
+        <OrangeText onClick={() => goToCart(history)}>SACOLA</OrangeText>
       ) : (
-        <p onClick={() => goToCart(history)}>SACOLA</p>
+        <GreyText onClick={() => goToCart(history)}>SACOLA</GreyText>
       )}
 
       {history.location.pathname === '/payment' ? (
-        <p onClick={() => goToPayment(history)}>PAGAMENTO</p>
+        <OrangeText onClick={() => goToPayment(history)}>PAGAMENTO</OrangeText>
       ) : (
-        <p onClick={() => goToPayment(history)}>PAGAMENTO</p>
+        <GreyText onClick={() => goToPayment(history)}>PAGAMENTO</GreyText>
       )}
 
       {history.location.pathname === '/confirmation' ? (
-        <p onClick={() => goToConfirmation(history)}>CONFIRMAÇÃO</p>
+        <OrangeText onClick={() => goToConfirmation(history)}>CONFIRMAÇÃO</OrangeText>
       ) : (
-        <p onClick={() => goToConfirmation(history)}>CONFIRMAÇÃO</p>
+        <GreyText onClick={() => goToConfirmation(history)}>CONFIRMAÇÃO</GreyText>
       )}
-    </div>
+    </HeaderContainer>
   )
 }
 
