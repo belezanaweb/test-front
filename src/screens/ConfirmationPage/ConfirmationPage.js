@@ -5,9 +5,11 @@ import TotalCard from '../../components/TotalCard/TotalCard'
 
 const ConfirmationPage = () => {
   const [cart, setCart] = useState()
+  const [paymentData, setPaymentData] = useState()
 
   useEffect(() => {
     setCart(JSON.parse(localStorage.getItem('cart')))
+    setPaymentData(JSON.parse(localStorage.getItem('paymentData')))
   }, [])
 
   return (
