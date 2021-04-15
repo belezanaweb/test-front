@@ -3,8 +3,8 @@ import styled from 'styled-components'
 export const CardContainer = styled.div`
   display: flex;
   box-sizing: border-box;
-  height: 90px;
-  width: 316px;
+  height: 9vh;
+  width: 99vw;
   border-radius: 3px;
   border: 1px solid #eee;
   justify-content: center;

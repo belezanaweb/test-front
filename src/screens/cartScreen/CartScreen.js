@@ -17,7 +17,7 @@ function CartScreen() {
   }, [])
 
   return (
-    <CartContainer>
+    <div>
       <Header />
       <Text>PRODUTOS</Text>
 
@@ -35,7 +35,7 @@ function CartScreen() {
           <Button onClick={() => goToPayment(history)}>SEGUIR PARA PAGAMENTO</Button>
         </div>
       )}
-    </CartContainer>
+    </div>
   )
 }
 

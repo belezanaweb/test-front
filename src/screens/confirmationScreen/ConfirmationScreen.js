@@ -16,7 +16,7 @@ function ConfirmationScreen() {
   }, [])
 
   return (
-    <ConfirmContainer>
+    <div>
       <Header />
       <SucessContainer>
         <Success src={success} />
@@ -43,7 +43,7 @@ function ConfirmationScreen() {
           />
         </div>
       )}
-    </ConfirmContainer>
+    </div>
   )
 }
 

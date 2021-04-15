@@ -4,7 +4,6 @@ export const HeaderContainer = styled.div`
   display: flex;
   justify-content: space-around;
   height: 8vh;
-  width: 387px;
   border-radius: 3px;
   background-color: #fff;
   box-shadow: 1px 1px 5px 0 rgba(0, 0, 29, 0.22);
@@ -18,7 +17,9 @@ export const OrangeText = styled.p`
   letter-spacing: NaNpx;
   line-height: 16px;
   text-align: center;
-  margin-top: 5%;
+  :hover {
+    cursor: pointer;
+  }
 `
 
 export const GreyText = styled.p`
@@ -30,5 +31,7 @@ export const GreyText = styled.p`
   line-height: 16px;
   text-align: center;
   padding-right: 10px;
-  margin-top: 5%;
+  :hover {
+    cursor: pointer;
+  }
 `

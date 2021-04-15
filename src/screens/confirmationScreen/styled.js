@@ -1,10 +1,5 @@
 import styled from 'styled-components'
 
-export const ConfirmContainer = styled.div`
-  height: 752px;
-  width: 387px;
-`
-
 export const SucessContainer = styled.div`
   width: 100%;
   display: flex;

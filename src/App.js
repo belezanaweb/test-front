@@ -9,7 +9,18 @@ body{
   margin: 0;
   padding: 0;
   background-color: #EEE;
-  height: 100vh;
+  height: 100%;
+  width: 100%;
+
+  @media screen and (max-device-width: 1680px){
+  margin: 0;
+  padding: 0;
+  background-color: #EEE;
+  height: 100%;
+  width: 100%;
+
+
+  }
 }
 `
 
