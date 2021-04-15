@@ -25,7 +25,7 @@ export const Label = styled.label`
   width: 129.71px;
   color: #ccc;
   font-family: 'Helvetica Neue';
-  font-size: 12px;
+  font-size: 10px;
   font-weight: 700;
   letter-spacing: NaNpx;
   line-height: 14px;
@@ -33,6 +33,7 @@ export const Label = styled.label`
 `
 
 export const Input = styled.input`
+  display: block;
   box-sizing: border-box;
   height: 45px;
   width: 320px;
