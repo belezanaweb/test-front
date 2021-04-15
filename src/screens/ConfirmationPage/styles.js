@@ -31,3 +31,21 @@ export const PageContainer = styled.div`
   margin: 0 auto;
   align-items: center;
 `
+export const SuccessMessage = styled.p`
+  font-size: 14px;
+  font-weight: bold;
+  line-height: 17px;
+  margin: 0;
+  padding: 0;
+  color: #ff7800;
+`
+export const SuccessContainer = styled.div`
+  width: 266.27px;
+  height: 67.57px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  justify-content: space-between;
+`

@@ -2,7 +2,14 @@ import React, { useEffect, useState } from 'react'
 import Header from '../../components/Header/Header'
 import Subtitle from '../../components/Subtitle/Subtitle'
 import TotalCard from '../../components/TotalCard/TotalCard'
-import { PageContainer, PaymentDataContainer, TextContainer } from './styles'
+import {
+  PageContainer,
+  PaymentDataContainer,
+  SuccessContainer,
+  SuccessMessage,
+  TextContainer
+} from './styles'
+import CheckCircleOutlineIcon from '@material-ui/icons/CheckCircleOutline'
 
 const ConfirmationPage = () => {
   const [cart, setCart] = useState()
@@ -16,6 +23,14 @@ const ConfirmationPage = () => {
   return (
     <PageContainer>
       <Header />
+      {paymentData ? (
+        <SuccessContainer>
+          <CheckCircleOutlineIcon style={{ color: '#FF7800', fontSize: 40 }} />
+          <SuccessMessage>COMPRA EFETUADA COM SUCESSO</SuccessMessage>
+        </SuccessContainer>
+      ) : (
+        ''
+      )}
       <Subtitle text="PAGAMENTO" />
       {paymentData && (
         <PaymentDataContainer>
