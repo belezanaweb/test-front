@@ -4,15 +4,14 @@ export const PriceContainer = styled.div`
   display: flex;
   justify-content: space-between;
   box-sizing: border-box;
-  height: 129px;
-  width: 341px;
+  height: 20vh;
+  width: 89vw;
   border-radius: 3px;
   border: 1px solid #ccc;
+  margin-left: 4%;
 `
 
 export const TextBlack = styled.p`
-  height: 17px;
-  width: 124px;
   color: #212122;
   font-family: 'Helvetica Neue';
   font-size: 14px;
@@ -21,8 +20,6 @@ export const TextBlack = styled.p`
 `
 
 export const TextDiscount = styled.p`
-  height: 17px;
-  width: 124px;
   color: #ff7800;
   font-family: 'Helvetica Neue';
   font-size: 14px;
@@ -31,8 +28,6 @@ export const TextDiscount = styled.p`
 `
 
 export const TextTotal = styled.p`
-  height: 17px;
-  width: 124px;
   color: #212122;
   font-family: 'Helvetica Neue';
   font-size: 14px;

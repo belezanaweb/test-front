@@ -1,10 +1,13 @@
-function PaymentCard({ cardNumber, name, expirationDate }) {
+import React from 'react'
+import { DivContainer, Text } from './styled'
+
+function PaymentCard(props) {
   return (
-    <div>
-      {cardNumber}
-      {name}
-      {expirationDate}
-    </div>
+    <DivContainer>
+      <Text>{props.cardNumber}</Text>
+      <Text>{props.name}</Text>
+      <Text>{props.expirationDate}</Text>
+    </DivContainer>
   )
 }
 

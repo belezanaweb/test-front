@@ -4,7 +4,7 @@ import PriceCard from '../../components/PriceCard/PriceCard'
 import { goToPayment } from '../../routers/Coordinator'
 import ProductCard from '../../components/ProductCard/ProductCard'
 import GlobalStateContext from '../../global/globalStateContext'
-import { Button, Text } from './styled'
+import { Button, CartContainer, Text } from './styled'
 import Header from '../../components/Header/Header'
 import Loading from '../../components/Loading'
 
@@ -17,7 +17,7 @@ function CartScreen() {
   }, [])
 
   return (
-    <div>
+    <CartContainer>
       <Header />
       <Text>PRODUTOS</Text>
 
@@ -35,7 +35,7 @@ function CartScreen() {
           <Button onClick={() => goToPayment(history)}>SEGUIR PARA PAGAMENTO</Button>
         </div>
       )}
-    </div>
+    </CartContainer>
   )
 }
 

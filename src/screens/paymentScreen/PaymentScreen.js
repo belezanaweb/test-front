@@ -7,12 +7,14 @@ import { goToConfirmation } from '../../routers/Coordinator'
 import PriceCard from '../../components/PriceCard/PriceCard'
 import { Button, FormContainer, Input, Label, PaymentContainer, Text, ButtonNone } from './styled'
 import Loading from '../../components/Loading'
+import { maskCard } from '../../components/maskNumberCard'
 
 function PaymentScreen() {
   const history = useHistory()
-  const { cart, getProducts, setUseCard } = useContext(GlobalStateContext)
+  const { cart, getProducts, setCard } = useContext(GlobalStateContext)
   const { form, onChange } = useForm({ cardNumber: '', name: '', expirationDate: '', cvv: '' })
   const [checkButton, setCheckButton] = useState(false)
+  const formatCardNumber = maskCard(form.cardNumber)
 
   useEffect(() => {
     getProducts()
@@ -26,11 +28,11 @@ function PaymentScreen() {
   const handleSubmit = (event) => {
     event.preventDefault()
     const data = {
-      cardNumber: form.cardNumber,
+      cardNumber: formatCardNumber,
       name: form.name,
       expirationDate: form.date
     }
-    setUseCard(data)
+    setCard(data)
     setCheckButton(true)
   }
 
@@ -67,8 +69,8 @@ function PaymentScreen() {
             name="expirationDate"
             value={form.expirationDate}
             type="text"
-            pattern="\d{2}\/\d{2}"
-            placeholder="__/__"
+            pattern="(0[1-9]|10|11|12)[- /.](20)\d\d$"
+            placeholder="__/____"
             onChange={handleInputChange}
           />
 

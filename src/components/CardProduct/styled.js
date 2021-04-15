@@ -7,6 +7,9 @@ export const CardContainer = styled.div`
   width: 316px;
   border-radius: 3px;
   border: 1px solid #eee;
+  justify-content: center;
+  margin-left: 2%;
+  margin-top: 5%;
 `
 
 export const Name = styled.p`
