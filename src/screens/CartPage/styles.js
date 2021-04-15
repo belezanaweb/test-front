@@ -14,3 +14,12 @@ export const ProductsContainer = styled.div`
   margin-bottom: 20px;
   align-items: center;
 `
+export const PageContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  background-color: #eee;
+  width: 100vw;
+  height: 100vh;
+  margin: 0 auto;
+  align-items: center;
+`

@@ -1,6 +1,11 @@
 import styled from 'styled-components'
 
-export const FormContainer = styled.div`
+export const FormContainer = styled.form`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+`
+export const Container = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
@@ -16,6 +21,7 @@ export const FormContainer = styled.div`
   padding-left: 10px;
   padding-right: 10px;
 `
+
 export const StyledLabel = styled.label`
   color: #ccc;
   font-size: 12px;
@@ -90,4 +96,13 @@ export const ValidateCvvContainer = styled.div`
   display: flex;
   justify-content: space-between;
   width: 341px;
+`
+export const PageContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  background-color: #eee;
+  width: 100vw;
+  height: 100vh;
+  margin: 0 auto;
+  align-items: center;
 `

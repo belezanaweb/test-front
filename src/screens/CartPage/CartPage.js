@@ -7,7 +7,7 @@ import ProductCard from '../../components/ProductCard/ProductCard'
 import Subtitle from '../../components/Subtitle/Subtitle'
 import TotalCard from '../../components/TotalCard/TotalCard'
 import { goToPaymentPage } from '../../router/Coordinator'
-import { ProductsContainer } from './styles'
+import { PageContainer, ProductsContainer } from './styles'
 
 const CartPage = () => {
   const history = useHistory()
@@ -26,7 +26,7 @@ const CartPage = () => {
   }, [])
 
   return (
-    <div>
+    <PageContainer>
       <Header />
       <Subtitle text="PRODUTOS" />
       <ProductsContainer>
@@ -51,7 +51,7 @@ const CartPage = () => {
         />
       )}
       <NextStepButton text="SEGUIR PARA O PAGAMENTO" onClick={() => goToPaymentPage(history)} />
-    </div>
+    </PageContainer>
   )
 }
 

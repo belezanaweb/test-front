@@ -22,3 +22,12 @@ export const TextContainer = styled.div`
   margin-left: 20px;
   height: 17px;
 `
+export const PageContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  background-color: #eee;
+  width: 100vw;
+  height: 100vh;
+  margin: 0 auto;
+  align-items: center;
+`

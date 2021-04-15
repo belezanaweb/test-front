@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import Header from '../../components/Header/Header'
 import Subtitle from '../../components/Subtitle/Subtitle'
 import TotalCard from '../../components/TotalCard/TotalCard'
-import { PaymentDataContainer, TextContainer } from './styles'
+import { PageContainer, PaymentDataContainer, TextContainer } from './styles'
 
 const ConfirmationPage = () => {
   const [cart, setCart] = useState()
@@ -14,7 +14,7 @@ const ConfirmationPage = () => {
   }, [])
 
   return (
-    <div>
+    <PageContainer>
       <Header />
       <Subtitle text="PAGAMENTO" />
       {paymentData && (
@@ -40,7 +40,7 @@ const ConfirmationPage = () => {
           total={cart.total}
         />
       )}
-    </div>
+    </PageContainer>
   )
 }
 

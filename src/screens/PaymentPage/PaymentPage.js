@@ -12,7 +12,9 @@ import {
   StyledLabel,
   ValidateCvvContainer,
   ValidateInput,
-  CvvInput
+  CvvInput,
+  PageContainer,
+  Container
 } from './styles'
 
 const PaymentPage = () => {
@@ -36,11 +38,11 @@ const PaymentPage = () => {
   }
 
   return (
-    <div>
+    <PageContainer>
       <Header />
       <Subtitle text="CARTÃO DE CRÉDITO" />
-      <form onSubmit={onSubmitForm}>
-        <FormContainer>
+      <FormContainer onSubmit={onSubmitForm}>
+        <Container>
           <InputContainer>
             <StyledLabel>Número do cartão:</StyledLabel>
             <StyledInput
@@ -87,7 +89,7 @@ const PaymentPage = () => {
               />
             </InputContainer>
           </ValidateCvvContainer>
-        </FormContainer>
+        </Container>
         {cart && (
           <TotalCard
             subTotal={cart.subTotal}
@@ -97,8 +99,8 @@ const PaymentPage = () => {
           />
         )}
         <NextStepButton type="submit" text="FINALIZAR O PEDIDO" />
-      </form>
-    </div>
+      </FormContainer>
+    </PageContainer>
   )
 }
 
