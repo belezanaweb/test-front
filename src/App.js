@@ -1,10 +1,11 @@
 import React from 'react'
 import Routes from './router'
+import { StyloedApp } from './styled.js'
 
 const App = () => (
-  <div>
+  <StyloedApp>
     <Routes />
-  </div>
+  </StyloedApp>
 )
 
 export default App

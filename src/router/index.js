@@ -4,7 +4,7 @@ import { Route, Switch } from 'react-router-dom'
 import { ShoppingCart } from '../pages/ShoppingCart'
 import { PaymentConfirmation } from '../pages/PaymentConfirmation'
 import { PaymentPage } from '../pages/PaymentPage'
-// import { ErrorPage } from '../pages/ErrorPage';
+import { ErrorPage } from '../pages/ErrorPage'
 
 const Routes = () => {
   return (
@@ -18,9 +18,9 @@ const Routes = () => {
       <Route exact path={'/confirmacao-de-pagamento'}>
         <PaymentConfirmation />
       </Route>
-      {/* <Route path="*">
-          <ErrorPage errorCode="404" />
-      </Route> */}
+      <Route path="*">
+        <ErrorPage errorCode="404" />
+      </Route>
     </Switch>
   )
 }
