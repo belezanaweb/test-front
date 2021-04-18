@@ -1,6 +1,10 @@
 import React from 'react'
-import './App.css'
+import Routes from './router'
 
-const App = () => <div className="App">Boa sorte! 🚀</div>
+const App = () => (
+  <div>
+    <Routes />
+  </div>
+)
 
 export default App

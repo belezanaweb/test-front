@@ -1,15 +1,14 @@
-import React, { StrictMode } from 'react'
+import React from 'react'
 import ReactDOM from 'react-dom'
 import './index.css'
 import App from './App'
-import * as serviceWorker from './serviceWorker'
+import { BrowserRouter } from 'react-router-dom'
 
-const Strict = () => (
-  <StrictMode>
-    <App />
-  </StrictMode>
+ReactDOM.render(
+  <React.StrictMode>
+    <BrowserRouter>
+      <App />
+    </BrowserRouter>
+  </React.StrictMode>,
+  document.getElementById('root')
 )
-
-ReactDOM.render(<Strict />, document.getElementById('root'))
-
-serviceWorker.unregister()
