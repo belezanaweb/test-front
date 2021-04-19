@@ -1,40 +1,35 @@
 import React from 'react'
 import { useHistory } from 'react-router'
-import { Link } from 'react-router-dom'
-import { StyledHeader, StyledOrangeText, StyledTextDisable } from './styles'
+
+import {
+  goToShoppingCart,
+  goToPaymentPage,
+  goToPaymentConfirmation
+} from '../../router/Coordinator'
+import { StyledHeader, StyledOrangeText, StyledTextDisable } from './styled'
 
 const Header = () => {
   const history = useHistory()
 
   return (
     <StyledHeader>
-      {history.location.pathname === '/carrinho' ? (
-        <StyledOrangeText>
-          <Link to="{/carrinho}">SACOLA</Link>
-        </StyledOrangeText>
+      {history.location.pathname === '/' || history.location.pathname === '/carrinho' ? (
+        <StyledOrangeText onClick={() => goToShoppingCart(history)}>SACOLA</StyledOrangeText>
       ) : (
-        <StyledTextDisable>
-          <Link to="{/carrinho}">SACOLA</Link>
-        </StyledTextDisable>
+        <StyledTextDisable onClick={() => goToShoppingCart(history)}>SACOLA</StyledTextDisable>
       )}
-
       {history.location.pathname === '/pagamento' ? (
-        <StyledOrangeText>
-          <Link to="{/pagamento}">PAGAMENTO</Link>
-        </StyledOrangeText>
+        <StyledOrangeText onClick={() => goToPaymentPage(history)}>PAGAMENTO</StyledOrangeText>
       ) : (
-        <StyledTextDisable>
-          <Link to="{/pagamento}">PAGAMENTO</Link>
-        </StyledTextDisable>
+        <StyledTextDisable onClick={() => goToPaymentPage(history)}>PAGAMENTO</StyledTextDisable>
       )}
-
       {history.location.pathname === '/confirmacao-de-pagamento' ? (
-        <StyledOrangeText>
-          <Link to="{/confirmacao-de-pagamento}">CONFIRMAÇÃO</Link>
+        <StyledOrangeText onClick={() => goToPaymentConfirmation(history)}>
+          CONFIRMAÇÃO
         </StyledOrangeText>
       ) : (
-        <StyledTextDisable>
-          <Link to="{/confirmacao-de-pagamento}">CONFIRMAÇÃO</Link>
+        <StyledTextDisable onClick={() => goToPaymentConfirmation(history)}>
+          CONFIRMAÇÃO
         </StyledTextDisable>
       )}
     </StyledHeader>
