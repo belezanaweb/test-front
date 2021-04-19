@@ -5,12 +5,15 @@ export const Container = styled.div`
   display: flex;
   justify-content: space-between;
   box-sizing: border-box;
-  /* height: 20vh; */
-  width: 89vw;
+  width: 98%;
   border-radius: 3px;
   border: 1px solid ${colors.silverTextDisable};
   margin-bottom: 4vw;
   padding: 3%;
+
+  @media screen and (max-device-width: 375px) {
+    width: 341px;
+  }
 `
 
 export const Text = styled.p`

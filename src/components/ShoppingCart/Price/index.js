@@ -11,7 +11,7 @@ const Price = (props) => {
         <TextTotal>TOTAL</TextTotal>
       </div>
       <div>
-        <Text>R$ {props.subTotal}</Text>
+        <Text>R$ {props.subTotal}0</Text>
         <Text>R$ {props.shippingTotal}</Text>
         <TextDiscount>- R$ {props.discount}</TextDiscount>
         <TextTotal>R$ {props.total}</TextTotal>
