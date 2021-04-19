@@ -5,7 +5,7 @@ import { Context } from '../context'
 const APIHelper = (props) => {
   const [cart, setCart] = useState({})
   const [products, setProducts] = useState([])
-  const [userCard, setUserCard] = useState({})
+  const [card, setCard] = useState({})
 
   const getProducts = () => {
     axios
@@ -17,7 +17,7 @@ const APIHelper = (props) => {
       .catch((error) => alert(error.message))
   }
 
-  const data = { cart, products, getProducts, userCard, setUserCard }
+  const data = { cart, products, getProducts, card, setCard }
 
   return <Context.Provider value={data}>{props.children}</Context.Provider>
 }

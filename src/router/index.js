@@ -9,15 +9,12 @@ import { ErrorPage } from '../pages/ErrorPage'
 const Routes = () => {
   return (
     <Switch>
-      <Route exact path={['/', '/carrinho']}>
-        <ShoppingCart />
-      </Route>
-      <Route exact path={'/pagamento'}>
-        <PaymentPage />
-      </Route>
-      <Route exact path={'/confirmacao-de-pagamento'}>
-        <PaymentConfirmation />
-      </Route>
+      <Route exact path={['/', '/carrinho']} component={ShoppingCart} />
+
+      <Route exact path={'/pagamento'} component={PaymentPage} />
+
+      <Route exact path={'/confirmacao-de-pagamento'} component={PaymentConfirmation} />
+
       <Route path="*">
         <ErrorPage errorCode="404" />
       </Route>

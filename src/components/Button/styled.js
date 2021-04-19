@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom'
 import styled from 'styled-components'
 import { colors, fonts } from '../../assets/styled/tokens'
 
@@ -25,4 +26,9 @@ export const StyledButton = styled.button`
   @media screen and (max-device-width: 375px) {
     width: 341px;
   }
+`
+
+export const StyledError = styled(Link)`
+  text-decoration: none;
+  color: ${colors.white};
 `

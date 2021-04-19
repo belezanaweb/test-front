@@ -32,7 +32,12 @@ const ShoppingCart = () => {
           <ProductsContainer>
             <Products products={products} />
           </ProductsContainer>
-          <Price subTotal={cart.subTotal} shipping={cart.shippingTotal} discount={cart.discount} />
+          <Price
+            subTotal={cart.subTotal}
+            shippingTotal={cart.shippingTotal}
+            discount={cart.discount}
+            total={cart.total}
+          />
           <Button onClick={() => goToPaymentPage(history)} text="SEGUIR PARA PAGAMENTO" />
         </>
       )}

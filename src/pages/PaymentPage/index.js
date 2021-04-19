@@ -1,5 +1,5 @@
 import React, { useContext, useEffect, useState } from 'react'
-import { useHistory } from 'react-router'
+import { useHistory } from 'react-router-dom'
 
 import { Header } from '../../components/Header'
 import { Text } from '../../components/Text'
@@ -8,8 +8,6 @@ import { Price } from '../../components/ShoppingCart/Price'
 
 import { Context } from '../../services/context'
 import { useForm } from '../../services/useForm'
-
-import { goToPaymentConfirmation } from '../../router/Coordinator'
 
 import {
   FormContainer,
@@ -24,9 +22,9 @@ import {
 } from './styled'
 
 const PaymentPage = () => {
-  const { history } = useHistory
-  const { cart, getProducts } = useContext(Context)
-  const { form, onChange } = useForm({ cardNumber: '', name: '', date: '', cvv: '' })
+  const history = useHistory()
+  const { cart, getProducts, setCard } = useContext(Context)
+  const { form, onChange } = useForm({ cardNumber: '', name: '', expirationDate: '', cvv: '' })
   const [loadButton, setLoadButton] = useState(true)
 
   useEffect(() => {
@@ -41,9 +39,14 @@ const PaymentPage = () => {
 
   const onSubmit = (e) => {
     e.preventDefault()
-    localStorage.setItem('paymentData', JSON.stringify(form))
-    goToPaymentConfirmation(history)
+    const data = {
+      cardNumber: form.cardNumber,
+      name: form.name,
+      expirationDate: form.expirationDate
+    }
+    setCard(data)
     setLoadButton(false)
+    history.push('/confirmacao-de-pagamento')
   }
 
   return (
@@ -59,7 +62,7 @@ const PaymentPage = () => {
               type="text"
               value={form.cardNumber}
               placeholder="____.____.____.____"
-              pattern="\d{16}|[^0-9]*\d{1}){16}|(\d{4}(\d{4}){3}"
+              pattern="(\d{4}).(\d{4}).(\d{4}).(\d{4})$"
               required
               onChange={handleInputChange}
             />
@@ -70,7 +73,7 @@ const PaymentPage = () => {
               name="name"
               value={form.name}
               type="text"
-              placeholder="Nome do portador do cartão"
+              placeholder="Como no cartão"
               required
               onChange={handleInputChange}
             />
@@ -79,7 +82,7 @@ const PaymentPage = () => {
             <InputContainer>
               <StyledLabel>Validade (mês/ano)*:</StyledLabel>
               <ValidateInput
-                name="date"
+                name="expirationDate"
                 value={form.expirationDate}
                 pattern="(0[1-9]|10|11|12)/20[0-9]{2}$"
                 placeholder="__/____"
@@ -116,7 +119,7 @@ const PaymentPage = () => {
         ) : (
           <div>PROCESSANDO</div>
         )}
-        {loadButton ? <Button type="submit" text="FINALIZAR O PEDIDO" /> : <div></div>}
+        <Button type="submit" text="FINALIZAR O PEDIDO" />
       </FormContainer>
     </>
   )

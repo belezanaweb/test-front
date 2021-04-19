@@ -28,9 +28,7 @@ const Header = () => {
           CONFIRMAÇÃO
         </StyledOrangeText>
       ) : (
-        <StyledTextDisable onClick={() => goToPaymentConfirmation(history)}>
-          CONFIRMAÇÃO
-        </StyledTextDisable>
+        <StyledTextDisable>CONFIRMAÇÃO</StyledTextDisable>
       )}
     </StyledHeader>
   )

@@ -28,7 +28,7 @@ const ErrorPage = () => {
       case '400':
         return {
           code: 400,
-          message: 'Opa! não foi possível exibir o que deveria estar aqui',
+          message: 'Ops! não foi possível exibir o que deveria estar aqui',
           messageSub: 'Verifique sua conexão com a internet e tente novamente.'
         }
       case '401':

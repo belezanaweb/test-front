@@ -3,7 +3,7 @@ import { colors } from '../../../assets/styled/tokens'
 
 export const Container = styled.div`
   display: flex;
-  width: 98%;
+  width: 100%;
   height: 90px;
   border: 1px solid ${colors.grayBackground};
   border-radius: 3px;
