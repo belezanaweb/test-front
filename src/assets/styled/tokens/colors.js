@@ -14,6 +14,7 @@ const colors = {
   gray: '#888888',
   dustyGrayText: '#999999', //
   silverChalice: '#AAAAAA',
+  grayInput: '#e7e7e7',
 
   // light gray
   grayBackground: '#EEE', //
@@ -27,6 +28,7 @@ const colors = {
   silver: '#BBBBBB',
   silver2: '#C2C2C2',
   silverTextDisable: '#CCCCCC', //
+  blueCyan: '#e0e7ee', //
 
   // dark gray
   mineShaft: '#333333',
@@ -47,6 +49,9 @@ const colors = {
   //red
   bittersweet: '#FE6E5B',
   cinnabar: '#E74C3C',
+
+  //pink
+  magenta: '#a43287',
 
   // green
   caribbeanGreen: '#06C2A1'

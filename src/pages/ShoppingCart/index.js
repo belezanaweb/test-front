@@ -1,55 +1,41 @@
-import React, { useEffect, useState } from 'react'
-import axios from 'axios'
+import React, { useContext, useEffect } from 'react'
+import { useHistory } from 'react-router'
 
 import { Button } from '../../components/Button'
-
 import { Header } from '../../components/Header'
 import { Price } from '../../components/ShoppingCart/Price'
 import { Products } from '../../components/ShoppingCart/Products'
-import { Container, ProductsContainer, Text } from './styled'
+import { Text } from '../../components/Text'
+
+import { goToPaymentPage } from '../../router/Coordinator'
+
+import { Container, ProductsContainer } from './styled'
+import { Context } from '../../services/context'
 
 const ShoppingCart = () => {
-  const [cart, setCart] = useState()
+  const history = useHistory()
+  const { cart, products, getProducts } = useContext(Context)
 
   useEffect(() => {
-    axios
-      .get('http://www.mocky.io/v2/5b15c4923100004a006f3c07')
-      .then((res) => {
-        localStorage.setItem('cart', JSON.stringify(res.data))
-        setCart(res.data)
-      })
-      .catch((err) => {
-        console.log(err)
-      })
+    getProducts()
     // eslint-disable-next-line
   }, [])
 
   return (
     <Container>
       <Header />
-      <Text>PRODUTOS</Text>
-      <ProductsContainer>
-        {cart &&
-          cart.items.map((item) => {
-            return (
-              <Products
-                key={item.product.sku}
-                thumbnail={item.product.imageObjects[0].thumbnail}
-                name={item.product.name}
-                price={item.product.priceSpecification.price}
-              />
-            )
-          })}
-      </ProductsContainer>
-      {cart && (
-        <Price
-          subTotal={cart.subTotal}
-          shippingTotal={cart.shippingTotal}
-          discount={cart.discount}
-          total={cart.total}
-        />
+      <Text text="PRODUTOS" />
+      {cart === 0 ? (
+        <div>PROCESSANDO</div>
+      ) : (
+        <>
+          <ProductsContainer>
+            <Products products={products} />
+          </ProductsContainer>
+          <Price subTotal={cart.subTotal} shipping={cart.shippingTotal} discount={cart.discount} />
+          <Button onClick={() => goToPaymentPage(history)} text="SEGUIR PARA PAGAMENTO" />
+        </>
       )}
-      <Button link="/pagamento" text="SEGUIR PARA PAGAMENTO" />
     </Container>
   )
 }

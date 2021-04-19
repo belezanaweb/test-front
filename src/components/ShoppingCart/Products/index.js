@@ -1,28 +1,19 @@
 import React from 'react'
-import {
-  Container,
-  ImageContainer,
-  Image,
-  NameContainer,
-  Name,
-  PriceContainer,
-  Price
-} from './styled'
+import { Product } from '../Product'
+import { Container } from './styled'
 
 const Products = (props) => {
   return (
     <Container>
-      <ImageContainer>
-        <Image src={props.thumbnail} alt="Imagem do produto" />
-      </ImageContainer>
-      <div>
-        <NameContainer>
-          <Name>{props.name}</Name>
-        </NameContainer>
-        <PriceContainer>
-          <Price>R$ {props.price.toFixed(2).replace('.', ',')} </Price>
-        </PriceContainer>
-      </div>
+      {props.products.map((item) => {
+        return (
+          <Product
+            price={item.product.priceSpecification.originalPrice}
+            thumbnail={item.product.imageObjects[0].small}
+            name={item.product.name}
+          />
+        )
+      })}
     </Container>
   )
 }

@@ -1,14 +1,12 @@
 import React from 'react'
-import { StyledButton, StyledLink } from './styled'
+import { StyledButton } from './styled'
 
-const Button = (props) => {
+export const Button = (props) => {
   return (
     <>
-      <StyledButton>
-        <StyledLink to={props.link}>{props.text}</StyledLink>
+      <StyledButton onSubmit={props.onSubmit} type={props.type} onClick={props.onClick}>
+        {props.text}
       </StyledButton>
     </>
   )
 }
-
-export { Button }

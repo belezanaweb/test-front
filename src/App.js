@@ -1,11 +1,14 @@
 import React from 'react'
 import Routes from './router'
-import { StyloedApp } from './styled.js'
+import { APIHelper } from './services/APIHelper'
+import { StyledApp } from './styled.js'
 
 const App = () => (
-  <StyloedApp>
-    <Routes />
-  </StyloedApp>
+  <APIHelper>
+    <StyledApp>
+      <Routes />
+    </StyledApp>
+  </APIHelper>
 )
 
 export default App

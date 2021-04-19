@@ -1,44 +1,13 @@
 import styled from 'styled-components'
-import { colors } from '../../../assets/styled/tokens'
 
 export const Container = styled.div`
-  display: flex;
-  width: 98%;
-  height: 90px;
-  border: 1px solid ${colors.grayBackground};
+  height: 325px;
   border-radius: 3px;
+  box-shadow: 1px 1px 5px 0 rgba(0, 0, 29, 0.22);
+  margin-top: 0;
+  width: 100%;
 
-  @media screen and (max-device-width: 375px) {
-    width: 316px;
+  @media screen and (max-device-width: 376px) {
+    width: 341px;
   }
-`
-
-export const Name = styled.p`
-  font-size: 13px;
-`
-
-export const NameContainer = styled.div`
-  height: 32px;
-`
-
-export const Price = styled.p`
-  font-size: 14px;
-  font-weight: bold;
-`
-
-export const PriceContainer = styled.div`
-  height: 15px;
-  text-align: left;
-  @media screen and (max-device-width: 375px) {
-    text-align: right;
-  }
-`
-
-export const Image = styled.img`
-  width: 65px;
-  height: 65px;
-`
-
-export const ImageContainer = styled.div`
-  margin: 11px 10px 14px 11px;
 `

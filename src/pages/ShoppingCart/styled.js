@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import { colors, fonts } from '../../assets/styled/tokens'
+import { colors } from '../../assets/styled/tokens'
 
 export const Container = styled.div`
   display: flex;
@@ -28,15 +28,4 @@ export const ProductsContainer = styled.div`
   @media screen and (max-device-width: 375px) {
     width: 341px;
   }
-`
-
-export const Text = styled.p`
-  height: 17px;
-  width: 100%;
-  color: ${colors.dustyGrayText};
-  font-family: ${fonts.text};
-  font-size: 14px;
-  font-weight: 700;
-  line-height: 17px;
-  margin-left: 11%;
 `
