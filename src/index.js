@@ -1,15 +1,15 @@
-import React, { StrictMode } from 'react'
+import React from 'react'
 import ReactDOM from 'react-dom'
-import './index.css'
+import { Router } from 'react-router-dom'
 import App from './App'
-import * as serviceWorker from './serviceWorker'
+import history from './services/history'
 
-const Strict = () => (
-  <StrictMode>
+import './config/ReactotronConfig'
+
+const Appliaction = () => (
+  <Router history={history}>
     <App />
-  </StrictMode>
+  </Router>
 )
 
-ReactDOM.render(<Strict />, document.getElementById('root'))
-
-serviceWorker.unregister()
+ReactDOM.render(<Appliaction />, document.getElementById('root'))
