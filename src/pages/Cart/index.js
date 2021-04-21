@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react'
-import { useDispatch } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
 
 import { Container } from './styles'
 
@@ -13,6 +13,7 @@ import { Creators as CartActions } from '../../store/ducks/cart'
 
 export const Cart = () => {
   const dispatch = useDispatch()
+  const { cartById } = useSelector((state) => state.cart)
 
   useEffect(() => {
     dispatch(CartActions.getCartByIdRequest())
@@ -34,22 +35,22 @@ export const Cart = () => {
       <BorderContainer color="#CCC">
         <ProductHeader>
           <Text type="cartPriceValue">PRODUTOS</Text>
-          <Text type="cartPriceValue">R$ 624,80</Text>
+          <Text type="cartPriceValue">R$ {cartById.subTotal}</Text>
         </ProductHeader>
 
         <ProductHeader>
           <Text type="cartPriceValue">FRETE</Text>
-          <Text type="cartPriceValue">R$ 5,30</Text>
+          <Text type="cartPriceValue">R$ {cartById.shippingTotal}</Text>
         </ProductHeader>
 
         <ProductHeader>
           <Text type="cartPriceDiscount">DESCONTO</Text>
-          <Text type="cartPriceDiscount"> - R$ 30,00</Text>
+          <Text type="cartPriceDiscount"> - R$ {cartById.discount}</Text>
         </ProductHeader>
 
         <ProductHeader>
           <Text type="cartPriceTotal">TOTAL</Text>
-          <Text type="cartPriceTotal">R$ 600,10</Text>
+          <Text type="cartPriceTotal">R$ {cartById.total}</Text>
         </ProductHeader>
       </BorderContainer>
 
