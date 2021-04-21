@@ -31,7 +31,7 @@
         "no-console": ["error", { "allow": ["tron"] }],
         "no-param-reassign": [
             "error",
-            { "props": true, "ignorePropertyModificationsFor": ["draft", "config"] },
+            { "props": true, "ignorePropertyModificationsFor": ["draft", "config"] }
         ]
     }
 }
