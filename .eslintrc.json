@@ -29,6 +29,9 @@
         "no-unused-expressions": ["error", { "allowTaggedTemplates": true }],
         "react/prop-types": "off",
         "no-console": ["error", { "allow": ["tron"] }],
-
+        "no-param-reassign": [
+            "error",
+            { "props": true, "ignorePropertyModificationsFor": ["draft", "config"] },
+        ]
     }
 }

@@ -34,6 +34,7 @@ export default function cart(state = INITIAL_STATE, action) {
         draft.cartById = {}
         break
       }
+      default:
     }
   })
 }
