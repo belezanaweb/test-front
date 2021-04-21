@@ -1,6 +1,9 @@
 import React from 'react'
-import './App.css'
 
-const App = () => <div className="App">Boa sorte! 🚀</div>
+import Header from './components/Header'
+
+const App = () => {
+  return <Header />
+}
 
 export default App
