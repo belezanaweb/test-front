@@ -24,7 +24,7 @@ export default function cart(state = INITIAL_STATE, action) {
         draft.loading = false
         draft.success = true
         draft.error = false
-        draft.cartById = action
+        draft.cartById = action.payload.cartValue
         break
       }
       case Types.GET_CART_ITEMS_ERROR: {
@@ -44,9 +44,9 @@ export const Creators = {
     type: Types.GET_CART_ITEMS_REQUEST,
     payload: { id }
   }),
-  getCartByIdSuccess: (places) => ({
+  getCartByIdSuccess: (cartValue) => ({
     type: Types.GET_CART_ITEMS_SUCCESS,
-    payload: { places }
+    payload: { cartValue }
   }),
   getCartByIdError: (error) => ({
     type: Types.GET_CART_ITEMS_ERROR,
