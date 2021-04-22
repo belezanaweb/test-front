@@ -12,7 +12,7 @@ class ProductCard extends Component {
     return (
       <div>
         <Title>{this.props.title}</Title>
-        <Card></Card>
+        <Card>{this.props.children}</Card>
       </div>
     )
   }
