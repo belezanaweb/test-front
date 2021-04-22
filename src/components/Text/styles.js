@@ -28,6 +28,11 @@ const types = (selectedType) => {
       color: ${theme.mainColor};
       line-height: 1.5em;
     `,
+    successText: css`
+      color: ${theme.mainColor};
+      line-height: 1.5em;
+      font-weight: 700;
+    `,
     cartPriceTotal: css`
       color: ${theme.textTitleColor};
       line-height: 2.5em;

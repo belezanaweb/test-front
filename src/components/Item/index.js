@@ -16,9 +16,11 @@ export const Item = ({ item }) => {
       <Text type="cartPriceValue" align="start">
         {label}
       </Text>
-      <Text type="cartPriceTotal" align="end">
-        R$ {price}
-      </Text>
+      {price && (
+        <Text type="cartPriceTotal" align="end">
+          R$ {price}
+        </Text>
+      )}
     </GridContainer>
   )
 }

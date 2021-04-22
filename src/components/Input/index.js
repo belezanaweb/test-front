@@ -29,24 +29,26 @@ export const Input = ({ width, disabled, name, icon: Icon, ...rest }) => {
   }, [fieldName, registerField])
 
   return (
-    <Container
-      isErrored={!!error}
-      isFilled={isFilled}
-      isFocused={isFocused}
-      disabled={disabled}
-      width={width}
-    >
-      {Icon && <Icon size={20} fill="#202020" />}
-      <input
-        onFocus={handleInputFocus}
-        onBlur={handleInputBlur}
-        defaultValue={defaultValue}
-        ref={inputRef}
+    <>
+      <Container
+        isErrored={!!error}
+        isFilled={isFilled}
+        isFocused={isFocused}
         disabled={disabled}
         width={width}
-        {...rest}
-      />
-      {error && <Error title={error}>a</Error>}
-    </Container>
+      >
+        {Icon && <Icon size={20} fill="#202020" />}
+        <input
+          onFocus={handleInputFocus}
+          onBlur={handleInputBlur}
+          defaultValue={defaultValue}
+          ref={inputRef}
+          disabled={disabled}
+          width={width}
+          {...rest}
+        />
+      </Container>
+      {error && <Error title={error}>{error}</Error>}
+    </>
   )
 }

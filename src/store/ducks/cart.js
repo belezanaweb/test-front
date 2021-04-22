@@ -3,14 +3,17 @@ import preduce from 'immer'
 export const Types = {
   GET_CART_ITEMS_REQUEST: '@cart/GET_CART_ITEMS_REQUEST',
   GET_CART_ITEMS_SUCCESS: '@cart/GET_CART_ITEMS_SUCCESS',
-  GET_CART_ITEMS_ERROR: '@cart/GET_CART_ITEMS_ERROR'
+  GET_CART_ITEMS_ERROR: '@cart/GET_CART_ITEMS_ERROR',
+  SAVE_USER_ITEMS: '@cart/SAVE_USER_ITEMS',
+  GET_USER_ITEMS: '@cart/GET_USER_ITEMS'
 }
 
 const INITIAL_STATE = {
   loading: false,
   success: false,
   error: false,
-  cartById: {}
+  cartById: {},
+  userData: {}
 }
 
 export default function cart(state = INITIAL_STATE, action) {
@@ -34,6 +37,11 @@ export default function cart(state = INITIAL_STATE, action) {
         draft.cartById = {}
         break
       }
+      case Types.SAVE_USER_ITEMS: {
+        draft.success = true
+        draft.userData = action.payload.body
+        break
+      }
       default:
     }
   })
@@ -51,5 +59,9 @@ export const Creators = {
   getCartByIdError: (error) => ({
     type: Types.GET_CART_ITEMS_ERROR,
     payload: { error }
+  }),
+  saveUser: (body) => ({
+    type: Types.SAVE_USER_ITEMS,
+    payload: { body }
   })
 }

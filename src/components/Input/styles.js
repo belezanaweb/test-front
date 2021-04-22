@@ -80,6 +80,12 @@ export const Container = styled.div`
 export const Error = styled.div`
   height: 20px;
   margin-left: 16px;
+  color: #f30;
+
+  &::before {
+    border-color: #c53030 transparent;
+  }
+
   svg {
     margin: 0;
   }

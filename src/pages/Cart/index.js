@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-
+import { Link } from 'react-router-dom'
 import { Button } from '../../components/Button'
 import { BorderContainer } from '../../components/BorderContainer'
 import { Card } from '../../components/Card'
@@ -16,13 +16,13 @@ export const Cart = () => {
 
   useEffect(() => {
     dispatch(CartActions.getCartByIdRequest())
-  }, [])
+  }, [dispatch])
 
   return (
     <Container>
       <ProductWrapper>
         <Text type="cardTextLabel">PRODUTOS</Text>
-        <Card margin="2%">
+        <Card margin="2%" padding="1%">
           {cartById.items &&
             cartById.items.map((item) => (
               <BorderContainer color="#EEE">
@@ -74,8 +74,9 @@ export const Cart = () => {
             </Text>
           </ProductHeader>
         </BorderContainer>
-
-        <Button value="SEGUIR PARA O PAGAMENTO" />
+        <Link to="/payment">
+          <Button value="SEGUIR PARA O PAGAMENTO" />
+        </Link>
       </ContainerWrapper>
     </Container>
   )
