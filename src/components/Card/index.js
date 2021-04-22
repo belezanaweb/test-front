@@ -1,5 +1,9 @@
-import React from "react";
+import React from 'react'
 
-import { Container } from "./styles";
+import { Container } from './styles'
 
-export const Card = ({ children }) => <Container>{children}</Container>;
+export const Card = ({ margin, padding, children }) => (
+  <Container margin={margin} padding={padding}>
+    {children}
+  </Container>
+)

@@ -1,7 +1,9 @@
-import React from "react";
+import React from 'react'
 
-import { Container } from "./styles";
+import { Container } from './styles'
 
-export const Text = ({ children, type }) => (
-  <Container type={type}>{children}</Container>
-);
+export const Text = ({ children, type, align }) => (
+  <Container type={type} align={align}>
+    {children}
+  </Container>
+)

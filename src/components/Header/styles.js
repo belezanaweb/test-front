@@ -1,5 +1,5 @@
-import styled from "styled-components";
-import theme from "../../styles/theme";
+import styled from 'styled-components'
+import theme from '../../styles/theme'
 
 export const Container = styled.div`
   background-color: ${theme.containerBackground};
@@ -10,4 +10,4 @@ export const Container = styled.div`
   height: 3.5rem;
   align-items: center;
   margin-bottom: 1.5rem;
-`;
+`
