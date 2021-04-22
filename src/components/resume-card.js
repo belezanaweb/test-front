@@ -4,25 +4,33 @@ import { Resume } from '../css/styles'
 class ResumeCard extends Component {
   constructor(props) {
     super(props)
+    this.state = {
+      values: {
+        sub_total: 0.0,
+        shipping_total: 0.0,
+        discount: 0.0,
+        total: 0.0
+      }
+    }
   }
   render() {
     return (
       <Resume>
         <li>
-          <h5>PRODUTOS</h5>
-          <h5>R$ 20,00</h5>
+          <h5>Produtos</h5>
+          <h5>R$ {this.props.values.sub_total.toFixed(2)}</h5>
         </li>
         <li>
-          <h5>s</h5>
-          <h5>s</h5>
+          <h5>Frete</h5>
+          <h5>R$ {this.props.values.shipping_total.toFixed(2)}</h5>
         </li>
         <li className="discount">
-          <h5>s</h5>
-          <h5>s</h5>
+          <h5>Desconto</h5>
+          <h5>- R$ {this.props.values.discount.toFixed(2)}</h5>
         </li>
-        <li>
-          <h5 className="total">TOTAL</h5>
-          <h5 className="total">R$ 500,00</h5>
+        <li className="total">
+          <h5>Total</h5>
+          <h5>R$ {this.props.values.total.toFixed(2)}</h5>
         </li>
       </Resume>
     )
