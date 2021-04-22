@@ -1,5 +1,5 @@
-import styled from "styled-components";
-import theme from "../../styles/theme";
+import styled from 'styled-components'
+import theme from '../../styles/theme'
 
 export const Container = styled.button`
   background-color: ${theme.btnBackgroundColor};
@@ -18,4 +18,4 @@ export const Container = styled.button`
     background: ${theme.btnShadowColor};
     border-color: ${theme.btnShadowColor};
   }
-`;
+`
