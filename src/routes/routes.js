@@ -15,7 +15,7 @@ export const routes = [
   },
   {
     id: 3,
-    url: '/checkoutconfirm ',
+    url: '/checkoutconfirm',
     component: CheckoutConfirm
   }
 ]
