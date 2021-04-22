@@ -1,3 +1,3 @@
-import React from "react";
+import React from 'react'
 
-export const CheckoutConfirm = () => <div> Sucesso </div>;
+export const CheckoutConfirm = () => <div> Sucesso </div>
