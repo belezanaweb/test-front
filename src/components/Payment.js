@@ -1,7 +1,7 @@
-import React from 'react'
+import React from 'react';
 
-const Payment = () => {
-  return <h1>Payment</h1>
-}
+const Payment = (props) => {
+  return <h1>Payment</h1>;
+};
 
-export default Payment
+export default Payment;

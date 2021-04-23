@@ -9,17 +9,18 @@ const ProductList = ({ products }) => {
         <p className="produtos">PRODUTOS</p>
         <div className="prod-list">
           {products?.length ? (
-            products.map((product) => <Product data={product} />)
+            products.map((product) => <Product key={product.product.sku} data={product} />)
           ) : (
             <h1>Carrinho vazio.</h1>
           )}
         </div>
       </div>
-      <style jsx>{`
+      <style jsx="true">{`
         .prod-list {
           display: flex;
           flex-direction: column;
           align-items: center;
+          max-width: 600px;
           align-self: center;
           background-color: #fff;
           height: 325px;

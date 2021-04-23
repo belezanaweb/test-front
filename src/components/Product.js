@@ -4,22 +4,22 @@ const Product = (props) => {
   const item = props.data.product;
   return (
     <>
-      <div class="item-display">
+      <div className="item-display">
         <img
-          class="thumbnail"
+          className="thumbnail"
           src={item.imageObjects[0].small}
           alt={item.name}
           width="65"
           height="65"
         />
-        <div class="product-info">
-          <p class="product-name">{item.name}</p>
-          <p class="product-price">
+        <div className="product-info">
+          <p className="product-name">{item.name}</p>
+          <p className="product-price">
             R$ {item.priceSpecification.price.toFixed(2).replace('.', ',')}
           </p>
         </div>
       </div>
-      <style jsx>{`
+      <style jsx="true">{`
         .item-display {
           box-sizing: border-box;
           border-radius: 3px;

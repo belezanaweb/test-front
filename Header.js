@@ -5,11 +5,19 @@ import Payment from './Payment';
 import Success from './Success';
 import NotFound from './NotFound';
 
-import { BrowserRouter, Switch, Route } from 'react-router-dom';
+import { BrowserRouter, Switch, Route, useLocation } from 'react-router-dom';
 
 const Header = () => {
   const [items, setItems] = useState([]);
+  const [step, setStep] = useState('cart');
   const [isLoading, setIsLoading] = useState(true);
+
+  const checkActive = (name) => {
+    if (name === step) {
+      return 'header-active';
+    }
+    return 'header-inactive';
+  };
 
   useEffect(() => {
     fetch('https://www.mocky.io/v2/5b15c4923100004a006f3c07')
@@ -23,10 +31,16 @@ const Header = () => {
   return (
     <BrowserRouter>
       <>
-        <div className="nav-bar">
-          <p className="header">SACOLA</p>
-          <p className="header">PAGAMENTO</p>
-          <p className="header">CONFIRMAÇÃO</p>
+        <div className="test">
+          <p className={checkActive('cart')} to="/cart">
+            SACOLA
+          </p>
+          <p className={checkActive('pay')} to="/pay">
+            PAGAMENTO
+          </p>
+          <p className={checkActive('success')} to="/success">
+            CONFIRMAÇÃO
+          </p>
         </div>
         <div className="content">
           {isLoading ? (
@@ -34,10 +48,10 @@ const Header = () => {
           ) : (
             <Switch>
               <Route path="/cart">
-                <Cart products={items} />
+                <Cart products={items} updateHeader={() => setStep('cart')} />
               </Route>
               <Route path="/pay">
-                <Payment />
+                <Payment updateHeader={() => setStep('pay')} />
               </Route>
               <Route path="/success">
                 <Success />
@@ -50,7 +64,7 @@ const Header = () => {
         </div>
 
         <style jsx="true">{`
-          .nav-bar {
+          .test {
             display: flex;
             flex-direction: row;
             background-color: #fff;
@@ -62,7 +76,8 @@ const Header = () => {
           .content {
             margin: 0px 2.5% 0px 2.5%;
           }
-          .header {
+          .header-active,
+          .header-inactive {
             font-size: 13px;
             font-weight: 700;
             line-height: 16px;
@@ -70,7 +85,12 @@ const Header = () => {
             text-align: center;
             text-decoration: none;
             margin: 13px 0 13px 0;
+          }
+          .header-active {
             color: #ff7800;
+          }
+          .header-inactive {
+            color: #ccc;
           }
           body {
             background-color: #eee;
