@@ -9,6 +9,14 @@ export default createGlobalStyle`
     outline: 0;
 }
 
+#root{
+    @media(min-width:800px) {
+        display: flex;
+        flex-direction: column;
+        align-items:center;
+    }
+}
+
 body {
     background: #EEE;
     color: #FFF;

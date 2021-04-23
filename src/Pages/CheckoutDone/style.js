@@ -3,14 +3,20 @@
 export const Container = styled.div`
   display: flex;
   flex-direction: column;
-
   .message-done {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     text-transform: uppercase;
     color: #ff7800;
     font-weight: bold;
     margin: 15px;
     font-size: 14px;
     text-align: center;
+
+    svg {
+      margin-bottom: 10px;
+    }
   }
 
   h2.title-payment {
@@ -29,5 +35,9 @@ export const Container = styled.div`
     color: #000;
     border-radius: 3px;
     padding: 15px;
+  }
+
+  > div {
+    margin-bottom: 30px;
   }
 `

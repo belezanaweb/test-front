@@ -1,15 +1,14 @@
 ﻿import React from 'react'
 import { Container } from './style'
-import { useLocation } from 'react-router'
+import { useRouteMatch } from 'react-router-dom'
 
 const HeaderCheckout = () => {
-  //    const location = useLocation();
-
+  let { path } = useRouteMatch()
   return (
     <Container>
-      <a href="">Sacola</a>
-      <a href="">Pagamento</a>
-      <a href="">Confirmação</a>
+      <span className={path == '/checkout/cart' && 'current'}>Sacola</span>
+      <span className={path == '/checkout/payment' && 'current'}>Pagamento</span>
+      <span className={path == '/checkout/done' && 'current'}>Confirmação</span>
     </Container>
   )
 }

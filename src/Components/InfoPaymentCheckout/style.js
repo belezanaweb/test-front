@@ -8,6 +8,10 @@ export const Container = styled.div`
   margin: 5px;
   padding: 15px;
 
+  @media (min-width: 800px) {
+    width: 1024px;
+  }
+
   div {
     display: flex;
     justify-content: space-between;

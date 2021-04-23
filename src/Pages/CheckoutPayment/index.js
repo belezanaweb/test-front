@@ -1,13 +1,14 @@
 ﻿import React, { useRef, useCallback, useState, useEffect } from 'react'
 import * as Yup from 'yup'
 import { Form } from '@unform/web'
-import { useHistory } from 'react-dom'
+import { useHistory } from 'react-router-dom'
 
 import api from '../../Service/api'
 import { Container } from './style'
 import getValidationErrors from '../../Utils/getValidationErrors'
 import InfoPaymentCheckout from '../../Components/InfoPaymentCheckout'
 import ButtonCheckout from '../../Components/ButtonCheckout'
+import HeaderCheckout from '../../Components/HeaderCheckout'
 import Input from '../../Components/Input'
 
 const CheckoutPayment = () => {
@@ -46,10 +47,9 @@ const CheckoutPayment = () => {
         abortEarly: false
       })
 
-      history.push('checkout/done', {
-        state: {
-          data
-        }
+      history.push({
+        pathname: '/checkout/done',
+        state: { data }
       })
     } catch (err) {
       const errors = getValidationErrors(err)
@@ -58,45 +58,48 @@ const CheckoutPayment = () => {
   }, [])
 
   return (
-    <Container>
-      <Form ref={formRef} onSubmit={handleSubmit}>
-        <h2>Cartão de crédito</h2>
-        <div className="info-cart">
-          <label htmlFor="numberCart">Número do cartão:</label>
-          <Input
-            className="input-number-cart"
-            name="numberCart"
-            type="text"
-            placeholder="____.____.____.____"
-          />
-          <label htmlFor="nameCart">Nome do titular:</label>
-          <Input
-            className="input-name-cart"
-            name="nameCart"
-            type="text"
-            placeholder="Como no cartão"
-          />
+    <>
+      <HeaderCheckout />
+      <Container>
+        <Form ref={formRef} onSubmit={handleSubmit}>
+          <h2>Cartão de crédito</h2>
+          <div className="info-cart">
+            <label htmlFor="numberCart">Número do cartão:</label>
+            <Input
+              className="input-number-cart"
+              name="numberCart"
+              type="text"
+              placeholder="____.____.____.____"
+            />
+            <label htmlFor="nameCart">Nome do titular:</label>
+            <Input
+              className="input-name-cart"
+              name="nameCart"
+              type="text"
+              placeholder="Como no cartão"
+            />
 
-          <div className="validate-cvv">
-            <div>
-              <label htmlFor="validateCart">Validade (mês/ano)</label>
-              <Input
-                className="input-validate-cart"
-                name="validateCart"
-                type="text"
-                placeholder="__/____"
-              />
-            </div>
-            <div>
-              <label htmlFor="cvvCart">CVV</label>
-              <Input className="input-cvv-cart" name="cvvCart" type="text" placeholder="___" />
+            <div className="validate-cvv">
+              <div>
+                <label htmlFor="validateCart">Validade (mês/ano)</label>
+                <Input
+                  className="input-validate-cart"
+                  name="validateCart"
+                  type="text"
+                  placeholder="__/____"
+                />
+              </div>
+              <div>
+                <label htmlFor="cvvCart">CVV</label>
+                <Input className="input-cvv-cart" name="cvvCart" type="text" placeholder="___" />
+              </div>
             </div>
           </div>
-        </div>
-        <InfoPaymentCheckout infoPayment={infoPayment} />
-        <ButtonCheckout type="submit">Finalizar pedido</ButtonCheckout>
-      </Form>
-    </Container>
+          <InfoPaymentCheckout infoPayment={infoPayment} />
+          <ButtonCheckout type="submit">Finalizar pedido</ButtonCheckout>
+        </Form>
+      </Container>
+    </>
   )
 }
 

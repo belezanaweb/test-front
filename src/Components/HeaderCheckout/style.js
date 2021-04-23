@@ -6,7 +6,12 @@ export const Container = styled.div`
   justify-content: center;
   background: #fff;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-  a {
+
+  @media (min-width: 800px) {
+    width: 1024px;
+  }
+
+  span {
     text-transform: uppercase;
     flex: 1;
     font-weight: bold;
@@ -15,5 +20,9 @@ export const Container = styled.div`
     text-align: center;
     color: #ccc; // FF7800 selected
     padding: 10px;
+
+    &.current {
+      color: #ff7800;
+    }
   }
 `

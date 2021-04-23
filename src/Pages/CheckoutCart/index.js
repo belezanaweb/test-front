@@ -4,6 +4,7 @@ import api from '../../Service/api'
 import ListProductsCheckout from '../../Components/ListProductsCheckout'
 import InfoPaymentCheckout from '../../Components/InfoPaymentCheckout'
 import ButtonCheckout from '../../Components/ButtonCheckout'
+import HeaderCheckout from '../../Components/HeaderCheckout'
 
 import { Container } from './style'
 import { useHistory } from 'react-router-dom'
@@ -34,6 +35,7 @@ const CheckoutCart = () => {
 
   return (
     <>
+      <HeaderCheckout />
       <Container>
         <ListProductsCheckout productItems={productItems} />
         <InfoPaymentCheckout infoPayment={infoPayment} />
