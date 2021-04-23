@@ -1,5 +1,9 @@
 {
-    "plugins": [
-      "styled-jsx/babel"
-    ]
+  "plugins": [
+    "styled-jsx/babel"
+  ],
+  "presets": [
+    "@babel/preset-env", 
+    "@babel/preset-react"
+  ]
 }
