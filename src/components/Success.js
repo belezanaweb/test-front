@@ -1,7 +1,14 @@
-import React from 'react'
+import React from 'react';
+
+import NavBar from './NavBar';
 
 const Success = () => {
-  return <h1>Success</h1>
-}
+  return (
+    <>
+      <NavBar active="success" />
+      <h1>Success</h1>
+    </>
+  );
+};
 
-export default Success
+export default Success;
