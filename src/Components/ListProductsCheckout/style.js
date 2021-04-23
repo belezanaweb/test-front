@@ -16,6 +16,7 @@ export const Container = styled.div`
 
   .product-item {
     display: flex;
+    justify-content: space-between;
     padding: 10px;
     margin: 15px 10px;
     border: 1px solid #eee;
