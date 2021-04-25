@@ -1,20 +1,30 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 import ProductList from './ProductList';
 import Total from './Total';
 import Button from './Button';
 import NavBar from './NavBar';
 
-const Cart = (props) => {
-  const { items, ...total } = props.products;
+import { Redirect } from 'react-router-dom';
+
+const Cart = () => {
+  const [toPayment, setToPayment] = useState(false);
+  const redirect = () => {
+    setToPayment(true);
+  };
   return (
     <>
       <NavBar active="cart" />
       <div className="content">
-        <ProductList products={items} />
-        <Total values={total} />
-        <Button text={'SEGUIR PARA O PAGAMENTO'} path={'/pay'} />
+        <ProductList />
+        {localStorage.getItem('belezanawebCartProducts') !== null ? (
+          <>
+            <Total />
+            <Button text={'seguir para o pagamento'} action={() => redirect} />
+          </>
+        ) : null}
       </div>
+      {toPayment && <Redirect to="/pay" />}
     </>
   );
 };

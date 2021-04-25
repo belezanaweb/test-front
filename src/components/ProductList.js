@@ -1,39 +1,28 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 
 import Product from './Product';
+import Container from './Container';
 
-const ProductList = ({ products }) => {
+const ProductList = () => {
+  const [products, setProducts] = useState([]);
+
+  useEffect(() => {
+    const data = localStorage.getItem('belezanawebCartProducts');
+    if (data !== null) {
+      const { items, ...total } = JSON.parse(data);
+      setProducts(items);
+    }
+  }, []);
+
   return (
     <>
-      <div className="cart">
-        <p className="produtos">PRODUTOS</p>
-        <div className="prod-list">
-          {products?.length ? (
-            products.map((product) => <Product key={product.product.sku} data={product} />)
-          ) : (
-            <h1>Carrinho vazio.</h1>
-          )}
-        </div>
-      </div>
-      <style jsx="true">{`
-        .prod-list {
-          display: flex;
-          flex-direction: column;
-          align-items: center;
-          max-width: 600px;
-          align-self: center;
-          background-color: #fff;
-          height: 325px;
-          border-radius: 3px;
-          box-shadow: 1px 1px 5px 0 rgba(0, 0, 29, 0.22);
-        }
-        .produtos {
-          color: #999;
-          font-size: 14px;
-          font-weight: 700;
-          margin: 13px 0px 3px 10px;
-        }
-      `}</style>
+      <Container title="produtos">
+        {products?.length ? (
+          products.map((product) => <Product key={product.product.sku} data={product} />)
+        ) : (
+          <h1>Carrinho vazio.</h1>
+        )}
+      </Container>
     </>
   );
 };

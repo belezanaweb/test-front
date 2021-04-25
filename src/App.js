@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect } from 'react';
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
 
 import Cart from './components/Cart';
@@ -7,40 +7,39 @@ import Success from './components/Success';
 import NotFound from './components/NotFound';
 
 const App = () => {
-  const [items, setItems] = useState([]);
-  const [isLoading, setIsLoading] = useState(true);
-
-  useEffect(() => {
+  const fetchAndStore = () => {
     fetch('https://www.mocky.io/v2/5b15c4923100004a006f3c07')
       .then((response) => response.json())
       .then((data) => {
-        setItems(data);
-        setIsLoading(false);
+        localStorage.setItem('belezanawebCartProducts', JSON.stringify(data));
       });
+  };
+
+  useEffect(() => {
+    //localStorage.removeItem('belezanawebCartProducts');
+    if (localStorage.getItem('belezanawebCartProducts') === null) {
+      fetchAndStore();
+    }
   }, []);
 
   return (
     <BrowserRouter>
       <>
         <div>
-          {isLoading ? (
-            <div>Loading...</div>
-          ) : (
-            <Switch>
-              <Route exact path="/">
-                <Cart products={items} />
-              </Route>
-              <Route path="/pay">
-                <Payment />
-              </Route>
-              <Route path="/success">
-                <Success />
-              </Route>
-              <Route path="*">
-                <NotFound />
-              </Route>
-            </Switch>
-          )}
+          <Switch>
+            <Route exact path="/">
+              <Cart />
+            </Route>
+            <Route path="/pay">
+              <Payment />
+            </Route>
+            <Route path="/success">
+              <Success />
+            </Route>
+            <Route path="*">
+              <NotFound />
+            </Route>
+          </Switch>
         </div>
 
         <style jsx="true">{`

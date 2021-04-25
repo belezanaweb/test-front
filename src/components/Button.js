@@ -1,13 +1,9 @@
 import React from 'react';
 
-import { Link } from 'react-router-dom';
-
 const Button = (props) => {
   return (
     <>
-      <Link to={props.path}>
-        <button>{props.text}</button>
-      </Link>
+      <button onClick={props.action()}>{props.text.toUpperCase()}</button>
       <style jsx="true">{`
         button {
           width: 100%;

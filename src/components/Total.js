@@ -1,29 +1,48 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 
-const Total = ({ values }) => {
+const Total = () => {
+  const [total, setTotal] = useState([]);
+  const [loading, setLoading] = useState(true);
+
+  const getData = async () => {
+    const data = await localStorage.getItem('belezanawebCartProducts');
+    const { items, ...info } = JSON.parse(data);
+    setTotal(info);
+    setLoading(false);
+  };
+
+  useEffect(() => {
+    getData();
+  }, []);
+
   let format = (value) => {
     return value.toFixed(2).replace('.', ',');
   };
+
   return (
     <>
-      <div className="total-container">
-        <div className="total-produtos">
-          <div className="keys">PRODUTOS</div>
-          <div className="values">R$ {format(values.subTotal)}</div>
+      {loading ? (
+        'Carregando'
+      ) : (
+        <div className="total-container">
+          <div className="total-produtos">
+            <div className="keys">PRODUTOS</div>
+            <div className="values">R$ {format(total.subTotal)}</div>
+          </div>
+          <div className="total-frete">
+            <div className="keys">FRETE</div>
+            <div className="values">R$ {format(total.shippingTotal)}</div>
+          </div>
+          <div className="total-desconto">
+            <div className="keys">DESCONTO</div>
+            <div className="values">- R$ {format(total.discount)}</div>
+          </div>
+          <div className="total">
+            <div className="keys">TOTAL</div>
+            <div className="values">R$ {format(total.total)}</div>
+          </div>
         </div>
-        <div className="total-frete">
-          <div className="keys">FRETE</div>
-          <div className="values">R$ {format(values.shippingTotal)}</div>
-        </div>
-        <div className="total-desconto">
-          <div className="keys">DESCONTO</div>
-          <div className="values">- R$ {format(values.discount)}</div>
-        </div>
-        <div className="total">
-          <div className="keys">TOTAL</div>
-          <div className="values">R$ {format(values.total)}</div>
-        </div>
-      </div>
+      )}
       <style jsx="true">{`
         .total-container {
           box-sizing: border-box;
