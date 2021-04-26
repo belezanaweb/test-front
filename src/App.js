@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
 
 import Cart from './components/Cart';
@@ -7,11 +7,13 @@ import Success from './components/Success';
 import NotFound from './components/NotFound';
 
 const App = () => {
+  const [loading, setLoading] = useState(true);
   const fetchAndStore = () => {
     fetch('https://www.mocky.io/v2/5b15c4923100004a006f3c07')
       .then((response) => response.json())
       .then((data) => {
         localStorage.setItem('belezanawebCartProducts', JSON.stringify(data));
+        setLoading(false);
       });
   };
 
@@ -22,7 +24,9 @@ const App = () => {
     }
   }, []);
 
-  return (
+  return loading ? (
+    <h3>Carregando</h3>
+  ) : (
     <BrowserRouter>
       <>
         <div className="display">
