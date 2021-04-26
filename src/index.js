@@ -1,31 +1,36 @@
 import * as serviceWorker from './serviceWorker'
-import React, { StrictMode } from 'react'
+import React from 'react'
 import ReactDOM from 'react-dom'
 import './css/index.css'
-import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
+import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom'
+import { Footer, Header } from './css/styles'
 
 import Cart from './pages/Cart'
 import Payment from './pages/Payment'
 import Confirmation from './pages/Confirmation'
 
 const Strict = () => (
-  <StrictMode>
+  <div id="page-body">
+    <Header>Grupo Boticário</Header>
     <Router>
-      <div>
+      <div className="main">
         <Switch>
-          <Route path="/">
+          <Route exact path="/">
             <Cart />
           </Route>
           <Route path="/payment">
             <Payment />
           </Route>
-          <Route path="/cart">
+          <Route path="/confirmation">
             <Confirmation />
           </Route>
         </Switch>
       </div>
     </Router>
-  </StrictMode>
+    <Footer>
+      <p>&#169; 2021</p>
+    </Footer>
+  </div>
 )
 
 ReactDOM.render(<Strict />, document.getElementById('root'))
