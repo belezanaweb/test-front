@@ -33,13 +33,15 @@ const Success = () => {
             <CheckMark size="50" color="#ff7800" />
             <h2>COMPRA EFETUADA COM SUCESSO</h2>
           </div>
-          <Container title="pagamento">
-            <div className="pay-info">
-              <span>{payInfo.card}</span>
-              <span>{payInfo.owner}</span>
-              <span>{payInfo.expiration}</span>
-            </div>
-          </Container>
+          <div className="container">
+            <Container title="pagamento">
+              <div className="pay-info">
+                <span>{payInfo.card}</span>
+                <span>{payInfo.owner}</span>
+                <span>{payInfo.expiration}</span>
+              </div>
+            </Container>
+          </div>
           <ProductList showPrice={false} />
           <Total />
         </div>
@@ -51,7 +53,11 @@ const Success = () => {
           align-items: center;
           margin-top: 8px;
         }
+        .container {
+          width: 100%;
+        }
         .pay-info {
+          width: 100%;
           align-self: flex-start;
           margin: 15px 0 0 10px;
           display: flex;

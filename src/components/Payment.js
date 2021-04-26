@@ -136,14 +136,12 @@ const Payment = () => {
       </div>
       {confirm && <Redirect to="/success" />}
       <style jsx="true">{`
-        .avcds {
-        }
         .payment-layout {
           display: flex;
           justify-content: space-between;
         }
         .payment-form {
-          width: 95%;
+          width: ${window.innerWidth < 700 ? '90vw' : '95%'};
           margin: 12px 10px 0 10px;
         }
         .input-layout {

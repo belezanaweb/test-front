@@ -25,7 +25,7 @@ const App = () => {
   return (
     <BrowserRouter>
       <>
-        <div>
+        <div className="display">
           <Switch>
             <Route exact path="/">
               <Cart />
@@ -43,8 +43,18 @@ const App = () => {
         </div>
 
         <style jsx="true">{`
+          .display {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+          }
           .content {
-            margin: 0px 2.5% 0px 2.5%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            max-width: 700px;
+            margin: 0px 2.5% 0px 2.5%;i
           }
           body {
             background-color: #eee;

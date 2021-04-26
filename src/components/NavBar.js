@@ -22,7 +22,7 @@ const NavBar = ({ active }) => {
           justify-content: space-around;
           box-shadow: 1px 1px 5px 0 rgba(0, 0, 29, 0.22);
           height: 40px;
-          width: '100%';
+          width: 100%;
         }
         .header-active,
         .header-inactive {

@@ -50,6 +50,7 @@ const Total = () => {
           border: 1px solid #ccc;
           margin: 20px 0 20px 0;
           padding: 15px 15px 13px 15px;
+          width: 100%;
         }
         .total-produtos,
         .total-frete,
