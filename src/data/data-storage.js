@@ -43,6 +43,15 @@ class DataStorage {
       total: JSON.parse(localStorage.getItem('total'))
     }
   }
+
+  getPaymentData() {
+    let card_num = localStorage.getItem('card_number')
+    return {
+      card_number: '****.****.****.' + card_num.substring(card_num.length - 4),
+      card_name: localStorage.getItem('card_name').toUpperCase(),
+      card_expiration: localStorage.getItem('card_expiration')
+    }
+  }
 }
 
 export default new DataStorage()
