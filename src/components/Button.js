@@ -3,7 +3,9 @@ import React from 'react';
 const Button = (props) => {
   return (
     <>
-      <button onClick={props.action()}>{props.text.toUpperCase()}</button>
+      <button onClick={props.action()} disabled={props.valid}>
+        {props.text.toUpperCase()}
+      </button>
       <style jsx="true">{`
         button {
           width: 100%;
@@ -23,6 +25,9 @@ const Button = (props) => {
         button:hover {
           background-color: #d45a00;
           cursor: pointer;
+        }
+        button:disabled {
+          cursor: not-allowed;
         }
       `}</style>
     </>

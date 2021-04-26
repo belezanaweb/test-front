@@ -3,7 +3,7 @@ import React, { useEffect, useState } from 'react';
 import Product from './Product';
 import Container from './Container';
 
-const ProductList = () => {
+const ProductList = (props) => {
   const [products, setProducts] = useState([]);
 
   useEffect(() => {
@@ -18,7 +18,9 @@ const ProductList = () => {
     <>
       <Container title="produtos">
         {products?.length ? (
-          products.map((product) => <Product key={product.product.sku} data={product} />)
+          products.map((product) => (
+            <Product key={product.product.sku} showPrice={props.showPrice} data={product} />
+          ))
         ) : (
           <h1>Carrinho vazio.</h1>
         )}

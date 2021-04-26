@@ -1,11 +1,10 @@
 import React, { useState } from 'react';
+import { Redirect } from 'react-router-dom';
 
 import ProductList from './ProductList';
 import Total from './Total';
 import Button from './Button';
 import NavBar from './NavBar';
-
-import { Redirect } from 'react-router-dom';
 
 const Cart = () => {
   const [toPayment, setToPayment] = useState(false);
@@ -16,7 +15,7 @@ const Cart = () => {
     <>
       <NavBar active="cart" />
       <div className="content">
-        <ProductList />
+        <ProductList showPrice="true" />
         {localStorage.getItem('belezanawebCartProducts') !== null ? (
           <>
             <Total />

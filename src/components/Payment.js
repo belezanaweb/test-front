@@ -1,6 +1,7 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useForm, Controller } from 'react-hook-form';
 import InputMask from 'react-input-mask';
+import { Redirect } from 'react-router-dom';
 
 import NavBar from './NavBar';
 import Container from './Container';
@@ -8,12 +9,24 @@ import Button from './Button';
 import Total from './Total';
 
 const Payment = () => {
+  const [confirm, setConfirm] = useState(false);
   const {
     formState: { errors },
     handleSubmit,
-    control
-  } = useForm();
-  const onSubmit = (data) => console.log(data);
+    control,
+    formState: { isDirty, isValid }
+  } = useForm({
+    mode: 'onChange'
+  });
+
+  const onSubmit = (data) => {
+    const { vc, ...storingData } = data;
+    const lastFour = data.card.split(' ')[3];
+    storingData.card = '****.'.repeat(3).concat(lastFour);
+
+    localStorage.setItem('belezanawebPayment', JSON.stringify(storingData));
+    setConfirm(true);
+  };
 
   return (
     <>
@@ -31,7 +44,6 @@ const Payment = () => {
                 rules={{ required: true, minLength: 19 }}
                 render={({ field: { onChange, onBlur, value, ref } }) => (
                   <InputMask
-                    ref={ref}
                     onChange={onChange}
                     onBlur={onBlur}
                     selected={value}
@@ -54,7 +66,6 @@ const Payment = () => {
                 rules={{ required: true }}
                 render={({ field: { onChange, onBlur, value, ref } }) => (
                   <input
-                    ref={ref}
                     onChange={onChange}
                     onBlur={onBlur}
                     selected={value}
@@ -76,7 +87,6 @@ const Payment = () => {
                   rules={{ required: true, minLength: 7 }}
                   render={({ field: { onChange, onBlur, value, ref } }) => (
                     <InputMask
-                      ref={ref}
                       onChange={onChange}
                       onBlur={onBlur}
                       selected={value}
@@ -99,7 +109,6 @@ const Payment = () => {
                   rules={{ required: true, minLength: 3 }}
                   render={({ field: { onChange, onBlur, value, ref } }) => (
                     <InputMask
-                      ref={ref}
                       onChange={onChange}
                       onBlur={onBlur}
                       selected={value}
@@ -120,9 +129,12 @@ const Payment = () => {
           type="button"
           name="pay"
           text={'finalizar compra'}
+          valid={!isValid || !isDirty}
+          dirty={isDirty}
           action={() => handleSubmit(onSubmit)}
         />
       </div>
+      {confirm && <Redirect to="/success" />}
       <style jsx="true">{`
         .avcds {
         }

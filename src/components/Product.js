@@ -9,14 +9,16 @@ const Product = (props) => {
           className="thumbnail"
           src={item.imageObjects[0].small}
           alt={item.name}
-          width="65"
-          height="65"
+          width={props.showPrice ? '65' : '45'}
+          height={props.showPrice ? '65' : '45'}
         />
         <div className="product-info">
           <p className="product-name">{item.name}</p>
-          <p className="product-price">
-            R$ {item.priceSpecification.price.toFixed(2).replace('.', ',')}
-          </p>
+          {props.showPrice && (
+            <p className="product-price">
+              R$ {item.priceSpecification.price.toFixed(2).replace('.', ',')}
+            </p>
+          )}
         </div>
       </div>
       <style jsx="true">{`
