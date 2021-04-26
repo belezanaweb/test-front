@@ -4,20 +4,20 @@ import CustomNavbar from '../components/custom-navbar'
 import ProductCard from '../components/product-card'
 import ResumeCard from '../components/resume-card'
 import ProductItem from '../components/product-item'
+import ConfirmMessage from '../components/confirm-message'
 import DataStorage from '../data/data-storage'
 
-const Confirmation = () => (
-  <div>
-    <CustomNavbar current_page="confirmation" />
-    <ProductCard title="Pagamento">
-      <span className="font-bold">****.****.****.1234</span>
-      <span className="font-bold">JOSÉ DA SILVA</span>
-      <span className="font-bold">05/2019</span>
-    </ProductCard>
-    <ProductCard title="Produtos">{renderItems()}</ProductCard>
-    <ResumeCard values={DataStorage.getResume()}></ResumeCard>
-  </div>
-)
+export default function Confirmation() {
+  return (
+    <div>
+      <CustomNavbar current_page="confirmation" />
+      <ConfirmMessage message="Compra efetuada com sucesso" />
+      <ProductCard title="Pagamento">{renderPaymentData()}</ProductCard>
+      <ProductCard title="Produtos">{renderItems()}</ProductCard>
+      <ResumeCard values={DataStorage.getResume()}></ResumeCard>
+    </div>
+  )
+}
 
 function renderItems() {
   return DataStorage.getProductItems().map((item, index) => (
@@ -31,4 +31,14 @@ function renderItems() {
   ))
 }
 
-export default Confirmation
+function renderPaymentData() {
+  let data = DataStorage.getPaymentData()
+
+  return (
+    <div>
+      <span className="font-bold">{data.card_number}</span>
+      <span className="font-bold">{data.card_name}</span>
+      <span className="font-bold">{data.card_expiration}</span>
+    </div>
+  )
+}

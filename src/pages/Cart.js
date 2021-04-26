@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 import CustomNavbar from '../components/custom-navbar'
 import ProductCard from '../components/product-card'
@@ -7,14 +8,18 @@ import CustomButton from '../components/custom-button'
 import ProductItem from '../components/product-item'
 import DataStorage from '../data/data-storage'
 
-const Cart = () => (
-  <div>
-    <CustomNavbar current_page="cart" />
-    <ProductCard title="Produtos">{renderItems()}</ProductCard>
-    <ResumeCard values={DataStorage.getResume()}></ResumeCard>
-    <CustomButton title="Seguir para o Pagamento"></CustomButton>
-  </div>
-)
+export default function Cart() {
+  return (
+    <div>
+      <CustomNavbar current_page="cart" />
+      <ProductCard title="Produtos">{renderItems()}</ProductCard>
+      <ResumeCard values={DataStorage.getResume()}></ResumeCard>
+      <Link to="/payment">
+        <CustomButton label="Seguir para o Pagamento"></CustomButton>
+      </Link>
+    </div>
+  )
+}
 
 function renderItems() {
   return DataStorage.getProductItems().map((item, index) => (
@@ -23,5 +28,3 @@ function renderItems() {
 }
 
 DataStorage.getData()
-
-export default Cart
