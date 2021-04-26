@@ -44,6 +44,12 @@ class DataStorage {
     }
   }
 
+  setPaymentData(card_number, cardholder_name, expiration_date) {
+    localStorage.setItem('card_number', this.state.card_number)
+    localStorage.setItem('card_name', this.state.cardholder_name)
+    localStorage.setItem('card_expiration', this.state.expiration_date)
+  }
+
   getPaymentData() {
     let card_num = localStorage.getItem('card_number')
     return {
