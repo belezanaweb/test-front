@@ -1,5 +1,24 @@
 import styled from 'styled-components'
 
+// fa6715
+
+//Header
+export const Header = styled.header`
+  height: 5vh;
+  padding: 1rem;
+  background-color: #31ad83;
+  color: white;
+  font-size: 1.5rem;
+  display: flex;
+  align-items: center;
+
+  img {
+    height: 2rem;
+    width: auto;
+    margin-left: 0.5rem;
+  }
+`
+
 //NavBar
 
 export const Navbar = styled.ul`
@@ -22,7 +41,7 @@ export const Navbar = styled.ul`
     margin: 0px;
 
     &.active {
-      color: #fa6715;
+      color: #ff890a;
     }
   }
 `
@@ -113,10 +132,75 @@ export const Margin = styled.div`
   margin: 1rem;
 `
 
+//Form
+export const Form = styled.form`
+  padding: 0.1rem;
+
+  .col {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+
+    label {
+      width: 55%;
+
+      &:last-of-type {
+        width: 40%;
+      }
+    }
+  }
+
+  label {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 1rem;
+
+    span {
+      font-size: 0.7rem;
+      font-weight: bold;
+      color: #cfcfcf;
+
+      &.feedback {
+        color: red;
+        font-weight: 200;
+        display: none;
+      }
+    }
+
+    input {
+      margin: 0.3rem 0;
+      padding: 0.8em;
+      font-size: 0.85rem;
+      border: 1px solid #cfcfcf;
+      border-radius: 3px;
+      box-shadow: inset -5px 1x 10px rgba(0, 0, 0, 0.5);
+
+      &:focus {
+        border-color: purple !important;
+        outline: none;
+      }
+    }
+
+    &.error {
+      input {
+        border-color: red;
+      }
+
+      span.feedback {
+        display: block;
+      }
+    }
+  }
+
+  button {
+    display: none;
+  }
+`
+
 export const Button = styled.button`
   display: block;
   width: 100%;
-  background-color: #fa6715;
+  background-color: #ff890a;
   color: white;
   text-transform: uppercase;
   padding: 1rem 0.5rem;
@@ -127,6 +211,11 @@ export const Button = styled.button`
   outline: none;
 
   &:hover {
+    box-shadow: none;
+    background-color: #d05610;
+  }
+
+  &:disabled {
     box-shadow: none;
     background-color: #d05610;
   }
@@ -151,7 +240,7 @@ export const Resume = styled.ul`
     }
 
     &.discount {
-      color: #fa6715;
+      color: #ff890a;
     }
 
     &.total {
@@ -173,5 +262,40 @@ export const Resume = styled.ul`
         text-align: end;
       }
     }
+  }
+`
+export const Message = styled.div`
+  margin: 1rem;
+  margin-bottom: 1.5rem;
+
+  img {
+    width: 2.5rem;
+    height: 2.5rem;
+    display: block;
+    margin: 0 auto;
+    margin-bottom: 0.9rem;
+  }
+
+  span {
+    display: block;
+    color: #ff890a;
+    text-transform: uppercase;
+    text-align: center;
+    font-size: 0.95rem;
+    font-weight: 600;
+  }
+`
+
+//Footer
+
+export const Footer = styled.footer`
+  height: 5vh;
+  padding: 1rem;
+  background-color: #6d6d6d;
+  color: white;
+  text-align: center;
+
+  h3 {
+    font-weight: 400;
   }
 `

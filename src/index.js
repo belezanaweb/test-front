@@ -2,8 +2,9 @@ import * as serviceWorker from './serviceWorker'
 import React from 'react'
 import ReactDOM from 'react-dom'
 import './css/index.css'
-import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom'
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
 import { Footer, Header } from './css/styles'
+import LogoImage from './assets/img/logo.png'
 
 import Cart from './pages/Cart'
 import Payment from './pages/Payment'
@@ -11,7 +12,9 @@ import Confirmation from './pages/Confirmation'
 
 const Strict = () => (
   <div id="page-body">
-    <Header>Grupo Boticário</Header>
+    <Header>
+      <span>Grupo Boticário</span> <img src={LogoImage} alt="Logo" />
+    </Header>
     <Router>
       <div className="main">
         <Switch>
