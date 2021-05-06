@@ -1,9 +1,5 @@
 import styled, { css } from "styled-components";
-
-interface ContainerProps {
-  isFocused: boolean;
-  isErrored: boolean;
-}
+import { ContainerProps } from "./types";
 
 export const Wrapper = styled.div``;
 

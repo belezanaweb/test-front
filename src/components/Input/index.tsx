@@ -25,7 +25,7 @@ const Input: React.FC<InputProps> = ({ name, title, ...rest }: InputProps) => {
   }, [fieldName, registerField]);
 
   return (
-    <Wrapper>
+    <Wrapper {...rest}>
       {title && <Title>{title}</Title>}
       <Container isErrored={!!error} isFocused={isFocused}>
         <input

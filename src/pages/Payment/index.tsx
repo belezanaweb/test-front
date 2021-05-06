@@ -4,6 +4,7 @@ import { Button, Card, Input, Summary, Template, Typography } from "components";
 import React, { useRef } from "react";
 import { Link } from "react-router-dom";
 import { PaymentProps } from "./types";
+import { FormGrid } from "./styles";
 
 const Payment: React.FC<PaymentProps> = () => {
   const formRef = useRef<FormHandles>(null);
@@ -13,42 +14,53 @@ const Payment: React.FC<PaymentProps> = () => {
   };
 
   return (
-    <Template>
-      <div>
-        <Typography as="h2" bold gutterBottom>
-          CARTÃO DE CRÉDITO
-        </Typography>
-        <Card>
-          <Form ref={formRef} onSubmit={handleSubmit}>
-            <Input
-              title="Número do cartão:"
-              name="card"
-              placeholder=""
-              type="text"
-            />
-            <Input
-              title="Nome do Titular:"
-              name="author"
-              placeholder="Como no cartão"
-              type="text"
-            />
-            <Input
-              title="Validade (mês/ano):"
-              name="valid"
-              placeholder=""
-              type="text"
-            />
-            <Input title="CVV:" name="cvv" placeholder="" type="text" />
-          </Form>
-        </Card>
-      </div>
+    <Form ref={formRef} onSubmit={handleSubmit}>
+      <Template>
+        <div>
+          <Typography as="h2" bold gutterBottom>
+            CARTÃO DE CRÉDITO
+          </Typography>
+          <Card>
+            <FormGrid>
+              <Input
+                title="Número do cartão:"
+                className="card"
+                name="card"
+                placeholder=""
+                type="text"
+              />
+              <Input
+                title="Nome do Titular:"
+                className="author"
+                name="author"
+                placeholder="Como no cartão"
+                type="text"
+              />
+              <Input
+                title="Validade (mês/ano):"
+                className="valid"
+                name="valid"
+                placeholder=""
+                type="text"
+              />
+              <Input
+                title="CVV:"
+                name="cvv"
+                className="cvv"
+                placeholder=""
+                type="text"
+              />
+            </FormGrid>
+          </Card>
+        </div>
 
-      <Summary data={[]} />
+        <Summary data={[]} />
 
-      <Button as={Link} to="/confirmation">
-        FINALIZAR O PEDIDO
-      </Button>
-    </Template>
+        <Button as={Link} to="/confirmation">
+          FINALIZAR O PEDIDO
+        </Button>
+      </Template>
+    </Form>
   );
 };
 
