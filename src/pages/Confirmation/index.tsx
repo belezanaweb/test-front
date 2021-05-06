@@ -21,7 +21,7 @@ const Confirmation: React.FC<ConfirmationProps> = () => {
 
       <div>
         <Typography as="h2" bold gutterBottom>
-          PAGEMENTO
+          PAGAMENTO
         </Typography>
         <Card>
           <Typography color={colors.dark}>
