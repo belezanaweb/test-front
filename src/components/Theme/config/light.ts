@@ -1,7 +1,7 @@
 export default {
   colors: {
     primary: {
-      light: "",
+      light: "#FF7800",
       main: "#FF6C00",
       dark: "#D45A00",
     },
@@ -16,8 +16,17 @@ export default {
       dark: "",
     },
 
-    lightGrey: "",
+    white: "#fff",
+    light: "#f4ede8",
+    darkGray: "#e0e7ee",
+    lightGrey: "#CCC",
     grey: "#EEE",
+    dark: "#212122",
+    black: "#000",
+  },
+
+  shadows: {
+    default: "1px 1px 5px 0 rgba(0, 0, 29, 0.22)",
   },
 
   fontSizes: {

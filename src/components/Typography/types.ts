@@ -4,4 +4,5 @@ export interface TypographyProps {
   color?: string;
   gutterBottom?: boolean;
   bold?: boolean;
+  as?: any;
 }

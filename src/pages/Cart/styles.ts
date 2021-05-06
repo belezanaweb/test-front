@@ -1,10 +1,9 @@
 import styled from "styled-components";
-
-export const Tamplate = styled.div``;
+import { CartProps } from "./types";
 
 export const ProductsList = styled.div`
   > div + div {
-    margin-top: 15px;
+    margin-top: 1.5rem;
   }
 `;
 
@@ -12,23 +11,23 @@ export const Summary = styled.div`
   box-sizing: border-box;
   width: 100%;
   border-radius: 3px;
-  border: 1px solid #ccc;
-  padding: 14px 15px;
+  border: 1px solid ${({ theme }) => theme.colors.lightGrey};
+  padding: 1.4rem 1.5rem;
   display: flex;
   flex-direction: column;
   flex-wrap: nowrap;
   justify-content: flex-start;
 
   > div + div {
-    margin-top: 8px;
+    margin-top: 0.8rem;
   }
 
   > div:last-child {
-    margin-top: 16px;
+    margin-top: 1.6rem;
   }
 `;
 
-export const Content = styled.div`
+export const Content = styled.section`
   flex: 1;
   padding: 1rem;
 
@@ -39,11 +38,10 @@ export const Content = styled.div`
 `;
 
 export const AppBar = styled.div`
-  height: 45px;
+  height: 4.5rem;
   width: 100%;
-  border-radius: 3px;
-  background-color: #fff;
-  box-shadow: 1px 1px 5px 0 rgba(0, 0, 29, 0.22);
+  background-color: ${({ theme }) => theme.colors.white};
+  box-shadow: ${({ theme }) => theme.shadows.default};
   display: flex;
   flex-direction: row;
 `;
@@ -57,12 +55,15 @@ export const Tabs = styled.div`
   align-items: center;
 `;
 
-export const TabItem = styled.a`
+export const TabItem = styled.a<CartProps>`
   flex: 1;
-  color: #ff7800;
+  color: ${(props) =>
+    props.active
+      ? props.theme.colors.primary.light
+      : props.theme.colors.lightGrey};
   font-family: "Helvetica Neue";
-  font-size: 13px;
+  font-size: 1.3rem;
   font-weight: 700;
-  line-height: 16px;
+  line-height: 1.6rem;
   text-align: center;
 `;

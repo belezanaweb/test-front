@@ -6,7 +6,6 @@ import { InputProps } from "./types";
 const Input: React.FC<InputProps> = ({ name, title, ...rest }: InputProps) => {
   const inputRef = useRef<HTMLInputElement>(null);
   const [isFocused, setIsFocused] = useState(false);
-  const [isFilled, setIsFiled] = useState(false);
   const { fieldName, defaultValue, error, registerField } = useField(name);
 
   const handleInputFocus = useCallback(() => {
@@ -15,7 +14,6 @@ const Input: React.FC<InputProps> = ({ name, title, ...rest }: InputProps) => {
 
   const handleInputBlur = useCallback(() => {
     setIsFocused(false);
-    setIsFiled(!!inputRef.current?.value);
   }, []);
 
   useEffect(() => {
@@ -29,7 +27,7 @@ const Input: React.FC<InputProps> = ({ name, title, ...rest }: InputProps) => {
   return (
     <Wrapper>
       {title && <Title>{title}</Title>}
-      <Container isErrored={!!error} isFilled={isFilled} isFocused={isFocused}>
+      <Container isErrored={!!error} isFocused={isFocused}>
         <input
           onFocus={handleInputFocus}
           onBlur={handleInputBlur}

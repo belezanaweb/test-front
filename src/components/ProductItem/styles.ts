@@ -4,16 +4,20 @@ export const Wrapper = styled.div`
   box-sizing: border-box;
   width: 100%;
   border-radius: 3px;
-  border: 1px solid #eee;
+  border: 1px solid ${({ theme }) => theme.colors.grey};
   display: flex;
   flex-wrap: nowrap;
   padding: 10px;
 `;
 
-export const Image = styled.div`
-  height: 65px;
-  width: 65px;
-  background: #000;
+export const Image = styled.img`
+  height: 6.5rem;
+  width: 6.5rem;
+  margin-right: 1.4rem;
+  background-image: url(${(props) => props.src});
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
 `;
 
 export const Content = styled.div`
@@ -25,9 +29,8 @@ export const Content = styled.div`
 
 export const Price = styled.div`
   color: #212122;
-  font-family: "Helvetica Neue";
-  font-size: 14px;
+  font-size: 1.4rem;
   font-weight: 700;
-  line-height: 17px;
+  line-height: 1.7rem;
   text-align: right;
 `;

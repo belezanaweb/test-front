@@ -2,41 +2,40 @@ import styled, { css } from "styled-components";
 
 interface ContainerProps {
   isFocused: boolean;
-  isFilled: boolean;
   isErrored: boolean;
 }
 
 export const Wrapper = styled.div``;
 
 export const Title = styled.div`
-  color: #ccc;
+  color: ${({ theme }) => theme.colors.lightGrey};
   font-size: ${({ theme }) => theme.fontSizes.small};
   font-weight: 700;
-  line-height: 14px;
+  line-height: 1.4rem;
 `;
 
 export const Container = styled.div<ContainerProps>`
   box-sizing: border-box;
-  height: 45px;
+  height: 4.5rem;
   border-radius: 3px;
-  background-color: #fff;
+  background-color: ${({ theme }) => theme.colors.white};
   border: 1px solid #e7e7e7;
   box-shadow: inset 0 1px 2px 0 rgba(0, 0, 0, 0.2);
-  padding: 14px 13px 12px 13px;
+  padding: 1.4rem 1.3rem 1.2rem 1.3rem;
   width: 100%;
 
   display: flex;
   align-items: center;
-  color: #212121;
+  color: ${({ theme }) => theme.colors.dark};
 
   & + div {
-    margin-top: 8px;
+    margin-top: 0.8rem;
   }
 
   ${(props) =>
     props.isErrored &&
     css`
-      border-color: #c53030;
+      border-color: ${({ theme }) => theme.colors.error.main};
     `}
 
   ${(props) =>
@@ -45,39 +44,30 @@ export const Container = styled.div<ContainerProps>`
       border-color: ${({ theme }) => theme.colors.secundary.main}; ;
     `}
 
-  ${(props) =>
-    props.isFilled &&
-    css`
-      color: #3fb8fe;
-    `}
-
   input {
-    color: #f4ede8;
+    color: ${({ theme }) => theme.colors.light};
     flex: 1;
     background: transparent;
     border: 0;
-    color: #000;
+    color: ${({ theme }) => theme.colors.black};
 
     &::placeholder {
-      color: #e0e7ee;
+      color: ${({ theme }) => theme.colors.darkGray};
     }
-  }
-  svg {
-    margin-right: 16px;
   }
 `;
 
 export const Error = styled.div`
-  height: 20px;
-  margin-left: 16px;
+  height: 2rem;
+  margin-left: 1.6rem;
   svg {
     margin-right: 0;
   }
   span {
-    background: #c53030;
-    color: #fff;
+    background: ${({ theme }) => theme.colors.error.main};
+    color: ${({ theme }) => theme.colors.white};
     &::before {
-      border-color: #c53030 transparent;
+      border-color: ${({ theme }) => theme.colors.error.main} transparent;
     }
   }
 `;

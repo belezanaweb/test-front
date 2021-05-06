@@ -1,22 +1,24 @@
+import { Button, Card, ProductItem, SummaryItem, Typography } from "components";
 import React from "react";
-import { CartProps } from "./types";
+import { useTheme } from "styled-components";
 import {
-  Tamplate,
   AppBar,
-  Tabs,
-  TabItem,
   Content,
-  Summary,
   ProductsList,
+  Summary,
+  TabItem,
+  Tabs,
 } from "./styles";
-import { Button, Typography, Card, ProductItem, SummaryItem } from "components";
+import { CartProps } from "./types";
 
 const Cart: React.FC<CartProps> = () => {
+  const { colors } = useTheme();
+
   return (
-    <Tamplate>
+    <>
       <AppBar>
         <Tabs>
-          <TabItem>SACOLA</TabItem>
+          <TabItem active>SACOLA</TabItem>
           <TabItem>PAGAMENTO</TabItem>
           <TabItem>CONFIRMAÇÃO</TabItem>
         </Tabs>
@@ -24,7 +26,7 @@ const Cart: React.FC<CartProps> = () => {
 
       <Content>
         <div>
-          <Typography bold gutterBottom>
+          <Typography as="h2" bold gutterBottom>
             PRODUTOS
           </Typography>
           <Card>
@@ -37,15 +39,24 @@ const Cart: React.FC<CartProps> = () => {
         </div>
 
         <Summary>
-          <SummaryItem color="#212122" label="PRODUTOS" value="R$ 624,80" />
-          <SummaryItem color="#212122" label="FRETE" value="R$ 5,30" />
-          <SummaryItem color="#FF7800" label="DESCONTO" value="- R$ 30,00" />
-          <SummaryItem color="#212122" bold label="TOTAL" value="R$ 600,10" />
+          <SummaryItem color={colors.dark} label="PRODUTOS" value="R$ 624,80" />
+          <SummaryItem color={colors.dark} label="FRETE" value="R$ 5,30" />
+          <SummaryItem
+            color={colors.primary.light}
+            label="DESCONTO"
+            value="- R$ 30,00"
+          />
+          <SummaryItem
+            color={colors.dark}
+            bold
+            label="TOTAL"
+            value="R$ 600,10"
+          />
         </Summary>
 
         <Button>SERGUIR PARA O PAGAMENTO</Button>
       </Content>
-    </Tamplate>
+    </>
   );
 };
 

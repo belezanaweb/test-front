@@ -3,7 +3,6 @@ import { TypographyProps } from "./types";
 
 export const Wrapper = styled.div<TypographyProps>`
   height: 17px;
-  width: 319px;
   font-family: "Helvetica Neue";
   font-size: 14px;
   font-weight: ${(props) => (props.bold ? 700 : 0)};
