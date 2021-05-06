@@ -16,8 +16,8 @@ export default {
       dark: "",
     },
 
-    lightGrey: "#EEE",
-    grey: "",
+    lightGrey: "",
+    grey: "#EEE",
   },
 
   fontSizes: {

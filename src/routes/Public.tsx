@@ -12,10 +12,10 @@ const Public = () => (
   <BrowserRouter basename="/">
     <Suspense fallback={<Loading />}>
       <Switch>
+        <Route exact path="/cart" component={Cart} />
+        <Route exact path="/payment" component={Payment} />
+        <Route exact path="/confirmation" component={Confirmation} />
         <Route path="/" component={Styleguide} />
-        <Route path="/cart" component={Cart} />
-        <Route path="/payment" component={Payment} />
-        <Route path="/confirmation" component={Confirmation} />
       </Switch>
     </Suspense>
   </BrowserRouter>
