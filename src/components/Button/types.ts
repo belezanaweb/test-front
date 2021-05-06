@@ -1,3 +1,6 @@
 import { ButtonHTMLAttributes } from "react";
 
-export type ButtonProps = ButtonHTMLAttributes<HTMLButtonElement>;
+export interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
+  as?: any;
+  to?: any;
+}

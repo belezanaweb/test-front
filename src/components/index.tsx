@@ -10,3 +10,4 @@ export { default as TabItem } from "./TabItem";
 export { default as Tabs } from "./Tabs";
 export { default as Theme } from "./Theme";
 export { default as Typography } from "./Typography";
+export { default as Template } from "./Template";

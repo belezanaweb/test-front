@@ -17,6 +17,7 @@ export const Container = styled.button`
   letter-spacing: 0.5px;
   line-height: 2.4rem;
   text-align: center;
+  display: block;
 
   &:hover {
     background: ${({ theme }) => theme.colors.primary.dark};

@@ -1,1 +1,3 @@
-export interface CartProps {}
+export interface PaymentProps {
+  active?: boolean;
+}
