@@ -6,4 +6,4 @@ const AppBar: React.FC<AppBarProps> = ({ children }: AppBarProps) => {
   return <Container>{children}</Container>;
 };
 
-export default AppBar;
+export default React.memo(AppBar);

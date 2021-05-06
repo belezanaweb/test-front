@@ -1,3 +1,8 @@
 export interface ProductItemProps {
-  children?: React.ReactNode;
+  showPrice?: boolean;
+  data: {
+    image?: string;
+    description: string;
+    price?: string;
+  };
 }

@@ -11,7 +11,7 @@ const Template: React.FC<TemplateProps> = ({ children }: TemplateProps) => {
     <>
       <AppBar>
         <Tabs>
-          <TabItem active={url === "/cart"}>SACOLA</TabItem>
+          <TabItem active={url === "/cart" || url === "/"}>SACOLA</TabItem>
           <TabItem active={url === "/payment"}>PAGAMENTO</TabItem>
           <TabItem active={url === "/confirmation"}>CONFIRMAÇÃO</TabItem>
         </Tabs>
@@ -22,4 +22,4 @@ const Template: React.FC<TemplateProps> = ({ children }: TemplateProps) => {
   );
 };
 
-export default Template;
+export default React.memo(Template);

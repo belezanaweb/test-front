@@ -6,13 +6,11 @@ import theme from "./config/light";
 
 const Theme: React.FC<ThemeProps> = ({ children }: ThemeProps) => {
   return (
-    <>
-      <ThemeProvider theme={theme}>
-        <GlobalStyle />
-        {children}
-      </ThemeProvider>
-    </>
+    <ThemeProvider theme={theme}>
+      <GlobalStyle />
+      {children}
+    </ThemeProvider>
   );
 };
 
-export default Theme;
+export default React.memo(Theme);

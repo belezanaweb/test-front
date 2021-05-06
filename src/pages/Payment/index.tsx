@@ -1,20 +1,11 @@
 import { FormHandles, SubmitHandler } from "@unform/core";
 import { Form } from "@unform/web";
-import {
-  Button,
-  Card,
-  Input,
-  Summary,
-  SummaryItem,
-  Template,
-  Typography,
-} from "components";
+import { Button, Card, Input, Summary, Template, Typography } from "components";
 import React, { useRef } from "react";
-import { useTheme } from "styled-components";
+import { Link } from "react-router-dom";
 import { PaymentProps } from "./types";
 
 const Payment: React.FC<PaymentProps> = () => {
-  const { colors } = useTheme();
   const formRef = useRef<FormHandles>(null);
 
   const handleSubmit: SubmitHandler<FormData> = () => {
@@ -52,18 +43,11 @@ const Payment: React.FC<PaymentProps> = () => {
         </Card>
       </div>
 
-      <Summary>
-        <SummaryItem color={colors.dark} label="PRODUTOS" value="R$ 624,80" />
-        <SummaryItem color={colors.dark} label="FRETE" value="R$ 5,30" />
-        <SummaryItem
-          color={colors.primary.light}
-          label="DESCONTO"
-          value="- R$ 30,00"
-        />
-        <SummaryItem color={colors.dark} bold label="TOTAL" value="R$ 600,10" />
-      </Summary>
+      <Summary data={[]} />
 
-      <Button>FINALIZAR O PEDIDO</Button>
+      <Button as={Link} to="/confirmation">
+        FINALIZAR O PEDIDO
+      </Button>
     </Template>
   );
 };

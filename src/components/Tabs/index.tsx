@@ -6,4 +6,4 @@ const Tabs: React.FC<TabsProps> = ({ children }: TabsProps) => {
   return <Container>{children}</Container>;
 };
 
-export default Tabs;
+export default React.memo(Tabs);
