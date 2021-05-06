@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import { Typography } from "../../components";
 
 export const Tamplate = styled.div``;
 
