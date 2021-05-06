@@ -15,7 +15,8 @@ const Public = () => (
         <Route exact path="/cart" component={Cart} />
         <Route exact path="/payment" component={Payment} />
         <Route exact path="/confirmation" component={Confirmation} />
-        <Route path="/" component={Styleguide} />
+        <Route exact path="/style-guide" component={Styleguide} />
+        <Route path="/" component={Cart} />
       </Switch>
     </Suspense>
   </BrowserRouter>

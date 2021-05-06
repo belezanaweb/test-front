@@ -1,14 +1,17 @@
-import { Button, Card, ProductItem, SummaryItem, Typography } from "components";
+import {
+  Button,
+  Card,
+  AppBar,
+  ProductItem,
+  SummaryItem,
+  Typography,
+  Tabs,
+  TabItem,
+  Summary,
+} from "components";
 import React from "react";
 import { useTheme } from "styled-components";
-import {
-  AppBar,
-  Content,
-  ProductsList,
-  Summary,
-  TabItem,
-  Tabs,
-} from "./styles";
+import { Content, ProductsList } from "./styles";
 import { CartProps } from "./types";
 
 const Cart: React.FC<CartProps> = () => {
