@@ -10,7 +10,7 @@ export const FormGrid = styled.div`
   display: grid;
   grid-template-columns: 1.2fr 0.8fr;
   grid-template-rows: 1fr 1fr 1fr;
-  gap: 20px 25px;
+  gap: 2rem;
   grid-template-areas:
     "card card"
     "author author"

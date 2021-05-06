@@ -42,7 +42,7 @@ export const Container = styled.div<ContainerProps>`
 
   input {
     color: ${({ theme }) => theme.colors.light};
-    flex: 1;
+    width: 100%;
     background: transparent;
     border: 0;
     color: ${({ theme }) => theme.colors.black};
