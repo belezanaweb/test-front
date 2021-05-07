@@ -5,20 +5,32 @@ import { Container } from "./styles";
 import { SummaryProps } from "./types";
 import { SummaryItem } from "../";
 
-const Summary: React.FC<SummaryProps> = ({ data }: SummaryProps) => {
+const Summary: React.FC<SummaryProps> = ({
+  discount,
+  shippingTotal,
+  subTotal,
+  total,
+}: SummaryProps) => {
   const { colors } = useTheme();
-  console.log(data);
 
   return (
     <Container>
-      <SummaryItem color={colors.dark} label="PRODUTOS" value="R$ 624,80" />
-      <SummaryItem color={colors.dark} label="FRETE" value="R$ 5,30" />
-      <SummaryItem
-        color={colors.primary.light}
-        label="DESCONTO"
-        value="- R$ 30,00"
-      />
-      <SummaryItem color={colors.dark} bold label="TOTAL" value="R$ 600,10" />
+      {!!subTotal && (
+        <SummaryItem color={colors.dark} label="PRODUTOS" value="R$ 624,80" />
+      )}
+      {!!shippingTotal && (
+        <SummaryItem color={colors.dark} label="FRETE" value="R$ 5,30" />
+      )}
+      {!!discount && (
+        <SummaryItem
+          color={colors.primary.light}
+          label="DESCONTO"
+          value="- R$ 30,00"
+        />
+      )}
+      {!!total && (
+        <SummaryItem color={colors.dark} bold label="TOTAL" value="R$ 600,10" />
+      )}
     </Container>
   );
 };

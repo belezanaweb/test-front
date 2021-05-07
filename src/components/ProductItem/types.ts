@@ -3,6 +3,6 @@ export interface ProductItemProps {
   data: {
     image?: string;
     description: string;
-    price?: string;
+    price?: number | string;
   };
 }

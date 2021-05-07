@@ -4,9 +4,11 @@ import { useTheme } from "styled-components";
 import { ProductsList } from "./styles";
 import { ConfirmationProps } from "./types";
 import { AiOutlineCheckCircle } from "react-icons/ai";
+import { useCart } from "hooks/Cart";
 
 const Confirmation: React.FC<ConfirmationProps> = () => {
   const { colors } = useTheme();
+  const { cart } = useCart();
 
   return (
     <Template>
@@ -40,41 +42,22 @@ const Confirmation: React.FC<ConfirmationProps> = () => {
         </Typography>
         <Card>
           <ProductsList>
-            <ProductItem
-              showPrice={false}
-              data={{
-                image:
-                  "https://res.cloudinary.com/beleza-na-web/image/upload/f_auto,fl_progressive,q_auto:best/v1/imagens/2/loreal-professionnel-expert-absolut-repair-cortex-lipidium-mascara-de-reconstrucao-500g-24410-963234120108391775.png",
-                description:
-                  "LOréal Professionnel Expert Absolut Repair Cortex Lipidium",
-                price: "299,00",
-              }}
-            />
-            <ProductItem
-              showPrice={false}
-              data={{
-                image:
-                  "https://res.cloudinary.com/beleza-na-web/image/upload/f_auto,fl_progressive,q_auto:best/v1/imagens/2/loreal-professionnel-expert-absolut-repair-cortex-lipidium-mascara-de-reconstrucao-500g-24410-963234120108391775.png",
-                description:
-                  "LOréal Professionnel Expert Absolut Repair Cortex Lipidium",
-                price: "299,00",
-              }}
-            />
-            <ProductItem
-              showPrice={false}
-              data={{
-                image:
-                  "https://res.cloudinary.com/beleza-na-web/image/upload/f_auto,fl_progressive,q_auto:best/v1/imagens/2/loreal-professionnel-expert-absolut-repair-cortex-lipidium-mascara-de-reconstrucao-500g-24410-963234120108391775.png",
-                description:
-                  "LOréal Professionnel Expert Absolut Repair Cortex Lipidium",
-                price: "299,00",
-              }}
-            />
+            {cart?.items.map((product) => (
+              <ProductItem
+                showPrice={false}
+                key={product.sku}
+                data={{
+                  image: product.image.medium,
+                  description: product.title,
+                  price: product.price,
+                }}
+              />
+            ))}
           </ProductsList>
         </Card>
       </div>
 
-      <Summary data={[]} />
+      <Summary {...cart} />
     </Template>
   );
 };

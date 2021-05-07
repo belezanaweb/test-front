@@ -5,8 +5,10 @@ import React, { useRef } from "react";
 import { Link } from "react-router-dom";
 import { PaymentProps } from "./types";
 import { FormGrid } from "./styles";
+import { useCart } from "hooks/Cart";
 
 const Payment: React.FC<PaymentProps> = () => {
+  const { cart } = useCart();
   const formRef = useRef<FormHandles>(null);
 
   const handleSubmit: SubmitHandler<FormData> = () => {
@@ -54,7 +56,7 @@ const Payment: React.FC<PaymentProps> = () => {
           </Card>
         </div>
 
-        <Summary data={[]} />
+        <Summary {...cart} />
 
         <Button as={Link} to="/confirmation">
           FINALIZAR O PEDIDO
