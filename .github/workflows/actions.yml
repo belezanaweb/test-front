@@ -1,0 +1,20 @@
+name: GH-Actions
+
+on:
+  push:
+    branches:
+      - '*' # matches every branch that doesn't contain a '/'
+      - '*/*' # matches every branch containing a single '/'
+      - '**' # matches every branch
+      - '**/**' # matches every branch
+jobs:
+  test:
+    name: Run test
+    runs-on: ubuntu-16.04
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v2
+        with:
+          node-version: '12'
+      - run : yarn install
+      - run : yarn test

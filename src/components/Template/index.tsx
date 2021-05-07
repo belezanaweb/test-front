@@ -4,11 +4,14 @@ import { useRouteMatch } from "react-router";
 import { Content } from "./styles";
 import { TemplateProps } from "./types";
 
-const Template: React.FC<TemplateProps> = ({ children }: TemplateProps) => {
+const Template: React.FC<TemplateProps> = ({
+  children,
+  ...rest
+}: TemplateProps) => {
   const { url } = useRouteMatch();
 
   return (
-    <>
+    <div {...rest}>
       <AppBar>
         <Tabs>
           <TabItem active={url === "/cart" || url === "/"}>SACOLA</TabItem>
@@ -18,7 +21,7 @@ const Template: React.FC<TemplateProps> = ({ children }: TemplateProps) => {
       </AppBar>
 
       <Content>{children}</Content>
-    </>
+    </div>
   );
 };
 

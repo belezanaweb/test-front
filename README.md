@@ -2,6 +2,8 @@
 
 Website preview https://test-front-boticario.netlify.app/
 
+![GH-Actions](https://github.com/henriqueweiand/test-front/workflows/GH-Actions/badge.svg)
+
 [![Netlify Status](https://api.netlify.com/api/v1/badges/7009114e-82a5-4d98-b818-6916d6c043c0/deploy-status)](https://app.netlify.com/sites/test-front-boticario/deploys)
 
 ## Frontend Test

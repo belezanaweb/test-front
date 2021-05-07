@@ -6,9 +6,10 @@ import { ProductItemProps } from "./types";
 const ProductItem: React.FC<ProductItemProps> = ({
   data: { price, description, image },
   showPrice = true,
+  ...rest
 }: ProductItemProps) => {
   return (
-    <Wrapper>
+    <Wrapper {...rest}>
       <Image alt="imagem" src={image} />
       <Content>
         <Typography color="#212122">{description}</Typography>

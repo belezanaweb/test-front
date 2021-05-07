@@ -10,11 +10,12 @@ const Summary: React.FC<SummaryProps> = ({
   shippingTotal,
   subTotal,
   total,
+  ...rest
 }: SummaryProps) => {
   const { colors } = useTheme();
 
   return (
-    <Container>
+    <Container {...rest}>
       {!!subTotal && (
         <SummaryItem color={colors.dark} label="PRODUTOS" value="R$ 624,80" />
       )}
