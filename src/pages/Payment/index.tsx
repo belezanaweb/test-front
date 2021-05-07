@@ -46,7 +46,8 @@ const Payment: React.FC<PaymentProps> = () => {
           </Typography>
           <Card>
             <FormGrid>
-              <Input.Default
+              <Input.Mask
+                mask="999.999.999.999"
                 title="Número do cartão:"
                 className="card"
                 name="card"
@@ -60,14 +61,16 @@ const Payment: React.FC<PaymentProps> = () => {
                 placeholder="Como no cartão"
                 type="text"
               />
-              <Input.Default
+              <Input.Mask
+                mask="99/9999"
                 title="Validade (mês/ano):"
                 className="valid"
                 name="valid"
                 placeholder=""
                 type="text"
               />
-              <Input.Default
+              <Input.Mask
+                mask="999"
                 title="CVV:"
                 name="cvv"
                 className="cvv"

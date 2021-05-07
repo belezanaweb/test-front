@@ -1,10 +1,11 @@
 import { useField } from "@unform/core";
 import React, { useCallback, useEffect, useRef, useState } from "react";
-import { Container, Error, Wrapper, Title } from "./styles";
-import { InputProps } from "./types";
+import ReactInputMask from "react-input-mask";
+import { Container, Error, Title, Wrapper } from "./styles";
+import { MaskProps } from "./types";
 
-const Mask: React.FC<InputProps> = ({ name, title, ...rest }: InputProps) => {
-  const inputRef = useRef<HTMLInputElement>(null);
+const Mask: React.FC<MaskProps> = ({ name, title, ...rest }: MaskProps) => {
+  const inputRef = useRef(null);
   const [isFocused, setIsFocused] = useState(false);
   const { fieldName, defaultValue, error, registerField } = useField(name);
 
@@ -21,6 +22,12 @@ const Mask: React.FC<InputProps> = ({ name, title, ...rest }: InputProps) => {
       name: fieldName,
       ref: inputRef.current,
       path: "value",
+      setValue(ref, value) {
+        ref.setInputValue(value ? value : "");
+      },
+      clearValue(ref) {
+        ref.setInputValue("");
+      },
     });
   }, [fieldName, registerField]);
 
@@ -28,15 +35,15 @@ const Mask: React.FC<InputProps> = ({ name, title, ...rest }: InputProps) => {
     <Wrapper {...rest}>
       {title && <Title>{title}</Title>}
       <Container isErrored={!!error} isFocused={isFocused}>
-        <input
+        <ReactInputMask
           onFocus={handleInputFocus}
           onBlur={handleInputBlur}
           defaultValue={defaultValue}
           ref={inputRef}
           {...rest}
         />
-        {error && <Error title={error}>{error}</Error>}
       </Container>
+      {error && <Error title={error}>{error}</Error>}
     </Wrapper>
   );
 };

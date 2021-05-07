@@ -8,6 +8,7 @@ export const Title = styled.div`
   font-size: ${({ theme }) => theme.fontSizes.small};
   font-weight: 700;
   line-height: 1.4rem;
+  margin-bottom: 0.3rem;
 `;
 
 export const Container = styled.div<ContainerProps>`
