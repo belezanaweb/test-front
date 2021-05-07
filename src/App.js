@@ -1,6 +1,13 @@
 import React from 'react'
-import './App.css'
+import { Provider } from 'react-redux'
 
-const App = () => <div className="App">Boa sorte! 🚀</div>
+import store from './config/store'
+import Routes from './routes'
+
+const App = () => (
+  <Provider store={store}>
+    <Routes />
+  </Provider>
+)
 
 export default App
