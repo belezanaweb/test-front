@@ -19,13 +19,13 @@ const Styleguide: React.FC<CartProps> = () => {
     <>
       <div>
         <Form ref={formRef} onSubmit={handleSubmit}>
-          <Input
+          <Input.Default
             title="Campo:"
             name="campo1"
             placeholder="Campo1"
             type="text"
           />
-          <Input
+          <Input.Default
             title="Campo:"
             name="campo2"
             placeholder="Campo2"

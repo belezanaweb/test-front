@@ -1,7 +1,8 @@
 import styled from "styled-components";
 
 export const Container = styled.button`
-  background: ${({ theme }) => theme.colors.primary.main};
+  background: ${({ theme, ...props }) =>
+    props.disabled ? theme.colors.primary.dark : theme.colors.primary.main};
   color: ${({ theme }) => theme.colors.white};
   height: 6rem;
   border-radius: 3px;
