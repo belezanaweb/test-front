@@ -51,7 +51,12 @@ const Cart: React.FC<CartProps> = () => {
 
       {!loading && <Summary {...cart} />}
 
-      <Button disabled={loading} as={Link} to="/payment">
+      <Button
+        data-testid="button-cart"
+        disabled={loading}
+        as={Link}
+        to="/payment"
+      >
         SERGUIR PARA O PAGAMENTO
       </Button>
     </Template>

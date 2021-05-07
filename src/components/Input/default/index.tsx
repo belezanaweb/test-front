@@ -3,7 +3,12 @@ import React, { useCallback, useEffect, useRef, useState } from "react";
 import { Container, Error, Wrapper, Title } from "./styles";
 import { InputProps } from "./types";
 
-const Input: React.FC<InputProps> = ({ name, title, ...rest }: InputProps) => {
+const Input: React.FC<InputProps> = ({
+  name,
+  title,
+  className,
+  ...rest
+}: InputProps) => {
   const inputRef = useRef<HTMLInputElement>(null);
   const [isFocused, setIsFocused] = useState(false);
   const { fieldName, defaultValue, error, registerField } = useField(name);
@@ -25,7 +30,7 @@ const Input: React.FC<InputProps> = ({ name, title, ...rest }: InputProps) => {
   }, [fieldName, registerField]);
 
   return (
-    <Wrapper {...rest}>
+    <Wrapper className={className}>
       {title && <Title>{title}</Title>}
       <Container isErrored={!!error} isFocused={isFocused}>
         <input

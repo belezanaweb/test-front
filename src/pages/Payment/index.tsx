@@ -50,6 +50,7 @@ const Payment: React.FC<PaymentProps> = () => {
                 mask="999.999.999.999"
                 title="Número do cartão:"
                 className="card"
+                data-testid="card"
                 name="card"
                 placeholder=""
                 type="text"
@@ -57,6 +58,7 @@ const Payment: React.FC<PaymentProps> = () => {
               <Input.Default
                 title="Nome do Titular:"
                 className="author"
+                data-testid="author"
                 name="author"
                 placeholder="Como no cartão"
                 type="text"
@@ -65,6 +67,7 @@ const Payment: React.FC<PaymentProps> = () => {
                 mask="99/9999"
                 title="Validade (mês/ano):"
                 className="valid"
+                data-testid="valid"
                 name="valid"
                 placeholder=""
                 type="text"
@@ -72,6 +75,7 @@ const Payment: React.FC<PaymentProps> = () => {
               <Input.Mask
                 mask="999"
                 title="CVV:"
+                data-testid="cvv"
                 name="cvv"
                 className="cvv"
                 placeholder=""
@@ -83,7 +87,9 @@ const Payment: React.FC<PaymentProps> = () => {
 
         <Summary {...cart} />
 
-        <Button type="submit">FINALIZAR O PEDIDO</Button>
+        <Button type="submit" data-testid="button-payment">
+          FINALIZAR O PEDIDO
+        </Button>
       </Template>
     </Form>
   );

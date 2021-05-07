@@ -4,7 +4,12 @@ import ReactInputMask from "react-input-mask";
 import { Container, Error, Title, Wrapper } from "./styles";
 import { MaskProps } from "./types";
 
-const Mask: React.FC<MaskProps> = ({ name, title, ...rest }: MaskProps) => {
+const Mask: React.FC<MaskProps> = ({
+  name,
+  title,
+  className,
+  ...rest
+}: MaskProps) => {
   const inputRef = useRef(null);
   const [isFocused, setIsFocused] = useState(false);
   const { fieldName, defaultValue, error, registerField } = useField(name);
@@ -32,7 +37,7 @@ const Mask: React.FC<MaskProps> = ({ name, title, ...rest }: MaskProps) => {
   }, [fieldName, registerField]);
 
   return (
-    <Wrapper {...rest}>
+    <Wrapper className={className}>
       {title && <Title>{title}</Title>}
       <Container isErrored={!!error} isFocused={isFocused}>
         <ReactInputMask
