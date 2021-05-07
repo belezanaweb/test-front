@@ -20,10 +20,10 @@ const Payment: React.FC<PaymentProps> = () => {
       formRef.current?.setErrors({});
 
       const schema = Yup.object().shape({
-        card: Yup.string().required("Required"),
-        author: Yup.string().required("Required"),
-        valid: Yup.string().required("Required"),
-        cvv: Yup.string().required("Required"),
+        card: Yup.string().required("Obrigatório"),
+        author: Yup.string().required("Obrigatório"),
+        valid: Yup.string().required("Obrigatório"),
+        cvv: Yup.string().required("Obrigatório"),
       });
 
       await schema.validate(values, { abortEarly: false });

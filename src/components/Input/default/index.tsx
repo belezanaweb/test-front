@@ -35,8 +35,8 @@ const Input: React.FC<InputProps> = ({ name, title, ...rest }: InputProps) => {
           ref={inputRef}
           {...rest}
         />
-        {error && <Error title={error}>{error}</Error>}
       </Container>
+      {error && <Error title={error}>{error}</Error>}
     </Wrapper>
   );
 };

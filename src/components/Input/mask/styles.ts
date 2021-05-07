@@ -54,16 +54,6 @@ export const Container = styled.div<ContainerProps>`
 `;
 
 export const Error = styled.div`
-  height: 2rem;
-  margin-left: 1.6rem;
-  svg {
-    margin-right: 0;
-  }
-  span {
-    background: ${({ theme }) => theme.colors.error.main};
-    color: ${({ theme }) => theme.colors.white};
-    &::before {
-      border-color: ${({ theme }) => theme.colors.error.main} transparent;
-    }
-  }
+  color: ${({ theme }) => theme.colors.error.main};
+  font-size: ${({ theme }) => theme.fontSizes.small};
 `;
