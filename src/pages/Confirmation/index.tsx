@@ -47,7 +47,7 @@ const Confirmation: React.FC<ConfirmationProps> = () => {
                 showPrice={false}
                 key={product.sku}
                 data={{
-                  image: product.image.medium,
+                  image: product.image.thumbnail,
                   description: product.title,
                   price: product.price,
                 }}
