@@ -1,7 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
-import { Container, NavbarItem } from './index.css'
+import { Container, NavbarItem } from './styles.css'
 
 const Navbar = ({ items }) => {
   return (

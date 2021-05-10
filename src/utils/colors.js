@@ -6,6 +6,7 @@ export default {
   inputError: '#F30',
   error: '#F30',
   backgroud: '#EEE',
+  whiteSmoke: '#EEE',
   veryLightGrey: '#CCC',
   lightGrey: '#999',
   white: '#FFF',
