@@ -1,7 +1,7 @@
 import { SET_CART_ITEMS } from '../actions/types'
 
 const initialState = {
-  infos: []
+  infos: {}
 }
 
 export default function cartReducers(state = initialState, action) {
