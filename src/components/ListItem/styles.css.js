@@ -13,6 +13,10 @@ export const Container = styled.div`
 export const Image = styled.div`
   margin-right: 11px;
   align-self: center;
+
+  img {
+    height: 65px;
+  }
 `
 export const ContainerInfos = styled.div`
   flex: 1;

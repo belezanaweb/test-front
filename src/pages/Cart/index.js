@@ -2,10 +2,20 @@ import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 
 import { setCartItems } from '../../actions/cartActios'
-import { List, Typography } from '../../components'
+import { Button, List, TotalInfos, Typography } from '../../components'
 import { getCartItems } from '../../services/cart'
 
-import { Container, CardProducts, Title } from './styles.css'
+import {
+  Container,
+  CardProducts,
+  Title,
+  CardTotal,
+  ContainerButton,
+  CustomButtom,
+  ContainerInfos,
+  Infos,
+  ContainerTitle
+} from './styles.css'
 
 const Cart = () => {
   const { infos } = useSelector((state) => state.cart)
@@ -20,23 +30,40 @@ const Cart = () => {
     getData()
   }, [dispatch])
 
-  console.log(infos)
-
   return (
     <Container>
-      <Title>
-        <Typography>Produtos</Typography>
-      </Title>
-      <CardProducts>
-        <List
-          items={infos.items?.map((item) => ({
-            key: item.product.sku,
-            imageURL: item.product.imageObjects[0].thumbnail, //TODO validate size image
-            name: item.product.name,
-            price: item.product.priceSpecification.price
-          }))}
-        />{' '}
-      </CardProducts>
+      <ContainerTitle>
+        <Title>
+          <Typography>Produtos</Typography>
+        </Title>
+      </ContainerTitle>
+      <ContainerInfos>
+        <Infos>
+          <CardProducts>
+            <List
+              items={infos.items?.map((item) => ({
+                key: item.product.sku,
+                imageURL: item.product.imageObjects[0].extraLarge,
+                name: item.product.name,
+                price: item.product.priceSpecification.price
+              }))}
+            />
+          </CardProducts>
+          <CardTotal>
+            <TotalInfos
+              discount={infos.discount}
+              shippingTotal={infos.shippingTotal}
+              subTotal={infos.subTotal}
+              total={infos.total}
+            />
+          </CardTotal>
+        </Infos>
+      </ContainerInfos>
+      <ContainerButton>
+        <CustomButtom>
+          <Button label="Seguir para o pagamento" />
+        </CustomButtom>
+      </ContainerButton>
     </Container>
   )
 }
