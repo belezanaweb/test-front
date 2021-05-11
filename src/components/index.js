@@ -5,5 +5,6 @@ import { default as List } from './List'
 import { default as ListItem } from './ListItem'
 import { default as TotalInfos } from './TotalInfos'
 import { default as Button } from './Button'
+import { default as Input } from './Input'
 
-export { Navbar, Header, Typography, List, ListItem, TotalInfos, Button }
+export { Navbar, Header, Typography, List, ListItem, TotalInfos, Button, Input }

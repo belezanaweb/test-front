@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
+import { useHistory } from 'react-router-dom'
 
 import { setCartItems } from '../../actions/cartActios'
 import { Button, List, TotalInfos, Typography } from '../../components'
@@ -19,6 +20,7 @@ import {
 
 const Cart = () => {
   const { infos } = useSelector((state) => state.cart)
+  const history = useHistory()
   const dispatch = useDispatch()
 
   useEffect(() => {
@@ -29,6 +31,8 @@ const Cart = () => {
 
     getData()
   }, [dispatch])
+
+  const goPayment = () => history.push('/payment')
 
   return (
     <Container>
@@ -61,7 +65,7 @@ const Cart = () => {
       </ContainerInfos>
       <ContainerButton>
         <CustomButtom>
-          <Button label="Seguir para o pagamento" />
+          <Button label="Seguir para o pagamento" onClick={() => goPayment()} />
         </CustomButtom>
       </ContainerButton>
     </Container>
