@@ -1,1 +1,2 @@
 export const SET_CART_ITEMS = 'SET_CART_ITEMS'
+export const SET_PAYMENT_INFOS = 'SET_PAYMENT_INFOS'

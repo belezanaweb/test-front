@@ -1,8 +1,10 @@
 import React, { useRef } from 'react'
-import { useSelector } from 'react-redux'
+import { useSelector, useDispatch } from 'react-redux'
+import { useHistory } from 'react-router-dom'
 import { Form } from '@unform/web'
 import * as Yup from 'yup'
 
+import { setPaymentInfos } from '../../actions/paymentActions'
 import { Button, Input, TotalInfos, Typography } from '../../components'
 import { valCreditCard, valCvv, valValidateDate, valCartHolder } from '../../utils/validation'
 
@@ -22,7 +24,8 @@ import {
 
 const Payment = () => {
   const { infos } = useSelector((state) => state.cart)
-
+  const history = useHistory()
+  const dispatch = useDispatch()
   const formRef = useRef()
 
   const schema = Yup.object().shape({
@@ -35,12 +38,12 @@ const Payment = () => {
   const handleFormSubmit = async (data) => {
     try {
       formRef.current.setErrors({})
-
       await schema.validate(data, {
         abortEarly: false
       })
-      console.log(data)
-      //TODO next page
+
+      dispatch(setPaymentInfos(data))
+      history.push('/success')
     } catch (err) {
       const validationErrors = {}
       if (err instanceof Yup.ValidationError) {
