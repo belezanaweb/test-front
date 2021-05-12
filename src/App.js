@@ -1,15 +1,20 @@
 import React from 'react'
+import { PersistGate } from 'redux-persist/integration/react'
 import { Provider } from 'react-redux'
 
 import Routes from './routes'
-import store from './store'
+import configureStore from './store'
 
 import { GlobalStyle } from './App.css'
 
+const { persistor, store } = configureStore()
+
 const App = () => (
   <Provider store={store}>
-    <GlobalStyle />
-    <Routes />
+    <PersistGate loading={null} persistor={persistor}>
+      <GlobalStyle />
+      <Routes />
+    </PersistGate>
   </Provider>
 )
 

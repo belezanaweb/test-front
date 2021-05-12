@@ -19,6 +19,7 @@
     "react-scripts": "3.4.4",
     "redux": "^4.1.0",
     "redux-devtools-extension": "^2.13.9",
+    "redux-persist": "^6.0.0",
     "redux-thunk": "^2.3.0",
     "styled-components": "^5.3.0",
     "yup": "^0.32.9"
