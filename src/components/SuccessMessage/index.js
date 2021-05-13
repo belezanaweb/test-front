@@ -10,7 +10,7 @@ const SuccessMessage = ({ message }) => {
   return (
     <Container>
       <ContainerImage>
-        <AiOutlineCheckCircle size="40px" color={colors.primary} />
+        <AiOutlineCheckCircle size={40} color={colors.primary} />
       </ContainerImage>
       <Message>{message}</Message>
     </Container>

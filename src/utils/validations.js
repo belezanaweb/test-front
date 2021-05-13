@@ -29,4 +29,7 @@ export const valCvv = Yup.string()
   .test('length', 'CVV inválido', (val) => val.replace(/-|_/g, '').length === 3)
   .required('CVV obrigatório')
 
-export const valCartHolder = Yup.string().trim().required('Nome do titular obrigatório')
+export const valCartHolder = Yup.string()
+  .trim()
+  .matches(/^[aA-zZ\s]+$/, 'Somente letras')
+  .required('Nome do titular obrigatório')

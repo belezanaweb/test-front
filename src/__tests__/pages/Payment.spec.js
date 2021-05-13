@@ -47,6 +47,21 @@ describe('Testing Payment.js', () => {
     ).toBeInTheDocument()
   })
 
+  it('should be able show the form errors', async () => {
+    renderPayment()
+
+    const form = screen.getByTestId('payment-form')
+
+    await act(async () => {
+      fireEvent.submit(form)
+    })
+
+    expect(screen.getByText(/Cartão de crédito inválido/)).toBeInTheDocument()
+    expect(screen.getByText(/Nome do titular obrigatório/)).toBeInTheDocument()
+    expect(screen.getByText(/Data de validade inválida/)).toBeInTheDocument()
+    expect(screen.getByText(/CVV inválido/)).toBeInTheDocument()
+  })
+
   it('should be able submit the form', async () => {
     renderPayment()
     const form = screen.getByTestId('payment-form')
@@ -65,20 +80,5 @@ describe('Testing Payment.js', () => {
 
     expect(screen.getByTestId('success-container')).toBeInTheDocument()
     expect(screen.getByText('COMPRA EFETUADA COM SUCESSO')).toBeInTheDocument()
-  })
-
-  it('should be able show the form errors', async () => {
-    renderPayment()
-
-    const form = screen.getByTestId('payment-form')
-
-    await act(async () => {
-      fireEvent.submit(form)
-    })
-
-    expect(screen.getByText(/Cartão de crédito inválido/)).toBeInTheDocument()
-    expect(screen.getByText(/Nome do titular obrigatório/)).toBeInTheDocument()
-    expect(screen.getByText(/Data de validade inválida/)).toBeInTheDocument()
-    expect(screen.getByText(/CVV inválido/)).toBeInTheDocument()
   })
 })

@@ -25,20 +25,24 @@ const Cart = () => {
 
   useEffect(() => {
     const getData = async () => {
-      const { data } = await getCartItems()
-      const tratedData = {
-        discount: data.discount,
-        shippingTotal: data.shippingTotal,
-        subTotal: data.subTotal,
-        total: data.total,
-        items: data.items.map((item) => ({
-          key: parseInt(item.product.sku),
-          imageURL: item.product.imageObjects[0].extraLarge,
-          name: item.product.name,
-          price: item.product.priceSpecification.price
-        }))
+      try {
+        const { data } = await getCartItems()
+        const tratedData = {
+          discount: data.discount,
+          shippingTotal: data.shippingTotal,
+          subTotal: data.subTotal,
+          total: data.total,
+          items: data.items.map((item) => ({
+            key: parseInt(item.product.sku),
+            imageURL: item.product.imageObjects[0].extraLarge,
+            name: item.product.name,
+            price: item.product.priceSpecification.price
+          }))
+        }
+        dispatch(setCartItems(tratedData))
+      } catch (error) {
+        console.error(error)
       }
-      dispatch(setCartItems(tratedData))
     }
 
     getData()

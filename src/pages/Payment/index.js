@@ -41,7 +41,6 @@ const Payment = () => {
       await schema.validate(data, {
         abortEarly: false
       })
-
       dispatch(setPaymentInfos(data))
       history.push('/success')
     } catch (err) {
