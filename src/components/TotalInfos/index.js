@@ -1,7 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
-import { maskMoney } from '../../utils/validation'
+import { maskMoney } from '../../utils/validations'
 
 import { Container, Info, Text, InfoTotal } from './styles.css'
 

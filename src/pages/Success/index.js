@@ -18,7 +18,7 @@ const Success = () => {
   const { paymentInfos } = useSelector((state) => state.payment)
 
   return (
-    <Container>
+    <Container data-testid="success-container">
       <SuccessMessage message="COMPRA EFETUADA COM SUCESSO" />
       <ContainerInfos>
         <Infos>
@@ -29,21 +29,14 @@ const Success = () => {
             <ClientInfo
               creditCard={paymentInfos.creditCard}
               name={paymentInfos.name}
-              date={paymentInfos.validate}
+              date={paymentInfos.date}
             />
           </PaymentCard>
           <CardProducts>
             <Title>
               <Typography>Produtos</Typography>
             </Title>
-            <List
-              items={infos.items?.map((item) => ({
-                key: item.product.sku,
-                imageURL: item.product.imageObjects[0].extraLarge,
-                name: item.product.name,
-                price: item.product.priceSpecification.price
-              }))}
-            />
+            <List items={infos.items?.map((item) => item)} />
           </CardProducts>
         </Infos>
       </ContainerInfos>

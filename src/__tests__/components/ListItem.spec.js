@@ -2,7 +2,7 @@ import { render, screen } from '@testing-library/react'
 import React from 'react'
 
 import { ListItem } from '../../components'
-import { maskMoney } from '../../utils/validation'
+import { maskMoney } from '../../utils/validations'
 
 describe('Testing ListItem.js', () => {
   it('should be able render listItem', () => {

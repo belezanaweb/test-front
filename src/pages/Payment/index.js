@@ -6,7 +6,7 @@ import * as Yup from 'yup'
 
 import { setPaymentInfos } from '../../actions/paymentActions'
 import { Button, Input, TotalInfos, Typography } from '../../components'
-import { valCreditCard, valCvv, valValidateDate, valCartHolder } from '../../utils/validation'
+import { valCreditCard, valCvv, valValidateDate, valCartHolder } from '../../utils/validations'
 
 import {
   Container,
@@ -31,7 +31,7 @@ const Payment = () => {
   const schema = Yup.object().shape({
     creditCard: valCreditCard,
     name: valCartHolder,
-    validate: valValidateDate,
+    date: valValidateDate,
     code: valCvv
   })
 
@@ -56,8 +56,8 @@ const Payment = () => {
   }
 
   return (
-    <Container>
-      <Form ref={formRef} onSubmit={handleFormSubmit}>
+    <Container data-testid="payment-container">
+      <Form ref={formRef} onSubmit={handleFormSubmit} data-testid="payment-form">
         <ContainerTitle>
           <Title>
             <Typography>Cartão de Crédito</Typography>
@@ -80,7 +80,7 @@ const Payment = () => {
               <ContainerInput>
                 <SideSideInput>
                   <Input
-                    name="validate"
+                    name="date"
                     label="Validade (mês/ano)"
                     mask="99/9999"
                     maskPlaceholder="__/____"
@@ -101,7 +101,6 @@ const Payment = () => {
         </ContainerInfos>
         <ContainerButton>
           <CustomButtom>
-            {/* TODO */}
             <Button label="Finalizar o pedido" type="submit" />
           </CustomButtom>
         </ContainerButton>

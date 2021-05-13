@@ -5,11 +5,7 @@ import { Typography } from '../../components'
 
 describe('Testing Typography.js', () => {
   it('should be able render Typography', () => {
-    render(
-      <Typography>
-        <span>Test</span>
-      </Typography>
-    )
+    render(<Typography>Test</Typography>)
 
     expect(screen.getByText('Test')).toBeTruthy()
   })

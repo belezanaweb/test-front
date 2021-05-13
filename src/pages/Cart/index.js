@@ -26,7 +26,19 @@ const Cart = () => {
   useEffect(() => {
     const getData = async () => {
       const { data } = await getCartItems()
-      dispatch(setCartItems(data))
+      const tratedData = {
+        discount: data.discount,
+        shippingTotal: data.shippingTotal,
+        subTotal: data.subTotal,
+        total: data.total,
+        items: data.items.map((item) => ({
+          key: parseInt(item.product.sku),
+          imageURL: item.product.imageObjects[0].extraLarge,
+          name: item.product.name,
+          price: item.product.priceSpecification.price
+        }))
+      }
+      dispatch(setCartItems(tratedData))
     }
 
     getData()
@@ -35,7 +47,7 @@ const Cart = () => {
   const goPayment = () => history.push('/payment')
 
   return (
-    <Container>
+    <Container data-testid="cart-container">
       <ContainerTitle>
         <Title>
           <Typography>Produtos</Typography>
@@ -44,14 +56,7 @@ const Cart = () => {
       <ContainerInfos>
         <Infos>
           <CardProducts>
-            <List
-              items={infos.items?.map((item) => ({
-                key: item.product.sku,
-                imageURL: item.product.imageObjects[0].extraLarge,
-                name: item.product.name,
-                price: item.product.priceSpecification.price
-              }))}
-            />
+            <List items={infos.items?.map((item) => item)} />
           </CardProducts>
           <CardTotal>
             <TotalInfos

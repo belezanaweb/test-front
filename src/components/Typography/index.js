@@ -8,7 +8,7 @@ const Typography = ({ children }) => {
 }
 
 Typography.propTypes = {
-  children: PropTypes.element.isRequired
+  children: PropTypes.string.isRequired
 }
 
 export default Typography
