@@ -9,7 +9,7 @@ const List = ({ items }) => {
   return (
     <Container>
       {items?.map((item) => (
-        <Item>
+        <Item key={item.key}>
           <ListItem imageURL={item.imageURL} name={item.name} price={item.price} />
         </Item>
       ))}

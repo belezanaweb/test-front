@@ -5,7 +5,7 @@ import { useField } from '@unform/core'
 
 import { Container, Label, CustomInput, Error } from './styles.css'
 
-const Input = ({ name, label, placeholder, mask, maskPlaceholder, ...rest }) => {
+const Input = ({ name, label, placeholder, mask, maskPlaceholder }) => {
   const inputRef = useRef()
   const { fieldName, defaultValue, registerField, error, clearError } = useField(name)
 
@@ -14,15 +14,9 @@ const Input = ({ name, label, placeholder, mask, maskPlaceholder, ...rest }) => 
       name: fieldName,
       ref: inputRef,
       path: 'value',
-      getValue: (ref) => {
-        return ref.current.value
-      },
-      setValue: (ref, value) => {
-        ref.current.value = value
-      },
-      clearValue: (ref) => {
-        ref.current.value = ''
-      }
+      getValue: (ref) => ref.current.value,
+      setValue: (ref, value) => (ref.current.value = value),
+      clearValue: (ref) => (ref.current.value = '')
     })
   }, [fieldName, registerField])
 
@@ -32,6 +26,7 @@ const Input = ({ name, label, placeholder, mask, maskPlaceholder, ...rest }) => 
       <CustomInput error={!!error}>
         <ReactInputMask
           name={name}
+          aria-label={name}
           placeholder={placeholder}
           ref={inputRef}
           defaultValue={defaultValue}
@@ -40,7 +35,6 @@ const Input = ({ name, label, placeholder, mask, maskPlaceholder, ...rest }) => 
           mask={mask}
           maskPlaceholder={maskPlaceholder}
           alwaysShowMask
-          {...rest}
         />
       </CustomInput>
       {error && <Error>{error}</Error>}
