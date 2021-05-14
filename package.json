@@ -7,8 +7,11 @@
     "@testing-library/react": "^9.3.2",
     "@testing-library/user-event": "^7.1.2",
     "axios": "^0.21.1",
+    "card-validator": "^8.1.1",
     "react": "^17.0.1",
+    "react-credit-cards": "^0.8.3",
     "react-dom": "^17.0.1",
+    "react-input-mask": "^2.0.4",
     "react-router-dom": "^5.2.0",
     "react-scripts": "3.4.4",
     "styled-components": "^5.3.0"

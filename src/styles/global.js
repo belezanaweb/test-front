@@ -31,6 +31,9 @@ export const Global = createGlobalStyle`
         font-size: 20px;
       }
     }
+    .rccs__expiry  {
+      display: block !important;
+    }
 `
 
 export default Global

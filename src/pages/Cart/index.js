@@ -1,10 +1,12 @@
 import React, { useState, useEffect } from 'react'
 
 import { useHistory } from 'react-router-dom'
-import { Container, CartContainer, SaleInfos, Info, TextInfo } from './styles'
+import { Container, CartContainer } from './styles'
 
 import Title from '../../components/Title'
 import Button from '../../components/Button'
+import SaleInfos from '../../components/SaleInfos'
+import Info from '../../components/SaleInfos/Info'
 import CartItem from './CartItem'
 
 import { mock } from '../../services/api'
@@ -51,20 +53,20 @@ function Cart() {
           </CartContainer>
           <SaleInfos>
             <Info>
-              <TextInfo>PRODUTOS</TextInfo>
-              <TextInfo>{convertValue(subTotal)}</TextInfo>
+              <p>PRODUTOS</p>
+              <p>{convertValue(subTotal)}</p>
             </Info>
             <Info>
-              <TextInfo>FRETE</TextInfo>
-              <TextInfo>{convertValue(shippingTotal)}</TextInfo>
+              <p>FRETE</p>
+              <p>{convertValue(shippingTotal)}</p>
             </Info>
             <Info color={'#FF7800'}>
-              <TextInfo>DESCONTO</TextInfo>
-              <TextInfo>{convertValue(discount)}</TextInfo>
+              <p>DESCONTO</p>
+              <p>- {convertValue(discount)}</p>
             </Info>
             <Info bold>
-              <TextInfo>TOTAL</TextInfo>
-              <TextInfo>{convertValue(subTotal + shippingTotal - discount)}</TextInfo>
+              <p>TOTAL</p>
+              <p>{convertValue(subTotal + shippingTotal - discount)}</p>
             </Info>
           </SaleInfos>
           <Button onClick={() => history.push('/payment')}>Seguir para o pagamento</Button>

@@ -5,6 +5,7 @@ import { Container } from './styles'
 
 import Menu from './Menu'
 import Cart from '../pages/Cart'
+import Payment from '../pages/Payment'
 
 export default function Routes() {
   const menus = [
@@ -31,7 +32,7 @@ export default function Routes() {
             <About />
           </Route>
           <Route path="/payment">
-            <Users />
+            <Payment />
           </Route>
           <Route path="/">
             <Cart />
