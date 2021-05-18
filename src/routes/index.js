@@ -6,6 +6,7 @@ import { Container } from './styles'
 import Menu from './Menu'
 import Cart from '../pages/Cart'
 import Payment from '../pages/Payment'
+import Confirm from '../pages/Confirm'
 
 export default function Routes() {
   const menus = [
@@ -29,7 +30,7 @@ export default function Routes() {
         <Menu menus={menus} />
         <Switch>
           <Route path="/confirm">
-            <About />
+            <Confirm />
           </Route>
           <Route path="/payment">
             <Payment />
@@ -41,12 +42,4 @@ export default function Routes() {
       </Container>
     </Router>
   )
-}
-
-function About() {
-  return <h2>About</h2>
-}
-
-function Users() {
-  return <h2>Users</h2>
 }
