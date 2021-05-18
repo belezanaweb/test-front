@@ -1,3 +1,17 @@
+## Executando Projeto Via Docker
+
+Para executar o projeto via docker primeiro build com o seguinte comando:
+
+```console
+docker build . -t test-front
+```
+
+E em seguida execute a build gerada com o seguinte comando:
+
+```console
+docker run -p 80:80 test-front
+```
+
 ## Frontend Test
 
 Faça um fork deste repositório e finalizar o teste, submeta um pull request para o repositório que nosso time será notificado.
