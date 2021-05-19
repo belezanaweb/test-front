@@ -1,4 +1,6 @@
 export const PRIMARY_COLOR = '#FF7800'
+export const PRIMARY_COLOR_DARK = '#D45A00'
+export const SECONDARY_COLOR = '#EEE'
 
 export const TEXT_PRIMARY_COLOR = '#212122'
 export const TEXT_SECONDARY_COLOR = '#CCC'

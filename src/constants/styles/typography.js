@@ -13,14 +13,14 @@ export const SIZES = {
 export const TITLE_EXTRA_LARGE = css`
   & {
     font-size: ${SIZES.md};
-    font-weight: 700;
+    font-weight: 800;
   }
 `
 
 export const TITLE_LARGE = css`
   & {
     font-size: ${SIZES.sm};
-    font-weight: 700;
+    font-weight: 800;
   }
 `
 

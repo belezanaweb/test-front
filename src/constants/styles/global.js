@@ -37,7 +37,8 @@ export const GlobalStyle = createGlobalStyle`
 
 	body {
 		font-family: ${T.PRIMARY_FONT};
-    color: ${C.TEXT_PRIMARY_COLOR}
+    color: ${C.TEXT_PRIMARY_COLOR};
+    background-color: ${C.SECONDARY_COLOR};
   }
 
 	a {
