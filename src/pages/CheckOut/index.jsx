@@ -2,14 +2,14 @@ import { Header } from 'components/Header'
 import React from 'react'
 import { useParams } from 'react-router'
 
-import Bag from 'containers/Bag'
+import Cart from 'containers/Cart'
 
 const Checkout = () => {
   const { step } = useParams()
   return (
     <React.Fragment>
       <Header step={Number(step)} />
-      <Bag />
+      <Cart />
     </React.Fragment>
   )
 }
