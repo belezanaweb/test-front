@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 
-import * as C from 'constants/colors'
+import * as C from 'constants/styles/colors'
 
 export const Loader = styled.div`
   cursor: wait;

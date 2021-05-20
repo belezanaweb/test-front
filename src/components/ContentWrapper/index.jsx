@@ -3,10 +3,10 @@ import React from 'react'
 
 import * as S from './styled'
 
-const MainWrapper = ({ children }) => {
-  return <S.MainWrapper>{children}</S.MainWrapper>
+export const ContentWrapper = ({ children }) => {
+  return <S.ContentWrapper>{children}</S.ContentWrapper>
 }
 
-MainWrapper.propTypes = {
+ContentWrapper.propTypes = {
   children: PropTypes.node
 }
