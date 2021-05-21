@@ -13,6 +13,10 @@ export const Loader = styled.div`
   animation: rotating 0.5s 0.25s linear infinite;
   border-radius: 50%;
   margin: 0 auto;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
 
   @keyframes rotating {
     from {
