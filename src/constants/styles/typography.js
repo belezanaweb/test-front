@@ -58,3 +58,10 @@ export const LABEL_TEXT = css`
     font-weight: 700;
   }
 `
+
+export const BUTTON_TEXT_EXTRA_LARGE = css`
+  & {
+    font-size: ${SIZES.xl};
+    font-weight: 700;
+  }
+`

@@ -14,6 +14,7 @@ GREY'S
 
 export const GREY_DARK = '#999'
 export const GREY_MID = '#A7A7A7'
+export const GREY_MID_LIGHT = '#E7E7E7'
 export const GREY_LIGHT = '#E0E7EE'
 
 /*

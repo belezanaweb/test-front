@@ -30,6 +30,12 @@ export const GlobalStyle = createGlobalStyle`
     font-size: 62.5%
   }
 
+  @media(min-width: 600px) {
+    html {
+      font-size: 72.5%
+    }
+  }
+
 	html,
   body {
 		height: 100%;
