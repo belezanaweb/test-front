@@ -24,7 +24,7 @@ Desenvolvimento do fluxo de finalização de compra, com carrinho, pagamento e c
 └── src
     ├── components/ # Componentes da aplicação
     │
-    ├── containers/ # Containers de componentes, responsáveis por consumir API's e gerenciar estados. 
+    ├── contexts/ # Gerenciar estados, responsáveis por consumir API's. 
     │   
     ├── constants/ # Configurações da aplicação, estilos e dados estáticos. 
     │
