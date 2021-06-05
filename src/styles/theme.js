@@ -8,6 +8,10 @@ const theme = {
       hover: '#D45A00',
       shadow: 'rgba(0, 0, 0, 0.25)',
       text: '#fff'
+    },
+    header: {
+      link: '#ccc',
+      linkActive: '#FF7800'
     }
   }
 }
