@@ -1,0 +1,11 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Button should match with snapshot 1`] = `
+<div>
+  <button
+    class="sc-bdnxRM hXgZNY"
+  >
+    Button Child
+  </button>
+</div>
+`;
