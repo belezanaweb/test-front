@@ -1,0 +1,36 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Header should match with snapshot 1`] = `
+<div>
+  <header
+    class="sc-bdnxRM cZjwSm"
+  >
+    <div
+      class="sc-gtsrHT egWxvy"
+    >
+      <nav
+        class="sc-dlnjwi kDoCbM"
+      >
+        <a
+          class="sc-hKFxyN jFArmR"
+          href="/cart"
+        >
+          Sacola
+        </a>
+        <a
+          class="sc-hKFxyN jFArmR"
+          href="/payment"
+        >
+          Pagamento
+        </a>
+        <a
+          class="sc-hKFxyN jFArmR"
+          href="/success"
+        >
+          Confirmação
+        </a>
+      </nav>
+    </div>
+  </header>
+</div>
+`;
