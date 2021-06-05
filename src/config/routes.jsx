@@ -1,6 +1,7 @@
+import React from 'react'
 import { BrowserRouter, Route, Switch } from 'react-router-dom'
 
-import React from 'react'
+import { Cart, Payment, PaymentConfirmation } from '../pages'
 
 const Routes = () => (
   <BrowserRouter>
@@ -10,15 +11,15 @@ const Routes = () => (
       </Route>
 
       <Route path="/cart">
-        <h1>Cart</h1>
+        <Cart />
       </Route>
 
       <Route path="/payment">
-        <h1>Payment</h1>
+        <Payment />
       </Route>
 
       <Route path="/confirmation">
-        <h1>Confirmation</h1>
+        <PaymentConfirmation />
       </Route>
     </Switch>
   </BrowserRouter>

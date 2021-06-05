@@ -13,7 +13,7 @@ function Header() {
           <NavLink to="/payment" activeStyle={{ color: '#FF7800' }}>
             Pagamento
           </NavLink>
-          <NavLink to="/success" activeStyle={{ color: '#FF7800' }}>
+          <NavLink to="/confirmation" activeStyle={{ color: '#FF7800' }}>
             Confirmação
           </NavLink>
         </NavBar>
