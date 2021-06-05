@@ -1,6 +1,6 @@
 import React from 'react'
 import { render } from '../../utils/test-utils'
-import Button from './Button'
+import Button from '../../components/Button'
 
 describe('Button', () => {
   test('should render without errors', () => {
