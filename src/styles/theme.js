@@ -25,6 +25,15 @@ const theme = {
     cartSummary: {
       text: '#212122',
       textDiscount: '#ff7800'
+    },
+    input: {
+      background: '#fff',
+      border: '#E7E7E7',
+      error: '#F30',
+      shadow: 'rgba(0,0,0,0.2)',
+      text: '#212121',
+      focus: '#A43287',
+      placeholder: '#E0E7EE'
     }
   }
 }
