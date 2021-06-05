@@ -1,0 +1,127 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Cart Page should match with snapshot 1`] = `
+<div>
+  <main
+    class="sc-eCApnc iHOios"
+  >
+    <header
+      class="sc-bdnxRM cZjwSm"
+    >
+      <div
+        class="sc-gtsrHT egWxvy"
+      >
+        <nav
+          class="sc-dlnjwi kDoCbM"
+        >
+          <a
+            class="sc-hKFxyN vGRFp"
+            href="/cart"
+          >
+            Sacola
+          </a>
+          <a
+            class="sc-hKFxyN vGRFp"
+            href="/payment"
+          >
+            Pagamento
+          </a>
+          <a
+            class="sc-hKFxyN vGRFp"
+            href="/confirmation"
+          >
+            Confirmação
+          </a>
+        </nav>
+      </div>
+    </header>
+    <div
+      class="sc-jSFjdj drOsWB"
+    >
+      <section
+        class="sc-iCoGMd"
+      >
+        <h2
+          class="sc-fujyAs djPjrY"
+        >
+          Produtos
+        </h2>
+        <div
+          class="sc-pNWdM fRwEYN"
+        >
+          <div
+            class="sc-jrsJWt dqothG"
+          >
+            <ul />
+          </div>
+        </div>
+      </section>
+      <section
+        class="sc-ksluID iNvcqR"
+      >
+        <div
+          class="sc-fFSPTT sc-bkbkJK jPYEnV"
+        >
+          <p
+            class="sc-hBMUJo kBEAzC"
+          >
+            Produtos
+          </p>
+          <p
+            class="sc-fnVZcZ gLXOoI"
+          >
+            R$ NaN
+          </p>
+        </div>
+        <div
+          class="sc-fFSPTT sc-iemWCZ jPYEnV"
+        >
+          <p
+            class="sc-hBMUJo kBEAzC"
+          >
+            Frete
+          </p>
+          <p
+            class="sc-fnVZcZ gLXOoI"
+          >
+            R$ NaN
+          </p>
+        </div>
+        <div
+          class="sc-fFSPTT sc-dIvrsQ jPYEnV hRyHfU"
+        >
+          <p
+            class="sc-hBMUJo kBEAzC"
+          >
+            Desconto
+          </p>
+          <p
+            class="sc-fnVZcZ gLXOoI"
+          >
+            R$ NaN
+          </p>
+        </div>
+        <div
+          class="sc-fFSPTT sc-hHEiqL jPYEnV cFkeXV"
+        >
+          <p
+            class="sc-hBMUJo kBEAzC"
+          >
+            Total
+          </p>
+          <p
+            class="sc-fnVZcZ gLXOoI"
+          >
+            R$ NaN
+          </p>
+        </div>
+      </section>
+      <button
+        class="sc-gKAaRy iuxzqw"
+      >
+        Seguir para o Pagamento
+      </button>
+    </div>
+  </main>
+</div>
+`;
