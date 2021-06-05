@@ -1,0 +1,54 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`CartList should match with snapshot 1`] = `
+<div>
+  <div
+    class="sc-fujyAs bSHCym"
+  >
+    <ul>
+      <li
+        class="sc-pNWdM eNrdGQ"
+      >
+        <img
+          class="sc-jrsJWt dCtIRT"
+        />
+        <div
+          class="sc-kEqXSa bzaWxE"
+        >
+          <p
+            class="sc-iqAclL hUpHlR"
+          >
+            sample item 1
+          </p>
+          <span
+            class="sc-crzoAE kmnOxv"
+          >
+            100
+          </span>
+        </div>
+      </li>
+      <li
+        class="sc-pNWdM eNrdGQ"
+      >
+        <img
+          class="sc-jrsJWt dCtIRT"
+        />
+        <div
+          class="sc-kEqXSa bzaWxE"
+        >
+          <p
+            class="sc-iqAclL hUpHlR"
+          >
+            sample item 2
+          </p>
+          <span
+            class="sc-crzoAE kmnOxv"
+          >
+            200
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+</div>
+`;

@@ -12,6 +12,15 @@ const theme = {
     header: {
       link: '#ccc',
       linkActive: '#FF7800'
+    },
+    section: {
+      text: '#999',
+      shadow: 'rgba(0, 0, 29, 0.22)',
+      background: '#fff'
+    },
+    cartList: {
+      border: '#eee',
+      text: '#212122'
     }
   }
 }

@@ -1,5 +1,5 @@
 import React from 'react'
-import { BrowserRouter, Route, Switch } from 'react-router-dom'
+import { BrowserRouter, Route, Switch, NavLink } from 'react-router-dom'
 
 import { Cart, Payment, PaymentConfirmation } from '../pages'
 
@@ -7,7 +7,7 @@ const Routes = () => (
   <BrowserRouter>
     <Switch>
       <Route path="/" exact>
-        <h1>Home</h1>
+        <NavLink to="/cart">Ir para o Checkout</NavLink>
       </Route>
 
       <Route path="/cart">

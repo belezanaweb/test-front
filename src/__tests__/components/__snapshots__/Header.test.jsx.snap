@@ -25,7 +25,7 @@ exports[`Header should match with snapshot 1`] = `
         </a>
         <a
           class="sc-hKFxyN jFArmR"
-          href="/success"
+          href="/confirmation"
         >
           Confirmação
         </a>
