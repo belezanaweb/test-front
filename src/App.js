@@ -5,13 +5,16 @@ import GlobalStyle from './styles/global'
 import theme from './styles/theme'
 
 import Routes from './config/routes'
+import AppProvider from './hooks'
 
 const App = () => {
   return (
-    <ThemeProvider theme={theme}>
-      <GlobalStyle />
-      <Routes />
-    </ThemeProvider>
+    <AppProvider>
+      <ThemeProvider theme={theme}>
+        <GlobalStyle />
+        <Routes />
+      </ThemeProvider>
+    </AppProvider>
   )
 }
 

@@ -12,19 +12,19 @@ exports[`Header should match with snapshot 1`] = `
         class="sc-dlnjwi kDoCbM"
       >
         <a
-          class="sc-hKFxyN jFArmR"
+          class="sc-hKFxyN vGRFp"
           href="/cart"
         >
           Sacola
         </a>
         <a
-          class="sc-hKFxyN jFArmR"
+          class="sc-hKFxyN vGRFp"
           href="/payment"
         >
           Pagamento
         </a>
         <a
-          class="sc-hKFxyN jFArmR"
+          class="sc-hKFxyN vGRFp"
           href="/confirmation"
         >
           Confirmação

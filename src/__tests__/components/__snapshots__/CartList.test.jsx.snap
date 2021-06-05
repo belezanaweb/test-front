@@ -11,19 +11,20 @@ exports[`CartList should match with snapshot 1`] = `
       >
         <img
           class="sc-jrsJWt dCtIRT"
+          src="teste"
         />
         <div
           class="sc-kEqXSa bzaWxE"
         >
           <p
-            class="sc-iqAclL hUpHlR"
+            class="sc-iqAclL vozpB"
           >
-            sample item 1
+            Sample product 1
           </p>
           <span
-            class="sc-crzoAE kmnOxv"
+            class="sc-crzoAE gpMDvT"
           >
-            100
+            R$ 100,00
           </span>
         </div>
       </li>
@@ -37,14 +38,14 @@ exports[`CartList should match with snapshot 1`] = `
           class="sc-kEqXSa bzaWxE"
         >
           <p
-            class="sc-iqAclL hUpHlR"
+            class="sc-iqAclL vozpB"
           >
-            sample item 2
+            Sample product 2
           </p>
           <span
-            class="sc-crzoAE kmnOxv"
+            class="sc-crzoAE gpMDvT"
           >
-            200
+            R$ 100,00
           </span>
         </div>
       </li>

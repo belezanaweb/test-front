@@ -1,21 +1,26 @@
 import React from 'react'
 
+import { toCurrency } from '../../utils/currency'
 import { Container, Item, Image, Information, Title, Price } from './styles'
 
-function CartList({ items }) {
+function CartList({ cartItems, isLoading }) {
   return (
     <Container>
-      <ul>
-        {items?.map(({ id, title, price, image }) => (
-          <Item key={id}>
-            <Image src={image} />
-            <Information>
-              <Title>{title}</Title>
-              <Price>{price}</Price>
-            </Information>
-          </Item>
-        ))}
-      </ul>
+      {isLoading ? (
+        <h3>Carregando...</h3>
+      ) : (
+        <ul>
+          {cartItems?.map(({ product: { sku, name, imageObjects, priceSpecification } }) => (
+            <Item key={sku}>
+              <Image src={imageObjects && imageObjects[0].small} />
+              <Information>
+                <Title>{name}</Title>
+                <Price>{toCurrency(priceSpecification.price)}</Price>
+              </Information>
+            </Item>
+          ))}
+        </ul>
+      )}
     </Container>
   )
 }

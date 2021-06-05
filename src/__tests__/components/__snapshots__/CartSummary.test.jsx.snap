@@ -1,0 +1,66 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`CartSummary should match with snapshot 1`] = `
+<div>
+  <section
+    class="sc-bdnxRM culpHK"
+  >
+    <div
+      class="sc-hKFxyN sc-eCApnc bZOByk"
+    >
+      <p
+        class="sc-gtsrHT hycvkX"
+      >
+        Produtos
+      </p>
+      <p
+        class="sc-dlnjwi cbugsT"
+      >
+        R$ 100,00
+      </p>
+    </div>
+    <div
+      class="sc-hKFxyN sc-jSFjdj bZOByk"
+    >
+      <p
+        class="sc-gtsrHT hycvkX"
+      >
+        Frete
+      </p>
+      <p
+        class="sc-dlnjwi cbugsT"
+      >
+        R$ 5,00
+      </p>
+    </div>
+    <div
+      class="sc-hKFxyN sc-gKAaRy bZOByk gmiCMG"
+    >
+      <p
+        class="sc-gtsrHT hycvkX"
+      >
+        Desconto
+      </p>
+      <p
+        class="sc-dlnjwi cbugsT"
+      >
+        R$ 20,00
+      </p>
+    </div>
+    <div
+      class="sc-hKFxyN sc-iCoGMd bZOByk kATLiF"
+    >
+      <p
+        class="sc-gtsrHT hycvkX"
+      >
+        Total
+      </p>
+      <p
+        class="sc-dlnjwi cbugsT"
+      >
+        R$ 85,00
+      </p>
+    </div>
+  </section>
+</div>
+`;

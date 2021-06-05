@@ -2,13 +2,30 @@ import React from 'react'
 import { render } from '../../utils/test-utils'
 import { CartList } from '../../components'
 
-const makeSut = () => {
-  const items = [
-    { id: 1, title: 'sample item 1', price: '100' },
-    { id: 2, title: 'sample item 2', price: '200' }
+const makeSut = (props) => {
+  const mockCartItems = [
+    {
+      product: {
+        sku: 1,
+        name: 'Sample product 1',
+        imageObjects: [{ small: 'teste' }],
+        priceSpecification: {
+          price: 100.0
+        }
+      }
+    },
+    {
+      product: {
+        sku: 2,
+        name: 'Sample product 2',
+        priceSpecification: {
+          price: 100.0
+        }
+      }
+    }
   ]
 
-  return render(<CartList items={items} />)
+  return render(<CartList cartItems={mockCartItems} {...props} />)
 }
 
 describe('CartList', () => {
@@ -17,7 +34,7 @@ describe('CartList', () => {
     expect(container).toBeInTheDocument()
   })
 
-  test('should component render children', () => {
+  test('should component render items', () => {
     const { container } = makeSut()
 
     const listElement = container.querySelector('ul')

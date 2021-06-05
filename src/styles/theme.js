@@ -1,6 +1,6 @@
 const theme = {
   font: {
-    family: '"Helvetica Neue",Helvetica,Arial,sans-serif'
+    family: '"Helvetica Neue", Helvetica, Arial, sans-serif'
   },
   colors: {
     button: {
@@ -21,6 +21,10 @@ const theme = {
     cartList: {
       border: '#eee',
       text: '#212122'
+    },
+    cartSummary: {
+      text: '#212122',
+      textDiscount: '#ff7800'
     }
   }
 }
