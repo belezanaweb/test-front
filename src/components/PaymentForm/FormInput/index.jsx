@@ -1,9 +1,9 @@
 import React, { useRef, useEffect } from 'react'
 import { useField } from '@unform/core'
 
-import { StyledInputMask } from './styles'
+import { StyledInput, StyledInputMask } from './styles'
 
-function InputMask({ name, ...rest }) {
+function InputMask({ name, mask, ...rest }) {
   const inputRef = useRef(null)
   const { fieldName, registerField, defaultValue, error } = useField(name)
 
@@ -21,15 +21,21 @@ function InputMask({ name, ...rest }) {
     })
   }, [fieldName, registerField])
 
-  return (
-    <StyledInputMask
-      ref={inputRef}
-      defaultValue={defaultValue}
-      error={error}
-      alwaysShowMask={false}
-      {...rest}
-    />
-  )
+  if (mask) {
+    return (
+      <StyledInputMask
+        ref={inputRef}
+        defaultValue={defaultValue}
+        error={error}
+        alwaysShowMask={false}
+        maskChar={null}
+        mask={mask}
+        {...rest}
+      />
+    )
+  }
+
+  return <StyledInput ref={inputRef} defaultValue={defaultValue} error={error} {...rest} />
 }
 
 export default InputMask

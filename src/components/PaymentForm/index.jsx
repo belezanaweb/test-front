@@ -45,12 +45,7 @@ function PaymentForm(props, ref) {
         placeholder="____.____.____.____"
         mask="9999.9999.9999.9999"
       />
-      <FormControl
-        name="cardName"
-        label="Nome do Titular"
-        placeholder="Como no cartão"
-        mask={'*'}
-      />
+      <FormControl name="cardName" label="Nome do Titular" placeholder="Como no cartão" />
 
       <FormControlGroup>
         <FormControl
