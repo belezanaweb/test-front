@@ -13,6 +13,7 @@ const CheckoutProvider = ({ children }) => {
     const fetchApiData = async () => {
       try {
         setIsLoading(true)
+
         const {
           data: { items, subTotal, shippingTotal, discount, total }
         } = await api.get('/5b15c4923100004a006f3c07')

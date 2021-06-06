@@ -1,0 +1,70 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`PaymentForm should match with snapshot 1`] = `
+<div>
+  <form
+    class="sc-lmgQwP cgxYwA"
+  >
+    <div
+      class="sc-bCwfaz cOSPOl"
+    >
+      <label
+        class="sc-iwajpm khNqxB"
+      >
+        Número do cartão
+      </label>
+      <input
+        class="sc-fKgJPI ArQqe"
+        placeholder="____.____.____.____"
+        value=""
+      />
+    </div>
+    <div
+      class="sc-bCwfaz cOSPOl"
+    >
+      <label
+        class="sc-iwajpm khNqxB"
+      >
+        Nome do Titular
+      </label>
+      <input
+        class="sc-kfYoZR cXtyio"
+        placeholder="Como no cartão"
+        value=""
+      />
+    </div>
+    <div
+      class="sc-iJCRrE dXXKOn"
+    >
+      <div
+        class="sc-bCwfaz cOSPOl"
+      >
+        <label
+          class="sc-iwajpm khNqxB"
+        >
+          Validade (mês/ano)
+        </label>
+        <input
+          class="sc-fKgJPI ArQqe"
+          placeholder="__/____"
+          value=""
+        />
+      </div>
+      <div
+        class="sc-bCwfaz cOSPOl"
+      >
+        <label
+          class="sc-iwajpm khNqxB"
+        >
+          CVV
+        </label>
+        <input
+          class="sc-fKgJPI ArQqe"
+          placeholder="____"
+          value=""
+        />
+      </div>
+    </div>
+  </form>
+</div>
+`;

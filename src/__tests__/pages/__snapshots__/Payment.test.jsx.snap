@@ -1,0 +1,186 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Payment Page should match with snapshot 1`] = `
+<div>
+  <main
+    class="sc-bYwzuL irqKRJ"
+  >
+    <header
+      class="sc-gtsrHT knapBr"
+    >
+      <div
+        class="sc-dlnjwi fieBIy"
+      >
+        <nav
+          class="sc-hKFxyN gbRFWY"
+        >
+          <a
+            class="sc-eCApnc jdlbal"
+            href="/cart"
+          >
+            Sacola
+          </a>
+          <a
+            class="sc-eCApnc jdlbal"
+            href="/payment"
+          >
+            Pagamento
+          </a>
+          <a
+            class="sc-eCApnc jdlbal"
+            href="/confirmation"
+          >
+            Confirmação
+          </a>
+        </nav>
+      </div>
+    </header>
+    <div
+      class="sc-kLojOw bnrJUY"
+    >
+      <section
+        class="sc-jSFjdj"
+      >
+        <h2
+          class="sc-gKAaRy iuHTKJ"
+        >
+          Cartão de Crédito
+        </h2>
+        <div
+          class="sc-iCoGMd oVyrW"
+        >
+          <form
+            class="sc-lmgQwP cgxYwA"
+          >
+            <div
+              class="sc-bCwfaz cOSPOl"
+            >
+              <label
+                class="sc-iwajpm khNqxB"
+              >
+                Número do cartão
+              </label>
+              <input
+                class="sc-fKgJPI ArQqe"
+                placeholder="____.____.____.____"
+                value=""
+              />
+            </div>
+            <div
+              class="sc-bCwfaz cOSPOl"
+            >
+              <label
+                class="sc-iwajpm khNqxB"
+              >
+                Nome do Titular
+              </label>
+              <input
+                class="sc-kfYoZR cXtyio"
+                placeholder="Como no cartão"
+                value=""
+              />
+            </div>
+            <div
+              class="sc-iJCRrE dXXKOn"
+            >
+              <div
+                class="sc-bCwfaz cOSPOl"
+              >
+                <label
+                  class="sc-iwajpm khNqxB"
+                >
+                  Validade (mês/ano)
+                </label>
+                <input
+                  class="sc-fKgJPI ArQqe"
+                  placeholder="__/____"
+                  value=""
+                />
+              </div>
+              <div
+                class="sc-bCwfaz cOSPOl"
+              >
+                <label
+                  class="sc-iwajpm khNqxB"
+                >
+                  CVV
+                </label>
+                <input
+                  class="sc-fKgJPI ArQqe"
+                  placeholder="____"
+                  value=""
+                />
+              </div>
+            </div>
+          </form>
+        </div>
+      </section>
+      <section
+        class="sc-dIsUp lfiDvO"
+      >
+        <div
+          class="sc-hBMUJo sc-fnVZcZ jcqzAV"
+        >
+          <p
+            class="sc-bqGGPW gxsOhh"
+          >
+            Produtos
+          </p>
+          <p
+            class="sc-ksluID gMSQZp"
+          >
+            R$ NaN
+          </p>
+        </div>
+        <div
+          class="sc-hBMUJo sc-fFSPTT jcqzAV"
+        >
+          <p
+            class="sc-bqGGPW gxsOhh"
+          >
+            Frete
+          </p>
+          <p
+            class="sc-ksluID gMSQZp"
+          >
+            R$ NaN
+          </p>
+        </div>
+        <div
+          class="sc-hBMUJo sc-bkbkJK jcqzAV gtxaIs"
+        >
+          <p
+            class="sc-bqGGPW gxsOhh"
+          >
+            Desconto
+          </p>
+          <p
+            class="sc-ksluID gMSQZp"
+          >
+            R$ NaN
+          </p>
+        </div>
+        <div
+          class="sc-hBMUJo sc-iemWCZ jcqzAV fJDoAN"
+        >
+          <p
+            class="sc-bqGGPW gxsOhh"
+          >
+            Total
+          </p>
+          <p
+            class="sc-ksluID gMSQZp"
+          >
+            R$ NaN
+          </p>
+        </div>
+      </section>
+      <button
+        class="sc-bdnxRM grNhhY"
+      >
+        Finalizar o Pedido
+      </button>
+    </div>
+  </main>
+</div>
+`;

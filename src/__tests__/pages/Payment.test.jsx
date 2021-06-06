@@ -1,6 +1,6 @@
 import React from 'react'
-import { render, fireEvent, act } from '../../utils/test-utils'
-import Cart from '../../pages/Cart'
+import { render } from '../../utils/test-utils'
+import Payment from '../../pages/Payment'
 
 jest.mock('../../hooks/checkout.jsx', () => ({
   useCheckout: jest.fn().mockReturnValue({
@@ -10,20 +10,14 @@ jest.mock('../../hooks/checkout.jsx', () => ({
   })
 }))
 
-describe('Cart Page', () => {
+describe('Payment Page', () => {
   test('should render without errors', () => {
-    const { container } = render(<Cart />)
+    const { container } = render(<Payment />)
     expect(container).toBeInTheDocument()
   })
 
-  test('should click on button ', () => {
-    const { getByText } = render(<Cart />)
-
-    fireEvent.click(getByText(/Seguir para o Pagamento/i))
-  })
-
   test('should match with snapshot', () => {
-    const { container } = render(<Cart />)
+    const { container } = render(<Payment />)
     expect(container).toMatchSnapshot()
   })
 })

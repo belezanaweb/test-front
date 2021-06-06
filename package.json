@@ -51,6 +51,7 @@
     ]
   },
   "devDependencies": {
+    "@testing-library/react-hooks": "^7.0.0",
     "husky": "^4.3.0",
     "lint-staged": "^10.4.2",
     "prettier": "^2.1.2"

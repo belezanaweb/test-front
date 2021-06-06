@@ -34,6 +34,15 @@ describe('CartSummary', () => {
     expect(totalElement).toBeInTheDocument()
   })
 
+  test('should render with loading message', () => {
+    const isLoading = true
+    const { getByText } = makeSut({ isLoading })
+
+    const loadingMessageElement = getByText(/Carregando.../i)
+
+    expect(loadingMessageElement).toBeInTheDocument()
+  })
+
   test('should match with snapshot', () => {
     const { container } = makeSut()
     expect(container).toMatchSnapshot()
