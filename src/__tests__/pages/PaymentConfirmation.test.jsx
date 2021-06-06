@@ -6,7 +6,14 @@ jest.mock('../../hooks/checkout.jsx', () => ({
   useCheckout: jest.fn().mockReturnValue({
     cartItems: [],
     cartSummary: {},
-    isLoading: false
+    isLoading: false,
+    paymentInfo: {
+      cardName: 'sample',
+      cardNumber: '1234.1234.1234.1234',
+      cardValid: '07/1991',
+      cardCode: '1234'
+    },
+    submitPayment: jest.fn()
   })
 }))
 
