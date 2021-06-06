@@ -1,4 +1,5 @@
-import React, { createContext, useState, useContext, useEffect } from 'react'
+import React, { createContext, useState, useContext, useEffect, useCallback } from 'react'
+
 import api from '../services/api'
 
 const CheckoutContext = createContext({})
@@ -6,6 +7,15 @@ const CheckoutContext = createContext({})
 const CheckoutProvider = ({ children }) => {
   const [cartItems, setCartItems] = useState([])
   const [cartSummary, setCartSummary] = useState({})
+  const [paymentInfo, setPaymentInfo] = useState(() => {
+    const info = localStorage.getItem('@BelezaNaWeb:paymentInfo')
+
+    if (info) {
+      return JSON.parse(info)
+    }
+
+    return {}
+  })
 
   const [isLoading, setIsLoading] = useState(false)
 
@@ -28,8 +38,16 @@ const CheckoutProvider = ({ children }) => {
     fetchApiData()
   }, [])
 
+  const submitPayment = useCallback((data) => {
+    localStorage.setItem('@BelezaNaWeb:paymentInfo', JSON.stringify(data))
+
+    setPaymentInfo(data)
+  }, [])
+
   return (
-    <CheckoutContext.Provider value={{ cartItems, cartSummary, isLoading }}>
+    <CheckoutContext.Provider
+      value={{ cartItems, cartSummary, isLoading, paymentInfo, submitPayment }}
+    >
       {children}
     </CheckoutContext.Provider>
   )

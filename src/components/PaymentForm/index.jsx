@@ -1,12 +1,15 @@
 import React, { forwardRef } from 'react'
 import * as Yup from 'yup'
+
 import { useHistory } from 'react-router-dom'
+import { useCheckout } from '../../hooks/checkout'
 
 import FormControl from './FormControl'
 import { StyledForm, FormControlGroup } from './styles'
 
 function PaymentForm(props, ref) {
   const history = useHistory()
+  const { submitPayment } = useCheckout()
 
   const handleSubmit = async (data) => {
     try {
@@ -16,14 +19,15 @@ function PaymentForm(props, ref) {
         cardNumber: Yup.string().required('campo obrigatório'),
         cardName: Yup.string().required('campo obrigatório'),
         cardValid: Yup.string().required('campo obrigatório'),
-        cardCode: Yup.string().required('campo obrigatório').max(4)
+        cardCode: Yup.string().required('campo obrigatório')
       })
 
       await schema.validate(data, {
         abortEarly: false
       })
 
-      console.log(data)
+      submitPayment(data)
+
       history.push('/confirmation')
     } catch (err) {
       const validationErrors = {}
