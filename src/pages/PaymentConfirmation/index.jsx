@@ -1,6 +1,8 @@
 import React from 'react'
 
 import Layout from '../Layout'
+import { ResponsiveBox } from '../../pages/Layout/styles'
+
 import { Section, BannerSuccess, PaymentSummary, CartSummary, CartList } from '../../components'
 import { useCheckout } from '../../hooks/checkout'
 
@@ -13,12 +15,12 @@ function PaymentConfirmation() {
       <Section title="Pagamento">
         <PaymentSummary />
       </Section>
-
-      <Section title="Produtos">
-        <CartList cartItems={cartItems} isLoading={isLoading} />
-      </Section>
-
-      <CartSummary cartSummary={cartSummary} isLoading={isLoading} />
+      <ResponsiveBox>
+        <Section title="Produtos">
+          <CartList cartItems={cartItems} isLoading={isLoading} />
+        </Section>
+        <CartSummary cartSummary={cartSummary} isLoading={isLoading} />
+      </ResponsiveBox>
     </Layout>
   )
 }

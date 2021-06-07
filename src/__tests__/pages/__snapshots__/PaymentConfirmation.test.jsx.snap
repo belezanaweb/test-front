@@ -2,47 +2,47 @@
 
 exports[`PaymentConfirmation Page should match with snapshot 1`] = `
 <div>
-  <main
-    class="sc-eCApnc iHOios"
+  <header
+    class="sc-bdnxRM cZjwSm"
   >
-    <header
-      class="sc-bdnxRM cZjwSm"
-    >
-      <div
-        class="sc-gtsrHT egWxvy"
-      >
-        <nav
-          class="sc-dlnjwi kDoCbM"
-        >
-          <a
-            class="sc-hKFxyN vGRFp"
-            href="/cart"
-          >
-            Sacola
-          </a>
-          <a
-            class="sc-hKFxyN vGRFp"
-            href="/payment"
-          >
-            Pagamento
-          </a>
-          <a
-            class="sc-hKFxyN vGRFp"
-            href="/confirmation"
-          >
-            Confirmação
-          </a>
-        </nav>
-      </div>
-    </header>
     <div
-      class="sc-jSFjdj drOsWB"
+      class="sc-gtsrHT egWxvy"
+    >
+      <nav
+        class="sc-dlnjwi kDoCbM"
+      >
+        <a
+          class="sc-hKFxyN vGRFp"
+          href="/cart"
+        >
+          Sacola
+        </a>
+        <a
+          class="sc-hKFxyN vGRFp"
+          href="/payment"
+        >
+          Pagamento
+        </a>
+        <a
+          class="sc-hKFxyN vGRFp"
+          href="/confirmation"
+        >
+          Confirmação
+        </a>
+      </nav>
+    </div>
+  </header>
+  <main
+    class="sc-eCApnc iOxhkc"
+  >
+    <div
+      class="sc-jSFjdj kNXtuK"
     >
       <div
-        class="sc-dlMDgC hyUoTp"
+        class="sc-kfYoZR earxj"
       >
         <svg
-          class="sc-fKgJPI fKlqQ"
+          class="sc-bCwfaz fYIYEq"
           fill="currentColor"
           height="1em"
           stroke="currentColor"
@@ -56,121 +56,125 @@ exports[`PaymentConfirmation Page should match with snapshot 1`] = `
           />
         </svg>
         <p
-          class="sc-kfYoZR fRurXo"
+          class="sc-fKgJPI iqoKIW"
         >
           Compra efetuada com sucesso
         </p>
       </div>
       <section
-        class="sc-iCoGMd"
+        class="sc-fujyAs"
       >
         <h2
-          class="sc-fujyAs djPjrY"
+          class="sc-pNWdM WYXkS"
         >
           Pagamento
         </h2>
         <div
-          class="sc-pNWdM fRwEYN"
+          class="sc-jrsJWt cMzJZb"
         >
           <div
-            class="sc-bYwzuL irqKRJ"
+            class="sc-kLojOw dVlKEY"
           >
             <p
-              class="sc-kLojOw bVLfhE"
+              class="sc-iklJeh jmqGUX"
             >
               ****.****.****.1234
             </p>
             <p
-              class="sc-kLojOw bVLfhE"
+              class="sc-iklJeh jmqGUX"
             >
               sample
             </p>
             <p
-              class="sc-kLojOw bVLfhE"
+              class="sc-iklJeh jmqGUX"
             >
               07/1991
             </p>
           </div>
         </div>
       </section>
-      <section
-        class="sc-iCoGMd"
+      <div
+        class="sc-gKAaRy cWTRtX"
       >
-        <h2
-          class="sc-fujyAs djPjrY"
+        <section
+          class="sc-fujyAs"
         >
-          Produtos
-        </h2>
-        <div
-          class="sc-pNWdM fRwEYN"
-        >
-          <div
-            class="sc-jrsJWt dqothG"
-          >
-            <ul />
-          </div>
-        </div>
-      </section>
-      <section
-        class="sc-ksluID iNvcqR"
-      >
-        <div
-          class="sc-fFSPTT sc-bkbkJK jPYEnV"
-        >
-          <p
-            class="sc-hBMUJo kBEAzC"
+          <h2
+            class="sc-pNWdM WYXkS"
           >
             Produtos
-          </p>
-          <p
-            class="sc-fnVZcZ gLXOoI"
+          </h2>
+          <div
+            class="sc-jrsJWt cMzJZb"
           >
-            R$ NaN
-          </p>
-        </div>
-        <div
-          class="sc-fFSPTT sc-iemWCZ jPYEnV"
+            <div
+              class="sc-kEqXSa isGIQJ"
+            >
+              <ul />
+            </div>
+          </div>
+        </section>
+        <section
+          class="sc-hBMUJo bTdOAL"
         >
-          <p
-            class="sc-hBMUJo kBEAzC"
+          <div
+            class="sc-bkbkJK sc-iemWCZ epJDSX"
           >
-            Frete
-          </p>
-          <p
-            class="sc-fnVZcZ gLXOoI"
+            <p
+              class="sc-fnVZcZ gLXOoI"
+            >
+              Produtos
+            </p>
+            <p
+              class="sc-fFSPTT fUYZVO"
+            >
+              R$ NaN
+            </p>
+          </div>
+          <div
+            class="sc-bkbkJK sc-dIvrsQ epJDSX"
           >
-            R$ NaN
-          </p>
-        </div>
-        <div
-          class="sc-fFSPTT sc-dIvrsQ jPYEnV hRyHfU"
-        >
-          <p
-            class="sc-hBMUJo kBEAzC"
+            <p
+              class="sc-fnVZcZ gLXOoI"
+            >
+              Frete
+            </p>
+            <p
+              class="sc-fFSPTT fUYZVO"
+            >
+              R$ NaN
+            </p>
+          </div>
+          <div
+            class="sc-bkbkJK sc-hHEiqL epJDSX gacPbO"
           >
-            Desconto
-          </p>
-          <p
-            class="sc-fnVZcZ gLXOoI"
+            <p
+              class="sc-fnVZcZ gLXOoI"
+            >
+              Desconto
+            </p>
+            <p
+              class="sc-fFSPTT fUYZVO"
+            >
+              R$ NaN
+            </p>
+          </div>
+          <div
+            class="sc-bkbkJK sc-dlMDgC epJDSX egHJHF"
           >
-            R$ NaN
-          </p>
-        </div>
-        <div
-          class="sc-fFSPTT sc-hHEiqL jPYEnV cFkeXV"
-        >
-          <p
-            class="sc-hBMUJo kBEAzC"
-          >
-            Total
-          </p>
-          <p
-            class="sc-fnVZcZ gLXOoI"
-          >
-            R$ NaN
-          </p>
-        </div>
-      </section>
+            <p
+              class="sc-fnVZcZ gLXOoI"
+            >
+              Total
+            </p>
+            <p
+              class="sc-fFSPTT fUYZVO"
+            >
+              R$ NaN
+            </p>
+          </div>
+        </section>
+      </div>
     </div>
   </main>
 </div>

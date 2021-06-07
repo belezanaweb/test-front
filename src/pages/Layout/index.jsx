@@ -5,10 +5,12 @@ import { Container, Content } from './styles'
 
 function Layout({ children }) {
   return (
-    <Container>
+    <>
       <Header />
-      <Content>{children}</Content>
-    </Container>
+      <Container>
+        <Content>{children}</Content>
+      </Container>
+    </>
   )
 }
 

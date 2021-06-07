@@ -10,6 +10,10 @@ export const Container = styled.section`
   border: 1px solid #ccc;
 
   min-height: 100px;
+
+  @media (min-width: 769px) {
+    margin-top: 26px;
+  }
 `
 
 export const Title = styled.p`

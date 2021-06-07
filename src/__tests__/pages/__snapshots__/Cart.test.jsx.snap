@@ -2,122 +2,126 @@
 
 exports[`Cart Page should match with snapshot 1`] = `
 <div>
-  <main
-    class="sc-eCApnc iHOios"
+  <header
+    class="sc-bdnxRM cZjwSm"
   >
-    <header
-      class="sc-bdnxRM cZjwSm"
+    <div
+      class="sc-gtsrHT egWxvy"
+    >
+      <nav
+        class="sc-dlnjwi kDoCbM"
+      >
+        <a
+          class="sc-hKFxyN vGRFp"
+          href="/cart"
+        >
+          Sacola
+        </a>
+        <a
+          class="sc-hKFxyN vGRFp"
+          href="/payment"
+        >
+          Pagamento
+        </a>
+        <a
+          class="sc-hKFxyN vGRFp"
+          href="/confirmation"
+        >
+          Confirmação
+        </a>
+      </nav>
+    </div>
+  </header>
+  <main
+    class="sc-eCApnc iOxhkc"
+  >
+    <div
+      class="sc-jSFjdj kNXtuK"
     >
       <div
-        class="sc-gtsrHT egWxvy"
+        class="sc-gKAaRy cWTRtX"
       >
-        <nav
-          class="sc-dlnjwi kDoCbM"
+        <section
+          class="sc-fujyAs"
         >
-          <a
-            class="sc-hKFxyN vGRFp"
-            href="/cart"
-          >
-            Sacola
-          </a>
-          <a
-            class="sc-hKFxyN vGRFp"
-            href="/payment"
-          >
-            Pagamento
-          </a>
-          <a
-            class="sc-hKFxyN vGRFp"
-            href="/confirmation"
-          >
-            Confirmação
-          </a>
-        </nav>
-      </div>
-    </header>
-    <div
-      class="sc-jSFjdj drOsWB"
-    >
-      <section
-        class="sc-iCoGMd"
-      >
-        <h2
-          class="sc-fujyAs djPjrY"
-        >
-          Produtos
-        </h2>
-        <div
-          class="sc-pNWdM fRwEYN"
-        >
-          <div
-            class="sc-jrsJWt dqothG"
-          >
-            <ul />
-          </div>
-        </div>
-      </section>
-      <section
-        class="sc-ksluID iNvcqR"
-      >
-        <div
-          class="sc-fFSPTT sc-bkbkJK jPYEnV"
-        >
-          <p
-            class="sc-hBMUJo kBEAzC"
+          <h2
+            class="sc-pNWdM WYXkS"
           >
             Produtos
-          </p>
-          <p
-            class="sc-fnVZcZ gLXOoI"
+          </h2>
+          <div
+            class="sc-jrsJWt cMzJZb"
           >
-            R$ NaN
-          </p>
-        </div>
-        <div
-          class="sc-fFSPTT sc-iemWCZ jPYEnV"
+            <div
+              class="sc-kEqXSa isGIQJ"
+            >
+              <ul />
+            </div>
+          </div>
+        </section>
+        <section
+          class="sc-hBMUJo bTdOAL"
         >
-          <p
-            class="sc-hBMUJo kBEAzC"
+          <div
+            class="sc-bkbkJK sc-iemWCZ epJDSX"
           >
-            Frete
-          </p>
-          <p
-            class="sc-fnVZcZ gLXOoI"
+            <p
+              class="sc-fnVZcZ gLXOoI"
+            >
+              Produtos
+            </p>
+            <p
+              class="sc-fFSPTT fUYZVO"
+            >
+              R$ NaN
+            </p>
+          </div>
+          <div
+            class="sc-bkbkJK sc-dIvrsQ epJDSX"
           >
-            R$ NaN
-          </p>
-        </div>
-        <div
-          class="sc-fFSPTT sc-dIvrsQ jPYEnV hRyHfU"
-        >
-          <p
-            class="sc-hBMUJo kBEAzC"
+            <p
+              class="sc-fnVZcZ gLXOoI"
+            >
+              Frete
+            </p>
+            <p
+              class="sc-fFSPTT fUYZVO"
+            >
+              R$ NaN
+            </p>
+          </div>
+          <div
+            class="sc-bkbkJK sc-hHEiqL epJDSX gacPbO"
           >
-            Desconto
-          </p>
-          <p
-            class="sc-fnVZcZ gLXOoI"
+            <p
+              class="sc-fnVZcZ gLXOoI"
+            >
+              Desconto
+            </p>
+            <p
+              class="sc-fFSPTT fUYZVO"
+            >
+              R$ NaN
+            </p>
+          </div>
+          <div
+            class="sc-bkbkJK sc-dlMDgC epJDSX egHJHF"
           >
-            R$ NaN
-          </p>
-        </div>
-        <div
-          class="sc-fFSPTT sc-hHEiqL jPYEnV cFkeXV"
-        >
-          <p
-            class="sc-hBMUJo kBEAzC"
-          >
-            Total
-          </p>
-          <p
-            class="sc-fnVZcZ gLXOoI"
-          >
-            R$ NaN
-          </p>
-        </div>
-      </section>
+            <p
+              class="sc-fnVZcZ gLXOoI"
+            >
+              Total
+            </p>
+            <p
+              class="sc-fFSPTT fUYZVO"
+            >
+              R$ NaN
+            </p>
+          </div>
+        </section>
+      </div>
       <button
-        class="sc-gKAaRy iuxzqw"
+        class="sc-iCoGMd hoHZHM"
       >
         Seguir para o Pagamento
       </button>
