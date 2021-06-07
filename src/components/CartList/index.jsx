@@ -12,7 +12,7 @@ function CartList({ cartItems, isLoading }) {
         <ul>
           {cartItems?.map(({ product: { sku, name, imageObjects, priceSpecification } }) => (
             <Item key={sku}>
-              <Image src={imageObjects && imageObjects[0].small} />
+              <Image src={imageObjects && imageObjects[0].small} alt={name} />
               <Information>
                 <Title>{name}</Title>
                 <Price>{toCurrency(priceSpecification.price)}</Price>
