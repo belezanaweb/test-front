@@ -1,21 +1,21 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Confirmation should match snapshot 1`] = `
-<div
-  class="sc-hHEiqL NEwMX"
+<section
+  class="sc-hHEiqL iacCzP"
 >
   <div
-    class="sc-iqAclL gRhSkW"
+    class="sc-iqAclL bfRixM"
   >
     <span
-      class="sc-jrsJWt dukXHX"
+      class="sc-jrsJWt jPvikj"
     >
       <svg>
         check-icon.svg
       </svg>
     </span>
     <p
-      class="sc-kEqXSa cctrwh"
+      class="sc-kEqXSa hFxtiD"
     >
       COMPRA EFETUADA COM SUCESSO
     </p>
@@ -198,5 +198,5 @@ exports[`Confirmation should match snapshot 1`] = `
       </span>
     </li>
   </ul>
-</div>
+</section>
 `;
