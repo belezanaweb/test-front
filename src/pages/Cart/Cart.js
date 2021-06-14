@@ -18,13 +18,15 @@ const Cart = () => {
   return (
     <S.Cart>
       <ProductList productList={productList} />
-      <CheckoutResume
-        productsPrice={formatPrice(subTotal)}
-        freightPrice={formatPrice(shippingTotal)}
-        discountPrice={`- ${formatPrice(discount)}`}
-        totalPrice={formatPrice(total)}
-      />
-      <Button onClick={handleSubmit}>SEGUIR PARA O PAGAMENTO</Button>
+      <S.Sidebar>
+        <CheckoutResume
+          productsPrice={formatPrice(subTotal)}
+          freightPrice={formatPrice(shippingTotal)}
+          discountPrice={`- ${formatPrice(discount)}`}
+          totalPrice={formatPrice(total)}
+        />
+        <Button onClick={handleSubmit}>SEGUIR PARA O PAGAMENTO</Button>
+      </S.Sidebar>
     </S.Cart>
   )
 }
