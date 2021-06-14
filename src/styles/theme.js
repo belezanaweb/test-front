@@ -41,6 +41,7 @@ export const theme = css`
     --spacing-9: 4.5rem;
     --spacing-10: 5rem;
     --spacing-11: 5.5rem;
+    --spacing-12: 6rem;
 
     @media ${device.tablet} {
       --font-size-md: 15px;
