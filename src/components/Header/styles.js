@@ -1,6 +1,8 @@
 import styled from 'styled-components'
 import { NavLink } from 'react-router-dom'
 
+import { device } from '../../styles/breakpoints'
+
 export const Header = styled.header`
   height: 100%;
   background: var(--colors-white);
@@ -27,5 +29,9 @@ export const Link = styled(NavLink)`
 
   &:hover {
     color: var(--colors-orange-300);
+  }
+
+  @media ${device.desktop} {
+    font-size: var(--font-size-md);
   }
 `

@@ -17,4 +17,8 @@ export const Layout = styled.div`
   display: grid;
   min-height: 100vh;
   grid-template-rows: var(--spacing-8) 1fr;
+
+  @media ${device.desktop} {
+    grid-template-rows: var(--spacing-12) 1fr;
+  }
 `

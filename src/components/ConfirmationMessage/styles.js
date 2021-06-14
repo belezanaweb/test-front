@@ -17,6 +17,16 @@ export const CheckIconWrapper = styled.span`
     width: 60px;
     border: 2px solid var(--colors-orange-200);
   }
+
+  @media ${device.desktop} {
+    height: 90px;
+    width: 90px;
+    border: 2px solid var(--colors-orange-200);
+
+    svg {
+      transform: scale(1.5);
+    }
+  }
 `
 
 export const Text = styled.p`
@@ -24,6 +34,10 @@ export const Text = styled.p`
   color: var(--colors-orange-200);
   font-weight: bold;
   line-height: var(--line-height-md);
+
+  @media ${device.desktop} {
+    font-size: var(--font-size-lg);
+  }
 `
 
 export const ConfirmationMessage = styled.div`
@@ -33,4 +47,8 @@ export const ConfirmationMessage = styled.div`
   align-items: center;
   justify-content: center;
   gap: var(--spacing-2);
+
+  @media ${device.desktop} {
+    gap: var(--spacing-4);
+  }
 `
