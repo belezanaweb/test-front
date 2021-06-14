@@ -71,12 +71,8 @@ CheckoutForm.propTypes = {
   register: PropTypes.func.isRequired
 }
 
-CheckoutForm.propTypes = {
-  errors: {}
-}
-
 CheckoutForm.defaultProps = {
-  href: undefined
+  errors: {}
 }
 
 export default CheckoutForm

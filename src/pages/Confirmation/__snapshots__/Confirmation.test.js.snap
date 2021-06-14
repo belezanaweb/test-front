@@ -1,0 +1,202 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Confirmation should match snapshot 1`] = `
+<div
+  class="sc-hHEiqL NEwMX"
+>
+  <div
+    class="sc-iqAclL gRhSkW"
+  >
+    <span
+      class="sc-jrsJWt dukXHX"
+    >
+      <svg>
+        check-icon.svg
+      </svg>
+    </span>
+    <p
+      class="sc-kEqXSa cctrwh"
+    >
+      COMPRA EFETUADA COM SUCESSO
+    </p>
+  </div>
+  <div>
+    <h2
+      class="sc-fujyAs gQPvIf"
+      data-testid="title"
+    >
+      PAGAMENTO
+    </h2>
+    <div
+      class="sc-iCoGMd eqLrhB"
+    >
+      <p
+        class="sc-pNWdM idQwwy"
+      >
+        ****.****.****.1234
+      </p>
+      <p
+        class="sc-pNWdM idQwwy"
+      >
+        marcos taron
+      </p>
+      <p
+        class="sc-pNWdM idQwwy"
+      >
+        12/1234
+      </p>
+    </div>
+  </div>
+  <div>
+    <h2
+      class="sc-fujyAs gQPvIf"
+      data-testid="title"
+    >
+      PRODUTOS
+    </h2>
+    <div
+      class="sc-iCoGMd eqLrhB"
+    >
+      <ul
+        class="sc-crzoAE itlXnG"
+      >
+        <li
+          class="sc-dIsUp OElgQ"
+        >
+          <picture
+            class="sc-bqGGPW ifqrkw"
+          >
+            <source
+              media="(min-width:768px)"
+              srcset="https://res.cloudinary.com/beleza-na-web/image/upload/f_auto,fl_progressive,q_auto:best/v1/imagens/6/loreal-professionnel-expert-absolut-repair-cortex-lipidium-mascara-de-reconstrucao-500g-24410-963234120108391775.png"
+            />
+            <img
+              alt="L'Oréal Professionnel Expert Absolut Repair Cortex Lipidium - Máscara de Reconstrução 500g"
+              src="https://res.cloudinary.com/beleza-na-web/image/upload/f_auto,fl_progressive,q_auto:best/v1/imagens/2/loreal-professionnel-expert-absolut-repair-cortex-lipidium-mascara-de-reconstrucao-500g-24410-963234120108391775.png"
+            />
+          </picture>
+          <div
+            class="sc-fnVZcZ fENHjR"
+          >
+            <p
+              class="sc-ksluID jSPjgj"
+            >
+              L'Oréal Professionnel Expert Absolut Repair Cortex Lipidium - Máscara de Reconstrução 500g
+            </p>
+          </div>
+        </li>
+        <li
+          class="sc-dIsUp OElgQ"
+        >
+          <picture
+            class="sc-bqGGPW ifqrkw"
+          >
+            <source
+              media="(min-width:768px)"
+              srcset="https://res.cloudinary.com/beleza-na-web/image/upload/f_auto,fl_progressive,q_auto:best/v1/imagens/6/good-girl-carolina-herrera-eau-de-parfum-perfume-feminino-30ml-38273-1960525940762131267.jpg"
+            />
+            <img
+              alt="Good Girl Carolina Herrera Eau de Parfum - Perfume Feminino 30ml"
+              src="https://res.cloudinary.com/beleza-na-web/image/upload/f_auto,fl_progressive,q_auto:best/v1/imagens/2/good-girl-carolina-herrera-eau-de-parfum-perfume-feminino-30ml-38273-1960525940762131267.jpg"
+            />
+          </picture>
+          <div
+            class="sc-fnVZcZ fENHjR"
+          >
+            <p
+              class="sc-ksluID jSPjgj"
+            >
+              Good Girl Carolina Herrera Eau de Parfum - Perfume Feminino 30ml
+            </p>
+          </div>
+        </li>
+        <li
+          class="sc-dIsUp OElgQ"
+        >
+          <picture
+            class="sc-bqGGPW ifqrkw"
+          >
+            <source
+              media="(min-width:768px)"
+              srcset="https://res.cloudinary.com/beleza-na-web/image/upload/f_auto,fl_progressive,q_auto:best/v1/imagens/6/senscience-inner-restore-intesif-deep-repairing-masque-mascara-de-tratamento-50ml-3019-7903251722539384904.png"
+            />
+            <img
+              alt="Senscience Inner Restore Intensif - Máscara Capilar 50ml"
+              src="https://res.cloudinary.com/beleza-na-web/image/upload/f_auto,fl_progressive,q_auto:best/v1/imagens/2/senscience-inner-restore-intesif-deep-repairing-masque-mascara-de-tratamento-50ml-3019-7903251722539384904.png"
+            />
+          </picture>
+          <div
+            class="sc-fnVZcZ fENHjR"
+          >
+            <p
+              class="sc-ksluID jSPjgj"
+            >
+              Senscience Inner Restore Intensif - Máscara Capilar 50ml
+            </p>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <ul
+    class="sc-bdnxRM krmlQt"
+  >
+    <li
+      class="sc-hKFxyN dgDZca"
+    >
+      <p
+        class="sc-gtsrHT dDNmoF"
+      >
+        PRODUTOS
+      </p>
+      <span
+        class="sc-dlnjwi jlJhPh"
+      >
+        R$ 624,80
+      </span>
+    </li>
+    <li
+      class="sc-hKFxyN sc-eCApnc dgDZca"
+    >
+      <p
+        class="sc-gtsrHT dDNmoF"
+      >
+        FRETE
+      </p>
+      <span
+        class="sc-dlnjwi jlJhPh"
+      >
+        R$ 5,30
+      </span>
+    </li>
+    <li
+      class="sc-hKFxyN sc-jSFjdj dgDZca btwslN"
+    >
+      <p
+        class="sc-gtsrHT dDNmoF"
+      >
+        DESCONTOS
+      </p>
+      <span
+        class="sc-dlnjwi jlJhPh"
+      >
+        - R$ 30,00
+      </span>
+    </li>
+    <li
+      class="sc-hKFxyN sc-gKAaRy dgDZca jbpTvD"
+    >
+      <p
+        class="sc-gtsrHT dDNmoF"
+      >
+        TOTAL
+      </p>
+      <span
+        class="sc-dlnjwi jlJhPh"
+      >
+        R$ 618,90
+      </span>
+    </li>
+  </ul>
+</div>
+`;
