@@ -3,6 +3,7 @@ import { device } from './breakpoints'
 
 export const theme = css`
   :root {
+    --colors-gray-50: #eee;
     --colors-gray-200: #ccc;
     --colors-gray-300: #999;
     --colors-gray-700: #212122;
