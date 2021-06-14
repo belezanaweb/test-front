@@ -1,7 +1,7 @@
 import axios from 'axios'
 
 export const api = axios.create({
-  baseURL: 'http://www.mocky.io/v2'
+  baseURL: 'https://www.mocky.io/v2'
 })
 
 export default api
