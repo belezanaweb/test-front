@@ -25,13 +25,15 @@ const Checkout = () => {
   return (
     <S.Checkout>
       <CheckoutForm errors={errors} register={register} />
-      <CheckoutResume
-        productsPrice={formatPrice(subTotal)}
-        freightPrice={formatPrice(shippingTotal)}
-        discountPrice={formatPrice(discount)}
-        totalPrice={formatPrice(total)}
-      />
-      <Button onClick={handleSubmit(onSubmit)}>FINALIZAR O PEDIDO</Button>
+      <S.Sidebar>
+        <CheckoutResume
+          productsPrice={formatPrice(subTotal)}
+          freightPrice={formatPrice(shippingTotal)}
+          discountPrice={formatPrice(discount)}
+          totalPrice={formatPrice(total)}
+        />
+        <Button onClick={handleSubmit(onSubmit)}>FINALIZAR O PEDIDO</Button>
+      </S.Sidebar>
     </S.Checkout>
   )
 }

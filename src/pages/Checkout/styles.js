@@ -1,33 +1,28 @@
 import styled from 'styled-components'
 import { device } from '../../styles/breakpoints'
 
-export const Checkout = styled.div`
+export const Checkout = styled.section`
   display: flex;
   flex-direction: column;
   gap: var(--spacing-4);
-  padding-top: var(--spacing-2);
+  padding: var(--spacing-2) 0;
 
   @media ${device.tablet} {
-    padding-top: var(--spacing-4);
+    padding: var(--spacing-4) 0;
   }
 
   @media ${device.desktop} {
-    display: block;
+    flex-direction: row;
+  }
+`
 
-    > *:first-child {
-      width: 60%;
-      margin: 0 auto;
-      float: left;
-    }
+export const Sidebar = styled.aside`
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-4);
 
-    > * {
-      width: calc(40% - var(--spacing-8));
-      float: right;
-      margin: var(--spacing-4);
-    }
-
-    > button {
-      margin-top: 0;
-    }
+  @media ${device.desktop} {
+    min-width: 40%;
+    margin-top: var(--spacing-4);
   }
 `
