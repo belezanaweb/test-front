@@ -5,7 +5,7 @@
   "dependencies": {
     "@hookform/resolvers": "^2.5.2",
     "@testing-library/jest-dom": "^4.2.4",
-    "@testing-library/react": "^9.3.2",
+    "@testing-library/react": "^11.2.7",
     "@testing-library/user-event": "^7.1.2",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
@@ -54,6 +54,7 @@
     "eslint-plugin-react-hooks": "^4.2.0",
     "husky": "^4.3.0",
     "lint-staged": "^10.4.2",
+    "mutationobserver-shim": "^0.3.7",
     "prettier": "^2.1.2"
   }
 }
