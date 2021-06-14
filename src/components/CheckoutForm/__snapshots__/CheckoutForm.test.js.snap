@@ -1,0 +1,96 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`CheckoutForm should match snapshot 1`] = `
+<div>
+  <h2
+    class="sc-gtsrHT hIMsyH"
+    data-testid="title"
+  >
+    CARTÃO DE CRÉDITO
+  </h2>
+  <div
+    class="sc-bdnxRM fjlQvV"
+  >
+    <form
+      class="sc-gKAaRy kEqFEf"
+    >
+      <div
+        class="sc-dlnjwi koSwQA"
+        id="creditCardNumber-group"
+      >
+        <label
+          class="sc-eCApnc gvEJHa"
+          data-testid="input-label"
+          for="creditCardNumber"
+        >
+          Número de cartão:
+        </label>
+        <input
+          aria-invalid="false"
+          class="sc-hKFxyN foRTGB"
+          id="creditCardNumber"
+          name="creditCardNumber"
+          placeholder="____.____.____.____"
+        />
+      </div>
+      <div
+        class="sc-dlnjwi koSwQA"
+        id="name-group"
+      >
+        <label
+          class="sc-eCApnc gvEJHa"
+          data-testid="input-label"
+          for="name"
+        >
+          Nome do Titular:
+        </label>
+        <input
+          aria-invalid="false"
+          class="sc-hKFxyN foRTGB"
+          id="name"
+          name="name"
+          placeholder="Como no cartão"
+        />
+      </div>
+      <div
+        class="sc-dlnjwi koSwQA"
+        id="expirationDate-group"
+      >
+        <label
+          class="sc-eCApnc gvEJHa"
+          data-testid="input-label"
+          for="expirationDate"
+        >
+          Validade (mês/ano):
+        </label>
+        <input
+          aria-invalid="false"
+          class="sc-hKFxyN foRTGB"
+          id="expirationDate"
+          name="expirationDate"
+          placeholder="__/____"
+        />
+      </div>
+      <div
+        class="sc-dlnjwi koSwQA"
+        id="verificationCode-group"
+      >
+        <label
+          class="sc-eCApnc gvEJHa"
+          data-testid="input-label"
+          for="verificationCode"
+        >
+          CVV:
+        </label>
+        <input
+          aria-invalid="false"
+          class="sc-hKFxyN foRTGB"
+          id="verificationCode"
+          name="verificationCode"
+          placeholder="___"
+        />
+      </div>
+    </form>
+  </div>
+</div>
+`
