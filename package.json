@@ -3,26 +3,34 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@hookform/resolvers": "^2.5.2",
     "@testing-library/jest-dom": "^4.2.4",
-    "@testing-library/react": "^9.3.2",
+    "@testing-library/react": "^11.2.7",
     "@testing-library/user-event": "^7.1.2",
+    "axios": "^0.21.1",
+    "prop-types": "^15.7.2",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
+    "react-hook-form": "^7.8.4",
+    "react-input-mask": "^2.0.4",
+    "react-router-dom": "^5.2.0",
+    "yup": "^0.32.9",
+    "styled-components": "^5.3.0",
     "react-scripts": "3.4.4"
   },
   "scripts": {
-    "start": "react-scripts start",
+    "dev": "react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test",
+    "lint": "eslint src",
+    "test": "react-scripts test --watchAll",
+    "test:watch": "react-scripts test",
     "coverage": "react-scripts test --coverage --watchAll=false",
     "eject": "react-scripts eject"
   },
-  "eslintConfig": {
-    "extends": "react-app"
-  },
   "lint-staged": {
     "src/**/*.{js,jsx,ts,tsx,json,css,scss,md}": [
-      "prettier --write"
+      "yarn lint --fix",
+      "yarn test --watchAll=false --bail --findRelatedTests"
     ]
   },
   "husky": {
@@ -43,8 +51,14 @@
     ]
   },
   "devDependencies": {
+    "eslint": "^6.6.0",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-prettier": "^3.4.0",
+    "eslint-plugin-react": "^7.24.0",
+    "eslint-plugin-react-hooks": "^4.2.0",
     "husky": "^4.3.0",
     "lint-staged": "^10.4.2",
+    "mutationobserver-shim": "^0.3.7",
     "prettier": "^2.1.2"
   }
 }
