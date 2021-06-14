@@ -19,7 +19,7 @@ exports[`CheckoutForm should match snapshot 1`] = `
         id="creditCardNumber-group"
       >
         <label
-          class="sc-eCApnc gvEJHa"
+          class="sc-eCApnc fQtvPT"
           data-testid="input-label"
           for="creditCardNumber"
         >
@@ -27,7 +27,7 @@ exports[`CheckoutForm should match snapshot 1`] = `
         </label>
         <input
           aria-invalid="false"
-          class="sc-hKFxyN foRTGB"
+          class="sc-hKFxyN hpMgwn"
           id="creditCardNumber"
           name="creditCardNumber"
           placeholder="____.____.____.____"
@@ -38,7 +38,7 @@ exports[`CheckoutForm should match snapshot 1`] = `
         id="name-group"
       >
         <label
-          class="sc-eCApnc gvEJHa"
+          class="sc-eCApnc fQtvPT"
           data-testid="input-label"
           for="name"
         >
@@ -46,7 +46,7 @@ exports[`CheckoutForm should match snapshot 1`] = `
         </label>
         <input
           aria-invalid="false"
-          class="sc-hKFxyN foRTGB"
+          class="sc-hKFxyN hpMgwn"
           id="name"
           name="name"
           placeholder="Como no cartão"
@@ -57,7 +57,7 @@ exports[`CheckoutForm should match snapshot 1`] = `
         id="expirationDate-group"
       >
         <label
-          class="sc-eCApnc gvEJHa"
+          class="sc-eCApnc fQtvPT"
           data-testid="input-label"
           for="expirationDate"
         >
@@ -65,7 +65,7 @@ exports[`CheckoutForm should match snapshot 1`] = `
         </label>
         <input
           aria-invalid="false"
-          class="sc-hKFxyN foRTGB"
+          class="sc-hKFxyN hpMgwn"
           id="expirationDate"
           name="expirationDate"
           placeholder="__/____"
@@ -76,7 +76,7 @@ exports[`CheckoutForm should match snapshot 1`] = `
         id="verificationCode-group"
       >
         <label
-          class="sc-eCApnc gvEJHa"
+          class="sc-eCApnc fQtvPT"
           data-testid="input-label"
           for="verificationCode"
         >
@@ -84,7 +84,7 @@ exports[`CheckoutForm should match snapshot 1`] = `
         </label>
         <input
           aria-invalid="false"
-          class="sc-hKFxyN foRTGB"
+          class="sc-hKFxyN hpMgwn"
           id="verificationCode"
           name="verificationCode"
           placeholder="___"
@@ -93,4 +93,4 @@ exports[`CheckoutForm should match snapshot 1`] = `
     </form>
   </div>
 </div>
-`
+`;
