@@ -11,6 +11,8 @@ export const theme = css`
     --colors-orange-300: #ff6c00;
     --colors-orange-400: #d45a00;
 
+    --colors-red-300: #f30;
+
     --colors-black: #170c2e;
     --colors-white: #fff;
     --colors-background: #eee;
