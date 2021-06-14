@@ -24,7 +24,7 @@
     "eject": "react-scripts eject"
   },
   "lint-staged": {
-    "src/**/*": [
+    "src/**/*.{js,jsx,ts,tsx,json,css,scss,md}": [
       "yarn lint --fix",
       "yarn test --watchAll=false --bail --findRelatedTests"
     ]
