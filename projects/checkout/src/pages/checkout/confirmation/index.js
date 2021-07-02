@@ -1,7 +1,29 @@
-import React from "react";
-import { Title } from "@belezanaweb/components";
+import React, { useState, useEffect } from "react";
+import { useUserState } from "@belezanaweb/store";
+import { ProductsList, PurchaseResume } from "@belezanaweb/components";
 
 const ConfirmationPage = () => {
+  const [productList, setProductList] = useState([]);
+  const { cartResume, purchaseItemsResume } = useUserState();
+
+  console.log(cartResume);
+
+  useEffect(() => {
+    renderProductsList();
+  }, []);
+
+  const renderProductsList = () => {
+    let newArr = [];
+
+    for (let i = 0; i < cartResume.items.length; i++) {
+      newArr[i] = {
+        imageSrc: cartResume.items[i].imageSrc,
+        imageAlt: cartResume.items[i].name,
+        name: cartResume.items[i].name,
+      };
+    }
+    setProductList(newArr);
+  };
   return (
     <>
       <nav>
@@ -13,71 +35,15 @@ const ConfirmationPage = () => {
       </nav>
       <section>
         <h1>Compra realizada com sucesso</h1>
-        <ul>
-          <li>
-            <figure>
-              <img />
-              <figcaption>
-                <p>
-                  L'Oréal Professionnel Expert Absolut Repair Cortex Lipidium
-                </p>
-                <p>
-                  <strong>R$ 225,90</strong>
-                </p>
-              </figcaption>
-            </figure>
-          </li>
-          <li>
-            <figure>
-              <img />
-              <figcaption>
-                <p>
-                  L'Oréal Professionnel Expert Absolut Repair Cortex Lipidium
-                </p>
-                <p>
-                  <strong>R$ 225,90</strong>
-                </p>
-              </figcaption>
-            </figure>
-          </li>
-          <li>
-            <figure>
-              <img />
-              <figcaption>
-                <p>
-                  L'Oréal Professionnel Expert Absolut Repair Cortex Lipidium
-                </p>
-                <p>
-                  <strong>R$ 225,90</strong>
-                </p>
-              </figcaption>
-            </figure>
-          </li>
-        </ul>
+        <ProductsList products={productList} />
       </section>
       <section>
-        <table>
-          <tbody>
-            <tr>
-              <td>Produtos</td>
-              <td>R$ 624,80</td>
-            </tr>
-            <tr>
-              <td>Frete</td>
-              <td>R$ 5,80</td>
-            </tr>
-            <tr>
-              <td>Descontos</td>
-              <td>- R$ 30,00</td>
-            </tr>
-          </tbody>
-          <tfoot>
-            <tr>
-              <td>Total</td>
-              <td>R$ 600,00</td>
-            </tr>
-          </tfoot>
-        </table>
+        <PurchaseResume
+          subTotal={purchaseItemsResume.subTotal}
+          shippingTotal={purchaseItemsResume.shippingTotal}
+          discount={purchaseItemsResume.discount}
+          total={purchaseItemsResume.total}
+        />
       </section>
     </>
   );

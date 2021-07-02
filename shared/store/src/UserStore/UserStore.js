@@ -2,40 +2,22 @@ import React, { useReducer, useEffect } from "react";
 import { useLocalStorage } from "@belezanaweb/hooks";
 
 const UserStateContext = React.createContext();
+
 const UserDispatchContext = React.createContext();
 
 const STORAGE_KEY = "BelezaNaWeb.Front";
 
 const initialState = {
-  cartItems: [
-    {
-      id: null,
-      items: [
-        {
-          quantity: null,
-          product: {
-            sku: null,
-            name: null,
-            imageObjecs: [
-              {
-                featured: null,
-                thumbnail: null,
-                valid: true,
-              },
-            ],
-            priceSpecification: {
-              sku: null,
-              price: null,
-              originalPrice: null,
-              maxPrice: null,
-              percent: null,
-              discount: null,
-            },
-          },
-        },
-      ],
-    },
-  ],
+  cartResume: {
+    id: null,
+    items: [
+      {
+        imageSrc: null,
+        imageAlt: null,
+        name: null,
+      },
+    ],
+  },
   purchaseItemsResume: {
     subTotal: null,
     shippingTotal: null,
@@ -51,11 +33,11 @@ const initialState = {
 
 function UserReducer(state, action) {
   switch (action.type) {
-    case "saveCartItems": {
+    case "saveCartResume": {
       return {
         ...state,
-        cartItems: {
-          ...state.cartItems,
+        cartResume: {
+          ...state.cartResume,
           ...action.value,
         },
       };

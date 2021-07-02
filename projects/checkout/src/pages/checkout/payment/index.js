@@ -1,10 +1,13 @@
 import React from "react";
 import { useRouter } from "next/router";
-
+import { useUserDispatch, useUserState } from "@belezanaweb/store";
 import { Button, PurchaseResume, Form, Input } from "@belezanaweb/components";
 import { PaymentFormSchema } from "@belezanaweb/utils";
 
 const PaymentPage = () => {
+  const dispatch = useUserDispatch();
+  const { purchaseItemsResume } = useUserState();
+
   const router = useRouter();
 
   const handleSubmit = (values, { setSubmitting, resetForm, setStatus }) => {
@@ -59,35 +62,13 @@ const PaymentPage = () => {
           />
           <Button label="Finalizar o pedido" />
         </Form>
-        {/* <form>
-          <fieldset>
-            <ul>
-              <li>
-                <label for="card-number">Número do cartão</label>
-                <input name="card-number" />
-              </li>
-              <li>
-                <label for="card-owner">Nome do tituloar</label>
-                <input name="card-owner" />
-              </li>
-              <li>
-                <label for="card-validate">Validade</label>
-                <input name="card-validate" />
-              </li>
-              <li>
-                <label for="card-cvv">CVV</label>
-                <input name="card-cvv" />
-              </li>
-            </ul>
-          </fieldset>
-        </form> */}
       </section>
       <section>
         <PurchaseResume
-          subTotal="624.8"
-          shippingTotal="5.3"
-          discount="30"
-          total="618.9"
+          subTotal={purchaseItemsResume.subTotal}
+          shippingTotal={purchaseItemsResume.shippingTotal}
+          discount={purchaseItemsResume.discount}
+          total={purchaseItemsResume.total}
         />
       </section>
     </>
