@@ -1,0 +1,27 @@
+{
+  "name": "@belezanaweb/checkout",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "export": "next export",
+    "test": "jest --no-cache-once --env=jsdom"
+  },
+  "dependencies": {
+    "@testing-library/jest-dom": "^5.14.1",
+    "@testing-library/react": "^12.0.0",
+    "babel-jest": "^27.0.6",
+    "jest-directory-named-resolver": "^0.3.0",
+    "next": "^11.0.1",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.14.6",
+    "@babel/preset-env": "^7.14.7",
+    "dotenv": "^10.0.0",
+    "next-transpile-modules": "^8.0.0",
+    "styled-components": "^5.3.0"
+  }
+}

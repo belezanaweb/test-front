@@ -1,50 +1,23 @@
 {
-  "name": "test-front",
-  "version": "0.1.0",
+  "name": "BelezaNaWeb.Front",
+  "version": "1.0.0",
+  "main": "index.js",
   "private": true,
-  "dependencies": {
-    "@testing-library/jest-dom": "^4.2.4",
-    "@testing-library/react": "^9.3.2",
-    "@testing-library/user-event": "^7.1.2",
-    "react": "^17.0.1",
-    "react-dom": "^17.0.1",
-    "react-scripts": "3.4.4"
-  },
+  "license": "MIT",
+  "workspaces": [
+    "projects/*",
+    "shared/*"
+  ],
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "coverage": "react-scripts test --coverage --watchAll=false",
-    "eject": "react-scripts eject"
+    "start:checkout": "yarn workspace @belezanaweb/checkout dev",
+    "test": "jest",
+    "coverage": "jest --coverage"
   },
-  "eslintConfig": {
-    "extends": "react-app"
-  },
-  "lint-staged": {
-    "src/**/*.{js,jsx,ts,tsx,json,css,scss,md}": [
-      "prettier --write"
-    ]
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged"
-    }
-  },
-  "browserslist": {
-    "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
-    ],
-    "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
-    ]
+  "dependencies": {
+    "jest": "^27.0.6",
+    "jest-directory-named-resolver": "^0.3.0"
   },
   "devDependencies": {
-    "husky": "^4.3.0",
-    "lint-staged": "^10.4.2",
-    "prettier": "^2.1.2"
+    "dotenv": "^10.0.0"
   }
 }
