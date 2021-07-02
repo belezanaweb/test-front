@@ -1,12 +1,13 @@
 import React, { useEffect, useState } from "react";
 import { useRouter } from "next/router";
-import { useUserDispatch } from "@belezanaweb/store";
+import { useUserDispatch, useUserState } from "@belezanaweb/store";
 import { Client } from "@belezanaweb/services";
 import { ProductsList, PurchaseResume } from "@belezanaweb/components";
 
 const CartPage = () => {
-  const [itemsList, setItemsList] = useState([]);
+  const [productList, setProductList] = useState([]);
   const dispatch = useUserDispatch();
+  const { purchaseItemsResume } = useUserState();
 
   useEffect(() => {
     renderItens();
@@ -20,32 +21,43 @@ const CartPage = () => {
    * dispatch content into UserStore
    */
   const renderItens = async () => {
-    const { data } = await Client.getPurchaseResume();
-    console.log(data);
-
+    const response = await Client.getPurchaseResume();
+    console.log(response);
     let newArr = [];
 
-    for (let i = 0; i < data.items.length; i++) {
+    for (let i = 0; i < response.data.items.length; i++) {
       newArr[i] = {
-        imageSrc: data.items[i].product.imageObjects[0].thumbnail,
-        imageAlt: data.items[i].product.name,
-        name: data.items[i].product.name,
-        price: data.items[i].product.priceSpecification.price,
+        imageSrc: response.data.items[i].product.imageObjects[0].thumbnail,
+        imageAlt: response.data.items[i].product.name,
+        name: response.data.items[i].product.name,
+        price: response.data.items[i].product.priceSpecification.price,
       };
     }
-    setItemsList(newArr);
+    setProductList(newArr);
 
+    /**
+     * save cart items into store
+     */
     dispatch({
-      type: "purchaseItemsResume",
+      type: "saveCartResume",
       value: {
-        subTotal: data.subTotal,
-        shippingTotal: data.shippingTotal,
-        discount: data.discount,
-        total: data.total,
+        id: response.data.id,
+        items: newArr,
       },
     });
 
-    
+    /**
+     * save purchase items price resume into store
+     */
+    dispatch({
+      type: "savePurchaseItemsResume",
+      value: {
+        subTotal: response.data.subTotal,
+        shippingTotal: response.data.shippingTotal,
+        discount: response.data.discount,
+        total: response.data.total,
+      },
+    });
   };
 
   const handleSubmit = () => {
@@ -64,20 +76,18 @@ const CartPage = () => {
       </nav>
       <section>
         <h1>Produtos</h1>
-        <ProductsList products={itemsList} />
+        <ProductsList products={productList} />
       </section>
 
       <section>
         <PurchaseResume
-          subTotal="624.8"
-          shippingTotal="5.3"
-          discount="30"
-          total="618.9"
+          subTotal={purchaseItemsResume.subTotal}
+          shippingTotal={purchaseItemsResume.shippingTotal}
+          discount={purchaseItemsResume.discount}
+          total={purchaseItemsResume.total}
         />
       </section>
-      <button type="submit" onClick={handleSubmit}>
-        Seguir para o pagamento
-      </button>
+      <button onClick={handleSubmit}>Seguir para o pagamento</button>
     </>
   );
 };
