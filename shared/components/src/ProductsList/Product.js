@@ -1,15 +1,19 @@
+import * as S from "./Products.styles";
+
 export const Product = ({ imageSrc, imageAlt, name, price = null }) => {
   return (
-    <figure>
-      <img src={imageSrc} alt={imageAlt} />
-      <figcaption>
-        <p>{name}</p>
+    <S.Figure>
+      <S.ImageContainer>
+        <S.Image src={imageSrc} alt={imageAlt} />
+      </S.ImageContainer>
+      <S.Figcaption>
+        <S.Label>{name}</S.Label>
         {price && (
-          <p>
-            <strong>R$ {price}</strong>
-          </p>
+          <S.Price>
+            <strong>{price}</strong>
+          </S.Price>
         )}
-      </figcaption>
-    </figure>
+      </S.Figcaption>
+    </S.Figure>
   );
 };

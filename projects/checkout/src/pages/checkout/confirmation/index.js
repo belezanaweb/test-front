@@ -1,12 +1,17 @@
 import React, { useState, useEffect } from "react";
 import { useUserState } from "@belezanaweb/store";
-import { ProductsList, PurchaseResume } from "@belezanaweb/components";
+import {
+  Navigation,
+  MainWrapper,
+  Container,
+  PaymentDetails,
+  ProductsList,
+  PurchaseResume,
+} from "@belezanaweb/components";
 
 const ConfirmationPage = () => {
   const [productList, setProductList] = useState([]);
   const { cartResume, purchaseItemsResume } = useUserState();
-
-  console.log(cartResume);
 
   useEffect(() => {
     renderProductsList();
@@ -26,25 +31,27 @@ const ConfirmationPage = () => {
   };
   return (
     <>
-      <nav>
-        <ul>
-          <li>Sacola</li>
-          <li>Pagamento</li>
-          <li>Confirmação</li>
-        </ul>
-      </nav>
-      <section>
-        <h1>Compra realizada com sucesso</h1>
-        <ProductsList products={productList} />
-      </section>
-      <section>
+      <header>
+        <Navigation />
+      </header>
+      <MainWrapper>
+        <Container label="Pagamento" labelType="h2">
+          <PaymentDetails
+            cardNumber="1234"
+            cardOwner="José da Silva"
+            cardValidation="12/2024"
+          />
+        </Container>
+        <Container label="Produtos" labelType="h2">
+          <ProductsList products={productList} />
+        </Container>
         <PurchaseResume
           subTotal={purchaseItemsResume.subTotal}
           shippingTotal={purchaseItemsResume.shippingTotal}
           discount={purchaseItemsResume.discount}
           total={purchaseItemsResume.total}
         />
-      </section>
+      </MainWrapper>
     </>
   );
 };

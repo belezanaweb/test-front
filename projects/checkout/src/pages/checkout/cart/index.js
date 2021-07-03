@@ -2,7 +2,16 @@ import React, { useEffect, useState } from "react";
 import { useRouter } from "next/router";
 import { useUserDispatch, useUserState } from "@belezanaweb/store";
 import { Client } from "@belezanaweb/services";
-import { ProductsList, PurchaseResume } from "@belezanaweb/components";
+import {
+  Header,
+  MainWrapper,
+  Footer,
+  Container,
+  Navigation,
+  Button,
+  ProductsList,
+  PurchaseResume,
+} from "@belezanaweb/components";
 
 const CartPage = () => {
   const [productList, setProductList] = useState([]);
@@ -22,12 +31,12 @@ const CartPage = () => {
    */
   const renderItens = async () => {
     const response = await Client.getPurchaseResume();
-    console.log(response);
+
     let newArr = [];
 
     for (let i = 0; i < response.data.items.length; i++) {
       newArr[i] = {
-        imageSrc: response.data.items[i].product.imageObjects[0].thumbnail,
+        imageSrc: response.data.items[i].product.imageObjects[0].small,
         imageAlt: response.data.items[i].product.name,
         name: response.data.items[i].product.name,
         price: response.data.items[i].product.priceSpecification.price,
@@ -66,28 +75,24 @@ const CartPage = () => {
 
   return (
     <>
-      <h1>Hello from Cart Page</h1>
-      <nav>
-        <ul>
-          <li>Sacola</li>
-          <li>Pagamento</li>
-          <li>Confirmação</li>
-        </ul>
-      </nav>
-      <section>
-        <h1>Produtos</h1>
-        <ProductsList products={productList} />
-      </section>
+      <Header>
+        <Navigation />
+      </Header>
+      <MainWrapper>
+        <Container label="Produtos">
+          <ProductsList products={productList} />
+        </Container>
 
-      <section>
         <PurchaseResume
           subTotal={purchaseItemsResume.subTotal}
           shippingTotal={purchaseItemsResume.shippingTotal}
           discount={purchaseItemsResume.discount}
           total={purchaseItemsResume.total}
         />
-      </section>
-      <button onClick={handleSubmit}>Seguir para o pagamento</button>
+      </MainWrapper>
+      <Footer>
+        <Button onClick={handleSubmit} label="Seguir para o pagamento" />
+      </Footer>
     </>
   );
 };
