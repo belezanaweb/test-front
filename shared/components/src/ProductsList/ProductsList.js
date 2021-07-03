@@ -1,18 +1,19 @@
 import { Product } from "./Product";
+import * as S from "./ProductsList.styles";
 
 export const ProductsList = ({ products = [] }) => {
   return (
-    <ul>
+    <S.UL>
       {products.map((product, i) => (
-        <li key={`box-card-item-${i}`}>
+        <S.LI key={`box-card-item-${i}`}>
           <Product
             imageSrc={product.imageSrc}
             imageAlt={product.imageAlt}
             name={product.name}
             price={product.price}
           />
-        </li>
+        </S.LI>
       ))}
-    </ul>
+    </S.UL>
   );
 };

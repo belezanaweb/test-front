@@ -1,12 +1,13 @@
 import React from "react";
 import { Formik, Form as FormikForm, useFormikContext } from "formik";
+import * as S from "./Form.styles";
 
 const MyForm = ({ children }) => {
   const { handleSubmit } = useFormikContext();
 
   return (
     <FormikForm onSubmit={handleSubmit}>
-      <fieldset>{children}</fieldset>
+      <S.Fieldset>{children}</S.Fieldset>
     </FormikForm>
   );
 };

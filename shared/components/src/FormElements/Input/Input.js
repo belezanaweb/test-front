@@ -1,6 +1,6 @@
 import {
   CustomError,
-  CustomField,
+  CustomInput,
   InputWrapper,
   LabelText,
 } from "./Input.styles";
@@ -10,7 +10,7 @@ export const Input = ({ label, id, name, ...props }) => {
     <InputWrapper>
       <label>
         <LabelText htmlFor={id}>{label}</LabelText>
-        <CustomField id={id} name={name} {...props} />
+        <CustomInput id={id} name={name} {...props} />
         <CustomError component="div" name={name} />
       </label>
     </InputWrapper>

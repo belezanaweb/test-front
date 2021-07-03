@@ -1,5 +1,13 @@
-import { Title } from "@belezanaweb/components";
+import { useEffect } from "react";
+import { useRouter } from "next/router";
 
-const Hey = () => <Title />;
+function HomePage() {
+  const router = useRouter();
 
-export default Hey;
+  useEffect(() => {
+    router.push("/checkout/cart");
+  }, []);
+  return null;
+}
+
+export default HomePage;
