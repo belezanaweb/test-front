@@ -13,3 +13,4 @@ export { PaymentDetails } from "./src/PaymentDetails/PaymentDetails";
 
 export { Form } from "./src/FormElements/Form/Form";
 export { Input } from "./src/FormElements/Input/Input";
+export { FormCreditCardPayment } from "./src/FormCreditCardPayment/FormCreditCardPayment";

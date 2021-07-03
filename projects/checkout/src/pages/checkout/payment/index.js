@@ -9,10 +9,9 @@ import {
   Navigation,
   PurchaseResume,
   Button,
-  Form,
-  Input,
+  FormCreditCardPayment,
 } from "@belezanaweb/components";
-import { PaymentFormSchema } from "@belezanaweb/utils";
+import { useFormikContext } from "formik";
 
 const PaymentPage = () => {
   const dispatch = useUserDispatch();
@@ -20,10 +19,6 @@ const PaymentPage = () => {
 
   const router = useRouter();
 
-  const handleSubmit = (values, { setSubmitting, resetForm, setStatus }) => {
-    setSubmitting(false);
-    // router.push("/checkout/confirmation");
-  };
   return (
     <>
       <Header>
@@ -31,41 +26,7 @@ const PaymentPage = () => {
       </Header>
       <MainWrapper>
         <Container label="Cartão de crédito">
-          <Form
-            initialValues={{
-              cardNumber: "",
-              cardOwner: "",
-              cardValidation: "",
-              cardCVV: "",
-            }}
-            onSubmit={handleSubmit}
-            validationSchema={PaymentFormSchema}
-          >
-            <Input
-              label="Número do cartão"
-              id="frm-payment-card-number"
-              name="cardNumber"
-              placeholder="_ _ _ _._ _ _ _._ _ _ _._ _ _ _"
-            />
-            <Input
-              label="Nome do Titular"
-              id="frm-payment-owner"
-              name="cardOwner"
-              placeholder="Como no cartão"
-            />
-            <Input
-              label="Validade mês/ano"
-              id="frm-payment-validation"
-              name="cardValidation"
-              placeholder="_ _/_ _ _"
-            />
-            <Input
-              label="CVV"
-              id="frm-payment-cvv"
-              name="cardCVV"
-              placeholder="_ _ _"
-            />
-          </Form>
+          <FormCreditCardPayment />
         </Container>
 
         <PurchaseResume
