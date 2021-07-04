@@ -1,6 +1,5 @@
 import React, { useEffect, useRef } from "react";
 import { useField } from "@unform/core";
-import InputMask from "react-input-mask";
 
 import * as S from "./Input.styles";
 
@@ -16,11 +15,21 @@ export const Input = ({ id, label, name, mask, ...rest }) => {
     });
   }, [fieldName, registerField]);
 
+  /**
+   * Check if there is a mask attr into input to render inputMask
+   */
+  const inputDecision = () => {
+    if (mask) {
+      return <S.CustomInputMask ref={inputRef} mask={mask} {...rest} />;
+    }
+    return <S.CustomInput ref={inputRef} {...rest} />;
+  };
+
   return (
     <S.InputWrapper>
       <label>
         <S.LabelText htmlFor={id}>{label}</S.LabelText>
-        <S.CustomInput ref={inputRef} mask={mask} {...rest} />
+        {inputDecision()}
         {error && <S.CustomError name={name}>{error}</S.CustomError>}
       </label>
     </S.InputWrapper>

@@ -11,6 +11,7 @@ export const FormCreditCardPayment = ({ formRef, onSubmit }) => {
         label="Número do cartão"
         id="frm-payment-card-number"
         name="cardNumber"
+        mask="9999.9999.9999.9999"
         placeholder="____.____.____.____"
       />
       <Input
@@ -25,6 +26,7 @@ export const FormCreditCardPayment = ({ formRef, onSubmit }) => {
             label="Validade mês/ano"
             id="frm-payment-validation"
             name="cardValidation"
+            mask="99/9999"
             placeholder="__/____"
           />
         </S.GridColumn>
@@ -33,6 +35,7 @@ export const FormCreditCardPayment = ({ formRef, onSubmit }) => {
             label="CVV"
             id="frm-payment-cvv"
             name="cardCVV"
+            mask="999"
             placeholder="___"
           />
         </S.GridColumn>
