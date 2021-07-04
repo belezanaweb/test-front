@@ -11,6 +11,6 @@ export { ProductsList } from "./src/ProductsList/ProductsList";
 export { PurchaseResume } from "./src/PurchaseResume/PurchaseResume";
 export { PaymentDetails } from "./src/PaymentDetails/PaymentDetails";
 
-export { Form } from "./src/FormElements/Form/Form";
 export { Input } from "./src/FormElements/Input/Input";
+export { MyForm } from "./src/FormElements/MyForm/MyForm";
 export { FormCreditCardPayment } from "./src/FormCreditCardPayment/FormCreditCardPayment";

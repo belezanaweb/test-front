@@ -1,17 +1,17 @@
-import styled, { css } from "styled-components";
-import { Field, ErrorMessage } from "formik";
+import styled from "styled-components";
 
-export const CustomError = styled(ErrorMessage)`
+export const CustomError = styled.div`
   font-size: 0.85rem;
   color: #f30;
 `;
 
-export const CustomInput = styled(Field)`
+export const CustomInput = styled.input`
   height: 45px;
   width: 100%;
   padding: 14px 13px 12px 13px;
 
-  border: 1px solid #e7e7e7;
+  border: ${(props) =>
+    props.$isInvalid ? "1px solid #f30" : "1px solid #e7e7e7"};
   border-radius: 3px;
   box-sizing: border-box;
   box-shadow: inset 0 1px 2px 0 rgba(0, 0, 0, 0.2);
@@ -39,8 +39,4 @@ export const LabelText = styled.span`
 
   font-size: 0.85rem;
   color: #ccc;
-`;
-
-export const Fieldset = styled.fieldset`
-  border: 0;
 `;

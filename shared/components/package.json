@@ -11,7 +11,7 @@
   "devDependencies": {
     "@babel/core": "^7.14.6",
     "@babel/preset-env": "^7.14.7",
-    "formik": "^2.2.9",
+    "react-input-mask": "^2.0.4",
     "yup": "^0.32.9"
   }
 }
