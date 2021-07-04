@@ -1,18 +1,37 @@
-import {
-  CustomError,
-  CustomInput,
-  InputWrapper,
-  LabelText,
-} from "./Input.styles";
+import React, { useEffect, useRef } from "react";
+import { useField } from "@unform/core";
 
-export const Input = ({ label, id, name, ...props }) => {
+import * as S from "./Input.styles";
+
+export const Input = ({ id, label, name, mask, ...rest }) => {
+  const inputRef = useRef(null);
+  const { fieldName, registerField, error } = useField(name);
+
+  useEffect(() => {
+    registerField({
+      name: fieldName,
+      ref: inputRef.current,
+      path: "value",
+    });
+  }, [fieldName, registerField]);
+
+  /**
+   * Check if there is a mask attr into input to render inputMask
+   */
+  const inputDecision = () => {
+    if (mask) {
+      return <S.CustomInputMask ref={inputRef} mask={mask} {...rest} />;
+    }
+    return <S.CustomInput ref={inputRef} {...rest} />;
+  };
+
   return (
-    <InputWrapper>
+    <S.InputWrapper>
       <label>
-        <LabelText htmlFor={id}>{label}</LabelText>
-        <CustomInput id={id} name={name} {...props} />
-        <CustomError component="div" name={name} />
+        <S.LabelText htmlFor={id}>{label}</S.LabelText>
+        {inputDecision()}
+        {error && <S.CustomError name={name}>{error}</S.CustomError>}
       </label>
-    </InputWrapper>
+    </S.InputWrapper>
   );
 };

@@ -1,25 +1,18 @@
-import { Form } from "../FormElements/Form/Form";
+import React from "react";
+
+import { Form } from "@unform/web";
 import { Input } from "../FormElements/Input/Input";
 import * as S from "./FormCreditCardPayment.styles";
-import { PaymentFormSchema } from "@belezanaweb/utils";
 
-export const FormCreditCardPayment = ({ onSubmit }) => {
+export const FormCreditCardPayment = ({ formRef, onSubmit }) => {
   return (
-    <Form
-      initialValues={{
-        cardNumber: "",
-        cardOwner: "",
-        cardValidation: "",
-        cardCVV: "",
-      }}
-      onSubmit={onSubmit}
-      validationSchema={PaymentFormSchema}
-    >
+    <Form id="form" ref={formRef} onSubmit={onSubmit}>
       <Input
         label="Número do cartão"
         id="frm-payment-card-number"
         name="cardNumber"
-        placeholder="_ _ _ _._ _ _ _._ _ _ _._ _ _ _"
+        mask="9999.9999.9999.9999"
+        placeholder="____.____.____.____"
       />
       <Input
         label="Nome do Titular"
@@ -33,7 +26,8 @@ export const FormCreditCardPayment = ({ onSubmit }) => {
             label="Validade mês/ano"
             id="frm-payment-validation"
             name="cardValidation"
-            placeholder="_ _/_ _ _"
+            mask="99/9999"
+            placeholder="__/____"
           />
         </S.GridColumn>
         <S.GridColumn>
@@ -41,7 +35,8 @@ export const FormCreditCardPayment = ({ onSubmit }) => {
             label="CVV"
             id="frm-payment-cvv"
             name="cardCVV"
-            placeholder="_ _ _"
+            mask="999"
+            placeholder="___"
           />
         </S.GridColumn>
       </S.Grid>
