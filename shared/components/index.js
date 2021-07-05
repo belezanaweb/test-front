@@ -1,6 +1,7 @@
 export { Title } from "./src/Title/Title";
 export { Navigation } from "./src/Navigation/Navigation";
 export { Button } from "./src/Button/Button";
+export { Banner } from "./src/Banner/Banner";
 
 export { Header } from "./src/Header/Header";
 export { Footer } from "./src/Footer/Footer";
@@ -12,5 +13,4 @@ export { PurchaseResume } from "./src/PurchaseResume/PurchaseResume";
 export { PaymentDetails } from "./src/PaymentDetails/PaymentDetails";
 
 export { Input } from "./src/FormElements/Input/Input";
-export { MyForm } from "./src/FormElements/MyForm/MyForm";
 export { FormCreditCardPayment } from "./src/FormCreditCardPayment/FormCreditCardPayment";

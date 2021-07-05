@@ -54,8 +54,6 @@ const PaymentPage = () => {
         },
       });
 
-      // console.log(data);
-      // console.log(replacedCardNumber);
       router.push("/checkout/confirmation");
     } catch (err) {
       if (err instanceof Yup.ValidationError) {

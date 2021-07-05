@@ -54,3 +54,6 @@ API: http://www.mocky.io/v2/5b15c4923100004a006f3c07
 - [] Test cover for all development files
 - [] Improve form validation to not allow past years on CreditCard validation
 - [] Create a StoryBook for the entire shared components folder
+- [] Create a CI/CD on GitHub
+- [] Improve Accessibility navigation
+- [] Add some loading animations to make the experience smoothly
