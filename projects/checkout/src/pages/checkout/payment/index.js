@@ -21,7 +21,7 @@ const PaymentPage = () => {
 
   const router = useRouter();
 
-  async function handleSubmit(data, { reset }) {
+  async function handleSubmit(data) {
     try {
       /**
        * get the validation schemas from our validations script and
@@ -31,18 +31,32 @@ const PaymentPage = () => {
         abortEarly: false,
       });
 
-      // Validation passed
-      console.log(data);
-
       /**
-       * reset errors messages
+       * reset error messages
        */
       formRef.current.setErrors({});
 
       /**
-       * reset form
+       * keep ony last 4 digits from credit card number
        */
-      reset();
+      const { cardNumber } = data;
+      const hiddenCardNumber = cardNumber.replace(/[0-9](?=.{4})/gm, "*");
+
+      /**
+       * save purchase items price resume into store
+       */
+      dispatch({
+        type: "saveCreditCardDetails",
+        value: {
+          number: hiddenCardNumber,
+          name: data.cardOwner,
+          expirationDate: data.cardValidation,
+        },
+      });
+
+      // console.log(data);
+      // console.log(replacedCardNumber);
+      router.push("/checkout/confirmation");
     } catch (err) {
       if (err instanceof Yup.ValidationError) {
         const errorMessages = {};

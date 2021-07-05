@@ -11,7 +11,7 @@ import {
 
 const ConfirmationPage = () => {
   const [productList, setProductList] = useState([]);
-  const { cartResume, purchaseItemsResume } = useUserState();
+  const { cartResume, purchaseItemsResume, creditCardDetails } = useUserState();
 
   useEffect(() => {
     renderProductsList();
@@ -37,9 +37,9 @@ const ConfirmationPage = () => {
       <MainWrapper>
         <Container label="Pagamento" labelType="h2">
           <PaymentDetails
-            cardNumber="1234"
-            cardOwner="José da Silva"
-            cardValidation="12/2024"
+            cardNumber={creditCardDetails.number}
+            cardOwner={creditCardDetails.name}
+            cardValidation={creditCardDetails.expirationDate}
           />
         </Container>
         <Container label="Produtos" labelType="h2">
