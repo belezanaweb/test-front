@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useRouter } from "next/router";
 import { useUserDispatch, useUserState } from "@belezanaweb/store";
+import { currency } from "@belezanaweb/utils";
 import { Client } from "@belezanaweb/services";
 import {
   Header,
@@ -39,7 +40,9 @@ const CartPage = () => {
         imageSrc: response.data.items[i].product.imageObjects[0].small,
         imageAlt: response.data.items[i].product.name,
         name: response.data.items[i].product.name,
-        price: response.data.items[i].product.priceSpecification.price,
+        price: currency(
+          response.data.items[i].product.priceSpecification.price
+        ),
       };
     }
     setProductList(newArr);

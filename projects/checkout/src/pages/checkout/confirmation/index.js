@@ -2,6 +2,8 @@ import React, { useState, useEffect } from "react";
 import { useUserState } from "@belezanaweb/store";
 import {
   Navigation,
+  Banner,
+  Header,
   MainWrapper,
   Container,
   PaymentDetails,
@@ -31,9 +33,13 @@ const ConfirmationPage = () => {
   };
   return (
     <>
-      <header>
+      <Header>
         <Navigation />
-      </header>
+        <Banner
+          icon="/images/icon-check.png"
+          message="Compra efetuada com sucesso"
+        />
+      </Header>
       <MainWrapper>
         <Container label="Pagamento" labelType="h2">
           <PaymentDetails
