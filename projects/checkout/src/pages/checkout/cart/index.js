@@ -45,6 +45,7 @@ const CartPage = () => {
         ),
       };
     }
+
     setProductList(newArr);
 
     /**
