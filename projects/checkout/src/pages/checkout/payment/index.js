@@ -1,5 +1,5 @@
 import React, { useRef } from "react";
-import { useRouter } from "next/router";
+import Router from "next/router";
 import * as Yup from "yup";
 import { useUserDispatch, useUserState } from "@belezanaweb/store";
 import {
@@ -18,8 +18,6 @@ const PaymentPage = () => {
   const dispatch = useUserDispatch();
   const { purchaseItemsResume } = useUserState();
   const formRef = useRef(null);
-
-  const router = useRouter();
 
   async function handleSubmit(data) {
     try {
@@ -54,7 +52,7 @@ const PaymentPage = () => {
         },
       });
 
-      router.push("/checkout/confirmation");
+      Router.push("/checkout/confirmation");
     } catch (err) {
       if (err instanceof Yup.ValidationError) {
         const errorMessages = {};

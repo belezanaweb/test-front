@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { useRouter } from "next/router";
+import Router from "next/router";
 import { useUserDispatch, useUserState } from "@belezanaweb/store";
 import { currency } from "@belezanaweb/utils";
 import { Client } from "@belezanaweb/services";
@@ -23,8 +23,6 @@ const CartPage = () => {
     renderItens();
   }, []);
 
-  const router = useRouter();
-
   /**
    * Get client purchased cart items from the API called: getPurchaseResume
    * populate the product array
@@ -45,6 +43,7 @@ const CartPage = () => {
         ),
       };
     }
+
     setProductList(newArr);
 
     /**
@@ -73,7 +72,7 @@ const CartPage = () => {
   };
 
   const handleSubmit = () => {
-    router.push("/checkout/payment");
+    Router.push("/checkout/payment");
   };
 
   return (
