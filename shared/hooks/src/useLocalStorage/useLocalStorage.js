@@ -1,5 +1,4 @@
 import { useState } from "react";
-// import { logError } from "helpers/errorHandler";
 
 function useLocalStorage(key, initialValue) {
   const [storedValue, setStoredValue] = useState(() => {
@@ -18,8 +17,8 @@ function useLocalStorage(key, initialValue) {
 
       window.localStorage.setItem(key, JSON.stringify(value));
     } catch (err) {
-      console.error(err);
-      // logError(err);
+      
+      console.log(err)
     }
   };
 

@@ -2,11 +2,16 @@
  * @jest-environment jsdom
  */
 import React from "react";
+import Router from "next/router";
 import "@testing-library/jest-dom/extend-expect";
-import { render, waitFor } from "@testing-library/react";
+import { fireEvent, render, waitFor, cleanup } from "@testing-library/react";
 import CartPage from "../../pages/checkout/cart";
 
-jest.mock("@belezanaweb/store");
+afterEach(cleanup);
+
+jest.mock("next/router", () => ({
+  push: jest.fn(),
+}));
 
 jest.mock("@belezanaweb/store", () => ({
   useUserState: jest.fn().mockImplementation(() => {
@@ -63,24 +68,26 @@ jest.mock("@belezanaweb/services", () => ({
   },
 }));
 
-const setProductList = jest.fn();
-
 const wrapper = () => render(<CartPage />);
 
 describe("Tests about Cart Page", () => {
-  it("Check if is loading correctly", () => {
-    const { getByText } = wrapper();
-
-    const btn = getByText(/Seguir para o pagamento/i);
-    expect(btn).toBeInTheDocument();
-  });
-
-  it("Check if the items list is loading correclty", async () => {
+  it("Check if page loads correctly and the dynamic list item as well", async () => {
     const { getByText } = wrapper();
 
     await waitFor(() => {
-      const text = getByText(/Product name 02/i);
+      const text = getByText("Product name 02");
       expect(text).toBeInTheDocument();
     });
+  });
+
+  it("Check if button is calling router correclty", async () => {
+    const { getByText } = wrapper();
+
+    await waitFor(() => {
+      const btn = getByText("Seguir para o pagamento");
+
+      fireEvent.click(btn);
+    });
+    expect(Router.push).toBeCalled();
   });
 });
