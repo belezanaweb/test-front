@@ -34,7 +34,7 @@ const ConfirmationPage = () => {
   return (
     <>
       <Header>
-        <Navigation />
+        <Navigation active="Confirmação" />
         <Banner
           icon="/images/icon-check.png"
           message="Compra efetuada com sucesso"

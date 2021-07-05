@@ -20,6 +20,7 @@ const PaymentPage = () => {
   const formRef = useRef(null);
 
   async function handleSubmit(data) {
+    console.log(formRef);
     try {
       /**
        * get the validation schemas from our validations script and
@@ -76,7 +77,7 @@ const PaymentPage = () => {
   return (
     <>
       <Header>
-        <Navigation />
+        <Navigation active="Pagamento" />
       </Header>
       <MainWrapper>
         <Container label="Cartão de crédito">

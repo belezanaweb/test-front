@@ -27,18 +27,20 @@ export const InputDefaultStyle = `
     border: 1px solid #a43287;
     outline: none;
   }
+
+  &.has-error {
+    border: 1px solid #f30;
+  }
 `;
 
 export const CustomInput = styled.input`
   ${InputDefaultStyle};
-  border: ${(props) =>
-    props.$isInvalid ? "1px solid #f30" : "1px solid #e7e7e7"};
+  border: 1px solid #e7e7e7;
 `;
 
 export const CustomInputMask = styled(InputMask)`
   ${InputDefaultStyle};
-  border: ${(props) =>
-    props.$isInvalid ? "1px solid #f30" : "1px solid #e7e7e7"};
+  border: 1px solid #e7e7e7;
 `;
 
 export const InputWrapper = styled.div`

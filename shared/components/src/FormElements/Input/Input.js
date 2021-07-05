@@ -20,9 +20,22 @@ export const Input = ({ id, label, name, mask, ...rest }) => {
    */
   const inputDecision = () => {
     if (mask) {
-      return <S.CustomInputMask ref={inputRef} mask={mask} {...rest} />;
+      return (
+        <S.CustomInputMask
+          className={error ? "has-error" : ""}
+          ref={inputRef}
+          mask={mask}
+          {...rest}
+        />
+      );
     }
-    return <S.CustomInput ref={inputRef} {...rest} />;
+    return (
+      <S.CustomInput
+        className={error ? "has-error" : ""}
+        ref={inputRef}
+        {...rest}
+      />
+    );
   };
 
   return (

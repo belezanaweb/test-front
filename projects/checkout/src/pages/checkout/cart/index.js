@@ -78,7 +78,7 @@ const CartPage = () => {
   return (
     <>
       <Header>
-        <Navigation />
+        <Navigation active="Sacola" />
       </Header>
       <MainWrapper>
         <Container label="Produtos">
