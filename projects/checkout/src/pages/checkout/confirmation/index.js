@@ -5,6 +5,7 @@ import {
   Banner,
   Header,
   MainWrapper,
+  SectionWrapper,
   Container,
   PaymentDetails,
   ProductsList,
@@ -34,23 +35,25 @@ const ConfirmationPage = () => {
   return (
     <>
       <Header>
-        <Navigation />
+        <Navigation active="Confirmação" />
         <Banner
           icon="/images/icon-check.png"
           message="Compra efetuada com sucesso"
         />
       </Header>
       <MainWrapper>
-        <Container label="Pagamento" labelType="h2">
-          <PaymentDetails
-            cardNumber={creditCardDetails.number}
-            cardOwner={creditCardDetails.name}
-            cardValidation={creditCardDetails.expirationDate}
-          />
-        </Container>
-        <Container label="Produtos" labelType="h2">
-          <ProductsList products={productList} />
-        </Container>
+        <SectionWrapper>
+          <Container label="Pagamento" labelType="h2">
+            <PaymentDetails
+              cardNumber={creditCardDetails.number}
+              cardOwner={creditCardDetails.name}
+              cardValidation={creditCardDetails.expirationDate}
+            />
+          </Container>
+          <Container label="Produtos" labelType="h2">
+            <ProductsList products={productList} />
+          </Container>
+        </SectionWrapper>
         <PurchaseResume
           subTotal={purchaseItemsResume.subTotal}
           shippingTotal={purchaseItemsResume.shippingTotal}

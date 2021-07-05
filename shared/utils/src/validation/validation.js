@@ -17,5 +17,5 @@ export const PaymentFormSchema = Yup.object().shape({
       7,
       "Verifique se digitou o formato da data corretamente. Exemplo: MM/YYYY"
     ),
-  cardCVV: Yup.string().required("O campo CVV é obrigatório").min(3).max(4),
+  cardCVV: Yup.string().required("O campo CVV é obrigatório"),
 });

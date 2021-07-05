@@ -20,6 +20,7 @@ const PaymentPage = () => {
   const formRef = useRef(null);
 
   async function handleSubmit(data) {
+    
     try {
       /**
        * get the validation schemas from our validations script and
@@ -58,7 +59,7 @@ const PaymentPage = () => {
         const errorMessages = {};
 
         /**
-         * create an array
+         * create an errors array
          */
         err.inner.forEach((error) => {
           errorMessages[error.path] = error.message;
@@ -76,7 +77,7 @@ const PaymentPage = () => {
   return (
     <>
       <Header>
-        <Navigation />
+        <Navigation active="Pagamento" />
       </Header>
       <MainWrapper>
         <Container label="Cartão de crédito">
