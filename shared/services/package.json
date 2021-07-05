@@ -1,0 +1,15 @@
+{
+  "name": "@belezanaweb/services",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "test": "jest"
+  },
+  "dependencies": {
+    "babel-jest": "^27.0.6"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.14.6",
+    "@babel/preset-env": "^7.14.7"
+  }
+}
