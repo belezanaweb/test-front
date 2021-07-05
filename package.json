@@ -11,7 +11,9 @@
   "scripts": {
     "start:checkout": "yarn workspace @belezanaweb/checkout dev",
     "test": "jest",
-    "coverage": "jest --coverage"
+    "coverage": "jest --coverage",
+    "build": "yarn workspace @belezanaweb/checkout build",
+    "export": "yarn workspace @belezanaweb/checkout export"
   },
   "dependencies": {
     "jest": "^27.0.6",

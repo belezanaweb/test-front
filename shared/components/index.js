@@ -6,6 +6,8 @@ export { Banner } from "./src/Banner/Banner";
 export { Header } from "./src/Header/Header";
 export { Footer } from "./src/Footer/Footer";
 export { MainWrapper } from "./src/MainWrapper/MainWrapper";
+export { SectionWrapper } from "./src/SectionWrapper/SectionWrapper";
+
 export { Container } from "./src/Container/Container";
 
 export { ProductsList } from "./src/ProductsList/ProductsList";

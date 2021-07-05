@@ -5,6 +5,7 @@ import {
   Banner,
   Header,
   MainWrapper,
+  SectionWrapper,
   Container,
   PaymentDetails,
   ProductsList,
@@ -41,16 +42,18 @@ const ConfirmationPage = () => {
         />
       </Header>
       <MainWrapper>
-        <Container label="Pagamento" labelType="h2">
-          <PaymentDetails
-            cardNumber={creditCardDetails.number}
-            cardOwner={creditCardDetails.name}
-            cardValidation={creditCardDetails.expirationDate}
-          />
-        </Container>
-        <Container label="Produtos" labelType="h2">
-          <ProductsList products={productList} />
-        </Container>
+        <SectionWrapper>
+          <Container label="Pagamento" labelType="h2">
+            <PaymentDetails
+              cardNumber={creditCardDetails.number}
+              cardOwner={creditCardDetails.name}
+              cardValidation={creditCardDetails.expirationDate}
+            />
+          </Container>
+          <Container label="Produtos" labelType="h2">
+            <ProductsList products={productList} />
+          </Container>
+        </SectionWrapper>
         <PurchaseResume
           subTotal={purchaseItemsResume.subTotal}
           shippingTotal={purchaseItemsResume.shippingTotal}

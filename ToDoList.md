@@ -12,35 +12,38 @@ O teste consiste em um checkout simples contendo 3 passos (carrinho, pagamento e
 - A aplicação precisa ser responsiva, utilizando o conceito de mobile-first. Use sua imaginação para entregar uma experiência boa no desktop.
 - Renderize cada passo em uma URL única (lib de rotas).
 
-
 ### Passo 1 - Carrinho:
-  - Consuma o [esse endpoint](http://www.mocky.io/v2/5b15c4923100004a006f3c07) e liste os itens do carrinho, bem como o resumo do carrinho;
-  - Persista o conteúdo do JSON para ser usado nas próximas etapas;
 
-### Passo 2 - Pagamento: 
-  - Exiba um form com campos de cartão de crédito com validação em cada campo;
-  - Habilite o botão de Finalizar Pedido apenas se o form esteja válido;
+- Consuma o [esse endpoint](http://www.mocky.io/v2/5b15c4923100004a006f3c07) e liste os itens do carrinho, bem como o resumo do carrinho;
+- Persista o conteúdo do JSON para ser usado nas próximas etapas;
 
-### Passo 3 - Sucesso: 
-  - Todo o conteúdo deverá ser exibido a partir dos dados persistidos;
-  
+### Passo 2 - Pagamento:
+
+- Exiba um form com campos de cartão de crédito com validação em cada campo;
+- Habilite o botão de Finalizar Pedido apenas se o form esteja válido;
+
+### Passo 3 - Sucesso:
+
+- Todo o conteúdo deverá ser exibido a partir dos dados persistidos;
+
 ### O que vamos avaliar:
-  - Organização do código;
-  - Mensagens (em inglês) e mudanças nos commits;
-  - Composição/reutilização de componentes;
-  - Testes unitários;
-  - O motivo de ter escolhido cada tech da stack;
-  - Como rodar sua aplicação ;)
+
+- Organização do código;
+- Mensagens (em inglês) e mudanças nos commits;
+- Composição/reutilização de componentes;
+- Testes unitários;
+- O motivo de ter escolhido cada tech da stack;
+- Como rodar sua aplicação ;)
 
 ### Diferenciais:
-  - Split bundle por rota (cada step ter um bundle separado para otimizar a performance);
-  - CSS in JS;
-  - React;
+
+- Split bundle por rota (cada step ter um bundle separado para otimizar a performance);
+- CSS in JS;
+- React;
 
 ### Fim:
+
 Ao finalizar o teste, submeta um pull request para o repositório que nosso time será notificado. Se tiver alguma observação, escreva no pull request.
-
-
 
 #ToDo List
 
@@ -98,6 +101,7 @@ API: http://www.mocky.io/v2/5b15c4923100004a006f3c07
 - [] Test cover for all development files
 - [] Improve form validation to not allow past years on CreditCard validation
 - [] Create a StoryBook for the entire shared components folder
+- [] Configure correctly build && export to create the artifacts for deploy
 - [] Create a CI/CD on GitHub
 - [] Improve Accessibility navigation
 - [] Add some loading animations to make the experience smoothly

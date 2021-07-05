@@ -59,7 +59,7 @@ const PaymentPage = () => {
         const errorMessages = {};
 
         /**
-         * create an array
+         * create an errors array
          */
         err.inner.forEach((error) => {
           errorMessages[error.path] = error.message;
