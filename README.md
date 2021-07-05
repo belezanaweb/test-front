@@ -102,4 +102,6 @@ Here is where you can find the **/checkout pages**  structure, but at this momen
 
 Here you will find the shared part of code, including **components**, **store**, **services**, **helpers** and what you think you should share between all of your projects.
 
-See ya!
+If you have any suggestions, questions, doubts, please do no hesitate to contact me.
+
+Cheers!
