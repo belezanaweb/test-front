@@ -1598,7 +1598,7 @@ babel-plugin-polyfill-regenerator@^0.2.2:
   dependencies:
     "@babel/helper-define-polyfill-provider" "^0.2.2"
 
-"babel-plugin-styled-components@>= 1.12.0":
+"babel-plugin-styled-components@>= 1.12.0", babel-plugin-styled-components@^1.13.1:
   version "1.13.1"
   resolved "https://registry.yarnpkg.com/babel-plugin-styled-components/-/babel-plugin-styled-components-1.13.1.tgz#5ecd28b207627c2a26ef8d5da401e9644065095a"
   integrity sha512-iY11g5orsdBnvWtXKCFBzDyTxZ9jvmkcYCCs5ONlvASYltDRhieCVzeDC7Do0fSW7psAL0zfVoXB3FHz2CkUSg==
