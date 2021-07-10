@@ -8,3 +8,13 @@
   font-size: calc(10px + 2vmin);
   color: white;
 }
+
+.container {
+  background: rgba(255, 255, 255, 0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 30vw;
+  height: calc(80vh + 90px);
+  z-index: 999;
+}
