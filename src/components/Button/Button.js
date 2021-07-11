@@ -1,7 +1,12 @@
 import React from 'react'
+import './Button.css'
 
-const Summary = (props) => {
-  return <div>Summary Component</div>
+const Button = (props) => {
+  return (
+    <div className="button-container" onClick={props.onClick}>
+      <span className="label">SEGUIR PARA O PAGAMENTO</span>
+    </div>
+  )
 }
 
-export default Summary
+export default Button

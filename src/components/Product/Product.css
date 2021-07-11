@@ -1,0 +1,30 @@
+.product-container {
+  border: 1px solid #eee;
+  border-radius: 3px;
+  padding: 10px;
+  margin: 5px 0;
+  display: flex;
+  flex-wrap: nowrap;
+}
+
+.thumbnail {
+  flex: 1;
+}
+
+.details {
+  flex: 3;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.name {
+  width: 100%;
+  font-size: 13px;
+  line-height: 16px;
+}
+
+.price {
+  font-weight: bold;
+  text-align: end;
+  width: 100%;
+}

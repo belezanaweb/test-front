@@ -1,0 +1,21 @@
+.button-container {
+  height: 60px;
+  margin-top: 20px;
+  background-color: #ff6c00;
+  border-radius: 3px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.button-container:hover {
+  background-color: #d45a00;
+}
+
+.label {
+  font-weight: bold;
+  font-size: 20px;
+  line-height: 24px;
+  letter-spacing: 0.5px;
+  color: #fff;
+}

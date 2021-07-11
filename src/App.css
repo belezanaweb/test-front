@@ -1,20 +1,10 @@
 .App {
-  background-color: #282c34;
+  background-color: #eee;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.container {
-  background: rgba(255, 255, 255, 0.8);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 30vw;
-  height: calc(80vh + 90px);
-  z-index: 999;
+  font-size: calc(9px + 2vmin);
+  color: #212122;
+  font-size: 14px;
+  line-height: 17px;
 }
