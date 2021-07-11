@@ -1,0 +1,34 @@
+.success {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.success > span {
+  font-weight: bold;
+  color: #ff7800;
+}
+
+.title {
+  padding: 0px 10px 5px 10px;
+  font-weight: bold;
+  color: #999;
+}
+
+.card {
+  background-color: #fff;
+  padding: 10px;
+}
+
+.payment-card {
+  display: flex;
+  flex-direction: column;
+}
+
+.product-card {
+  margin-top: 20px;
+}
+
+.summary {
+  margin-top: 20px;
+}

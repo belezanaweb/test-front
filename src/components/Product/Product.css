@@ -9,6 +9,8 @@
 
 .thumbnail {
   flex: 1;
+  max-width: 90px;
+  max-height: 90px;
 }
 
 .details {

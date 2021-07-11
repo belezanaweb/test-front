@@ -4,7 +4,7 @@ import './Button.css'
 const Button = (props) => {
   return (
     <div className="button-container" onClick={props.onClick}>
-      <span className="label">SEGUIR PARA O PAGAMENTO</span>
+      <span className="button-label">{props.label}</span>
     </div>
   )
 }

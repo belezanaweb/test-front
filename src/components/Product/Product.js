@@ -1,18 +1,21 @@
 import React from 'react'
+import styled from 'styled-components'
 import './Product.css'
 import { convertDecimalToCurrency } from '../../utils'
 
 const Product = (props) => {
-  const thumbnail = props.product.imageObjects.find((im) => im.valid).thumbnail
+  const imageObject = props.product.imageObjects.find((im) => im.valid)
 
   return (
     <div className="product-container">
-      <img src={thumbnail} className="thumbnail" />
+      <img src={imageObject.medium} className="thumbnail" />
       <div className="details">
         <span className="name">{props.product.name}</span>
-        <span className="price">
-          {convertDecimalToCurrency(props.product.priceSpecification.price)}
-        </span>
+        {props.showPrice && (
+          <span className="price">
+            {convertDecimalToCurrency(props.product.priceSpecification.price)}
+          </span>
+        )}
       </div>
     </div>
   )

@@ -3,3 +3,45 @@
   flex-direction: column;
   padding: 10px;
 }
+
+.title {
+  padding: 0px 10px 5px 10px;
+  font-weight: bold;
+  color: #999;
+}
+
+.form {
+  background-color: #fff;
+  padding: 10px;
+}
+
+.form-line {
+  display: flex;
+  justify-content: space-between;
+}
+
+.summary {
+  margin-top: 20px;
+}
+
+@media (min-width: 900px) {
+  .title {
+    width: 100%;
+  }
+
+  .responsive-container {
+    display: flex;
+    flex-direction: row;
+  }
+
+  .form {
+    flex: 1;
+    margin-right: 10px;
+  }
+
+  .summary {
+    flex: 1;
+    margin-top: 0px;
+    margin-left: 10px;
+  }
+}
