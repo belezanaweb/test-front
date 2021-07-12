@@ -1,0 +1,42 @@
+.page-container {
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+}
+
+.title {
+  padding: 0px 10px 5px 10px;
+  font-weight: bold;
+  color: #999;
+}
+
+.product-list {
+  background-color: #fff;
+  padding: 10px;
+}
+
+.summary {
+  margin-top: 20px;
+}
+
+@media (min-width: 900px) {
+  .title {
+    width: 100%;
+  }
+
+  .responsive-container {
+    display: flex;
+    flex-direction: row;
+  }
+
+  .product-list {
+    flex: 1;
+    margin-right: 10px;
+  }
+
+  .summary {
+    flex: 1;
+    margin-top: 0px;
+    margin-left: 10px;
+  }
+}

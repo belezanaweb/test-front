@@ -1,0 +1,39 @@
+.success {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.success__image {
+  max-width: 40px;
+  max-height: 40px;
+  margin-top: 10px;
+}
+
+.success > span {
+  font-weight: bold;
+  color: #ff7800;
+  margin: 10px 0;
+}
+
+.title {
+  padding: 0px 10px 5px 10px;
+  font-weight: bold;
+  color: #999;
+  margin-top: 10px;
+}
+
+.card {
+  background-color: #fff;
+  padding: 10px;
+}
+
+.payment-card {
+  display: flex;
+  flex-direction: column;
+}
+
+.summary {
+  margin-top: 20px;
+}

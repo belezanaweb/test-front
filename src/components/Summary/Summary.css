@@ -1,0 +1,23 @@
+.summary-container {
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+}
+
+.line {
+  flex: 1;
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: 8px;
+}
+
+.discount {
+  color: #ff7800;
+}
+
+.total {
+  font-weight: bold;
+  padding-top: 5px;
+}
