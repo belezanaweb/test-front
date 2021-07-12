@@ -16,7 +16,6 @@ const initialState = {
 }
 
 function reducer(state, action) {
-  console.log(action)
   switch (('Action', action.type)) {
     case 'SET_SHOPPING_CART': {
       return {

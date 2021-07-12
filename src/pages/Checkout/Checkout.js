@@ -1,6 +1,7 @@
-import React, { useContext } from 'react'
+import React, { useContext, useEffect } from 'react'
 import { ReducerContext } from '../../reducer'
 import './Checkout.css'
+import { ReactComponent as Check } from '../../assets/check.svg'
 import { NavBar } from '../../components/NavBar'
 import { Product } from '../../components/Product'
 import { Summary } from '../../components/Summary'
@@ -8,12 +9,18 @@ import { Summary } from '../../components/Summary'
 const Checkout = (props) => {
   const { state } = useContext(ReducerContext)
 
+  useEffect(() => {
+    if (state.shoppingCart.items.length === 0 || state.creditCard.number.length === 0) {
+      props.history.push('/')
+    }
+  })
+
   return (
     <>
       <NavBar pathname={props.location.pathname} />
       <div className="page-container">
         <div className="success">
-          <img></img>
+          <Check className="success__image" />
           <span>COMPRA EFETUADA COM SUCESSO</span>
         </div>
         <div className="title">
@@ -27,7 +34,7 @@ const Checkout = (props) => {
         <div className="title">
           <span>PRODUTOS</span>
         </div>
-        <div className="card product-card">
+        <div className="card">
           {state.shoppingCart.items.map((i) => {
             return <Product key={i.product.sku} product={i.product} showPrice={false} />
           })}

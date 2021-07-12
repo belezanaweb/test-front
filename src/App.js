@@ -1,5 +1,4 @@
-import React, { useContext, useEffect } from 'react'
-import { ReducerContext } from './reducer'
+import React from 'react'
 import './App.css'
 import { ReducerContextProvider } from './reducer'
 import { BrowserRouter, Route, Switch } from 'react-router-dom'

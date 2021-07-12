@@ -1,4 +1,4 @@
-import React, { useState, useContext } from 'react'
+import React, { useState, useEffect, useContext } from 'react'
 import { ReducerContext } from '../../reducer'
 import { NavBar } from '../../components/NavBar'
 import './Payment.css'
@@ -10,61 +10,58 @@ import { validateCreditCard, validateCVV, validateExpiration, validateName } fro
 const Payment = (props) => {
   const { state, dispatch } = useContext(ReducerContext)
 
-  const [form, setForm] = useState({
-    creditCard: {
-      value: '',
-      hasError: false,
-      errorMessage: ''
-    },
-    name: {
-      value: '',
-      hasError: false,
-      errorMessage: ''
-    },
-    expiration: {
-      value: '',
-      hasError: false,
-      errorMessage: ''
-    },
-    cvv: {
-      value: '',
-      hasError: false,
-      errorMessage: ''
+  useEffect(() => {
+    if (state.shoppingCart.items.length === 0) {
+      props.history.push('/')
     }
   })
 
-  const validate = (target) => {
-    if (target.id === 'creditCard') return validateCreditCard(target.value)
-    if (target.id === 'name') return validateName(target.value)
-    if (target.id === 'expiration') return validateExpiration(target.value)
-    if (target.id === 'cvv') return validateCVV(target.value)
-  }
+  const [creditCardInput, setCreditCardInput] = useState({
+    value: '',
+    hasError: false,
+    errorMessage: ''
+  })
+  const [nameInput, setNameInput] = useState({ value: '', hasError: false, errorMessage: '' })
+  const [expirationInput, setExpirationInput] = useState({
+    value: '',
+    hasError: false,
+    errorMessage: ''
+  })
+  const [cvvInput, setCvvInput] = useState({ value: '', hasError: false, errorMessage: '' })
 
   const handleChange = (event) => {
     event.persist()
+    validate(event.target)
+  }
 
-    let updatedForm = form
-    updatedForm[event.target.id] = validate(event.target)
-
-    setForm(updatedForm)
-    console.log(updatedForm)
+  const validate = (target) => {
+    if (target.id === 'creditCard') setCreditCardInput(validateCreditCard(target.value))
+    if (target.id === 'name') setNameInput(validateName(target.value))
+    if (target.id === 'expiration') setExpirationInput(validateExpiration(target.value))
+    if (target.id === 'cvv') setCvvInput(validateCVV(target.value))
   }
 
   const submit = () => {
     if (
-      form.creditCard.hasError ||
-      form.name.hasError ||
-      form.expiration.hasError ||
-      form.cvv.hasError
+      creditCardInput.hasError ||
+      nameInput.hasError ||
+      expirationInput.hasError ||
+      cvvInput.hasError
     ) {
-      window.alert('Your form contains erros. Please, correct them before continue.')
+      window.alert('Seu formulário contém erros. Por favor, corrija-os antes de continuar.')
       return
     }
 
+    let maskedNumber = creditCardInput.value.replace(
+      /(\d{4})?(\d{4})?(\d{4})?(\d{4})/,
+      '$1.$2.$3.$4'
+    )
+    maskedNumber = maskedNumber.slice(0, 13).replace(/[0-9]/g, '*') + maskedNumber.slice(14, 19)
+
     const creditCard = {
-      number: form.creditCard.value,
-      name: form.name.value,
-      expiration: form.expiration.value
+      number: maskedNumber,
+      name: nameInput.value,
+      expiration: expirationInput.value
     }
     dispatch({ type: 'SET_CREDIT_CARD', payload: creditCard })
     props.history.push('/checkout')
@@ -84,37 +81,37 @@ const Payment = (props) => {
               label="Cartão de Crédito"
               type="number"
               onChange={handleChange}
-              value={form.creditCard.value}
-              error={form.creditCard.hasError}
-              errorMessage={form.creditCard.errorMessage}
+              value={creditCardInput.value}
+              error={creditCardInput.hasError}
+              errorMessage={creditCardInput.errorMessage}
             />
             <Input
               id="name"
               label="Nome do Titular"
               type="text"
               onChange={handleChange}
-              value={form.name.value}
-              error={form.name.hasError}
-              errorMessage={form.name.errorMessage}
+              value={nameInput.value}
+              error={nameInput.hasError}
+              errorMessage={nameInput.errorMessage}
             />
             <div className="form-line">
               <Input
                 id="expiration"
-                label="Validade (mês/ano)"
+                label="Validade (MM/AA)"
                 type="text"
                 onChange={handleChange}
-                value={form.expiration.value}
-                error={form.expiration.hasError}
-                errorMessage={form.expiration.errorMessage}
+                value={expirationInput.value}
+                error={expirationInput.hasError}
+                errorMessage={expirationInput.errorMessage}
               />
               <Input
                 id="cvv"
                 label="CVV"
                 type="number"
                 onChange={handleChange}
-                value={form.cvv.value}
-                error={form.cvv.hasError}
-                errorMessage={form.cvv.errorMessage}
+                value={cvvInput.value}
+                error={cvvInput.hasError}
+                errorMessage={cvvInput.errorMessage}
               />
             </div>
           </div>

@@ -1,5 +1,4 @@
 import React from 'react'
-import styled from 'styled-components'
 import './Product.css'
 import { convertDecimalToCurrency } from '../../utils'
 
@@ -8,7 +7,11 @@ const Product = (props) => {
 
   return (
     <div className="product-container">
-      <img src={imageObject.medium} className="thumbnail" />
+      <img
+        src={imageObject.medium}
+        className="thumbnail"
+        alt={`Imagem do produto ${props.product.name}`}
+      />
       <div className="details">
         <span className="name">{props.product.name}</span>
         {props.showPrice && (

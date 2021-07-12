@@ -10,8 +10,12 @@ import { fetch } from '../../service'
 const ShoppingCart = (props) => {
   const { state, dispatch } = useContext(ReducerContext)
 
-  useEffect(async () => {
-    dispatch({ type: 'SET_SHOPPING_CART', payload: await fetch() })
+  useEffect(() => {
+    const fetchData = async () => {
+      const response = await fetch()
+      dispatch({ type: 'SET_SHOPPING_CART', payload: response })
+    }
+    fetchData()
   }, [dispatch])
 
   const submit = () => {
