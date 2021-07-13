@@ -51,6 +51,7 @@ export default function Cart() {
           <span className="value">R$ {products.total}</span>
         </div>
       </div>
+      <button className="btnProceed">SEGUIR PARA O PAGAMENTO</button>
     </div>
   )
 }
