@@ -1,0 +1,19 @@
+.cart-list {
+  background-color: #fff;
+  padding: 10px;
+  margin: 10px;
+  border-radius: 5px;
+  box-shadow: 1px 1px 5px 0 rgba(0, 0, 29, 0.22);
+}
+
+.cart-title {
+  color: #999;
+  font-size: 14px;
+  font-weight: 700;
+  margin-left: 3%;
+}
+
+.cart {
+  justify-items: left;
+  padding: 1%;
+}

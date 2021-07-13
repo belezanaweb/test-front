@@ -5,10 +5,10 @@ import Cart from './components/cart/index'
 
 const App = () => {
   return (
-    <>
+    <div className="App">
       <Header />
       <Cart />
-    </>
+    </div>
   )
 }
 

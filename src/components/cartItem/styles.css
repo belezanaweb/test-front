@@ -1,0 +1,25 @@
+.cart-item {
+  border: solid 1px #eee;
+  border-radius: 5px;
+  margin: 10px;
+  padding: 5px;
+  display: flex;
+}
+
+.name-price {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  flex-grow: 1;
+}
+
+.price {
+  text-align: end;
+  margin-right: 3%;
+  font-weight: 700;
+}
+
+.image {
+  display: block;
+  margin-bottom: 2px;
+}
