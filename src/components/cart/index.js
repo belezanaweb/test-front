@@ -27,11 +27,29 @@ export default function Cart() {
             <CartItem
               key={index}
               name={item.product.name}
-              src={item.product.imageObjects[0].medium}
+              src={item.product.imageObjects[0].small}
               price={item.product.priceSpecification.price}
             />
           )
         })}
+      </div>
+      <div className="summary">
+        <div className="row">
+          <span>PRODUTOS</span>
+          <span className="value">R$ {products.subTotal}</span>
+        </div>
+        <div className="row">
+          <span>FRETE</span>
+          <span className="value">R$ {products.shippingTotal}</span>
+        </div>
+        <div className="row discount">
+          <span>DESCONTO</span>
+          <span className="value">R$ {products.discount}</span>
+        </div>
+        <div className="row total">
+          <span>TOTAL</span>
+          <span className="value">R$ {products.total}</span>
+        </div>
       </div>
     </div>
   )

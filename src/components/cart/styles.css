@@ -1,7 +1,7 @@
 .cart-list {
   background-color: #fff;
   padding: 10px;
-  margin: 10px;
+  margin: 1%;
   border-radius: 5px;
   box-shadow: 1px 1px 5px 0 rgba(0, 0, 29, 0.22);
 }
@@ -16,4 +16,27 @@
 .cart {
   justify-items: left;
   padding: 1%;
+}
+
+.summary {
+  border: solid 1px #ccc;
+  border-radius: 3px;
+  padding: 13px;
+  margin: 1%;
+  margin-top: 4%;
+}
+
+.row {
+  margin-top: 9px;
+  margin-bottom: 9px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.discount {
+  color: #ff7800;
+}
+
+.total {
+  font-weight: 700;
 }
