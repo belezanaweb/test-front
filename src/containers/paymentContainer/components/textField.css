@@ -1,0 +1,25 @@
+.label {
+  color: #ccc;
+  font-size: 12px;
+  font-weight: 700;
+  margin-bottom: 5px;
+}
+
+.input {
+  height: 45px;
+  box-sizing: border-box;
+  border-radius: 3px;
+  background-color: #fff;
+  border: 1px solid #e7e7e7;
+  box-shadow: inset 0 1px 2px 0 rgba(0, 0, 0, 0.2);
+  font-size: 16px;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.textField {
+  display: flex;
+  flex-direction: column;
+  margin: 5px;
+  flex-grow: 1;
+}

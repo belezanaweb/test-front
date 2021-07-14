@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from 'react'
 import axios from 'axios'
-import CartItem from '../cartItem/index'
-import './styles.css'
+import { CartList } from './components/cartList'
+import './cartContainer.css'
 
-export default function Cart() {
+const Cart = () => {
   const [products, setProducts] = useState('')
   const [isLoading, setLoading] = useState(true)
   function getProducts() {
@@ -24,18 +24,7 @@ export default function Cart() {
   return (
     <div className="cart">
       <span className="cart-title">PRODUTOS</span>
-      <div className="cart-list">
-        {products.items.map((item, index) => {
-          return (
-            <CartItem
-              key={index}
-              name={item.product.name}
-              src={item.product.imageObjects[0].small}
-              price={item.product.priceSpecification.price}
-            />
-          )
-        })}
-      </div>
+      <CartList items={products.items} />
       <div className="summary">
         <div className="row">
           <span>PRODUTOS</span>
@@ -58,3 +47,5 @@ export default function Cart() {
     </div>
   )
 }
+
+export { Cart }

@@ -1,8 +1,9 @@
 import React from 'react'
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 import './App.css'
-import Navbar from './components/navbar/index'
-import Cart from './components/cart/index'
+import Navbar from './containers/navbarContainer/index'
+import { Cart } from './containers/cartContainer/cartContainer'
+import Payment from './containers/paymentContainer/paymentContainer'
 
 const App = () => {
   return (
@@ -13,7 +14,9 @@ const App = () => {
           <Route exact path="/">
             <Cart />
           </Route>
-          <Route path="/payment"></Route>
+          <Route path="/payment">
+            <Payment />
+          </Route>
           <Route path="/confirm"></Route>
         </Switch>
       </div>

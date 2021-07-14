@@ -1,0 +1,14 @@
+.cardForm {
+  background-color: #fff;
+  padding: 10px;
+  margin: 1%;
+  border-radius: 5px;
+  box-shadow: 1px 1px 5px 0 rgba(0, 0, 29, 0.22);
+  display: flex;
+  flex-direction: column;
+}
+
+.formRow {
+  display: flex;
+  justify-content: space-between;
+}
