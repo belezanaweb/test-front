@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import axios from 'axios'
 import CartItem from '../cartItem/index'
 import './styles.css'
@@ -12,7 +12,10 @@ export default function Cart() {
       setLoading(false)
     })
   }
-  getProducts()
+
+  useEffect(() => {
+    getProducts()
+  }, [])
 
   if (isLoading) {
     return <div>Loading...</div>

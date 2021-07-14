@@ -1,14 +1,23 @@
 import React from 'react'
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 import './App.css'
-import Header from './components/header/index'
+import Navbar from './components/navbar/index'
 import Cart from './components/cart/index'
 
 const App = () => {
   return (
-    <div className="App">
-      <Header />
-      <Cart />
-    </div>
+    <Router>
+      <div className="App">
+        <Navbar />
+        <Switch>
+          <Route exact path="/">
+            <Cart />
+          </Route>
+          <Route path="/payment"></Route>
+          <Route path="/confirm"></Route>
+        </Switch>
+      </div>
+    </Router>
   )
 }
 

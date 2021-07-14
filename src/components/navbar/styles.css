@@ -1,4 +1,4 @@
-.headerButton {
+.navbarButton {
   background-color: #fff;
   border: none;
   height: 100%;
@@ -11,11 +11,11 @@
   font-family: helvetica;
 }
 
-.headerButton:hover {
+.navbarButton:hover {
   color: #ff7800;
 }
 
-.header {
+.navbar {
   display: flex;
   height: 5vh;
   box-shadow: 1px 1px 5px 0 rgba(0, 0, 29, 0.22);
