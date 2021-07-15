@@ -1,3 +1,9 @@
+.payment {
+  display: flex;
+  flex-direction: column;
+  padding: 1%;
+}
+
 .form {
   display: flex;
   flex-direction: column;

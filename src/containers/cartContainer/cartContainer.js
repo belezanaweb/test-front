@@ -1,9 +1,12 @@
 import React, { useState, useEffect } from 'react'
 import axios from 'axios'
 import { CartList } from './components/cartList'
+import { Title } from '../../commons/title'
+import { PriceSummary } from '../../commons/priceSummary'
+import { Button } from '../../commons/button'
 import './cartContainer.css'
 
-const Cart = () => {
+const CartContainer = () => {
   const [products, setProducts] = useState('')
   const [isLoading, setLoading] = useState(true)
   function getProducts() {
@@ -23,29 +26,17 @@ const Cart = () => {
 
   return (
     <div className="cart">
-      <span className="cart-title">PRODUTOS</span>
+      <Title text="PRODUTOS" />
       <CartList items={products.items} />
-      <div className="summary">
-        <div className="row">
-          <span>PRODUTOS</span>
-          <span className="value">R$ {products.subTotal}</span>
-        </div>
-        <div className="row">
-          <span>FRETE</span>
-          <span className="value">R$ {products.shippingTotal}</span>
-        </div>
-        <div className="row discount">
-          <span>DESCONTO</span>
-          <span className="value">R$ {products.discount}</span>
-        </div>
-        <div className="row total">
-          <span>TOTAL</span>
-          <span className="value">R$ {products.total}</span>
-        </div>
-      </div>
-      <button className="btnProceed">SEGUIR PARA O PAGAMENTO</button>
+      <PriceSummary
+        subTotal={products.subTotal}
+        shippingTotal={products.shippingTotal}
+        discount={products.discount}
+        total={products.total}
+      />
+      <Button text="SEGUIR PARA O PAGAMENTO" />
     </div>
   )
 }
 
-export { Cart }
+export { CartContainer }

@@ -1,0 +1,17 @@
+.success {
+  display: flex;
+  flex-direction: column;
+  padding: 1%;
+}
+.circle {
+  width: 39.51px;
+  height: 39.51px;
+  margin: auto;
+  background-image: url('../../assets/Check.png');
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.images {
+  display: flex;
+}

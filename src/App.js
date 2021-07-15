@@ -2,8 +2,9 @@ import React from 'react'
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 import './App.css'
 import Navbar from './containers/navbarContainer/index'
-import { Cart } from './containers/cartContainer/cartContainer'
-import Payment from './containers/paymentContainer/paymentContainer'
+import { CartContainer } from './containers/cartContainer/cartContainer'
+import { PaymentContainer } from './containers/paymentContainer/paymentContainer'
+import { SuccessContainer } from './containers/successContainer/successContainer'
 
 const App = () => {
   return (
@@ -12,12 +13,14 @@ const App = () => {
         <Navbar />
         <Switch>
           <Route exact path="/">
-            <Cart />
+            <CartContainer />
           </Route>
           <Route path="/payment">
-            <Payment />
+            <PaymentContainer />
           </Route>
-          <Route path="/confirm"></Route>
+          <Route path="/success">
+            <SuccessContainer />
+          </Route>
         </Switch>
       </div>
     </Router>

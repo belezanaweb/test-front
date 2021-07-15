@@ -1,51 +1,5 @@
-.cart-title {
-  color: #999;
-  font-size: 14px;
-  font-weight: 700;
-  margin-left: 3%;
-}
-
 .cart {
   display: flex;
   flex-direction: column;
   padding: 1%;
-}
-
-.summary {
-  border: solid 1px #ccc;
-  border-radius: 3px;
-  padding: 13px;
-  margin: 1%;
-  margin-top: 3%;
-}
-
-.row {
-  margin-top: 9px;
-  margin-bottom: 9px;
-  display: flex;
-  justify-content: space-between;
-}
-
-.discount {
-  color: #ff7800;
-}
-
-.total {
-  font-weight: 700;
-}
-
-.btnProceed {
-  margin: 1%;
-  height: 60px;
-  color: #fff;
-  font-size: 20px;
-  font-weight: bold;
-  background-color: #ff6c00;
-  border-radius: 3px;
-  border: none;
-  box-shadow: inset 0 -3px 0 0 #d45a00, 0 2px 4px 0 rgba(0, 0, 0, 0.25);
-}
-
-.btnProceed:hover {
-  background-color: #d45a00;
 }
