@@ -3,15 +3,30 @@
   flex-direction: column;
   padding: 1%;
 }
-.circle {
-  width: 39.51px;
-  height: 39.51px;
-  margin: auto;
-  background-image: url('../../assets/Check.png');
-  background-repeat: no-repeat;
-  background-position: center;
+
+.imgTitle {
+  margin: 1%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
-.images {
+.icon {
+  font-size: 39.51px;
+  color: #ff7800;
+  margin-bottom: 11.06px;
+}
+
+.titleText {
+  color: #ff7800;
+}
+
+.paymentData {
   display: flex;
+  flex-direction: column;
+  padding: 1%;
+  margin: 1%;
+  background-color: #fff;
+  border-radius: 3px;
+  box-shadow: 1px 1px 5px 0 rgba(0, 0, 29, 0.22);
 }
