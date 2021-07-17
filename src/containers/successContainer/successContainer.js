@@ -5,23 +5,33 @@ import { CartList } from '../cartContainer/components/cartList'
 import { PriceSummary } from '../../commons/priceSummary'
 import { faCheckCircle } from '@fortawesome/free-regular-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { connect } from 'react-redux'
 
-const SuccessContainer = () => (
-  <div className="success">
-    <div className="imgTitle">
-      <FontAwesomeIcon className="icon" icon={faCheckCircle} />
-      <Title classname="titleText" text="COMPRA EFETUADA COM SUCESSO" />
+const component = ({ products }) => {
+  return (
+    <div className="success">
+      <div className="imgTitle">
+        <FontAwesomeIcon className="icon" icon={faCheckCircle} />
+        <Title classname="titleText" text="COMPRA EFETUADA COM SUCESSO" />
+      </div>
+      <Title text="PAGAMENTO" />
+      <div className="paymentData">
+        <div>****.****.****.1234</div>
+        <div>Joao da Silva</div>
+        <div>05/2019</div>
+      </div>
+      <Title text="PRODUTOS" />
+      <CartList items={products.items} />
+      <PriceSummary
+        subTotal={products.subTotal}
+        shippingTotal={products.shippingTotal}
+        discount={products.discount}
+        total={products.total}
+      />
     </div>
-    <Title text="PAGAMENTO" />
-    <div className="paymentData">
-      <div>****.****.****.1234</div>
-      <div>Joao da Silva</div>
-      <div>05/2019</div>
-    </div>
-    <Title text="PRODUTOS" />
-    {/* <CartList /> */}
-    <PriceSummary subTotal={0} shippingTotal={0} discount={0} total={0} />
-  </div>
-)
+  )
+}
+
+const SuccessContainer = connect((state) => ({ products: state.products }))(component)
 
 export { SuccessContainer }

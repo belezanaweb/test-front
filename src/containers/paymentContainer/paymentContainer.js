@@ -3,15 +3,23 @@ import { CardForm } from './components/cardForm'
 import { Title } from '../../commons/title'
 import { PriceSummary } from '../../commons/priceSummary'
 import { Button } from '../../commons/button'
+import { connect } from 'react-redux'
 import './paymentContainer.css'
 
-const PaymentContainer = () => (
+const component = ({ products }) => (
   <div className="payment">
     <Title text="CARTÃO DE CRÉDITO" />
     <CardForm />
-    <PriceSummary subTotal={0} shippingTotal={0} discount={0} total={0} />
+    <PriceSummary
+      subTotal={products.subTotal}
+      shippingTotal={products.shippingTotal}
+      discount={products.discount}
+      total={products.total}
+    />
     <Button text="FINALIZAR PEDIDO" />
   </div>
 )
+
+const PaymentContainer = connect((state) => ({ products: state.products }))(component)
 
 export { PaymentContainer }
