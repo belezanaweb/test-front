@@ -7,34 +7,37 @@ import { SuccessContainer } from './successContainer/successContainer'
 import { Loading } from '../commons/loading'
 import { connect } from 'react-redux'
 import { productsThunks } from '../thunks/products'
+import './checkout.css'
 
-const Checkout = ({ isLoading, dispatch }) => {
+const Component = ({ isLoading, dispatch }) => {
   useEffect(() => {
     dispatch(productsThunks.getAll())
   })
 
-  if (isLoading) {
-    return <Loading />
-  }
-
   return (
-    <Router>
-      <div className="App">
-        <Navbar />
-        <Switch>
-          <Route exact path="/">
-            <CartContainer />
-          </Route>
-          <Route path="/payment">
-            <PaymentContainer />
-          </Route>
-          <Route path="/success">
-            <SuccessContainer />
-          </Route>
-        </Switch>
-      </div>
-    </Router>
+    <div className="checkout">
+      {isLoading ? (
+        <Loading />
+      ) : (
+        <Router>
+          <Navbar />
+          <Switch>
+            <Route exact path="/">
+              <CartContainer />
+            </Route>
+            <Route path="/payment">
+              <PaymentContainer />
+            </Route>
+            <Route path="/success">
+              <SuccessContainer />
+            </Route>
+          </Switch>
+        </Router>
+      )}
+    </div>
   )
 }
 
-export default connect((state) => ({ isLoading: state.products.isLoading }))(Checkout)
+const Checkout = connect((state) => ({ isLoading: state.products.isLoading }))(Component)
+
+export { Checkout }
