@@ -5,7 +5,6 @@ const initialState = {
 }
 
 const products = (state = initialState, action) => {
-  console.log(action.payload)
   switch (action.type) {
     case ACTIONS.PRODUCTS_GET: {
       return action.payload

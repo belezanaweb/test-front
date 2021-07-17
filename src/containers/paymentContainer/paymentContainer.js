@@ -6,7 +6,7 @@ import { Button } from '../../commons/button'
 import { connect } from 'react-redux'
 import './paymentContainer.css'
 
-const component = ({ products }) => (
+const Component = ({ products }) => (
   <div className="payment">
     <Title text="CARTÃO DE CRÉDITO" />
     <CardForm />
@@ -20,6 +20,6 @@ const component = ({ products }) => (
   </div>
 )
 
-const PaymentContainer = connect((state) => ({ products: state.products }))(component)
+const PaymentContainer = connect((state) => ({ products: state.products }))(Component)
 
 export { PaymentContainer }
