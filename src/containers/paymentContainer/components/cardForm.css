@@ -10,5 +10,23 @@
 
 .formRow {
   display: flex;
+  flex-direction: row;
   justify-content: space-between;
+  width: 100%;
+}
+
+.formRow > *:first-child {
+  margin-right: 16px;
+}
+
+@media screen and (max-width: 460px) {
+  .formRow {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+  }
+
+  .formRow > *:first-child {
+    margin-right: 0;
+  }
 }

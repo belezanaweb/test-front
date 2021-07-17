@@ -1,14 +1,12 @@
 .summary {
   border: solid 1px #ccc;
   border-radius: 3px;
-  padding: 13px;
-  margin: 1%;
-  margin-top: 1%;
+  padding: 15px 13px 15px 13px;
+  margin: 8px 1% 1% 1%;
 }
 
 .row {
-  margin-top: 9px;
-  margin-bottom: 9px;
+  margin-bottom: 8px;
   display: flex;
   justify-content: space-between;
 }
@@ -19,4 +17,5 @@
 
 .total {
   font-weight: 700;
+  margin-top: 16px;
 }
