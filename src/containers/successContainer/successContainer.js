@@ -7,19 +7,23 @@ import { faCheckCircle } from '@fortawesome/free-regular-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { connect } from 'react-redux'
 
-const component = ({ products }) => {
+const component = ({ products, card }) => {
   return (
     <div className="success">
       <div className="imgTitle">
         <FontAwesomeIcon className="icon" icon={faCheckCircle} />
         <Title classname="titleText" text="COMPRA EFETUADA COM SUCESSO" />
       </div>
-      <Title text="PAGAMENTO" />
-      <div className="paymentData">
-        <div>****.****.****.1234</div>
-        <div>Joao da Silva</div>
-        <div>05/2019</div>
-      </div>
+      {card.cardNum && card.cardName && card.cardVal && (
+        <>
+          <Title text="PAGAMENTO" />
+          <div className="paymentData">
+            <div>{'****.****.****.' + card.cardNum.substring(card.cardNum.length - 4)}</div>
+            <div>{card.cardName}</div>
+            <div>{card.cardVal}</div>
+          </div>
+        </>
+      )}
       <Title text="PRODUTOS" />
       <CartList items={products.items} />
       <PriceSummary
@@ -32,6 +36,8 @@ const component = ({ products }) => {
   )
 }
 
-const SuccessContainer = connect((state) => ({ products: state.products }))(component)
+const SuccessContainer = connect((state) => ({ products: state.products, card: state.card }))(
+  component
+)
 
 export { SuccessContainer }
