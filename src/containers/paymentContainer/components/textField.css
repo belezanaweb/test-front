@@ -20,6 +20,18 @@
   letter-spacing: 1.37px;
 }
 
+.invalidInput {
+  border: 2px solid #f58c94;
+}
+
+.validInput {
+  border: 2px solid #94f58c;
+}
+
+.input:focus {
+  outline: none;
+}
+
 .name {
   letter-spacing: 0px;
 }

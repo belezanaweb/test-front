@@ -1,6 +1,7 @@
 import { ACTIONS } from '../constants/actions'
 
 const initialState = {
+  valid: false,
   cardNum: '',
   cardName: '',
   cardVal: '',
