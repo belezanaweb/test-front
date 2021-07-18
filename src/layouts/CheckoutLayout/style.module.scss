@@ -11,7 +11,7 @@
     background-color: $c-bg-grey-light;
     display: flex;
     align-items: center;
-    flex-direction: row;
+    flex-direction: column;
     @include device(desktop) {
         flex-direction: row;
     }

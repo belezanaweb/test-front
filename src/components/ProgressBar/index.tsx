@@ -2,10 +2,9 @@ import { useRouter } from 'next/router'
 import style from './style.module.scss'
 
 const ProgressBar = () => {
-  const path = useRouter().asPath
+  const path = useRouter()?.asPath
 
   const activeLink = (page: string) => {
-    console.log('path', path)
     return path == page ? style.isActive : ''
   }
 

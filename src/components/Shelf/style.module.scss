@@ -1,0 +1,44 @@
+@import "styles";
+
+.container {
+    width: 100%;
+    background-color: $c-bg-light;
+    padding: 0.4em;
+}
+.list {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+}
+.item {
+    color: $c-text-dark;
+    font-size: rem(13);
+    padding: 0.4em;
+    margin: 0.4em auto;
+    border: 1px solid $c-border-light;
+    display: grid;
+    grid-template-columns: repeat(8, 1fr);
+    gap: 0.8em;
+}
+.productImage {
+    grid-column: 1/1;
+    grid-row: 1/9;
+    max-width: 65px;
+    align-self: center;
+    @include device(desktop) {
+        max-width: 100%;
+    }
+}
+
+.productName {
+    grid-column: 2/9;
+    grid-row: 1/6;
+}
+
+.productPrice {
+    grid-column: 2/9;
+    grid-row: 6/8;
+    justify-self: end;
+
+    font-weight: bold;
+}

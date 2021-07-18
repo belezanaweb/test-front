@@ -5,7 +5,7 @@ export default function Payment() {
     return (
         <>
             <Head>
-                <title>Pagamento | Checkout</title>
+                <title>Pagamento | Loja</title>
             </Head>
             <div>Pagamento
             </div>

@@ -28,10 +28,39 @@
     "babel-jest": "^27.0.6",
     "eslint": "7.30.0",
     "eslint-config-next": "11.0.1",
+    "husky": "^7.0.1",
     "identity-obj-proxy": "^3.0.0",
+    "isomorphic-fetch": "^3.0.0",
     "jest": "^27.0.6",
+    "lint-staged": "^11.0.1",
+    "prettier": "^2.3.2",
     "sass": "^1.35.2",
     "ts-jest": "^27.0.3",
     "typescript": "4.3.5"
+  },
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "lint-staged": {
+    "src/**/*.{js,jsx,ts,tsx,json,css,scss,md}": [
+      "prettier --write"
+    ]
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
   }
 }

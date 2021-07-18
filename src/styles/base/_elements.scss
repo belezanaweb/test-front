@@ -1,39 +1,33 @@
-html, body, div, span, applet, object, iframe,
-h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-a, abbr, acronym, address, big, cite, code,
-del, dfn, em, font, img, ins, kbd, q, s, samp,
-small, strike, sub, sup, tt, var,
-dl, dt, dd, ol, ul, li,
-fieldset, form, label, legend,
-table, caption, tbody, tfoot, thead, tr, th, td {
+html,
+body {
     font-family: $f-main;
-}
+    background-color: $c-bg-grey-light;
+    overflow-x: hidden;
 
-body{
-    background-color: $c-bg-grey-light; 
-}
+    -webkit-text-size-adjust: 100%;
+    -ms-text-size-adjust: 100%;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 
-html,body{
-    @include device(smallPhone){
+    @include device(smallPhone) {
         font-size: 1rem;
     }
-    @include device(phone){
+    @include device(phone) {
         font-size: 1.2rem;
     }
-    @include device(largePhone){
+    @include device(largePhone) {
+        font-size: 1.3rem;
+    }
+    @include device(tablet) {
         font-size: 1.4rem;
     }
-    @include device(tablet){
+    @include device(laptop) {
         font-size: 1.5rem;
     }
-    @include device(laptop){
+    @include device(monitor) {
         font-size: 1.6rem;
     }
-    @include device(monitor){
+    @include device(tv) {
         font-size: 1.7rem;
     }
-    @include device(tv){
-        font-size: 1.8rem;
-    }
-    
 }
