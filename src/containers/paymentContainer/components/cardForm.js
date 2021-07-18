@@ -15,22 +15,27 @@ const Component = ({ card, dispatch }) => {
     <form className="cardForm">
       <TextField
         label="Número do cartão:"
+        mask="9999.9999.9999.9999"
         onChange={(e) => setCardInfo({ ...cardInfo, cardNum: e.target.value })}
         value={card.cardNum}
       />
       <TextField
+        className="name"
         label="Nome do Titular:"
+        placeholder="Como no cartão"
         onChange={(e) => setCardInfo({ ...cardInfo, cardName: e.target.value })}
         value={card.cardName}
       />
       <div className="formRow">
         <TextField
           label="Validade (mês/ano):"
+          mask="99/9999"
           onChange={(e) => setCardInfo({ ...cardInfo, cardVal: e.target.value })}
           value={card.cardVal}
         />
         <TextField
           label="CVV:"
+          mask="999"
           onChange={(e) => setCardInfo({ ...cardInfo, cardCvv: e.target.value })}
           value={card.cardCvv}
         />

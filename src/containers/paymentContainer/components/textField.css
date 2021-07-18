@@ -6,6 +6,7 @@
 }
 
 .input {
+  color: #ccc;
   height: 45px;
   box-sizing: border-box;
   border-radius: 3px;
@@ -16,6 +17,15 @@
   padding-left: 8px;
   padding-right: 8px;
   font-family: Helvetica;
+  letter-spacing: 1.37px;
+}
+
+.name {
+  letter-spacing: 0px;
+}
+
+.input::placeholder {
+  color: #ccc;
 }
 
 .textField {

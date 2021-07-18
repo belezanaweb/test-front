@@ -1,10 +1,18 @@
 import React from 'react'
 import './textField.css'
+import InputMask from 'react-input-mask'
 
-const TextField = ({ label, onChange, value }) => (
+const TextField = ({ className, label, onChange, value, mask, placeholder }) => (
   <div className="textField">
     <div className="label">{label}</div>
-    <input className="input" onChange={onChange} value={value}></input>
+    <InputMask
+      className={'input ' + className}
+      placeholder={placeholder}
+      mask={mask}
+      onChange={onChange}
+      value={value}
+      alwaysShowMask="true"
+    />
   </div>
 )
 
