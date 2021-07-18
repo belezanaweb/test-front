@@ -1,7 +1,6 @@
 import Link from 'next/link'
 import { useEffect } from 'react'
 import { useRouter } from 'next/router'
-import NotFoundLayout from '../layouts/NotFoundLayout'
 
 const NotFound = () => {
   const router = useRouter()
@@ -13,12 +12,15 @@ const NotFound = () => {
   }, [router])
 
   return (
-    <NotFoundLayout >      
+    <div>
       <h1>Ooops...</h1>
-      <h2>Pagina não encontrada :(</h2>
+      <br />
+      <h2>Pagina não encontrada :(
+      </h2>
+      <br />
       <p>Voltando para a página <Link href="/"><a>Checkout</a></Link> em 3 segundos...</p>
-    </NotFoundLayout>
+    </div>
   )
 }
- 
+
 export default NotFound;

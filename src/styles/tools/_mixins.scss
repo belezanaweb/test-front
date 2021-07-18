@@ -1,38 +1,26 @@
 @use "sass:map";
 
-@mixin breakpoint($point: desktop) {
-  @if $point==mobile {
-    @media only screen and (max-width: map.get($breakpoints, 'mobile')) {
-      @content;
-    }
-  } @else if $point==desktop {
-    @media only screen and (min-width: map.get($breakpoints, 'desktop')) {
-      @content;
-    }
-  }
-}
-
 @mixin device($point, $value: 0) {
   @if $point==smallPhone {
     @media only screen and (max-width: map.get($breakpoints, 'phone')) {
       @content;
     }
   } @else if $point==phone {
-    @media only screen and (min-width: map.get($breakpoints, 'phone')) and (max-width: map.get($breakpoints, 'larger-phone')) {
+    @media only screen and (min-width: map.get($breakpoints, 'phone')) and (max-width: map.get($breakpoints, 'largePhone')) {
       @content;
     }
   } @else if $point==largePhone {
-    @media only screen and (min-width: map.get($breakpoints, 'larger-phone')) and (max-width: map.get($breakpoints, 'tablet')) {
+    @media only screen and (min-width: map.get($breakpoints, 'largePhone')) and (max-width: map.get($breakpoints, 'tablet')) {
       @content;
     }
   }
    @else if $point==tablet {
-    @media only screen and (min-width: map.get($breakpoints, 'larger-phone')) and (max-width: map.get($breakpoints, 'tablet')) {
+    @media only screen and (min-width: map.get($breakpoints, 'tablet')) and (max-width: map.get($breakpoints, 'laptop')) {
       @content;
     }
   }
    @else if $point==laptop {
-    @media only screen and (min-width: map.get($breakpoints, 'tablet')) and (max-width: map.get($breakpoints, 'monitor')) {
+    @media only screen and (min-width: map.get($breakpoints, 'laptop')) and (max-width: map.get($breakpoints, 'monitor')) {
       @content;
     }
   } @else if $point==monitor {
