@@ -2,7 +2,7 @@ import React from 'react';
 import { currency } from '../../helpers/precify';
 import style from './style.module.scss'
 
-const Shelf: React.FC = ({ subTotal, shippingTotal, discount, total }: any) => {
+const Totals: React.FC = ({ subTotal, shippingTotal, discount, total }: any) => {
 
     return (
         <section className={style.container}>
@@ -28,4 +28,4 @@ const Shelf: React.FC = ({ subTotal, shippingTotal, discount, total }: any) => {
     );
 }
 
-export default React.memo(Shelf);
+export default React.memo(Totals);

@@ -6,7 +6,8 @@ import { currency } from '../../helpers/precify';
 
 
 const Shelf: React.FC = ({ items }: any) => {
-    const route = useRouter().asPath
+
+    const route = useRouter()?.asPath
 
     return (
         <>
