@@ -23,6 +23,7 @@
     padding: 0.4em;
     margin: 0.4em auto;
     border: 1px solid $c-border-light;
+    border-radius: $s-radius;
     display: grid;
     grid-template-columns: repeat(8, 1fr);
     gap: 0.8em;

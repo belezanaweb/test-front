@@ -1,0 +1,29 @@
+@import "styles";
+
+.button {
+    width: 100%;
+    background-color: $c-button-brand;
+    border-bottom: 1px solid $c-button-brand-hover;
+    border-radius: $s-radius;
+
+    &:hover {
+        background-color: $c-button-brand-hover;
+    }
+    @include device(desktop) {
+        width: 30%;
+        margin-left: auto;
+    }
+
+    a {
+        width: 100%;
+        height: 100%;
+        display: block;
+        padding: 0.8em;
+        font-size: rem(20);
+        font-weight: bold;
+        text-transform: uppercase;
+        text-align: center;
+        color: $c-text-light;
+        cursor: pointer;
+    }
+}

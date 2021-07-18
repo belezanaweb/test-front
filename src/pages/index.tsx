@@ -1,5 +1,6 @@
 import Head from 'next/head'
 import React from 'react'
+import Button from '../components/Button'
 import Shelf from '../components/Shelf'
 import Totals from '../components/Totals'
 import { userCart } from '../constants/cart'
@@ -21,6 +22,7 @@ export default function Cart({ cart }: any) {
       </Head>
       <Shelf {...cart} />
       <Totals {...cart} />
+      <Button to="/pagamento">SEGUIR PARA O PAGAMENTO</Button>
     </>
   )
 }

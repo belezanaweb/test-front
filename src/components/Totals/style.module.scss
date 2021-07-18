@@ -4,6 +4,8 @@
     width: 100%;
     padding: 0.4em;
     border: 1px solid $c-border-medium;
+    border-radius: $s-radius;
+    margin-bottom: 0.8em;
 
     @include device(desktop) {
         width: 30%;
