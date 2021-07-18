@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react'
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
-import Navbar from './navbarContainer/index'
+import { BrowserRouter as Router, Route, Switch, Redirect } from 'react-router-dom'
+import { Navbar } from './navbarContainer/index'
 import { CartContainer } from './cartContainer/cartContainer'
 import { PaymentContainer } from './paymentContainer/paymentContainer'
 import { SuccessContainer } from './successContainer/successContainer'
@@ -9,7 +9,7 @@ import { connect } from 'react-redux'
 import { productsThunks } from '../thunks/products'
 import './checkout.css'
 
-const Component = ({ isLoading, dispatch }) => {
+const Component = ({ isLoading, order, dispatch }) => {
   useEffect(() => {
     dispatch(productsThunks.getAll())
   })
@@ -23,13 +23,13 @@ const Component = ({ isLoading, dispatch }) => {
           <Navbar />
           <Switch>
             <Route exact path="/">
-              <CartContainer />
+              {order.isOrderComplete ? <Redirect to="/success" /> : <CartContainer />}
             </Route>
             <Route path="/payment">
-              <PaymentContainer />
+              {order.isOrderComplete ? <Redirect to="/success" /> : <PaymentContainer />}
             </Route>
             <Route path="/success">
-              <SuccessContainer />
+              {order.isOrderComplete ? <SuccessContainer /> : <Redirect to="/payment" />}
             </Route>
           </Switch>
         </Router>
@@ -38,6 +38,8 @@ const Component = ({ isLoading, dispatch }) => {
   )
 }
 
-const Checkout = connect((state) => ({ isLoading: state.products.isLoading }))(Component)
+const Checkout = connect((state) => ({ isLoading: state.products.isLoading, order: state.order }))(
+  Component
+)
 
 export { Checkout }

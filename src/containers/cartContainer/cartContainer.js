@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 import { connect } from 'react-redux'
 import { CartList } from './components/cartList'
 import { Title } from '../../commons/title'
@@ -17,7 +18,9 @@ const component = ({ products }) => {
         discount={products.discount}
         total={products.total}
       />
-      <Button text="SEGUIR PARA O PAGAMENTO" />
+      <Link to="/payment">
+        <Button text="SEGUIR PARA O PAGAMENTO" />
+      </Link>
     </div>
   )
 }

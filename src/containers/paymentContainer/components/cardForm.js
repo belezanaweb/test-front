@@ -22,7 +22,7 @@ const Component = ({ card, dispatch }) => {
 
   useEffect(() => {
     if (isValidCardNum && isValidCardVal && isValidCardName && isValidCardCvv) {
-      dispatch(cardActions.update({ ...cardInfo, valid: true }))
+      dispatch(cardActions.update({ ...cardInfo, isValid: true }))
     } else {
       dispatch(cardActions.update(cardInfo))
     }

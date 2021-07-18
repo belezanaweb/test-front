@@ -1,16 +1,12 @@
 import { ACTIONS } from '../constants/actions'
 
 const initialState = {
-  isValid: false,
-  cardNum: '',
-  cardName: '',
-  cardVal: '',
-  cardCvv: ''
+  isOrderComplete: false
 }
 
-const card = (state = initialState, action) => {
+const order = (state = initialState, action) => {
   switch (action.type) {
-    case ACTIONS.CARD_UPDATE: {
+    case ACTIONS.ORDER_COMPLETE: {
       return { ...state, ...action.payload }
     }
     default: {
@@ -21,4 +17,4 @@ const card = (state = initialState, action) => {
   }
 }
 
-export { card }
+export { order }

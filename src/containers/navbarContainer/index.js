@@ -2,7 +2,7 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import './styles.css'
 
-export default function Navbar() {
+const Navbar = () => {
   return (
     <div className="navbar">
       <Link className="navbarButton" to="/">
@@ -17,3 +17,5 @@ export default function Navbar() {
     </div>
   )
 }
+
+export { Navbar }
