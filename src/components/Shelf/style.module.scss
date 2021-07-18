@@ -4,6 +4,12 @@
     width: 100%;
     background-color: $c-bg-light;
     padding: 0.4em;
+    margin-bottom: 0.8em;
+    max-height: 60vh;
+    overflow-y: auto;
+    @include device(desktop) {
+        width: 60%;
+    }
 }
 .list {
     display: flex;
@@ -11,6 +17,7 @@
     flex-direction: column;
 }
 .item {
+    width: 100%;
     color: $c-text-dark;
     font-size: rem(13);
     padding: 0.4em;
@@ -21,9 +28,9 @@
     gap: 0.8em;
 }
 .productImage {
+    max-width: 65px;
     grid-column: 1/1;
     grid-row: 1/9;
-    max-width: 65px;
     align-self: center;
     @include device(desktop) {
         max-width: 100%;
@@ -36,9 +43,8 @@
 }
 
 .productPrice {
+    font-weight: bold;
     grid-column: 2/9;
     grid-row: 6/8;
     justify-self: end;
-
-    font-weight: bold;
 }

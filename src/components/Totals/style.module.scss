@@ -1,0 +1,34 @@
+@import "styles";
+
+.container {
+    width: 100%;
+    padding: 0.4em;
+    border: 1px solid $c-border-medium;
+
+    @include device(desktop) {
+        width: 30%;
+    }
+}
+.list {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+.item {
+    width: 100%;
+    color: $c-text-dark;
+    font-size: rem(13);
+    text-transform: uppercase;
+    padding: 0.4em;
+    margin: 0.4em auto;
+    display: flex;
+    justify-content: space-between;
+
+    &:last-child {
+        font-weight: bold;
+    }
+}
+
+.hasDiscount {
+    color: $c-text-brand;
+}

@@ -13,21 +13,21 @@ body {
         font-size: 1rem;
     }
     @include device(phone) {
-        font-size: 1.2rem;
+        font-size: 1.05rem;
     }
     @include device(largePhone) {
-        font-size: 1.3rem;
+        font-size: 1.1rem;
     }
     @include device(tablet) {
-        font-size: 1.4rem;
+        font-size: 1.15rem;
     }
     @include device(laptop) {
-        font-size: 1.5rem;
+        font-size: 1.2rem;
     }
     @include device(monitor) {
-        font-size: 1.6rem;
+        font-size: 1.25rem;
     }
     @include device(tv) {
-        font-size: 1.7rem;
+        font-size: 1.3rem;
     }
 }

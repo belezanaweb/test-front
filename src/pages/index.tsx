@@ -1,6 +1,7 @@
 import Head from 'next/head'
 import React from 'react'
 import Shelf from '../components/Shelf'
+import Totals from '../components/Totals'
 import { userCart } from '../constants/cart'
 
 export const getStaticProps = async () => {
@@ -19,6 +20,7 @@ export default function Cart({ cart }: any) {
         <title>Sacola | Loja</title>
       </Head>
       <Shelf {...cart} />
+      <Totals {...cart} />
     </>
   )
 }
