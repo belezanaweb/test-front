@@ -1,0 +1,16 @@
+@function rem($font-pixel) {
+  @return calc(#{$font-pixel}rem / #{$f-size-base});
+}
+
+/**
+ * Z-indexes
+ */
+@function z($name) {
+  @if index($z-indexes, $name) {
+    // starts with 1000, in case of externas libs
+    @return (length($z-indexes) - index($z-indexes, $name)) + 1000;
+  } @else {
+    @warn 'Theres is no "#{$name}" in the z-index list; choose one of this items: #{$z-indexes}';
+    @return null;
+  }
+}

@@ -1,21 +1,41 @@
 {
-  "name": "test-front",
+  "name": "boti-test",
   "version": "0.1.0",
   "private": true,
-  "dependencies": {
-    "@testing-library/jest-dom": "^4.2.4",
-    "@testing-library/react": "^9.3.2",
-    "@testing-library/user-event": "^7.1.2",
-    "react": "^17.0.1",
-    "react-dom": "^17.0.1",
-    "react-scripts": "3.4.4"
-  },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "coverage": "react-scripts test --coverage --watchAll=false",
-    "eject": "react-scripts eject"
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint",
+    "test": "jest"
+  },
+  "dependencies": {
+    "next": "11.0.1",
+    "react": "17.0.2",
+    "react-dom": "17.0.2"
+  },
+  "devDependencies": {
+    "@testing-library/dom": "^8.1.0",
+    "@testing-library/jest-dom": "^5.14.1",
+    "@testing-library/react": "^12.0.0",
+    "@testing-library/react-hooks": "^7.0.1",
+    "@testing-library/user-event": "^13.1.9",
+    "@types/babel-generator": "^6.25.4",
+    "@types/jest": "^26.0.24",
+    "@types/node": "^16.3.3",
+    "@types/react": "17.0.14",
+    "@types/react-dom": "^17.0.9",
+    "babel-jest": "^27.0.6",
+    "eslint": "7.30.0",
+    "eslint-config-next": "11.0.1",
+    "husky": "^7.0.1",
+    "identity-obj-proxy": "^3.0.0",
+    "jest": "^27.0.6",
+    "lint-staged": "^11.0.1",
+    "prettier": "^2.3.2",
+    "sass": "^1.35.2",
+    "ts-jest": "^27.0.3",
+    "typescript": "4.3.5"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -29,22 +49,5 @@
     "hooks": {
       "pre-commit": "lint-staged"
     }
-  },
-  "browserslist": {
-    "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
-    ],
-    "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
-    ]
-  },
-  "devDependencies": {
-    "husky": "^4.3.0",
-    "lint-staged": "^10.4.2",
-    "prettier": "^2.1.2"
   }
 }
