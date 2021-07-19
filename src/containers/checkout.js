@@ -15,7 +15,7 @@ const Component = ({ isLoading, order, dispatch }) => {
   })
 
   return (
-    <div className="checkout">
+    <div className="checkout" data-testid="checkout">
       {isLoading ? (
         <Loading />
       ) : (

@@ -5,7 +5,7 @@ import './loading.css'
 
 const Loading = () => (
   <div className="iconSpace">
-    <FontAwesomeIcon id="icon" class="fa-spin" icon={faSpinner} />
+    <FontAwesomeIcon id="icon" className="fa-spin" icon={faSpinner} />
   </div>
 )
 
