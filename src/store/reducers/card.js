@@ -4,13 +4,18 @@ const initialState = {
   isValid: false,
   cardNum: '',
   cardName: '',
-  cardVal: '',
-  cardCvv: ''
+  cardExp: '',
+  cardCvv: '',
+  isValidCardNum: null,
+  isValidCardExp: null,
+  isValidCardName: null,
+  isValidCardCvv: null
 }
 
 const card = (state = initialState, action) => {
   switch (action.type) {
     case ACTIONS.CARD_UPDATE: {
+      console.log(action.payload)
       return { ...state, ...action.payload }
     }
     default: {

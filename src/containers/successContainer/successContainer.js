@@ -14,13 +14,13 @@ const component = ({ products, card }) => {
         <FontAwesomeIcon className="icon" icon={faCheckCircle} />
         <Title classname="titleText" text="COMPRA EFETUADA COM SUCESSO" />
       </div>
-      {card.cardNum && card.cardName && card.cardVal && (
+      {card.cardNum && card.cardName && card.cardExp && (
         <>
           <Title text="PAGAMENTO" />
           <div className="paymentData">
             <div>{'****.****.****.' + card.cardNum.substring(card.cardNum.length - 4)}</div>
             <div>{card.cardName}</div>
-            <div>{card.cardVal}</div>
+            <div>{card.cardExp}</div>
           </div>
         </>
       )}
