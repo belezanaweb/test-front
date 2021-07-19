@@ -1,18 +1,27 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useLocation } from 'react-router-dom'
+import classnames from 'classnames'
 import './styles.css'
 
 const Navbar = () => {
+  const location = useLocation().pathname
+
   return (
     <div className="navbar">
-      <Link className="navbarButton" to="/">
-        <button className="navbarButton">SACOLA</button>
+      <Link className="navbarLink" to="/">
+        <button className={classnames('navbarButton', location === '/' ? 'current' : '')}>
+          SACOLA
+        </button>
       </Link>
-      <Link className="navbarButton" to="/payment">
-        <button className="navbarButton">PAGAMENTO</button>
+      <Link className="navbarLink" to="/payment">
+        <button className={classnames('navbarButton', location === '/payment' ? 'current' : '')}>
+          PAGAMENTO
+        </button>
       </Link>
-      <Link className="navbarButton" to="/success">
-        <button className="navbarButton">CONFIRMAÇÃO</button>
+      <Link className="navbarLink" to="/success">
+        <button className={classnames('navbarButton', location === '/success' ? 'current' : '')}>
+          CONFIRMAÇÃO
+        </button>
       </Link>
     </div>
   )

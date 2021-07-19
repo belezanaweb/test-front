@@ -5,10 +5,10 @@ import { CartItem } from './cartItem'
 const CartList = ({ items }) => {
   return (
     <div className="cart-list">
-      {items.map((item, index) => {
+      {items.map((item) => {
         return (
           <CartItem
-            key={index}
+            key={item.product.sku}
             name={item.product.name}
             src={item.product.imageObjects[0].small}
             price={item.product.priceSpecification.price}

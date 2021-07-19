@@ -3,17 +3,22 @@
   border: none;
   height: 100%;
   width: 100%;
-  align-items: center;
-  justify-content: center;
+  font-family: 'Helvetica Neue', Arial, sans-serif;
   font-size: 13px;
   font-weight: 1000;
   color: #ccc;
-  font-family: helvetica;
-  display: flex;
+}
+
+.navbarLink {
+  width: 100%;
   text-decoration: none;
 }
 
 .navbarButton:hover {
+  color: #ff7800;
+}
+
+.current {
   color: #ff7800;
 }
 
