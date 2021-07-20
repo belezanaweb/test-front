@@ -5,7 +5,9 @@ import classNames from 'classnames'
 
 const TextField = ({ id, className, label, onChange, value, mask, placeholder, isValid }) => (
   <div className="textField" mask={mask}>
-    <div className="label">{label}</div>
+    <label for={id} className="label">
+      {label}
+    </label>
     <InputMask
       id={id}
       className={classNames(
