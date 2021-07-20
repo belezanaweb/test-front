@@ -33,7 +33,7 @@ describe('Text Field', () => {
         isValid={true}
       />
     );
-    expect(getByTestId('test-id')).toHaveClass('input', 'testClass', 'validInput');
+    expect(getByTestId('test-id')).toHaveClass('input', 'testClass');
     expect(getByTestId('test-id')).toHaveValue('1111.____');
     expect(getByPlaceholderText('test-placeholder')).not.toBeNull();
     rerender(
