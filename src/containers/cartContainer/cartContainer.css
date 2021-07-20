@@ -1,5 +1,5 @@
 .cart {
   display: flex;
   flex-direction: column;
-  padding: 1%;
+  padding: 10px;
 }

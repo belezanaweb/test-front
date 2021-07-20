@@ -1,7 +1,6 @@
 .cardForm {
   background-color: #fff;
-  padding: 10px;
-  margin: 1%;
+  padding: 12px 10px 0 10px;
   border-radius: 5px;
   box-shadow: 1px 1px 5px 0 rgba(0, 0, 29, 0.22);
   display: flex;

@@ -1,12 +1,16 @@
 .cart-item {
   border: solid 1px #eee;
   border-radius: 5px;
-  margin: 10px;
-  padding: 5px;
+  padding: 11px 10px 14px 10px;
   display: flex;
 }
 
+.cart-item:not(:last-child) {
+  margin-bottom: 15px;
+}
+
 .name-price {
+  margin-left: 11px;
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
@@ -15,7 +19,6 @@
 
 .price {
   text-align: end;
-  margin-right: 3%;
   font-weight: 700;
 }
 
