@@ -28,7 +28,11 @@ const Component = ({ products, card, dispatch }) => {
         discount={products.discount}
         total={products.total}
       />
-      <Button onClick={() => handleClick(card.isValid)} text="FINALIZAR PEDIDO" />
+      <Button
+        isEnabled={card.isValid}
+        onClick={() => handleClick(card.isValid)}
+        text="FINALIZAR PEDIDO"
+      />
     </div>
   );
 };

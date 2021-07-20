@@ -13,3 +13,8 @@
 .btnProceed:hover {
   background-color: #d45a00;
 }
+
+.btnProceed:disabled {
+  background-color: #999;
+  box-shadow: inset 0 -3px 0 0 rgb(116, 116, 116), 0 2px 4px 0 rgba(0, 0, 0, 0.25);
+}
