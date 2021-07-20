@@ -10,6 +10,7 @@ const TextField = ({ id, className, label, onChange, value, mask, placeholder, i
     </label>
     <InputMask
       id={id}
+      data-testid={id}
       className={classNames(
         'input',
         className,
@@ -20,7 +21,7 @@ const TextField = ({ id, className, label, onChange, value, mask, placeholder, i
       mask={mask}
       onChange={onChange}
       value={value}
-      alwaysShowMask="true"
+      alwaysShowMask={true}
     />
   </div>
 );
