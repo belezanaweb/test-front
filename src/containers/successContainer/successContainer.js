@@ -1,7 +1,7 @@
 import React from 'react';
 import './successContainer.css';
 import { Title } from '../../commons/title';
-import { CartList } from '../cartContainer/components/cartList';
+import { CartList } from '../../commons/cartList';
 import { PriceSummary } from '../../commons/priceSummary';
 import { faCheckCircle } from '@fortawesome/free-regular-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -27,7 +27,7 @@ const component = ({ products, card }) => {
         </>
       )}
       <Title text="PRODUTOS" />
-      <CartList items={products.items} />
+      <CartList items={products.items} showPrice={false} />
       <PriceSummary
         subTotal={products.subTotal}
         shippingTotal={products.shippingTotal}

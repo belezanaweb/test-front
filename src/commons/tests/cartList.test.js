@@ -1,6 +1,6 @@
 import React from 'react';
 import { render } from '@testing-library/react';
-import { CartList } from './cartList';
+import { CartList } from '../cartList';
 
 describe('Cart List', () => {
   it('Should render the cart list', async () => {

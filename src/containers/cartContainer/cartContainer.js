@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
-import { CartList } from './components/cartList';
+import { CartList } from '../../commons/cartList';
 import { Title } from '../../commons/title';
 import { PriceSummary } from '../../commons/priceSummary';
 import { Button } from '../../commons/button';

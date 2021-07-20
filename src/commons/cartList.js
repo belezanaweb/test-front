@@ -2,7 +2,7 @@ import React from 'react';
 import './cartList.css';
 import { CartItem } from './cartItem';
 
-const CartList = ({ items }) => {
+const CartList = ({ items, showPrice = true }) => {
   return (
     <div data-testid="cart-list" className="cart-list">
       {items.map((item) => {
@@ -11,7 +11,7 @@ const CartList = ({ items }) => {
             key={item.product.sku}
             name={item.product.name}
             src={item.product.imageObjects[0].small}
-            price={item.product.priceSpecification.price}
+            price={showPrice ? item.product.priceSpecification.price : false}
           />
         );
       })}

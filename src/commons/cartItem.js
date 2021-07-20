@@ -6,7 +6,7 @@ const CartItem = ({ name, src, price }) => (
     <img className="image" alt={name} src={src} />
     <div className="name-price">
       <span className="name">{name}</span>
-      <span className="price">R$ {price.toFixed(2).replace('.', ',')}</span>
+      {price && <span className="price">R$ {price.toFixed(2).replace('.', ',')}</span>}
     </div>
   </div>
 );
