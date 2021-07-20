@@ -6,7 +6,8 @@ interface iType {
   max: number,
   mask: string,
   message: string,
-  regex?: RegExp
+  regex?: RegExp,
+  validate?: RegExp,
 }
 
 const inputTypes: { [key: string]: iType } = {
@@ -29,7 +30,8 @@ const inputTypes: { [key: string]: iType } = {
     max: 7,
     mask: '00/0000',
     message: 'Validade Incorreta',
-    regex: /[^\d]+/gi
+    regex: /[^\d]+/gi,
+    validate: /^(0[1-9]|1[0-2])\/?([0-9]{4})$/
   },
   cvv: {
     min: 3,
@@ -46,6 +48,9 @@ const useForm = (type: string) => {
   const [valid, setValid] = React.useState<boolean>(false);
 
   function invalid(): boolean {
+    if (inputTypes[type]?.validate) {
+      return value.replace(/[^\w]+/g, '').match(inputTypes[type].validate) ? false : true
+    }
     return value.length < inputTypes[type].min || value.length > inputTypes[type].max ? true : false;
   }
 

@@ -11,7 +11,7 @@ const CardForm = () => {
     const expire = useForm('expire');
     const cvv = useForm('cvv');
 
-    const { setcardApproved } = useContext(BillingContext)
+    const { setCardApproved } = useContext(BillingContext)
 
     function handleSubmit(event: any) {
         event.preventDefault();
@@ -19,9 +19,9 @@ const CardForm = () => {
 
     useEffect(() => {
         if (cardNumber.valid && cardName.valid && expire.valid && cvv.valid) {
-            setcardApproved(true)
+            setCardApproved(true)
         } else {
-            setcardApproved(false)
+            setCardApproved(false)
         }
     }, [cardNumber.valid, cardName.valid, expire.valid, cvv.valid])
 

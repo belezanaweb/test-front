@@ -4,6 +4,5 @@
   "/_document": "pages/_document.js",
   "/pagamento": "pages/pagamento.js",
   "/confirmacao": "pages/confirmacao.js",
-  "/404": "pages/404.js",
   "/": "pages/index.js"
 }
