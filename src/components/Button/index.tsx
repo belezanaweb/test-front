@@ -1,13 +1,16 @@
-import Link from 'next/link';
-import { useRouter } from 'next/router'
+import React from 'react';
 import style from './style.module.scss'
 
-const Button = ({ to, children }: any) => {
-  const path = useRouter()?.asPath
+type Props = {
+  children: React.ReactChild,
+  handleClick: Function | any,
+  allow?: boolean
+};
 
+const Button: React.FC<Props> = ({ children, handleClick, allow = true }) => {
   return (
-    <button className={style.button}>
-      <Link href={to}>{children}</Link>
+    <button className={`${style.button} ${!allow && style.isDisabled}`} onClick={handleClick} disabled={!allow}>
+      {children}
     </button>
   );
 }

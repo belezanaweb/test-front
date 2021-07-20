@@ -1,9 +1,10 @@
-import Head from 'next/head'
 import React from 'react'
+import Head from 'next/head'
 import Button from '../components/Button'
 import Shelf from '../components/Shelf'
 import Totals from '../components/Totals'
 import { userCart } from '../constants/cart'
+import { useRouter } from 'next/router'
 
 export const getStaticProps = async () => {
   const res = await fetch(userCart)
@@ -15,6 +16,12 @@ export const getStaticProps = async () => {
 }
 
 export default function Cart({ cart }: any) {
+  const router = useRouter()
+
+  function handleClick() {
+    router.push('/pagamento')
+  }
+
   return (
     <>
       <Head>
@@ -22,7 +29,7 @@ export default function Cart({ cart }: any) {
       </Head>
       <Shelf {...cart} />
       <Totals {...cart} />
-      <Button to="/pagamento">SEGUIR PARA O PAGAMENTO</Button>
+      <Button handleClick={handleClick}>seguir para o pagamento</Button>
     </>
   )
 }

@@ -3,6 +3,7 @@ import mask from '../helpers/mask';
 
 interface iType {
   min: number,
+  max: number,
   mask: string,
   message: string,
   regex?: RegExp
@@ -11,24 +12,28 @@ interface iType {
 const inputTypes: { [key: string]: iType } = {
   cardNumber: {
     min: 19,
+    max: 19,
     mask: '0000-0000-0000-0000',
     message: 'Cartão Inválido',
     regex: /[^\d]+/gi
   },
   cardName: {
     min: 5,
+    max: 50,
     mask: '0',
     message: 'Nome Inválido',
     regex: /[^[a-zA-Z\s]+/gi
   },
   expire: {
     min: 7,
+    max: 7,
     mask: '00/0000',
     message: 'Validade Incorreta',
     regex: /[^\d]+/gi
   },
   cvv: {
     min: 3,
+    max: 3,
     mask: '000',
     message: 'Código Inválido',
     regex: /[^\d]+/gi
@@ -41,7 +46,7 @@ const useForm = (type: string) => {
   const [valid, setValid] = React.useState<boolean>(false);
 
   function invalid(): boolean {
-    return value.length < inputTypes[type].min ? true : false;
+    return value.length < inputTypes[type].min || value.length > inputTypes[type].max ? true : false;
   }
 
   function onKeyUp(event: any): void {

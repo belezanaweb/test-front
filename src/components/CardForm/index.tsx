@@ -1,4 +1,5 @@
-import { useEffect } from 'react'
+import { useEffect, useContext } from 'react'
+import { BillingContext } from '../../contexts/BillingContext'
 import style from './style.module.scss'
 import Input from '../Input';
 import useForm from '../../hooks/useForm';
@@ -10,15 +11,17 @@ const CardForm = () => {
     const expire = useForm('expire');
     const cvv = useForm('cvv');
 
+    const { setcardApproved } = useContext(BillingContext)
+
     function handleSubmit(event: any) {
         event.preventDefault();
     }
 
     useEffect(() => {
         if (cardNumber.valid && cardName.valid && expire.valid && cvv.valid) {
-            console.log('Cartão OK!')
+            setcardApproved(true)
         } else {
-            console.log('Cartão invalido!')
+            setcardApproved(false)
         }
     }, [cardNumber.valid, cardName.valid, expire.valid, cvv.valid])
 
