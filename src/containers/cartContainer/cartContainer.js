@@ -8,7 +8,6 @@ import { Button } from '../../commons/button';
 import './cartContainer.css';
 
 const component = ({ products }) => {
-  console.log(products);
   return (
     <div className="cart">
       <Title text="PRODUTOS" />
