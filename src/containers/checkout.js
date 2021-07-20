@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react'
 import { BrowserRouter as Router, Route, Switch, Redirect } from 'react-router-dom'
-import { Navbar } from './navbarContainer/index'
+import { Navbar } from './navbarContainer/navbarContainer'
 import { CartContainer } from './cartContainer/cartContainer'
 import { PaymentContainer } from './paymentContainer/paymentContainer'
 import { SuccessContainer } from './successContainer/successContainer'
