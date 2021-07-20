@@ -20,12 +20,18 @@
   letter-spacing: 1.37px;
 }
 
-.invalidInput {
-  border: 2px solid #f58c94;
+.invalidMessage {
+  color: #f30;
+  font-size: 12px;
+  margin: 3px 0 0 2px;
 }
 
-.validInput {
-  border: 2px solid #94f58c;
+input:focus {
+  border: 1px solid #a43287;
+}
+
+.invalidInput {
+  border: 1px solid #f30;
 }
 
 .input:focus {
@@ -45,4 +51,8 @@
   flex-direction: column;
   width: 100%;
   margin-bottom: 25px;
+}
+
+.invalid {
+  margin-bottom: 6px;
 }
