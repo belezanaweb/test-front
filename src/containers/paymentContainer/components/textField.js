@@ -1,11 +1,11 @@
-import React from 'react'
-import './textField.css'
-import InputMask from 'react-input-mask'
-import classNames from 'classnames'
+import React from 'react';
+import './textField.css';
+import InputMask from 'react-input-mask';
+import classNames from 'classnames';
 
 const TextField = ({ id, className, label, onChange, value, mask, placeholder, isValid }) => (
   <div className="textField" mask={mask}>
-    <label for={id} className="label">
+    <label htmlFor={id} className="label">
       {label}
     </label>
     <InputMask
@@ -23,6 +23,6 @@ const TextField = ({ id, className, label, onChange, value, mask, placeholder, i
       alwaysShowMask="true"
     />
   </div>
-)
+);
 
-export { TextField }
+export { TextField };

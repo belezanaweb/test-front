@@ -1,4 +1,4 @@
-import { ACTIONS } from '../constants/actions'
+import { ACTIONS } from '../constants/actions';
 
 const initialState = {
   isValid: false,
@@ -10,20 +10,19 @@ const initialState = {
   isValidCardExp: null,
   isValidCardName: null,
   isValidCardCvv: null
-}
+};
 
 const card = (state = initialState, action) => {
   switch (action.type) {
     case ACTIONS.CARD_UPDATE: {
-      console.log(action.payload)
-      return { ...state, ...action.payload }
+      return { ...state, ...action.payload };
     }
     default: {
       return {
         ...state
-      }
+      };
     }
   }
-}
+};
 
-export { card }
+export { card };

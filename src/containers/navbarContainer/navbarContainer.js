@@ -1,10 +1,10 @@
-import React from 'react'
-import { Link, useLocation } from 'react-router-dom'
-import classnames from 'classnames'
-import './navbarContainer.css'
+import React from 'react';
+import { Link, useLocation } from 'react-router-dom';
+import classnames from 'classnames';
+import './navbarContainer.css';
 
 const Navbar = () => {
-  const location = useLocation().pathname
+  const location = useLocation().pathname;
 
   return (
     <div className="navbar">
@@ -24,7 +24,7 @@ const Navbar = () => {
         </button>
       </Link>
     </div>
-  )
-}
+  );
+};
 
-export { Navbar }
+export { Navbar };

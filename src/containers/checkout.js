@@ -1,18 +1,18 @@
-import React, { useEffect } from 'react'
-import { BrowserRouter as Router, Route, Switch, Redirect } from 'react-router-dom'
-import { Navbar } from './navbarContainer/navbarContainer'
-import { CartContainer } from './cartContainer/cartContainer'
-import { PaymentContainer } from './paymentContainer/paymentContainer'
-import { SuccessContainer } from './successContainer/successContainer'
-import { Loading } from '../commons/loading'
-import { connect } from 'react-redux'
-import { productsThunks } from '../thunks/products'
-import './checkout.css'
+import React, { useEffect } from 'react';
+import { BrowserRouter as Router, Route, Switch, Redirect } from 'react-router-dom';
+import { Navbar } from './navbarContainer/navbarContainer';
+import { CartContainer } from './cartContainer/cartContainer';
+import { PaymentContainer } from './paymentContainer/paymentContainer';
+import { SuccessContainer } from './successContainer/successContainer';
+import { Loading } from '../commons/loading';
+import { connect } from 'react-redux';
+import { productsThunks } from '../thunks/products';
+import './checkout.css';
 
 const Component = ({ isLoading, order, dispatch }) => {
   useEffect(() => {
-    dispatch(productsThunks.getAll())
-  })
+    dispatch(productsThunks.getAll());
+  });
 
   return (
     <div className="checkout" data-testid="checkout">
@@ -35,11 +35,11 @@ const Component = ({ isLoading, order, dispatch }) => {
         </Router>
       )}
     </div>
-  )
-}
+  );
+};
 
 const Checkout = connect((state) => ({ isLoading: state.products.isLoading, order: state.order }))(
   Component
-)
+);
 
-export { Checkout }
+export { Checkout };

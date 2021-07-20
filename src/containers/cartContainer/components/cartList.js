@@ -1,6 +1,6 @@
-import React from 'react'
-import './cartList.css'
-import { CartItem } from './cartItem'
+import React from 'react';
+import './cartList.css';
+import { CartItem } from './cartItem';
 
 const CartList = ({ items }) => {
   return (
@@ -13,10 +13,10 @@ const CartList = ({ items }) => {
             src={item.product.imageObjects[0].small}
             price={item.product.priceSpecification.price}
           />
-        )
+        );
       })}
     </div>
-  )
-}
+  );
+};
 
-export { CartList }
+export { CartList };

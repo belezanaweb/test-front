@@ -1,9 +1,9 @@
-import { productsApis } from '../apis/products'
-import { productsActions } from '../store/actions/products'
+import { productsApis } from '../apis/products';
+import { productsActions } from '../store/actions/products';
 const productsThunks = {
   getAll: () => (dispatch) => {
-    productsApis.getAll().then((products) => dispatch(productsActions.get(products)))
+    productsApis.getAll().then((products) => dispatch(productsActions.get(products)));
   }
-}
+};
 
-export { productsThunks }
+export { productsThunks };

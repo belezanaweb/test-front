@@ -1,11 +1,11 @@
-import React from 'react'
-import './successContainer.css'
-import { Title } from '../../commons/title'
-import { CartList } from '../cartContainer/components/cartList'
-import { PriceSummary } from '../../commons/priceSummary'
-import { faCheckCircle } from '@fortawesome/free-regular-svg-icons'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { connect } from 'react-redux'
+import React from 'react';
+import './successContainer.css';
+import { Title } from '../../commons/title';
+import { CartList } from '../cartContainer/components/cartList';
+import { PriceSummary } from '../../commons/priceSummary';
+import { faCheckCircle } from '@fortawesome/free-regular-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { connect } from 'react-redux';
 
 const component = ({ products, card }) => {
   return (
@@ -33,11 +33,11 @@ const component = ({ products, card }) => {
         total={products.total}
       />
     </div>
-  )
-}
+  );
+};
 
 const SuccessContainer = connect((state) => ({ products: state.products, card: state.card }))(
   component
-)
+);
 
-export { SuccessContainer }
+export { SuccessContainer };

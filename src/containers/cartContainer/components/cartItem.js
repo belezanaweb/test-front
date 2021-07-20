@@ -1,5 +1,5 @@
-import React from 'react'
-import './cartItem.css'
+import React from 'react';
+import './cartItem.css';
 
 const CartItem = ({ name, src, price }) => (
   <div className="cart-item" data-testid="cart-item">
@@ -9,6 +9,6 @@ const CartItem = ({ name, src, price }) => (
       <span className="price">R$ {price.toFixed(2).replace('.', ',')}</span>
     </div>
   </div>
-)
+);
 
-export { CartItem }
+export { CartItem };

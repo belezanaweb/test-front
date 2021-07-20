@@ -1,13 +1,14 @@
-import React from 'react'
-import { Link } from 'react-router-dom'
-import { connect } from 'react-redux'
-import { CartList } from './components/cartList'
-import { Title } from '../../commons/title'
-import { PriceSummary } from '../../commons/priceSummary'
-import { Button } from '../../commons/button'
-import './cartContainer.css'
+import React from 'react';
+import { Link } from 'react-router-dom';
+import { connect } from 'react-redux';
+import { CartList } from './components/cartList';
+import { Title } from '../../commons/title';
+import { PriceSummary } from '../../commons/priceSummary';
+import { Button } from '../../commons/button';
+import './cartContainer.css';
 
 const component = ({ products }) => {
+  console.log(products);
   return (
     <div className="cart">
       <Title text="PRODUTOS" />
@@ -22,9 +23,9 @@ const component = ({ products }) => {
         <Button text="SEGUIR PARA O PAGAMENTO" />
       </Link>
     </div>
-  )
-}
+  );
+};
 
-const CartContainer = connect((state) => ({ products: state.products }))(component)
+const CartContainer = connect((state) => ({ products: state.products }))(component);
 
-export { CartContainer }
+export { CartContainer };

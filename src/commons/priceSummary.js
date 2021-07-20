@@ -1,5 +1,5 @@
-import React from 'react'
-import './priceSummary.css'
+import React from 'react';
+import './priceSummary.css';
 
 const PriceSummary = ({ subTotal, shippingTotal, discount, total }) => (
   <div className="summary">
@@ -28,6 +28,6 @@ const PriceSummary = ({ subTotal, shippingTotal, discount, total }) => (
       </span>
     </div>
   </div>
-)
+);
 
-export { PriceSummary }
+export { PriceSummary };

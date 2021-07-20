@@ -1,6 +1,6 @@
-import React from 'react'
-import { render } from '@testing-library/react'
-import { CartList } from './cartList'
+import React from 'react';
+import { render } from '@testing-library/react';
+import { CartList } from './cartList';
 
 describe('Cart List', () => {
   it('Should render the cart list', async () => {
@@ -37,8 +37,8 @@ describe('Cart List', () => {
           }
         ]}
       />
-    )
-    expect(getByTestId('cart-list')).toHaveClass('cart-list')
-    expect(getAllByTestId('cart-item')).toHaveLength(2)
-  })
-})
+    );
+    expect(getByTestId('cart-list')).toHaveClass('cart-list');
+    expect(getAllByTestId('cart-item')).toHaveLength(2);
+  });
+});
