@@ -12,7 +12,7 @@ import './checkout.css';
 const Component = ({ isLoading, order, dispatch }) => {
   useEffect(() => {
     dispatch(productsThunks.getAll());
-  });
+  }, [dispatch]);
 
   return (
     <div className="checkout" data-testid="checkout">
