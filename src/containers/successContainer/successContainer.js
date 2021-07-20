@@ -9,7 +9,7 @@ import { connect } from 'react-redux';
 
 const component = ({ products, card }) => {
   return (
-    <div className="success">
+    <div data-testid="success" className="success">
       <div className="imgTitle">
         <FontAwesomeIcon className="icon" icon={faCheckCircle} />
         <Title classname="titleText" text="COMPRA EFETUADA COM SUCESSO" />
@@ -17,10 +17,12 @@ const component = ({ products, card }) => {
       {card.cardNum && card.cardName && card.cardExp && (
         <>
           <Title text="PAGAMENTO" />
-          <div className="paymentData">
-            <div>{'****.****.****.' + card.cardNum.substring(card.cardNum.length - 4)}</div>
-            <div>{card.cardName}</div>
-            <div>{card.cardExp}</div>
+          <div data-testid="payment-data" className="paymentData">
+            <div data-testid="card-number-masked">
+              {'****.****.****.' + card.cardNum.substring(card.cardNum.length - 4)}
+            </div>
+            <div data-testid="card-name">{card.cardName}</div>
+            <div data-testid="card-exp-date">{card.cardExp}</div>
           </div>
         </>
       )}

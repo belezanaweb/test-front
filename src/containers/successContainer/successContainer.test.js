@@ -1,12 +1,13 @@
 import React from 'react';
 import { render } from '@testing-library/react';
-import { CartContainer } from './cartContainer';
+import { SuccessContainer } from './successContainer';
 import { Provider } from 'react-redux';
 import { createStore } from 'redux';
 import { reducers } from '../../store/reducers/index';
 import { MemoryRouter } from 'react-router-dom';
+import '@testing-library/jest-dom';
 
-const mockPayload = {
+const mockProductsPayload = {
   id: '5b15c171e4b0023bb624f616',
   items: [
     {
@@ -75,57 +76,71 @@ const mockPayload = {
   discount: 18.19,
   total: 100.36
 };
-
-describe('Cart Container', () => {
+const mockCardPayload = {
+  isValid: true,
+  cardNum: '1234.1234.1234.1234',
+  cardName: 'Teste Testando',
+  cardExp: '12/1998',
+  cardCvv: '777',
+  isValidCardNum: true,
+  isValidCardExp: true,
+  isValidCardName: true,
+  isValidCardCvv: true
+};
+describe('Success Container', () => {
   const store = createStore(reducers);
-  store.dispatch({ type: 'PRODUCTS_GET', payload: mockPayload });
-  it('Should render the cart container', async () => {
-    const { getByText, getAllByText } = render(
+  store.dispatch({ type: 'PRODUCTS_GET', payload: mockProductsPayload });
+  store.dispatch({ type: 'CARD_UPDATE', payload: mockCardPayload });
+
+  it('Should render the success container', () => {
+    const { getByTestId, getByText, getAllByText } = render(
       <Provider store={store}>
         <MemoryRouter>
-          <CartContainer />
+          <SuccessContainer />
         </MemoryRouter>
       </Provider>
     );
+    expect(getByTestId('success')).not.toBeNull();
+    expect(getByTestId('payment-data')).not.toBeNull();
+    expect(getByText('COMPRA EFETUADA COM SUCESSO')).toHaveClass('titleText');
     expect(getAllByText('PRODUTOS')).toHaveLength(2);
-    expect(getByText('SEGUIR PARA O PAGAMENTO')).not.toBeNull();
   });
 
-  it('Should render the correct amount of itens', async () => {
-    const { getAllByTestId } = render(
+  it('Should render the correct payment data', () => {
+    const { getByTestId } = render(
       <Provider store={store}>
         <MemoryRouter>
-          <CartContainer />
+          <SuccessContainer />
+        </MemoryRouter>
+      </Provider>
+    );
+    expect(getByTestId('card-number-masked')).toHaveTextContent('****.****.****.1234');
+    expect(getByTestId('card-name')).toHaveTextContent('Teste Testando');
+    expect(getByTestId('card-exp-date')).toHaveTextContent('12/1998');
+  });
+
+  it('Should render the correct product ammount and names', () => {
+    const { getByText, getAllByTestId } = render(
+      <Provider store={store}>
+        <MemoryRouter>
+          <SuccessContainer />
         </MemoryRouter>
       </Provider>
     );
     expect(getAllByTestId('cart-item')).toHaveLength(3);
-  });
-
-  it('Should render the correct product names', async () => {
-    const { getByText } = render(
-      <Provider store={store}>
-        <MemoryRouter>
-          <CartContainer />
-        </MemoryRouter>
-      </Provider>
-    );
     expect(getByText('Produto 1')).not.toBeNull();
     expect(getByText('Produto 2')).not.toBeNull();
     expect(getByText('Produto 3')).not.toBeNull();
   });
 
-  it('Should render the correct prices', async () => {
+  it('Should render the correct prices', () => {
     const { getByText } = render(
       <Provider store={store}>
         <MemoryRouter>
-          <CartContainer />
+          <SuccessContainer />
         </MemoryRouter>
       </Provider>
     );
-    expect(getByText('R$ 10,12')).not.toBeNull();
-    expect(getByText('R$ 20,24')).not.toBeNull();
-    expect(getByText('R$ 30,36')).not.toBeNull();
     expect(getByText('R$ 40,48')).not.toBeNull();
     expect(getByText('R$ 1,27')).not.toBeNull();
     expect(getByText('- R$ 18,19')).not.toBeNull();
