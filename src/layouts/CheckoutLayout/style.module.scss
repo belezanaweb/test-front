@@ -16,8 +16,9 @@
     justify-content: space-between;
     @include device(desktop) {
         width: 90%;
-        align-items: flex-start;
-        flex-flow: row wrap;
         margin: auto;
+        display: grid;
+        grid-template-columns: repeat(8, 1fr);
+        gap: 1em;
     }
 }

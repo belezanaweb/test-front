@@ -8,7 +8,9 @@
     margin-bottom: 0.8em;
 
     @include device(desktop) {
-        width: 30%;
+        grid-column: 6/9;
+        grid-row: 2/5;
+        align-self: start;
     }
 }
 .list {
@@ -25,7 +27,9 @@
     margin: 0.4em auto;
     display: flex;
     justify-content: space-between;
-
+    @include device(desktop) {
+        font-size: rem(15);
+    }
     &:last-child {
         font-weight: bold;
     }

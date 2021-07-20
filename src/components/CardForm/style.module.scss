@@ -1,0 +1,38 @@
+@import "styles";
+
+.container {
+    width: 100%;
+    background-color: $c-bg-light;
+    padding: 0.4em;
+    margin-bottom: 0.8em;
+    display: grid;
+    grid-template-columns: repeat(8, 1fr);
+    @include device(desktop) {
+        grid-column: 1/6;
+        grid-row: 2/9;
+        align-self: start;
+        padding: 0.8em;
+    }
+}
+.fieldCardNumber {
+    grid-column: 1/9;
+    grid-row: 1/2;
+    @include device(desktop) {
+        grid-column: 1/4;
+    }
+}
+.fieldCardName {
+    grid-column: 1/9;
+    grid-row: 3/4;
+    @include device(desktop) {
+        grid-column: 1/4;
+    }
+}
+.fieldExpire {
+    grid-column: 1/4;
+    grid-row: 4/5;
+}
+.fieldCode {
+    grid-column: 6/9;
+    grid-row: 4/5;
+}

@@ -22,12 +22,12 @@ body {
         font-size: 1.15rem;
     }
     @include device(laptop) {
-        font-size: 1.2rem;
+        font-size: 1rem;
     }
     @include device(monitor) {
-        font-size: 1.25rem;
+        font-size: 1.05rem;
     }
     @include device(tv) {
-        font-size: 1.3rem;
+        font-size: 1.1rem;
     }
 }

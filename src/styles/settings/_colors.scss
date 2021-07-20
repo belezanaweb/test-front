@@ -9,36 +9,39 @@ $c-brand: #ff6c00;
 $c-bg-grey-light: #eeeeee;
 $c-bg-dark: #383935;
 $c-bg-light: #ffffff;
-
 /*
-  Buttons
+Buttons
 */
 $c-button-brand: $c-brand;
 $c-button-brand-hover: #d45a00;
 
 /*
-  Borders
+Borders
 */
 $c-border-light: #eeeeee;
 $c-border-medium: #cccccc;
+$c-border-input: #e7e7e7;
+$c-border-input-focus: #a43287;
+$c-border-input-invalid: #f30;
 
 /*
- Box-Shadows
+Box-Shadows
 */
 $c-box-dark: #0d0d0d;
 $c-box-light: #272626;
 
 /*
-  Texts
+Texts
 */
 $c-text-brand: #ff7800;
 $c-text-dark: #212122;
+$c-text-error: #f30;
 $c-text-light: #ffffff;
-$c-text-inactive: #cccccc;
+$c-text-grey: #cccccc;
 $c-text-heading: #999999;
 
 /*
-  Colors  
+Colors  
 */
 $c-ice: #f5f5f5;
 $c-silver: #e7e7e7;

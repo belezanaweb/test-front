@@ -8,7 +8,9 @@
     max-height: 60vh;
     overflow-y: auto;
     @include device(desktop) {
-        width: 60%;
+        grid-column: 1/6;
+        grid-row: 2/9;
+        align-self: start;
     }
 }
 .list {
@@ -27,6 +29,9 @@
     display: grid;
     grid-template-columns: repeat(8, 1fr);
     gap: 0.8em;
+    @include device(desktop) {
+        font-size: rem(15);
+    }
 }
 .productImage {
     max-width: 65px;
