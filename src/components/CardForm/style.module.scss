@@ -8,9 +8,7 @@
     display: grid;
     grid-template-columns: repeat(8, 1fr);
     @include device(desktop) {
-        grid-column: 1/6;
-        grid-row: 2/9;
-        align-self: start;
+        grid-area: shelf;
         padding: 0.8em;
     }
 }

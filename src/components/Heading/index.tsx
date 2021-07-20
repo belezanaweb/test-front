@@ -1,7 +1,7 @@
-import { FC } from 'react';
+import React from 'react';
 import style from './style.module.scss'
 
-const Heading: FC = ({ children }) => {
+const Heading: React.FC = ({ children }: any) => {
 
     return <h2 className={style.heading}>{children}</h2>;
 }

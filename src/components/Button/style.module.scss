@@ -4,7 +4,7 @@
     width: 100%;
     padding: 0.8em 0;
     background-color: $c-button-brand;
-    border-bottom: 1px solid $c-button-brand-hover;
+    border-bottom: 2px solid $c-button-brand-hover;
     border-radius: $s-radius;
     color: $c-text-light;
     font-size: rem(20);
@@ -12,13 +12,12 @@
     text-transform: uppercase;
     text-align: center;
     cursor: pointer;
+    grid-area: button;
     &:hover {
         background-color: $c-button-brand-hover;
     }
-    @include device(desktop) {
-        grid-column: 6/9;
-        grid-row: 5;
-        align-self: start;
+    &:focus {
+        outline: darken($color: $c-button-brand, $amount: 20) auto;
     }
 }
 

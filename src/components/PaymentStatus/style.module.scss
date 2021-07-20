@@ -1,0 +1,25 @@
+@import "styles";
+
+.container {
+    width: 100%;
+    padding: 0.5em;
+    display: flex;
+    margin: auto;
+    flex-direction: column;
+    text-align: center;
+    justify-content: space-between;
+    grid-area: paymentStatus;
+}
+
+.icon {
+    margin: auto;
+    @include statusApproved;
+}
+
+.subheading {
+    margin: 20px auto 0 auto;
+    color: $c-brand;
+    font-size: rem(14);
+    font-weight: 700;
+    text-align: center;
+}

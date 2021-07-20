@@ -9,6 +9,8 @@
 .container {
     width: 100%;
     padding: 10px;
+    margin: auto;
+    gap: 0.5em;
     background-color: $c-bg-grey-light;
     display: flex;
     align-items: center;
@@ -18,7 +20,7 @@
         width: 90%;
         margin: auto;
         display: grid;
-        grid-template-columns: repeat(8, 1fr);
-        gap: 1em;
+        grid-template-columns: 2.5fr 0.2fr 1fr;
+        grid-template-areas: "paymentStatus paymentStatus paymentStatus" "shelfHeading shelfHeading shelfHeading" "shelf . totals" "shelf . button" "shelf . paymentData";
     }
 }

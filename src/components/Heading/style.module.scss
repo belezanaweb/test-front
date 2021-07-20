@@ -4,13 +4,17 @@
     color: $c-text-heading;
     font-size: rem(14);
     font-weight: bolder;
-    padding: 0.2em;
-    margin-top: 0.5em;
+    padding: 0.4em;
     text-align: left;
     text-transform: uppercase;
     width: 100%;
     white-space: nowrap;
     @include device(desktop) {
         font-size: rem(16);
+        align-self: start;
     }
+}
+
+.shelfStatus {
+    grid-area: shelfStatus;
 }

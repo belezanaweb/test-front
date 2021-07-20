@@ -15,7 +15,11 @@ export const BillingContext = createContext<BillingContextInterface>({
 
 const BillingContextProvider = (props: any) => {
 
-    const [cardData, setCardData] = useState(null)
+    const [cardData, setCardData] = useState({
+        numbers: null,
+        name: null,
+        expirationDate: null
+    })
     const [cardApproved, setCardApproved] = useState(false)
 
     useEffect(() => { setCardApproved(cardApproved) }, [cardApproved])

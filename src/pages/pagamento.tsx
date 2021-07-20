@@ -8,6 +8,7 @@ import CardForm from '../components/CardForm'
 import Totals from '../components/Totals'
 
 export default function Cart({ cart }: any) {
+
     const router = useRouter()
     const { cardApproved } = useContext(BillingContext)
 
@@ -15,6 +16,7 @@ export default function Cart({ cart }: any) {
         if (!cardApproved) return
         router.push('/confirmacao')
     }
+
     return (
         <>
             <Head>

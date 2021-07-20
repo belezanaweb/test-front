@@ -1,10 +1,10 @@
 import React from 'react'
 import Head from 'next/head'
+import { useRouter } from 'next/router'
+import { userCart } from '../constants/cart'
 import Button from '../components/Button'
 import Shelf from '../components/Shelf'
 import Totals from '../components/Totals'
-import { userCart } from '../constants/cart'
-import { useRouter } from 'next/router'
 
 export const getStaticProps = async () => {
   const res = await fetch(userCart)

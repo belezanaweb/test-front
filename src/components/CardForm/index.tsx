@@ -1,17 +1,17 @@
-import { useEffect, useContext } from 'react'
+import React, { useEffect, useContext } from 'react'
 import { BillingContext } from '../../contexts/BillingContext'
 import style from './style.module.scss'
 import Input from '../Input';
 import useForm from '../../hooks/useForm';
 import Heading from '../Heading';
 
-const CardForm = () => {
+const CardForm: React.FC = () => {
     const cardNumber = useForm('cardNumber');
     const cardName = useForm('cardName');
     const expire = useForm('expire');
     const cvv = useForm('cvv');
 
-    const { setCardApproved } = useContext(BillingContext)
+    const { setCardApproved, setCardData } = useContext(BillingContext)
 
     function handleSubmit(event: any) {
         event.preventDefault();
@@ -19,8 +19,14 @@ const CardForm = () => {
 
     useEffect(() => {
         if (cardNumber.valid && cardName.valid && expire.valid && cvv.valid) {
+            setCardData({
+                numbers: cardNumber.value,
+                name: cardName.value,
+                expirationDate: expire.value
+            })
             setCardApproved(true)
         } else {
+            setCardData(null)
             setCardApproved(false)
         }
     }, [cardNumber.valid, cardName.valid, expire.valid, cvv.valid])

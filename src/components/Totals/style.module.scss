@@ -5,14 +5,13 @@
     padding: 0.4em;
     border: 1px solid $c-border-medium;
     border-radius: $s-radius;
-    margin-bottom: 0.8em;
 
     @include device(desktop) {
-        grid-column: 6/9;
-        grid-row: 2/5;
+        grid-area: totals;
         align-self: start;
     }
 }
+
 .list {
     width: 100%;
     display: flex;

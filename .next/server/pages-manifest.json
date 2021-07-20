@@ -2,7 +2,8 @@
   "/_app": "pages/_app.js",
   "/_error": "pages/_error.js",
   "/_document": "pages/_document.js",
+  "/404": "pages/404.js",
+  "/": "pages/index.js",
   "/pagamento": "pages/pagamento.js",
-  "/confirmacao": "pages/confirmacao.js",
-  "/": "pages/index.js"
+  "/confirmacao": "pages/confirmacao.js"
 }

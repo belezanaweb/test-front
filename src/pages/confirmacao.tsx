@@ -1,10 +1,12 @@
 import React, { useEffect, useContext } from 'react'
 import Head from 'next/head'
 import { useRouter } from 'next/router'
-import Shelf from '../components/Shelf'
 import { userCart } from '../constants/cart'
-import { BillingContext } from '../contexts/BillingContext';
-
+import { BillingContext } from '../contexts/BillingContext'
+import Shelf from '../components/Shelf'
+import Totals from '../components/Totals'
+import PaymentStatus from '../components/PaymentStatus'
+import PaymentData from '../components/PaymentData'
 
 export default function Cart({ cart }: any) {
 
@@ -12,8 +14,6 @@ export default function Cart({ cart }: any) {
     const { cardApproved } = useContext(BillingContext)
 
     useEffect(() => {
-        console.log('cardApproved', cardApproved);
-
         if (!cardApproved) router.push('/404')
     }, [cardApproved])
 
@@ -22,7 +22,10 @@ export default function Cart({ cart }: any) {
             <Head>
                 <title>Confirmação | Loja</title>
             </Head>
+            <PaymentStatus />
+            <PaymentData />
             <Shelf {...cart} />
+            <Totals {...cart} />
         </>
     )
 }
