@@ -2,7 +2,7 @@ import React from 'react'
 import './cartItem.css'
 
 const CartItem = ({ name, src, price }) => (
-  <div className="cart-item">
+  <div className="cart-item" data-testid="cart-item">
     <img className="image" alt={name} src={src} />
     <div className="name-price">
       <span className="name">{name}</span>
