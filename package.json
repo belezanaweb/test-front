@@ -1,6 +1,6 @@
 {
-  "name": "front-test",
-  "version": "0.1.0",
+  "name": "test-front",
+  "version": "1.0.0",
   "private": true,
   "scripts": {
     "dev": "next dev",
@@ -29,6 +29,7 @@
     "eslint": "7.30.0",
     "eslint-config-next": "11.0.1",
     "identity-obj-proxy": "^3.0.0",
+    "isomorphic-fetch": "^3.0.0",
     "jest": "^27.0.6",
     "sass": "^1.35.2",
     "ts-jest": "^27.0.3",

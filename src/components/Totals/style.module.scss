@@ -1,0 +1,39 @@
+@import "styles";
+
+.container {
+    width: 100%;
+    padding: 0.4em;
+    border: 1px solid $c-border-medium;
+    border-radius: $s-radius;
+
+    @include device(desktop) {
+        grid-area: totals;
+        align-self: start;
+    }
+}
+
+.list {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+.item {
+    width: 100%;
+    color: $c-text-dark;
+    font-size: rem(13);
+    text-transform: uppercase;
+    padding: 0.4em;
+    margin: 0.4em auto;
+    display: flex;
+    justify-content: space-between;
+    @include device(desktop) {
+        font-size: rem(15);
+    }
+    &:last-child {
+        font-weight: bold;
+    }
+}
+
+.hasDiscount {
+    color: $c-text-brand;
+}

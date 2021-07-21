@@ -1,0 +1,17 @@
+@mixin statusApproved($border-color: $c-text-border-brand) {
+    height: 50px;
+    width: 50px;
+    border: 1px solid $border-color;
+    border-radius: 50%;
+    padding: 10px;
+    text-align: center;
+    &:before {
+        content: "";
+        display: inline-block;
+        transform: rotate(45deg);
+        height: 20px;
+        width: 12px;
+        border-bottom: 1px solid $border-color;
+        border-right: 1px solid $border-color;
+    }
+}

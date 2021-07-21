@@ -1,0 +1,37 @@
+@import "styles";
+
+.input {
+    width: 100%;
+    margin: 0.2em 0 1em;
+    padding: 0.8em 0.4em;
+    font-size: rem(13);
+    color: $c-text-dark;
+    border: 1px solid $c-border-input;
+    border-radius: $s-radius;
+    @include placeholder($c-text-grey);
+    &:focus {
+        border-color: $c-border-input-focus;
+    }
+}
+
+.isInvalid {
+    border: 1px solid $c-border-input-invalid;
+}
+
+.label {
+    width: 100%;
+    display: block;
+    color: $c-text-grey;
+    font-size: rem(12);
+    padding: 0.8em 0.4em;
+    white-space: nowrap;
+    @include device(desktop) {
+        font-size: rem(14);
+    }
+}
+
+.error {
+    height: 10px;
+    font-size: rem(12);
+    color: $c-text-error;
+}

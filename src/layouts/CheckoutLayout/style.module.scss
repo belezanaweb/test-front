@@ -4,15 +4,23 @@
     width: 100%;
     display: flex;
     flex-direction: column;
+    justify-content: space-between;
 }
 .container {
     width: 100%;
     padding: 10px;
+    margin: auto;
+    gap: 0.5em;
     background-color: $c-bg-grey-light;
     display: flex;
     align-items: center;
-    flex-direction: row;
+    flex-direction: column;
+    justify-content: space-between;
     @include device(desktop) {
-        flex-direction: row;
+        width: 90%;
+        margin: auto;
+        display: grid;
+        grid-template-columns: 2.5fr 0.2fr 1fr;
+        grid-template-areas: "paymentStatus paymentStatus paymentStatus" "shelfHeading shelfHeading shelfHeading" "shelf . totals" "shelf . button" "shelf . paymentData";
     }
 }

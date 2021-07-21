@@ -1,0 +1,28 @@
+@import "styles";
+
+.button {
+    width: 100%;
+    padding: 0.8em 0;
+    background-color: $c-button-brand;
+    border-bottom: 2px solid $c-button-brand-hover;
+    border-radius: $s-radius;
+    color: $c-text-light;
+    font-size: rem(20);
+    font-weight: bold;
+    text-transform: uppercase;
+    text-align: center;
+    cursor: pointer;
+    grid-area: button;
+    &:hover {
+        background-color: $c-button-brand-hover;
+    }
+    &:focus {
+        outline: darken($color: $c-button-brand, $amount: 20) auto;
+    }
+}
+
+.isDisabled,
+.isDisabled:hover {
+    background-color: $c-button-disabled;
+    border-bottom: 1px solid $c-grey;
+}

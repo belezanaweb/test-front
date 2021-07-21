@@ -1,0 +1,63 @@
+@import "styles";
+
+.container {
+    width: 100%;
+    padding: 0.4em;
+    max-height: 60vh;
+    overflow-y: auto;
+    background-color: $c-bg-light;
+    border-radius: $s-radius;
+    grid-area: shelf;
+}
+
+.list {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+}
+.item {
+    width: 100%;
+    color: $c-text-dark;
+    font-size: rem(13);
+    padding: 0.4em;
+    margin: 0.4em auto;
+    border: 1px solid $c-border-light;
+    border-radius: $s-radius;
+    display: grid;
+    grid-template-columns: repeat(8, 1fr);
+    gap: 0.8em;
+    @include device(desktop) {
+        font-size: rem(15);
+    }
+}
+
+.itemFlex {
+    display: flex;
+    align-items: center;
+}
+.productImage {
+    max-width: 65px;
+    grid-column: 1/1;
+    grid-row: 1/9;
+    align-self: center;
+    @include device(desktop) {
+        max-width: 100%;
+        max-width: 80px;
+    }
+}
+
+.productName {
+    grid-column: 2/9;
+    grid-row: 1/6;
+}
+
+.productPrice {
+    font-weight: bold;
+    grid-column: 2/9;
+    grid-row: 6/8;
+    justify-self: end;
+}
+
+.shelfHeading {
+    grid-area: shelfHeading;
+}

@@ -4,7 +4,7 @@
     width: 100%;
     background-color: $c-bg-light;
     padding: 0.8em;
-    box-shadow: 0 1px 10px rgba(0,0,0,.3);
+    box-shadow: 0 1px 10px rgba(0, 0, 0, 0.3);
     z-index: z(progressBar);
 }
 .list {
@@ -12,10 +12,13 @@
     justify-content: space-between;
 }
 .item {
-    color: $c-text-inactive;
+    color: $c-text-grey;
     font-size: rem(13);
     font-weight: bolder;
     padding: 0.2em;
+    @include device(desktop) {
+        font-size: rem(18);
+    }
 }
 .isActive {
     color: $c-text-brand;
