@@ -15,7 +15,7 @@ export default function Cart({ cart }: any) {
 
     useEffect(() => {
         if (!cardApproved) router.push('/404')
-    }, [cardApproved])
+    }, [cardApproved, router])
 
     return cardApproved && (
         <>

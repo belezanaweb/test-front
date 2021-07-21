@@ -19,7 +19,7 @@ const Shelf: React.FC = ({ items }: any) => {
                             const { sku, name, imageObjects, priceSpecification } = product;
 
                             return (<li className={`${style.item} ${route != '/' && style.itemFlex}`} key={sku}>
-                                <img className={style.productImage} src={imageObjects[0].small} />
+                                <img className={style.productImage} src={imageObjects[0].small} alt="produto" />
                                 <p className={style.productName}>{name}</p>
                                 {
                                     route == '/' && <p className={style.productPrice} >{currency(priceSpecification.price)}</p>
