@@ -34,7 +34,7 @@ const CardForm: React.FC = () => {
     return (
         <>
             <Heading>Cartão de Crédito</Heading>
-            <form className={style.container} onSubmit={handleSubmit}>
+            <form className={style.container} data-testid="cardForm-test" onSubmit={handleSubmit}>
                 <div className={style.fieldCardNumber}>
                     <Input
                         label="Número do cartão:"
