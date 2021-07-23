@@ -5,7 +5,7 @@ export const ContainerCreditCardForm = styled.form`
   background-color: var(--white);
 
   border-radius: 0.18rem;
-
+  box-shadow: 1px 1px 5px 0 rgba(0, 0, 29, 0.22);
   padding: 0.81rem;
 `
 
