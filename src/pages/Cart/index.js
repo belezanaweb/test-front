@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import Button from '../../components/Button'
 import Informations from '../../components/Informations'
-import Items from '../../components/Items'
 import ListItems from '../../components/ListItems'
 
 import { getCheckout } from '../../services/checkout'
