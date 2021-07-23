@@ -25,7 +25,7 @@ body {
         font-size: 1rem;
     }
     @include device(monitor) {
-        font-size: 1.5rem;
+        font-size: 1.05rem;
     }
     @include device(tv) {
         font-size: 1.1rem;
