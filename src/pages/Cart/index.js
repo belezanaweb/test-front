@@ -1,5 +1,8 @@
 import React, { useEffect, useState } from 'react'
+import Button from '../../components/Button'
+import Informations from '../../components/Informations'
 import Items from '../../components/Items'
+import ListItems from '../../components/ListItems'
 
 import { getCheckout } from '../../services/checkout'
 
@@ -13,17 +16,12 @@ function Cart() {
   }, [])
 
   return (
-    <div>
-      <p>Produtos</p>
-      {products &&
-        products.map((item) => (
-          <Items
-            name={item.product.name}
-            image={item.product.imageObjects[0].small}
-            price={item.product.priceSpecification.price}
-          />
-        ))}
-    </div>
+    <main>
+      <h5>Produtos</h5>
+      <ListItems list={products} />
+      <Informations />
+      <Button>Seguir para pagamento</Button>
+    </main>
   )
 }
 

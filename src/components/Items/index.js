@@ -1,12 +1,14 @@
 import React from 'react'
-import { ItemsContainer } from './styles'
+import { ItemsContainer, WrapperInformations } from './styles'
 
 function Items({ image, name, price }) {
   return (
     <ItemsContainer>
       <img src={image} alt="Imagem do produto" />
-      <p>{name}</p>
-      <strong>{price}</strong>
+      <WrapperInformations>
+        <p>{name}</p>
+        <strong>{price || ''}</strong>
+      </WrapperInformations>
     </ItemsContainer>
   )
 }
