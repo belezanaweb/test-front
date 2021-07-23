@@ -8,7 +8,7 @@ import Totals from '../components/Totals'
 import PaymentStatus from '../components/PaymentStatus'
 import PaymentData from '../components/PaymentData'
 
-export default function Cart({ cart }: any) {
+export default function Confirmation({ cart }: any) {
 
     const router = useRouter()
     const { cardApproved } = useContext(BillingContext)

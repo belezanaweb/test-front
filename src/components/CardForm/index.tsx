@@ -29,7 +29,7 @@ const CardForm: React.FC = () => {
             setCardData(null)
             setCardApproved(false)
         }
-    }, [cardNumber, cardName, expire, cvv, setCardApproved, setCardData])
+    }, [cardNumber.valid, cardName.valid, expire.valid, cvv.valid, cardNumber.value, cardName.value, expire.value, cvv.value])
 
     return (
         <>
