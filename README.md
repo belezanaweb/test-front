@@ -4,11 +4,11 @@
 * [Typescript](https://www.typescriptlang.org/)
     * Provides highly productive development tools for JavaScript, promote good practices like static checking and identify the file and properties which is used.
 * [React.js](https://reactjs.org) 
-    * Most pobular famework today allows us to create reusable UI components and single page apps
+    * Most popular famework today, allows us to create reusable UI components and single page apps
 * [Next.js](https://nextjs.org)
     * Utilise server-side rendering, which makes web apps and websites load faster and performative, also makes your React websites much easier for search engines to crawl.
 * [Sass](https://sass-lang.com/)
-    * CSS syntax friendly offers variables, import syntax , functions to make reusable themes and design system much easier, has a large community and is well documented.
+    * CSS syntax friendly offers variables, import syntax , functions and make reusable themes and design system much easier, has a large community and is well documented.
 * [Jest](https://jestjs.io)
     * It is a simple JavaScript Testing Framework well integrated with other React testing tools such as React Testing Library.
 ## Comand
