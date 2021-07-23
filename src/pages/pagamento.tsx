@@ -7,7 +7,7 @@ import Button from '../components/Button'
 import CardForm from '../components/CardForm'
 import Totals from '../components/Totals'
 
-export default function Cart({ cart }: any) {
+export default function Payment({ cart }: any) {
 
     const router = useRouter()
     const { cardApproved } = useContext(BillingContext)
