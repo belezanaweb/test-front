@@ -3,7 +3,9 @@ import { getCheckout } from '../services/checkout'
 
 const CheckoutContext = createContext({
   data: {},
-  getCheckout: () => {}
+  getData: () => {},
+  savePaymentData: () => {},
+  paymentData: {}
 })
 
 export function CheckoutProvider({ children }) {
@@ -17,6 +19,8 @@ export function CheckoutProvider({ children }) {
     return []
   })
 
+  const [paymentData, setPaymentData] = useState('')
+
   const getData = () => {
     getCheckout().then((response) => {
       setData(response)
@@ -25,7 +29,19 @@ export function CheckoutProvider({ children }) {
     })
   }
 
-  return <CheckoutContext.Provider value={{ data, getData }}>{children}</CheckoutContext.Provider>
+  const savePaymentData = (name, expirationDate, creditCard) => {
+    setPaymentData({
+      creditCard,
+      expirationDate,
+      name
+    })
+  }
+
+  return (
+    <CheckoutContext.Provider value={{ data, getData, savePaymentData, paymentData }}>
+      {children}
+    </CheckoutContext.Provider>
+  )
 }
 
 export function useCheckout() {

@@ -1,9 +1,10 @@
 import React from 'react'
 import { useHistory } from 'react-router'
+import { useCheckout } from '../../hooks/useCheckout'
+
 import Button from '../../components/Button'
 import Informations from '../../components/Informations'
 import ListItems from '../../components/ListItems'
-import { useCheckout } from '../../hooks/useCheckout'
 
 function Cart() {
   const history = useHistory()

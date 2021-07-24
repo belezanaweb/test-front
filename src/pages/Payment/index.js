@@ -1,9 +1,10 @@
 import React, { useState } from 'react'
 import { useHistory } from 'react-router'
+import { useCheckout } from '../../hooks/useCheckout'
+
 import Button from '../../components/Button'
 import CreditCardForm from '../../components/CreditCardForm'
 import Informations from '../../components/Informations'
-import { useCheckout } from '../../hooks/useCheckout'
 
 function Payment() {
   const [creditCard, setCreditCard] = useState('')
@@ -13,7 +14,7 @@ function Payment() {
 
   const history = useHistory()
 
-  const { data } = useCheckout()
+  const { data, savePaymentData } = useCheckout()
 
   const { discount, shippingTotal, subTotal } = data
 
@@ -30,6 +31,16 @@ function Payment() {
     return false
   }
 
+  const finalizeOrder = () => {
+    savePaymentData(
+      name,
+      expirationDate,
+      creditCard.replace(/\b(?:\d{4}[ .]?){3}(?=\d{4}\b)/gm, '****.****.****.')
+    )
+
+    history.push('/success')
+  }
+
   return (
     <main>
       <h5>Cartão de crédito</h5>
@@ -44,7 +55,7 @@ function Payment() {
         setCvv={setCvv}
       />
       <Informations discount={discount} shipping={shippingTotal} subtotal={subTotal} />
-      <Button disabled={statusButton()} onClick={() => history.push('/success')}>
+      <Button disabled={statusButton()} onClick={finalizeOrder}>
         Finalizar o pedido
       </Button>
     </main>
