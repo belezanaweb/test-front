@@ -1,15 +1,13 @@
 import React from 'react'
-import { useLocation } from 'react-router'
-import { HeaderContainer, Item } from './styles'
+import { NavLink } from 'react-router-dom'
+import { HeaderContainer } from './styles'
 
 export const Header = () => {
-  const location = useLocation()
-
   return (
     <HeaderContainer>
-      <Item active={location.pathname === '/'}>Sacola</Item>
-      <Item active={location.pathname === '/payment'}>Pagamento</Item>
-      <Item active={location.pathname === '/success'}>Confirmação</Item>
+      <NavLink to="/cart">Sacola</NavLink>
+      <NavLink to="/payment">Pagamento</NavLink>
+      <NavLink to="/success">Confirmação</NavLink>
     </HeaderContainer>
   )
 }

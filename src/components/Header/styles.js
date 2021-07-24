@@ -10,11 +10,22 @@ export const HeaderContainer = styled.header`
   padding: 0.75rem 0;
   box-shadow: 1px 1px 5px 0 rgba(0, 0, 29, 0.22);
   background-color: var(--white);
-`
 
-export const Item = styled.p`
-  font-size: 0.81rem;
-  text-transform: uppercase;
-  font-weight: bold;
-  color: ${({ active }) => (active ? 'var(--orange)' : 'var(--grey-text)')};
+  @media (min-width: 960px) {
+    padding: 1.5rem 0;
+  }
+
+  a {
+    font-size: 0.81rem;
+    text-transform: uppercase;
+    font-weight: bold;
+
+    text-decoration: none;
+
+    color: var(--grey-text);
+
+    &.active {
+      color: var(--orange);
+    }
+  }
 `

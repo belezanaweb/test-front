@@ -1,4 +1,5 @@
 import React from 'react'
+import { validateDate, validDate } from '../../helpers/functions'
 import Input from '../Input'
 import { ContainerCreditCardForm, WrapperInput } from './styles'
 
@@ -12,6 +13,8 @@ function CreditCardForm({
   cvv,
   setCvv
 }) {
+  console.log(validateDate())
+
   return (
     <ContainerCreditCardForm>
       <Input
@@ -19,7 +22,7 @@ function CreditCardForm({
         label="Número do cartão"
         value={creditCard}
         onChange={(event) => setCreditCard(event.target.value)}
-        mask="0000.0000.0000.0000"
+        mask="9999.9999.9999.9999"
         size={20}
         error={creditCard.length < 19 && creditCard.length !== 0}
       />
@@ -37,9 +40,12 @@ function CreditCardForm({
           maxWidth="10rem"
           value={expirationDate}
           onChange={(event) => setExpirationDate(event.target.value)}
-          mask="00/0000"
+          mask="99/9999"
           size={7}
-          error={expirationDate.length < 7 && expirationDate.length !== 0}
+          error={
+            (expirationDate.length < 7 && expirationDate.length !== 0) ||
+            (expirationDate.length !== 0 && !validDate(expirationDate))
+          }
         />
         <Input
           placeholder="___"
@@ -48,7 +54,7 @@ function CreditCardForm({
           value={cvv}
           onChange={(event) => setCvv(event.target.value)}
           maxLength="3"
-          mask="000"
+          mask="999"
           error={cvv.length < 3 && cvv.length !== 0}
         />
       </WrapperInput>

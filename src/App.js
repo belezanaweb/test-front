@@ -18,7 +18,7 @@ const App = () => {
     <BrowserRouter>
       <Header />
       <Switch>
-        <Route path="/" exact component={Cart} />
+        <Route path="/cart" exact component={Cart} />
         <Route path="/payment" component={Payment} />
         <Route path="/success" component={SuccessPayment} />
       </Switch>

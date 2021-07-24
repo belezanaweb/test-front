@@ -32,7 +32,7 @@ export const GlobalStyle = createGlobalStyle`
     width: 100%;
   }
 
-  input, button, label, p, strong, h1, h2, h3, h4, h5, h6 {
+  input, button, label, p, a, strong, h1, h2, h3, h4, h5, h6 {
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
     color: var(--text);
   }
