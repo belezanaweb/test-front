@@ -1,25 +1,32 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect } from 'react'
+import { useHistory } from 'react-router'
 import Button from '../../components/Button'
 import Informations from '../../components/Informations'
 import ListItems from '../../components/ListItems'
-
-import { getCheckout } from '../../services/checkout'
+import { useCheckout } from '../../hooks/useCheckout'
 
 function Cart() {
-  const [products, setProducts] = useState([])
+  const history = useHistory()
+
+  const { getData, data } = useCheckout()
+
+  const { discount, shippingTotal, subTotal, total, items } = data
 
   useEffect(() => {
-    getCheckout().then((response) => {
-      setProducts(response.items)
-    })
+    getData()
   }, [])
 
   return (
     <main>
       <h5>Produtos</h5>
-      <ListItems list={products} />
-      <Informations />
-      <Button>Seguir para pagamento</Button>
+      <ListItems list={items} />
+      <Informations
+        discount={discount}
+        shipping={shippingTotal}
+        subtotal={subTotal}
+        total={total}
+      />
+      <Button onClick={() => history.push('/payment')}>Seguir para pagamento</Button>
     </main>
   )
 }

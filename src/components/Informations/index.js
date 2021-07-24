@@ -1,13 +1,25 @@
 import React from 'react'
-import { ContainerInformations } from './styles'
+import { ContainerInformations, WrapperItem } from './styles'
 
-function Informations() {
+function Informations({ discount, shipping, subtotal, total }) {
   return (
     <ContainerInformations>
-      <p>Produtos</p>
-      <p>Frete</p>
-      <p className="discount">Desconto</p>
-      <p className="total">Total</p>
+      <WrapperItem>
+        <p>Produtos</p>
+        <p>{total}</p>
+      </WrapperItem>
+      <WrapperItem>
+        <p>Frete</p>
+        <p>{shipping}</p>
+      </WrapperItem>
+      <WrapperItem>
+        <p className="discount">Desconto</p>
+        <p className="discount">{discount}</p>
+      </WrapperItem>
+      <WrapperItem>
+        <p className="total">Total</p>
+        <p className="total">{subtotal}</p>
+      </WrapperItem>
     </ContainerInformations>
   )
 }

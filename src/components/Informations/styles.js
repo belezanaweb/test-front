@@ -23,3 +23,9 @@ export const ContainerInformations = styled.div`
     color: var(--orange);
   }
 `
+
+export const WrapperItem = styled.div`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+`

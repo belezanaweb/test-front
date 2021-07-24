@@ -7,7 +7,7 @@ export const Header = () => {
 
   return (
     <HeaderContainer>
-      <Item active={location.pathname === '/cart'}>Sacola</Item>
+      <Item active={location.pathname === '/'}>Sacola</Item>
       <Item active={location.pathname === '/payment'}>Pagamento</Item>
       <Item active={location.pathname === '/success'}>Confirmação</Item>
     </HeaderContainer>

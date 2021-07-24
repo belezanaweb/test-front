@@ -28,6 +28,10 @@ export const GlobalStyle = createGlobalStyle`
     height: 100vh;
   }
 
+  #root {
+    width: 100%;
+  }
+
   input, button, label, p, strong, h1, h2, h3, h4, h5, h6 {
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
     color: var(--text);
@@ -35,6 +39,8 @@ export const GlobalStyle = createGlobalStyle`
 
   main {
     padding: 0.62rem;
+    max-width: 600px;
+    margin: auto;
 
     h5 {
       font-size: 0.87rem;

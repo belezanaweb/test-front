@@ -8,6 +8,7 @@ function ListItems({ list }) {
       {list &&
         list.map((item) => (
           <Items
+            key={item.product.sku}
             name={item.product.name}
             image={item.product.imageObjects[0].small}
             price={item.product.priceSpecification.price}
