@@ -1,8 +1,8 @@
 import React, { useEffect } from 'react'
 import { BrowserRouter, Route, Switch } from 'react-router-dom'
-import './App.css'
 import { Header } from './components/Header'
 import { useCheckout } from './hooks/useCheckout'
+
 import Cart from './pages/Cart'
 import Payment from './pages/Payment'
 import SuccessPayment from './pages/SuccessPayment'
