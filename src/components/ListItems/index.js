@@ -2,7 +2,7 @@ import React from 'react'
 import Items from '../Items'
 import { ContainerListItems } from './styles'
 
-function ListItems({ list }) {
+function ListItems({ list, showPrice = true }) {
   return (
     <ContainerListItems>
       {list &&
@@ -12,6 +12,7 @@ function ListItems({ list }) {
             name={item.product.name}
             image={item.product.imageObjects[0].small}
             price={item.product.priceSpecification.price}
+            showPrice={showPrice}
           />
         ))}
     </ContainerListItems>

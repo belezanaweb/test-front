@@ -4,11 +4,14 @@ import './index.css'
 import App from './App'
 import * as serviceWorker from './serviceWorker'
 import { GlobalStyle } from './assets/styles/global'
+import { CheckoutProvider } from './hooks/useCheckout'
 
 const Strict = () => (
   <StrictMode>
-    <GlobalStyle />
-    <App />
+    <CheckoutProvider>
+      <GlobalStyle />
+      <App />
+    </CheckoutProvider>
   </StrictMode>
 )
 

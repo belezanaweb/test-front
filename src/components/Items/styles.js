@@ -15,12 +15,6 @@ export const ItemsContainer = styled.div`
   &:not(:last-child) {
     margin-bottom: 0.93rem;
   }
-
-  img {
-    width: 4rem;
-
-    margin-right: 0.68rem;
-  }
 `
 
 export const WrapperInformations = styled.div`
@@ -34,4 +28,10 @@ export const WrapperInformations = styled.div`
     right: 0;
     bottom: 0;
   }
+`
+
+export const Image = styled.img`
+  width: ${({ showPrice }) => (showPrice ? '4rem' : '2.62rem')};
+
+  margin-right: 0.68rem;
 `

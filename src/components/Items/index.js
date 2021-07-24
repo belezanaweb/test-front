@@ -1,13 +1,14 @@
 import React from 'react'
-import { ItemsContainer, WrapperInformations } from './styles'
+import { formatValue } from '../../helpers/functions'
+import { Image, ItemsContainer, WrapperInformations } from './styles'
 
-function Items({ image, name, price }) {
+function Items({ image, name, price, showPrice }) {
   return (
     <ItemsContainer>
-      <img src={image} alt="Imagem do produto" />
+      <Image src={image} alt="Imagem do produto" showPrice={showPrice} />
       <WrapperInformations>
         <p>{name}</p>
-        <strong>{price || ''}</strong>
+        {showPrice ? <strong>{formatValue(price) || ''}</strong> : null}
       </WrapperInformations>
     </ItemsContainer>
   )

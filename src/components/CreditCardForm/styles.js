@@ -12,5 +12,5 @@ export const ContainerCreditCardForm = styled.form`
 export const WrapperInput = styled.div`
   display: flex;
   justify-content: space-between;
-  align-items: center;
+  align-items: flex-start;
 `
