@@ -5,6 +5,7 @@ import { useCheckout } from '../../hooks/useCheckout'
 import Button from '../../components/Button'
 import CreditCardForm from '../../components/CreditCardForm'
 import Informations from '../../components/Informations'
+import { validCurrentDate, validDate } from '../../helpers/functions'
 
 function Payment() {
   const [creditCard, setCreditCard] = useState('')
@@ -22,6 +23,8 @@ function Payment() {
     if (
       name.length === 0 ||
       expirationDate.length !== 7 ||
+      !validCurrentDate(expirationDate) ||
+      !validDate(expirationDate) ||
       creditCard.length !== 19 ||
       cvv.length !== 3
     ) {
