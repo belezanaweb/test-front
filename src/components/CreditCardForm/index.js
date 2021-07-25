@@ -1,5 +1,5 @@
 import React from 'react'
-import { validDate } from '../../helpers/functions'
+import { formatExpiry, validCurrentDate, validDate } from '../../helpers/functions'
 import Input from '../Input'
 import { ContainerCreditCardForm, WrapperInput } from './styles'
 
@@ -37,12 +37,11 @@ function CreditCardForm({
           label="Validade (mês/ano)"
           maxWidth="10rem"
           value={expirationDate}
-          onChange={(event) => setExpirationDate(event.target.value)}
-          mask="00/0000"
-          size={7}
+          onChange={(event) => setExpirationDate(formatExpiry(event.target.value))}
           error={
             (expirationDate.length < 7 && expirationDate.length !== 0) ||
-            (expirationDate.length !== 0 && !validDate(expirationDate))
+            (expirationDate.length !== 0 && !validDate(expirationDate)) ||
+            (expirationDate.length !== 0 && !validCurrentDate(expirationDate))
           }
         />
         <Input

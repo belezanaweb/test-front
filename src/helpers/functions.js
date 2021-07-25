@@ -10,3 +10,29 @@ export function validDate(value) {
 
   return regex.test(value)
 }
+
+export function formatExpiry(string) {
+  return string
+    .replace(/[^0-9]/g, '')
+    .replace(/^([2-9])$/g, '0$1')
+    .replace(/^(1{1})([3-9]{1})$/g, '0$1/$2')
+    .replace(/^0{1,}/g, '0')
+    .replace(/^([0-1]{1}[0-9]{1})([0-9]{1,4}).*/g, '$1/$2')
+}
+
+export function validCurrentDate(expirationDate) {
+  const expiration = expirationDate.split('/')
+
+  const date = new Date()
+
+  const year = date.getFullYear()
+  const month = date.getMonth() + 1
+
+  if (expiration.length >= 2) {
+    if (Number(expiration[0]) >= month && Number(expiration[1]) >= year) {
+      return true
+    }
+  }
+
+  return false
+}
