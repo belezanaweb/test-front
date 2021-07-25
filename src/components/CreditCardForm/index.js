@@ -1,5 +1,5 @@
 import React from 'react'
-import { validateDate, validDate } from '../../helpers/functions'
+import { validDate } from '../../helpers/functions'
 import Input from '../Input'
 import { ContainerCreditCardForm, WrapperInput } from './styles'
 
