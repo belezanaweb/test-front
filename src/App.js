@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react'
-import { BrowserRouter, Route, Switch } from 'react-router-dom'
+import { BrowserRouter, Redirect, Route, Switch } from 'react-router-dom'
 import { Header } from './components/Header'
 import { useCheckout } from './hooks/useCheckout'
 
@@ -18,6 +18,7 @@ const App = () => {
     <BrowserRouter>
       <Header />
       <Switch>
+        <Route exact path="/" render={() => <Redirect to="/cart" />} />
         <Route path="/cart" exact component={Cart} />
         <Route path="/payment" component={Payment} />
         <Route path="/success" component={SuccessPayment} />

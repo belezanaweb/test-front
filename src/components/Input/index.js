@@ -29,7 +29,7 @@ function Input({
       ) : (
         <input placeholder={placeholder} onChange={onChange} value={value} {...props} />
       )}
-      {error ? <p>Invalid field</p> : null}
+      {error ? <p>Campo inválido</p> : null}
     </ContainerInput>
   )
 }

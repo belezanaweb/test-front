@@ -10,6 +10,7 @@
     "axios": "^0.21.1",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
+    "react-imask": "^6.1.0",
     "react-maskinput": "^3.2.0",
     "react-router": "^5.2.0",
     "react-router-dom": "^5.2.0",

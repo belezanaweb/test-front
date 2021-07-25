@@ -13,4 +13,12 @@ export const WrapperInput = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
+
+  @media (min-width: 920px) {
+    justify-content: flex-start;
+
+    div {
+      margin-right: 1rem;
+    }
+  }
 `
