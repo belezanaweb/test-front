@@ -5,10 +5,8 @@ export const ButtonContainer = styled.button`
   width: 100%;
   margin-top: 20px;
   height: 60px;
-
   cursor: pointer;
   background-color: #ff6c00;
-
   border: none;
   border-radius: 3px;
 
@@ -23,10 +21,4 @@ export const ButtonContainer = styled.button`
     box-shadow: inset 0 -3px 0 0 #d45a00, 0 2px 4px 0 rgba(0, 0, 0, 0.25);
     background-color: #d45b00;
   }
-`
-export const ButtonSection = styled.button`
-  align-items: center;
-  justify-content: center;
-  width: 100%;
-  border: none;
 `

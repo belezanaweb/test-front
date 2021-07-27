@@ -2,7 +2,9 @@ import React, { useContext, useEffect } from 'react'
 import { ReducerContext } from '../../utils/Reducer'
 import NavBar from '../../components/NavBar/NavBar'
 import Product from '../../components/Product/Product'
+import Summary from '../../components/Summary/Summary'
 import Button from '../../components/Button/Button'
+import { PageContainer, Title, ListProductContainer } from './styles'
 
 import { useHistory } from 'react-router-dom'
 import { mock } from '../../api'
@@ -24,25 +26,34 @@ const Bag = () => {
     <>
       <NavBar active="/" />
 
-      <div className="page-container">
-        <div className="title">
-          <span>PRODUTOS</span>
-        </div>
+      <PageContainer>
+        <Title>PRODUTOS</Title>
+
         <div className="responsive-container">
-          <div className="product-list">
+          <ListProductContainer>
             {state.shoppingCart.items.map((i) => {
               return <Product key={i.product.sku} product={i.product} showPrice={true} />
             })}
-          </div>
+          </ListProductContainer>
+          <div className="summary">
+            <Summary
+              summary={{
+                subTotal: state.shoppingCart.subTotal,
+                shipping: state.shoppingCart.shippingTotal,
+                discount: state.shoppingCart.discount,
+                total: state.shoppingCart.total
+              }}
+            />
 
-          <Button
-            onClick={() => {
-              history.push('/payment')
-            }}
-            label="SEGUIR PARA O PAGAMENTO"
-          />
+            <Button
+              onClick={() => {
+                history.push('/payment')
+              }}
+              label="SEGUIR PARA O PAGAMENTO"
+            />
+          </div>
         </div>
-      </div>
+      </PageContainer>
     </>
   )
 }
