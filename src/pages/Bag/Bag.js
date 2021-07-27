@@ -1,7 +1,12 @@
 import React from 'react'
+import NavBar from '../../components/NavBar/NavBar'
 
-export const Bag = () => {
-  return <div>Bag</div>
+const Bag = () => {
+  return (
+    <>
+      <NavBar active="/" />
+    </>
+  )
 }
 
 export default Bag

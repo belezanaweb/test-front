@@ -1,7 +1,12 @@
 import React from 'react'
+import NavBar from '../../components/NavBar/NavBar'
 
-export const Payment = () => {
-  return <div>Payment</div>
+const Payment = () => {
+  return (
+    <>
+      <NavBar active="payment" />
+    </>
+  )
 }
 
 export default Payment
