@@ -6,6 +6,8 @@ export const ProductContainer = styled.div`
   padding: 12px 10px;
   border-radius: 3px;
   border: 1px solid #eee;
+  margin-bottom: 5px;
+  margin-top: 5px;
 `
 export const DetailsContainer = styled.div`
   flex: 3;

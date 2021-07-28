@@ -4,8 +4,7 @@ import NavBar from '../../components/NavBar/NavBar'
 import Product from '../../components/Product/Product'
 import Summary from '../../components/Summary/Summary'
 import Button from '../../components/Button/Button'
-import { PageContainer, Title, ListProductContainer } from './styles'
-
+import { PageContainer, Title, ListProductContainer, ContainerSummary } from './styles'
 import { useHistory } from 'react-router-dom'
 import { mock } from '../../api'
 
@@ -29,13 +28,13 @@ const Bag = () => {
       <PageContainer>
         <Title>PRODUTOS</Title>
 
-        <div className="responsive-container">
+        <div>
           <ListProductContainer>
             {state.shoppingCart.items.map((i) => {
               return <Product key={i.product.sku} product={i.product} showPrice={true} />
             })}
           </ListProductContainer>
-          <div className="summary">
+          <ContainerSummary>
             <Summary
               summary={{
                 subTotal: state.shoppingCart.subTotal,
@@ -51,7 +50,7 @@ const Bag = () => {
               }}
               label="SEGUIR PARA O PAGAMENTO"
             />
-          </div>
+          </ContainerSummary>
         </div>
       </PageContainer>
     </>

@@ -11,7 +11,7 @@ export const ButtonContainer = styled.button`
   border-radius: 3px;
 
   box-shadow: inset 0 -3px 0 0 #d45b00, 0 2px 4px 0 rgba(0, 0, 0, 0.25);
-  font-weight: bold;
+  font-weight: 700;
   font-size: 20px;
   font-family: Arial, Helvetica, sans-serif;
   line-height: 24px;

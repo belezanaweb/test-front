@@ -36,7 +36,7 @@ function reducer(state, action) {
   }
 }
 
-// Export hook
+// hook //
 export default function useCustomReducer() {
   return React.useReducer(reducer, initialState)
 }
