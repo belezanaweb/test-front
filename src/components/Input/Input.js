@@ -1,5 +1,5 @@
 import React from 'react'
-import { Styles } from './styles'
+import { Styles, InputSmallContainer, InputSmallValidate, InputSmallCvv } from './styles'
 import { Form, Field } from 'react-final-form/dist/react-final-form.cjs'
 import { formatCreditCardNumber, formatCVC, formatExpirationDate } from '../../utils/Cart/utils'
 
@@ -26,7 +26,7 @@ const Input = () => (
                 type="text"
                 required
                 pattern="[\d| ]{16,22}"
-                placeholder=" ____.____.____.____"
+                placeholder="  ____.____.____.____"
                 format={formatCreditCardNumber}
               />
             </div>
@@ -40,28 +40,32 @@ const Input = () => (
                 placeholder=" Como no cartão"
               />
             </div>
-            <div>
-              <label>Validate (mês/ano)</label>
-              <Field
-                name="expiry"
-                component="input"
-                required
-                type="text"
-                pattern="\d\d/\d\d"
-                placeholder="__/____"
-                format={formatExpirationDate}
-              />
-              <label>CVV</label>
-              <Field
-                name="cvc"
-                component="input"
-                required
-                type="text"
-                pattern="\d{3,4}"
-                placeholder="___"
-                format={formatCVC}
-              />
-            </div>
+            <InputSmallContainer>
+              <InputSmallValidate>
+                <label>Validate (mês/ano)</label>
+                <Field
+                  name="expiry"
+                  component="input"
+                  required
+                  type="text"
+                  pattern="\d\d/\d\d"
+                  placeholder="  __/____"
+                  format={formatExpirationDate}
+                />
+              </InputSmallValidate>
+              <InputSmallCvv>
+                <label>CVV</label>
+                <Field
+                  name="cvc"
+                  component="input"
+                  required
+                  type="text"
+                  pattern="\d{3,4}"
+                  placeholder="  ___"
+                  format={formatCVC}
+                />
+              </InputSmallCvv>
+            </InputSmallContainer>
           </form>
         )
       }}
