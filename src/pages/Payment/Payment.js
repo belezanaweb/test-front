@@ -5,7 +5,7 @@ import Input from '../../components/Input/Input'
 import Summary from '../../components/Summary/Summary'
 import Button from '../../components/Button/Button'
 import { mock } from '../../api'
-import { PayContainerPage, Title, CardContainer } from './styles'
+import { PayContainerPage, Title, CardContainer, PageSection } from './styles'
 
 const Payment = () => {
   const { state, dispatch } = useContext(ReducerContext)
@@ -24,9 +24,13 @@ const Payment = () => {
 
       <PayContainerPage>
         <Title>CARTÃO DE CRÉDITO</Title>
+
         <CardContainer>
-          <Input />
+          <PageSection>
+            <Input />
+          </PageSection>
         </CardContainer>
+
         <Summary
           summary={{
             subTotal: state.shoppingCart.subTotal,

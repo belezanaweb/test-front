@@ -1,129 +1,72 @@
 import React from 'react'
-import { render } from 'react-dom'
-import 'react-credit-cards/es/styles-compiled.css'
-import {
-  formatCreditCardNumber,
-  formatCVC,
-  formatExpirationDate,
-  formatFormData
-} from '../../utils/Cart/utils'
-import { FormContainer, FormSmall, FormInput, FormInput2 } from './styles'
+import { Styles } from './styles'
+import { Form, Field } from 'react-final-form/dist/react-final-form.cjs'
+import { formatCreditCardNumber, formatCVC, formatExpirationDate } from '../../utils/Cart/utils'
 
-export default class Input extends React.Component {
-  state = {
-    number: '',
-    name: '',
-    expiry: '',
-    cvc: '',
-    focused: '',
-    formData: null
-  }
+const sleep = (ms) => new Promise((resolve) => setTimeout(resolve, ms))
 
-  handleCallback = ({ issuer }, isValid) => {
-    if (isValid) {
-      this.setState({ issuer })
-    }
-  }
-
-  handleInputFocus = ({ target }) => {
-    this.setState({
-      focused: target.name
-    })
-  }
-
-  handleInputChange = ({ target }) => {
-    if (target.name === 'number') {
-      target.value = formatCreditCardNumber(target.value)
-    } else if (target.name === 'expiry') {
-      target.value = formatExpirationDate(target.value)
-    } else if (target.name === 'cvc') {
-      target.value = formatCVC(target.value)
-    }
-
-    this.setState({ [target.name]: target.value })
-  }
-
-  handleSubmit = (e) => {
-    e.preventDefault()
-    const formData = [...e.target.elements]
-      .filter((d) => d.name)
-      .reduce((acc, d) => {
-        acc[d.name] = d.value
-        return acc
-      }, {})
-
-    this.setState({ formData })
-    this.form.reset()
-  }
-
-  render() {
-    const { formData } = this.state
-
-    return (
-      <div key="Payment">
-        <form ref={(c) => (this.form = c)} onSubmit={this.handleSubmit}>
-          <FormContainer>
-            <label>Número do cartão</label>
-            <input
-              type="tel"
-              name="number"
-              className="form-control"
-              placeholder=""
-              pattern="[\d| ]{16,22}"
-              onChange={this.handleInputChange}
-              onFocus={this.handleInputFocus}
-            />
-          </FormContainer>
-          <FormContainer>
-            <label>Nome do Titular</label>
-            <input
-              type="text"
-              name="name"
-              className="form-control"
-              placeholder=""
-              onChange={this.handleInputChange}
-              onFocus={this.handleInputFocus}
-            />
-          </FormContainer>
-          <FormSmall>
-            <FormInput>
-              <label>Validate (mês/ano)</label>
-              <input
-                type="tel"
-                name="expiry"
-                className="form-control"
-                placeholder=""
-                pattern="\d\d/\d\d"
-                required
-                onChange={this.handleInputChange}
-                onFocus={this.handleInputFocus}
-              />
-            </FormInput>
-            <FormInput2>
-              <label>CVV</label>
-              <input
-                type="tel"
-                name="cvc"
-                className="form-control"
-                placeholder=" "
-                pattern="\d{3}"
-                required
-                onChange={this.handleInputChange}
-                onFocus={this.handleInputFocus}
-              />
-            </FormInput2>
-          </FormSmall>
-        </form>
-        {formData && (
-          <div className="App-highlight">
-            {formatFormData(formData).map((d, i) => (
-              <div key={i}>{d}</div>
-            ))}
-          </div>
-        )}
-      </div>
-    )
-  }
+const onSubmit = async (values) => {
+  await sleep(300)
+  window.alert(JSON.stringify(values, 0, 2))
 }
 
-render(<Input />, document.getElementById('root'))
+const Input = () => (
+  <Styles>
+    <Form
+      onSubmit={onSubmit}
+      render={({ handleSubmit, form, submitting, pristine, values, active }) => {
+        return (
+          <form onSubmit={handleSubmit}>
+            <div>
+              <label>Número do cartão</label>
+
+              <Field
+                name="number"
+                component="input"
+                type="text"
+                required
+                pattern="[\d| ]{16,22}"
+                placeholder=" ____.____.____.____"
+                format={formatCreditCardNumber}
+              />
+            </div>
+            <div>
+              <label>Nome do Titular</label>
+              <Field
+                name="name"
+                component="input"
+                required
+                type="text"
+                placeholder=" Como no cartão"
+              />
+            </div>
+            <div>
+              <label>Validate (mês/ano)</label>
+              <Field
+                name="expiry"
+                component="input"
+                required
+                type="text"
+                pattern="\d\d/\d\d"
+                placeholder="__/____"
+                format={formatExpirationDate}
+              />
+              <label>CVV</label>
+              <Field
+                name="cvc"
+                component="input"
+                required
+                type="text"
+                pattern="\d{3,4}"
+                placeholder="___"
+                format={formatCVC}
+              />
+            </div>
+          </form>
+        )
+      }}
+    />
+  </Styles>
+)
+
+export default Input

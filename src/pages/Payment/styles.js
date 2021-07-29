@@ -18,3 +18,15 @@ export const CardContainer = styled.div`
   padding: 10px;
   box-shadow: 1px 1px 5px 0 rgba(0, 0, 29, 0.22);
 `
+export const PageSection = styled.div`
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+  justify-content: center;
+  align-items: center;
+
+  @media (max-width: 800px) {
+    flex-direction: column;
+    position: relative;
+  }
+`
