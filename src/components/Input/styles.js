@@ -12,7 +12,7 @@ export const Styles = styled.div`
     box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.2);
     margin-top: 5px;
     margin-bottom: 5px;
-    outline-offset: 10px;
+    outline: none;
 
     &::placeholder {
       color: var(--grey-placeholder);
@@ -65,6 +65,6 @@ export const InputSmallValidate = styled.div`
 export const InputSmallCvv = styled.div`
   input {
     width: 140px;
-    outline-offset: 10px;
+    outline: none;
   }
 `

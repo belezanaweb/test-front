@@ -16,6 +16,7 @@ const Checkout = () => {
     }
     mockData()
   }, [dispatch])
+
   return (
     <>
       <NavBar active="checkout" />

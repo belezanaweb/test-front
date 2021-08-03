@@ -6,6 +6,7 @@ import Summary from '../../components/Summary/Summary'
 import Button from '../../components/Button/Button'
 import { mock } from '../../api'
 import { PayContainerPage, Title, CardContainer, PageSection } from './styles'
+import { useHistory } from 'react-router-dom'
 
 const Payment = () => {
   const { state, dispatch } = useContext(ReducerContext)
@@ -18,6 +19,8 @@ const Payment = () => {
     mockData()
   }, [dispatch])
 
+  const history = useHistory()
+
   return (
     <>
       <NavBar active="payment" />
@@ -27,7 +30,7 @@ const Payment = () => {
 
         <CardContainer>
           <PageSection>
-            <Input />
+            <Input type="submit" />
           </PageSection>
         </CardContainer>
 
@@ -39,7 +42,14 @@ const Payment = () => {
             total: state.shoppingCart.total
           }}
         />
-        <Button form="form" label="FINALIZAR O PEDIDO" type="submit" />
+        <Button
+          form="form"
+          onClick={() => {
+            history.push('/checkout')
+          }}
+          type="submit"
+          label="FINALIZAR O PEDIDO"
+        />
       </PayContainerPage>
     </>
   )
