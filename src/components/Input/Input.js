@@ -26,7 +26,7 @@ const Input = () => (
                 type="text"
                 required
                 pattern="[\d| ]{16,22}"
-                placeholder="  ____.____.____.____"
+                placeholder="____.____.____.____"
                 format={formatCreditCardNumber}
               />
             </div>
@@ -37,7 +37,7 @@ const Input = () => (
                 component="input"
                 required
                 type="text"
-                placeholder=" Como no cartão"
+                placeholder="Como no cartão"
               />
             </div>
             <InputSmallContainer>
@@ -49,7 +49,7 @@ const Input = () => (
                   required
                   type="text"
                   pattern="\d\d/\d\d"
-                  placeholder="  __/____"
+                  placeholder="__/____"
                   format={formatExpirationDate}
                 />
               </InputSmallValidate>
@@ -61,7 +61,7 @@ const Input = () => (
                   required
                   type="text"
                   pattern="\d{3,4}"
-                  placeholder="  ___"
+                  placeholder="___"
                   format={formatCVC}
                 />
               </InputSmallCvv>

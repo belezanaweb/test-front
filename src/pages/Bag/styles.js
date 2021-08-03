@@ -15,6 +15,7 @@ export const ListProductContainer = styled.div`
   background-color: #fff;
   padding: 10px;
   box-shadow: 1px 1px 5px 0 rgba(0, 0, 29, 0.22);
+  border-radius: 3px;
 `
 export const ContainerSummary = styled.div`
   margin-top: 10px;

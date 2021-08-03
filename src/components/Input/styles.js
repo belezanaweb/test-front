@@ -13,6 +13,7 @@ export const Styles = styled.div`
     margin-top: 5px;
     margin-bottom: 5px;
     outline: none;
+    padding-left: 0.5em;
 
     &::placeholder {
       color: var(--grey-placeholder);
@@ -64,7 +65,6 @@ export const InputSmallValidate = styled.div`
 `
 export const InputSmallCvv = styled.div`
   input {
-    width: 140px;
-    outline: none;
+    width: 133px;
   }
 `
