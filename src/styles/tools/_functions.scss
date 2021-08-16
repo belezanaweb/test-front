@@ -1,5 +1,7 @@
+@use "sass:math";
+
 @function rem($font-pixel) {
-  @return calc(#{$font-pixel}rem / #{$f-size-base});
+  @return math.div($font-pixel, $f-size-base) + rem;
 }
 
 /**

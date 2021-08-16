@@ -3,6 +3,7 @@ import Head from 'next/head'
 import { useRouter } from 'next/router'
 import { userCart } from '../constants/cart'
 import { BillingContext } from '../contexts/BillingContext'
+import CheckoutLayout from '../layouts/CheckoutLayout'
 import Shelf from '../components/Shelf'
 import Totals from '../components/Totals'
 import PaymentStatus from '../components/PaymentStatus'
@@ -18,7 +19,7 @@ export default function Confirmation({ cart }: any) {
     }, [cardApproved, router])
 
     return cardApproved && (
-        <>
+        <CheckoutLayout>
             <Head>
                 <title>Confirmação | Loja</title>
             </Head>
@@ -26,7 +27,7 @@ export default function Confirmation({ cart }: any) {
             <PaymentData />
             <Shelf {...cart} />
             <Totals {...cart} />
-        </>
+        </CheckoutLayout>
     )
 }
 

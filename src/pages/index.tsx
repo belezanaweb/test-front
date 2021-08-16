@@ -2,6 +2,7 @@ import React from 'react'
 import Head from 'next/head'
 import { useRouter } from 'next/router'
 import { userCart } from '../constants/cart'
+import CheckoutLayout from '../layouts/CheckoutLayout'
 import Button from '../components/Button'
 import Shelf from '../components/Shelf'
 import Totals from '../components/Totals'
@@ -23,13 +24,13 @@ export default function Cart({ cart }: any) {
   }
 
   return (
-    <>
+    <CheckoutLayout>
       <Head>
         <title>Sacola | Loja</title>
       </Head>
       <Shelf {...cart} />
       <Totals {...cart} />
       <Button handleClick={handleClick}>seguir para o pagamento</Button>
-    </>
+    </CheckoutLayout>
   )
 }
