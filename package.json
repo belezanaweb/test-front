@@ -6,11 +6,15 @@
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.3.2",
     "@testing-library/user-event": "^7.1.2",
+    "formik": "^2.2.9",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
     "react-router-dom": "^5.2.1",
     "react-scripts": "3.4.4",
-    "styled-components": "^5.3.1"
+    "remask": "^0.1.0-alpha.5",
+    "styled-components": "^5.3.1",
+    "vanilla-masker": "^1.2.0",
+    "yup": "^0.32.9"
   },
   "scripts": {
     "start": "react-scripts start",

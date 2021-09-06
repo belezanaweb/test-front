@@ -4,15 +4,15 @@ export const StyledButton = styled.button`
   font-size: 20px;
   font-weight: bold;
   color: var(--content);
-  background-color: var(--secondary);
+  background-color: var(--primary);
 
   height: 60px;
   width: 100%;
   border: none;
   border-radius: 3px;
-  transition: filter 0.2s;
+  transition: 0.3s;
 
   &:hover {
-    filter: brightness(0.9);
+    background-color: var(--secondary);
   }
 `
