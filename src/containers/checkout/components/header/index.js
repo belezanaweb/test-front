@@ -8,7 +8,7 @@ import logoImg from '../../../../assets/logo.svg'
 const { CART, PAYMENT, CONFIRMATION } = STEPS
 
 const Header = ({ step }) => {
-  const isMedium = useMedia('(min-width: 500px)')
+  const isMedium = useMedia('(min-width: 600px)')
 
   return (
     <>

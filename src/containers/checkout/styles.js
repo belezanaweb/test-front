@@ -7,4 +7,20 @@ export const Container = styled.div`
 
 export const Content = styled.div`
   padding: 0 0.875rem;
+  .buttonContainer {
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  @media (min-width: 600px) {
+    & button {
+      flex: 0.485;
+    }
+  }
+
+  @media (min-width: 1000px) {
+    & button {
+      flex: 0.33;
+    }
+  }
 `

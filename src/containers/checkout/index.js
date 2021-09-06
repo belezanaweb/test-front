@@ -78,16 +78,18 @@ const Checkout = () => {
         <Totals products={products} />
 
         {step !== CONFIRMATION && (
-          <Button
-            title={isPaymentStep ? 'FINALIZAR O PEDIDO' : 'SEGUIR PARA O PAGAMENTO'}
-            onClick={() => {
-              if (isPaymentStep) {
-                form.submitForm()
-              } else {
-                handleStep(step)
-              }
-            }}
-          />
+          <div className="buttonContainer">
+            <Button
+              title={isPaymentStep ? 'FINALIZAR O PEDIDO' : 'SEGUIR PARA O PAGAMENTO'}
+              onClick={() => {
+                if (isPaymentStep) {
+                  form.submitForm()
+                } else {
+                  handleStep(step)
+                }
+              }}
+            />
+          </div>
         )}
       </Content>
     </Container>

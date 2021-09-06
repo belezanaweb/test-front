@@ -30,4 +30,16 @@ export const Content = styled.div`
     font-size: 0.875rem;
     color: #000;
   }
+
+  @media (min-width: 600px) {
+    & {
+      width: 49%;
+    }
+  }
+
+  @media (min-width: 1000px) {
+    & {
+      width: 33%;
+    }
+  }
 `

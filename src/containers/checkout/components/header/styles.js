@@ -10,13 +10,14 @@ export const Container = styled.header`
   display: flex;
   align-items: center;
   justify-content: center;
+
   .steps {
     display: flex;
     width: 100%;
     justify-content: space-around;
   }
 
-  @media (min-width: 500px) {
+  @media (min-width: 600px) {
     & {
       display: flex;
       justify-content: space-between;
