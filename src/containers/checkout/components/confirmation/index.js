@@ -14,7 +14,7 @@ const Confirmation = ({ form }) => {
     <Container>
       <Image className="img" src={successImg} alt="Sucesso" />
 
-      <h3>PAYMENT</h3>
+      <h3>PAGAMENTO</h3>
 
       <Content>
         <span>{'****.****.****.'.concat(last4Digits)}</span>

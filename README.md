@@ -1,41 +1,55 @@
-## Frontend Test
+# Desafio frontend da <a href="https://www.grupoboticario.com.br/en/Pages/Home.aspx">Grupo Boticário</a>
 
-Faça um fork deste repositório e finalizar o teste, submeta um pull request para o repositório que nosso time será notificado.
+### Requisitos: [clique aqui](https://github.com/belezanaweb/test-front#readme)
 
-O teste consiste em um checkout simples contendo 3 passos (carrinho, PAYMENT e sucesso) [Veja o Layout](https://projects.invisionapp.com/prototype/font-test-cji0j0khf005c1t0132358e8k)
+<hr />
 
-**Faça quando quiser/puder (madrugada, fim de semana, etc)**
+# Contents
 
-### Requerimentos
+- [Layout](#screenshots)
+- [Technologies](#technologies)
+- [Getting started](#getting-started)
+- [Running tests](#running-tests)
 
-- Pixel perfect ([nesse link](https://projects.invisionapp.com/prototype/font-test-cji0j0khf005c1t0132358e8k), você pode inspecionar para ver espaçamentos, fonte, tamanho, etc)
-- A aplicação precisa ser responsiva, utilizando o conceito de mobile-first. Use sua imaginação para entregar uma experiência boa no desktop.
-- Renderize cada passo em uma URL única (lib de rotas).
+# Resources
 
+- [Layout](https://projects.invisionapp.com/prototype/front-test-cji0j0khf005c1t0132358e8k)
+- [API](http://www.mocky.io/v2/5b15c4923100004a006f3c07)
 
-### Passo 1 - Carrinho:
-  - Consuma o [esse endpoint](http://www.mocky.io/v2/5b15c4923100004a006f3c07) e liste os itens do carrinho, bem como o resumo do carrinho;
-  - Persista o conteúdo do JSON para ser usado nas próximas etapas;
+# Technologies
 
-### Passo 2 - PAYMENT: 
-  - Exiba um form com campos de cartão de crédito com validação em cada campo;
-  - Habilite o botão de Finalizar Pedido apenas se o form esteja válido;
+This project was made using the follow technologies:
 
-### Passo 3 - Sucesso: 
-  - Todo o conteúdo deverá ser exibido a partir dos dados persistidos;
-  
-### O que vamos avaliar:
-  - Organização do código;
-  - Mensagens (em inglês) e mudanças nos commits;
-  - Composição/reutilização de componentes;
-  - Testes unitários;
-  - O motivo de ter escolhido cada tech da stack;
-  - Como rodar sua aplicação ;)
+- [React](https://reactjs.org/)
+- [Jest](https://jestjs.io/pt-BR/)
+- [React Testing Library](https://testing-library.com/docs/react-testing-library/intro/)
+- [Prettier](https://prettier.io/)
+- [Styled Components](https://styled-components.com/)
 
-### Diferenciais:
-  - Split bundle por rota (cada step ter um bundle separado para otimizar a performance);
-  - CSS in JS;
-  - React;
+# Getting started
 
-### Fim:
-Ao finalizar o teste, submeta um pull request para o repositório que nosso time será notificado. Se tiver alguma observação, escreva no pull request.
+```bash
+# Clone Repository
+$ git clone git@github.com:niltonxp2/test-front.git && cd test-front
+
+# Install Dependencies
+$ yarn
+
+# Fill .env.local file with YOUR environment variables, according to .env.example file.
+
+# Run Aplication
+$ yarn start
+```
+
+Go to http://localhost:3000/ to see the application running.
+
+# Running tests
+
+```bash
+$ yarn test
+
+# Run with --coverage to generate a new coverage report
+$ yarn test --coverage
+```
+
+Made with 💖 by [Ivanilton Bezerra](https://www.linkedin.com/in/ivanilton-bezerra-da-silva-b67784108/).

@@ -1,4 +1,6 @@
-import Checkout from '../containers/checkout'
+import { lazy } from 'react'
+
+const Checkout = lazy(() => import('../containers/checkout'))
 
 export default [
   {

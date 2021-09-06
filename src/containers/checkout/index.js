@@ -13,6 +13,7 @@ import Confirmation from './components/confirmation'
 import Button from '../../components/Button'
 
 import { Container, Content } from './styles'
+import Loading from '../../components/Helper/Loading'
 
 const { CART, PAYMENT, CONFIRMATION } = STEPS
 
@@ -67,7 +68,7 @@ const Checkout = () => {
     requestProducts()
   }, [requestProducts])
 
-  if (loading) return <span>Carregando...</span>
+  if (loading) return <Loading />
 
   return (
     <Container>
