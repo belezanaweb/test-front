@@ -1,12 +1,26 @@
 import React from 'react'
+import { mask } from 'remask'
 import { Container, Content } from './styles'
 
-const Confirmation = () => {
+import successImg from '../../../../assets/success.png'
+import Image from '../../../../components/Helper/Image'
+
+const Confirmation = ({ form }) => {
+  const { values } = form
+
+  const last4Digits = String(values.cardNumber).slice(-4)
+
   return (
     <Container>
-      <h3>PAGAMENTO</h3>
+      <Image className="img" src={successImg} alt="Sucesso" />
 
-      <Content>test</Content>
+      <h3>PAYMENT</h3>
+
+      <Content>
+        <span>{'****.****.****.'.concat(last4Digits)}</span>
+        <span>{values?.name?.toUpperCase()}</span>
+        <span>{mask(values.validity, ['99/9999'])}</span>
+      </Content>
     </Container>
   )
 }

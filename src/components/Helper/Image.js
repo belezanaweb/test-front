@@ -1,7 +1,7 @@
 import React from 'react'
-import styles from './Image.module.css'
+import { Wrapper } from './styles'
 
-const Image = ({ alt, ...props }) => {
+const Image = ({ alt, className, ...props }) => {
   const [skeleton, setSkeleton] = React.useState(true)
 
   function handleLoad({ target }) {
@@ -10,10 +10,10 @@ const Image = ({ alt, ...props }) => {
   }
 
   return (
-    <div className={styles.wrapper}>
-      {skeleton && <div className={styles.skeleton}> </div>}
-      <img onLoad={handleLoad} className={styles.img} alt={alt} {...props} />
-    </div>
+    <Wrapper className={className}>
+      {skeleton && <div className="skeleton"> </div>}
+      <img onLoad={handleLoad} className="img" alt={alt} {...props} />
+    </Wrapper>
   )
 }
 

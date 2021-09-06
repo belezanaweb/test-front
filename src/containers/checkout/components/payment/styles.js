@@ -1,13 +1,18 @@
 import styled from 'styled-components'
+import { animeLeft } from '../../../../styles/global'
 
 export const Container = styled.div`
   h3 {
     color: #999;
-    font-size: 14px;
+    font-size: 0.875rem;
     line-height: 17px;
     margin-bottom: 5px;
     padding-left: 15px;
   }
+
+  opacity: 0;
+  transform: translateX(-20px);
+  animation: ${animeLeft} 0.3s forwards;
 `
 export const Content = styled.div`
   display: flex;

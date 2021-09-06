@@ -1,4 +1,4 @@
-import { createGlobalStyle } from 'styled-components'
+import { createGlobalStyle, keyframes } from 'styled-components'
 
 export const GlobalStyle = createGlobalStyle`
   :root {
@@ -7,6 +7,8 @@ export const GlobalStyle = createGlobalStyle`
     --primary: #FF7800;
     --secondary: #FF6C00;
     --text: #CCC;
+
+    --border-radius: 0.188rem;
   }
 
   * {
@@ -55,5 +57,12 @@ export const GlobalStyle = createGlobalStyle`
   [disabled] {
     opacity: 0.6;
     cursor: not-allowed;
+  }
+`
+
+export const animeLeft = keyframes`
+  to {
+    opacity: 1;
+    transform: initial;
   }
 `

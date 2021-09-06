@@ -12,16 +12,16 @@ import Totals from './components/totals'
 import Confirmation from './components/confirmation'
 import Button from '../../components/Button'
 
-import { Container } from './styles'
+import { Container, Content } from './styles'
 
-const { SACOLA, PAGAMENTO, CONFIRMAÇÃO } = STEPS
+const { CART, PAYMENT, CONFIRMATION } = STEPS
 
 const Checkout = () => {
-  const [step, setStep] = useState(PAGAMENTO)
+  const [step, setStep] = useState(CART)
   const [products, setProducts] = useState(null)
   const { request, loading } = useFetch()
 
-  const isPaymentStep = step === PAGAMENTO
+  const isPaymentStep = step === PAYMENT
 
   const form = useFormik({
     initialValues: {},
@@ -38,9 +38,9 @@ const Checkout = () => {
   const handleStep = useCallback(() => {
     setStep((step) => {
       const steps = {
-        [SACOLA]: PAGAMENTO,
-        [PAGAMENTO]: CONFIRMAÇÃO,
-        [CONFIRMAÇÃO]: SACOLA
+        [CART]: PAYMENT,
+        [PAYMENT]: CONFIRMATION,
+        [CONFIRMATION]: CART
       }
 
       return steps[step]
@@ -48,11 +48,11 @@ const Checkout = () => {
   }, [])
 
   const PAGES = {
-    [SACOLA]: <Products products={products} />,
-    [PAGAMENTO]: <Payment form={form} />,
-    [CONFIRMAÇÃO]: (
+    [CART]: <Products products={products} />,
+    [PAYMENT]: <Payment form={form} />,
+    [CONFIRMATION]: (
       <>
-        <Confirmation />
+        <Confirmation form={form} />
         <Products products={products} />
       </>
     )
@@ -70,13 +70,13 @@ const Checkout = () => {
   if (loading) return <span>Carregando...</span>
 
   return (
-    <>
+    <Container>
       <Header step={step} setStep={setStep} form={form} />
-      <Container>
+      <Content>
         {PAGES[step]}
         <Totals products={products} />
 
-        {step !== CONFIRMAÇÃO && (
+        {step !== CONFIRMATION && (
           <Button
             title={isPaymentStep ? 'FINALIZAR O PEDIDO' : 'SEGUIR PARA O PAGAMENTO'}
             onClick={() => {
@@ -88,8 +88,8 @@ const Checkout = () => {
             }}
           />
         )}
-      </Container>
-    </>
+      </Content>
+    </Container>
   )
 }
 

@@ -24,8 +24,16 @@ const Payment = ({ form }) => {
             label="Validade (mês/ano):"
             placeholder="__/____"
             masks={['99/9999']}
+            maxLength={7}
           />
-          <Input form={form} name="cvv" label="CVV:" placeholder="___" masks={['999']} />
+          <Input
+            form={form}
+            name="cvv"
+            label="CVV:"
+            placeholder="___"
+            masks={['999']}
+            maxLength={3}
+          />
         </div>
       </Content>
     </Container>
