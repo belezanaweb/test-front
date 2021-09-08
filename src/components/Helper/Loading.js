@@ -2,7 +2,7 @@ import React from 'react'
 import { RollerSpinner } from './styles'
 
 const Loading = ({ color }) => (
-  <RollerSpinner color={color}>
+  <RollerSpinner color={color} data-testid="loading">
     <div />
     <div />
     <div />

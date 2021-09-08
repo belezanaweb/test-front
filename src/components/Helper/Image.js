@@ -10,8 +10,8 @@ const Image = ({ alt, className, ...props }) => {
   }
 
   return (
-    <Wrapper className={className}>
-      {skeleton && <div className="skeleton"> </div>}
+    <Wrapper data-testid="img-wrapper" className={className}>
+      {skeleton && <div data-testid="skeleton" className="skeleton"></div>}
       <img onLoad={handleLoad} className="img" alt={alt} {...props} />
     </Wrapper>
   )

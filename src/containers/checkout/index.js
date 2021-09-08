@@ -28,7 +28,7 @@ const Checkout = () => {
     initialValues: {},
     validateOnChange: false,
     validationSchema: yup.object().shape({
-      cardNumber: yup.string().length(12).required(),
+      cardNumber: yup.string().length(16).required(),
       name: yup.string().min(3).required(),
       validity: yup.string().min(6).required(),
       cvv: yup.string().min(3).required()
@@ -72,7 +72,7 @@ const Checkout = () => {
 
   return (
     <Container>
-      <Header step={step} setStep={setStep} form={form} />
+      <Header step={step} />
       <Content>
         {PAGES[step]}
         <Totals products={products} />

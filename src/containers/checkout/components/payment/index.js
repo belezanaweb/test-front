@@ -13,8 +13,8 @@ const Payment = ({ form }) => {
           name="cardNumber"
           label="Número do cartão:"
           placeholder="____.____.____.____"
-          masks={['999.999.999.999']}
-          maxLength={15}
+          masks={['9999.9999.9999.9999']}
+          maxLength={19}
         />
         <Input form={form} name="name" label="Nome do Titular:" placeholder="Como no cartão" />
         <div className="inline">

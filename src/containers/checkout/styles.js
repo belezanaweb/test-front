@@ -7,6 +7,7 @@ export const Container = styled.div`
 
 export const Content = styled.div`
   padding: 0 0.875rem;
+
   .buttonContainer {
     display: flex;
     justify-content: flex-end;
@@ -14,13 +15,13 @@ export const Content = styled.div`
 
   @media (min-width: 600px) {
     & button {
-      flex: 0.485;
+      flex: 0.483;
     }
   }
 
   @media (min-width: 1000px) {
     & button {
-      flex: 0.33;
+      flex: 0.328;
     }
   }
 `

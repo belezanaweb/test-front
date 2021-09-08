@@ -8,7 +8,7 @@ const Product = ({ product }) => {
   const { imageObjects, name, priceSpecification } = product
 
   return (
-    <Container>
+    <Container role="product">
       <Image src={imageObjects?.[0].large} alt={name} />
 
       <span className="name">{name}</span>

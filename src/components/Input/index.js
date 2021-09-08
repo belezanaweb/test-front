@@ -3,11 +3,11 @@ import { mask, unMask } from 'remask'
 import { Container } from './styles'
 
 const Input = ({ form, name, label, type, masks, ...props }) => {
-  const { values, setFieldValue, errors } = form
+  const { values, setFieldValue, errors } = form || {}
   const value = values?.[name]
 
   return (
-    <Container error={errors?.[name]}>
+    <Container error={errors?.[name]} role="input">
       <label htmlFor={name}>{label}</label>
       <input
         {...props}

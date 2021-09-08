@@ -9,6 +9,7 @@ export const StyledButton = styled.button`
 
   height: 60px;
   width: 100%;
+  margin-bottom: 1rem;
   border: none;
   border-radius: var(--border-radius);
   opacity: 0;

@@ -1,4 +1,4 @@
-# Desafio frontend da <a href="https://www.grupoboticario.com.br/en/Pages/Home.aspx">Grupo Boticário</a>
+# <a href="https://www.grupoboticario.com.br/en/Pages/Home.aspx">Grupo Boticário</a> frontend challenge
 
  Requisitos: [clique aqui](https://github.com/belezanaweb/test-front#readme)
 
@@ -24,12 +24,10 @@ This project was made using the follow technologies:
 $ git clone git@github.com:niltonxp2/test-front.git && cd test-front
 
 # Install Dependencies
-$ yarn
-
-# Fill .env.local file with YOUR environment variables, according to .env.example file.
+$ yarn or npm i
 
 # Run Aplication
-$ yarn start
+$ yarn start or npm start
 ```
 
 Go to http://localhost:3000/ to see the application running.

@@ -12,7 +12,7 @@ export const Container = styled.div`
   .img {
     display: flex;
     justify-content: center;
-    margin: 5px 0 20px;
+    margin: 5px 0 15px;
   }
 `
 export const Content = styled.div`
