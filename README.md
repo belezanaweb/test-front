@@ -38,7 +38,7 @@ Go to http://localhost:3000/ to see the application running.
 $ yarn test
 
 # Run with --coverage to generate a new coverage report
-$ yarn test --coverage
+$ yarn coverage
 ```
 
 Made with 💖 by [Ivanilton Bezerra](https://www.linkedin.com/in/ivanilton-bezerra-da-silva-b67784108/).
