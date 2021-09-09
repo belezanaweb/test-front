@@ -1,4 +1,5 @@
 import React from 'react'
+import { useHistory } from 'react-router-dom'
 
 import { styled, keyframes } from '@/style/stitches.config'
 
@@ -34,9 +35,15 @@ interface OwnProps {
 const Box = (props: OwnProps): React.ReactElement => {
   const { text, href } = props
 
-  console.log(href)
+  const history = useHistory()
 
-  return <ButtonStyled>{text}</ButtonStyled>
+  const onClick = (): void => {
+    if (href) {
+      history.push(href)
+    }
+  }
+
+  return <ButtonStyled onClick={href ? onClick : undefined}>{text}</ButtonStyled>
 }
 
 export default Box
