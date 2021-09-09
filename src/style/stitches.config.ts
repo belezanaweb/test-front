@@ -16,8 +16,10 @@ export const {
       orange200: '#F30',
       orange300: '#D45A00',
       gray100: '#EEE',
-      gray200: '#CCC',
-      shadow: 'rgba(0,0,29,0.22)'
+      gray200: '#CCC'
+    },
+    shadows: {
+      defaultShadow: 'rgba(0,0,29,0.22)'
     }
   },
   media: {
@@ -29,6 +31,8 @@ export const {
   },
   utils: {
     marginX: (value: String) => ({ marginLeft: value, marginRight: value }),
-    marginY: (value: String) => ({ marginTop: value, marginBottom: value })
+    marginY: (value: String) => ({ marginTop: value, marginBottom: value }),
+    paddingX: (value: String) => ({ paddingLeft: value, paddingRight: value }),
+    paddingY: (value: String) => ({ paddingTop: value, paddingBottom: value })
   }
 })
