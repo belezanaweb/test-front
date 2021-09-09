@@ -1,6 +1,9 @@
 import React from 'react'
 
 import { styled } from '@/style/stitches.config'
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
+import { IStep } from '@/types/Step'
+import { useStep } from '@/contexts/step'
 
 const StepStyled = styled('span', {
   fontSize: 13,
@@ -18,15 +21,14 @@ const StepStyled = styled('span', {
   }
 })
 
-interface OwnProps {
-  name: String
-  slug: 'sacola' | 'pagamento' | 'confirmacao'
-}
+const Step = (props: IStep): React.ReactElement => {
+  const { name, pathname } = props
 
-const Step = (props: OwnProps): React.ReactElement => {
-  const { name } = props
+  const { stepPathnameActive } = useStep()
 
-  return <StepStyled color="inactive">{name}</StepStyled>
+  return (
+    <StepStyled color={pathname === stepPathnameActive ? 'active' : 'inactive'}>{name}</StepStyled>
+  )
 }
 
 export default Step

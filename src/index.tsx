@@ -9,7 +9,8 @@ import Payment from '@/pages/Payment'
 import Success from '@/pages/Success'
 
 import Container from '@/components/Container'
-import StepBar from './components/StepBar'
+import StepBar from '@/components/StepBar'
+import StepProvider from '@/contexts/step'
 
 const globalStyles = globalCss({
   '*': { margin: 0, padding: 0, fontFamily: 'Helvetica Neue, Helvetica, Arial, sans-serif' }
@@ -19,21 +20,25 @@ const Main = (): React.ReactElement => {
   globalStyles()
 
   return (
-    <Container>
-      <StepBar />
-      <StrictMode>
-        <BrowserRouter>
-          <Switch>
-            <Route path="/cart" exact component={Cart} />
-            <Route path="/payment" exact component={Payment} />
-            <Route path="/success" exact component={Success} />
-            <Route exact path="/">
-              <Redirect to="/cart" />
-            </Route>
-          </Switch>
-        </BrowserRouter>
-      </StrictMode>
-    </Container>
+    <StrictMode>
+      <BrowserRouter>
+        <Container>
+          <StepProvider>
+            <>
+              <StepBar />
+              <Switch>
+                <Route path="/cart" exact component={Cart} />
+                <Route path="/payment" exact component={Payment} />
+                <Route path="/success" exact component={Success} />
+                <Route exact path="/">
+                  <Redirect to="/cart" />
+                </Route>
+              </Switch>
+            </>
+          </StepProvider>
+        </Container>
+      </BrowserRouter>
+    </StrictMode>
   )
 }
 

@@ -1,7 +1,11 @@
-import React from 'react'
+import React, { useEffect } from 'react'
+import { useLocation } from 'react-router-dom'
 
 import { styled } from '@/style/stitches.config'
 import Step from './Step'
+
+import { StepPathname } from '@/types/Step'
+import { useStep } from '@/contexts/step'
 
 const StepBarStyled = styled('div', {
   display: 'flex',
@@ -13,11 +17,20 @@ const StepBarStyled = styled('div', {
 })
 
 const StepBar = (): React.ReactElement => {
+  const location = useLocation()
+  const { stepPathnameActive, setStepPathnameActive } = useStep()
+
+  useEffect(() => {
+    if (location.pathname !== stepPathnameActive) {
+      setStepPathnameActive(location.pathname as StepPathname)
+    }
+  })
+
   return (
     <StepBarStyled>
-      <Step name="Sacola" slug="sacola" />
-      <Step name="Pagamento" slug="pagamento" />
-      <Step name="Confirmação" slug="confirmacao" />
+      <Step name="Sacola" pathname={StepPathname.Sacola} />
+      <Step name="Pagamento" pathname={StepPathname.Pagamento} />
+      <Step name="Confirmação" pathname={StepPathname.Confirmacao} />
     </StepBarStyled>
   )
 }
