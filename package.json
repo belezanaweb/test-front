@@ -11,7 +11,7 @@
   },
   "scripts": {
     "start": "webpack-dev-server --open",
-    "test": "jest"
+    "test": "jest --no-cache --runInBand"
   },
   "eslintConfig": {
     "extends": "react-app"
