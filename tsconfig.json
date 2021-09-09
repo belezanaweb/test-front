@@ -6,7 +6,6 @@
       "jsx": "react",
       "rootDir": "src",
       "removeComments": true,
-      "isolatedModules": true,
       "strict": true,
       "moduleResolution": "node",
       "baseUrl": "src",
