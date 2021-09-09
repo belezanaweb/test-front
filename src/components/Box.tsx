@@ -14,7 +14,7 @@ const BoxStyled = styled('div', {
   paddingY: '5px',
   paddingX: '15px',
   boxShadow: '1px 1px 5px $defaultShadow',
-  borderRadius: '2px'
+  borderRadius: '3px'
 })
 
 interface OwnProps {

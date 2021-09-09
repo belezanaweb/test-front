@@ -11,7 +11,7 @@ const ProductBoxStyled = styled('div', {
   display: 'flex',
   alignItems: 'center',
   border: '1px solid $gray100',
-  borderRadius: '2px',
+  borderRadius: '3px',
   padding: '10px',
   marginY: '10px'
 })

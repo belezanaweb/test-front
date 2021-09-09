@@ -15,7 +15,7 @@ const ResumeValueStyled = styled('div', {
   paddingX: '15px',
   paddingY: '5px',
   border: '1px solid $gray200',
-  borderRadius: '2px',
+  borderRadius: '3px',
   fontSize: 14
 })
 
