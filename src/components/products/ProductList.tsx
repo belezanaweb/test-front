@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React from 'react'
 
 import { useCart } from '@/contexts/cart'
 
@@ -6,11 +6,7 @@ import Box from '@/components/Box'
 import ProductBox from '@/components/products/ProductBox'
 
 const ProductList = (): JSX.Element | null => {
-  const { cart, loadCart } = useCart()
-
-  useEffect(() => {
-    loadCart()
-  }, [])
+  const { cart } = useCart()
 
   if (!cart) {
     return null

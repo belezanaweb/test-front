@@ -5,9 +5,10 @@ import { useHistory } from 'react-router-dom'
 
 import ResumeValues from '@/components/resume/ResumeValues'
 import Button from '@/components/Button'
+import PaymentFields from '@/components/payment/PaymentFields'
 
 import { StepPathname } from '@/entities/Step'
-import PaymentFields from '@/components/payment/PaymentFields'
+import { useCart } from '@/contexts/cart'
 
 type Inputs = {
   cardNumber: string
@@ -16,17 +17,22 @@ type Inputs = {
   cvv: string
 }
 
-function Payment (): React.ReactElement {
+function Payment (): React.ReactElement | null {
   const {
     register,
     handleSubmit,
     formState: { errors }
   } = useForm<Inputs>()
 
+  const { cart } = useCart()
   const history = useHistory()
 
   const onSubmit: SubmitHandler<Inputs> = (data) => {
     history.push(StepPathname.Confirmacao)
+  }
+
+  if (!cart) {
+    return null
   }
 
   return (
