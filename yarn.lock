@@ -1045,7 +1045,7 @@
   dependencies:
     "@types/yargs-parser" "*"
 
-"@typescript-eslint/eslint-plugin@^4.31.0":
+"@typescript-eslint/eslint-plugin@^4.2.0":
   version "4.31.0"
   resolved "https://registry.yarnpkg.com/@typescript-eslint/eslint-plugin/-/eslint-plugin-4.31.0.tgz#9c3fa6f44bad789a962426ad951b54695bd3af6b"
   integrity sha512-iPKZTZNavAlOhfF4gymiSuUkgLne/nh5Oz2/mdiUmuZVD42m9PapnCnzjxuDsnpnbH3wT5s2D8bw6S39TC6GNw==
@@ -3081,10 +3081,10 @@ eslint-plugin-react@^7.25.1:
     resolve "^2.0.0-next.3"
     string.prototype.matchall "^4.0.5"
 
-eslint-plugin-standard@^5.0.0:
-  version "5.0.0"
-  resolved "https://registry.yarnpkg.com/eslint-plugin-standard/-/eslint-plugin-standard-5.0.0.tgz#c43f6925d669f177db46f095ea30be95476b1ee4"
-  integrity sha512-eSIXPc9wBM4BrniMzJRBm2uoVuXz2EPa+NXPk2+itrVt+r5SbKFERx/IgrK/HmfjddyKVz2f+j+7gBRvu19xLg==
+eslint-plugin-standard@^4.0.1:
+  version "4.1.0"
+  resolved "https://registry.yarnpkg.com/eslint-plugin-standard/-/eslint-plugin-standard-4.1.0.tgz#0c3bf3a67e853f8bbbc580fb4945fbf16f41b7c5"
+  integrity sha512-ZL7+QRixjTR6/528YNGyDotyffm5OQst/sGxKDwGb9Uqs4In5Egi4+jbobhqJoyoCM6/7v/1A5fhQ7ScMtDjaQ==
 
 eslint-scope@^4.0.3:
   version "4.0.3"
