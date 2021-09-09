@@ -3,7 +3,7 @@ import React, { useEffect } from 'react'
 import { useCart } from '@/contexts/cart'
 
 import Box from '@/components/Box'
-import ProductBox from '@/components/ProductBox'
+import ProductBox from '@/components/products/ProductBox'
 
 const ProductList = (): JSX.Element | null => {
   const { cart, loadCart } = useCart()

@@ -9,7 +9,7 @@ import Payment from '@/pages/Payment'
 import Success from '@/pages/Success'
 
 import Container from '@/components/Container'
-import StepBar from '@/components/StepBar'
+import StepBar from '@/components/steps/StepBar'
 
 import StepProvider from '@/contexts/step'
 import CartProvider from '@/contexts/cart'
