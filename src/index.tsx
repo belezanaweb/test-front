@@ -13,9 +13,11 @@ import StepBar from '@/components/steps/StepBar'
 
 import StepProvider from '@/contexts/step'
 import CartProvider from '@/contexts/cart'
+import PaymentProvider from '@/contexts/payment'
 
 const globalStyles = globalCss({
-  '*': { margin: 0, padding: 0, fontFamily: 'Helvetica Neue, Helvetica, Arial, sans-serif' }
+  '*': { margin: 0, padding: 0, fontFamily: 'Helvetica Neue, Helvetica, Arial, sans-serif' },
+  'html, body': { height: '100%', backgroundColor: '$gray100' }
 })
 
 const Main = (): React.ReactElement => {
@@ -27,17 +29,19 @@ const Main = (): React.ReactElement => {
         <Container>
           <StepProvider>
             <CartProvider>
-              <>
-                <StepBar />
-                <Switch>
-                  <Route path="/cart" exact component={Cart} />
-                  <Route path="/payment" exact component={Payment} />
-                  <Route path="/success" exact component={Success} />
-                  <Route exact path="/">
-                    <Redirect to="/cart" />
-                  </Route>
-                </Switch>
-              </>
+              <PaymentProvider>
+                <>
+                  <StepBar />
+                  <Switch>
+                    <Route path="/cart" exact component={Cart} />
+                    <Route path="/payment" exact component={Payment} />
+                    <Route path="/success" exact component={Success} />
+                    <Route exact path="/">
+                      <Redirect to="/cart" />
+                    </Route>
+                  </Switch>
+                </>
+              </PaymentProvider>
             </CartProvider>
           </StepProvider>
         </Container>

@@ -9,6 +9,7 @@ import PaymentFields from '@/components/payment/PaymentFields'
 
 import { StepPathname } from '@/entities/Step'
 import { useCart } from '@/contexts/cart'
+import { usePayment } from '@/contexts/payment'
 
 type Inputs = {
   cardNumber: string
@@ -26,9 +27,16 @@ function Payment (): React.ReactElement | null {
 
   const { cart } = useCart()
   const history = useHistory()
+  const { storePaymentDetail } = usePayment()
 
   const onSubmit: SubmitHandler<Inputs> = (data) => {
-    history.push(StepPathname.Confirmacao)
+    storePaymentDetail({
+      cardholder: data.cardholder,
+      cardExpirationDate: data.cardExpiringDate,
+      cardNumberHashed: data.cardNumber
+    }).then((response) => {
+      history.push(StepPathname.Confirmacao)
+    })
   }
 
   if (!cart) {
