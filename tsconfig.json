@@ -1,0 +1,21 @@
+{
+    "compilerOptions": {
+      "target": "es6",
+      "module": "ESNext",
+      "allowJs": true,
+      "jsx": "react",
+      "rootDir": "src",
+      "removeComments": true,
+      "isolatedModules": true,
+      "strict": true,
+      "moduleResolution": "node",
+      "baseUrl": "src",
+      "paths": {
+        "@/*": ["*"]
+      },
+      "esModuleInterop": true,
+      "resolveJsonModule": true,
+    },
+    "include": ["src"],
+    "exclude": ["public"]
+}
