@@ -10,6 +10,7 @@ const onHover = keyframes({
 
 const ButtonStyled = styled('button', {
   backgroundColor: '$orange100',
+  width: '-webkit-fill-available',
   color: 'white',
   fontSize: 20,
   fontWeight: 'bold',
@@ -30,10 +31,11 @@ const ButtonStyled = styled('button', {
 interface OwnProps {
   text: string
   href?: string
+  isSubmit?: boolean
 }
 
 const Box = (props: OwnProps): React.ReactElement => {
-  const { text, href } = props
+  const { text, href, isSubmit = false } = props
 
   const history = useHistory()
 
@@ -41,6 +43,14 @@ const Box = (props: OwnProps): React.ReactElement => {
     if (href) {
       history.push(href)
     }
+  }
+
+  if (isSubmit) {
+    return (
+      <div>
+        <ButtonStyled type="submit">{text}</ButtonStyled>
+      </div>
+    )
   }
 
   return <ButtonStyled onClick={href ? onClick : undefined}>{text}</ButtonStyled>
