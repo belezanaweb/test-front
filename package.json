@@ -21,8 +21,9 @@
     "extends": "react-app"
   },
   "lint-staged": {
-    "src/**/*.{js,jsx,ts,tsx,json,css,scss,md}": [
-      "prettier --write"
+    "src/**/*.{ts,tsx}": [
+      "prettier --write",
+      "eslint 'src/**' --fix"
     ]
   },
   "husky": {
@@ -44,6 +45,14 @@
   },
   "devDependencies": {
     "@types/node": "^16.9.0",
+    "@typescript-eslint/eslint-plugin": "^4.31.0",
+    "eslint": "^7.32.0",
+    "eslint-config-standard-with-typescript": "11",
+    "eslint-plugin-import": "^2.24.2",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-promise": "^5.1.0",
+    "eslint-plugin-react": "^7.25.1",
+    "eslint-plugin-standard": "^5.0.0",
     "git-commit-msg-linter": "^3.2.8",
     "husky": "^4.3.0",
     "lint-staged": "^10.4.2",
