@@ -4,7 +4,7 @@ import { useLocation } from 'react-router-dom'
 import { styled } from '@/style/stitches.config'
 import Step from './Step'
 
-import { StepPathname } from '@/types/Step'
+import { StepPathname } from '@/entities/Step'
 import { useStep } from '@/contexts/step'
 
 const StepBarStyled = styled('div', {

@@ -1,6 +1,6 @@
 import React, { createContext, useContext, useState } from 'react'
 
-import { StepPathname } from '@/types/Step'
+import { StepPathname } from '@/entities/Step'
 
 export type StepContextType = {
   stepPathnameActive: StepPathname

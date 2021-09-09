@@ -2,7 +2,7 @@ import React from 'react'
 
 import { styled } from '@/style/stitches.config'
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
-import { IStep } from '@/types/Step'
+import { IStep } from '@/entities/Step'
 import { useStep } from '@/contexts/step'
 
 const StepStyled = styled('span', {

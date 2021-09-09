@@ -16,7 +16,9 @@ export const {
       orange200: '#F30',
       orange300: '#D45A00',
       gray100: '#EEE',
-      gray200: '#CCC'
+      gray200: '#CCC',
+      gray300: '#999',
+      gray400: '#212122'
     },
     shadows: {
       defaultShadow: 'rgba(0,0,29,0.22)'
