@@ -27,11 +27,11 @@ export const {
     }
   },
   media: {
-    sm: '(max-width: 576px)',
-    md: '(max-width: 768px)',
-    lg: '(max-width: 992px)',
-    xl: '(max-width: 1200px)',
-    xxl: '(max-width: 1400px)'
+    sm: '(min-width: 576px)',
+    md: '(min-width: 768px)',
+    lg: '(min-width: 992px)',
+    xl: '(min-width: 1200px)',
+    xxl: '(min-width: 1400px)'
   },
   utils: {
     marginX: (value: String) => ({ marginLeft: value, marginRight: value }),

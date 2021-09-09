@@ -7,13 +7,7 @@ const InputContainerStyled = styled('div', {
   position: 'relative',
   flexDirection: 'column',
   paddingY: '10px',
-  variants: {
-    size: {
-      twoColumns: {
-        width: '40vw'
-      }
-    }
-  }
+  width: '100%'
 })
 
 const LabelStyled = styled('label', {
@@ -24,8 +18,8 @@ const LabelStyled = styled('label', {
 })
 
 const InputStyled = styled('input', {
+  width: '100%',
   paddingY: '15px',
-  paddingLeft: '15px',
   fontSize: 16,
   color: '$gray400',
   border: '1px solid $gray150',
@@ -53,10 +47,10 @@ const MessageErrorStyled = styled('span', {
 })
 
 const Input = (props: any): React.ReactElement => {
-  const { label, error, twoColumns = false, register } = props
+  const { label, error, register } = props
 
   return (
-    <InputContainerStyled size={twoColumns ? 'twoColumns' : undefined}>
+    <InputContainerStyled>
       {label && <LabelStyled>{label}</LabelStyled>}
       <InputStyled color={error ? 'error' : undefined} {...register} {...props}></InputStyled>
       {error && <MessageErrorStyled>{error.message}</MessageErrorStyled>}

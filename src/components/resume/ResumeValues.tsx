@@ -6,7 +6,15 @@ import formatNumberToReal from '@/utils/formaNumberToReal'
 import { useCart } from '@/contexts/cart'
 
 const SpacingStyled = styled('div', {
-  marginY: '10px'
+  marginY: '10px',
+  variants: {
+    size: {
+      largeDevice: {
+        width: '100%',
+        flexShrink: '2'
+      }
+    }
+  }
 })
 
 const ResumeValueStyled = styled('div', {
@@ -46,7 +54,7 @@ const ResumeValues = (): JSX.Element | null => {
   const finalPrice = cart.subTotal + cart.shippingTotal - cart.discount
 
   return (
-    <SpacingStyled>
+    <SpacingStyled size={{ '@xl': 'largeDevice' }}>
       <ResumeValueStyled>
         <ResumeValueContainerStyled>
           <span>PRODUTOS</span>

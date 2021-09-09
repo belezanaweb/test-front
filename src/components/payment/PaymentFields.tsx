@@ -11,7 +11,6 @@ import Input from '@/components/Input'
 
 const FlexStyled = styled('div', {
   display: 'flex',
-  flexWrap: 'wrap',
   gap: 20
 })
 
@@ -65,7 +64,6 @@ function PaymentFields (props: any): JSX.Element {
             event.target.value = normalizeCardExpiringDate(event.target.value)
           }}
           error={errors.cardExpiringDate}
-          twoColumns
         />
         <Input
           placeholder="_ _ _"
@@ -79,7 +77,6 @@ function PaymentFields (props: any): JSX.Element {
             }
           })}
           error={errors.cvv}
-          twoColumns
         />
       </FlexStyled>
     </Box>
