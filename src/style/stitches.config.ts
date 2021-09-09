@@ -28,7 +28,7 @@ export const {
     xxl: '(max-width: 1400px)'
   },
   utils: {
-    marginX: (value) => ({ marginLeft: value, marginRight: value }),
-    marginY: (value) => ({ marginTop: value, marginBottom: value })
+    marginX: (value: String) => ({ marginLeft: value, marginRight: value }),
+    marginY: (value: String) => ({ marginTop: value, marginBottom: value })
   }
 })
