@@ -16,6 +16,7 @@
   },
   "scripts": {
     "start": "webpack-dev-server --open",
+    "start:docker": "webpack-dev-server --hot --host 0.0.0.0 --public localhost:3000",
     "build": "webpack",
     "test": "jest --no-cache --runInBand"
   },

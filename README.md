@@ -39,3 +39,5 @@ O teste consiste em um checkout simples contendo 3 passos (carrinho, pagamento e
 
 ### Fim:
 Ao finalizar o teste, submeta um pull request para o repositório que nosso time será notificado. Se tiver alguma observação, escreva no pull request.
+
+docker run --name test-front -it -p 3000:3000 test-front:latest
