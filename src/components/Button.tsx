@@ -48,12 +48,18 @@ const Box = (props: OwnProps): React.ReactElement => {
   if (isSubmit) {
     return (
       <div>
-        <ButtonStyled type="submit">{text}</ButtonStyled>
+        <ButtonStyled type="submit" data-testid="button">
+          {text}
+        </ButtonStyled>
       </div>
     )
   }
 
-  return <ButtonStyled onClick={href ? onClick : undefined}>{text}</ButtonStyled>
+  return (
+    <ButtonStyled onClick={href ? onClick : undefined} data-testid="button">
+      {text}
+    </ButtonStyled>
+  )
 }
 
 export default Box

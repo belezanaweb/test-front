@@ -51,9 +51,9 @@ const Input = (props: any): React.ReactElement => {
 
   return (
     <InputContainerStyled>
-      {label && <LabelStyled>{label}</LabelStyled>}
+      {label && <LabelStyled data-testid="input-label">{label}</LabelStyled>}
       <InputStyled color={error ? 'error' : undefined} {...register} {...props}></InputStyled>
-      {error && <MessageErrorStyled>{error.message}</MessageErrorStyled>}
+      {error && <MessageErrorStyled data-testid="input-error">{error.message}</MessageErrorStyled>}
     </InputContainerStyled>
   )
 }

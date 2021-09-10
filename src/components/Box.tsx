@@ -27,7 +27,7 @@ const Box = (props: OwnProps): React.ReactElement => {
 
   return (
     <SpacingStyled>
-      <Title>{title}</Title>
+      <Title data-testid="box-title">{title}</Title>
       <BoxStyled>{children}</BoxStyled>
     </SpacingStyled>
   )
