@@ -40,6 +40,7 @@ function Payment (): React.ReactElement | null {
   }
 
   if (!cart) {
+    history.push(StepPathname.Sacola)
     return null
   }
 
