@@ -15,7 +15,9 @@ O teste consiste em um checkout simples contendo 3 passos (carrinho, pagamento e
 **Usando YARN**
 
 ```bash
-  tip: caso utilize bash/zsh/fish pode utilizar uma linha para rodar: yarn install && yarn start
+  tip: caso utilize bash/zsh/fish pode utilizar uma linha para rodar: 
+  yarn install && yarn start
+  
   yarn install
   yarn start
 ```
@@ -23,7 +25,9 @@ O teste consiste em um checkout simples contendo 3 passos (carrinho, pagamento e
 **Usando NPM**
 
 ```bash
-  tip: caso utilize bash/zsh/fish pode utilizar uma linha para rodar: npm install && npm start
+  tip: caso utilize bash/zsh/fish pode utilizar uma linha para rodar: 
+  npm install && npm start
+  
   npm install 
   npm start
 ```
