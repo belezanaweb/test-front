@@ -6,6 +6,8 @@ O teste consiste em um checkout simples contendo 3 passos (carrinho, pagamento e
 
 **React:** facilidade de criação de componentes e reutilização e possui maior base no javascript, podendo ser mais maleável/flexível de se utilizar.
 
+**Axios:** praticidade e boa documentação, adotado em larga escala para trabalhar com requests.
+
 **Styled-Components:** Uma lib muito utilizada tanto pelo mercado quanto pela comunidade e bem consistente, com updates frequentes. Possui facilidade na implementação de CSS-in-JS e reutilização em diversos componentes, ajudando a manter um padrão.
 
 ## Instalando e Rodando o APP
