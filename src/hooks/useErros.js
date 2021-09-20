@@ -27,7 +27,7 @@ export const useErros = (validations) => {
 const createInitialState = (validations) => {
   const initialState = {}
   for (let field in validations) {
-    initialState[field] = { valid: true, text: '' }
+    initialState[field] = { valid: true, texto: '' }
   }
   return initialState
 }
