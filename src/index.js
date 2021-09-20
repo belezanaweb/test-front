@@ -1,11 +1,14 @@
-import React, { StrictMode } from 'react'
+import React from 'react'
 import ReactDOM from 'react-dom'
+import { Reset } from './styles/generic/Reset'
+import { Base } from './styles/global/Base'
 import App from './App'
 
-const Strict = () => (
-  <StrictMode>
+ReactDOM.render(
+  <React.StrictMode>
+    <Reset />
+    <Base />
     <App />
-  </StrictMode>
+  </React.StrictMode>,
+  document.getElementById('root')
 )
-
-ReactDOM.render(<Strict />, document.getElementById('root'))
