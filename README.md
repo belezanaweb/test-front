@@ -31,6 +31,7 @@ O teste consiste em um checkout simples contendo 3 passos (carrinho, pagamento e
   npm install 
   npm start
 ```
-
     
  Vai estar rodando na porta local padrão em http://localhost:3000
+ 
+ ps: este projeto foi feito com **Vim** e muita dedicação e horas de estudo :hearts:
