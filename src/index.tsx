@@ -1,11 +1,13 @@
 import React, { StrictMode } from 'react'
 import ReactDOM from 'react-dom'
-import './index.css'
-import App from './App'
+
+import { App } from './modules'
+import { GlobalStyle } from 'components'
 import * as serviceWorker from './serviceWorker'
 
 const Strict = () => (
   <StrictMode>
+    <GlobalStyle />
     <App />
   </StrictMode>
 )

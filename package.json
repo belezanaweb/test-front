@@ -8,8 +8,10 @@
     "@testing-library/user-event": "^7.1.2",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
+    "react-router-dom": "^5.3.0",
     "react-scripts": "3.4.4",
     "styled-components": "^5.3.1",
+    "styled-reset": "^4.3.4",
     "swr": "^1.0.1",
     "typescript": "^4.4.3"
   },
@@ -52,6 +54,7 @@
     "@types/node": "^16.9.4",
     "@types/react": "^17.0.22",
     "@types/react-dom": "^17.0.9",
+    "@types/react-router-dom": "^5.1.9",
     "@typescript-eslint/eslint-plugin": "^4.31.2",
     "@typescript-eslint/parser": "^4.31.2",
     "eslint": "6.6.0",
