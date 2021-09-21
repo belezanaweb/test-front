@@ -1,3 +1,5 @@
 export * from './global-style/global.style'
 export { Steps } from './steps/steps.component'
 export { ButtonStyled as Button } from './button/button.style'
+export { TitleStyled as Title } from './title/title.styled'
+export { CardStyled as Card } from './card/card.style'
