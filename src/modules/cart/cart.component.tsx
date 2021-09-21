@@ -1,4 +1,4 @@
-import { Card, Product, Title } from 'components'
+import { Card, Product, Summary, Title } from 'components'
 import React, { FC } from 'react'
 
 export const Cart: FC<{ children?: never }> = () => {
@@ -22,6 +22,7 @@ export const Cart: FC<{ children?: never }> = () => {
           picture="https://via.placeholder.com/100"
         />
       </Card>
+      <Summary />
     </>
   )
 }
