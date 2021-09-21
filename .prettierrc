@@ -5,13 +5,5 @@
   "singleQuote": true,
   "trailingComma": "none",
   "parser": "babel",
-  "semi": false,
-  "overrides": [
-    {
-      "files": "*.css",
-      "options": {
-        "parser": "css"
-      }
-    }
-  ]
+  "semi": false
 }

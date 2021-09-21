@@ -21,7 +21,7 @@
     "test": "react-scripts test",
     "coverage": "react-scripts test --coverage --watchAll=false",
     "eject": "react-scripts eject",
-    "lint": "yarn eslint src/ --ext .ts",
+    "lint": "yarn eslint src/ --ext .ts,.tsx",
     "format": "yarn prettier --write src/"
   },
   "eslintConfig": {
@@ -59,7 +59,10 @@
     "@typescript-eslint/parser": "^4.31.2",
     "eslint": "6.6.0",
     "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-file-progress": "^1.1.1",
     "eslint-plugin-prettier": "^4.0.0",
+    "eslint-plugin-react": "^7.26.0",
+    "eslint-plugin-react-hooks": "^4.2.0",
     "eslint-plugin-simple-import-sort": "^7.0.0",
     "husky": "^4.3.0",
     "lint-staged": "^10.4.2",
