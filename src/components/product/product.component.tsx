@@ -5,8 +5,8 @@ import { ProductStyled } from './product.style'
 
 export const Product: FC<IProductProps> = ({ title, picture, price = 0, size = 'default' }) => {
   return (
-    <ProductStyled>
-      <div className={`img ${size}`}>
+    <ProductStyled size={size}>
+      <div className="img">
         <img src={picture} />
       </div>
       <h3>{title}</h3>
