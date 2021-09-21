@@ -1,4 +1,4 @@
-import { Card, Title } from 'components'
+import { Card, Product, Title } from 'components'
 import React, { FC } from 'react'
 
 export const Cart: FC<{ children?: never }> = () => {
@@ -6,11 +6,21 @@ export const Cart: FC<{ children?: never }> = () => {
     <>
       <Title>Produtos</Title>
       <Card>
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Modi quae nisi laboriosam magnam
-        nesciunt temporibus aut, a ratione sequi, error deleniti vitae est repudiandae? Reiciendis
-        voluptatem neque in eligendi velit ab maxime eius labore magni, dolor accusamus laborum
-        repudiandae alias, commodi quaerat? Blanditiis vitae dolores impedit sunt, illo provident
-        sequi?
+        <Product
+          title="Senscience Inner Restore Intensif - Máscara Capilar 50ml"
+          price={42.95}
+          picture="https://via.placeholder.com/100"
+        />
+        <Product
+          title="Senscience Inner Restore Intensif - Máscara Capilar 50ml"
+          price={42.95}
+          picture="https://via.placeholder.com/100"
+        />
+        <Product
+          title="Senscience Inner Restore Intensif - Máscara Capilar 50ml"
+          price={-42.95}
+          picture="https://via.placeholder.com/100"
+        />
       </Card>
     </>
   )
