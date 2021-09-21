@@ -1,5 +1,6 @@
-import { Card, Product, Summary, Title } from 'components'
+import { Button, Card, Product, Summary, Title } from 'components'
 import React, { FC } from 'react'
+import { Link } from 'react-router-dom'
 
 export const Cart: FC<{ children?: never }> = () => {
   return (
@@ -23,6 +24,9 @@ export const Cart: FC<{ children?: never }> = () => {
         />
       </Card>
       <Summary />
+      <Button as={Link} to="/payment">
+        Seguir para o pagamento
+      </Button>
     </>
   )
 }

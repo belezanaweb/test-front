@@ -4,11 +4,12 @@ export const ButtonStyled = styled.button`
   color: #fff;
   display: block;
 
-  font-size: 1.54rem;
+  font-size: 20px;
   margin-top: 1em;
   padding: 0.9em 0;
   text-align: center;
-  letter-spacing: 0.025em;
+  letter-spacing: 0.05px;
+  text-transform: uppercase;
 
   border-radius: 3px;
   background-color: #ff6c00;
