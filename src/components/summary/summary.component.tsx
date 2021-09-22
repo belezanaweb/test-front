@@ -1,11 +1,14 @@
 import { useCheckoutContext } from 'context/checkout.context'
 import { formatMoney } from 'helpers'
 import React, { FC } from 'react'
+import { SummarySkeleton } from './summary.skeleton'
 import { SummaryStyled } from './summary.style'
 
 export const Summary: FC<{ children?: never }> = () => {
-  const { subTotal, shippingTotal, discount, total } = useCheckoutContext()
-  return (
+  const { subTotal, shippingTotal, discount, total, loading } = useCheckoutContext()
+  return loading ? (
+    <SummarySkeleton />
+  ) : (
     <SummaryStyled>
       <div className="item">
         <p>Produtos</p>
