@@ -5,6 +5,6 @@ Code challenge displaying a checkout app. Based on [https://github.com/belezanaw
 
 ## Stack
 - CRA, to keep it simple
-- React Router, por familiaridade
-- SWR: request caching
+- React Router
+- SWR: request caching and control of "loading" state
 - Styled Components: easy to control visual changes based on props
