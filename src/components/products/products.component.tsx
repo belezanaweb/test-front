@@ -1,27 +1,14 @@
 import React, { FC } from 'react'
 import { Card, Product } from 'components'
+import { useCheckoutContext } from 'context/checkout.context'
 
 export const Products: FC<{ children?: never, thumbs?: boolean }> = ({ thumbs = false }) => {
+  const { products } = useCheckoutContext()
   return (
     <Card>
-      <Product
-        title="Senscience Inner Restore Intensif - Máscara Capilar 50ml"
-        price={42.95}
-        picture="https://via.placeholder.com/100"
-        size={thumbs ? 'small' : 'default'}
-      />
-      <Product
-        title="Senscience Inner Restore Intensif - Máscara Capilar 50ml"
-        price={42.95}
-        picture="https://via.placeholder.com/100"
-        size={thumbs ? 'small' : 'default'}
-      />
-      <Product
-        title="Senscience Inner Restore Intensif - Máscara Capilar 50ml"
-        price={-42.95}
-        picture="https://via.placeholder.com/100"
-        size={thumbs ? 'small' : 'default'}
-      />
+      {products.map((item) => (
+        <Product {...item} size={thumbs ? 'small' : 'default'} key={item.title} />
+      ))}
     </Card>
   )
 }
