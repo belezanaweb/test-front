@@ -1,6 +1,7 @@
 export { ButtonStyled as Button } from './button/button.style'
 export { CardStyled as Card } from './card/card.style'
 export { Input } from './input/input.component'
+export { PaymentInfo } from './payment-info/payment-info.component'
 export { Product } from './product/product.component'
 export { Products } from './products/products.component'
 export { Steps } from './steps/steps.component'

@@ -1,4 +1,4 @@
-import React, { FC, useContext, createContext, useMemo } from 'react'
+import React, { FC, useContext, createContext, useMemo, useState, SetStateAction } from 'react'
 import { useOrders } from 'requests/get-orders.request'
 
 interface IProduct {
@@ -7,6 +7,12 @@ interface IProduct {
   price: number;
 }
 
+interface IPaymentInfo {
+  number: string,
+  name: string,
+  cvv: string,
+  expDate: string,
+}
 interface ICheckoutData {
   loading: boolean;
   products: IProduct[];
@@ -14,6 +20,8 @@ interface ICheckoutData {
   shippingTotal: number;
   discount: number;
   total: number;
+  paymentInfo: IPaymentInfo,
+  setPaymentInfo: (info: IPaymentInfo) => void
 }
 
 const CheckoutContext = createContext({} as ICheckoutData)
@@ -24,6 +32,13 @@ export const CheckoutProvider: FC = ({ children }) => {
     return data?.items?.map(i => ({picture: i.product.imageObjects[0].medium, title: i.product.name, price: i.product.priceSpecification.price})) ?? []
   }, [data])
 
+  const [paymentInfo, setPaymentInfo] = useState<IPaymentInfo>({
+    number: '',
+    name: '',
+    expDate: '',
+    cvv: ''
+  })
+
   return (
     <CheckoutContext.Provider
       value={{
@@ -32,7 +47,9 @@ export const CheckoutProvider: FC = ({ children }) => {
         subTotal: data?.subTotal ?? 0,
         shippingTotal: data?.shippingTotal ?? 0,
         discount: data?.discount ?? 0,
-        total: data?.total ?? 0
+        total: data?.total ?? 0,
+        paymentInfo,
+        setPaymentInfo
       }}>
         {children}
     </CheckoutContext.Provider>

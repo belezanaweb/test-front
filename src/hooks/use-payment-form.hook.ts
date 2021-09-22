@@ -1,12 +1,9 @@
+import { useCheckoutContext } from 'context/checkout.context'
 import { useState, useCallback, useMemo } from 'react'
 
 export const usePaymentForm = () => {
-  const [values, setValues] = useState({
-    number: '',
-    name: '',
-    expDate: '',
-    cvv: ''
-  })
+
+  const { paymentInfo, setPaymentInfo } = useCheckoutContext()
 
   const handleCardChange = useCallback(
     (value: string) => {
@@ -19,17 +16,17 @@ export const usePaymentForm = () => {
             clean.substr(8, 4),
             clean.substr(12, 4)
           ].join('.')
-          setValues({ ...values, number: str })
+          setPaymentInfo({ ...paymentInfo, number: str })
           break
         }
         case value.length >= '____.____.____.____'.length:
           return
         default:
           const clean = value.replace(/[^0-9.]/g, '')
-          setValues({ ...values, number: clean })
+          setPaymentInfo({ ...paymentInfo, number: clean })
       }
     },
-    [values, setValues]
+    [paymentInfo, setPaymentInfo]
   )
 
   const handleExpDateChange = useCallback(
@@ -38,53 +35,53 @@ export const usePaymentForm = () => {
         case value.length === 6: {
           const clean = value.replace(/\//g, '')
           const str = [clean.substr(0, 2), clean.substr(2, 4)].join('/')
-          setValues({ ...values, expDate: str })
+          setPaymentInfo({ ...paymentInfo, expDate: str })
           break
         }
         case value.length >= '__/____'.length:
           return
         default:
           const clean = value.replace(/[^0-9.]/g, '')
-          setValues({ ...values, expDate: clean })
+          setPaymentInfo({ ...paymentInfo, expDate: clean })
       }
     },
-    [values, setValues]
+    [paymentInfo, setPaymentInfo]
   )
 
   const inputs = useMemo(
     () => [
       {
-        value: values.number,
+        value: paymentInfo.number,
         label: 'Número do cartão:',
         placeholder: '____.____.____.____',
-        isValid: values.number?.length === '____.____.____.____'.length,
+        isValid: paymentInfo.number?.length === '____.____.____.____'.length,
         handleChange: (value: string) => handleCardChange(value),
         className: 'full'
       },
       {
-        value: values.name,
+        value: paymentInfo.name,
         label: 'Nome do Titular:',
         placeholder: 'Como no cartão',
-        isValid: values.name?.includes(' ') ?? false,
-        handleChange: (value: string) => setValues({ ...values, name: value }),
+        isValid: paymentInfo.name?.includes(' ') ?? false,
+        handleChange: (value: string) => setPaymentInfo({ ...paymentInfo, name: value }),
         className: 'full'
       },
       {
-        value: values.expDate,
+        value: paymentInfo.expDate,
         label: 'Validade (mês/ano):',
         placeholder: '__/____',
-        isValid: values.expDate?.length === 7,
+        isValid: paymentInfo.expDate?.length === 7,
         handleChange: (value: string) => handleExpDateChange(value)
       },
       {
-        value: values.cvv,
+        value: paymentInfo.cvv,
         label: 'CVV:',
         placeholder: '___',
-        isValid: values.cvv?.length === 3,
-        handleChange: (value: string) => setValues({ ...values, cvv: value })
+        isValid: paymentInfo.cvv?.length === 3,
+        handleChange: (value: string) => setPaymentInfo({ ...paymentInfo, cvv: value })
       }
     ],
-    [values, handleCardChange, handleExpDateChange]
+    [paymentInfo, handleCardChange, handleExpDateChange]
   )
 
   const buttonEnabled = useMemo(
