@@ -1,7 +1,17 @@
 import { useCheckoutContext } from 'context/checkout.context'
 import { useCallback, useMemo } from 'react'
 
-export const usePaymentForm = () => {
+interface IInput {
+  value: string,
+  label: string,
+  placeholder: string,
+  isValid: boolean,
+  handleChange: (value: string) => void,
+  className?: string,
+  autocomplete: string
+}
+
+export const usePaymentForm = (): { inputs: IInput[], buttonEnabled: boolean } => {
   const { paymentInfo, setPaymentInfo } = useCheckoutContext()
 
   const handleCardChange = useCallback(
@@ -47,7 +57,7 @@ export const usePaymentForm = () => {
     [paymentInfo, setPaymentInfo]
   )
 
-  const isExpDateValid = () => {
+  const isExpDateValid = useCallback(() => {
     const date = paymentInfo.expDate ?? ''
 
     if (date.length !== 7) return false
@@ -73,8 +83,9 @@ export const usePaymentForm = () => {
       default:
         return false
     }
-  }
-  const inputs = useMemo(
+  }, [paymentInfo.expDate])
+
+  const inputs = useMemo<IInput[]>(
     () => [
       {
         value: paymentInfo.number,
