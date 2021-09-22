@@ -2,7 +2,6 @@ import { useCheckoutContext } from 'context/checkout.context'
 import { useState, useCallback, useMemo } from 'react'
 
 export const usePaymentForm = () => {
-
   const { paymentInfo, setPaymentInfo } = useCheckoutContext()
 
   const handleCardChange = useCallback(
@@ -48,6 +47,33 @@ export const usePaymentForm = () => {
     [paymentInfo, setPaymentInfo]
   )
 
+  const isExpDateValid = () => {
+    const date = paymentInfo.expDate ?? ''
+
+    if (date.length !== 7) return false
+
+    const [m, y] = date.split('/')
+    console.log(`m: ${m}, y: ${y}`)
+    const month = Number(m)
+    const year = Number(y)
+
+    switch (true) {
+      // no matter what, month must be smaller than 12
+      case month > 12:
+        return false
+
+      // if this year, month must be greater than this month
+      case year === new Date().getFullYear():
+        return month > new Date().getMonth() + 1
+
+      // if not this year, year must be greather than current
+      case year !== new Date().getFullYear():
+        return year > new Date().getFullYear()
+
+      default:
+        return false
+    }
+  }
   const inputs = useMemo(
     () => [
       {
@@ -57,7 +83,7 @@ export const usePaymentForm = () => {
         isValid: paymentInfo.number?.length === '____.____.____.____'.length,
         handleChange: (value: string) => handleCardChange(value),
         className: 'full',
-        autocomplete: 'cc-number',
+        autocomplete: 'cc-number'
       },
       {
         value: paymentInfo.name,
@@ -72,7 +98,7 @@ export const usePaymentForm = () => {
         value: paymentInfo.expDate,
         label: 'Validade (mês/ano):',
         placeholder: '__/____',
-        isValid: paymentInfo.expDate?.length === 7,
+        isValid: isExpDateValid(),
         handleChange: (value: string) => handleExpDateChange(value),
         autocomplete: 'cc-exp'
       },
