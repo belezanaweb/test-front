@@ -4,7 +4,7 @@ module.exports = {
     es2020: true,
     jest: true
   },
-  extends: ['plugin:react/recommended',
+  extends: ['prettier', 'prettier/react', 'plugin:react/recommended',
   'plugin:@typescript-eslint/recommended'],
   globals: {
     afterAll: true,
