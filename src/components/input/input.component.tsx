@@ -18,10 +18,7 @@ export const Input: FC<IInputProps> = ({
       <input
         type="text"
         placeholder={placeholder}
-        onChange={(e) => {
-          console.log(e.target.value)
-          handleChange(e.target.value)
-        }}
+        onChange={(e) => handleChange(e.target.value)}
         value={value}
       />
       {!isValid && <span className="error">{errorMessage}</span>}
