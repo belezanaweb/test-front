@@ -21,21 +21,10 @@
     "test": "react-scripts test",
     "coverage": "react-scripts test --coverage --watchAll=false",
     "eject": "react-scripts eject",
-    "lint": "yarn eslint src/ --ext .ts,.tsx",
-    "format": "yarn prettier --write src/"
+    "lint": "yarn eslint src/ --ext .ts,.tsx"
   },
   "eslintConfig": {
     "extends": "react-app"
-  },
-  "lint-staged": {
-    "src/**/*.{js,jsx,ts,tsx,json,css,scss,md}": [
-      "prettier --write"
-    ]
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged"
-    }
   },
   "browserslist": {
     "production": [
