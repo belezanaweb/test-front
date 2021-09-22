@@ -1,5 +1,6 @@
 export { ButtonStyled as Button } from './button/button.style'
 export { CardStyled as Card } from './card/card.style'
+export { ContainerStyled as Container } from './container/container.style' 
 export { Input } from './input/input.component'
 export { PaymentInfo } from './payment-info/payment-info.component'
 export { Product } from './product/product.component'

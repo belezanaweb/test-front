@@ -1,17 +1,24 @@
 import { Link } from 'react-router-dom'
 import styled from 'styled-components'
 
-export const StepsStyled = styled.nav`
-  display: flex;
-  align-items: stretch;
-  justify-content: center;
-  position: fixed;
+export const StepsStyled = styled.header`
   top: 0;
   left: 0;
   width: 100%;
   z-index: 10;
   box-shadow: 1px 1px 5px 0 rgba(0, 0, 29, 0.22);
   border-radius: 3px;
+  position: fixed; 
+  background: #fff;
+  
+  nav {
+    display: flex;
+    align-items: stretch;
+    justify-content: center;
+
+    max-width: 768px;
+    margin: 0 auto;
+  }
 `
 
 export const StepStyled = styled(Link) <{ active: boolean } >`

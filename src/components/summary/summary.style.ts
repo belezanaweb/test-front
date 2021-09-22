@@ -22,4 +22,8 @@ export const SummaryStyled = styled.div`
     &.accent { color: #FF7800 }
     &.margin { margin-top: 16px; }
   }
+
+  @media only screen and (min-width: 1200px) {
+    margin-top: 0;
+  }
 `

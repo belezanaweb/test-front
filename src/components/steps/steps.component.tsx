@@ -11,15 +11,17 @@ export const Steps: FC<{ children?: never }> = () => {
    */
   return (
     <StepsStyled>
-      <StepStyled to="/cart" active={pathname === '/cart'}>
-        Sacola
-      </StepStyled>
-      <StepStyled to="/payment" active={pathname === '/payment'}>
-        Pagamento
-      </StepStyled>
-      <StepStyled to="/confirm" active={pathname === '/confirm'}>
-        Confirmação
-      </StepStyled>
+      <nav>
+        <StepStyled to="/cart" active={pathname === '/cart'}>
+          Sacola
+        </StepStyled>
+        <StepStyled to="/payment" active={pathname === '/payment'}>
+          Pagamento
+        </StepStyled>
+        <StepStyled to="/confirm" active={pathname === '/confirm'}>
+          Confirmação
+        </StepStyled>
+      </nav>
     </StepsStyled>
   )
 }
