@@ -8,14 +8,9 @@ export const InputStyled = styled.label<IInputStyledProps>`
 
   display: block;
   position: relative;
-  padding-bottom: 14px;
-  & + & {
-    margin-top: 9px;
-  }
+  padding-bottom: 16px;
 
-  &.no-margin {
-    margin-top: 0;
-  }
+  &.full { grid-column: 1 / -1; }
 
   .label {
     color: #CCC;

@@ -14,14 +14,12 @@ export const StepsStyled = styled.nav`
   border-radius: 3px;
 `
 
-export const StepStyled =
-  styled(Link) <
-  { active: boolean } >
-  `
+export const StepStyled = styled(Link) <{ active: boolean } >`
   flex: 1 0 auto;
   padding: 1.083em 1.3em;
   color: ${({ active }) => (active ? '#FF7800' : '#CCC')};
   text-transform: uppercase;
+  text-align: center;
   font-weight: 700;
   letter-spacing: 0;
   display: block;
@@ -44,5 +42,4 @@ export const StepStyled =
   &:hover::before {
     background: #FF7800;
   }
-
 `
