@@ -56,7 +56,8 @@ export const usePaymentForm = () => {
         placeholder: '____.____.____.____',
         isValid: paymentInfo.number?.length === '____.____.____.____'.length,
         handleChange: (value: string) => handleCardChange(value),
-        className: 'full'
+        className: 'full',
+        autocomplete: 'cc-number',
       },
       {
         value: paymentInfo.name,
@@ -64,21 +65,24 @@ export const usePaymentForm = () => {
         placeholder: 'Como no cartão',
         isValid: paymentInfo.name?.includes(' ') ?? false,
         handleChange: (value: string) => setPaymentInfo({ ...paymentInfo, name: value }),
-        className: 'full'
+        className: 'full',
+        autocomplete: 'cc-name'
       },
       {
         value: paymentInfo.expDate,
         label: 'Validade (mês/ano):',
         placeholder: '__/____',
         isValid: paymentInfo.expDate?.length === 7,
-        handleChange: (value: string) => handleExpDateChange(value)
+        handleChange: (value: string) => handleExpDateChange(value),
+        autocomplete: 'cc-exp'
       },
       {
         value: paymentInfo.cvv,
         label: 'CVV:',
         placeholder: '___',
         isValid: paymentInfo.cvv?.length === 3,
-        handleChange: (value: string) => setPaymentInfo({ ...paymentInfo, cvv: value })
+        handleChange: (value: string) => setPaymentInfo({ ...paymentInfo, cvv: value }),
+        autocomplete: 'cc-csc'
       }
     ],
     [paymentInfo, handleCardChange, handleExpDateChange]

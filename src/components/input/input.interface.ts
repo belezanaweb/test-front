@@ -5,6 +5,7 @@ export interface IInputProps {
   handleChange: (value: string) => void;
   isValid: boolean;
   errorMessage?: string;
+  autoComplete?: string;
   children?: never;
   className?: string;
 }

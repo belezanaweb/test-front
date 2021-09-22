@@ -18,7 +18,7 @@ export const PaymentInfo: FC<{ children?: never }> = () => {
 
   const mockData = () => setPaymentInfo({
     number: '1111.2222.3333.4444',
-    name: 'John Cena',
+    name: 'José da Silva',
     expDate: '03/2028',
     cvv: '202'
   })
@@ -32,8 +32,8 @@ export const PaymentInfo: FC<{ children?: never }> = () => {
   ) : (
     <Card>
       <p>Parece que você não preencheu os dados do cartão.</p>
-      <Button as={Link} to='/payment'>Voltar e preencher</Button>
-      <Button onClick={() => mockData()}>Carregar dados falsos</Button>
+      <Button as={Link} to='/payment'>Voltar</Button>
+      <Button onClick={() => mockData()}>Simular dados</Button>
     </Card>
   )
 }

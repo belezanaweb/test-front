@@ -10,7 +10,8 @@ export const Input: FC<IInputProps> = ({
   errorMessage = 'Campo Inválido',
   isValid,
   handleChange,
-  className
+  className,
+  autoComplete
 }) => {
   return (
     <InputStyled valid={isValid} empty={!value?.length} className={className}>
@@ -20,6 +21,8 @@ export const Input: FC<IInputProps> = ({
         placeholder={placeholder}
         onChange={(e) => handleChange(e.target.value)}
         value={value}
+        autoComplete={autoComplete}
+        required
       />
       {!isValid && <span className="error">{errorMessage}</span>}
     </InputStyled>
