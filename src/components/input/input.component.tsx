@@ -1,0 +1,30 @@
+import React, { FC } from 'react'
+
+import { IInputProps } from './input.interface'
+import { InputStyled } from './input.style'
+
+export const Input: FC<IInputProps> = ({
+  value,
+  label,
+  placeholder,
+  errorMessage = 'Campo Inválido',
+  isValid,
+  handleChange,
+  className
+}) => {
+  return (
+    <InputStyled valid={isValid} empty={!value?.length} className={className}>
+      <span className="label">{label}</span>
+      <input
+        type="text"
+        placeholder={placeholder}
+        onChange={(e) => {
+          console.log(e.target.value)
+          handleChange(e.target.value)
+        }}
+        value={value}
+      />
+      {!isValid && <span className="error">{errorMessage}</span>}
+    </InputStyled>
+  )
+}
