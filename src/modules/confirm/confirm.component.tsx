@@ -8,7 +8,7 @@ export const Confirm: FC<{ children?: never }> = () => {
       <Title as="h3">Pagamento</Title>
       <PaymentInfo />
       <Title as="h3">Produtos</Title>
-      <Products />
+      <Products thumbs />
       <Summary />
     </>
   )
