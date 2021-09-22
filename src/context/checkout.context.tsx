@@ -1,4 +1,4 @@
-import React, { FC, useContext, createContext, useMemo, useState, SetStateAction } from 'react'
+import React, { FC, useContext, createContext, useMemo, useState } from 'react'
 import { useOrders } from 'requests/get-orders.request'
 
 interface IProduct {

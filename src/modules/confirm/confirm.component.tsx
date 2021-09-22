@@ -1,4 +1,4 @@
-import { PaymentInfo, SuccessDialog, Card, Products, Summary, Title } from 'components'
+import { PaymentInfo, SuccessDialog, Products, Summary } from 'components'
 import React, { FC } from 'react'
 import { ConfirmContainerStyled } from './confirm.style'
 

@@ -1,5 +1,5 @@
 import { useCheckoutContext } from 'context/checkout.context'
-import { useState, useCallback, useMemo } from 'react'
+import { useCallback, useMemo } from 'react'
 
 export const usePaymentForm = () => {
   const { paymentInfo, setPaymentInfo } = useCheckoutContext()
@@ -111,7 +111,7 @@ export const usePaymentForm = () => {
         autocomplete: 'cc-csc'
       }
     ],
-    [paymentInfo, handleCardChange, handleExpDateChange]
+    [paymentInfo, handleCardChange, handleExpDateChange, isExpDateValid, setPaymentInfo]
   )
 
   const buttonEnabled = useMemo(

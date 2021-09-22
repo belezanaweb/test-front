@@ -1,4 +1,3 @@
-import { PaymentInfo, Products, SuccessDialog, Summary } from 'components'
 import { CardStyled } from 'components/card/card.style'
 import { SuccessDialogStyled } from 'components/success-dialog/success-dialog.style'
 import { SummaryStyled } from 'components/summary/summary.style'

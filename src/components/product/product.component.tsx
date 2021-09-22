@@ -7,7 +7,7 @@ export const Product: FC<IProductProps> = ({ title, picture, price = 0, size = '
   return (
     <ProductStyled size={size}>
       <div className="img">
-        <img src={picture} />
+        <img src={picture} alt={title} />
       </div>
       <h3>{title}</h3>
       {!!price && size !== 'small' && <p>{formatMoney(price)}</p>}
