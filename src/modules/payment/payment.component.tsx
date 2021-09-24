@@ -27,3 +27,5 @@ export const Payment: FC<{ children?: never }> = () => {
     </Container>
   )
 }
+
+export default Payment

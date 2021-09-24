@@ -15,3 +15,5 @@ export const Cart: FC<{ children?: never }> = () => {
     </Container>
   )
 }
+
+export default Cart

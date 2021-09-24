@@ -14,3 +14,5 @@ export const Confirm: FC<{ children?: never }> = () => {
     </ConfirmContainerStyled>
   )
 }
+
+export default Confirm
