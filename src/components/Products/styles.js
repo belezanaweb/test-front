@@ -11,6 +11,7 @@ export const ContainerProducts = styled(Container)`
 `
 
 export const Wrapper = styled.div`
+  flex-direction: column;
   justify-content: center;
   background-color: #fff;
   -webkit-box-shadow: 0px 0px 15px 0px rgba(0, 0, 29, 0.22);
@@ -23,6 +24,15 @@ export const ProductWrapper = styled.div`
   border: 1px solid #eee;
   border-radius: 3px;
   padding: 10px 15px;
+  margin: 7px 0;
+
+  &:first-child {
+    margin-top: 0;
+  }
+
+  &:last-child {
+    margin-bottom: 0;
+  }
 `
 
 export const ProductImageWrapper = styled.div`

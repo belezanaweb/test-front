@@ -1,4 +1,4 @@
-import styled from 'styled-components'
+import styled, { css } from 'styled-components'
 
 export const Wrapper = styled.div`
   max-width: 1024px;
@@ -16,6 +16,12 @@ export const Option = styled.li`
   font-size: 13px;
   font-weight: bold;
   text-transform: uppercase;
-  color: #ff7800;
+  color: #ccc;
   padding: 0 20px;
+
+  ${(props) =>
+    props.active &&
+    css`
+      color: #ff7800;
+    `}
 `

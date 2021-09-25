@@ -1,8 +1,10 @@
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit'
-// import { cartList } from './checkoutAPI'
+import { cartList } from './checkoutAPI'
 
 const initialState = {
-  cart: null,
+  cartListResponse: null,
+  products: [],
+  resume: null,
   status: 'idle'
 }
 
@@ -12,9 +14,16 @@ const initialState = {
 // code can then be executed and other actions can be dispatched. Thunks are
 // typically used to make async requests.
 export const cartListAsync = createAsyncThunk('checkout/cartList', async (amount) => {
-  // const response = await cartList(amount)
+  const response = await cartList(amount)
+  console.log('cartListAsync response:', response)
   // The value we return becomes the `fulfilled` action payload
-  return {}
+
+  let newCartListData = null
+  if (response?.status === 200 && response?.data?.id) {
+    newCartListData = response.data
+  }
+
+  return newCartListData
 })
 
 export const checkoutSlice = createSlice({
@@ -31,10 +40,22 @@ export const checkoutSlice = createSlice({
       })
       .addCase(cartListAsync.fulfilled, (state, action) => {
         state.status = 'idle'
+        state.cartListResponse = action.payload
+        state.resume = {
+          subTotal: action.payload.subTotal,
+          shippingTotal: action.payload.shippingTotal,
+          discount: action.payload.discount,
+          total: action.payload.total
+        }
+        state.products = action.payload.items
       })
   }
 })
 
 // export const { } = checkoutSlice.actions
+
+export const selectCartListResponse = (state) => state.checkout.cartListResponse
+export const selectCartProductsResponse = (state) => state.checkout.products
+export const selectCartResumeResponse = (state) => state.checkout.resume
 
 export default checkoutSlice.reducer
