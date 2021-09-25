@@ -23,12 +23,12 @@ h5,
 h6 {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
 }
 
 div {
   display: flex;
-  height: 100%;
-  min-height: 100%;
+  align-items: stretch;
   width: 100%;
   max-width: 100%;
 }
