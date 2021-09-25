@@ -39,6 +39,10 @@ export const ProductImageWrapper = styled.div`
   align-items: center;
   justify-content: center;
   max-width: 28%;
+
+  img {
+    height: 65px;
+  }
 `
 
 export const ProductImage = styled.img`
