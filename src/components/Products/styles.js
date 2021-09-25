@@ -42,6 +42,14 @@ export const ProductImageWrapper = styled.div`
 
   img {
     height: 65px;
+
+    @media screen and (min-width: 64em) {
+      height: 95px;
+    }
+
+    @media screen and (min-width: 80em) {
+      height: 105px;
+    }
   }
 `
 

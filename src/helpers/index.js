@@ -6,9 +6,9 @@ export const redirect = (url, history) => {
   }
 }
 
-export const formatCoinStr = (value) => {
+export const formatCoinStr = (value, prefixo) => {
   try {
-    if (value) return `$ ${Number(value).toFixed(2)}`
+    if (value) return `${prefixo || ''}$ ${Number(value).toFixed(2)}`
     return '$0.00'
   } catch (error) {
     console.log(error)

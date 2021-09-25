@@ -1,4 +1,10 @@
 import React from 'react'
+import { useSelector } from 'react-redux'
+
+/**
+ * Reducers
+ */
+import { selectCartProductsResponse } from '../../store/reducers/checkout'
 
 /**
  * Helpers
@@ -25,8 +31,8 @@ import {
   ProductInfoPrice
 } from './styles'
 
-const Products = ({ products = [] }) => {
-  console.log('Products products:', products)
+const Products = () => {
+  const cartProductsResponse = useSelector(selectCartProductsResponse)
 
   const resolveImages = (item) => {
     try {
@@ -44,11 +50,10 @@ const Products = ({ products = [] }) => {
     <ContainerProducts>
       <Title>Products</Title>
       <Wrapper>
-        {!!products?.length &&
-          products.map((item, i) => (
+        {!!cartProductsResponse?.length &&
+          cartProductsResponse.map((item, i) => (
             <ProductWrapper key={i}>
               <ProductImageWrapper>
-                {/* <ProductImage src="https://res.cloudinary.com/beleza-na-web/image/upload/f_auto,fl_progressive,q_auto:best/v1/imagens/1/loreal-professionnel-expert-absolut-repair-cortex-lipidium-mascara-de-reconstrucao-500g-24410-963234120108391775.png" /> */}
                 <Picture images={resolveImages(item)} />
               </ProductImageWrapper>
               <ProductInfoWrapper>
