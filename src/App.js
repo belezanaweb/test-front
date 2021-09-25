@@ -3,7 +3,7 @@ import React from 'react'
 /**
  * Libs
  */
-import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
+import { BrowserRouter as Router, Switch, Route, Redirect } from 'react-router-dom'
 import { Provider } from 'react-redux'
 import { configureStore } from '@reduxjs/toolkit'
 import {
@@ -22,14 +22,13 @@ import { PersistGate } from 'redux-persist/integration/react'
 /**
  * Pages
  */
-import GoodLuck from './pages/GoodLuck'
+// import GoodLuck from './pages/GoodLuck'
+import Bag from './pages/Bag'
 
 /**
  * Reducers
  */
 import { rootReducer } from './store'
-
-import './App.css'
 
 /**
  * Redux with Persist
@@ -60,8 +59,13 @@ const App = () => {
       <Provider store={store}>
         <PersistGate loading={null} persistor={persistor}>
           <Switch>
-            <Route path="/">
-              <GoodLuck />
+            <Route path="/" exact>
+              {/* <GoodLuck /> */}
+              <Redirect to="/bag" />
+            </Route>
+            <Route path="/bag" exact>
+              {/* <GoodLuck /> */}
+              <Bag />
             </Route>
           </Switch>
         </PersistGate>
