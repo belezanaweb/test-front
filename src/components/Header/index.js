@@ -6,10 +6,17 @@ import React from 'react'
 import { Container } from '../Utils/styles'
 import Menu from '../Menu'
 
+/**
+ * Styles
+ */
+import { Wrapper } from './styles'
+
 const Header = () => {
   return (
     <Container>
-      <Menu />
+      <Wrapper>
+        <Menu />
+      </Wrapper>
     </Container>
   )
 }

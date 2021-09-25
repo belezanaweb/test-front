@@ -4,13 +4,13 @@ import React from 'react'
  * Components
  */
 import { Page, PageContainer } from '../../components/Utils/styles'
-import Menu from '../../components/Menu'
+import Header from '../../components/Header'
 
 const Bag = () => {
   return (
     <Page>
       <PageContainer>
-        <Menu />
+        <Header />
       </PageContainer>
     </Page>
   )
