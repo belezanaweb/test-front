@@ -28,22 +28,32 @@ const MenuComponent = () => {
     }
   }
 
+  const handleRedirect = (path) => {
+    try {
+      if (location.pathname === '/bag') return false
+
+      if (location.pathname === '/payment' && path === '/finish') return false
+
+      redirect(path, history)
+    } catch (error) {
+      console.log(error)
+    }
+  }
+
   return (
     <Wrapper>
       <Menu>
-        <Option active={checkIsActiveOption('/bag')} onClick={() => redirect('/bag', history)}>
+        <Option active={checkIsActiveOption('/bag')} onClick={() => handleRedirect('/bag')}>
           Bag
         </Option>
         <Option
+          disabled={true}
           active={checkIsActiveOption('/payment')}
-          onClick={() => redirect('/payment', history)}
+          onClick={() => handleRedirect('/payment')}
         >
           Payment
         </Option>
-        <Option
-          active={checkIsActiveOption('/finish')}
-          onClick={() => redirect('/finish', history)}
-        >
+        <Option active={checkIsActiveOption('/finish')} onClick={() => handleRedirect('/finish')}>
           Finish
         </Option>
       </Menu>

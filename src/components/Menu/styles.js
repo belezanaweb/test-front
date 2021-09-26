@@ -18,6 +18,7 @@ export const Option = styled.li`
   text-transform: uppercase;
   color: #ccc;
   padding: 0 20px;
+  cursor: pointer;
 
   ${(props) =>
     props.active &&
