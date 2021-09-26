@@ -5,7 +5,12 @@ import { useHistory } from 'react-router'
 /**
  * Reducers
  */
-import { cartListAsync, selectCartListResponse } from '../../store/reducers/checkout'
+import {
+  cartListAsync,
+  selectCartListResponse,
+  saveCartCreditCardInfos,
+  selectCartCreditCardInfos
+} from '../../store/reducers/checkout'
 
 /**
  * Helpers
@@ -18,6 +23,7 @@ import { redirect } from '../../helpers'
 import { Page, PageContainer, Container } from '../../components/Utils/styles'
 import Header from '../../components/Header'
 import Resume from '../../components/Resume'
+import CreditCard from '../../components/CreditCard'
 import Button from '../../components/Button'
 
 const Payment = () => {
@@ -25,6 +31,8 @@ const Payment = () => {
   const dispatch = useDispatch()
 
   const cartListResponse = useSelector(selectCartListResponse)
+  const creditCardInfos = useSelector(selectCartCreditCardInfos)
+  console.log('CreditCard creditCardInfos:', creditCardInfos)
 
   useEffect(() => {
     try {
@@ -36,21 +44,25 @@ const Payment = () => {
     }
   }, [cartListResponse, dispatch])
 
-  const checkDisable = () => {
-    try {
-      return true
-    } catch (error) {
-      console.log(error)
-    }
-  }
-
   return (
     <Page>
       <PageContainer>
         <Container>
           <Header />
         </Container>
-        <Container my="10px" mx="20px"></Container>
+        <Container my="10px" mx="20px">
+          <CreditCard
+            handleGetInfos={(infos) => {
+              try {
+                console.log('CreditCard handleGetInfos infos:', infos)
+                dispatch(saveCartCreditCardInfos({ infos }))
+              } catch (error) {
+                console.log(error)
+              }
+            }}
+            infos={creditCardInfos}
+          />
+        </Container>
         <Container my="10px" mx="20px">
           <Resume />
         </Container>
@@ -58,7 +70,7 @@ const Payment = () => {
           <Button
             text="GO FINISH"
             onClick={() => redirect('/finish', history)}
-            disabled={checkDisable()}
+            disabled={!creditCardInfos?.valid}
           />
         </Container>
       </PageContainer>

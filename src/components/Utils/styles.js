@@ -36,3 +36,10 @@ export const Title = styled.h3`
   margin-bottom: 3px;
   margin-left: 10px;
 `
+
+export const Label = styled.p`
+  font-size: 12px;
+  font-weight: bold;
+  color: #ccc;
+  margin-bottom: 5px;
+`

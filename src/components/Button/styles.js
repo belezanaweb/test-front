@@ -3,7 +3,7 @@ import styled from 'styled-components'
 export const Wrapper = styled.div`
   max-width: 1024px;
   background-color: #fff;
-  height: 50px;
+  height: auto;
 `
 
 export const Button = styled.button`

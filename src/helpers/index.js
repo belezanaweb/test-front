@@ -15,3 +15,13 @@ export const formatCoinStr = (value, prefixo) => {
     return '$'
   }
 }
+
+export const onlyNumbers = (str) => {
+  try {
+    if (str) return str.replace(/\D/g, '')
+    return ''
+  } catch (error) {
+    console.log(error)
+    return ''
+  }
+}
