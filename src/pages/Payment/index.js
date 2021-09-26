@@ -50,7 +50,7 @@ const Payment = () => {
         <Container>
           <Header />
         </Container>
-        <Container my="10px" mx="20px">
+        <Container my="12px" mx="20px">
           <CreditCard
             handleGetInfos={(infos) => {
               try {
@@ -63,10 +63,10 @@ const Payment = () => {
             infos={creditCardInfos}
           />
         </Container>
-        <Container my="10px" mx="20px">
+        <Container my="12px" mx="20px">
           <Resume />
         </Container>
-        <Container my="10px" mx="20px">
+        <Container my="12px" mx="20px">
           <Button
             text="GO FINISH"
             onClick={() => redirect('/finish', history)}

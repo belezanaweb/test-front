@@ -1,6 +1,5 @@
 import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-import { useHistory } from 'react-router'
 
 /**
  * Reducers
@@ -10,19 +9,19 @@ import { cartListAsync, selectCartListResponse } from '../../store/reducers/chec
 /**
  * Helpers
  */
-import { redirect } from '../../helpers'
+// import { redirect } from '../../helpers'
 
 /**
  * Components
  */
 import { Page, PageContainer, Container } from '../../components/Utils/styles'
 import Header from '../../components/Header'
+import PaymentInfo from '../../components/PaymentInfo'
 import Products from '../../components/Products'
 import Resume from '../../components/Resume'
-import Button from '../../components/Button'
+import FinishSuccess from '../../components/FinishSuccess'
 
-const Bag = () => {
-  const history = useHistory()
+const Finish = () => {
   const dispatch = useDispatch()
 
   const cartListResponse = useSelector(selectCartListResponse)
@@ -43,18 +42,21 @@ const Bag = () => {
         <Container>
           <Header />
         </Container>
+        <Container my="5px" mx="20px">
+          <FinishSuccess />
+        </Container>
+        <Container my="12px" mx="20px">
+          <PaymentInfo />
+        </Container>
         <Container my="12px" mx="20px">
           <Products />
         </Container>
         <Container my="12px" mx="20px">
           <Resume />
         </Container>
-        <Container my="12px" mx="20px">
-          <Button text="GO PAYMENT" onClick={() => redirect('/payment', history)} />
-        </Container>
       </PageContainer>
     </Page>
   )
 }
 
-export default Bag
+export default Finish
