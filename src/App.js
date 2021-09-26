@@ -24,6 +24,7 @@ import { PersistGate } from 'redux-persist/integration/react'
  */
 // import GoodLuck from './pages/GoodLuck'
 import Bag from './pages/Bag'
+import Payment from './pages/Payment'
 
 /**
  * Reducers
@@ -66,6 +67,10 @@ const App = () => {
             <Route path="/bag" exact>
               {/* <GoodLuck /> */}
               <Bag />
+            </Route>
+            <Route path="/payment" exact>
+              {/* <GoodLuck /> */}
+              <Payment />
             </Route>
           </Switch>
         </PersistGate>
