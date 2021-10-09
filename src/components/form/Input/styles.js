@@ -40,7 +40,7 @@ export const Label = styled.label`
   font-size: ${theme.size[1]};
   font-weight: bold;
   color: ${theme.colors.gray};
-  ${theme.media.md} {
+  ${theme.media.desktop} {
     font-size: ${theme.size[3]};
   }
 `

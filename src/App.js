@@ -1,12 +1,17 @@
 import React from 'react'
+import { BrowserRouter } from 'react-router-dom'
 import './App.css'
-import PaymentForm from './components/form/PaymentForm'
+import Header from './components/Header'
+import Routes from './routes'
 
 const App = () => {
   return (
-    <div className="App">
-      <PaymentForm />
-    </div>
+    <BrowserRouter>
+      <Header />
+      <div style={{ padding: '10px' }}>
+        <Routes />
+      </div>
+    </BrowserRouter>
   )
 }
 

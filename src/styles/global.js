@@ -21,7 +21,7 @@ export default createGlobalStyle`
     background-color: ${theme.colors.grayLight};
     -webkit-font-smoothing: antialiased;
 
-    ${theme.media.md} {
+    ${theme.media.desktop} {
       font-size: ${theme.size[4]};
     }
   }
