@@ -36,8 +36,8 @@ const PaymentForm = ({ formRef }) => {
             label="Número do cartão:"
             placeholder="____.____.____.____"
             control={control}
-            onChange={onChange}
-            value={format.cardNumber(value)}
+            onChange={(e) => onChange(format.cardNumber(e.target.value))}
+            value={value}
             error={errors.cardNumber}
           />
         )}
@@ -72,8 +72,8 @@ const PaymentForm = ({ formRef }) => {
               label="Validade (mês/ano):"
               placeholder="__/____"
               control={control}
-              onChange={onChange}
-              value={format.expirationDate(value)}
+              onChange={(e) => onChange(format.expirationDate(e.target.value))}
+              value={value}
               error={errors.expirationDate}
             />
           )}
@@ -90,8 +90,8 @@ const PaymentForm = ({ formRef }) => {
               label="CVV:"
               placeholder="___"
               control={control}
-              onChange={onChange}
-              value={format.cvvCode(value)}
+              onChange={(e) => onChange(format.cvvCode(e.target.value))}
+              value={value}
               error={errors.cvvCode}
             />
           )}
