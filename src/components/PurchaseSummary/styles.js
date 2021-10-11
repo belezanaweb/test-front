@@ -5,6 +5,13 @@ export const Container = styled.div`
   border: 1px solid ${theme.colors.gray};
   border-radius: 3px;
   padding: ${theme.size[3]};
+  margin-bottom: ${theme.spacing.sm};
+  height: fit-content;
+
+  ${theme.media.desktop} {
+    margin-top: 26px;
+    min-width: 350px;
+  }
 `
 
 export const Item = styled.div`

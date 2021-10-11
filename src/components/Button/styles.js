@@ -17,8 +17,7 @@ export const ButtonContainer = styled.button`
   text-align: center;
   padding: ${theme.size[2]};
   cursor: pointer;
-  &:hover,
-  &:focus {
+  &:hover {
     background-color: ${theme.colors.primaryDark};
   }
 `

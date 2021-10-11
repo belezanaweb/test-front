@@ -1,15 +1,21 @@
 import React from 'react'
-import Card from '../../components/Card'
+import { Link } from 'react-router-dom'
 import PurchaseSummary from '../../components/PurchaseSummary'
 import Button from '../../components/Button'
+import Products from '../../components/Products'
+import * as M from '../../styles/structure'
 
 const Cart = () => {
   return (
-    <div>
-      <Card title="Produtos">Cart</Card>
-      <PurchaseSummary />
-      <Button label="Seguir para o pagamento" />
-    </div>
+    <M.Main>
+      <Products />
+      <div>
+        <PurchaseSummary />
+        <Link to="/pagamento">
+          <Button label="Seguir para o pagamento" />
+        </Link>
+      </div>
+    </M.Main>
   )
 }
 

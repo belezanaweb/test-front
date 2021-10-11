@@ -11,6 +11,16 @@ export const Input = styled.input`
   box-shadow: inset 0 1px 2px rgba(0, 0, 29, 0.22);
   padding: 12px;
   margin-top: 5px;
+
+  &::-webkit-outer-spin-button,
+  &::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+
+  &[type='number'] {
+    -moz-appearance: textfield;
+  }
   &::placeholder {
     font-size: ${theme.size[4]};
     color: ${theme.colors.grayIce};

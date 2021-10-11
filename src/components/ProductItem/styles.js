@@ -39,10 +39,9 @@ export const Wrapper = styled.div`
 export const Title = styled.h3`
   max-width: 50ch;
   font-size: ${theme.size[1]};
-  /* font-weight: ${theme.typography.weight.regular}; */
   margin-bottom: ${theme.spacing.xs};
   ${theme.media.desktop} {
-    font-size: ${theme.sizes[3]};
+    font-size: ${theme.size[3]};
   }
 `
 

@@ -7,7 +7,7 @@ const Input = ({ name, label, error, onChange, value, ...rest }) => {
       <S.Label htmlFor={name}>{label}</S.Label>
       <S.Input name={name} value={value} onChange={onChange} error={error} {...rest} />
 
-      {error && <S.ErrorMessage>Required</S.ErrorMessage>}
+      {error && <S.ErrorMessage>Campo obrigatório</S.ErrorMessage>}
     </S.InputBlock>
   )
 }
