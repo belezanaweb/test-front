@@ -1,4 +1,18 @@
-## Frontend Test
+## Frontend Test by Jose Kim
+
+As stacks usadas nesse projeto, são stacks na qual uso no meu dia a dia.
+
+- React
+- React-redux (duck pattern)
+- Styled-components
+- Testing library
+- Jest
+
+Antes de iniciar a aplicação, usar *yarn* e depois *yarn start*
+
+Para iniciar os testes *yarn test* e *yarn coverage* para gerar o relatório dos testes.
+
+##################################################################################################################################################
 
 Faça um fork deste repositório e finalizar o teste, submeta um pull request para o repositório que nosso time será notificado.
 
