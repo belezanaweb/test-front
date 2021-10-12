@@ -9,9 +9,9 @@ const Header = () => {
   return (
     <S.Container>
       <S.Wrapper>
-        <S.Step active={pathname === '/carrinho'}>Sacola</S.Step>
-        <S.Step active={pathname === '/pagamento'}>Pagamento</S.Step>
-        <S.Step active={pathname === '/sucesso'}>Confirmação</S.Step>
+        <S.Step active={pathname === '/cart'}>Sacola</S.Step>
+        <S.Step active={pathname === '/payment'}>Pagamento</S.Step>
+        <S.Step active={pathname === '/success'}>Confirmação</S.Step>
       </S.Wrapper>
     </S.Container>
   )

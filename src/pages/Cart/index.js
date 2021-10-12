@@ -1,19 +1,19 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
+import { useHistory } from 'react-router-dom'
 import PurchaseSummary from '../../components/PurchaseSummary'
 import Button from '../../components/Button'
 import Products from '../../components/Products'
 import * as M from '../../styles/structure'
 
 const Cart = () => {
+  const history = useHistory()
+
   return (
-    <M.Main>
+    <M.Main data-testid="cart-page">
       <Products />
       <div>
         <PurchaseSummary />
-        <Link to="/pagamento">
-          <Button label="Seguir para o pagamento" />
-        </Link>
+        <Button label="Seguir para o pagamento" onClick={() => history.replace('/payment')} />
       </div>
     </M.Main>
   )

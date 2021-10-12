@@ -21,6 +21,13 @@ export default createGlobalStyle`
     background-color: ${theme.colors.grayLight};
     -webkit-font-smoothing: antialiased;
 
+    .loader {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+
     ${theme.media.desktop} {
       font-size: ${theme.size[4]};
     }

@@ -1,8 +1,8 @@
 import { all } from 'redux-saga/effects'
-import cart from './cart.sagas'
+import * as cart from './cart.sagas'
 
 function* sagas() {
-  yield all([cart])
+  yield all([cart.watchSagas()])
 }
 
 export default sagas

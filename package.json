@@ -5,11 +5,12 @@
   "dependencies": {
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.3.2",
-    "@testing-library/user-event": "^7.1.2",
+    "@testing-library/user-event": "^13.3.0",
     "axios": "^0.22.0",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
     "react-hook-form": "^7.17.1",
+    "react-loading": "^2.0.3",
     "react-redux": "^7.2.5",
     "react-router-dom": "^5.3.0",
     "react-scripts": "3.4.4",
@@ -51,6 +52,8 @@
     ]
   },
   "devDependencies": {
+    "@testing-library/dom": "^8.7.2",
+    "axios-mock-adapter": "^1.20.0",
     "husky": "^4.3.0",
     "lint-staged": "^10.4.2",
     "prettier": "^2.1.2"

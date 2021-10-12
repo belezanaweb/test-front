@@ -19,7 +19,7 @@ const PaymentForm = ({ formRef }) => {
 
   const onSubmit = (data) => {
     dispatch(CartActions.getCreditCardData(data))
-    history.replace('/sucesso')
+    history.replace('/success')
   }
 
   return (

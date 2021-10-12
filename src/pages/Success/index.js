@@ -19,7 +19,7 @@ const Success = () => {
         </S.IconContainer>
         <S.SuccessText>Compra efetuada com sucesso</S.SuccessText>
       </S.SuccessContainer>
-      <M.Main>
+      <M.Main data-testid="success-page">
         <div>
           <Card title="Pagamento">
             {creditCardData && (

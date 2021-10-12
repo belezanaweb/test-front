@@ -13,7 +13,7 @@ const Payment = () => {
   }
 
   return (
-    <M.Main>
+    <M.Main data-testid="payment-page">
       <Card title="Cartão de crédito">
         <PaymentForm formRef={formRef} />
       </Card>
