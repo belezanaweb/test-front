@@ -15,8 +15,10 @@ export const GlobalStyle = createGlobalStyle`
     --grey-200: #999;
     --gray-dark: #212121;
 
-    --purple: #6a1b60;
-    --red: #F30;   
+    --purple: #A43287;
+    --red: #F30;
+
+   
   }
 
   * {
@@ -34,3 +36,16 @@ export const GlobalStyle = createGlobalStyle`
   #root {
     width: 100%;
   }
+
+  input, button, label, p, a, strong, h1, h2, h3, h4, h5, h6 {
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    color: var(--gray-dark);
+  }
+
+  .div-container {
+    padding: 0.62rem;
+    max-width: 600px;
+    margin: auto;
+
+  }
+`
