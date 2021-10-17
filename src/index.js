@@ -1,12 +1,18 @@
 import React, { StrictMode } from 'react'
 import ReactDOM from 'react-dom'
-import './index.css'
 import App from './App'
+
 import * as serviceWorker from './serviceWorker'
+import { GlobalStyle } from './styles/global'
+import { CartProvider } from './context/useCart'
 
 const Strict = () => (
   <StrictMode>
-    <App />
+    {/* All status is passed to the provider */}
+    <CartProvider>
+      <GlobalStyle />
+      <App />
+    </CartProvider>
   </StrictMode>
 )
 
