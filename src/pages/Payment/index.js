@@ -1,4 +1,5 @@
-import React, { useState } from 'react'
+/* eslint-disable react-hooks/exhaustive-deps */
+import React, { useCallback, useState } from 'react'
 import { useHistory } from 'react-router'
 
 //context
@@ -42,15 +43,14 @@ const Payment = () => {
   }
 
   //Saving all data entered for payment
-  const finalizeOrder = () => {
+  const finalizeOrder = useCallback(() => {
     savePaymentData(
       name,
       expirationDate,
       creditCard.replace(/\b(?:\d{4}[ .]?){3}(?=\d{4}\b)/gm, '****.****.****.')
     )
-
     history.push('/success')
-  }
+  }, [])
 
   return (
     <div className="div-container">

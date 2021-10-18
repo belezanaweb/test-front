@@ -1,41 +1,54 @@
-## Frontend Test
+## Beleza Na Web
 
-Faça um fork deste repositório e finalizar o teste, submeta um pull request para o repositório que nosso time será notificado.
+## Aplicação baseada no carrinho de compras do site [Beleza na Web](https://www.belezanaweb.com.br/)
 
-O teste consiste em um checkout simples contendo 3 passos (carrinho, pagamento e sucesso) [Veja o Layout](https://projects.invisionapp.com/prototype/font-test-cji0j0khf005c1t0132358e8k)
+### Features
 
-**Faça quando quiser/puder (madrugada, fim de semana, etc)**
-
-### Requerimentos
-
-- Pixel perfect ([nesse link](https://projects.invisionapp.com/prototype/font-test-cji0j0khf005c1t0132358e8k), você pode inspecionar para ver espaçamentos, fonte, tamanho, etc)
-- A aplicação precisa ser responsiva, utilizando o conceito de mobile-first. Use sua imaginação para entregar uma experiência boa no desktop.
-- Renderize cada passo em uma URL única (lib de rotas).
+- [x] Listagem dos Produtos
+- [x] Pagamento
+- [x] Confirmação do Pagamento
 
 
-### Passo 1 - Carrinho:
-  - Consuma o [esse endpoint](http://www.mocky.io/v2/5b15c4923100004a006f3c07) e liste os itens do carrinho, bem como o resumo do carrinho;
-  - Persista o conteúdo do JSON para ser usado nas próximas etapas;
+### Pré-requisitos
 
-### Passo 2 - Pagamento: 
-  - Exiba um form com campos de cartão de crédito com validação em cada campo;
-  - Habilite o botão de Finalizar Pedido apenas se o form esteja válido;
+Antes de começar, você vai precisar ter instalado em sua máquina as seguintes ferramentas:
+[Git](https://git-scm.com), [Node.js](https://nodejs.org/en/). 
+Além disto é bom ter um editor para trabalhar com o código como [VSCode](https://code.visualstudio.com/)
 
-### Passo 3 - Sucesso: 
-  - Todo o conteúdo deverá ser exibido a partir dos dados persistidos;
-  
-### O que vamos avaliar:
-  - Organização do código;
-  - Mensagens (em inglês) e mudanças nos commits;
-  - Composição/reutilização de componentes;
-  - Testes unitários;
-  - O motivo de ter escolhido cada tech da stack;
-  - Como rodar sua aplicação ;)
+### 🎲 Rodando o Front End (web)
 
-### Diferenciais:
-  - Split bundle por rota (cada step ter um bundle separado para otimizar a performance);
-  - CSS in JS;
-  - React;
+```bash
+# Clone este repositório
+$ git clone <https://github.com/liscamarini/test-front>
 
-### Fim:
-Ao finalizar o teste, submeta um pull request para o repositório que nosso time será notificado. Se tiver alguma observação, escreva no pull request.
+# Acesse a pasta do projeto no terminal/cmd
+$ cd test-front
+
+# Instale as dependências
+$ npm install
+
+# Execute a aplicação 
+$ npm start 
+```
+
+###  Tecnologias
+
+As seguintes ferramentas foram usadas na construção do projeto:
+
+- [React](https://pt-br.reactjs.org/)
+
+- [React Router](https://reactrouter.com/)
+ Utilizado para criar as rotas entre páginas.
+- [Axios](https://axios-http.com/)
+ Conexão com api.
+- [Styled Component](https://styled-components.com/)
+Estilização CSS in JS da aplicação
+- [Ant Designer Icons](https://ant.design/components/icon/)
+ Utilização de ícones
+- [React Mask Input](https://www.npmjs.com/package/react-input-mask)
+ Máscara para os inputs do número do cartão de crédito e validade do cartão de crédito.
+- [React Hooks Testing Library](https://react-hooks-testing-library.com/)
+ Biblioteca de testes simples que lida com a execução dentro do corpo do componentes.
+- [React Testing Library](https://testing-library.com/)
+ Biblioteca utilizada para testar componentes.
+

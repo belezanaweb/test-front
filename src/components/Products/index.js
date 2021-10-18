@@ -4,13 +4,13 @@ import { formatPrice } from '../../utils/formats'
 
 import { Image, Container, WrapperProducts } from './styles'
 
-const Products = ({ image, name, price, showPrice }) => {
+const Products = ({ image, name, price }) => {
   return (
     <Container>
-      <Image src={image} alt="Imagem do produto" showPrice={showPrice} />
+      <Image src={image} alt="Imagem do produto" />
       <WrapperProducts>
         <p>{name}</p>
-        {showPrice ? <strong>{formatPrice(price) || ''}</strong> : null}
+        <strong>{formatPrice(price)}</strong>
       </WrapperProducts>
     </Container>
   )

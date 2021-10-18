@@ -4,7 +4,7 @@ import Products from '../Products'
 
 import { Container } from './styles'
 
-const ProductsList = ({ list, showPrice = true }) => {
+const ProductsList = ({ list }) => {
   return (
     <Container>
       {list &&
@@ -14,7 +14,6 @@ const ProductsList = ({ list, showPrice = true }) => {
             name={item.product.name}
             image={item.product.imageObjects[0].small}
             price={item.product.priceSpecification.price}
-            showPrice={showPrice}
           />
         ))}
     </Container>
