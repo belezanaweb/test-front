@@ -2,6 +2,7 @@
 
 ## Aplicação baseada no carrinho de compras do site [Beleza na Web](https://www.belezanaweb.com.br/)
 
+
 ### Features
 
 - [x] Listagem dos Produtos
