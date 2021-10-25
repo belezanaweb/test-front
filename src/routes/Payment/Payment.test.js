@@ -5,6 +5,6 @@ import { screen } from '@testing-library/dom'
 
 test('navigates to Payment route', () => {
   renderWithRouter(<Payment />)
-  const linkElement = screen.getByTestId(/Payment/)
-  expect(linkElement).toBeInTheDocument()
+  const linkElement = screen.getByTestId(/Payment/i)
+  expect(linkElement).toBeTruthy()
 })

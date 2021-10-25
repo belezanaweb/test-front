@@ -5,6 +5,6 @@ import { screen } from '@testing-library/dom'
 
 test('navigates to Confirmation route', () => {
   renderWithRouter(<Confirmation />)
-  const linkElement = screen.getByTestId(/Confirmation/)
-  expect(linkElement).toBeInTheDocument()
+  const linkElement = screen.getByTestId(/Confirmation/i)
+  expect(linkElement).toBeTruthy()
 })
