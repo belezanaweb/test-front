@@ -1,9 +1,10 @@
 import React from 'react'
-import { render } from '@testing-library/react'
 import App from './App'
+import { renderWithRouter } from './testUtils'
+import { screen } from '@testing-library/dom'
 
-test('renders learn react link', () => {
-  const { getByText } = render(<App />)
-  const linkElement = getByText(/beleza/i)
-  expect(linkElement).toBeInTheDocument()
+test('full app rendering/navigating', () => {
+  renderWithRouter(<App />)
+  const appId = screen.getByTestId(/App/)
+  expect(appId).toBeInTheDocument()
 })
