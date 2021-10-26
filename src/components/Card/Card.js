@@ -3,14 +3,17 @@ import { createUseStyles } from 'react-jss'
 
 const useStyles = createUseStyles({
   defaultCard: {
-    width: '320px',
+    width: '80%',
+    minWidth: '320px',
+    maxWidth: '600px',
     minHeight: '20px',
     borderRadius: '3px',
     backgroundColor: '#ffffff',
-    boxShadow: 'inset 0 -3px 0 0 #D45A00, 0 2px 4px 0 rgba(0,0,0,0.25)',
+    boxShadow: '2px 2px 2px 1px rgba(0, 0, 0, 0.1)',
     border: 'none',
     padding: '10px',
-    boxSizing: 'border-box'
+    boxSizing: 'border-box',
+    margin: '20px auto'
   }
 })
 

@@ -1,4 +1,4 @@
-import React, { useEffect, useContext, useMemo } from 'react'
+import React, { useContext, useMemo } from 'react'
 import { useHistory } from 'react-router-dom'
 import { CartContext } from '../../components/Context/Context'
 import Button from '../../components/Button/Button'
@@ -39,7 +39,7 @@ const Cart = () => {
   return (
     <div data-testid="Cart">
       <Card>{renderProductList}</Card>
-      <OrderSummary></OrderSummary>
+      <OrderSummary />
       <Button text="Seguir para o pagamento" click={handleClick} />
     </div>
   )
