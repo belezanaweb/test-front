@@ -6,7 +6,7 @@ import Card from '../../components/Card/Card'
 import OrderSummary from '../../components/OrderSummary/OrderSummary'
 
 const Cart = () => {
-  const { cartProductsData } = useContext(CartContext)
+  const cartProductsData = useContext(CartContext)
   const history = useHistory()
 
   useEffect(() => {

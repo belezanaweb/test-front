@@ -33,7 +33,7 @@ const Button = (props) => {
 
   return (
     <div>
-      <button className={classes.defaultButton} onClick={click}>
+      <button className={classes.defaultButton} onClick={click} data-testid="defaultButton">
         <span className={classes.textButton}>{text}</span>
       </button>
     </div>
