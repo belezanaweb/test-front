@@ -28,6 +28,12 @@ export default {
     textOpacity: '#cccccc',
     background: '#eeeeee',
     border: '#eeeeee',
-    title: '#999999'
+    title: '#999999',
+    white: '#ffffff'
+  },
+  container: {
+    desktop: '1120px',
+    tablet: '768px',
+    mobile: '414px'
   }
 }

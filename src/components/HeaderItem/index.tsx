@@ -6,14 +6,10 @@ export type ItemProps = {
   status: boolean
 }
 
-export type HeaderItemProps = {
-  title: ItemProps
-}
-
-export const HeaderItem: React.FC<HeaderItemProps> = ({ title }) => {
+export const HeaderItem: React.FC<ItemProps> = ({ name, status }) => {
   return (
-    <S.Wrapper status={title.status}>
-      <span>{title.name}</span>
+    <S.Wrapper status={status}>
+      <span>{name}</span>
     </S.Wrapper>
   )
 }

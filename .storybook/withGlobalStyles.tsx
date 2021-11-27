@@ -7,6 +7,6 @@ import theme from '../src/global/theme'
 export const withGlobalStyles = (storyFn: StoryFn) => (
   <ThemeProvider theme={theme}>
     <GlobalStyles />
-    {storyFn}
+    {storyFn()}
   </ThemeProvider>
 )
