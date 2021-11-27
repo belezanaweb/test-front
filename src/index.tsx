@@ -1,4 +1,5 @@
 import React, { StrictMode } from 'react'
+import { BrowserRouter } from 'react-router-dom'
 import { ThemeProvider } from 'styled-components'
 import theme from '../src/global/theme'
 import { GlobalStyles } from './global/styles'
@@ -9,10 +10,12 @@ import * as serviceWorker from './serviceWorker'
 
 const Strict = () => (
   <ThemeProvider theme={theme}>
-    <GlobalStyles />
-    <StrictMode>
-      <App />
-    </StrictMode>
+    <BrowserRouter>
+      <GlobalStyles />
+      <StrictMode>
+        <App />
+      </StrictMode>
+    </BrowserRouter>
   </ThemeProvider>
 )
 

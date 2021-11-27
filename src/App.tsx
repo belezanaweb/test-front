@@ -1,6 +1,6 @@
 import React from 'react'
-import * as S from './app.styles'
+import { Routes } from './routes/routes'
 
 export const App: React.FC = () => {
-  return <S.Wrapper></S.Wrapper>
+  return <Routes />
 }
