@@ -7,6 +7,8 @@
   "jsxBracketSameLine": false,
   "parser": "babel",
   "semi": false,
+  "endOfLine": "lf",
+  "arrowParens": "avoid",
   "overrides": [
     {
       "files": "*.css",
