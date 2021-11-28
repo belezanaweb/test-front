@@ -1,5 +1,6 @@
 /* eslint-disable */
 import React, { useContext, useEffect, useMemo } from 'react'
+import { Link } from 'react-router-dom'
 import { Button } from '../../components/Button'
 import { HeaderNav } from '../../components/HeaderNav'
 import { Heading } from '../../components/Heading'
@@ -50,7 +51,10 @@ export const Checkout: React.FC = () => {
           )}
         </S.Price>
         <S.Button>
-          <Button />
+          <Link to="/payment">
+            {' '}
+            <Button />
+          </Link>
         </S.Button>
       </S.Content>
     </S.Wrapper>
