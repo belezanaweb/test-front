@@ -28,6 +28,7 @@ export default {
     textOpacity: '#cccccc',
     background: '#eeeeee',
     border: '#eeeeee',
+    borderDark: '#cccccc',
     title: '#999999',
     white: '#ffffff'
   },

@@ -28,8 +28,8 @@ export const Description = styled.div`
   ${({ theme }) => css`
     p {
       font-size: ${theme.font.size.font13};
-    line-height: ${theme.font.lineHeight.lh16}
-    color: ${theme.color.text};
+      line-height: ${theme.font.lineHeight.lh16}
+      color: ${theme.color.text};
     }
   `}
 `
