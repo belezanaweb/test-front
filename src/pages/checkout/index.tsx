@@ -1,40 +1,54 @@
-import React from 'react'
+/* eslint-disable */
+import React, { useContext, useEffect, useMemo } from 'react'
 import { Button } from '../../components/Button'
 import { HeaderNav } from '../../components/HeaderNav'
 import { Heading } from '../../components/Heading'
 import { Product } from '../../components/Product'
 import { TotalPriceModule } from '../../components/TotalPriceModule'
+import { CheckoutContext } from '../../contexts/CheckoutContext'
+import api from '../../services/api'
+
 import * as S from './styles'
 
 export const Checkout: React.FC = () => {
+  const { handleProduct, product } = useContext(CheckoutContext)
+
+  useEffect(() => {
+    api.get('').then(data => handleProduct?.(data.data))
+  }, [handleProduct])
+
+  const totalPrice = useMemo(() => {
+    if (product) {
+      return product?.shippingTotal + product?.subTotal - product?.discount
+    }
+  }, [product])
+
   return (
     <S.Wrapper>
       <HeaderNav />
       <S.Content>
         <Heading title="produtos" />
-
         <S.Products>
-          <Product
-            image="https://res.cloudinary.com/beleza-na-web/image/upload/f_auto,fl_progressive,q_auto:best/v1/imagens/1/loreal-professionnel-expert-absolut-repair-cortex-lipidium-mascara-de-reconstrucao-500g-24410-963234120108391775.png"
-            description="L'Oréal Professionnel Expert Absolut Repair Cortex Lipidium - Máscara de Reconstrução 500g"
-            price={225.9}
-          />
-          <Product
-            image="https://res.cloudinary.com/beleza-na-web/image/upload/f_auto,fl_progressive,q_auto:best/v1/imagens/1/loreal-professionnel-expert-absolut-repair-cortex-lipidium-mascara-de-reconstrucao-500g-24410-963234120108391775.png"
-            description="L'Oréal Professionnel Expert Absolut Repair Cortex Lipidium - Máscara de Reconstrução 500g"
-            price={225.9}
-          />
-          <Product
-            image="https://res.cloudinary.com/beleza-na-web/image/upload/f_auto,fl_progressive,q_auto:best/v1/imagens/1/loreal-professionnel-expert-absolut-repair-cortex-lipidium-mascara-de-reconstrucao-500g-24410-963234120108391775.png"
-            description="L'Oréal Professionnel Expert Absolut Repair Cortex Lipidium - Máscara de Reconstrução 500g"
-            price={225.9}
-          />
+          {product &&
+            product.items.map(item => (
+              <Product
+                key={item.product.sku}
+                image={item.product.imageObjects[0].small}
+                description={item.product.name}
+                price={item.product.priceSpecification.originalPrice}
+              />
+            ))}
         </S.Products>
-
         <S.Price>
-          <TotalPriceModule />
+          {product && totalPrice && (
+            <TotalPriceModule
+              discount={product?.discount}
+              freightage={product?.shippingTotal}
+              products={product?.subTotal}
+              total={totalPrice}
+            />
+          )}
         </S.Price>
-
         <S.Button>
           <Button />
         </S.Button>

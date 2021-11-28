@@ -1,8 +1,6 @@
 export default {
   border: {
-    radius: {
-      small: '3px'
-    }
+    radius: '3px'
   },
   font: {
     family:

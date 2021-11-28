@@ -2,16 +2,28 @@ import React from 'react'
 import { TotalPrice } from '../TotalPrice'
 import * as S from './styles'
 
-export const TotalPriceModule: React.FC = () => {
+export type TotalPriceModuleProps = {
+  products: number,
+  freightage: number,
+  discount: number,
+  total: number
+}
+
+export const TotalPriceModule: React.FC<TotalPriceModuleProps> = ({
+  discount,
+  freightage,
+  products,
+  total
+}) => {
   return (
     <S.Wrapper>
       <S.Prices>
-        <TotalPrice price={624.8} title="produtos" />
-        <TotalPrice price={5.3} title="frete" />
-        <TotalPrice price={30} title="desconto" isNegative />
+        <TotalPrice price={products} title="produtos" />
+        <TotalPrice price={freightage} title="frete" />
+        <TotalPrice price={discount} title="desconto" isNegative />
       </S.Prices>
       <S.Total>
-        <TotalPrice price={600.1} title="produtos" isTotal />
+        <TotalPrice price={total} title="produtos" isTotal />
       </S.Total>
     </S.Wrapper>
   )
