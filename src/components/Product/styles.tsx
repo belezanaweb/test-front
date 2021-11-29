@@ -1,4 +1,18 @@
 import styled, { css } from 'styled-components'
+import { ProductProps } from '.'
+
+type ImageProps = Pick<ProductProps, 'type'>
+
+const imageModifier = {
+  default: {
+    height: '65px',
+    width: '65px'
+  },
+  small: {
+    height: '42px',
+    width: '42px'
+  }
+}
 
 export const Wrapper = styled.article`
   ${({ theme }) => css`
@@ -11,11 +25,13 @@ export const Wrapper = styled.article`
   `}
 `
 
-export const Figure = styled.figure`
-  img {
-    height: 65px;
-    width: 65px;
-  }
+// prettier-ignore
+export const Figure = styled.figure<ImageProps>`
+  ${({ type }) => css`
+    img {
+      ${type && imageModifier[type]}
+    }
+  `}
 `
 
 export const Content = styled.section`

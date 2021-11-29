@@ -28,6 +28,7 @@ export default {
     orangeText: '#FF7800',
     error: '#f30',
     text: '#212122',
+    textDark: '#000000',
     textOpacity: '#cccccc',
     background: '#eeeeee',
     border: '#eeeeee',

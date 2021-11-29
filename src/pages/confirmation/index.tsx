@@ -1,7 +1,6 @@
 /* eslint-disable */
 import React, { useContext, useMemo } from 'react'
-import { Link } from 'react-router-dom'
-import { Button } from '../../components/Button'
+import { IoCheckmarkOutline } from 'react-icons/io5'
 import { HeaderNav } from '../../components/HeaderNav'
 import { Heading } from '../../components/Heading'
 import { Product } from '../../components/Product'
@@ -19,12 +18,28 @@ export const Confirmation: React.FC = () => {
     }
   }, [product])
 
-  console.log(user)
+  const hideNumbers = useMemo(() => {
+    return `****.****.****.${user?.creditCard.split('.')[3]}`
+  }, [user])
+
+  const upperName = useMemo(() => {
+    return user?.name.toUpperCase()
+  }, [user])
 
   return (
     <S.Wrapper>
       <HeaderNav page="confirmation" />
       <S.Content>
+        <S.Success>
+          <IoCheckmarkOutline />
+          <span>compra efetuada com sucesso</span>
+        </S.Success>
+        <Heading title="Pagamento" />
+        <S.Payment>
+          <span>{user && hideNumbers}</span>
+          <span>{user && upperName}</span>
+          <span>{user && user.date}</span>
+        </S.Payment>
         <Heading title="produtos" />
         <S.Products>
           {product &&
@@ -33,7 +48,7 @@ export const Confirmation: React.FC = () => {
                 key={item.product.sku}
                 image={item.product.imageObjects[0].small}
                 description={item.product.name}
-                price={item.product.priceSpecification.originalPrice}
+                type="small"
               />
             ))}
         </S.Products>
@@ -47,11 +62,6 @@ export const Confirmation: React.FC = () => {
             />
           )}
         </S.Price>
-        <S.Button>
-          <Link to="/payment">
-            <Button text="finalizar pedido" />
-          </Link>
-        </S.Button>
       </S.Content>
     </S.Wrapper>
   )
