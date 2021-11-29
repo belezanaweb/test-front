@@ -29,32 +29,36 @@ export const Checkout: React.FC = () => {
       <HeaderNav page="checkout" />
       <S.Content>
         <Heading title="produtos" />
-        <S.Products>
-          {product &&
-            product.items.map(item => (
-              <Product
-                key={item.product.sku}
-                image={item.product.imageObjects[0].small}
-                description={item.product.name}
-                price={item.product.priceSpecification.originalPrice}
-              />
-            ))}
-        </S.Products>
-        <S.Price>
-          {product && totalPrice && (
-            <TotalPriceModule
-              discount={product?.discount}
-              freightage={product?.shippingTotal}
-              products={product?.subTotal}
-              total={totalPrice}
-            />
-          )}
-        </S.Price>
-        <S.Button>
-          <Link to="/payment">
-            <Button text="seguir para o pagamento" />
-          </Link>
-        </S.Button>
+        <S.BlockContent>
+          <S.Products>
+            {product &&
+              product.items.map(item => (
+                <Product
+                  key={item.product.sku}
+                  image={item.product.imageObjects[0].small}
+                  description={item.product.name}
+                  price={item.product.priceSpecification.originalPrice}
+                />
+              ))}
+          </S.Products>
+          <S.BlockPrice>
+            <S.Price>
+              {product && totalPrice && (
+                <TotalPriceModule
+                  discount={product?.discount}
+                  freightage={product?.shippingTotal}
+                  products={product?.subTotal}
+                  total={totalPrice}
+                />
+              )}
+            </S.Price>
+            <S.Button>
+              <Link to="/payment">
+                <Button text="seguir para o pagamento" />
+              </Link>
+            </S.Button>
+          </S.BlockPrice>
+        </S.BlockContent>
       </S.Content>
     </S.Wrapper>
   )

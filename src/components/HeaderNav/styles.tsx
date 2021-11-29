@@ -3,7 +3,7 @@ import styled, { css } from 'styled-components'
 export const Wrapper = styled.header`
   ${({ theme }) => css`
     display: flex;
-    max-width: ${theme.container.desktop};
+    max-width: 100%;
     background: ${theme.color.white};
     height: 40px;
     align-items: flex-end;

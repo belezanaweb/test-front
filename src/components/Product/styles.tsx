@@ -22,6 +22,10 @@ export const Wrapper = styled.article`
     border-radius: ${theme.border.radius};
     padding: 8px;
     margin: 0 auto;
+
+    @media (min-width: ${theme.container.tablet}) {
+      width: 500px;
+    }
   `}
 `
 

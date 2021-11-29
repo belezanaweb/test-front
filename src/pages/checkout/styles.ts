@@ -20,6 +20,21 @@ export const Content = styled.section`
   `}
 `
 
+export const BlockContent = styled.div`
+  ${({ theme }) => css`
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 24px;
+
+    @media (max-width: ${theme.container.mobile}) {
+      display: flex;
+      flex-direction: column;
+    }
+  `}
+`
+
+export const BlockPrice = styled.div``
+
 export const Products = styled.section`
   ${({ theme }) => css`
     background: ${theme.color.white};
@@ -38,6 +53,10 @@ export const Price = styled.section`
     border: 1px solid ${theme.color.borderDark};
     border-radius: ${theme.border.radius};
     padding: 12px;
+
+    @media (min-width: ${theme.container.tablet}) {
+      margin-top: 0;
+    }
   `}
 `
 
