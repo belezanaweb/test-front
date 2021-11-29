@@ -52,8 +52,7 @@ export const Checkout: React.FC = () => {
         </S.Price>
         <S.Button>
           <Link to="/payment">
-            {' '}
-            <Button />
+            <Button text="seguir para o pagamento" />
           </Link>
         </S.Button>
       </S.Content>

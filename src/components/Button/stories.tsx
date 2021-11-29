@@ -1,6 +1,6 @@
 import React from 'react'
 import { Story } from '@storybook/react/types-6-0'
-import { Button } from '.'
+import { Button, ButtonProps } from '.'
 
 export default {
   title: 'Button',
@@ -10,4 +10,8 @@ export default {
   }
 }
 
-export const Basic: Story = args => <Button {...args} />
+export const Basic: Story<ButtonProps> = args => <Button {...args} />
+
+Basic.args = {
+  text: 'finalizar pedido'
+}

@@ -1,10 +1,14 @@
 import React from 'react'
 import * as S from './styles'
 
-export const Button: React.FC = () => {
+export type ButtonProps = {
+  text: string
+}
+
+export const Button: React.FC<ButtonProps> = ({ text }) => {
   return (
     <S.Wrapper>
-      <span>seguir para o pagamento</span>
+      <span>{text}</span>
     </S.Wrapper>
   )
 }
