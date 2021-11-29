@@ -1,6 +1,6 @@
 import React from 'react'
 import { Story } from '@storybook/react/types-6-0'
-import { HeaderNav } from '.'
+import { HeaderNav, HeaderNavProps } from '.'
 
 export default {
   title: 'HeaderNav',
@@ -10,4 +10,8 @@ export default {
   }
 }
 
-export const Basic: Story = args => <HeaderNav {...args} />
+export const Basic: Story<HeaderNavProps> = args => <HeaderNav {...args} />
+
+Basic.args = {
+  page: 'checkout'
+}

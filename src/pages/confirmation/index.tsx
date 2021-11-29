@@ -11,7 +11,7 @@ import { CheckoutContext } from '../../contexts/CheckoutContext'
 import * as S from './styles'
 
 export const Confirmation: React.FC = () => {
-  const { product } = useContext(CheckoutContext)
+  const { product, user } = useContext(CheckoutContext)
 
   const totalPrice = useMemo(() => {
     if (product) {
@@ -19,9 +19,11 @@ export const Confirmation: React.FC = () => {
     }
   }, [product])
 
+  console.log(user)
+
   return (
     <S.Wrapper>
-      <HeaderNav />
+      <HeaderNav page="confirmation" />
       <S.Content>
         <Heading title="produtos" />
         <S.Products>

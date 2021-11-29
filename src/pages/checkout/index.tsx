@@ -26,7 +26,7 @@ export const Checkout: React.FC = () => {
 
   return (
     <S.Wrapper>
-      <HeaderNav />
+      <HeaderNav page="checkout" />
       <S.Content>
         <Heading title="produtos" />
         <S.Products>
