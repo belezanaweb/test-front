@@ -34,34 +34,38 @@ export const Confirmation: React.FC = () => {
           <IoCheckmarkOutline />
           <span>compra efetuada com sucesso</span>
         </S.Success>
-        <Heading title="Pagamento" />
-        <S.Payment>
-          <span>{user && hideNumbers}</span>
-          <span>{user && upperName}</span>
-          <span>{user && user.date}</span>
-        </S.Payment>
-        <Heading title="produtos" />
-        <S.Products>
-          {product &&
-            product.items.map(item => (
-              <Product
-                key={item.product.sku}
-                image={item.product.imageObjects[0].small}
-                description={item.product.name}
-                type="small"
+        <S.BlockContent>
+          <S.ContentInfo>
+            <Heading title="Pagamento" />
+            <S.Payment>
+              <span>{user && hideNumbers}</span>
+              <span>{user && upperName}</span>
+              <span>{user && user.date}</span>
+            </S.Payment>
+            <Heading title="produtos" />
+            <S.Products>
+              {product &&
+                product.items.map(item => (
+                  <Product
+                    key={item.product.sku}
+                    image={item.product.imageObjects[0].small}
+                    description={item.product.name}
+                    type="small"
+                  />
+                ))}
+            </S.Products>
+          </S.ContentInfo>
+          <S.Price>
+            {product && totalPrice && (
+              <TotalPriceModule
+                discount={product?.discount}
+                freightage={product?.shippingTotal}
+                products={product?.subTotal}
+                total={totalPrice}
               />
-            ))}
-        </S.Products>
-        <S.Price>
-          {product && totalPrice && (
-            <TotalPriceModule
-              discount={product?.discount}
-              freightage={product?.shippingTotal}
-              products={product?.subTotal}
-              total={totalPrice}
-            />
-          )}
-        </S.Price>
+            )}
+          </S.Price>
+        </S.BlockContent>
       </S.Content>
     </S.Wrapper>
   )
