@@ -1,6 +1,6 @@
 import React from 'react'
-import { StyledButton } from './styled'
 import PropTypes from 'prop-types'
+import { StyledButton } from './styled'
 
 Button.propTypes = {
   block: PropTypes.bool
