@@ -1,0 +1,33 @@
+.Header {
+  display: flex;
+  align-items: center;
+  height: 40px;
+  margin: 32px 13px 0 14px;
+  border-radius: 3px;
+  background-color: #fff;
+  box-shadow: 1px 1px 5px 0 rgba(0, 0, 29, 0.22);
+  justify-content: center;
+  z-index: 1;
+}
+
+.Header ul {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.Header li {
+  cursor: pointer;
+  height: 16px;
+  color: #ccc;
+  font-family: 'Helvetica Neue';
+  font-size: 13px;
+  font-weight: 700;
+  text-align: center;
+  margin: 0 15px;
+}
+
+.Header li:hover {
+  color: #ff7800;
+}

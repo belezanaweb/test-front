@@ -1,0 +1,12 @@
+.Container {
+  display: flex;
+  flex-direction: column;
+  width: 387px;
+  justify-content: center;
+  margin: auto;
+}
+@media screen and (min-width: 1440px) {
+  .Container {
+    width: 100%;
+  }
+}
