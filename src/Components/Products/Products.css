@@ -1,0 +1,127 @@
+.Products {
+  display: flex;
+  box-sizing: border-box;
+  height: 90px;
+  border-radius: 3px;
+  border: 1px solid #eee;
+  padding: 11px 10px 14px 10px;
+  margin: 12px 13px 0px 13px;
+}
+
+.Img {
+  display: flex;
+  width: 65px;
+  justify-content: center;
+  align-items: center;
+}
+
+.Img img {
+  width: 100%;
+}
+
+.Descr {
+  display: flex;
+  flex-direction: column;
+  flex: 1px;
+}
+
+.DescrText {
+  flex: 1;
+  height: 32px;
+  color: #212122;
+  font-family: 'Helvetica Neue';
+  font-size: 13px;
+  line-height: 16px;
+}
+
+.Price {
+  display: flex;
+  justify-content: right;
+  align-items: baseline;
+  color: #212122;
+  font-family: 'Helvetica Neue';
+  font-size: 14px;
+  font-weight: 700;
+}
+
+@media screen and (min-width: 768px) {
+  .Products {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100%;
+    width: 600px;
+  }
+
+  .Img {
+    display: flex;
+    width: 297px;
+    order: 2;
+  }
+
+  .Descr {
+    order: 1;
+    display: flex;
+    flex-direction: row;
+    border-bottom: 1px solid #ff7800;
+    padding: 25px;
+  }
+
+  .DescrText {
+    flex: 2;
+    font-size: 16px;
+    line-height: 19px;
+    justify-content: center;
+    padding-bottom: 40px;
+  }
+
+  .Price {
+    display: flex;
+    flex: 1;
+    align-items: center;
+    font-size: 24px;
+  }
+}
+
+@media screen and (min-width: 1400px) {
+  .Products {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100%;
+    width: 400px;
+  }
+
+  .Img {
+    display: flex;
+    width: 297px;
+    justify-content: center;
+    align-items: center;
+    order: 2;
+  }
+
+  .Descr {
+    order: 1;
+    display: flex;
+    flex-direction: row;
+    border-bottom: 1px solid #ff7800;
+    padding: 25px;
+  }
+
+  .DescrText {
+    flex: 2;
+    color: #212122;
+    font-size: 14px;
+    line-height: 17px;
+    justify-content: center;
+    padding-bottom: 30px;
+  }
+
+  .Price {
+    display: flex;
+    flex: 1;
+    justify-content: right;
+    align-items: center;
+    font-size: 18px;
+  }
+}

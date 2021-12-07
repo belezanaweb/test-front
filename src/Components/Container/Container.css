@@ -5,7 +5,8 @@
   justify-content: center;
   margin: auto;
 }
-@media screen and (min-width: 1440px) {
+
+@media screen and (min-width: 768px) {
   .Container {
     width: 100%;
   }

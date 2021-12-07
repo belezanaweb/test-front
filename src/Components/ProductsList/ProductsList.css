@@ -1,0 +1,19 @@
+.ProductsList {
+  display: flex;
+  flex-direction: column;
+  border-radius: 3px;
+  background-color: #fff;
+  box-shadow: 1px 1px 5px 0 rgba(0, 0, 29, 0.22);
+  padding-bottom: 13px;
+}
+
+@media screen and (min-width: 1400px) {
+  .ProductsList {
+    display: flex;
+    flex-direction: row;
+    border-radius: 3px;
+    background-color: #fff;
+    box-shadow: 1px 1px 5px 0 rgba(0, 0, 29, 0.22);
+    padding-bottom: 13px;
+  }
+}

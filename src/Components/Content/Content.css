@@ -1,6 +1,8 @@
 .Content {
+  display: flex;
+  justify-content: center;
   background-color: #eee;
-  height: 100vh;
   margin: 0 13px 0 14px;
   z-index: 0;
+  padding: 10px 10px 10px 9px;
 }

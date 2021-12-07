@@ -1,0 +1,10 @@
+.TotalList {
+  display: flex;
+  flex-direction: column;
+  margin-top: 20px;
+  box-sizing: border-box;
+  height: 129px;
+  border-radius: 3px;
+  border: 1px solid #ccc;
+  padding: 15px 13px 13px 14px;
+}

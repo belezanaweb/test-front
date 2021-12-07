@@ -31,3 +31,22 @@
 .Header li:hover {
   color: #ff7800;
 }
+
+@media screen and (min-width: 768px) {
+  .Header {
+    margin: 0;
+    height: 50px;
+  }
+  .Header li {
+    height: 19px;
+    font-size: 16px;
+    margin: 0 20px;
+  }
+}
+
+@media screen and (min-width: 1400px) {
+  .Header {
+    margin: 0;
+    height: 60px;
+  }
+}

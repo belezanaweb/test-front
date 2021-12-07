@@ -1,0 +1,41 @@
+.PaymentView {
+  display: flex;
+  flex-direction: column;
+  border-radius: 3px;
+  background-color: #fff;
+  box-shadow: 1px 1px 5px 0 rgba(0, 0, 29, 0.22);
+  margin-bottom: 20px;
+  padding: 14px 20px 10px 20px;
+}
+
+.PaymentView span {
+  color: #000;
+  font-family: 'Helvetica Neue';
+  font-size: 14px;
+  line-height: 17px;
+}
+
+.PaymentView .message {
+  height: 17px;
+  width: 266.27px;
+  color: #ff7800;
+  font-family: 'Helvetica Neue';
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 17px;
+  text-align: center;
+}
+
+@media screen and (min-width: 768px) {
+  .PaymentView span {
+    font-size: 16px;
+    line-height: 19px;
+  }
+}
+
+@media screen and (min-width: 1400px) {
+  .PaymentView span {
+    font-size: 18px;
+    line-height: 20px;
+  }
+}

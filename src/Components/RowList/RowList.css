@@ -1,0 +1,20 @@
+.RowList {
+  display: flex;
+  width: 100%;
+}
+
+.RowList .ColName {
+  flex: 1;
+  color: #212122;
+  font-family: 'Helvetica Neue';
+  font-size: 14px;
+}
+
+.RowList .ColValue {
+  display: flex;
+  flex: 1;
+  justify-content: right;
+  color: #212122;
+  font-family: 'Helvetica Neue';
+  font-size: 14px;
+}

@@ -1,7 +1,19 @@
-import React from 'react'
+import React, { useContext } from 'react'
 
-import './ProductList.css'
+import Products from '../Products/Products'
+import DataContext from '../../Store/DataContext'
+import './ProductsList.css'
 
-const ProductsList = () => <div className="ProductsList">Lista de produto</div>
+const ProductsList = () => {
+  const context = useContext(DataContext)
+  const list = context.state?.products.items || []
+  return (
+    <div className="ProductsList">
+      {list.map((data) => (
+        <Products data={data} key={data.product.sku} />
+      ))}
+    </div>
+  )
+}
 
 export default ProductsList

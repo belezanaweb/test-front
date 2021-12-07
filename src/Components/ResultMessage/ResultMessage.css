@@ -1,0 +1,15 @@
+.ResultMessage {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.ResultMessage span {
+  margin-top: 11.06px;
+  margin-bottom: 20.43px;
+  color: #ff7800;
+  font-family: 'Helvetica Neue';
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 17px;
+}
