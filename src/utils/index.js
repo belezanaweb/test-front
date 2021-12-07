@@ -6,6 +6,12 @@ const utils = {
         currency: 'BRL'
       }).format(value)
     }
+  },
+  hideCardNumber: (value) => {
+    if (value) {
+      let last = value.slice(value.length - 4)
+      return `****.****.****.${last}`
+    }
   }
 }
 

@@ -4,7 +4,13 @@ const initialState = {
   loading: false,
   error: false,
   products: [],
-  info: {}
+  info: {},
+  card: {
+    number: '',
+    name: '',
+    date: '',
+    cvv: ''
+  }
 }
 
 export const checkoutSlice = createSlice({
@@ -34,10 +40,16 @@ export const checkoutSlice = createSlice({
         ...state,
         info: action.payload
       }
+    },
+    setCard: (state, action) => {
+      return {
+        ...state,
+        card: action.payload
+      }
     }
   }
 })
 
-export const { setLoading, setError, setProducts, setInfo } = checkoutSlice.actions
+export const { setLoading, setError, setProducts, setInfo, setCard } = checkoutSlice.actions
 
 export default checkoutSlice.reducer
