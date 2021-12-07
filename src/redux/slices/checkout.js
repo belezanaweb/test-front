@@ -8,8 +8,7 @@ const initialState = {
   card: {
     number: '',
     name: '',
-    date: '',
-    cvv: ''
+    date: ''
   }
 }
 

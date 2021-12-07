@@ -31,8 +31,7 @@ export default function Payment() {
         setCard({
           number: utils.hideCardNumber(values.cardNumber),
           name: values.cardName,
-          date: values.cardDate,
-          cvv: values.cardCVV
+          date: values.cardDate
         })
       )
       navigate('/confirmation')
