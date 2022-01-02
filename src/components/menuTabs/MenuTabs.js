@@ -13,7 +13,7 @@ const MenuTabs = ({ tab0, tab1, tab2 }) => {
   }
 
   return (
-    <Box sx={{ width: '100%', backgroundColor: '#EEE' }}>
+    <Box sx={{ width: '100%', backgroundColor: '#EEE', height: '100vh' }}>
       <Box sx={{ borderBottom: 1, borderColor: 'divider', backgroundColor: '#FFF' }}>
         <Tabs
           value={value}

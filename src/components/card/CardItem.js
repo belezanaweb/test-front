@@ -7,6 +7,10 @@ import Grid from '@mui/material/Grid'
 import Typography from '@mui/material/Typography'
 import Stack from '@mui/material/Stack'
 
+const formatPrice = (value) => {
+  return value ? value.toLocaleString('pt-BR', { minimumFractionDigits: 2 }) : '0,00'
+}
+
 const CardItem = ({ item }) => {
   return (
     <Box>
@@ -28,8 +32,8 @@ const CardItem = ({ item }) => {
               }}
               component="img"
               height="65"
-              alt={item?.name}
-              image={item?.imageObjects[0]?.small}
+              alt={item?.product?.name}
+              image={item?.product?.imageObjects[0]?.small}
             />
           </Grid>
           <Grid item xs={9}>
@@ -45,7 +49,7 @@ const CardItem = ({ item }) => {
                   maxHeight: 32
                 }}
               >
-                {item?.name}
+                {item?.product?.name}
               </Typography>
               <Typography
                 sx={{
@@ -55,7 +59,7 @@ const CardItem = ({ item }) => {
                   paddingRight: 1
                 }}
               >
-                R$ {item?.priceSpecification?.price}
+                R$ {formatPrice(item?.product?.priceSpecification?.price)}
               </Typography>
             </Stack>
           </Grid>

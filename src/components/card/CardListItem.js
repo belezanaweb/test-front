@@ -15,7 +15,7 @@ const CardListItem = ({ items }) => {
       }}
     >
       {items.map((item) => (
-        <CardItem item={item} />
+        <CardItem item={item} key={item?.product?.sku} />
       ))}
     </Stack>
   )
