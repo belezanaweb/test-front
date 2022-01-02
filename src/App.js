@@ -1,6 +1,11 @@
 import React from 'react'
 import './App.css'
+import Tabs from './pages/tabs/Tabs'
 
-const App = () => <div className="App">Boa sorte! 🚀</div>
+const App = () => (
+  <div>
+    <Tabs />
+  </div>
+)
 
 export default App

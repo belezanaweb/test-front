@@ -6,8 +6,8 @@ import Typography from '@mui/material/Typography'
 const PaymentData = ({ data }) => {
   return (
     <Box sx={{ margin: 2 }}>
-      <Typography sx={{ fontSize: 14, textTransform: 'uppercase' }}>{data.creditCard}</Typography>
-      <Typography sx={{ fontSize: 14 }}>{data.name}</Typography>
+      <Typography sx={{ fontSize: 14 }}>{data.creditCard}</Typography>
+      <Typography sx={{ fontSize: 14, textTransform: 'uppercase' }}>{data.name}</Typography>
       <Typography sx={{ fontSize: 14 }}>{data.date}</Typography>
     </Box>
   )

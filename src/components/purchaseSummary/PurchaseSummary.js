@@ -14,6 +14,7 @@ const PurchaseSummary = ({ discount, total, shippingTotal, subTotal }) => {
           border: 1,
           borderColor: 'divider',
           height: 129,
+          width: 341,
           marginTop: 2
         }}
         variant="outlined"
@@ -89,7 +90,7 @@ const PurchaseSummary = ({ discount, total, shippingTotal, subTotal }) => {
                 marginTop: 1
               }}
             >
-              R$ {discount}
+              - R$ {discount}
             </Typography>
             <Typography
               sx={{
