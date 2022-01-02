@@ -5,7 +5,11 @@ import Grid from '@mui/material/Grid'
 import Typography from '@mui/material/Typography'
 import PropTypes from 'prop-types'
 
-const PurchaseSummary = ({ discount, total, shippingTotal, subTotal }) => {
+const formatPrice = (value) => {
+  return value ? value.toLocaleString('pt-BR', { minimumFractionDigits: 2 }) : '0,00'
+}
+
+const PurchaseSummary = ({ price }) => {
   return (
     <Box>
       <Paper
@@ -69,7 +73,7 @@ const PurchaseSummary = ({ discount, total, shippingTotal, subTotal }) => {
                 marginTop: 1
               }}
             >
-              R$ {subTotal}
+              R$ {formatPrice(price?.subTotal)}
             </Typography>
             <Typography
               sx={{
@@ -79,7 +83,7 @@ const PurchaseSummary = ({ discount, total, shippingTotal, subTotal }) => {
                 marginTop: 1
               }}
             >
-              R$ {shippingTotal}
+              R$ {formatPrice(price?.shippingTotal)}
             </Typography>
             <Typography
               sx={{
@@ -90,7 +94,7 @@ const PurchaseSummary = ({ discount, total, shippingTotal, subTotal }) => {
                 marginTop: 1
               }}
             >
-              - R$ {discount}
+              - R$ {formatPrice(price?.discount)}
             </Typography>
             <Typography
               sx={{
@@ -101,7 +105,7 @@ const PurchaseSummary = ({ discount, total, shippingTotal, subTotal }) => {
                 fontWeight: 'bold'
               }}
             >
-              R$ {total}
+              R$ {formatPrice(price?.total)}
             </Typography>
           </Grid>
         </Grid>
@@ -111,10 +115,7 @@ const PurchaseSummary = ({ discount, total, shippingTotal, subTotal }) => {
 }
 
 PurchaseSummary.propTypes = {
-  discount: PropTypes.number,
-  total: PropTypes.number,
-  shippingTotal: PropTypes.number,
-  subTotal: PropTypes.number
+  price: PropTypes.object
 }
 
 export default PurchaseSummary
