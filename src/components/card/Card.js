@@ -1,12 +1,10 @@
 import * as React from 'react'
 import PropTypes from 'prop-types'
 import Box from '@mui/material/Box'
-import Stack from '@mui/material/Stack'
 import Paper from '@mui/material/Paper'
 import Typography from '@mui/material/Typography'
-import CardItem from './CardItem'
 
-const Card = ({ title, items }) => {
+const Card = ({ title, content }) => {
   return (
     <Box
       sx={{
@@ -36,19 +34,7 @@ const Card = ({ title, items }) => {
             width: 341
           }}
         >
-          <Stack
-            spacing={2}
-            justifyContent="center"
-            alignItems="center"
-            sx={{
-              marginTop: 2,
-              marginBottom: 2
-            }}
-          >
-            {items.map((item) => (
-              <CardItem item={item} />
-            ))}
-          </Stack>
+          {content}
         </Paper>
       </Box>
     </Box>
@@ -56,7 +42,7 @@ const Card = ({ title, items }) => {
 }
 
 Card.propTypes = {
-  items: PropTypes.array,
+  content: PropTypes.node,
   title: PropTypes.string
 }
 
