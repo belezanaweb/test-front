@@ -4,6 +4,7 @@ import Card from '../../components/card/Card'
 import PurchaseSummary from '../../components/purchaseSummary/PurchaseSummary'
 import BigButton from '../../components/bigButton/BigButton'
 import CreditCardForm from '../../components/creditCardForm/CreditCardForm'
+import store from '../../store'
 
 const Payment = () => {
   return (
@@ -16,7 +17,7 @@ const Payment = () => {
       }}
     >
       <Card title="Cartão de crédito" content={<CreditCardForm />} />
-      <PurchaseSummary />
+      <PurchaseSummary price={store.getState()} />
       <BigButton buttonText="Finalizar o pedido" />
     </Box>
   )
