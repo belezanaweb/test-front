@@ -11,7 +11,7 @@ const formatPrice = (value) => {
   return value ? value.toLocaleString('pt-BR', { minimumFractionDigits: 2 }) : '0,00'
 }
 
-const CardItem = ({ item }) => {
+const CardItem = ({ item, shouldShowPrice }) => {
   return (
     <Box>
       <Card
@@ -51,16 +51,18 @@ const CardItem = ({ item }) => {
               >
                 {item?.product?.name}
               </Typography>
-              <Typography
-                sx={{
-                  fontWeight: 'bold',
-                  fontSize: 14,
-                  textAlign: 'right',
-                  paddingRight: 1
-                }}
-              >
-                R$ {formatPrice(item?.product?.priceSpecification?.price)}
-              </Typography>
+              {shouldShowPrice ? (
+                <Typography
+                  sx={{
+                    fontWeight: 'bold',
+                    fontSize: 14,
+                    textAlign: 'right',
+                    paddingRight: 1
+                  }}
+                >
+                  R$ {formatPrice(item?.product?.priceSpecification?.price)}
+                </Typography>
+              ) : null}
             </Stack>
           </Grid>
         </Grid>
@@ -70,7 +72,8 @@ const CardItem = ({ item }) => {
 }
 
 CardItem.propTypes = {
-  item: PropTypes.object
+  item: PropTypes.object,
+  shouldShowPrice: PropTypes.bool
 }
 
 export default CardItem

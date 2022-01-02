@@ -2,9 +2,10 @@ import * as React from 'react'
 import Box from '@mui/material/Box'
 import Card from '../../components/card/Card'
 import PurchaseSummary from '../../components/purchaseSummary/PurchaseSummary'
-import BigButton from '../../components/bigButton/BigButton'
 import ConfirmationMessage from '../../components/confirmationMessage/ConfirmationMessage'
 import PaymentData from '../../components/paymentData/PaymentData'
+import CardListItem from '../../components/card/CardListItem'
+import store from '../../store'
 
 const Confirmation = () => {
   return (
@@ -18,8 +19,11 @@ const Confirmation = () => {
     >
       <ConfirmationMessage sucessMessage="Compra efetuada com sucesso" />
       <Card title="Pagamento" content={<PaymentData />} />
-      <PurchaseSummary />
-      <BigButton buttonText="Finalizar o pedido" />
+      <Card
+        title="Produtos"
+        content={<CardListItem items={store.getState().items} shouldShowPrice={false} />}
+      />
+      <PurchaseSummary price={store.getState()} />
     </Box>
   )
 }

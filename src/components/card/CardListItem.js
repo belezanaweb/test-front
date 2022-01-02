@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 import Stack from '@mui/material/Stack'
 import CardItem from './CardItem'
 
-const CardListItem = ({ items }) => {
+const CardListItem = ({ items, shouldShowPrice }) => {
   return (
     <Stack
       spacing={2}
@@ -15,14 +15,20 @@ const CardListItem = ({ items }) => {
       }}
     >
       {items.map((item) => (
-        <CardItem item={item} key={item?.product?.sku} />
+        <CardItem item={item} key={item?.product?.sku} shouldShowPrice={shouldShowPrice} />
       ))}
     </Stack>
   )
 }
 
 CardListItem.propTypes = {
-  items: PropTypes.array
+  items: PropTypes.array,
+  shouldShowPrice: PropTypes.bool
+}
+
+CardListItem.defaultProps = {
+  items: [],
+  shouldShowPrice: true
 }
 
 export default CardListItem
