@@ -7,7 +7,7 @@ import FormHelperText from '@mui/material/FormHelperText'
 
 const CreditCardForm = ({ item }) => {
   return (
-    <Box sx={{ margin: 1 }}>
+    <Box sx={{ margin: 1, paddingBottom: 2 }}>
       <Grid
         container
         direction="row"
