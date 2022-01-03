@@ -16,8 +16,11 @@ const Cart = () => {
         alignItems: 'center'
       }}
     >
-      <Card title="Produtos" content={<CardListItem items={store.getState().items} />} />
-      <PurchaseSummary price={store.getState()} />
+      <Card
+        title="Produtos"
+        content={<CardListItem items={store.getState().purchaseData.items} />}
+      />
+      <PurchaseSummary price={store.getState().purchaseData} />
       <BigButton buttonText="Seguir para o pagamento" />
     </Box>
   )

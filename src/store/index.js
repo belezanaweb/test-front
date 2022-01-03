@@ -1,15 +1,32 @@
-import { createStore } from 'redux'
+import { createStore, combineReducers } from 'redux'
 
-function reducer(state = {}, action) {
+function purchaseDataReducer(state = {}, action) {
   switch (action.type) {
-    case 'set':
-      state = action.param
+    case 'setPurchaseData':
+      state = action.value
       return state
     default:
       return state
   }
 }
 
-const store = createStore(reducer)
+function paymentDataReducer(state = {}, action) {
+  switch (action.type) {
+    case 'setPaymentData':
+      return {
+        ...state,
+        [action.field]: action.value
+      }
+    default:
+      return state
+  }
+}
+
+const store = createStore(
+  combineReducers({
+    purchaseData: purchaseDataReducer,
+    paymentData: paymentDataReducer
+  })
+)
 
 export default store

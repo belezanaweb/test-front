@@ -1,11 +1,13 @@
-import * as React from 'react'
-import PropTypes from 'prop-types'
+import React from 'react'
 import Box from '@mui/material/Box'
 import OutlinedInput from '@mui/material/OutlinedInput'
 import Grid from '@mui/material/Grid'
 import FormHelperText from '@mui/material/FormHelperText'
+import store from '../../store'
 
-const CreditCardForm = ({ item }) => {
+const bigInputStyle = { height: '45px', width: '100%' }
+
+const CreditCardForm = () => {
   return (
     <Box sx={{ margin: 1, paddingBottom: 2 }}>
       <Grid
@@ -18,34 +20,54 @@ const CreditCardForm = ({ item }) => {
         <Grid item xs={12}>
           <FormHelperText>Número do cartão</FormHelperText>
           <OutlinedInput
-            sx={{ height: '45px', width: '100%' }}
+            color="warning"
+            sx={bigInputStyle}
             placeholder="____.____.____.____"
-            value={item?.creditCard}
+            value={store.getState().paymentData.creditCard}
+            onChange={(e) =>
+              store.dispatch({ type: 'setPaymentData', field: 'creditCard', value: e.target.value })
+            }
           />
         </Grid>
         <Grid item xs={12}>
           <FormHelperText>Nome do titular</FormHelperText>
           <OutlinedInput
-            sx={{ height: '45px', width: '100%' }}
+            color="warning"
+            sx={bigInputStyle}
             placeholder="Como no cartão"
-            value={item?.name}
+            value={store.getState().paymentData.name}
+            onChange={(e) =>
+              store.dispatch({ type: 'setPaymentData', field: 'name', value: e.target.value })
+            }
           />
         </Grid>
         <Grid item xs={7}>
           <FormHelperText>Validade (mês/ano)</FormHelperText>
-          <OutlinedInput sx={{ height: '45px' }} placeholder="__/____" value={item?.date} />
+          <OutlinedInput
+            color="warning"
+            sx={{ height: '45px' }}
+            laceholder="__/____"
+            value={store.getState().paymentData.date}
+            onChange={(e) =>
+              store.dispatch({ type: 'setPaymentData', field: 'date', value: e.target.value })
+            }
+          />
         </Grid>
         <Grid item xs={5}>
           <FormHelperText>CVV</FormHelperText>
-          <OutlinedInput sx={{ height: '45px' }} placeholder="___" value={item?.cvv} />
+          <OutlinedInput
+            color="warning"
+            sx={{ height: '45px' }}
+            placeholder="___"
+            value={store.getState().paymentData.cvv}
+            onChange={(e) =>
+              store.dispatch({ type: 'setPaymentData', field: 'cvv', value: e.target.value })
+            }
+          />
         </Grid>
       </Grid>
     </Box>
   )
-}
-
-CreditCardForm.propTypes = {
-  item: PropTypes.object
 }
 
 export default CreditCardForm
