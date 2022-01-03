@@ -5,8 +5,29 @@ import PurchaseSummary from '../../components/purchaseSummary/PurchaseSummary'
 import BigButton from '../../components/bigButton/BigButton'
 import CreditCardForm from '../../components/creditCardForm/CreditCardForm'
 import store from '../../store'
+import * as moment from 'moment'
+
+function validateCvv() {
+  return /^([0-9]){3}$/.test(store.getState().paymentData.cvv)
+}
+
+function validateName() {
+  return /^[A-Za-záàâãéèêíïóôõöúçñÁÀÂÃÉÈÍÏÓÔÕÖÚÇÑ ]+$/.test(store.getState().paymentData.name)
+}
+
+function validateCreditCard() {
+  return /^([0-9]){4}\.([0-9]){4}\.([0-9]){4}.([0-9]){4}$/.test(
+    store.getState().paymentData.creditCard
+  )
+}
+
+function validateDate() {
+  return moment(store.getState().paymentData.date, 'MM/YYYY', true).isValid()
+}
 
 const Payment = () => {
+  const shouldDisableButton = true
+
   return (
     <Box
       sx={{
@@ -17,8 +38,8 @@ const Payment = () => {
       }}
     >
       <Card title="Cartão de crédito" content={<CreditCardForm />} />
-      <PurchaseSummary price={store.getState()} />
-      <BigButton buttonText="Finalizar o pedido" />
+      <PurchaseSummary price={store.getState().purchaseData} />
+      <BigButton buttonText="Finalizar o pedido" disabled={shouldDisableButton} />
     </Box>
   )
 }

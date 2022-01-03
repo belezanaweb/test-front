@@ -21,9 +21,11 @@ const Confirmation = () => {
       <Card title="Pagamento" content={<PaymentData />} />
       <Card
         title="Produtos"
-        content={<CardListItem items={store.getState().items} shouldShowPrice={false} />}
+        content={
+          <CardListItem items={store.getState().purchaseData.items} shouldShowPrice={false} />
+        }
       />
-      <PurchaseSummary price={store.getState()} />
+      <PurchaseSummary price={store.getState().purchaseData} />
     </Box>
   )
 }

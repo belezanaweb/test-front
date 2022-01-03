@@ -13,7 +13,7 @@ export default function Tabs() {
 
   useEffect(() => {
     api.get('5b15c4923100004a006f3c07').then((response) => {
-      store.dispatch({ type: 'set', param: response.data })
+      store.dispatch({ type: 'setPurchaseData', value: response.data })
       setLoading(false)
     })
   })
