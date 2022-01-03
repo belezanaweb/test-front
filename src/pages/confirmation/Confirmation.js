@@ -18,7 +18,7 @@ const Confirmation = () => {
       }}
     >
       <ConfirmationMessage sucessMessage="Compra efetuada com sucesso" />
-      <Card title="Pagamento" content={<PaymentData />} />
+      <Card title="Pagamento" content={<PaymentData data={store.getState().paymentData} />} />
       <Card
         title="Produtos"
         content={
