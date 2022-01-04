@@ -37,7 +37,7 @@ export default function Init() {
       <Box
         sx={{
           width: '100%',
-          height: '100%',
+          height: '100vh',
           backgroundColor: '#EEE',
           display: 'flex',
           flexDirection: 'column',
@@ -50,7 +50,7 @@ export default function Init() {
     )
   } else {
     return (
-      <Box sx={{ width: '100%', backgroundColor: '#EEE' }}>
+      <Box sx={{ width: '100%', backgroundColor: '#EEE', heigth: '100vh' }}>
         <MenuTabs
           disabledTabs={disableTabs}
           tab0={<Bag />}
