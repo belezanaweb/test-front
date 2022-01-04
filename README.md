@@ -5,8 +5,8 @@
 - Aplicação responsiva, cada passo uma rota `/sacola`, `/pagamento` e `/confirmação`
 - Para ver o funcionamento é só clicar [aqui](http://blznaweb.surge.sh/)
 - Para rodar localmente, executar:
-    `yarn`
-    `yarn start`
+    `yarn`(para instalar as dependencias)
+    `yarn start` (para subir a aplicação)
 
 
 ### O que foi utilizado:
