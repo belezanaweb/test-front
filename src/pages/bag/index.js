@@ -5,13 +5,16 @@ import Card from '../../components/card/Card'
 import CardListItem from '../../components/card/CardListItem'
 import PurchaseSummary from '../../components/purchaseSummary/PurchaseSummary'
 import BigButton from '../../components/bigButton/BigButton'
-
-function goToPayment() {
-  store.dispatch({ type: 'setTabs', field: 'disabledTab1', value: false })
-  store.dispatch({ type: 'setTabs', field: 'currentTab', value: 1 })
-}
+import { useNavigate } from 'react-router-dom'
 
 const Bag = () => {
+  const history = useNavigate()
+
+  function goToPayment() {
+    history('/pagamento')
+    store.dispatch({ type: 'setTabs', field: 'disabledTab1', value: false })
+  }
+
   return (
     <Box
       sx={{

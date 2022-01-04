@@ -7,6 +7,7 @@ import CreditCardForm from '../../components/creditCardForm/CreditCardForm'
 import store from '../../store'
 import * as moment from 'moment'
 import { useSelector } from 'react-redux'
+import { useNavigate } from 'react-router-dom'
 
 function validateCvv(cvv) {
   return /^([0-9]){3}$/.test(cvv)
@@ -33,14 +34,15 @@ function validateFields(value) {
   )
 }
 
-function goToConfirmation() {
-  store.dispatch({ type: 'setTabs', field: 'disabledTab2', value: false })
-  store.dispatch({ type: 'setTabs', field: 'currentTab', value: 2 })
-}
-
 const Payment = () => {
+  const history = useNavigate()
   const paymentData = useSelector((state) => state.paymentData)
   const shouldEditForm = !useSelector((state) => state.tabs.disabledTab2)
+
+  function goToConfirmation() {
+    store.dispatch({ type: 'setTabs', field: 'disabledTab2', value: false })
+    history('/confirmacao')
+  }
 
   return (
     <Box

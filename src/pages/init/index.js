@@ -8,11 +8,22 @@ import api from '../../services/api'
 import store from '../../store'
 import { CircularProgress } from '@mui/material'
 import { useSelector } from 'react-redux'
+import { useParams } from 'react-router-dom'
+
+const tabNameToIndex = {
+  sacola: 0,
+  pagamento: 1,
+  confirmacao: 2
+}
 
 export default function Init() {
+  const { page } = useParams()
   const [loading, setLoading] = useState(true)
-
   const disableTabs = useSelector((state) => state.tabs)
+
+  useEffect(() => {
+    store.dispatch({ type: 'setTabs', field: 'currentTab', value: tabNameToIndex[page] })
+  }, [page])
 
   useEffect(() => {
     api.get('5b15c4923100004a006f3c07').then((response) => {
