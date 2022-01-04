@@ -7,7 +7,8 @@ const BigButton = ({ buttonText, disabled, handleClick }) => {
     <Button
       sx={{
         backgroundColor: '#FF6C00',
-        width: 341,
+        width: '35.5%',
+        minWidth: 341,
         height: 60,
         marginTop: 2,
         fontWeight: 'bold',

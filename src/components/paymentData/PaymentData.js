@@ -1,6 +1,6 @@
 import * as React from 'react'
 import PropTypes from 'prop-types'
-import Box from '@mui/material/Box'
+import Container from '@mui/material/Container'
 import Typography from '@mui/material/Typography'
 
 function formatCreditCard(creditCard) {
@@ -11,11 +11,11 @@ function formatCreditCard(creditCard) {
 
 const PaymentData = ({ data }) => {
   return (
-    <Box sx={{ margin: 2 }}>
-      <Typography sx={{ fontSize: 14 }}>{formatCreditCard(data?.creditCard)}</Typography>
-      <Typography sx={{ fontSize: 14, textTransform: 'uppercase' }}>{data?.name}</Typography>
-      <Typography sx={{ fontSize: 14 }}>{data?.date}</Typography>
-    </Box>
+    <Container sx={{ margin: 2, minWidth: 318 }}>
+      <Typography sx={{ fontSize: 16 }}>{formatCreditCard(data?.creditCard)}</Typography>
+      <Typography sx={{ fontSize: 16, textTransform: 'uppercase' }}>{data?.name}</Typography>
+      <Typography sx={{ fontSize: 16 }}>{data?.date}</Typography>
+    </Container>
   )
 }
 
