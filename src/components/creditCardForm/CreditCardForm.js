@@ -8,7 +8,7 @@ import store from '../../store'
 
 const CreditCardForm = ({ disableForm }) => {
   return (
-    <Box sx={{ margin: 1, paddingBottom: 2 }}>
+    <Box sx={{ margin: 1, paddingBottom: 2, maxWidth: 625 }}>
       <Grid
         container
         direction="row"

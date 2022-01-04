@@ -13,11 +13,12 @@ const ConfirmationMessage = ({ sucessMessage }) => {
         justifyContent: 'center',
         alignItems: 'center',
         margin: 2,
-        color: '#FF7800'
+        color: '#FF7800',
+        width: '100%'
       }}
     >
       <CheckCircleOutline style={{ fontSize: 40, marginBottom: 3 }} />
-      <Typography sx={{ fontSize: 14, textTransform: 'uppercase', fontWeight: 'bold' }}>
+      <Typography sx={{ fontSize: 18, textTransform: 'uppercase', fontWeight: 'bold' }}>
         {sucessMessage}
       </Typography>
     </Box>
