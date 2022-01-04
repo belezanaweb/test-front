@@ -10,7 +10,22 @@ function purchaseDataReducer(state = {}, action) {
   }
 }
 
-function paymentDataReducer(state = {}, action) {
+function tabsReducer(
+  state = { disabledTab0: false, disabledTab1: true, disabledTab2: true, currentTab: 0 },
+  action
+) {
+  switch (action.type) {
+    case 'setTabs':
+      return {
+        ...state,
+        [action.field]: action.value
+      }
+    default:
+      return state
+  }
+}
+
+function paymentDataReducer(state = { date: '', name: '', creditCard: '', cvv: '' }, action) {
   switch (action.type) {
     case 'setPaymentData':
       return {
@@ -25,7 +40,8 @@ function paymentDataReducer(state = {}, action) {
 const store = createStore(
   combineReducers({
     purchaseData: purchaseDataReducer,
-    paymentData: paymentDataReducer
+    paymentData: paymentDataReducer,
+    tabs: tabsReducer
   })
 )
 

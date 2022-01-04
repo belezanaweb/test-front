@@ -33,8 +33,14 @@ function validateFields(value) {
   )
 }
 
+function goToConfirmation() {
+  store.dispatch({ type: 'setTabs', field: 'disabledTab2', value: false })
+  store.dispatch({ type: 'setTabs', field: 'currentTab', value: 2 })
+}
+
 const Payment = () => {
-  const shouldDisableButton = useSelector((state) => validateFields(state.paymentData))
+  const paymentData = useSelector((state) => state.paymentData)
+  const shouldEditForm = !useSelector((state) => state.tabs.disabledTab2)
 
   return (
     <Box
@@ -45,9 +51,13 @@ const Payment = () => {
         alignItems: 'center'
       }}
     >
-      <Card title="Cartão de crédito" content={<CreditCardForm />} />
+      <Card title="Cartão de crédito" content={<CreditCardForm disableForm={shouldEditForm} />} />
       <PurchaseSummary price={store.getState().purchaseData} />
-      <BigButton buttonText="Finalizar o pedido" disabled={shouldDisableButton} />
+      <BigButton
+        buttonText="Finalizar o pedido"
+        disabled={validateFields(paymentData)}
+        handleClick={goToConfirmation}
+      />
     </Box>
   )
 }

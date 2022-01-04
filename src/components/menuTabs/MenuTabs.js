@@ -4,19 +4,21 @@ import Tabs from '@mui/material/Tabs'
 import Tab from '@mui/material/Tab'
 import Box from '@mui/material/Box'
 import MenuTabsItem from './MenuTabsItem'
+import store from '../../store'
+import { useSelector } from 'react-redux'
 
-const MenuTabs = ({ tab0, tab1, tab2 }) => {
-  const [value, setValue] = React.useState(0)
+const MenuTabs = ({ tab0, tab1, tab2, disabledTabs }) => {
+  const currentTab = useSelector((state) => state.tabs.currentTab)
 
   const handleChange = (event, newValue) => {
-    setValue(newValue)
+    store.dispatch({ type: 'setTabs', field: 'currentTab', value: newValue })
   }
 
   return (
     <Box sx={{ width: '100%', backgroundColor: '#EEE', height: '100vh' }}>
       <Box sx={{ borderBottom: 1, borderColor: 'divider', backgroundColor: '#FFF' }}>
         <Tabs
-          value={value}
+          value={currentTab}
           onChange={handleChange}
           aria-label="basic tabs example"
           indicatorColor="none"
@@ -29,18 +31,18 @@ const MenuTabs = ({ tab0, tab1, tab2 }) => {
             boxShadow: 3
           }}
         >
-          <Tab label="Sacola" />
-          <Tab label="Pagamento" />
-          <Tab label="Confirmação" />
+          <Tab label="Sacola" disabled={disabledTabs.disabledTab0} />
+          <Tab label="Pagamento" disabled={disabledTabs.disabledTab1} />
+          <Tab label="Confirmação" disabled={disabledTabs.disabledTab2} />
         </Tabs>
       </Box>
-      <MenuTabsItem value={value} index={0}>
+      <MenuTabsItem value={currentTab} index={0}>
         {tab0}
       </MenuTabsItem>
-      <MenuTabsItem value={value} index={1}>
+      <MenuTabsItem value={currentTab} index={1}>
         {tab1}
       </MenuTabsItem>
-      <MenuTabsItem value={value} index={2}>
+      <MenuTabsItem value={currentTab} index={2}>
         {tab2}
       </MenuTabsItem>
     </Box>
@@ -50,7 +52,8 @@ const MenuTabs = ({ tab0, tab1, tab2 }) => {
 MenuTabs.propTypes = {
   tab0: PropTypes.node,
   tab1: PropTypes.node,
-  tab2: PropTypes.node
+  tab2: PropTypes.node,
+  disabledTabs: PropTypes.object
 }
 
 export default MenuTabs

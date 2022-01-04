@@ -1,10 +1,10 @@
 import React from 'react'
 import './App.css'
-import Tabs from './pages/tabs/Tabs'
+import Init from './pages/init'
 
 const App = () => (
   <div>
-    <Tabs />
+    <Init />
   </div>
 )
 

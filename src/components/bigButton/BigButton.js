@@ -2,7 +2,7 @@ import * as React from 'react'
 import PropTypes from 'prop-types'
 import Button from '@mui/material/Button'
 
-const BigButton = ({ buttonText, disabled }) => {
+const BigButton = ({ buttonText, disabled, handleClick }) => {
   return (
     <Button
       sx={{
@@ -15,6 +15,9 @@ const BigButton = ({ buttonText, disabled }) => {
       }}
       variant="contained"
       disabled={disabled}
+      onClick={() => {
+        handleClick()
+      }}
     >
       {buttonText}
     </Button>
@@ -23,7 +26,8 @@ const BigButton = ({ buttonText, disabled }) => {
 
 BigButton.propTypes = {
   buttonText: PropTypes.string,
-  disabled: PropTypes.bool
+  disabled: PropTypes.bool,
+  handleClick: PropTypes.func
 }
 
 BigButton.defaultProps = {
