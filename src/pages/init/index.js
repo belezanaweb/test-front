@@ -1,15 +1,18 @@
 import React, { useEffect, useState } from 'react'
 import MenuTabs from '../../components/menuTabs/MenuTabs'
 import Box from '@mui/material/Box'
-import Cart from '../cart/Cart'
-import Payment from '../payment/Payment'
-import Confirmation from '../confirmation/Confirmation'
+import Bag from '../bag'
+import Payment from '../payment'
+import Confirmation from '../confirmation'
 import api from '../../services/api'
 import store from '../../store'
 import { CircularProgress } from '@mui/material'
+import { useSelector } from 'react-redux'
 
-export default function Tabs() {
+export default function Init() {
   const [loading, setLoading] = useState(true)
+
+  const disableTabs = useSelector((state) => state.tabs)
 
   useEffect(() => {
     api.get('5b15c4923100004a006f3c07').then((response) => {
@@ -37,7 +40,12 @@ export default function Tabs() {
   } else {
     return (
       <Box sx={{ width: '100%', backgroundColor: '#EEE' }}>
-        <MenuTabs tab0={<Cart />} tab1={<Payment />} tab2={<Confirmation />} />
+        <MenuTabs
+          disabledTabs={disableTabs}
+          tab0={<Bag />}
+          tab1={<Payment />}
+          tab2={<Confirmation />}
+        />
       </Box>
     )
   }
