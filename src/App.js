@@ -1,11 +1,7 @@
 import React from 'react'
-import './App.css'
-import Init from './pages/init'
 
-const App = () => (
-  <div>
-    <Init />
-  </div>
-)
+import Routers from './routes'
 
-export default App
+export default function App() {
+  return <Routers />
+}

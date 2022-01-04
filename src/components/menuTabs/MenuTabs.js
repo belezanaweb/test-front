@@ -6,12 +6,20 @@ import Box from '@mui/material/Box'
 import MenuTabsItem from './MenuTabsItem'
 import store from '../../store'
 import { useSelector } from 'react-redux'
+import { useNavigate } from 'react-router-dom'
 
 const MenuTabs = ({ tab0, tab1, tab2, disabledTabs }) => {
   const currentTab = useSelector((state) => state.tabs.currentTab)
+  const history = useNavigate()
+  const indexToTab = {
+    0: 'sacola',
+    1: 'pagamento',
+    2: 'confirmacao'
+  }
 
   const handleChange = (event, newValue) => {
     store.dispatch({ type: 'setTabs', field: 'currentTab', value: newValue })
+    history(`/${indexToTab[newValue]}`)
   }
 
   return (
