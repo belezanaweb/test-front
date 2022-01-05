@@ -16,4 +16,4 @@
 - React Router Dom
 
 
-#### desenvolvido por Claudia Pimentel :D
+ #### Made with ♥ by Claudia Pimentel 
