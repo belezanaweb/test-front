@@ -3,7 +3,7 @@ import React from 'react'
 import { Container } from '../styles/globalStyle'
 import { Button, Products, Summary } from '../components'
 
-export function Bag() {
+export function Wallet() {
   return (
     <Container>
       <main>
