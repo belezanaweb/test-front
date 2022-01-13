@@ -40,7 +40,7 @@ export const ProductsItem = styled.div`
   align-items: center;
 `
 
-export const ProductsContentImg = styled.image`
+export const ProductsContentImg = styled.img`
   width: 4rem;
   height: 4rem;
 `
