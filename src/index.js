@@ -2,11 +2,14 @@ import React, { StrictMode } from 'react'
 import ReactDOM from 'react-dom'
 import * as serviceWorker from './serviceWorker'
 
+import { CreateFetchProvider } from './contexts/useFetch'
 import App from './App'
 
 const Strict = () => (
   <StrictMode>
-    <App />
+    <CreateFetchProvider>
+      <App />
+    </CreateFetchProvider>
   </StrictMode>
 )
 

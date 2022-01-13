@@ -1,4 +1,5 @@
 import React from 'react'
+
 import {
   ProductsContainer,
   ProductsContentImg,
@@ -7,25 +8,22 @@ import {
   ProductsItem
 } from './Products.elements'
 
+import { useFetch } from '../../contexts/useFetch'
+
 export default function Products() {
+  const { products } = useFetch()
+
   return (
     <section>
       <ProductsHeaderTitle>PRODUTOS</ProductsHeaderTitle>
       <ProductsContainer>
-        <ProductsItem>
-          <ProductsContentImg />
-          <ProductsContentText>
-            L'Oréal Professionnel Expert Absolut Repair Cortex Lipidium
-          </ProductsContentText>
-          <ProductsContentText bold>R$ 225,90</ProductsContentText>
-        </ProductsItem>
-        <ProductsItem>
-          <ProductsContentImg />
-          <ProductsContentText>
-            L'Oréal Professionnel Expert Absolut Repair Cortex Lipidium
-          </ProductsContentText>
-          <ProductsContentText bold>R$ 225,90</ProductsContentText>
-        </ProductsItem>
+        {products?.map(({ id, name, price, image }) => (
+          <ProductsItem key={id}>
+            <ProductsContentImg src={image} alt={name} />
+            <ProductsContentText>{name}</ProductsContentText>
+            <ProductsContentText bold>{price}</ProductsContentText>
+          </ProductsItem>
+        ))}
       </ProductsContainer>
     </section>
   )

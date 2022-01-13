@@ -1,25 +1,30 @@
 import React from 'react'
+
 import { SummaryContainer, SummaryItem, SummaryText, SummaryTextBold } from './Summary.elements'
 
+import { useFetch } from '../../contexts/useFetch'
+
 export default function Summary() {
+  const { summary } = useFetch()
+
   return (
     <section>
       <SummaryContainer>
         <SummaryItem>
           <SummaryText>PRODUTOS</SummaryText>
-          <SummaryText>R$ 624,80</SummaryText>
+          <SummaryText>{summary.subTotal}</SummaryText>
         </SummaryItem>
         <SummaryItem>
           <SummaryText>FRETE</SummaryText>
-          <SummaryText>R$ 624,80</SummaryText>
+          <SummaryText>{summary.shippingTotal}</SummaryText>
         </SummaryItem>
         <SummaryItem>
           <SummaryText discount>DESCONTO</SummaryText>
-          <SummaryText discount>R$ 624,80</SummaryText>
+          <SummaryText discount> - {summary.discount}</SummaryText>
         </SummaryItem>
         <SummaryItem>
           <SummaryTextBold>TOTAL</SummaryTextBold>
-          <SummaryTextBold>R$ 624,80</SummaryTextBold>
+          <SummaryTextBold>{summary.total}</SummaryTextBold>
         </SummaryItem>
       </SummaryContainer>
     </section>
