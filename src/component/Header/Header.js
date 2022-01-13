@@ -11,11 +11,13 @@ const Header = () => {
 
   return (
     <S.Header>
-      <S.Ul>
-        <S.Li active={returnAtivePath('sacola')}>SACOLA</S.Li>
-        <S.Li active={returnAtivePath('pagamento')}>PAGAMENTO</S.Li>
-        <S.Li active={returnAtivePath('confirmacao')}>CONFIRMAÇÃO</S.Li>
-      </S.Ul>
+      <S.ContainerList>
+        <S.Ul>
+          <S.Li active={returnAtivePath('sacola')}>SACOLA</S.Li>
+          <S.Li active={returnAtivePath('pagamento')}>PAGAMENTO</S.Li>
+          <S.Li active={returnAtivePath('confirmacao')}>CONFIRMAÇÃO</S.Li>
+        </S.Ul>
+      </S.ContainerList>
     </S.Header>
   )
 }

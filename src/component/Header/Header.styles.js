@@ -7,11 +7,23 @@ export const Header = styled.header`
 `
 
 export const Ul = styled.ul`
-  display: flex;
+  max-width: 360px;
+  margin: auto;
+
+  li:nth-child(1) {
+    margin-left: 10px;
+  }
+  li:nth-child(2) {
+    margin-left: 38px;
+    margin-right: 38px;
+  }
+`
+export const ContainerList = styled.div`
   padding: 12px 10px;
 `
+
 export const Li = styled.li`
-  flex: 1;
+  display: inline-block;
   font-size: 13px;
   text-align: center;
   font-weight: bold;
