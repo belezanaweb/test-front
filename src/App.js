@@ -1,8 +1,10 @@
 import React from 'react'
-import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom'
 
 import { Header } from './components'
-import { Bag } from './pages/Bag'
+import { Confirmation } from './pages/Confirmation'
+import { Payment } from './pages/Payment'
+import { Wallet } from './pages/Wallet'
 
 import GlobalStyle from './styles/globalStyle'
 
@@ -11,7 +13,10 @@ const App = () => (
     <GlobalStyle />
     <Header />
     <Routes>
-      <Route path="/" element={<Bag />} />
+      <Route path="/" element={<Navigate replace to="/wallet" />} />
+      <Route path="/wallet" element={<Wallet />} />
+      <Route path="/payment" element={<Payment />} />
+      <Route path="/confirmation" element={<Confirmation />} />
     </Routes>
   </BrowserRouter>
 )
