@@ -6,6 +6,14 @@ export const Box = styled.div`
   background-color: #FFF;
   box-shadow: 1px 1px 5px 0 rgba(0,0,29,0.22);
   margin-bottom: 20px;
+
+  div {
+    margin-bottom: 15px;
+  }
+
+  div:last-child {
+    margin-bottom: 0;
+  }
 }
 `
 export const TitleBox = styled.h2`
