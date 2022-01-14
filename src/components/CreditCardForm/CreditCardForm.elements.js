@@ -46,17 +46,29 @@ export const FormInputLabel = styled.label`
   }
 `
 
+export const FormInputLabelError = styled.span`
+  color: #f30;
+  padding-top: 0.5rem;
+  font-size: 0.75rem;
+`
+
 export const FormInput = styled.input`
   width: 100%;
   font-size: 1rem;
   padding: 0.5rem;
   height: 2.875rem;
   border-radius: 3px;
-  border: 1px solid #e7e7e7;
+  border: 1px solid ${({ error }) => (error ? '#F30' : '#e7e7e7')};
   box-shadow: inset 0 1px 2px 0 rgba(0, 0, 0, 0.2);
 
   &::placeholder {
     color: #e0e7ee;
+  }
+
+  &:focus {
+    outline: none;
+    border-color: #a43287;
+    box-shadow: inset 0 1px 2px 0 rgba(0, 0, 0, 0.2);
   }
 `
 
