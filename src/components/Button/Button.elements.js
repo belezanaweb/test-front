@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 
 export const ButtonStyled = styled.button`
-  cursor: pointer;
+  cursor: ${({ disabled }) => (disabled ? 'not-allowed' : 'pointer')};
   border: none;
   outline: none;
   font-size: 1.25rem;
@@ -16,6 +16,6 @@ export const ButtonStyled = styled.button`
   box-shadow: 0 3px 0 #d45a00, 0 2px 4px rgba(0, 0, 0, 0.25);
 
   &:hover {
-    background-color: #d45a00;
+    background-color: ${({ disabled }) => (disabled ? '#ff6c00' : '#d45a00')};
   }
 `
