@@ -1,4 +1,5 @@
 import React from 'react'
+import { useCreditCardForm } from '../../contexts/useCreditCardForm'
 
 import {
   CreditCardInfoContainer,
@@ -7,13 +8,17 @@ import {
 } from './CreditCardInfo.elements'
 
 export default function CreditCardInfo() {
+  const { creditCardNumber, name, dateValidate } = useCreditCardForm()
+
+  const creditCardNumberFormated = creditCardNumber.slice(-4).padStart(creditCardNumber.length, '*')
+
   return (
     <section>
       <CreditCardInfoTitle />
       <CreditCardInfoContainer>
-        <CreditCardInfoText>****.****.****.1234</CreditCardInfoText>
-        <CreditCardInfoText>JOSÉ DA SILVA</CreditCardInfoText>
-        <CreditCardInfoText>05/2019</CreditCardInfoText>
+        <CreditCardInfoText>{creditCardNumberFormated}</CreditCardInfoText>
+        <CreditCardInfoText>{name}</CreditCardInfoText>
+        <CreditCardInfoText>{dateValidate}</CreditCardInfoText>
       </CreditCardInfoContainer>
     </section>
   )
