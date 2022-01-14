@@ -1,12 +1,19 @@
 import React, { StrictMode } from 'react'
 import ReactDOM from 'react-dom'
-import './index.css'
-import App from './App'
 import * as serviceWorker from './serviceWorker'
+
+import { CreateFetchProvider } from './contexts/useFetch'
+import { CreateCreditCardProvider } from './contexts/useCreditCardForm'
+
+import App from './App'
 
 const Strict = () => (
   <StrictMode>
-    <App />
+    <CreateFetchProvider>
+      <CreateCreditCardProvider>
+        <App />
+      </CreateCreditCardProvider>
+    </CreateFetchProvider>
   </StrictMode>
 )
 
