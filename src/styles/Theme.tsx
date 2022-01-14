@@ -4,7 +4,8 @@ const fontFamily = {
 
 const fontSize = {
   paragraph: '0.8125rem',
-  button: '1.25rem'
+  button: '1.25rem',
+  input: '1rem'
 }
 
 const color = {
@@ -12,6 +13,10 @@ const color = {
     primary: '#777777',
     button: {
       primary: '#FFFFFF'
+    },
+    input: {
+      primary: '#212121',
+      placeholder: '#E0E7EE'
     }
   },
   background: {
@@ -19,6 +24,16 @@ const color = {
     button: {
       primary: '#FF6C00',
       primaryHovered: '#D45A00'
+    },
+    input: {
+      primary: '#FFFFFF'
+    }
+  },
+  border: {
+    input: {
+      primary: '#E7E7E7',
+      focus: '#A43287',
+      error: '#F30f30'
     }
   }
 }
