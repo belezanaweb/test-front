@@ -46,6 +46,5 @@ export const StyledInput =
 
   &:disabled {
     opacity: 0.6;
-    cursor: not-allowed;
   }
 `

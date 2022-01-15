@@ -6,12 +6,14 @@ const fontSize = {
   paragraph: '0.8125rem',
   button: '1.25rem',
   input: '1rem',
-  label: '0.75rem'
+  label: '0.75rem',
+  errorText: '0.75rem'
 }
 
 const color = {
   text: {
     primary: '#777777',
+    error: '#F30F30',
     button: {
       primary: '#FFFFFF'
     },
