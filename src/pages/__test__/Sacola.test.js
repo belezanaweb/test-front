@@ -1,5 +1,5 @@
 import React from 'react'
-import { screen, render, fireEvent, waitFor } from '@testing-library/react'
+import { screen, render, fireEvent } from '@testing-library/react'
 import Sacola from '../Sacola'
 import { DataContext } from '../../context/Context'
 import { MemoryRouter } from 'react-router-dom'
