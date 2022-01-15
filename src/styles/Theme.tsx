@@ -34,6 +34,10 @@ const color = {
     },
     productInfo: {
       primary: '#212121'
+    },
+    purchaseSummary: {
+      primary: '#212122',
+      highlight: '#FF7800'
     }
   },
   background: {
@@ -60,6 +64,9 @@ const color = {
     },
     productInfo: {
       primary: '#EEEEEE'
+    },
+    purchaseSummary: {
+      primary: '#CCCCCC'
     }
   }
 }
