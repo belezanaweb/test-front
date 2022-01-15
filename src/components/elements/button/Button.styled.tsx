@@ -22,7 +22,7 @@ export const StyledButton = styled.button`
   color: ${({ theme }) => theme.color.text.button.primary};
   background-color: ${({ theme }) => theme.color.background.button.primary};
 
-  box-shadow: inset 0 1px 2px 0 rgba(0, 0, 0, 0.2);
+  box-shadow: inset 0 -3px 0 0 #d45a00, 0 2px 4px 0 rgba(0, 0, 0, 0.25);
 
   cursor: pointer;
 
