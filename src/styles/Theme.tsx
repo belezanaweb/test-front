@@ -23,6 +23,10 @@ const color = {
     },
     label: {
       primary: '#CCCCCC'
+    },
+    header: {
+      primary: '#CCCCCC',
+      active: '#FF7800'
     }
   },
   background: {
@@ -32,6 +36,9 @@ const color = {
       primaryHovered: '#D45A00'
     },
     input: {
+      primary: '#FFFFFF'
+    },
+    header: {
       primary: '#FFFFFF'
     }
   },

@@ -24,6 +24,14 @@ const GlobalStyles = createGlobalStyle`
     color: ${({ theme }) => theme.color.text.primary};
     background-color: ${({ theme }) => theme.color.background.primary};
   }
+
+  a {
+    text-decoration: none;
+  }
+
+  a:visited {
+    color: inherit;
+  }
 `
 
 export default GlobalStyles
