@@ -5,7 +5,7 @@ export const StyledPageTitle = styled.h1`
   font-weight: 700;
   line-height: 1.0625;
 
-  color: ${({ theme }) => theme.color.text.pageTitle};
+  color: ${({ theme }) => theme.color.text.pageTitle.primary};
 
   text-transform: uppercase;
 `
