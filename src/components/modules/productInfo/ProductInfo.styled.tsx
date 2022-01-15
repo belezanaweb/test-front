@@ -1,9 +1,9 @@
 import styled from 'styled-components'
 
 export const StyledProductInfo = styled.article`
-  padding: 0.875rem;
+  padding: 0.625rem;
   border-radius: 3px;
-  border: 1px solid ${({ theme }) => theme.color.border.productInfo};
+  border: 1px solid ${({ theme }) => theme.color.border.productInfo.primary};
 
   display: flex;
   flex-direction: row;
