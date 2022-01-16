@@ -12,6 +12,7 @@ type FormControlProps = {
   label: string,
   placeholder?: string,
   disabled?: boolean,
+  mask?: string,
   'data-testid'?: string
 }
 
@@ -20,6 +21,7 @@ function FormControl({
   label,
   placeholder = '',
   disabled = false,
+  mask = undefined,
   ...props
 }: FormControlProps): JSX.Element {
   const [field, meta, helpers] = useField({ name, type: 'text' })
@@ -48,6 +50,7 @@ function FormControl({
         onChange={handleChange}
         disabled={disabled}
         invalid={invalid}
+        mask={mask}
       />
       {invalid ? <ErrorText text={meta.error || ''} /> : null}
     </StyledFormControl>

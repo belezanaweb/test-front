@@ -16,7 +16,7 @@ export const StyledInput =
   width: 100%;
   height: 2.8125rem;
 
-  padding: 0.875rem 5.5rem 0.75rem 0.8125rem;
+  padding: 0.75rem 0.8125rem;
 
   border: 1px solid ${({ theme, invalid }) =>
     invalid ? theme.color.border.input.error : theme.color.border.input.primary};

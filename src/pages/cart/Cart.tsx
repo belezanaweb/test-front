@@ -1,4 +1,5 @@
 import React, { useEffect, useContext, useState } from 'react'
+import { useNavigate } from 'react-router-dom'
 
 import RestClient from '../../api/RestClient'
 
@@ -7,11 +8,15 @@ import Layout from '../../components/layouts/checkout/Checkout'
 import PurchaseProducts from '../../components/modules/purchaseProducts/PurchaseProducts'
 import PurchaseSummary from '../../components/modules/purchaseSummary/PurchaseSummary'
 
+import { PAYMENT_PATH } from '../../constants/paths'
+
 import { PurchaseContext } from '../../contexts/PurchaseContext'
 
 import { StyledCartPage } from './Cart.styled'
 
 function CartPage() {
+  const navigate = useNavigate()
+
   const [loadingProducts, setLoadingProducts] = useState(true)
 
   const { setProducts, setSubTotal, setShipingTotal, setDiscount, setTotal } = useContext(
@@ -39,12 +44,16 @@ function CartPage() {
       })
   }, [setProducts, setSubTotal, setShipingTotal, setDiscount, setTotal])
 
+  function goToPaymentPage() {
+    navigate(PAYMENT_PATH)
+  }
+
   return loadingProducts ? null : (
     <Layout title="Produtos">
       <StyledCartPage>
         <PurchaseProducts />
         <PurchaseSummary />
-        <Button>Seguir para o pagamento</Button>
+        <Button onClick={goToPaymentPage}>Seguir para o pagamento</Button>
       </StyledCartPage>
     </Layout>
   )
