@@ -38,7 +38,11 @@ const color = {
     purchaseSummary: {
       primary: '#212122',
       highlight: '#FF7800'
-    }
+    },
+    paymentInfo: {
+      primary: '#000000'
+    },
+    successMessage: '#FF7800'
   },
   background: {
     primary: '#EEEEEE',

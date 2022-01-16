@@ -6,7 +6,7 @@ import Header from '../../modules/header/Header'
 import { StyledCheckout, StyledMainContent } from './Checkout.styled'
 
 type DefaultLayoutProps = PropsWithChildren<{
-  title: string
+  title?: string
 }>
 
 function CheckoutLayout({ title, children }: DefaultLayoutProps): JSX.Element {
@@ -14,7 +14,7 @@ function CheckoutLayout({ title, children }: DefaultLayoutProps): JSX.Element {
     <StyledCheckout>
       <Header />
       <StyledMainContent>
-        <PageTitle text={title} />
+        {title ? <PageTitle text={title} /> : null}
         {children}
       </StyledMainContent>
     </StyledCheckout>

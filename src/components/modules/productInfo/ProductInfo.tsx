@@ -13,16 +13,19 @@ import {
 type ProductInfoProps = {
   img: string,
   description: string,
-  price: number
+  price: number,
+  showPrice: boolean
 }
 
-function ProductInfo({ img, description, price }: ProductInfoProps): JSX.Element {
+function ProductInfo({ img, description, price, showPrice = true }: ProductInfoProps): JSX.Element {
   return (
     <StyledProductInfo>
       <StyledProductInfoImage src={img} alt="Product image" />
       <StyledProductInfoDescriptionDetails>
         <StyledProductInfoDescription>{description}</StyledProductInfoDescription>
-        <StyledProductInfoPrice>{formatCurrencyBRL(price)}</StyledProductInfoPrice>
+        {showPrice ? (
+          <StyledProductInfoPrice>{formatCurrencyBRL(price)}</StyledProductInfoPrice>
+        ) : null}
       </StyledProductInfoDescriptionDetails>
     </StyledProductInfo>
   )

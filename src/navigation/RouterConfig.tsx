@@ -7,6 +7,7 @@ import PurchaseContextProvider from '../contexts/PurchaseContext'
 
 import CartPage from '../pages/cart/Cart'
 import PaymentPage from '../pages/payment/Payment'
+import PaymentSuccess from '../pages/paymentSuccess/PaymentSuccess'
 
 function RouterConfig(): JSX.Element {
   return (
@@ -14,7 +15,7 @@ function RouterConfig(): JSX.Element {
       <Routes>
         <Route path={CART_PATH} element={<CartPage />} />
         <Route path={PAYMENT_PATH} element={<PaymentPage />} />
-        <Route path={PAYMENT_SUCCESS_PATH} element={<h1>Sucesso</h1>} />
+        <Route path={PAYMENT_SUCCESS_PATH} element={<PaymentSuccess />} />
 
         <Route path="*" element={<Navigate replace to={CART_PATH} />} />
       </Routes>
