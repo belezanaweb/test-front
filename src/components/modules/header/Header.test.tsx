@@ -13,8 +13,8 @@ describe('Header', () => {
       </BrowserRouter>
     )
 
-    const header = getByText(/Sacola/i)
-
-    expect(header).toBeInTheDocument()
+    expect(getByText(/Sacola/i)).toBeInTheDocument()
+    expect(getByText(/Pagamento/i)).toBeInTheDocument()
+    expect(getByText(/Confirmação/i)).toBeInTheDocument()
   })
 })
