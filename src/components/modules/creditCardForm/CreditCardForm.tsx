@@ -18,11 +18,11 @@ function CreditCardForm(): JSX.Element {
       <StyledRow>
         <FormControl
           name="expirationDate"
-          label="Número do cartão"
+          label="Validade (mês/ano)"
           placeholder="__/____"
           mask="99/9999"
         />
-        <FormControl name="cvv" label="Nome do titular" placeholder="___" mask="999" />
+        <FormControl name="cvv" label="CVV" placeholder="___" mask="999" />
       </StyledRow>
     </Card>
   )

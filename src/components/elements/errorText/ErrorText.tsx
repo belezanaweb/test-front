@@ -7,7 +7,7 @@ type ErrorTextProps = {
 }
 
 function ErrorText({ text, ...props }: ErrorTextProps): JSX.Element {
-  return <StyledErrorText {...props}>{text}:</StyledErrorText>
+  return <StyledErrorText {...props}>{text}</StyledErrorText>
 }
 
 export default ErrorText

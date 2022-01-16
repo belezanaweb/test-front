@@ -48,6 +48,7 @@ function FormControl({
         placeholder={placeholder}
         value={field.value}
         onChange={handleChange}
+        onBlur={() => helpers.setTouched(true)}
         disabled={disabled}
         invalid={invalid}
         mask={mask}

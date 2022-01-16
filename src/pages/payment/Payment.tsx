@@ -27,10 +27,32 @@ function PaymentPage() {
   }
 
   const validationSchema = Yup.object().shape({
-    number: Yup.string().required('Campo obrigatório'),
+    number: Yup.string()
+      .required('Campo obrigatório')
+      .test('creditCardNumber', 'Número do cartão inválido', (value) =>
+        /\d{4}\.\d{4}\.\d{4}\.\d{4}/.test(value ?? '')
+      ),
     name: Yup.string().required('Campo obrigatório'),
-    expirationDate: Yup.string().required('Campo obrigatório'),
-    cvv: Yup.string().required('Campo obrigatório')
+    expirationDate: Yup.string()
+      .required('Campo obrigatório')
+      .test('creditCardExpirationDate', 'Data de validade inválida', (value) => {
+        if (!value) return false
+
+        const match = /\d{2}\/\d{4}/.test(value ?? '')
+
+        if (!match) return false
+
+        const [month, year] = value.split('/')
+
+        if (month < '01' || month > '12') return false
+
+        if (year < new Date().getFullYear().toString()) return false
+
+        return true
+      }),
+    cvv: Yup.string()
+      .required('Campo obrigatório')
+      .test('creditCardCVV', 'Cvv inválido', (value) => /\d{3}/.test(value ?? ''))
   })
 
   function handleSubmit(values: FormikValues) {
@@ -50,6 +72,7 @@ function PaymentPage() {
         initialValues={initialValues}
         validationSchema={validationSchema}
         onSubmit={handleSubmit}
+        validateOnBlur
       >
         {({ isValid, initialValues, values }) => (
           <Form>
