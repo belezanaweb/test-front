@@ -1,5 +1,5 @@
 import { Form, Formik, FormikValues } from 'formik'
-import React, { useContext } from 'react'
+import React, { useContext, useEffect } from 'react'
 import { useNavigate } from 'react-router-dom'
 import * as Yup from 'yup'
 
@@ -8,7 +8,7 @@ import Layout from '../../components/layouts/checkout/Checkout'
 import CreditCardForm from '../../components/modules/creditCardForm/CreditCardForm'
 import PurchaseSummary from '../../components/modules/purchaseSummary/PurchaseSummary'
 
-import { PAYMENT_SUCCESS_PATH } from '../../constants/paths'
+import { CART_PATH, PAYMENT_SUCCESS_PATH } from '../../constants/paths'
 
 import { PurchaseContext } from '../../contexts/PurchaseContext'
 
@@ -17,7 +17,7 @@ import { StyledPaymentPage } from './Payment.styled'
 function PaymentPage() {
   const navigate = useNavigate()
 
-  const { setPaymentInfo } = useContext(PurchaseContext)
+  const { products, setPaymentInfo } = useContext(PurchaseContext)
 
   const initialValues = {
     number: '',
@@ -53,6 +53,12 @@ function PaymentPage() {
     cvv: Yup.string()
       .required('Campo obrigatório')
       .test('creditCardCVV', 'Cvv inválido', (value) => /\d{3}/.test(value ?? ''))
+  })
+
+  useEffect(() => {
+    if (!products.length) {
+      navigate(CART_PATH)
+    }
   })
 
   function handleSubmit(values: FormikValues) {
