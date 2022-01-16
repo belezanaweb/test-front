@@ -14,11 +14,11 @@ function PaymentSuccessPage() {
     <Layout>
       <StyledPaymentSuccessPage>
         <SuccessMessage message="Compra efetuada com sucesso" />
-        <section>
+        <section id="paymentSection">
           <PageTitle text="Pagamento" />
           <PaymentInfo />
         </section>
-        <section>
+        <section id="productSection">
           <PageTitle text="Produtos" />
           <PurchaseProducts showPrice={false} />
         </section>

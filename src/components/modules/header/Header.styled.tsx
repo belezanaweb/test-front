@@ -1,8 +1,11 @@
 import styled from 'styled-components'
 
+import { DesktopScreen } from '../../../styles/Helpers'
+
 export const StyledHeader = styled.header`
-  width: 100;
+  width: 100%;
   height: 4.5rem;
+  min-height: 4.5rem;
 
   background-color: ${({ theme }) => theme.color.background.header.primary};
 
@@ -11,10 +14,21 @@ export const StyledHeader = styled.header`
 
 export const StyledHeaderNav = styled.nav`
   width: 100%;
+  max-width: 420px;
   height: 100%;
+  margin: 0 auto;
   display: flex;
   align-items: center;
   justify-content: space-evenly;
+
+  ${DesktopScreen`
+    width: fit-content;
+    max-width: fit-content;
+    justify-content: center;
+    gap: 2rem;
+
+    margin: 0 auto;
+  `}
 `
 
 export const StyledHeaderNavItem =
