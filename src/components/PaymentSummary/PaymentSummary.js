@@ -6,7 +6,11 @@ import Card from '../Card/Card'
 
 const useStyles = createUseStyles({
   paymentSummary: {
-    textTransform: 'uppercase'
+    textTransform: 'uppercase',
+    width: '100%',
+    minWidth: '320px',
+    maxWidth: '600px',
+    margin: '0 auto'
   },
   summaryRow: {
     display: 'flex',

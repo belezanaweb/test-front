@@ -3,7 +3,7 @@ import { createUseStyles } from 'react-jss'
 
 const useStyles = createUseStyles({
   headerTextWrapper: {
-    width: '80%',
+    width: '100%',
     minWidth: '320px',
     maxWidth: '600px',
     minHeight: '20px',

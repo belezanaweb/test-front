@@ -6,7 +6,7 @@ import { currencyFormatter } from '../../utils'
 const useStyles = createUseStyles({
   orderSummary: {
     border: '1px solid #777',
-    width: '80%',
+    width: '100%',
     minWidth: '320px',
     maxWidth: '600px',
     margin: '0 auto',

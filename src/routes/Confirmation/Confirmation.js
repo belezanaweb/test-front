@@ -6,6 +6,9 @@ import { createUseStyles } from 'react-jss'
 import shape from '../../assets/images/Shape.png'
 
 const useStyles = createUseStyles({
+  confirmation: {
+    width: '95%'
+  },
   successTip: {
     textTransform: 'uppercase',
     height: '17px',
@@ -33,7 +36,7 @@ const Confirmation = () => {
   const classes = useStyles()
 
   return (
-    <div data-testid="Confirmation">
+    <div data-testid="Confirmation" className={classes.confirmation}>
       <div className={classes.confirmationCard}>
         <div className={classes.successIcon}>
           <img src={shape} alt="Success" height="15.01px" />

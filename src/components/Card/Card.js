@@ -3,7 +3,6 @@ import { createUseStyles } from 'react-jss'
 
 const useStyles = createUseStyles({
   defaultCard: {
-    width: '80%',
     minWidth: '320px',
     maxWidth: '600px',
     minHeight: '20px',

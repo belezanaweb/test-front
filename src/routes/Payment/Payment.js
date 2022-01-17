@@ -10,7 +10,7 @@ import HeaderText from '../../components/HeaderText/HeaderText'
 
 const useStyles = createUseStyles({
   payment: {
-    width: '100%'
+    width: '95%'
   }
 })
 

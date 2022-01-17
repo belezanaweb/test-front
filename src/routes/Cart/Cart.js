@@ -7,7 +7,7 @@ import ProductList from '../../components/ProductList/ProductList'
 
 const useStyles = createUseStyles({
   cart: {
-    width: '100%'
+    width: '95%'
   }
 })
 
