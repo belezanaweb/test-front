@@ -7,11 +7,13 @@ import { FormContextProvider } from './components/Context/FormContext'
 const useStyles = createUseStyles({
   app: {
     display: 'flex',
+    flexDirection: 'column',
     alignItems: 'center',
-    justifyContent: 'center',
+    justifyContent: 'flex-start',
     width: '100%',
     backgroundColor: '#E7E7E7',
-    minHeight: '100vh'
+    minHeight: '100vh',
+    paddingBottom: '20px'
   }
 })
 
