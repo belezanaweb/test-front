@@ -12,9 +12,7 @@ export const createRoutes = () => (
       <Switch>
         <Route exact path="/" component={Cart} />
         <Route path="/confirmation" component={Confirmation} />
-        <FormContextProvider>
-          <Route path="/payment" component={Payment} />
-        </FormContextProvider>
+        <Route path="/payment" component={Payment} />
       </Switch>
     </Suspense>
   </Router>

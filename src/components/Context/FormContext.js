@@ -10,6 +10,12 @@ export const FormContextProvider = ({ children }) => {
     cvv: false,
     expiryDate: false
   })
+  const [formFieldsValues, setFormFieldsValues] = useState({
+    creditCard: '',
+    holderName: '',
+    cvv: '',
+    expiryDate: ''
+  })
 
   useEffect(() => {
     if (Object.values(formValidFields).every((item) => item === true)) {
@@ -17,12 +23,18 @@ export const FormContextProvider = ({ children }) => {
     } else {
       setIsFormValid(false)
     }
-    console.log(formValidFields)
   }, [formValidFields])
 
   return (
     <FormContext.Provider
-      value={{ isFormValid, setIsFormValid, formValidFields, setFormValidFields }}
+      value={{
+        isFormValid,
+        setIsFormValid,
+        formValidFields,
+        setFormValidFields,
+        formFieldsValues,
+        setFormFieldsValues
+      }}
     >
       {children}
     </FormContext.Provider>

@@ -6,6 +6,7 @@ import Button from '../../components/Button/Button'
 import Card from '../../components/Card/Card'
 import { createUseStyles } from 'react-jss'
 import CreditCardForm from '../../components/CreditCardForm/CreditCardForm'
+import HeaderText from '../../components/HeaderText/HeaderText'
 
 const useStyles = createUseStyles({
   payment: {
@@ -24,6 +25,7 @@ const Payment = () => {
 
   return (
     <div className={classes.payment} data-testid="Payment">
+      <HeaderText>Cartão de Crédito</HeaderText>
       <Card>
         <CreditCardForm></CreditCardForm>
       </Card>

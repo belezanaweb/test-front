@@ -13,7 +13,7 @@ const useStyles = createUseStyles({
     border: 'none',
     padding: '10px',
     boxSizing: 'border-box',
-    margin: '20px auto'
+    margin: '5px auto 20px'
   }
 })
 

@@ -14,9 +14,6 @@ const useStyles = createUseStyles({
   errorInput: {
     borderColor: 'red !important'
   },
-  errorLabel: {
-    color: 'red !important'
-  },
   inputWrapper: {
     marginBottom: '25px',
     '& input': {
@@ -69,11 +66,19 @@ const Input = (props) => {
         cvv: validateCVV(e.target.value),
         default: validateField(e.target.value)
       }
+
       const isValid = roleValidators[role]
+      const fieldName = Object.keys(formContext.formValidFields).find((item) => item === role)
+
       setIsfieldValid(isValid.status)
       setErrorMessage(isValid.errorMessage)
+      formContext.setFormFieldsValues(e.target.value)
+      formContext.setFormFieldsValues({
+        ...formContext.formFieldsValues,
+        [fieldName]: e.target.value
+      })
     },
-    [isFieldValid]
+    [isFieldValid, formContext]
   )
 
   useEffect(() => {
@@ -86,7 +91,7 @@ const Input = (props) => {
 
   return (
     <div className={classes.inputWrapper}>
-      <label className={isFieldValid ? classes.customLabel : classes.errorLabel}>{labelText}</label>
+      <label className={classes.customLabel}>{labelText}</label>
       <input
         className={isFieldValid ? classes.customInput : classes.errorInput}
         type={type}

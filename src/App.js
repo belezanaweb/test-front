@@ -2,6 +2,7 @@ import React, { StrictMode } from 'react'
 import { createUseStyles } from 'react-jss'
 import { createRoutes } from './routes'
 import { CartContextProvider } from './components/Context/Context'
+import { FormContextProvider } from './components/Context/FormContext'
 
 const useStyles = createUseStyles({
   app: {
@@ -21,7 +22,9 @@ const App = () => {
   return (
     <StrictMode>
       <div className={classes.app} data-testid="App">
-        <CartContextProvider>{routes}</CartContextProvider>
+        <CartContextProvider>
+          <FormContextProvider>{routes}</FormContextProvider>
+        </CartContextProvider>
       </div>
     </StrictMode>
   )
