@@ -1,5 +1,6 @@
 import React, { Suspense, lazy } from 'react'
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
+import { FormContextProvider } from './components/Context/FormContext'
 
 const Cart = lazy(() => import('./routes/Cart/Cart'))
 const Payment = lazy(() => import('./routes/Payment/Payment'))
@@ -10,8 +11,10 @@ export const createRoutes = () => (
     <Suspense fallback={<div>Carregando...</div>}>
       <Switch>
         <Route exact path="/" component={Cart} />
-        <Route path="/payment" component={Payment} />
         <Route path="/confirmation" component={Confirmation} />
+        <FormContextProvider>
+          <Route path="/payment" component={Payment} />
+        </FormContextProvider>
       </Switch>
     </Suspense>
   </Router>

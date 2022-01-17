@@ -1,7 +1,36 @@
-import React from 'react'
+import React, { useState, useContext } from 'react'
+import { useHistory } from 'react-router-dom'
+import { FormContext } from '../../components/Context/FormContext'
+import OrderSummary from '../../components/OrderSummary/OrderSummary'
+import Button from '../../components/Button/Button'
+import Card from '../../components/Card/Card'
+import { createUseStyles } from 'react-jss'
+import CreditCardForm from '../../components/CreditCardForm/CreditCardForm'
+
+const useStyles = createUseStyles({
+  payment: {
+    width: '100%'
+  }
+})
 
 const Payment = () => {
-  return <div data-testid="Payment">Payment</div>
+  const history = useHistory()
+  const classes = useStyles()
+  const formContext = useContext(FormContext)
+
+  const handleClick = () => {
+    history.push('/confirmation')
+  }
+
+  return (
+    <div className={classes.payment} data-testid="Payment">
+      <Card>
+        <CreditCardForm></CreditCardForm>
+      </Card>
+      <OrderSummary />
+      <Button text="Finalizar o pedido" disabled={!formContext.isFormValid} click={handleClick} />
+    </div>
+  )
 }
 
 export default Payment

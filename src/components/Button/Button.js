@@ -20,7 +20,12 @@ const useStyles = createUseStyles({
     border: 'none',
     margin: '0 auto',
     '&:hover': {
-      backgroundColor: '#D45A00'
+      backgroundColor: '#D45A00',
+      cursor: 'pointer'
+    },
+    '&:disabled': {
+      opacity: '0.2',
+      cursor: 'default'
     }
   },
   textButton: {
@@ -38,12 +43,17 @@ const useStyles = createUseStyles({
 })
 
 const Button = (props) => {
-  const { text, click } = props
+  const { text, click, disabled } = props
   const classes = useStyles()
 
   return (
     <div className={classes.buttonWrapper}>
-      <button className={classes.defaultButton} onClick={click} data-testid="defaultButton">
+      <button
+        className={classes.defaultButton}
+        onClick={click}
+        data-testid="defaultButton"
+        disabled={disabled}
+      >
         <span className={classes.textButton}>{text}</span>
       </button>
     </div>

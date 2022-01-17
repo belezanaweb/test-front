@@ -7,6 +7,7 @@ const useStyles = createUseStyles({
   orderSummary: {
     border: '1px solid #777',
     width: '80%',
+    minWidth: '320px',
     maxWidth: '600px',
     margin: '0 auto',
     padding: '10px',

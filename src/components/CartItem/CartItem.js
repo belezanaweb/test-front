@@ -4,7 +4,8 @@ import { createUseStyles } from 'react-jss'
 const useStyles = createUseStyles({
   cartItem: {
     display: 'flex',
-    alignItems: 'center'
+    alignItems: 'center',
+    justifyContent: 'space-between'
   },
   cardItemText: {
     fontFamily: 'Helvetica Neue',
@@ -19,19 +20,34 @@ const useStyles = createUseStyles({
     fontWeight: 'bold',
     textAlign: 'right',
     width: '100%'
+  },
+  withWrapper: {
+    display: 'flex',
+    alignItems: 'flex-start',
+    border: 'solid #EEE 1px',
+    borderRadius: '3px',
+    boxSizing: 'border-box',
+    flexWrap: 'nowrap',
+    flexDirection: 'row',
+    marginBottom: '15px',
+    justifyContent: 'space-between',
+    padding: '0 10px'
+  },
+  productInfo: {
+    flex: '1'
   }
 })
 
 const CartItem = (props) => {
-  const { imageSrc, name, price } = props
+  const { imageSrc, name, price, withWrapper } = props
   const classes = useStyles()
 
   return (
-    <div className={classes.cartItem}>
+    <div className={(classes.cartItem, classes.withWrapper)}>
       <div>
         <img src={imageSrc} alt={name}></img>
       </div>
-      <div>
+      <div className={classes.productInfo}>
         <p className={classes.cardItemText}>{name}</p>
         <p className={classes.cardItemPrice}>{price}</p>
       </div>

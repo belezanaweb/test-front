@@ -18,7 +18,6 @@ const useStyles = createUseStyles({
 })
 
 const Card = (props) => {
-  const { text, click } = props
   const classes = useStyles()
 
   return <div className={classes.defaultCard}>{props.children}</div>

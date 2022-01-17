@@ -8,7 +8,6 @@ export const CartContextProvider = ({ children }) => {
 
   const getCartProductsData = async () => {
     const cartData = await getCartProducts()
-    console.log(cartData)
     setCartProductsData(cartData)
   }
 
