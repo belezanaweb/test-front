@@ -33,10 +33,6 @@ const PaymentSummary = () => {
   const classes = useStyles()
   const formContext = useContext(FormContext)
 
-  useEffect(() => {
-    console.log(formContext.formFieldsValues)
-  }, [formContext.formFieldsValues])
-
   const renderSummaryRows = () => {
     return (
       <>

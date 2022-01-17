@@ -33,7 +33,6 @@ const useStyles = createUseStyles({
 const Steps = () => {
   const classes = useStyles()
   let location = useLocation()
-  console.log(location.pathname)
   return (
     <div className={classes.navbar}>
       <li>
