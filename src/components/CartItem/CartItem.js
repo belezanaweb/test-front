@@ -39,7 +39,7 @@ const useStyles = createUseStyles({
 })
 
 const CartItem = (props) => {
-  const { imageSrc, name, price, withWrapper } = props
+  const { imageSrc, name, price } = props
   const classes = useStyles()
 
   return (

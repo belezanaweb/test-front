@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React from 'react'
 import { createUseStyles } from 'react-jss'
 import { useLocation } from 'react-router-dom'
 

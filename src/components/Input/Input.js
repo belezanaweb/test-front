@@ -78,7 +78,7 @@ const Input = (props) => {
         [fieldName]: e.target.value
       })
     },
-    [isFieldValid, formContext]
+    [formContext]
   )
 
   useEffect(() => {
@@ -87,7 +87,7 @@ const Input = (props) => {
       ...formContext.formValidFields,
       [fieldName]: isFieldValid
     })
-  }, [isFieldValid])
+  }, [isFieldValid, formContext, role])
 
   return (
     <div className={classes.inputWrapper}>

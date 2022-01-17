@@ -1,4 +1,4 @@
-import React, { useState, useContext } from 'react'
+import React, { useContext } from 'react'
 import { useHistory } from 'react-router-dom'
 import { FormContext } from '../../components/Context/FormContext'
 import OrderSummary from '../../components/OrderSummary/OrderSummary'

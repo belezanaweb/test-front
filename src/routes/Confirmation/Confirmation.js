@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React from 'react'
 import OrderSummary from '../../components/OrderSummary/OrderSummary'
 import ProductList from '../../components/ProductList/ProductList'
 import PaymentSummary from '../../components/PaymentSummary/PaymentSummary'

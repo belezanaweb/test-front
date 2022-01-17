@@ -1,4 +1,4 @@
-import React, { useContext, useEffect } from 'react'
+import React, { useContext } from 'react'
 import { createUseStyles } from 'react-jss'
 import { FormContext } from '../../components/Context/FormContext'
 import HeaderText from '../HeaderText/HeaderText'

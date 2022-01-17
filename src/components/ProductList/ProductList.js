@@ -16,7 +16,7 @@ const ProductList = (props) => {
             name={item.product.name}
             imageSrc={item.product.imageObjects[0].small}
             price={
-              listType == 'cartScreen'
+              listType === 'cartScreen'
                 ? currencyFormatter.format(item.product.priceSpecification.price)
                 : ''
             }
@@ -31,7 +31,7 @@ const ProductList = (props) => {
         </div>
       )
     }
-  }, [cartContext])
+  }, [cartContext, listType])
 
   return (
     <>

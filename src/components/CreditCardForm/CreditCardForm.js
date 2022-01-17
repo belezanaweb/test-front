@@ -26,9 +26,8 @@ const useStyles = createUseStyles({
   }
 })
 
-const CreditCardForm = (props) => {
+const CreditCardForm = () => {
   const classes = useStyles()
-  const { disableSubmit } = props
 
   return (
     <div className={classes.creditCardForm} data-testid="CreditCardForm">
