@@ -1,0 +1,19 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly 1`] = `
+<div
+  className="inputWrapper-0-2-2"
+>
+  <label />
+  <input
+    className="errorInput-0-2-1"
+    onChange={[Function]}
+    type="text"
+  />
+  <p
+    className="errorMessage-0-2-3"
+  >
+    
+  </p>
+</div>
+`;

@@ -10,7 +10,7 @@ const ProductList = (props) => {
   const { listType } = props
   const renderProductList = useMemo(() => {
     if (Object.keys(cartContext.cartProductsData).length) {
-      return cartContext.cartProductsData.data.items.map((item, index) => {
+      return cartContext.cartProductsData.items.map((item, index) => {
         return (
           <CartItem
             name={item.product.name}

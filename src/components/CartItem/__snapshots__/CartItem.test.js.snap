@@ -1,0 +1,21 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly 1`] = `
+<div
+  className="withWrapper-0-2-4"
+>
+  <div>
+    <img />
+  </div>
+  <div
+    className="productInfo-0-2-5"
+  >
+    <p
+      className="cardItemText-0-2-2"
+    />
+    <p
+      className="cardItemPrice-0-2-3"
+    />
+  </div>
+</div>
+`;

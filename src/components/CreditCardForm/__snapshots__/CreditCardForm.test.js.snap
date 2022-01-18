@@ -1,0 +1,83 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly 1`] = `
+<div
+  className="creditCardForm-0-2-1"
+  data-testid="CreditCardForm"
+>
+  <form>
+    <div
+      className="inputWrapper-0-2-4"
+    >
+      <label>
+        Número do Cartão
+      </label>
+      <input
+        className="errorInput-0-2-3"
+        onChange={[Function]}
+        type="number"
+      />
+      <p
+        className="errorMessage-0-2-5"
+      >
+        
+      </p>
+    </div>
+    <div
+      className="inputWrapper-0-2-4"
+    >
+      <label>
+        Nome do Titular
+      </label>
+      <input
+        className="errorInput-0-2-3"
+        onChange={[Function]}
+        type="text"
+      />
+      <p
+        className="errorMessage-0-2-5"
+      >
+        
+      </p>
+    </div>
+    <div
+      className="doubleColumn-0-2-2"
+    >
+      <div
+        className="inputWrapper-0-2-4"
+      >
+        <label>
+          CVV
+        </label>
+        <input
+          className="errorInput-0-2-3"
+          onChange={[Function]}
+          type="number"
+        />
+        <p
+          className="errorMessage-0-2-5"
+        >
+          
+        </p>
+      </div>
+      <div
+        className="inputWrapper-0-2-4"
+      >
+        <label>
+          Validade (mês/ano)
+        </label>
+        <input
+          className="errorInput-0-2-3"
+          onChange={[Function]}
+          type="text"
+        />
+        <p
+          className="errorMessage-0-2-5"
+        >
+          
+        </p>
+      </div>
+    </div>
+  </form>
+</div>
+`;

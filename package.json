@@ -3,11 +3,12 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "6": "0.0.1",
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.3.2",
     "@testing-library/user-event": "^13.5.0",
     "axios": "^0.23.0",
+    "jest": "^24.9.0",
+    "jest-cli": "^24.9.0",
     "jss-preset-default": "^10.8.2",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
@@ -21,6 +22,23 @@
     "test": "react-scripts test",
     "coverage": "react-scripts test --coverage --watchAll=false",
     "eject": "react-scripts eject"
+  },
+  "jest": {
+    "collectCoverageFrom": [
+      "src/**/*.js"
+    ],
+    "coverageThreshold": {
+      "global": {
+        "branches": 90,
+        "functions": 90,
+        "lines": 90,
+        "statements": 90
+      }
+    },
+    "coverageReporters": [
+      "html",
+      "text"
+    ]
   },
   "eslintConfig": {
     "extends": "react-app"

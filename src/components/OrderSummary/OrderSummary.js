@@ -42,19 +42,19 @@ const OrderSummary = () => {
       <>
         <div className={classes.summaryRow}>
           <span>Produtos</span>
-          <span>{currencyFormatter.format(cartContext.cartProductsData.data?.subTotal)}</span>
+          <span>{currencyFormatter.format(cartContext.cartProductsData?.subTotal)}</span>
         </div>
         <div className={classes.summaryRow}>
           <span>Frete</span>
-          <span>{currencyFormatter.format(cartContext.cartProductsData.data?.shippingTotal)}</span>
+          <span>{currencyFormatter.format(cartContext.cartProductsData?.shippingTotal)}</span>
         </div>
         <div className={`${classes.summaryRow} ${classes.discount}`}>
           <span>Desconto</span>
-          <span>- {currencyFormatter.format(cartContext.cartProductsData.data?.discount)}</span>
+          <span>- {currencyFormatter.format(cartContext.cartProductsData?.discount)}</span>
         </div>
         <div className={`${classes.summaryRow} ${classes.total}`}>
           <span>Total</span>
-          <span>{currencyFormatter.format(cartContext.cartProductsData.data?.total)}</span>
+          <span>{currencyFormatter.format(cartContext.cartProductsData?.total)}</span>
         </div>
       </>
     )
@@ -62,7 +62,7 @@ const OrderSummary = () => {
 
   return (
     <div className={classes.orderSummary}>
-      {cartContext.cartProductsData.data && renderSummaryRows()}
+      {cartContext.cartProductsData && renderSummaryRows()}
     </div>
   )
 }
