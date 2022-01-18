@@ -15,6 +15,7 @@ const Sacola = () => {
     getData().then((res) => {
       setData(res.data)
     })
+    // eslint-disable-next-line
   }, [])
   return (
     <ContainerPage>

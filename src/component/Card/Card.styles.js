@@ -7,8 +7,8 @@ export const CardContainer = styled.div`
   display: flex;
 `
 export const Image = styled.img`
-  width: 65px;
-  height: 65px;
+  width: ${({ noPrice }) => (noPrice ? '42px' : '65px')};
+  height: ${({ noPrice }) => (noPrice ? '42px' : '65px')};
   margin-right: 10px;
 `
 
