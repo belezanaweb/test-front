@@ -6,7 +6,8 @@ import Input from '../Input/Input'
 import * as S from './PaymentData.styles'
 
 const PaymentData = () => {
-  const [data, setData] = useContext(DataContext)
+  const contextResult = useContext(DataContext)
+  const setData = contextResult[1]
   const navigate = useNavigate()
   const {
     register,
@@ -29,8 +30,6 @@ const PaymentData = () => {
 
   return (
     <form onSubmit={handleSubmit(onSubmit)} id="creditForm">
-      {console.log('errors', errors)}
-
       <Input
         label="Número do cartão:"
         id="number"
@@ -47,7 +46,10 @@ const PaymentData = () => {
         error={errors?.name}
         label="Nome do Titular:"
         placeholder="Como no cartão"
-        {...register('name', { required: 'This input is required' })}
+        {...register('name', {
+          required: 'This input is required',
+          pattern: { value: /^[a-zA-Z\s]*$/, message: 'Invalid character' }
+        })}
       />
       <S.ContainerBottom>
         <S.DateContainer>
