@@ -1,8 +1,9 @@
 import React from 'react'
+import { useCheckoutContext } from '../../contexts/Checkout'
+
 import Navbar from '../../components/Navbar'
 import ProductItem from '../../components/ProductItem'
 import ProductList from '../../components/ProductList'
-import { useCheckoutContext } from '../../contexts/Checkout'
 import CardContainer from '../../components/CardContainer'
 import Container from '../../components/Container'
 import Button from '../../components/Button'
