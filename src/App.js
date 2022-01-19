@@ -3,7 +3,7 @@ import { Routes, Route, Navigate } from 'react-router-dom'
 import { CheckoutProvider } from './contexts/Checkout'
 import CartPage from './pages/CartPage'
 import PaymentPage from './pages/PaymentPage'
-// import SuccessPage from './pages/SuccessPage'
+import SuccessPage from './pages/SuccessPage'
 
 const App = () => {
   return (
@@ -13,7 +13,7 @@ const App = () => {
           <Route path="/cart" element={<CartPage />} />
           <Route path="/" element={<Navigate replace to="/cart" />} />
           <Route path="/payment" element={<PaymentPage />} />
-          {/* <Route path="/success" element={<SuccessPage />} /> */}
+          <Route path="/success" element={<SuccessPage />} />
         </Routes>
       </CheckoutProvider>
     </>
