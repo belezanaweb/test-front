@@ -28,11 +28,12 @@ export const CheckoutProvider = ({ children }) => {
   const [products, setProducts] = useState([])
   const [isLoading, setIsLoading] = useState(true)
   const [prices, setPrices] = useState({})
-  const [isValidated, setIsValidated] = useState(false)
-  const [paymentInfo, setPaymentInfo] = useState({
-    cardName: '',
+  const [isConfirmed, setIsConfirmed] = useState(false)
+  const [paymentData, setPaymentData] = useState({
     cardNumber: '',
-    cardDate: ''
+    cardName: '',
+    cardDate: '',
+    cardCvv: ''
   })
 
   useEffect(() => {
@@ -48,13 +49,13 @@ export const CheckoutProvider = ({ children }) => {
   }, [])
 
   const store = {
+    isLoading,
     products,
     prices,
-    isLoading,
-    isValidated,
-    setIsValidated,
-    setPaymentInfo,
-    paymentInfo
+    isConfirmed,
+    setIsConfirmed,
+    paymentData,
+    setPaymentData
   }
 
   return <CheckoutContext.Provider value={store}>{children}</CheckoutContext.Provider>

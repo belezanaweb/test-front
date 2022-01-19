@@ -4,6 +4,9 @@ import Navbar from '../../components/Navbar'
 import Button from '../../components/Button'
 import Inputs from '../../components/Inputs'
 import ProductList from '../../components/ProductList'
+import * as S from './styled'
+import CardContainer from '../../components/CardContainer'
+import Container from '../../components/Container'
 
 const PaymentPage = () => {
   const [data, setData] = useState({
@@ -30,9 +33,21 @@ const PaymentPage = () => {
     prices,
     isConfirmed,
     setIsConfirmed,
-    setPaymentInfo,
-    paymentInfo
+    setPaymentData,
+    paymentData
   } = useCheckoutContext()
+
+  useEffect(() => {
+    const { cardNumber, cardDate, cardName, cardCvv } = data
+    const items = [cardNumber, cardDate, cardName, cardCvv]
+
+    const checkout = items.every((currentInput) => currentInput.value !== '' && currentInput.valid)
+    if (checkout) {
+      setIsConfirmed(true)
+    } else {
+      setIsConfirmed(false)
+    }
+  })
 
   /* dados do cartão de crédito */
 
@@ -76,11 +91,11 @@ const PaymentPage = () => {
 
   const handleChange = useCallback(
     (type, value) => {
-      const targetValue = value.target.value
-      const newValue = targetValue.replaceAll('.', '')
+      const inputValue = value.target.value
+      const userValue = inputValue.replaceAll('.', '')
 
       const valid = require('card-validator')
-      const valCardNumber = (number) => {
+      const cardNumberValid = (number) => {
         const numberValidation = valid.number(number)
 
         if (numberValidation.isValid) {
@@ -90,7 +105,7 @@ const PaymentPage = () => {
         }
       }
 
-      const valCardName = (name) => {
+      const cardNameValid = (name) => {
         const cardholderName = valid.cardholderName(name)
 
         if (cardholderName.isValid && name.length > 1) {
@@ -100,7 +115,7 @@ const PaymentPage = () => {
         }
       }
 
-      const valCardDate = (date) => {
+      const cardDateValid = (date) => {
         const expirationDate = valid.expirationDate(date)
 
         if (expirationDate.isValid) {
@@ -110,7 +125,7 @@ const PaymentPage = () => {
         }
       }
 
-      const valCvv = (cvv) => {
+      const cardCvvValid = (cvv) => {
         const cvvValitation = valid.cvv(cvv)
 
         if (cvvValitation.isValid) {
@@ -122,74 +137,66 @@ const PaymentPage = () => {
 
       switch (type) {
         case 'cardNumber':
-          switchValidation(type, targetValue, valCardNumber(newValue))
+          switchValidation(type, inputValue, cardNumberValid(userValue))
           break
         case 'cardName':
-          switchValidation(type, targetValue, valCardName(targetValue))
+          switchValidation(type, inputValue, cardNameValid(inputValue))
           break
         case 'cardDate':
-          switchValidation(type, targetValue, valCardDate(targetValue))
+          switchValidation(type, inputValue, cardDateValid(inputValue))
           break
         case 'cardCvv':
-          switchValidation(type, targetValue, valCvv(targetValue))
+          switchValidation(type, inputValue, cardCvvValid(inputValue))
           break
         default:
           return
       }
 
-      setPaymentInfo({
-        ...paymentInfo,
-        [type]: targetValue
+      setPaymentData({
+        ...paymentData,
+        [type]: inputValue
       })
     },
-    [paymentInfo, setPaymentInfo, switchValidation]
+    [paymentData, setPaymentData, switchValidation]
   )
-
-  useEffect(() => {
-    const { cardNumber, cardDate, cardName, cardCvv } = data
-    const items = [cardNumber, cardDate, cardName, cardCvv]
-
-    const checkout = items.every((currentInput) => currentInput.value !== '' && currentInput.valid)
-    if (checkout) {
-      setIsConfirmed(true)
-    } else {
-      setIsConfirmed(false)
-    }
-  })
 
   return (
     <>
       {isLoading}
       <Navbar step={1} />
       {!isLoading && (
-        <div>
+        <Container>
           <>
-            <div>
-              <Inputs
-                {...cardNumber}
-                value={data.cardNumber.value}
-                onChange={(event) => handleChange('cardNumber', event)}
-                valid={data.cardNumber.valid}
-              />
-              <Inputs
-                {...cardName}
-                value={data.cardName.value}
-                onChange={(event) => handleChange('cardName', event)}
-                valid={data.cardName.valid}
-              />
-              <Inputs
-                {...cardDate}
-                value={data.cardDate.value}
-                onChange={(event) => handleChange('cardDate', event)}
-                valid={data.cardDate.valid}
-              />
-              <Inputs
-                {...cardCvv}
-                value={data.cardCvv.value}
-                onChange={(event) => handleChange('cardCvv,', event)}
-                valid={data.cardCvv.valid}
-              />
-            </div>
+            <CardContainer title={creditCardData.containerCreditTitle}>
+              <S.PaymentCard>
+                <Inputs
+                  {...cardNumber}
+                  value={data.cardNumber.value}
+                  onChange={(event) => handleChange('cardNumber', event)}
+                  valid={data.cardNumber.valid}
+                />
+                <Inputs
+                  {...cardName}
+                  value={data.cardName.value}
+                  onChange={(event) => handleChange('cardName', event)}
+                  valid={data.cardName.valid}
+                />
+                <S.GridForm>
+                  <Inputs
+                    {...cardDate}
+                    value={data.cardDate.value}
+                    onChange={(event) => handleChange('cardDate', event)}
+                    valid={data.cardDate.valid}
+                  />
+                  <Inputs
+                    {...cardCvv}
+                    value={data.cardCvv.value}
+                    onChange={(event) => handleChange('cardCvv,', event)}
+                    valid={data.cardCvv.valid}
+                  />
+                </S.GridForm>
+              </S.PaymentCard>
+            </CardContainer>
             <ProductList prices={prices} />
             <Button
               text={creditCardData.buttonText}
@@ -198,7 +205,7 @@ const PaymentPage = () => {
               disabled={!isConfirmed}
             />
           </>
-        </div>
+        </Container>
       )}
     </>
   )
