@@ -10,6 +10,7 @@ const ProductItem = ({
   },
   hideProductPrice
 }) => {
+  //funcao para conversar de dólares em reais
   const convertToReais = (value) => {
     return Number(value).toLocaleString('pt-BR', {
       minimumFractionDigits: 2,

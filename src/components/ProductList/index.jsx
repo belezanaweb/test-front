@@ -2,6 +2,7 @@ import React from 'react'
 import * as S from './styled'
 
 const ProductList = ({ prices: { subTotal, shippingTotal, discount, total } }) => {
+  //funcao para conversar de dólares em reais
   const convertToReais = (value) => {
     return Number(value).toLocaleString('pt-BR', {
       minimumFractionDigits: 2,

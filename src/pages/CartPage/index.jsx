@@ -27,7 +27,6 @@ const CartPage = () => {
                 <ProductItem key={i} product={currentProduct.product} />
               ))}
             </CardContainer>
-
             <div>
               <ProductList prices={prices} />
               <Button text={cartPageText.buttonText} step="1" path="/payment" />
