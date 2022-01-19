@@ -37,8 +37,8 @@ const PaymentData = () => {
         mask="9999.9999.9999.9999"
         error={errors?.number}
         {...register('number', {
-          required: 'This input is required',
-          pattern: { value: /\d\d\d\d.\d\d\d\d.\d\d\d\d.\d\d\d\d/g, message: 'Invalid number' }
+          required: 'Campo obrigatório',
+          pattern: { value: /\d\d\d\d.\d\d\d\d.\d\d\d\d.\d\d\d\d/g, message: 'Número inválido' }
         })}
       />
       <Input
@@ -47,8 +47,8 @@ const PaymentData = () => {
         label="Nome do Titular:"
         placeholder="Como no cartão"
         {...register('name', {
-          required: 'This input is required',
-          pattern: { value: /^[a-zA-Z\s]*$/, message: 'Invalid character' }
+          required: 'Campo obrigatório',
+          pattern: { value: /^[a-zA-Z\s]*$/, message: 'Apenas letras são permitidas' }
         })}
       />
       <S.ContainerBottom>
@@ -60,8 +60,8 @@ const PaymentData = () => {
             mask="99/9999"
             placeholder="__/____"
             {...register('date', {
-              required: 'This input is required',
-              pattern: { value: /\d\d\/\d\d\d\d/g, message: 'Invalid date' }
+              required: 'Campo obrigatório',
+              pattern: { value: /\d\d\/\d\d\d\d/g, message: 'Data inválida' }
             })}
           />
         </S.DateContainer>
@@ -73,8 +73,8 @@ const PaymentData = () => {
             mask="9999"
             placeholder="___"
             {...register('cvv', {
-              required: 'This input is required',
-              pattern: { value: /\d\d\d\d/g, message: 'Invalid cvv' }
+              required: 'Campo obrigatório',
+              pattern: { value: /\d\d\d\d/g, message: 'Cvv inválido' }
             })}
           />
         </S.CvvContainer>
