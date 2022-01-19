@@ -1,25 +1,25 @@
-import React from 'react'
-import iconImg from '../../assets/icon/confirmation.svg'
-import * as S from './styled'
+import styled from 'styled-components'
 
-const PaymentConfirmation = ({ status }) => {
-  const successPaymentInfo = {
-    success: {
-      text: 'Compra efetuada com sucesso',
-      color: '#FF7800',
-      icon: iconImg
-    }
-  }
+/* texto de confirmacao de pagamento */
+export const PaymentConfirmationText = styled.p`
+  text-transform: uppercase;
+  color: ${({ color }) => color};
+  font-size: 14px;
+  font-weight: 700;
+`
+/* icone de confirmacao de pagamento */
+export const PaymentConfirmationImage = styled.img`
+  margin: 5px 0 10px 0;
+  font-weight: 700;
+`
 
-  const { icon, text, color } = successPaymentInfo[status]
+export const PaymentConfirmationContainerImage = styled.div`
+  width: 39.51px;
+`
 
-  return (
-    <>
-      <S.PaymentConfirmationImage src={icon} />
-
-      <S.PaymentConfirmationText color={color}>{text}</S.PaymentConfirmationText>
-    </>
-  )
-}
-
-export default PaymentConfirmation
+export const PaymentConfirmationContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 20px;
+`
