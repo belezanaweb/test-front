@@ -1,6 +1,7 @@
 import React from 'react'
 import * as S from './styled'
 
+/* cada item do carrinho */
 const ProductItem = ({
   product: {
     productName,
