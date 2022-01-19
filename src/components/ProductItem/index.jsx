@@ -9,11 +9,19 @@ const ProductItem = ({
   },
   hideProductPrice
 }) => {
+  const convertToReais = (value) => {
+    return Number(value).toLocaleString('pt-BR', {
+      minimumFractionDigits: 2,
+      style: 'currency',
+      currency: 'BRL'
+    })
+  }
+
   return (
     <S.ProductItemContainer>
       <S.ProductItemImageContainer hidePrice={hideProductPrice}>
         <S.ProductItemSource
-          media="(min-width: 650px)"
+          media="min-width: 600px"
           srcSet={productImage[0].medium}
           alt={productName}
         />
@@ -21,7 +29,9 @@ const ProductItem = ({
       </S.ProductItemImageContainer>
       <S.ProductItemText>
         <S.ProductItemName>{productName}</S.ProductItemName>
-        {!hideProductPrice && <S.ProductItemPrice>{productPrice}</S.ProductItemPrice>}
+        {!hideProductPrice && (
+          <S.ProductItemPrice>{convertToReais(productPrice)}</S.ProductItemPrice>
+        )}
       </S.ProductItemText>
     </S.ProductItemContainer>
   )
