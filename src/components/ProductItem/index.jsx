@@ -4,11 +4,11 @@ import * as S from './styled'
 /* cada item do carrinho */
 const ProductItem = ({
   product: {
-    productName,
-    productImage,
-    priceSpecification: { productPrice }
+    name,
+    imageObjects,
+    priceSpecification: { price }
   },
-  hideProductPrice
+  hidePrice
 }) => {
   //funcao para conversar de dólares em reais
   const convertToReais = (value) => {
@@ -21,19 +21,13 @@ const ProductItem = ({
 
   return (
     <S.ProductItemContainer>
-      <S.ProductItemImageContainer hidePrice={hideProductPrice}>
-        <S.ProductItemSource
-          media="min-width: 600px"
-          srcSet={productImage[0].medium}
-          alt={productName}
-        />
-        <S.ProductItemImage src={productImage[0].thumbnail} alt={productName} />
+      <S.ProductItemImageContainer hidePrice={hidePrice}>
+        <S.ProductItemSource media="min-width: 650px" srcSet={imageObjects[0].medium} alt={name} />
+        <S.ProductItemImage src={imageObjects[0].thumbnail} alt={name} />
       </S.ProductItemImageContainer>
       <S.ProductItemText>
-        <S.ProductItemName>{productName}</S.ProductItemName>
-        {!hideProductPrice && (
-          <S.ProductItemPrice>{convertToReais(productPrice)}</S.ProductItemPrice>
-        )}
+        <S.ProductItemName>{name}</S.ProductItemName>
+        {!hidePrice && <S.ProductItemPrice>{convertToReais(price)}</S.ProductItemPrice>}
       </S.ProductItemText>
     </S.ProductItemContainer>
   )
