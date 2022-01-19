@@ -6,7 +6,7 @@ export const CheckoutContext = createContext()
 export const useCheckoutContext = () => {
   const context = useContext(CheckoutContext)
   if (context === undefined) {
-    throw new Error('useCheckoutContext must be used within a CheckoutProvider')
+    throw new Error('useCheckoutContext must be used with a CheckoutProvider')
   }
   return context
 }
