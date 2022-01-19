@@ -1,8 +1,16 @@
 import styled from 'styled-components'
 
 export const DateContainer = styled.div`
-  max-width: 160px;
+  flex: 1;
   margin-right: 20px;
+
+  @media screen and (max-width: 1023px) {
+    max-width: 160px;
+  }
+`
+
+export const CvvContainer = styled.div`
+  flex: 1;
 `
 
 export const ContainerBottom = styled.div`

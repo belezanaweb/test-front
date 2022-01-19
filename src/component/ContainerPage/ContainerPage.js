@@ -1,10 +1,10 @@
 import React from 'react'
 import * as S from './ContainerPage.styles'
 
-const ContainerPage = ({ children }) => {
+const ContainerPage = ({ children, deskFlex }) => {
   return (
     <S.Container>
-      <S.InnerContainer>{children}</S.InnerContainer>
+      <S.InnerContainer deskFlex={deskFlex}>{children}</S.InnerContainer>
     </S.Container>
   )
 }

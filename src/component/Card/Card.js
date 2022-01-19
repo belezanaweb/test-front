@@ -4,7 +4,11 @@ import * as S from './Card.styles'
 const Card = ({ price, name, image, noPrice }) => {
   return (
     <S.CardContainer>
-      <S.Image noPrice={noPrice} alt="produto" src={image} />
+      <picture>
+        <S.Source srcset={image.small} alt="produto" media="(max-width: 1023px)" />
+        <S.Image noPrice={noPrice} alt="produto" src={image.large} />
+      </picture>
+
       <S.ContentContainer>
         <S.NameProduct>{name}</S.NameProduct>
         {!noPrice && (

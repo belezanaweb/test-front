@@ -17,8 +17,12 @@ export const Box = styled.div`
 }
 `
 export const TitleBox = styled.h2`
-  font-size: 14px;
+  font-size: 16px;
   padding-left: 10px;
   color: #999;
   margin-bottom: 5px;
+
+  @media screen and (max-width: 1023px) {
+    font-size: 14px;
+  }
 `

@@ -7,6 +7,11 @@ export const Container = styled.div`
 `
 
 export const InnerContainer = styled.div`
-  max-width: 360px;
-  margin: auto;
+  max-width: inherit;
+  ${({ deskFlex }) => (deskFlex ? 'display: flex; justify-content: space-around;' : '')}
+  @media screen and (max-width: 1023px) {
+    display: inherit;
+    max-width: 360px;
+    margin: auto;
+  }
 `

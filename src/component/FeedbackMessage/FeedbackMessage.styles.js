@@ -10,11 +10,15 @@ export const ImageCheck = styled.img`
   position: absolute;
 `
 export const Message = styled.h3`
+  font-size: 16px;
   color: #ff7800;
-  font-size: 14px;
   font-weight: 700;
   line-height: 17px;
   text-align: center;
+
+  @media screen and (max-width: 1023px) {
+    font-size: 14px;
+  }
 `
 
 export const ImageContainer = styled.div`

@@ -65,7 +65,7 @@ const PaymentData = () => {
             })}
           />
         </S.DateContainer>
-        <div>
+        <S.CvvContainer>
           <Input
             id="cvv"
             error={errors?.cvv}
@@ -77,7 +77,7 @@ const PaymentData = () => {
               pattern: { value: /\d\d\d\d/g, message: 'Invalid cvv' }
             })}
           />
-        </div>
+        </S.CvvContainer>
       </S.ContainerBottom>
     </form>
   )
