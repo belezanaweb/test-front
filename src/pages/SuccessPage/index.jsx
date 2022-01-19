@@ -4,8 +4,11 @@ import { useCheckoutContext } from '../../contexts/Checkout'
 import PaymentConfirmation from '../../components/PaymentConfirmation'
 import CardContainer from '../../components/CardContainer'
 import ProductItem from '../../components/ProductItem'
+import { useNavigate } from 'react-router-dom'
+import ProductList from '../../components/ProductList'
 
 const SuccessPage = () => {
+  let navigate = useNavigate()
   const { paymentInfo, products } = useCheckoutContext()
   const { cardName, cardNumber, cardDate } = paymentInfo
   const successPageText = {
@@ -32,6 +35,9 @@ const SuccessPage = () => {
             <ProductItem key={i} product={currentProduct.product} hidePrice={true} />
           ))}
         </CardContainer>
+        <div>
+          <ProductList prices={prices} />
+        </div>
       </div>
     </>
   )
