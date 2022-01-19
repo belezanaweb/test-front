@@ -32,8 +32,7 @@ export const CheckoutProvider = ({ children }) => {
   const [paymentData, setPaymentData] = useState({
     cardNumber: '',
     cardName: '',
-    cardDate: '',
-    cardCvv: ''
+    cardDate: ''
   })
 
   useEffect(() => {

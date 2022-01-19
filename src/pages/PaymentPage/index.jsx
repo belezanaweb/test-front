@@ -9,6 +9,15 @@ import CardContainer from '../../components/CardContainer'
 import Container from '../../components/Container'
 
 const PaymentPage = () => {
+  const {
+    isLoading,
+    prices,
+    isConfirmed,
+    setIsConfirmed,
+    setPaymentData,
+    paymentData
+  } = useCheckoutContext()
+
   const [data, setData] = useState({
     cardNumber: {
       value: '',
@@ -27,15 +36,6 @@ const PaymentPage = () => {
       valid: true
     }
   })
-
-  const {
-    isLoading,
-    prices,
-    isConfirmed,
-    setIsConfirmed,
-    setPaymentData,
-    paymentData
-  } = useCheckoutContext()
 
   useEffect(() => {
     const { cardNumber, cardDate, cardName, cardCvv } = data
@@ -59,11 +59,6 @@ const PaymentPage = () => {
       mask: '9999.9999.9999.9999',
       label: 'Número do cartão:'
     },
-    cardCvv: {
-      placeholder: '___',
-      mask: '999',
-      label: 'CVV:'
-    },
     cardName: {
       placeholder: 'Como no cartão',
       label: 'Nome do Titular:'
@@ -72,6 +67,11 @@ const PaymentPage = () => {
       placeholder: '__/____',
       mask: '99/9999',
       label: 'Validade (mês/ano):'
+    },
+    cardCvv: {
+      placeholder: '___',
+      mask: '999',
+      label: 'CVV:'
     }
   }
 
@@ -191,7 +191,7 @@ const PaymentPage = () => {
                   <Inputs
                     {...cardCvv}
                     value={data.cardCvv.value}
-                    onChange={(event) => handleChange('cardCvv,', event)}
+                    onChange={(event) => handleChange('cardCvv', event)}
                     valid={data.cardCvv.valid}
                   />
                 </S.GridForm>
