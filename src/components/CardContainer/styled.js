@@ -11,6 +11,10 @@ export const CardContainerTitle = styled.p`
   line-height: 17px;
   text-transform: uppercase;
   padding-left: 10px;
+
+  @media (min-width: 500px) {
+    font-size: 1.4em;
+  }
 `
 
 /* retangulo branco que contem os produtos do carrinho */
@@ -23,4 +27,8 @@ export const CardContainer = styled.main`
   width: 341px;
   padding: 12px;
   margin: 5px 0px 20px;
+
+  @media (min-width: 500px) {
+    width: 541px;
+  }
 `

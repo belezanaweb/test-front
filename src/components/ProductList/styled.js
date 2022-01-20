@@ -7,6 +7,9 @@ export const ProductListText = styled.p`
   text-transform: uppercase;
   font-weight: ${({ total }) => (total ? '700' : '400')};
   color: ${({ discount }) => (discount ? '#FF7800' : '#212122')};
+  @media (min-width: 500px) {
+    font-size: 1.3rem;
+  }
 `
 
 /* container */
@@ -18,6 +21,10 @@ export const ProductListContainer = styled.div`
   border: 1px solid #ccc;
   padding: 15px 15px;
   margin-bottom: 20px;
+
+  @media (min-width: 500px) {
+    width: 541px;
+  }
 `
 
 /* texto de cada item */

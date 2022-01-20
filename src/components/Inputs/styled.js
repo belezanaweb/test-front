@@ -28,6 +28,10 @@ export const InputContainer = styled.div`
     height: 45px;
     width: 310px;
 
+    @media (min-width: 500px) {
+      width: 511px;
+    }
+
     &::placeholder {
       color: #e0e7ee;
       font-size: 16px;

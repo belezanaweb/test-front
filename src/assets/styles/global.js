@@ -27,14 +27,7 @@ export const GlobalStyle = createGlobalStyle`
     list-style: none;
   }
 
-
-  @media(min-width: 600px) {
-    html {
-      font-size: 13px;
-    }
-  }
-
-	html,
+ 	html,
   body {
 		height: 100%;
   }
@@ -53,4 +46,5 @@ export const GlobalStyle = createGlobalStyle`
   a {
     text-decoration: none;
   }
+
   `

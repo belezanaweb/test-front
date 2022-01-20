@@ -3,6 +3,14 @@ import styled, { css } from 'styled-components'
 /* texto dos produtos do carrinho */
 export const ProductItemText = styled.div`
   font-size: 13px;
+  @media (min-width: 500px) {
+    display: flex;
+    flex-direction: column;
+    align-content: space-around;
+    justify-content: space-around;
+    align-items: flex-end;
+    font-size: 1.2rem;
+  }
 `
 /* nome do produto */
 export const ProductItemName = styled.p`
@@ -13,6 +21,11 @@ export const ProductItemName = styled.p`
   letter-spacing: NaNpx;
   line-height: 16px;
   margin-bottom: 10px;
+
+  @media (min-width: 500px) {
+    width: 421px;
+    padding: 0 8px;
+  }
 `
 
 /* preço do produto */
@@ -25,6 +38,11 @@ export const ProductItemPrice = styled.p`
   letter-spacing: NaNpx;
   line-height: 17px;
   text-align: right;
+
+  @media (min-width: 500px) {
+    margin-right: 15px;
+    font-size: 1.3rem;
+  }
 `
 /* thumb dos produtos do carrinho */
 export const ProductItemImageContainer = styled.picture`
@@ -67,5 +85,9 @@ export const ProductItemContainer = styled.div`
 
   &:last-of-type {
     margin-bottom: 0px;
+  }
+
+  @media (min-width: 500px) {
+    width: 521px;
   }
 `

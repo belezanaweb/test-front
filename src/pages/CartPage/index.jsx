@@ -1,6 +1,6 @@
 import React from 'react'
 import { useCheckoutContext } from '../../contexts/Checkout'
-
+import * as S from './styled'
 import Navbar from '../../components/Navbar'
 import ProductItem from '../../components/ProductItem'
 import ProductList from '../../components/ProductList'
@@ -23,15 +23,16 @@ const CartPage = () => {
         {isLoading}
         {products.length > 0 && (
           <>
-            <CardContainer title={cartPageText.containerTitle}>
-              {products.map((currentProduct, i) => (
-                <ProductItem key={i} product={currentProduct.product} />
-              ))}
-            </CardContainer>
-            <div>
+            <S.ProductButtonContainer>
+              <CardContainer title={cartPageText.containerTitle}>
+                {products.map((currentProduct, i) => (
+                  <ProductItem key={i} product={currentProduct.product} />
+                ))}
+              </CardContainer>
+
               <ProductList prices={prices} />
               <Button text={cartPageText.buttonText} step="1" path="/payment" />
-            </div>
+            </S.ProductButtonContainer>
           </>
         )}
       </Container>
