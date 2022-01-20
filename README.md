@@ -11,8 +11,7 @@ Each step was divided into a single route.
 Access the deploy page: [click here](https://oboticario-checkout.netlify.app)
 
 ## Technologies used
-ReactJS
-styled-components
+ReactJS & styled-components
 
 ## Project setup for running locally
 #### Step 1/3: clone the repository
