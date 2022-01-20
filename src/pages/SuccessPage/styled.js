@@ -11,5 +11,9 @@ export const PaymentConfirmationText = styled.p`
   text-transform: uppercase;
   color: ${({ color }) => color};
   font-size: 14px;
-  font-weight: 700;
+  font-weight: 400;
+
+  @media (min-width: 500px) {
+    font-size: 1.3rem;
+  }
 `

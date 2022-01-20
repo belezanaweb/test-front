@@ -6,6 +6,10 @@ export const PaymentConfirmationText = styled.p`
   color: ${({ color }) => color};
   font-size: 14px;
   font-weight: 700;
+
+  @media (min-width: 500px) {
+    font-size: 1.3em;
+  }
 `
 /* icone de confirmacao de pagamento */
 export const PaymentConfirmationImage = styled.img`
