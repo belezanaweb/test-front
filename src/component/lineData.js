@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import * as S from './lineData.styles'
+import * as S from './LineData.styles'
 
 const LineData = ({ name, price, type }) => {
   const [typePrice, setTypePrice] = useState(0)

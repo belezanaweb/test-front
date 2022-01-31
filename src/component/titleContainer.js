@@ -1,5 +1,5 @@
 import React from 'react'
-import * as S from './titleContainer.styles'
+import * as S from './TitleContainer.styles'
 
 const TitleContainer = ({ title, children }) => {
   return (
