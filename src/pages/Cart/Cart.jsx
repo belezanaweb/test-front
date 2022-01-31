@@ -1,26 +1,33 @@
-import React from 'react'
+import React, { Component } from 'react'
 import Logo from '../../logo.svg'
 import '../../App.css'
 
-function cart() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src="{logo}" alt="logo" className="App-logo" />
-        <p>
-          Edit <code>src/App.js</code> and save reload
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  )
-}
+import request from '../../request'
 
-export default cart
+class Cart extends Component {
+  state = {
+    produtos: []
+  }
+
+  async componentDidMount() {
+    const response = await request.getProdutos('')
+
+    this.setState({ produtos: response.data })
+  }
+
+  render() {
+    const { produtos } = this.state
+    return (
+      <div>
+        <h1>Teste</h1>
+        {produtos.items?.map((produto) => (
+          <h2>
+            {produto.product.name}
+            {produto.product.priceSpecification.price}
+          </h2>
+        ))}
+      </div>
+    )
+  }
+}
+export default Cart
