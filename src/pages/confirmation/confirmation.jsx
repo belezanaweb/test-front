@@ -1,26 +1,50 @@
-import React from 'react'
-import Logo from '../../logo.svg'
-import '../../App.css'
+import React, { useContext } from 'react'
+import CartTotal from '../../component/CartTotal'
+import ContainerPage from '../../component/ContainerPage'
+import TitleContainer from '../../component/TitleContainer'
+import { DataContext } from '../../context/Context'
+import PaymentResume from '../../component/PaymentResume'
+import Card from '../../component/Card'
+import FeedbackMessage from '../../component/FeedbackMessage'
+import * as S from '../Pages.styles'
 
-function confirmation() {
+const Confirmation = () => {
+  const [data] = useContext(DataContext)
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src="{logo}" alt="logo" className="App-logo" />
-        <p>
-          Edit <code>src/App.js</code> and save reload
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <ContainerPage>
+      <FeedbackMessage message="COMPRA EFETUADA COM SUCESSO" />
+      <S.DesktopFlex>
+        <S.FirstContainer>
+          <PaymentResume
+            cardNumber={data?.creditCard?.number}
+            date={data?.creditCard?.date}
+            name={data?.creditCard?.name}
+          />
+          <TitleContainer title={'PRODUTOS'}>
+            {data.items?.map(({ product }) => {
+              return (
+                <Card
+                  image={product.imageObjects[0]}
+                  name={product.name}
+                  key={product.sku}
+                  noPrice
+                />
+              )
+            })}
+          </TitleContainer>
+        </S.FirstContainer>
+        <S.SecondContainer>
+          <CartTotal
+            discountPrice={data?.discount}
+            shippingPrice={data?.shippingTotal}
+            productPrice={data?.subTotal}
+            totalPrice={data?.total}
+          />
+        </S.SecondContainer>
+      </S.DesktopFlex>
+    </ContainerPage>
   )
 }
 
-export default confirmation
+export default Confirmation

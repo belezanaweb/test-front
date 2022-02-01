@@ -19,7 +19,7 @@ export default function Cart() {
       const dadosProdutos = res.data
       setProduto(dadosProdutos)
     })
-  })
+  }, [])
 
   return (
     <ContainerPage deskFlex>
