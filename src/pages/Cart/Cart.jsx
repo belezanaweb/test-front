@@ -1,7 +1,7 @@
 import React, { useContext, useEffect, useState } from 'react'
 import { DataContext } from '../../context/Context'
 import request from '../../request'
-import * as S from './Cart.styles'
+import * as S from './Pages.styles'
 import { useNavigate } from 'react-router-dom'
 
 import ContainerPage from '../../component/ContainerPage'
