@@ -1,26 +1,33 @@
-import React from 'react'
-import Logo from '../../logo.svg'
-import '../../App.css'
+import React, { useContext } from 'react'
+import Button from '../../component/Button'
+import CartTotal from '../../component/CartTotal'
+import ContainerPage from '../../component/ContainerPage'
+import TitleContainer from '../../component/TitleContainer'
+import { DataContext } from '../../context/Context'
+import PaymentData from '../../component/PaymentData'
+import * as S from '../Pages.styles'
 
-function payment() {
+const Payment = () => {
+  const [data] = useContext(DataContext)
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src="{logo}" alt="logo" className="App-logo" />
-        <p>
-          Edit <code>src/App.js</code> and save reload
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <ContainerPage deskFlex>
+      <S.FirstContainer>
+        <TitleContainer title={'CARTÃO DE CRÉDITO'}>
+          <PaymentData />
+        </TitleContainer>
+      </S.FirstContainer>
+      <S.SecondContainer>
+        <CartTotal
+          discountPrice={data?.discount}
+          shippingPrice={data?.shippingTotal}
+          productPrice={data?.subTotal}
+          totalPrice={data?.total}
+        />
+        <Button text="FINALIZAR O PEDIDO" type="submit" form="creditForm" />
+      </S.SecondContainer>
+    </ContainerPage>
   )
 }
 
-export default payment
+export default Payment
