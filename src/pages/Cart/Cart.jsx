@@ -1,7 +1,7 @@
-import React, { useContext, useEffect, useState } from 'react'
+import React, { useContext, useEffect } from 'react'
 import { DataContext } from '../../context/Context'
 import request from '../../request'
-import * as S from './Pages.styles'
+import * as S from '../Pages.styles'
 import { useNavigate } from 'react-router-dom'
 
 import ContainerPage from '../../component/ContainerPage'
@@ -19,7 +19,7 @@ export default function Cart() {
       const dadosProdutos = res.data
       setProduto(dadosProdutos)
     })
-  }, [])
+  })
 
   return (
     <ContainerPage deskFlex>

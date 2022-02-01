@@ -3,8 +3,8 @@ import './App.css'
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'
 
 import Cart from './pages/Cart/Cart'
-import Payment from './pages/payment/payment'
-import Confirmation from './pages/confirmation/confirmation'
+import Payment from './pages/Payment/Payment'
+import Confirmation from './pages/Confirmation/Confirmation'
 
 import { DataProvider } from './context/Context'
 
