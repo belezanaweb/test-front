@@ -1,15 +1,17 @@
 import React, { Fragment } from 'react'
 import ProductCard from './ProductCard'
+import { useRequestContext } from '../../context/useRequestContext'
 
 /**
  *  Function to render default card
  *  @property {vector[]} products - vector of products
  */
 
-export default function BoxProducts({ products }) {
+export default function BoxProducts() {
+  const { order } = useRequestContext()
   return (
     <>
-      {products?.map((item) => (
+      {order?.items?.map((item) => (
         <Fragment key={item?.product?.sku}>
           <ProductCard
             img={item?.product?.imageObjects?.[0]?.medium}

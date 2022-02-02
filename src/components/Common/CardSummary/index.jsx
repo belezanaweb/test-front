@@ -1,15 +1,15 @@
 import React from 'react'
 import { Container, BoxText, Text } from './styles'
+import { useRequestContext } from '../../../context/useRequestContext'
 
 /**
  *  Function to render summary card
- *  @property {number} price - price of the products
- *  @property {number} shipping - price of the shipping
- *  @property {number} discount - price of the discount
- *  @property {number} total - price of the total
  */
 
-export default function CardSummary({ price = 0, shipping = 0, discount = 0, total = 0 }) {
+export default function CardSummary() {
+  const { order } = useRequestContext()
+  const { subTotal, shippingTotal, discount } = order
+
   const formatPrice = (price) => {
     return price?.toLocaleString('pt-br', {
       style: 'currency',
@@ -17,18 +17,18 @@ export default function CardSummary({ price = 0, shipping = 0, discount = 0, tot
     })
   }
 
-  const valueTotal = price + shipping - discount
+  const valueTotal = subTotal + shippingTotal - discount
 
   return (
     <Container>
       <BoxText className="product">
         <Text>PRODUTOS</Text>
-        <Text>{formatPrice(price)}</Text>
+        <Text>{formatPrice(subTotal)}</Text>
       </BoxText>
 
       <BoxText className="shipping">
         <Text>FRETE</Text>
-        <Text>{formatPrice(shipping)}</Text>
+        <Text>{formatPrice(shippingTotal)}</Text>
       </BoxText>
 
       <BoxText className="discount">
