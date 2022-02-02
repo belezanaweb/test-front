@@ -13,9 +13,13 @@ export default function CardProducts({ title, products }) {
     <div>
       <Title>{title}</Title>
       <BoxCard>
-        {products?.map((product) => (
-          <Fragment key={product?.sku}>
-            <ProductCard img={product.img} title={product.title} price={product.price} />
+        {products?.map((item) => (
+          <Fragment key={item?.product?.sku}>
+            <ProductCard
+              img={item?.product?.imageObjects?.[0]?.medium}
+              name={item?.product?.name}
+              price={item?.product?.priceSpecification?.price}
+            />
           </Fragment>
         ))}
       </BoxCard>

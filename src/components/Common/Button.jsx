@@ -28,6 +28,7 @@ export default styled(Button)`
   letter-spacing: 0.5px;
   line-height: 24px;
   text-align: center;
+  cursor: pointer;
 
   &:hover {
     background-color: #d45a00;

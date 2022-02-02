@@ -1,18 +1,29 @@
 import styled from 'styled-components'
 
 export const Container = styled.div`
+  max-width: 660px;
   box-sizing: border-box;
   border-radius: 3px;
   border: 1px solid #ccc;
   padding: 15px 13px 14px 13px;
+
+  @media (min-width: 700px) {
+    height: 325px;
+    margin-left: 10px;
+    margin-top: 28px;
+  }
 `
 export const BoxText = styled.div`
   width: 100%;
-  min-width: 316px;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
+  min-width: 316px;
+
+  @media (min-width: 700px) {
+    min-width: 400px;
+  }
 
   &.product {
     margin-bottom: 9px;

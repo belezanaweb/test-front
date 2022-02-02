@@ -13,9 +13,8 @@ export function RequestProvider({ children }) {
       .then((res) => res.json())
       .then((json) => {
         setOrder(json)
-        localStorage.setItem('@grupoboticario:order', JSON.stringify(order))
       })
-  }, [order])
+  }, [])
 
   return <RequestContext.Provider value={{ order, setOrder }}>{children}</RequestContext.Provider>
 }

@@ -4,16 +4,16 @@ import styled from 'styled-components'
 /**
  *  Function to render product in card default
  *  @property {string} img - img of the product
- *  @property {string} title - title of the product
+ *  @property {string} name - name of the product
  *  @property {number} price - price of the product
  */
 
-export default function ProductCard({ img, title, price }) {
+export default function ProductCard({ img, name = '', price }) {
   return (
-    <Container>
-      <div>{img ? <img src={img} alt={title} /> : 'Produto sem imagem'}</div>
+    <Container name={name}>
+      <div>{img ? <img src={img} alt={name} /> : 'Produto sem imagem'}</div>
       <div>
-        <h2>{title}</h2>
+        <h2>{name}</h2>
         <h3>{price.toLocaleString('pt-br', { style: 'currency', currency: 'BRL' })}</h3>
       </div>
     </Container>
@@ -33,6 +33,10 @@ export const Container = styled.div`
   justify-content: space-between;
   gap: 11px;
 
+  @media (max-width: 430px) {
+    ${(props) => props.name?.length > 70 && 'height: 105px'}
+  }
+
   div:nth-child(2) {
     display: flex;
     flex-direction: column;
@@ -43,6 +47,7 @@ export const Container = styled.div`
     font-size: 13px;
     line-height: 16px;
     font-weight: normal;
+    text-align: left;
     margin: 0;
   }
 
