@@ -2,7 +2,7 @@ import React from 'react'
 import { useNavigate } from 'react-router-dom'
 import Navbar from '../../components/Common/Navbar'
 import { useRequestContext } from '../../context/useRequestContext'
-import CardProducts from '../../components/Common/CardProducts'
+import CardDefault from '../../components/Common/CardDefault'
 import CardSummary from '../../components/Common/CardSummary'
 import Button from '../../components/Common/Button'
 import styled from 'styled-components'
@@ -16,7 +16,7 @@ export default function Cart() {
       <Navbar />
       <Container>
         <div className="box">
-          <CardProducts title="Produtos" products={order?.items} />
+          <CardDefault title="Produtos" products={order?.items} />
           <CardSummary
             price={order.subTotal}
             shipping={order.shippingTotal}

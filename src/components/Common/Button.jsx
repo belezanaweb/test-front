@@ -4,6 +4,9 @@ import styled from 'styled-components'
 /**
  *  Function to render button
  *  @property {string} text - text of the button
+ *  @property {string} type - type of the button
+ *  @property {function} onClick - function to handle click
+ *  @property {string} disabled - disable the button
  */
 
 const Button = ({ text, type, onClick, disabled = false, ...buttonProps }) => {
