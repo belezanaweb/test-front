@@ -11,11 +11,7 @@ export default function Navbar() {
     <Container select={true}>
       <ul>
         <li>
-          <NavLink
-            exact
-            to="/"
-            className={({ isActive }) => 'title' + (!isActive ? '' : ' selected')}
-          >
+          <NavLink to="/" className={({ isActive }) => 'title' + (!isActive ? '' : ' selected')}>
             SACOLA
           </NavLink>
         </li>

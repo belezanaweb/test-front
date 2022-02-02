@@ -1,14 +1,23 @@
-import React, { createContext, Dispatch, useContext, useEffect, useState } from 'react'
+import React, { createContext, useContext, useEffect, useState } from 'react'
 
 const RequestContext = createContext({
-  products: {},
-  setProducts: null
+  order: {},
+  setOrder: null
 })
 
 export function RequestProvider({ children }) {
-  const [products, setProducts] = useState({})
+  const [order, setOrder] = useState({})
 
-  return <RequestContext.Provider value={{}}>{children}</RequestContext.Provider>
+  useEffect(() => {
+    fetch('http://www.mocky.io/v2/5b15c4923100004a006f3c07')
+      .then((res) => res.json())
+      .then((json) => {
+        setOrder(json)
+        localStorage.setItem('@grupoboticario:order', JSON.stringify(order))
+      })
+  }, [order])
+
+  return <RequestContext.Provider value={{ order, setOrder }}>{children}</RequestContext.Provider>
 }
 
 export function useRequestContext() {

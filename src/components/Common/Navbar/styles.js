@@ -3,6 +3,7 @@ import styled from 'styled-components'
 export const Container = styled.div`
   height: 40px;
   width: auto;
+  min-width: 316px;
   border-radius: 3px;
   background-color: #fff;
   box-shadow: 1px 1px 5px 0 rgba(0, 0, 29, 0.22);
@@ -10,6 +11,7 @@ export const Container = styled.div`
   display: flex;
   align-items: center;
   padding: 0 1rem;
+  margin-bottom: 1rem;
 
   ul {
     width: 100%;
