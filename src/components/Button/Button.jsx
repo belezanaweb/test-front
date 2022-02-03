@@ -1,6 +1,6 @@
 import React from 'react'
 import * as CSS from './style'
 
-export default function Button(props) {
-  return <CSS.Button onClick={props.onClick}>{props.children}</CSS.Button>
+export default function Button({ disabled, children }) {
+  return <CSS.Button disabled={disabled}>{children ?? 'Text Button'}</CSS.Button>
 }

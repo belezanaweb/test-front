@@ -12,3 +12,8 @@ test('should create a Button component with text', function () {
   const component = renderer.create(<Button>{buttonText}</Button>)
   expect(component.toJSON().children).toContain(buttonText)
 })
+
+test('should create a Button component without text and get default value from button', function () {
+  const component = renderer.create(<Button></Button>)
+  expect(component.toJSON().children).toContain('Text Button')
+})
