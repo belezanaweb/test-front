@@ -2,11 +2,12 @@ import React from 'react'
 import { Title, BoxCard } from './styles'
 import BoxProducts from '../BoxProduct'
 import FormCreditCard from '../FormCreditCard'
+import CardRegister from '../CardRegister'
 
 /**
  *  Function to render default card
  *  @property {string} type - type show card
- *  @property {vector[]} products - vector of products
+ *  @property {string} title - title card default
  */
 
 export default function CardDefault({ title, type }) {
@@ -16,6 +17,7 @@ export default function CardDefault({ title, type }) {
       <BoxCard>
         {type === 'product' && <BoxProducts />}
         {type === 'form' && <FormCreditCard />}
+        {type === 'payment' && <CardRegister />}
       </BoxCard>
     </div>
   )

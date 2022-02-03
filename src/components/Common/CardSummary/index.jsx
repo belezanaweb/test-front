@@ -10,6 +10,7 @@ export default function CardSummary() {
   const { order } = useRequestContext()
   const { subTotal, shippingTotal, discount } = order
 
+  // function to format price
   const formatPrice = (price) => {
     return price?.toLocaleString('pt-br', {
       style: 'currency',
@@ -17,6 +18,7 @@ export default function CardSummary() {
     })
   }
 
+  // total price - total order value get from API is wrong
   const valueTotal = subTotal + shippingTotal - discount
 
   return (

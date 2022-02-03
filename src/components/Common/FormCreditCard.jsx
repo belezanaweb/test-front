@@ -1,6 +1,7 @@
 import React from 'react'
 import { Input } from './Input'
 import styled from 'styled-components'
+import { useRegisterCardContext } from '../../context/useRegisterCardContext'
 
 /**
  *  Function to render default card
@@ -8,6 +9,8 @@ import styled from 'styled-components'
  */
 
 export default function FormCreditCard({ products }) {
+  const { setCard } = useRegisterCardContext()
+
   return (
     <div>
       <Input
@@ -16,6 +19,7 @@ export default function FormCreditCard({ products }) {
         id="cardnumber"
         type="text"
         pattern="[\d| ]{16,22}"
+        onChange={(e) => setCard((prev) => ({ ...prev, number: e.target.value }))}
       />
       <Input labelText="Nome do Titular:" placeholder="Como no cartão" />
       <Container>

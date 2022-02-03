@@ -32,7 +32,7 @@ export const Container = styled.div`
     font-weight: 700;
     line-height: 17px;
     text-align: center;
-    margin: 11px 0px 20px 0px;
+    margin: 11px 0px 15px 0px;
   }
 `
 

@@ -12,7 +12,8 @@ export default function Confirmation() {
       <SuccessBuy />
       <Container>
         <div className="box">
-          <CardDefault title="CARTÃO DE CRÉDITO" type="form" />
+          <CardDefault title="PAGAMENTO" type="payment" />
+          <CardDefault title="CARTÃO DE CRÉDITO" type="product" />
           <CardSummary />
         </div>
       </Container>
