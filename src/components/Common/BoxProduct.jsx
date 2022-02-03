@@ -9,9 +9,19 @@ import { useRequestContext } from '../../context/useRequestContext'
 
 export default function BoxProducts() {
   const { order } = useRequestContext()
+  const orderStorage = JSON.parse(localStorage.getItem('gb:order'))
+
+  let productsOrder = {}
+
+  if (orderStorage) {
+    productsOrder = orderStorage
+  } else {
+    productsOrder = order
+  }
+
   return (
     <>
-      {order?.items?.map((item) => (
+      {productsOrder?.items?.map((item) => (
         <Fragment key={item?.product?.sku}>
           <ProductCard
             img={item?.product?.imageObjects?.[0]?.medium}

@@ -13,6 +13,7 @@ export function RequestProvider({ children }) {
       .then((res) => res.json())
       .then((json) => {
         setOrder(json)
+        localStorage.setItem('gb:order', JSON.stringify(json))
       })
   }, [])
 

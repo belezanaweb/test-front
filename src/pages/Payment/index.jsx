@@ -5,9 +5,11 @@ import CardDefault from '../../components/Common/CardDefault'
 import CardSummary from '../../components/Common/CardSummary'
 import Button from '../../components/Common/Button'
 import styled from 'styled-components'
+import { useRegisterCardContext } from '../../context/useRegisterCardContext'
 
 export default function Cart() {
   const navigate = useNavigate()
+  const { card, update } = useRegisterCardContext()
 
   return (
     <main>
@@ -17,7 +19,21 @@ export default function Cart() {
           <CardDefault title="CARTÃO DE CRÉDITO" type="form" />
           <CardSummary />
         </div>
-        <Button text="FINALIZAR O PEDIDO" onClick={() => navigate('/confirmation')} />
+        <Button
+          id="buttonForm"
+          text="FINALIZAR O PEDIDO"
+          type="submit"
+          disabled={
+            !card.name.length > 0 ||
+            !card.number.length > 0 ||
+            !card.expiry.length > 0 ||
+            !card.cvv.length > 0
+          }
+          onClick={() => {
+            navigate('/confirmation')
+            update()
+          }}
+        />
       </Container>
     </main>
   )

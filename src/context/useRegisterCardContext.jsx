@@ -1,4 +1,4 @@
-import React, { createContext, useContext, useState } from 'react'
+import React, { createContext, useContext, useState, useCallback } from 'react'
 
 const RegisterCardContext = createContext({
   card: {},
@@ -7,14 +7,18 @@ const RegisterCardContext = createContext({
 
 export function RegisterCardProvider({ children }) {
   const [card, setCard] = useState({
-    number: '1234567891123456',
-    name: 'LUIZ F C QUEIROZ',
-    expiry: '20/2020',
-    cvv: '722'
+    number: '',
+    name: '',
+    expiry: '',
+    cvv: ''
   })
 
+  const update = useCallback(() => {
+    localStorage.setItem('gb:card', JSON.stringify(card))
+  }, [card])
+
   return (
-    <RegisterCardContext.Provider value={{ card, setCard }}>
+    <RegisterCardContext.Provider value={{ card, setCard, update }}>
       {children}
     </RegisterCardContext.Provider>
   )

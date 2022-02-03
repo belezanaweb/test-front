@@ -8,7 +8,17 @@ import { useRequestContext } from '../../../context/useRequestContext'
 
 export default function CardSummary() {
   const { order } = useRequestContext()
-  const { subTotal, shippingTotal, discount } = order
+  const orderStorage = JSON.parse(localStorage.getItem('gb:order'))
+
+  let productsOrder = {}
+
+  if (orderStorage) {
+    productsOrder = orderStorage
+  } else {
+    productsOrder = order
+  }
+
+  const { subTotal, shippingTotal, discount } = productsOrder
 
   // function to format price
   const formatPrice = (price) => {

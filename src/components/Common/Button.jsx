@@ -9,9 +9,9 @@ import styled from 'styled-components'
  *  @property {string} disabled - disable the button
  */
 
-const Button = ({ text, type, onClick, disabled = false, ...buttonProps }) => {
+const Button = ({ text, type, onClick, ref, disabled = false, ...buttonProps }) => {
   return (
-    <button type={type} onClick={onClick} disabled={disabled} {...buttonProps}>
+    <button type={type} onClick={onClick} ref={ref} disabled={disabled} {...buttonProps}>
       {text}
     </button>
   )
@@ -32,6 +32,8 @@ export default styled(Button)`
   line-height: 24px;
   text-align: center;
   cursor: pointer;
+  outline: none;
+  border-style: none;
 
   &:hover {
     background-color: #d45a00;
