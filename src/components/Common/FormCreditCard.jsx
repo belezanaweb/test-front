@@ -61,7 +61,6 @@ export default function FormCreditCard() {
 
   return (
     <form onSubmit={handleSubmit(onSubmit)}>
-      {console.log(errors)}
       <Input
         labelText="Número do cartão:"
         placeholder="____.____.____.____"
