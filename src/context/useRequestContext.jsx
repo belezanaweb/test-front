@@ -9,7 +9,7 @@ export function RequestProvider({ children }) {
   const [order, setOrder] = useState({})
 
   useEffect(() => {
-    fetch('http://www.mocky.io/v2/5b15c4923100004a006f3c07')
+    fetch('https://raw.githubusercontent.com/FelipeQq/mockgb/main/mockgb.json')
       .then((res) => res.json())
       .then((json) => {
         setOrder(json)
