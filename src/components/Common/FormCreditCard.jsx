@@ -1,4 +1,5 @@
 import React from 'react'
+import { useNavigate } from 'react-router-dom'
 import { Input } from './Input'
 import styled from 'styled-components'
 import { useRegisterCardContext } from '../../context/useRegisterCardContext'
@@ -11,7 +12,8 @@ import { yupResolver } from '@hookform/resolvers/yup'
  */
 
 export default function FormCreditCard() {
-  const { setCard } = useRegisterCardContext()
+  const navigate = useNavigate()
+  const { update } = useRegisterCardContext()
   const cardStorage = JSON.parse(localStorage.getItem('gb:card'))
 
   // function to verify if number card is valid
@@ -55,11 +57,10 @@ export default function FormCreditCard() {
 
   // function to save card
   function onSubmit(values) {
-    setCard(values)
-
-    var el = document.getElementById('buttonForm')
-    el.click()
+    update(values)
+    navigate('/confirmation')
   }
+
   return (
     <form onSubmit={handleSubmit(onSubmit)}>
       <Input
@@ -98,7 +99,7 @@ export default function FormCreditCard() {
           placeholder="___"
           id="cardCvv"
           type="password"
-          maxlength="3"
+          maxLength="3"
           defaultValue={cardStorage?.cvv || ''}
           error={errors?.cvv?.message}
           register={{
@@ -108,7 +109,7 @@ export default function FormCreditCard() {
           }}
         />
       </Container>
-      <Button type="submit" />
+      <Button id="formSubmitCard" type="submit" />
     </form>
   )
 }

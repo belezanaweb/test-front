@@ -1,15 +1,15 @@
 import React from 'react'
-import { useNavigate } from 'react-router-dom'
 import Navbar from '../../components/Common/Navbar'
 import CardDefault from '../../components/Common/CardDefault'
 import CardSummary from '../../components/Common/CardSummary'
 import Button from '../../components/Common/Button'
 import styled from 'styled-components'
-import { useRegisterCardContext } from '../../context/useRegisterCardContext'
 
 export default function Cart() {
-  const navigate = useNavigate()
-  const { card, update } = useRegisterCardContext()
+  function onSubmit(e) {
+    var el = document.getElementById('formSubmitCard')
+    el.click()
+  }
 
   return (
     <main>
@@ -19,21 +19,7 @@ export default function Cart() {
           <CardDefault title="CARTÃO DE CRÉDITO" type="form" />
           <CardSummary />
         </div>
-        <Button
-          id="buttonForm"
-          text="FINALIZAR O PEDIDO"
-          type="submit"
-          disabled={
-            !card.name.length > 0 ||
-            !card.number.length > 0 ||
-            !card.expiry.length > 0 ||
-            !card.cvv.length > 0
-          }
-          onClick={() => {
-            navigate('/confirmation')
-            update()
-          }}
-        />
+        <Button id="buttonForm" text="FINALIZAR O PEDIDO" type="submit" onClick={onSubmit} />
       </Container>
     </main>
   )

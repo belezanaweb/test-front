@@ -13,9 +13,10 @@ export function RegisterCardProvider({ children }) {
     cvv: ''
   })
 
-  const update = useCallback(() => {
-    localStorage.setItem('gb:card', JSON.stringify(card))
-  }, [card])
+  const update = useCallback((values) => {
+    setCard(values)
+    localStorage.setItem('gb:card', JSON.stringify(values))
+  }, [])
 
   return (
     <RegisterCardContext.Provider value={{ card, setCard, update }}>

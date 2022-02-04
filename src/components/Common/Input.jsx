@@ -20,7 +20,7 @@ export const Input = ({
   error,
   defaultValue,
   onChange,
-  maxlength
+  maxLength
 }) => {
   return (
     <Container error={!!error}>
@@ -37,7 +37,7 @@ export const Input = ({
       ) : (
         <input
           className="inputMask"
-          maxlength={maxlength}
+          maxLength={maxLength}
           placeholder={placeholder}
           id={id}
           type={type}
@@ -59,11 +59,11 @@ export const Container = styled.div`
     flex-direction: column;
     box-sizing: border-box;
     border-radius: 3px;
-    background-color: #FFF;
+    background-color: #fff;
     border: ${(props) => (props.error ? '1px solid #F30' : '1px solid #E7E7E7')};
-    box-shadow: inset 0 1px 2px 0 rgba(0,0,0,0.2);
+    box-shadow: inset 0 1px 2px 0 rgba(0, 0, 0, 0.2);
     margin-top: 5px;
-    margin-bottom:  ${(props) => (props.error ? '0' : '25px')};
+    margin-bottom: ${(props) => (props.error ? '0' : '25px')};
     padding: 13px;
     font-size: 16px;
     line-height: 19px;
@@ -71,20 +71,20 @@ export const Container = styled.div`
     text-transform: uppercase;
 
     &:focus {
-      border: 1px solid #A43287;
+      border: 1px solid #a43287;
     }
 
     ::placeholder {
-      color: #E0E7EE;
+      color: #e0e7ee;
       text-transform: none;
     }
 
-    :-ms-input-placeholder { /* Internet Explorer 10-11 */
-      color: #E0E7EE;
+    :-ms-input-placeholder {
+      /* Internet Explorer 10-11 */
+      color: #e0e7ee;
       text-transform: none;
     }
   }
-}
 `
 
 export const Label = styled.label`
