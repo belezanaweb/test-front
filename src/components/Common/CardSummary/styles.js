@@ -8,7 +8,7 @@ export const Container = styled.div`
   padding: 15px 13px 14px 13px;
 
   @media (min-width: 700px) {
-    height: 325px;
+    height: ${(props) => (props.screenPayment ? '303px' : '325px')};
     margin-left: 10px;
     margin-top: 28px;
   }

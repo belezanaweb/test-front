@@ -1,6 +1,7 @@
 import React from 'react'
 import { Container, BoxText, Text } from './styles'
 import { useRequestContext } from '../../../context/useRequestContext'
+import { useLocation } from 'react-router-dom'
 
 /**
  *  Function to render summary card
@@ -9,6 +10,7 @@ import { useRequestContext } from '../../../context/useRequestContext'
 export default function CardSummary() {
   const { order } = useRequestContext()
   const orderStorage = JSON.parse(localStorage.getItem('gb:order'))
+  const screenPayment = useLocation()
 
   let productsOrder = {}
 
@@ -32,7 +34,7 @@ export default function CardSummary() {
   const valueTotal = subTotal + shippingTotal - discount
 
   return (
-    <Container>
+    <Container screenPayment={!!screenPayment.pathname.slice(1)}>
       <BoxText className="product">
         <Text>PRODUTOS</Text>
         <Text>{formatPrice(subTotal)}</Text>

@@ -47,7 +47,7 @@ export const Container = styled.div`
     font-size: 13px;
     line-height: 16px;
     font-weight: normal;
-    text-align: left;
+    text-align: right;
     margin: 0;
   }
 

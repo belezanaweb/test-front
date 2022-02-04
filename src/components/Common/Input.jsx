@@ -18,7 +18,9 @@ export const Input = ({
   mask,
   register,
   error,
-  defaultValue
+  defaultValue,
+  onChange,
+  maxlength
 }) => {
   return (
     <Container error={!!error}>
@@ -35,11 +37,13 @@ export const Input = ({
       ) : (
         <input
           className="inputMask"
-          {...register}
+          maxlength={maxlength}
           placeholder={placeholder}
           id={id}
           type={type}
           defaultValue={defaultValue}
+          onChange={onChange}
+          {...register}
         />
       )}
       {error && <Error>{error}</Error>}
@@ -64,6 +68,7 @@ export const Container = styled.div`
     font-size: 16px;
     line-height: 19px;
     outline: none;
+    text-transform: uppercase;
 
     &:focus {
       border: 1px solid #A43287;
@@ -71,11 +76,12 @@ export const Container = styled.div`
 
     ::placeholder {
       color: #E0E7EE;
+      text-transform: none;
     }
 
     :-ms-input-placeholder { /* Internet Explorer 10-11 */
       color: #E0E7EE;
-      text-transform: lowercase;
+      text-transform: none;
     }
   }
 }

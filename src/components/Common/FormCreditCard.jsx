@@ -14,12 +14,12 @@ export default function FormCreditCard() {
   const { setCard } = useRegisterCardContext()
   const cardStorage = JSON.parse(localStorage.getItem('gb:card'))
 
+  // function to verify if number card is valid
   function checkNumberCard(value) {
     // remove all non digit characters
     var valueT = value.replace(/\D/g, '')
     var sum = 0
     var shouldDouble = false
-    // loop through values starting at the rightmost side
     for (var i = valueT.length - 1; i >= 0; i--) {
       var digit = parseInt(valueT.charAt(i))
 
@@ -28,37 +28,38 @@ export default function FormCreditCard() {
       }
 
       sum += digit
-
       shouldDouble = !shouldDouble
     }
     return sum % 10 === 0
   }
 
+  //Schema to validation of card
   const schema = Yup.object().shape({
     name: Yup.string().required('Nome requirido'),
     number: Yup.string()
       .required('Número do cartão requirido')
       .min(19, 'Número do cartão inválido')
       .test('checkNumberCard', 'Número do cartão inválido', (value) => checkNumberCard(value)),
-    cvv: Yup.string().required('CVV requirido').min(3, 'CVV inválido'),
+    cvv: Yup.string().required('CVV requirido').min(3, 'CVV deve conter 3 dígitos'),
     expiry: Yup.string().required('Validade requirido').min(6, 'Minimo 6 caracteres')
   })
 
   const {
     register,
     handleSubmit,
+    setValue,
     formState: { errors }
   } = useForm({
     resolver: yupResolver(schema)
   })
 
+  // function to save card
   function onSubmit(values) {
     setCard(values)
 
     var el = document.getElementById('buttonForm')
     el.click()
   }
-
   return (
     <form onSubmit={handleSubmit(onSubmit)}>
       <Input
@@ -77,7 +78,9 @@ export default function FormCreditCard() {
         defaultValue={cardStorage?.name || ''}
         error={errors?.name?.message}
         register={{
-          ...register('name')
+          ...register('name', {
+            onChange: (e) => setValue('name', e.target.value.replace(/([0-9][a-zA-Z]*)+/gim, ''))
+          })
         }}
       />
       <Container>
@@ -94,10 +97,15 @@ export default function FormCreditCard() {
           labelText="CVV:"
           placeholder="___"
           id="cardCvv"
-          mask="999"
+          type="password"
+          maxlength="3"
           defaultValue={cardStorage?.cvv || ''}
           error={errors?.cvv?.message}
-          register={{ ...register('cvv') }}
+          register={{
+            ...register('cvv', {
+              onChange: (e) => setValue('cvv', e.target.value.replace(/([^\d])+/gim, ''))
+            })
+          }}
         />
       </Container>
       <Button type="submit" />

@@ -7,6 +7,13 @@ import { Container } from './styles'
  */
 
 export default function Navbar() {
+  const cardStorage = JSON.parse(localStorage.getItem('gb:card'))
+  const active = !!cardStorage
+  const handleClick = (e) => {
+    if (!active) {
+      e.preventDefault()
+    }
+  }
   return (
     <Container select={true}>
       <ul>
@@ -25,6 +32,7 @@ export default function Navbar() {
         </li>
         <li>
           <NavLink
+            onClick={handleClick}
             to="/confirmation"
             className={({ isActive }) => 'title' + (!isActive ? '' : ' selected')}
           >

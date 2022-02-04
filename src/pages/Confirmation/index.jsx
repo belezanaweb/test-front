@@ -11,11 +11,9 @@ export default function Confirmation() {
       <Navbar />
       <SuccessBuy />
       <Container>
-        <div className="box">
-          <CardDefault title="PAGAMENTO" type="payment" />
-          <CardDefault title="CARTÃO DE CRÉDITO" type="product" />
-          <CardSummary />
-        </div>
+        <CardDefault title="PAGAMENTO" type="payment" />
+        <CardDefault title="CARTÃO DE CRÉDITO" type="product" />
+        <CardSummary />
       </Container>
     </main>
   )
@@ -25,11 +23,7 @@ const Container = styled.div`
   display: grid;
   padding: 0px 10px 50px 10px;
   gap: 20px;
-
-  .box {
-    display: grid;
-    gap: 20px;
-  }
+  justify-content: center;
 
   @media (min-width: 700px) {
     .box {
