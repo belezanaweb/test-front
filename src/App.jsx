@@ -3,6 +3,8 @@ import React from 'react'
 import { Navigate, Routes, Route } from 'react-router-dom'
 
 import BasketProvider from './context/Basket'
+import Header from './components/Header/Header'
+
 import CartFeature from './features/cart/Cart'
 import PaymentFeature from './features/payment/Payment'
 import SuccessFeature from './features/success/Success'
@@ -21,6 +23,7 @@ const AppWrapper = () => {
   return (
     <>
       <BasketProvider>
+        <Header></Header>
         <AppRoutes />
       </BasketProvider>
     </>
