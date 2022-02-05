@@ -5,10 +5,12 @@ import ProductList from '../../components/ProductList/ProductList'
 
 const CartFeature = () => {
   return (
-    <Container title="Produtos">
-      <ProductList />
+    <>
+      <Container title="Produtos">
+        <ProductList />
+      </Container>
       <Button toPage="payment">seguir para pagamento</Button>
-    </Container>
+    </>
   )
 }
 

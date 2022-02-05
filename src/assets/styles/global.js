@@ -1,4 +1,4 @@
-import { createGlobalStyle } from 'styled-components'
+import styled, { createGlobalStyle } from 'styled-components'
 import { colors } from './colors'
 
 export const GlobalStyle = createGlobalStyle`
@@ -29,4 +29,11 @@ export const GlobalStyle = createGlobalStyle`
 	body {
 		height: 100%;
 	}	
+`
+
+export const Wrapper = styled.div`
+  padding: 0 10px 0 9px;
+  display: flex;
+  flex-flow: column;
+  align-items: center;
 `

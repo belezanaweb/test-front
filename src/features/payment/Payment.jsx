@@ -5,9 +5,10 @@ import Container from '../../components/Container/Container'
 const PaymentFeature = () => {
   console.log('PaymentFeature')
   return (
-    <Container title="Pagamento">
+    <>
+      <Container title="Pagamento"></Container>
       <Button toPage="success">seguir para o sucesso</Button>
-    </Container>
+    </>
   )
 }
 

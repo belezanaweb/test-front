@@ -3,6 +3,7 @@ import { colors } from '../../assets/styles/colors'
 
 export const Container = styled.main`
   margin-top: 10px;
+  margin-bottom: 20px;
   padding: 0 10px 0 9px;
 `
 
