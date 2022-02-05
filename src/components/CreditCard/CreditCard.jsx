@@ -19,6 +19,7 @@ export default function CreditCard() {
           mask={creditCardMask}
           placeholder={creditCardPlace}
           name="credit-card-number"
+          type="number"
         ></Input>
       </CSS.Column>
 
