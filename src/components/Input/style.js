@@ -9,6 +9,7 @@ export const Wrapper = styled.div`
     box-shadow: inset 0px 1px 2px rgba(0, 0, 0, 0.2);
     border-radius: 3px;
     border: 1px solid ${colors.input.border.normal};
+    border-color: ${({ valid }) => (valid ? colors.input.border.normal : colors.input.error)};
     color: ${colors.input.text.normal};
     font-weight: normal;
     font-size: 16px;
@@ -24,7 +25,6 @@ export const Wrapper = styled.div`
     }
 
     &:focus {
-      border-color: ${({ error }) => (error ? colors.input.text.focus : colors.input.text.error)};
       color: ${colors.input.text.focus};
     }
   }
@@ -35,4 +35,12 @@ export const Label = styled.label`
   font-weight: bold;
   line-height: 14px;
   color: ${colors.input.label};
+`
+
+export const ErrorLabel = styled.p`
+  color: ${colors.input.error};
+  font-size: 12px;
+  font-weight: 400;
+  position: absolute;
+  margin-top: 3px;
 `

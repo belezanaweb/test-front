@@ -1,50 +1,66 @@
-import React from 'react'
+import React, { useState } from 'react'
 import Input from '../../components/Input/Input'
 import { cardValidateMask, creditCardMask, cvvMask } from '../../utils/masks'
 import { cardValidatePlace, creditCardPlace, cvvPlace } from '../../utils/placeholders'
+import { creditCardInfo } from './paymentUtils'
 import * as CSS from './style'
 
-const handleChange = (type, event) => {
-  console.log(type, event.target.value)
-}
-
 export default function CreditCard() {
+  const [crediCardData, setCreditCardData] = useState(creditCardInfo)
+
+  const handleChange = (type, event) => {
+    const value = event.target.value
+    const isValid = value.replace(/[._]/g, '').length >= 3
+
+    setCreditCardData({
+      ...crediCardData,
+      [type]: {
+        value: value,
+        valid: isValid
+      }
+    })
+  }
+
   return (
     <>
-      <CSS.Column>
+      <CSS.Row>
         <Input
           label="Número do cartão"
           mask={creditCardMask}
           placeholder={creditCardPlace}
           name="credit-card-number"
-          onChange={(event) => handleChange('credit-card-number', event)}
+          onChange={(event) => handleChange('number', event)}
+          valid={crediCardData.number.valid}
         ></Input>
-      </CSS.Column>
+      </CSS.Row>
 
-      <CSS.Column>
+      <CSS.Row>
         <Input
           label="Nome do titular"
           placeholder="Como no cartão"
-          onChange={(event) => handleChange('credit-card-owner', event)}
+          onChange={(event) => handleChange('owner', event)}
+          valid={crediCardData.owner.valid}
         ></Input>
-      </CSS.Column>
+      </CSS.Row>
 
-      <CSS.Column>
+      <CSS.Row>
         <Input
           label="Validade (mês/ano)"
           mask={cardValidateMask}
           placeholder={cardValidatePlace}
           name="credit-card-validate"
-          onChange={(event) => handleChange('credit-card-validate', event)}
+          onChange={(event) => handleChange('validate', event)}
+          valid={crediCardData.validate.valid}
         ></Input>
         <Input
           label="CVV"
           mask={cvvMask}
           placeholder={cvvPlace}
           name="credit-card-cvv"
-          onChange={(event) => handleChange('credit-card-cvv', event)}
+          onChange={(event) => handleChange('cvv', event)}
+          valid={crediCardData.cvv.valid}
         ></Input>
-      </CSS.Column>
+      </CSS.Row>
     </>
   )
 }

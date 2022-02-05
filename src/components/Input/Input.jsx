@@ -2,9 +2,9 @@ import React from 'react'
 import * as CSS from './style'
 import InputMask from 'react-input-mask'
 
-export default function Input({ name, label, mask, type, onChange, placeholder }) {
+export default function Input({ name, label, mask, type, onChange, valid, placeholder }) {
   return (
-    <CSS.Wrapper>
+    <CSS.Wrapper valid={valid}>
       <CSS.Label htmlFor={name}>{label}</CSS.Label>
       <InputMask
         mask={mask}
@@ -14,6 +14,7 @@ export default function Input({ name, label, mask, type, onChange, placeholder }
         onChange={onChange}
         placeholder={placeholder}
       />
+      {!valid && <CSS.ErrorLabel>Campo Inválido</CSS.ErrorLabel>}
     </CSS.Wrapper>
   )
 }

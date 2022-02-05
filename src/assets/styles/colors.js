@@ -31,7 +31,7 @@ export const colors = {
       normal: '#E0E7EE',
       focus: '#212121'
     },
-    error: 'F30'
+    error: '#F30'
   },
   productList: {
     border: '#EEE'
