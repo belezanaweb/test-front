@@ -24,6 +24,7 @@ const AppWrapper = () => {
     <BasketProvider>
       <Header></Header>
       <AppRoutes />
+      &nbsp;
     </BasketProvider>
   )
 }

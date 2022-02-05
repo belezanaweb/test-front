@@ -29,5 +29,15 @@ export const colors = {
       normal: '#E0E7EE',
       focus: '#212121'
     }
+  },
+  productList: {
+    border: '#EEE'
+  },
+  total: {
+    border: '#CCC',
+    text: {
+      normal: '#212122',
+      discount: '#FF7800'
+    }
   }
 }
