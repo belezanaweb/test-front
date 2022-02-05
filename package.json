@@ -4,6 +4,7 @@
   "private": true,
   "dependencies": {
     "@hookform/resolvers": "^2.8.8",
+    "@testing-library/jest-dom": "^5.11.4",
     "@testing-library/react": "^12.1.2",
     "@testing-library/user-event": "^7.1.2",
     "react": "^17.0.1",
@@ -12,13 +13,14 @@
     "react-input-mask": "^2.0.4",
     "react-router-dom": "^6.2.1",
     "react-scripts": "3.4.4",
+    "react-test-renderer": "^17.0.2",
     "styled-components": "^5.3.3",
     "yup": "^0.32.11"
   },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test",
+    "test": "react-scripts test --env=jest-environment-jsdom-sixteen",
     "coverage": "react-scripts test --coverage --watchAll=false",
     "eject": "react-scripts eject"
   },
@@ -49,6 +51,7 @@
   },
   "devDependencies": {
     "husky": "^4.3.0",
+    "jest-environment-jsdom-sixteen": "^1.0.3",
     "lint-staged": "^10.4.2",
     "prettier": "^2.1.2"
   }
