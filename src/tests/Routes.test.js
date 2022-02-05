@@ -6,7 +6,7 @@ import Payment from '../pages/Payment'
 import Confirmation from '../pages/Confirmation'
 
 describe('App', () => {
-  it('render cart parge', () => {
+  it('render snapshot cart parge', () => {
     let renderer: TestRenderer.ReactTestRenderer
     TestRenderer.act(() => {
       renderer = TestRenderer.create(
@@ -140,7 +140,7 @@ describe('App', () => {
               `)
   })
 
-  it('render payment page', () => {
+  it('render snapshot payment page', () => {
     let renderer: TestRenderer.ReactTestRenderer
     TestRenderer.act(() => {
       renderer = TestRenderer.create(
@@ -370,7 +370,7 @@ describe('App', () => {
           `)
   })
 
-  it('render confirmation page', () => {
+  it('render snapshot confirmation page', () => {
     let renderer: TestRenderer.ReactTestRenderer
     TestRenderer.act(() => {
       renderer = TestRenderer.create(

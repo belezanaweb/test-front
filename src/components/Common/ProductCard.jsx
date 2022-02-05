@@ -14,7 +14,7 @@ export default function ProductCard({ img, name = '', price }) {
       <div>{img ? <img src={img} alt={name} /> : 'Produto sem imagem'}</div>
       <div>
         <h2>{name}</h2>
-        <h3>{price.toLocaleString('pt-br', { style: 'currency', currency: 'BRL' })}</h3>
+        <h3>{price?.toLocaleString('pt-br', { style: 'currency', currency: 'BRL' })}</h3>
       </div>
     </Container>
   )

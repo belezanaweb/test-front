@@ -1,4 +1,4 @@
-// function to verify if number card is valid
+// function to check if number card is valid
 export function checkNumberCard(value) {
   // remove all non digit characters
   const numberCard = value.replace(/\D/g, '')
@@ -22,7 +22,7 @@ export function checkNumberCard(value) {
   } else return false
 }
 
-// function to verify if date is valid
+// function to check if date is valid
 export function checkExpiry(value) {
   // separete date and month
   const dateExpiry = value.split('/')
