@@ -1,10 +1,12 @@
 import React from 'react'
+import Container from '../../components/Container/Container'
+import Button from '../../components/Button/Button'
 
 const CartFeature = () => {
   return (
-    <>
-      <div className="Cart">Cart Feature</div>
-    </>
+    <Container title="Produtos">
+      <Button toPage="payment">seguir para pagamento</Button>
+    </Container>
   )
 }
 

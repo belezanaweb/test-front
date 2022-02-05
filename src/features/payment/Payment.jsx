@@ -1,11 +1,14 @@
 import React from 'react'
+import Button from '../../components/Button/Button'
+import Container from '../../components/Container/Container'
 
-const Payment = () => {
+const PaymentFeature = () => {
+  console.log('PaymentFeature')
   return (
-    <>
-      <div className="Payment">Payment Feature</div>
-    </>
+    <Container title="Pagamento">
+      <Button toPage="success">seguir para o sucesso</Button>
+    </Container>
   )
 }
 
-export default Payment
+export default PaymentFeature

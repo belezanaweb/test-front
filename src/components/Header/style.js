@@ -19,8 +19,9 @@ export const Item = styled.li`
   justify-content: center;
   align-items: center;
 
-  color: ${(props) =>
-    props.active ? colors.header.links.active : colors.header.links.desactivated};
+  text-transform: uppercase;
+  color: ${({ active }) =>
+    active ? colors.header.links.active : colors.header.links.desactivated};
   font-weight: bold;
   font-size: 13px;
   line-height: 16px;

@@ -1,11 +1,8 @@
 import React from 'react'
+import Container from '../../components/Container/Container'
 
-const Success = () => {
-  return (
-    <>
-      <div className="Success">Success Feature</div>
-    </>
-  )
+const SuccessFeature = () => {
+  return <Container title="Sucesso"></Container>
 }
 
-export default Success
+export default SuccessFeature

@@ -14,19 +14,17 @@ const AppRoutes = () => (
     <Route index element={<CartFeature />} />
     <Route path="/" element={<Navigate replace to="/cart" />} />
     <Route path="cart" element={<CartFeature />} />
-    <Route patch="payment" element={<PaymentFeature />} />
-    <Route patch="success" element={<SuccessFeature />} />
+    <Route path="payment" element={<PaymentFeature />} />
+    <Route path="success" element={<SuccessFeature />} />
   </Routes>
 )
 
 const AppWrapper = () => {
   return (
-    <>
-      <BasketProvider>
-        <Header></Header>
-        <AppRoutes />
-      </BasketProvider>
-    </>
+    <BasketProvider>
+      <Header></Header>
+      <AppRoutes />
+    </BasketProvider>
   )
 }
 

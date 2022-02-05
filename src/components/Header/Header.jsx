@@ -9,7 +9,7 @@ export default function Header() {
   return (
     <CSS.Header>
       <CSS.Menu>
-        <CSS.Item active={path === '' || path === '/'}>Sacola</CSS.Item>
+        <CSS.Item active={path === '' || path === '/' || path.includes('cart')}>Sacola</CSS.Item>
         <CSS.Item active={path.includes('payment')}>Pagamento</CSS.Item>
         <CSS.Item active={path.includes('success')}>Confirmação</CSS.Item>
       </CSS.Menu>

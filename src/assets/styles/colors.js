@@ -9,6 +9,9 @@ export const colors = {
       desactivated: '#ccc'
     }
   },
+  container: {
+    title: '#999'
+  },
   button: {
     main: '#FF6C00',
     text: '#FFF',
