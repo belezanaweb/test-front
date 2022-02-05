@@ -1,4 +1,5 @@
 import { createGlobalStyle } from 'styled-components'
+import { colors } from './colors'
 
 export const GlobalStyle = createGlobalStyle`
 	* {
@@ -9,6 +10,7 @@ export const GlobalStyle = createGlobalStyle`
     }
 
 	body {
+		background-color: ${colors.body.background};
 		margin: 0;
 		padding: 0;
 		font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",

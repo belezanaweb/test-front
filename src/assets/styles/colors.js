@@ -1,4 +1,14 @@
 export const colors = {
+  body: {
+    background: '#fafafa'
+  },
+  header: {
+    background: '#FFF',
+    links: {
+      active: '#FF7800',
+      desactivated: '#ccc'
+    }
+  },
   button: {
     main: '#FF6C00',
     text: '#FFF',
