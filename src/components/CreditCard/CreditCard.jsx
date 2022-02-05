@@ -25,7 +25,7 @@ export default function CreditCard() {
     <>
       <CSS.Row>
         <Input
-          label="Número do cartão"
+          label="Número do cartão:"
           mask={creditCardMask}
           placeholder={creditCardPlace}
           name="credit-card-number"
@@ -36,7 +36,7 @@ export default function CreditCard() {
 
       <CSS.Row>
         <Input
-          label="Nome do titular"
+          label="Nome do titular:"
           placeholder="Como no cartão"
           onChange={(event) => handleChange('owner', event)}
           valid={crediCardData.owner.valid}
@@ -45,7 +45,7 @@ export default function CreditCard() {
 
       <CSS.Row>
         <Input
-          label="Validade (mês/ano)"
+          label="Validade (mês/ano)0:"
           mask={cardValidateMask}
           placeholder={cardValidatePlace}
           name="credit-card-validate"
@@ -53,7 +53,7 @@ export default function CreditCard() {
           valid={crediCardData.validate.valid}
         ></Input>
         <Input
-          label="CVV"
+          label="CVV:"
           mask={cvvMask}
           placeholder={cvvPlace}
           name="credit-card-cvv"
