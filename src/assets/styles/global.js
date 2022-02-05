@@ -18,5 +18,15 @@ export const GlobalStyle = createGlobalStyle`
 		  sans-serif;
 		-webkit-font-smoothing: antialiased;
 		-moz-osx-font-smoothing: grayscale;
-	  }
+	}
+
+	ul,
+	ol {
+	  list-style: none;
+	}
+  
+	html,
+	body {
+		height: 100%;
+	}	
 `

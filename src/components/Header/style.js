@@ -18,7 +18,6 @@ export const Item = styled.li`
   flex: 1;
   justify-content: center;
   align-items: center;
-  list-style: none;
 
   color: ${(props) =>
     props.active ? colors.header.links.active : colors.header.links.desactivated};
