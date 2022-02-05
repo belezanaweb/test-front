@@ -31,7 +31,7 @@ export function checkExpiry(value) {
   const month = dateExpiry[0].replace(/\D/g, '')
   const year = dateExpiry[1].replace(/\D/g, '')
 
-  if (month > 12) {
+  if (month > 12 || month < 1) {
     return false
   } else if (year < 2022 || year > 2030) {
     return false
