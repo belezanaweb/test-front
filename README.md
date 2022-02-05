@@ -1,9 +1,9 @@
 ## Algumas Informações
 
 Olá, pensando em uma experiência melhor criei uma outra branch com o nome PROD, subi ela no AWS amplify para que tenha acesso independente do projeto
-[clique aqui para acessar](https://prod.d1yy20cawboqtt.amplifyapp.com/), para funcionar da melhor maneira precisei hospedar o mock no meu github e apontei ele como padrao na branch PROD. Mas nessa branch (stagin) esta com o link do mock padrao.
+[clique aqui para acessar](https://prod.d1yy20cawboqtt.amplifyapp.com/), para funcionar da melhor maneira precisei hospedar o mock no meu github e apontei ele como padrão na branch PROD. Mas nessa branch (stagin) esta com o link do mock padrão.
 
-Segue tambem alguns números de cartão de crédito para preencher o form, validei o campo para receber apenas cartoes válidos! E entendo que as vezes é chato buscar algum ou ter que sair para outra aba do 4devs e gerar.
+Segue também alguns números de cartão de crédito para preencher o form, validei o campo para receber apenas cartões válidos! E entendo que as vezes é chato buscar algum ou ter que sair para outra aba do 4devs e gerar.
 
 Cartão: 5195 8250 8405 3648 / 5109 0595 3838 2396 / 5438 8178 9617 8983
 
