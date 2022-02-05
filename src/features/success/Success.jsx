@@ -1,11 +1,21 @@
 import React from 'react'
+import Container from '../../components/Container/Container'
+import ProductList from '../../components/ProductList/ProductList'
 
-const Success = () => {
+import Total from '../../components/Total/Total'
+
+const SuccessFeature = () => {
   return (
     <>
-      <div className="Success">Success Feature</div>
+      <Container title="Pagamento"></Container>
+
+      <Container title="Produtos">
+        <ProductList hidePrice></ProductList>
+      </Container>
+
+      <Total></Total>
     </>
   )
 }
 
-export default Success
+export default SuccessFeature
