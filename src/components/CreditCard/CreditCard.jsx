@@ -9,7 +9,7 @@ export default function CreditCard() {
   const [crediCardData, setCreditCardData] = useState(creditCardInfo)
 
   const handleChange = (type, event) => {
-    const value = event.target.value
+    const value = event.target.value.replace(/[._]/g, '')
     const isValid = verifyIfInformationIsValid(type, value)
 
     setCreditCardData({
