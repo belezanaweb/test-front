@@ -21,6 +21,7 @@ export const colors = {
     hover: '#D45A00'
   },
   input: {
+    label: '#CCC',
     border: {
       normal: '#E7E7E7',
       focus: '#A43287'

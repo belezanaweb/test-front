@@ -26,4 +26,8 @@ export const Row = styled.li`
   &:first-of-type {
     padding-bottom: 9px;
   }
+
+  &:last-of-type {
+    padding-bottom: 0;
+  }
 `
