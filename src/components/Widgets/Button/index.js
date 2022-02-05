@@ -1,5 +1,6 @@
 import React from 'react'
-import { Button } from './style'
+import PropTypes from 'prop-types'
+import { CustomButton } from './style'
 
 /*
     Component for Button
@@ -10,7 +11,7 @@ import { Button } from './style'
 const Button = (textButton) => {
   return (
     <>
-      <Button>{textButton}</Button>
+      <CustomButton>{textButton}</CustomButton>
     </>
   )
 }

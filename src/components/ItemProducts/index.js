@@ -1,4 +1,5 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 import { BoxProduct, ContainerProducts, ImageProduct, PriceProduct, TitleProduct } from './style'
 
 /*
