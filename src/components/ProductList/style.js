@@ -1,7 +1,9 @@
 import styled from 'styled-components'
 import { colors } from '../../assets/styles/colors'
 
-export const List = styled.ul``
+export const List = styled.ul`
+  width: 100%;
+`
 
 export const Item = styled.li`
   padding: 12px 10px 14px 10px;

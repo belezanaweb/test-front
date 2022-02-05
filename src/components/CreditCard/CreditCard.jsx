@@ -1,16 +1,14 @@
 import React from 'react'
 import Input from '../../components/Input/Input'
+import { cardValidateMask, creditCardMask, cvvMask } from '../../utils/masks'
+import { cardValidatePlace, creditCardPlace, cvvPlace } from '../../utils/placeholders'
 import * as CSS from './style'
 
+const handleChange = (type, event) => {
+  console.log(type, event.target.value)
+}
+
 export default function CreditCard() {
-  const creditCardPlace = '____.____.____.____'
-  const cardValidatePlace = '__/____'
-  const cvvPlace = '___'
-
-  const creditCardMask = '9999.9999.9999.9999'
-  const cardValidateMask = '99/9999'
-  const cvvMask = '999'
-
   return (
     <>
       <CSS.Column>
@@ -19,12 +17,16 @@ export default function CreditCard() {
           mask={creditCardMask}
           placeholder={creditCardPlace}
           name="credit-card-number"
-          type="number"
+          onChange={(event) => handleChange('credit-card-number', event)}
         ></Input>
       </CSS.Column>
 
       <CSS.Column>
-        <Input label="Nome do titular" placeholder="Como no cartão"></Input>
+        <Input
+          label="Nome do titular"
+          placeholder="Como no cartão"
+          onChange={(event) => handleChange('credit-card-owner', event)}
+        ></Input>
       </CSS.Column>
 
       <CSS.Column>
@@ -32,9 +34,16 @@ export default function CreditCard() {
           label="Validade (mês/ano)"
           mask={cardValidateMask}
           placeholder={cardValidatePlace}
-          name="cvv-number"
+          name="credit-card-validate"
+          onChange={(event) => handleChange('credit-card-validate', event)}
         ></Input>
-        <Input label="CVV" mask={cvvMask} placeholder={cvvPlace}></Input>
+        <Input
+          label="CVV"
+          mask={cvvMask}
+          placeholder={cvvPlace}
+          name="credit-card-cvv"
+          onChange={(event) => handleChange('credit-card-cvv', event)}
+        ></Input>
       </CSS.Column>
     </>
   )
