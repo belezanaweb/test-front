@@ -6,8 +6,9 @@ import { formatToBRL } from '../../utils/currencyHelper'
 
 export default function Total(props) {
   const basket = useBasketContext()
-  console.log(basket)
-  const { subTotal, shippingTotal, discount, total } = basket.amounts
+  const { subTotal, shippingTotal, discount } = basket.amounts
+  const total = subTotal + shippingTotal - discount
+
   return (
     <Global.Wrapper>
       <CSS.Box>
