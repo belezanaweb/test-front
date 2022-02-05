@@ -4,4 +4,6 @@ export const Column = styled.div`
   display: flex;
   margin-bottom: 25px;
   gap: 20px;
+
+  width: 100%;
 `

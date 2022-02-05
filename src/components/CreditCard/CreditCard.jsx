@@ -3,14 +3,23 @@ import Input from '../../components/Input/Input'
 import * as CSS from './style'
 
 export default function CreditCard() {
-  const creditCardMask = '____.____.____.____'
-  const cardValiddateMask = '__/____'
-  const cvvMask = '___'
+  const creditCardPlace = '____.____.____.____'
+  const cardValidatePlace = '__/____'
+  const cvvPlace = '___'
+
+  const creditCardMask = '9999.9999.9999.9999'
+  const cardValidateMask = '99/9999'
+  const cvvMask = '999'
 
   return (
     <>
       <CSS.Column>
-        <Input label="Número do cartão" placeholder={creditCardMask}></Input>
+        <Input
+          label="Número do cartão"
+          mask={creditCardMask}
+          placeholder={creditCardPlace}
+          name="credit-card-number"
+        ></Input>
       </CSS.Column>
 
       <CSS.Column>
@@ -18,8 +27,13 @@ export default function CreditCard() {
       </CSS.Column>
 
       <CSS.Column>
-        <Input label="Validade (mês/ano)" placeholder={cardValiddateMask}></Input>
-        <Input label="CVV" placeholder={cvvMask}></Input>
+        <Input
+          label="Validade (mês/ano)"
+          mask={cardValidateMask}
+          placeholder={cardValidatePlace}
+          name="cvv-number"
+        ></Input>
+        <Input label="CVV" mask={cvvMask} placeholder={cvvPlace}></Input>
       </CSS.Column>
     </>
   )
