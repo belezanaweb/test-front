@@ -34,7 +34,7 @@ export default function CardSummary() {
   const valueTotal = subTotal + shippingTotal - discount
 
   return (
-    <Container screenPayment={!!screenPayment.pathname.slice(1)}>
+    <Container screenPayment={screenPayment.pathname.slice(1)}>
       <BoxText className="product">
         <Text>PRODUTOS</Text>
         <Text>{formatPrice(subTotal)}</Text>

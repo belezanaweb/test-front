@@ -27,7 +27,7 @@ describe('Components Common', () => {
     expect(screen.getByPlaceholderText('___')).toBeInTheDocument()
   })
 
-  it('Component ProductCard - ', () => {
+  it('Component ProductCard - must contain all fields props', () => {
     render(<ProductCard {...propsProductCard} />, { wrapper: MemoryRouter })
     // screen.logTestingPlaygroundURL()
 

@@ -28,8 +28,8 @@ export function checkExpiry(value) {
   const dateExpiry = value.split('/')
 
   // set month and year and remove all non digit characters
-  const month = dateExpiry[0].replace(/\D/g, '')
-  const year = dateExpiry[1].replace(/\D/g, '')
+  const month = dateExpiry?.[0]?.replace(/\D/g, '')
+  const year = dateExpiry?.[1]?.replace(/\D/g, '')
 
   if (month > 12 || month < 1) {
     return false

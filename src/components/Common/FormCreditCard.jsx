@@ -28,7 +28,9 @@ export default function FormCreditCard() {
     expiry: Yup.string()
       .required('Validade requirido')
       .min(6, 'Minimo 6 caracteres')
-      .test('checkExpiry', 'Digite um mês e ano válido', (value) => checkExpiry(value))
+      .test('checkExpiry', 'Digite um mês e ano válido, mês 1-12 / ano 2022-2030', (value) =>
+        checkExpiry(value)
+      )
   })
 
   const {

@@ -1,16 +1,16 @@
 import styled from 'styled-components'
 
 export const Container = styled.div`
-  max-width: 660px;
   box-sizing: border-box;
   border-radius: 3px;
   border: 1px solid #ccc;
   padding: 15px 13px 14px 13px;
 
   @media (min-width: 700px) {
-    height: ${(props) => (props.screenPayment ? '303px' : '325px')};
-    margin-left: 10px;
-    margin-top: 28px;
+    margin-left: ${(props) => (props.screenPayment === 'confirmation' ? '0px' : '10px')};
+    margin-top: ${(props) => (props.screenPayment === 'confirmation' ? '0px' : '28px')};
+    /* margin-left: 10px; */
+    /* margin-top: 28px; */
   }
 `
 export const BoxText = styled.div`
