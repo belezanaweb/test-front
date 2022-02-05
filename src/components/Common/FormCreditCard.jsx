@@ -6,6 +6,7 @@ import { useRegisterCardContext } from '../../context/useRegisterCardContext'
 import { useForm } from 'react-hook-form'
 import * as Yup from 'yup'
 import { yupResolver } from '@hookform/resolvers/yup'
+import { checkExpiry, checkNumberCard } from '../../utils/validateFunction'
 
 /**
  *  Function to render default card
@@ -16,25 +17,6 @@ export default function FormCreditCard() {
   const { update } = useRegisterCardContext()
   const cardStorage = JSON.parse(localStorage.getItem('gb:card'))
 
-  // function to verify if number card is valid
-  function checkNumberCard(value) {
-    // remove all non digit characters
-    var valueT = value.replace(/\D/g, '')
-    var sum = 0
-    var shouldDouble = false
-    for (var i = valueT.length - 1; i >= 0; i--) {
-      var digit = parseInt(valueT.charAt(i))
-
-      if (shouldDouble) {
-        if ((digit *= 2) > 9) digit -= 9
-      }
-
-      sum += digit
-      shouldDouble = !shouldDouble
-    }
-    return sum % 10 === 0
-  }
-
   //Schema to validation of card
   const schema = Yup.object().shape({
     name: Yup.string().required('Nome requirido'),
@@ -43,7 +25,10 @@ export default function FormCreditCard() {
       .min(19, 'Número do cartão inválido')
       .test('checkNumberCard', 'Número do cartão inválido', (value) => checkNumberCard(value)),
     cvv: Yup.string().required('CVV requirido').min(3, 'CVV deve conter 3 dígitos'),
-    expiry: Yup.string().required('Validade requirido').min(6, 'Minimo 6 caracteres')
+    expiry: Yup.string()
+      .required('Validade requirido')
+      .min(6, 'Minimo 6 caracteres')
+      .test('checkExpiry', 'Digite um mês e ano válido', (value) => checkExpiry(value))
   })
 
   const {
@@ -80,7 +65,7 @@ export default function FormCreditCard() {
         error={errors?.name?.message}
         register={{
           ...register('name', {
-            onChange: (e) => setValue('name', e.target.value.replace(/([0-9][a-zA-Z]*)+/gim, ''))
+            onChange: (e) => setValue('name', e.target.value.replace(/([^a-zA-Z ])+/gim, ''))
           })
         }}
       />
