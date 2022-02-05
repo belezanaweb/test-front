@@ -16,3 +16,23 @@ export const creditCardInfo = {
     valid: true
   }
 }
+
+export const verifyIfInformationIsValid = (type, value) => {
+  const cardValidator = require('card-validator')
+
+  if (type === 'number') {
+    return cardValidator.number(value).isValid
+  }
+
+  if (type === 'owner') {
+    return cardValidator.cardholderName(value).isValid
+  }
+
+  if (type === 'validate') {
+    return cardValidator.expirationDate(value).isValid
+  }
+
+  if (type === 'cvv') {
+    return cardValidator.cvv(value).isValid
+  }
+}

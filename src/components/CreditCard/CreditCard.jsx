@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import Input from '../../components/Input/Input'
 import { cardValidateMask, creditCardMask, cvvMask } from '../../utils/masks'
 import { cardValidatePlace, creditCardPlace, cvvPlace } from '../../utils/placeholders'
-import { creditCardInfo } from './paymentUtils'
+import { creditCardInfo, verifyIfInformationIsValid } from './paymentUtils'
 import * as CSS from './style'
 
 export default function CreditCard() {
@@ -10,7 +10,7 @@ export default function CreditCard() {
 
   const handleChange = (type, event) => {
     const value = event.target.value
-    const isValid = value.replace(/[._]/g, '').length >= 3
+    const isValid = verifyIfInformationIsValid(type, value)
 
     setCreditCardData({
       ...crediCardData,

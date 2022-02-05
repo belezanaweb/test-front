@@ -13,8 +13,9 @@ export default function Input({ name, label, mask, type, onChange, valid, placeh
         id={name}
         onChange={onChange}
         placeholder={placeholder}
+        autocomplete="chrome-off"
       />
-      {!valid && <CSS.ErrorLabel>Campo Inválido</CSS.ErrorLabel>}
+      {!valid && <CSS.ErrorLabel>Campo inválido</CSS.ErrorLabel>}
     </CSS.Wrapper>
   )
 }
