@@ -1,3 +1,6 @@
+Ola, pensando em uma experiencia melhor criei uma outra branch com o nome PROD, subi ela no AWS amplify para que tenha acesso independente do projeto
+[clique aqui para acessar](https://prod.d1yy20cawboqtt.amplifyapp.com/), para funcionar da melhor maneira precisei hospedar o mock no meu github e apontei ele como padrao na branch PROD. Mas nessa branch (stagin) esta com o link do mock padrao.
+
 ## Frontend Test
 
 Faça um fork deste repositório e finalizar o teste, submeta um pull request para o repositório que nosso time será notificado.
