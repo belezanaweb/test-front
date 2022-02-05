@@ -5,7 +5,7 @@ export const Button = styled.button`
   display: block;
   cursor: pointer;
   height: 60px;
-  width: 320px;
+  width: 100%;
   border-radius: 3px;
   background-color: ${colors.button.main};
   box-shadow: inset 0 -3px 0 0 ${colors.button.hover}, 0 2px 4px 0 rgba(0, 0, 0, 0.25);
