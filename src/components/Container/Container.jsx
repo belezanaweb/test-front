@@ -5,7 +5,7 @@ export default function Container({ title, children }) {
   return (
     <CSS.Container>
       <CSS.Title>{title ?? 'label'}</CSS.Title>
-      {children}
+      <CSS.Box>{children}</CSS.Box>
     </CSS.Container>
   )
 }

@@ -12,3 +12,10 @@ export const Title = styled.h1`
   text-transform: uppercase;
   color: ${colors.container.title};
 `
+
+export const Box = styled.div`
+  padding-left: 20px;
+  margin-top: 5px;
+  border: 1px solid red;
+  background-color: ${colors.container.box.background};
+`

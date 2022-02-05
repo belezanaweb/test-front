@@ -10,7 +10,10 @@ export const colors = {
     }
   },
   container: {
-    title: '#999'
+    title: '#999',
+    box: {
+      background: '#FFF'
+    }
   },
   button: {
     main: '#FF6C00',
