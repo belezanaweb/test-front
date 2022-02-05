@@ -8,7 +8,7 @@ const SuccessFeature = () => {
       <Container title="Pagamento"></Container>
 
       <Container title="Produtos">
-        <ProductList></ProductList>
+        <ProductList hidePrice></ProductList>
       </Container>
     </>
   )

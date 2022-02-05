@@ -8,12 +8,3 @@ export const Item = styled.li`
   border: 1px solid #eee;
   display: flex;
 `
-
-export const Desc = styled.div``
-
-export const ItemLabel = styled.li`
-  color: #212122;
-  font-size: 13px;
-  line-height: 16px;
-  display: flex;
-`
