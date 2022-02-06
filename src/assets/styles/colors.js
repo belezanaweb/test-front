@@ -44,5 +44,8 @@ export const colors = {
       normal: '#212122',
       discount: '#FF7800'
     }
+  },
+  creditCardInfo: {
+    text: '#000'
   }
 }

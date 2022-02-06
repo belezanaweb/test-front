@@ -53,3 +53,11 @@ export const validInformations = ({ number, owner, validate, cvv }) => {
     cvv.valid
   )
 }
+
+export const ofuscateCardNumber = (cardNumber) => {
+  if (cardNumber) {
+    const finalCardNumber = cardNumber.substring(12)
+    return `****.****.****.${finalCardNumber}`
+  }
+  return ''
+}
