@@ -22,122 +22,122 @@ describe('App', () => {
 
     // data has not been loaded yet
     expect(renderer.toJSON()).toMatchInlineSnapshot(`
-                  <main>
-                    <div
-                      className="sc-bdvvtL hchXHT"
-                    >
-                      <ul>
-                        <li>
-                          <a
-                            aria-current="page"
-                            className="title selected"
-                            href="/"
-                            onClick={[Function]}
-                          >
-                            SACOLA
-                          </a>
-                        </li>
-                        <li>
-                          <a
-                            className="title"
-                            href="/payment"
-                            onClick={[Function]}
-                          >
-                            PAGAMENTO
-                          </a>
-                        </li>
-                        <li>
-                          <a
-                            className="title"
-                            href="/confirmation"
-                            onClick={[Function]}
-                          >
-                            CONFIRMAÇÃO
-                          </a>
-                        </li>
-                      </ul>
-                    </div>
-                    <div
-                      className="sc-egiyK hytFim"
-                    >
-                      <div
-                        className="box"
-                      >
-                        <div>
-                          <h2
-                            className="sc-dkPtRN hEgYgW"
-                          >
-                            Produtos
-                          </h2>
-                          <div
-                            className="sc-gsDKAQ kaOEHb"
-                          />
-                        </div>
-                        <div
-                          className="sc-jrQzAO DBPFX"
-                        >
-                          <div
-                            className="sc-kDTinF hPDOMe product"
-                          >
-                            <h2
-                              className="sc-iqseJM kHSfAR"
-                            >
-                              PRODUTOS
-                            </h2>
-                            <h2
-                              className="sc-iqseJM kHSfAR"
-                            />
-                          </div>
-                          <div
-                            className="sc-kDTinF hPDOMe shipping"
-                          >
-                            <h2
-                              className="sc-iqseJM kHSfAR"
-                            >
-                              FRETE
-                            </h2>
-                            <h2
-                              className="sc-iqseJM kHSfAR"
-                            />
-                          </div>
-                          <div
-                            className="sc-kDTinF hPDOMe discount"
-                          >
-                            <h2
-                              className="sc-iqseJM kHSfAR discountColor"
-                            >
-                              DESCONTO
-                            </h2>
-                            <h2
-                              className="sc-iqseJM kHSfAR discountColor"
-                            />
-                          </div>
-                          <div
-                            className="sc-kDTinF hPDOMe"
-                          >
-                            <h2
-                              className="sc-iqseJM kHSfAR total"
-                            >
-                              TOTAL
-                            </h2>
-                            <h2
-                              className="sc-iqseJM kHSfAR total"
-                            >
-                              R$ NaN
-                            </h2>
-                          </div>
-                        </div>
-                      </div>
-                      <button
-                        className="sc-crHmcD bZMXcF"
-                        disabled={false}
-                        onClick={[Function]}
-                      >
-                        Seguir para o pagamento
-                      </button>
-                    </div>
-                  </main>
-              `)
+      <main>
+        <div
+          className="sc-bdvvtL hchXHT"
+        >
+          <ul>
+            <li>
+              <a
+                aria-current="page"
+                className="title selected"
+                href="/"
+                onClick={[Function]}
+              >
+                SACOLA
+              </a>
+            </li>
+            <li>
+              <a
+                className="title"
+                href="/payment"
+                onClick={[Function]}
+              >
+                PAGAMENTO
+              </a>
+            </li>
+            <li>
+              <a
+                className="title"
+                href="/confirmation"
+                onClick={[Function]}
+              >
+                CONFIRMAÇÃO
+              </a>
+            </li>
+          </ul>
+        </div>
+        <div
+          className="sc-egiyK hytFim"
+        >
+          <div
+            className="box"
+          >
+            <div>
+              <h2
+                className="sc-dkPtRN hEgYgW"
+              >
+                Produtos
+              </h2>
+              <div
+                className="sc-gsDKAQ kaOEHb"
+              />
+            </div>
+            <div
+              className="sc-jrQzAO fcIFj"
+            >
+              <div
+                className="sc-kDTinF hPDOMe product"
+              >
+                <h2
+                  className="sc-iqseJM kHSfAR"
+                >
+                  PRODUTOS
+                </h2>
+                <h2
+                  className="sc-iqseJM kHSfAR"
+                />
+              </div>
+              <div
+                className="sc-kDTinF hPDOMe shipping"
+              >
+                <h2
+                  className="sc-iqseJM kHSfAR"
+                >
+                  FRETE
+                </h2>
+                <h2
+                  className="sc-iqseJM kHSfAR"
+                />
+              </div>
+              <div
+                className="sc-kDTinF hPDOMe discount"
+              >
+                <h2
+                  className="sc-iqseJM kHSfAR discountColor"
+                >
+                  DESCONTO
+                </h2>
+                <h2
+                  className="sc-iqseJM kHSfAR discountColor"
+                />
+              </div>
+              <div
+                className="sc-kDTinF hPDOMe"
+              >
+                <h2
+                  className="sc-iqseJM kHSfAR total"
+                >
+                  TOTAL
+                </h2>
+                <h2
+                  className="sc-iqseJM kHSfAR total"
+                >
+                  R$ NaN
+                </h2>
+              </div>
+            </div>
+          </div>
+          <button
+            className="sc-crHmcD bZMXcF"
+            disabled={false}
+            onClick={[Function]}
+          >
+            Seguir para o pagamento
+          </button>
+        </div>
+      </main>
+    `)
   })
 
   it('render snapshot payment page', () => {
@@ -156,218 +156,218 @@ describe('App', () => {
 
     // data has not been loaded yet
     expect(renderer.toJSON()).toMatchInlineSnapshot(`
-            <main>
-              <div
-                className="sc-bdvvtL hchXHT"
+      <main>
+        <div
+          className="sc-bdvvtL hchXHT"
+        >
+          <ul>
+            <li>
+              <a
+                className="title"
+                href="/"
+                onClick={[Function]}
               >
-                <ul>
-                  <li>
-                    <a
-                      className="title"
-                      href="/"
-                      onClick={[Function]}
-                    >
-                      SACOLA
-                    </a>
-                  </li>
-                  <li>
-                    <a
-                      aria-current="page"
-                      className="title selected"
-                      href="/payment"
-                      onClick={[Function]}
-                    >
-                      PAGAMENTO
-                    </a>
-                  </li>
-                  <li>
-                    <a
-                      className="title"
-                      href="/confirmation"
-                      onClick={[Function]}
-                    >
-                      CONFIRMAÇÃO
-                    </a>
-                  </li>
-                </ul>
-              </div>
-              <div
-                className="sc-bqiRlB kPJdAR"
+                SACOLA
+              </a>
+            </li>
+            <li>
+              <a
+                aria-current="page"
+                className="title selected"
+                href="/payment"
+                onClick={[Function]}
               >
-                <div
-                  className="box"
+                PAGAMENTO
+              </a>
+            </li>
+            <li>
+              <a
+                className="title"
+                href="/confirmation"
+                onClick={[Function]}
+              >
+                CONFIRMAÇÃO
+              </a>
+            </li>
+          </ul>
+        </div>
+        <div
+          className="sc-bqiRlB kPJdAR"
+        >
+          <div
+            className="box"
+          >
+            <div>
+              <h2
+                className="sc-dkPtRN hEgYgW"
+              >
+                CARTÃO DE CRÉDITO
+              </h2>
+              <div
+                className="sc-gsDKAQ kaOEHb"
+              >
+                <form
+                  onSubmit={[Function]}
                 >
-                  <div>
-                    <h2
-                      className="sc-dkPtRN hEgYgW"
+                  <div
+                    className="sc-eCImPb eMfaUz"
+                  >
+                    <label
+                      className="sc-jRQBWg fSZWEb"
                     >
-                      CARTÃO DE CRÉDITO
-                    </h2>
-                    <div
-                      className="sc-gsDKAQ kaOEHb"
-                    >
-                      <form
-                        onSubmit={[Function]}
-                      >
-                        <div
-                          className="sc-eCImPb eMfaUz"
-                        >
-                          <label
-                            className="sc-jRQBWg fSZWEb"
-                          >
-                            Número do cartão:
-                          </label>
-                          <input
-                            className="inputMask"
-                            defaultValue=""
-                            id="cardnumber"
-                            name="number"
-                            onBlur={[Function]}
-                            onChange={[Function]}
-                            onFocus={[Function]}
-                            onMouseDown={[Function]}
-                            onPaste={[Function]}
-                            placeholder="____.____.____.____"
-                          />
-                        </div>
-                        <div
-                          className="sc-eCImPb eMfaUz"
-                        >
-                          <label
-                            className="sc-jRQBWg fSZWEb"
-                          >
-                            Nome do Titular:
-                          </label>
-                          <input
-                            className="inputMask"
-                            defaultValue=""
-                            id="cardName"
-                            name="name"
-                            onBlur={[Function]}
-                            onChange={[Function]}
-                            placeholder="Como no cartão"
-                          />
-                        </div>
-                        <div
-                          className="sc-iCfMLu vlccp"
-                        >
-                          <div
-                            className="sc-eCImPb eMfaUz"
-                          >
-                            <label
-                              className="sc-jRQBWg fSZWEb"
-                            >
-                              Validade (mês/ano):
-                            </label>
-                            <input
-                              className="inputMask"
-                              defaultValue=""
-                              id="cardExpiry"
-                              name="expiry"
-                              onBlur={[Function]}
-                              onChange={[Function]}
-                              onFocus={[Function]}
-                              onMouseDown={[Function]}
-                              onPaste={[Function]}
-                              placeholder="__/____"
-                            />
-                          </div>
-                          <div
-                            className="sc-eCImPb eMfaUz"
-                          >
-                            <label
-                              className="sc-jRQBWg fSZWEb"
-                            >
-                              CVV:
-                            </label>
-                            <input
-                              className="inputMask"
-                              defaultValue=""
-                              id="cardCvv"
-                              maxLength="3"
-                              name="cvv"
-                              onBlur={[Function]}
-                              onChange={[Function]}
-                              placeholder="___"
-                              type="password"
-                            />
-                          </div>
-                        </div>
-                        <button
-                          className="sc-furwcr cGvjjN"
-                          id="formSubmitCard"
-                          type="submit"
-                        />
-                      </form>
-                    </div>
+                      Número do cartão:
+                    </label>
+                    <input
+                      className="inputMask"
+                      defaultValue=""
+                      id="cardnumber"
+                      name="number"
+                      onBlur={[Function]}
+                      onChange={[Function]}
+                      onFocus={[Function]}
+                      onMouseDown={[Function]}
+                      onPaste={[Function]}
+                      placeholder="____.____.____.____"
+                    />
                   </div>
                   <div
-                    className="sc-jrQzAO UKKnL"
+                    className="sc-eCImPb eMfaUz"
+                  >
+                    <label
+                      className="sc-jRQBWg fSZWEb"
+                    >
+                      Nome do Titular:
+                    </label>
+                    <input
+                      className="inputMask"
+                      defaultValue=""
+                      id="cardName"
+                      name="name"
+                      onBlur={[Function]}
+                      onChange={[Function]}
+                      placeholder="Como no cartão"
+                    />
+                  </div>
+                  <div
+                    className="sc-iCfMLu vlccp"
                   >
                     <div
-                      className="sc-kDTinF hPDOMe product"
+                      className="sc-eCImPb eMfaUz"
                     >
-                      <h2
-                        className="sc-iqseJM kHSfAR"
+                      <label
+                        className="sc-jRQBWg fSZWEb"
                       >
-                        PRODUTOS
-                      </h2>
-                      <h2
-                        className="sc-iqseJM kHSfAR"
+                        Validade (mês/ano):
+                      </label>
+                      <input
+                        className="inputMask"
+                        defaultValue=""
+                        id="cardExpiry"
+                        name="expiry"
+                        onBlur={[Function]}
+                        onChange={[Function]}
+                        onFocus={[Function]}
+                        onMouseDown={[Function]}
+                        onPaste={[Function]}
+                        placeholder="__/____"
                       />
                     </div>
                     <div
-                      className="sc-kDTinF hPDOMe shipping"
+                      className="sc-eCImPb eMfaUz"
                     >
-                      <h2
-                        className="sc-iqseJM kHSfAR"
+                      <label
+                        className="sc-jRQBWg fSZWEb"
                       >
-                        FRETE
-                      </h2>
-                      <h2
-                        className="sc-iqseJM kHSfAR"
+                        CVV:
+                      </label>
+                      <input
+                        className="inputMask"
+                        defaultValue=""
+                        id="cardCvv"
+                        maxLength="3"
+                        name="cvv"
+                        onBlur={[Function]}
+                        onChange={[Function]}
+                        placeholder="___"
+                        type="password"
                       />
-                    </div>
-                    <div
-                      className="sc-kDTinF hPDOMe discount"
-                    >
-                      <h2
-                        className="sc-iqseJM kHSfAR discountColor"
-                      >
-                        DESCONTO
-                      </h2>
-                      <h2
-                        className="sc-iqseJM kHSfAR discountColor"
-                      />
-                    </div>
-                    <div
-                      className="sc-kDTinF hPDOMe"
-                    >
-                      <h2
-                        className="sc-iqseJM kHSfAR total"
-                      >
-                        TOTAL
-                      </h2>
-                      <h2
-                        className="sc-iqseJM kHSfAR total"
-                      >
-                        R$ NaN
-                      </h2>
                     </div>
                   </div>
-                </div>
-                <button
-                  className="sc-crHmcD bZMXcF"
-                  disabled={false}
-                  id="buttonForm"
-                  onClick={[Function]}
-                  type="submit"
-                >
-                  FINALIZAR O PEDIDO
-                </button>
+                  <button
+                    className="sc-furwcr cGvjjN"
+                    id="formSubmitCard"
+                    type="submit"
+                  />
+                </form>
               </div>
-            </main>
-          `)
+            </div>
+            <div
+              className="sc-jrQzAO fcIFj"
+            >
+              <div
+                className="sc-kDTinF hPDOMe product"
+              >
+                <h2
+                  className="sc-iqseJM kHSfAR"
+                >
+                  PRODUTOS
+                </h2>
+                <h2
+                  className="sc-iqseJM kHSfAR"
+                />
+              </div>
+              <div
+                className="sc-kDTinF hPDOMe shipping"
+              >
+                <h2
+                  className="sc-iqseJM kHSfAR"
+                >
+                  FRETE
+                </h2>
+                <h2
+                  className="sc-iqseJM kHSfAR"
+                />
+              </div>
+              <div
+                className="sc-kDTinF hPDOMe discount"
+              >
+                <h2
+                  className="sc-iqseJM kHSfAR discountColor"
+                >
+                  DESCONTO
+                </h2>
+                <h2
+                  className="sc-iqseJM kHSfAR discountColor"
+                />
+              </div>
+              <div
+                className="sc-kDTinF hPDOMe"
+              >
+                <h2
+                  className="sc-iqseJM kHSfAR total"
+                >
+                  TOTAL
+                </h2>
+                <h2
+                  className="sc-iqseJM kHSfAR total"
+                >
+                  R$ NaN
+                </h2>
+              </div>
+            </div>
+          </div>
+          <button
+            className="sc-crHmcD bZMXcF"
+            disabled={false}
+            id="buttonForm"
+            onClick={[Function]}
+            type="submit"
+          >
+            FINALIZAR O PEDIDO
+          </button>
+        </div>
+      </main>
+    `)
   })
 
   it('render snapshot confirmation page', () => {
@@ -386,154 +386,154 @@ describe('App', () => {
 
     // data has not been loaded yet
     expect(renderer.toJSON()).toMatchInlineSnapshot(`
-            <main>
-              <div
-                className="sc-bdvvtL hchXHT"
+      <main>
+        <div
+          className="sc-bdvvtL hchXHT"
+        >
+          <ul>
+            <li>
+              <a
+                className="title"
+                href="/"
+                onClick={[Function]}
               >
-                <ul>
-                  <li>
-                    <a
-                      className="title"
-                      href="/"
-                      onClick={[Function]}
-                    >
-                      SACOLA
-                    </a>
-                  </li>
-                  <li>
-                    <a
-                      className="title"
-                      href="/payment"
-                      onClick={[Function]}
-                    >
-                      PAGAMENTO
-                    </a>
-                  </li>
-                  <li>
-                    <a
-                      aria-current="page"
-                      className="title selected"
-                      href="/confirmation"
-                      onClick={[Function]}
-                    >
-                      CONFIRMAÇÃO
-                    </a>
-                  </li>
-                </ul>
-              </div>
-              <div
-                className="sc-ksdxgE iwvPKg"
+                SACOLA
+              </a>
+            </li>
+            <li>
+              <a
+                className="title"
+                href="/payment"
+                onClick={[Function]}
               >
-                <div
-                  className="sc-hBUSln cUUCgE"
+                PAGAMENTO
+              </a>
+            </li>
+            <li>
+              <a
+                aria-current="page"
+                className="title selected"
+                href="/confirmation"
+                onClick={[Function]}
+              >
+                CONFIRMAÇÃO
+              </a>
+            </li>
+          </ul>
+        </div>
+        <div
+          className="sc-ksdxgE iwvPKg"
+        >
+          <div
+            className="sc-hBUSln cUUCgE"
+          >
+            <img
+              alt="Check"
+              className="check"
+              src="check.png"
+            />
+            <img
+              alt="Circle"
+              src="circle.png"
+            />
+          </div>
+          <h2>
+            COMPRA EFETUADA COM SUCESSO
+          </h2>
+        </div>
+        <div
+          className="sc-fotOHu kaSDIX"
+        >
+          <div>
+            <h2
+              className="sc-dkPtRN hEgYgW"
+            >
+              PAGAMENTO
+            </h2>
+            <div
+              className="sc-gsDKAQ kaOEHb"
+            >
+              <div>
+                <h2
+                  className="sc-pVTFL euyLxO"
                 >
-                  <img
-                    alt="Check"
-                    className="check"
-                    src="check.png"
-                  />
-                  <img
-                    alt="Circle"
-                    src="circle.png"
-                  />
-                </div>
-                <h2>
-                  COMPRA EFETUADA COM SUCESSO
+                  ****.****.****.
                 </h2>
+                <h2
+                  className="sc-pVTFL euyLxO"
+                />
+                <h2
+                  className="sc-pVTFL euyLxO"
+                />
               </div>
-              <div
-                className="sc-fotOHu kaSDIX"
+            </div>
+          </div>
+          <div>
+            <h2
+              className="sc-dkPtRN hEgYgW"
+            >
+              CARTÃO DE CRÉDITO
+            </h2>
+            <div
+              className="sc-gsDKAQ kaOEHb"
+            />
+          </div>
+          <div
+            className="sc-jrQzAO haeTIg"
+          >
+            <div
+              className="sc-kDTinF hPDOMe product"
+            >
+              <h2
+                className="sc-iqseJM kHSfAR"
               >
-                <div>
-                  <h2
-                    className="sc-dkPtRN hEgYgW"
-                  >
-                    PAGAMENTO
-                  </h2>
-                  <div
-                    className="sc-gsDKAQ kaOEHb"
-                  >
-                    <div>
-                      <h2
-                        className="sc-pVTFL euyLxO"
-                      >
-                        ****.****.****.
-                      </h2>
-                      <h2
-                        className="sc-pVTFL euyLxO"
-                      />
-                      <h2
-                        className="sc-pVTFL euyLxO"
-                      />
-                    </div>
-                  </div>
-                </div>
-                <div>
-                  <h2
-                    className="sc-dkPtRN hEgYgW"
-                  >
-                    CARTÃO DE CRÉDITO
-                  </h2>
-                  <div
-                    className="sc-gsDKAQ kaOEHb"
-                  />
-                </div>
-                <div
-                  className="sc-jrQzAO UKKnL"
-                >
-                  <div
-                    className="sc-kDTinF hPDOMe product"
-                  >
-                    <h2
-                      className="sc-iqseJM kHSfAR"
-                    >
-                      PRODUTOS
-                    </h2>
-                    <h2
-                      className="sc-iqseJM kHSfAR"
-                    />
-                  </div>
-                  <div
-                    className="sc-kDTinF hPDOMe shipping"
-                  >
-                    <h2
-                      className="sc-iqseJM kHSfAR"
-                    >
-                      FRETE
-                    </h2>
-                    <h2
-                      className="sc-iqseJM kHSfAR"
-                    />
-                  </div>
-                  <div
-                    className="sc-kDTinF hPDOMe discount"
-                  >
-                    <h2
-                      className="sc-iqseJM kHSfAR discountColor"
-                    >
-                      DESCONTO
-                    </h2>
-                    <h2
-                      className="sc-iqseJM kHSfAR discountColor"
-                    />
-                  </div>
-                  <div
-                    className="sc-kDTinF hPDOMe"
-                  >
-                    <h2
-                      className="sc-iqseJM kHSfAR total"
-                    >
-                      TOTAL
-                    </h2>
-                    <h2
-                      className="sc-iqseJM kHSfAR total"
-                    >
-                      R$ NaN
-                    </h2>
-                  </div>
-                </div>
-              </div>
-            </main>
-          `)
+                PRODUTOS
+              </h2>
+              <h2
+                className="sc-iqseJM kHSfAR"
+              />
+            </div>
+            <div
+              className="sc-kDTinF hPDOMe shipping"
+            >
+              <h2
+                className="sc-iqseJM kHSfAR"
+              >
+                FRETE
+              </h2>
+              <h2
+                className="sc-iqseJM kHSfAR"
+              />
+            </div>
+            <div
+              className="sc-kDTinF hPDOMe discount"
+            >
+              <h2
+                className="sc-iqseJM kHSfAR discountColor"
+              >
+                DESCONTO
+              </h2>
+              <h2
+                className="sc-iqseJM kHSfAR discountColor"
+              />
+            </div>
+            <div
+              className="sc-kDTinF hPDOMe"
+            >
+              <h2
+                className="sc-iqseJM kHSfAR total"
+              >
+                TOTAL
+              </h2>
+              <h2
+                className="sc-iqseJM kHSfAR total"
+              >
+                R$ NaN
+              </h2>
+            </div>
+          </div>
+        </div>
+      </main>
+    `)
   })
 })
