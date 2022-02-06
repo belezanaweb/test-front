@@ -18,6 +18,7 @@ export const GlobalStyle = createGlobalStyle`
 		  sans-serif;
 		-webkit-font-smoothing: antialiased;
 		-moz-osx-font-smoothing: grayscale;
+		min-width: 320px;
 	}
 
 	ul,
@@ -36,4 +37,9 @@ export const Wrapper = styled.div`
   display: flex;
   flex-flow: column;
   align-items: center;
+
+  @media (min-width: 768px) {
+    width: 768px;
+    margin: 0 auto;
+  }
 `

@@ -18,9 +18,13 @@ export const colors = {
   button: {
     main: '#FF6C00',
     text: '#FFF',
-    hover: '#D45A00'
+    hover: '#D45A00',
+    disabled: '#B3B3B3',
+    shadow: '#666666'
   },
   input: {
+    label: '#CCC',
+    placeholder: '#e0e7ee',
     border: {
       normal: '#E7E7E7',
       focus: '#A43287'
@@ -28,7 +32,8 @@ export const colors = {
     text: {
       normal: '#E0E7EE',
       focus: '#212121'
-    }
+    },
+    error: '#F30'
   },
   productList: {
     border: '#EEE'
@@ -39,5 +44,8 @@ export const colors = {
       normal: '#212122',
       discount: '#FF7800'
     }
+  },
+  creditCardInfo: {
+    text: '#000'
   }
 }

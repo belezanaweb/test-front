@@ -4,12 +4,13 @@ import { colors } from '../../assets/styles/colors'
 export const Box = styled.ul`
   background-color: transparent;
   border: 1px solid ${colors.total.border};
+  border-radius: 3px;
   width: 100%;
   margin-bottom: 20px;
   padding: 15px 13px 13px 14px;
 
   &:first-of-type {
-    paddin-bottom: 9px;
+    padding-bottom: 9px;
   }
 `
 
@@ -25,5 +26,9 @@ export const Row = styled.li`
 
   &:first-of-type {
     padding-bottom: 9px;
+  }
+
+  &:last-of-type {
+    padding-bottom: 0;
   }
 `

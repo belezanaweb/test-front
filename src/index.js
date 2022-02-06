@@ -1,4 +1,4 @@
-import React, { StrictMode } from 'react'
+import React from 'react'
 import ReactDOM from 'react-dom'
 import AppWrapper from './App'
 import * as serviceWorker from './serviceWorker'
@@ -7,10 +7,8 @@ import { GlobalStyle } from './assets/styles/global'
 
 const Root = () => (
   <BrowserRouter>
-    <StrictMode>
-      <AppWrapper />
-      <GlobalStyle />
-    </StrictMode>
+    <AppWrapper />
+    <GlobalStyle />
   </BrowserRouter>
 )
 

@@ -17,8 +17,15 @@ export const Button = styled.button`
   text-align: center;
   text-transform: uppercase;
   padding: 18px 0.94px;
+  pointer-events: auto;
 
   &:hover {
     background-color: ${colors.button.hover};
+  }
+
+  &:disabled {
+    background-color: ${colors.button.disabled};
+    box-shadow: inset 0 -3px 0 0 ${colors.button.shadow}, 0 2px 6px 0 rgba(0, 0, 0, 0.35);
+    pointer-events: none;
   }
 `
