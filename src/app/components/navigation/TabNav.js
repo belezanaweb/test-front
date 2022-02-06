@@ -1,19 +1,19 @@
 import React from 'react'
-import { ContainerTabNav } from './tabNav.style'
-import { Link } from 'react-router-dom'
+import { ContainerTabNav } from './TabNav.style'
+import { NavLink } from 'react-router-dom'
 const TabNav = () => {
   return (
     <ContainerTabNav>
       <nav>
         <ul>
           <li>
-            <Link to="/cart">SACOLA</Link>
+            <NavLink to="/cart">SACOLA</NavLink>
           </li>
           <li>
-            <Link to="/checkout">PAGAMENTO</Link>
+            <NavLink to="/checkout">PAGAMENTO</NavLink>
           </li>
           <li>
-            <Link to="/wow-moment">CONFIRMAÇÃO</Link>
+            <NavLink to="/wow-moment">CONFIRMAÇÃO</NavLink>
           </li>
         </ul>
       </nav>

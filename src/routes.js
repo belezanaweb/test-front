@@ -1,10 +1,10 @@
 import React, { Suspense, lazy } from 'react'
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'
-import TabNav from './app/components/tabNav'
+import TabNav from './app/components/navigation/TabNav'
 
-const Cart = lazy(() => import('./app/pages/Cart'))
-const Checkout = lazy(() => import('./app/pages/Checkout'))
-const WowMoment = lazy(() => import('./app/pages/WowMoment'))
+const Cart = lazy(() => import('./app/pages/cart/CartMain'))
+const Checkout = lazy(() => import('./app/pages/checkout/CheckoutMain'))
+const WowMoment = lazy(() => import('./app/pages/wowmoment/WowMomentMain'))
 
 export default function CRouter() {
   return (

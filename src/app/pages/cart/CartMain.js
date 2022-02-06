@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react'
-import apiCart from '../../core/api/api.cart'
-import { TransactionContext } from '../../core/store/Context'
+import apiCart from '../../../core/api/api.cart'
+import { TransactionContext } from '../../../core/store/Context'
+import TitleSection from '../../components/layout/TitleSection'
 
 const Cart = () => {
   const [transaction, setTransaction] = React.useContext(TransactionContext)
@@ -14,7 +15,12 @@ const Cart = () => {
 
   console.log('transaction', transaction)
 
-  return <h1>Cart</h1>
+  return (
+    <>
+      <TitleSection title="Cart" />
+      asd
+    </>
+  )
 }
 
 export default Cart

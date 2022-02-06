@@ -13,10 +13,15 @@
 
 html {
   box-sizing: border-box;
+  background-color: #eee;
 }
 
 ul {
   list-style-type: none;
   padding: 0;
   margin: 0;
+}
+
+body {
+  background-color: #eee;
 }
