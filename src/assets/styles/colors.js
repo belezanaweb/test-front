@@ -47,5 +47,8 @@ export const colors = {
   },
   creditCardInfo: {
     text: '#000'
+  },
+  success: {
+    text: '#FF7800'
   }
 }
