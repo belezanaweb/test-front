@@ -20,7 +20,6 @@ export const Box = styled.div`
   background-color: ${({ transparent }) =>
     transparent ? 'transparent' : colors.container.box.background};
   padding: 10px;
-  padding-bottom: ${({ transparent }) => (transparent ? '20.43px' : '0px')};
   box-shadow: ${({ transparent }) => (transparent ? 'none' : '1px 1px 5px 0 rgba(0, 0, 29, 0.22)')};
   border-radius: 3px;
 
