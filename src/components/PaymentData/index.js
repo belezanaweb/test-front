@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import { Button } from '../'
+import { useSelector, useDispatch } from 'react-redux'
 import { TitleInput } from './style'
 import { Grid, TextField } from '@mui/material'
 import InputMask from 'react-input-mask'
@@ -19,33 +19,48 @@ const PaymentData = (props) => {
     expirationDate: false,
     codCreditCard: false
   })
+  const teste = useSelector((state) => state.creditcard)
+  const dispatch = useDispatch()
+  useEffect(() => {
+    console.log(teste)
+  }, [teste])
 
   const onChangeNumCreditCard = (value) => {
     setNumCreditCard(value)
     let numCreditCardCustom = value.replace(/[^a-zA-Z0-9 ]/g, '')
     if (numCreditCardCustom.length != 16) setErrorField({ ...errorField, numCreditCard: true })
     else {
+      dispatch({ type: 'creditCard/ADD_NUMBER_CREDITCARD', numCreditCard: value })
       setErrorField({ ...errorField, numCreditCard: false })
     }
   }
 
   const onChangeNameCreditCard = (value) => {
     setNameCreditCard(value)
-    if (nameCreditCard) setErrorField({ ...errorField, nameCreditCard: true })
-    else setErrorField({ ...errorField, nameCreditCard: false })
+    if (!nameCreditCard) setErrorField({ ...errorField, nameCreditCard: true })
+    else {
+      dispatch({ type: 'creditCard/ADD_NAME_CREDITCARD', nameCreditCard: value })
+      setErrorField({ ...errorField, nameCreditCard: false })
+    }
   }
 
   const onChangeExpirationDateCreditCard = (value) => {
     setExpirationDate(value)
     let numExpirationDate = expirationDate.replace(/[^a-zA-Z0-9 ]/g, '')
-    if (numExpirationDate != 4) setErrorField({ ...errorField, expirationDate: true })
-    else setErrorField({ ...errorField, expirationDate: false })
+    if (numExpirationDate.length != 4) setErrorField({ ...errorField, expirationDate: true })
+    else {
+      dispatch({ type: 'creditCard/ADD_EXPIRATIONDATE_CREDITCARD', expirationDate: value })
+      setErrorField({ ...errorField, expirationDate: false })
+    }
   }
 
   const onChangeCodCreditCard = (value) => {
     setCodCreditCard(value)
-    if (codCreditCard) setErrorField({ ...errorField, expirationDate: true })
-    else setErrorField({ ...errorField, expirationDate: false })
+    if (!codCreditCard) setErrorField({ ...errorField, expirationDate: true })
+    else {
+      dispatch({ type: 'creditCard/ADD_COD_CREDITCARD', codCreditCard: value })
+      setErrorField({ ...errorField, expirationDate: false })
+    }
   }
 
   return (
