@@ -21,9 +21,9 @@ test('should create a Button component', function () {
 
 test('should create a Button component with text', function () {
   const buttonText = 'o Boticário'
-  expect(componentWithText.toJSON().children).toContain(buttonText)
+  expect(componentWithText.toJSON().children[0].children[0]).toContain(buttonText)
 })
 
 test('should create a Button component without text and get default value from button', function () {
-  expect(component.toJSON().children).toContain('Text Button')
+  expect(component.toJSON().children[0].children[0]).toContain('Text Button')
 })

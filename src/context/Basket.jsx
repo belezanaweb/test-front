@@ -41,8 +41,11 @@ export const BasketProvider = ({ children }) => {
     items,
     amounts,
     paymentInfo,
+    setAmounts,
+    setItems,
     setIsDisabled,
-    setPaymentInfo
+    setPaymentInfo,
+    setIsLoading
   }
 
   return <BasketContext.Provider value={store}>{children}</BasketContext.Provider>

@@ -16,6 +16,7 @@ const AppRoutes = () => (
     <Route path="cart" element={<CartFeature />} />
     <Route path="payment" element={<PaymentFeature />} />
     <Route path="success" element={<SuccessFeature />} />
+    <Route path="*" element={<Navigate replace to="/cart" />} />
   </Routes>
 )
 
@@ -23,7 +24,7 @@ const AppWrapper = () => {
   return (
     <BasketProvider>
       <Header></Header>
-      <AppRoutes />
+      <AppRoutes></AppRoutes>
       &nbsp;
     </BasketProvider>
   )
