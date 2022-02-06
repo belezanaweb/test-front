@@ -18,7 +18,7 @@ npm install or yarn install
 npm start
 ```
 
-## About my dependencies
+## About project dependencies
 
 ### Browser func
  - **Fetch** = to request the api of list of products. I could also use the **Axios** lib but I prefer to use the native method of browser to get only one request.
