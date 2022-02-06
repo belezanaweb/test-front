@@ -5,6 +5,11 @@ export const Container = styled.section`
   margin-top: 10px;
   margin-bottom: 20px;
   padding: 0 10px 0 9px;
+
+  @media (min-width: 768px) {
+    width: 768px;
+    margin: 10px auto 20px;
+  }
 `
 
 export const Title = styled.h1`
