@@ -15,7 +15,7 @@ function App() {
         <RequestProvider>
           <RegisterCardProvider>
             <Routes>
-              <Route path="/" element={<Cart />} />
+              <Route exact path="/" element={<Cart />} />
               <Route path="/payment" element={<Payment />} />
               <Route path="/confirmation" element={<Confirmation />} />
             </Routes>
