@@ -8,10 +8,10 @@ import { CustomButton } from './style'
     textButton - Text displayed on the button
 */
 
-const Button = (textButton) => {
+const Button = (props) => {
   return (
     <>
-      <CustomButton>{textButton}</CustomButton>
+      <CustomButton>{props.textButton}</CustomButton>
     </>
   )
 }

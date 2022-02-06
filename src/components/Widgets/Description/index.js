@@ -7,10 +7,10 @@ import { TitleDescription } from './style'
     Props:
     Title - Title for description box
 */
-const Description = (title) => {
+const Description = (props) => {
   return (
     <>
-      <TitleDescription>{title}</TitleDescription>
+      <TitleDescription>{props.title}</TitleDescription>
     </>
   )
 }

@@ -1,43 +1,33 @@
 import { Typography } from '@mui/material'
 import styled from 'styled-components'
 
-export const ContainerProducts = styled.div`
-  height: 325px;
-  width: 341px;
-  border-radius: 3px;
-  background-color: #fff;
-  box-shadow: 1px 1px 5px 0 rgba(0, 0, 29, 0.22);
-`
-
 export const BoxProduct = styled.div`
-  box-sizing: border-box;
-  height: 90px;
-  width: 316px;
-  border-radius: 3px;
-  border: 1px solid #eee;
+  height: 25%;
+  box-sizing: border-box !important;
+  border-radius: 3px !important;
+  border: 2px solid #eee !important;
+  padding: 12px 12px 13px 13px !important;
+  margin: 15px 12px 0px 12px;
 `
 
 export const TitleProduct = styled(Typography)`
-  height: 32px;
-  width: 220px;
-  color: #212122;
-  font-family: 'Helvetica Neue';
-  font-size: 13px;
-  letter-spacing: NaNpx;
-  line-height: 16px;
+  color: #212122 !important;
+  font-family: 'Helvetica Neue' !important;
+  font-size: 0.8125rem !important;
+  line-height: 16px !important;
 `
 export const PriceProduct = styled(Typography)`
-  height: 17px;
-  width: 220px;
-  color: #212122;
-  font-family: 'Helvetica Neue';
-  font-size: 14px;
-  font-weight: 700;
-  line-height: 17px;
-  text-align: right;
+  color: #212122 !important;
+  font-family: 'Helvetica Neue' !important;
+  font-size: 0.875rem !important;
+  font-weight: 700 !important;
+  line-height: 17px !important;
+  text-align: right !important;
 `
-export const ImageProduct = styled.img`
-  height: 65px;
-  width: 65px;
-  background: url(${(props) => props.imgProduct});
+export const ImageProduct = styled.div`
+  height: 65px !important;
+  width: 65px !important;
+  background: url(${(props) => props.imgProduct}) no-repeat !important;
+  background-size: contain !important;
+  border: 10px solid transparent !important;
 `

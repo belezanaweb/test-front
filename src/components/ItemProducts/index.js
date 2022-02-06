@@ -1,6 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import { BoxProduct, ContainerProducts, ImageProduct, PriceProduct, TitleProduct } from './style'
+import { BoxProduct, ImageProduct, PriceProduct, TitleProduct } from './style'
+import { Grid } from '@mui/material'
 
 /*
     Component for Product Container
@@ -9,16 +10,35 @@ import { BoxProduct, ContainerProducts, ImageProduct, PriceProduct, TitleProduct
     titleProduct - Main Title Product
     priceProduct - Price Product
 */
+
+//padding 10 grid container
 const ItemProducts = (props) => {
   return (
     <>
-      <ContainerProducts>
-        <BoxProduct>
-          <ImageProduct imgProduct={props.imgProduct} />
-          <TitleProduct>{props.titleProduct}</TitleProduct>
-          <PriceProduct>{props.priceProduct}</PriceProduct>
-        </BoxProduct>
-      </ContainerProducts>
+      <BoxProduct>
+        <Grid container id={'teste'}>
+          <Grid item xs={3}>
+            <ImageProduct imgProduct={props.imgProduct} />
+          </Grid>
+          <Grid item xs={9}>
+            <Grid container>
+              <Grid item xs={12}>
+                <TitleProduct>{props.titleProduct}</TitleProduct>
+              </Grid>
+              <Grid item xs={12}>
+                <PriceProduct>
+                  {props.priceProduct > 0
+                    ? props.priceProduct.toLocaleString('pt-br', {
+                        style: 'currency',
+                        currency: 'BRL'
+                      })
+                    : 'R$0,00'}
+                </PriceProduct>
+              </Grid>
+            </Grid>
+          </Grid>
+        </Grid>
+      </BoxProduct>
     </>
   )
 }
