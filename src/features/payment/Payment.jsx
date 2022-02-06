@@ -14,7 +14,9 @@ const PaymentFeature = () => {
 
       <Total></Total>
 
-      <Button toPage="success">finalizar o pedido</Button>
+      <Button toPage="success" disabled={true}>
+        finalizar o pedido
+      </Button>
     </>
   )
 }

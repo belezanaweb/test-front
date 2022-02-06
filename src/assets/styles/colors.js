@@ -18,7 +18,9 @@ export const colors = {
   button: {
     main: '#FF6C00',
     text: '#FFF',
-    hover: '#D45A00'
+    hover: '#D45A00',
+    disabled: '#B3B3B3',
+    shadow: '#666666'
   },
   input: {
     label: '#CCC',
