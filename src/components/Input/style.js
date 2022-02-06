@@ -25,8 +25,8 @@ export const Wrapper = styled.div`
     }
 
     &:focus {
-      color: ${colors.input.text.focus};
       border-color: ${colors.input.border.focus};
+      outline: none;
     }
   }
 `
