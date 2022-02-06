@@ -6,18 +6,20 @@ import { CustomButton } from './style'
     Component for Button
     Props:
     textButton - Text displayed on the button
+    onClick - Function respective onClick for button
 */
 
 const Button = (props) => {
   return (
     <>
-      <CustomButton>{props.textButton}</CustomButton>
+      <CustomButton onClick={props.onClick}>{props.textButton}</CustomButton>
     </>
   )
 }
 
 Button.prototype = {
-  textButton: PropTypes.string.isRequired
+  textButton: PropTypes.string.isRequired,
+  onClick: PropTypes.func
 }
 
 export default Button

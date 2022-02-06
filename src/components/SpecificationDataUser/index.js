@@ -1,6 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { ContainerSDUser, DescriptionSDUser } from './style'
+import { Grid } from '@mui/material'
 
 /*
     Component for Specification DataUser
@@ -13,9 +14,17 @@ const SpecificationDataUser = (props) => {
   return (
     <>
       <ContainerSDUser>
-        <DescriptionSDUser>{props.numberCreditCard}</DescriptionSDUser>
-        <DescriptionSDUser>{props.nameCreditCard}</DescriptionSDUser>
-        <DescriptionSDUser>{props.expirationDate}</DescriptionSDUser>
+        <Grid container style={{ padding: '10px' }}>
+          <Grid item xs={12}>
+            <DescriptionSDUser>{props.numberCreditCard}</DescriptionSDUser>
+          </Grid>
+          <Grid item xs={12}>
+            <DescriptionSDUser>{props.nameCreditCard}</DescriptionSDUser>
+          </Grid>
+          <Grid item xs={12}>
+            <DescriptionSDUser>{props.expirationDate}</DescriptionSDUser>
+          </Grid>
+        </Grid>
       </ContainerSDUser>
     </>
   )

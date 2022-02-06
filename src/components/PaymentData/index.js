@@ -1,4 +1,5 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
+import { Button } from '../'
 import { TitleInput } from './style'
 import { Grid, TextField } from '@mui/material'
 import InputMask from 'react-input-mask'
@@ -12,6 +13,40 @@ const PaymentData = (props) => {
   const [nameCreditCard, setNameCreditCard] = useState('')
   const [expirationDate, setExpirationDate] = useState('')
   const [codCreditCard, setCodCreditCard] = useState('')
+  const [errorField, setErrorField] = useState({
+    numCreditCard: false,
+    nameCreditCard: false,
+    expirationDate: false,
+    codCreditCard: false
+  })
+
+  const onChangeNumCreditCard = (value) => {
+    setNumCreditCard(value)
+    let numCreditCardCustom = value.replace(/[^a-zA-Z0-9 ]/g, '')
+    if (numCreditCardCustom.length != 16) setErrorField({ ...errorField, numCreditCard: true })
+    else {
+      setErrorField({ ...errorField, numCreditCard: false })
+    }
+  }
+
+  const onChangeNameCreditCard = (value) => {
+    setNameCreditCard(value)
+    if (nameCreditCard) setErrorField({ ...errorField, nameCreditCard: true })
+    else setErrorField({ ...errorField, nameCreditCard: false })
+  }
+
+  const onChangeExpirationDateCreditCard = (value) => {
+    setExpirationDate(value)
+    let numExpirationDate = expirationDate.replace(/[^a-zA-Z0-9 ]/g, '')
+    if (numExpirationDate != 4) setErrorField({ ...errorField, expirationDate: true })
+    else setErrorField({ ...errorField, expirationDate: false })
+  }
+
+  const onChangeCodCreditCard = (value) => {
+    setCodCreditCard(value)
+    if (codCreditCard) setErrorField({ ...errorField, expirationDate: true })
+    else setErrorField({ ...errorField, expirationDate: false })
+  }
 
   return (
     <>
@@ -28,10 +63,11 @@ const PaymentData = (props) => {
                 placeholder="____.____.____.____"
                 maskChar=" "
                 value={numCreditCard}
-                onChange={(e) => setNumCreditCard(e.target.value)}
+                onChange={(e) => onChangeNumCreditCard(e.target.value)}
               >
                 {() => (
                   <TextField
+                    error={errorField.numCreditCard}
                     placeholder="____.____.____.____"
                     size="small"
                     fullWidth
@@ -44,13 +80,14 @@ const PaymentData = (props) => {
             <Grid item xs={12} style={{ marginTop: '7%' }}>
               <TitleInput>Nome do Titular:</TitleInput>
               <TextField
+                error={errorField.nameCreditCard}
                 placeholder="Como no cartão"
                 size="small"
                 fullWidth
                 name="nameCreditCard"
                 type="text"
                 value={nameCreditCard}
-                onChange={(e) => setNameCreditCard(e.target.value)}
+                onChange={(e) => onChangeNameCreditCard(e.target.value)}
               ></TextField>
             </Grid>
             <Grid item xs={6} style={{ marginTop: '7%' }}>
@@ -60,10 +97,11 @@ const PaymentData = (props) => {
                 placeholder="__/__"
                 maskChar=" "
                 value={expirationDate}
-                onChange={(e) => setExpirationDate(e.target.value)}
+                onChange={(e) => onChangeExpirationDateCreditCard(e.target.value)}
               >
                 {() => (
                   <TextField
+                    error={errorField.expirationDate}
                     placeholder="__/__"
                     size="small"
                     fullWidth
@@ -80,10 +118,11 @@ const PaymentData = (props) => {
                 placeholder="___"
                 maskChar=" "
                 value={codCreditCard}
-                onChange={(e) => setCodCreditCard(e.target.value)}
+                onChange={(e) => onChangeCodCreditCard(e.target.value)}
               >
                 {() => (
                   <TextField
+                    error={errorField.codCreditCard}
                     placeholder="___"
                     size="small"
                     fullWidth

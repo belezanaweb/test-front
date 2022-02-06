@@ -17,6 +17,13 @@ function Payment() {
     [setTotalCart]
   )
 
+  const onClickFinishCart = () => {
+    /*
+      Ducks
+      Rotear
+    */
+  }
+
   const getProducts = async () => {
     await api.get('/5b15c4923100004a006f3c07').then((resp) => {
       console.log('getproducts', resp)
@@ -42,7 +49,7 @@ function Payment() {
   return (
     <>
       <Grid container>
-        <Grid container id="gridContainerCard">
+        <Grid container>
           <Description title={'CARTÃO DE CRÉDITO'} />
           <BoxPaymentData>
             <PaymentData />
@@ -59,7 +66,7 @@ function Payment() {
           </Grid>
         </Grid>
         <Grid container justifyContent="center">
-          <Button textButton={'FINALIZAR O PEDIDO'} />
+          <Button textButton={'FINALIZAR O PEDIDO'} onClick={() => onClickFinishCart()} />
         </Grid>
       </Grid>
     </>

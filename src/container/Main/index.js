@@ -10,7 +10,7 @@ const Main = () => {
   return (
     <>
       <MainContainer>
-        <Header typeTab={'SACOLA'} />
+        <Header typeTab={'CONFIRMACAO'} />
         <Grid container alignContent="center" style={{ marginTop: '14%' }}>
           <Grid item xs={12}>
             <Payment />
