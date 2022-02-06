@@ -13,7 +13,7 @@ const CartFeature = () => {
 
       <Total></Total>
 
-      <Button toPage="payment">seguir para pagamento</Button>
+      <Button toPage="payment">seguir para o pagamento</Button>
     </>
   )
 }

@@ -10,6 +10,7 @@
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
     "react-input-mask": "^2.0.4",
+    "react-loader": "^2.4.7",
     "react-router-dom": "^6.2.1",
     "react-scripts": "3.4.4",
     "react-test-renderer": "^17.0.2",
