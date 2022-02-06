@@ -10,7 +10,7 @@ export const Wrapper = styled.div`
     border-radius: 3px;
     border: 1px solid ${colors.input.border.normal};
     border-color: ${({ valid }) => (valid ? colors.input.border.normal : colors.input.error)};
-    color: ${colors.input.text.normal};
+    color: ${colors.input.text.focus};
     font-weight: normal;
     font-size: 16px;
     height: 45px;
@@ -26,6 +26,7 @@ export const Wrapper = styled.div`
 
     &:focus {
       color: ${colors.input.text.focus};
+      border-color: ${colors.input.border.focus};
     }
   }
 `

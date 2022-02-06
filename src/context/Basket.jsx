@@ -19,6 +19,8 @@ export const BasketProvider = ({ children }) => {
   const [items, setItems] = useState([])
   const [isLoading, setIsLoading] = useState(true)
   const [amounts, setAmounts] = useState({})
+  const [paymentInfo, setPaymentInfo] = useState({})
+  const [isDisabled, setIsDisabled] = useState(true)
 
   useEffect(() => {
     const productsData = getMyProducts()
@@ -28,14 +30,19 @@ export const BasketProvider = ({ children }) => {
         setAmounts({ subTotal, shippingTotal, discount, total })
         setItems(data.items)
         setIsLoading(false)
+        setPaymentInfo({})
       })
       .catch((err) => console.log(err))
   }, [])
 
   const store = {
     isLoading,
+    isDisabled,
     items,
-    amounts
+    amounts,
+    paymentInfo,
+    setIsDisabled,
+    setPaymentInfo
   }
 
   return <BasketContext.Provider value={store}>{children}</BasketContext.Provider>

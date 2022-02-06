@@ -36,3 +36,20 @@ export const verifyIfInformationIsValid = (type, value) => {
     return cardValidator.cvv(value).isValid
   }
 }
+
+export const validInformations = ({ number, owner, validate, cvv }) => {
+  return (
+    number &&
+    number.value &&
+    number.valid &&
+    owner &&
+    owner.value &&
+    owner.valid &&
+    validate &&
+    validate.value &&
+    validate.valid &&
+    cvv &&
+    cvv.value &&
+    cvv.valid
+  )
+}

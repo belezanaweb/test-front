@@ -3,8 +3,12 @@ import Container from '../../components/Container/Container'
 import ProductList from '../../components/ProductList/ProductList'
 import Total from '../../components/Total/Total'
 import success from '../../assets/images/success.png'
+import { useBasketContext } from '../../context/Basket'
 
 const SuccessFeature = () => {
+  const basket = useBasketContext()
+  console.log('success', basket)
+
   return (
     <>
       <Container transparent>
