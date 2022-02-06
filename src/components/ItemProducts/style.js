@@ -7,7 +7,7 @@ export const BoxProduct = styled.div`
   border-radius: 3px !important;
   border: 2px solid #eee !important;
   padding: 12px 12px 13px 13px !important;
-  margin: 15px 12px 0px 12px;
+  margin: 15px 12px 15px 12px !important;
 `
 
 export const TitleProduct = styled(Typography)`

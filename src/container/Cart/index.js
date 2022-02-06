@@ -5,20 +5,16 @@ import { Button, Description, ItemProduct, SpecificationCart } from '../../compo
 import { Grid } from '@mui/material'
 
 function Cart() {
-  const [arrayProducts, setArrayProducts] = useState([])
+  const [products, setProducts] = useState([])
   const [totalCart, setTotalCart] = useState({})
 
   useEffect(
     () => {
       getProducts()
     },
-    [setArrayProducts],
+    [setProducts],
     [setTotalCart]
   )
-
-  useEffect(() => {
-    console.log('arrayproducts', arrayProducts)
-  }, [arrayProducts])
 
   const getProducts = async () => {
     await api.get('/5b15c4923100004a006f3c07').then((resp) => {
@@ -29,13 +25,13 @@ function Cart() {
           imgProduct: item.product.imageObjects[0].extraLarge,
           priceProduct: item.product.priceSpecification.price
         }
-        setArrayProducts((arrayProducts) => [...arrayProducts, product])
+        setProducts((products) => [...products, product])
       })
       let totalCart = {
         subTotal: resp.data.subTotal,
         shippingTotal: resp.data.shippingTotal,
         discount: resp.data.discount,
-        total: resp.data.total
+        total: resp.data.subTotal + resp.data.shippingTotal - resp.data.discount
       }
 
       setTotalCart(totalCart)
@@ -46,17 +42,21 @@ function Cart() {
     <>
       <Grid container>
         <Grid container>
-          <Description title={'PRODUTOS'} />
-          <ContainerProducts>
-            {arrayProducts.map((product, index) => (
-              <ItemProduct
-                key={index}
-                imgProduct={product.imgProduct}
-                titleProduct={product.titleProduct}
-                priceProduct={product.priceProduct}
-              />
-            ))}
-          </ContainerProducts>
+          <Grid item xs={12}>
+            <Description title={'PRODUTOS'} />
+          </Grid>
+          <Grid item xs={12}>
+            <ContainerProducts>
+              {products.map((product, index) => (
+                <ItemProduct
+                  key={index}
+                  imgProduct={product.imgProduct}
+                  titleProduct={product.titleProduct}
+                  priceProduct={product.priceProduct}
+                />
+              ))}
+            </ContainerProducts>
+          </Grid>
         </Grid>
 
         <Grid container>

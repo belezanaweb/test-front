@@ -3,5 +3,6 @@ import Button from './Widgets/Button'
 import ItemProduct from './ItemProducts'
 import PaymentData from './PaymentData'
 import SpecificationCart from './SpecificationCart'
+import Header from './Widgets/Header'
 
-export { Description, Button, ItemProduct, PaymentData, SpecificationCart }
+export { Description, Button, ItemProduct, PaymentData, SpecificationCart, Header }

@@ -16,7 +16,7 @@ const ItemProducts = (props) => {
   return (
     <>
       <BoxProduct>
-        <Grid container id={'teste'}>
+        <Grid container>
           <Grid item xs={3}>
             <ImageProduct imgProduct={props.imgProduct} />
           </Grid>
