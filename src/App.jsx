@@ -1,21 +1,53 @@
-import React from 'react'
+import React, { lazy, Suspense } from 'react'
 
 import { Navigate, Routes, Route } from 'react-router-dom'
 
 import BasketProvider from './context/Basket'
 import Header from './components/Header/Header'
 
-import CartFeature from './features/cart/Cart'
-import PaymentFeature from './features/payment/Payment'
-import SuccessFeature from './features/success/Success'
+const CartFeature = lazy(() => import('./features/cart/Cart'))
+const PaymentFeature = lazy(() => import('./features/payment/Payment'))
+const SuccessFeature = lazy(() => import('./features/success/Success'))
 
 const AppRoutes = () => (
   <Routes>
-    <Route index element={<CartFeature />} />
+    <Route
+      index
+      element={
+        <Suspense fallback={<></>}>
+          <CartFeature />
+        </Suspense>
+      }
+    />
+
+    <Route
+      path="cart"
+      element={
+        <Suspense fallback={<></>}>
+          <CartFeature />
+        </Suspense>
+      }
+    />
+
+    <Route
+      path="payment"
+      element={
+        <Suspense fallback={<></>}>
+          <PaymentFeature />
+        </Suspense>
+      }
+    />
+
+    <Route
+      path="success"
+      element={
+        <Suspense fallback={<p>Loading</p>}>
+          <SuccessFeature />
+        </Suspense>
+      }
+    />
+
     <Route path="/" element={<Navigate replace to="/cart" />} />
-    <Route path="cart" element={<CartFeature />} />
-    <Route path="payment" element={<PaymentFeature />} />
-    <Route path="success" element={<SuccessFeature />} />
     <Route path="*" element={<Navigate replace to="/cart" />} />
   </Routes>
 )
