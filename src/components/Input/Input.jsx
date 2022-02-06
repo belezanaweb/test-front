@@ -13,7 +13,7 @@ export default function Input({ name, label, mask, type, onChange, valid, placeh
         id={name}
         onChange={onChange}
         placeholder={placeholder}
-        autocomplete="chrome-off"
+        autoComplete="chrome-off"
       />
       {!valid && <CSS.ErrorLabel>Campo inválido</CSS.ErrorLabel>}
     </CSS.Wrapper>

@@ -17,9 +17,11 @@ export const Title = styled.h1`
 
 export const Box = styled.div`
   margin-top: 5px;
-  background-color: ${colors.container.box.background};
+  background-color: ${({ transparent }) =>
+    transparent ? 'transparent' : colors.container.box.background};
   padding: 10px;
-  box-shadow: 1px 1px 5px 0 rgba(0, 0, 29, 0.22);
+  padding-bottom: ${({ transparent }) => (transparent ? '20.43px' : '0px')};
+  box-shadow: ${({ transparent }) => (transparent ? 'none' : '1px 1px 5px 0 rgba(0, 0, 29, 0.22)')};
   border-radius: 3px;
 
   display: flex;
