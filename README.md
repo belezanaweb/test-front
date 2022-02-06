@@ -24,7 +24,7 @@ npm start
  - **Fetch** = to request the api of list of products. I could also use the **Axios** lib but I prefer to use the native method of browser to get only one request.
 
 ### Libs
-- **react-router** = to create routes in my application
+- **react-router-dom** = to create routes in my application
 - **react-loader** = to create a loader while request of products is pending
 - **react-input-mask** = to create mask in my inputs
 
