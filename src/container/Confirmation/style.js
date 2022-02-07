@@ -1,4 +1,4 @@
-import { Typography } from '@mui/material'
+import { Typography, Grid } from '@mui/material'
 import styled from 'styled-components'
 
 export const BoxPaymentData = styled.div`
@@ -17,4 +17,16 @@ export const TitleBuySucess = styled(Typography)`
   text-align: center !important;
   margin-top: 3% !important;
   margin-bottom: 6% !important;
+`
+export const GridContainer = styled(Grid)`
+  margin-top: 14% !important;
+`
+
+export const GridFooter = styled(Grid)`
+  margin-bottom: 60px !important;
+`
+
+export const ImgSucess = styled.div`
+  fill: #ff7800;
+  width: 11%;
 `

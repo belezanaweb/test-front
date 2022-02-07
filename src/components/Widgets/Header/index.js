@@ -10,29 +10,30 @@ import PropTypes from 'prop-types'
 */
 
 const Header = (props) => {
+  const { typeTab } = props
   const [color, setColor] = useState({})
 
   useEffect(() => {
-    if (props.typeTab === 'SACOLA') {
+    if (typeTab === 'SACOLA') {
       setColor({
         sacola: true,
         pagto: false,
         confirm: false
       })
-    } else if (props.typeTab === 'PAGAMENTO') {
+    } else if (typeTab === 'PAGAMENTO') {
       setColor({
         sacola: false,
         pagto: true,
         confirm: false
       })
-    } else if (props.typeTab === 'CONFIRMACAO') {
+    } else if (typeTab === 'CONFIRMACAO') {
       setColor({
         sacola: false,
         pagto: false,
         confirm: true
       })
     }
-  }, [props])
+  }, [typeTab])
 
   return (
     <>

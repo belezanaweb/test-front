@@ -10,9 +10,10 @@ import { CustomButton } from './style'
 */
 
 const Button = (props) => {
+  const { onClick, textButton } = props
   return (
     <>
-      <CustomButton onClick={props.onClick}>{props.textButton}</CustomButton>
+      <CustomButton onClick={onClick}>{textButton}</CustomButton>
     </>
   )
 }

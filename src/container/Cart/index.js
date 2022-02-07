@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { useDispatch } from 'react-redux'
 import { useNavigate } from 'react-router-dom'
 import { api } from '../../services/'
-import { ContainerProducts } from './style.js'
+import { ContainerProducts, GridContainer } from './style.js'
 import { Button, Description, ItemProduct, SpecificationCart, Header } from '../../components'
 import { Grid } from '@mui/material'
 
@@ -56,7 +56,7 @@ function Cart() {
   return (
     <>
       <Header typeTab={'SACOLA'} />
-      <Grid container alignContent="center" style={{ marginTop: '14%' }}>
+      <GridContainer container alignContent="center">
         <Grid item xs={12}>
           <Grid container>
             <Grid container>
@@ -92,7 +92,7 @@ function Cart() {
             </Grid>
           </Grid>
         </Grid>
-      </Grid>
+      </GridContainer>
     </>
   )
 }

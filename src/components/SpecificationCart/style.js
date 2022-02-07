@@ -1,4 +1,4 @@
-import { Typography } from '@mui/material'
+import { Typography, Grid } from '@mui/material'
 import styled from 'styled-components'
 
 export const ContainerSCart = styled.div`
@@ -17,4 +17,7 @@ export const DescriptionSCart = styled(Typography)`
   ${(props) => (props.bold ? `font-weight: 700 !important;` : `font-weight: 400 !important;`)}
   ${(props) =>
     props.textAlign ? `text-align: right !important;` : `text-align: left; !important;`}
+`
+export const GridContainerLine = styled(Grid)`
+  margin-top: ${(props) => props.margintop} !important;
 `

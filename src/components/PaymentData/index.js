@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
-import { TitleInput } from './style'
+import { TitleInput, GridItemInput } from './style'
 import { Grid, TextField } from '@mui/material'
 import InputMask from 'react-input-mask'
 
@@ -19,11 +19,25 @@ const PaymentData = (props) => {
     expirationDate: false,
     codCreditCard: false
   })
-  const teste = useSelector((state) => state.creditcard)
+  const dataCreditCard = useSelector((state) => state.creditcard)
   const dispatch = useDispatch()
   useEffect(() => {
-    console.log(teste)
-  }, [teste])
+    if (dataCreditCard.numCreditCard) {
+      setNumCreditCard(dataCreditCard.numCreditCard)
+    }
+
+    if (dataCreditCard.nameCreditCard) {
+      setNameCreditCard(dataCreditCard.nameCreditCard)
+    }
+
+    if (dataCreditCard.expirationDate) {
+      setExpirationDate(dataCreditCard.expirationDate)
+    }
+
+    if (dataCreditCard.codCreditCard) {
+      setCodCreditCard(dataCreditCard.codCreditCard)
+    }
+  }, [dataCreditCard])
 
   const onChangeNumCreditCard = (value) => {
     setNumCreditCard(value)
@@ -67,11 +81,8 @@ const PaymentData = (props) => {
     <>
       <Grid container>
         <Grid item xs={12}>
-          <TitleInput> {props.titleInput}</TitleInput>
-        </Grid>
-        <Grid item xs={12}>
           <Grid container spacing={2} justifyContent="flex-end">
-            <Grid item xs={12}>
+            <GridItemInput item xs={12}>
               <TitleInput>Número do cartão:</TitleInput>
               <InputMask
                 mask="9999-9999-9999-9999"
@@ -91,8 +102,8 @@ const PaymentData = (props) => {
                   />
                 )}
               </InputMask>
-            </Grid>
-            <Grid item xs={12} style={{ marginTop: '7%' }}>
+            </GridItemInput>
+            <GridItemInput item xs={12} marginTop={'7%'}>
               <TitleInput>Nome do Titular:</TitleInput>
               <TextField
                 error={errorField.nameCreditCard}
@@ -104,8 +115,8 @@ const PaymentData = (props) => {
                 value={nameCreditCard}
                 onChange={(e) => onChangeNameCreditCard(e.target.value)}
               ></TextField>
-            </Grid>
-            <Grid item xs={6} style={{ marginTop: '7%' }}>
+            </GridItemInput>
+            <GridItemInput item xs={6} marginTop={'7%'}>
               <TitleInput>Validade (mês/ano):</TitleInput>
               <InputMask
                 mask="99/99"
@@ -125,8 +136,8 @@ const PaymentData = (props) => {
                   />
                 )}
               </InputMask>
-            </Grid>
-            <Grid item xs={6} style={{ marginTop: '7%' }}>
+            </GridItemInput>
+            <GridItemInput item xs={6} marginTop={'7%'}>
               <TitleInput>CVV:</TitleInput>
               <InputMask
                 mask="999"
@@ -146,7 +157,7 @@ const PaymentData = (props) => {
                   />
                 )}
               </InputMask>
-            </Grid>
+            </GridItemInput>
           </Grid>
         </Grid>
       </Grid>

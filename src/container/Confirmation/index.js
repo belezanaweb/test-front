@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { useSelector } from 'react-redux'
-import { TitleBuySucess } from './style'
+import { TitleBuySucess, GridContainer, ImgSucess, GridFooter } from './style'
 import { ContainerProducts } from '../Cart/style'
 import {
   SpecificationDataUser,
@@ -15,15 +15,30 @@ import { ReactComponent as ConfirmationIcon } from '../../assets/icon/confirmati
 function Confirmation() {
   const totalCartDucks = useSelector((state) => state.products.specifications)
   const productsDucks = useSelector((state) => state.products.products)
+  const dataCreditCard = useSelector((state) => state.creditcard)
+
+  const hideNumCreditCard = (numCreditCard) => {
+    let hideNum = []
+    for (let i = 0; i < numCreditCard.length; i++) {
+      if (i < numCreditCard.length - 4) {
+        hideNum.push('*')
+      } else {
+        hideNum.push(numCreditCard[i])
+      }
+    }
+    return hideNum.join('')
+  }
 
   return (
     <>
       <Header typeTab={'CONFIRMACAO'} />
-      <Grid container alignContent="center" style={{ marginTop: '14%' }}>
+      <GridContainer container alignContent="center">
         <Grid item xs={12}>
           <Grid container>
             <Grid container justifyContent="center">
-              <ConfirmationIcon style={{ fill: '#FF7800', width: '11%' }} />
+              <ImgSucess>
+                <ConfirmationIcon />
+              </ImgSucess>
             </Grid>
             <Grid container>
               <Grid item xs={12}>
@@ -34,9 +49,9 @@ function Confirmation() {
             <Grid container justifyContent="center">
               <Grid item xs={12}>
                 <SpecificationDataUser
-                  numberCreditCard={'****.****.****.1234'}
-                  nameCreditCard={'JOSÉ DA SILVA'}
-                  expirationDate={'05/2019'}
+                  numberCreditCard={hideNumCreditCard(dataCreditCard.numCreditCard)}
+                  nameCreditCard={dataCreditCard.nameCreditCard}
+                  expirationDate={dataCreditCard.expirationDate}
                 />
               </Grid>
             </Grid>
@@ -57,7 +72,7 @@ function Confirmation() {
                 </ContainerProducts>
               </Grid>
             </Grid>
-            <Grid container style={{ marginBottom: '60px' }}>
+            <GridFooter container>
               <Grid item xs={12}>
                 <SpecificationCart
                   subTotal={totalCartDucks.subTotal}
@@ -66,10 +81,10 @@ function Confirmation() {
                   total={totalCartDucks.total}
                 />
               </Grid>
-            </Grid>
+            </GridFooter>
           </Grid>
         </Grid>
-      </Grid>
+      </GridContainer>
     </>
   )
 }

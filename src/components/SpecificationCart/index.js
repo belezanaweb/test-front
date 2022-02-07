@@ -1,6 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import { ContainerSCart, DescriptionSCart } from './style'
+import { ContainerSCart, DescriptionSCart, GridContainerLine } from './style'
 import { Grid } from '@mui/material'
 
 /*
@@ -12,50 +12,50 @@ import { Grid } from '@mui/material'
     total - Total price of list products
 */
 const SpecificationCart = (props) => {
+  const { subTotal, shippingTotal, discount, total } = props
   return (
     <>
       <ContainerSCart>
-        <Grid container style={{ marginTop: '15px' }}>
+        <GridContainerLine container marginTop={'5%'}>
           <Grid item xs={6}>
             <DescriptionSCart colortext={'#212122'}>PRODUTOS</DescriptionSCart>
           </Grid>
           <Grid item xs={6}>
             <DescriptionSCart colortext={'#212122'} textAlign>
-              {props.subTotal > 0
-                ? props.subTotal.toLocaleString('pt-br', { style: 'currency', currency: 'BRL' })
+              {subTotal > 0
+                ? subTotal.toLocaleString('pt-br', { style: 'currency', currency: 'BRL' })
                 : 'R$0,00'}
             </DescriptionSCart>
           </Grid>
-        </Grid>
-        <Grid container style={{ marginTop: '8px' }}>
+        </GridContainerLine>
+        <GridContainerLine container marginTop={'3%'}>
           <Grid item xs={6}>
             <DescriptionSCart colortext={'#212122'}>FRETE</DescriptionSCart>
           </Grid>
           <Grid item xs={6}>
             <DescriptionSCart colortext={'#212122'} textAlign>
-              {props.shippingTotal > 0
-                ? props.shippingTotal.toLocaleString('pt-br', {
+              {shippingTotal > 0
+                ? shippingTotal.toLocaleString('pt-br', {
                     style: 'currency',
                     currency: 'BRL'
                   })
                 : 'R$0,00'}
             </DescriptionSCart>
           </Grid>
-        </Grid>
-        <Grid container style={{ marginTop: '8px' }}>
+        </GridContainerLine>
+        <GridContainerLine container marginTop={'3%'}>
           <Grid item xs={6}>
             <DescriptionSCart colortext={'#FF7800'}>DESCONTO</DescriptionSCart>
           </Grid>
           <Grid item xs={6}>
             <DescriptionSCart colortext={'#FF7800'} textAlign>
-              {props.discount > 0
-                ? '- ' +
-                  props.discount.toLocaleString('pt-br', { style: 'currency', currency: 'BRL' })
+              {discount > 0
+                ? '- ' + discount.toLocaleString('pt-br', { style: 'currency', currency: 'BRL' })
                 : 'R$ 0,00'}
             </DescriptionSCart>
           </Grid>
-        </Grid>
-        <Grid container style={{ marginTop: '16px' }}>
+        </GridContainerLine>
+        <GridContainerLine container marginTop={'5%'}>
           <Grid item xs={6}>
             <DescriptionSCart colortext={'#212122'} bold="true">
               TOTAL
@@ -63,12 +63,12 @@ const SpecificationCart = (props) => {
           </Grid>
           <Grid item xs={6}>
             <DescriptionSCart colortext={'#212122'} textAlign bold="true">
-              {props.total > 0
-                ? props.total.toLocaleString('pt-br', { style: 'currency', currency: 'BRL' })
+              {total > 0
+                ? total.toLocaleString('pt-br', { style: 'currency', currency: 'BRL' })
                 : 'R$ 0,00'}
             </DescriptionSCart>
           </Grid>
-        </Grid>
+        </GridContainerLine>
       </ContainerSCart>
     </>
   )

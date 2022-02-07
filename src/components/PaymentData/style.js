@@ -1,4 +1,4 @@
-import { Typography } from '@mui/material'
+import { Typography, Grid } from '@mui/material'
 import styled from 'styled-components'
 
 export const TitleInput = styled(Typography)`
@@ -10,4 +10,6 @@ export const TitleInput = styled(Typography)`
   margin-bottom: 2% !important;
 `
 
-export const BoxPaymentData = styled.div``
+export const GridItemInput = styled(Grid)`
+  margin-top: ${(props) => props.margintop} !important;
+`

@@ -1,4 +1,4 @@
-import { Typography } from '@mui/material'
+import { Typography, Grid } from '@mui/material'
 import styled from 'styled-components'
 
 export const ContainerSDUser = styled.div`
@@ -11,8 +11,10 @@ export const ContainerSDUser = styled.div`
 
 export const DescriptionSDUser = styled(Typography)`
   color: #000;
-  font-family: 'Helvetica Neue';
-  font-size: 0.875rem;
-  letter-spacing: NaNpx;
-  line-height: 17px;
+  font-family: 'Helvetica Neue' !important;
+  font-size: 0.875rem !important;
+  line-height: 17px !important;
+`
+export const GridContainerBox = styled(Grid)`
+  padding: 10px !important;
 `

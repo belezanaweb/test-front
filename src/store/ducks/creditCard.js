@@ -10,7 +10,8 @@ const INITIAL_STATE = {
   numCreditCard: '',
   nameCreditCard: '',
   expirationDate: '',
-  codCreditCard: ''
+  codCreditCard: '',
+  dataCreditCard: {}
 }
 
 export default function CreditCardReducer(state = INITIAL_STATE, action) {
@@ -20,24 +21,26 @@ export default function CreditCardReducer(state = INITIAL_STATE, action) {
     case Types.ADD_NAME_CREDITCARD:
       return { ...state, nameCreditCard: action.nameCreditCard }
     case Types.ADD_EXPIRATIONDATE_CREDITCARD:
-      return { ...state, expirationCreditCard: action.expirationDate }
+      return { ...state, expirationDate: action.expirationDate }
     case Types.ADD_COD_CREDITCARD:
       return { ...state, codCreditCard: action.codCreditCard }
+    case Types.GET_FIELDS_VALIDATE:
+      return { ...state, dataCreditCard: action.dataCreditCard }
     default:
       return state
   }
 }
 
 export const Creators = {
-  getFieldsValidate: (numCreditCard, expirationDate, nameCreditCard, codCreditCard) => {
+  getFieldsValidate: (dataCreditCard) => {
     let validate = false
-    let numCreditCardCustom = numCreditCard.replace(/[^a-zA-Z0-9 ]/g, '')
-    let numExpirationDate = expirationDate.replace(/[^a-zA-Z0-9 ]/g, '')
+    let numCreditCardCustom = dataCreditCard.numCreditCard.replace(/[^a-zA-Z0-9 ]/g, '')
+    let numExpirationDate = dataCreditCard.expirationDate.replace(/[^a-zA-Z0-9 ]/g, '')
     if (
       numCreditCardCustom.length == 16 ||
-      nameCreditCard ||
+      dataCreditCard.nameCreditCard ||
       numExpirationDate.length == 4 ||
-      codCreditCard
+      dataCreditCard.codCreditCard
     ) {
       validate = true
     }

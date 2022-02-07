@@ -1,30 +1,33 @@
 import React, { useEffect, useState } from 'react'
-import { useSelector } from 'react-redux'
+import { useSelector, useDispatch } from 'react-redux'
 import { useNavigate } from 'react-router-dom'
-import { BoxPaymentData } from './style'
+import { BoxPaymentData, GridContainer } from './style'
 import { PaymentData } from '../../components'
 import { Button, Description, SpecificationCart, Header } from '../../components'
 import { Grid } from '@mui/material'
 
 function Payment() {
-  const [arrayProducts, setArrayProducts] = useState([])
-  const [totalCart, setTotalCart] = useState({})
   const navigate = useNavigate()
   const totalCartDucks = useSelector((state) => state.products.specifications)
+  const dataCreditCard = useSelector((state) => state.creditcard)
 
   const onClickFinishCart = () => {
-    navigate('/confirmation')
-
-    /*
-      Ducks
-      Rotear
-    */
+    let numCreditCardCustom = dataCreditCard.numCreditCard.replace(/[^a-zA-Z0-9 ]/g, '')
+    let numExpirationDate = dataCreditCard.expirationDate.replace(/[^a-zA-Z0-9 ]/g, '')
+    if (
+      numCreditCardCustom.length == 16 ||
+      dataCreditCard.nameCreditCard ||
+      numExpirationDate.length == 4 ||
+      dataCreditCard.codCreditCard
+    ) {
+      navigate('/confirmation')
+    }
   }
 
   return (
     <>
       <Header typeTab={'PAGAMENTO'} />
-      <Grid container alignContent="center" style={{ marginTop: '14%' }}>
+      <GridContainer container alignContent="center">
         <Grid item xs={12}>
           <Grid container>
             <Grid container>
@@ -48,7 +51,7 @@ function Payment() {
             </Grid>
           </Grid>
         </Grid>
-      </Grid>
+      </GridContainer>
     </>
   )
 }

@@ -1,6 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import { ContainerSDUser, DescriptionSDUser } from './style'
+import { ContainerSDUser, DescriptionSDUser, GridContainerBox } from './style'
 import { Grid } from '@mui/material'
 
 /*
@@ -11,20 +11,21 @@ import { Grid } from '@mui/material'
     expirationDate - Expirantion Date of CreditCard
 */
 const SpecificationDataUser = (props) => {
+  const { numberCreditCard, nameCreditCard, expirationDate } = props
   return (
     <>
       <ContainerSDUser>
-        <Grid container style={{ padding: '10px' }}>
+        <GridContainerBox container>
           <Grid item xs={12}>
-            <DescriptionSDUser>{props.numberCreditCard}</DescriptionSDUser>
+            <DescriptionSDUser>{numberCreditCard}</DescriptionSDUser>
           </Grid>
           <Grid item xs={12}>
-            <DescriptionSDUser>{props.nameCreditCard}</DescriptionSDUser>
+            <DescriptionSDUser>{nameCreditCard}</DescriptionSDUser>
           </Grid>
           <Grid item xs={12}>
-            <DescriptionSDUser>{props.expirationDate}</DescriptionSDUser>
+            <DescriptionSDUser>{expirationDate}</DescriptionSDUser>
           </Grid>
-        </Grid>
+        </GridContainerBox>
       </ContainerSDUser>
     </>
   )

@@ -13,22 +13,23 @@ import { Grid } from '@mui/material'
 
 //padding 10 grid container
 const ItemProducts = (props) => {
+  const { imgProduct, titleProduct, priceProduct } = props
   return (
     <>
       <BoxProduct>
         <Grid container>
           <Grid item xs={3}>
-            <ImageProduct imgProduct={props.imgProduct} />
+            <ImageProduct imgProduct={imgProduct} />
           </Grid>
           <Grid item xs={9}>
             <Grid container>
               <Grid item xs={12}>
-                <TitleProduct>{props.titleProduct}</TitleProduct>
+                <TitleProduct>{titleProduct}</TitleProduct>
               </Grid>
               <Grid item xs={12}>
                 <PriceProduct>
-                  {props.priceProduct > 0
-                    ? props.priceProduct.toLocaleString('pt-br', {
+                  {priceProduct > 0
+                    ? priceProduct.toLocaleString('pt-br', {
                         style: 'currency',
                         currency: 'BRL'
                       })

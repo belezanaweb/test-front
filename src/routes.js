@@ -8,6 +8,7 @@ import Confirmation from './container/Confirmation'
 export default function MainRoutes() {
   return (
     <Routes>
+      <Route path="/" element={<Cart />} />
       <Route path="/cart" element={<Cart />} />
       <Route path="/payment" element={<Payment />} />
       <Route path="/confirmation" element={<Confirmation />} />
