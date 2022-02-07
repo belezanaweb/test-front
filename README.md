@@ -10,7 +10,7 @@ Cartão: 5195 8250 8405 3648 / 5109 0595 3838 2396 / 5438 8178 9617 8983
 ## Porque da escolha de cada tech
 
 No projeto foi utilizado as seguintes libs: [react-hook-form](https://react-hook-form.com/) - [react-input-mask](https://www.npmjs.com/package/react-input-mask) - [react-router-dom V6](https://reactrouter.com/docs/en/v6/getting-started/overview) - [styled-components](https://styled-components.com/) - [yup](https://www.npmjs.com/package/yup) - [testing-library](https://testing-library.com/)
-*Optei por não utilizar o axios por não ver necessidade pra tanto.
+*Optei por não utilizar o axios por não ver necessidade pra tanto. Por isso optei pelo uso do Fetch para fazer a requisição
 
 Utilizei o combo do [react-input-mask](https://www.npmjs.com/package/react-input-mask) + [react-hook-form](https://react-hook-form.com/)  + [yup](https://www.npmjs.com/package/yup) para facilitar na hora de criar e validar as informações do form. Elas ajudam bastante na hora de promover uma boa experiência para o usúario. Apesar de não serem essenciais para a contrução do projeto, o usúario agradece por ter todos os erros bem detalhados e o YUP junto com o hook-form ajuda nisso.
 
@@ -42,7 +42,7 @@ Card: 5195 8250 8405 3648 / 5109 0595 3838 2396 / 5438 8178 9617 8983
 ## Why the choice of each tech
 
 The following libs were used in the project: [react-hook-form](https://react-hook-form.com/) - [react-input-mask](https://www.npmjs.com/package/ react-input-mask) - [react-router-dom V6](https://reactrouter.com/docs/en/v6/getting-started/overview) - [styled-components](https://styled-components .com/) - [yup](https://www.npmjs.com/package/yup) - [testing-library](https://testing-library.com/)
-*I chose not to use axios because I didn't see the need for it.
+*I chose not to use axios because I didn't see the need for it. That's why I chose to use Fetch to make the request
 
 I used the combo of [react-input-mask](https://www.npmjs.com/package/react-input-mask) + [react-hook-form](https://react-hook-form.com /) + [yup](https://www.npmjs.com/package/yup) to make it easier to create and validate form information. They help a lot when it comes to promoting a good user experience. Although they are not essential for the construction of the project, the user is grateful for having all the errors well detailed and the YUP along with the hook-form helps with that.
 
