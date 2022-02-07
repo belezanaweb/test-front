@@ -10,7 +10,7 @@ export default function ProductList({ hidePrice }) {
   return (
     <>
       <Spinner loaded={!basket.isLoading} />
-      <CSS.List>
+      <CSS.List hidePrice={hidePrice}>
         {basket.items.map((item) => {
           return (
             <CSS.Item key={item.product.sku}>

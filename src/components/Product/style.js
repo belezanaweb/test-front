@@ -6,7 +6,7 @@ export const Desc = styled.div`
 `
 
 export const Img = styled.img`
-  padding: 11px 11px 14px 10px;
+  padding: ${({ hidePrice }) => (hidePrice ? '11px 11px 0px 10px' : '11px 11px 14px 10px')};
 `
 
 export const Label = styled.span`

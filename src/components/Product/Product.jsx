@@ -10,7 +10,7 @@ export default function Product({ hidePrice, item }) {
   return (
     <>
       <a href={extraLarge} target="_blank" rel="noopener noreferrer">
-        <CSS.Img src={thumbnail} alt={name} />
+        <CSS.Img src={thumbnail} alt={name} hidePrice={hidePrice} />
       </a>
       <CSS.Desc>
         <CSS.Label title={name}>{name}</CSS.Label>

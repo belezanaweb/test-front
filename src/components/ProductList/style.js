@@ -6,7 +6,7 @@ export const List = styled.ul`
 `
 
 export const Item = styled.li`
-  padding: 12px 10px 14px 10px;
+  padding: ${({ hidePrice }) => (hidePrice ? '12px 10px 11px 10px' : '12px 10px 14px 10px')};
   margin-bottom: 15px;
   border: 1px solid ${colors.productList.border};
   border-radius: 3px;
