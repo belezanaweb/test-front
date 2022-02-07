@@ -1,6 +1,7 @@
 import React, { lazy, Suspense } from 'react'
 
 import { Navigate, Routes, Route } from 'react-router-dom'
+import Loader from 'react-loader'
 
 import BasketProvider from './context/Basket'
 import Header from './components/Header/Header'
@@ -14,7 +15,7 @@ const AppRoutes = () => (
     <Route
       index
       element={
-        <Suspense fallback={<></>}>
+        <Suspense fallback={<Loader />}>
           <CartFeature />
         </Suspense>
       }
@@ -23,7 +24,7 @@ const AppRoutes = () => (
     <Route
       path="cart"
       element={
-        <Suspense fallback={<></>}>
+        <Suspense fallback={<Loader />}>
           <CartFeature />
         </Suspense>
       }
@@ -32,7 +33,7 @@ const AppRoutes = () => (
     <Route
       path="payment"
       element={
-        <Suspense fallback={<></>}>
+        <Suspense fallback={<Loader />}>
           <PaymentFeature />
         </Suspense>
       }
@@ -41,7 +42,7 @@ const AppRoutes = () => (
     <Route
       path="success"
       element={
-        <Suspense fallback={<p>Loading</p>}>
+        <Suspense fallback={<Loader />}>
           <SuccessFeature />
         </Suspense>
       }
