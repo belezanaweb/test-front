@@ -1,5 +1,6 @@
 import React, { Suspense, lazy } from 'react'
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'
+import Loading from './app/components/layout/Loading'
 import TabNav from './app/components/navigation/TabNav'
 
 const Cart = lazy(() => import('./app/pages/cart/CartMain'))
@@ -8,7 +9,7 @@ const WowMoment = lazy(() => import('./app/pages/wowmoment/WowMomentMain'))
 
 export default function CRouter() {
   return (
-    <Suspense fallback={<p>Carregando...</p>}>
+    <Suspense fallback={<Loading />}>
       <Router>
         <TabNav />
         <Routes>
