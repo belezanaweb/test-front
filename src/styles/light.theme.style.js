@@ -1,5 +1,5 @@
 export const theme = {
-  color: {
+  colors: {
     DARK: '#212122',
     WHITE: '#fff',
     LIGHT_ORANGE: '#FF7800',
@@ -16,8 +16,11 @@ export const theme = {
     BIG: '45px'
   },
   fontSize: {
-    SMALL: '0.9rem',
-    MEDIUM: '1.2rem',
+    SMALL: '0.8rem',
+    MEDIUM: '0.9rem',
     BIG: '1.5rem'
+  },
+  borderRadius: {
+    SMALL: '3px'
   }
 }
