@@ -2,7 +2,8 @@ import React, { useEffect } from 'react'
 import apiCart from '../../../core/api/api.cart'
 import { TransactionContext } from '../../../core/store/Context'
 import TitleSection from '../../components/layout/TitleSection'
-import { ContainerProducts } from './CartPage.style'
+import SliceCartItems from '../../components/slices/CartItems.slices'
+import SliceCartCheckoutInfo from '../../components/slices/CartCheckoutInfo.slices'
 
 const Cart = () => {
   const [transaction, setTransaction] = React.useContext(TransactionContext)
@@ -19,19 +20,8 @@ const Cart = () => {
   return (
     <>
       <TitleSection title="Produtos" />
-      <ContainerProducts>
-        <ul>
-          {transaction.items.map((list) => {
-            return (
-              <li key={list.product.sku}>
-                <img src={list.product.imageObjects[0].thumbnail} alt={list.product.name} />
-                <p>{list.product.name}</p>
-                <strong>R$ {list.product.priceSpecification.price}</strong>
-              </li>
-            )
-          })}
-        </ul>
-      </ContainerProducts>
+      <SliceCartItems transaction={transaction} />
+      <SliceCartCheckoutInfo transaction={transaction} />
     </>
   )
 }
