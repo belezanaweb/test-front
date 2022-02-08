@@ -39,13 +39,13 @@ const Header = (props) => {
     <>
       <StepsContainer container alignContent="center">
         <Grid item xs={3}>
-          <TitleSteps colorsteps={color.sacola}>SACOLA</TitleSteps>
+          <TitleSteps colorsteps={color.sacola ? 1 : 0}>SACOLA</TitleSteps>
         </Grid>
         <Grid item xs={4}>
-          <TitleSteps colorsteps={color.pagto}>PAGAMENTO</TitleSteps>
+          <TitleSteps colorsteps={color.pagto ? 1 : 0}>PAGAMENTO</TitleSteps>
         </Grid>
         <Grid item xs={5}>
-          <TitleSteps colorsteps={color.confirm}>CONFIRMAÇÃO</TitleSteps>
+          <TitleSteps colorsteps={color.confirm ? 1 : 0}>CONFIRMAÇÃO</TitleSteps>
         </Grid>
       </StepsContainer>
     </>
