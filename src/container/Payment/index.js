@@ -10,16 +10,30 @@ function Payment() {
   const navigate = useNavigate()
   const totalCartDucks = useSelector((state) => state.products.specifications)
   const dataCreditCard = useSelector((state) => state.creditcard)
+  const [buttonActivate, setButtonActivate] = useState(false)
 
-  const onClickFinishCart = () => {
+  useEffect(() => {
+    let validate = validateDataCreditCard()
+    setButtonActivate(validate)
+  }, [dataCreditCard])
+
+  const validateDataCreditCard = () => {
     let numCreditCardCustom = dataCreditCard.numCreditCard.replace(/[^a-zA-Z0-9 ]/g, '')
     let numExpirationDate = dataCreditCard.expirationDate.replace(/[^a-zA-Z0-9 ]/g, '')
     if (
-      numCreditCardCustom.length == 16 ||
-      dataCreditCard.nameCreditCard ||
-      numExpirationDate.length == 4 ||
-      dataCreditCard.codCreditCard
+      numCreditCardCustom.length == 16 &&
+      dataCreditCard.nameCreditCard &&
+      numExpirationDate.length == 4 &&
+      dataCreditCard.codCreditCard.length == 3
     ) {
+      return true
+    } else {
+      return false
+    }
+  }
+
+  const onClickFinishCart = () => {
+    if (validateDataCreditCard) {
       navigate('/confirmation')
     }
   }
@@ -47,7 +61,11 @@ function Payment() {
               </Grid>
             </Grid>
             <Grid container justifyContent="center">
-              <Button textButton={'FINALIZAR O PEDIDO'} onClick={() => onClickFinishCart()} />
+              <Button
+                textButton={'FINALIZAR O PEDIDO'}
+                disabled={!buttonActivate}
+                onClick={() => onClickFinishCart()}
+              />
             </Grid>
           </Grid>
         </Grid>
