@@ -7,13 +7,34 @@ const TabNav = () => {
       <nav>
         <ul>
           <li>
-            <NavLink to="/cart">SACOLA</NavLink>
+            <NavLink
+              style={({ isActive }) => ({
+                color: isActive ? '#FF7800' : '#CCC'
+              })}
+              to="/cart"
+            >
+              SACOLA
+            </NavLink>
           </li>
           <li>
-            <NavLink to="/checkout">PAGAMENTO</NavLink>
+            <NavLink
+              style={({ isActive }) => ({
+                color: isActive ? '#FF7800' : '#CCC'
+              })}
+              to="/checkout"
+            >
+              PAGAMENTO
+            </NavLink>
           </li>
           <li>
-            <NavLink to="/wow-moment">CONFIRMAÇÃO</NavLink>
+            <NavLink
+              style={({ isActive }) => ({
+                color: isActive ? '#FF7800' : '#CCC'
+              })}
+              to="/wow-moment"
+            >
+              CONFIRMAÇÃO
+            </NavLink>
           </li>
         </ul>
       </nav>
