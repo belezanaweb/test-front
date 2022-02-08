@@ -1,8 +1,12 @@
-import React from 'react';
+import React, { Suspense, lazy } from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
 import './config/ReactotronConfig';
 import AppProvider from './providers/AppProvider';
+
+import Cart from './pages/Cart';
+import Payment from './pages/Payment';
+import Confirmation from './pages/Confirmation';
 
 import GlobalStyle from './styles/global';
 
@@ -13,10 +17,13 @@ function App() {
   return (
     <AppProvider>
       <BrowserRouter>
-        <Routes>
-          {/* <Route path="/*" element={} />
-          <Route path="/dashboard/*" element={} /> */}
-        </Routes>
+        <Suspense fallback={<div>Loading...</div>}>
+          <Routes>
+            <Route path="/*" element={<Cart />} />
+            <Route path="/Payment/*" element={<Payment />} />
+            <Route path="/confirmation/*" element={<Confirmation />} />
+          </Routes>
+        </Suspense>
       </BrowserRouter>
       <GlobalStyle />
     </AppProvider>
