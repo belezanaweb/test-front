@@ -6,7 +6,7 @@ import AppProvider from './providers/AppProvider';
 import Header from './components/Header';
 
 import GlobalStyle from './styles/global';
-import { AppContainer } from './styles/styles';
+import { AppContainer, Button } from './styles/styles';
 
 function App() {
   console.info(`==> 🌎  Você está no modo ${process.env.NODE_ENV}`);
@@ -17,6 +17,7 @@ function App() {
       <AppProvider>
         <Header />
         <Outlet />
+        <Button>TEXT BUTTON</Button>
         <GlobalStyle />
       </AppProvider>
     </AppContainer>

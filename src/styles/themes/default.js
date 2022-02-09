@@ -7,8 +7,8 @@ const theme = {
   lightGrey: '#F0F0F7',
   darkGrey: '#41414C',
 
-  darkOrange: '#F25D27',
-  lightOrange: '#F25D27',
+  primary: '#FF6C00',
+  primaryDark: '#D45A00',
 
   title: '#32264D',
   subtitle: '#6A6180',
