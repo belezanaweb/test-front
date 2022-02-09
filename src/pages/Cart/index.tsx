@@ -5,9 +5,13 @@ import { RootStateOrAny, useDispatch, useSelector } from 'react-redux';
 import { CartItem } from '../../interfaces/Cart';
 import { cartRequest } from '../../store/modules/cart/actions';
 
-import { ProductList } from './styles';
+import Button from '../../components/Button';
 
-export default function Invoices() {
+import formatCurrency from '../../helpers/formatCurrency';
+
+import { Container, ProductList, Info, CartSum } from './styles';
+
+export default function Cart() {
   const { cart } = useSelector((state: RootStateOrAny) => state.cart);
 
   const dispatch = useDispatch();
@@ -17,16 +21,27 @@ export default function Invoices() {
   }, []);
 
   return (
-    <div>
+    <Container>
       <ProductList>
         {cart?.items?.map((item: CartItem) => (
           <Link to={`/cart/${item.product.sku}`} key={item.product.sku}>
-            <img src={item.product.imageObjects[0].thumbnail} />
-            {item.product.name}
+            <img src={item.product.imageObjects[0].small} />
+            <Info>
+              {item.product.name}
+              <span>{formatCurrency(item.product.priceSpecification.price)}</span>
+            </Info>
           </Link>
         ))}
       </ProductList>
+
+      <CartSum>
+        <li>Produtos</li>
+        <li>Frete</li>
+        <li>Desconto</li>
+        <li>Total</li>
+      </CartSum>
+      <Button title="Seguir para o pagamento" />
       <Outlet />
-    </div>
+    </Container>
   );
 }
