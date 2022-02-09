@@ -64,10 +64,6 @@ export default function Payment() {
                 hasBorder={false}
                 inputHeight="6rem"
                 radius="all"
-                onChange={(e) => {
-                  setDefaultValueOrder(e.target.value);
-                  console.log(e.target.value);
-                }}
               />
             </fieldset>
 
@@ -82,28 +78,34 @@ export default function Payment() {
                 hasBorder={false}
                 inputHeight="6rem"
                 radius="all"
-                onChange={(e) => {
-                  setDefaultValueOrder(e.target.value);
-                  console.log(e.target.value);
-                }}
               />
             </fieldset>
 
             <fieldset>
-              <label htmlFor="titularName">Validade (mês/ano):</label>
+              <label htmlFor="valid">Validade (mês/ano):</label>
               <Input
-                name="titularName"
+                name="valid"
                 type="text"
                 hasValidation={true}
-                placeholder="Como no Cartão"
+                placeholder=""
                 defaultValue={defaultValue}
                 hasBorder={false}
                 inputHeight="6rem"
                 radius="all"
-                onChange={(e) => {
-                  setDefaultValueOrder(e.target.value);
-                  console.log(e.target.value);
-                }}
+              />
+            </fieldset>
+
+            <fieldset>
+              <label htmlFor="cardCode">CVV:</label>
+              <Input
+                name="cardCode"
+                type="text"
+                hasValidation={true}
+                placeholder=""
+                defaultValue={defaultValue}
+                hasBorder={false}
+                inputHeight="6rem"
+                radius="all"
               />
             </fieldset>
 
