@@ -2,7 +2,7 @@ import React, { useRef, useEffect, useState, useCallback, InputHTMLAttributes } 
 import { useField } from '@unform/core';
 import { FiAlertCircle } from 'react-icons/fi';
 import { Container, Error } from './styles';
-import { INPUT_ERROR, INPUT_FOCUSED } from '../../constants/validation';
+import { INPUT_ERROR, INPUT_FOCUSED, ICON_ERROR_COLOR } from '../../constants/validation';
 import { IconBaseProps } from 'react-icons/lib';
 
 interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
@@ -63,7 +63,7 @@ export default function Input({
 
       {error && validationType === 'isErrored' && (
         <Error title={error}>
-          <FiAlertCircle color="#c53030" size={20} />
+          <FiAlertCircle color={ICON_ERROR_COLOR} size={20} />
         </Error>
       )}
     </Container>
