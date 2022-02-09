@@ -17,6 +17,7 @@ export default function CRouter() {
           <Route path="cart" element={<Cart />} />
           <Route path="checkout" element={<Checkout />} />
           <Route path="wow-moment" element={<WowMoment />} />
+          <Route path="*" element={<h1>NOT FOUND</h1>} />
         </Routes>
       </Router>
     </Suspense>

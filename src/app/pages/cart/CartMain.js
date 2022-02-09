@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react'
+import { useNavigate } from 'react-router-dom'
 import apiCart from '../../../core/api/api.cart'
 import { TransactionContext } from '../../../core/store/Context'
 import TitleSection from '../../components/layout/TitleSection'
@@ -8,8 +9,14 @@ import Loading from '../../components/layout/Loading'
 import SliceCartCheckoutInfo from '../../components/slices/CartCheckoutInfo.slices'
 
 const Cart = () => {
+  const navigate = useNavigate()
+
   const [transaction, setTransaction] = React.useContext(TransactionContext)
   const [loading, setLoading] = useState(true)
+
+  const goToNextStep = () => {
+    navigate('/checkout')
+  }
 
   useEffect(() => {
     apiCart.getCartData.then(async (response) => {
@@ -27,7 +34,7 @@ const Cart = () => {
         <>
           <SliceCartItems transaction={transaction} />
           <SliceCartCheckoutInfo transaction={transaction} />
-          <Button text="Seguir para o Pagamento" />
+          <Button onClick={() => goToNextStep()} text="Seguir para o Pagamento" />
         </>
       )}
     </>

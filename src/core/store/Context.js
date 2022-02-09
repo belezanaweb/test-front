@@ -10,7 +10,7 @@ export const TransactionProvider = (props) => {
     subTotal: 0,
     total: 0,
     creditCard: {
-      number: '',
+      number: '222',
       name: '',
       expiration: '',
       cvc: ''

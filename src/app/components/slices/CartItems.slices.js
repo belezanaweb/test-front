@@ -2,10 +2,11 @@ import React from 'react'
 import { ContainerProducts } from '../../pages/cart/CartPage.style'
 
 const SliceCartItems = (props) => {
+  const { transaction } = props
   return (
     <ContainerProducts>
       <ul>
-        {props.transaction.items.map((list) => {
+        {transaction.items.map((list) => {
           return (
             <li key={list.product.sku}>
               <img src={list.product.imageObjects[0].thumbnail} alt={list.product.name} />

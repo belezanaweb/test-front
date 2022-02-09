@@ -2,24 +2,25 @@ import React from 'react'
 import { ContainerCheckoutInfo } from '../../pages/cart/CartPage.style'
 
 const SliceCartCheckoutInfo = (props) => {
+  const { transaction } = props
   return (
     <ContainerCheckoutInfo>
       <ul>
         <li>
           <p>Produtos</p>
-          <strong>{props.transaction.subTotal}</strong>
+          <strong>{transaction.subTotal}</strong>
         </li>
         <li>
           <p>Frete</p>
-          <strong>{props.transaction.shippingTotal}</strong>
+          <strong>{transaction.shippingTotal}</strong>
         </li>
         <li>
           <p>Desconto</p>
-          <strong>{props.transaction.discount}</strong>
+          <strong>{transaction.discount}</strong>
         </li>
         <li>
           <p>Total</p>
-          <strong>{props.transaction.total}</strong>
+          <strong>{transaction.total}</strong>
         </li>
       </ul>
     </ContainerCheckoutInfo>
