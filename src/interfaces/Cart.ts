@@ -15,7 +15,7 @@ export type CartItem = {
 export type Product = {
   sku: string;
   name: string;
-  imageObjects: Array<object>;
+  imageObjects: ImageObjects[];
   priceSpecification: PriceSpecification;
 };
 

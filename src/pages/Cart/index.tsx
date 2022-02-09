@@ -2,10 +2,10 @@ import React, { useEffect } from 'react';
 import { Link, Outlet } from 'react-router-dom';
 import { RootStateOrAny, useDispatch, useSelector } from 'react-redux';
 
-import api from '../../services/api';
-
-import { Cart, CartItem } from '../../interfaces/Cart';
+import { CartItem } from '../../interfaces/Cart';
 import { cartRequest } from '../../store/modules/cart/actions';
+
+import { ProductList } from './styles';
 
 export default function Invoices() {
   const { cart } = useSelector((state: RootStateOrAny) => state.cart);
@@ -17,23 +17,15 @@ export default function Invoices() {
   }, []);
 
   return (
-    <div style={{ display: 'flex' }}>
-      <nav
-        style={{
-          borderRight: 'solid 1px',
-          padding: '1rem'
-        }}
-      >
+    <div>
+      <ProductList>
         {cart?.items?.map((item: CartItem) => (
-          <Link
-            style={{ display: 'block', margin: '1rem 0' }}
-            to={`/cart/${item.product.sku}`}
-            key={item.product.sku}
-          >
+          <Link to={`/cart/${item.product.sku}`} key={item.product.sku}>
+            <img src={item.product.imageObjects[0].thumbnail} />
             {item.product.name}
           </Link>
         ))}
-      </nav>
+      </ProductList>
       <Outlet />
     </div>
   );

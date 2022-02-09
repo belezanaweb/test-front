@@ -4,9 +4,10 @@ import './config/ReactotronConfig';
 
 import AppProvider from './providers/AppProvider';
 import Header from './components/Header';
+import MainContent from './components/MainContent';
 
 import GlobalStyle from './styles/global';
-import { AppContainer, Button } from './styles/styles';
+import { AppContainer } from './styles/styles';
 
 function App() {
   console.info(`==> 🌎  Você está no modo ${process.env.NODE_ENV}`);
@@ -16,8 +17,9 @@ function App() {
     <AppContainer>
       <AppProvider>
         <Header />
-        <Outlet />
-        <Button>TEXT BUTTON</Button>
+        <MainContent>
+          <Outlet />
+        </MainContent>
         <GlobalStyle />
       </AppProvider>
     </AppContainer>

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+import { NavLink, useNavigate } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 
 import { Container } from './styles';
@@ -22,11 +22,33 @@ export default function Header() {
     navigate('/', { replace: true });
   }
 
+  const navItems = [
+    {
+      title: 'sacola',
+      url: '/cart'
+    },
+    {
+      title: 'pagamento',
+      url: '/payment'
+    },
+    {
+      title: 'confirmação',
+      url: '/confirmation'
+    }
+  ];
+
   return (
     <Container>
       <nav>
-        <Link to="/cart">Cart</Link> | <Link to="/payment">Payment</Link> |{' '}
-        <Link to="/confirmation">Confirmation</Link>
+        {navItems.map((item) => (
+          <NavLink
+            key={item.title}
+            className={({ isActive }) => (isActive ? 'red' : '')}
+            to={item.url}
+          >
+            {item.title}
+          </NavLink>
+        ))}
       </nav>
     </Container>
   );

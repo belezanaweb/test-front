@@ -10,13 +10,19 @@ const theme = {
   primary: '#FF6C00',
   primaryDark: '#D45A00',
 
+  shadow: 'rgba(0,0,29,0.22)',
+  background: '#EEE',
+  border: '#EEE',
+
   title: '#32264D',
   subtitle: '#6A6180',
-  text: '#A8A8B3',
 
-  border: '#E1E3E5',
+  text: {
+    color: '#A8A8B3',
+    disabled: '#CCC'
+  },
+
   inputs: '#C1BCCC',
-
   error: '#d32f2f',
   success: '#04d361'
 };
