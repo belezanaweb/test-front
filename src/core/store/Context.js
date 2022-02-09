@@ -1,4 +1,5 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
+import apiCart from '../../core/api/api.cart'
 
 export const TransactionContext = React.createContext({})
 
@@ -10,12 +11,19 @@ export const TransactionProvider = (props) => {
     subTotal: 0,
     total: 0,
     creditCard: {
-      number: '222',
+      number: '',
       name: '',
       expiration: '',
       cvc: ''
     }
   })
+
+  useEffect(() => {
+    apiCart.getCartData.then(async (response) => {
+      const data = await response.data
+      setTransaction(data)
+    })
+  }, [setTransaction])
 
   return (
     <TransactionContext.Provider value={[transaction, setTransaction]}>
