@@ -3,6 +3,7 @@ import { takeLatest, all, put, call } from 'redux-saga/effects';
 import { cartSuccess, cartFailure, setCartLoading } from './actions';
 import { TYPE_CART_REQUEST } from '../../../constants/types-reducers';
 import { setToLocalStorage } from '../../../helpers/local-storage';
+import { BELEZA_NA_WEB_CART } from '../../../constants/local-storage';
 
 import api from '../../../services/api';
 
@@ -14,7 +15,7 @@ export function* getCart() {
 
     yield put(cartSuccess(response.data));
 
-    yield put(setToLocalStorage('@BelezaNaWeb: cart', response.data));
+    yield put(setToLocalStorage(BELEZA_NA_WEB_CART, response.data));
 
     yield put(setCartLoading(false));
   } catch (err) {
