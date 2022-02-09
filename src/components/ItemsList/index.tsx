@@ -1,9 +1,7 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
-import { useDispatch } from 'react-redux';
 
 import { Cart, CartItem } from '../../interfaces/Cart';
-import { cartRequest } from '../../store/modules/cart/actions';
 import formatCurrency from '../../helpers/formatCurrency';
 
 import { Container, ItemTitle, ProductListContent } from './styles';
@@ -13,12 +11,6 @@ interface ItemsListProps {
 }
 
 export default function ItemsList({ cart }: ItemsListProps) {
-  const dispatch = useDispatch();
-
-  useEffect(() => {
-    dispatch(cartRequest());
-  }, []);
-
   return (
     <ProductListContent>
       <h2>Produtos</h2>
