@@ -9,7 +9,7 @@ import Button from '../../components/Button';
 
 import formatCurrency from '../../helpers/formatCurrency';
 
-import { Container, ProductList, Info, CartSum } from './styles';
+import { Container, ProductListContent, ProductList, Info, CartSum } from './styles';
 
 export default function Cart() {
   const { cart } = useSelector((state: RootStateOrAny) => state.cart);
@@ -22,17 +22,20 @@ export default function Cart() {
 
   return (
     <Container>
-      <ProductList>
-        {cart?.items?.map((item: CartItem) => (
-          <Link to={`/cart/${item.product.sku}`} key={item.product.sku}>
-            <img src={item.product.imageObjects[0].small} />
-            <Info>
-              {item.product.name}
-              <span>{formatCurrency(item.product.priceSpecification.price)}</span>
-            </Info>
-          </Link>
-        ))}
-      </ProductList>
+      <ProductListContent>
+        <h2>Produtos</h2>
+        <ProductList>
+          {cart?.items?.map((item: CartItem) => (
+            <Link to={`/cart/${item.product.sku}`} key={item.product.sku}>
+              <img src={item.product.imageObjects[0].small} />
+              <Info>
+                {item.product.name}
+                <span>{formatCurrency(item.product.priceSpecification.price)}</span>
+              </Info>
+            </Link>
+          ))}
+        </ProductList>
+      </ProductListContent>
 
       <CartSum>
         <li>Produtos</li>

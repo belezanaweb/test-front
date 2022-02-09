@@ -4,7 +4,7 @@ export const Container = styled.header`
   width: 100%;
   background-color: ${(props) => props.theme.white};
   box-shadow: 0.1rem 0.1rem 0.5rem 0 ${(props) => props.theme.shadow};
-  color: ${(props) => props.theme.text.disabled};
+  color: ${(props) => props.theme.types.disabled};
 
   nav {
     display: flex;

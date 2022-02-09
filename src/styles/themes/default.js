@@ -17,8 +17,9 @@ const theme = {
   title: '#32264D',
   subtitle: '#6A6180',
 
-  text: {
-    color: '#212122',
+  types: {
+    text: '#212122',
+    title: '#999',
     disabled: '#CCC'
   },
 
