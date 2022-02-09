@@ -23,7 +23,7 @@ const theme = {
 
   shadow: 'rgba(0,0,29,0.22)',
   background: '#EEE',
-  border: '#EEE'
+  border: '#E7E7E7'
 };
 
 export default theme;

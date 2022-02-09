@@ -25,7 +25,8 @@ export const ProductList = styled.div`
   flex-direction: column;
   gap: 2rem;
   padding: 1.2rem;
-  background-color: white;
+  background-color: ${(props) => props.theme.colors.white};
+  box-shadow: 0.1rem 0.1rem 0.5rem 0 ${(props) => props.theme.shadow};
 
   a {
     display: flex;

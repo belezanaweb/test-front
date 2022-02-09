@@ -11,7 +11,8 @@ export const Container = styled.div`
     bottom: calc(100% + 12px);
     color: #312e38;
 
-    font-size: 1.2rem;
+    font-size: 1rem;
+    letter-spacing: 0.5px;
     font-weight: 500;
 
     left: 50%;

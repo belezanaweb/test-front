@@ -17,7 +17,7 @@ const returnColorPerType = (props: any) => {
     case INPUT_FOCUSED:
       return props.theme.input.focus;
     default:
-      return props.theme.colors.white;
+      return props.theme.colors.grey;
   }
 };
 
@@ -39,7 +39,8 @@ export const Container = styled.div<ContainerProps>`
   box-shadow: inset 0 1px 2px 0 rgba(0, 0, 0, 0.2);
 
   & + div {
-    margin-top: 0.8rem;
+    margin-top: 0.5rem;
+    color: ${(props) => props.theme.input.error};
   }
 
   svg {
@@ -67,12 +68,12 @@ export const Error = styled(Tooltip)`
   justify-content: center;
 
   position: absolute;
-  top: 1.2rem;
-  right: 1.2rem;
+  top: 1.5rem;
+  right: 1rem;
 
   svg {
-    width: 1.8rem;
-    height: 1.8rem;
+    width: 1.4rem;
+    height: 1.4rem;
     margin: 0;
   }
 

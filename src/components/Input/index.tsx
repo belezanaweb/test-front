@@ -50,22 +50,26 @@ export default function Input({
   }, []);
 
   return (
-    <Container validationType={validationType} inputHeight={inputHeight}>
-      {Icon && <Icon />}
-      <input
-        onFocus={handleInputFocus}
-        onBlur={handleInputBlur}
-        id={fieldName}
-        ref={inputRef}
-        defaultValue={defaultValue}
-        {...rest}
-      />
+    <>
+      <Container validationType={validationType} inputHeight={inputHeight}>
+        {Icon && <Icon />}
+        <input
+          onFocus={handleInputFocus}
+          onBlur={handleInputBlur}
+          id={fieldName}
+          ref={inputRef}
+          defaultValue={defaultValue}
+          {...rest}
+        />
 
-      {error && validationType === 'isErrored' && (
-        <Error title={error}>
-          <FiAlertCircle color={ICON_ERROR_COLOR} size={20} />
-        </Error>
-      )}
-    </Container>
+        {error && validationType === INPUT_ERROR && (
+          <Error title={error}>
+            <FiAlertCircle color={ICON_ERROR_COLOR} size={20} />
+          </Error>
+        )}
+      </Container>
+
+      {error && validationType === INPUT_ERROR && <div>Campo inválido</div>}
+    </>
   );
 }

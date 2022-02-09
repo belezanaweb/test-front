@@ -32,17 +32,4 @@ export const ButtonStyle = styled.button<ButtonProps>`
   :hover {
     background-color: ${(props) => props.theme.colors.primaryDark};
   }
-  /*
-  :disabled {
-    background-color: ${(props) => props.theme.colors.primary};
-    border-color: ${(props) => props.theme.colors.primary};
-    color: white;
-  }
-
-  :active:enabled {
-    -moz-box-shadow: 0px 2px 3px rgba(0, 0, 0, 0.3);
-    -webkit-box-shadow: 0px 2px 3px rgba(0, 0, 0, 0.3);
-    box-shadow: 0px 2px 3px rgba(0, 0, 0, 0.3);
-    background-color: ${(props) => darken(0.1, 'blue')};
-  } */
 `;

@@ -8,8 +8,9 @@ import * as Yup from 'yup';
 import getValidationError from '../../helpers/validations';
 import Button from '../../components/Button';
 import Input from '../../components/Input';
+import SumInfo from '../../components/SumInfo';
 
-import { Container, ProductListContent, ProductList, FormGroup } from './styles';
+import { Container, FormContent, FormGroup } from './styles';
 
 export default function Payment() {
   const formRef = useRef<FormHandles>(null);
@@ -53,42 +54,42 @@ export default function Payment() {
 
   return (
     <Container>
-      <ProductListContent>
-        <h2>Produtos</h2>
-        <ProductList>
-          <Form ref={formRef} onSubmit={handleSubmit}>
+      <h2>CARTÃO DE CRÉDTIO</h2>
+      <Form ref={formRef} onSubmit={handleSubmit}>
+        <FormContent>
+          <fieldset>
+            <label htmlFor="cardNumber">Número do cartão:</label>
+            <Input name="cardNumber" type="text" placeholder="" radius="all" />
+          </fieldset>
+
+          <fieldset>
+            <label htmlFor="titularName">Nome do Titular:</label>
+            <Input
+              name="titularName"
+              type="text"
+              placeholder="Como no Cartão"
+              inputHeight="6rem"
+              radius="all"
+            />
+          </fieldset>
+
+          <FormGroup>
             <fieldset>
-              <label htmlFor="cardNumber">Número do cartão:</label>
-              <Input name="cardNumber" type="text" placeholder="" radius="all" />
+              <label htmlFor="validate">Validade (mês/ano):</label>
+              <Input name="validate" type="text" placeholder="" radius="all" />
             </fieldset>
 
             <fieldset>
-              <label htmlFor="titularName">Nome do Titular:</label>
-              <Input
-                name="titularName"
-                type="text"
-                placeholder="Como no Cartão"
-                inputHeight="6rem"
-                radius="all"
-              />
+              <label htmlFor="cardCode">CVV:</label>
+              <Input name="cardCode" type="text" placeholder="" radius="all" />
             </fieldset>
+          </FormGroup>
+        </FormContent>
 
-            <FormGroup>
-              <fieldset>
-                <label htmlFor="validate">Validade (mês/ano):</label>
-                <Input name="validate" type="text" placeholder="" radius="all" />
-              </fieldset>
+        <SumInfo />
 
-              <fieldset>
-                <label htmlFor="cardCode">CVV:</label>
-                <Input name="cardCode" type="text" placeholder="" radius="all" />
-              </fieldset>
-            </FormGroup>
-
-            <Button type="submit" title="Finalizar Pagamento" />
-          </Form>
-        </ProductList>
-      </ProductListContent>
+        <Button type="submit" title="Finalizar Pagamento" />
+      </Form>
     </Container>
   );
 }

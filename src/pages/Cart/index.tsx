@@ -7,6 +7,7 @@ import { cartRequest } from '../../store/modules/cart/actions';
 import formatCurrency from '../../helpers/formatCurrency';
 
 import Button from '../../components/Button';
+import SumInfo from '../../components/SumInfo';
 
 import { Container, ProductListContent, ProductList, Info, CartSum } from './styles';
 
@@ -36,13 +37,7 @@ export default function Cart() {
         </ProductList>
       </ProductListContent>
 
-      <CartSum>
-        <li>Produtos</li>
-
-        <li>Frete</li>
-        <li>Desconto</li>
-        <li>Total</li>
-      </CartSum>
+      <SumInfo />
       <Button title="Seguir para o pagamento" />
     </Container>
   );
