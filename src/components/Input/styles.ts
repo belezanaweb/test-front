@@ -1,55 +1,42 @@
 import styled from 'styled-components';
 
 import Tooltip from '../Tooltip';
-import { INPUT_ERROR, INPUT_FILLED, INPUT_FOCUSED } from '../../constants/validation';
+import { INPUT_ERROR, INPUT_FOCUSED } from '../../constants/validation';
 
 interface ContainerProps {
-  hasValidation: boolean;
-  hasBorder: boolean;
-  inputHeight: string;
-  radius?: string;
+  inputHeight?: string;
+  validationType: string;
 }
 
 const returnColorPerType = (props: any) => {
-  const { hasValidation } = props;
+  const { validationType } = props;
 
-  switch (hasValidation) {
+  switch (validationType) {
     case INPUT_ERROR:
-      return props.theme.error;
-    case INPUT_FILLED:
+      return props.theme.input.error;
     case INPUT_FOCUSED:
-      return props.theme.success;
+      return props.theme.input.focus;
     default:
-      return props.theme.lightGrey;
+      return props.theme.colors.white;
   }
 };
 
 export const Container = styled.div<ContainerProps>`
-  height: ${(props) => props.inputHeight};
+  height: 4.5rem;
   position: relative;
-
-  border: ${(props) => (props.hasBorder ? '1px solid' : '2px solid')};
-  border-color: ${(props) => (props.hasBorder ? props.theme.border : returnColorPerType(props))};
-
-  background: ${(props) => props.theme.white};
-
-  border-bottom-left-radius: ${(props) =>
-    props.radius === 'left' || props.radius === 'all' ? '0.5rem' : '0'};
-  border-top-left-radius: ${(props) =>
-    props.radius === 'left' || props.radius === 'all' ? '0.5rem' : '0'};
-
-  border-bottom-right-radius: ${(props) =>
-    props.radius === 'right' || props.radius === 'all' ? '0.5rem' : '0'};
-  border-top-right-radius: ${(props) =>
-    props.radius === 'right' || props.radius === 'all' ? '0.5rem' : '0'};
-
-  padding: 1rem 0.5rem 1rem 2rem;
-  width: 100%;
 
   display: flex;
   align-items: center;
 
-  color: ${(props) => props.theme.subtitle};
+  border: 1px solid;
+  border-color: ${(props) => returnColorPerType(props)};
+
+  background: ${(props) => props.theme.colors.white};
+  border-radius: 0.3rem;
+  padding: 1rem 0.5rem 1rem 2rem;
+  width: 100%;
+
+  box-shadow: inset 0 1px 2px 0 rgba(0, 0, 0, 0.2);
 
   & + div {
     margin-top: 0.8rem;
@@ -65,10 +52,10 @@ export const Container = styled.div<ContainerProps>`
     border: 0;
     outline: none;
     font-size: 1.8rem;
-    color: ${(props) => props.theme.subtitle};
+    color: ${(props) => props.theme.types.text};
 
     &::placeholder {
-      color: ${(props) => props.theme.text};
+      color: ${(props) => props.theme.types.placeholder};
       font-size: 1.6rem;
     }
   }
@@ -80,10 +67,12 @@ export const Error = styled(Tooltip)`
   justify-content: center;
 
   position: absolute;
-  top: 1.5rem;
+  top: 1.2rem;
   right: 1.2rem;
 
   svg {
+    width: 1.8rem;
+    height: 1.8rem;
     margin: 0;
   }
 

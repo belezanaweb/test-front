@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 export const Container = styled.header`
   width: 100%;
-  background-color: ${(props) => props.theme.white};
+  background-color: ${(props) => props.theme.colors.white};
   box-shadow: 0.1rem 0.1rem 0.5rem 0 ${(props) => props.theme.shadow};
   color: ${(props) => props.theme.types.disabled};
 
@@ -16,10 +16,10 @@ export const Container = styled.header`
     font-weight: bold;
     line-height: 1.6rem;
     text-transform: uppercase;
-    background-color: ${(props) => props.theme.white};
+    background-color: ${(props) => props.theme.colors.white};
 
     a.red {
-      color: ${(props) => props.theme.primary};
+      color: ${(props) => props.theme.colors.primary};
     }
   }
 `;

@@ -43,6 +43,25 @@ export const ProductList = styled.div`
       height: 6.5rem;
     }
   }
+
+  form {
+    display: flex;
+    flex-direction: column;
+    gap: 2.5rem;
+
+    fieldset {
+      display: flex;
+      flex-direction: column;
+
+      label {
+        font-size: 1.2rem;
+        line-height: 1.4rem;
+        font-weight: bold;
+        color: #ccc;
+        margin-bottom: 5px;
+      }
+    }
+  }
 `;
 
 export const Info = styled.div`
@@ -73,4 +92,9 @@ export const CartSum = styled.div`
     color: ${(props) => props.theme.types.text};
     text-transform: uppercase;
   }
+`;
+
+export const FormGroup = styled.div`
+  display: flex;
+  gap: 2rem;
 `;

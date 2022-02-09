@@ -2,24 +2,20 @@ import React, { useRef, useEffect, useState, useCallback, InputHTMLAttributes } 
 import { useField } from '@unform/core';
 import { FiAlertCircle } from 'react-icons/fi';
 import { Container, Error } from './styles';
-import { INPUT_ERROR, INPUT_FILLED, INPUT_FOCUSED } from '../../constants/validation';
+import { INPUT_ERROR, INPUT_FOCUSED } from '../../constants/validation';
 import { IconBaseProps } from 'react-icons/lib';
 
 interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
   name: string;
   icon?: React.ComponentType<IconBaseProps>;
   defaultValue?: string;
-  hasValidation: boolean;
-  hasBorder: boolean;
-  inputHeight: string;
+  inputHeight?: string;
   radius?: string;
 }
 
 export default function Input({
   name,
   icon: Icon,
-  hasValidation,
-  hasBorder,
   defaultValue,
   inputHeight,
   radius,
@@ -27,7 +23,7 @@ export default function Input({
 }: InputProps) {
   const inputRef = useRef(null);
 
-  const [validation, setValidation] = useState('');
+  const [validationType, setValidationType] = useState('');
   const { fieldName, registerField, error } = useField(name);
 
   useEffect(() => {
@@ -41,30 +37,20 @@ export default function Input({
   }, [fieldName, registerField]);
 
   useEffect(() => {
-    if (error) setValidation(INPUT_ERROR);
+    if (error) setValidationType(INPUT_ERROR);
   }, [error]);
 
   const handleInputFocus = useCallback(() => {
-    setValidation(INPUT_FOCUSED);
+    console.log(`focus`);
+    setValidationType(INPUT_FOCUSED);
   }, []);
 
   const handleInputBlur = useCallback(() => {
-    setValidation('');
-
-    if (defaultValue) {
-      console.log('✅ ~ inputRef?.current', inputRef?.current);
-
-      setValidation(INPUT_FILLED);
-    }
+    setValidationType('');
   }, []);
 
   return (
-    <Container
-      hasValidation={hasValidation}
-      hasBorder={hasBorder}
-      inputHeight={inputHeight}
-      radius={radius}
-    >
+    <Container validationType={validationType} inputHeight={inputHeight}>
       {Icon && <Icon />}
       <input
         onFocus={handleInputFocus}
@@ -75,7 +61,7 @@ export default function Input({
         {...rest}
       />
 
-      {error && validation === 'isErrored' && (
+      {error && validationType === 'isErrored' && (
         <Error title={error}>
           <FiAlertCircle color="#c53030" size={20} />
         </Error>

@@ -4,16 +4,15 @@ import { Form } from '@unform/web';
 import { FormHandles } from '@unform/core';
 import * as Yup from 'yup';
 
-import formatCurrency from '../../helpers/formatCurrency';
+// import formatCurrency from '../../helpers/formatCurrency';
 import getValidationError from '../../helpers/validations';
 import Button from '../../components/Button';
 import Input from '../../components/Input';
 
-import { Container, ProductListContent, ProductList, CartSum } from './styles';
+import { Container, ProductListContent, ProductList, FormGroup } from './styles';
 
 export default function Payment() {
   const formRef = useRef<FormHandles>(null);
-  const [defaultValue, setDefaultValueOrder] = useState('');
 
   const validForm = async () => {
     try {
@@ -21,7 +20,12 @@ export default function Payment() {
 
       formRef.current?.setErrors({});
 
-      const schema = Yup.object().shape({ user: Yup.string().required('User obrigatório') });
+      const schema = Yup.object().shape({
+        cardNumber: Yup.string().required('Digite o número do cartão'),
+        titularName: Yup.string().required('Digite o nome do titular'),
+        validate: Yup.string().required('Digite a validade do cartão'),
+        cardCode: Yup.string().required('Digite o código do cartão')
+      });
 
       await schema.validate(data, { abortEarly: false });
 
@@ -55,59 +59,31 @@ export default function Payment() {
           <Form ref={formRef} onSubmit={handleSubmit}>
             <fieldset>
               <label htmlFor="cardNumber">Número do cartão:</label>
-              <Input
-                name="cardNumber"
-                type="text"
-                hasValidation={true}
-                placeholder=""
-                defaultValue={defaultValue}
-                hasBorder={false}
-                inputHeight="6rem"
-                radius="all"
-              />
+              <Input name="cardNumber" type="text" placeholder="" radius="all" />
             </fieldset>
 
             <fieldset>
-              <label htmlFor="titularName">Nome do titular:</label>
+              <label htmlFor="titularName">Nome do Titular:</label>
               <Input
                 name="titularName"
                 type="text"
-                hasValidation={true}
                 placeholder="Como no Cartão"
-                defaultValue={defaultValue}
-                hasBorder={false}
                 inputHeight="6rem"
                 radius="all"
               />
             </fieldset>
 
-            <fieldset>
-              <label htmlFor="valid">Validade (mês/ano):</label>
-              <Input
-                name="valid"
-                type="text"
-                hasValidation={true}
-                placeholder=""
-                defaultValue={defaultValue}
-                hasBorder={false}
-                inputHeight="6rem"
-                radius="all"
-              />
-            </fieldset>
+            <FormGroup>
+              <fieldset>
+                <label htmlFor="validate">Validade (mês/ano):</label>
+                <Input name="validate" type="text" placeholder="" radius="all" />
+              </fieldset>
 
-            <fieldset>
-              <label htmlFor="cardCode">CVV:</label>
-              <Input
-                name="cardCode"
-                type="text"
-                hasValidation={true}
-                placeholder=""
-                defaultValue={defaultValue}
-                hasBorder={false}
-                inputHeight="6rem"
-                radius="all"
-              />
-            </fieldset>
+              <fieldset>
+                <label htmlFor="cardCode">CVV:</label>
+                <Input name="cardCode" type="text" placeholder="" radius="all" />
+              </fieldset>
+            </FormGroup>
 
             <Button type="submit" title="Finalizar Pagamento" />
           </Form>
