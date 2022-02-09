@@ -12,7 +12,7 @@ export const INITIAL_STATE = {
   cart: null
 };
 
-export function cart(state = INITIAL_STATE, action) {
+export function payments(state = INITIAL_STATE, action) {
   return produce(state, (draft) => {
     switch (action.type) {
       case TYPE_CART_REQUEST: {
