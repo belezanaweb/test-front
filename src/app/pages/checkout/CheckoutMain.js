@@ -34,7 +34,6 @@ const Checkout = () => {
         <input {...register('expiration', { required: true })} />
         <input {...register('cvc', { required: true })} />
         <SliceCartCheckoutInfo transaction={transaction} />
-        {/* <input type="submit" /> */}
         <Button onClick={handleSubmit(onSubmit)} text="Finalizar o Pedido" />
       </form>
     </>
