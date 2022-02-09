@@ -1,13 +1,12 @@
 import React, { useEffect } from 'react';
-import { Link, Outlet } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { RootStateOrAny, useDispatch, useSelector } from 'react-redux';
 
 import { CartItem } from '../../interfaces/Cart';
 import { cartRequest } from '../../store/modules/cart/actions';
+import formatCurrency from '../../helpers/formatCurrency';
 
 import Button from '../../components/Button';
-
-import formatCurrency from '../../helpers/formatCurrency';
 
 import { Container, ProductListContent, ProductList, Info, CartSum } from './styles';
 
@@ -39,12 +38,12 @@ export default function Cart() {
 
       <CartSum>
         <li>Produtos</li>
+
         <li>Frete</li>
         <li>Desconto</li>
         <li>Total</li>
       </CartSum>
       <Button title="Seguir para o pagamento" />
-      <Outlet />
     </Container>
   );
 }

@@ -8,16 +8,27 @@ import { IconBaseProps } from 'react-icons/lib';
 interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
   name: string;
   icon?: React.ComponentType<IconBaseProps>;
+  defaultValue?: string;
   hasValidation: boolean;
   hasBorder: boolean;
   inputHeight: string;
   radius?: string;
 }
 
-export default function Input({ name, icon: Icon, hasValidation, hasBorder, inputHeight, radius, ...rest }: InputProps) {
+export default function Input({
+  name,
+  icon: Icon,
+  hasValidation,
+  hasBorder,
+  defaultValue,
+  inputHeight,
+  radius,
+  ...rest
+}: InputProps) {
   const inputRef = useRef(null);
+
   const [validation, setValidation] = useState('');
-  const { fieldName, defaultValue, registerField, error } = useField(name);
+  const { fieldName, registerField, error } = useField(name);
 
   useEffect(() => {
     registerField({
@@ -40,11 +51,20 @@ export default function Input({ name, icon: Icon, hasValidation, hasBorder, inpu
   const handleInputBlur = useCallback(() => {
     setValidation('');
 
-    if (inputRef.current?.value) setValidation(INPUT_FILLED);
+    if (defaultValue) {
+      console.log('✅ ~ inputRef?.current', inputRef?.current);
+
+      setValidation(INPUT_FILLED);
+    }
   }, []);
 
   return (
-    <Container validation={hasValidation && validation} hasBorder={hasBorder} inputHeight={inputHeight} radius={radius}>
+    <Container
+      hasValidation={hasValidation}
+      hasBorder={hasBorder}
+      inputHeight={inputHeight}
+      radius={radius}
+    >
       {Icon && <Icon />}
       <input
         onFocus={handleInputFocus}

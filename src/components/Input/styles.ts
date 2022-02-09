@@ -4,16 +4,16 @@ import Tooltip from '../Tooltip';
 import { INPUT_ERROR, INPUT_FILLED, INPUT_FOCUSED } from '../../constants/validation';
 
 interface ContainerProps {
-  validation: string;
+  hasValidation: boolean;
   hasBorder: boolean;
   inputHeight: string;
-  radius: string;
+  radius?: string;
 }
 
 const returnColorPerType = (props: any) => {
-  const { validation } = props;
+  const { hasValidation } = props;
 
-  switch (validation) {
+  switch (hasValidation) {
     case INPUT_ERROR:
       return props.theme.error;
     case INPUT_FILLED:
@@ -33,11 +33,15 @@ export const Container = styled.div<ContainerProps>`
 
   background: ${(props) => props.theme.white};
 
-  border-bottom-left-radius: ${(props) => (props.radius === 'left' || props.radius === 'all' ? '0.5rem' : '0')};
-  border-top-left-radius: ${(props) => (props.radius === 'left' || props.radius === 'all' ? '0.5rem' : '0')};
+  border-bottom-left-radius: ${(props) =>
+    props.radius === 'left' || props.radius === 'all' ? '0.5rem' : '0'};
+  border-top-left-radius: ${(props) =>
+    props.radius === 'left' || props.radius === 'all' ? '0.5rem' : '0'};
 
-  border-bottom-right-radius: ${(props) => (props.radius === 'right' || props.radius === 'all' ? '0.5rem' : '0')};
-  border-top-right-radius: ${(props) => (props.radius === 'right' || props.radius === 'all' ? '0.5rem' : '0')};
+  border-bottom-right-radius: ${(props) =>
+    props.radius === 'right' || props.radius === 'all' ? '0.5rem' : '0'};
+  border-top-right-radius: ${(props) =>
+    props.radius === 'right' || props.radius === 'all' ? '0.5rem' : '0'};
 
   padding: 1rem 0.5rem 1rem 2rem;
   width: 100%;

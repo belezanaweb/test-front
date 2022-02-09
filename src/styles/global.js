@@ -14,7 +14,8 @@ button {
 
 h1,
 input,
-button {
+button,
+fieldset {
   border: none;
 }
 
@@ -35,6 +36,7 @@ a {
   color: inherit;
   text-decoration: none;
 }
+
 
 // base styles
 body {

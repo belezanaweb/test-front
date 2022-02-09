@@ -5,6 +5,7 @@ export const Container = styled.main`
   flex-direction: column;
   gap: 2rem;
 `;
+
 export const ProductListContent = styled.div`
   display: flex;
   flex-direction: column;

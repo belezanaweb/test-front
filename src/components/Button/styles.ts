@@ -3,6 +3,7 @@ import { darken } from 'polished';
 
 interface ButtonProps {
   width?: string;
+  type?: string;
 }
 
 export const ButtonStyle = styled.button<ButtonProps>`
