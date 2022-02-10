@@ -30,3 +30,31 @@ export const PaymentMethod = styled.main`
     }
   }
 `;
+
+export const CheckConfirm = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+
+  .check {
+    width: 4rem;
+    height: 4rem;
+
+    border-radius: 50%;
+    border: 1px solid ${(props) => props.theme.colors.primary};
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  span {
+    font-size: 1.4rem;
+    line-height: 1.7rem;
+    font-weight: bold;
+    color: ${(props) => props.theme.colors.primary};
+    text-transform: uppercase;
+    margin-top: 1rem;
+  }
+`;

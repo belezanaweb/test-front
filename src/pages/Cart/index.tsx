@@ -1,5 +1,4 @@
 import React, { useContext } from 'react';
-import { useNavigate } from 'react-router';
 
 import Button from '../../components/Button';
 import SumInfo from '../../components/SumInfo';
@@ -10,7 +9,6 @@ import { StorageContext } from '../../contexts/StorageContext';
 
 export default function Cart() {
   const { cartItems } = useContext(StorageContext);
-  const navigate = useNavigate();
 
   return (
     <Container>

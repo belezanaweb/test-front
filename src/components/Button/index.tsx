@@ -7,7 +7,7 @@ interface ButtonProps extends ButtonHTMLAttributes<HTMLInputElement> {
   title: string;
   width?: string;
   type?: 'submit' | 'reset' | 'button';
-  navigation?: string | '/';
+  navigation?: string;
 }
 
 export default function Button({ type, title, width, navigation }: ButtonProps) {
