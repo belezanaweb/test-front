@@ -54,12 +54,12 @@ export const Container = styled.div<ContainerProps>`
     outline: none;
     font-size: 1.8rem;
     color: ${(props) => props.theme.types.text};
-    letter-spacing: 1.37px;
+    letter-spacing: 1.2px;
 
     &::placeholder {
       color: ${(props) => props.theme.types.placeholder};
       font-size: 1.6rem;
-      letter-spacing: 1.37px;
+      letter-spacing: 1.2px;
     }
   }
 `;

@@ -31,3 +31,10 @@ export function setCartLoading(boolean) {
     payload: boolean
   };
 }
+
+export function setCreditCardInfo(data) {
+  return {
+    type: 'TYPE_CART_CREDIT_CARD_INFO',
+    payload: data
+  };
+}

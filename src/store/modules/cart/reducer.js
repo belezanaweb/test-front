@@ -9,7 +9,8 @@ import {
 
 export const INITIAL_STATE = {
   loadingCart: false,
-  cart: null
+  cart: null,
+  creditCard: null
 };
 
 export function cart(state = INITIAL_STATE, action) {
@@ -29,6 +30,10 @@ export function cart(state = INITIAL_STATE, action) {
       }
       case TYPE_CART_LOADING: {
         draft.loadingCart = action.payload;
+        break;
+      }
+      case 'TYPE_CART_CREDIT_CARD_INFO': {
+        draft.creditCard = action.payload;
         break;
       }
       default:

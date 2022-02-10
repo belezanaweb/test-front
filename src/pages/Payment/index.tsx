@@ -1,17 +1,25 @@
 import React, { useRef, useCallback, useState, useContext } from 'react';
-import { Link, Outlet } from 'react-router-dom';
+import * as Yup from 'yup';
 import { Form } from '@unform/web';
 import { FormHandles } from '@unform/core';
-import * as Yup from 'yup';
+import { useNavigate } from 'react-router';
 
-// import formatCurrency from '../../helpers/formatCurrency';
 import getValidationError from '../../helpers/validations';
+import {
+  CARD_NUMBER_PLACEHOLDER,
+  CVV_PLACEHOLDER,
+  DATE_PLACEHOLDER,
+  TITULAR_NAME_PLACEHOLDER
+} from '../../constants/placeholder';
+
 import Button from '../../components/Button';
 import Input from '../../components/Input';
 import SumInfo from '../../components/SumInfo';
 
 import { Container, FormContent, FormGroup } from './styles';
 import { StorageContext } from '../../contexts/StorageContext';
+import { useDispatch } from 'react-redux';
+import { setCreditCardInfo } from '../../store/modules/cart/actions';
 
 interface PaymentInfo {
   cardNumber: string;
@@ -23,8 +31,10 @@ interface PaymentInfo {
 export default function Payment() {
   const formRef = useRef<FormHandles>(null);
   const { cartItems } = useContext(StorageContext);
-
   const [paymentInfo, setPaymentInfo] = useState<PaymentInfo>({} as PaymentInfo);
+
+  const navigate = useNavigate();
+  const dispatch = useDispatch();
 
   const validForm = async () => {
     try {
@@ -56,11 +66,10 @@ export default function Payment() {
   const handleSubmit = useCallback(async (data: any) => {
     const formIsValid = await validForm();
 
-    console.log(data);
-
-    // if (formIsValid) {
-    //   navigate(`../dashboard?username=${data.user}&page=1&size=4&type=all`, { replace: true });
-    // }
+    if (formIsValid) {
+      dispatch(setCreditCardInfo(data));
+      navigate('/confirmation', { replace: true });
+    }
   }, []);
 
   const handleChange = useCallback(
@@ -83,7 +92,7 @@ export default function Payment() {
             <Input
               name="cardNumber"
               type="text"
-              placeholder="_ _ _ _._ _ _ _._ _ _ _._ _ _ _."
+              placeholder={CARD_NUMBER_PLACEHOLDER}
               mask="creditCard"
               onChange={handleChange}
               radius="all"
@@ -95,7 +104,7 @@ export default function Payment() {
             <Input
               name="titularName"
               type="text"
-              placeholder="Como no Cartão"
+              placeholder={TITULAR_NAME_PLACEHOLDER}
               mask="titularName"
               onChange={handleChange}
               radius="all"
@@ -108,7 +117,7 @@ export default function Payment() {
               <Input
                 name="validate"
                 type="text"
-                placeholder="_ _/_ _ _ _"
+                placeholder={DATE_PLACEHOLDER}
                 mask="date"
                 onChange={handleChange}
                 radius="all"
@@ -120,7 +129,7 @@ export default function Payment() {
               <Input
                 name="cardCode"
                 type="text"
-                placeholder="_ _ _"
+                placeholder={CVV_PLACEHOLDER}
                 mask="cvv"
                 onChange={handleChange}
                 radius="all"

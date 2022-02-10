@@ -59,7 +59,6 @@ export default function Input({
       if (mask === 'date') dateMask(e);
       if (mask === 'cvv') cvvMask(e);
     },
-
     [mask]
   );
 
