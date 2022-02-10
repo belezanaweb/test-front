@@ -1,4 +1,4 @@
-import React, { useRef, useCallback, useState } from 'react';
+import React, { useRef, useCallback, useState, useContext } from 'react';
 import { Link, Outlet } from 'react-router-dom';
 import { Form } from '@unform/web';
 import { FormHandles } from '@unform/core';
@@ -11,9 +11,11 @@ import Input from '../../components/Input';
 import SumInfo from '../../components/SumInfo';
 
 import { Container, FormContent, FormGroup } from './styles';
+import { StorageContext } from '../../contexts/StorageContext';
 
 export default function Payment() {
   const formRef = useRef<FormHandles>(null);
+  const { cartItems } = useContext(StorageContext);
 
   const validForm = async () => {
     try {
@@ -86,7 +88,7 @@ export default function Payment() {
           </FormGroup>
         </FormContent>
 
-        <SumInfo />
+        {cartItems && <SumInfo cart={cartItems} />}
 
         <Button type="submit" title="Finalizar Pagamento" />
       </Form>

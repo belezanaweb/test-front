@@ -11,10 +11,12 @@ export default function Cart() {
   const { cartItems } = useContext(StorageContext);
 
   return (
-    <Container>
-      {cartItems && <ItemsList cart={cartItems} />}
-      <SumInfo />
-      <Button title="Seguir para o pagamento" />
-    </Container>
+    cartItems && (
+      <Container>
+        <ItemsList cart={cartItems} />
+        <SumInfo cart={cartItems} />
+        <Button title="Seguir para o pagamento" />
+      </Container>
+    )
   );
 }
