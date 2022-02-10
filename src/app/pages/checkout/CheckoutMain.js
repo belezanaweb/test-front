@@ -96,6 +96,7 @@ const Checkout = () => {
                   <label>CVV:</label>
                   <input
                     mask="999"
+                    type="number"
                     placeholder="___"
                     defaultValue={transaction?.creditCard?.cvv ? transaction.creditCard.cvv : ''}
                     {...register('cvv', {
