@@ -27,6 +27,12 @@ export default createGlobalStyle`
 
   body {
     background-color: #eee;
+    @media (min-width: 600px)
+    {
+      margin 0 auto;
+      width: 900px;
+    }
   }
+
 
 `
