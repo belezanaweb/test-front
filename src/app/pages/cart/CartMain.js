@@ -1,6 +1,6 @@
 import React, { useEffect, useState, useContext } from 'react'
 import { useNavigate } from 'react-router-dom'
-import { TransactionContext } from '../../../core/store/Context'
+import { TransactionContext } from '../../../core/providers/Context'
 import TitleSection from '../../components/layout/TitleSection'
 import SliceCartItems from '../../components/slices/CartItems.slices'
 import Button from '../../components/layout/Button'

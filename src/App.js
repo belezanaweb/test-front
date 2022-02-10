@@ -1,6 +1,6 @@
 import React from 'react'
 import CRouter from './routes'
-import { TransactionProvider } from './core/store/Context'
+import { TransactionProvider } from './core/providers/Context'
 import { ThemeProvider } from 'styled-components'
 import GlobalStyles from './styles/global.style'
 import { theme } from './styles/light.theme.style'

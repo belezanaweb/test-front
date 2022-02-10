@@ -19,10 +19,14 @@ export const TransactionProvider = (props) => {
   })
 
   useEffect(() => {
-    apiCart.getCartData.then(async (response) => {
-      const data = await response.data
-      setTransaction(data)
-    })
+    apiCart.getCartData
+      .then(async (response) => {
+        const data = await response.data
+        setTransaction(data)
+      })
+      .catch((err) => {
+        console.log(err)
+      })
   }, [setTransaction])
 
   return (

@@ -1,7 +1,7 @@
 import React, { useContext } from 'react'
 import { useForm } from 'react-hook-form'
 import { useNavigate } from 'react-router-dom'
-import { TransactionContext } from '../../../core/store/Context'
+import { TransactionContext } from '../../../core/providers/Context'
 import TitleSection from '../../components/layout/TitleSection'
 import Button from '../../components/layout/Button'
 import SliceCartCheckoutInfo from '../../components/slices/CartCheckoutInfo.slices'
@@ -28,14 +28,14 @@ const Checkout = () => {
   return (
     <>
       <TitleSection title="Pagamento" />
-      <form>
+      <form id="form" onSubmit={handleSubmit(onSubmit)}>
         <input type="number" {...register('number', { required: true, maxLength: 20 })} />
         <input {...register('name', { required: true })} />
         <input {...register('expiration', { required: true })} />
         <input {...register('cvc', { required: true })} />
-        <SliceCartCheckoutInfo transaction={transaction} />
-        <Button onClick={handleSubmit(onSubmit)} text="Finalizar o Pedido" />
       </form>
+      <SliceCartCheckoutInfo transaction={transaction} />
+      <Button type="submit" form="form" text="Finalizar o Pedido" />
     </>
   )
 }

@@ -1,26 +1,28 @@
 import React from 'react'
 import { ContainerCheckoutInfo } from '../../pages/cart/CartPage.style'
+import handleRealFormatMoney from '../../../utils/helpers/formatMoney'
 
 const SliceCartCheckoutInfo = (props) => {
   const { transaction } = props
+
   return (
     <ContainerCheckoutInfo>
       <ul>
         <li>
           <p>Produtos</p>
-          <strong>{transaction.subTotal}</strong>
+          <strong>{handleRealFormatMoney(transaction.subTotal)}</strong>
         </li>
         <li>
           <p>Frete</p>
-          <strong>{transaction.shippingTotal}</strong>
+          <strong>{handleRealFormatMoney(transaction.shippingTotal)}</strong>
         </li>
         <li>
           <p>Desconto</p>
-          <strong>{transaction.discount}</strong>
+          <strong>- {handleRealFormatMoney(transaction.discount)}</strong>
         </li>
         <li>
           <p>Total</p>
-          <strong>{transaction.total}</strong>
+          <strong>{handleRealFormatMoney(transaction.total)}</strong>
         </li>
       </ul>
     </ContainerCheckoutInfo>

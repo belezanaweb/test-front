@@ -1,5 +1,5 @@
 import React, { useContext } from 'react'
-import { TransactionContext } from '../../../core/store/Context'
+import { TransactionContext } from '../../../core/providers/Context'
 import { ContainerWowMomentText } from './WowMoment.style'
 import SuccessIcon from '../../../assets/success_icon.png'
 import TitleSection from '../../components/layout/TitleSection'
@@ -18,7 +18,7 @@ const WowMoment = () => {
       const fullNumber = creditCard.number
       const handleFullNumber = fullNumber.match(/.{1,4}/g)
       return handleFullNumber
-        .join('.')
+        ?.join('.')
         .split('.')
         .map((elem, ind) => (ind === 3 ? elem : '****'))
         .join('.')

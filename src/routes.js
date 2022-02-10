@@ -1,5 +1,5 @@
 import React, { Suspense, lazy } from 'react'
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'
+import { BrowserRouter as Router, Route, Routes, Navigate } from 'react-router-dom'
 import Loading from './app/components/layout/Loading'
 import TabNav from './app/components/navigation/TabNav'
 
@@ -13,7 +13,7 @@ export default function CRouter() {
       <Router>
         <TabNav />
         <Routes>
-          <Route path="/" element={<Cart />} exact />
+          <Route path="/" element={<Navigate to="/cart" />} exact />
           <Route path="cart" element={<Cart />} />
           <Route path="checkout" element={<Checkout />} />
           <Route path="wow-moment" element={<WowMoment />} />

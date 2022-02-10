@@ -2,10 +2,12 @@ import React from 'react'
 import { ContainerButton } from './Button.style'
 
 const Button = (props) => {
-  const { text, onClick } = props
+  const { text, onClick, type, form } = props
   return (
     <ContainerButton>
-      <button onClick={onClick}>{text}</button>
+      <button type={type} form={form} onClick={onClick}>
+        {text}
+      </button>
     </ContainerButton>
   )
 }
