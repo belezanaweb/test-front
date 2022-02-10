@@ -16,7 +16,6 @@ Para esta demanda, fiz um plano de desenvolvimento que pode ser consultado nesta
   - Axios
 - Testes
   - Testing Library
-
 ### GoLive
   Para acessar o projeto online, nesta url: [Veja a aplicação online](https://silly-bell-3ba9c4.netlify.app/)
 
@@ -24,6 +23,20 @@ Para esta demanda, fiz um plano de desenvolvimento que pode ser consultado nesta
   - Clone o repo;
   - Execute ```yarn```
   - Execute ```yarn start```  
+
+
+### Screenshots
+![](https://paideya.com.br/blza/test-frontend-andy-castro.gif)
+
+![](https://paideya.com.br/blza/01.png)
+
+![](https://paideya.com.br/blza/02.png)
+
+![](https://paideya.com.br/blza/03.png)
+
+![](https://paideya.com.br/blza/04.png)
+
+![](https://paideya.com.br/blza/05.png)
 
 ### Dúvidas?
 Em caso de dúvidas, pode entrar em contato pelo e-mail:
