@@ -14,7 +14,7 @@ export const TransactionProvider = (props) => {
       number: '',
       name: '',
       expiration: '',
-      cvc: ''
+      cvv: ''
     }
   })
 

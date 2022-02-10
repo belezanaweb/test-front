@@ -1,16 +1,16 @@
 import React from 'react'
 import { render, screen } from '@testing-library/react'
-import TitleSection from './TitleSection'
+import Button from './Button'
 import { ThemeProvider } from 'styled-components'
 import { theme } from '../../../styles/light.theme.style'
 
 describe('Title Section test', () => {
-  test('Test if the Title Section Component is rendering', () => {
+  test('Test if the Button Component is rendering', () => {
     render(
       <ThemeProvider theme={theme}>
-        <TitleSection title="Cart" />
+        <Button text="Seguir para o Pagamento" />
       </ThemeProvider>
     )
-    expect(screen.getByText('Cart')).toBeInTheDocument()
+    expect(screen.getByText('Seguir para o Pagamento')).toBeInTheDocument()
   })
 })

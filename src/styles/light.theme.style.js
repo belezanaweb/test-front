@@ -8,7 +8,8 @@ export const theme = {
     SUBLIME_GREY: '#EEE',
     LIGHT_GREY: '#D8D8D8',
     GREY: '#CCC',
-    DARK_GREY: '#999'
+    DARK_GREY: '#999',
+    ALERT: '#F30'
   },
   spacing: {
     SMALL: '15px',
