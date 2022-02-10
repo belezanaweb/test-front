@@ -13,9 +13,18 @@ import SumInfo from '../../components/SumInfo';
 import { Container, FormContent, FormGroup } from './styles';
 import { StorageContext } from '../../contexts/StorageContext';
 
+interface PaymentInfo {
+  cardNumber: string;
+  titularName: string;
+  validate: string;
+  cardCode: string;
+}
+
 export default function Payment() {
   const formRef = useRef<FormHandles>(null);
   const { cartItems } = useContext(StorageContext);
+
+  const [paymentInfo, setPaymentInfo] = useState<PaymentInfo>({} as PaymentInfo);
 
   const validForm = async () => {
     try {
@@ -54,6 +63,16 @@ export default function Payment() {
     // }
   }, []);
 
+  const handleChange = useCallback(
+    (e: React.FormEvent<HTMLInputElement>) => {
+      setPaymentInfo({
+        ...paymentInfo,
+        [e.currentTarget.name]: e.currentTarget.value
+      });
+    },
+    [paymentInfo]
+  );
+
   return (
     <Container>
       <h2>CARTÃO DE CRÉDTIO</h2>
@@ -61,7 +80,14 @@ export default function Payment() {
         <FormContent>
           <fieldset>
             <label htmlFor="cardNumber">Número do cartão:</label>
-            <Input name="cardNumber" type="text" placeholder="" radius="all" />
+            <Input
+              name="cardNumber"
+              type="text"
+              placeholder="_ _ _ _._ _ _ _._ _ _ _._ _ _ _."
+              mask="creditCard"
+              onChange={handleChange}
+              radius="all"
+            />
           </fieldset>
 
           <fieldset>
@@ -70,7 +96,8 @@ export default function Payment() {
               name="titularName"
               type="text"
               placeholder="Como no Cartão"
-              inputHeight="6rem"
+              mask="titularName"
+              onChange={handleChange}
               radius="all"
             />
           </fieldset>
@@ -78,12 +105,26 @@ export default function Payment() {
           <FormGroup>
             <fieldset>
               <label htmlFor="validate">Validade (mês/ano):</label>
-              <Input name="validate" type="text" placeholder="" radius="all" />
+              <Input
+                name="validate"
+                type="text"
+                placeholder="_ _/_ _ _ _"
+                mask="date"
+                onChange={handleChange}
+                radius="all"
+              />
             </fieldset>
 
             <fieldset>
               <label htmlFor="cardCode">CVV:</label>
-              <Input name="cardCode" type="text" placeholder="" radius="all" />
+              <Input
+                name="cardCode"
+                type="text"
+                placeholder="_ _ _"
+                mask="cvv"
+                onChange={handleChange}
+                radius="all"
+              />
             </fieldset>
           </FormGroup>
         </FormContent>

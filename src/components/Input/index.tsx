@@ -2,8 +2,10 @@ import React, { useRef, useEffect, useState, useCallback, InputHTMLAttributes } 
 import { useField } from '@unform/core';
 import { FiAlertCircle } from 'react-icons/fi';
 import { Container, Error } from './styles';
-import { INPUT_ERROR, INPUT_FOCUSED, ICON_ERROR_COLOR } from '../../constants/validation';
 import { IconBaseProps } from 'react-icons/lib';
+
+import { INPUT_ERROR, INPUT_FOCUSED, ICON_ERROR_COLOR } from '../../constants/validation';
+import { creditCardMask, titularNameMask, dateMask, cvvMask } from '../../helpers/masks';
 
 interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
   name: string;
@@ -11,6 +13,7 @@ interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
   defaultValue?: string;
   inputHeight?: string;
   radius?: string;
+  mask?: 'creditCard' | 'date' | 'cvv' | 'titularName';
 }
 
 export default function Input({
@@ -19,6 +22,7 @@ export default function Input({
   defaultValue,
   inputHeight,
   radius,
+  mask,
   ...rest
 }: InputProps) {
   const inputRef = useRef(null);
@@ -41,13 +45,23 @@ export default function Input({
   }, [error]);
 
   const handleInputFocus = useCallback(() => {
-    console.log(`focus`);
     setValidationType(INPUT_FOCUSED);
   }, []);
 
   const handleInputBlur = useCallback(() => {
     setValidationType('');
   }, []);
+
+  const handleKeyUp = useCallback(
+    (e: React.FormEvent<HTMLInputElement>) => {
+      if (mask === 'creditCard') creditCardMask(e);
+      if (mask === 'titularName') titularNameMask(e);
+      if (mask === 'date') dateMask(e);
+      if (mask === 'cvv') cvvMask(e);
+    },
+
+    [mask]
+  );
 
   return (
     <>
@@ -59,6 +73,7 @@ export default function Input({
           id={fieldName}
           ref={inputRef}
           defaultValue={defaultValue}
+          onKeyUp={handleKeyUp}
           {...rest}
         />
 
