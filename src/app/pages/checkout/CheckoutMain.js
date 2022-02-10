@@ -14,8 +14,8 @@ const Checkout = () => {
   const {
     register,
     handleSubmit,
-    formState: { errors }
-  } = useForm()
+    formState: { isValid, errors }
+  } = useForm({ mode: 'onChange' })
 
   const onSubmit = (data) => {
     setTransaction((prev) => ({
@@ -40,27 +40,26 @@ const Checkout = () => {
             <input
               mask="9999.9999.9999.9999"
               placeholder="____.____.____.____"
-              error={errors?.number}
+              name="number"
               defaultValue={transaction?.creditCard?.number ? transaction.creditCard.number : ''}
               {...register('number', {
-                required: 'Campo obrigatório',
+                required: 'campo obrigatório',
                 pattern: {
                   value: /\d\d\d\d\d\d\d\d\d\d\d\d\d\d\d\d/g,
-                  message: 'Número inválido'
+                  message: 'apenas números e geralmente são 16 caracteres, ok?'
                 }
               })}
             />
-            <p>{errors.number && 'campo inválido'}</p>
+            {errors.number && <p>{errors.number.message}</p>}
             <label>Nome do Titular:</label>
             <input
               placeholder="Como no cartão"
-              error={errors?.name}
               defaultValue={transaction?.creditCard?.name ? transaction.creditCard.name : ''}
               {...register('name', {
-                required: 'Campo obrigatório'
+                required: 'campo obrigatório'
               })}
             />
-            <p>{errors.name && 'campo inválido'}</p>
+            {errors.name && <p>{errors.name.message}</p>}
           </ContainerSimpleForm>
           <ContainerCustomForm>
             <div>
@@ -68,36 +67,37 @@ const Checkout = () => {
               <input
                 mask="99/9999"
                 placeholder="__/____"
-                error={errors?.expiration}
                 defaultValue={
                   transaction?.creditCard?.expiration ? transaction.creditCard.expiration : ''
                 }
                 {...register('expiration', {
-                  required: 'Campo obrigatório',
-                  pattern: { value: /\d\d\/\d\d\d\d/g, message: 'Data inválida' }
+                  required: 'campo obrigatório',
+                  pattern: {
+                    value: /\d\d\/\d\d\d\d/g,
+                    message: 'geralmente esse dado é assim: 00/0000'
+                  }
                 })}
               />
-              <p>{errors.expiration && 'campo inválido'}</p>
+              {errors.expiration && <p>{errors.expiration.message}</p>}
             </div>
             <div>
               <label>CVV:</label>
               <input
                 mask="999"
                 placeholder="___"
-                error={errors?.cvv}
                 defaultValue={transaction?.creditCard?.cvv ? transaction.creditCard.cvv : ''}
                 {...register('cvv', {
-                  required: 'Campo obrigatório',
-                  pattern: { value: /\d\d\d/g, message: 'CVV inválido' }
+                  required: 'campo obrigatório',
+                  pattern: { value: /\d\d\d/g, message: 'aqui são 3 números :)' }
                 })}
               />
-              <p>{errors.cvv && 'campo inválido'}</p>
+              {errors.cvv && <p>{errors.cvv.message}</p>}
             </div>
           </ContainerCustomForm>
         </form>
       </ContainerAllForm>
       <SliceCartCheckoutInfo transaction={transaction} />
-      <Button type="submit" form="form" text="Finalizar o Pedido" />
+      <Button disabled={!isValid} type="submit" form="form" text="Finalizar o Pedido" />
     </>
   )
 }

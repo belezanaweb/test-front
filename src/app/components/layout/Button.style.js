@@ -18,6 +18,10 @@ export const ContainerButton = styled.section(
       :hover {
         background-color: ${theme.colors.DARK_ORANGE};
       }
+      :disabled {
+        cursor: not-allowed;
+        opacity: 0.4;
+      }
     }
   `
 )

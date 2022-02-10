@@ -25,7 +25,7 @@ export const TransactionProvider = (props) => {
         setTransaction(data)
       })
       .catch((err) => {
-        console.log(err)
+        console.error(err)
       })
   }, [setTransaction])
 
