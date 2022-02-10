@@ -10,6 +10,12 @@ export const ContainerLoading = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  div {
-  }
+`
+
+export const ContainerInternalLoading = styled.div`
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 `

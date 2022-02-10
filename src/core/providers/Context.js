@@ -10,6 +10,7 @@ export const TransactionProvider = (props) => {
     shippingTotal: 0,
     subTotal: 0,
     total: 0,
+    isBuyApproved: false,
     creditCard: {
       number: '',
       name: '',

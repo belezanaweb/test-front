@@ -6,6 +6,7 @@ import TitleSection from '../../components/layout/TitleSection'
 import SliceCartItems from '../../components/slices/CartItems.slices'
 import SliceCartCheckoutInfo from '../../components/slices/CartCheckoutInfo.slices'
 import PaymentInfo from '../../components/slices/PaymentInfo.slices'
+import { InternalLoading } from '../../../app/components/layout/Loading'
 
 const WowMoment = () => {
   const [transaction] = useContext(TransactionContext)
@@ -28,19 +29,29 @@ const WowMoment = () => {
 
   return (
     <>
-      <ContainerWowMomentText>
-        <img src={SuccessIcon} alt="asd" />
-        <h2>Compra efetuada com Sucesso</h2>
-      </ContainerWowMomentText>
-      <TitleSection title="Pagamento" />
-      <PaymentInfo
-        number={creditCard ? hideInfoCreditCard() : fallbackData}
-        name={creditCard ? creditCard.name : fallbackData}
-        expiration={creditCard ? creditCard.expiration : fallbackData}
-      ></PaymentInfo>
-      <TitleSection title="Produtos" />
-      <SliceCartItems transaction={transaction} />
-      <SliceCartCheckoutInfo transaction={transaction} />
+      {transaction.isBuyApproved && (
+        <>
+          <ContainerWowMomentText>
+            <img src={SuccessIcon} alt="asd" />
+            <h2>Compra efetuada com Sucesso</h2>
+          </ContainerWowMomentText>
+          <TitleSection title="Pagamento" />
+          <PaymentInfo
+            number={creditCard ? hideInfoCreditCard() : fallbackData}
+            name={creditCard ? creditCard.name : fallbackData}
+            expiration={creditCard ? creditCard.expiration : fallbackData}
+          ></PaymentInfo>
+          <TitleSection title="Produtos" />
+          <SliceCartItems transaction={transaction} />
+          <SliceCartCheckoutInfo transaction={transaction} />
+        </>
+      )}
+      {!transaction.isBuyApproved && (
+        <ContainerWowMomentText>
+          <p>Aguardando pagamento...</p>
+          <InternalLoading />
+        </ContainerWowMomentText>
+      )}
     </>
   )
 }

@@ -4,7 +4,7 @@ import { TransactionContext } from '../../../core/providers/Context'
 import TitleSection from '../../components/layout/TitleSection'
 import SliceCartItems from '../../components/slices/CartItems.slices'
 import Button from '../../components/layout/Button'
-import Loading from '../../components/layout/Loading'
+import { Loading } from '../../components/layout/Loading'
 import SliceCartCheckoutInfo from '../../components/slices/CartCheckoutInfo.slices'
 
 const Cart = () => {

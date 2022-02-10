@@ -1,6 +1,6 @@
 import React, { Suspense, lazy } from 'react'
 import { BrowserRouter as Router, Route, Routes, Navigate } from 'react-router-dom'
-import Loading from './app/components/layout/Loading'
+import { Loading } from './app/components/layout/Loading'
 import TabNav from './app/components/navigation/TabNav'
 
 const Cart = lazy(() => import('./app/pages/cart/CartMain'))
