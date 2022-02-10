@@ -4,7 +4,8 @@ import {
   TYPE_CART_REQUEST,
   TYPE_CART_SUCCESS,
   TYPE_CART_FAILURE,
-  TYPE_CART_LOADING
+  TYPE_CART_LOADING,
+  TYPE_CART_CREDIT_CARD_INFO
 } from '../../../constants/types-reducers';
 
 export const INITIAL_STATE = {
@@ -32,7 +33,7 @@ export function cart(state = INITIAL_STATE, action) {
         draft.loadingCart = action.payload;
         break;
       }
-      case 'TYPE_CART_CREDIT_CARD_INFO': {
+      case TYPE_CART_CREDIT_CARD_INFO: {
         draft.creditCard = action.payload;
         break;
       }

@@ -26,6 +26,7 @@ export const PaymentMethod = styled.main`
     li {
       font-size: 1.4rem;
       line-height: 1.7rem;
+      text-transform: uppercase;
     }
   }
 `;

@@ -1,4 +1,5 @@
 import React, { useContext } from 'react';
+import { useSelector, RootStateOrAny } from 'react-redux';
 
 import SumInfo from '../../components/SumInfo';
 import ItemsList from '../../components/ItemsList';
@@ -8,16 +9,19 @@ import { StorageContext } from '../../contexts/StorageContext';
 
 export default function Confirmation() {
   const { cartItems } = useContext(StorageContext);
+  const { creditCard } = useSelector((state: RootStateOrAny) => state.cart);
 
   return (
     <Container>
       <PaymentMethod>
         <h2>Pagamento</h2>
-        <div>
-          <li>asdasd</li>
-          <li>asdasd</li>
-          <li>asdasdad</li>
-        </div>
+        {creditCard && (
+          <div>
+            <li>{creditCard.cardNumber}</li>
+            <li>{creditCard.titularName}</li>
+            <li>{creditCard.validate}</li>
+          </div>
+        )}
       </PaymentMethod>
 
       {cartItems && (
