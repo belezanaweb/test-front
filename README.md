@@ -42,7 +42,6 @@
 REACT_APP_ENVIRONMENT = "development",
 NODE_ENV = "development",
 ENVIRONMENT = "development"
-ENDPOINT = "http://localhost:3000/" 
 ```
 
 - Rodar Aplicação: `yarn start`
