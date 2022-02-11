@@ -7,10 +7,10 @@ import PaymentMethod from '../../../../components/PaymentMethod';
 import { Container, CheckConfirm, Content } from './styles';
 
 import Check from '../../../../assets/check.png';
-import { useCart } from '../..';
+import { useCartContext } from '../..';
 
 export default function Confirmation() {
-  const { cartItems, creditCardInfo } = useCart();
+  const { cartItems, creditCardInfo } = useCartContext();
 
   return (
     <Container>

@@ -5,10 +5,10 @@ import SumInfo from '../../../../components/SumInfo';
 import ItemsList from '../../../../components/ItemsList';
 
 import { Container } from './styles';
-import { useCart } from '../../index';
+import { useCartContext } from '../../index';
 
 export default function CartItems() {
-  const { cartItems } = useCart();
+  const { cartItems } = useCartContext();
 
   return (
     <Container>

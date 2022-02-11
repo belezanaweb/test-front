@@ -24,7 +24,7 @@ import { Container, FormContent, FormGroup, Content, InputsContent, CartContent 
 import { setCreditCardInfo } from '../../../../store/modules/cart/actions';
 import { setToLocalStorage } from '../../../../helpers/local-storage';
 import { BELEZA_NA_WEB_CREDIT_CARD } from '../../../../constants/local-storage';
-import { useCart } from '../..';
+import { useCartContext } from '../..';
 
 interface PaymentInfo {
   cardNumber: string;
@@ -36,7 +36,7 @@ interface PaymentInfo {
 
 export default function Payment() {
   const formRef = useRef<FormHandles>(null);
-  const { cartItems, creditCardInfo } = useCart();
+  const { cartItems, creditCardInfo } = useCartContext();
   const [paymentInfo, setPaymentInfo] = useState<PaymentInfo>({} as PaymentInfo);
 
   const navigate = useNavigate();

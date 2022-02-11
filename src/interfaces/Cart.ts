@@ -2,7 +2,6 @@ export interface CartContext {
   cartItems: Cart;
   creditCardInfo: any;
 }
-
 export interface Cart {
   id: string;
   items: CartItem[];
@@ -42,3 +41,7 @@ export type ImageObjects = {
   extraLarge: string;
   valid: boolean;
 };
+export interface Stock {
+  id: number;
+  amount: number;
+}

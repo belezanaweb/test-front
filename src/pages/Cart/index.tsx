@@ -22,6 +22,6 @@ export default function Cart() {
   );
 }
 
-export function useCart() {
+export function useCartContext() {
   return useOutletContext<CartContext>();
 }

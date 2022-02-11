@@ -2,7 +2,9 @@ import React from 'react';
 import { render } from 'react-dom';
 import { BrowserRouter, Routes, Route, Outlet } from 'react-router-dom';
 
+import Home from './pages/Home';
 import Cart from './pages/Cart';
+
 import Payment from './pages/Cart/components/Payment';
 import CartItems from './pages/Cart/components/CartItems';
 import Confirmation from './pages/Cart/components/Confirmation';
@@ -23,6 +25,7 @@ function App() {
       <AppProvider>
         <BrowserRouter>
           <Routes>
+            <Route path="/" element={<Home />} />
             <Route path="/cart/*" element={<Cart />}>
               <Route path="*" element={<CartItems />} />
               <Route path="payment" element={<Payment />} />
