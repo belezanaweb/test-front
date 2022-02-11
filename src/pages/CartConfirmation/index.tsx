@@ -1,19 +1,19 @@
 import React, { useEffect } from 'react';
 import { useNavigate } from 'react-router';
 
-import SumInfo from '../../../../components/SumInfo';
-import ItemsList from '../../../../components/ItemsList';
-import PaymentMethod from '../../../../components/PaymentMethod';
+import SumInfo from '../../components/SumInfo';
+import ItemsList from '../../components/ItemsList';
+import PaymentMethod from '../../components/CreditCardInfo';
 
 import { Container, CheckConfirm, Content } from './styles';
 
-import Check from '../../../../assets/check.png';
-import { useCart } from '../../../../hooks/useCart';
-import { getFromLocalStorage } from '../../../../helpers/local-storage';
-import { BELEZA_NA_WEB_CREDIT_CARD } from '../../../../constants/local-storage';
+import Check from '../../assets/check.png';
+import { useCart } from '../../hooks/useCart';
+import { getFromLocalStorage } from '../../helpers/local-storage';
+import { BELEZA_NA_WEB_CREDIT_CARD } from '../../constants/local-storage';
 
-export default function Confirmation() {
-  const { cartItems, sumInfo, creditCardInfo, setCreditCardInfo } = useCart();
+export default function CartConfirmation() {
+  const { cartItems, creditCardInfo, setCreditCardInfo } = useCart();
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -36,8 +36,8 @@ export default function Confirmation() {
 
           <Content>
             {creditCardInfo?.cardNumber && <PaymentMethod creditCardInfo={creditCardInfo} />}
-            <ItemsList cartItems={cartItems} showControlers={false} />
-            {sumInfo && <SumInfo sumInfo={sumInfo} />}
+            <ItemsList showControlers={false} />
+            <SumInfo />
           </Content>
         </>
       ) : (

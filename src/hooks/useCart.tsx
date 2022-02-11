@@ -10,11 +10,7 @@ import {
 } from 'react';
 import api from '../services/api';
 import { Cart, CartItem } from '../interfaces/Cart';
-import {
-  BELEZA_NA_WEB_CART,
-  BELEZA_NA_WEB_CART_ITEMS,
-  BELEZA_NA_WEB_CREDIT_CARD
-} from '../constants/local-storage';
+import { BELEZA_NA_WEB_CART_ITEMS } from '../constants/local-storage';
 import { getFromLocalStorage, setToLocalStorage } from '../helpers/local-storage';
 import formatCurrency from '../helpers/formatCurrency';
 import { Focused } from 'react-credit-cards';
@@ -29,11 +25,10 @@ interface UpdateProductAmount {
 }
 
 interface SumInfo {
-  id: string;
+  subtotal: number;
   discount: number;
-  shippingTotal: number;
-  subTotal: number;
   total: number;
+  freight: number;
 }
 
 interface CreditCardInfo {
@@ -47,6 +42,7 @@ interface CreditCardInfo {
 interface CartContextData {
   allProducts: any;
   sumInfo: SumInfo;
+  setSumInfo: Dispatch<SetStateAction<SumInfo>>;
   creditCardInfo: CreditCardInfo;
   setCreditCardInfo: Dispatch<SetStateAction<CreditCardInfo>>;
   cartItems: CartItem[];
@@ -91,16 +87,7 @@ export function CartProvider({ children }: CartProviderProps): JSX.Element {
         return dataWrapper;
       });
 
-      const info = {
-        id: response.data.id,
-        discount: response.data.discount,
-        shippingTotal: response.data.shippingTotal,
-        subTotal: response.data.subTotal,
-        total: response.data.total
-      };
-
       setAllProducts(all);
-      setSumInfo(info);
     }
 
     loadProducts();
@@ -111,6 +98,25 @@ export function CartProvider({ children }: CartProviderProps): JSX.Element {
       setToLocalStorage(BELEZA_NA_WEB_CART_ITEMS, cartItems);
     }
   }, [cartPreviousValue, cartItems]);
+
+  const setSumInfoAmount = (updatedCartItems: CartItem[]) => {
+    let subtotal = 0;
+    let discount = 0;
+
+    updatedCartItems.forEach((item: CartItem) => {
+      subtotal += item.product.priceSpecification.price;
+      discount += item.product.priceSpecification.discount;
+    });
+
+    const sum = {
+      subtotal,
+      discount,
+      total: subtotal - discount,
+      freight: 5
+    };
+
+    setSumInfo(sum);
+  };
 
   const addProduct = async (productSku: string) => {
     try {
@@ -139,6 +145,7 @@ export function CartProvider({ children }: CartProviderProps): JSX.Element {
       }
 
       setCartItems(updatedCartItems);
+      setSumInfoAmount(updatedCartItems);
     } catch {
       alert('Erro na adição do produto');
     }
@@ -158,7 +165,9 @@ export function CartProvider({ children }: CartProviderProps): JSX.Element {
 
       if (itemAlreadyInCart) {
         itemAlreadyInCart.quantity = quantity;
+
         setCartItems(updatedCartItems);
+        setSumInfoAmount(updatedCartItems);
       } else throw Error();
     } catch {
       alert('Erro na alteração de quantidade do produto');
@@ -184,6 +193,7 @@ export function CartProvider({ children }: CartProviderProps): JSX.Element {
       value={{
         allProducts,
         sumInfo,
+        setSumInfo,
         creditCardInfo,
         setCreditCardInfo,
         cartItems,

@@ -1,13 +1,12 @@
 import React from 'react';
-import { render } from 'react-dom';
-import { BrowserRouter, Routes, Route, Outlet } from 'react-router-dom';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
 import Home from './pages/Home';
 import Cart from './pages/Cart';
 
-import Payment from './pages/Cart/components/Payment';
-import CartItemsList from './pages/Cart/components/CartItemsList';
-import Confirmation from './pages/Cart/components/Confirmation';
+import CartList from './pages/CartList';
+import CartPayment from './pages/CartPayment';
+import CartConfirmation from './pages/CartConfirmation';
 
 import AppProvider from './providers/AppProvider';
 
@@ -25,9 +24,9 @@ function App() {
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/cart/*" element={<Cart />}>
-              <Route path="*" element={<CartItemsList />} />
-              <Route path="payment" element={<Payment />} />
-              <Route path="confirmation" element={<Confirmation />} />
+              <Route path="*" element={<CartList />} />
+              <Route path="payment" element={<CartPayment />} />
+              <Route path="confirmation" element={<CartConfirmation />} />
             </Route>
           </Routes>
         </BrowserRouter>

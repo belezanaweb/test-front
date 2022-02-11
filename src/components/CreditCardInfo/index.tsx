@@ -2,11 +2,11 @@ import React from 'react';
 
 import { Container } from './styles';
 
-interface PaymentMethodProps {
+interface CreditCardInfoProps {
   creditCardInfo: any;
 }
 
-export default function PaymentMethod({ creditCardInfo }: PaymentMethodProps) {
+export default function CreditCardInfo({ creditCardInfo }: CreditCardInfoProps) {
   return (
     <Container>
       <h2>Pagamento</h2>

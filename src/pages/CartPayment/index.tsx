@@ -6,21 +6,21 @@ import { Form } from '@unform/web';
 import { FormHandles } from '@unform/core';
 import { useNavigate } from 'react-router';
 
-import getValidationError from '../../../../helpers/validations';
-import { getFromLocalStorage, setToLocalStorage } from '../../../../helpers/local-storage';
-import { BELEZA_NA_WEB_CREDIT_CARD } from '../../../../constants/local-storage';
+import getValidationError from '../../helpers/validations';
+import { getFromLocalStorage, setToLocalStorage } from '../../helpers/local-storage';
+import { BELEZA_NA_WEB_CREDIT_CARD } from '../../constants/local-storage';
 
 import {
   CARD_NUMBER_PLACEHOLDER,
   CVV_PLACEHOLDER,
   DATE_PLACEHOLDER,
   TITULAR_NAME_PLACEHOLDER
-} from '../../../../constants/placeholder';
+} from '../../constants/placeholder';
 
-import Button from '../../../../components/Button';
-import Input from '../../../../components/Input';
-import SumInfo from '../../../../components/SumInfo';
-import { useCart } from '../../../../hooks/useCart';
+import Button from '../../components/Button';
+import Input from '../../components/Input';
+import SumInfo from '../../components/SumInfo';
+import { useCart } from '../../hooks/useCart';
 
 import { Container, FormContent, FormGroup, Content, InputsContent, CartContent } from './styles';
 
@@ -32,9 +32,9 @@ interface PaymentInfo {
   focused: Focused;
 }
 
-export default function Payment() {
+export default function CartPayment() {
   const formRef = useRef<FormHandles>(null);
-  const { creditCardInfo, setCreditCardInfo, sumInfo, cartItems } = useCart();
+  const { creditCardInfo, setCreditCardInfo, cartItems } = useCart();
   const [paymentInfo, setPaymentInfo] = useState<PaymentInfo>({} as PaymentInfo);
 
   const navigate = useNavigate();
@@ -182,7 +182,7 @@ export default function Payment() {
             </CartContent>
           </FormContent>
 
-          {sumInfo && <SumInfo sumInfo={sumInfo} />}
+          <SumInfo />
           <Button type="submit" title="Finalizar Pagamento" />
         </Content>
       </Form>

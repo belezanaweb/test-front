@@ -1,6 +1,4 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
-
 import { CartItem } from '../../interfaces/Cart';
 import formatCurrency from '../../helpers/formatCurrency';
 
@@ -15,23 +13,45 @@ import { MdAddCircleOutline, MdDelete, MdRemoveCircleOutline } from 'react-icons
 import { useCart } from '../../hooks/useCart';
 
 interface ItemsListProps {
-  cartItems: CartItem[];
   showControlers: boolean;
 }
 
-export default function ItemsList({ cartItems, showControlers }: ItemsListProps) {
-  const { removeProduct, updateItemQuantity } = useCart();
+export default function ItemsList({ showControlers }: ItemsListProps) {
+  const { removeProduct, updateItemQuantity, sumInfo, setSumInfo, cartItems } = useCart();
 
   function handleProductIncrement(item: CartItem) {
-    updateItemQuantity({ productSku: item.product.sku, quantity: item.quantity + 1 });
+    updateItemQuantity({
+      productSku: item.product.sku,
+      quantity: item.quantity + 1
+    });
+
+    const qtd = item.quantity - 1;
+    updateSubTotal(item, qtd);
   }
 
   function handleProductDecrement(item: CartItem) {
-    updateItemQuantity({ productSku: item.product.sku, quantity: item.quantity - 1 });
+    updateItemQuantity({
+      productSku: item.product.sku,
+      quantity: item.quantity - 1
+    });
+
+    const qtd = item.quantity - 1;
+    updateSubTotal(item, qtd);
   }
 
   function handleRemoveProduct(productSku: string) {
     removeProduct(productSku);
+  }
+
+  function updateSubTotal(item: CartItem, qtd: number) {
+    const priceTotal = item.product.priceSpecification.price * qtd;
+
+    const data = {
+      ...sumInfo,
+      subTotal: priceTotal
+    };
+
+    setSumInfo(data);
   }
 
   return (
@@ -46,7 +66,9 @@ export default function ItemsList({ cartItems, showControlers }: ItemsListProps)
 
                 <ItemTitle>
                   {item.product.name}
-                  <span>{formatCurrency(item.product.priceSpecification.price)}</span>
+                  <span>
+                    {formatCurrency(item.product.priceSpecification.price * item.quantity)}
+                  </span>
                 </ItemTitle>
 
                 {showControlers && (
