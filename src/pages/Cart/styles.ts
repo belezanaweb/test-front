@@ -17,10 +17,6 @@ export const Container = styled.section`
       'list button';
   }
 
-  div {
-    width: 100%;
-  }
-
   h2 {
     text-transform: uppercase;
     color: ${(props) => props.theme.types.title};

@@ -5,10 +5,6 @@ export const Container = styled.section`
   flex-direction: column;
   gap: 2rem;
 
-  div {
-    width: 100%;
-  }
-
   h2 {
     text-transform: uppercase;
     color: ${(props) => props.theme.types.title};
@@ -55,7 +51,6 @@ export const Content = styled.div`
 
 export const FormContent = styled.div`
   display: flex;
-  flex-direction: column;
   gap: 2rem;
   padding: 1.2rem;
   background-color: ${(props) => props.theme.colors.white};
@@ -86,4 +81,14 @@ export const FormContent = styled.div`
 export const FormGroup = styled.div`
   display: flex;
   gap: 2rem;
+`;
+
+export const InputsContent = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  width: 50%;
+`;
+export const CartContent = styled.div`
+  display: flex;
 `;
