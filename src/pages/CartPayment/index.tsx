@@ -24,18 +24,9 @@ import { useCart } from '../../hooks/useCart';
 
 import { Container, FormContent, FormGroup, Content, InputsContent, CartContent } from './styles';
 
-interface PaymentInfo {
-  cardNumber: string;
-  titularName: string;
-  validate: string;
-  cvv: string;
-  focused: Focused;
-}
-
 export default function CartPayment() {
   const formRef = useRef<FormHandles>(null);
   const { creditCardInfo, setCreditCardInfo, cartItems } = useCart();
-  const [paymentInfo, setPaymentInfo] = useState<PaymentInfo>({} as PaymentInfo);
 
   const navigate = useNavigate();
 
@@ -72,22 +63,22 @@ export default function CartPayment() {
 
   const handleChange = useCallback(
     (e: React.FormEvent<HTMLInputElement>) => {
-      setPaymentInfo({
-        ...paymentInfo,
+      setCreditCardInfo({
+        ...creditCardInfo,
         [e.currentTarget.id]: e.currentTarget.value
       });
     },
-    [paymentInfo]
+    [creditCardInfo]
   );
 
   const handleInputFocus = useCallback(
     (e: React.FormEvent<HTMLInputElement>) => {
-      setPaymentInfo({
-        ...paymentInfo
+      setCreditCardInfo({
+        ...creditCardInfo
         // focused: e.currentTarget.id
       });
     },
-    [paymentInfo]
+    [creditCardInfo]
   );
 
   const handleSubmit = useCallback(async (data: any) => {
@@ -108,47 +99,19 @@ export default function CartPayment() {
   return (
     <Container>
       <Form ref={formRef} onSubmit={handleSubmit}>
-        <h2>CARTÃO DE CRÉDITO</h2>
         <Content>
-          <FormContent>
-            <InputsContent>
-              <fieldset>
-                <label htmlFor="cardNumber">Número do cartão:</label>
-                <Input
-                  name="cardNumber"
-                  type="text"
-                  placeholder={CARD_NUMBER_PLACEHOLDER}
-                  mask="creditCard"
-                  defaultValue={creditCardInfo?.cardNumber || ''}
-                  onChange={handleChange}
-                  onFocus={handleInputFocus}
-                  radius="all"
-                />
-              </fieldset>
-
-              <fieldset>
-                <label htmlFor="titularName">Nome do Titular:</label>
-                <Input
-                  name="titularName"
-                  type="text"
-                  placeholder={TITULAR_NAME_PLACEHOLDER}
-                  mask="titularName"
-                  defaultValue={creditCardInfo?.titularName || ''}
-                  onChange={handleChange}
-                  onFocus={handleInputFocus}
-                  radius="all"
-                />
-              </fieldset>
-
-              <FormGroup>
+          <div>
+            <h2>CARTÃO DE CRÉDITO</h2>
+            <FormContent>
+              <InputsContent>
                 <fieldset>
-                  <label htmlFor="validate">Validade (mês/ano):</label>
+                  <label htmlFor="cardNumber">Número do cartão:</label>
                   <Input
-                    name="validate"
+                    name="cardNumber"
                     type="text"
-                    placeholder={DATE_PLACEHOLDER}
-                    mask="date"
-                    defaultValue={creditCardInfo?.validate || ''}
+                    placeholder={CARD_NUMBER_PLACEHOLDER}
+                    mask="creditCard"
+                    defaultValue={creditCardInfo?.cardNumber || ''}
                     onChange={handleChange}
                     onFocus={handleInputFocus}
                     radius="all"
@@ -156,32 +119,61 @@ export default function CartPayment() {
                 </fieldset>
 
                 <fieldset>
-                  <label htmlFor="cvv">CVV:</label>
+                  <label htmlFor="titularName">Nome do Titular:</label>
                   <Input
-                    name="cvv"
+                    name="titularName"
                     type="text"
-                    placeholder={CVV_PLACEHOLDER}
-                    mask="cvv"
-                    defaultValue={creditCardInfo?.cvv || ''}
+                    placeholder={TITULAR_NAME_PLACEHOLDER}
+                    mask="titularName"
+                    defaultValue={creditCardInfo?.titularName || ''}
                     onChange={handleChange}
                     onFocus={handleInputFocus}
                     radius="all"
                   />
                 </fieldset>
-              </FormGroup>
-            </InputsContent>
 
-            <CartContent>
-              <Cards
-                focused={paymentInfo?.focused || ''}
-                cvc={paymentInfo?.cvv || ''}
-                expiry={paymentInfo?.validate || ''}
-                name={paymentInfo?.titularName || ''}
-                number={paymentInfo?.cardNumber || ''}
-              />
-            </CartContent>
-          </FormContent>
+                <FormGroup>
+                  <fieldset>
+                    <label htmlFor="validate">Validade (mês/ano):</label>
+                    <Input
+                      name="validate"
+                      type="text"
+                      placeholder={DATE_PLACEHOLDER}
+                      mask="date"
+                      defaultValue={creditCardInfo?.validate || ''}
+                      onChange={handleChange}
+                      onFocus={handleInputFocus}
+                      radius="all"
+                    />
+                  </fieldset>
 
+                  <fieldset>
+                    <label htmlFor="cvv">CVV:</label>
+                    <Input
+                      name="cvv"
+                      type="text"
+                      placeholder={CVV_PLACEHOLDER}
+                      mask="cvv"
+                      defaultValue={creditCardInfo?.cvv || ''}
+                      onChange={handleChange}
+                      onFocus={handleInputFocus}
+                      radius="all"
+                    />
+                  </fieldset>
+                </FormGroup>
+              </InputsContent>
+
+              <CartContent>
+                <Cards
+                  focused={creditCardInfo?.focused || ''}
+                  cvc={creditCardInfo?.cvv || ''}
+                  expiry={creditCardInfo?.validate || ''}
+                  name={creditCardInfo?.titularName || ''}
+                  number={creditCardInfo?.cardNumber || ''}
+                />
+              </CartContent>
+            </FormContent>
+          </div>
           <SumInfo />
           <Button type="submit" title="Finalizar Pagamento" />
         </Content>

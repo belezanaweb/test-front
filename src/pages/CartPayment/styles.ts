@@ -51,6 +51,10 @@ export const Content = styled.div`
 
 export const FormContent = styled.div`
   display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
   gap: 2rem;
   padding: 1.2rem;
   background-color: ${(props) => props.theme.colors.white};
@@ -58,6 +62,7 @@ export const FormContent = styled.div`
 
   @media (min-width: 48rem) {
     grid-area: form;
+    flex-direction: row;
   }
 
   a {
@@ -87,7 +92,11 @@ export const InputsContent = styled.div`
   display: flex;
   flex-direction: column;
   gap: 2rem;
-  width: 50%;
+  width: 100%;
+
+  @media (min-width: 48rem) {
+    width: 50%;
+  }
 `;
 export const CartContent = styled.div`
   display: flex;

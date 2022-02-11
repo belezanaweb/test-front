@@ -12,6 +12,7 @@ export const Container = styled.div`
 
   @media (min-width: 48rem) {
     grid-area: sumInfo;
+    margin-top: 3rem;
   }
 
   li {

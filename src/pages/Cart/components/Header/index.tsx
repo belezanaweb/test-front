@@ -13,7 +13,7 @@ import {
 export default function Header() {
   const navItems = [
     {
-      title: 'voltar',
+      title: 'Ver Produtos',
       url: '/'
     },
     {
