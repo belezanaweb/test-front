@@ -4,8 +4,14 @@ import { Link } from 'react-router-dom';
 import { CartItem } from '../../interfaces/Cart';
 import formatCurrency from '../../helpers/formatCurrency';
 
-import { Container, ItemTitle, ProductListContent, UpdateItemControl } from './styles';
-import { MdAddCircleOutline, MdRemoveCircleOutline } from 'react-icons/md';
+import {
+  Container,
+  ItemTitle,
+  ProductListContent,
+  UpdateItemControl,
+  DeleteItemControl
+} from './styles';
+import { MdAddCircleOutline, MdDelete, MdRemoveCircleOutline } from 'react-icons/md';
 import { useCart } from '../../hooks/useCart';
 
 interface ItemsListProps {
@@ -13,7 +19,7 @@ interface ItemsListProps {
 }
 
 export default function ItemsList({ cartItems }: ItemsListProps) {
-  const { updateItemQuantity } = useCart();
+  const { removeProduct, updateItemQuantity } = useCart();
 
   function handleProductIncrement(item: CartItem) {
     updateItemQuantity({ productSku: item.product.sku, quantity: item.quantity + 1 });
@@ -23,9 +29,9 @@ export default function ItemsList({ cartItems }: ItemsListProps) {
     updateItemQuantity({ productSku: item.product.sku, quantity: item.quantity - 1 });
   }
 
-  // function handleRemoveProduct(productSku: number) {
-  //   removeProduct(productSku);
-  // }
+  function handleRemoveProduct(productSku: string) {
+    removeProduct(productSku);
+  }
 
   return (
     <Container>
@@ -59,6 +65,16 @@ export default function ItemsList({ cartItems }: ItemsListProps) {
                 <MdAddCircleOutline size={20} />
               </button>
             </UpdateItemControl>
+
+            <DeleteItemControl>
+              <button
+                type="button"
+                data-testid="remove-product"
+                onClick={() => handleRemoveProduct(item.product.sku)}
+              >
+                <MdDelete size={20} />
+              </button>
+            </DeleteItemControl>
           </li>
         ))}
       </ProductListContent>

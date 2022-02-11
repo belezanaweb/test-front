@@ -100,3 +100,5 @@ export const UpdateItemControl = styled.div`
     }
   }
 `;
+
+export const DeleteItemControl = styled(UpdateItemControl)``;

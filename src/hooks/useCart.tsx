@@ -27,7 +27,7 @@ interface CartContextData {
   sumInfo: SumInfo;
   cartItems: CartItem[];
   addProduct: (productSku: string) => Promise<void>;
-  // removeProduct: (productId: string) => void;
+  removeProduct: (productSku: string) => void;
   updateItemQuantity: ({ productSku, quantity }: UpdateProductAmount) => void;
 }
 
@@ -42,6 +42,8 @@ export function CartProvider({ children }: CartProviderProps): JSX.Element {
 
   const prevCartRef = useRef<CartItem[]>();
   const cartPreviousValue = prevCartRef.current ?? cartItems;
+
+  const stockquantity = 8;
 
   useEffect(() => {
     prevCartRef.current = cartItems;
@@ -94,7 +96,7 @@ export function CartProvider({ children }: CartProviderProps): JSX.Element {
       const currentItemQuantity = quantitySum + 1;
 
       // se for chegar no limite do estoque
-      if (currentItemQuantity > 8) {
+      if (currentItemQuantity > stockquantity) {
         alert('Quantidade solicitada fora de estoque');
         return;
       }
@@ -121,8 +123,6 @@ export function CartProvider({ children }: CartProviderProps): JSX.Element {
     try {
       if (quantity <= 0) return;
 
-      const stockquantity = 6;
-
       if (quantity > stockquantity) {
         alert('Quantidade solicitada fora de estoque');
         return;
@@ -132,8 +132,7 @@ export function CartProvider({ children }: CartProviderProps): JSX.Element {
       const itemAlreadyInCart = updatedCartItems.find((item) => item.product.sku === productSku);
 
       if (itemAlreadyInCart) {
-        itemAlreadyInCart.product.priceSpecification.price = quantity;
-
+        itemAlreadyInCart.quantity = quantity;
         setCartItems(updatedCartItems);
       } else throw Error();
     } catch {
@@ -141,19 +140,19 @@ export function CartProvider({ children }: CartProviderProps): JSX.Element {
     }
   };
 
-  // const removeProduct = (productId: string) => {
-  //   try {
-  //     const updatedCart = [...cart];
-  //     const productIndex = updatedCart.findIndex((product) => product.sku === productId);
+  const removeProduct = (productSku: string) => {
+    try {
+      const updatedCartItems = [...cartItems];
+      const productIndex = updatedCartItems.findIndex((item) => item.product.sku === productSku);
 
-  //     if (productIndex >= 0) {
-  //       updatedCart.splice(productIndex, 1);
-  //       setCart(updatedCart);
-  //     } else throw Error();
-  //   } catch {
-  //     alert('Erro na remoção do produto');
-  //   }
-  // };
+      if (productIndex >= 0) {
+        updatedCartItems.splice(productIndex, 1);
+        setCartItems(updatedCartItems);
+      } else throw Error();
+    } catch {
+      alert('Erro na remoção do produto');
+    }
+  };
 
   return (
     <CartContext.Provider
@@ -162,7 +161,7 @@ export function CartProvider({ children }: CartProviderProps): JSX.Element {
         sumInfo,
         cartItems,
         addProduct,
-        // removeProduct,
+        removeProduct,
         updateItemQuantity
       }}
     >
