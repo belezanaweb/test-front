@@ -16,6 +16,7 @@ export default function Home() {
         <h1>Beleza na Web</h1>
       </Link>
       <CartInfo to="/cart">
+        <p>Meu carrinho</p>
         <div>
           <span data-testid="cart-size">{cartLength}</span>
           <MdShoppingBasket size={36} color="#FF6C00" />

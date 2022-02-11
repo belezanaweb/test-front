@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { darken, lighten } from 'polished';
 
 export const Container = styled.div`
   display: flex;
@@ -18,10 +19,11 @@ export const ProductListContent = styled.div`
     grid-area: list;
   }
 
-  a {
+  li {
     display: flex;
     gap: 1rem;
     padding: 1rem 1.2rem;
+    gap: 2rem;
 
     font-size: 1.3rem;
     line-height: 1.6rem;
@@ -64,5 +66,37 @@ export const CartSum = styled.div`
     line-height: 1.7rem;
     color: ${(props) => props.theme.types.text};
     text-transform: uppercase;
+  }
+`;
+
+export const UpdateItemControl = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-left: 1px solid ${(props) => props.theme.border};
+  padding-left: 1rem;
+
+  button {
+    background: none;
+    border: 0;
+    padding: 6px;
+
+    svg {
+      color: ${(props) => props.theme.colors.primaryDark};
+      transition: color 0.2s;
+    }
+
+    &:hover {
+      svg {
+        color: ${(props) => props.theme.colors.primaryDark};
+      }
+    }
+
+    &:disabled {
+      svg {
+        color: ${(props) => props.theme.types.disabled};
+        cursor: not-allowed;
+      }
+    }
   }
 `;

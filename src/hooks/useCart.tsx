@@ -28,7 +28,7 @@ interface CartContextData {
   cartItems: CartItem[];
   addProduct: (productSku: string) => Promise<void>;
   // removeProduct: (productId: string) => void;
-  // updateProductAmount: ({ productId, amount }: UpdateProductAmount) => void;
+  updateItemQuantity: ({ productSku, quantity }: UpdateProductAmount) => void;
 }
 
 const CartContext = createContext<CartContextData>({} as CartContextData);
@@ -117,6 +117,30 @@ export function CartProvider({ children }: CartProviderProps): JSX.Element {
     }
   };
 
+  const updateItemQuantity = ({ productSku, quantity }: UpdateProductAmount) => {
+    try {
+      if (quantity <= 0) return;
+
+      const stockquantity = 6;
+
+      if (quantity > stockquantity) {
+        alert('Quantidade solicitada fora de estoque');
+        return;
+      }
+
+      const updatedCartItems = [...cartItems];
+      const itemAlreadyInCart = updatedCartItems.find((item) => item.product.sku === productSku);
+
+      if (itemAlreadyInCart) {
+        itemAlreadyInCart.product.priceSpecification.price = quantity;
+
+        setCartItems(updatedCartItems);
+      } else throw Error();
+    } catch {
+      alert('Erro na alteração de quantidade do produto');
+    }
+  };
+
   // const removeProduct = (productId: string) => {
   //   try {
   //     const updatedCart = [...cart];
@@ -131,42 +155,15 @@ export function CartProvider({ children }: CartProviderProps): JSX.Element {
   //   }
   // };
 
-  // const updateProductAmount = async ({ productId, amount }: UpdateProductAmount) => {
-  //   try {
-  //     if (amount <= 0) return;
-
-  //     const response = await api.get(`/stock/${productId}`);
-
-  //     const stock: Stock = response.data;
-
-  //     const stockAmount = stock.amount;
-
-  //     if (amount > stockAmount) {
-  //       alert('Quantidade solicitada fora de estoque');
-  //       return;
-  //     }
-
-  //     const updatedCart = [...cart];
-  //     const itemAlreadyInCart = updatedCart.find((product) => product.sku === productId);
-
-  //     if (itemAlreadyInCart) {
-  //       itemAlreadyInCart.priceSpecification.price = amount;
-  //       setCart(updatedCart);
-  //     } else throw Error();
-  //   } catch {
-  //     alert('Erro na alteração de quantidade do produto');
-  //   }
-  // };
-
   return (
     <CartContext.Provider
       value={{
         allProducts,
         sumInfo,
         cartItems,
-        addProduct
+        addProduct,
         // removeProduct,
-        // updateProductAmount
+        updateItemQuantity
       }}
     >
       {children}

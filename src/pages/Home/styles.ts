@@ -9,29 +9,44 @@ export const Container = styled.section`
 `;
 
 export const ProductList = styled.ul`
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-gap: 20px;
-  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+
+  @media (min-width: 36rem) {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 2rem;
+    list-style: none;
+  }
+
+  @media (min-width: 56rem) {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 2rem;
+    list-style: none;
+  }
 
   li {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    box-shadow: 0.1rem 0.1rem 0.5rem 0 ${(props) => props.theme.shadow};
+    align-items: center;
+    gap: 2rem;
+
+    padding: 2rem;
 
     background: #fff;
-    border-radius: 4px;
-    padding: 20px;
+    border-radius: 0.4rem;
+    box-shadow: 0.1rem 0.1rem 0.5rem 0 ${(props) => props.theme.shadow};
 
     img {
       align-self: center;
-      max-width: 250px;
+      max-width: 25rem;
     }
 
     > p {
-      font-size: 16px;
-      line-height: 20px;
+      font-size: 1.4rem;
       color: #333;
       margin-top: 5px;
     }
@@ -45,7 +60,15 @@ export const ProductList = styled.ul`
 `;
 
 export const Button = styled(ButtonStyle)`
-  justify-content: space-between;
+  justify-content: center;
+  gap: 5rem;
+  width: 70%;
+
+  @media (min-width: 36rem) {
+    justify-content: space-around;
+    width: 100%;
+    gap: 0;
+  }
 
   .quantity {
     display: flex;

@@ -34,6 +34,11 @@ export const CartInfo = styled(Link)`
   align-items: center;
   text-decoration: none;
 
+  p {
+    font-size: 1.2rem;
+    margin-right: 1rem;
+  }
+
   div {
     text-align: right;
     margin-right: 10px;
