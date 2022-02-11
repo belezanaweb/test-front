@@ -1,41 +1,47 @@
-## Frontend Test
+<h1 align=center> Beleza na Web</h1>
 
-Faça um fork deste repositório e finalizar o teste, submeta um pull request para o repositório que nosso time será notificado.
+<p align=center> Aplicação de carrinho de e-commerce com consumo de API e steps de pagamento e sucesso
 
-O teste consiste em um checkout simples contendo 3 passos (carrinho, pagamento e sucesso) [Veja o Layout](https://projects.invisionapp.com/prototype/font-test-cji0j0khf005c1t0132358e8k)
+<h3 align=center>
 
-**Faça quando quiser/puder (madrugada, fim de semana, etc)**
+💻 **Acesse a aplicação [aqui](https://app-github-user-finder.herokuapp.com/)**
 
-### Requerimentos
+</h3>
 
-- Pixel perfect ([nesse link](https://projects.invisionapp.com/prototype/font-test-cji0j0khf005c1t0132358e8k), você pode inspecionar para ver espaçamentos, fonte, tamanho, etc)
-- A aplicação precisa ser responsiva, utilizando o conceito de mobile-first. Use sua imaginação para entregar uma experiência boa no desktop.
-- Renderize cada passo em uma URL única (lib de rotas).
+## Tecnologias utilizadas
+
+- react: `Framework Javascript baseado em componentes`
+
+- typescript: `Linguagem de programação com tipagem estática`
+
+- javascript: `Linguagem de programação com tipagem dinâmica`
+
+- axios: `Cliente HTTP para fazer requisições à API`
+
+- styled-components: `Estilização dos componentes com CSS-in-JS`
+
+- react-router-dom: `Roteamento do sistema`
+
+- unform: `Criação de formulários para React e React Native`
+
+- yup: `Construtor de esquemas de validações de formulários`
+
+- polished: `Ferramenta de estilização css`
+
+- eslint: `Ferramenta de análise de erros em códigos`
+
+- prettier: `Ferramenta de formatação de códigos`
 
 
-### Passo 1 - Carrinho:
-  - Consuma o [esse endpoint](http://www.mocky.io/v2/5b15c4923100004a006f3c07) e liste os itens do carrinho, bem como o resumo do carrinho;
-  - Persista o conteúdo do JSON para ser usado nas próximas etapas;
+## 📥 Execute esse projeto no seu computador
 
-### Passo 2 - Pagamento: 
-  - Exiba um form com campos de cartão de crédito com validação em cada campo;
-  - Habilite o botão de Finalizar Pedido apenas se o form esteja válido;
+- Clonar Repositório: `git clone https://github.com/dxwebster/test-front`
+- Instalar dependências: `yarn`
+- Criar aquivo .env com as seguintes variáveis:
+`REACT_APP_ENVIRONMENT = "development"` e `NODE_ENV = "development"`
+- Rodar Aplicação: `yarn start`
 
-### Passo 3 - Sucesso: 
-  - Todo o conteúdo deverá ser exibido a partir dos dados persistidos;
-  
-### O que vamos avaliar:
-  - Organização do código;
-  - Mensagens (em inglês) e mudanças nos commits;
-  - Composição/reutilização de componentes;
-  - Testes unitários;
-  - O motivo de ter escolhido cada tech da stack;
-  - Como rodar sua aplicação ;)
+## 📕 Licença
 
-### Diferenciais:
-  - Split bundle por rota (cada step ter um bundle separado para otimizar a performance);
-  - CSS in JS;
-  - React;
-
-### Fim:
-Ao finalizar o teste, submeta um pull request para o repositório que nosso time será notificado. Se tiver alguma observação, escreva no pull request.
+Todos os arquivos incluídos aqui, incluindo este _Readme_, estão sob Licença MIT.<br>
+Criado com ❤ por [Adriana Lima](https://github.com/dxwebster)
