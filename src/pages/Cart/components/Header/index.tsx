@@ -1,12 +1,16 @@
 import React, { useContext, useEffect, useState } from 'react';
 import { useLocation } from 'react-router-dom';
 import { useNavigate } from 'react-router';
-import { StorageContext } from '../../contexts/StorageContext';
+import { StorageContext } from '../../../../contexts/StorageContext';
 
 import { Container } from './styles';
 
 export default function Header() {
   const navItems = [
+    {
+      title: 'voltar',
+      url: '/'
+    },
     {
       title: 'sacola',
       url: '/cart'

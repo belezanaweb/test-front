@@ -1,7 +1,8 @@
-import React, { useRef, useEffect, useState, useCallback, ButtonHTMLAttributes } from 'react';
+import React, { ButtonHTMLAttributes } from 'react';
 import { ButtonStyle } from './styles';
 import PropTypes from 'prop-types';
 import { useNavigate } from 'react-router';
+import { IconBaseProps } from 'react-icons/lib';
 
 interface ButtonProps extends ButtonHTMLAttributes<HTMLInputElement> {
   title: string;
@@ -19,7 +20,7 @@ export default function Button({ type, title, width, navigation }: ButtonProps) 
 
   return (
     <ButtonStyle type={type} width={width} onClick={() => handleNavigation()}>
-      {title}
+      <span>{title}</span>
     </ButtonStyle>
   );
 }

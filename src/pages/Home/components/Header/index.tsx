@@ -12,15 +12,14 @@ export default function Home() {
 
   return (
     <Header>
-      <Link to="/">Beleza na Web</Link>
+      <Link to="/">
+        <h1>Beleza na Web</h1>
+      </Link>
       <CartInfo to="/cart">
         <div>
-          <strong>Meu carrinho</strong>
-          <span data-testid="cart-size">
-            {cartLength === 1 ? `${cartLength} item` : `${cartLength} itens`}
-          </span>
+          <span data-testid="cart-size">{cartLength}</span>
+          <MdShoppingBasket size={36} color="#FF6C00" />
         </div>
-        <MdShoppingBasket size={36} color="#FFF" />
       </CartInfo>
     </Header>
   );

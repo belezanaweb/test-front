@@ -7,7 +7,7 @@ interface ButtonProps {
 
 export const ButtonStyle = styled.button<ButtonProps>`
   width: ${(props) => props.width};
-  height: 6rem;
+  height: 5rem;
 
   display: flex;
   justify-content: center;
@@ -19,7 +19,7 @@ export const ButtonStyle = styled.button<ButtonProps>`
   padding: 1.8rem 0.94rem;
   border-radius: 0.3rem;
 
-  font-size: 1.6rem;
+  font-size: 1.4rem;
   font-weight: bold;
   line-height: 2.4rem;
   letter-spacing: 0.05rem;
@@ -35,6 +35,5 @@ export const ButtonStyle = styled.button<ButtonProps>`
 
   @media (min-width: 48rem) {
     grid-area: button;
-    flex: 1;
   }
 `;

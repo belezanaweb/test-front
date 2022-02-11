@@ -1,6 +1,5 @@
 import styled from 'styled-components';
-import { Link } from 'react-router-dom';
-import { darken } from 'polished';
+import { ButtonStyle } from '../../components/Button/styles';
 
 export const Container = styled.section`
   width: 100%;
@@ -18,6 +17,9 @@ export const ProductList = styled.ul`
   li {
     display: flex;
     flex-direction: column;
+    justify-content: space-between;
+    box-shadow: 0.1rem 0.1rem 0.5rem 0 ${(props) => props.theme.shadow};
+
     background: #fff;
     border-radius: 4px;
     padding: 20px;
@@ -27,7 +29,7 @@ export const ProductList = styled.ul`
       max-width: 250px;
     }
 
-    > strong {
+    > p {
       font-size: 16px;
       line-height: 20px;
       color: #333;
@@ -35,79 +37,22 @@ export const ProductList = styled.ul`
     }
 
     > span {
-      font-size: 21px;
+      font-size: 2rem;
       font-weight: bold;
-      margin: 5px 0 20px;
-    }
-
-    button {
-      background: #7159c1;
-      color: #fff;
-      border: 0;
-      border-radius: 4px;
-      overflow: hidden;
-      margin-top: auto;
-
-      display: flex;
-      align-items: center;
-      transition: background 0.2s;
-
-      &:hover {
-        background: ${darken(0.06, '#7159c1')};
-      }
-
-      div {
-        display: flex;
-        align-items: center;
-        padding: 12px;
-        background: rgba(0, 0, 0, 0.1);
-
-        svg {
-          margin-right: 5px;
-        }
-      }
-
-      span {
-        flex: 1;
-        text-align: center;
-        font-weight: bold;
-      }
+      margin: 1rem 0 1rem;
     }
   }
 `;
 
-export const Header = styled.header`
-  display: flex;
+export const Button = styled(ButtonStyle)`
   justify-content: space-between;
-  align-items: center;
-  margin: 50px 0;
 
-  a {
-    transition: opacity 0.2s;
-
-    &:hover {
-      opacity: 0.7;
-    }
-  }
-`;
-
-export const CartInfo = styled(Link)`
-  display: flex;
-  align-items: center;
-  text-decoration: none;
-
-  div {
-    text-align: right;
-    margin-right: 10px;
-
-    strong {
-      display: block;
-      color: #fff;
-    }
-
-    span {
-      font-size: 12px;
-      color: #999;
-    }
+  .quantity {
+    display: flex;
+    align-items: center;
+    padding: 1rem 2rem;
+    border-right: 1px solid rgba(0, 0, 0, 0.1);
+    margin-left: -1rem;
+    gap: 1rem;
   }
 `;

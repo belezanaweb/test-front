@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import { MdAddShoppingCart } from 'react-icons/md';
 
-import { ProductList } from './styles';
+import { ProductList, Button } from './styles';
 
 import setCartItemsQuantity from '../../helpers/set-items-quantity';
 
 import { useCart } from '../../hooks/useCart';
-import { Cart, CartItem } from '../../interfaces/Cart';
+import { CartItem } from '../../interfaces/Cart';
 import Header from './components/Header';
 
 export default function Home() {
@@ -19,20 +19,17 @@ export default function Home() {
         {allProducts.map((item: CartItem) => (
           <li key={item.product.sku}>
             <img src={item.product.imageObjects[0].medium} alt={item.product.name} />
-            <strong>{item.product.name}</strong>
+            <p>{item.product.name}</p>
             <span>{item.product.priceSpecification.price}</span>
-            <button
-              type="button"
-              data-testid="add-product-button"
-              onClick={() => addProduct(item.product.sku)}
-            >
-              <div data-testid="cart-product-quantity">
-                <MdAddShoppingCart size={16} color="#FFF" />
+
+            <Button onClick={() => addProduct(item.product.sku)}>
+              <div className="quantity">
                 {setCartItemsQuantity(cartItems, item.product.sku) || 0}
+                <MdAddShoppingCart />
               </div>
 
               <span>ADICIONAR AO CARRINHO</span>
-            </button>
+            </Button>
           </li>
         ))}
       </ProductList>
