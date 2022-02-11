@@ -8,14 +8,14 @@ import { Container } from './styles';
 import { useCart } from '../../../../hooks/useCart';
 
 export default function CartItems() {
-  const { cartItems, cart } = useCart();
+  const { cartItems, sumInfo } = useCart();
 
   return (
     <Container>
       {cartItems && (
         <>
           <ItemsList cartItems={cartItems} />
-          <SumInfo cart={cart} />
+          <SumInfo sumInfo={sumInfo} />
           <Button title="Seguir para o pagamento" navigation="/cart/payment" />
         </>
       )}

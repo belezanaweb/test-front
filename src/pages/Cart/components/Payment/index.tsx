@@ -18,6 +18,7 @@ import {
 import Button from '../../../../components/Button';
 import Input from '../../../../components/Input';
 import SumInfo from '../../../../components/SumInfo';
+import { useCart } from '../../../../hooks/useCart';
 
 import { Container, FormContent, FormGroup, Content, InputsContent, CartContent } from './styles';
 
@@ -36,7 +37,8 @@ interface PaymentInfo {
 
 export default function Payment() {
   const formRef = useRef<FormHandles>(null);
-  const { cartItems, creditCardInfo } = useCartContext();
+  const { creditCardInfo } = useCartContext();
+  const { cartItems, sumInfo } = useCart();
   const [paymentInfo, setPaymentInfo] = useState<PaymentInfo>({} as PaymentInfo);
 
   const navigate = useNavigate();
@@ -176,7 +178,7 @@ export default function Payment() {
             </CartContent>
           </FormContent>
 
-          {cartItems && <SumInfo cart={cartItems} />}
+          {sumInfo && <SumInfo sumInfo={sumInfo} />}
           <Button type="submit" title="Finalizar Pagamento" />
         </Content>
       </Form>

@@ -3,6 +3,7 @@ import api from '../services/api';
 import { Cart, CartItem } from '../interfaces/Cart';
 import { BELEZA_NA_WEB_CART, BELEZA_NA_WEB_CART_ITEMS } from '../constants/local-storage';
 import { getFromLocalStorage, setToLocalStorage } from '../helpers/local-storage';
+import formatCurrency from '../helpers/formatCurrency';
 
 interface CartProviderProps {
   children: ReactNode;
@@ -13,8 +14,17 @@ interface UpdateProductAmount {
   quantity: number;
 }
 
+interface SumInfo {
+  id: string;
+  discount: number;
+  shippingTotal: number;
+  subTotal: number;
+  total: number;
+}
+
 interface CartContextData {
-  cart: Cart;
+  allProducts: any;
+  sumInfo: SumInfo;
   cartItems: CartItem[];
   addProduct: (productSku: string) => Promise<void>;
   // removeProduct: (productId: string) => void;
@@ -25,27 +35,55 @@ const CartContext = createContext<CartContextData>({} as CartContextData);
 
 export function CartProvider({ children }: CartProviderProps): JSX.Element {
   const currentCartItems = getFromLocalStorage(BELEZA_NA_WEB_CART_ITEMS);
-  const currentCart = getFromLocalStorage(BELEZA_NA_WEB_CART);
 
+  const [allProducts, setAllProducts] = useState<CartItem[]>([]);
   const [cartItems, setCartItems] = useState<CartItem[]>(currentCartItems || []);
-  const [cart, setCart] = useState<Cart>(currentCart || {});
+  const [sumInfo, setSumInfo] = useState<SumInfo>({} as SumInfo);
 
   const prevCartRef = useRef<CartItem[]>();
+  const cartPreviousValue = prevCartRef.current ?? cartItems;
 
   useEffect(() => {
     prevCartRef.current = cartItems;
   });
 
-  const cartPreviousValue = prevCartRef.current ?? cartItems;
+  useEffect(() => {
+    async function loadProducts() {
+      const response = await api.get<Cart>('5b15c4923100004a006f3c07');
+
+      const all = response.data.items.map((item: CartItem) => {
+        item.product.priceSpecification.price = formatCurrency(
+          item.product.priceSpecification.price
+        );
+
+        const dataWrapper = {
+          product: item.product,
+          quantity: item.quantity
+        };
+
+        return dataWrapper;
+      });
+
+      const info = {
+        id: response.data.id,
+        discount: response.data.discount,
+        shippingTotal: response.data.shippingTotal,
+        subTotal: response.data.subTotal,
+        total: response.data.total
+      };
+
+      setAllProducts(all);
+      setSumInfo(info);
+    }
+
+    loadProducts();
+  }, []);
 
   useEffect(() => {
-    if (cartPreviousValue !== cartItems) setToLocalStorage(BELEZA_NA_WEB_CART, cartItems);
+    if (cartPreviousValue !== cartItems) {
+      setToLocalStorage(BELEZA_NA_WEB_CART_ITEMS, cartItems);
+    }
   }, [cartPreviousValue, cartItems]);
-
-  const getCart = async () => {
-    const response = await api.get<Cart>('5b15c4923100004a006f3c07');
-    setCart(response.data);
-  };
 
   const addProduct = async (productSku: string) => {
     try {
@@ -123,10 +161,12 @@ export function CartProvider({ children }: CartProviderProps): JSX.Element {
   return (
     <CartContext.Provider
       value={{
-        cart,
+        allProducts,
+        sumInfo,
         cartItems,
         addProduct
-        // removeProduct, updateProductAmount
+        // removeProduct,
+        // updateProductAmount
       }}
     >
       {children}

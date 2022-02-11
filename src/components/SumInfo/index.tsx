@@ -4,15 +4,21 @@ import { Cart } from '../../interfaces/Cart';
 import { Container } from './styles';
 
 interface SumInfoProps {
-  cart: Cart;
+  sumInfo: {
+    id: string;
+    discount: number;
+    shippingTotal: number;
+    subTotal: number;
+    total: number;
+  };
 }
 
-export default function SumInfo({ cart }: SumInfoProps) {
+export default function SumInfo({ sumInfo }: SumInfoProps) {
   const paymentInfo = {
-    subtotal: cart.subTotal || 0,
-    freight: cart.shippingTotal || 0,
-    discount: cart.discount || 0,
-    total: cart.subTotal + cart.shippingTotal - cart.discount || 0
+    subtotal: sumInfo.subTotal || 0,
+    freight: sumInfo.shippingTotal || 0,
+    discount: sumInfo.discount || 0,
+    total: sumInfo.subTotal + sumInfo.shippingTotal - sumInfo.discount || 0
   };
 
   return (

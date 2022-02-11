@@ -3,7 +3,7 @@ import { RootStateOrAny, useDispatch, useSelector } from 'react-redux';
 import { getFromLocalStorage } from '../helpers/local-storage';
 import { Cart } from '../interfaces/Cart';
 import { BELEZA_NA_WEB_CART, BELEZA_NA_WEB_CREDIT_CARD } from '../constants/local-storage';
-import { cartRequest, cartSuccess, setCreditCardInfo } from '../store/modules/cart/actions';
+import { cartSuccess, setCreditCardInfo } from '../store/modules/cart/actions';
 
 interface StorageContextData {
   cartItems: Cart;
@@ -33,8 +33,6 @@ export function StorageProvider({ children, ...props }: StorageProviderProps) {
     if (cartFromStorage) {
       setCartItems(cartFromStorage);
       dispatch(cartSuccess(cartFromStorage));
-    } else {
-      dispatch(cartRequest());
     }
 
     if (creditCardFromStorage) {

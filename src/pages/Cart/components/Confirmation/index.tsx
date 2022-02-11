@@ -1,5 +1,4 @@
-import React, { useContext } from 'react';
-
+import React from 'react';
 import SumInfo from '../../../../components/SumInfo';
 import ItemsList from '../../../../components/ItemsList';
 import PaymentMethod from '../../../../components/PaymentMethod';
@@ -10,7 +9,7 @@ import Check from '../../../../assets/check.png';
 import { useCart } from '../../../../hooks/useCart';
 
 export default function Confirmation() {
-  const { cartItems, cart } = useCart();
+  const { cartItems, sumInfo } = useCart();
 
   return (
     <Container>
@@ -25,7 +24,7 @@ export default function Confirmation() {
         <Content>
           {/* <PaymentMethod creditCardInfo={creditCardInfo} /> */}
           <ItemsList cartItems={cartItems} />
-          <SumInfo cart={cart} />
+          <SumInfo sumInfo={sumInfo} />
         </Content>
       )}
     </Container>
