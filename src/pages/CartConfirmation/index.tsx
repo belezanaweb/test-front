@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router';
 
 import SumInfo from '../../components/SumInfo';
 import ItemsList from '../../components/ItemsList';
-import PaymentMethod from '../../components/CreditCardInfo';
+import PaymentMethod from '../../components/PaymentInfo';
 
 import { Container, CheckConfirm, Content } from './styles';
 
