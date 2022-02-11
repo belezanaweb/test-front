@@ -1,8 +1,12 @@
 import styled from 'styled-components';
 
-export const Container = styled.main`
+export const Container = styled.section`
   display: flex;
   flex-direction: column;
+
+  div {
+    width: 100%;
+  }
 
   h2 {
     text-transform: uppercase;
@@ -16,6 +20,17 @@ export const Container = styled.main`
     display: flex;
     flex-direction: column;
     gap: 2.5rem;
+
+    @media (min-width: 48rem) {
+      display: grid;
+      grid-template-columns: 70% 1fr;
+      grid-template-rows: 55% 1fr;
+      gap: 2rem;
+
+      grid-template-areas:
+        'form sumInfo'
+        'form button';
+    }
 
     fieldset {
       display: flex;
@@ -39,6 +54,10 @@ export const FormContent = styled.div`
   padding: 1.2rem;
   background-color: ${(props) => props.theme.colors.white};
   box-shadow: 0.1rem 0.1rem 0.5rem 0 ${(props) => props.theme.shadow};
+
+  @media (min-width: 48rem) {
+    grid-area: form;
+  }
 
   a {
     display: flex;

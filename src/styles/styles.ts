@@ -1,20 +1,25 @@
 import styled from 'styled-components';
 
 export const AppContainer = styled.main`
-  // mobile styles
-  width: 36rem;
-  height: 72rem;
+  width: 100%;
+  height: 100vh;
   margin: 0 auto;
 
-  // small tablet styles
-  @media (min-width: 62rem) {
+  // iPads, Tablets
+  @media (min-width: 48rem) {
+    width: 80%;
+    margin: 0 auto;
   }
 
-  // large tablets styles & laptop styles
-  @media (min-width: 96rem) {
+  // Small screens, laptops
+  @media (min-width: 768rem) {
+    width: 80%;
+    margin: 0 auto;
   }
 
-  // desktop styles
+  // Desktops, large screens
   @media (min-width: 120rem) {
+    width: 80%;
+    margin: 0 auto;
   }
 `;

@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-export const Container = styled.main`
+export const Container = styled.section`
   display: flex;
   flex-direction: column;
   gap: 2rem;
@@ -15,7 +15,7 @@ export const Container = styled.main`
   }
 `;
 
-export const PaymentMethod = styled.main`
+export const PaymentMethod = styled.div`
   display: flex;
   flex-direction: column;
 

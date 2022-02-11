@@ -1,5 +1,4 @@
 import styled from 'styled-components';
-import { darken } from 'polished';
 
 interface ButtonProps {
   width?: string;
@@ -8,6 +7,7 @@ interface ButtonProps {
 
 export const ButtonStyle = styled.button<ButtonProps>`
   width: ${(props) => props.width};
+  height: 6rem;
 
   display: flex;
   justify-content: center;
@@ -31,5 +31,10 @@ export const ButtonStyle = styled.button<ButtonProps>`
 
   :hover {
     background-color: ${(props) => props.theme.colors.primaryDark};
+  }
+
+  @media (min-width: 48rem) {
+    grid-area: button;
+    flex: 1;
   }
 `;

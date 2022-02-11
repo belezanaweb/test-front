@@ -12,9 +12,8 @@ interface ItemsListProps {
 
 export default function ItemsList({ cart }: ItemsListProps) {
   return (
-    <ProductListContent>
-      <h2>Produtos</h2>
-      <Container>
+    <Container>
+      <ProductListContent>
         {cart?.items?.map((item: CartItem) => (
           <Link to={`/cart/${item.product.sku}`} key={item.product.sku}>
             <img src={item.product.imageObjects[0].small} />
@@ -24,7 +23,7 @@ export default function ItemsList({ cart }: ItemsListProps) {
             </ItemTitle>
           </Link>
         ))}
-      </Container>
-    </ProductListContent>
+      </ProductListContent>
+    </Container>
   );
 }

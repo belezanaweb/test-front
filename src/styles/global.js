@@ -45,7 +45,7 @@ export default createGlobalStyle`
     font-weight: 200;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    background-color: ${(props) => props.theme.colors.grey};
+    background-color: #EEE;
     height: 100vh;
   }
 

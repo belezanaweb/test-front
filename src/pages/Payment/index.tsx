@@ -84,7 +84,7 @@ export default function Payment() {
 
   return (
     <Container>
-      <h2>CARTÃO DE CRÉDTIO</h2>
+      <h2>CARTÃO DE CRÉDITO</h2>
       <Form ref={formRef} onSubmit={handleSubmit}>
         <FormContent>
           <fieldset>
@@ -139,7 +139,6 @@ export default function Payment() {
         </FormContent>
 
         {cartItems && <SumInfo cart={cartItems} />}
-
         <Button type="submit" title="Finalizar Pagamento" />
       </Form>
     </Container>

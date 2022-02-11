@@ -1,12 +1,21 @@
 import styled from 'styled-components';
 
-export const Container = styled.main`
+export const Container = styled.div`
+  display: flex;
+  flex-direction: column;
+`;
+
+export const ProductListContent = styled.div`
   display: flex;
   flex-direction: column;
   gap: 2rem;
   padding: 1.2rem;
   background-color: ${(props) => props.theme.colors.white};
   box-shadow: 0.1rem 0.1rem 0.5rem 0 ${(props) => props.theme.shadow};
+
+  @media (min-width: 48rem) {
+    grid-area: list;
+  }
 
   a {
     display: flex;
@@ -23,20 +32,6 @@ export const Container = styled.main`
       width: 6.5rem;
       height: 6.5rem;
     }
-  }
-`;
-
-export const ProductListContent = styled.div`
-  display: flex;
-  flex-direction: column;
-
-  h2 {
-    text-transform: uppercase;
-    color: ${(props) => props.theme.types.title};
-    font-size: 1.4rem;
-    font-weight: bold;
-
-    margin: 1rem 0 0.5rem;
   }
 `;
 

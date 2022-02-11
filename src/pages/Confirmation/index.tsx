@@ -21,6 +21,7 @@ export default function Confirmation() {
         </div>
         <span>Compra efetuada com Sucesso</span>
       </CheckConfirm>
+
       <PaymentMethod>
         <h2>Pagamento</h2>
         {creditCard && (
