@@ -18,11 +18,9 @@ export default function Confirmation() {
 
   useEffect(() => {
     const creditCardFromStorage = getFromLocalStorage(BELEZA_NA_WEB_CREDIT_CARD);
-    setCreditCardInfo(creditCardFromStorage);
-  }, []);
 
-  useEffect(() => {
-    if (!creditCardInfo?.cardNumber) navigate('/cart/payment', { replace: true });
+    if (creditCardFromStorage) setCreditCardInfo(creditCardFromStorage);
+    else navigate('/cart/payment', { replace: true });
   }, []);
 
   return (
