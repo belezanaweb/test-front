@@ -15,7 +15,7 @@ export function* getCart() {
 
     yield put(cartSuccess(response.data));
 
-    yield put(setToLocalStorage(BELEZA_NA_WEB_CART, response.data));
+    // yield put(setToLocalStorage(BELEZA_NA_WEB_CART, response.data));
 
     yield put(setCartLoading(false));
   } catch (err) {

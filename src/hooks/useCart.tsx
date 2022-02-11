@@ -1,7 +1,8 @@
 import { createContext, ReactNode, useContext, useState, useRef, useEffect } from 'react';
 import api from '../services/api';
-import { Cart, CartItem, Product, Stock } from '../interfaces/Cart';
-import { BELEZA_NA_WEB_CART } from '../constants/local-storage';
+import { Cart, CartItem } from '../interfaces/Cart';
+import { BELEZA_NA_WEB_CART, BELEZA_NA_WEB_CART_ITEMS } from '../constants/local-storage';
+import { getFromLocalStorage, setToLocalStorage } from '../helpers/local-storage';
 
 interface CartProviderProps {
   children: ReactNode;
@@ -14,6 +15,7 @@ interface UpdateProductAmount {
 
 interface CartContextData {
   cart: Cart;
+  cartItems: CartItem[];
   addProduct: (productSku: string) => Promise<void>;
   // removeProduct: (productId: string) => void;
   // updateProductAmount: ({ productId, amount }: UpdateProductAmount) => void;
@@ -22,57 +24,56 @@ interface CartContextData {
 const CartContext = createContext<CartContextData>({} as CartContextData);
 
 export function CartProvider({ children }: CartProviderProps): JSX.Element {
-  const [cart, setCart] = useState<Cart>(getInfoFromLocalStorage());
+  const currentCartItems = getFromLocalStorage(BELEZA_NA_WEB_CART_ITEMS);
+  const currentCart = getFromLocalStorage(BELEZA_NA_WEB_CART);
 
-  function getInfoFromLocalStorage() {
-    const storagedCart = localStorage.getItem(BELEZA_NA_WEB_CART);
-    if (storagedCart) return JSON.parse(storagedCart);
+  const [cartItems, setCartItems] = useState<CartItem[]>(currentCartItems || []);
+  const [cart, setCart] = useState<Cart>(currentCart || {});
 
-    return [];
-  }
-
-  const prevCartRef = useRef<Cart>();
+  const prevCartRef = useRef<CartItem[]>();
 
   useEffect(() => {
-    prevCartRef.current = cart;
+    prevCartRef.current = cartItems;
   });
 
-  const cartPreviousValue = prevCartRef.current ?? cart;
+  const cartPreviousValue = prevCartRef.current ?? cartItems;
 
   useEffect(() => {
-    if (cartPreviousValue !== cart) localStorage.setItem(BELEZA_NA_WEB_CART, JSON.stringify(cart));
-  }, [cartPreviousValue, cart]);
+    if (cartPreviousValue !== cartItems) setToLocalStorage(BELEZA_NA_WEB_CART, cartItems);
+  }, [cartPreviousValue, cartItems]);
+
+  const getCart = async () => {
+    const response = await api.get<Cart>('5b15c4923100004a006f3c07');
+    setCart(response.data);
+  };
 
   const addProduct = async (productSku: string) => {
     try {
-      const updatedCart = { ...cart };
+      const updatedCartItems = [...cartItems];
 
-      const productExists = updatedCart.items.find((item) => item.product.sku === productSku);
+      const itemAlreadyInCart = updatedCartItems.find((item) => item.product.sku === productSku);
+      const quantitySum = itemAlreadyInCart ? itemAlreadyInCart.quantity : 0;
+      const currentItemQuantity = quantitySum + 1;
 
-      const stockQuantity = 3;
-
-      const itemQuantity = productExists ? productExists?.quantity : 0;
-
-      const quantity = itemQuantity + 1;
-
-      if (quantity > stockQuantity) {
+      // se for chegar no limite do estoque
+      if (currentItemQuantity > 8) {
         alert('Quantidade solicitada fora de estoque');
         return;
       }
 
-      if (productExists) productExists.quantity = quantity;
-      else {
-        const item = await api.get(`/5b15c4923100004a006f3c07/${productSku}`);
-
-        const newProduct = {
-          ...item.data,
-          quantity: 1
-        };
-
-        updatedCart.items.push(newProduct);
+      // soma mais 1 no item que já está no carrinho
+      if (itemAlreadyInCart) {
+        itemAlreadyInCart.quantity = quantitySum + 1;
       }
 
-      setCart(updatedCart);
+      // armazena novo produto no carrinho
+      else {
+        const { data } = await api.get('5b15c4923100004a006f3c07');
+        const newItem = data.items.find((item: CartItem) => item.product.sku === productSku);
+        updatedCartItems.push(newItem);
+      }
+
+      setCartItems(updatedCartItems);
     } catch {
       alert('Erro na adição do produto');
     }
@@ -108,10 +109,10 @@ export function CartProvider({ children }: CartProviderProps): JSX.Element {
   //     }
 
   //     const updatedCart = [...cart];
-  //     const productExists = updatedCart.find((product) => product.sku === productId);
+  //     const itemAlreadyInCart = updatedCart.find((product) => product.sku === productId);
 
-  //     if (productExists) {
-  //       productExists.priceSpecification.price = amount;
+  //     if (itemAlreadyInCart) {
+  //       itemAlreadyInCart.priceSpecification.price = amount;
   //       setCart(updatedCart);
   //     } else throw Error();
   //   } catch {
@@ -123,6 +124,7 @@ export function CartProvider({ children }: CartProviderProps): JSX.Element {
     <CartContext.Provider
       value={{
         cart,
+        cartItems,
         addProduct
         // removeProduct, updateProductAmount
       }}

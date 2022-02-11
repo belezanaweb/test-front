@@ -1,22 +1,22 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-import { Cart, CartItem } from '../../interfaces/Cart';
+import { CartItem } from '../../interfaces/Cart';
 import formatCurrency from '../../helpers/formatCurrency';
 
 import { Container, ItemTitle, ProductListContent } from './styles';
 
 interface ItemsListProps {
-  cart: Cart;
+  cartItems: CartItem[];
 }
 
-export default function ItemsList({ cart }: ItemsListProps) {
+export default function ItemsList({ cartItems }: ItemsListProps) {
   return (
     <Container>
       <h2>Produtos</h2>
 
       <ProductListContent>
-        {cart?.items?.map((item: CartItem) => (
+        {cartItems?.map((item: CartItem) => (
           <Link to={`/cart/${item.product.sku}`} key={item.product.sku}>
             <img src={item.product.imageObjects[0].small} />
             <ItemTitle>

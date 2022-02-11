@@ -1,93 +1,59 @@
 import React, { useState, useEffect } from 'react';
-import { MdAddShoppingCart, MdShoppingBasket } from 'react-icons/md';
-import { Link } from 'react-router-dom';
+import { MdAddShoppingCart } from 'react-icons/md';
 
-import { ProductList, Header, CartInfo } from './styles';
+import { ProductList } from './styles';
 import api from '../../services/api';
+
 import formatCurrency from '../../helpers/formatCurrency';
+import setCartItemsQuantity from '../../helpers/set-items-quantity';
+
 import { useCart } from '../../hooks/useCart';
-import { Cart, CartItem, Product } from '../../interfaces/Cart';
+import { Cart, CartItem } from '../../interfaces/Cart';
+import Header from './components/Header';
 
-interface CartItemFormatted extends CartItem {
-  priceFormatted: string;
-}
-
-interface CartItemsQuantity {
-  [key: string]: number;
-}
-
-const Home = (): JSX.Element => {
-  const [items, setItems] = useState<CartItemFormatted[]>([]);
-  const {
-    // addProduct,
-    cart
-  } = useCart();
-
-  const itemsQuantity = cart.items.length;
-
-  const cartItemsQuantity = cart.items.reduce((itemsQuantity, item) => {
-    const itemsQuantityObj = { ...itemsQuantity };
-
-    itemsQuantityObj[item.product.sku] = item.quantity;
-
-    return itemsQuantityObj;
-  }, {} as CartItemsQuantity);
+export default function Home() {
+  const [items, setItems] = useState<CartItem[]>([]);
+  const { addProduct, cartItems } = useCart();
 
   useEffect(() => {
     async function loadProducts() {
       const response = await api.get<Cart>('5b15c4923100004a006f3c07');
 
-      const data = response.data.items.map((item: CartItem) => ({
-        ...item,
-        priceFormatted: formatCurrency(item.product.priceSpecification.price)
-      }));
+      const data = response.data.items.map((item: CartItem) => {
+        item.product.priceSpecification.price = formatCurrency(
+          item.product.priceSpecification.price
+        );
+
+        const dataWrapper = {
+          product: item.product,
+          quantity: item.quantity
+        };
+
+        return dataWrapper;
+      });
 
       setItems(data);
     }
-
     loadProducts();
   }, []);
 
-  // function handleAddProduct(sku: string) {
-  //   addProduct(sku);
-  // }
-
   return (
     <>
-      <Header>
-        <Link to="/">{/* <img src={logo} alt="Rocketshoes" /> */}</Link>
-
-        <CartInfo to="/cart">
-          <div>
-            <strong>Meu carrinho</strong>
-            <span data-testid="cart-size">
-              {itemsQuantity === 1 ? `${itemsQuantity} item` : `${itemsQuantity} itens`}
-            </span>
-          </div>
-          <MdShoppingBasket size={36} color="#FFF" />
-        </CartInfo>
-      </Header>
-
+      <Header />
       <ProductList>
-        {items.map((item: CartItemFormatted) => (
+        {items.map((item: CartItem) => (
           <li key={item.product.sku}>
             <img src={item.product.imageObjects[0].medium} alt={item.product.name} />
             <strong>{item.product.name}</strong>
-            <span>{item.priceFormatted}</span>
+            <span>{item.product.priceSpecification.price}</span>
             <button
               type="button"
               data-testid="add-product-button"
-              onClick={
-                () => {
-                  return;
-                }
-
-                //  handleAddProduct(item.product.sku)
-              }
+              onClick={() => addProduct(item.product.sku)}
             >
               <div data-testid="cart-product-quantity">
                 <MdAddShoppingCart size={16} color="#FFF" />
-                {cartItemsQuantity[item.product.sku] || 0}
+                {setCartItemsQuantity(cartItems, item.product.sku) || 0}
               </div>
 
               <span>ADICIONAR AO CARRINHO</span>
@@ -97,6 +63,4 @@ const Home = (): JSX.Element => {
       </ProductList>
     </>
   );
-};
-
-export default Home;
+}

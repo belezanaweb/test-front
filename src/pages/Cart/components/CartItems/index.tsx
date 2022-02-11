@@ -5,17 +5,17 @@ import SumInfo from '../../../../components/SumInfo';
 import ItemsList from '../../../../components/ItemsList';
 
 import { Container } from './styles';
-import { useCartContext } from '../../index';
+import { useCart } from '../../../../hooks/useCart';
 
 export default function CartItems() {
-  const { cartItems } = useCartContext();
+  const { cartItems, cart } = useCart();
 
   return (
     <Container>
       {cartItems && (
         <>
-          <ItemsList cart={cartItems} />
-          <SumInfo cart={cartItems} />
+          <ItemsList cartItems={cartItems} />
+          <SumInfo cart={cart} />
           <Button title="Seguir para o pagamento" navigation="/cart/payment" />
         </>
       )}

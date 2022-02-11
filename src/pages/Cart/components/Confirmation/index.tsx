@@ -7,10 +7,10 @@ import PaymentMethod from '../../../../components/PaymentMethod';
 import { Container, CheckConfirm, Content } from './styles';
 
 import Check from '../../../../assets/check.png';
-import { useCartContext } from '../..';
+import { useCart } from '../../../../hooks/useCart';
 
 export default function Confirmation() {
-  const { cartItems, creditCardInfo } = useCartContext();
+  const { cartItems, cart } = useCart();
 
   return (
     <Container>
@@ -23,9 +23,9 @@ export default function Confirmation() {
 
       {cartItems && (
         <Content>
-          <PaymentMethod creditCardInfo={creditCardInfo} />
-          <ItemsList cart={cartItems} />
-          <SumInfo cart={cartItems} />
+          {/* <PaymentMethod creditCardInfo={creditCardInfo} /> */}
+          <ItemsList cartItems={cartItems} />
+          <SumInfo cart={cart} />
         </Content>
       )}
     </Container>
