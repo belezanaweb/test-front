@@ -1,4 +1,6 @@
 import React, { useEffect } from 'react';
+import { useNavigate } from 'react-router';
+
 import SumInfo from '../../../../components/SumInfo';
 import ItemsList from '../../../../components/ItemsList';
 import PaymentMethod from '../../../../components/PaymentMethod';
@@ -12,26 +14,37 @@ import { BELEZA_NA_WEB_CREDIT_CARD } from '../../../../constants/local-storage';
 
 export default function Confirmation() {
   const { cartItems, sumInfo, creditCardInfo, setCreditCardInfo } = useCart();
+  const navigate = useNavigate();
 
   useEffect(() => {
     const creditCardFromStorage = getFromLocalStorage(BELEZA_NA_WEB_CREDIT_CARD);
     setCreditCardInfo(creditCardFromStorage);
   }, []);
 
+  useEffect(() => {
+    if (!creditCardInfo?.cardNumber) navigate('/cart/payment', { replace: true });
+  }, []);
+
   return (
     <Container>
-      <CheckConfirm>
-        <div className="check">
-          <img src={Check} alt="check" />
-        </div>
-        <span>Compra efetuada com Sucesso</span>
-      </CheckConfirm>
+      {cartItems?.length > 0 ? (
+        <>
+          <CheckConfirm>
+            <div className="check">
+              <img src={Check} alt="check" />
+            </div>
+            <span>Compra efetuada com Sucesso</span>
+          </CheckConfirm>
 
-      <Content>
-        {creditCardInfo && <PaymentMethod creditCardInfo={creditCardInfo} />}
-        {cartItems && <ItemsList cartItems={cartItems} showControlers={false} />}
-        {sumInfo && <SumInfo sumInfo={sumInfo} />}
-      </Content>
+          <Content>
+            {creditCardInfo?.cardNumber && <PaymentMethod creditCardInfo={creditCardInfo} />}
+            <ItemsList cartItems={cartItems} showControlers={false} />
+            {sumInfo && <SumInfo sumInfo={sumInfo} />}
+          </Content>
+        </>
+      ) : (
+        <div>Não há itens no carrinho </div>
+      )}
     </Container>
   );
 }

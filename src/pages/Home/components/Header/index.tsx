@@ -15,7 +15,8 @@ export default function Home() {
       <Link to="/">
         <h1>Beleza na Web</h1>
       </Link>
-      <CartInfo to="/cart">
+
+      <CartInfo to={cartItems?.length > 0 ? '/cart' : '/'}>
         <p>Meu carrinho</p>
         <div>
           <span data-testid="cart-size">{cartLength}</span>

@@ -36,53 +36,58 @@ export default function ItemsList({ cartItems, showControlers }: ItemsListProps)
 
   return (
     <Container>
-      <h2>Produtos</h2>
+      {cartItems?.length > 0 ? (
+        <>
+          <h2>Produtos</h2>
+          <ProductListContent>
+            {cartItems?.map((item: CartItem) => (
+              <li key={item.product.sku}>
+                <img src={item.product.imageObjects[0].small} />
 
-      <ProductListContent>
-        {cartItems?.map((item: CartItem) => (
-          <li key={item.product.sku}>
-            <img src={item.product.imageObjects[0].small} />
+                <ItemTitle>
+                  {item.product.name}
+                  <span>{formatCurrency(item.product.priceSpecification.price)}</span>
+                </ItemTitle>
 
-            <ItemTitle>
-              {item.product.name}
-              <span>{formatCurrency(item.product.priceSpecification.price)}</span>
-            </ItemTitle>
+                {showControlers && (
+                  <>
+                    <UpdateItemControl>
+                      <button
+                        type="button"
+                        data-testid="decrement-product"
+                        disabled={item.quantity <= 1}
+                        onClick={() => handleProductDecrement(item)}
+                      >
+                        <MdRemoveCircleOutline size={20} />
+                      </button>
+                      <span>{item.quantity}</span>
+                      <button
+                        type="button"
+                        data-testid="increment-product"
+                        onClick={() => handleProductIncrement(item)}
+                      >
+                        <MdAddCircleOutline size={20} />
+                      </button>
+                    </UpdateItemControl>
 
-            {showControlers && (
-              <>
-                <UpdateItemControl>
-                  <button
-                    type="button"
-                    data-testid="decrement-product"
-                    disabled={item.quantity <= 1}
-                    onClick={() => handleProductDecrement(item)}
-                  >
-                    <MdRemoveCircleOutline size={20} />
-                  </button>
-                  <span>{item.quantity}</span>
-                  <button
-                    type="button"
-                    data-testid="increment-product"
-                    onClick={() => handleProductIncrement(item)}
-                  >
-                    <MdAddCircleOutline size={20} />
-                  </button>
-                </UpdateItemControl>
-
-                <DeleteItemControl>
-                  <button
-                    type="button"
-                    data-testid="remove-product"
-                    onClick={() => handleRemoveProduct(item.product.sku)}
-                  >
-                    <MdDelete size={20} />
-                  </button>
-                </DeleteItemControl>
-              </>
-            )}
-          </li>
-        ))}
-      </ProductListContent>
+                    <DeleteItemControl>
+                      <button
+                        type="button"
+                        data-testid="remove-product"
+                        onClick={() => handleRemoveProduct(item.product.sku)}
+                      >
+                        <MdDelete size={20} />
+                      </button>
+                    </DeleteItemControl>
+                  </>
+                )}
+              </li>
+            ))}
+          </ProductListContent>
+        </>
+      ) : (
+        <div>Não há itens no carrinho </div>
+      )}
     </Container>
   );
 }

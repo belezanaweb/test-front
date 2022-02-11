@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import { MdAddShoppingCart } from 'react-icons/md';
 
 import { ProductList, Button } from './styles';

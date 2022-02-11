@@ -4,6 +4,11 @@ import { useNavigate } from 'react-router';
 
 import { Container } from './styles';
 import { useCart } from '../../../../hooks/useCart';
+import {
+  NAV_TITLE_CART,
+  NAV_TITLE_PAYMENT,
+  NAV_TITLE_CONFIRMATION
+} from '../../../../constants/navigation';
 
 export default function Header() {
   const navItems = [
@@ -12,21 +17,21 @@ export default function Header() {
       url: '/'
     },
     {
-      title: 'sacola',
+      title: NAV_TITLE_CART,
       url: '/cart'
     },
     {
-      title: 'pagamento',
+      title: NAV_TITLE_PAYMENT,
       url: '/cart/payment'
     },
     {
-      title: 'confirmação',
+      title: NAV_TITLE_CONFIRMATION,
       url: '/cart/confirmation'
     }
   ];
 
   const [optionSelected, setOptionSelected] = useState<string>();
-  const { creditCardInfo } = useCart();
+  const { cartItems, creditCardInfo } = useCart();
 
   const location = useLocation();
   const navigate = useNavigate();
@@ -34,23 +39,25 @@ export default function Header() {
   useEffect(() => {
     switch (location.pathname) {
       case '/cart':
-        setOptionSelected('sacola');
+        setOptionSelected(NAV_TITLE_CART);
         break;
       case '/cart/payment':
-        setOptionSelected('pagamento');
+        setOptionSelected(NAV_TITLE_PAYMENT);
         break;
       case '/cart/confirmation':
-        setOptionSelected('confirmação');
+        setOptionSelected(NAV_TITLE_CONFIRMATION);
         break;
       default:
-        setOptionSelected('CART');
+        setOptionSelected(NAV_TITLE_CART);
         break;
     }
   }, [location]);
 
   function handleOptionSelected(item: any) {
     const { title, url } = item;
-    if (title === 'confirmação' && !creditCardInfo) return;
+
+    if (title === NAV_TITLE_PAYMENT && cartItems?.length === 0) return;
+    if (title === NAV_TITLE_CONFIRMATION && !creditCardInfo) return;
 
     navigate(url, { replace: true });
     setOptionSelected(item);

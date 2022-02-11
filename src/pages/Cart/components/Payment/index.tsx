@@ -34,10 +34,14 @@ interface PaymentInfo {
 
 export default function Payment() {
   const formRef = useRef<FormHandles>(null);
-  const { creditCardInfo, setCreditCardInfo, sumInfo } = useCart();
+  const { creditCardInfo, setCreditCardInfo, sumInfo, cartItems } = useCart();
   const [paymentInfo, setPaymentInfo] = useState<PaymentInfo>({} as PaymentInfo);
 
   const navigate = useNavigate();
+
+  useEffect(() => {
+    if (cartItems?.length === 0) navigate('/', { replace: true });
+  }, []);
 
   const validForm = async () => {
     try {
