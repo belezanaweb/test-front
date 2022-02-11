@@ -38,7 +38,13 @@
 - Clonar Repositório: `git clone https://github.com/dxwebster/test-front`
 - Instalar dependências: `yarn`
 - Criar aquivo .env com as seguintes variáveis:
-`REACT_APP_ENVIRONMENT = "development"` e `NODE_ENV = "development"`
+```
+REACT_APP_ENVIRONMENT = "development",
+NODE_ENV = "development",
+ENVIRONMENT = "development"
+ENDPOINT = "http://localhost:3000/" 
+```
+
 - Rodar Aplicação: `yarn start`
 
 ## 📕 Licença

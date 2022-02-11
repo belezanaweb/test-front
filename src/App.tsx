@@ -9,8 +9,6 @@ import Payment from './pages/Cart/components/Payment';
 import CartItemsList from './pages/Cart/components/CartItemsList';
 import Confirmation from './pages/Cart/components/Confirmation';
 
-import './config/ReactotronConfig';
-
 import AppProvider from './providers/AppProvider';
 
 import GlobalStyle from './styles/global';
