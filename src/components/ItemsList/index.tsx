@@ -16,9 +16,10 @@ import { useCart } from '../../hooks/useCart';
 
 interface ItemsListProps {
   cartItems: CartItem[];
+  showControlers: boolean;
 }
 
-export default function ItemsList({ cartItems }: ItemsListProps) {
+export default function ItemsList({ cartItems, showControlers }: ItemsListProps) {
   const { removeProduct, updateItemQuantity } = useCart();
 
   function handleProductIncrement(item: CartItem) {
@@ -47,34 +48,38 @@ export default function ItemsList({ cartItems }: ItemsListProps) {
               <span>{formatCurrency(item.product.priceSpecification.price)}</span>
             </ItemTitle>
 
-            <UpdateItemControl>
-              <button
-                type="button"
-                data-testid="decrement-product"
-                disabled={item.quantity <= 1}
-                onClick={() => handleProductDecrement(item)}
-              >
-                <MdRemoveCircleOutline size={20} />
-              </button>
-              <span>{item.quantity}</span>
-              <button
-                type="button"
-                data-testid="increment-product"
-                onClick={() => handleProductIncrement(item)}
-              >
-                <MdAddCircleOutline size={20} />
-              </button>
-            </UpdateItemControl>
+            {showControlers && (
+              <>
+                <UpdateItemControl>
+                  <button
+                    type="button"
+                    data-testid="decrement-product"
+                    disabled={item.quantity <= 1}
+                    onClick={() => handleProductDecrement(item)}
+                  >
+                    <MdRemoveCircleOutline size={20} />
+                  </button>
+                  <span>{item.quantity}</span>
+                  <button
+                    type="button"
+                    data-testid="increment-product"
+                    onClick={() => handleProductIncrement(item)}
+                  >
+                    <MdAddCircleOutline size={20} />
+                  </button>
+                </UpdateItemControl>
 
-            <DeleteItemControl>
-              <button
-                type="button"
-                data-testid="remove-product"
-                onClick={() => handleRemoveProduct(item.product.sku)}
-              >
-                <MdDelete size={20} />
-              </button>
-            </DeleteItemControl>
+                <DeleteItemControl>
+                  <button
+                    type="button"
+                    data-testid="remove-product"
+                    onClick={() => handleRemoveProduct(item.product.sku)}
+                  >
+                    <MdDelete size={20} />
+                  </button>
+                </DeleteItemControl>
+              </>
+            )}
           </li>
         ))}
       </ProductListContent>

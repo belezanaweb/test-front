@@ -1,9 +1,23 @@
-import { createContext, ReactNode, useContext, useState, useRef, useEffect } from 'react';
+import {
+  createContext,
+  ReactNode,
+  useContext,
+  useState,
+  useRef,
+  useEffect,
+  SetStateAction,
+  Dispatch
+} from 'react';
 import api from '../services/api';
 import { Cart, CartItem } from '../interfaces/Cart';
-import { BELEZA_NA_WEB_CART, BELEZA_NA_WEB_CART_ITEMS } from '../constants/local-storage';
+import {
+  BELEZA_NA_WEB_CART,
+  BELEZA_NA_WEB_CART_ITEMS,
+  BELEZA_NA_WEB_CREDIT_CARD
+} from '../constants/local-storage';
 import { getFromLocalStorage, setToLocalStorage } from '../helpers/local-storage';
 import formatCurrency from '../helpers/formatCurrency';
+import { Focused } from 'react-credit-cards';
 
 interface CartProviderProps {
   children: ReactNode;
@@ -22,9 +36,19 @@ interface SumInfo {
   total: number;
 }
 
+interface CreditCardInfo {
+  cardNumber: string;
+  titularName: string;
+  validate: string;
+  cvv: string;
+  focused: Focused;
+}
+
 interface CartContextData {
   allProducts: any;
   sumInfo: SumInfo;
+  creditCardInfo: CreditCardInfo;
+  setCreditCardInfo: Dispatch<SetStateAction<CreditCardInfo>>;
   cartItems: CartItem[];
   addProduct: (productSku: string) => Promise<void>;
   removeProduct: (productSku: string) => void;
@@ -39,6 +63,7 @@ export function CartProvider({ children }: CartProviderProps): JSX.Element {
   const [allProducts, setAllProducts] = useState<CartItem[]>([]);
   const [cartItems, setCartItems] = useState<CartItem[]>(currentCartItems || []);
   const [sumInfo, setSumInfo] = useState<SumInfo>({} as SumInfo);
+  const [creditCardInfo, setCreditCardInfo] = useState<CreditCardInfo>({} as CreditCardInfo);
 
   const prevCartRef = useRef<CartItem[]>();
   const cartPreviousValue = prevCartRef.current ?? cartItems;
@@ -159,6 +184,8 @@ export function CartProvider({ children }: CartProviderProps): JSX.Element {
       value={{
         allProducts,
         sumInfo,
+        creditCardInfo,
+        setCreditCardInfo,
         cartItems,
         addProduct,
         removeProduct,

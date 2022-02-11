@@ -14,7 +14,7 @@ export default function CartItems() {
     <Container>
       {cartItems && (
         <>
-          <ItemsList cartItems={cartItems} />
+          <ItemsList cartItems={cartItems} showControlers={true} />
           <SumInfo sumInfo={sumInfo} />
           <Button title="Seguir para o pagamento" navigation="/cart/payment" />
         </>

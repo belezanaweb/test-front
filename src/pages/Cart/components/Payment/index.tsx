@@ -1,13 +1,15 @@
-import React, { useRef, useCallback, useState, useContext } from 'react';
+import React, { useRef, useCallback, useState, useEffect } from 'react';
 import * as Yup from 'yup';
 import Cards, { Focused } from 'react-credit-cards';
 import 'react-credit-cards/es/styles-compiled.css';
 import { Form } from '@unform/web';
 import { FormHandles } from '@unform/core';
 import { useNavigate } from 'react-router';
-import { useDispatch } from 'react-redux';
 
 import getValidationError from '../../../../helpers/validations';
+import { getFromLocalStorage, setToLocalStorage } from '../../../../helpers/local-storage';
+import { BELEZA_NA_WEB_CREDIT_CARD } from '../../../../constants/local-storage';
+
 import {
   CARD_NUMBER_PLACEHOLDER,
   CVV_PLACEHOLDER,
@@ -22,11 +24,6 @@ import { useCart } from '../../../../hooks/useCart';
 
 import { Container, FormContent, FormGroup, Content, InputsContent, CartContent } from './styles';
 
-import { setCreditCardInfo } from '../../../../store/modules/cart/actions';
-import { setToLocalStorage } from '../../../../helpers/local-storage';
-import { BELEZA_NA_WEB_CREDIT_CARD } from '../../../../constants/local-storage';
-import { useCartContext } from '../..';
-
 interface PaymentInfo {
   cardNumber: string;
   titularName: string;
@@ -37,12 +34,10 @@ interface PaymentInfo {
 
 export default function Payment() {
   const formRef = useRef<FormHandles>(null);
-  const { creditCardInfo } = useCartContext();
-  const { cartItems, sumInfo } = useCart();
+  const { creditCardInfo, setCreditCardInfo, sumInfo } = useCart();
   const [paymentInfo, setPaymentInfo] = useState<PaymentInfo>({} as PaymentInfo);
 
   const navigate = useNavigate();
-  const dispatch = useDispatch();
 
   const validForm = async () => {
     try {
@@ -71,16 +66,6 @@ export default function Payment() {
     }
   };
 
-  const handleSubmit = useCallback(async (data: any) => {
-    const formIsValid = await validForm();
-
-    if (formIsValid) {
-      dispatch(setCreditCardInfo(data));
-      // setToLocalStorage(BELEZA_NA_WEB_CREDIT_CARD, data);
-      navigate('/cart/confirmation', { replace: true });
-    }
-  }, []);
-
   const handleChange = useCallback(
     (e: React.FormEvent<HTMLInputElement>) => {
       setPaymentInfo({
@@ -100,6 +85,21 @@ export default function Payment() {
     },
     [paymentInfo]
   );
+
+  const handleSubmit = useCallback(async (data: any) => {
+    const formIsValid = await validForm();
+
+    if (formIsValid) {
+      setCreditCardInfo(data);
+      setToLocalStorage(BELEZA_NA_WEB_CREDIT_CARD, data);
+      navigate('/cart/confirmation', { replace: true });
+    }
+  }, []);
+
+  useEffect(() => {
+    const creditCardFromStorage = getFromLocalStorage(BELEZA_NA_WEB_CREDIT_CARD);
+    setCreditCardInfo(creditCardFromStorage);
+  }, []);
 
   return (
     <Container>

@@ -1,9 +1,9 @@
-import React, { useContext, useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useLocation } from 'react-router-dom';
 import { useNavigate } from 'react-router';
-import { StorageContext } from '../../../../contexts/StorageContext';
 
 import { Container } from './styles';
+import { useCart } from '../../../../hooks/useCart';
 
 export default function Header() {
   const navItems = [
@@ -26,8 +26,7 @@ export default function Header() {
   ];
 
   const [optionSelected, setOptionSelected] = useState<string>();
-
-  const { cartItems, creditCardInfo } = useContext(StorageContext);
+  const { creditCardInfo } = useCart();
 
   const location = useLocation();
   const navigate = useNavigate();
