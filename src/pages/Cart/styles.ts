@@ -4,6 +4,18 @@ export const Container = styled.section`
   width: 100%;
   display: flex;
   flex-direction: column;
+  gap: 2rem;
+
+  @media (min-width: 48rem) {
+    display: grid;
+    grid-template-columns: 70% 1fr;
+    grid-template-rows: 35% 1fr;
+    gap: 2rem;
+
+    grid-template-areas:
+      'list sumInfo'
+      'list button';
+  }
 
   div {
     width: 100%;
@@ -15,18 +27,5 @@ export const Container = styled.section`
     font-size: 1.4rem;
     font-weight: bold;
     margin: 1rem 0 0.5rem;
-  }
-`;
-
-export const CartContent = styled.div`
-  @media (min-width: 48rem) {
-    display: grid;
-    grid-template-columns: 70% 1fr;
-    grid-template-rows: 35% 1fr;
-    gap: 2rem;
-
-    grid-template-areas:
-      'list sumInfo'
-      'list button';
   }
 `;

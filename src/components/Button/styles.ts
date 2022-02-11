@@ -19,7 +19,7 @@ export const ButtonStyle = styled.button<ButtonProps>`
   padding: 1.8rem 0.94rem;
   border-radius: 0.3rem;
 
-  font-size: 2rem;
+  font-size: 1.6rem;
   font-weight: bold;
   line-height: 2.4rem;
   letter-spacing: 0.05rem;

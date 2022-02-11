@@ -1,17 +1,16 @@
 import React, { useContext } from 'react';
-import { useSelector, RootStateOrAny } from 'react-redux';
 
 import SumInfo from '../../components/SumInfo';
 import ItemsList from '../../components/ItemsList';
+import PaymentMethod from '../../components/PaymentMethod';
 
-import { Container, PaymentMethod, CheckConfirm } from './styles';
+import { Container, CheckConfirm, Content } from './styles';
 import { StorageContext } from '../../contexts/StorageContext';
 
 import Check from '../../assets/check.png';
 
 export default function Confirmation() {
-  const { cartItems } = useContext(StorageContext);
-  const { creditCard } = useSelector((state: RootStateOrAny) => state.cart);
+  const { cartItems, creditCardInfo } = useContext(StorageContext);
 
   return (
     <Container>
@@ -22,22 +21,12 @@ export default function Confirmation() {
         <span>Compra efetuada com Sucesso</span>
       </CheckConfirm>
 
-      <PaymentMethod>
-        <h2>Pagamento</h2>
-        {creditCard && (
-          <div>
-            <li>{creditCard.cardNumber}</li>
-            <li>{creditCard.titularName}</li>
-            <li>{creditCard.validate}</li>
-          </div>
-        )}
-      </PaymentMethod>
-
       {cartItems && (
-        <>
+        <Content>
+          <PaymentMethod creditCardInfo={creditCardInfo} />
           <ItemsList cart={cartItems} />
           <SumInfo cart={cartItems} />
-        </>
+        </Content>
       )}
     </Container>
   );

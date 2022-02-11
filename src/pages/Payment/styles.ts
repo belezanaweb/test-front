@@ -3,6 +3,7 @@ import styled from 'styled-components';
 export const Container = styled.section`
   display: flex;
   flex-direction: column;
+  gap: 2rem;
 
   div {
     width: 100%;
@@ -19,18 +20,6 @@ export const Container = styled.section`
   form {
     display: flex;
     flex-direction: column;
-    gap: 2.5rem;
-
-    @media (min-width: 48rem) {
-      display: grid;
-      grid-template-columns: 70% 1fr;
-      grid-template-rows: 55% 1fr;
-      gap: 2rem;
-
-      grid-template-areas:
-        'form sumInfo'
-        'form button';
-    }
 
     fieldset {
       display: flex;
@@ -44,6 +33,23 @@ export const Container = styled.section`
         margin-bottom: 5px;
       }
     }
+  }
+`;
+
+export const Content = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+
+  @media (min-width: 48rem) {
+    display: grid;
+    grid-template-columns: 70% 1fr;
+    grid-template-rows: 55% 1fr;
+    gap: 2rem;
+
+    grid-template-areas:
+      'form sumInfo'
+      'form button';
   }
 `;
 

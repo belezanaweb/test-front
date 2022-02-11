@@ -16,10 +16,12 @@ import Button from '../../components/Button';
 import Input from '../../components/Input';
 import SumInfo from '../../components/SumInfo';
 
-import { Container, FormContent, FormGroup } from './styles';
+import { Container, FormContent, FormGroup, Content } from './styles';
 import { StorageContext } from '../../contexts/StorageContext';
 import { useDispatch } from 'react-redux';
 import { setCreditCardInfo } from '../../store/modules/cart/actions';
+import { setToLocalStorage } from '../../helpers/local-storage';
+import { BELEZA_NA_WEB_CREDIT_CARD } from '../../constants/local-storage';
 
 interface PaymentInfo {
   cardNumber: string;
@@ -68,6 +70,7 @@ export default function Payment() {
 
     if (formIsValid) {
       dispatch(setCreditCardInfo(data));
+      setToLocalStorage(BELEZA_NA_WEB_CREDIT_CARD, data);
       navigate('/confirmation', { replace: true });
     }
   }, []);
@@ -84,62 +87,64 @@ export default function Payment() {
 
   return (
     <Container>
-      <h2>CARTÃO DE CRÉDITO</h2>
       <Form ref={formRef} onSubmit={handleSubmit}>
-        <FormContent>
-          <fieldset>
-            <label htmlFor="cardNumber">Número do cartão:</label>
-            <Input
-              name="cardNumber"
-              type="text"
-              placeholder={CARD_NUMBER_PLACEHOLDER}
-              mask="creditCard"
-              onChange={handleChange}
-              radius="all"
-            />
-          </fieldset>
-
-          <fieldset>
-            <label htmlFor="titularName">Nome do Titular:</label>
-            <Input
-              name="titularName"
-              type="text"
-              placeholder={TITULAR_NAME_PLACEHOLDER}
-              mask="titularName"
-              onChange={handleChange}
-              radius="all"
-            />
-          </fieldset>
-
-          <FormGroup>
+        <h2>CARTÃO DE CRÉDITO</h2>
+        <Content>
+          <FormContent>
             <fieldset>
-              <label htmlFor="validate">Validade (mês/ano):</label>
+              <label htmlFor="cardNumber">Número do cartão:</label>
               <Input
-                name="validate"
+                name="cardNumber"
                 type="text"
-                placeholder={DATE_PLACEHOLDER}
-                mask="date"
+                placeholder={CARD_NUMBER_PLACEHOLDER}
+                mask="creditCard"
                 onChange={handleChange}
                 radius="all"
               />
             </fieldset>
 
             <fieldset>
-              <label htmlFor="cardCode">CVV:</label>
+              <label htmlFor="titularName">Nome do Titular:</label>
               <Input
-                name="cardCode"
+                name="titularName"
                 type="text"
-                placeholder={CVV_PLACEHOLDER}
-                mask="cvv"
+                placeholder={TITULAR_NAME_PLACEHOLDER}
+                mask="titularName"
                 onChange={handleChange}
                 radius="all"
               />
             </fieldset>
-          </FormGroup>
-        </FormContent>
 
-        {cartItems && <SumInfo cart={cartItems} />}
-        <Button type="submit" title="Finalizar Pagamento" />
+            <FormGroup>
+              <fieldset>
+                <label htmlFor="validate">Validade (mês/ano):</label>
+                <Input
+                  name="validate"
+                  type="text"
+                  placeholder={DATE_PLACEHOLDER}
+                  mask="date"
+                  onChange={handleChange}
+                  radius="all"
+                />
+              </fieldset>
+
+              <fieldset>
+                <label htmlFor="cardCode">CVV:</label>
+                <Input
+                  name="cardCode"
+                  type="text"
+                  placeholder={CVV_PLACEHOLDER}
+                  mask="cvv"
+                  onChange={handleChange}
+                  radius="all"
+                />
+              </fieldset>
+            </FormGroup>
+          </FormContent>
+
+          {cartItems && <SumInfo cart={cartItems} />}
+          <Button type="submit" title="Finalizar Pagamento" />
+        </Content>
       </Form>
     </Container>
   );

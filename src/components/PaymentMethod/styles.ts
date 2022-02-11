@@ -1,9 +1,8 @@
 import styled from 'styled-components';
 
-export const Container = styled.section`
+export const Container = styled.div`
   display: flex;
   flex-direction: column;
-  gap: 2rem;
 
   h2 {
     text-transform: uppercase;
@@ -13,28 +12,6 @@ export const Container = styled.section`
 
     margin: 1rem 0 0.5rem;
   }
-`;
-
-export const Content = styled.div`
-  display: flex;
-  flex-direction: column;
-  gap: 2rem;
-
-  @media (min-width: 48rem) {
-    display: grid;
-    grid-template-columns: 70% 1fr;
-    grid-template-rows: 18% 1fr;
-    gap: 2rem;
-
-    grid-template-areas:
-      'list method'
-      'list sumInfo';
-  }
-`;
-
-export const PaymentMethod = styled.div`
-  display: flex;
-  flex-direction: column;
 
   @media (min-width: 48rem) {
     grid-area: method;
@@ -42,6 +19,7 @@ export const PaymentMethod = styled.div`
 
   div {
     background-color: white;
+    box-shadow: 0.1rem 0.1rem 0.5rem 0 ${(props) => props.theme.shadow};
     padding: 0.9rem;
 
     li {

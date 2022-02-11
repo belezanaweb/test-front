@@ -10,7 +10,9 @@ import { StorageProvider } from '../contexts/StorageContext';
 const AppProvider = ({ children, ...props }: any) => (
   <Provider store={store}>
     <ThemeProvider theme={theme}>
-      <StorageProvider cartItems={props.cartItems}> {children} </StorageProvider>
+      <StorageProvider cartItems={props.cartItems} creditCardInfo={props.creditCardInfo}>
+        {children}
+      </StorageProvider>
     </ThemeProvider>
   </Provider>
 );

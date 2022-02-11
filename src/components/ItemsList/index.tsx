@@ -13,6 +13,8 @@ interface ItemsListProps {
 export default function ItemsList({ cart }: ItemsListProps) {
   return (
     <Container>
+      <h2>Produtos</h2>
+
       <ProductListContent>
         {cart?.items?.map((item: CartItem) => (
           <Link to={`/cart/${item.product.sku}`} key={item.product.sku}>
