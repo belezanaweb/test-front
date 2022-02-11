@@ -1,5 +1,8 @@
-import React from 'react';
-import { NavLink, useNavigate } from 'react-router-dom';
+import React, { useContext, useEffect, useState } from 'react';
+import { useLocation } from 'react-router-dom';
+import { useNavigate } from 'react-router';
+import { StorageContext } from '../../contexts/StorageContext';
+
 import { Container } from './styles';
 
 export default function Header() {
@@ -18,17 +21,49 @@ export default function Header() {
     }
   ];
 
+  const [optionSelected, setOptionSelected] = useState<string>();
+
+  const { cartItems, creditCardInfo } = useContext(StorageContext);
+
+  const location = useLocation();
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    switch (location.pathname) {
+      case '/cart':
+        setOptionSelected('sacola');
+        break;
+      case '/cart/payment':
+        setOptionSelected('pagamento');
+        break;
+      case '/cart/confirmation':
+        setOptionSelected('confirmação');
+        break;
+      default:
+        setOptionSelected('CART');
+        break;
+    }
+  }, [location]);
+
+  function handleOptionSelected(item: any) {
+    const { title, url } = item;
+    if (title === 'confirmação' && !creditCardInfo) return;
+
+    navigate(url, { replace: true });
+    setOptionSelected(item);
+  }
+
   return (
     <Container>
       <nav>
         {navItems.map((item) => (
-          <NavLink
+          <button
             key={item.title}
-            className={({ isActive }) => (isActive ? 'red' : '')}
-            to={item.url}
+            className={optionSelected === item.title ? 'active' : ''}
+            onClick={() => handleOptionSelected(item)}
           >
             {item.title}
-          </NavLink>
+          </button>
         ))}
       </nav>
     </Container>

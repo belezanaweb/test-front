@@ -75,7 +75,7 @@ export default function Payment() {
     if (formIsValid) {
       dispatch(setCreditCardInfo(data));
       setToLocalStorage(BELEZA_NA_WEB_CREDIT_CARD, data);
-      navigate('/confirmation', { replace: true });
+      navigate('/cart/confirmation', { replace: true });
     }
   }, []);
 
