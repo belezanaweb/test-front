@@ -1,3 +1,8 @@
+export interface CartContext {
+  cartItems: Cart;
+  creditCardInfo: any;
+}
+
 export interface Cart {
   id: string;
   items: CartItem[];

@@ -1,17 +1,8 @@
 import React from 'react';
 import { NavLink, useNavigate } from 'react-router-dom';
-import { useDispatch } from 'react-redux';
-
 import { Container } from './styles';
 
 export default function Header() {
-  const navigate = useNavigate();
-  const dispatch = useDispatch();
-
-  function handleBack() {
-    navigate('/', { replace: true });
-  }
-
   const navItems = [
     {
       title: 'sacola',
@@ -19,11 +10,11 @@ export default function Header() {
     },
     {
       title: 'pagamento',
-      url: '/payment'
+      url: '/cart/payment'
     },
     {
       title: 'confirmação',
-      url: '/confirmation'
+      url: '/cart/confirmation'
     }
   ];
 

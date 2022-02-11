@@ -1,10 +1,15 @@
-import { Outlet } from 'react-router-dom';
+import React from 'react';
+import { render } from 'react-dom';
+import { BrowserRouter, Routes, Route, Outlet } from 'react-router-dom';
+
+import Cart from './pages/Cart';
+import Payment from './pages/Cart/components/Payment';
+import CartItems from './pages/Cart/components/CartItems';
+import Confirmation from './pages/Cart/components/Confirmation';
 
 import './config/ReactotronConfig';
 
 import AppProvider from './providers/AppProvider';
-import Header from './components/Header';
-import MainContent from './components/MainContent';
 
 import GlobalStyle from './styles/global';
 import { AppContainer } from './styles/styles';
@@ -16,10 +21,16 @@ function App() {
   return (
     <AppContainer>
       <AppProvider>
-        <Header />
-        <MainContent>
-          <Outlet />
-        </MainContent>
+        <BrowserRouter>
+          <Routes>
+            <Route path="/cart/*" element={<Cart />}>
+              <Route path="*" element={<CartItems />} />
+              <Route path="payment" element={<Payment />} />
+              <Route path="confirmation" element={<Confirmation />} />
+            </Route>
+          </Routes>
+        </BrowserRouter>
+
         <GlobalStyle />
       </AppProvider>
     </AppContainer>

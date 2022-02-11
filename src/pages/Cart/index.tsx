@@ -1,24 +1,27 @@
 import React, { useContext } from 'react';
+import { Outlet } from 'react-router-dom';
+import { useOutletContext } from 'react-router';
 
-import Button from '../../components/Button';
-import SumInfo from '../../components/SumInfo';
-import ItemsList from '../../components/ItemsList';
-
-import { Container } from './styles';
+import Header from '../../components/Header';
+import MainContent from '../../components/MainContent';
 import { StorageContext } from '../../contexts/StorageContext';
 
+import { Container } from './styles';
+import { CartContext } from '../../interfaces/Cart';
+
 export default function Cart() {
-  const { cartItems } = useContext(StorageContext);
+  const { cartItems, creditCardInfo } = useContext(StorageContext);
 
   return (
     <Container>
-      {cartItems && (
-        <>
-          <ItemsList cart={cartItems} />
-          <SumInfo cart={cartItems} />
-          <Button title="Seguir para o pagamento" navigation="/payment" />
-        </>
-      )}
+      <Header />
+      <MainContent>
+        <Outlet context={{ cartItems, creditCardInfo }} />
+      </MainContent>
     </Container>
   );
+}
+
+export function useCart() {
+  return useOutletContext<CartContext>();
 }

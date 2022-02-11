@@ -1,16 +1,16 @@
 import React, { useContext } from 'react';
 
-import SumInfo from '../../components/SumInfo';
-import ItemsList from '../../components/ItemsList';
-import PaymentMethod from '../../components/PaymentMethod';
+import SumInfo from '../../../../components/SumInfo';
+import ItemsList from '../../../../components/ItemsList';
+import PaymentMethod from '../../../../components/PaymentMethod';
 
 import { Container, CheckConfirm, Content } from './styles';
-import { StorageContext } from '../../contexts/StorageContext';
 
-import Check from '../../assets/check.png';
+import Check from '../../../../assets/check.png';
+import { useCart } from '../..';
 
 export default function Confirmation() {
-  const { cartItems, creditCardInfo } = useContext(StorageContext);
+  const { cartItems, creditCardInfo } = useCart();
 
   return (
     <Container>

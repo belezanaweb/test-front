@@ -1,29 +1,30 @@
 import React, { useRef, useCallback, useState, useContext } from 'react';
 import * as Yup from 'yup';
-import Cards, { Focused, ReactCreditCardProps } from 'react-credit-cards';
+import Cards, { Focused } from 'react-credit-cards';
 import 'react-credit-cards/es/styles-compiled.css';
 import { Form } from '@unform/web';
 import { FormHandles } from '@unform/core';
 import { useNavigate } from 'react-router';
+import { useDispatch } from 'react-redux';
 
-import getValidationError from '../../helpers/validations';
+import getValidationError from '../../../../helpers/validations';
 import {
   CARD_NUMBER_PLACEHOLDER,
   CVV_PLACEHOLDER,
   DATE_PLACEHOLDER,
   TITULAR_NAME_PLACEHOLDER
-} from '../../constants/placeholder';
+} from '../../../../constants/placeholder';
 
-import Button from '../../components/Button';
-import Input from '../../components/Input';
-import SumInfo from '../../components/SumInfo';
+import Button from '../../../../components/Button';
+import Input from '../../../../components/Input';
+import SumInfo from '../../../../components/SumInfo';
 
 import { Container, FormContent, FormGroup, Content, InputsContent, CartContent } from './styles';
-import { StorageContext } from '../../contexts/StorageContext';
-import { useDispatch } from 'react-redux';
-import { setCreditCardInfo } from '../../store/modules/cart/actions';
-import { setToLocalStorage } from '../../helpers/local-storage';
-import { BELEZA_NA_WEB_CREDIT_CARD } from '../../constants/local-storage';
+
+import { setCreditCardInfo } from '../../../../store/modules/cart/actions';
+import { setToLocalStorage } from '../../../../helpers/local-storage';
+import { BELEZA_NA_WEB_CREDIT_CARD } from '../../../../constants/local-storage';
+import { useCart } from '../..';
 
 interface PaymentInfo {
   cardNumber: string;
@@ -35,7 +36,7 @@ interface PaymentInfo {
 
 export default function Payment() {
   const formRef = useRef<FormHandles>(null);
-  const { cartItems, creditCardInfo } = useContext(StorageContext);
+  const { cartItems, creditCardInfo } = useCart();
   const [paymentInfo, setPaymentInfo] = useState<PaymentInfo>({} as PaymentInfo);
 
   const navigate = useNavigate();
