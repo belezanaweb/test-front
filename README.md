@@ -11,7 +11,7 @@
 <p align=center>
 
 <h5 align=center>
-<img src="readme/Home.svg" width=600><br>
+<img src="readme/Home.gif" width=600><br>
 
 </h5>
 
