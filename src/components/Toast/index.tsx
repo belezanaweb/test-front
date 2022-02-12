@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react';
 import { FiAlertCircle, FiCheckCircle, FiInfo, FiXCircle } from 'react-icons/fi';
+import { useLocation } from 'react-router';
 import { useTransition, animated, easings } from 'react-spring';
 import { useToast } from '../../hooks/useToast';
 import { ToastMessageState } from '../../interfaces/ToastInterface';
@@ -22,7 +23,7 @@ export default function Toast({ messages }: ToastContainerProps) {
   useEffect(() => {
     messages.forEach((message: any) => {
       const messageId = message.id;
-      setTimeout(() => removeToast(messageId), 3000);
+      setTimeout(() => removeToast(messageId), 2500);
     });
   }, [removeToast, messages]);
 

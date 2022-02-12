@@ -93,7 +93,6 @@ export default function CartPayment() {
       };
 
       setToLocalStorage(BELEZA_NA_WEB_CREDIT_CARD, maskData);
-      navigate('/cart/confirmation', { replace: true });
     }
   }, []);
 
@@ -176,7 +175,12 @@ export default function CartPayment() {
             </FormContent>
           </div>
           <SumInfo />
-          <Button type="submit" title="Finalizar Pagamento" />
+          <Button
+            type="submit"
+            title="Finalizar Pagamento"
+            navigation="/cart/confirmation"
+            typeButton="payment"
+          />
         </Content>
       </Form>
     </Container>
