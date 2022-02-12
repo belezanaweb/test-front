@@ -50,6 +50,7 @@
 - Toasts de success, error, warning
 ### Página de Produtos
 - Listagem de produtos por consumo de API
+- Loading de carregamento
 - Botão de adicionar item no carrinho
 - Contador de quantidade de produtos no carrinho
 - Header com navegação para "Meu carrinho" e contador de itens
@@ -72,7 +73,8 @@
 - Máscara para validar inserção correta de dados em cada campo
 - Ícone de erro com tooltip com mensagem personalizada de validação de cada campo
 - Validação de campos não preenchidos ao clicar no botão Finalizar Pagamento
-- Representação visual do cartão de crédito com os dados inseridos ([dados para teste](https://docs.moip.com.br/docs/cartoes-de-credito-para-teste)) 
+- Representação visual do cartão de crédito com os dados inseridos ([dados para teste](https://docs.moip.com.br/docs/cartoes-de-credito-para-teste))
+- Botão de Finalizar Pagamento com estilização de progresso
 ## Carrinho > Confirmação
 - Mensagem de Compra efetuada com sucesso
 - Listagem de Produtos
