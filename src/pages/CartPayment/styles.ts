@@ -40,7 +40,7 @@ export const Content = styled.div`
   @media (min-width: 48rem) {
     display: grid;
     grid-template-columns: 70% 1fr;
-    grid-template-rows: 55% 1fr;
+    grid-template-rows: 17rem 1fr;
     gap: 2rem;
 
     grid-template-areas:

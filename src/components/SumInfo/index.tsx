@@ -1,5 +1,5 @@
 import React from 'react';
-import formatCurrency from '../../helpers/formatCurrency';
+
 import { useCart } from '../../hooks/useCart';
 import { Container } from './styles';
 
