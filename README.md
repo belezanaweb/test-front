@@ -4,7 +4,7 @@
 
 <h3 align=center>
 
-<!-- 💻 **Acesse a aplicação [aqui](https://app-beleza-na-web.herokuapp.com/)** -->
+💻 **Acesse a aplicação [aqui](https://dxwebster.github.io/test-front/)**
 
 </h3>
 
