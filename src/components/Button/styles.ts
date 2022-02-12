@@ -29,9 +29,9 @@ export const ButtonStyle = styled.button<ButtonProps>`
   box-shadow: 0 0.3rem 0 0 ${(props) => props.theme.colors.primaryDark};
   cursor: pointer;
 
-  /* :hover {
+  :hover {
     background-color: ${(props) => props.theme.colors.primaryDark};
-  } */
+  }
 
   @media (min-width: 48rem) {
     grid-area: button;
@@ -99,11 +99,8 @@ export const ButtonStyle = styled.button<ButtonProps>`
     80% {
       width: 100%;
     }
-    95% {
-      width: 100%;
-    }
     100% {
-      width: 0%;
+      width: 100%;
     }
   }
 `;

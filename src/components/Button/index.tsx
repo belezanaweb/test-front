@@ -23,7 +23,6 @@ export default function Button({ type, title, width, navigation, typeButton }: B
 
         setTimeout(() => {
           navigate(navigation, { replace: true });
-          setIsActive(false);
         }, 5000);
       }
       //
@@ -41,7 +40,7 @@ export default function Button({ type, title, width, navigation, typeButton }: B
       className={isActive ? 'progress-btn active' : 'progress-btn'}
       data-progress-style="fill-back"
     >
-      <span className="btn">{title}</span>
+      <span className="btn">{!isActive ? title : 'finalizando...'}</span>
       <div className="progress"></div>
     </ButtonStyle>
   );
