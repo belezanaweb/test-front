@@ -9,7 +9,7 @@ import {
   Dispatch
 } from 'react';
 import api from '../services/api';
-import { Cart, CartItem, Product } from '../interfaces/Cart';
+import { Cart, CartItem } from '../interfaces/Cart';
 import {
   BELEZA_NA_WEB_CART_ITEMS,
   BELEZA_NA_WEB_CREDIT_CARD,
@@ -22,7 +22,7 @@ import { Focused } from 'react-credit-cards';
 interface CartProviderProps {
   children: ReactNode;
 }
-interface UpdateProductAmount {
+interface UpdateItemQuantity {
   productSku: string;
   quantity: number;
 }
@@ -48,7 +48,7 @@ interface CartContextData {
   cartItems: CartItem[];
   addProduct: (productSku: string) => Promise<void>;
   removeProduct: (productSku: string) => void;
-  updateItemQuantity: ({ productSku, quantity }: UpdateProductAmount) => void;
+  updateItemQuantity: ({ productSku, quantity }: UpdateItemQuantity) => void;
 }
 
 const CartContext = createContext<CartContextData>({} as CartContextData);
@@ -137,7 +137,7 @@ export function CartProvider({ children }: CartProviderProps): JSX.Element {
     }
   };
 
-  const updateItemQuantity = ({ productSku, quantity }: UpdateProductAmount) => {
+  const updateItemQuantity = ({ productSku, quantity }: UpdateItemQuantity) => {
     try {
       if (quantity <= 0) return;
 
