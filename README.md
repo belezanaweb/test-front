@@ -8,6 +8,16 @@
 
 </h3>
 
+<p align=center>
+
+<h5 align=center>
+<img src="readme/Home.png" width=600><br>
+
+</h5>
+
+</p>
+
+
 ## 🛠 Tecnologias utilizadas
 
 - react: `Framework Javascript baseado em componentes`
@@ -33,6 +43,7 @@
 - prettier: `Ferramenta de formatação de códigos`
 
 ## ✨ Features implementadas
+
 - Layout Responsivo
 - Desenvolvimento Mobile First
 - Persistência de dados em LocalStorage e contexto
