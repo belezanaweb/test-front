@@ -3,6 +3,13 @@ import styled from 'styled-components';
 export const Container = styled.section`
   width: 100%;
   display: flex;
+  align-items: center;
+  justify-content: center;
+`;
+
+export const Content = styled.section`
+  width: 100%;
+  display: flex;
   flex-direction: column;
   gap: 2rem;
 

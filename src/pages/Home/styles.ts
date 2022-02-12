@@ -12,6 +12,7 @@ export const ProductList = styled.ul`
   display: flex;
   flex-direction: column;
   gap: 2rem;
+  margin: 2rem;
 
   @media (min-width: 36rem) {
     display: grid;
@@ -25,6 +26,7 @@ export const ProductList = styled.ul`
     grid-template-columns: repeat(3, 1fr);
     grid-gap: 2rem;
     list-style: none;
+    margin: 0;
   }
 
   li {

@@ -4,6 +4,7 @@ import { useNavigate } from 'react-router';
 import SumInfo from '../../components/SumInfo';
 import ItemsList from '../../components/ItemsList';
 import PaymentMethod from '../../components/PaymentInfo';
+import EmptyMessage from '../../components/EmptyMessage';
 
 import { Container, CheckConfirm, Content } from './styles';
 
@@ -19,7 +20,7 @@ export default function CartConfirmation() {
   useEffect(() => {
     const creditCardFromStorage = getFromLocalStorage(BELEZA_NA_WEB_CREDIT_CARD);
     if (creditCardFromStorage) setCreditCardInfo(creditCardFromStorage);
-    else navigate('/cart/payment', { replace: true });
+    else navigate('/', { replace: true });
   }, []);
 
   return (
@@ -40,7 +41,7 @@ export default function CartConfirmation() {
           </Content>
         </>
       ) : (
-        <div>Não há itens no carrinho </div>
+        <EmptyMessage />
       )}
     </Container>
   );

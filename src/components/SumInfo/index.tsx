@@ -2,6 +2,7 @@ import React from 'react';
 
 import { useCart } from '../../hooks/useCart';
 import { Container } from './styles';
+import EmptyMessage from '../../components/EmptyMessage';
 
 export default function SumInfo() {
   const { cartItems, sumInfo } = useCart();
@@ -24,7 +25,7 @@ export default function SumInfo() {
           </li>
         </>
       ) : (
-        <div>Não há itens no carrinho </div>
+        <EmptyMessage />
       )}
     </Container>
   );

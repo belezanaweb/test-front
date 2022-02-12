@@ -57,7 +57,7 @@ export default function Header() {
     const { title, url } = item;
 
     if (title === NAV_TITLE_PAYMENT && cartItems?.length === 0) return;
-    if (title === NAV_TITLE_CONFIRMATION && !creditCardInfo) return;
+    if (title === NAV_TITLE_CONFIRMATION && !creditCardInfo?.cardNumber) return;
 
     navigate(url, { replace: true });
     setOptionSelected(item);

@@ -11,6 +11,7 @@ import {
 } from './styles';
 import { MdAddCircleOutline, MdDelete, MdRemoveCircleOutline } from 'react-icons/md';
 import { useCart } from '../../hooks/useCart';
+import EmptyMessage from '../../components/EmptyMessage';
 
 interface ItemsListProps {
   showControlers: boolean;
@@ -95,7 +96,7 @@ export default function ItemsList({ showControlers }: ItemsListProps) {
           </ProductListContent>
         </>
       ) : (
-        <div>Não há itens no carrinho </div>
+        <EmptyMessage />
       )}
     </Container>
   );

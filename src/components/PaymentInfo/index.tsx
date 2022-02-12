@@ -13,7 +13,9 @@ export default function PaymentInfo({ creditCardInfo }: PaymentInfoProps) {
 
       {creditCardInfo && (
         <div>
-          <li>{creditCardInfo.cardNumber}</li>
+          <li>
+            {creditCardInfo.cardNumber.replace(/(?!(?:\D*\d){14}$|(?:\D*\d){1,3}$)\d/gm, '#')}
+          </li>
           <li>{creditCardInfo.titularName}</li>
           <li>{creditCardInfo.validate}</li>
         </div>

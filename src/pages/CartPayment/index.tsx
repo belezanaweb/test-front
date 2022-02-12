@@ -86,7 +86,13 @@ export default function CartPayment() {
 
     if (formIsValid) {
       setCreditCardInfo(data);
-      setToLocalStorage(BELEZA_NA_WEB_CREDIT_CARD, data);
+
+      const maskData = {
+        ...data,
+        cvv: '###'
+      };
+
+      setToLocalStorage(BELEZA_NA_WEB_CREDIT_CARD, maskData);
       navigate('/cart/confirmation', { replace: true });
     }
   }, []);

@@ -15,7 +15,11 @@ import {
   BELEZA_NA_WEB_CREDIT_CARD,
   BELEZA_NA_WEB_SUM_INFO
 } from '../constants/local-storage';
-import { getFromLocalStorage, setToLocalStorage } from '../helpers/local-storage';
+import {
+  cleanLocalStorage,
+  getFromLocalStorage,
+  setToLocalStorage
+} from '../helpers/local-storage';
 import formatCurrency from '../helpers/formatCurrency';
 import { Focused } from 'react-credit-cards';
 
@@ -169,7 +173,11 @@ export function CartProvider({ children }: CartProviderProps): JSX.Element {
         updatedCartItems.splice(productIndex, 1);
         setCartItems(updatedCartItems);
         setSumInfoItems(updatedCartItems);
-      } else throw Error();
+
+        if (updatedCartItems?.length === 0) cleanLocalStorage();
+      }
+      //
+      else throw Error();
     } catch {
       alert('Erro na remoção do produto');
     }
