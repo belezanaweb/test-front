@@ -29,6 +29,8 @@ export default function CartPayment() {
   const { creditCardInfo, setCreditCardInfo, cartItems } = useCart();
   const navigate = useNavigate();
 
+  const [isValid, setIsValid] = useState(false);
+
   useEffect(() => {
     if (cartItems?.length === 0) navigate('/', { replace: true });
   }, []);
@@ -74,6 +76,7 @@ export default function CartPayment() {
     const formIsValid = await validForm();
 
     if (formIsValid) {
+      setIsValid(true);
       setCreditCardInfo(data);
 
       const maskData = {
@@ -182,6 +185,7 @@ export default function CartPayment() {
             title="Finalizar Pagamento"
             navigation="/cart/confirmation"
             typeButton="payment"
+            isValid={isValid}
           />
         </Content>
       </Form>

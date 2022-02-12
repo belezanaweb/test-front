@@ -9,9 +9,17 @@ interface ButtonProps extends ButtonHTMLAttributes<HTMLInputElement> {
   type?: 'submit' | 'reset' | 'button';
   navigation?: string;
   typeButton?: string;
+  isValid?: boolean;
 }
 
-export default function Button({ type, title, width, navigation, typeButton }: ButtonProps) {
+export default function Button({
+  type,
+  title,
+  width,
+  navigation,
+  typeButton,
+  isValid
+}: ButtonProps) {
   const navigate = useNavigate();
 
   const [isActive, setIsActive] = useState(false);
@@ -19,14 +27,15 @@ export default function Button({ type, title, width, navigation, typeButton }: B
   function handleNavigation() {
     if (navigation) {
       if (typeButton === 'payment') {
-        setIsActive(true);
+        if (isValid) {
+          setIsActive(true);
+          setTimeout(() => {
+            navigate(navigation, { replace: true });
+          }, 5000);
+        }
 
-        setTimeout(() => {
-          navigate(navigation, { replace: true });
-        }, 5000);
-      }
-      //
-      else {
+        return;
+      } else {
         navigate(navigation, { replace: true });
       }
     }
