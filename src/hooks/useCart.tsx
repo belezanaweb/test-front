@@ -32,10 +32,10 @@ interface UpdateItemQuantity {
   quantity: number;
 }
 interface CreditCardInfo {
-  cardNumber: string;
-  titularName: string;
-  validate: string;
-  cvv: string;
+  number: string;
+  name: string;
+  expiry: string;
+  cvc: string;
   focused: Focused;
 }
 interface SumInfo {

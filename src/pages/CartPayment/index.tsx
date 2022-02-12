@@ -27,7 +27,6 @@ import { Container, FormContent, FormGroup, Content, InputsContent, CartContent 
 export default function CartPayment() {
   const formRef = useRef<FormHandles>(null);
   const { creditCardInfo, setCreditCardInfo, cartItems } = useCart();
-
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -41,10 +40,10 @@ export default function CartPayment() {
       formRef.current?.setErrors({});
 
       const schema = Yup.object().shape({
-        cardNumber: Yup.string().required('Digite o número do cartão'),
-        titularName: Yup.string().required('Digite o nome do titular'),
-        validate: Yup.string().required('Digite a validade do cartão'),
-        cvv: Yup.string().required('Digite o código do cartão')
+        number: Yup.string().required('Digite o número do cartão'),
+        name: Yup.string().required('Digite o nome do titular'),
+        expiry: Yup.string().required('Digite a validade do cartão'),
+        cvc: Yup.string().required('Digite o código do cartão')
       });
 
       await schema.validate(data, { abortEarly: false });
@@ -71,16 +70,6 @@ export default function CartPayment() {
     [creditCardInfo]
   );
 
-  const handleInputFocus = useCallback(
-    (e: React.FormEvent<HTMLInputElement>) => {
-      setCreditCardInfo({
-        ...creditCardInfo
-        // focused: e.currentTarget.id
-      });
-    },
-    [creditCardInfo]
-  );
-
   const handleSubmit = useCallback(async (data: any) => {
     const formIsValid = await validForm();
 
@@ -89,12 +78,21 @@ export default function CartPayment() {
 
       const maskData = {
         ...data,
-        cvv: '###'
+        cvc: '###'
       };
 
       setToLocalStorage(BELEZA_NA_WEB_CREDIT_CARD, maskData);
     }
   }, []);
+
+  const handleFocus = (value: any) => {
+    const f: Focused = value;
+
+    setCreditCardInfo({
+      ...creditCardInfo,
+      focused: f
+    });
+  };
 
   return (
     <Container>
@@ -105,58 +103,62 @@ export default function CartPayment() {
             <FormContent>
               <InputsContent>
                 <fieldset>
-                  <label htmlFor="cardNumber">Número do cartão:</label>
+                  <label htmlFor="number">Número do cartão:</label>
                   <Input
-                    name="cardNumber"
+                    id="number"
+                    name="number"
                     type="text"
                     placeholder={CARD_NUMBER_PLACEHOLDER}
                     mask="creditCard"
-                    defaultValue={creditCardInfo?.cardNumber || ''}
+                    defaultValue={creditCardInfo?.number || ''}
                     onChange={handleChange}
-                    onFocus={handleInputFocus}
+                    onFocus={(e) => handleFocus(e.target.name)}
                     radius="all"
                   />
                 </fieldset>
 
                 <fieldset>
-                  <label htmlFor="titularName">Nome do Titular:</label>
+                  <label htmlFor="name">Nome do Titular:</label>
                   <Input
-                    name="titularName"
+                    id="name"
+                    name="name"
                     type="text"
                     placeholder={TITULAR_NAME_PLACEHOLDER}
-                    mask="titularName"
-                    defaultValue={creditCardInfo?.titularName || ''}
+                    mask="name"
+                    defaultValue={creditCardInfo?.name || ''}
                     onChange={handleChange}
-                    onFocus={handleInputFocus}
+                    onFocus={(e) => handleFocus(e.target.name)}
                     radius="all"
                   />
                 </fieldset>
 
                 <FormGroup>
                   <fieldset>
-                    <label htmlFor="validate">Validade (mês/ano):</label>
+                    <label htmlFor="expiry">Validade (mês/ano):</label>
                     <Input
-                      name="validate"
+                      id="expiry"
+                      name="expiry"
                       type="text"
                       placeholder={DATE_PLACEHOLDER}
                       mask="date"
-                      defaultValue={creditCardInfo?.validate || ''}
+                      defaultValue={creditCardInfo?.expiry || ''}
                       onChange={handleChange}
-                      onFocus={handleInputFocus}
+                      onFocus={(e) => handleFocus(e.target.name)}
                       radius="all"
                     />
                   </fieldset>
 
                   <fieldset>
-                    <label htmlFor="cvv">CVV:</label>
+                    <label htmlFor="cvc">CVV:</label>
                     <Input
-                      name="cvv"
+                      id="cvc"
+                      name="cvc"
                       type="text"
                       placeholder={CVV_PLACEHOLDER}
-                      mask="cvv"
-                      defaultValue={creditCardInfo?.cvv || ''}
+                      mask="cvc"
+                      defaultValue={creditCardInfo?.cvc || ''}
                       onChange={handleChange}
-                      onFocus={handleInputFocus}
+                      onFocus={(e) => handleFocus(e.target.name)}
                       radius="all"
                     />
                   </fieldset>
@@ -165,11 +167,11 @@ export default function CartPayment() {
 
               <CartContent>
                 <Cards
-                  focused={creditCardInfo?.focused || ''}
-                  cvc={creditCardInfo?.cvv || ''}
-                  expiry={creditCardInfo?.validate || ''}
-                  name={creditCardInfo?.titularName || ''}
-                  number={creditCardInfo?.cardNumber || ''}
+                  focused={creditCardInfo?.focused}
+                  cvc={creditCardInfo?.cvc || ''}
+                  expiry={creditCardInfo?.expiry || ''}
+                  name={creditCardInfo?.name || ''}
+                  number={creditCardInfo?.number || ''}
                 />
               </CartContent>
             </FormContent>

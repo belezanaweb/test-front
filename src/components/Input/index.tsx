@@ -13,7 +13,7 @@ interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
   defaultValue?: string;
   inputHeight?: string;
   radius?: string;
-  mask?: 'creditCard' | 'date' | 'cvv' | 'titularName';
+  mask?: 'creditCard' | 'date' | 'cvc' | 'name';
 }
 
 export default function Input({
@@ -44,8 +44,10 @@ export default function Input({
     if (error) setValidationType(INPUT_ERROR);
   }, [error]);
 
-  const handleInputFocus = useCallback(() => {
+  const handleInputFocus = useCallback((e) => {
     setValidationType(INPUT_FOCUSED);
+
+    console.log('✅ ~ e', e);
   }, []);
 
   const handleInputBlur = useCallback(() => {
@@ -55,9 +57,9 @@ export default function Input({
   const handleKeyUp = useCallback(
     (e: React.FormEvent<HTMLInputElement>) => {
       if (mask === 'creditCard') creditCardMask(e);
-      if (mask === 'titularName') titularNameMask(e);
+      if (mask === 'name') titularNameMask(e);
       if (mask === 'date') dateMask(e);
-      if (mask === 'cvv') cvvMask(e);
+      if (mask === 'cvc') cvvMask(e);
     },
     [mask]
   );
@@ -67,9 +69,10 @@ export default function Input({
       <Container validationType={validationType} inputHeight={inputHeight}>
         {Icon && <Icon />}
         <input
-          onFocus={handleInputFocus}
+          onFocus={(e) => handleInputFocus(e)}
           onBlur={handleInputBlur}
           id={fieldName}
+          name={fieldName}
           ref={inputRef}
           defaultValue={defaultValue}
           onKeyUp={handleKeyUp}

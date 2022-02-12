@@ -59,10 +59,10 @@ export default function Header() {
     if (title === NAV_TITLE_PAYMENT && cartItems?.length === 0) return;
     if (
       title === NAV_TITLE_CONFIRMATION &&
-      (!creditCardInfo?.cardNumber ||
-        !creditCardInfo?.cvv ||
-        !creditCardInfo?.titularName ||
-        !creditCardInfo?.validate)
+      (!creditCardInfo?.number ||
+        !creditCardInfo?.cvc ||
+        !creditCardInfo?.name ||
+        !creditCardInfo?.expiry)
     )
       return;
 

@@ -35,7 +35,7 @@ export default function CartConfirmation() {
           </CheckConfirm>
 
           <Content>
-            {creditCardInfo?.cardNumber && <PaymentMethod creditCardInfo={creditCardInfo} />}
+            {creditCardInfo?.number && <PaymentMethod creditCardInfo={creditCardInfo} />}
             <ItemsList showControlers={false} />
             <SumInfo />
           </Content>
