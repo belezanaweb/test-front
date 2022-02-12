@@ -18,12 +18,10 @@ import { Focused } from 'react-credit-cards';
 interface CartProviderProps {
   children: ReactNode;
 }
-
 interface UpdateProductAmount {
   productSku: string;
   quantity: number;
 }
-
 interface CreditCardInfo {
   cardNumber: string;
   titularName: string;
@@ -31,13 +29,12 @@ interface CreditCardInfo {
   cvv: string;
   focused: Focused;
 }
-
 interface SumInfo {
-  itemsSubTotal: number;
-  itemsDiscount: number;
-  itemsTotal: number;
+  itemsSubTotalFormatted: string;
+  itemsDiscountFormatted: string;
+  itemsTotalFormatted: string;
+  shippingTotalFormatterd: string;
 }
-
 interface CartContextData {
   allProducts: any;
   sumInfo: SumInfo;
@@ -57,10 +54,8 @@ export function CartProvider({ children }: CartProviderProps): JSX.Element {
 
   const [allProducts, setAllProducts] = useState<CartItem[]>([]);
   const [cartItems, setCartItems] = useState<CartItem[]>(currentCartItems || []);
-
-  const [sumInfo, setSumInfo] = useState({} as SumInfo);
-
   const [creditCardInfo, setCreditCardInfo] = useState<CreditCardInfo>({} as CreditCardInfo);
+  const [sumInfo, setSumInfo] = useState({} as SumInfo);
 
   const prevCartRef = useRef<CartItem[]>();
   const cartPreviousValue = prevCartRef.current ?? cartItems;
@@ -89,6 +84,9 @@ export function CartProvider({ children }: CartProviderProps): JSX.Element {
       });
 
       setAllProducts(all);
+
+      const shippingTotalFormatterd = formatCurrency(response.data.shippingTotal);
+      setSumInfo({ ...sumInfo, shippingTotalFormatterd });
     }
 
     loadProducts();
@@ -186,8 +184,16 @@ export function CartProvider({ children }: CartProviderProps): JSX.Element {
       itemsSubTotal += item.subTotal;
     });
 
-    const itemsTotal = itemsSubTotal - itemsDiscount;
-    setSumInfo({ itemsSubTotal, itemsDiscount, itemsTotal });
+    const itemsTotalFormatted = formatCurrency(itemsSubTotal - itemsDiscount);
+    const itemsSubTotalFormatted = formatCurrency(itemsSubTotal);
+    const itemsDiscountFormatted = formatCurrency(itemsDiscount);
+
+    setSumInfo({
+      ...sumInfo,
+      itemsSubTotalFormatted,
+      itemsDiscountFormatted,
+      itemsTotalFormatted
+    });
   };
 
   return (
