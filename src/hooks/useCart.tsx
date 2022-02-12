@@ -9,7 +9,7 @@ import {
   Dispatch
 } from 'react';
 import api from '../services/api';
-import { Cart, CartItem } from '../interfaces/Cart';
+import { Cart, CartItem, Product } from '../interfaces/Cart';
 import { BELEZA_NA_WEB_CART_ITEMS } from '../constants/local-storage';
 import { getFromLocalStorage, setToLocalStorage } from '../helpers/local-storage';
 import formatCurrency from '../helpers/formatCurrency';
@@ -24,19 +24,18 @@ interface UpdateProductAmount {
   quantity: number;
 }
 
-interface SumInfo {
-  subtotal: number;
-  discount: number;
-  total: number;
-  freight: number;
-}
-
 interface CreditCardInfo {
   cardNumber: string;
   titularName: string;
   validate: string;
   cvv: string;
   focused: Focused;
+}
+
+interface SumInfo {
+  itemsSubTotal: number;
+  itemsDiscount: number;
+  itemsTotal: number;
 }
 
 interface CartContextData {
@@ -58,7 +57,9 @@ export function CartProvider({ children }: CartProviderProps): JSX.Element {
 
   const [allProducts, setAllProducts] = useState<CartItem[]>([]);
   const [cartItems, setCartItems] = useState<CartItem[]>(currentCartItems || []);
-  const [sumInfo, setSumInfo] = useState<SumInfo>({} as SumInfo);
+
+  const [sumInfo, setSumInfo] = useState({} as SumInfo);
+
   const [creditCardInfo, setCreditCardInfo] = useState<CreditCardInfo>({} as CreditCardInfo);
 
   const prevCartRef = useRef<CartItem[]>();
@@ -99,25 +100,6 @@ export function CartProvider({ children }: CartProviderProps): JSX.Element {
     }
   }, [cartPreviousValue, cartItems]);
 
-  const setSumInfoAmount = (updatedCartItems: CartItem[]) => {
-    let subtotal = 0;
-    let discount = 0;
-
-    updatedCartItems.forEach((item: CartItem) => {
-      subtotal += item.product.priceSpecification.price;
-      discount += item.product.priceSpecification.discount;
-    });
-
-    const sum = {
-      subtotal,
-      discount,
-      total: subtotal - discount,
-      freight: 5
-    };
-
-    setSumInfo(sum);
-  };
-
   const addProduct = async (productSku: string) => {
     try {
       const updatedCartItems = [...cartItems];
@@ -145,7 +127,7 @@ export function CartProvider({ children }: CartProviderProps): JSX.Element {
       }
 
       setCartItems(updatedCartItems);
-      setSumInfoAmount(updatedCartItems);
+      setSumInfoItems(updatedCartItems);
     } catch {
       alert('Erro na adição do produto');
     }
@@ -167,7 +149,7 @@ export function CartProvider({ children }: CartProviderProps): JSX.Element {
         itemAlreadyInCart.quantity = quantity;
 
         setCartItems(updatedCartItems);
-        setSumInfoAmount(updatedCartItems);
+        setSumInfoItems(updatedCartItems);
       } else throw Error();
     } catch {
       alert('Erro na alteração de quantidade do produto');
@@ -182,10 +164,30 @@ export function CartProvider({ children }: CartProviderProps): JSX.Element {
       if (productIndex >= 0) {
         updatedCartItems.splice(productIndex, 1);
         setCartItems(updatedCartItems);
+        setSumInfoItems(updatedCartItems);
       } else throw Error();
     } catch {
       alert('Erro na remoção do produto');
     }
+  };
+
+  const setSumInfoItems = (updatedCartItems: CartItem[]) => {
+    const cartWithSubtotal = updatedCartItems.map((item) => ({
+      ...item,
+      subTotal: item.product.priceSpecification.price * item.quantity,
+      discount: item.product.priceSpecification.discount
+    }));
+
+    let itemsSubTotal = 0;
+    let itemsDiscount = 0;
+
+    cartWithSubtotal.forEach((item) => {
+      itemsDiscount += item.discount;
+      itemsSubTotal += item.subTotal;
+    });
+
+    const itemsTotal = itemsSubTotal - itemsDiscount;
+    setSumInfo({ itemsSubTotal, itemsDiscount, itemsTotal });
   };
 
   return (

@@ -17,7 +17,7 @@ interface ItemsListProps {
 }
 
 export default function ItemsList({ showControlers }: ItemsListProps) {
-  const { removeProduct, updateItemQuantity, sumInfo, setSumInfo, cartItems } = useCart();
+  const { removeProduct, updateItemQuantity, cartItems } = useCart();
 
   function handleProductIncrement(item: CartItem) {
     updateItemQuantity({
@@ -26,7 +26,6 @@ export default function ItemsList({ showControlers }: ItemsListProps) {
     });
 
     const qtd = item.quantity - 1;
-    updateSubTotal(item, qtd);
   }
 
   function handleProductDecrement(item: CartItem) {
@@ -36,22 +35,10 @@ export default function ItemsList({ showControlers }: ItemsListProps) {
     });
 
     const qtd = item.quantity - 1;
-    updateSubTotal(item, qtd);
   }
 
   function handleRemoveProduct(productSku: string) {
     removeProduct(productSku);
-  }
-
-  function updateSubTotal(item: CartItem, qtd: number) {
-    const priceTotal = item.product.priceSpecification.price * qtd;
-
-    const data = {
-      ...sumInfo,
-      subTotal: priceTotal
-    };
-
-    setSumInfo(data);
   }
 
   return (

@@ -8,19 +8,19 @@ export default function SumInfo() {
 
   return (
     <Container>
-      {sumInfo && cartItems?.length > 0 ? (
+      {cartItems?.length > 0 ? (
         <>
           <li>
-            Produtos <span>{formatCurrency(sumInfo.subtotal)}</span>
+            Produtos <span>{formatCurrency(sumInfo.itemsSubTotal)}</span>
           </li>
-          <li>
+          {/* <li>
             Frete <span>{formatCurrency(sumInfo.freight)}</span>
-          </li>
+          </li>*/}
           <li className="discount">
-            Desconto <span>-{formatCurrency(sumInfo.discount)}</span>
+            Desconto <span>-{formatCurrency(sumInfo.itemsDiscount)}</span>
           </li>
           <li className="total">
-            Total <span>{formatCurrency(sumInfo.total)}</span>
+            Total <span>{formatCurrency(sumInfo.itemsTotal)}</span>
           </li>
         </>
       ) : (
