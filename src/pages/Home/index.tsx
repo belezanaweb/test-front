@@ -1,5 +1,5 @@
 import React from 'react';
-import { MdAddShoppingCart } from 'react-icons/md';
+import { MdAddShoppingCart, MdShoppingBasket } from 'react-icons/md';
 
 import { ProductList, Button } from './styles';
 
@@ -25,8 +25,8 @@ export default function Home() {
 
             <Button onClick={() => addProduct(item.product.sku)}>
               <div className="quantity">
+                <MdShoppingBasket size={20} color="#fff" />
                 {setCartItemsQuantity(cartItems, item.product.sku) || 0}
-                <MdAddShoppingCart />
               </div>
 
               <span>ADICIONAR AO CARRINHO</span>

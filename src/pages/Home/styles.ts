@@ -14,14 +14,14 @@ export const ProductList = styled.ul`
   gap: 2rem;
   margin: 2rem;
 
-  @media (min-width: 36rem) {
+  @media (min-width: 40rem) {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     grid-gap: 2rem;
     list-style: none;
   }
 
-  @media (min-width: 56rem) {
+  @media (min-width: 66rem) {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-gap: 2rem;
@@ -62,14 +62,15 @@ export const ProductList = styled.ul`
 `;
 
 export const Button = styled(ButtonStyle)`
-  justify-content: center;
-  gap: 5rem;
+  gap: 2rem;
   width: 70%;
 
-  @media (min-width: 36rem) {
-    justify-content: space-around;
+  @media (min-width: 40rem) {
+    justify-content: space-between;
     width: 100%;
     gap: 0;
+    padding: 2rem 4rem;
+    font-size: 1.2rem;
   }
 
   .quantity {
@@ -77,7 +78,10 @@ export const Button = styled(ButtonStyle)`
     align-items: center;
     padding: 1rem 2rem;
     border-right: 1px solid rgba(0, 0, 0, 0.1);
-    margin-left: -1rem;
     gap: 1rem;
+
+    @media (min-width: 36rem) {
+      margin-left: -3rem;
+    }
   }
 `;

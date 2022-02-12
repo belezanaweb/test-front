@@ -5,7 +5,7 @@ export const AppContainer = styled.main`
   height: 100vh;
   margin: 0 auto;
 
-  @media (min-width: 48rem) {
+  @media (min-width: 40rem) {
     width: 80%;
     margin: 0 auto;
   }

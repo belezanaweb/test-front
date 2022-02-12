@@ -60,7 +60,7 @@ export const FormContent = styled.div`
   background-color: ${(props) => props.theme.colors.white};
   box-shadow: 0.1rem 0.1rem 0.5rem 0 ${(props) => props.theme.shadow};
 
-  @media (min-width: 48rem) {
+  @media (min-width: 65rem) {
     grid-area: form;
     flex-direction: row;
   }
@@ -94,7 +94,7 @@ export const InputsContent = styled.div`
   gap: 2rem;
   width: 100%;
 
-  @media (min-width: 48rem) {
+  @media (min-width: 65rem) {
     width: 50%;
   }
 `;
