@@ -10,7 +10,11 @@ import {
 } from 'react';
 import api from '../services/api';
 import { Cart, CartItem, Product } from '../interfaces/Cart';
-import { BELEZA_NA_WEB_CART_ITEMS } from '../constants/local-storage';
+import {
+  BELEZA_NA_WEB_CART_ITEMS,
+  BELEZA_NA_WEB_CREDIT_CARD,
+  BELEZA_NA_WEB_SUM_INFO
+} from '../constants/local-storage';
 import { getFromLocalStorage, setToLocalStorage } from '../helpers/local-storage';
 import formatCurrency from '../helpers/formatCurrency';
 import { Focused } from 'react-credit-cards';
@@ -50,12 +54,14 @@ interface CartContextData {
 const CartContext = createContext<CartContextData>({} as CartContextData);
 
 export function CartProvider({ children }: CartProviderProps): JSX.Element {
-  const currentCartItems = getFromLocalStorage(BELEZA_NA_WEB_CART_ITEMS);
+  const cartItemsFromLocalStorage = getFromLocalStorage(BELEZA_NA_WEB_CART_ITEMS);
+  const sumInfoFromLocalStorage = getFromLocalStorage(BELEZA_NA_WEB_SUM_INFO);
+  const creditCardFromStorage = getFromLocalStorage(BELEZA_NA_WEB_CREDIT_CARD);
 
   const [allProducts, setAllProducts] = useState<CartItem[]>([]);
-  const [cartItems, setCartItems] = useState<CartItem[]>(currentCartItems || []);
-  const [creditCardInfo, setCreditCardInfo] = useState<CreditCardInfo>({} as CreditCardInfo);
-  const [sumInfo, setSumInfo] = useState({} as SumInfo);
+  const [cartItems, setCartItems] = useState<CartItem[]>(cartItemsFromLocalStorage || []);
+  const [sumInfo, setSumInfo] = useState<SumInfo>(sumInfoFromLocalStorage || {});
+  const [creditCardInfo, setCreditCardInfo] = useState<CreditCardInfo>(creditCardFromStorage || {});
 
   const prevCartRef = useRef<CartItem[]>();
   const cartPreviousValue = prevCartRef.current ?? cartItems;
@@ -188,12 +194,15 @@ export function CartProvider({ children }: CartProviderProps): JSX.Element {
     const itemsSubTotalFormatted = formatCurrency(itemsSubTotal);
     const itemsDiscountFormatted = formatCurrency(itemsDiscount);
 
-    setSumInfo({
+    const sumInfoObject = {
       ...sumInfo,
       itemsSubTotalFormatted,
       itemsDiscountFormatted,
       itemsTotalFormatted
-    });
+    };
+
+    setSumInfo(sumInfoObject);
+    setToLocalStorage(BELEZA_NA_WEB_SUM_INFO, sumInfoObject);
   };
 
   return (

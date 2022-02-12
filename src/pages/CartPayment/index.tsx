@@ -91,11 +91,6 @@ export default function CartPayment() {
     }
   }, []);
 
-  useEffect(() => {
-    const creditCardFromStorage = getFromLocalStorage(BELEZA_NA_WEB_CREDIT_CARD);
-    setCreditCardInfo(creditCardFromStorage);
-  }, []);
-
   return (
     <Container>
       <Form ref={formRef} onSubmit={handleSubmit}>
