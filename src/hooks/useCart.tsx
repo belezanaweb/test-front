@@ -54,6 +54,7 @@ interface CartContextData {
   addProduct: (productSku: string) => Promise<void>;
   removeProduct: (productSku: string) => void;
   updateItemQuantity: ({ productSku, quantity }: UpdateItemQuantity) => void;
+  stockquantity: number;
 }
 
 const CartContext = createContext<CartContextData>({} as CartContextData);
@@ -71,7 +72,6 @@ export function CartProvider({ children }: CartProviderProps): JSX.Element {
   const prevCartRef = useRef<CartItem[]>();
   const cartPreviousValue = prevCartRef.current ?? cartItems;
   const { addToast } = useToast();
-
   const stockquantity = 8;
 
   useEffect(() => {
@@ -139,6 +139,12 @@ export function CartProvider({ children }: CartProviderProps): JSX.Element {
         const { data } = await api.get('5b15c4923100004a006f3c07');
         const newItem = data.items.find((item: CartItem) => item.product.sku === productSku);
         updatedCartItems.push(newItem);
+
+        addToast({
+          type: 'success',
+          title: 'Sucesso!',
+          description: `"${newItem?.product?.name}" foi adicionado ao carrinho`
+        });
       }
 
       setCartItems(updatedCartItems);
@@ -247,7 +253,8 @@ export function CartProvider({ children }: CartProviderProps): JSX.Element {
         cartItems,
         addProduct,
         removeProduct,
-        updateItemQuantity
+        updateItemQuantity,
+        stockquantity
       }}
     >
       {children}

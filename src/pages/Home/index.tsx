@@ -1,7 +1,7 @@
 import React from 'react';
 import { MdShoppingBasket } from 'react-icons/md';
 
-import { ProductList, Button } from './styles';
+import { ProductList, Button, StockCounter } from './styles';
 
 import setCartItemsQuantity from '../../helpers/set-items-quantity';
 
@@ -11,7 +11,7 @@ import Header from './components/Header';
 import Loading from '../../components/Loading';
 
 export default function Home() {
-  const { allProducts, addProduct, cartItems } = useCart();
+  const { allProducts, addProduct, cartItems, stockquantity } = useCart();
 
   return (
     <>
@@ -31,6 +31,11 @@ export default function Home() {
 
               <span>ADICIONAR AO CARRINHO</span>
             </Button>
+
+            <StockCounter>
+              Restam {stockquantity - (setCartItemsQuantity(cartItems, item.product.sku) || 0)} no
+              estoque
+            </StockCounter>
           </li>
         ))}
       </ProductList>

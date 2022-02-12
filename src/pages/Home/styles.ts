@@ -84,3 +84,7 @@ export const Button = styled(ButtonStyle)`
     }
   }
 `;
+
+export const StockCounter = styled.div`
+  font-size: 1.2rem;
+`;

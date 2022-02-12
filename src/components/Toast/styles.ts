@@ -22,8 +22,8 @@ const toastTypeVariations = {
 };
 
 export const Container = styled(animated.div)<ContainerProps>`
-  min-width: 40rem;
-  height: 6rem;
+  width: 40rem;
+  min-height: 6rem;
 
   display: flex;
   align-items: center;
