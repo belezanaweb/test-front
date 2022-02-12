@@ -22,6 +22,7 @@ import {
 } from '../helpers/local-storage';
 import formatCurrency from '../helpers/formatCurrency';
 import { Focused } from 'react-credit-cards';
+import { useToast } from './useToast';
 
 interface CartProviderProps {
   children: ReactNode;
@@ -69,6 +70,7 @@ export function CartProvider({ children }: CartProviderProps): JSX.Element {
 
   const prevCartRef = useRef<CartItem[]>();
   const cartPreviousValue = prevCartRef.current ?? cartItems;
+  const { addToast } = useToast();
 
   const stockquantity = 8;
 
@@ -118,7 +120,12 @@ export function CartProvider({ children }: CartProviderProps): JSX.Element {
 
       // se for chegar no limite do estoque
       if (currentItemQuantity > stockquantity) {
-        alert('Quantidade solicitada fora de estoque');
+        addToast({
+          type: 'error',
+          title: 'Erro',
+          description: 'Quantidade solicitada fora de estoque'
+        });
+
         return;
       }
 
@@ -137,7 +144,11 @@ export function CartProvider({ children }: CartProviderProps): JSX.Element {
       setCartItems(updatedCartItems);
       setSumInfoItems(updatedCartItems);
     } catch {
-      alert('Erro na adição do produto');
+      addToast({
+        type: 'error',
+        title: 'Erro',
+        description: 'Erro ao tentar incluir item no carrinho'
+      });
     }
   };
 
@@ -146,7 +157,11 @@ export function CartProvider({ children }: CartProviderProps): JSX.Element {
       if (quantity <= 0) return;
 
       if (quantity > stockquantity) {
-        alert('Quantidade solicitada fora de estoque');
+        addToast({
+          type: 'error',
+          title: 'Erro',
+          description: 'Quantidade solicitada fora de estoque'
+        });
         return;
       }
 
@@ -160,7 +175,11 @@ export function CartProvider({ children }: CartProviderProps): JSX.Element {
         setSumInfoItems(updatedCartItems);
       } else throw Error();
     } catch {
-      alert('Erro na alteração de quantidade do produto');
+      addToast({
+        type: 'error',
+        title: 'Erro',
+        description: 'Erro ao alterar quantidade'
+      });
     }
   };
 
@@ -179,7 +198,11 @@ export function CartProvider({ children }: CartProviderProps): JSX.Element {
       //
       else throw Error();
     } catch {
-      alert('Erro na remoção do produto');
+      addToast({
+        type: 'error',
+        title: 'Erro',
+        description: 'Erro na remoção de item'
+      });
     }
   };
 
