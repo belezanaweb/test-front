@@ -1,4 +1,4 @@
-import styled, { css } from 'styled-components';
+import styled, { css, keyframes } from 'styled-components';
 import { animated } from 'react-spring';
 
 interface ContainerProps {
@@ -21,20 +21,14 @@ const toastTypeVariations = {
   `
 };
 
-export const Container = styled(animated.div)<ContainerProps>`
-  width: 40rem;
-  min-height: 6rem;
+export const ToastContent = styled(animated.div)<ContainerProps>`
+  width: 36rem;
+  position: absolute;
+  left: calc(50% - 16rem);
 
+  padding: 1.6rem;
   display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 16px 30px 16px 16px;
 
-  position: fixed;
-  left: calc(50% - 20rem);
-  top: 1rem;
-
-  transition: all 200ms;
   z-index: 99999;
   border-radius: 10px;
   box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.2);

@@ -28,9 +28,7 @@ function ToastProvider({ children }: any) {
     <ToastContext.Provider value={{ addToast, removeToast }}>
       {children}
 
-      {messages.map((message, index) => (
-        <Toast key={index} message={message} />
-      ))}
+      <Toast messages={messages} />
     </ToastContext.Provider>
   );
 }

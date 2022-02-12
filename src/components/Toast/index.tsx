@@ -1,8 +1,10 @@
 import React, { useEffect } from 'react';
 import { FiAlertCircle, FiCheckCircle, FiInfo, FiXCircle } from 'react-icons/fi';
+import { useTransition, animated, easings } from 'react-spring';
 import { useToast } from '../../hooks/useToast';
+import { ToastMessageState } from '../../interfaces/ToastInterface';
 
-import { Container } from './styles';
+import { ToastContent } from './styles';
 
 const icons = {
   info: <FiInfo size={24} />,
@@ -10,21 +12,29 @@ const icons = {
   success: <FiCheckCircle size={24} />
 };
 
-export default function Toast({ message }: any) {
+interface ToastContainerProps {
+  messages: ToastMessageState[];
+}
+
+export default function Toast({ messages }: ToastContainerProps) {
   const { removeToast } = useToast();
 
   useEffect(() => {
-    const timer = setTimeout(() => {
-      removeToast(message.id);
-    }, 3000);
+    messages.forEach((message: any) => {
+      const messageId = message.id;
+      setTimeout(() => removeToast(messageId), 3000);
+    });
+  }, [removeToast, messages]);
 
-    return () => {
-      clearTimeout(timer);
-    };
-  }, [removeToast, message.id]);
+  const messagesWithtransitions = useTransition(messages, {
+    from: { top: '-20%', opacity: 0 },
+    enter: { top: '1rem', opacity: 1 },
+    leave: { top: '-20%', opacity: 0 },
+    config: { duration: 200, easing: easings.easeInOutQuart }
+  });
 
-  return (
-    <Container type={message.type}>
+  return messagesWithtransitions((styles, message) => (
+    <ToastContent type={message.type} style={styles}>
       {icons.error}
       <div>
         <strong>{message.title}</strong>
@@ -34,6 +44,6 @@ export default function Toast({ message }: any) {
       <button onClick={() => removeToast(message.id)} type="button">
         <FiXCircle size={18} />
       </button>
-    </Container>
-  );
+    </ToastContent>
+  ));
 }

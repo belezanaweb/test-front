@@ -47,7 +47,7 @@
 - Layout Responsivo
 - Desenvolvimento Mobile First
 - Persistência de dados em LocalStorage e contexto
-- Toasts de sucess, error, warning
+- Toasts de success, error, warning
 ### Página de Produtos
 - Listagem de produtos por consumo de API
 - Botão de adicionar item no carrinho
