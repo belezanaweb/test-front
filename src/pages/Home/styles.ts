@@ -66,10 +66,9 @@ export const Button = styled(ButtonStyle)`
   width: 70%;
 
   @media (min-width: 40rem) {
-    justify-content: space-between;
+    justify-content: center;
     width: 100%;
-    gap: 0;
-    padding: 2rem 4rem;
+    padding: 2rem 2rem;
     font-size: 1.2rem;
   }
 
@@ -81,7 +80,7 @@ export const Button = styled(ButtonStyle)`
     gap: 1rem;
 
     @media (min-width: 36rem) {
-      margin-left: -3rem;
+      margin-left: -2rem;
     }
   }
 `;
