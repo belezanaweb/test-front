@@ -36,13 +36,19 @@
 
 - yup: `Construtor de esquemas de validações de formulários`
 
-- polished: `Estilização css`
+- polished: `Biblioteca de Estilização js no css`
+
+- react-spring: `Biblioteca de animação em js`
+
+- jest: `Testes em ambiente React`
+
+## 🛠 Ferramentas de desenvolvimento
 
 - eslint: `Ferramenta de análise de erros em códigos`
 
 - prettier: `Ferramenta de formatação de códigos`
 
-- commit lint: `Ferramenta para verificar padrão de commits`
+- commitlint: `Ferramenta para verificar padrão de commits`
 
 - husky: `Ferramenta para melhorar commits`
 
@@ -50,6 +56,8 @@
 
 - Layout Responsivo
 - Desenvolvimento Mobile First
+- CI com Github Actions
+- Testes com jest
 - Persistência de dados em LocalStorage e contexto
 - Toasts de success, error, warning
 ### Página de Produtos
@@ -58,28 +66,30 @@
 - Botão de adicionar item no carrinho
 - Contador de quantidade de produtos no carrinho
 - Header com navegação para "Meu carrinho" e contador de itens
-- Bloqueio de acição de item fora de estoque no carrinho
-## Carrinho
+- Toast de success por adição de item no carrinho
+- Toast de erro de adição de item fora de estoque no carrinho
+### Carrinho
 - 3 steps de carrinho: lista de itens > pagamento > compra confirmada
 - Header com navegação dos steps do carrinho
 - Bloqueio de step de pagamento se não houver items no carrinho
 - Bloqueio de step confirmação se não houver dados de pagamento
 - Redirecionamento caso tentar acessar pela url, sem dados requeridos para o step
-## Carrinho > Lista
+- Toast de erro de adição de item fora de estoque no carrinho
+### Carrinho > Lista
 - Listagem de itens com controles para incrementar ou decrementar quantidade
 - Botão para remover item do carrinho
 - Visualização de subtotal, frete, desconto e total
 - Atualização automática de valores ao modificar algum dos items
 - Mensagem de carrinho vazio caso não tenha items com navegação para "ver produtos"
 - Botão seguir para pagamento
-## Carrinho > Pagamento
+### Carrinho > Pagamento
 - Formulário para inclusão de dados de cartão de crédito
 - Máscara para validar inserção correta de dados em cada campo
 - Ícone de erro com tooltip com mensagem personalizada de validação de cada campo
 - Validação de campos não preenchidos ao clicar no botão Finalizar Pagamento
 - Representação visual do cartão de crédito com os dados inseridos ([dados para teste](https://docs.moip.com.br/docs/cartoes-de-credito-para-teste))
 - Botão de Finalizar Pagamento com estilização de progresso
-## Carrinho > Confirmação
+### Carrinho > Confirmação
 - Mensagem de Compra efetuada com sucesso
 - Listagem de Produtos
 - Visualização de dados de cartão de crédito mascarados
