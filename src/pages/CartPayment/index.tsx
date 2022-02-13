@@ -110,8 +110,6 @@ export default function CartPayment() {
 
   const handleKeyUp = useCallback(
     (e: React.FormEvent<HTMLInputElement>) => {
-      console.log('✅ ~ e', e);
-
       setVisualCard({
         ...visualCard,
         [e.currentTarget.id]: e.currentTarget.value
@@ -160,7 +158,7 @@ export default function CartPayment() {
                     name="number"
                     type="text"
                     placeholder={CARD_NUMBER_PLACEHOLDER}
-                    defaultValue={creditCardInfo?.number || ''}
+                    defaultValue={creditCardInfo?.number}
                     onChange={handleChange}
                     onFocus={(e) => handleFocus(e.target.name)}
                     onKeyUp={handleKeyUp}
@@ -175,7 +173,7 @@ export default function CartPayment() {
                     name="name"
                     type="text"
                     placeholder={TITULAR_NAME_PLACEHOLDER}
-                    defaultValue={creditCardInfo?.name || ''}
+                    defaultValue={creditCardInfo?.name}
                     onChange={handleChange}
                     onFocus={(e) => handleFocus(e.target.name)}
                     onKeyUp={handleKeyUp}
@@ -191,7 +189,7 @@ export default function CartPayment() {
                       name="expiry"
                       type="text"
                       placeholder={DATE_PLACEHOLDER}
-                      defaultValue={creditCardInfo?.expiry || ''}
+                      defaultValue={creditCardInfo?.expiry}
                       onChange={handleChange}
                       onFocus={(e) => handleFocus(e.target.name)}
                       onKeyUp={handleKeyUp}
@@ -206,7 +204,7 @@ export default function CartPayment() {
                       name="cvc"
                       type="text"
                       placeholder={CVV_PLACEHOLDER}
-                      defaultValue={creditCardInfo?.cvc || ''}
+                      defaultValue={creditCardInfo?.cvc}
                       onChange={handleChange}
                       onFocus={(e) => handleFocus(e.target.name)}
                       onKeyUp={handleKeyUp}
@@ -219,10 +217,10 @@ export default function CartPayment() {
               <CartContent>
                 <Cards
                   focused={creditCardInfo?.focused}
-                  cvc={visualCard?.cvc || ''}
-                  expiry={visualCard?.expiry || ''}
-                  name={visualCard?.name || ''}
-                  number={visualCard?.number || ''}
+                  cvc={visualCard?.cvc}
+                  expiry={visualCard?.expiry}
+                  name={visualCard?.name}
+                  number={visualCard?.number}
                 />
               </CartContent>
             </FormContent>
