@@ -4,8 +4,6 @@ import { MdShoppingBasket } from 'react-icons/md';
 import { ProductList, Button, StockCounter } from './styles';
 import api from '../../services/api';
 
-import setCartItemsQuantity from '../../helpers/set-items-quantity';
-
 import { useCart } from '../../hooks/useCart';
 import { Cart, CartItem } from '../../interfaces/Cart';
 import Header from './components/Header';
