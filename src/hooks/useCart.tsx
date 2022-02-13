@@ -20,7 +20,6 @@ import {
   getFromLocalStorage,
   setToLocalStorage
 } from '../helpers/local-storage';
-import formatCurrency from '../helpers/formatCurrency';
 import { Focused } from 'react-credit-cards';
 import { useToast } from './useToast';
 
@@ -39,10 +38,10 @@ interface CreditCardInfo {
   focused: Focused;
 }
 interface SumInfo {
-  itemsSubTotalFormatted: string;
-  itemsDiscountFormatted: string;
-  itemsTotalFormatted: string;
-  shippingTotalFormatterd: string;
+  itemsSubTotal: number;
+  itemsDiscount: number;
+  itemsTotal: number;
+  shippingTotal: number;
 }
 interface CartContextData {
   allProducts: any;
@@ -82,23 +81,9 @@ export function CartProvider({ children }: CartProviderProps): JSX.Element {
     async function loadProducts() {
       const response = await api.get<Cart>('5b15c4923100004a006f3c07');
 
-      const all = response.data.items.map((item: CartItem) => {
-        item.product.priceSpecification.price = formatCurrency(
-          item.product.priceSpecification.price
-        );
+      setAllProducts(response.data.items);
 
-        const dataWrapper = {
-          product: item.product,
-          quantity: item.quantity
-        };
-
-        return dataWrapper;
-      });
-
-      setAllProducts(all);
-
-      const shippingTotalFormatterd = formatCurrency(response.data.shippingTotal);
-      setSumInfo({ ...sumInfo, shippingTotalFormatterd });
+      setSumInfo({ ...sumInfo, shippingTotal: response.data.shippingTotal });
     }
 
     loadProducts();
@@ -136,9 +121,8 @@ export function CartProvider({ children }: CartProviderProps): JSX.Element {
 
       // armazena novo produto no carrinho
       else {
-        const { data } = await api.get('5b15c4923100004a006f3c07');
-        const newItem = data.items.find((item: CartItem) => item.product.sku === productSku);
-        updatedCartItems.push(newItem);
+        const newItem = allProducts?.find((item: CartItem) => item.product.sku === productSku);
+        if (newItem) updatedCartItems.push(newItem);
 
         addToast({
           type: 'success',
@@ -227,16 +211,16 @@ export function CartProvider({ children }: CartProviderProps): JSX.Element {
       itemsSubTotal += item.subTotal;
     });
 
-    const itemsTotalFormatted = formatCurrency(itemsSubTotal - itemsDiscount);
-    const itemsSubTotalFormatted = formatCurrency(itemsSubTotal);
-    const itemsDiscountFormatted = formatCurrency(itemsDiscount);
+    const itemsTotal = itemsSubTotal - itemsDiscount;
 
     const sumInfoObject = {
       ...sumInfo,
-      itemsSubTotalFormatted,
-      itemsDiscountFormatted,
-      itemsTotalFormatted
+      itemsSubTotal,
+      itemsDiscount,
+      itemsTotal
     };
+
+    console.log('✅ ~ sumInfoObject', sumInfoObject);
 
     setSumInfo(sumInfoObject);
     setToLocalStorage(BELEZA_NA_WEB_SUM_INFO, sumInfoObject);

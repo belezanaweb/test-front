@@ -9,6 +9,7 @@ import { useCart } from '../../hooks/useCart';
 import { CartItem } from '../../interfaces/Cart';
 import Header from './components/Header';
 import Loading from '../../components/Loading';
+import formatCurrency from '../../helpers/formatCurrency';
 
 export default function Home() {
   const { allProducts, addProduct, cartItems, stockquantity } = useCart();
@@ -21,7 +22,7 @@ export default function Home() {
           <li key={item.product.sku}>
             <img src={item.product.imageObjects[0].medium} alt={item.product.name} />
             <p>{item.product.name}</p>
-            <span>{item.product.priceSpecification.price}</span>
+            <span>{formatCurrency(item.product.priceSpecification.price)}</span>
 
             <Button onClick={() => addProduct(item.product.sku)}>
               <div className="quantity">

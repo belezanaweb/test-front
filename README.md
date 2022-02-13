@@ -40,8 +40,6 @@
 
 - react-spring: `Biblioteca de animação em js`
 
-- jest: `Testes em ambiente React`
-
 ## 🛠 Ferramentas de desenvolvimento
 
 - eslint: `Ferramenta de análise de erros em códigos`
@@ -51,6 +49,8 @@
 - commitlint: `Ferramenta para verificar padrão de commits`
 
 - husky: `Ferramenta para melhorar commits`
+
+- jest: `Testes em ambiente React`
 
 ## ✨ Features implementadas
 
