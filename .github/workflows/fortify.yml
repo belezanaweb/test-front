@@ -11,22 +11,6 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v2
-      - name: Set-up Node
-        uses: actions/setup-node@v1
-        with:
-          node-version: "10.x"
-      - run: npm install
-      - run: npm run build
-      - run: npm test
-      - name: Deploy
-        uses: crazy-max/ghaction-github-pages@v1
-        with:
-          target_branch: gh-pages
-          build_dir: build
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      - name: Checkout
-        uses: actions/checkout@v2
       - name: Checkout Application & Version Action
         run: git clone git@github.com-fortify-action-api:grupoboticario/fortify-action-api.git .github/fortify-action-api
       - name: Checkout SAST Assessment Action
@@ -56,4 +40,3 @@ jobs:
           client_token: '${{ env.SCANCENTRAL }}'
           ci_token: '${{ env.CITOKEN }}'
           language_profile: other
-
