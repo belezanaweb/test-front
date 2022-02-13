@@ -7,7 +7,11 @@ import { FormHandles } from '@unform/core';
 import { useNavigate } from 'react-router';
 
 import getValidationError from '../../helpers/validations';
-import { getFromLocalStorage, setToLocalStorage } from '../../helpers/local-storage';
+import {
+  cleanLocalStorage,
+  getFromLocalStorage,
+  setToLocalStorage
+} from '../../helpers/local-storage';
 import { BELEZA_NA_WEB_CREDIT_CARD } from '../../constants/local-storage';
 import { creditCardMask, titularNameMask, dateMask, cvvMask } from '../../helpers/masks';
 
@@ -131,6 +135,10 @@ export default function CartPayment() {
       };
 
       setToLocalStorage(BELEZA_NA_WEB_CREDIT_CARD, maskData);
+
+      setTimeout(() => {
+        cleanLocalStorage();
+      }, 500);
     }
   }, []);
 
