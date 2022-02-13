@@ -4,11 +4,10 @@
   "private": true,
   "scripts": {
     "start": "export ENVIRONMENT=${ENVIRONMENT:=development} NODE_ENV=development && react-scripts start",
-    "predeploy": "npm run build",
-    "deploy": "gh-pages -d build",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "deploy": "gh-pages -d build"
   },
   "homepage": "https://dxwebster.github.io/test-front",
   "browserslist": {
