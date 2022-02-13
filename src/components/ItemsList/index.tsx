@@ -15,9 +15,10 @@ import EmptyMessage from '../../components/EmptyMessage';
 
 interface ItemsListProps {
   showControlers: boolean;
+  showPrice?: boolean;
 }
 
-export default function ItemsList({ showControlers }: ItemsListProps) {
+export default function ItemsList({ showControlers, showPrice = true }: ItemsListProps) {
   const { removeProduct, updateItemQuantity, cartItems } = useCart();
 
   function handleProductIncrement(item: CartItem) {
@@ -50,9 +51,11 @@ export default function ItemsList({ showControlers }: ItemsListProps) {
 
                 <ItemTitle>
                   {item.product.name}
-                  <span>
-                    {formatCurrency(item.product.priceSpecification.price * item.quantity)}
-                  </span>
+                  {showPrice && (
+                    <span>
+                      {formatCurrency(item.product.priceSpecification.price * item.quantity)}
+                    </span>
+                  )}
                 </ItemTitle>
 
                 {showControlers && (
