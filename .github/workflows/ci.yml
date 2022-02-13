@@ -1,0 +1,28 @@
+name: Beleza na Web Frontend Tests
+on:
+  push:
+    branches:
+      - master
+jobs:
+  build-test-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Set-up Node
+        uses: actions/setup-node@v1
+        with:
+          node-version: '10.x'
+      - run: npm install
+      - run: npm run build
+      - run: npm test
+      - name: Deploy
+        uses: crazy-max/ghaction-github-pages@v1
+        with:
+          target_branch: gh-pages
+          build_dir: build
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          ENVIRONMENT: ${{ secrets.ENVIRONMENT }}
+          REACT_APP_ENVIRONMENT: ${{ secrets.REACT_APP_ENVIRONMENT }}
+          NODE_ENV: ${{ secrets.NODE_ENV }}
