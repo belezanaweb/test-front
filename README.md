@@ -36,11 +36,15 @@
 
 - yup: `Construtor de esquemas de validações de formulários`
 
-- polished: `Ferramenta de estilização css`
+- polished: `Estilização css`
 
 - eslint: `Ferramenta de análise de erros em códigos`
 
 - prettier: `Ferramenta de formatação de códigos`
+
+- commit lint: `Ferramenta para verificar padrão de commits`
+
+- husky: `Ferramenta para melhorar commits`
 
 ## ✨ Features implementadas
 
