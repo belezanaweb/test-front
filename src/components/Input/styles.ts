@@ -13,11 +13,11 @@ const returnColorPerType = (props: any) => {
 
   switch (validationType) {
     case INPUT_ERROR:
-      return props.theme.input.error;
+      return props.theme.error;
     case INPUT_FOCUSED:
-      return props.theme.input.focus;
+      return props.theme.focus;
     default:
-      return props.theme.colors.grey;
+      return props.theme.grey;
   }
 };
 
@@ -31,7 +31,7 @@ export const Container = styled.div<ContainerProps>`
   border: 1px solid;
   border-color: ${(props) => returnColorPerType(props)};
 
-  background: ${(props) => props.theme.colors.white};
+  background: ${(props) => props.theme.white};
   border-radius: 0.3rem;
   padding: 1rem 0.5rem 1rem 2rem;
   width: 100%;
@@ -40,7 +40,7 @@ export const Container = styled.div<ContainerProps>`
 
   & + div {
     margin-top: 0.5rem;
-    color: ${(props) => props.theme.input.error};
+    color: ${(props) => props.theme.error};
   }
 
   svg {
@@ -53,11 +53,11 @@ export const Container = styled.div<ContainerProps>`
     border: 0;
     outline: none;
     font-size: 1.8rem;
-    color: ${(props) => props.theme.types.text};
+    color: ${(props) => props.theme.text};
     letter-spacing: 1.2px;
 
     &::placeholder {
-      color: ${(props) => props.theme.types.placeholder};
+      color: ${(props) => props.theme.placeholder};
       font-size: 1.6rem;
       letter-spacing: 1.2px;
     }

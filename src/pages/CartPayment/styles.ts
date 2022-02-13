@@ -7,7 +7,7 @@ export const Container = styled.section`
 
   h2 {
     text-transform: uppercase;
-    color: ${(props) => props.theme.types.title};
+    color: ${(props) => props.theme.title};
     font-size: 1.4rem;
     font-weight: bold;
     margin: 1rem 0 0.5rem;
@@ -57,7 +57,7 @@ export const FormContent = styled.div`
 
   gap: 2rem;
   padding: 1.2rem;
-  background-color: ${(props) => props.theme.colors.white};
+  background-color: ${(props) => props.theme.white};
   box-shadow: 0.1rem 0.1rem 0.5rem 0 ${(props) => props.theme.shadow};
 
   @media (min-width: 65rem) {

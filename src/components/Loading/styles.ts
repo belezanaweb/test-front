@@ -21,10 +21,10 @@ export const Container = styled.div`
     width: 64px;
     height: 64px;
     margin: 8px;
-    border: 8px solid ${(props) => props.theme.colors.primary};
+    border: 8px solid ${(props) => props.theme.primary};
     border-radius: 50%;
     animation: lds-ring 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
-    border-color: ${(props) => props.theme.colors.primary} transparent transparent transparent;
+    border-color: ${(props) => props.theme.primary} transparent transparent transparent;
   }
   .lds-ring div:nth-child(1) {
     animation-delay: -0.45s;

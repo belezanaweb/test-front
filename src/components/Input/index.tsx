@@ -13,7 +13,6 @@ interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
   defaultValue?: string;
   inputHeight?: string;
   radius?: string;
-  mask?: 'creditCard' | 'date' | 'cvc' | 'name';
 }
 
 export default function Input({
@@ -22,7 +21,6 @@ export default function Input({
   defaultValue,
   inputHeight,
   radius,
-  mask,
   ...rest
 }: InputProps) {
   const inputRef = useRef(null);
@@ -44,38 +42,25 @@ export default function Input({
     if (error) setValidationType(INPUT_ERROR);
   }, [error]);
 
-  const handleInputFocus = useCallback((e) => {
+  const handleInputFocus = useCallback(() => {
     setValidationType(INPUT_FOCUSED);
-
-    console.log('✅ ~ e', e);
   }, []);
 
   const handleInputBlur = useCallback(() => {
     setValidationType('');
   }, []);
 
-  const handleKeyUp = useCallback(
-    (e: React.FormEvent<HTMLInputElement>) => {
-      if (mask === 'creditCard') creditCardMask(e);
-      if (mask === 'name') titularNameMask(e);
-      if (mask === 'date') dateMask(e);
-      if (mask === 'cvc') cvvMask(e);
-    },
-    [mask]
-  );
-
   return (
     <>
       <Container validationType={validationType} inputHeight={inputHeight}>
         {Icon && <Icon />}
         <input
-          onFocus={(e) => handleInputFocus(e)}
+          onFocus={handleInputFocus}
           onBlur={handleInputBlur}
           id={fieldName}
           name={fieldName}
           ref={inputRef}
           defaultValue={defaultValue}
-          onKeyUp={handleKeyUp}
           {...rest}
         />
 
@@ -86,7 +71,7 @@ export default function Input({
         )}
       </Container>
 
-      {error && validationType === INPUT_ERROR && <div>Campo inválido</div>}
+      {error && validationType === INPUT_ERROR && <div>{error}</div>}
     </>
   );
 }

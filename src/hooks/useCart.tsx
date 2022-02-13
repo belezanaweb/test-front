@@ -11,6 +11,7 @@ import {
 import api from '../services/api';
 import { Cart, CartItem } from '../interfaces/Cart';
 import {
+  BELEZA_NA_WEB_ALL_ITEMS,
   BELEZA_NA_WEB_CART_ITEMS,
   BELEZA_NA_WEB_CREDIT_CARD,
   BELEZA_NA_WEB_SUM_INFO
@@ -46,7 +47,6 @@ interface SumInfo {
   shippingTotal: number;
 }
 interface CartContextData {
-  allProducts: any;
   sumInfo: SumInfo;
   setSumInfo: Dispatch<SetStateAction<SumInfo>>;
   creditCardInfo: CreditCardInfo;
@@ -65,7 +65,6 @@ export function CartProvider({ children }: CartProviderProps): JSX.Element {
   const sumInfoFromLocalStorage = getFromLocalStorage(BELEZA_NA_WEB_SUM_INFO);
   const creditCardFromStorage = getFromLocalStorage(BELEZA_NA_WEB_CREDIT_CARD);
 
-  const [allProducts, setAllProducts] = useState<any>([] as CartItem[]);
   const [cartItems, setCartItems] = useState<CartItem[]>(cartItemsFromLocalStorage || []);
   const [sumInfo, setSumInfo] = useState<SumInfo>(sumInfoFromLocalStorage || {});
   const [creditCardInfo, setCreditCardInfo] = useState<CreditCardInfo>(creditCardFromStorage || {});
@@ -78,20 +77,6 @@ export function CartProvider({ children }: CartProviderProps): JSX.Element {
   useEffect(() => {
     prevCartRef.current = cartItems;
   });
-
-  useEffect(() => {
-    async function loadProducts() {
-      const response = await api.get<Cart>('5b15c4923100004a006f3c07');
-
-      const cartWrapper = cartMapper(response.data);
-      const { items, shippingTotal } = cartWrapper;
-
-      setAllProducts(items);
-      setSumInfo({ ...sumInfo, shippingTotal });
-    }
-
-    loadProducts();
-  }, []);
 
   useEffect(() => {
     if (cartPreviousValue !== cartItems) {
@@ -125,7 +110,10 @@ export function CartProvider({ children }: CartProviderProps): JSX.Element {
 
       // armazena novo produto no carrinho
       else {
-        const newItem = allProducts?.find((item: CartItem) => item.product.sku === productSku);
+        const response = await api.get<Cart>('5b15c4923100004a006f3c07');
+        const newItem = response.data.items.find(
+          (item: CartItem) => item.product.sku === productSku
+        );
         if (newItem) updatedCartItems.push(newItem);
 
         addToast({
@@ -231,7 +219,6 @@ export function CartProvider({ children }: CartProviderProps): JSX.Element {
   return (
     <CartContext.Provider
       value={{
-        allProducts,
         sumInfo,
         setSumInfo,
         creditCardInfo,

@@ -11,7 +11,7 @@ export const ProductListContent = styled.div`
   flex-direction: column;
   gap: 2rem;
   padding: 1.2rem;
-  background-color: ${(props) => props.theme.colors.white};
+  background-color: ${(props) => props.theme.white};
   box-shadow: 0.1rem 0.1rem 0.5rem 0 ${(props) => props.theme.shadow};
 
   @media (min-width: 48rem) {
@@ -63,7 +63,7 @@ export const CartSum = styled.div`
   li {
     font-size: 1.4rem;
     line-height: 1.7rem;
-    color: ${(props) => props.theme.types.text};
+    color: ${(props) => props.theme.text};
     text-transform: uppercase;
   }
 `;
@@ -81,19 +81,19 @@ export const UpdateItemControl = styled.div`
     padding: 6px;
 
     svg {
-      color: ${(props) => props.theme.colors.primaryDark};
+      color: ${(props) => props.theme.primaryDark};
       transition: color 0.2s;
     }
 
     &:hover {
       svg {
-        color: ${(props) => props.theme.colors.primaryDark};
+        color: ${(props) => props.theme.primaryDark};
       }
     }
 
     &:disabled {
       svg {
-        color: ${(props) => props.theme.types.disabled};
+        color: ${(props) => props.theme.disabled};
         cursor: not-allowed;
       }
     }

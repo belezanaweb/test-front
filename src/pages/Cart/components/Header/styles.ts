@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 export const Container = styled.header`
   width: 100%;
-  background-color: ${(props) => props.theme.colors.white};
+  background-color: ${(props) => props.theme.white};
   box-shadow: 0.1rem 0.1rem 0.5rem 0 ${(props) => props.theme.shadow};
 
   nav {
@@ -16,12 +16,12 @@ export const Container = styled.header`
       font-weight: bold;
       line-height: 1.6rem;
       text-transform: uppercase;
-      color: ${(props) => props.theme.types.disabled};
-      background-color: ${(props) => props.theme.colors.white};
+      color: ${(props) => props.theme.disabled};
+      background-color: ${(props) => props.theme.white};
     }
 
     button.active {
-      color: ${(props) => props.theme.colors.primary};
+      color: ${(props) => props.theme.primary};
     }
   }
 `;

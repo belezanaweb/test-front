@@ -18,14 +18,14 @@ export const Container = styled.div`
   li {
     font-size: 1.4rem;
     line-height: 1.7rem;
-    color: ${(props) => props.theme.types.text};
+    color: ${(props) => props.theme.text};
     text-transform: uppercase;
 
     display: flex;
     justify-content: space-between;
 
     &.discount {
-      color: ${(props) => props.theme.colors.primary};
+      color: ${(props) => props.theme.primary};
     }
 
     &.total {

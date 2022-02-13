@@ -10,5 +10,7 @@ export default function setCartItemsQuantity(cartItems: any, productSku: any) {
     return itemsQuantityObj;
   }, {} as CartItemsQuantity);
 
-  return itemsQuantity[productSku] || 0;
+  const quantity = itemsQuantity ? itemsQuantity[productSku] : 0;
+
+  return quantity;
 }

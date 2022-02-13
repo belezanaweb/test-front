@@ -26,7 +26,7 @@ export const Content = styled.section`
 
   h2 {
     text-transform: uppercase;
-    color: ${(props) => props.theme.types.title};
+    color: ${(props) => props.theme.title};
     font-size: 1.4rem;
     font-weight: bold;
     margin: 1rem 0 0.5rem;

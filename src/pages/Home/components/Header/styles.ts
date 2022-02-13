@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 
 export const Header = styled.header`
   width: 100%;
-  background-color: ${(props) => props.theme.colors.white};
+  background-color: ${(props) => props.theme.white};
   box-shadow: 0.1rem 0.1rem 0.5rem 0 ${(props) => props.theme.shadow};
 
   display: flex;
@@ -14,7 +14,7 @@ export const Header = styled.header`
   padding: 1rem 2rem;
 
   a {
-    color: ${(props) => props.theme.types.text};
+    color: ${(props) => props.theme.text};
     transition: opacity 0.2s;
 
     h1 {
@@ -62,7 +62,7 @@ export const CartInfo = styled(Link)`
       right: -1rem;
 
       font-size: 12px;
-      color: ${(props) => props.theme.colors.white};
+      color: ${(props) => props.theme.white};
     }
   }
 `;

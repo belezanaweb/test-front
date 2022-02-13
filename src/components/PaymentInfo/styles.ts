@@ -6,7 +6,7 @@ export const Container = styled.div`
 
   h2 {
     text-transform: uppercase;
-    color: ${(props) => props.theme.types.title};
+    color: ${(props) => props.theme.title};
     font-size: 1.4rem;
     font-weight: bold;
 
@@ -47,7 +47,7 @@ export const CheckConfirm = styled.div`
     height: 4rem;
 
     border-radius: 50%;
-    border: 1px solid ${(props) => props.theme.colors.primary};
+    border: 1px solid ${(props) => props.theme.primary};
 
     display: flex;
     align-items: center;
@@ -58,7 +58,7 @@ export const CheckConfirm = styled.div`
     font-size: 1.4rem;
     line-height: 1.7rem;
     font-weight: bold;
-    color: ${(props) => props.theme.colors.primary};
+    color: ${(props) => props.theme.primary};
     text-transform: uppercase;
     margin-top: 1rem;
   }

@@ -13,8 +13,8 @@ export const ButtonStyle = styled.button<ButtonProps>`
   justify-content: center;
   align-items: center;
 
-  background-color: ${(props) => props.theme.colors.primary};
-  border-color: ${(props) => props.theme.colors.primary};
+  background-color: ${(props) => props.theme.primary};
+  border-color: ${(props) => props.theme.primary};
 
   padding: 1.8rem 0.94rem;
   border-radius: 0.3rem;
@@ -25,12 +25,12 @@ export const ButtonStyle = styled.button<ButtonProps>`
   letter-spacing: 0.05rem;
   text-transform: uppercase;
 
-  color: ${(props) => props.theme.colors.white};
-  box-shadow: 0 0.3rem 0 0 ${(props) => props.theme.colors.primaryDark};
+  color: ${(props) => props.theme.white};
+  box-shadow: 0 0.3rem 0 0 ${(props) => props.theme.primaryDark};
   cursor: pointer;
 
   :hover {
-    background-color: ${(props) => props.theme.colors.primaryDark};
+    background-color: ${(props) => props.theme.primaryDark};
   }
 
   @media (min-width: 48rem) {
