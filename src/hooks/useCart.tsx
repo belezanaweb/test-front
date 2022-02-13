@@ -23,6 +23,8 @@ import {
 import { Focused } from 'react-credit-cards';
 import { useToast } from './useToast';
 
+import cartMapper from '../mappers/cart-mapper';
+
 interface CartProviderProps {
   children: ReactNode;
 }
@@ -63,7 +65,7 @@ export function CartProvider({ children }: CartProviderProps): JSX.Element {
   const sumInfoFromLocalStorage = getFromLocalStorage(BELEZA_NA_WEB_SUM_INFO);
   const creditCardFromStorage = getFromLocalStorage(BELEZA_NA_WEB_CREDIT_CARD);
 
-  const [allProducts, setAllProducts] = useState<CartItem[]>([]);
+  const [allProducts, setAllProducts] = useState<any>([] as CartItem[]);
   const [cartItems, setCartItems] = useState<CartItem[]>(cartItemsFromLocalStorage || []);
   const [sumInfo, setSumInfo] = useState<SumInfo>(sumInfoFromLocalStorage || {});
   const [creditCardInfo, setCreditCardInfo] = useState<CreditCardInfo>(creditCardFromStorage || {});
@@ -81,9 +83,11 @@ export function CartProvider({ children }: CartProviderProps): JSX.Element {
     async function loadProducts() {
       const response = await api.get<Cart>('5b15c4923100004a006f3c07');
 
-      setAllProducts(response.data.items);
+      const cartWrapper = cartMapper(response.data);
+      const { items, shippingTotal } = cartWrapper;
 
-      setSumInfo({ ...sumInfo, shippingTotal: response.data.shippingTotal });
+      setAllProducts(items);
+      setSumInfo({ ...sumInfo, shippingTotal });
     }
 
     loadProducts();
@@ -219,8 +223,6 @@ export function CartProvider({ children }: CartProviderProps): JSX.Element {
       itemsDiscount,
       itemsTotal
     };
-
-    console.log('✅ ~ sumInfoObject', sumInfoObject);
 
     setSumInfo(sumInfoObject);
     setToLocalStorage(BELEZA_NA_WEB_SUM_INFO, sumInfoObject);

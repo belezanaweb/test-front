@@ -25,8 +25,6 @@ export default function ItemsList({ showControlers }: ItemsListProps) {
       productSku: item.product.sku,
       quantity: item.quantity + 1
     });
-
-    const qtd = item.quantity - 1;
   }
 
   function handleProductDecrement(item: CartItem) {
@@ -34,8 +32,6 @@ export default function ItemsList({ showControlers }: ItemsListProps) {
       productSku: item.product.sku,
       quantity: item.quantity - 1
     });
-
-    const qtd = item.quantity - 1;
   }
 
   function handleRemoveProduct(productSku: string) {
