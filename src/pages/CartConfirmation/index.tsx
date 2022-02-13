@@ -34,7 +34,7 @@ export default function CartConfirmation() {
       setTimeout(() => {
         cleanLocalStorage();
         navigate('/', { replace: true });
-      }, 6000);
+      }, 4000);
     } else {
       navigate('/', { replace: true });
     }
