@@ -1,7 +1,8 @@
 name: Node.js CI
 on:
   push:
-    branches: [master]
+    branches:
+      - master
 
 jobs:
   build-test-deploy:
@@ -12,8 +13,14 @@ jobs:
       - name: Set-up Node
         uses: actions/setup-node@v1
         with:
-        node-version: '14.x'
+          node-version: '10.x'
       - run: npm install
       - run: npm run build
       - run: npm test
-
+      - name: Deploy
+        uses: crazy-max/ghaction-github-pages@v1
+        with:
+          target_branch: gh-pages
+          build_dir: build
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_REPO_TOKEN }}
