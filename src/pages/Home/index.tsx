@@ -12,13 +12,15 @@ import formatCurrency from '../../helpers/formatCurrency';
 import cartMapper from '../../mappers/cart-mapper';
 import { setToLocalStorage } from '../../helpers/local-storage';
 import { BELEZA_NA_WEB_ALL_ITEMS } from '../../constants/local-storage';
+import { useLocation } from 'react-router';
 
 interface CartItemsQuantity {
   [key: string]: number;
 }
 
 export default function Home() {
-  const { cartItems, stockquantity, setSumInfo, sumInfo, addProduct } = useCart();
+  const { cartItems, stockquantity, setSumInfo, sumInfo, addProduct, isPurchaseConfirm } =
+    useCart();
   const [allProducts, setAllProducts] = useState<CartItem[]>([] as CartItem[]);
 
   useEffect(() => {
@@ -35,6 +37,12 @@ export default function Home() {
 
     loadProducts();
   }, []);
+
+  useEffect(() => {
+    if (isPurchaseConfirm) {
+      window.location.reload();
+    }
+  }, [isPurchaseConfirm]);
 
   const cartItemsQuantity = cartItems.reduce((itemsQuantity, item) => {
     const itemsQuantityObj = { ...itemsQuantity };

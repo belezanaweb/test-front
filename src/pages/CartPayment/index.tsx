@@ -34,15 +34,6 @@ export default function CartPayment() {
   const formRef = useRef<FormHandles>(null);
   const { creditCardInfo, setCreditCardInfo, cartItems } = useCart();
 
-  const inputs = {
-    number: '',
-    name: '',
-    expiry: '',
-    cvc: ''
-  };
-
-  const [visualCard, setVisualCard] = useState(inputs);
-
   const navigate = useNavigate();
 
   const [isValid, setIsValid] = useState(false);
@@ -74,6 +65,7 @@ export default function CartPayment() {
 
       await schema.validate(data, { abortEarly: false });
 
+      setIsValid(true);
       return true;
     } catch (err) {
       if (err instanceof Yup.ValidationError) {
@@ -112,21 +104,22 @@ export default function CartPayment() {
     [creditCardInfo]
   );
 
-  const handleKeyUp = useCallback(
-    (e: React.FormEvent<HTMLInputElement>) => {
-      setVisualCard({
-        ...visualCard,
-        [e.currentTarget.id]: e.currentTarget.value
+  const handleFocus = useCallback(
+    (value) => {
+      const f: Focused = value;
+
+      setCreditCardInfo({
+        ...creditCardInfo,
+        focused: f
       });
     },
-    [visualCard]
+    [creditCardInfo]
   );
 
   const handleSubmit = useCallback(async (data: any) => {
     const formIsValid = await validForm();
 
     if (formIsValid) {
-      setIsValid(true);
       setCreditCardInfo(data);
 
       const maskData = {
@@ -135,21 +128,8 @@ export default function CartPayment() {
       };
 
       setToLocalStorage(BELEZA_NA_WEB_CREDIT_CARD, maskData);
-
-      setTimeout(() => {
-        cleanLocalStorage();
-      }, 500);
     }
   }, []);
-
-  const handleFocus = (value: any) => {
-    const f: Focused = value;
-
-    setCreditCardInfo({
-      ...creditCardInfo,
-      focused: f
-    });
-  };
 
   return (
     <Container>
@@ -169,7 +149,6 @@ export default function CartPayment() {
                     defaultValue={creditCardInfo?.number}
                     onChange={handleChange}
                     onFocus={(e) => handleFocus(e.target.name)}
-                    onKeyUp={handleKeyUp}
                     radius="all"
                   />
                 </fieldset>
@@ -184,7 +163,6 @@ export default function CartPayment() {
                     defaultValue={creditCardInfo?.name}
                     onChange={handleChange}
                     onFocus={(e) => handleFocus(e.target.name)}
-                    onKeyUp={handleKeyUp}
                     radius="all"
                   />
                 </fieldset>
@@ -200,7 +178,6 @@ export default function CartPayment() {
                       defaultValue={creditCardInfo?.expiry}
                       onChange={handleChange}
                       onFocus={(e) => handleFocus(e.target.name)}
-                      onKeyUp={handleKeyUp}
                       radius="all"
                     />
                   </fieldset>
@@ -215,7 +192,6 @@ export default function CartPayment() {
                       defaultValue={creditCardInfo?.cvc}
                       onChange={handleChange}
                       onFocus={(e) => handleFocus(e.target.name)}
-                      onKeyUp={handleKeyUp}
                       radius="all"
                     />
                   </fieldset>
@@ -224,11 +200,11 @@ export default function CartPayment() {
 
               <CartContent>
                 <Cards
-                  focused={creditCardInfo?.focused}
-                  cvc={visualCard?.cvc}
-                  expiry={visualCard?.expiry}
-                  name={visualCard?.name}
-                  number={visualCard?.number}
+                  focused={creditCardInfo?.focused || ''}
+                  cvc={creditCardInfo?.cvc || ''}
+                  expiry={creditCardInfo?.expiry || ''}
+                  name={creditCardInfo?.name || ''}
+                  number={creditCardInfo?.number || ''}
                 />
               </CartContent>
             </FormContent>

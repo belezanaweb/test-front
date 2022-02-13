@@ -50,7 +50,6 @@
 
 - husky: `Ferramenta para melhorar commits`
 
-- jest: `Testes em ambiente React`
 
 ## ✨ Features implementadas
 

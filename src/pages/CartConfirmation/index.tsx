@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { useNavigate } from 'react-router';
+import { useLocation, useNavigate } from 'react-router';
 
 import SumInfo from '../../components/SumInfo';
 import ItemsList from '../../components/ItemsList';
@@ -10,17 +10,34 @@ import { Container, CheckConfirm, Content } from './styles';
 
 import Check from '../../assets/check.png';
 import { useCart } from '../../hooks/useCart';
-import { getFromLocalStorage } from '../../helpers/local-storage';
+import { cleanLocalStorage, getFromLocalStorage } from '../../helpers/local-storage';
 import { BELEZA_NA_WEB_CREDIT_CARD } from '../../constants/local-storage';
+import { useToast } from '../../hooks/useToast';
 
 export default function CartConfirmation() {
-  const { cartItems, creditCardInfo, setCreditCardInfo } = useCart();
+  const { cartItems, creditCardInfo, setIsPurchaseConfirm } = useCart();
   const navigate = useNavigate();
+  const { addToast } = useToast();
 
   useEffect(() => {
     const creditCardFromStorage = getFromLocalStorage(BELEZA_NA_WEB_CREDIT_CARD);
-    if (creditCardFromStorage) setCreditCardInfo(creditCardFromStorage);
-    else navigate('/', { replace: true });
+
+    if (creditCardFromStorage) {
+      setIsPurchaseConfirm(true);
+
+      addToast({
+        type: 'success',
+        title: 'Sucesso!',
+        description: 'Aguarde para ser redirecionado a loja'
+      });
+
+      setTimeout(() => {
+        cleanLocalStorage();
+        navigate('/', { replace: true });
+      }, 6000);
+    } else {
+      navigate('/', { replace: true });
+    }
   }, []);
 
   return (

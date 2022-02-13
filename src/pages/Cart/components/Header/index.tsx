@@ -31,7 +31,7 @@ export default function Header() {
   ];
 
   const [optionSelected, setOptionSelected] = useState<string>();
-  const { cartItems, creditCardInfo } = useCart();
+  const { cartItems, creditCardInfo, isPurchaseConfirm } = useCart();
 
   const location = useLocation();
   const navigate = useNavigate();
@@ -57,14 +57,12 @@ export default function Header() {
     const { title, url } = item;
 
     if (title === NAV_TITLE_PAYMENT && cartItems?.length === 0) return;
-    if (
-      title === NAV_TITLE_CONFIRMATION &&
-      (!creditCardInfo?.number ||
-        !creditCardInfo?.cvc ||
-        !creditCardInfo?.name ||
-        !creditCardInfo?.expiry)
-    )
-      return;
+    if (title === NAV_TITLE_CONFIRMATION) {
+      if (isPurchaseConfirm) return;
+
+      const { number, cvc, name, expiry } = creditCardInfo;
+      if (!number || !cvc || !name || !expiry) return;
+    }
 
     navigate(url, { replace: true });
     setOptionSelected(item);

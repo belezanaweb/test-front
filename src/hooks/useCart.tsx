@@ -56,6 +56,8 @@ interface CartContextData {
   removeProduct: (productSku: string) => void;
   updateItemQuantity: ({ productSku, quantity }: UpdateItemQuantity) => void;
   stockquantity: number;
+  isPurchaseConfirm: boolean;
+  setIsPurchaseConfirm: Dispatch<SetStateAction<boolean>>;
 }
 
 const CartContext = createContext<CartContextData>({} as CartContextData);
@@ -68,6 +70,7 @@ export function CartProvider({ children }: CartProviderProps): JSX.Element {
   const [cartItems, setCartItems] = useState<CartItem[]>(cartItemsFromLocalStorage || []);
   const [sumInfo, setSumInfo] = useState<SumInfo>(sumInfoFromLocalStorage || {});
   const [creditCardInfo, setCreditCardInfo] = useState<CreditCardInfo>(creditCardFromStorage || {});
+  const [isPurchaseConfirm, setIsPurchaseConfirm] = useState(false);
 
   const prevCartRef = useRef<CartItem[]>();
   const cartPreviousValue = prevCartRef.current ?? cartItems;
@@ -227,7 +230,9 @@ export function CartProvider({ children }: CartProviderProps): JSX.Element {
         addProduct,
         removeProduct,
         updateItemQuantity,
-        stockquantity
+        stockquantity,
+        isPurchaseConfirm,
+        setIsPurchaseConfirm
       }}
     >
       {children}
