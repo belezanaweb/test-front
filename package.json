@@ -8,9 +8,7 @@
     "deploy": "gh-pages -d build",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject",
-    "server": "json-server server.json -p 3333",
-    "prepare": "husky install"
+    "eject": "react-scripts eject"
   },
   "homepage": "https://dxwebster.github.io/test-front",
   "browserslist": {
