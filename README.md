@@ -56,7 +56,6 @@
 - Layout Responsivo
 - Desenvolvimento Mobile First
 - CI com Github Actions
-- Testes com jest
 - Persistência de dados em LocalStorage e contexto
 - Toasts de success, error, warning
 ### Página de Produtos
