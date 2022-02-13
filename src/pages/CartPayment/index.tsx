@@ -115,7 +115,7 @@ export default function CartPayment() {
         [e.currentTarget.id]: e.currentTarget.value
       });
     },
-    [creditCardInfo]
+    [visualCard]
   );
 
   const handleSubmit = useCallback(async (data: any) => {
