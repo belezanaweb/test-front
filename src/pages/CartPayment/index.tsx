@@ -57,7 +57,7 @@ export default function CartPayment() {
           .min(3, 'Nome deve ter pelo menos 3 letras'),
         expiry: Yup.string()
           .required('Digite a validade do cartão')
-          .min(7, 'Data deve ter pelo menos 4 dígitos'),
+          .min(7, 'Data deve ter pelo menos 6 dígitos'),
         cvc: Yup.string()
           .required('Digite o código do cartão')
           .min(3, 'CVC deve ter pelo menos 3 dígitos')

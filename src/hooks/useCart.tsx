@@ -11,7 +11,6 @@ import {
 import api from '../services/api';
 import { Cart, CartItem } from '../interfaces/Cart';
 import {
-  BELEZA_NA_WEB_ALL_ITEMS,
   BELEZA_NA_WEB_CART_ITEMS,
   BELEZA_NA_WEB_CREDIT_CARD,
   BELEZA_NA_WEB_SUM_INFO
