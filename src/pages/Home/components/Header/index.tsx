@@ -13,7 +13,7 @@ export default function Home() {
 
   useEffect(() => {
     let qtd = 0;
-    cartItems.forEach((items) => (qtd += items.quantity));
+    cartItems?.forEach((items) => (qtd += items.quantity));
     setCartQtd(qtd);
   }, [cartItems]);
 
