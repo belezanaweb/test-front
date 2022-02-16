@@ -33,6 +33,7 @@
     "@unform/web": "^2.1.6",
     "autoprefixer": "^10.0.2",
     "axios": "^0.21.1",
+    "card-validator": "^8.1.1",
     "dotenv": "^16.0.0",
     "gh-pages": "^3.2.3",
     "history": "^5.0.0",

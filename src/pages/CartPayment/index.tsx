@@ -7,11 +7,7 @@ import { FormHandles } from '@unform/core';
 import { useNavigate } from 'react-router';
 
 import getValidationError from '../../helpers/validations';
-import {
-  cleanLocalStorage,
-  getFromLocalStorage,
-  setToLocalStorage
-} from '../../helpers/local-storage';
+import { setToLocalStorage } from '../../helpers/local-storage';
 import { BELEZA_NA_WEB_CREDIT_CARD } from '../../constants/local-storage';
 import { creditCardMask, titularNameMask, dateMask, cvvMask } from '../../helpers/masks';
 
@@ -28,7 +24,7 @@ import SumInfo from '../../components/SumInfo';
 import { useCart } from '../../hooks/useCart';
 
 import { Container, FormContent, FormGroup, Content, InputsContent, CartContent } from './styles';
-import { nullableTypeAnnotation } from '@babel/types';
+import valid from 'card-validator';
 
 export default function CartPayment() {
   const formRef = useRef<FormHandles>(null);
@@ -50,14 +46,19 @@ export default function CartPayment() {
 
       const schema = Yup.object().shape({
         number: Yup.string()
-          .required('Digite o número do cartão')
-          .min(19, 'Número do cartão deve ter pelo menos 16 dígitos'),
+          .min(17, 'Número do cartão deve ter pelo menos 14 dígitos')
+          .test(
+            'test-number',
+            'Insira um número de cartão de crédito válido',
+            (value) => valid.number(value).isValid
+          )
+          .required('Digite o número do cartão'),
         name: Yup.string()
           .required('Digite o nome do titular')
           .min(3, 'Nome deve ter pelo menos 3 letras'),
         expiry: Yup.string()
           .required('Digite a validade do cartão')
-          .min(7, 'Data deve ter pelo menos 6 dígitos'),
+          .min(5, 'Data deve ter pelo menos 4 dígitos'),
         cvc: Yup.string()
           .required('Digite o código do cartão')
           .min(3, 'CVC deve ter pelo menos 3 dígitos')
@@ -146,7 +147,7 @@ export default function CartPayment() {
                     name="number"
                     type="text"
                     placeholder={CARD_NUMBER_PLACEHOLDER}
-                    defaultValue={creditCardInfo?.number}
+                    defaultValue={creditCardInfo?.number || ''}
                     onChange={handleChange}
                     onFocus={(e) => handleFocus(e.target.name)}
                     radius="all"
@@ -160,7 +161,7 @@ export default function CartPayment() {
                     name="name"
                     type="text"
                     placeholder={TITULAR_NAME_PLACEHOLDER}
-                    defaultValue={creditCardInfo?.name}
+                    defaultValue={creditCardInfo?.name || ''}
                     onChange={handleChange}
                     onFocus={(e) => handleFocus(e.target.name)}
                     radius="all"
@@ -175,7 +176,7 @@ export default function CartPayment() {
                       name="expiry"
                       type="text"
                       placeholder={DATE_PLACEHOLDER}
-                      defaultValue={creditCardInfo?.expiry}
+                      defaultValue={creditCardInfo?.expiry || ''}
                       onChange={handleChange}
                       onFocus={(e) => handleFocus(e.target.name)}
                       radius="all"
@@ -189,7 +190,7 @@ export default function CartPayment() {
                       name="cvc"
                       type="text"
                       placeholder={CVV_PLACEHOLDER}
-                      defaultValue={creditCardInfo?.cvc}
+                      defaultValue={creditCardInfo?.cvc || ''}
                       onChange={handleChange}
                       onFocus={(e) => handleFocus(e.target.name)}
                       radius="all"

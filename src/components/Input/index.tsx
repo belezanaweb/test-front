@@ -5,7 +5,6 @@ import { Container, Error } from './styles';
 import { IconBaseProps } from 'react-icons/lib';
 
 import { INPUT_ERROR, INPUT_FOCUSED, ICON_ERROR_COLOR } from '../../constants/validation';
-import { creditCardMask, titularNameMask, dateMask, cvvMask } from '../../helpers/masks';
 
 interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
   name: string;
