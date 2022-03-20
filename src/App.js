@@ -4,11 +4,13 @@ import CartProvider from './context/CartProvider'
 import Bag from './pages/Bag/Bag'
 import Payment from './pages/Payment/Payment'
 import Sucess from './pages/Sucess/Sucess'
+import GlobalStyle from './styles/Global'
 
 export default function App() {
   return (
     <CartProvider>
       <BrowserRouter>
+        <GlobalStyle />
         <Routes>
           <Route path="/" element={<Bag />} />
           <Route path="/payment" element={<Payment />} />

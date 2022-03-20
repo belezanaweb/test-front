@@ -1,6 +1,8 @@
 import styled from 'styled-components'
 
-export const StepBar = styled.header``
+export const StepBar = styled.header`
+  width: 100%;
+`
 export const StepUl = styled.ul`
   display: flex;
   align-items: center;

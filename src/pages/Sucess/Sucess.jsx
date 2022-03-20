@@ -1,5 +1,12 @@
 import React from 'react'
+import Header from '../../components/Header/Header'
 
-export default function Sucess() {
-  return <div>Sucess</div>
+const Sucess = () => {
+  return (
+    <div>
+      <Header page={2} />
+    </div>
+  )
 }
+
+export default Sucess

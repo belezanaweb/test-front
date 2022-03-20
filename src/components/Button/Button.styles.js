@@ -21,4 +21,8 @@ export const ButtonStyled = styled.button`
   @media (max-width: 991px) {
     font-size: 93%;
   }
+
+  @media (min-width: 741px) {
+    font-size: 93%;
+  }
 `
