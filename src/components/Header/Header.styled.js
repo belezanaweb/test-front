@@ -14,8 +14,10 @@ export const StepUl = styled.ul`
   box-shadow: 1px 1px 5px 0 rgba(0, 0, 29, 0.22);
   list-style-type: none;
 
-  @media (max-width: 991px) {
-    font-size: 93%;
+  @media only screen and (max-width: 412px) {
+    max-width: 412px;
+    padding-left: 0px;
+    padding-right: 0px;
   }
 `
 export const StepItem = styled.li`
@@ -30,12 +32,10 @@ export const StepItem = styled.li`
   space-between: 25px;
   color: ${({ $page }) => ($page ? `#FF7800` : `#CCC`)};
   
-  @media (max-width:991px) {
-    height: calc(8px + 3px)
-    font-size: calc(7px + 5px);
-  }
-
-  @media (max-width:1040px) {
-    font-size: calc(7px + 3px);
-  }
+  @media only screen and (max-width: 412px){
+    max-width: 110px;
+    font-size: 11px;
+    space-between: 5px;
+    padding: 0px 10px;
+}
 `
