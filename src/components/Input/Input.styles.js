@@ -1,9 +1,10 @@
 import styled from 'styled-components'
 
-export const InputStyled = styled.input`
+export const InputStyled = styled.input(
+  ({ size }) => `
   box-sizing: border-box;
   height: 45px;
-  width: 320px;
+  width: ${size}px;
   border-radius: 3px;
   background-color: #fff;
   border: 1px solid #e7e7e7;
@@ -17,8 +18,9 @@ export const InputStyled = styled.input`
     border: 1px solid #a43287;
   }
 `
+)
 
-export const LabelStyled = styled.label`
+export const LabelStyled = styled.div`
   height: 14px;
   width: 129.71px;
   color: #ccc;
