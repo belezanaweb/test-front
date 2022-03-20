@@ -8,6 +8,7 @@ export const StepUl = styled.ul`
   align-items: center;
   justify-content: space-evenly;
   height: 40px;
+  margin-top: 0px;
   border-radius: 3px;
   background-color: #fff;
   box-shadow: 1px 1px 5px 0 rgba(0, 0, 29, 0.22);
@@ -31,7 +32,7 @@ export const StepItem = styled.li`
   
   @media (max-width:991px) {
     height: calc(8px + 3px)
-    font-size: calc(7px + 3px);
+    font-size: calc(7px + 5px);
   }
 
   @media (max-width:1040px) {
