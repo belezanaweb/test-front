@@ -26,16 +26,15 @@ export const StepItem = styled.li`
   font-size: 13px;
   font-weight: 700;
   line-height: 16px;
-  padding-right: 40px;
-  padding-left: 15px
+  padding: 1px;
   text-align: center;
-  space-between: 25px;
+  space-between: 20px;
   color: ${({ $page }) => ($page ? `#FF7800` : `#CCC`)};
-  
-  @media only screen and (max-width: 412px){
+
+  @media only screen and (max-width: 412px) {
     max-width: 110px;
     font-size: 11px;
     space-between: 5px;
     padding: 0px 10px;
-}
+  }
 `

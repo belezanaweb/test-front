@@ -4,22 +4,37 @@ import CartContext from './CartContext'
 function CartProvider({ children }) {
   //Store the values ​​of the api response in the variable
   const [items, setItems] = useState([])
+  const [total, setTotal] = useState([])
+  const [subTotal, setsubTotal] = useState([])
+  const [shippingTotal, setShipping] = useState([])
+  const [discount, setDiscount] = useState([])
 
   //GET in the mocky.io API --- Params = product name, image, price, discounts and shipping price
   useEffect(() => {
-    async function fetchApi() {
-      const response = await fetch('http://www.mocky.io/v2/5b15c4923100004a006f3c07')
-      const { results } = await response.json()
-      setItems(results)
-    }
-    fetchApi()
+    fetch('http://www.mocky.io/v2/5b15c4923100004a006f3c07')
+      .then((response) => response.json())
+      .then((data) => {
+        setItems(data.items)
+        setTotal(data.total)
+        setsubTotal(data.subTotal)
+        setShipping(data.shippingTotal)
+        setDiscount(data.discount)
+      })
   }, [])
 
   return (
     <CartContext.Provider
       value={{
         items,
-        setItems
+        setItems,
+        total,
+        setTotal,
+        subTotal,
+        setsubTotal,
+        shippingTotal,
+        setShipping,
+        discount,
+        setDiscount
       }}
     >
       {children}
