@@ -4,6 +4,7 @@ import Header from '../../components/Header/Header'
 import Title from '../../components/Title/Title'
 import Button from '../../components/Button/Button'
 import CartContext from '../../context/CartContext'
+import { useNavigate } from 'react-router-dom'
 
 const Home = () => {
   const { items, subTotal, total, shippingTotal, discount } = useContext(CartContext)
@@ -11,6 +12,12 @@ const Home = () => {
   const changeParse = (int) => {
     parseFloat(int).toFixed(2)
     return int.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' })
+  }
+
+  const navigate = useNavigate()
+
+  const handleClick = () => {
+    navigate('/payment')
   }
 
   return (
@@ -55,7 +62,7 @@ const Home = () => {
             </p>
           </div>
         </S.BagValuesWrapper>
-        <Button text="SEGUIR PARA O PAGAMENTO" />
+        <Button onClick={handleClick} text="SEGUIR PARA O PAGAMENTO" />
       </S.BagDiv>
     </S.BagBackgroud>
   )
