@@ -7,6 +7,7 @@ import Input from '../../components/Input/Input'
 import CartContext from '../../context/CartContext'
 import Cards from 'react-credit-cards'
 import 'react-credit-cards/es/styles-compiled.css'
+import { useNavigate } from 'react-router-dom'
 
 const Payment = () => {
   const {
@@ -27,6 +28,12 @@ const Payment = () => {
   const changeParse = (int) => {
     parseFloat(int).toFixed(2)
     return int.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' })
+  }
+
+  const navigate = useNavigate()
+
+  const handleClick = () => {
+    navigate('/sucess')
   }
 
   return (
@@ -99,7 +106,7 @@ const Payment = () => {
             </p>
           </div>
         </S.PaymentValuesWrapper>
-        <Button text="FINALIZAR O PEDIDO" />
+        <Button onClick={handleClick} text="FINALIZAR O PEDIDO" />
       </S.PaymentDiv>
     </S.PaymentBackgroud>
   )
