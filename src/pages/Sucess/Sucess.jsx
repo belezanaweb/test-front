@@ -5,17 +5,8 @@ import CartContext from '../../context/CartContext'
 import * as S from './Sucess.styled'
 
 const Sucess = () => {
-  const {
-    items,
-    number,
-    name,
-    expiry,
-
-    subTotal,
-    total,
-    shippingTotal,
-    discount
-  } = useContext(CartContext)
+  const { items, number, name, expiry, subTotal, total, shippingTotal, discount } =
+    useContext(CartContext)
 
   const changeParse = (int) => {
     parseFloat(int).toFixed(2)

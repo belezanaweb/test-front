@@ -7,11 +7,14 @@ export const SucessImg = styled.img.attrs({
   height: 65.57px;
   width: 250.27px
   text-align: center;
-  margin-left: 55px;
   `
 
 export const SucessBackgroud = styled.div`
   overflow-y: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 
   @media only screen and (max-width: 412px) {
     max-width: 412px;
@@ -41,11 +44,10 @@ height: 90px;
 width: 340px;
 display: flex;
 font-family: "Helvetica Neue";
-flex-direction: flex-start;
 border-radius: 3px;
 background-color: #fff;
 box-shadow: 1px 1px 5px 0 rgba(0, 0, 29, 0.22);
-margin-left: 17px;
+
 
 .item-change {
   display: flex;
