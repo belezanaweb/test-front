@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 
 export const InputStyled = styled.input(
-  ({ size }) => `
+  ({ size, valid }) => `
   box-sizing: border-box;
   height: 45px;
   width: ${size}px;
@@ -16,6 +16,15 @@ export const InputStyled = styled.input(
   &:focus {
     outline: none;
     border: 1px solid #a43287;
+  }
+
+  input:required:focus {
+    border: 1px solid red;
+    outline: none;
+  }
+  textarea:required:focus {
+    border: 1px solid red;
+    outline: none;
   }
 `
 )

@@ -36,6 +36,24 @@ const Payment = () => {
     navigate('/sucess')
   }
 
+  // Validation
+  const NUMBER_LENGTH = 16
+  const NAME_LENGTH = 8
+  const CVV_LENGTH = 3
+  const EXPIRY_LENGTH = 7
+
+  let valid = true
+  if (
+    number.length >= NUMBER_LENGTH &&
+    name.length >= NAME_LENGTH &&
+    expiry.length >= EXPIRY_LENGTH &&
+    cvc.length >= CVV_LENGTH
+  ) {
+    valid = false
+  } else {
+    valid = true
+  }
+
   return (
     <S.PaymentBackgroud>
       <Header page={1} />
@@ -46,7 +64,11 @@ const Payment = () => {
           <Input
             type="tel"
             name="number"
+            id="card"
+            required
             value={number}
+            maxLength={16}
+            pattern="(?:0[1-9]|1[0-2])/[0-9]{2})"
             size={320}
             title="Número do cartão:"
             placeholder="____.____.____.____"
@@ -55,7 +77,9 @@ const Payment = () => {
           <Input
             type="text"
             name="name"
+            id="card"
             value={name}
+            maxLength={16}
             size={320}
             title="Nome do Titular:"
             placeholder="Como no cartão"
@@ -63,18 +87,21 @@ const Payment = () => {
           />
           <div className="input-wrapper">
             <Input
-              type="number"
+              type="text"
               value={expiry}
+              id="card"
+              maxLength={7}
               size={160}
               title="Validade (mês/ano):"
-              pattern="(?:0[1-9]|1[0-2])/[0-9]{2}"
               onChange={(e) => setExpiry(e.target.value)}
               placeholder="__/____"
             />
             <Input
               type="tel"
               name="cvc"
+              id="card"
               value={cvc}
+              maxLength={3}
               size={140}
               title="CVV:"
               placeholder="___"
@@ -106,7 +133,12 @@ const Payment = () => {
             </p>
           </div>
         </S.PaymentValuesWrapper>
-        <Button onClick={handleClick} text="FINALIZAR O PEDIDO" />
+        <Button
+          id="disable-btn"
+          disabled={valid}
+          onClick={handleClick}
+          text={valid ? 'PREENCHA OS DADOS' : 'FINALIZAR O PEDIDO'}
+        />
       </S.PaymentDiv>
     </S.PaymentBackgroud>
   )
