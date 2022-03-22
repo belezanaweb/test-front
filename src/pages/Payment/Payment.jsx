@@ -38,7 +38,7 @@ const Payment = () => {
 
   // Validation
   const NUMBER_LENGTH = 16
-  const NAME_LENGTH = 8
+  const NAME_LENGTH = 5
   const CVV_LENGTH = 3
   const EXPIRY_LENGTH = 7
 
