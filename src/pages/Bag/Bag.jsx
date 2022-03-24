@@ -19,7 +19,7 @@ const Home = () => {
   const handleClick = () => {
     navigate('/payment')
   }
-// test
+
   return (
     <S.BagBackgroud>
       <Header page={0} />

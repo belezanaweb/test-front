@@ -8,10 +8,7 @@ function CartProvider({ children }) {
   const [subTotal, setsubTotal] = useState([])
   const [shippingTotal, setShipping] = useState([])
   const [discount, setDiscount] = useState([])
-  const [number, setNumber] = useState('')
-  const [name, setName] = useState('')
-  const [expiry, setExpiry] = useState('')
-  const [cvc, setCvc] = useState('')
+  const [paymentData, setPaymentData] = useState({})
 
   //GET in the mocky.io API --- Params = product name, image, price, discounts and shipping price
   useEffect(() => {
@@ -39,14 +36,8 @@ function CartProvider({ children }) {
         setShipping,
         discount,
         setDiscount,
-        number,
-        setNumber,
-        name,
-        setName,
-        expiry,
-        setExpiry,
-        cvc,
-        setCvc
+        paymentData,
+        setPaymentData
       }}
     >
       {children}

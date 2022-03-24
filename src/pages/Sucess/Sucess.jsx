@@ -3,10 +3,10 @@ import Header from '../../components/Header/Header'
 import Title from '../../components/Title/Title'
 import CartContext from '../../context/CartContext'
 import * as S from './Sucess.styled'
+// import { useFormikContext } from 'formik';
 
 const Sucess = () => {
-  const { items, number, name, expiry, subTotal, total, shippingTotal, discount } =
-    useContext(CartContext)
+  const { items, subTotal, total, shippingTotal, discount, paymentData } = useContext(CartContext)
 
   const changeParse = (int) => {
     parseFloat(int).toFixed(2)
@@ -14,10 +14,9 @@ const Sucess = () => {
   }
 
   const hiddeNumber = (cardNumber) => {
-    const maskAllButLastFour = cardNumber.replace(/[0-9](?=([0-9]{4}))/g, '*')
-    return maskAllButLastFour
+    return '****.****.****.' + cardNumber.substring(12)
   }
-
+  console.log(paymentData)
   return (
     <div>
       <S.SucessBackgroud>
@@ -28,9 +27,9 @@ const Sucess = () => {
         </S.SucessDiv>
         <S.userWrapper>
           <ul className="user-wrapper">
-            <li>{hiddeNumber(number)}</li>
-            <li>{name}</li>
-            <li>{expiry}</li>
+            <li>{hiddeNumber(paymentData.number)}</li>
+            <li>{paymentData.name}</li>
+            <li>{paymentData.expiry}</li>
           </ul>
         </S.userWrapper>
         <S.SucessDiv>
