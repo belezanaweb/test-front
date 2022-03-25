@@ -1,12 +1,12 @@
 import React, { useContext } from 'react'
-import * as S from './Payment.styled'
+import { Formik, Field, Form, ErrorMessage } from 'formik'
+import { useNavigate } from 'react-router-dom'
 import Header from '../../components/Header/Header'
 import Title from '../../components/Title/Title'
-import { Formik, Field, Form, ErrorMessage } from 'formik'
+import PurchaseData from '../../components/PurchaseData/PurchaseData'
 import CartContext from '../../context/CartContext'
-// import schema from './schema';
+import * as S from './Payment.styled'
 import 'react-credit-cards/es/styles-compiled.css'
-import { useNavigate } from 'react-router-dom'
 
 const Payment = () => {
   const { setPaymentData } = useContext(CartContext)
@@ -58,10 +58,10 @@ const Payment = () => {
               <button type="submit" onClick={() => setPaymentData(values)}>
                 Enviar
               </button>
-              console.log(paymentData)
             </Form>
           )}
         />
+        <PurchaseData />
       </S.PaymentDiv>
     </S.PaymentBackgroud>
   )

@@ -3,7 +3,7 @@ import * as S from '../../pages/Payment/Payment.styled'
 import CartContext from '../../context/CartContext'
 
 export default function PurchaseData() {
-  const { subTotal, total, shippingTotal, discount } = useContext(CartContext)
+  const { subTotal, shippingTotal, discount } = useContext(CartContext)
   const changeParse = (int) => {
     parseFloat(int).toFixed(2)
     return int.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' })
@@ -31,7 +31,7 @@ export default function PurchaseData() {
               <strong>TOTAL</strong>
             </S.PaymentValuesP>
             <p>
-              <strong>{changeParse(total)}</strong>
+              <strong>{changeParse(subTotal + shippingTotal - discount)}</strong>
             </p>
           </div>
         </S.PaymentValuesWrapper>

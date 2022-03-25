@@ -5,9 +5,10 @@ import Title from '../../components/Title/Title'
 import Button from '../../components/Button/Button'
 import CartContext from '../../context/CartContext'
 import { useNavigate } from 'react-router-dom'
+import PurchaseData from '../../components/PurchaseData/PurchaseData'
 
 const Home = () => {
-  const { items, subTotal, total, shippingTotal, discount } = useContext(CartContext)
+  const { items } = useContext(CartContext)
 
   const changeParse = (int) => {
     parseFloat(int).toFixed(2)
@@ -38,30 +39,7 @@ const Home = () => {
             </div>
           ))}
         </S.BagWrapper>
-        <S.BagValuesWrapper>
-          <div className="products-display">
-            <S.BagValuesP>PRODUTOS</S.BagValuesP>
-            <p> {changeParse(subTotal)}</p>
-          </div>
-          <div className="products-display">
-            <S.BagValuesP>FRETE</S.BagValuesP>
-            <p> {changeParse(shippingTotal)}</p>
-          </div>
-          <div className="products-display">
-            <S.BagValuesP color="#FF7800">DESCONTO</S.BagValuesP>
-            <p color="#FF7800" className="change-color">
-              {'- ' + changeParse(discount)}
-            </p>
-          </div>
-          <div className="products-display">
-            <S.BagValuesP>
-              <strong>TOTAL</strong>
-            </S.BagValuesP>
-            <p>
-              <strong>{changeParse(total)}</strong>
-            </p>
-          </div>
-        </S.BagValuesWrapper>
+        <PurchaseData />
         <Button onClick={handleClick} text="SEGUIR PARA O PAGAMENTO" />
       </S.BagDiv>
     </S.BagBackgroud>

@@ -1,12 +1,12 @@
 import React, { useContext } from 'react'
 import Header from '../../components/Header/Header'
+import PurchaseData from '../../components/PurchaseData/PurchaseData'
 import Title from '../../components/Title/Title'
 import CartContext from '../../context/CartContext'
 import * as S from './Sucess.styled'
-// import { useFormikContext } from 'formik';
 
 const Sucess = () => {
-  const { items, subTotal, total, shippingTotal, discount, paymentData } = useContext(CartContext)
+  const { items, paymentData } = useContext(CartContext)
 
   const changeParse = (int) => {
     parseFloat(int).toFixed(2)
@@ -46,30 +46,7 @@ const Sucess = () => {
               </div>
             ))}
           </S.SucessWrapper>
-          <S.SucessValuesWrapper>
-            <div className="products-display">
-              <S.SucessValuesP>PRODUTOS</S.SucessValuesP>
-              <p> {changeParse(subTotal)}</p>
-            </div>
-            <div className="products-display">
-              <S.SucessValuesP>FRETE</S.SucessValuesP>
-              <p> {changeParse(shippingTotal)}</p>
-            </div>
-            <div className="products-display">
-              <S.SucessValuesP color="#FF7800">DESCONTO</S.SucessValuesP>
-              <p color="#FF7800" className="change-color">
-                {'- ' + changeParse(discount)}
-              </p>
-            </div>
-            <div className="products-display">
-              <S.SucessValuesP>
-                <strong>TOTAL</strong>
-              </S.SucessValuesP>
-              <p>
-                <strong>{changeParse(total)}</strong>
-              </p>
-            </div>
-          </S.SucessValuesWrapper>
+          <PurchaseData />
         </S.SucessDiv>
       </S.SucessBackgroud>
     </div>
