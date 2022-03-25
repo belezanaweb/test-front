@@ -52,22 +52,54 @@ const Payment = () => {
                     <div>
                       <label className="input-title">Number</label>
                       <Field className="input-display" name="number" type="text" />
-                      <ErrorMessage name="number" />
+                      <ErrorMessage name="number">
+                        {(msg) => (
+                          <div style={{ color: 'red', height: 18, marginLeft: 14, fontSize: 14 }}>
+                            {msg}
+                          </div>
+                        )}
+                      </ErrorMessage>
                     </div>
                     <div>
                       <label className="input-title">name</label>
                       <Field className="input-display" name="name" type="text" />
-                      <ErrorMessage name="name" />
+                      <ErrorMessage name="name">
+                        {(msg) => (
+                          <div style={{ color: 'red', height: 18, marginLeft: 14, fontSize: 14 }}>
+                            {msg}
+                          </div>
+                        )}
+                      </ErrorMessage>
                     </div>
                     <div>
                       <label className="input-title">Expiry</label>
                       <Field className="input-display" name="expiry" type="text" />
-                      <ErrorMessage name="expiry" />
+                      <ErrorMessage name="expiry">
+                        {(msg) => (
+                          <div style={{ color: 'red', height: 18, marginLeft: 14, fontSize: 14 }}>
+                            {msg}
+                          </div>
+                        )}
+                      </ErrorMessage>
                     </div>
                     <div>
                       <label className="input-title">CVV</label>
                       <Field className="input-display" name="cvv" type="text" />
-                      <ErrorMessage name="cvv" />
+                      <ErrorMessage name="cvv">
+                        {(msg) => (
+                          <div
+                            style={{
+                              color: 'red',
+                              height: 18,
+                              marginLeft: 14,
+                              fontSize: 14,
+                              fontFamily: 'Helvetica Neue'
+                            }}
+                          >
+                            {msg}
+                          </div>
+                        )}
+                      </ErrorMessage>
                     </div>
                   </>
                 }

@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 
 export const DisplayStyled = styled.div`
-  height: 279px;
+  height: 290px;
   margin-top: 10px;
   width: 340px;
   border-radius: 3px;
