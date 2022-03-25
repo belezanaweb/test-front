@@ -1,12 +1,17 @@
 import React, { useContext } from 'react'
 import { Formik, Field, Form, ErrorMessage } from 'formik'
-import { useNavigate } from 'react-router-dom'
-import Header from '../../components/Header/Header'
-import Title from '../../components/Title/Title'
 import PurchaseData from '../../components/PurchaseData/PurchaseData'
+import Header from '../../components/Header/Header'
+import Button from '../../components/Button/Button'
 import CartContext from '../../context/CartContext'
-import * as S from './Payment.styled'
+import Display from '../../components/Display/Display'
 import 'react-credit-cards/es/styles-compiled.css'
+import Title from '../../components/Title/Title'
+import { useNavigate } from 'react-router-dom'
+import * as S from './Payment.styled'
+import Card from 'react-credit-cards'
+import schema from './schema'
+import './Payment.css'
 
 const Payment = () => {
   const { setPaymentData } = useContext(CartContext)
@@ -14,7 +19,6 @@ const Payment = () => {
   const navigate = useNavigate()
 
   function onSubmit(values, actions) {
-    console.log('SUBMIT', values)
     navigate('/sucess')
   }
 
@@ -24,7 +28,7 @@ const Payment = () => {
       <S.PaymentDiv>
         <Title text="CARTÃO DE CREDITO" />
         <Formik
-          // validationSchema={schema}
+          validationSchema={schema}
           onSubmit={onSubmit}
           validateOnMount
           initialValues={{
@@ -33,35 +37,51 @@ const Payment = () => {
             expiry: '',
             cvv: ''
           }}
-          render={({ values, errors, touched }) => (
+          render={({ values, errors, touched, isValid }) => (
             <Form>
-              <div>
-                <label>Number</label>
-                <Field name="number" type="text" />
-                <ErrorMessage name="name" />
-              </div>
-              <div>
-                <label>name</label>
-                <Field name="name" type="text" />
-                <ErrorMessage name="name" />
-              </div>
-              <div>
-                <label>Expiry</label>
-                <Field name="expiry" type="text" />
-                <ErrorMessage name="expiry" />
-              </div>
-              <div>
-                <label>CVV</label>
-                <Field name="cvv" type="text" />
-                <ErrorMessage name="cvv" />
-              </div>
-              <button type="submit" onClick={() => setPaymentData(values)}>
-                Enviar
-              </button>
+              <Card
+                number={values.number}
+                name={values.name}
+                expiry={values.expiry}
+                cvc={values.cvv}
+                focused={values.focus}
+              />
+              <Display
+                content={
+                  <>
+                    <div>
+                      <label className="input-title">Number</label>
+                      <Field className="input-display" name="number" type="text" />
+                      <ErrorMessage name="number" />
+                    </div>
+                    <div>
+                      <label className="input-title">name</label>
+                      <Field className="input-display" name="name" type="text" />
+                      <ErrorMessage name="name" />
+                    </div>
+                    <div>
+                      <label className="input-title">Expiry</label>
+                      <Field className="input-display" name="expiry" type="text" />
+                      <ErrorMessage name="expiry" />
+                    </div>
+                    <div>
+                      <label className="input-title">CVV</label>
+                      <Field className="input-display" name="cvv" type="text" />
+                      <ErrorMessage name="cvv" />
+                    </div>
+                  </>
+                }
+              />
+              <PurchaseData />
+              <Button
+                text="FINALIZAR COMPRA"
+                type="submit"
+                disabled={!isValid}
+                onClick={() => setPaymentData(values)}
+              />
             </Form>
           )}
         />
-        <PurchaseData />
       </S.PaymentDiv>
     </S.PaymentBackgroud>
   )

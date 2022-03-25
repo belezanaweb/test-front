@@ -1,5 +1,5 @@
 import React, { useContext } from 'react'
-import * as S from '../../pages/Payment/Payment.styled'
+import * as S from './PurchaseData.styled'
 import CartContext from '../../context/CartContext'
 
 export default function PurchaseData() {

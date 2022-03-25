@@ -16,7 +16,6 @@ const Sucess = () => {
   const hiddeNumber = (cardNumber) => {
     return '****.****.****.' + cardNumber.substring(12)
   }
-  console.log(paymentData)
   return (
     <div>
       <S.SucessBackgroud>
