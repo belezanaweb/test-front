@@ -54,7 +54,15 @@ const Payment = () => {
                       <Field className="input-display" name="number" type="text" />
                       <ErrorMessage name="number">
                         {(msg) => (
-                          <div style={{ color: 'red', height: 18, marginLeft: 14, fontSize: 14 }}>
+                          <div
+                            style={{
+                              color: 'red',
+                              height: 18,
+                              marginLeft: 14,
+                              fontSize: 12,
+                              fontFamily: 'Helvetica Neue'
+                            }}
+                          >
                             {msg}
                           </div>
                         )}
@@ -65,7 +73,15 @@ const Payment = () => {
                       <Field className="input-display" name="name" type="text" />
                       <ErrorMessage name="name">
                         {(msg) => (
-                          <div style={{ color: 'red', height: 18, marginLeft: 14, fontSize: 14 }}>
+                          <div
+                            style={{
+                              color: 'red',
+                              height: 18,
+                              marginLeft: 14,
+                              fontSize: 12,
+                              fontFamily: 'Helvetica Neue'
+                            }}
+                          >
                             {msg}
                           </div>
                         )}
@@ -76,7 +92,15 @@ const Payment = () => {
                       <Field className="input-display" name="expiry" type="text" />
                       <ErrorMessage name="expiry">
                         {(msg) => (
-                          <div style={{ color: 'red', height: 18, marginLeft: 14, fontSize: 14 }}>
+                          <div
+                            style={{
+                              color: 'red',
+                              height: 18,
+                              marginLeft: 14,
+                              fontSize: 12,
+                              fontFamily: 'Helvetica Neue'
+                            }}
+                          >
                             {msg}
                           </div>
                         )}
@@ -92,7 +116,7 @@ const Payment = () => {
                               color: 'red',
                               height: 18,
                               marginLeft: 14,
-                              fontSize: 14,
+                              fontSize: 12,
                               fontFamily: 'Helvetica Neue'
                             }}
                           >
