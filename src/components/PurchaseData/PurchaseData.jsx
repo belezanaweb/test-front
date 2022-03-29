@@ -14,28 +14,31 @@ export default function PurchaseData() {
     <div>
       <S.PaymentDiv>
         <S.PaymentValuesWrapper>
-          <div className="products-display">
+          <S.ProductDisplay>
             <S.PaymentValuesP>PRODUTOS</S.PaymentValuesP>
             <p> {FormatToR$(subTotal)}</p>
-          </div>
-          <div className="products-display">
+          </S.ProductDisplay>
+
+          <S.ProductDisplay>
             <S.PaymentValuesP>FRETE</S.PaymentValuesP>
             <p> {FormatToR$(shippingTotal)}</p>
-          </div>
-          <div className="products-display">
+          </S.ProductDisplay>
+
+          <S.ProductDisplay>
             <S.PaymentValuesP color="#FF7800">DESCONTO</S.PaymentValuesP>
             <p color="#FF7800" className="change-color">
               {'- ' + FormatToR$(discount)}
             </p>
-          </div>
-          <div className="products-display">
+          </S.ProductDisplay>
+
+          <S.ProductDisplay>
             <S.PaymentValuesP>
               <strong>TOTAL</strong>
             </S.PaymentValuesP>
             <p>
               <strong>{FormatToR$(subTotal + shippingTotal - discount)}</strong>
             </p>
-          </div>
+          </S.ProductDisplay>
         </S.PaymentValuesWrapper>
       </S.PaymentDiv>
     </div>

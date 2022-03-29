@@ -24,11 +24,6 @@ export const SucessBackgroud = styled.div`
     max-width: 736px;
     margin-left: 30px;
   }
-
-  .items-image {
-    height: 65px;
-    width: 55px;
-  }
 `
 
 export const SucessDiv = styled.div`
@@ -37,13 +32,9 @@ export const SucessDiv = styled.div`
   align-items: center;
   margin-top: 15px;
   justify-content: center;
-
-  .payment {
-    width: 20px;
-  }
 `
 
-export const userWrapper = styled.div`
+export const UserWrapper = styled.div`
   overflow-y: hidden;
   height: 70px;
   width: 340px;
@@ -53,22 +44,37 @@ export const userWrapper = styled.div`
   background-color: #fff;
   box-shadow: 1px 1px 5px 0 rgba(0, 0, 29, 0.22);
 
-  .item-change {
-    display: flex;
-    flex-direction: column;
-    width: 20px;
-  }
-
-  .user-wrapper {
-    height: 68px;
-    width: 310px;
-    overflow-y: hidden;
-    margin-left: -30px;
-  }
-
   ul {
     margin-top: 10px;
   }
+`
+
+export const ItemCard = styled.div`
+  display: flex;
+  margin: 10px;
+  box-sizing: border-box;
+  height: 64px;
+  width: 316px;
+  border-radius: 3px;
+  border: 1px solid #eee;
+  overflow-y: hidden;
+`
+export const ItemImage = styled.div`
+  height: 65px;
+  width: 55px;
+`
+
+export const ItemSpecs = styled.div`
+  width: 251px;
+  color: #212122;
+  overflow-y: hidden;
+`
+
+export const StyledUl = styled.ul`
+  height: 68px;
+  width: 310px;
+  overflow-y: hidden;
+  margin-left: -30px;
 `
 
 export const SucessWrapper = styled.div`
@@ -80,23 +86,6 @@ export const SucessWrapper = styled.div`
   border-radius: 3px;
   background-color: #fff;
   box-shadow: 1px 1px 5px 0 rgba(0, 0, 29, 0.22);
-
-  .items-card {
-    display: flex;
-    margin: 10px;
-    box-sizing: border-box;
-    height: 64px;
-    width: 316px;
-    border-radius: 3px;
-    border: 1px solid #eee;
-    overflow-y: hidden;
-  }
-
-  .items-specs {
-    width: 251px;
-    color: #212122;
-    overflow-y: hidden;
-  }
 
   img {
     margin-left: 11px;
@@ -123,6 +112,7 @@ export const SucessWrapper = styled.div`
     marginn-left: 20px;
   }
 `
+//x-------------------------------------------x-------------------------------------------x
 
 // Values display
 
@@ -134,21 +124,10 @@ export const SucessValuesWrapper = styled.div`
   border: 1px solid #ccc;
   margin: 15px 0px;
 
-  .products-display {
-    display: flex;
-    width: 320px;
-    margin: 5px;
-    justify-content: space-between;
-  }
-
   p {
     margin: 0px;
     width: 80px;
     text-align: end;
-  }
-
-  .change-color {
-    color: #ff7800;
   }
 `
 

@@ -18,25 +18,25 @@ const Sucess = () => {
       <S.SucessDiv>
         <Title color={999} size={14} text="PAGAMENTO" />
       </S.SucessDiv>
-      <S.userWrapper>
-        <ul className="user-wrapper">
+      <S.UserWrapper>
+        <S.StyledUl>
           <li>{hiddeNumber(paymentData.number)}</li>
           <li>{paymentData.name}</li>
           <li>{paymentData.expiry}</li>
-        </ul>
-      </S.userWrapper>
+        </S.StyledUl>
+      </S.UserWrapper>
       <S.SucessDiv>
         <Title color={999} size={14} text="PRODUTOS" />
         <S.SucessWrapper>
           {items.map((item, index) => (
-            <div className="items-card" key={index}>
-              <div className="items-image">
+            <S.ItemCard key={index}>
+              <S.ItemImage>
                 <img src={item.product.imageObjects[0].small} alt="img" />
-              </div>
-              <div className="items-specs">
+              </S.ItemImage>
+              <S.ItemSpecs>
                 <p>{item.product.name}</p>
-              </div>
-            </div>
+              </S.ItemSpecs>
+            </S.ItemCard>
           ))}
         </S.SucessWrapper>
         <PurchaseData />

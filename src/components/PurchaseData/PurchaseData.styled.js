@@ -7,7 +7,13 @@ export const PaymentDiv = styled.div`
   justify-content: center;
 `
 
-//Prices display
+export const ProductDisplay = styled.div`
+  display: flex;
+  width: 320px;
+  margin: 5px;
+  margin-top: 10px;
+  justify-content: space-between;
+`
 
 export const PaymentValuesWrapper = styled.div`
   box-sizing: border-box;
