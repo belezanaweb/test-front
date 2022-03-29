@@ -28,15 +28,15 @@ const Home = () => {
         <Title color={999} size={14} text="PRODUTOS" />
         <S.BagWrapper>
           {items.map((item, index) => (
-            <div className="items-card" key={index}>
-              <div className="item-image">
+            <S.ItemsCard key={index}>
+              <S.ItemImage>
                 <img src={item.product.imageObjects[0].small} alt="img" />
-              </div>
-              <div className="items-specs">
+              </S.ItemImage>
+              <S.ItemSpecs>
                 <p>{item.product.name}</p>
                 <h1>{changeParse(item.product.priceSpecification.price)}</h1>
-              </div>
-            </div>
+              </S.ItemSpecs>
+            </S.ItemsCard>
           ))}
         </S.BagWrapper>
         <PurchaseData />

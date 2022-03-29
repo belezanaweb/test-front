@@ -1,9 +1,9 @@
 import React from 'react'
 import { render, screen, fireEvent } from '@testing-library/react'
-import Button from '../Button'
+import Button from './Button'
 
 describe('Test of Button', () => {
-  test('Verify rendering', () => {
+  test('Must render on page', () => {
     const testFunction = jest.fn()
     render(<Button text="test" onClick={testFunction} />)
     expect(screen.getByText('test')).toBeInTheDocument()

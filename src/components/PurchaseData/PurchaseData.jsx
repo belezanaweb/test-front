@@ -12,7 +12,7 @@ export default function PurchaseData() {
 
   return (
     <div>
-      <S.PaymentDiv>
+      <S.PaymentDiv data-testid="purchase-data">
         <S.PaymentValuesWrapper>
           <S.ProductDisplay>
             <S.PaymentValuesP>PRODUTOS</S.PaymentValuesP>

@@ -1,6 +1,7 @@
 import styled from 'styled-components'
 import image from '../../assets/images/success.png'
 
+// Sucess page tags
 export const SucessImg = styled.img.attrs({
   src: `${image}`
 })`
@@ -8,6 +9,41 @@ export const SucessImg = styled.img.attrs({
   width: 250.27px
   text-align: center;
   `
+export const SucessWrapper = styled.div`
+  height: 255px;
+  width: 341px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 3px;
+  background-color: #fff;
+  box-shadow: 1px 1px 5px 0 rgba(0, 0, 29, 0.22);
+
+  img {
+    margin-left: 11px;
+    height: 42px;
+    width: 42px;
+  }
+
+  p {
+    font-family: 'Helvetica Neue';
+    font-size: 14px;
+    letter-spacing: NaNpx;
+    line-height: 12px;
+    overflow-y: hidden;
+    margin: 10px;
+    margin-right: 10px;
+  }
+
+  h1 {
+    height: 17px;
+    width: 230px;
+    font-size: 14px;
+    text-align: right;
+    margin: 0px;
+    marginn-left: 20px;
+  }
+`
 
 export const SucessBackgroud = styled.div`
   overflow-y: hidden;
@@ -48,6 +84,8 @@ export const UserWrapper = styled.div`
     margin-top: 10px;
   }
 `
+//x-------------------------------------------x-------------------------------------------x
+// Items display tags
 
 export const ItemCard = styled.div`
   display: flex;
@@ -77,41 +115,6 @@ export const StyledUl = styled.ul`
   margin-left: -30px;
 `
 
-export const SucessWrapper = styled.div`
-  height: 255px;
-  width: 341px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  border-radius: 3px;
-  background-color: #fff;
-  box-shadow: 1px 1px 5px 0 rgba(0, 0, 29, 0.22);
-
-  img {
-    margin-left: 11px;
-    height: 42px;
-    width: 42px;
-  }
-
-  p {
-    font-family: 'Helvetica Neue';
-    font-size: 14px;
-    letter-spacing: NaNpx;
-    line-height: 12px;
-    overflow-y: hidden;
-    margin: 10px;
-    margin-right: 10px;
-  }
-
-  h1 {
-    height: 17px;
-    width: 230px;
-    font-size: 14px;
-    text-align: right;
-    margin: 0px;
-    marginn-left: 20px;
-  }
-`
 //x-------------------------------------------x-------------------------------------------x
 
 // Values display

@@ -2,7 +2,6 @@ import React, { useState, useEffect } from 'react'
 import CartContext from './CartContext'
 
 function CartProvider({ children }) {
-  //Store the values ​​of the api response in the variable
   const [items, setItems] = useState([])
   const [total, setTotal] = useState([])
   const [subTotal, setsubTotal] = useState([])

@@ -104,7 +104,7 @@ const Payment = () => {
               </S.Display>
               <PurchaseData />
               <Button
-                text="FINALIZAR COMPRA"
+                text="FINALIZAR O PEDIDO"
                 type="submit"
                 disabled={!isValid}
                 onClick={() => setPaymentData(values)}

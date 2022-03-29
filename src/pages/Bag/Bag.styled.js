@@ -12,6 +12,24 @@ export const BagBackgroud = styled.div`
   }
 `
 
+export const ItemsCard = styled.div`
+  display: flex;
+  margin: 10px;
+  box-sizing: border-box;
+  height: 90px;
+  width: 316px;
+  border-radius: 3px;
+  border: 1px solid #eee;
+  overflow-y: hidden;
+`
+
+export const ItemImage = styled.div``
+export const ItemSpecs = styled.div`
+  width: 251px;
+  color: #212122;
+  overflow-y: hidden;
+`
+
 export const BagDiv = styled.div`
   display: flex;
   flex-direction: column;
@@ -28,22 +46,6 @@ export const BagWrapper = styled.div`
   background-color: #fff;
   box-shadow: 1px 1px 5px 0 rgba(0, 0, 29, 0.22);
 
-  .items-card {
-    display: flex;
-    margin: 10px;
-    box-sizing: border-box;
-    height: 90px;
-    width: 316px;
-    border-radius: 3px;
-    border: 1px solid #eee;
-    overflow-y: hidden;
-  }
-
-  .items-specs {
-    width: 251px;
-    color: #212122;
-    overflow-y: hidden;
-  }
   img {
     height: 65px;
     width: 65px;

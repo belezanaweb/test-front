@@ -8,7 +8,7 @@ import * as S from './Sucess.styled'
 const Sucess = () => {
   const { items, paymentData } = useContext(CartContext)
 
-  const hiddeNumber = (cardNumber) => {
+  const hiddeCardNumber = (cardNumber) => {
     return '****.****.****.' + cardNumber.substring(12)
   }
   return (
@@ -20,7 +20,7 @@ const Sucess = () => {
       </S.SucessDiv>
       <S.UserWrapper>
         <S.StyledUl>
-          <li>{hiddeNumber(paymentData.number)}</li>
+          <li>{hiddeCardNumber(paymentData.number)}</li>
           <li>{paymentData.name}</li>
           <li>{paymentData.expiry}</li>
         </S.StyledUl>
