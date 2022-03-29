@@ -1,11 +1,12 @@
 import styled from 'styled-components'
 
-export const StyledTitle = styled.h1`
+export const StyledTitle = styled.h1(
+  ({ size, color }) => `
   height: 17px;
   margin-top: 1px;
   width: 319px;
-  color: #999;
-  font-size: 14px;
+  color: #${color};
+  font-size: ${size}px;
   font-weight: 700;
   letter-spacing: NaNpx;
   line-height: 17px;
@@ -21,3 +22,4 @@ export const StyledTitle = styled.h1`
     margin-left: 30px;
   }
 `
+)

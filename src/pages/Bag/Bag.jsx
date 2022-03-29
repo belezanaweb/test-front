@@ -25,7 +25,7 @@ const Home = () => {
     <S.BagBackgroud>
       <Header page={0} />
       <S.BagDiv>
-        <Title text="PRODUTOS" />
+        <Title color={999} size={14} text="PRODUTOS" />
         <S.BagWrapper>
           {items.map((item, index) => (
             <div className="items-card" key={index}>

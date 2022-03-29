@@ -24,6 +24,11 @@ export const SucessBackgroud = styled.div`
     max-width: 736px;
     margin-left: 30px;
   }
+
+  .items-image {
+    height: 65px;
+    width: 55px;
+  }
 `
 
 export const SucessDiv = styled.div`
@@ -39,36 +44,35 @@ export const SucessDiv = styled.div`
 `
 
 export const userWrapper = styled.div`
-overflow-y: hidden;
-height: 90px;
-width: 340px;
-display: flex;
-font-family: "Helvetica Neue";
-border-radius: 3px;
-background-color: #fff;
-box-shadow: 1px 1px 5px 0 rgba(0, 0, 29, 0.22);
-
-
-.item-change {
+  overflow-y: hidden;
+  height: 70px;
+  width: 340px;
   display: flex;
-  flex-direction: column;
-  width: 20px;
-}
+  font-family: 'Helvetica Neue';
+  border-radius: 3px;
+  background-color: #fff;
+  box-shadow: 1px 1px 5px 0 rgba(0, 0, 29, 0.22);
+
+  .item-change {
+    display: flex;
+    flex-direction: column;
+    width: 20px;
+  }
 
   .user-wrapper {
-    width: 200px
-    height: 200px
+    height: 68px;
+    width: 310px;
     overflow-y: hidden;
+    margin-left: -30px;
   }
 
-  list-item {
-    with: 50px;
+  ul {
+    margin-top: 10px;
   }
-
 `
 
 export const SucessWrapper = styled.div`
-  height: 325px;
+  height: 255px;
   width: 341px;
   display: flex;
   flex-direction: column;
@@ -81,7 +85,7 @@ export const SucessWrapper = styled.div`
     display: flex;
     margin: 10px;
     box-sizing: border-box;
-    height: 90px;
+    height: 64px;
     width: 316px;
     border-radius: 3px;
     border: 1px solid #eee;
@@ -95,8 +99,9 @@ export const SucessWrapper = styled.div`
   }
 
   img {
-    height: 65px;
-    width: 65px;
+    margin-left: 11px;
+    height: 42px;
+    width: 42px;
   }
 
   p {
@@ -120,18 +125,6 @@ export const SucessWrapper = styled.div`
 `
 
 // Values display
-export const SucessValueSeparator = styled.div(
-  ({ color, margin }) => `
-  display: flex;
-  flex-direction: flex-start;
-  padding-top: 10px;
-  color: ${color};
-  margin-right: ${margin}px;
-  
-`
-)
-
-export const SucessValueMover = styled.div``
 
 export const SucessValuesWrapper = styled.div`
   box-sizing: border-box;
@@ -145,7 +138,6 @@ export const SucessValuesWrapper = styled.div`
     display: flex;
     width: 320px;
     margin: 5px;
-    margin-top: 10px;
     justify-content: space-between;
   }
 

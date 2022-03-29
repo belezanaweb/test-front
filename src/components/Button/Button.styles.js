@@ -1,7 +1,5 @@
 import styled from 'styled-components'
 
-export const ButtoDiv = styled.div``
-
 export const ButtonStyled = styled.button`
   border-radius: 3px;
   letter-spacing: 0.5px;
@@ -22,10 +20,10 @@ export const ButtonStyled = styled.button`
   }
 
   @media (max-width: 991px) {
-    font-size: 93%;
+    font-size: 20px;
   }
 
   @media (min-width: 741px) {
-    font-size: 93%;
+    font-size: 20px;
   }
 `

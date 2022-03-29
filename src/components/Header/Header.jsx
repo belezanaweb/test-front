@@ -9,7 +9,7 @@ const Header = ({ page }) => {
         {pages.map((currentPage, index) => {
           return (
             <S.StepItem key={currentPage} $page={index === page}>
-              {currentPage}
+              <p>{currentPage}</p>
             </S.StepItem>
           )
         })}
