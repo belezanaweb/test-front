@@ -104,6 +104,7 @@ const Payment = () => {
               </S.Display>
               <PurchaseData />
               <Button
+                data-testid="button"
                 text="FINALIZAR O PEDIDO"
                 type="submit"
                 disabled={!isValid}
