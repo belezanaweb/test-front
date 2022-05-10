@@ -1,5 +1,6 @@
 import React from 'react'
+import Button from '../../components/Button'
 
 export function Cart() {
-  return <h1>Cart</h1>
+  return <Button>Adicionar ao carrinho</Button>
 }
