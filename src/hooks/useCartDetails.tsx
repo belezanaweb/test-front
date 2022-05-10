@@ -7,20 +7,40 @@ interface CartDetailsProviderProps {
   children: ReactNode
 }
 
-const cartDetailsInitialValues = {
+interface userPaymentInfo {
+  flag: string
+  name: string
+  expirationDate: string
+}
+
+type CartDetailsProps = {
+  userPaymentInfo: userPaymentInfo
+  handleUserPaymentInfo: (userPaymentInfo: userPaymentInfo) => void
+} & CartDetails
+
+const cartDetailsPropsInitialValues = {
   id: '',
   items: [],
   subTotal: 0,
   shippingTotal: 0,
   discount: 0,
-  total: 0
+  total: 0,
+  userPaymentInfo: {
+    flag: '',
+    name: '',
+    expirationDate: ''
+  },
+  handleUserPaymentInfo: () => {}
 }
 
-const CartDetailsContext = createContext<CartDetails>(cartDetailsInitialValues)
+const CartDetailsContext = createContext<CartDetailsProps>(
+  cartDetailsPropsInitialValues
+)
 
 export function CartDetailsProvider({ children }: CartDetailsProviderProps) {
-  const [cartDetails, setCartDetails] = useState<CartDetails>(
-    cartDetailsInitialValues
+  const [cartDetails, setCartDetails] = useState<CartDetails>({} as CartDetails)
+  const [userPaymentInfo, setUserPaymentInfo] = useState<userPaymentInfo>(
+    {} as userPaymentInfo
   )
   const [mounted, setMounted] = useState(false)
 
@@ -41,8 +61,14 @@ export function CartDetailsProvider({ children }: CartDetailsProviderProps) {
     getCartDetails()
   }
 
+  const handleUserPaymentInfo = (userPaymentInfo: userPaymentInfo) => {
+    setUserPaymentInfo(userPaymentInfo)
+  }
+
   return (
-    <CartDetailsContext.Provider value={cartDetails}>
+    <CartDetailsContext.Provider
+      value={{ ...cartDetails, userPaymentInfo, handleUserPaymentInfo }}
+    >
       {children}
     </CartDetailsContext.Provider>
   )
