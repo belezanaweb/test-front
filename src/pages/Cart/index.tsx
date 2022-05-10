@@ -1,10 +1,10 @@
 import React from 'react'
+import InfoWrapper from '../../components/InfoWrapper'
 
-import Subtotal from '../../components/Subtotal'
-import { useCartDetails } from '../../hooks/useCartDetails'
+// import { useCartDetails } from '../../hooks/useCartDetails'
 
 export function Cart() {
-  const { discount, shippingTotal, subTotal, total } = useCartDetails()
+  // const { discount, shippingTotal, subTotal, total } = useCartDetails()
   //  const product = items?.[0]?.product
   return (
     <div
@@ -15,12 +15,7 @@ export function Cart() {
         width: '100%'
       }}
     >
-      <Subtotal
-        discount={discount}
-        shippingTotal={shippingTotal}
-        subTotal={subTotal}
-        total={total}
-      />
+      <InfoWrapper title={'PRODUTOS'}>etou sendo abraçado kk</InfoWrapper>
     </div>
   )
 }

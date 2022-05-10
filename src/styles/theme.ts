@@ -30,8 +30,9 @@ export default {
     orange: '#FF7800',
     lighterGray: '#EEEEEE',
     lightGray: '#E7E7E7',
-    mediumGray: '#CCC',
-    darkGray: '#777',
+    mediumGray: '#CCCCCC',
+    gray: '#999999',
+    darkGray: '#777777',
     lightBlue: '#E0E7EE'
   },
   spacings: {

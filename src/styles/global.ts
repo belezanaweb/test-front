@@ -1,6 +1,19 @@
-import { createGlobalStyle } from 'styled-components'
+import {
+  createGlobalStyle,
+  css,
+  DefaultTheme,
+  GlobalStyleComponent
+} from 'styled-components'
 
-export default createGlobalStyle`
+type GlobalStylesProps = {
+  removeBg?: boolean
+  theme?: DefaultTheme | undefined
+}
+
+const GlobalStyles: GlobalStyleComponent<
+  GlobalStylesProps,
+  DefaultTheme
+> = createGlobalStyle`
     /* poppins-300 - latin */
   @font-face {
   font-family: 'Helvetica Neue';
@@ -37,15 +50,15 @@ export default createGlobalStyle`
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
   }
-  body {
-    font-family: 'Helvetica Neue', -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
-    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans",
-    sans-serif;
-  }
-  code {
-  font-family: source-code-pro, Helvetica Neue, Menlo, Monaco, Consolas, "Courier New",
-    monospace;
-  }
+
+  ${({ theme }) => css`
+    body {
+      font-family: ${theme.font.family};
+      font-size: ${theme.font.sizes.xsmall};
+      background-color: ${theme.colors.lighterGray};
+    }
+  `}
+
   #root {
     max-width: 1020px;
     margin: 0 auto;
@@ -54,3 +67,4 @@ export default createGlobalStyle`
     cursor: pointer;
   }
 `
+export default GlobalStyles
