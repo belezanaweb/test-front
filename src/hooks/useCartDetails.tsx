@@ -16,6 +16,7 @@ interface userPaymentInfo {
 type CartDetailsProps = {
   userPaymentInfo: userPaymentInfo
   handleUserPaymentInfo: (userPaymentInfo: userPaymentInfo) => void
+  mounted: boolean
 } & CartDetails
 
 const cartDetailsPropsInitialValues = {
@@ -30,6 +31,7 @@ const cartDetailsPropsInitialValues = {
     name: '',
     expirationDate: ''
   },
+  mounted: false,
   handleUserPaymentInfo: () => {}
 }
 
@@ -67,14 +69,19 @@ export function CartDetailsProvider({ children }: CartDetailsProviderProps) {
 
   return (
     <CartDetailsContext.Provider
-      value={{ ...cartDetails, userPaymentInfo, handleUserPaymentInfo }}
+      value={{
+        ...cartDetails,
+        userPaymentInfo,
+        handleUserPaymentInfo,
+        mounted
+      }}
     >
       {children}
     </CartDetailsContext.Provider>
   )
 }
 
-export function useCartDetails(): CartDetails {
+export function useCartDetails(): CartDetailsProps {
   const context = useContext(CartDetailsContext)
 
   return context

@@ -1,21 +1,52 @@
 import React from 'react'
-import Success from '../../components/Success'
-
-// import { useCartDetails } from '../../hooks/useCartDetails'
+import InfoWrapper from '../../components/InfoWrapper'
+import Menu from '../../components/Menu'
+import * as S from './styles'
+import { useCartDetails } from '../../hooks/useCartDetails'
+import Product from '../../components/Product'
+import Subtotal from '../../components/Subtotal'
+import Button from '../../components/Button'
+import Loader from '../../components/Loader'
 
 export function Cart() {
-  // const { discount, shippingTotal, subTotal, total } = useCartDetails()
-  //  const product = items?.[0]?.product
+  const {
+    discount,
+    shippingTotal,
+    subTotal,
+    total,
+    items,
+    mounted
+  } = useCartDetails()
   return (
-    <div
-      style={{
-        justifyContent: 'center',
-        height: '100vh',
-        alignItems: 'center',
-        width: '100%'
-      }}
-    >
-      <Success />
-    </div>
+    <>
+      {mounted || !mounted ? (
+        <Loader />
+      ) : (
+        <>
+          <S.MenuWrapper>
+            <Menu />
+          </S.MenuWrapper>
+          <S.CartWrapper>
+            <InfoWrapper title="PRODUTOS">
+              {items?.map((item) => (
+                <Product
+                  key={item.product.sku}
+                  name={item.product.name}
+                  imageUrl={item.product.imageObjects[0].small}
+                  price={item.product.priceSpecification.price}
+                />
+              ))}
+            </InfoWrapper>
+            <Subtotal
+              shippingTotal={shippingTotal}
+              subTotal={subTotal}
+              total={total}
+              discount={discount}
+            />
+            <Button>SEGUIR PARA O PAGAMENTO</Button>
+          </S.CartWrapper>
+        </>
+      )}
+    </>
   )
 }

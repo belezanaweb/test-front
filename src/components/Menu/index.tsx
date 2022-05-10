@@ -5,7 +5,7 @@ export type ProfileMenuProps = {
   activeLink?: '/' | '/payment' | '/success' | string
 }
 
-const ProfileMenu = ({ activeLink }: ProfileMenuProps) => {
+const Menu = ({ activeLink }: ProfileMenuProps) => {
   return (
     <S.Nav>
       <S.Link href="/" isActive={activeLink === '/'} title="Sacola">
@@ -31,4 +31,4 @@ const ProfileMenu = ({ activeLink }: ProfileMenuProps) => {
   )
 }
 
-export default ProfileMenu
+export default Menu
