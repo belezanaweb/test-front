@@ -1,4 +1,4 @@
-export interface CartItems {
+export interface CartDetails {
   id: string;
   items: Item[];
   subTotal: number;
