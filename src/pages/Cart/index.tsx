@@ -1,5 +1,5 @@
 import React from 'react'
-import InfoWrapper from '../../components/InfoWrapper'
+import Success from '../../components/Success'
 
 // import { useCartDetails } from '../../hooks/useCartDetails'
 
@@ -15,7 +15,7 @@ export function Cart() {
         width: '100%'
       }}
     >
-      <InfoWrapper title={'PRODUTOS'}>etou sendo abraçado kk</InfoWrapper>
+      <Success />
     </div>
   )
 }
