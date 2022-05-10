@@ -1,17 +1,23 @@
 import React from 'react'
-import TextField from '../../components/TextField'
+import MediaMatch from '../../components/MediaMatch'
+import ProfileMenu from '../../components/Menu'
 
 export function Cart() {
   return (
     <div
       style={{
-        display: 'flex',
         justifyContent: 'center',
         height: '100vh',
-        alignItems: 'center'
+        alignItems: 'center',
+        width: '100%'
       }}
     >
-      <TextField label="Número do cartão" placeholder="Placeholder" />
+      <MediaMatch greaterThan="medium">
+        <ProfileMenu activeLink="/" />
+      </MediaMatch>
+      <MediaMatch lessThan="medium">
+        <ProfileMenu activeLink="/" />
+      </MediaMatch>
     </div>
   )
 }

@@ -8,12 +8,13 @@ export default {
   },
   font: {
     family:
-      "-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif",
+      "'Helvetica Neue', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Fira Sans', 'Droid Sans', sans-serif",
     light: 300,
     normal: 400,
     bold: 600,
     sizes: {
-      small: '0.75rem',
+      xsmall: '0.75rem',
+      small: '0.813rem',
       regular: '1rem',
       xlarge: '1.25rem'
     }
