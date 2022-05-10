@@ -28,7 +28,7 @@ export const Input = styled.input`
     }
 
     &:-webkit-autofill {
-      -webkit-box-shadow: 0 0 0 ${theme.spacings.xsmall}
+      -webkit-box-shadow: 0 0 0 ${theme.spacings.large}
         ${theme.colors.lightGray} inset;
       filter: none;
     }

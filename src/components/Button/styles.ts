@@ -9,7 +9,7 @@ export const Wrapper = styled.button`
     box-shadow: 0 0.2rem ${theme.colors.secondary},
       0 0 0.25rem ${theme.colors.darkGray};
     border-radius: ${theme.border.radius};
-    padding: ${theme.spacings.xsmall};
+    padding: ${theme.spacings.large};
     text-decoration: none;
     font-size: ${theme.font.sizes.xlarge};
     font-weight: ${theme.font.bold};

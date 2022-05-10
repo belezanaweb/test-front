@@ -32,8 +32,8 @@ export default {
     lightBlue: '#E0E7EE'
   },
   spacings: {
-    xsmall: '1.125rem',
-    regular: '0.813rem'
+    regular: '0.813rem',
+    large: '1.125rem'
   },
   layers: {
     base: 10

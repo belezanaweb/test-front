@@ -1,14 +1,14 @@
 import { createGlobalStyle } from 'styled-components'
 
 export default createGlobalStyle`
-      /* poppins-300 - latin */
-    @font-face {
-    font-family: 'Helvetica Neue';
-    font-style: normal;
-    font-weight: 300;
-    font-display: swap;
-    src: local('Helvetica Neue Light'), local('Helvetica Neue Light'),
-        url('/fonts/HelveticaNeueCyr-Light.woff2') format('woff2'), /* Super Modern Browsers */
+    /* poppins-300 - latin */
+  @font-face {
+  font-family: 'Helvetica Neue';
+  font-style: normal;
+  font-weight: 300;
+  font-display: swap;
+  src: local('Helvetica Neue Light'), local('Helvetica Neue Light'),
+      url('/fonts/HelveticaNeueCyr-Light.woff2') format('woff2'), /* Super Modern Browsers */
   }
   /* poppins-regular - latin */
   @font-face {
