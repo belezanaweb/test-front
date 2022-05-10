@@ -1,14 +1,15 @@
 import React from 'react'
 import { useState, InputHTMLAttributes } from 'react'
+import InputMask from 'react-input-mask'
 import * as S from './styles'
 
 export type TextFieldProps = {
   onInputChange?: (value: string) => void
   label?: string
   initialValue?: string
+  mask?: string
   icon?: React.ReactNode
   iconPosition?: 'left' | 'right'
-  disabled?: boolean
   error?: string
 } & InputHTMLAttributes<HTMLInputElement>
 
@@ -17,9 +18,9 @@ const TextField = ({
   iconPosition = 'left',
   label,
   initialValue = '',
+  mask,
   error,
   name,
-  disabled = false,
   onInputChange,
   ...props
 }: TextFieldProps) => {
@@ -33,15 +34,17 @@ const TextField = ({
   return (
     <S.Wrapper error={!!error}>
       {!!label && <S.Label htmlFor={name}>{label}</S.Label>}
-      <S.Input
-        type="text"
-        onChange={onChange}
-        value={value}
-        disabled={disabled}
-        name={name}
-        {...(label ? { id: name } : {})}
-        {...props}
-      />
+      <InputMask mask={mask ?? ''} onChange={onChange} value={value}>
+        {(inputProps: any) => (
+          <S.Input
+            type="text"
+            name={name}
+            {...(label ? { id: name } : {})}
+            {...props}
+            {...inputProps}
+          />
+        )}
+      </InputMask>
       {!!error && <S.Error>{error}</S.Error>}
     </S.Wrapper>
   )
