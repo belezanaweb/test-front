@@ -6,8 +6,7 @@ export const Wrapper = styled.button`
     cursor: pointer;
     color: ${theme.colors.white};
     border: 0;
-    box-shadow: 0 0.2rem ${theme.colors.secondary},
-      0 0 0.25rem ${theme.colors.darkGray};
+    box-shadow: 0 3px ${theme.colors.secondary}, 0px 2px 4px rgba(0, 0, 0, 0.25);
     border-radius: ${theme.border.radius};
     padding: ${theme.spacings.large};
     text-decoration: none;
@@ -23,7 +22,7 @@ export const Wrapper = styled.button`
     }
 
     &:hover {
-      box-shadow: 0 0.2rem ${theme.colors.secondary};
+      box-shadow: 0 3px ${theme.colors.secondary};
       background: ${theme.colors.secondary};
     }
   `}
