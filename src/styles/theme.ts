@@ -13,8 +13,9 @@ export default {
     normal: 400,
     bold: 600,
     sizes: {
-      xsmall: '0.75rem',
-      small: '0.813rem',
+      xxsmall: '0.75rem',
+      xsmall: '0.813rem',
+      small: '0.875rem',
       regular: '1rem',
       xlarge: '1.25rem'
     }
@@ -26,12 +27,14 @@ export default {
     black: '#212121',
     purple: '#A43287',
     red: '#F30F30',
+    lighterGray: '#EEEEEE',
     lightGray: '#E7E7E7',
     mediumGray: '#CCC',
     darkGray: '#777',
     lightBlue: '#E0E7EE'
   },
   spacings: {
+    small: '0.625rem',
     regular: '0.813rem',
     large: '1.125rem'
   },

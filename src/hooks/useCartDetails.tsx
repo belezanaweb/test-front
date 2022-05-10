@@ -1,7 +1,7 @@
 import React from 'react'
 import { createContext, ReactNode, useContext, useState } from 'react'
 import { api } from '../services/api'
-import { CartDetails } from '../types'
+import { CartDetails } from '../types/productTypes'
 
 interface CartDetailsProviderProps {
   children: ReactNode

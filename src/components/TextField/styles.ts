@@ -36,7 +36,7 @@ export const Input = styled.input`
 `
 export const Label = styled.label`
   ${({ theme }) => css`
-    font-size: ${theme.font.sizes.small};
+    font-size: ${theme.font.sizes.xsmall};
     color: ${theme.colors.mediumGray};
     font-weight: ${theme.font.bold};
     cursor: pointer;
@@ -46,7 +46,7 @@ export const Label = styled.label`
 export const Error = styled.p`
   ${({ theme }) => css`
     color: ${theme.colors.red};
-    font-size: ${theme.font.sizes.small};
+    font-size: ${theme.font.sizes.xsmall};
   `}
 `
 

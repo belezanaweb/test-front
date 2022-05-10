@@ -1,7 +1,10 @@
 import React from 'react'
-import ProfileMenu from '../../components/Menu'
+import Product from '../../components/Product'
+import { useCartDetails } from '../../hooks/useCartDetails'
 
 export function Cart() {
+  const { items } = useCartDetails()
+  const product = items?.[0]?.product
   return (
     <div
       style={{
@@ -11,7 +14,11 @@ export function Cart() {
         width: '100%'
       }}
     >
-      <ProfileMenu activeLink="/" />
+      <Product
+        name={product?.name}
+        price={product?.priceSpecification?.price}
+        imageUrl={product?.imageObjects[0]?.small}
+      />
     </div>
   )
 }

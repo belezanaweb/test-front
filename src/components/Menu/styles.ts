@@ -41,7 +41,7 @@ export const Link = styled.a<LinkProps>`
     align-items: center;
     padding: ${theme.spacings.regular} 0;
     font-family: ${theme.font.family};
-    font-size: ${theme.font.sizes.small};
+    font-size: ${theme.font.sizes.xsmall};
     font-weight: ${theme.font.bold};
     transition: color, ${theme.transition.default};
     &:hover {
