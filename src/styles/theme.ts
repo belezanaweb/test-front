@@ -13,13 +13,9 @@ export default {
     normal: 400,
     bold: 600,
     sizes: {
-      xsmall: '1.2rem',
-      small: '1.4rem',
-      medium: '1.6rem',
-      large: '1.8rem',
-      xlarge: '1.25rem',
-      xxlarge: '2.8rem',
-      huge: '5.2rem'
+      small: '0.75rem',
+      regular: '1rem',
+      xlarge: '1.25rem'
     }
   },
   colors: {
@@ -29,26 +25,17 @@ export default {
     black: '#212121',
     purple: '#A43287',
     red: '#F30F30',
-    lightGrey: '#E7E7E7',
-    mediumGrey: '#CCC',
-    darkGrey: '#777',
+    lightGray: '#E7E7E7',
+    mediumGray: '#CCC',
+    darkGray: '#777',
     lightBlue: '#E0E7EE'
   },
   spacings: {
-    xxsmall: '0.8rem',
     xsmall: '1.125rem',
-    small: '2.4rem',
-    medium: '3.2rem',
-    large: '4.0rem',
-    xlarge: '4.8rem',
-    xxlarge: '5.6rem'
+    regular: '0.813rem'
   },
   layers: {
-    base: 10,
-    menu: 20,
-    overlay: 30,
-    modal: 40,
-    alwaysOnTop: 50
+    base: 10
   },
   transition: {
     default: '0.3s ease-in-out',

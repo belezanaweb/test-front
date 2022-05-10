@@ -1,6 +1,17 @@
 import React from 'react'
-import Button from '../../components/Button'
+import TextField from '../../components/TextField'
 
 export function Cart() {
-  return <Button>TEXT BUTTON</Button>
+  return (
+    <div
+      style={{
+        display: 'flex',
+        justifyContent: 'center',
+        height: '100vh',
+        alignItems: 'center'
+      }}
+    >
+      <TextField label="Número do cartão" placeholder="Placeholder" />
+    </div>
+  )
 }

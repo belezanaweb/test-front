@@ -7,7 +7,7 @@ export const Wrapper = styled.button`
     color: ${theme.colors.white};
     border: 0;
     box-shadow: 0 0.2rem ${theme.colors.secondary},
-      0 0 0.25rem ${theme.colors.darkGrey};
+      0 0 0.25rem ${theme.colors.darkGray};
     border-radius: ${theme.border.radius};
     padding: ${theme.spacings.xsmall};
     text-decoration: none;
