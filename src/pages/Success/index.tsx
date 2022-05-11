@@ -5,8 +5,11 @@ import * as S from './styles'
 import { useCartDetails } from '../../hooks/useCartDetails'
 import Product from '../../components/Product'
 import Subtotal from '../../components/Subtotal'
-import Button from '../../components/Button'
 import Loader from '../../components/Loader'
+import { formatCreditCardNumber, formatExpirationDate } from '../../util/format'
+import CartSuccess from '../../components/CartSuccess'
+import Empty from '../../components/Empty'
+import MediaMatch from '../../components/MediaMatch'
 
 export function Success() {
   const {
@@ -15,7 +18,8 @@ export function Success() {
     subTotal,
     total,
     items,
-    mounted
+    mounted,
+    userPaymentInfo
   } = useCartDetails()
   return (
     <>
@@ -23,36 +27,79 @@ export function Success() {
         <Loader />
       ) : (
         <>
-          <S.Wrapper>
-            <S.MenuWrapper>
-              <Menu activeLink="/success" />
-            </S.MenuWrapper>
-            <S.CartWrapper>
-              <InfoWrapper title="PRODUTOS">
-                <S.Product>
-                  {items?.map((item) => (
-                    <Product
-                      key={item.product.sku}
-                      name={item.product.name}
-                      imageUrl={item.product.imageObjects[0].small}
-                      price={item.product.priceSpecification.price}
-                    />
-                  ))}
-                </S.Product>
-              </InfoWrapper>
-              <S.PaymentInfo>
-                <Subtotal
-                  shippingTotal={shippingTotal}
-                  subTotal={subTotal}
-                  total={total}
-                  discount={discount}
-                />
-                <Button as={'a'} href={'/payment'}>
-                  SEGUIR PARA O PAGAMENTO
-                </Button>
-              </S.PaymentInfo>
-            </S.CartWrapper>
-          </S.Wrapper>
+          {Object.keys(userPaymentInfo).length === 0 ? (
+            <>
+              <S.Wrapper>
+                <S.MenuWrapper>
+                  <Menu activeLink="/success" />
+                </S.MenuWrapper>
+                <Empty />
+              </S.Wrapper>
+            </>
+          ) : (
+            <>
+              <S.Wrapper>
+                <S.MenuWrapper>
+                  <Menu activeLink="/success" />
+                </S.MenuWrapper>
+                <S.CartWrapper>
+                  <S.StatusPaymentWrapper>
+                    <S.StatusWrapper>
+                      <CartSuccess />
+                    </S.StatusWrapper>
+                    <InfoWrapper title="PAGAMENTO">
+                      <S.UserPaymentInfoWrapper>
+                        <S.Text>
+                          {userPaymentInfo.creditCard &&
+                            formatCreditCardNumber(userPaymentInfo.creditCard)}
+                        </S.Text>
+                        <S.Text>{userPaymentInfo.nameInCard}</S.Text>
+                        <S.Text>
+                          {userPaymentInfo.expirationDate &&
+                            formatExpirationDate(
+                              userPaymentInfo.expirationDate
+                            )}
+                        </S.Text>
+                      </S.UserPaymentInfoWrapper>
+                    </InfoWrapper>
+                    <MediaMatch greaterThan="medium">
+                      <S.PaymentInfo>
+                        <Subtotal
+                          shippingTotal={shippingTotal}
+                          subTotal={subTotal}
+                          total={total}
+                          discount={discount}
+                        />
+                      </S.PaymentInfo>
+                    </MediaMatch>
+                  </S.StatusPaymentWrapper>
+                  <S.ProductPaymentInfoWrapper>
+                    <InfoWrapper title="PRODUTOS">
+                      <S.Product>
+                        {items?.map((item) => (
+                          <Product
+                            key={item.product.sku}
+                            name={item.product.name}
+                            imageUrl={item.product.imageObjects[0].small}
+                          />
+                        ))}
+                      </S.Product>
+                    </InfoWrapper>
+                    <MediaMatch lessThan="medium">
+                      <S.PaymentInfo>
+                        <Subtotal
+                          shippingTotal={shippingTotal}
+                          subTotal={subTotal}
+                          total={total}
+                          discount={discount}
+                        />
+                      </S.PaymentInfo>
+                    </MediaMatch>
+                  </S.ProductPaymentInfoWrapper>
+                </S.CartWrapper>
+              </S.Wrapper>
+            </>
+          )}
         </>
       )}
     </>

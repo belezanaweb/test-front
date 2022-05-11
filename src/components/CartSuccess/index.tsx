@@ -2,7 +2,7 @@ import React from 'react'
 import { CheckIcon } from '../Icons/CheckIcon'
 import * as S from './styles'
 
-const Success = () => {
+const CartSuccess = () => {
   return (
     <>
       <S.Wrapper>
@@ -15,4 +15,4 @@ const Success = () => {
   )
 }
 
-export default Success
+export default CartSuccess

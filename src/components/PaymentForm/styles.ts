@@ -5,13 +5,19 @@ export const Wrapper = styled.main`
   ${({ theme }) => css``}
 `
 
-export const InputGroup = styled.div`
-  display: flex;
+type InputGroupProps = {
+  isSideToSide: boolean
+}
+
+export const InputGroup = styled.div<InputGroupProps>`
+  ${({ isSideToSide }) => css`
+  display: ${isSideToSide ? 'flex;' : 'block;'}
   grid-gap: 1rem;
   ${media.greaterThan('medium')`
     display: flex;
     flex-direction: column;
     grid-gap: 1.3rem;
+  `}
   `}
 `
 
@@ -44,6 +50,9 @@ export const FormDetailsWrapper = styled.div`
   display: flex;
   flex-direction: column;
   grid-gap: 1.3rem;
+  ${media.greaterThan('medium')`
+    flex-direction: row;
+  `}
 `
 
 export const FormWrapper = styled.div`
@@ -51,12 +60,11 @@ export const FormWrapper = styled.div`
     display: flex;
     flex-direction: column;
     grid-gap: ${theme.spacings.xlarge};
-    ${media.greaterThan('medium')`
-      padding: 1.5rem;
-      display: grid;
-      grid-template-columns: 290px 200px;
-      align-items: center;
-      flex-direction: row;
   `}
+`
+
+export const BoxPaymentWrapper = styled.div`
+  ${({ theme }) => css`
+    /* max-width: 25rem; */
   `}
 `

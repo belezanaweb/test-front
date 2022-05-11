@@ -55,94 +55,97 @@ const PaymentForm = ({
 
   return (
     <S.CartWrapper onSubmit={handleSubmit}>
-      <InfoWrapper title="CARTÃO DE CRÉDITO">
-        <S.FormWrapper>
-          <S.CardWrapper>
-            <Cards
-              cvc={values.cvv}
-              expiry={values.expirationDate}
-              focused={focused}
-              name={values.nameInCard}
-              number={values.creditCard}
-            />
-          </S.CardWrapper>
-          <S.FormDetailsWrapper>
-            <TextField
-              label={'Número do cartão:'}
-              name={'creditCard'}
-              type={'creditCard'}
-              error={fieldError?.creditCard}
-              onInputChange={(v) =>
-                handleInput(
-                  'creditCard',
-                  v
-                    .split('')
-                    .filter((char) => /^[0-9]*$/.test(char))
-                    .join('')
-                )
-              }
-              handleOnFocus={() => setFocused('number')}
-              handleOnBlur={() => setFocused(undefined)}
-              placeholder={'____.____.____.____'}
-              mask={'9999.9999.9999.9999'}
-            />
-
-            <TextField
-              label={'Nome do Titular:'}
-              name={'nameInCard'}
-              type={'nameInCard'}
-              error={fieldError?.nameInCard}
-              onInputChange={(v) => handleInput('nameInCard', v)}
-              handleOnFocus={() => setFocused('name')}
-              handleOnBlur={() => setFocused(undefined)}
-              placeholder={'Como no cartão'}
-              noMask={true}
-            />
-
-            <S.InputGroup>
-              <TextField
-                name={'expirationDate'}
-                type={'expirationDate'}
-                error={fieldError?.expirationDate}
-                onInputChange={(v) =>
-                  handleInput(
-                    'expirationDate',
-                    v
-                      .split('')
-                      .filter((char) => /^[0-9]*$/.test(char))
-                      .join('')
-                  )
-                }
-                label={'Validade (mês/ano):'}
-                handleOnFocus={() => setFocused('expiry')}
-                handleOnBlur={() => setFocused(undefined)}
-                placeholder={'__/__'}
-                mask={'99/99'}
+      <S.BoxPaymentWrapper>
+        <InfoWrapper title="CARTÃO DE CRÉDITO">
+          <S.FormWrapper>
+            <S.CardWrapper>
+              <Cards
+                cvc={values.cvv}
+                expiry={values.expirationDate}
+                focused={focused}
+                name={values.nameInCard}
+                number={values.creditCard}
               />
+            </S.CardWrapper>
+            <S.FormDetailsWrapper>
+              <S.InputGroup isSideToSide={false}>
+                <TextField
+                  label={'Número do cartão:'}
+                  name={'creditCard'}
+                  type={'creditCard'}
+                  error={fieldError?.creditCard}
+                  onInputChange={(v) =>
+                    handleInput(
+                      'creditCard',
+                      v
+                        .split('')
+                        .filter((char) => /^[0-9]*$/.test(char))
+                        .join('')
+                    )
+                  }
+                  handleOnFocus={() => setFocused('number')}
+                  handleOnBlur={() => setFocused(undefined)}
+                  placeholder={'____.____.____.____'}
+                  mask={'9999.9999.9999.9999'}
+                />
 
-              <TextField
-                name={'cvv'}
-                type={'cvv'}
-                error={fieldError?.cvv}
-                onInputChange={(v) =>
-                  handleInput(
-                    'cvv',
-                    v
-                      .split('')
-                      .filter((char) => /^[0-9]*$/.test(char))
-                      .join('')
-                  )
-                }
-                handleOnFocus={() => setFocused('cvc')}
-                handleOnBlur={() => setFocused(undefined)}
-                label={'CVV:'}
-                placeholder={'___'}
-                mask={'999'}
-              />
-            </S.InputGroup>
-          </S.FormDetailsWrapper>
-        </S.FormWrapper>
-      </InfoWrapper>
+                <TextField
+                  label={'Nome do Titular:'}
+                  name={'nameInCard'}
+                  type={'nameInCard'}
+                  error={fieldError?.nameInCard}
+                  onInputChange={(v) => handleInput('nameInCard', v)}
+                  handleOnFocus={() => setFocused('name')}
+                  handleOnBlur={() => setFocused(undefined)}
+                  placeholder={'Como no cartão'}
+                  noMask={true}
+                />
+              </S.InputGroup>
+              <S.InputGroup isSideToSide={true}>
+                <TextField
+                  name={'expirationDate'}
+                  type={'expirationDate'}
+                  error={fieldError?.expirationDate}
+                  onInputChange={(v) =>
+                    handleInput(
+                      'expirationDate',
+                      v
+                        .split('')
+                        .filter((char) => /^[0-9]*$/.test(char))
+                        .join('')
+                    )
+                  }
+                  label={'Validade (mês/ano):'}
+                  handleOnFocus={() => setFocused('expiry')}
+                  handleOnBlur={() => setFocused(undefined)}
+                  placeholder={'__/__'}
+                  mask={'99/99'}
+                />
+
+                <TextField
+                  name={'cvv'}
+                  type={'cvv'}
+                  error={fieldError?.cvv}
+                  onInputChange={(v) =>
+                    handleInput(
+                      'cvv',
+                      v
+                        .split('')
+                        .filter((char) => /^[0-9]*$/.test(char))
+                        .join('')
+                    )
+                  }
+                  handleOnFocus={() => setFocused('cvc')}
+                  handleOnBlur={() => setFocused(undefined)}
+                  label={'CVV:'}
+                  placeholder={'___'}
+                  mask={'999'}
+                />
+              </S.InputGroup>
+            </S.FormDetailsWrapper>
+          </S.FormWrapper>
+        </InfoWrapper>
+      </S.BoxPaymentWrapper>
       <S.PaymentInfo>
         <Subtotal
           shippingTotal={shippingTotal}

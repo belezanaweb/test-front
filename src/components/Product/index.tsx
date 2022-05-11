@@ -5,7 +5,7 @@ import * as S from './styles'
 interface ProductProps {
   imageUrl: string
   name: string
-  price: number
+  price?: number
 }
 
 const Product = ({ imageUrl, name, price }: ProductProps) => {
@@ -14,7 +14,7 @@ const Product = ({ imageUrl, name, price }: ProductProps) => {
       <S.Image src={imageUrl} />
       <S.Content>
         <S.Text>{name}</S.Text>
-        <S.Price>{price && formatPrice(price)}</S.Price>
+        {price && <S.Price>{formatPrice(price)}</S.Price>}
       </S.Content>
     </S.Wrapper>
   )

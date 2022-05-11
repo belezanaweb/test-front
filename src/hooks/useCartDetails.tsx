@@ -45,6 +45,9 @@ export function CartDetailsProvider({ children }: CartDetailsProviderProps) {
   const [userPaymentInfo, setUserPaymentInfo] = useState<Payment>({} as Payment)
   const [mounted, setMounted] = useState(false)
 
+  console.log('olha o userPaymentInfo: ', userPaymentInfo)
+  console.log('olha a condição:', Object.keys(userPaymentInfo).length === 0)
+
   const getCartDetails = async () => {
     try {
       api

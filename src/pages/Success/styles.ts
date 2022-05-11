@@ -46,3 +46,33 @@ export const Product = styled.div`
   flex-direction: column;
   grid-gap: 1rem;
 `
+
+export const Text = styled.p`
+  ${({ theme }) => css`
+    font-size: ${theme.font.sizes.small};
+  `}
+`
+
+export const UserPaymentInfoWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+`
+
+export const StatusWrapper = styled.div``
+
+export const StatusPaymentWrapper = styled.div`
+  ${media.greaterThan('medium')`
+    display: flex;
+    flex-direction: column;
+    margin-right: 1rem;
+    margin-left: 1rem;
+    max-width: 20rem;
+  `}
+`
+export const ProductPaymentInfoWrapper = styled.div`
+  ${media.greaterThan('medium')`
+    display: flex;
+    flex-direction: column;
+    max-width: 20rem;
+  `}
+`
