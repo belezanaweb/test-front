@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import { Payment } from '../../types/productTypes'
 import { FieldErrors, PaymentValidate } from '../../util/validations'
 import Button from '../Button'
 import InfoWrapper from '../InfoWrapper'
@@ -6,15 +7,19 @@ import Subtotal, { SubtotalProps } from '../Subtotal'
 import TextField from '../TextField'
 import * as S from './styles'
 
+type PaymentFormProps = {
+  onSubmit: (value: Payment) => void
+} & SubtotalProps
+
 const PaymentForm = ({
   shippingTotal,
   subTotal,
   total,
-  discount
-}: SubtotalProps) => {
-  const [formError, setFormError] = useState('')
+  discount,
+  onSubmit
+}: PaymentFormProps) => {
   const [fieldError, setFieldError] = useState<FieldErrors>({})
-  const [values, setValues] = useState({
+  const [values, setValues] = useState<Payment>({
     creditCard: '',
     nameInCard: '',
     expirationDate: '',
@@ -28,14 +33,15 @@ const PaymentForm = ({
   const handleSubmit = async (event: React.FormEvent) => {
     event.preventDefault()
 
-    console.log('olha os values: ', values)
+    console.log('olha aqui os valores: ', values)
+
     const errors = PaymentValidate(values)
 
     if (Object.keys(errors).length) {
       setFieldError(errors)
       return
     }
-
+    onSubmit(values)
     setFieldError({})
   }
 
@@ -47,7 +53,15 @@ const PaymentForm = ({
           name={'creditCard'}
           type={'creditCard'}
           error={fieldError?.creditCard}
-          onInputChange={(v) => handleInput('creditCard', v)}
+          onInputChange={(v) =>
+            handleInput(
+              'creditCard',
+              v
+                .split('')
+                .filter((char) => /^[0-9]*$/.test(char))
+                .join('')
+            )
+          }
           placeholder={'____.____.____.____'}
           mask={'9999.9999.9999.9999'}
         />
@@ -67,7 +81,15 @@ const PaymentForm = ({
             name={'expirationDate'}
             type={'expirationDate'}
             error={fieldError?.expirationDate}
-            onInputChange={(v) => handleInput('expirationDate', v)}
+            onInputChange={(v) =>
+              handleInput(
+                'expirationDate',
+                v
+                  .split('')
+                  .filter((char) => /^[0-9]*$/.test(char))
+                  .join('')
+              )
+            }
             label={'Validade (mês/ano):'}
             placeholder={'__/____'}
             mask={'99/9999'}
@@ -77,7 +99,15 @@ const PaymentForm = ({
             name={'cvv'}
             type={'cvv'}
             error={fieldError?.cvv}
-            onInputChange={(v) => handleInput('cvv', v)}
+            onInputChange={(v) =>
+              handleInput(
+                'cvv',
+                v
+                  .split('')
+                  .filter((char) => /^[0-9]*$/.test(char))
+                  .join('')
+              )
+            }
             label={'CVV:'}
             placeholder={'___'}
             mask={'999'}

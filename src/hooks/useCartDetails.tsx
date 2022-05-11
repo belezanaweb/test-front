@@ -1,21 +1,21 @@
 import React from 'react'
 import { createContext, ReactNode, useContext, useState } from 'react'
 import { api } from '../services/api'
-import { CartDetails } from '../types/productTypes'
+import { CartDetails, Payment } from '../types/productTypes'
 
 interface CartDetailsProviderProps {
   children: ReactNode
 }
 
-interface userPaymentInfo {
-  flag: string
-  name: string
-  expirationDate: string
-}
+// interface userPaymentInfo {
+//   flag: string
+//   name: string
+//   expirationDate: string
+// }
 
 type CartDetailsProps = {
-  userPaymentInfo: userPaymentInfo
-  handleUserPaymentInfo: (userPaymentInfo: userPaymentInfo) => void
+  userPaymentInfo: Payment
+  handleUserPaymentInfo: (userPaymentInfo: Payment) => void
   mounted: boolean
 } & CartDetails
 
@@ -27,9 +27,10 @@ const cartDetailsPropsInitialValues = {
   discount: 0,
   total: 0,
   userPaymentInfo: {
-    flag: '',
-    name: '',
-    expirationDate: ''
+    creditCard: '',
+    nameInCard: '',
+    expirationDate: '',
+    cvv: ''
   },
   mounted: false,
   handleUserPaymentInfo: () => {}
@@ -41,9 +42,7 @@ const CartDetailsContext = createContext<CartDetailsProps>(
 
 export function CartDetailsProvider({ children }: CartDetailsProviderProps) {
   const [cartDetails, setCartDetails] = useState<CartDetails>({} as CartDetails)
-  const [userPaymentInfo, setUserPaymentInfo] = useState<userPaymentInfo>(
-    {} as userPaymentInfo
-  )
+  const [userPaymentInfo, setUserPaymentInfo] = useState<Payment>({} as Payment)
   const [mounted, setMounted] = useState(false)
 
   const getCartDetails = async () => {
@@ -63,7 +62,7 @@ export function CartDetailsProvider({ children }: CartDetailsProviderProps) {
     getCartDetails()
   }
 
-  const handleUserPaymentInfo = (userPaymentInfo: userPaymentInfo) => {
+  const handleUserPaymentInfo = (userPaymentInfo: Payment) => {
     setUserPaymentInfo(userPaymentInfo)
   }
 
