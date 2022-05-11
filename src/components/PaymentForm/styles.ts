@@ -39,8 +39,8 @@ export const PaymentInfo = styled.section`
     flex-direction: column;
     grid-gap: ${theme.spacings.xlarge};
     ${media.greaterThan('medium')`
-    margin-top: 2.125rem;
-  `}
+      margin-top: 2.125rem;
+    `}
   `}
 `
 

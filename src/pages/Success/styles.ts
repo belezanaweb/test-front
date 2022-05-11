@@ -18,6 +18,21 @@ export const MenuWrapper = styled.section`
   `}
 `
 
+export const EmptyWrapper = styled.section`
+  ${({ theme }) => css`
+    ${media.greaterThan('medium')`
+    width: 70%;
+    height: 50%;
+    background-color: ${theme.colors.white};
+    box-shadow: 1px 1px 5px rgba(0, 0, 29, 0.22);
+    border-radius: ${theme.border.radius};
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  `}
+  `}
+`
+
 export const CartWrapper = styled.section`
   ${({ theme }) => css`
     padding: ${theme.spacings.small};
@@ -35,9 +50,6 @@ export const PaymentInfo = styled.section`
     display: flex;
     flex-direction: column;
     grid-gap: ${theme.spacings.xlarge};
-    ${media.greaterThan('medium')`
-    margin-top: 2.125rem;
-  `}
   `}
 `
 
@@ -58,7 +70,11 @@ export const UserPaymentInfoWrapper = styled.div`
   flex-direction: column;
 `
 
-export const StatusWrapper = styled.div``
+export const StatusWrapper = styled.div`
+  ${media.lessThan('medium')`
+      margin-bottom: 1rem;
+  `}
+`
 
 export const StatusPaymentWrapper = styled.div`
   ${media.greaterThan('medium')`
@@ -67,6 +83,7 @@ export const StatusPaymentWrapper = styled.div`
     margin-right: 1rem;
     margin-left: 1rem;
     max-width: 20rem;
+    grid-gap: 1rem;
   `}
 `
 export const ProductPaymentInfoWrapper = styled.div`

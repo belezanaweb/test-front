@@ -33,7 +33,9 @@ export function Success() {
                 <S.MenuWrapper>
                   <Menu activeLink="/success" />
                 </S.MenuWrapper>
-                <Empty />
+                <S.EmptyWrapper>
+                  <Empty />
+                </S.EmptyWrapper>
               </S.Wrapper>
             </>
           ) : (

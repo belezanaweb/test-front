@@ -1,4 +1,5 @@
 import styled, { css } from 'styled-components'
+import media from 'styled-media-query'
 
 export const Wrapper = styled.div`
   display: flex;
@@ -6,7 +7,9 @@ export const Wrapper = styled.div`
   align-items: center;
   justify-content: center;
   grid-gap: 0.5rem;
-  height: 100vh;
+  ${media.lessThan('medium')`
+    height: 100vh;
+  `}
 `
 
 export const Text = styled.p`
