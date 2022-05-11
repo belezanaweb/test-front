@@ -1,14 +1,11 @@
 import Joi from 'joi'
 import { Payment } from '../../types/productTypes'
-
-const creditCard_schema = Joi.string().min(16).required().messages({
-  'string.empty': `O cartão não pode estar vazio`,
-  'string.min': `O cartão precisa ter no mínimo 16 dígitos`,
-  'any.required': `O campo de cartão de crédito é obrigatório`
-})
-const nameInCard_schema = Joi.string().min(3).required()
-const expirationDate_schema = Joi.string().min(4).required()
-const cvv_schema = Joi.string().min(3).required()
+import {
+  creditCard_schema,
+  cvv_schema,
+  expirationDate_schema,
+  nameInCard_schema
+} from './errors'
 
 const fieldsValidations = {
   creditCard: creditCard_schema,
@@ -41,7 +38,6 @@ export function PaymentValidate(values: Payment) {
 }
 
 function getFieldErrors(objError: Joi.ValidationResult, field: keyof Payment) {
-  console.log('olha o que ta vindo: ', objError)
   const errors: FieldErrors = {}
 
   if (objError.error) {

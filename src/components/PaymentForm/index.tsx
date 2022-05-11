@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { Payment } from '../../types/productTypes'
 import {
   FieldErrors,
@@ -37,6 +37,12 @@ const PaymentForm = ({
     cvv: ''
   })
 
+  useEffect(() => {
+    console.log(fieldError)
+    console.log('condição 1', fieldError !== {})
+    console.log('condição 2', Object.keys(fieldError).length === 0)
+  }, [fieldError])
+
   const handleInput = (field: string, value: string) => {
     setValues((s) => ({ ...s, [field]: value }))
   }
@@ -45,7 +51,7 @@ const PaymentForm = ({
     let objError = fieldError
     const errors = FieldValidate(value, field)
     if (Object.keys(errors).length) {
-      setFieldError(errors)
+      setFieldError({ ...fieldError, ...errors })
     } else {
       delete objError[field]
       setFieldError(objError)
@@ -54,8 +60,6 @@ const PaymentForm = ({
 
   const handleSubmit = async (event: React.FormEvent) => {
     event.preventDefault()
-
-    // console.log('olha aqui os valores: ', values)
 
     const errors = PaymentValidate(values)
 
@@ -116,6 +120,7 @@ const PaymentForm = ({
                   handleOnFocus={() => setFocused('name')}
                   handleOnBlur={() => {
                     setFocused(undefined)
+                    handleOnBlur(values.nameInCard, 'nameInCard')
                   }}
                   placeholder={'Como no cartão'}
                   noMask={true}
@@ -139,6 +144,7 @@ const PaymentForm = ({
                   handleOnFocus={() => setFocused('expiry')}
                   handleOnBlur={() => {
                     setFocused(undefined)
+                    handleOnBlur(values.expirationDate, 'expirationDate')
                   }}
                   placeholder={'__/__'}
                   mask={'99/99'}
@@ -160,6 +166,7 @@ const PaymentForm = ({
                   handleOnFocus={() => setFocused('cvc')}
                   handleOnBlur={() => {
                     setFocused(undefined)
+                    handleOnBlur(values.cvv, 'cvv')
                   }}
                   label={'CVV:'}
                   placeholder={'___'}
@@ -182,7 +189,8 @@ const PaymentForm = ({
             !values.creditCard ||
             !values.nameInCard ||
             !values.expirationDate ||
-            !values.cvv
+            !values.cvv ||
+            Object.keys(fieldError).length !== 0
           }
           type={'submit'}
         >
