@@ -47,7 +47,9 @@ export function Cart() {
                   total={total}
                   discount={discount}
                 />
-                <Button>SEGUIR PARA O PAGAMENTO</Button>
+                <Button as={'a'} href={'/payment'}>
+                  SEGUIR PARA O PAGAMENTO
+                </Button>
               </S.PaymentInfo>
             </S.CartWrapper>
           </S.Wrapper>

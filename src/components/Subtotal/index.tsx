@@ -2,7 +2,7 @@ import React from 'react'
 import { formatPrice } from '../../util/format'
 import * as S from './styles'
 
-interface SubtotalProps {
+export interface SubtotalProps {
   subTotal: number
   shippingTotal: number
   discount?: number

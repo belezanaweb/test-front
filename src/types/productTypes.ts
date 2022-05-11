@@ -35,3 +35,10 @@ export interface Image {
   extraLarge: string
   valid: boolean
 }
+
+export interface Payment {
+  creditCard: string
+  nameInCard: string
+  expirationDate: string
+  cvv: string
+}

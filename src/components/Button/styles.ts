@@ -10,6 +10,7 @@ export const Wrapper = styled.button`
     border-radius: ${theme.border.radius};
     padding: ${theme.spacings.large};
     text-decoration: none;
+    text-align: center;
     font-size: ${theme.font.sizes.xlarge};
     font-weight: ${theme.font.bold};
     display: inline-flex;
