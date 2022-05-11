@@ -13,13 +13,13 @@ interface CartDetailsProviderProps {
 //   expirationDate: string
 // }
 
-type CartDetailsProps = {
+export type CartDetailsProps = {
   userPaymentInfo: Payment
   handleUserPaymentInfo: (userPaymentInfo: Payment) => void
   mounted: boolean
 } & CartDetails
 
-const cartDetailsPropsInitialValues = {
+export const cartDetailsPropsInitialValues = {
   id: '',
   items: [],
   subTotal: 0,
@@ -36,7 +36,7 @@ const cartDetailsPropsInitialValues = {
   handleUserPaymentInfo: () => {}
 }
 
-const CartDetailsContext = createContext<CartDetailsProps>(
+export const CartDetailsContext = createContext<CartDetailsProps>(
   cartDetailsPropsInitialValues
 )
 
