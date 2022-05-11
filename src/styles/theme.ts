@@ -27,6 +27,7 @@ export default {
     black: '#212121',
     purple: '#A43287',
     red: '#F30F30',
+    orange: '#FF7800',
     lighterGray: '#EEEEEE',
     lightGray: '#E7E7E7',
     mediumGray: '#CCC',
@@ -34,6 +35,7 @@ export default {
     lightBlue: '#E0E7EE'
   },
   spacings: {
+    xsmall: '0.5rem',
     small: '0.625rem',
     regular: '0.813rem',
     large: '1.125rem'

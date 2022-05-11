@@ -1,10 +1,11 @@
 import React from 'react'
-import Product from '../../components/Product'
+
+import Subtotal from '../../components/Subtotal'
 import { useCartDetails } from '../../hooks/useCartDetails'
 
 export function Cart() {
-  const { items } = useCartDetails()
-  const product = items?.[0]?.product
+  const { discount, shippingTotal, subTotal, total } = useCartDetails()
+  //  const product = items?.[0]?.product
   return (
     <div
       style={{
@@ -14,10 +15,11 @@ export function Cart() {
         width: '100%'
       }}
     >
-      <Product
-        name={product?.name}
-        price={product?.priceSpecification?.price}
-        imageUrl={product?.imageObjects[0]?.small}
+      <Subtotal
+        discount={discount}
+        shippingTotal={shippingTotal}
+        subTotal={subTotal}
+        total={total}
       />
     </div>
   )
