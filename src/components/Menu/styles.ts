@@ -61,3 +61,10 @@ export const Link = styled.a<LinkProps>`
     ${isActive && linkModifiers.active(theme)}
   `}
 `
+
+export const Icon = styled.span`
+  ${media.lessThan('medium')`
+    display: none;
+  `}
+  margin-right: 0.5rem;
+`
