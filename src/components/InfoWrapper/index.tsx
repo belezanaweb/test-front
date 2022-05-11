@@ -8,10 +8,10 @@ interface InfoWrapperProps {
 
 const InfoWrapper = ({ children, title }: InfoWrapperProps) => {
   return (
-    <>
+    <div>
       <S.Title>{title}</S.Title>
       <S.Wrapper>{children}</S.Wrapper>
-    </>
+    </div>
   )
 }
 

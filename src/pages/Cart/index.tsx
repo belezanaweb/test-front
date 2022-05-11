@@ -19,32 +19,38 @@ export function Cart() {
   } = useCartDetails()
   return (
     <>
-      {mounted || !mounted ? (
+      {!mounted ? (
         <Loader />
       ) : (
         <>
-          <S.MenuWrapper>
-            <Menu />
-          </S.MenuWrapper>
-          <S.CartWrapper>
-            <InfoWrapper title="PRODUTOS">
-              {items?.map((item) => (
-                <Product
-                  key={item.product.sku}
-                  name={item.product.name}
-                  imageUrl={item.product.imageObjects[0].small}
-                  price={item.product.priceSpecification.price}
+          <S.Wrapper>
+            <S.MenuWrapper>
+              <Menu activeLink="/" />
+            </S.MenuWrapper>
+            <S.CartWrapper>
+              <InfoWrapper title="PRODUTOS">
+                <S.Product>
+                  {items?.map((item) => (
+                    <Product
+                      key={item.product.sku}
+                      name={item.product.name}
+                      imageUrl={item.product.imageObjects[0].small}
+                      price={item.product.priceSpecification.price}
+                    />
+                  ))}
+                </S.Product>
+              </InfoWrapper>
+              <S.PaymentInfo>
+                <Subtotal
+                  shippingTotal={shippingTotal}
+                  subTotal={subTotal}
+                  total={total}
+                  discount={discount}
                 />
-              ))}
-            </InfoWrapper>
-            <Subtotal
-              shippingTotal={shippingTotal}
-              subTotal={subTotal}
-              total={total}
-              discount={discount}
-            />
-            <Button>SEGUIR PARA O PAGAMENTO</Button>
-          </S.CartWrapper>
+                <Button>SEGUIR PARA O PAGAMENTO</Button>
+              </S.PaymentInfo>
+            </S.CartWrapper>
+          </S.Wrapper>
         </>
       )}
     </>

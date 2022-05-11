@@ -39,7 +39,8 @@ export default {
     xsmall: '0.5rem',
     small: '0.625rem',
     regular: '0.813rem',
-    large: '1.125rem'
+    large: '1.125rem',
+    xlarge: '1.25rem'
   },
   layers: {
     base: 10
