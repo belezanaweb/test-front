@@ -1,6 +1,10 @@
 import React, { useState } from 'react'
 import { Payment } from '../../types/productTypes'
-import { FieldErrors, PaymentValidate } from '../../util/validations'
+import {
+  FieldErrors,
+  FieldValidate,
+  PaymentValidate
+} from '../../util/validations'
 import Button from '../Button'
 import InfoWrapper from '../InfoWrapper'
 import Subtotal, { SubtotalProps } from '../Subtotal'
@@ -35,6 +39,17 @@ const PaymentForm = ({
 
   const handleInput = (field: string, value: string) => {
     setValues((s) => ({ ...s, [field]: value }))
+  }
+
+  const handleOnBlur = (value: string, field: keyof Payment) => {
+    let objError = fieldError
+    const errors = FieldValidate(value, field)
+    if (Object.keys(errors).length) {
+      setFieldError(errors)
+    } else {
+      delete objError[field]
+      setFieldError(objError)
+    }
   }
 
   const handleSubmit = async (event: React.FormEvent) => {
@@ -84,7 +99,10 @@ const PaymentForm = ({
                     )
                   }
                   handleOnFocus={() => setFocused('number')}
-                  handleOnBlur={() => setFocused(undefined)}
+                  handleOnBlur={() => {
+                    setFocused(undefined)
+                    handleOnBlur(values.creditCard, 'creditCard')
+                  }}
                   placeholder={'____.____.____.____'}
                   mask={'9999.9999.9999.9999'}
                 />
@@ -96,7 +114,9 @@ const PaymentForm = ({
                   error={fieldError?.nameInCard}
                   onInputChange={(v) => handleInput('nameInCard', v)}
                   handleOnFocus={() => setFocused('name')}
-                  handleOnBlur={() => setFocused(undefined)}
+                  handleOnBlur={() => {
+                    setFocused(undefined)
+                  }}
                   placeholder={'Como no cartão'}
                   noMask={true}
                 />
@@ -117,7 +137,9 @@ const PaymentForm = ({
                   }
                   label={'Validade (mês/ano):'}
                   handleOnFocus={() => setFocused('expiry')}
-                  handleOnBlur={() => setFocused(undefined)}
+                  handleOnBlur={() => {
+                    setFocused(undefined)
+                  }}
                   placeholder={'__/__'}
                   mask={'99/99'}
                 />
@@ -136,7 +158,9 @@ const PaymentForm = ({
                     )
                   }
                   handleOnFocus={() => setFocused('cvc')}
-                  handleOnBlur={() => setFocused(undefined)}
+                  handleOnBlur={() => {
+                    setFocused(undefined)
+                  }}
                   label={'CVV:'}
                   placeholder={'___'}
                   mask={'999'}
@@ -153,7 +177,17 @@ const PaymentForm = ({
           total={total}
           discount={discount}
         />
-        <Button type={'submit'}>FINALIZAR O PEDIDO</Button>
+        <Button
+          disabled={
+            !values.creditCard ||
+            !values.nameInCard ||
+            !values.expirationDate ||
+            !values.cvv
+          }
+          type={'submit'}
+        >
+          FINALIZAR O PEDIDO
+        </Button>
       </S.PaymentInfo>
       {success && <Redirect to="/success" />}
     </S.CartWrapper>

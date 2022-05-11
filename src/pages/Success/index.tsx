@@ -55,7 +55,9 @@ export function Success() {
                           {userPaymentInfo.creditCard &&
                             formatCreditCardNumber(userPaymentInfo.creditCard)}
                         </S.Text>
-                        <S.Text>{userPaymentInfo.nameInCard}</S.Text>
+                        <S.Text>
+                          {userPaymentInfo.nameInCard.toUpperCase()}
+                        </S.Text>
                         <S.Text>
                           {userPaymentInfo.expirationDate &&
                             formatExpirationDate(

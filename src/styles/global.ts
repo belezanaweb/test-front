@@ -14,7 +14,6 @@ const GlobalStyles: GlobalStyleComponent<
   GlobalStylesProps,
   DefaultTheme
 > = createGlobalStyle`
-    /* poppins-300 - latin */
   @font-face {
   font-family: 'Helvetica Neue';
   font-style: normal;
@@ -23,7 +22,7 @@ const GlobalStyles: GlobalStyleComponent<
   src: local('Helvetica Neue Light'), local('Helvetica Neue Light'),
       url('/fonts/HelveticaNeueCyr-Light.woff2') format('woff2'), /* Super Modern Browsers */
   }
-  /* poppins-regular - latin */
+
   @font-face {
     font-family: 'Helvetica Neue';
     font-style: normal;
@@ -32,7 +31,7 @@ const GlobalStyles: GlobalStyleComponent<
     src: local('Helvetica Neue Roman'), local('Helvetica Neue Roman'),
         url('/fonts/HelveticaNeueCyr-Roman.woff2') format('woff2'), /* Super Modern Browsers */
   }
-  /* poppins-600 - latin */
+
   @font-face {
     font-family: 'Helvetica Neue';
     font-style: normal;

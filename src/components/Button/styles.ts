@@ -1,7 +1,20 @@
 import styled, { css } from 'styled-components'
 
-export const Wrapper = styled.button`
-  ${({ theme }) => css`
+const wrapperModifiers = {
+  disabled: () => css`
+    &:disabled {
+      cursor: not-allowed;
+      filter: saturate(30%);
+    }
+  `
+}
+
+export type WrapperProps = {
+  disabled: boolean
+}
+
+export const Wrapper = styled.button<WrapperProps>`
+  ${({ theme, disabled }) => css`
     background: ${theme.colors.primary};
     cursor: pointer;
     color: ${theme.colors.white};
@@ -26,5 +39,7 @@ export const Wrapper = styled.button`
       box-shadow: 0 3px ${theme.colors.secondary};
       background: ${theme.colors.secondary};
     }
+
+    ${disabled && wrapperModifiers.disabled()}
   `}
 `
