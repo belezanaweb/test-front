@@ -10,10 +10,9 @@ export const Nav = styled.nav`
     ${media.greaterThan('medium')`
       display: flex;
       flex-direction: column;
-      border: 0;
       grid-gap: 0.3rem;
       padding: 0.5rem;
-      a:not(:last-child) {
+      button:not(:last-child) {
         border-bottom: 0.1rem solid ${theme.colors.lightGray};
       }
     `}
@@ -33,12 +32,14 @@ type LinkProps = {
   isActive?: boolean
 }
 
-export const Link = styled.a<LinkProps>`
+export const Button = styled.button<LinkProps>`
   ${({ theme, isActive }) => css`
     cursor: pointer;
     text-decoration: none;
     display: flex;
     align-items: center;
+    background: transparent;
+    border: 0;
     padding: ${theme.spacings.small} 0;
     font-family: ${theme.font.family};
     font-size: ${theme.font.sizes.xsmall};

@@ -5,11 +5,16 @@ import Button from '../Button'
 import InfoWrapper from '../InfoWrapper'
 import Subtotal, { SubtotalProps } from '../Subtotal'
 import TextField from '../TextField'
+import Cards from 'react-credit-cards'
 import * as S from './styles'
+import 'react-credit-cards/es/styles-compiled.css'
+import { Redirect } from 'react-router-dom'
 
 type PaymentFormProps = {
   onSubmit: (value: Payment) => void
 } & SubtotalProps
+
+type focusCreditCard = 'name' | 'number' | 'expiry' | 'cvc' | undefined
 
 const PaymentForm = ({
   shippingTotal,
@@ -19,6 +24,8 @@ const PaymentForm = ({
   onSubmit
 }: PaymentFormProps) => {
   const [fieldError, setFieldError] = useState<FieldErrors>({})
+  const [focused, setFocused] = useState<focusCreditCard>(undefined)
+  const [success, setSuccess] = useState(false)
   const [values, setValues] = useState<Payment>({
     creditCard: '',
     nameInCard: '',
@@ -33,7 +40,7 @@ const PaymentForm = ({
   const handleSubmit = async (event: React.FormEvent) => {
     event.preventDefault()
 
-    console.log('olha aqui os valores: ', values)
+    // console.log('olha aqui os valores: ', values)
 
     const errors = PaymentValidate(values)
 
@@ -42,77 +49,99 @@ const PaymentForm = ({
       return
     }
     onSubmit(values)
+    setSuccess(true)
     setFieldError({})
   }
 
   return (
     <S.CartWrapper onSubmit={handleSubmit}>
       <InfoWrapper title="CARTÃO DE CRÉDITO">
-        <TextField
-          label={'Número do cartão:'}
-          name={'creditCard'}
-          type={'creditCard'}
-          error={fieldError?.creditCard}
-          onInputChange={(v) =>
-            handleInput(
-              'creditCard',
-              v
-                .split('')
-                .filter((char) => /^[0-9]*$/.test(char))
-                .join('')
-            )
-          }
-          placeholder={'____.____.____.____'}
-          mask={'9999.9999.9999.9999'}
-        />
+        <S.FormWrapper>
+          <S.CardWrapper>
+            <Cards
+              cvc={values.cvv}
+              expiry={values.expirationDate}
+              focused={focused}
+              name={values.nameInCard}
+              number={values.creditCard}
+            />
+          </S.CardWrapper>
+          <S.FormDetailsWrapper>
+            <TextField
+              label={'Número do cartão:'}
+              name={'creditCard'}
+              type={'creditCard'}
+              error={fieldError?.creditCard}
+              onInputChange={(v) =>
+                handleInput(
+                  'creditCard',
+                  v
+                    .split('')
+                    .filter((char) => /^[0-9]*$/.test(char))
+                    .join('')
+                )
+              }
+              handleOnFocus={() => setFocused('number')}
+              handleOnBlur={() => setFocused(undefined)}
+              placeholder={'____.____.____.____'}
+              mask={'9999.9999.9999.9999'}
+            />
 
-        <TextField
-          label={'Nome do Titular:'}
-          name={'nameInCard'}
-          type={'nameInCard'}
-          error={fieldError?.nameInCard}
-          onInputChange={(v) => handleInput('nameInCard', v)}
-          placeholder={'Como no cartão'}
-          noMask={true}
-        />
+            <TextField
+              label={'Nome do Titular:'}
+              name={'nameInCard'}
+              type={'nameInCard'}
+              error={fieldError?.nameInCard}
+              onInputChange={(v) => handleInput('nameInCard', v)}
+              handleOnFocus={() => setFocused('name')}
+              handleOnBlur={() => setFocused(undefined)}
+              placeholder={'Como no cartão'}
+              noMask={true}
+            />
 
-        <S.InputGroup>
-          <TextField
-            name={'expirationDate'}
-            type={'expirationDate'}
-            error={fieldError?.expirationDate}
-            onInputChange={(v) =>
-              handleInput(
-                'expirationDate',
-                v
-                  .split('')
-                  .filter((char) => /^[0-9]*$/.test(char))
-                  .join('')
-              )
-            }
-            label={'Validade (mês/ano):'}
-            placeholder={'__/____'}
-            mask={'99/9999'}
-          />
+            <S.InputGroup>
+              <TextField
+                name={'expirationDate'}
+                type={'expirationDate'}
+                error={fieldError?.expirationDate}
+                onInputChange={(v) =>
+                  handleInput(
+                    'expirationDate',
+                    v
+                      .split('')
+                      .filter((char) => /^[0-9]*$/.test(char))
+                      .join('')
+                  )
+                }
+                label={'Validade (mês/ano):'}
+                handleOnFocus={() => setFocused('expiry')}
+                handleOnBlur={() => setFocused(undefined)}
+                placeholder={'__/__'}
+                mask={'99/99'}
+              />
 
-          <TextField
-            name={'cvv'}
-            type={'cvv'}
-            error={fieldError?.cvv}
-            onInputChange={(v) =>
-              handleInput(
-                'cvv',
-                v
-                  .split('')
-                  .filter((char) => /^[0-9]*$/.test(char))
-                  .join('')
-              )
-            }
-            label={'CVV:'}
-            placeholder={'___'}
-            mask={'999'}
-          />
-        </S.InputGroup>
+              <TextField
+                name={'cvv'}
+                type={'cvv'}
+                error={fieldError?.cvv}
+                onInputChange={(v) =>
+                  handleInput(
+                    'cvv',
+                    v
+                      .split('')
+                      .filter((char) => /^[0-9]*$/.test(char))
+                      .join('')
+                  )
+                }
+                handleOnFocus={() => setFocused('cvc')}
+                handleOnBlur={() => setFocused(undefined)}
+                label={'CVV:'}
+                placeholder={'___'}
+                mask={'999'}
+              />
+            </S.InputGroup>
+          </S.FormDetailsWrapper>
+        </S.FormWrapper>
       </InfoWrapper>
       <S.PaymentInfo>
         <Subtotal
@@ -123,6 +152,7 @@ const PaymentForm = ({
         />
         <Button type={'submit'}>FINALIZAR O PEDIDO</Button>
       </S.PaymentInfo>
+      {success && <Redirect to="/success" />}
     </S.CartWrapper>
   )
 }

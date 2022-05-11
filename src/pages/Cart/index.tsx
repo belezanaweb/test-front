@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import InfoWrapper from '../../components/InfoWrapper'
 import Menu from '../../components/Menu'
 import * as S from './styles'
@@ -7,6 +7,7 @@ import Product from '../../components/Product'
 import Subtotal from '../../components/Subtotal'
 import Button from '../../components/Button'
 import Loader from '../../components/Loader'
+import { Redirect } from 'react-router-dom'
 
 export function Cart() {
   const {
@@ -17,6 +18,7 @@ export function Cart() {
     items,
     mounted
   } = useCartDetails()
+  const [goToPayment, setgoToPayment] = useState(false)
   return (
     <>
       {!mounted ? (
@@ -47,12 +49,13 @@ export function Cart() {
                   total={total}
                   discount={discount}
                 />
-                <Button as={'a'} href={'/payment'}>
+                <Button type={'button'} onClick={() => setgoToPayment(true)}>
                   SEGUIR PARA O PAGAMENTO
                 </Button>
               </S.PaymentInfo>
             </S.CartWrapper>
           </S.Wrapper>
+          {goToPayment && <Redirect to="/payment" />}
         </>
       )}
     </>

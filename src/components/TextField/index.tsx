@@ -5,6 +5,8 @@ import * as S from './styles'
 
 export type TextFieldProps = {
   onInputChange?: (value: string) => void
+  handleOnBlur?: () => void
+  handleOnFocus?: () => void
   label?: string
   initialValue?: string
   mask?: string | null
@@ -23,6 +25,8 @@ const TextField = ({
   error,
   name,
   onInputChange,
+  handleOnBlur,
+  handleOnFocus,
   noMask,
   ...props
 }: TextFieldProps) => {
@@ -37,7 +41,13 @@ const TextField = ({
     <S.Wrapper error={!!error}>
       {!!label && <S.Label htmlFor={name}>{label}</S.Label>}
       {!noMask ? (
-        <InputMask mask={mask ?? ''} onChange={onChange} value={value}>
+        <InputMask
+          mask={mask ?? ''}
+          onChange={onChange}
+          value={value}
+          onFocus={handleOnFocus}
+          onBlur={handleOnBlur}
+        >
           {(inputProps: any) => (
             <S.Input
               type="text"
@@ -51,6 +61,8 @@ const TextField = ({
       ) : (
         <S.Input
           onChange={onChange}
+          onFocus={handleOnFocus}
+          onBlur={handleOnBlur}
           value={value}
           type="text"
           name={name}

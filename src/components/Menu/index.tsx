@@ -3,7 +3,8 @@ import {
   CreditCardFront,
   ShoppingBag
 } from '@styled-icons/boxicons-regular'
-import React from 'react'
+import React, { useState } from 'react'
+import { Redirect } from 'react-router-dom'
 import * as S from './styles'
 
 export type ProfileMenuProps = {
@@ -11,17 +12,32 @@ export type ProfileMenuProps = {
 }
 
 const Menu = ({ activeLink }: ProfileMenuProps) => {
+  const [goToBag, setGoToBag] = useState(false)
+  const [goToPayment, setGoToPayment] = useState(false)
+  const [sucess, setSucess] = useState(false)
   return (
     <S.Nav>
-      <S.Link href="/" isActive={activeLink === '/'} title="Sacola">
+      <S.Button
+        onClick={() => {
+          setGoToPayment(false)
+          setSucess(false)
+          setGoToBag(true)
+        }}
+        isActive={activeLink === '/'}
+        title="Sacola"
+      >
         <S.Icon>
           <ShoppingBag size={24} />
         </S.Icon>
         <span>SACOLA</span>
-      </S.Link>
+      </S.Button>
 
-      <S.Link
-        href="/payment"
+      <S.Button
+        onClick={() => {
+          setSucess(false)
+          setGoToBag(false)
+          setGoToPayment(true)
+        }}
         isActive={activeLink === '/payment'}
         title="Pagamento"
       >
@@ -29,10 +45,14 @@ const Menu = ({ activeLink }: ProfileMenuProps) => {
           <CreditCardFront size={24} />
         </S.Icon>
         <span>PAGAMENTO</span>
-      </S.Link>
+      </S.Button>
 
-      <S.Link
-        href="/success"
+      <S.Button
+        onClick={() => {
+          setGoToBag(false)
+          setGoToPayment(false)
+          setSucess(true)
+        }}
         isActive={activeLink === '/success'}
         title="Confirmação"
       >
@@ -40,7 +60,10 @@ const Menu = ({ activeLink }: ProfileMenuProps) => {
           <CheckSquare size={24} />
         </S.Icon>
         <span>CONFIRMAÇÃO</span>
-      </S.Link>
+      </S.Button>
+      {goToBag && <Redirect to="/" />}
+      {goToPayment && <Redirect to="/payment" />}
+      {sucess && <Redirect to="/success" />}
     </S.Nav>
   )
 }

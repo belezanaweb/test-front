@@ -4,7 +4,7 @@ import { Payment } from '../../types/productTypes'
 const fieldsValidations = {
   creditCard: Joi.string().min(16).required(),
   nameInCard: Joi.string().min(3).required(),
-  expirationDate: Joi.string().min(6).required(),
+  expirationDate: Joi.string().min(4).required(),
   cvv: Joi.string().min(3).required()
 }
 

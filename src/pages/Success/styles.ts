@@ -2,20 +2,23 @@ import styled, { css } from 'styled-components'
 import media from 'styled-media-query'
 
 export const Wrapper = styled.main`
-  ${({ theme }) => css``}
+  display: block;
+  ${media.greaterThan('medium')`
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      grid-gap: 1.25rem;
+    `}
 `
 
-export const InputGroup = styled.div`
-  display: flex;
-  grid-gap: 1rem;
+export const MenuWrapper = styled.section`
   ${media.greaterThan('medium')`
-    display: flex;
-    flex-direction: column;
-    grid-gap: 1.3rem;
+    margin-top: 2.125rem;
   `}
 `
 
-export const CartWrapper = styled.form`
+export const CartWrapper = styled.section`
   ${({ theme }) => css`
     padding: ${theme.spacings.small};
     display: flex;
@@ -38,25 +41,8 @@ export const PaymentInfo = styled.section`
   `}
 `
 
-export const CardWrapper = styled.section``
-
-export const FormDetailsWrapper = styled.div`
+export const Product = styled.div`
   display: flex;
   flex-direction: column;
-  grid-gap: 1.3rem;
-`
-
-export const FormWrapper = styled.div`
-  ${({ theme }) => css`
-    display: flex;
-    flex-direction: column;
-    grid-gap: ${theme.spacings.xlarge};
-    ${media.greaterThan('medium')`
-      padding: 1.5rem;
-      display: grid;
-      grid-template-columns: 290px 200px;
-      align-items: center;
-      flex-direction: row;
-  `}
-  `}
+  grid-gap: 1rem;
 `
