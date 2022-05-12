@@ -10,7 +10,7 @@ const props = {
   total: 220
 }
 
-describe('Product Component', () => {
+describe('Subtotal Component', () => {
   it('should render correctly', () => {
     render(<Subtotal {...props} />)
 

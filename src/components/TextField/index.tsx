@@ -10,15 +10,11 @@ export type TextFieldProps = {
   label?: string
   initialValue?: string
   mask?: string | null
-  icon?: React.ReactNode
-  iconPosition?: 'left' | 'right'
   error?: string
   noMask?: boolean
 } & InputHTMLAttributes<HTMLInputElement>
 
 const TextField = ({
-  icon,
-  iconPosition = 'left',
   label,
   initialValue = '',
   mask,
