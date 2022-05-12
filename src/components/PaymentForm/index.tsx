@@ -108,6 +108,7 @@ const PaymentForm = ({
                     handleOnBlur(values.creditCard, 'creditCard')
                   }}
                   placeholder={'____.____.____.____'}
+                  data-testid="creditCard"
                   mask={'9999.9999.9999.9999'}
                 />
 
@@ -123,6 +124,7 @@ const PaymentForm = ({
                     handleOnBlur(values.nameInCard, 'nameInCard')
                   }}
                   placeholder={'Como no cartão'}
+                  data-testid="nameInCard"
                   noMask={true}
                 />
               </S.InputGroup>
@@ -147,6 +149,7 @@ const PaymentForm = ({
                     handleOnBlur(values.expirationDate, 'expirationDate')
                   }}
                   placeholder={'__/__'}
+                  data-testid="expirationDate"
                   mask={'99/99'}
                 />
 
@@ -170,6 +173,7 @@ const PaymentForm = ({
                   }}
                   label={'CVV:'}
                   placeholder={'___'}
+                  data-testid="cvv"
                   mask={'999'}
                 />
               </S.InputGroup>

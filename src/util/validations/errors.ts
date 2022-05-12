@@ -16,7 +16,7 @@ export const creditCard_schema = Joi.string()
 
 export const nameInCard_schema = Joi.string()
   .min(3)
-  .pattern(/^[a-zA-Z]*$/)
+  .pattern(/^[a-z A-Z]*$/)
   .required()
   .messages({
     'string.empty': `O nome não pode ser vazio`,

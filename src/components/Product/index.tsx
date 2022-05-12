@@ -11,7 +11,7 @@ interface ProductProps {
 const Product = ({ imageUrl, name, price }: ProductProps) => {
   return (
     <S.Wrapper>
-      <S.Image src={imageUrl} />
+      <S.Image src={imageUrl} alt="Product image" />
       <S.Content>
         <S.Text>{name}</S.Text>
         {price && <S.Price>{formatPrice(price)}</S.Price>}
