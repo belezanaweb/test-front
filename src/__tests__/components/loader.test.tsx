@@ -1,6 +1,6 @@
 import React from 'react'
 import Loader from '../../components/Loader'
-import { render, screen } from '../../util/test-utils'
+import { render } from '../../util/test-utils'
 
 describe('Loader Component', () => {
   it('should render correctly', () => {
