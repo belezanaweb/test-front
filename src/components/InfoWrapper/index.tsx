@@ -10,7 +10,7 @@ const InfoWrapper = ({ children, title }: InfoWrapperProps) => {
   return (
     <div>
       <S.Title>{title}</S.Title>
-      <S.Wrapper>{children}</S.Wrapper>
+      <S.Wrapper data-testid={'wrapper-infoWrapper'}>{children}</S.Wrapper>
     </div>
   )
 }
