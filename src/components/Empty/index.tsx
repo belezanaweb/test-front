@@ -8,7 +8,7 @@ const Empty = () => {
   return (
     <>
       <S.Wrapper>
-        <S.Image src={bag} />
+        <S.Image src={bag} alt="Two empty bags" />
         <S.Text>Eita! Parece que ainda não foi feita nenhuma compra.</S.Text>
         <S.Button onClick={() => setGoToBag(true)}>
           Que tal conferir nossos produtos?
