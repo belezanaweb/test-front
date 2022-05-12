@@ -3,7 +3,7 @@ import { createContext, ReactNode, useContext, useState } from 'react'
 import { api } from '../services/api'
 import { CartDetails, Payment } from '../types/productTypes'
 
-interface CartDetailsProviderProps {
+export interface CartDetailsProviderProps {
   children: ReactNode
 }
 
