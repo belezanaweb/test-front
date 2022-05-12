@@ -14,6 +14,7 @@ const Loader = () => (
         viewBox="0 0 100 100"
         enableBackground="new 0 0 0 0"
         xmlSpace="preserve"
+        data-icon="loader"
       >
         <circle fill="#FF6C00" stroke="none" cx="6" cy="50" r="6">
           <animateTransform

@@ -12,8 +12,6 @@ describe('InfoWrapper Component', () => {
 
     expect(screen.getByText(/example title/i)).toBeInTheDocument()
 
-    screen.debug()
-
     expect(screen.getByTestId('wrapper-infoWrapper')).toHaveStyle({
       'background-color': '#FFFFFF',
       'box-shadow': '1px 1px 5px rgba(0,0,29,0.22)'
