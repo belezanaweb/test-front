@@ -4,6 +4,7 @@ export const CheckIcon = () => {
     <svg
       xmlns="http://www.w3.org/2000/svg"
       enableBackground="new 0 0 145 143.5"
+      data-icon="checkIcon"
       viewBox="0 0 145 143.5"
       xmlSpace="preserve"
     >

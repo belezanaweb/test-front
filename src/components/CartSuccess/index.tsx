@@ -6,7 +6,7 @@ const CartSuccess = () => {
   return (
     <>
       <S.Wrapper>
-        <S.Icon>
+        <S.Icon data-testid="checkIcon">
           <CheckIcon />
         </S.Icon>
         <S.Text>COMPRA EFETUADA COM SUCESSO</S.Text>
