@@ -11,6 +11,7 @@ const Dropdown = () => {
     <S.Wrapper isOpen={isOpen}>
       <S.Icon onClick={() => setIsOpen(!isOpen)}>
         <Body
+          data-icon="body"
           color={
             customTheme === 'dark' || customTheme === 'highContrast'
               ? 'white'
