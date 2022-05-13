@@ -7,12 +7,6 @@ export interface CartDetailsProviderProps {
   children: ReactNode
 }
 
-// interface userPaymentInfo {
-//   flag: string
-//   name: string
-//   expirationDate: string
-// }
-
 export type CartDetailsProps = {
   userPaymentInfo: Payment
   handleUserPaymentInfo: (userPaymentInfo: Payment) => void

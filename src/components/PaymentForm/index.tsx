@@ -39,12 +39,6 @@ const PaymentForm = ({
     cvv: ''
   })
 
-  useEffect(() => {
-    console.log(fieldError)
-    console.log('condição 1', fieldError !== {})
-    console.log('condição 2', Object.keys(fieldError).length === 0)
-  }, [fieldError])
-
   const handleInput = (field: string, value: string) => {
     setValues((s) => ({ ...s, [field]: value }))
   }
