@@ -1,12 +1,14 @@
 import React, { StrictMode } from 'react'
 import ReactDOM from 'react-dom'
-import './index.css'
 import App from './App'
+import { CustomThemeProvider } from './hooks/useTheme'
 import * as serviceWorker from './serviceWorker'
 
 const Strict = () => (
   <StrictMode>
-    <App />
+    <CustomThemeProvider>
+      <App />
+    </CustomThemeProvider>
   </StrictMode>
 )
 
