@@ -8,7 +8,7 @@ import {
 } from '../hooks/useCartDetails'
 
 import { ThemeProvider } from 'styled-components'
-import theme from '../styles/theme'
+import theme from '../styles/themes/light'
 
 type CustomRenderProps = {
   cartProviderProps?: CartDetailsProps

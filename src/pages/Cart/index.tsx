@@ -8,6 +8,8 @@ import Subtotal from '../../components/Subtotal'
 import Button from '../../components/Button'
 import Loader from '../../components/Loader'
 import { Redirect } from 'react-router-dom'
+import Dropdown from '../../components/Dropdown'
+import MediaMatch from '../../components/MediaMatch'
 
 export function Cart() {
   const {
@@ -43,6 +45,11 @@ export function Cart() {
                 </S.Product>
               </InfoWrapper>
               <S.PaymentInfo>
+                <MediaMatch greaterThan="medium">
+                  <S.AcessibilityWrapper>
+                    <Dropdown />
+                  </S.AcessibilityWrapper>
+                </MediaMatch>
                 <Subtotal
                   shippingTotal={shippingTotal}
                   subTotal={subTotal}
@@ -55,6 +62,11 @@ export function Cart() {
               </S.PaymentInfo>
             </S.CartWrapper>
           </S.Wrapper>
+          <MediaMatch lessThan="medium">
+            <S.AcessibilityWrapper>
+              <Dropdown />
+            </S.AcessibilityWrapper>
+          </MediaMatch>
           {goToPayment && <Redirect to="/payment" />}
         </>
       )}

@@ -1,6 +1,6 @@
 import React from 'react'
 import Menu from '../../components/Menu'
-import theme from '../../styles/theme'
+import light from '../../styles/themes/light'
 import userEvent from '@testing-library/user-event'
 import { render, screen } from '../../util/test-utils'
 import { BrowserRouter as Router } from 'react-router-dom'
@@ -23,7 +23,7 @@ describe('Menu Component', () => {
     render(<Menu activeLink="/success" />)
 
     expect(screen.getByRole('button', { name: /CONFIRMAÇÃO/i })).toHaveStyle({
-      color: theme.colors.primary
+      color: light.colors.primary
     })
   })
 

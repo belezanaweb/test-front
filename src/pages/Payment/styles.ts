@@ -46,3 +46,13 @@ export const Product = styled.div`
   flex-direction: column;
   grid-gap: 1rem;
 `
+
+export const AcessibilityWrapper = styled.div`
+  display: flex;
+  justify-content: end;
+  margin-top: 1rem;
+  ${media.lessThan('medium')`
+    justify-content: center;
+    margin-bottom: 1rem;
+  `}
+`

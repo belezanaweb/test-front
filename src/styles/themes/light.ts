@@ -1,4 +1,5 @@
 export default {
+  title: 'light',
   grid: {
     container: '130rem',
     gutter: '3.2rem'
@@ -43,7 +44,9 @@ export default {
     xlarge: '1.25rem'
   },
   layers: {
-    base: 10
+    base: 10,
+    overlay: 30,
+    alwaysOnTop: 50
   },
   transition: {
     default: '0.3s ease-in-out',

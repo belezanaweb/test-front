@@ -9,6 +9,16 @@ type InputGroupProps = {
   isSideToSide: boolean
 }
 
+export const AcessibilityWrapper = styled.div`
+  display: flex;
+  justify-content: end;
+  margin-top: 1rem;
+  ${media.lessThan('medium')`
+    justify-content: center;
+    margin-bottom: 1rem;
+  `}
+`
+
 export const InputGroup = styled.div<InputGroupProps>`
   ${({ isSideToSide }) => css`
   display: ${isSideToSide ? 'flex;' : 'block;'}

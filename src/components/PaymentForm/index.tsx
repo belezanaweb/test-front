@@ -13,6 +13,8 @@ import Cards from 'react-credit-cards'
 import * as S from './styles'
 import 'react-credit-cards/es/styles-compiled.css'
 import { Redirect } from 'react-router-dom'
+import MediaMatch from '../MediaMatch'
+import Dropdown from '../Dropdown'
 
 type PaymentFormProps = {
   onSubmit: (value: Payment) => void
@@ -182,6 +184,11 @@ const PaymentForm = ({
         </InfoWrapper>
       </S.BoxPaymentWrapper>
       <S.PaymentInfo>
+        <MediaMatch greaterThan="medium">
+          <S.AcessibilityWrapper>
+            <Dropdown />
+          </S.AcessibilityWrapper>
+        </MediaMatch>
         <Subtotal
           shippingTotal={shippingTotal}
           subTotal={subTotal}

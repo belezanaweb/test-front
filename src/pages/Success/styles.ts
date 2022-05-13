@@ -12,6 +12,16 @@ export const Wrapper = styled.main`
     `}
 `
 
+export const AcessibilityWrapper = styled.div`
+  display: flex;
+  justify-content: end;
+  margin-top: 1rem;
+  ${media.lessThan('medium')`
+    justify-content: center;
+    margin-bottom: 1rem;
+  `}
+`
+
 export const MenuWrapper = styled.section`
   ${media.greaterThan('medium')`
     margin-top: 2.125rem;

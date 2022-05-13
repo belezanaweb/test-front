@@ -10,6 +10,7 @@ import { formatCreditCardNumber, formatExpirationDate } from '../../util/format'
 import CartSuccess from '../../components/CartSuccess'
 import Empty from '../../components/Empty'
 import MediaMatch from '../../components/MediaMatch'
+import Dropdown from '../../components/Dropdown'
 
 export function Success() {
   const {
@@ -78,6 +79,11 @@ export function Success() {
                     </MediaMatch>
                   </S.StatusPaymentWrapper>
                   <S.ProductPaymentInfoWrapper>
+                    <MediaMatch greaterThan="medium">
+                      <S.AcessibilityWrapper>
+                        <Dropdown />
+                      </S.AcessibilityWrapper>
+                    </MediaMatch>
                     <InfoWrapper title="PRODUTOS">
                       <S.Product>
                         {items?.map((item) => (
@@ -102,6 +108,11 @@ export function Success() {
                   </S.ProductPaymentInfoWrapper>
                 </S.CartWrapper>
               </S.Wrapper>
+              <MediaMatch lessThan="medium">
+                <S.AcessibilityWrapper>
+                  <Dropdown />
+                </S.AcessibilityWrapper>
+              </MediaMatch>
             </>
           )}
         </>

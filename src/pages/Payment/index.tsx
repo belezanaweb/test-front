@@ -4,6 +4,8 @@ import * as S from './styles'
 import { useCartDetails } from '../../hooks/useCartDetails'
 import Loader from '../../components/Loader'
 import PaymentForm from '../../components/PaymentForm'
+import MediaMatch from '../../components/MediaMatch'
+import Dropdown from '../../components/Dropdown'
 
 export function Payment() {
   const {
@@ -37,6 +39,11 @@ export function Payment() {
               onSubmit={handleUserPaymentInfo}
             />
           </S.Wrapper>
+          <MediaMatch lessThan="medium">
+            <S.AcessibilityWrapper>
+              <Dropdown />
+            </S.AcessibilityWrapper>
+          </MediaMatch>
         </>
       )}
     </>
