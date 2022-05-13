@@ -6,7 +6,7 @@ export const Wrapper = styled.main`
     grid-template-columns: 4rem 1fr;
     padding: ${theme.spacings.small};
     grid-gap: 1rem;
-    border: 1px solid ${theme.colors.lighterGray};
+    border: 1px solid ${theme.colors.lightGray};
     border-radius: ${theme.border.radius};
   `}
 `
@@ -25,6 +25,7 @@ export const Content = styled.div`
 export const Text = styled.p`
   ${({ theme }) => css`
     font-size: ${theme.font.sizes.xsmall};
+    color: ${theme.colors.black};
   `}
 `
 
@@ -32,6 +33,7 @@ export const Price = styled.p`
   ${({ theme }) => css`
     font-size: ${theme.font.sizes.small};
     font-weight: ${theme.font.bold};
+    color: ${theme.colors.black};
     text-align: right;
   `}
 `

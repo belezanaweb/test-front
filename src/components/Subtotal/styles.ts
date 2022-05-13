@@ -32,6 +32,7 @@ const textModifiers = {
 
 export const Text = styled.p<TextProps>`
   ${({ theme, isDiscont, isTotal }) => css`
+    color: ${theme.colors.black};
     font-size: ${theme.font.sizes.small};
     ${isDiscont && textModifiers.discont(theme)}
     ${isTotal && textModifiers.total(theme)}

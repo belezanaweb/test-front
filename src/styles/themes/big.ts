@@ -14,11 +14,11 @@ export default {
     normal: 400,
     bold: 600,
     sizes: {
-      xxsmall: '0.75rem',
-      xsmall: '0.813rem',
-      small: '0.875rem',
-      regular: '1rem',
-      xlarge: '1.25rem'
+      xxsmall: '1rem',
+      xsmall: '1.063rem',
+      small: '1.025rem',
+      regular: '1.25rem',
+      xlarge: '1.5rem'
     }
   },
   colors: {
@@ -29,7 +29,7 @@ export default {
     purple: '#A43287',
     red: '#F30F30',
     orange: '#FF7800',
-    lighterGray: '#FF6C00',
+    lighterGray: '#EEEEEE',
     lightGray: '#E7E7E7',
     mediumGray: '#CCCCCC',
     gray: '#999999',

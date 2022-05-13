@@ -6,11 +6,17 @@ import * as S from './styles'
 
 const Dropdown = () => {
   const [isOpen, setIsOpen] = useState(false)
-  const { handleCustomTheme } = useCustomTheme()
+  const { customTheme, handleCustomTheme } = useCustomTheme()
   return (
     <S.Wrapper isOpen={isOpen}>
       <S.Icon onClick={() => setIsOpen(!isOpen)}>
-        <Body color="black" />
+        <Body
+          color={
+            customTheme === 'dark' || customTheme === 'highContrast'
+              ? 'white'
+              : 'black'
+          }
+        />
       </S.Icon>
 
       <S.Content aria-hidden={!isOpen}>

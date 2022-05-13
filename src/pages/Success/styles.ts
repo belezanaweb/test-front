@@ -72,6 +72,7 @@ export const Product = styled.div`
 export const Text = styled.p`
   ${({ theme }) => css`
     font-size: ${theme.font.sizes.small};
+    color: ${theme.colors.black};
   `}
 `
 
