@@ -1,6 +1,8 @@
 import React from 'react'
 import './App.css'
+import Header from './components/Header.jsx'
+import 'antd/dist/antd.css'
 
-const App = () => <div className="App">Boa sorte! 🚀</div>
+const App = () => <Header />
 
 export default App
