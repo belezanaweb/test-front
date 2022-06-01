@@ -1,0 +1,12 @@
+@import url('http://fonts.cdnfonts.com/css/helvetica-neue-9');
+
+* {
+  margin: 0;
+  padding: 0;
+  outline: none;
+  font-family: 'Helvetica Neue', sans-serif;
+}
+
+.App {
+  background-color: #eeeeee;
+}
