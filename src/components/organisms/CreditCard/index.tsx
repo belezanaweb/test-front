@@ -1,13 +1,14 @@
 import React from 'react'
 
 import Card from '../../molecules/Card'
-
-import Product from '../../molecules/Product'
+import FormCreditCard from '../../molecules/FormCreditCard'
 
 function CreditCard() {
   return (
     <section>
-      <Card title="Cartão de crédito"></Card>
+      <Card title="Cartão de crédito">
+        <FormCreditCard />
+      </Card>
     </section>
   )
 }
