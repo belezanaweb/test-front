@@ -1,5 +1,5 @@
 import React from 'react'
-import Link from '../../micro/Link'
+import Link from '../../atoms/Link'
 
 import { Nav } from './styles'
 

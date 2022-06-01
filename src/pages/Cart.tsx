@@ -1,16 +1,19 @@
 import React from 'react'
 
-import Container from '../components/micro/Container'
-import Button from '../components/micro/Button'
+import Container from '../components/atoms/Container'
+import Button from '../components/atoms/Button'
 
-import Navbar from '../components/sections/Navbar'
-import ProductCard from '../components/sections/ProductCard'
+import ProductPrice from '../components/molecules/ProductPrice'
+
+import Navbar from '../components/organisms/Navbar'
+import ProductCard from '../components/organisms/ProductCard'
 
 function Cart() {
   return (
     <Container>
       <Navbar />
       <ProductCard />
+      <ProductPrice />
       <Button>Seguir para o pagamento</Button>
     </Container>
   )

@@ -1,8 +1,10 @@
 import React from 'react'
 
-import Price from '../../micro/Price'
+import Price from '../../atoms/Price'
 
 import { ProductContent } from './styles'
+
+import image from './a.jpg'
 
 type Props = {
   title: string,
@@ -12,8 +14,13 @@ type Props = {
 function Product({ title, price }: Props) {
   return (
     <ProductContent>
-      <h4>{title}</h4>
-      <Price>{price}</Price>
+      <div>
+        <img src={image} alt="aaaaaa" />
+      </div>
+      <div className="title-price">
+        <h4>{title}</h4>
+        <Price>{price}</Price>
+      </div>
     </ProductContent>
   )
 }
