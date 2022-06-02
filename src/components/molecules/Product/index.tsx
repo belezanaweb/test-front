@@ -4,18 +4,17 @@ import Price from '../../atoms/Price'
 
 import { ProductContent } from './styles'
 
-import image from './a.jpg'
-
 type Props = {
-  title: string,
+  title: string
   price: string
+  image: string
 }
 
-function Product({ title, price }: Props) {
+function Product({ title, price, image }: Props) {
   return (
     <ProductContent>
       <div>
-        <img src={image} alt="aaaaaa" />
+        <img src={image} alt="Imagem do produto" />
       </div>
       <div className="title-price">
         <h4>{title}</h4>

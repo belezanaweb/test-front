@@ -1,5 +1,5 @@
 import React, { useContext, createContext, useState } from 'react'
-import { CheckoutType } from '../types/CheckoutType'
+import { CheckoutType, Product } from '../types/CheckoutType'
 
 type Props = {
   children: JSX.Element
@@ -13,6 +13,14 @@ export function CheckoutProvider({ children }: Props) {
     { id: 2, name: 'Pagamento', active: false },
     { id: 3, name: 'Confirmação', active: false }
   ])
+  const [productData, setProductData] = useState<Product>({
+    id: '',
+    items: [],
+    discount: 0,
+    shippingTotal: 5.3,
+    subTotal: 624.8,
+    total: 618.9
+  })
 
   console.log(navigation)
 
@@ -20,7 +28,9 @@ export function CheckoutProvider({ children }: Props) {
     <CheckoutContext.Provider
       value={{
         navigation,
-        setNavigation
+        setNavigation,
+        productData,
+        setProductData
       }}
     >
       {children}

@@ -3,7 +3,7 @@ import React from 'react'
 import { PriceComponent } from './styles'
 
 export type Props = {
-  children: string,
+  children: string | string[]
   type?: 'total' | 'discount'
 }
 
