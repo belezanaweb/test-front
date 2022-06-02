@@ -14,7 +14,7 @@ function Payment() {
       <Navbar />
       <CreditCard />
       <ProductPrice />
-      <Button>Finalizar pedido</Button>
+      <Button func={() => null}>Finalizar pedido</Button>
     </Container>
   )
 }
