@@ -1,4 +1,70 @@
-a.link {
+a.link,
+a.link:hover,
+a.link:focus,
+a.link:active {
   text-decoration: none;
   color: inherit;
+  font-family: inherit;
+}
+
+.steps {
+  height: 72px;
+  border-radius: 3px;
+  background-color: #d8d8d8;
+  display: flex;
+  justify-content: center;
+}
+
+.Row {
+  margin: 0px;
+  padding: 0px;
+}
+
+.stepLabel {
+  margin-top: 32px;
+  font-family: 'Helvetica Neue', 'Arial Narrow';
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.1px;
+  line-height: 16px;
+  margin-bottom: 12px;
+  box-shadow: 1px 1px 5px 0 rgba(0, 0, 29, 0.22);
+  margin-left: 14px;
+  margin-right: 13px;
+  height: 40px;
+  width: 360px;
+  background-color: #fff;
+}
+
+.cart {
+  height: 16px;
+  width: 61px;
+  max-width: 61px;
+  color: #ff7800;
+  margin-top: 12px;
+  margin-left: 17.5px;
+  text-align: center;
+  margin-bottom: 12px;
+}
+
+.payment {
+  height: 16px;
+  width: 89px;
+  color: #ccc;
+  font-size: 13px;
+  margin-top: 12px;
+  margin-left: 38px;
+  text-align: center;
+  margin-bottom: 12px;
+}
+
+.confirm {
+  height: 16px;
+  width: 101px;
+  color: #ccc;
+  text-align: center;
+  margin-top: 12px;
+  margin-left: 38px;
+  text-align: center;
+  margin-bottom: 12px;
 }

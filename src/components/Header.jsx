@@ -1,20 +1,24 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import { PageHeader, Col, Row } from 'antd'
+import { Col, Row } from 'antd'
 import './Header.css'
 
 const Header = () => (
-  <PageHeader>
-    <Row>
+  <Row className="steps">
+    <Row className="stepLabel">
       <Col>
         <Link className="link" to="/cart">
-          SACOLA
+          <div className="cart">SACOLA</div>
         </Link>
       </Col>
-      <Col>PAGAMENTO</Col>
-      <Col>CONFIRMAÇÃO</Col>
+      <Col>
+        <div className="payment">PAGAMENTO</div>
+      </Col>
+      <Col>
+        <div className="confirm">CONFIRMAÇÃO</div>
+      </Col>
     </Row>
-  </PageHeader>
+  </Row>
 )
 
 export default Header
