@@ -21,3 +21,10 @@
   letter-spacing: 0.1px;
   line-height: 17px;
 }
+
+.loading {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  margin-top: 10px;
+}
