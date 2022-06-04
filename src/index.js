@@ -3,7 +3,9 @@ import ReactDOM from 'react-dom'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import { SWRConfig } from 'swr'
 import './index.css'
-import Cart from './routes/Cart.jsx'
+import Cart from './routes/cart/Cart.jsx'
+import Payment from './routes/payment/Payment'
+import Confirm from './routes/confirm/Confirm'
 import App from './App'
 import * as serviceWorker from './serviceWorker'
 import store from './store'
@@ -19,6 +21,8 @@ const Strict = () => (
           <Routes>
             <Route path="/" element={<App />} />
             <Route path="cart" element={<Cart />} />
+            <Route path="payment" element={<Payment />} />
+            <Route path="confirm" element={<Confirm />} />
           </Routes>
         </BrowserRouter>
       </SWRConfig>

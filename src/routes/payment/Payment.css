@@ -1,0 +1,23 @@
+.paymentBody {
+  height: 100vh;
+  border-radius: 3px;
+  background-color: #d8d8d8;
+  display: flex;
+  justify-content: center;
+}
+
+.paymentCard {
+  height: 347px;
+  width: 341px;
+}
+
+.paymentLabel {
+  height: 17px;
+  width: 319px;
+  color: #999;
+  font-family: 'Helvetica Neue', 'Arial Narrow';
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 0.1px;
+  line-height: 17px;
+}

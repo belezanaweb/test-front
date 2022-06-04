@@ -3,15 +3,15 @@ import { createSlice } from '@reduxjs/toolkit'
 export const cartReducer = createSlice({
   name: 'cart',
   initialState: {
-    total: 0
+    isCartActive: false
   },
   reducers: {
-    setTotal: (state, action) => {
-      state.total = action.payload
+    setIsCartActive: (state, action) => {
+      state.isCartActive = action.payload
     }
   }
 })
 
-export const { setTotal } = cartReducer.actions
+export const { setIsCartActive } = cartReducer.actions
 
 export default cartReducer.reducer
