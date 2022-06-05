@@ -2,6 +2,8 @@ import React from 'react'
 import { Col, Row, Image } from 'antd'
 
 const productContent = (items, cssClassName) => {
+  const formatPrice = (price) => price.toFixed(2)
+
   return items.map((item) => (
     <div key={item.product.sku} className={cssClassName}>
       <Row>
@@ -12,7 +14,9 @@ const productContent = (items, cssClassName) => {
           <Row className="productName">{item.product.name}</Row>
           <Row>
             <span className="productPrice">
-              {item.product.priceSpecification && item.product.priceSpecification.price}
+              R${' '}
+              {item.product.priceSpecification &&
+                formatPrice(item.product.priceSpecification.price)}
             </span>
           </Row>
         </Col>
