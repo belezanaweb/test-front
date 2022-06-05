@@ -11,7 +11,7 @@ export function CheckoutProvider({ children }: Props) {
   const [navigation, setNavigation] = useState([
     { id: 1, name: 'Sacola', active: true },
     { id: 2, name: 'Pagamento', active: false },
-    { id: 3, name: 'Confirmação', active: false }
+    { id: 3, name: 'Confirmacao', active: false }
   ])
   const [productData, setProductData] = useState<Product>({
     id: '',
@@ -21,6 +21,11 @@ export function CheckoutProvider({ children }: Props) {
     subTotal: 624.8,
     total: 618.9
   })
+  const [paymentValid, setPaymentValid] = useState(false)
+  const [creditCard, setCreditCard] = useState('')
+  const [cvv, setCvv] = useState('')
+  const [name, setName] = useState('')
+  const [date, setDate] = useState('')
 
   console.log(navigation)
 
@@ -30,7 +35,17 @@ export function CheckoutProvider({ children }: Props) {
         navigation,
         setNavigation,
         productData,
-        setProductData
+        setProductData,
+        paymentValid,
+        setPaymentValid,
+        creditCard,
+        setCreditCard,
+        cvv,
+        setCvv,
+        name,
+        setName,
+        date,
+        setDate
       }}
     >
       {children}

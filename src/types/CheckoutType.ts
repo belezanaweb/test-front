@@ -37,4 +37,14 @@ export type CheckoutType = {
   setNavigation: React.Dispatch<React.SetStateAction<Nav[]>>
   productData: Product
   setProductData: React.Dispatch<React.SetStateAction<Product>>
+  paymentValid: boolean
+  setPaymentValid: React.Dispatch<React.SetStateAction<boolean>>
+  creditCard: string
+  setCreditCard: React.Dispatch<React.SetStateAction<string>>
+  cvv: string
+  setCvv: React.Dispatch<React.SetStateAction<string>>
+  name: string
+  setName: React.Dispatch<React.SetStateAction<string>>
+  date: string
+  setDate: React.Dispatch<React.SetStateAction<string>>
 }

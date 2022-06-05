@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-d
 
 import Cart from './Cart'
 import Payment from './Payment'
+import Confirmation from './Confirmation'
 
 function AppRoutes() {
   return (
@@ -11,6 +12,7 @@ function AppRoutes() {
         <Route path="/" element={<Navigate to="/sacola" />} />
         <Route path="/sacola" element={<Cart />} />
         <Route path="/pagamento" element={<Payment />} />
+        <Route path="/confirmacao" element={<Confirmation />} />
       </Routes>
     </Router>
   )

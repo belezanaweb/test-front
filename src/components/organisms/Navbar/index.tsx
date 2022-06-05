@@ -19,7 +19,7 @@ function Navbar() {
           key={nav.id}
           active={window.location.pathname.toUpperCase() === `/${nav.name.toUpperCase()}`}
         >
-          {nav.name}
+          {nav.name === 'Confirmacao' ? 'Confirmação' : nav.name}
         </Link>
       ))}
     </Nav>

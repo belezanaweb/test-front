@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React from 'react'
 
 import { InputContainer, InputMaskStyled } from './styles'
 
@@ -7,15 +7,24 @@ type Props = {
   mask?: string
   placeholder: string
   label: string
+  value: string
+  setValues: React.Dispatch<React.SetStateAction<string>>
 }
 
-function Input({ type, mask, placeholder, label }: Props) {
-  const [inputValue, setInputValue] = useState('')
-
+function Input({ type, mask, placeholder, label, value, setValues }: Props) {
   return (
     <InputContainer>
       <label htmlFor={label}>{label}</label>
-      <InputMaskStyled mask={mask ? mask : ''} id={label} type={type} placeholder={placeholder} />
+      <InputMaskStyled
+        value={value}
+        mask={mask ? mask : ''}
+        id={label}
+        type={type}
+        placeholder={placeholder}
+        onChange={(e: any) => {
+          setValues(e.target.value)
+        }}
+      />
     </InputContainer>
   )
 }

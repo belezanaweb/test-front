@@ -2,13 +2,19 @@ import React from 'react'
 
 import { ButtonContent } from './styles'
 
-type Props = {
+export type Props = {
   children: string
-  func: () => void
+  func?: () => void
+  active?: boolean
+  type?: 'submit'
 }
 
-function Button({ children, func }: Props) {
-  return <ButtonContent onClick={() => func()}>{children}</ButtonContent>
+function Button({ children, func, active = true, type }: Props) {
+  return (
+    <ButtonContent type={type && type} onClick={() => func && func()} active={active}>
+      {children}
+    </ButtonContent>
+  )
 }
 
 export default Button
