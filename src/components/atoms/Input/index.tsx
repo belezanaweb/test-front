@@ -9,9 +9,10 @@ type Props = {
   label: string
   value: string
   setValues: React.Dispatch<React.SetStateAction<string>>
+  errorComponent: JSX.Element
 }
 
-function Input({ type, mask, placeholder, label, value, setValues }: Props) {
+function Input({ type, mask, placeholder, label, value, setValues, errorComponent }: Props) {
   return (
     <InputContainer>
       <label htmlFor={label}>{label}</label>
@@ -25,6 +26,7 @@ function Input({ type, mask, placeholder, label, value, setValues }: Props) {
           setValues(e.target.value)
         }}
       />
+      {errorComponent}
     </InputContainer>
   )
 }

@@ -8,10 +8,11 @@ export const ButtonContent = styled.button<Props>`
   background-color: #ff6c00;
   outline: none;
   border: 0;
-  padding: 0.75rem;
+  padding: 1rem 0.75rem;
   color: #fafafa;
-  font-size: 1rem;
+  font-size: 1.1rem;
   text-transform: uppercase;
   border-radius: 3px;
-  opacity: ${(props) => (props.active ? `1` : `.5`)};
+  letter-spacing: 1px;
+  box-shadow: 0px 2.5px 0px #d45a00;
 `

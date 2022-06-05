@@ -14,8 +14,9 @@ export const InputContainer = styled.div`
 export const InputMaskStyled = styled<any>(InputMask)`
   border: 1px solid #cccccc;
   padding: 0.5rem;
-  margin: 0.3rem 0 1rem 0;
+  margin: 0.3rem 0.5rem 1rem 0rem;
   border-radius: 3px;
+  width: ${(props) => (props.id === 'Validade (mês/ano):' || props.id === 'CVV' ? '85%' : '92%')};
 
   ::placeholder {
     color: #cccccc;

@@ -12,19 +12,51 @@ function ProductPrice() {
     <PriceCard>
       <div>
         <Text type="text">Produtos</Text>
-        <Price>R$ {productData.subTotal.toString()}</Price>
+        <Price>
+          {productData.subTotal
+            .toLocaleString('pt-BR', {
+              minimumFractionDigits: 2,
+              style: 'currency',
+              currency: 'BRL'
+            })
+            .toString()}
+        </Price>
       </div>
       <div>
         <Text type="text">Frete</Text>
-        <Price>R$ {productData.shippingTotal.toString()}</Price>
+        <Price>
+          {productData.shippingTotal
+            .toLocaleString('pt-BR', {
+              minimumFractionDigits: 2,
+              style: 'currency',
+              currency: 'BRL'
+            })
+            .toString()}
+        </Price>
       </div>
       <div>
-        <Text type="text">Desconto</Text>
-        <Price>R$ {productData.discount.toString()}</Price>
+        <Text type="discount">Desconto</Text>
+        <Price type="discount">
+          {productData.discount
+            .toLocaleString('pt-BR', {
+              minimumFractionDigits: 2,
+              style: 'currency',
+              currency: 'BRL'
+            })
+            .toString()}
+        </Price>
       </div>
       <div>
-        <Text type="text">Total</Text>
-        <Price>R$ {productData.total.toString()}</Price>
+        <Text type="total">Total</Text>
+        <Price type="total">
+          {productData.total
+            .toLocaleString('pt-BR', {
+              minimumFractionDigits: 2,
+              style: 'currency',
+              currency: 'BRL'
+            })
+            .toString()}
+        </Price>
       </div>
     </PriceCard>
   )

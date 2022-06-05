@@ -7,7 +7,6 @@
   font-family: 'Helvetica Neue', sans-serif;
 }
 
-.App {
+html {
   background-color: #eeeeee;
-  height: 100vh;
 }

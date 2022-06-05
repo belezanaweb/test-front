@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React from 'react'
 import { useNavigate } from 'react-router-dom'
 import { Form, Formik } from 'formik'
 
@@ -11,21 +11,10 @@ import Navbar from '../components/organisms/Navbar'
 import CreditCard from '../components/organisms/CreditCard'
 import { useCheckout } from '../providers/checkout'
 import formValidation from '../utils/formValidations'
-import { FormProps } from '../types/FormTypes'
 
 function Payment() {
   const navigate = useNavigate()
-  const {
-    paymentValid,
-    creditCard,
-    setCreditCard,
-    name,
-    setName,
-    date,
-    setDate,
-    cvv,
-    setCvv
-  } = useCheckout()
+  const { creditCard, name, date, cvv, setError, setPaymentValid } = useCheckout()
 
   return (
     <Container>
@@ -45,25 +34,27 @@ function Payment() {
             date,
             cvv
           })
+          setError(errors)
+          if (
+            errors.creditCard === '' &&
+            errors.name === '' &&
+            errors.date === '' &&
+            errors.cvv === ''
+          ) {
+            navigate('/confirmacao')
+          } else {
+            setPaymentValid(false)
+          }
           return errors
         }}
-        onSubmit={(values) => {
-          console.log(values)
-          if (paymentValid) {
-            navigate('/confirmacao')
-          }
-        }}
+        onSubmit={() => {}}
       >
-        {({ errors }) => (
+        {() => (
           <Form>
             <>
-              {console.log(errors)}
-
               <CreditCard />
               <ProductPrice />
-              <Button type="submit" active={paymentValid}>
-                Finalizar pedido
-              </Button>
+              <Button type="submit">Finalizar pedido</Button>
             </>
           </Form>
         )}

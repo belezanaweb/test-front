@@ -1,14 +1,16 @@
 import React from 'react'
+
 import { NavLink } from './styles'
 
 export type Props = {
-  children: string | string[],
+  children: string | string[]
   active: boolean
+  func?: () => void
 }
 
-function Link({ children, active }: Props) {
+function Link({ children, active, func }: Props) {
   return (
-    <NavLink href="" active={active}>
+    <NavLink active={active} onClick={() => func && func()}>
       {children}
     </NavLink>
   )

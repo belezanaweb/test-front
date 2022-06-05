@@ -26,6 +26,12 @@ export function CheckoutProvider({ children }: Props) {
   const [cvv, setCvv] = useState('')
   const [name, setName] = useState('')
   const [date, setDate] = useState('')
+  const [error, setError] = useState({
+    creditCard: '',
+    cvv: '',
+    date: '',
+    name: ''
+  })
 
   console.log(navigation)
 
@@ -45,7 +51,9 @@ export function CheckoutProvider({ children }: Props) {
         name,
         setName,
         date,
-        setDate
+        setDate,
+        error,
+        setError
       }}
     >
       {children}

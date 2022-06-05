@@ -4,6 +4,7 @@ export const PriceCard = styled.div`
   border: 1px solid #cccccc;
   margin: 0.5rem;
   padding: 0.5rem;
+  border-radius: 5px;
 
   div {
     display: grid;

@@ -4,16 +4,16 @@ import Text from '../../atoms/Text'
 import { CardContent } from './styles'
 
 type Props = {
-  children: JSX.Element | JSX.Element[],
+  children: JSX.Element | JSX.Element[]
   title: string
 }
 
 function Card({ children, title }: Props) {
   return (
-    <section>
+    <CardContent>
       <Text type="title">{title}</Text>
-      <CardContent>{children}</CardContent>
-    </section>
+      <div className="content">{children}</div>
+    </CardContent>
   )
 }
 

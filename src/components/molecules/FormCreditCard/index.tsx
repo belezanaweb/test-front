@@ -3,21 +3,31 @@ import React from 'react'
 import { ALignTwoInputs } from './styles'
 
 import Input from '../../atoms/Input'
-import { FormProps } from '../../../types/FormTypes'
 import { useCheckout } from '../../../providers/checkout'
 
 function FormCreditCard() {
-  const { creditCard, setCreditCard, name, setName, date, setDate, cvv, setCvv } = useCheckout()
+  const {
+    creditCard,
+    setCreditCard,
+    name,
+    setName,
+    date,
+    setDate,
+    cvv,
+    setCvv,
+    error
+  } = useCheckout()
 
   return (
     <>
       <Input
-        mask="9999.9999.9999"
+        mask="9999.9999.9999.9999"
         type="text"
         value={creditCard}
         setValues={setCreditCard}
         placeholder="_ _ _ _._ _ _ _._ _ _ _._ _ _ _"
         label="Número do cartão:"
+        errorComponent={error.creditCard !== '' ? <p>{error.creditCard}</p> : <></>}
       />
       <Input
         type="text"
@@ -25,6 +35,7 @@ function FormCreditCard() {
         setValues={setName}
         placeholder="Como no cartão"
         label="Nome do titular:"
+        errorComponent={error.name !== '' ? <p>{error.name}</p> : <></>}
       />
       <ALignTwoInputs>
         <Input
@@ -34,6 +45,7 @@ function FormCreditCard() {
           setValues={setDate}
           placeholder="_ _/_ _ _ _"
           label="Validade (mês/ano):"
+          errorComponent={error.date !== '' ? <p>{error.date}</p> : <></>}
         />
         <Input
           mask="999"
@@ -42,6 +54,7 @@ function FormCreditCard() {
           setValues={setCvv}
           placeholder="_ _ _"
           label="CVV"
+          errorComponent={error.cvv !== '' ? <p>{error.cvv}</p> : <></>}
         />
       </ALignTwoInputs>
     </>

@@ -32,6 +32,13 @@ export type Product = {
   total: number
 }
 
+export type Error = {
+  creditCard: string
+  cvv: string
+  date: string
+  name: string
+}
+
 export type CheckoutType = {
   navigation: Nav[]
   setNavigation: React.Dispatch<React.SetStateAction<Nav[]>>
@@ -47,4 +54,6 @@ export type CheckoutType = {
   setName: React.Dispatch<React.SetStateAction<string>>
   date: string
   setDate: React.Dispatch<React.SetStateAction<string>>
+  error: Error
+  setError: React.Dispatch<React.SetStateAction<Error>>
 }

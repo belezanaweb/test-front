@@ -5,4 +5,5 @@ export const Nav = styled.nav`
   justify-content: space-around;
   padding: 1rem;
   background-color: #fafafa;
+  box-shadow: 0px 2px 7px #d9d9d9;
 `
