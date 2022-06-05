@@ -2,9 +2,9 @@ import React, { useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import { Col, Row } from 'antd'
 import { useSelector, useDispatch } from 'react-redux'
-import { setIsCartActive } from '../reducer/Cart'
-import { setIsConfirmActive } from '../reducer/Confirm'
-import { setIsPaymentActive } from '../reducer/Payment'
+import { setIsCartActive } from '../../reducer/Cart'
+import { setIsConfirmActive } from '../../reducer/Confirm'
+import { setIsPaymentActive } from '../../reducer/Payment'
 import { useLocation } from 'react-router-dom'
 import './Header.css'
 
@@ -23,9 +23,7 @@ const Header = () => {
 
   const setCurrentRoute = () => {
     const setActive = routes[location.pathname]
-    if (setActive) {
-      dispatch(setActive(true))
-    }
+    dispatch(setActive ? setActive(true) : setIsCartActive(true))
   }
 
   useEffect(() => {

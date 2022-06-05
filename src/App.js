@@ -1,12 +1,12 @@
 import React from 'react'
 import './App.css'
-import Header from './components/Header.jsx'
+import Cart from './routes/cart/Cart.jsx'
 import 'antd/dist/antd.css'
 
 const App = () => {
   return (
     <>
-      <Header />
+      <Cart />
     </>
   )
 }
