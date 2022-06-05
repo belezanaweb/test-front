@@ -20,6 +20,9 @@
   font-weight: 700;
   letter-spacing: 0.1px;
   line-height: 17px;
+  margin-top: 10px;
+  margin-left: 9px;
+  margin-bottom: 5px;
 }
 
 .loading {
@@ -27,4 +30,23 @@
   justify-content: center;
   width: 100%;
   margin-top: 10px;
+}
+
+.productBody {
+  height: 325px;
+  width: 341px;
+  border-radius: 3px;
+  background-color: #fff;
+  box-shadow: 1px 1px 5px 0 rgba(0, 0, 29, 0.22);
+}
+
+.productItem {
+  box-sizing: border-box;
+  height: 90px;
+  width: 316px;
+  border-radius: 3px;
+  border: 1px solid #eee;
+  margin-left: 13px;
+  margin-right: 12px;
+  margin-top: 12px;
 }
