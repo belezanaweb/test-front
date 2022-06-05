@@ -23,7 +23,7 @@ const Cart = () => {
     <>
       <Header />
       <Row className="cartBody">
-        <Row className="productCard">
+        <div className="productCard">
           {!cartInfo ? (
             <Row className="loading">
               <Col>
@@ -40,7 +40,7 @@ const Cart = () => {
               </Row>
             </>
           )}
-        </Row>
+        </div>
       </Row>
     </>
   )

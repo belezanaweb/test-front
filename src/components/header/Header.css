@@ -10,7 +10,7 @@ a.link:active {
 .steps {
   height: 72px;
   border-radius: 3px;
-  background-color: #d8d8d8;
+  background-color: #eee;
   display: flex;
   justify-content: center;
 }
@@ -34,6 +34,7 @@ a.link:active {
   height: 40px;
   width: 360px;
   background-color: #fff;
+  z-index: 2;
 }
 
 .cart {

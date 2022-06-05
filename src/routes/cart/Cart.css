@@ -1,14 +1,16 @@
 .cartBody {
   height: 100vh;
   border-radius: 3px;
-  background-color: #d8d8d8;
+  background-color: #eee;
   display: flex;
   justify-content: center;
 }
 
 .productCard {
-  height: 347px;
-  width: 341px;
+  height: 680px;
+  width: 360px;
+  background-color: #eee;
+  box-shadow: 1px 1px 5px 0 rgba(0, 0, 29, 0.22);
 }
 
 .productLabel {
@@ -38,6 +40,7 @@
   border-radius: 3px;
   background-color: #fff;
   box-shadow: 1px 1px 5px 0 rgba(0, 0, 29, 0.22);
+  margin-left: 9px;
 }
 
 .productItem {
@@ -49,4 +52,29 @@
   margin-left: 13px;
   margin-right: 12px;
   margin-top: 12px;
+}
+
+.productName {
+  height: 32px;
+  width: 220px;
+  color: #212122;
+  font-family: 'Helvetica Neue', 'Arial Narrow';
+  font-size: 13px;
+  line-height: 16px;
+  margin-left: 11px;
+  margin-top: 12px;
+  margin-right: 10px;
+  word-wrap: break-word;
+}
+
+.productPrice {
+  height: 17px;
+  width: 220px;
+  color: #212122;
+  font-family: 'Helvetica Neue', 'Arial Narrow';
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 17px;
+  text-align: right;
+  margin-top: 15px;
 }

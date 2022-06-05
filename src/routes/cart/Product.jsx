@@ -1,9 +1,22 @@
 import React from 'react'
+import { Col, Row, Image } from 'antd'
 
 const productContent = (items, cssClassName) => {
   return items.map((item) => (
     <div key={item.product.sku} className={cssClassName}>
-      {item.product.name}
+      <Row>
+        <Col>
+          <Image width={65} src={item.product.imageObjects && item.product.imageObjects[0].small} />
+        </Col>
+        <Col>
+          <Row className="productName">{item.product.name}</Row>
+          <Row>
+            <span className="productPrice">
+              {item.product.priceSpecification && item.product.priceSpecification.price}
+            </span>
+          </Row>
+        </Col>
+      </Row>
     </div>
   ))
 }
