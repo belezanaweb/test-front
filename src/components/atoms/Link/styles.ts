@@ -8,4 +8,5 @@ export const NavLink = styled.p<Props>`
   text-transform: uppercase;
   font-size: 0.8rem;
   letter-spacing: 0.75px;
+  cursor: pointer;
 `

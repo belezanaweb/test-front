@@ -18,12 +18,17 @@ export const ProductContent = styled.div`
   div img {
     width: 100%;
     margin: 0 0 0 1rem;
+
+    @media (min-width: 767px) {
+      width: 50%;
+    }
   }
 
   .title-price {
     display: flex;
     flex-direction: column;
     padding: 0 0 0 0.5rem;
+    justify-content: space-around;
 
     p {
       font-size: 0.75rem;

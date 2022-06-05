@@ -1,11 +1,11 @@
 import React from 'react'
 
+import { Content } from './styles'
+
 type Props = {
   children: JSX.Element | JSX.Element[]
 }
 
-function Container({ children }: Props) {
+export default function Container({ children }: Props) {
   return <main>{children}</main>
 }
-
-export default Container

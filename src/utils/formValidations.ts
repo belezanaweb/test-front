@@ -13,7 +13,7 @@ function formValidation(values: Props) {
     date: ''
   }
 
-  if (values.creditCard.replace(/[^a-zA-Z0-9]/g, '').length < 12) {
+  if (values.creditCard.replace(/[^a-zA-Z0-9]/g, '').length < 16) {
     errors.creditCard = 'Insira um cartão de crédito válido'
   }
 

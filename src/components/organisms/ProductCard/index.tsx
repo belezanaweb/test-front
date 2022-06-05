@@ -1,12 +1,14 @@
 import React from 'react'
 
 import { useCheckout } from '../../../providers/checkout'
+import useWindowSize from '../../../utils/useWindowSize'
 
 import Card from '../../molecules/Card'
 import Product from '../../molecules/Product'
 
 function ProductCard() {
   const { productData } = useCheckout()
+  const size = useWindowSize()
 
   return (
     <section>
@@ -15,7 +17,11 @@ function ProductCard() {
           <Product
             title={product.product.name}
             price={product.product.priceSpecification.price.toString()}
-            image={product.product.imageObjects[0].small}
+            image={
+              size < 768
+                ? product.product.imageObjects[0].small
+                : product.product.imageObjects[0].large
+            }
           />
         ))}
       </Card>

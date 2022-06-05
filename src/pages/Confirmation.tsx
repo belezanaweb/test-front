@@ -1,6 +1,7 @@
 import React from 'react'
 
 import Container from '../components/atoms/Container'
+import { Content } from '../components/atoms/Container/styles'
 
 import ProductPrice from '../components/molecules/ProductPrice'
 
@@ -12,9 +13,11 @@ function Confirmation() {
   return (
     <Container>
       <Navbar />
-      <PaymentSuccess />
-      <ProductCard />
-      <ProductPrice />
+      <Content>
+        <PaymentSuccess />
+        <ProductCard />
+        <ProductPrice />
+      </Content>
     </Container>
   )
 }

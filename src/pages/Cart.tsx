@@ -4,6 +4,8 @@ import { useNavigate } from 'react-router-dom'
 
 import Container from '../components/atoms/Container'
 import Button from '../components/atoms/Button'
+import { Content } from '../components/atoms/Container/styles'
+import { Loading } from '../components/atoms/Loading/styles'
 
 import ProductPrice from '../components/molecules/ProductPrice'
 
@@ -20,7 +22,6 @@ function Cart() {
   async function getProductsPrice() {
     const response = await axios.get('http://www.mocky.io/v2/5b15c4923100004a006f3c07')
     const data = await response.data
-    console.log(data)
     setProductData(data)
     setLoading(false)
   }
@@ -33,13 +34,13 @@ function Cart() {
     <Container>
       <Navbar />
       {loading ? (
-        <>Carregando...</>
+        <Loading>Carregando...</Loading>
       ) : (
-        <>
+        <Content>
           <ProductCard />
           <ProductPrice />
           <Button func={() => navigate('/pagamento')}>Seguir para o pagamento</Button>
-        </>
+        </Content>
       )}
     </Container>
   )

@@ -33,8 +33,6 @@ export function CheckoutProvider({ children }: Props) {
     name: ''
   })
 
-  console.log(navigation)
-
   return (
     <CheckoutContext.Provider
       value={{

@@ -4,6 +4,13 @@ import InputMask from 'react-input-mask'
 export const InputContainer = styled.div`
   display: flex;
   flex-direction: column;
+  width: 100%;
+
+  .error {
+    margin: -0.5rem 0 0.75rem 0;
+    color: #ff3300;
+    font-size: 0.8rem;
+  }
 
   label {
     font-size: 0.75rem;

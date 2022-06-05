@@ -31,15 +31,17 @@ function Navbar() {
 
   return (
     <Nav>
-      {navigation.map((nav: NavType) => (
-        <Link
-          key={nav.id}
-          active={window.location.pathname.toUpperCase() === `/${nav.name.toUpperCase()}`}
-          func={() => navigationBack(nav.name)}
-        >
-          {nav.name === 'Confirmacao' ? 'Confirmação' : nav.name}
-        </Link>
-      ))}
+      <div className="navLinks">
+        {navigation.map((nav: NavType) => (
+          <Link
+            key={nav.id}
+            active={window.location.pathname.toUpperCase() === `/${nav.name.toUpperCase()}`}
+            func={() => navigationBack(nav.name)}
+          >
+            {nav.name === 'Confirmacao' ? 'Confirmação' : nav.name}
+          </Link>
+        ))}
+      </div>
     </Nav>
   )
 }

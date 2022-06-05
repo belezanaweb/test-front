@@ -18,7 +18,6 @@ function PaymentSuccess() {
         newString.push(element.toString().replace(element, '****'))
       }
     })
-    console.log(newString.join('.'))
     return newString.join('.')
   }
 

@@ -27,7 +27,9 @@ function FormCreditCard() {
         setValues={setCreditCard}
         placeholder="_ _ _ _._ _ _ _._ _ _ _._ _ _ _"
         label="Número do cartão:"
-        errorComponent={error.creditCard !== '' ? <p>{error.creditCard}</p> : <></>}
+        errorComponent={
+          error.creditCard !== '' ? <p className="error">{error.creditCard}</p> : <></>
+        }
       />
       <Input
         type="text"
@@ -35,7 +37,7 @@ function FormCreditCard() {
         setValues={setName}
         placeholder="Como no cartão"
         label="Nome do titular:"
-        errorComponent={error.name !== '' ? <p>{error.name}</p> : <></>}
+        errorComponent={error.name !== '' ? <p className="error">{error.name}</p> : <></>}
       />
       <ALignTwoInputs>
         <Input
@@ -45,7 +47,7 @@ function FormCreditCard() {
           setValues={setDate}
           placeholder="_ _/_ _ _ _"
           label="Validade (mês/ano):"
-          errorComponent={error.date !== '' ? <p>{error.date}</p> : <></>}
+          errorComponent={error.date !== '' ? <p className="error">{error.date}</p> : <></>}
         />
         <Input
           mask="999"
@@ -54,7 +56,7 @@ function FormCreditCard() {
           setValues={setCvv}
           placeholder="_ _ _"
           label="CVV"
-          errorComponent={error.cvv !== '' ? <p>{error.cvv}</p> : <></>}
+          errorComponent={error.cvv !== '' ? <p className="error">{error.cvv}</p> : <></>}
         />
       </ALignTwoInputs>
     </>
