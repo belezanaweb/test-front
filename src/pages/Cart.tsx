@@ -28,7 +28,7 @@ function Cart() {
 
   useEffect(() => {
     getProductsPrice()
-  }, [])
+  }, []) // eslint-disable-line react-hooks/exhaustive-deps
 
   return (
     <Container>

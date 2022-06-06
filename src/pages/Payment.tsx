@@ -1,6 +1,6 @@
 import React from 'react'
 import { useNavigate } from 'react-router-dom'
-import { Form, Formik } from 'formik'
+import { Formik } from 'formik'
 
 import Container from '../components/atoms/Container'
 import Button from '../components/atoms/Button'

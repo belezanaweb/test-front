@@ -11,13 +11,13 @@ function PaymentSuccess() {
   function creditCardString() {
     let stringCard = creditCard.split('.')
     let newString: string[] = []
-    stringCard.map((element, index) => {
+    for (let index = 0; index < stringCard.length; index++) {
       if (index === stringCard.length - 1) {
-        newString.push(element)
+        newString.push(stringCard[index])
       } else {
-        newString.push(element.toString().replace(element, '****'))
+        newString.push(stringCard[index].toString().replace(stringCard[index], '****'))
       }
-    })
+    }
     return newString.join('.')
   }
 
