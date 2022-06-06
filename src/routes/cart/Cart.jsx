@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react'
 import useSWR from 'swr'
 import URL from '../../utils/constants.js'
-import { Col, Row, Spin } from 'antd'
+import { Col, Row, Spin, Button } from 'antd'
 import { useSelector, useDispatch } from 'react-redux'
 import Header from '../../components/header/Header.jsx'
 import { setCartInfo } from '../../reducer/Cart'
@@ -41,6 +41,11 @@ const Cart = () => {
                 </div>
               </Row>
               <Row>{totalCardContent(cartInfo.items, 'total')}</Row>
+              <Row>
+                <button className="goToPaymentBtn">
+                  <div className="goToPaymentLabel">SEGUIR PARA O PAGAMENTO</div>
+                </button>
+              </Row>
             </>
           )}
         </div>
