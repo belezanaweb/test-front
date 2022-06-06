@@ -78,3 +78,53 @@
   text-align: right;
   margin-top: 15px;
 }
+
+.total {
+  height: 129px;
+  width: 341px;
+  border: 1px solid #ccc;
+  margin-left: 9px;
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+.totalItem {
+  color: #212122;
+  font-family: 'Helvetica Neue', 'Arial Narrow';
+  font-size: 14px;
+  line-height: 17px;
+}
+
+.totalItemLabel {
+  margin-left: 14px;
+}
+
+.totalProduct {
+  height: 17px;
+  width: 124px;
+  margin-top: 15px;
+}
+
+.totalItemValue {
+  margin-right: 13px;
+  text-align: right;
+}
+
+.productItemValue {
+  margin-top: 15px;
+}
+
+.totalFrete {
+  margin-top: 9px;
+}
+
+.totalDesconto {
+  margin-top: 8px;
+  color: #ff7800;
+}
+
+.totalTotal {
+  margin-top: 16px;
+  font-weight: 700;
+}
