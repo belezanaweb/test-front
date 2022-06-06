@@ -5,7 +5,7 @@ import { Col, Row, Spin } from 'antd'
 import { useSelector, useDispatch } from 'react-redux'
 import Header from '../../components/header/Header.jsx'
 import { setCartInfo } from '../../reducer/Cart'
-import { productContent, totalContent } from './Product'
+import { productCardContent, totalCardContent } from './Product'
 import './Cart.css'
 
 const Cart = () => {
@@ -36,9 +36,11 @@ const Cart = () => {
                 <Col className="productLabel">PRODUTOS</Col>
               </Row>
               <Row>
-                <div className="productBody">{productContent(cartInfo.items, 'productItem')}</div>
+                <div className="productBody">
+                  {productCardContent(cartInfo.items, 'productItem')}
+                </div>
               </Row>
-              <Row>{totalContent(cartInfo.items, 'total')}</Row>
+              <Row>{totalCardContent(cartInfo.items, 'total')}</Row>
             </>
           )}
         </div>
