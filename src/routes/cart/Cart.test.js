@@ -1,12 +1,12 @@
 import React from 'react'
 import '../../tests/matchMedia'
 import { render } from '@testing-library/react'
-import Header from './Header'
+import Cart from './Cart.jsx'
 import { Provider } from 'react-redux'
 import configureStore from 'redux-mock-store'
 import { BrowserRouter } from 'react-router-dom'
 
-test('renders the header page', () => {
+test('renders the cart page', () => {
   const mockStore = configureStore()
   const initialState = {
     cart: {
@@ -22,15 +22,11 @@ test('renders the header page', () => {
   let store
   store = mockStore(initialState)
 
-  const { getByText } = render(
+  render(
     <Provider store={store}>
       <BrowserRouter>
-        <Header />
+        <Cart />
       </BrowserRouter>
     </Provider>
   )
-
-  expect(getByText('SACOLA')).toBeInTheDocument()
-  expect(getByText('PAGAMENTO')).toBeInTheDocument()
-  expect(getByText('CONFIRMAÇÃO')).toBeInTheDocument()
 })
