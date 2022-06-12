@@ -5,4 +5,5 @@ export const Container = styled.section`
   padding: 13px;
   background-color: #fff;
   border-radius: 3px;
+  margin-bottom: 20px;
 `
