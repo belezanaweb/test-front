@@ -8,10 +8,13 @@ export const Container = styled.section`
   div {
     width: 100%;
     font-size: 0.875rem;
-    margin-bottom: 8px;
     color: #212122;
     display: flex;
     justify-content: space-between;
+
+    &:not(:last-child) {
+      margin-bottom: 8px;
+    }
 
     &:nth-child(3) {
       margin-bottom: 16px;
