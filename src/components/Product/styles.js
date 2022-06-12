@@ -6,6 +6,10 @@ export const Container = styled.article`
   padding: 10px;
   border: 1px solid #eee;
   border-radius: 3px;
+
+  &:not(:last-child) {
+    margin-bottom: 15px;
+  }
 `
 export const ImageContainer = styled.div`
   width: 20%;
