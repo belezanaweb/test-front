@@ -9,7 +9,7 @@ export const Cart = () => {
     <Container>
       <Products />
       <Summary />
-      <ActionButton />
+      <ActionButton actionText={'Seguir para o pagamento'} />
     </Container>
   )
 }
