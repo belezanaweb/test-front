@@ -1,5 +1,6 @@
 import React from 'react'
+import { ButtonContainer } from './styles'
 
 export const ActionButton = ({ actionText }) => {
-  return <button>{actionText}</button>
+  return <ButtonContainer>{actionText}</ButtonContainer>
 }
