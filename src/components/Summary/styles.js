@@ -12,6 +12,10 @@ export const Container = styled.section`
     display: flex;
     justify-content: space-between;
 
+    p {
+      text-transform: uppercase;
+    }
+
     &:not(:last-child) {
       margin-bottom: 8px;
     }
