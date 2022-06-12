@@ -1,6 +1,6 @@
 import React, { StrictMode } from 'react'
 import ReactDOM from 'react-dom'
-import './index.css'
+import './global.css'
 import App from './App'
 import * as serviceWorker from './serviceWorker'
 
