@@ -1,7 +1,10 @@
 import React from 'react'
+import { useSelector } from 'react-redux'
 import { Container, div, ShippingCost, Discount, Total } from './styles'
 
 export const Summary = ({ pricesTotal, shippingCost, discount, total }) => {
+  const summaryInfo = useSelector((state) => state.summary)
+  console.log(summaryInfo)
   return (
     <Container>
       <div>
