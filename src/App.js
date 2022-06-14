@@ -9,7 +9,6 @@ import { Confirmation } from './pages/Confirmation'
 const App = () => {
   return (
     <PageContainer>
-      <Header />
       <Routes>
         <Route path="/" element={<Cart />} />
         <Route path="/payment" element={<Payment />} />
