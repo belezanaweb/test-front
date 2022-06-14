@@ -9,19 +9,19 @@ export const Summary = ({ pricesTotal, shippingCost, discount, total }) => {
     <Container>
       <div>
         <p>Produtos</p>
-        <p>RS{pricesTotal}</p>
+        <p>RS {summaryInfo.subTotal.toFixed(2)}</p>
       </div>
       <div>
         <p>Frete</p>
-        <p>R${shippingCost}</p>
+        <p>R$ {summaryInfo.shippingCost.toFixed(2)}</p>
       </div>
       <Discount>
         <p>Desconto</p>
-        <p>R${discount}</p>
+        <p>R$ {summaryInfo.discount.toFixed(2)}</p>
       </Discount>
       <Total>
         <p>Total</p>
-        <p>R${total}</p>
+        <p>R$ {summaryInfo.total.toFixed(2)}</p>
       </Total>
     </Container>
   )
