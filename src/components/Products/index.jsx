@@ -6,7 +6,7 @@ import { useSelector } from 'react-redux'
 
 export const Products = () => {
   const [chosenProducts, setChosenProducts] = useState([])
-  const products = useSelector((state) => state.products.products)
+  const products = useSelector((state) => state.products.items)
 
   useEffect(() => {
     setChosenProducts(products)
@@ -16,8 +16,10 @@ export const Products = () => {
     <>
       <SectionHeader text={'Produtos'} />
       <Container>
-        {chosenProducts?.length &&
-          chosenProducts.map((product) => <Product key={product.sku} {...product} />)}
+        {!!chosenProducts?.length &&
+          chosenProducts.map((product) => (
+            <Product key={product.product.sku} {...product.product} />
+          ))}
       </Container>
     </>
   )
