@@ -2,14 +2,28 @@ import React from 'react'
 import './App.css'
 import { Route, Routes } from 'react-router-dom'
 import { PageContainer } from './components/PageContainer'
-import { Cart } from './pages/Cart/'
-import { Payment } from './pages/Payment'
-import { Confirmation } from './pages/Confirmation'
+// import { Cart } from './pages/Cart/'
+// import { Payment } from './pages/Payment'
+// import { Confirmation } from './pages/Confirmation'
 import { useEffect } from 'react'
 import { api } from './services/api'
 import { useDispatch } from 'react-redux'
 import { loadProducts } from './redux/slices/productsSlice'
 import { loadSummaryInfo } from './redux/slices/summarySlice'
+import loadable from '@loadable/component'
+
+const Cart = loadable(() => import('./pages/Cart/'), {
+  resolveComponent: (components) => components.Cart
+})
+
+const Payment = loadable(() => import('./pages/Payment/'), {
+  resolveComponent: (components) => components.Payment
+})
+
+const Confirmation = loadable(() => import('./pages/Confirmation/'), {
+  resolveComponent: (components) => components.Confirmation
+})
+
 const App = () => {
   const dispatch = useDispatch()
 
