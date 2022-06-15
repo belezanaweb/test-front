@@ -2,7 +2,6 @@ import styled from 'styled-components'
 
 export const Container = styled.article`
   width: 100%;
-  /* height: 90px; */
   padding: 10px;
   border: 1px solid #eee;
   border-radius: 3px;
@@ -28,6 +27,12 @@ export const TextContainer = styled.div`
   align-items: flex-end;
   font-size: 0.81rem;
   line-height: 1rem;
+
+  @media screen and (min-width: 1024px) {
+    p {
+      font-size: 1rem;
+    }
+  }
 `
 export const ProductTitle = styled.p`
   font-weight: 400;

@@ -1,6 +1,6 @@
 import React, { StrictMode } from 'react'
 import ReactDOM from 'react-dom'
-import './global.css'
+import { GlobalStyle } from './globalStyles'
 import App from './App'
 import { BrowserRouter } from 'react-router-dom'
 import { Provider } from 'react-redux'
@@ -10,6 +10,7 @@ const Strict = () => (
   <StrictMode>
     <Provider store={store}>
       <BrowserRouter>
+        <GlobalStyle />
         <App />
       </BrowserRouter>
     </Provider>

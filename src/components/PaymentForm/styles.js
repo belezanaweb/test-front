@@ -6,6 +6,7 @@ export const Container = styled.section`
   background-color: #fff;
   border-radius: 3px;
   margin-bottom: 20px;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
 
   label {
     display: flex;
@@ -28,17 +29,18 @@ export const Container = styled.section`
       &:focus {
         border: inherit;
       }
-      /*
-      &:first-child {
-        &::placeholder {
-        }
-      } */
 
       &::placeholder {
         color: #e0e7ee;
         font-size: 1rem;
         letter-spacing: 1.37px;
       }
+    }
+  }
+
+  @media screen and (min-width: 1024px) {
+    label {
+      font-size: 1rem;
     }
   }
 `

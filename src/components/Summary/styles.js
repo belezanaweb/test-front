@@ -4,6 +4,7 @@ export const Container = styled.section`
   width: 100%;
   border: 1px solid #d4d4d4;
   padding: 15px;
+  border-radius: 3px;
 
   div {
     width: 100%;
@@ -22,6 +23,14 @@ export const Container = styled.section`
 
     &:nth-child(3) {
       margin-bottom: 16px;
+    }
+  }
+
+  @media screen and (min-width: 1024px) {
+    div {
+      p {
+        font-size: 1.2rem;
+      }
     }
   }
 `

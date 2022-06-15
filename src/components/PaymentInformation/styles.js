@@ -7,4 +7,5 @@ export const Container = styled.section`
   background-color: #fff;
   border-radius: 3px;
   margin-bottom: 10px;
+  box-shadow: 1px 2px 4px rgba(0, 0, 0, 0.2);
 `

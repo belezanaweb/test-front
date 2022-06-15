@@ -10,14 +10,8 @@ export const Nav = styled.nav`
   align-items: center;
   margin: 0 auto;
 
-  @media (min-width: 720px) {
-    a {
-      font-size: 1.2rem;
-    }
-  }
-
   @media (min-width: 1024px) {
-    a {
+    li {
       font-size: 1.3rem;
     }
   }
