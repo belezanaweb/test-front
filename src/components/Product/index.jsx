@@ -3,7 +3,7 @@ import { Container, ImageContainer, Image, TextContainer, ProductTitle, Price } 
 
 export const Product = ({ name, priceSpecification, imageObjects }) => {
   return (
-    <Container isConfirmation={window.location.pathname === '/confirmation'}>
+    <Container role="article" isConfirmation={window.location.pathname === '/confirmation'}>
       <ImageContainer>
         <img src={imageObjects[0]?.thumbnail} alt={name} />
       </ImageContainer>

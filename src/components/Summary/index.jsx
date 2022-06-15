@@ -8,19 +8,19 @@ export const Summary = ({ pricesTotal, shippingCost, discount, total }) => {
     <Container>
       <div>
         <p>Produtos</p>
-        <p>RS {summaryInfo.subTotal.toFixed(2)}</p>
+        <p data-testid="subTotal">R$ {summaryInfo.subTotal.toFixed(2)}</p>
       </div>
       <div>
         <p>Frete</p>
-        <p>R$ {summaryInfo.shippingCost.toFixed(2)}</p>
+        <p data-testid="shippingTotal">R$ {summaryInfo.shippingCost.toFixed(2)}</p>
       </div>
       <Discount>
         <p>Desconto</p>
-        <p>R$ {summaryInfo.discount.toFixed(2)}</p>
+        <p data-testid="discount">R$ {summaryInfo.discount.toFixed(2)}</p>
       </Discount>
       <Total>
         <p>Total</p>
-        <p>R$ {summaryInfo.total.toFixed(2)}</p>
+        <p data-testid="total">R$ {summaryInfo.total.toFixed(2)}</p>
       </Total>
     </Container>
   )

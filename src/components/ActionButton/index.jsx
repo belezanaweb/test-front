@@ -12,5 +12,9 @@ export const ActionButton = ({ handlePaymentInformation, actionText, pathToGo })
     navigate(pathToGo)
   }
 
-  return <ButtonContainer onClick={handleClick}>{actionText}</ButtonContainer>
+  return (
+    <ButtonContainer role="button" onClick={handleClick}>
+      {actionText}
+    </ButtonContainer>
+  )
 }
