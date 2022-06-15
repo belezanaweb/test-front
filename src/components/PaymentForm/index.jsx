@@ -31,10 +31,11 @@ export const PaymentForm = ({ fillCardNumber, fillName, fillExpiryDate, fillCVV 
     <>
       <SectionHeader text={'Cartão de Crédito'} />
       <Container>
-        <form>
+        <form data-testid="payment-form">
           <label>
             <span>Número do Cartão:</span>
             <input
+              data-testid="card-number-input"
               onChange={handleCardNumber}
               type="text"
               placeholder="____.____.____.____"
@@ -47,6 +48,7 @@ export const PaymentForm = ({ fillCardNumber, fillName, fillExpiryDate, fillCVV 
           <label>
             <span>Nome do Titular</span>
             <input
+              data-testid="name-input"
               onChange={handleName}
               value={name}
               type="text"
@@ -58,6 +60,7 @@ export const PaymentForm = ({ fillCardNumber, fillName, fillExpiryDate, fillCVV 
             <label>
               <span>Validade (mês/ano):</span>
               <input
+                data-testid="expiry-date-input"
                 onChange={handleExpiryDate}
                 type="text"
                 value={expiryDate}
@@ -69,7 +72,14 @@ export const PaymentForm = ({ fillCardNumber, fillName, fillExpiryDate, fillCVV 
             </label>
             <label>
               <span>CVV:</span>
-              <input onChange={handleCvv} value={cvv} type="text" placeholder="___" maxLength={3} />
+              <input
+                data-testid="cvv-input"
+                onChange={handleCvv}
+                value={cvv}
+                type="text"
+                placeholder="___"
+                maxLength={3}
+              />
             </label>
           </DateCVVContainer>
         </form>
