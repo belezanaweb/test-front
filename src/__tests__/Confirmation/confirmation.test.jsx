@@ -1,4 +1,5 @@
 import React from 'react'
+import { Confirmation } from '../../pages/Confirmation'
 import { render, screen } from '@testing-library/react'
 import { loadProducts } from '../../redux/slices/productsSlice'
 import { handlePayment } from '../../redux/slices/paymentSlice'
@@ -8,7 +9,6 @@ import { GlobalStyle } from '../../globalStyles'
 import { MemoryRouter } from 'react-router-dom'
 import { Provider } from 'react-redux'
 import store from '../../redux/store'
-import { Confirmation } from '../../pages/Confirmation'
 
 describe('Confirmation page', () => {
   beforeEach(() => {
