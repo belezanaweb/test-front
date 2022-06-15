@@ -1,19 +1,19 @@
 import React from 'react'
+import { useSelector } from 'react-redux'
 import { SectionHeader } from '../SectionHeader'
 import { Container } from './styles'
 
 export const PaymentInformation = ({ cardNumber, name, expiringDate }) => {
-  // const cardNumberParts = cardNumber.split('.')
-  // const fourLastDigits = cardNumberParts[cardNumberParts.length - 1]
-  const fourLastDigits = '1234'
+  const paymentInformation = useSelector((state) => state.payment)
+  const fourLastDigits = paymentInformation.cardNumber.slice(-4)
 
   return (
     <>
       <SectionHeader text={'Pagamento'} />
       <Container>
         <p>{`****.****.****.${fourLastDigits}`}</p>
-        <p>{name}</p>
-        <p>{expiringDate}</p>
+        <p>{paymentInformation.name}</p>
+        <p>{paymentInformation.expiryDate}</p>
       </Container>
     </>
   )

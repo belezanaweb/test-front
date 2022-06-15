@@ -2,8 +2,15 @@ import React from 'react'
 import { useNavigate } from 'react-router-dom'
 import { ButtonContainer } from './styles'
 
-export const ActionButton = ({ actionText, pathToGo }) => {
+export const ActionButton = ({ handlePaymentInformation, actionText, pathToGo }) => {
+  const location = window.location.pathname
   const navigate = useNavigate()
-  const handleClick = () => navigate(pathToGo)
+  const handleClick = () => {
+    if (location === '/payment') {
+      handlePaymentInformation()
+    }
+    navigate(pathToGo)
+  }
+
   return <ButtonContainer onClick={handleClick}>{actionText}</ButtonContainer>
 }
