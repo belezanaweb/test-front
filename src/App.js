@@ -17,7 +17,6 @@ const App = () => {
     const getProducts = async () => {
       const res = await api.get()
       dispatch(loadProducts(res.data.items))
-      console.log(res)
       dispatch(
         loadSummaryInfo({
           subTotal: res.data.subTotal,
