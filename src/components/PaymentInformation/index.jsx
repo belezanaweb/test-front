@@ -10,10 +10,10 @@ export const PaymentInformation = ({ cardNumber, name, expiringDate }) => {
   return (
     <>
       <SectionHeader text={'Pagamento'} />
-      <Container>
-        <p>{`****.****.****.${fourLastDigits}`}</p>
-        <p>{paymentInformation.name}</p>
-        <p>{paymentInformation.expiryDate}</p>
+      <Container data-testid="payment-information">
+        <p data-testid="card-number-information">{`****.****.****.${fourLastDigits}`}</p>
+        <p data-testid="name-information">{paymentInformation.name}</p>
+        <p data-testid="expiry-date-information">{paymentInformation.expiryDate}</p>
       </Container>
     </>
   )
