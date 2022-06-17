@@ -22,5 +22,22 @@ export const GlobalStyle = createGlobalStyle`
   #root {
     width: 100%;
     height: 100%;
+
+    main {
+      width: 100%;
+
+      margin: 0 auto;
+      padding: 10px;
+
+      @media (min-width: 1024px) {
+        display: flex;
+        max-width: 1120px;
+        justify-content: space-between;
+
+        section:nth-child(2) {
+          padding-top: 27px;
+        }
+      }
+    }
   }
 `

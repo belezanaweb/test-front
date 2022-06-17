@@ -1,5 +1,4 @@
 import React, { useState } from 'react'
-import { Container } from './styles'
 import { useDispatch } from 'react-redux'
 import { handlePayment } from '../../redux/slices/paymentSlice'
 
@@ -38,20 +37,15 @@ export const Payment = () => {
   return (
     <>
       <Header />
-      <Container>
+      <main>
         <PaymentForm
           fillCardNumber={setCardNumber}
           fillName={setName}
           fillCVV={setCvv}
           fillExpiryDate={setExpiryDate}
-        />
-        <Summary />
-        <ActionButton
           handlePaymentInformation={handlePaymentInformation}
-          pathToGo={'/confirmation'}
-          actionText={'Finalizar o pedido'}
         />
-      </Container>
+      </main>
     </>
   )
 }
