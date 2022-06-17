@@ -1,3 +1,9 @@
+import { Header } from "../components/Header";
+
 export function Payment() {
-  return <h1>Payment</h1>
+  return (
+    <>
+    <Header activeItem='pagamento'></Header>
+    </>
+  )
 }

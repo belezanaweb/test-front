@@ -1,3 +1,9 @@
+import { Header } from "../components/Header";
+
 export function Success() {
-  return <h1>Success</h1>
+  return (
+    <>
+    <Header activeItem='confirmação'></Header>
+    </>
+  )
 }

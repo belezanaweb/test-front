@@ -1,3 +1,9 @@
+import { Header } from "../components/Header";
+
 export function Cart() {
-  return <h1>Cart</h1>
+  return (
+    <>
+    <Header activeItem='sacola'></Header>
+    </>
+  )
 }
