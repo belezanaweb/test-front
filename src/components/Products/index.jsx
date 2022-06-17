@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import { Container } from './styles'
+import { Container, SectionContainer } from './styles'
 import { Product } from '../Product'
 import { SectionHeader } from '../SectionHeader'
 import { useSelector } from 'react-redux'
@@ -13,7 +13,7 @@ export const Products = () => {
   }, [products])
 
   return (
-    <>
+    <SectionContainer>
       <SectionHeader text={'Produtos'} />
       <Container>
         {!!chosenProducts?.length &&
@@ -21,6 +21,6 @@ export const Products = () => {
             <Product key={product.product.sku} {...product.product} />
           ))}
       </Container>
-    </>
+    </SectionContainer>
   )
 }

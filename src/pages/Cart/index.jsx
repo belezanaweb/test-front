@@ -1,6 +1,6 @@
 import React from 'react'
-import { Container } from './styles'
 import loadable from '@loadable/component'
+import { SectionContainer } from '../../components/Products/styles'
 
 const Header = loadable(() => import('../../components/Header'), {
   resolveComponent: (components) => components.Header
@@ -19,11 +19,13 @@ export const Cart = () => {
   return (
     <>
       <Header />
-      <Container>
+      <main>
         <Products />
-        <Summary />
-        <ActionButton pathToGo={'/payment'} actionText={'Seguir para o pagamento'} />
-      </Container>
+        <SectionContainer>
+          <Summary />
+          <ActionButton pathToGo={'/payment'} actionText={'Seguir para o pagamento'} />
+        </SectionContainer>
+      </main>
     </>
   )
 }
