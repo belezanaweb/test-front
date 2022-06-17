@@ -1,5 +1,6 @@
 export const colors = {
-  grey: '#CCC',
-  orange: '#FF7800',
-  white: '#fff',
+  'grey': '#999',
+  'orange': '#FF7800',
+  'shadow-grey': '#CCC',
+  'white': '#fff',
 }

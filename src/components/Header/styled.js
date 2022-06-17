@@ -5,7 +5,7 @@ export const HeaderItem = styled.h1`
   font-size: 13px;
   font-weight: 700;
   text-transform: uppercase;
-  color: ${({ active }) => (active ? colors.orange : colors.grey) };
+  color: ${({ active }) => (active ? colors.orange : colors['shadow-grey']) };
 `
 
 export const StyledHeader = styled.header`
