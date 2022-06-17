@@ -1,5 +1,5 @@
 import React from 'react'
-import { Container, SectionContainer } from './styles'
+import { Container, SectionContainer, SuccessMessage } from './styles'
 import loadable from '@loadable/component'
 
 const Header = loadable(() => import('../../components/Header'), {
@@ -19,6 +19,12 @@ export const Confirmation = () => {
   return (
     <>
       <Header />
+      <SuccessMessage>
+        <div>
+          <div></div>
+        </div>
+        <p>Compra Efetuada com Sucesso</p>
+      </SuccessMessage>
       <main>
         <SectionContainer>
           <PaymentInformation />
