@@ -10,13 +10,11 @@ import { Success } from "./pages/Success";
 
 export function AppRoutes() {
   return (
-    <BrowserRouter>
-      <Routes>
-        <Route path="/" element={<Navigate replace to="/cart" />} />
-        <Route path="/cart" element={<Cart />} />
-        <Route path="/payment" element={<Payment />} />
-        <Route path="/success" element={<Success />} />
-      </Routes>
-    </BrowserRouter>
+    <Routes>
+      <Route path="/" element={<Navigate replace to="/cart" />} />
+      <Route path="/cart" element={<Cart />} />
+      <Route path="/payment" element={<Payment />} />
+      <Route path="/success" element={<Success />} />
+    </Routes>
   )
 }
