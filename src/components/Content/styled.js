@@ -15,6 +15,9 @@ export const StyledContentWrapper = styled.div`
   padding: 12px;
   border: 1px solid ${colors.grey};
   border-radius: 3px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
 `
 
 export const StyledContentWhiteWrapper = styled(StyledContentWrapper)`

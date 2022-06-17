@@ -1,5 +1,6 @@
 import { Header } from "../components/Header";
 import { Content } from "../components/Content";
+import { ProductCard } from "../components/ProductCard"
 
 export function Success() {
   return (
@@ -9,7 +10,7 @@ export function Success() {
         Lorem Ipsum
       </Content>
       <Content title='Produtos' type='white'>
-        Lorem Ipsum
+        <ProductCard hideDetails/>
       </Content>
       <Content>
         Lorem Ipsum
