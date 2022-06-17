@@ -1,5 +1,5 @@
 import React from 'react'
-import { Container } from './styles'
+import { Container, SectionContainer } from './styles'
 import loadable from '@loadable/component'
 
 const Header = loadable(() => import('../../components/Header'), {
@@ -19,11 +19,15 @@ export const Confirmation = () => {
   return (
     <>
       <Header />
-      <Container>
-        <PaymentInformation />
-        <Products />
-        <Summary />
-      </Container>
+      <main>
+        <SectionContainer>
+          <PaymentInformation />
+          <Products />
+        </SectionContainer>
+        <SectionContainer>
+          <Summary />
+        </SectionContainer>
+      </main>
     </>
   )
 }

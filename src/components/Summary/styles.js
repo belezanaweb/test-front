@@ -5,6 +5,7 @@ export const Container = styled.section`
   border: 1px solid #d4d4d4;
   padding: 15px;
   border-radius: 3px;
+  margin-top: 26px;
 
   div {
     width: 100%;

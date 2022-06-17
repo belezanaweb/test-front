@@ -33,10 +33,6 @@ export const GlobalStyle = createGlobalStyle`
         display: flex;
         max-width: 1120px;
         justify-content: space-between;
-
-        section:nth-child(2) {
-          padding-top: 27px;
-        }
       }
     }
   }

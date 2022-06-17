@@ -1,5 +1,14 @@
 import styled from 'styled-components'
 
+export const SectionContainer = styled.section`
+  width: 100%;
+  margin-bottom: -5px;
+
+  @media (min-width: 1024px) {
+    width: 100%;
+  }
+`
+
 export const Container = styled.section`
   width: 100%;
   height: 73px;

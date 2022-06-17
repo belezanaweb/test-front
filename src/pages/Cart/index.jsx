@@ -1,6 +1,6 @@
 import React from 'react'
 import loadable from '@loadable/component'
-import { SectionContainer } from '../../components/Products/styles'
+import { CartSectionContainer } from './styles'
 
 const Header = loadable(() => import('../../components/Header'), {
   resolveComponent: (components) => components.Header
@@ -20,11 +20,13 @@ export const Cart = () => {
     <>
       <Header />
       <main>
-        <Products />
-        <SectionContainer>
+        <CartSectionContainer>
+          <Products />
+        </CartSectionContainer>
+        <CartSectionContainer>
           <Summary />
           <ActionButton pathToGo={'/payment'} actionText={'Seguir para o pagamento'} />
-        </SectionContainer>
+        </CartSectionContainer>
       </main>
     </>
   )
