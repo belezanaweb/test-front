@@ -2,18 +2,32 @@ import React from 'react'
 import { useNavigate } from 'react-router-dom'
 import { ButtonContainer } from './styles'
 
-export const ActionButton = ({ handlePaymentInformation, actionText, pathToGo }) => {
-  const location = window.location.pathname
+export const ActionButton = ({
+  type = 'button',
+  form = '',
+  handleSubmit = () => {},
+  actionText,
+  pathToGo,
+  disabled = false
+}) => {
   const navigate = useNavigate()
-  const handleClick = () => {
-    if (location === '/payment') {
-      handlePaymentInformation()
+  const handleClick = (e) => {
+    e.preventDefault()
+    if (type === 'submit') {
+      handleSubmit()
     }
+
     navigate(pathToGo)
   }
 
   return (
-    <ButtonContainer role="button" onClick={handleClick}>
+    <ButtonContainer
+      disabled={disabled}
+      type={type}
+      form={form}
+      role="button"
+      onClick={handleClick}
+    >
       {actionText}
     </ButtonContainer>
   )

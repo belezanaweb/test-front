@@ -18,19 +18,9 @@ const ActionButton = loadable(() => import('../../components/ActionButton'), {
 })
 
 export const Payment = () => {
-  const [cardNumber, setCardNumber] = useState('')
-  const [name, setName] = useState('')
-  const [expiryDate, setExpiryDate] = useState('')
-  const [cvv, setCvv] = useState('')
   const dispatch = useDispatch()
 
-  const handlePaymentInformation = () => {
-    const payload = {
-      cardNumber,
-      name,
-      expiryDate,
-      cvv
-    }
+  const handlePaymentInformation = (payload) => {
     dispatch(handlePayment(payload))
   }
 
@@ -38,13 +28,7 @@ export const Payment = () => {
     <>
       <Header />
       <main>
-        <PaymentForm
-          fillCardNumber={setCardNumber}
-          fillName={setName}
-          fillCVV={setCvv}
-          fillExpiryDate={setExpiryDate}
-          handlePaymentInformation={handlePaymentInformation}
-        />
+        <PaymentForm handlePaymentInformation={handlePaymentInformation} />
       </main>
     </>
   )

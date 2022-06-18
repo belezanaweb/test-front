@@ -1,94 +1,106 @@
-import React, { useState } from 'react'
+import React from 'react'
 import { SectionHeader } from '../SectionHeader'
 import { SectionContainer, InnerContainer, DateCVVContainer } from './styles'
 import { ActionButton } from '../ActionButton'
 import { Summary } from '../Summary'
+import { useForm } from 'react-hook-form'
+import { yupResolver } from '@hookform/resolvers/yup'
+import * as yup from 'yup'
 
-export const PaymentForm = ({
-  fillCardNumber,
-  fillName,
-  fillExpiryDate,
-  fillCVV,
-  handlePaymentInformation
-}) => {
-  const [cardNumber, setCardNumber] = useState('')
-  const [name, setName] = useState('')
-  const [expiryDate, setExpiryDate] = useState('')
-  const [cvv, setCvv] = useState('')
+const paymentValidation = yup.object().shape({
+  cardNumber: yup
+    .string()
+    .required('Campo inválido. Ex: 1234.1234.1234.1234')
+    .min(19, 'Campo inválido. Ex: 1234.1234.1234.1234')
+    .test('test-number', 'Campo inválido. Ex: 1234.1234.1234.1234', (value) =>
+      /(\d{4}\.){3}/g.test(value)
+    ),
+  name: yup
+    .string()
+    .required('Campo inválido')
+    .test(
+      'test-name',
+      'Campo inválido. No mínimo um nome e um sobrenome.',
+      (value) => value.split(' ').length >= 2
+    ),
+  expiryDate: yup
+    .string()
+    .required('Campo inválido. Ex: 07/2024')
+    .min(7, 'Campo inválido. Ex: 07/2024')
+    .test('test-date', 'Campo inválido. Cartão vencido.', (value) =>
+      /(0?[1-9]|1[0-2])\/(20[2-9][2-9]$)/.test(value)
+    ),
+  cvv: yup.string().required('Campo inválido').min(3, 'Campo inválido. Ex: 667')
+})
 
-  const handleCardNumber = (e) => {
-    setCardNumber(e.target.value)
-    fillCardNumber(e.target.value)
+export const PaymentForm = ({ handlePaymentInformation }) => {
+  const {
+    register,
+    handleSubmit,
+    formState: { errors, isDirty }
+  } = useForm({
+    mode: 'all',
+    resolver: yupResolver(paymentValidation)
+  })
+
+  const handleFormData = (data) => {
+    handlePaymentInformation(data)
   }
 
-  const handleName = (e) => {
-    setName(e.target.value)
-    fillName(e.target.value)
-  }
-
-  const handleExpiryDate = (e) => {
-    setExpiryDate(e.target.value)
-    fillExpiryDate(e.target.value)
-  }
-
-  const handleCvv = (e) => {
-    setCvv(e.target.value)
-    fillCVV(e.target.value)
-  }
   return (
     <>
       <SectionContainer>
         <SectionHeader text={'Cartão de Crédito'} />
         <InnerContainer>
-          <form data-testid="payment-form">
+          <form id="payment-form" data-testid="payment-form">
             <label>
               <span>Número do Cartão:</span>
               <input
                 data-testid="card-number-input"
-                onChange={handleCardNumber}
                 type="text"
                 placeholder="____.____.____.____"
-                value={cardNumber}
-                minLength={16}
-                maxLength={16}
-                required
+                name="cardNumber"
+                {...register('cardNumber')}
+                maxLength={19}
               />
+              <p>{errors.cardNumber?.message}</p>
             </label>
             <label>
               <span>Nome do Titular</span>
               <input
                 data-testid="name-input"
-                onChange={handleName}
-                value={name}
                 type="text"
                 placeholder="Como no cartão"
+                name="name"
+                {...register('name')}
                 maxLength={50}
               />
+              <p>{errors.name?.message}</p>
             </label>
             <DateCVVContainer>
               <label>
                 <span>Validade (mês/ano):</span>
                 <input
                   data-testid="expiry-date-input"
-                  onChange={handleExpiryDate}
                   type="text"
-                  value={expiryDate}
                   placeholder="__/____"
-                  pattern="/^(0[1-9]|1[0-2])\/?([0-9]{4}|[0-9]{2})$/"
-                  data-valid-example="06/2022"
+                  name="expiryDate"
+                  {...register('expiryDate')}
                   maxLength={7}
                 />
+                <p>{errors.expiryDate?.message}</p>
               </label>
               <label>
                 <span>CVV:</span>
                 <input
                   data-testid="cvv-input"
-                  onChange={handleCvv}
-                  value={cvv}
                   type="text"
                   placeholder="___"
+                  name="cvv"
+                  {...register('cvv')}
                   maxLength={3}
                 />
+                <p>{errors.cvv?.message}</p>
               </label>
             </DateCVVContainer>
           </form>
@@ -97,9 +109,12 @@ export const PaymentForm = ({
       <SectionContainer>
         <Summary />
         <ActionButton
-          handlePaymentInformation={handlePaymentInformation}
+          type="submit"
+          handleSubmit={handleSubmit(handleFormData)}
+          form="payment-form"
           pathToGo={'/confirmation'}
           actionText={'Finalizar o pedido'}
+          disabled={!isDirty || Object.entries(errors).length > 0}
         />
       </SectionContainer>
     </>
