@@ -1,6 +1,6 @@
 import React from 'react'
 import { SectionHeader } from '../SectionHeader'
-import { SectionContainer, InnerContainer, DateCVVContainer } from './styles'
+import { SectionContainer, InnerContainer, DateCVVContainer, Input } from './styles'
 import { ActionButton } from '../ActionButton'
 import { Summary } from '../Summary'
 import { useForm } from 'react-hook-form'
@@ -37,7 +37,8 @@ export const PaymentForm = ({ handlePaymentInformation }) => {
   const {
     register,
     handleSubmit,
-    formState: { errors, isDirty }
+    getValues,
+    formState: { errors, isValid }
   } = useForm({
     mode: 'all',
     resolver: yupResolver(paymentValidation)
@@ -53,52 +54,60 @@ export const PaymentForm = ({ handlePaymentInformation }) => {
         <SectionHeader text={'Cartão de Crédito'} />
         <InnerContainer>
           <form id="payment-form" data-testid="payment-form">
-            <label>
+            <label htmlFor="cardNumber">
               <span>Número do Cartão:</span>
-              <input
+              <Input
+                id="cardNumber"
                 data-testid="card-number-input"
                 type="text"
                 placeholder="____.____.____.____"
                 name="cardNumber"
                 {...register('cardNumber')}
                 maxLength={19}
+                error={!getValues('cardNumber') || errors.cardNumber}
               />
               <p>{errors.cardNumber?.message}</p>
             </label>
-            <label>
+            <label htmlFor="name">
               <span>Nome do Titular</span>
-              <input
+              <Input
+                id="name"
                 data-testid="name-input"
                 type="text"
                 placeholder="Como no cartão"
                 name="name"
                 {...register('name')}
                 maxLength={50}
+                error={!getValues('name') || errors.name}
               />
               <p>{errors.name?.message}</p>
             </label>
             <DateCVVContainer>
-              <label>
+              <label htmlFor="expiryDate">
                 <span>Validade (mês/ano):</span>
-                <input
+                <Input
+                  id="expiryDate"
                   data-testid="expiry-date-input"
                   type="text"
                   placeholder="__/____"
                   name="expiryDate"
                   {...register('expiryDate')}
                   maxLength={7}
+                  error={!getValues('expiryDate') || errors.expiryDate}
                 />
                 <p>{errors.expiryDate?.message}</p>
               </label>
-              <label>
+              <label htmlFor="cvv">
                 <span>CVV:</span>
-                <input
+                <Input
+                  id="cvv"
                   data-testid="cvv-input"
                   type="text"
                   placeholder="___"
                   name="cvv"
                   {...register('cvv')}
                   maxLength={3}
+                  error={!getValues('cvv') || errors.cvv}
                 />
                 <p>{errors.cvv?.message}</p>
               </label>
@@ -114,7 +123,7 @@ export const PaymentForm = ({ handlePaymentInformation }) => {
           form="payment-form"
           pathToGo={'/confirmation'}
           actionText={'Finalizar o pedido'}
-          disabled={!isDirty || Object.entries(errors).length > 0}
+          disabled={!isValid}
         />
       </SectionContainer>
     </>

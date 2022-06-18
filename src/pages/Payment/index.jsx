@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React from 'react'
 import { useDispatch } from 'react-redux'
 import { handlePayment } from '../../redux/slices/paymentSlice'
 
@@ -9,12 +9,6 @@ const Header = loadable(() => import('../../components/Header'), {
 })
 const PaymentForm = loadable(() => import('../../components/PaymentForm'), {
   resolveComponent: (components) => components.PaymentForm
-})
-const Summary = loadable(() => import('../../components/Summary'), {
-  resolveComponent: (components) => components.Summary
-})
-const ActionButton = loadable(() => import('../../components/ActionButton'), {
-  resolveComponent: (components) => components.ActionButton
 })
 
 export const Payment = () => {

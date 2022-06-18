@@ -26,29 +26,41 @@ export const InnerContainer = styled.section`
       margin-bottom: 7px;
     }
 
-    input {
-      padding: 15px;
-      border: 1px solid #e7e7e7;
-      border-radius: 3px;
-      max-width: 320px;
-      box-shadow: 1px 0 2px rgba(0, 0, 0, 0.2);
+    p {
+      color: #f30;
+      font-size: 0.8rem;
+      padding-top: 5px;
+    }
 
-      &:focus {
-        border: inherit;
-      }
-
-      &::placeholder {
-        color: #e0e7ee;
+    @media (min-width: 1024px) {
+      p {
         font-size: 1rem;
-        letter-spacing: 1.37px;
       }
     }
   }
 
   @media screen and (min-width: 1024px) {
     label {
-      font-size: 1rem;
+      font-size: 1.2rem;
     }
+  }
+`
+
+export const Input = styled.input`
+  padding: 15px;
+  border: 1px solid #e7e7e7;
+  border-radius: 3px;
+  max-width: 320px;
+  box-shadow: 1px 0 2px rgba(0, 0, 0, 0.2);
+
+  &:focus {
+    outline: ${(props) => `${props.error ? '1px solid #f30' : '1px solid #a43287'}`};
+  }
+
+  &::placeholder {
+    color: #e0e7ee;
+    font-size: 1rem;
+    letter-spacing: 1.37px;
   }
 `
 

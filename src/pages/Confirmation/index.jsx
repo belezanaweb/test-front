@@ -1,5 +1,5 @@
 import React from 'react'
-import { Container, SectionContainer, SuccessMessage } from './styles'
+import { SectionContainer, SuccessMessage } from './styles'
 import loadable from '@loadable/component'
 
 const Header = loadable(() => import('../../components/Header'), {
