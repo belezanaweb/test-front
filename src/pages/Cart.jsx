@@ -5,6 +5,7 @@ import { PriceList } from "../components/PriceList";
 
 import axios from "axios"
 import { useEffect, useState } from "react";
+import { Button } from "../components/Button";
 
 export function Cart() {
 
@@ -34,6 +35,7 @@ export function Cart() {
           <Content>
             <PriceList prices={{subTotal: cart.subTotal, shippingTotal: cart.shippingTotal, discount: cart.discount, total: cart.total}}/>
           </Content>
+          <Button>Seguir para o pagamento</Button>
         </>
       )}
     </>
