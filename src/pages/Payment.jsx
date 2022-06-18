@@ -4,8 +4,12 @@ import { Button } from "../components/Button";
 import { InputField } from "../components/InputField";
 
 import { useForm } from "react-hook-form";
+import { useLocation } from "react-router-dom";
+import { PriceList } from "../components/PriceList";
 
 export function Payment() {
+
+  const { state } = useLocation();
 
   const { register, handleSubmit, formState: { errors }, } = useForm({
     mode: "onBlur",
@@ -49,9 +53,9 @@ export function Payment() {
         </form>
       </Content>
       <Content>
-        Lorem Ipsum
+        <PriceList prices={{subTotal: state.data.subTotal, shippingTotal: state.data.shippingTotal, discount: state.data.discount, total: state.data.total}}/>
       </Content>
-      <Button>Finalizar o pedido</Button>
+      <Button path="/success" data={state.data}>Finalizar o pedido</Button>
     </>
   )
 }
