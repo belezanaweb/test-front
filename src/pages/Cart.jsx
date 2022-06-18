@@ -1,6 +1,7 @@
 import { Header } from "../components/Header";
 import { Content } from "../components/Content";
 import { ProductCard } from "../components/ProductCard"
+import { PriceList } from "../components/PriceList";
 
 import axios from "axios"
 import { useEffect, useState } from "react";
@@ -31,7 +32,7 @@ export function Cart() {
             ))}
           </Content>
           <Content>
-            Lorem Ipsum
+            <PriceList prices={{subTotal: cart.subTotal, shippingTotal: cart.shippingTotal, discount: cart.discount, total: cart.total}}/>
           </Content>
         </>
       )}
