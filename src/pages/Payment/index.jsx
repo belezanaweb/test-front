@@ -7,32 +7,43 @@ import { headerItems } from '../../types'
 import { StyledCardDetailsWrapper } from './styled'
 
 import { useForm } from 'react-hook-form'
-import { useLocation } from 'react-router-dom'
+import { useLocation, useNavigate } from 'react-router-dom'
 
 const Payment = () => {
   const { state } = useLocation()
+  const navigate = useNavigate()
 
   const {
     register,
     handleSubmit,
-    formState: { errors }
+    formState: { errors, isDirty, isValid }
   } = useForm({
     mode: 'onBlur'
   })
 
-  const onSubmit = (data) => console.log(data)
+  const onSubmit = (formData) => {
+    delete formData.cardVerificationValue
+    navigate('/success', { state: { ...state, formData } })
+  }
 
   return (
     <>
       <Header activeItem={headerItems.PAGAMENTO} headerItems={Object.values(headerItems)} />
-      <Content title="Cartão de Crédito" type="white">
-        <form id="form" onSubmit={handleSubmit(onSubmit)}>
+      <form onSubmit={handleSubmit(onSubmit)}>
+        <Content title="Cartão de Crédito" type="white">
           <InputField
             fieldName="cardNumber"
             label="Número do cartão:"
             placeholder="____.____.____.____"
             register={register}
             errors={errors}
+            validations={{
+              required: 'Número do cartão é obrigatório.',
+              validate: {
+                length: (str) =>
+                  str.replace(/\D/g, '').length === 16 || 'Verifique os números do cartão'
+              }
+            }}
           />
           <InputField
             fieldName="cardHolderName"
@@ -40,6 +51,13 @@ const Payment = () => {
             placeholder="Como no cartão"
             register={register}
             errors={errors}
+            validations={{
+              required: 'Nome do titular é obrigatório.',
+              minLength: {
+                value: 3,
+                message: 'Deve ter pelo menos 3 caracteres.'
+              }
+            }}
           />
           <StyledCardDetailsWrapper>
             <InputField
@@ -48,6 +66,13 @@ const Payment = () => {
               placeholder="__/____"
               register={register}
               errors={errors}
+              validations={{
+                required: 'Validade é obrigatório.',
+                pattern: {
+                  value: /[\d]{2}\/[\d]{4}/,
+                  message: 'Formato: mm/yyyy'
+                }
+              }}
             />
             <InputField
               fieldName="cardVerificationValue"
@@ -55,16 +80,23 @@ const Payment = () => {
               placeholder="___"
               register={register}
               errors={errors}
+              validations={{
+                required: 'CVV é obrigatório.',
+                pattern: {
+                  value: /^\d{3}$/,
+                  message: 'Deve ter 3 números'
+                }
+              }}
             />
           </StyledCardDetailsWrapper>
-        </form>
-      </Content>
-      <Content>
-        <PriceList {...state.data} />
-      </Content>
-      <Button path="/success" data={state.data}>
-        Finalizar o pedido
-      </Button>
+        </Content>
+        <Content>
+          <PriceList {...state.data} />
+        </Content>
+        <Button type="submit" disabled={!isDirty || !isValid}>
+          Finalizar o pedido
+        </Button>
+      </form>
     </>
   )
 }

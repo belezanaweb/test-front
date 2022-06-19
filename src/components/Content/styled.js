@@ -23,7 +23,6 @@ export const StyledContentWrapper = styled.div`
   border-radius: 3px;
   display: flex;
   flex-direction: column;
-  gap: 15px;
   @media (min-width: 520px) {
     margin: 5px auto 20px auto;
   }
@@ -33,4 +32,5 @@ export const StyledContentWhiteWrapper = styled(StyledContentWrapper)`
   border: none;
   background-color: ${colors.white};
   box-shadow: 1px 1px 5px 0 rgba(0, 0, 29, 0.22);
+  gap: ${({ noGap }) => (noGap ? '3px' : '15px')};
 `

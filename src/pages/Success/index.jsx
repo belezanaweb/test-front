@@ -2,6 +2,7 @@ import Header from '../../components/Header'
 import Content from '../../components/Content'
 import ProductCard from '../../components/ProductCard'
 import PriceList from '../../components/PriceList'
+import CardInfo from '../../components/CardInfo'
 import { headerItems } from '../../types'
 
 import { useLocation } from 'react-router-dom'
@@ -12,8 +13,8 @@ const Success = () => {
   return (
     <>
       <Header activeItem={headerItems.CONFIRMAÇÃO} headerItems={Object.values(headerItems)} />
-      <Content title="Pagamento" type="white">
-        Lorem Ipsum
+      <Content title="Pagamento" type="white" noGap>
+        <CardInfo data={state.formData} />
       </Content>
       <Content title="Produtos" type="white">
         {state.data.items.map((item) => (

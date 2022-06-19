@@ -5,3 +5,7 @@ export const convertToReais = (value) => {
     currency: 'BRL'
   })
 }
+
+export const hideCardNumber = (number) => {
+  return '****.****.****.' + number.substr(-4)
+}
