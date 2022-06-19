@@ -3,9 +3,9 @@ import {
   Route,
   Navigate,
 } from "react-router-dom";
-import { Cart } from "./pages/Cart";
-import { Payment } from "./pages/Payment";
-import { Success } from "./pages/Success";
+import Cart from "./pages/Cart";
+import Payment from "./pages/Payment";
+import Success from "./pages/Success";
 
 export function AppRoutes() {
   return (
