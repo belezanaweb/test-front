@@ -3,6 +3,7 @@ import Content from '../../components/Content'
 import ProductCard from '../../components/ProductCard'
 import PriceList from '../../components/PriceList'
 import CardInfo from '../../components/CardInfo'
+import PaymentSuccess from '../../components/PaymentSuccess'
 import { headerItems } from '../../types'
 
 import { useLocation } from 'react-router-dom'
@@ -13,6 +14,7 @@ const Success = () => {
   return (
     <>
       <Header activeItem={headerItems.CONFIRMAÇÃO} headerItems={Object.values(headerItems)} />
+      <PaymentSuccess />
       <Content title="Pagamento" type="white" noGap>
         <CardInfo data={state.formData} />
       </Content>
