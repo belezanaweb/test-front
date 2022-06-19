@@ -1,8 +1,8 @@
-import { Header } from '../../components/Header'
-import { Content } from '../../components/Content'
-import { Button } from '../../components/Button'
-import { InputField } from '../../components/InputField'
-import { PriceList } from '../../components/PriceList'
+import Header from '../../components/Header'
+import Content from '../../components/Content'
+import Button from '../../components/Button'
+import InputField from '../../components/InputField'
+import PriceList from '../../components/PriceList'
 import { headerItems } from '../../types'
 
 import { useForm } from 'react-hook-form'
@@ -57,14 +57,7 @@ const Payment = () => {
         </form>
       </Content>
       <Content>
-        <PriceList
-          prices={{
-            subTotal: state.data.subTotal,
-            shippingTotal: state.data.shippingTotal,
-            discount: state.data.discount,
-            total: state.data.total
-          }}
-        />
+        <PriceList {...state.data} />
       </Content>
       <Button path="/success" data={state.data}>
         Finalizar o pedido

@@ -1,8 +1,8 @@
-import { Header } from '../../components/Header'
-import { Content } from '../../components/Content'
-import { ProductCard } from '../../components/ProductCard'
-import { PriceList } from '../../components/PriceList'
-import { Button } from '../../components/Button'
+import Header from '../../components/Header'
+import Content from '../../components/Content'
+import ProductCard from '../../components/ProductCard'
+import PriceList from '../../components/PriceList'
+import Button from '../../components/Button'
 import { headerItems } from '../../types'
 
 import { useEffect, useState } from 'react'
@@ -36,14 +36,7 @@ const Cart = () => {
             ))}
           </Content>
           <Content>
-            <PriceList
-              prices={{
-                subTotal: cart.subTotal,
-                shippingTotal: cart.shippingTotal,
-                discount: cart.discount,
-                total: cart.total
-              }}
-            />
+            <PriceList {...cart} />
           </Content>
           <Button path="/payment" data={cart}>
             Seguir para o pagamento

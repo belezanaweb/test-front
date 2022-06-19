@@ -1,14 +1,14 @@
 import * as S from './styled'
 
-export const Content = ({ title, type, children }) => {
-
-  if(type ==='white') return (
+const Content = ({ title, type, children }) => {
+  return type === 'white' ? (
     <>
       <S.StyledContentTitle>{title}</S.StyledContentTitle>
       <S.StyledContentWhiteWrapper>{children}</S.StyledContentWhiteWrapper>
     </>
+  ) : (
+    <S.StyledContentWrapper>{children}</S.StyledContentWrapper>
   )
-
-  return <S.StyledContentWrapper>{children}</S.StyledContentWrapper>
-
 }
+
+export default Content

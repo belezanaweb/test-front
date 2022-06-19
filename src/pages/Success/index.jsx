@@ -1,7 +1,7 @@
-import { Header } from '../../components/Header'
-import { Content } from '../../components/Content'
-import { ProductCard } from '../../components/ProductCard'
-import { PriceList } from '../../components/PriceList'
+import Header from '../../components/Header'
+import Content from '../../components/Content'
+import ProductCard from '../../components/ProductCard'
+import PriceList from '../../components/PriceList'
 import { headerItems } from '../../types'
 
 import { useLocation } from 'react-router-dom'
@@ -29,14 +29,7 @@ const Success = () => {
         ))}
       </Content>
       <Content>
-        <PriceList
-          prices={{
-            subTotal: state.data.subTotal,
-            shippingTotal: state.data.shippingTotal,
-            discount: state.data.discount,
-            total: state.data.total
-          }}
-        />
+        <PriceList {...state.data} />
       </Content>
     </>
   )
