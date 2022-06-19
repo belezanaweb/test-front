@@ -3,7 +3,7 @@ import { useSelector } from 'react-redux'
 import { SectionHeader } from '../SectionHeader'
 import { SectionContainer, Container } from './styles'
 
-export const PaymentInformation = ({ cardNumber, name, expiringDate }) => {
+export const PaymentInformation = () => {
   const paymentInformation = useSelector((state) => state.payment)
   const fourLastDigits = paymentInformation.cardNumber.slice(-4)
 

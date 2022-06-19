@@ -1,7 +1,7 @@
 import React from 'react'
 import { render, screen } from '@testing-library/react'
 import { loadSummaryInfo } from '../../redux/slices/summarySlice'
-import { mockedProducts } from '../mocks/mockProducts'
+import { mockedProducts } from '../../mocks/mockProducts'
 import { GlobalStyle } from '../../globalStyles'
 import { MemoryRouter } from 'react-router-dom'
 import { Provider } from 'react-redux'
@@ -40,6 +40,13 @@ describe('Payment page', () => {
     expect(screen.getByTestId('cvv-input')).not.toBeNull()
   })
 
+  it('should all inputs be empty', () => {
+    expect(screen.getByTestId('card-number-input')).toHaveTextContent('')
+    expect(screen.getByTestId('name-input')).toHaveTextContent('')
+    expect(screen.getByTestId('expiry-date-input')).toHaveTextContent('')
+    expect(screen.getByTestId('cvv-input')).toHaveTextContent('')
+  })
+
   it('should show correct values on summary', () => {
     const subTotal = `R$ ${mockedProducts.subTotal.toFixed(2)}`
     const shippingTotal = `R$ ${mockedProducts.shippingTotal.toFixed(2)}`
@@ -54,5 +61,9 @@ describe('Payment page', () => {
 
   it('should show correct text for actionButton', () => {
     expect(screen.getByRole('button')).toHaveTextContent('Finalizar o pedido')
+  })
+
+  it('should have actionButton disabled', () => {
+    expect(screen.getByRole('button')).toBeDisabled('Finalizar o pedido')
   })
 })

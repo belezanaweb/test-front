@@ -1,10 +1,10 @@
 import React from 'react'
 import { Confirmation } from '../../pages/Confirmation'
-import { render, screen } from '@testing-library/react'
+import { render, screen, waitForElement, debug } from '@testing-library/react'
 import { loadProducts } from '../../redux/slices/productsSlice'
 import { handlePayment } from '../../redux/slices/paymentSlice'
 import { loadSummaryInfo } from '../../redux/slices/summarySlice'
-import { mockedProducts } from '../mocks/mockProducts'
+import { mockedProducts } from '../../mocks/mockProducts'
 import { GlobalStyle } from '../../globalStyles'
 import { MemoryRouter } from 'react-router-dom'
 import { Provider } from 'react-redux'
@@ -16,7 +16,7 @@ describe('Confirmation page', () => {
 
     store.dispatch(
       handlePayment({
-        cardNumber: 1234123412341234,
+        cardNumber: '1234.1234.1234.1234',
         name: 'Filipe R Paiva',
         expiryDate: '07/2023',
         cvv: '677'
