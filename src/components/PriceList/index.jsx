@@ -1,4 +1,5 @@
 import * as S from './styled'
+import { convertToReais } from '../../utils'
 
 const PriceList = ({ subTotal, shippingTotal, discount, total }) => {
   const labels = ['Produtos', 'Frete', 'Desconto', 'Total']
@@ -12,7 +13,7 @@ const PriceList = ({ subTotal, shippingTotal, discount, total }) => {
             {label}
           </S.StyledPriceListText>
           <S.StyledPriceListText discount={label === 'Desconto'} total={label === 'Total'}>
-            {prices[idx]}
+            {convertToReais(prices[idx])}
           </S.StyledPriceListText>
         </S.StyledPriceListItem>
       ))}
