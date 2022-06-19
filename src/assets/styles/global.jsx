@@ -4,8 +4,9 @@ import { colors } from '../../assets/styles/theme'
 export const GlobalStyle = createGlobalStyle`
   html {
     box-sizing: border-box;
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
     font-size: 16px;
-    background-color: ${colors['shadow-grey']};
+    background-color: ${colors.background};
   }
 
   *, *:before, *:after {

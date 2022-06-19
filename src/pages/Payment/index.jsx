@@ -4,6 +4,7 @@ import Button from '../../components/Button'
 import InputField from '../../components/InputField'
 import PriceList from '../../components/PriceList'
 import { headerItems } from '../../types'
+import { StyledCardDetailsWrapper } from './styled'
 
 import { useForm } from 'react-hook-form'
 import { useLocation } from 'react-router-dom'
@@ -40,20 +41,22 @@ const Payment = () => {
             register={register}
             errors={errors}
           />
-          <InputField
-            fieldName="cardValidity"
-            label="Validade (mês/ano):"
-            placeholder="__/____"
-            register={register}
-            errors={errors}
-          />
-          <InputField
-            fieldName="cardVerificationValue"
-            label="CVV:"
-            placeholder="___"
-            register={register}
-            errors={errors}
-          />
+          <StyledCardDetailsWrapper>
+            <InputField
+              fieldName="cardValidity"
+              label="Validade (mês/ano):"
+              placeholder="__/____"
+              register={register}
+              errors={errors}
+            />
+            <InputField
+              fieldName="cardVerificationValue"
+              label="CVV:"
+              placeholder="___"
+              register={register}
+              errors={errors}
+            />
+          </StyledCardDetailsWrapper>
         </form>
       </Content>
       <Content>

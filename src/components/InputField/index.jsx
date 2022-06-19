@@ -7,7 +7,10 @@ const InputField = ({ fieldName, label, register, errors, placeholder }) => {
       <S.StyledInput
         invalid={errors[fieldName]}
         {...register(fieldName, {
-          required: `${label.slice(0, -1)} é obrigatório.`
+          required:
+            fieldName === 'cardValidity'
+              ? `${label.slice(0, -10)} é obrigatório.`
+              : `${label.slice(0, -1)} é obrigatório.`
         })}
         placeholder={placeholder}
       />
