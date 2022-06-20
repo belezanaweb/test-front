@@ -1,10 +1,54 @@
 ## Frontend Test
 
+Autor: Gabriel Arruda 
+
+Tempo gasto: 5 horas
+
 Faça um fork deste repositório e finalizar o teste, submeta um pull request para o repositório que nosso time será notificado.
 
 O teste consiste em um checkout simples contendo 3 passos (carrinho, pagamento e sucesso) [Veja o Layout](https://projects.invisionapp.com/prototype/font-test-cji0j0khf005c1t0132358e8k)
 
 **Faça quando quiser/puder (madrugada, fim de semana, etc)**
+
+### Introdução
+
+Tecnologias utilizadas e motivo:
+
+- [Vite](https://vitejs.dev/) - Muito rápido em comparação com Create React App e suporta todos navegadores mais recentes, acredito que vá substituir o CRA em produtos mais robustos no futuro.
+- [React](https://reactjs.org/)
+- [Javascript](https://www.javascript.com/) - Tecnologia esperada pela vaga, mas se fosse escolher usaria typescript sempre que possível.
+- [Styled components](https://github.com/styled-components/styled-components) - Resolve diversos problemas do CSS sem intrometer na forma e estilos
+- [axios](https://github.com/axios/axios) - Sintaxe mais simples que o builtin Fetch e maior compatibilidade com browsers antigos.
+- [React Router Dom](https://www.npmjs.com/package/react-router-dom)
+- [React Hook Form](https://react-hook-form.com/) - Ganho de performance na forma de renderizar os forms por isolar a renderização de cada componente, além de código menor e mais simples que os principais concorrentes (Formik e Redux)
+
+### Rodando o projeto
+
+O projeto foi criado usando node.js v16.15.1
+
+1. Faça o git clone ou download do repositório
+2. Rode o script de instalação
+
+```bash
+cd test-front
+npm i
+```
+3. Execute o projeto
+
+```bash
+npm run dev
+```
+
+### Melhorias
+
+1. Usar o tema de forma mais abrangente, com adição de espaçamentos, tamanho de fonte, etc;
+2. Mudanças de layout nas telas maiores para acomodar melhor as informações;
+3. Criar um serviço para receber as informações do backend ao invés de colocar toda lógica na página;
+4. O formulário da página de pagamento tem muito espaço para melhorias, dentre elas considero que utilizar máscaras para facilitar o preenchimento do usuário é a mais importante. Além disso as validações podiam ser muito mais abrangentes, como por exemplo no número do cartão poderia criar uma função para validar se é um número válido. Por ultimo o uso do "onBlur" para habilitar o botão faz com que o usuário precise clicar fora do ultimo campo para seguir para próxima etapa.
+5. Bloquear o acesso a página de sucesso se o usuário não estiver vindo pelo formulário de pagamento ou fazer alterações para que a página não seja estatica;
+6. Comentários no código;
+7. Criação de testes.
+
 
 ### Requerimentos
 

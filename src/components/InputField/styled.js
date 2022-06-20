@@ -46,7 +46,7 @@ export const StyledInputErrorText = styled.p`
 `
 
 export const StyledInputWrapper = styled.div`
-  margin-bottom: 25px;
+  margin-bottom: 10px;
   position: relative;
   flex-grow: 1;
 `
