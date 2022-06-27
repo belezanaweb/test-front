@@ -1,7 +1,7 @@
 ## Algumas Informações
 
 Olá, pensando em uma experiência melhor criei uma outra branch com o nome PROD, subi ela no AWS amplify para que tenha acesso independente do projeto
-[clique aqui para acessar](https://prod.d1yy20cawboqtt.amplifyapp.com/), para funcionar da melhor maneira precisei hospedar o mock no meu github e apontei ele como padrão na branch PROD. Mas nessa branch (stagin) esta com o link do mock padrão.
+[clique aqui para acessar](https://elaborate-creponne-39ff32.netlify.app/), para funcionar da melhor maneira precisei hospedar o mock no meu github e apontei ele como padrão na branch PROD. Mas nessa branch (stagin) esta com o link do mock padrão.
 
 Segue também alguns números de cartão de crédito para preencher o form, validei o campo para receber apenas cartões válidos! E entendo que as vezes é chato buscar algum ou ter que sair para outra aba do 4devs e gerar.
 
@@ -33,7 +33,7 @@ Basta ir no diretório do projeto e rodar os seguintes comandos no terminal:
 ## English README
 
 Hello, thinking about a better experience, I created another branch with the name PROD, I uploaded it to AWS amplify so that it has access independent of the project
-[click here to access](https://prod.d1yy20cawboqtt.amplifyapp.com/), to work in the best way I needed to host the mock on my github and set it as default in the PROD branch. But this branch (stagin) is with the default mock link.
+[click here to access](https://elaborate-creponne-39ff32.netlify.app/), to work in the best way I needed to host the mock on my github and set it as default in the PROD branch. But this branch (stagin) is with the default mock link.
 
 Also follow some credit card numbers to fill in the form, I validated the field to receive only valid cards! And I understand that sometimes it's boring to look for some or have to go out to another 4devs tab and generate.
 
