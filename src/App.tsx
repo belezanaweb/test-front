@@ -1,6 +1,10 @@
 import React from 'react'
-import './App.css'
+import GlobalStyle from './global/styles/style'
+import { Bag } from './pages/bag'
 
-const App: React.FC = () => <div className="App">beleza 🚀</div>
-
-export default App
+export const App: React.FC = () => (
+  <>
+    <GlobalStyle />
+    <Bag />
+  </>
+)

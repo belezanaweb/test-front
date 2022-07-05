@@ -21,6 +21,7 @@
   },
   "include": [
     "src",
-    "styled-components.d.ts"
+    "styled-components.d.ts",
+    "bag.d.ts"
   ]
 }
