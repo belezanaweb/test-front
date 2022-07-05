@@ -24,6 +24,7 @@
     "no-use-before-define": "off",
     "react/jsx-filename-extension": [1, { "extensions": [".ts", ".tsx"] }],
     "react/function-component-definition": "off",
+    "react/require-default-props": "off",
     "import/extensions": [
       "warn", "never"
     ],
