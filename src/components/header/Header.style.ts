@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 
 interface ListItem {
-  active?: boolean;
+  active?: boolean
 }
 
 export const Navbar = styled.nav(
@@ -23,14 +23,13 @@ export const List = styled.ul`
   margin: 0;
 `
 
-export const ListItem =
-  styled.li <
-  ListItem >
-  (({ active, theme }) => `
+export const ListItem = styled.li<ListItem>(
+  ({ active, theme }) => `
   color: ${active ? theme.colors.accent : theme.colors.disabled};
   background-color: ${theme.colors.white};
   border: none;
   font-size: ${theme.fonts.header};
   font-weight: bold;
   text-transform: uppercase;
-  `)
+  `
+)

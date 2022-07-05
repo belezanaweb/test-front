@@ -6,7 +6,7 @@ type HeaderItem = {
 }
 
 interface HeaderProps {
-  items: HeaderItem[];
+  items: HeaderItem[]
 }
 
 export const Header: React.FC<HeaderProps> = ({ items = [] }: HeaderProps) => (
