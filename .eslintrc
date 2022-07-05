@@ -11,10 +11,10 @@
     "plugin:@typescript-eslint/recommended",
     "prettier"
   ],
-  "parser": "@typescript-eslint/parser",
   "parserOptions": {
     "ecmaFeatures": {
-      "jsx": true
+      "tsx": true,
+      "ts": true
     },
     "ecmaVersion": "latest",
     "sourceType": "module"
@@ -33,7 +33,8 @@
       { "caseSensitive": false }
    ],
     "import/prefer-default-export": "off",
-    "prettier/prettier": "error"
+    "prettier/prettier": "error",
+    "@typescript-eslint/explicit-module-boundary-types": "off"
   },
   "settings": {
     "import/resolver": {
