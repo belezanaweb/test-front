@@ -1,40 +1,36 @@
 {
-  "extends": [
-    "eslint:recommended",
-    "plugin:import/errors",
-    "plugin:react/recommended",
-    "plugin:jsx-a11y/recommended",
-    "plugin:react-hooks/recommended",
-    "prettier"
-  ],
-  "rules": {
-    "react/prop-types": "off",
-    "react/jsx-uses-react": "error",
-    "react/react-in-jsx-scope": "off",
-    "react/self-closing-comp": "warn"
+  "env": {
+    "browser": true,
+    "es2021": true
   },
-  "plugins": ["react", "import", "jsx-a11y", "prettier"],
+  "extends": [
+    "airbnb",
+    "plugin:import/typescript",
+    "prettier/@typescript-eslint",
+    "plugin:react/recommended",
+    "plugin:@typescript-eslint/recommended",
+    "plugin:prettier/recommended"
+  ],
+  "parser": "@typescript-eslint/parser",
   "parserOptions": {
-    "ecmaVersion": 2021,
-    "sourceType": "module",
     "ecmaFeatures": {
       "jsx": true
-    }
+    },
+    "ecmaVersion": "latest",
+    "sourceType": "module"
   },
-  "env": {
-    "es6": true,
-    "browser": true,
-    "jest": true,
-    "node": true
+  "plugins": ["react", "react-hooks", "@typescript-eslint", "prettier"],
+  "rules": {
+    "import/no-unresolved": [
+      2,
+      { "caseSensitive": false }
+   ],
+    "import/prefer-default-export": "off",
+    "prettier/prettier": "error"
   },
   "settings": {
-    "react": {
-      "version": "detect"
-    },
     "import/resolver": {
-      "node": {
-        "extensions": [".js", ".jsx", ".ts", ".tsx"]
-      }
+      "typescript": {}
     }
   }
 }
