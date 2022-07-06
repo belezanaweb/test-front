@@ -20,8 +20,6 @@ const Bag: React.FC = () => {
     return <></>
   }
 
-  console.log(bag)
-
   return (
     <BagBox>
       <Title>Produtos</Title>
