@@ -1,5 +1,6 @@
 interface ImageObject {
   small: string;
+  thumbnail: string;
 }
 
 interface PriceSpecification {
