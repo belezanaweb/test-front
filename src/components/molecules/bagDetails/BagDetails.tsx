@@ -1,7 +1,12 @@
 import React from 'react'
 import { formatValueToBRL } from '../../../utils/currency'
 import { Paper } from '../../atoms'
-import { BagDetailsItem, BagDetailsLabel, BagDetailsValue } from './BagDetails.style'
+import {
+  BagDetailsItem,
+  BagDetailsLabel,
+  BagDetailsList,
+  BagDetailsValue
+} from './BagDetails.style'
 
 interface BagDetailsProps {
   bag: ProductBag
@@ -17,18 +22,20 @@ export const BagDetails = ({ bag }: BagDetailsProps) => {
 
   return (
     <Paper isSolid={false}>
-      {details.map(({ label, value }) => {
-        const isDiscount = label === 'desconto'
-        const isTotal = label === 'total'
-        return (
-          <BagDetailsItem key={label} highlight={isDiscount} bold={isTotal}>
-            <BagDetailsLabel>{label}</BagDetailsLabel>
-            <BagDetailsValue>{`${isDiscount ? '- ' : ''} ${formatValueToBRL(
-              value
-            )}`}</BagDetailsValue>
-          </BagDetailsItem>
-        )
-      })}
+      <BagDetailsList>
+        {details.map(({ label, value }) => {
+          const isDiscount = label === 'desconto'
+          const isTotal = label === 'total'
+          return (
+            <BagDetailsItem key={label} highlight={isDiscount} bold={isTotal}>
+              <BagDetailsLabel>{label}</BagDetailsLabel>
+              <BagDetailsValue>{`${isDiscount ? '- ' : ''} ${formatValueToBRL(
+                value
+              )}`}</BagDetailsValue>
+            </BagDetailsItem>
+          )
+        })}
+      </BagDetailsList>
     </Paper>
   )
 }

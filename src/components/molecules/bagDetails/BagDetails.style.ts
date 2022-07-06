@@ -5,6 +5,12 @@ interface BagDetailsItem {
   bold: boolean
 }
 
+export const BagDetailsList = styled.ul`
+  margin: 0;
+  list-style: none;
+  padding: 0;
+`
+
 export const BagDetailsItem = styled.li<BagDetailsItem>(
   ({ highlight, bold, theme }) => `
 display: flex;
