@@ -25,7 +25,7 @@ export const List = styled.ul`
 
 export const ListItem = styled.li<ListItem>(
   ({ active, theme }) => `
-  color: ${active ? theme.colors.accent : theme.colors.disabled};
+  color: ${active ? theme.colors.accent : theme.colors.lightGray};
   background-color: ${theme.colors.white};
   border: none;
   font-size: ${theme.fonts.header};

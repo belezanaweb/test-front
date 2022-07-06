@@ -16,7 +16,7 @@ export const BagDetailsItem = styled.li<BagDetailsItem>(
 display: flex;
 width: 100%;
 justify-content: space-between;
-color: ${highlight ? theme.colors.accent : theme.colors.black};
+color: ${highlight ? theme.colors.accent : theme.colors.primary};
 font-weight: ${bold ? '700' : 'normal'};
 font-size: ${theme.fonts.highlightText};
 margin-bottom: 9px;
