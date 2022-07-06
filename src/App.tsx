@@ -5,6 +5,8 @@ import { Header } from './components/atoms'
 import GlobalStyle from './global/styles/style'
 import { defaultTheme } from './global/styles/theme'
 import { Bag } from './pages/bag'
+import { Payment } from './pages/payment'
+import { Main } from './App.style'
 
 export const App: React.FC = () => (
   <>
@@ -24,12 +26,14 @@ export const App: React.FC = () => (
         ]}
       />
 
-      <BrowserRouter>
-        <Routes>
-          <Route path="/" element={<Bag />} />
-          <Route path="/payment" element={<></>} />
-        </Routes>
-      </BrowserRouter>
+      <Main>
+        <BrowserRouter>
+          <Routes>
+            <Route path="/" element={<Bag />} />
+            <Route path="/payment" element={<Payment />} />
+          </Routes>
+        </BrowserRouter>
+      </Main>
     </ThemeProvider>
   </>
 )

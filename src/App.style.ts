@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 
-export const BagBox = styled.section`
+export const Main = styled.main`
   display: flex;
   flex-direction: column;
   gap: 20px;
