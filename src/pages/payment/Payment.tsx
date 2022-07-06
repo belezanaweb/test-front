@@ -1,9 +1,7 @@
 import React, { useCallback, useContext, useEffect } from 'react'
 import { useForm } from 'react-hook-form'
 import { useNavigate } from 'react-router-dom'
-import { Button } from '../../components/atoms'
-import { BagDetails } from '../../components/molecules'
-import { FormData, PaymentForm } from '../../components/molecules/paymentForm/PaymentForm'
+import { BagDetails, FormData, PaymentForm } from '../../components/molecules'
 import { BagContext } from '../../contexts/BagContext'
 import { HeaderContext } from '../../contexts/HeaderContext'
 import { PaymentFormContext } from '../../contexts/PaymentFormContext'
@@ -33,17 +31,24 @@ export const Payment = () => {
 
   useEffect(() => {
     setHeaderPosition(1)
-  }, [setHeaderPosition])
+    if (!bag) {
+      navigate('/')
+    }
+  }, [bag, navigate, setHeaderPosition])
 
   return (
-    <>
-      <FormContainer>
-        <PaymentForm register={register} errors={errors} />
-        {bag && <BagDetails bag={bag} />}
-        <Button onClick={handleConfirmButton} disabled={!isValid}>
-          finalizar o pedido
-        </Button>
-      </FormContainer>
-    </>
+    <FormContainer>
+      <PaymentForm register={register} errors={errors} />
+      {bag && (
+        <BagDetails
+          bag={bag}
+          buttonData={{
+            label: 'finalizar o pedido',
+            action: handleConfirmButton,
+            disabled: !isValid
+          }}
+        />
+      )}
+    </FormContainer>
   )
 }
