@@ -1,9 +1,11 @@
 import React, { useContext, useEffect } from 'react'
 import { useNavigate } from 'react-router-dom'
-import { ProductPaper, BagDetails } from '../../components/molecules'
-import { Button } from '../../components/atoms'
+
+import { ProductPaper, BagDetails, BagSkeleton } from '../../components/molecules'
 import { BagContext } from '../../contexts/BagContext'
 import { HeaderContext } from '../../contexts/HeaderContext'
+import 'react-loading-skeleton/dist/skeleton.css'
+import { Container } from './Bag.style'
 
 const Bag: React.FC = () => {
   const navigate = useNavigate()
@@ -19,15 +21,17 @@ const Bag: React.FC = () => {
   }, [setHeaderPosition])
 
   if (!bag) {
-    return <></>
+    return <BagSkeleton />
   }
 
   return (
-    <>
+    <Container>
       <ProductPaper bag={bag} />
-      <BagDetails bag={bag} />
-      <Button onClick={handleGoToPaymentStep}>seguir para o pagamento</Button>
-    </>
+      <BagDetails
+        bag={bag}
+        buttonData={{ label: 'seguir para o pagamento', action: handleGoToPaymentStep }}
+      />
+    </Container>
   )
 }
 

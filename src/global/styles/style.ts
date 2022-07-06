@@ -15,7 +15,14 @@ const GlobalStyle = createGlobalStyle`
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     background-color: #eee;
-}
+  }
+
+  #root {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+  }
 `
 
 export default GlobalStyle

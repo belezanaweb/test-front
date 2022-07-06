@@ -32,6 +32,12 @@ declare module 'styled-components' {
 
     shadows: {
       paper: string;
+    };
+
+    breakpoints: {
+      mobile: string;
+      tablet: string;
+      deskop: string;
     }
   }
 }

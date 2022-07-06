@@ -1,8 +1,9 @@
 import styled from 'styled-components'
 
-export const Main = styled.main`
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-  padding: 10px;
-`
+export const Main = styled.main(
+  ({ theme }) => `
+    margin: 10px;
+    max-width: ${theme.breakpoints.deskop};
+    width: calc(100% - 20px);
+  `
+)
