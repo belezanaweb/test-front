@@ -1,5 +1,5 @@
 import React, { createContext, Dispatch, ReactNode, useState } from 'react'
-import { FormData } from '../components/molecules/paymentForm/PaymentForm'
+import { FormData } from '../components/molecules'
 
 interface PaymentFormProviderProps {
   children: ReactNode
