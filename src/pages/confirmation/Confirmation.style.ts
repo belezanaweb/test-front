@@ -22,3 +22,13 @@ text-transform: uppercase;
 margin: 0;
 `
 )
+
+export const ConfirmationDataParagraph = styled.p(
+  ({ theme }) => `
+  color: ${theme.colors.black};
+  font-size: ${theme.fonts.highlightText};
+  margin: 0;
+  text-transform: uppercase;
+  line-height: 17px;
+`
+)

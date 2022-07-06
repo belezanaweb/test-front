@@ -43,7 +43,7 @@ line-height: 19px;
 outline: none;
 padding: 13px;
 :focus {
-  color: ${theme.colors.black};
+  color: ${theme.colors.lightBlack};
   border: 1px solid ${theme.colors.purple};
 }
 ::placeholder,

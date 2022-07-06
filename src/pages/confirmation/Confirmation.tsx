@@ -3,7 +3,12 @@ import { Paper } from '../../components/atoms'
 import { BagDetails, ProductPaper } from '../../components/molecules'
 import { BagContext } from '../../contexts/BagContext'
 import { HeaderContext } from '../../contexts/HeaderContext'
-import { CheckImage, SuccessBox, SuccessParagraph } from './Confirmation.style'
+import {
+  CheckImage,
+  ConfirmationDataParagraph,
+  SuccessBox,
+  SuccessParagraph
+} from './Confirmation.style'
 import DoneIcon from '../../assets/images/done-icon.png'
 import { PaymentFormContext } from '../../contexts/PaymentFormContext'
 
@@ -25,9 +30,9 @@ export const Confirmation = () => {
         <SuccessParagraph>Compra efetuada com sucesso</SuccessParagraph>
       </SuccessBox>
       <Paper title="pagamento">
-        <p>{cardNumber}</p>
-        <p>{cardName}</p>
-        <p>{date}</p>
+        <ConfirmationDataParagraph>{cardNumber}</ConfirmationDataParagraph>
+        <ConfirmationDataParagraph>{cardName}</ConfirmationDataParagraph>
+        <ConfirmationDataParagraph>{date}</ConfirmationDataParagraph>
       </Paper>
       {bag && (
         <>
