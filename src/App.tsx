@@ -1,16 +1,18 @@
-import React from 'react'
+import React, { lazy, Suspense } from 'react'
 import { ThemeProvider } from 'styled-components'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import { Header } from './components/atoms'
 import GlobalStyle from './global/styles/style'
 import { defaultTheme } from './global/styles/theme'
-import { Bag } from './pages/bag'
-import { Payment } from './pages/payment'
-import { Main } from './App.style'
 import { BagProvider } from './contexts/BagContext'
-import { Confirmation } from './pages/confirmation'
 import { HeaderProvider } from './contexts/HeaderContext'
 import { PaymentFormProvider } from './contexts/PaymentFormContext'
+import { Main } from './App.style'
+import { PageSkeleton } from './components/molecules'
+
+const Bag = lazy(() => import('./pages/bag'))
+const Payment = lazy(() => import('./pages/payment'))
+const Confirmation = lazy(() => import('./pages/confirmation'))
 
 export const App: React.FC = () => (
   <>
@@ -34,13 +36,15 @@ export const App: React.FC = () => (
         <BagProvider>
           <PaymentFormProvider>
             <Main>
-              <BrowserRouter>
-                <Routes>
-                  <Route path="/" element={<Bag />} />
-                  <Route path="/payment" element={<Payment />} />
-                  <Route path="/confirmation" element={<Confirmation />} />
-                </Routes>
-              </BrowserRouter>
+              <Suspense fallback={<PageSkeleton />}>
+                <BrowserRouter>
+                  <Routes>
+                    <Route path="/" element={<Bag />} />
+                    <Route path="/payment" element={<Payment />} />
+                    <Route path="/confirmation" element={<Confirmation />} />
+                  </Routes>
+                </BrowserRouter>
+              </Suspense>
             </Main>
           </PaymentFormProvider>
         </BagProvider>

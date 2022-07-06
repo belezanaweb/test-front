@@ -1,7 +1,7 @@
 import React, { useContext, useEffect } from 'react'
 import { useNavigate } from 'react-router-dom'
 
-import { ProductPaper, BagDetails, BagSkeleton } from '../../components/molecules'
+import { ProductPaper, BagDetails, PageSkeleton } from '../../components/molecules'
 import { BagContext } from '../../contexts/BagContext'
 import { HeaderContext } from '../../contexts/HeaderContext'
 import 'react-loading-skeleton/dist/skeleton.css'
@@ -21,7 +21,7 @@ const Bag: React.FC = () => {
   }, [setHeaderPosition])
 
   if (!bag) {
-    return <BagSkeleton />
+    return <PageSkeleton />
   }
 
   return (

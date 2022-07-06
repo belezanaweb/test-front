@@ -1,1 +1,1 @@
-export { Bag } from './Bag'
+export { Bag as default } from './Bag'

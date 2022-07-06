@@ -1,1 +1,1 @@
-export { Confirmation } from './Confirmation'
+export { Confirmation as default } from './Confirmation'
