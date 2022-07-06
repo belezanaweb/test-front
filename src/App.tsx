@@ -8,7 +8,7 @@ import { Bag } from './pages/bag'
 import { Payment } from './pages/payment'
 import { Main } from './App.style'
 import { BagProvider } from './contexts/BagContext'
-import { Confirmation } from './pages/confirmation/Confirmation'
+import { Confirmation } from './pages/confirmation'
 import { HeaderProvider } from './contexts/HeaderContext'
 import { PaymentFormProvider } from './contexts/PaymentFormContext'
 
