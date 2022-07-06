@@ -7,6 +7,7 @@ const defaultTheme: DefaultTheme = {
     header: '13px',
     title: '14px',
     text: '13px',
+    highlightText: '14px',
     button: '20px'
   },
 
@@ -16,7 +17,8 @@ const defaultTheme: DefaultTheme = {
     accent: '#FF6C00',
     darkAccent: '#D45A00',
     disabled: '#CCC',
-    background: '#EEE',
+    gray: '#EEE',
+    black: '#212122',
     white: '#FFF'
   },
 

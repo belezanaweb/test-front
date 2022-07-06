@@ -1,5 +1,5 @@
 interface ImageObject {
-  thumbnail: string;
+  small: string;
 }
 
 interface PriceSpecification {
@@ -13,6 +13,14 @@ interface Product {
   priceSpecification: PriceSpecification;
 }
 
-interface ProductBag {
+interface ProductBagItem {
   product: Product;
+}
+
+interface ProductBag {
+  items: ProductBagItem[];
+  subTotal: number;
+  shippingTotal: number;
+  discount: number;
+  total: number;
 }

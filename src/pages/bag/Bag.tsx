@@ -1,17 +1,15 @@
 import React, { useEffect, useState } from 'react'
-import { ThemeProvider } from 'styled-components'
-import { defaultTheme } from '../../global/styles/theme'
-import { Header } from '../../components/header/Header'
-import { Title } from '../../components/title/Title'
-import { Paper } from '../../components/paper/Paper'
-import { getProducts } from './service'
+import { Title } from '../../components/atoms'
+import { getBag } from './service'
+import { ProductPaper, BagDetails } from '../../components/molecules'
+import { BagBox } from './Bag.style'
 
 const Bag: React.FC = () => {
-  const [bag, setBag] = useState<ProductBag[]>()
+  const [bag, setBag] = useState<ProductBag>()
 
   useEffect(() => {
     const loadBag = async () => {
-      const productsList = await getProducts()
+      const productsList = await getBag()
       setBag(productsList)
     }
 
@@ -22,32 +20,16 @@ const Bag: React.FC = () => {
     return <></>
   }
 
+  console.log(bag)
+
   return (
-    <ThemeProvider theme={defaultTheme}>
-      <div className="App">
-        <Header
-          items={[
-            {
-              label: 'sacola'
-            },
-            {
-              label: 'pagamento'
-            },
-            {
-              label: 'confirmação'
-            }
-          ]}
-        />
+    <BagBox>
+      <Title>Produtos</Title>
 
-        <Title>Produtos</Title>
+      <ProductPaper bag={bag} />
 
-        <Paper>
-          {bag.map(({ product }) => (
-            <div key={product.sku}>{product.name}</div>
-          ))}
-        </Paper>
-      </div>
-    </ThemeProvider>
+      <BagDetails bag={bag} />
+    </BagBox>
   )
 }
 

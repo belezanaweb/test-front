@@ -8,6 +8,7 @@ declare module 'styled-components' {
       header: string;
       title: string;
       text: string;
+      highlightText: string;
       button: string;
     };
 
@@ -17,7 +18,8 @@ declare module 'styled-components' {
       accent: string;
       darkAccent: string;
       disabled: string;
-      background: string;
+      gray: string;
+      black: string;
       white: string;
     };
 
