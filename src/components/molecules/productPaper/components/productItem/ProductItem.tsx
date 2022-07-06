@@ -11,11 +11,16 @@ import {
 interface ProductItemProps {
   product: Product
   showPrice?: boolean
+  sizeVariant: keyof ImageObject
 }
 
-export const ProductItem = ({ product, showPrice = true }: ProductItemProps) => (
-  <ProductItemBox>
-    <ProductImage alt={product.name} src={product.imageObjects[0].small} />
+export const ProductItem = ({ product, showPrice = true, sizeVariant }: ProductItemProps) => (
+  <ProductItemBox sizeVariant={sizeVariant}>
+    <ProductImage
+      alt={product.name}
+      sizeVariant={sizeVariant}
+      src={product.imageObjects[0][sizeVariant as keyof ImageObject]}
+    />
     <ProductDetails>
       <ProductName>{product.name}</ProductName>
       {showPrice && (

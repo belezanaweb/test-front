@@ -1,12 +1,22 @@
 import styled from 'styled-components'
 
-export const ProductItemBox = styled.div(
-  ({ theme }) => `
-  border: 1px solid ${theme.colors.gray};
-  padding: 12px 10px 14px 10px;
-  display: flex;
-  gap: 10px;
-`
+const variants: ImageObject = {
+  thumbnail: '42px',
+  small: '65px'
+}
+
+interface ProductVariant {
+  sizeVariant: keyof ImageObject
+}
+
+export const ProductItemBox = styled.div<ProductVariant>(
+  ({ theme, sizeVariant }) => `
+    border: 1px solid ${theme.colors.gray};
+    border-radius: ${theme.borderRadius};
+    padding: ${sizeVariant === 'small' ? '10px 10px 14px 10px' : '11px'};
+    display: flex;
+    gap: 10px;
+  `
 )
 
 export const ProductDetails = styled.div`
@@ -16,24 +26,27 @@ export const ProductDetails = styled.div`
   justify-content: space-between;
 `
 
-export const ProductImage = styled.img`
-  width: 65px;
-  min-width: 65px;
-  height: 65px;
-`
+export const ProductImage = styled.img<ProductVariant>(
+  ({ sizeVariant }) => `
+    width: ${variants[sizeVariant]};
+    min-width: ${variants[sizeVariant]};
+    height: ${variants[sizeVariant]};
+  `
+)
 
 export const ProductName = styled.p(
   ({ theme }) => `
-  font-size: ${theme.fonts.text};
-  margin: 0 0 15px;
-`
+    font-size: ${theme.fonts.text};
+    margin: 0 0 15px;
+    line-height: 16px;
+  `
 )
 
 export const ProductPrice = styled.p(
   ({ theme }) => `
-font-weight: bold;
-font-size: ${theme.fonts.highlightText};
-align-self: flex-end;
-margin: 0;
-`
+    font-weight: bold;
+    font-size: ${theme.fonts.highlightText};
+    align-self: flex-end;
+    margin: 0;
+  `
 )
