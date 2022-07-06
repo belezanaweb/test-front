@@ -6,6 +6,7 @@ export const ButtonBox = styled.button(
   color: ${theme.colors.white};
   background-color: ${theme.colors.accent};
   border: none;
+  border-radius: ${theme.borderRadius};
   font-weight: bold;
   text-transform: uppercase;
   padding: 18px 12px;
