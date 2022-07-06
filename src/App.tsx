@@ -1,5 +1,6 @@
 import React from 'react'
 import { ThemeProvider } from 'styled-components'
+import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import { Header } from './components/atoms'
 import GlobalStyle from './global/styles/style'
 import { defaultTheme } from './global/styles/theme'
@@ -22,7 +23,13 @@ export const App: React.FC = () => (
           }
         ]}
       />
-      <Bag />
+
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<Bag />} />
+          <Route path="/payment" element={<></>} />
+        </Routes>
+      </BrowserRouter>
     </ThemeProvider>
   </>
 )
