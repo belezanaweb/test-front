@@ -7,7 +7,7 @@ export const ButtonBox = styled.button(
   background-color: ${theme.colors.accent};
   border: none;
   border-radius: ${theme.borderRadius};
-  font-weight: bold;
+  font-weight: 700;
   text-transform: uppercase;
   padding: 18px 12px;
   width: 100%;
