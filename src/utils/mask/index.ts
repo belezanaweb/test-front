@@ -5,6 +5,13 @@ export const formatCreditCard = (creditCardNumber: string) =>
     ?.join('.')
     .substring(0, 19) || ''
 
+export const maskCreditCard = (creditCardNumber: string | undefined) =>
+  creditCardNumber
+    ?.replace(/[^0-9]/g, '')
+    .replace(/.(?=.{4})/g, '*')
+    .match(/.{1,4}/g)
+    ?.join('.')
+
 export const formatValidDate = (date: string) =>
   date
     .replace(/[^0-9]/g, '')

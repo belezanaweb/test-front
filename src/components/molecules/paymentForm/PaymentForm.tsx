@@ -6,7 +6,7 @@ import { Input, Paper } from '../../atoms'
 import { RowFields } from './PaymentForm.style'
 
 export interface FormData {
-  cardNumber: string
+  cardNumber: string | undefined
   cardName: string
   date: string
   cvv: string

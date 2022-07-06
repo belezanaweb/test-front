@@ -7,6 +7,7 @@ import { FormData, PaymentForm } from '../../components/molecules/paymentForm/Pa
 import { BagContext } from '../../contexts/BagContext'
 import { HeaderContext } from '../../contexts/HeaderContext'
 import { PaymentFormContext } from '../../contexts/PaymentFormContext'
+import { maskCreditCard } from '../../utils/mask'
 import { FormContainer } from './Payment.style'
 
 export const Payment = () => {
@@ -24,7 +25,9 @@ export const Payment = () => {
   })
 
   const handleConfirmButton = useCallback(() => {
-    setFormValues(getValues())
+    const values = getValues()
+    const cardNumber = maskCreditCard(values.cardNumber)
+    setFormValues({ ...values, cardNumber })
     navigate('/confirmation')
   }, [setFormValues, getValues, navigate])
 
