@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react'
-import { Title } from '../../components/atoms'
 import { getBag } from './service'
 import { ProductPaper, BagDetails } from '../../components/molecules'
 import { BagBox } from './Bag.style'
@@ -22,10 +21,7 @@ const Bag: React.FC = () => {
 
   return (
     <BagBox>
-      <Title>Produtos</Title>
-
-      <ProductPaper bag={bag} />
-
+      <ProductPaper title="produtos" bag={bag} />
       <BagDetails bag={bag} />
     </BagBox>
   )
