@@ -5,14 +5,14 @@ import { Products } from './ProductPaper.style'
 
 interface ProductPaperProps {
   bag: ProductBag
-  title: string
+  showPrice?: boolean
 }
 
-export const ProductPaper = ({ bag, title }: ProductPaperProps) => (
-  <Paper title={title}>
+export const ProductPaper = ({ bag, showPrice = true }: ProductPaperProps) => (
+  <Paper title="produtos">
     <Products>
       {bag.items.map(({ product }) => (
-        <ProductItem key={product.sku} product={product} />
+        <ProductItem key={product.sku} product={product} showPrice={showPrice} />
       ))}
     </Products>
   </Paper>
