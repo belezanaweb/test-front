@@ -1,0 +1,1 @@
+export { BagDetails } from './BagDetails'
