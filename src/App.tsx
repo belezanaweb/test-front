@@ -7,33 +7,36 @@ import { defaultTheme } from './global/styles/theme'
 import { Bag } from './pages/bag'
 import { Payment } from './pages/payment'
 import { Main } from './App.style'
+import { BagProvider } from './contexts/BagContext'
 
 export const App: React.FC = () => (
   <>
     <GlobalStyle />
-    <ThemeProvider theme={defaultTheme}>
-      <Header
-        items={[
-          {
-            label: 'sacola'
-          },
-          {
-            label: 'pagamento'
-          },
-          {
-            label: 'confirmação'
-          }
-        ]}
-      />
+    <BagProvider>
+      <ThemeProvider theme={defaultTheme}>
+        <Header
+          items={[
+            {
+              label: 'sacola'
+            },
+            {
+              label: 'pagamento'
+            },
+            {
+              label: 'confirmação'
+            }
+          ]}
+        />
 
-      <Main>
-        <BrowserRouter>
-          <Routes>
-            <Route path="/" element={<Bag />} />
-            <Route path="/payment" element={<Payment />} />
-          </Routes>
-        </BrowserRouter>
-      </Main>
-    </ThemeProvider>
+        <Main>
+          <BrowserRouter>
+            <Routes>
+              <Route path="/" element={<Bag />} />
+              <Route path="/payment" element={<Payment />} />
+            </Routes>
+          </BrowserRouter>
+        </Main>
+      </ThemeProvider>
+    </BagProvider>
   </>
 )
