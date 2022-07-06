@@ -29,7 +29,7 @@ export const ListItem = styled.li<ListItem>(
   background-color: ${theme.colors.white};
   border: none;
   font-size: ${theme.fonts.header};
-  font-weight: bold;
+  font-weight: 700;
   text-transform: uppercase;
   `
 )
