@@ -1,41 +1,50 @@
-## Frontend Test
+### Beleza na Web
 
-Faça um fork deste repositório e finalizar o teste, submeta um pull request para o repositório que nosso time será notificado.
+## O projeto
 
-O teste consiste em um checkout simples contendo 3 passos (carrinho, pagamento e sucesso) [Veja o Layout](https://projects.invisionapp.com/prototype/font-test-cji0j0khf005c1t0132358e8k)
+O projeto tem, como objetivo, proporcionar uma experiência de "sacola" de produtos.
+Dessa forma, é possível visualizar os produtos na sacola de compras, prosseguir para o pagamento e, após isso,
+uma tela de confirmação com todos os produtos e valores totais.
 
-**Faça quando quiser/puder (madrugada, fim de semana, etc)**
+## Como iniciar a aplicação
 
-### Requerimentos
+Para iniciar a aplicação em ambiente de desenvolvimento, execute os seguintes comandos:
 
-- Pixel perfect ([nesse link](https://projects.invisionapp.com/prototype/font-test-cji0j0khf005c1t0132358e8k), você pode inspecionar para ver espaçamentos, fonte, tamanho, etc)
-- A aplicação precisa ser responsiva, utilizando o conceito de mobile-first. Use sua imaginação para entregar uma experiência boa no desktop.
-- Renderize cada passo em uma URL única (lib de rotas).
+- instale todas as dependências da aplicação com `npm install`
+- inicie o ambiente com `npm run start`
 
+### Stack principal
 
-### Passo 1 - Carrinho:
-  - Consuma o [esse endpoint](http://www.mocky.io/v2/5b15c4923100004a006f3c07) e liste os itens do carrinho, bem como o resumo do carrinho;
-  - Persista o conteúdo do JSON para ser usado nas próximas etapas;
+- React
+- TypeScript
+  - utilizado para evitar problemas de tipagem no momento de desenvolvimento e para definir os tipos das propriedades e funções de cada componente do projeto.
+- Context API
+  - utilizado para compartilhar dados dos componentes entre si e evitar o prop drilling;
+  - o não uso de Redux foi definido pelas poucas alterações de estado e a falta de complexidade para armazenar os dados. Context API possui uma simplicidade maior para fazer esse compartilhamento e também não foi necessário instalar uma biblioteca.
 
-### Passo 2 - Pagamento: 
-  - Exiba um form com campos de cartão de crédito com validação em cada campo;
-  - Habilite o botão de Finalizar Pedido apenas se o form esteja válido;
+### Stacks utilizadas
 
-### Passo 3 - Sucesso: 
-  - Todo o conteúdo deverá ser exibido a partir dos dados persistidos;
-  
-### O que vamos avaliar:
-  - Organização do código;
-  - Mensagens (em inglês) e mudanças nos commits;
-  - Composição/reutilização de componentes;
-  - Testes unitários;
-  - O motivo de ter escolhido cada tech da stack;
-  - Como rodar sua aplicação ;)
+- react-hook-form: utilizado para o formulário de pagamento;
+- react-router-dom: controlador de rotas da aplicação;
+- styled-components: responsável pelo estilo dos componentes, css global e definição do tema da aplicação;
+- axios: responsável pela comunicação com API.
+- msw (mock server worker): em requisições durante os testes, essa biblioteca cuidará de interceptar e retornar dados locais. Também funciona com outras bibliotecas que realizam requisições.
 
-### Diferenciais:
-  - Split bundle por rota (cada step ter um bundle separado para otimizar a performance);
-  - CSS in JS;
-  - React;
+### Dev experience
 
-### Fim:
-Ao finalizar o teste, submeta um pull request para o repositório que nosso time será notificado. Se tiver alguma observação, escreva no pull request.
+- Eslint
+  - para validações do código e checar possíveis problemas.
+- Prettier
+  - estilização do código seguindo as configurações da Airbnb.
+- Commitizen
+  - padronização de mensagens de commit.
+- Husky
+  - verificação de possíveis erros de código antes do commit ser feito.
+
+### Testes
+
+Cada componente tem o seu teste dentro de sua própria pasta.
+
+- para rodar os testes, basta rodar `npm run test` e irá trazer a cobertura de todos eles.
+
+* pacote utilizado: @testing-library/react
