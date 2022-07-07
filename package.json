@@ -3,9 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "@testing-library/jest-dom": "^4.2.4",
-    "@testing-library/react": "^9.3.2",
-    "@testing-library/user-event": "^7.1.2",
+
     "@types/jest": "^28.1.4",
     "@types/node": "^18.0.1",
     "@types/react": "^18.0.14",
@@ -25,7 +23,7 @@
     "commit": "git-cz",
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test",
+    "test": "react-scripts test --coverage",
     "coverage": "react-scripts test --coverage --watchAll=false",
     "eject": "react-scripts eject",
     "lint": "eslint \"src/**/*.{js,jsx}\" --quiet",
@@ -69,8 +67,12 @@
     "eslint-plugin-react": "^7.30.1",
     "eslint-plugin-react-hooks": "^4.6.0",
     "husky": "^4.3.0",
+    "jest-styled-components": "^7.0.8",
     "lint-staged": "^10.4.2",
-    "prettier": "^2.7.1"
+    "prettier": "^2.7.1",
+    "@testing-library/react": "^10.0.0",
+    "@testing-library/jest-dom": "^4.2.4",
+    "@testing-library/user-event": "^7.1.2"
   },
   "config": {
     "commitizen": {
