@@ -1,5 +1,5 @@
 import React, { useCallback, useContext, useEffect } from 'react'
-import { useForm } from 'react-hook-form'
+import { FormProvider, useForm } from 'react-hook-form'
 import { useNavigate } from 'react-router-dom'
 import { BagDetails, FormData, PaymentForm } from '../../components/molecules'
 import { BagContext } from '../../contexts/BagContext'
@@ -14,13 +14,15 @@ export const Payment = () => {
   const { setFormValues } = useContext(PaymentFormContext)
   const navigate = useNavigate()
 
+  const methods = useForm<FormData>({
+    mode: 'all'
+  })
+
   const {
     register,
     formState: { errors, isValid },
     getValues
-  } = useForm<FormData>({
-    mode: 'onBlur'
-  })
+  } = methods
 
   const handleConfirmButton = useCallback(() => {
     const values = getValues()
@@ -37,18 +39,20 @@ export const Payment = () => {
   }, [bag, navigate, setHeaderPosition])
 
   return (
-    <FormContainer>
-      <PaymentForm register={register} errors={errors} />
-      {bag && (
-        <BagDetails
-          bag={bag}
-          buttonData={{
-            label: 'finalizar o pedido',
-            action: handleConfirmButton,
-            disabled: !isValid
-          }}
-        />
-      )}
-    </FormContainer>
+    <FormProvider {...methods}>
+      <FormContainer>
+        <PaymentForm register={register} errors={errors} />
+        {bag && (
+          <BagDetails
+            bag={bag}
+            buttonData={{
+              label: 'finalizar o pedido',
+              action: handleConfirmButton,
+              disabled: !isValid
+            }}
+          />
+        )}
+      </FormContainer>
+    </FormProvider>
   )
 }

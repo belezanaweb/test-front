@@ -32,7 +32,7 @@ export const PaymentForm = ({ register, errors }: PaymentFormProps) => (
             message: FormMessages.invalid
           }
         })}
-        onChange={(event) => {
+        formatValue={(event) => {
           const { target } = event
           target.value = formatCreditCard(target.value)
         }}
@@ -59,7 +59,7 @@ export const PaymentForm = ({ register, errors }: PaymentFormProps) => (
               message: FormMessages.invalid
             }
           })}
-          onChange={(event) => {
+          formatValue={(event) => {
             const { target } = event
             target.value = formatValidDate(target.value)
           }}
@@ -78,7 +78,7 @@ export const PaymentForm = ({ register, errors }: PaymentFormProps) => (
               message: FormMessages.invalid
             }
           })}
-          onChange={(event) => {
+          formatValue={(event) => {
             const { target } = event
             target.value = formatCvv(target.value)
           }}

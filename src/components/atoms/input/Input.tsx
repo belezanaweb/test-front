@@ -9,10 +9,11 @@ export interface InputProps {
   minWidth?: string
   expand?: boolean
   onChange?: (event: ChangeEvent<HTMLInputElement>) => void
+  formatValue?: (event: ChangeEvent<HTMLInputElement>) => void
 }
 
 const InputComponent = (
-  { label, error, placeholder, minWidth, expand, onChange, ...rest }: InputProps,
+  { label, error, placeholder, minWidth, expand, onChange, formatValue, ...rest }: InputProps,
   ref: ForwardedRef<HTMLInputElement>
 ) => (
   <InputContainer minWidth={minWidth} expand={expand}>
@@ -20,9 +21,12 @@ const InputComponent = (
     <InputBox
       placeholder={placeholder}
       ref={ref}
-      onChange={(event) => onChange && onChange(event)}
       invalid={!!error}
       {...rest}
+      onChange={(event) => {
+        if (formatValue) formatValue(event)
+        if (onChange) onChange(event)
+      }}
     />
     {error && <InputErrorMessage>{error}</InputErrorMessage>}
   </InputContainer>
