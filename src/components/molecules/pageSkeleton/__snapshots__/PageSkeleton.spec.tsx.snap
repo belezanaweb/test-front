@@ -1,0 +1,68 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`PageSkeleton renders correctly 1`] = `
+<body>
+  <div>
+    <div
+      class="sc-dIouRR bxyfEO"
+    >
+      <section
+        class="sc-bjUoiL ddtJdZ"
+      >
+        <span
+          aria-busy="true"
+          aria-live="polite"
+        >
+          <span
+            class="react-loading-skeleton"
+            style="margin-bottom: 5px; width: 210px; height: 18px; --base-color: #d7d7d7; --highlight-color: #c9c9c9;"
+          >
+            ‌
+          </span>
+          <br />
+        </span>
+        <span
+          aria-busy="true"
+          aria-live="polite"
+        >
+          <span
+            class="react-loading-skeleton"
+            style="height: 320px; --base-color: #d7d7d7; --highlight-color: #c9c9c9;"
+          >
+            ‌
+          </span>
+          <br />
+        </span>
+      </section>
+      <section
+        class="sc-jqUVSM iwggig"
+      >
+        <span
+          aria-busy="true"
+          aria-live="polite"
+        >
+          <span
+            class="react-loading-skeleton"
+            style="height: 130px; --base-color: #d7d7d7; --highlight-color: #c9c9c9;"
+          >
+            ‌
+          </span>
+          <br />
+        </span>
+        <span
+          aria-busy="true"
+          aria-live="polite"
+        >
+          <span
+            class="react-loading-skeleton"
+            style="height: 60px; --base-color: #d7d7d7; --highlight-color: #c9c9c9;"
+          >
+            ‌
+          </span>
+          <br />
+        </span>
+      </section>
+    </div>
+  </div>
+</body>
+`;
