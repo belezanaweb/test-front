@@ -6,7 +6,7 @@ type HeaderItem = {
   label: string
 }
 
-interface HeaderProps {
+export interface HeaderProps {
   items: HeaderItem[]
 }
 
