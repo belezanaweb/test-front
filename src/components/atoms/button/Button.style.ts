@@ -3,6 +3,7 @@ import styled from 'styled-components'
 export const ButtonBox = styled.button(
   ({ theme }) => `
     font-size: ${theme.fonts.button};
+    letter-spacing: 0.5px;
     color: ${theme.colors.white};
     background-color: ${theme.colors.accent};
     border: none;

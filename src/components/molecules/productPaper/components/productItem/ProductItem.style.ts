@@ -44,7 +44,7 @@ export const ProductName = styled.p(
 
 export const ProductPrice = styled.p(
   ({ theme }) => `
-    font-weight: bold;
+    font-weight: 700;
     font-size: ${theme.fonts.highlightText};
     align-self: flex-end;
     margin: 0;
