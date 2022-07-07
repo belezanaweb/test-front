@@ -1,24 +1,12 @@
 import React from 'react'
-import { setupServer } from 'msw/node'
 import { waitFor } from '@testing-library/react'
-import { rest } from 'msw'
 import { act } from 'react-dom/test-utils'
 import { render, fireEvent } from './test-utils'
 import { App } from './App'
-import { bagResponseMock } from '../mock/bagResponse'
-import { belezaNaWebApi } from './api'
 import { FormMessages } from './constants/formMessages'
+import { setupMockServer } from '../mock/msw/setupMockServer'
 
-const baseURL = belezaNaWebApi.getUri()
-
-const server = setupServer(
-  rest.get(`${baseURL}5b15c4923100004a006f3c07`, (req, res, ctx) =>
-    res(ctx.status(200), ctx.json(bagResponseMock))
-  )
-)
-
-beforeAll(() => server.listen())
-afterAll(() => server.close())
+setupMockServer()
 
 const renderComponent = () => render(<App />)
 
