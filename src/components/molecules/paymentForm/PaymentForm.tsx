@@ -22,6 +22,7 @@ export const PaymentForm = ({ register, errors }: PaymentFormProps) => (
     <Paper title="cartão de crédito" paddingBottom={false}>
       <Input
         label="Número do Cartão:"
+        data-testid="cardNumberInput"
         placeholder="____.____.____.____"
         error={errors.cardNumber?.message}
         {...register('cardNumber', {
@@ -39,6 +40,7 @@ export const PaymentForm = ({ register, errors }: PaymentFormProps) => (
 
       <Input
         label="Nome do Titular:"
+        data-testid="cardNameInput"
         placeholder="Como no cartão"
         error={errors.cardName?.message}
         {...register('cardName', { required: FormMessages.required })}
@@ -47,6 +49,7 @@ export const PaymentForm = ({ register, errors }: PaymentFormProps) => (
       <RowFields>
         <Input
           label="Validade (mês/ano):"
+          data-testid="dateInput"
           placeholder="__/____"
           error={errors.date?.message}
           {...register('date', {
@@ -64,6 +67,7 @@ export const PaymentForm = ({ register, errors }: PaymentFormProps) => (
 
         <Input
           label="CVV:"
+          data-testid="cvvInput"
           placeholder="___"
           minWidth="140px"
           error={errors.cvv?.message}
