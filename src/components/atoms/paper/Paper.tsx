@@ -2,7 +2,7 @@ import React, { ReactNode } from 'react'
 import { Title } from '../title'
 import { PaperBox } from './Paper.style'
 
-interface PaperProps {
+export interface PaperProps {
   children: ReactNode
   isSolid?: boolean
   title?: string
