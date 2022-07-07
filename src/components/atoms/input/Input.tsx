@@ -1,7 +1,7 @@
 import React, { ChangeEvent, ForwardedRef, forwardRef } from 'react'
 import { InputBox, InputContainer, InputErrorMessage, InputLabel } from './Input.style'
 
-interface InputProps {
+export interface InputProps {
   label: string
   placeholder?: string
   error?: string
