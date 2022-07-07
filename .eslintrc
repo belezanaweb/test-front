@@ -37,7 +37,8 @@
     "@typescript-eslint/explicit-module-boundary-types": "off",
     "react/jsx-props-no-spreading": "off",
     "no-shadow": "off",
-    "@typescript-eslint/no-shadow": ["error"]
+    "@typescript-eslint/no-shadow": ["error"],
+    "import/no-extraneous-dependencies": "off"
   },
   "settings": {
     "import/resolver": {
