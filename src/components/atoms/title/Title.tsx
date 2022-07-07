@@ -1,7 +1,7 @@
 import React, { ReactNode } from 'react'
 import { Heading } from './Title.style'
 
-interface TitleProps {
+export interface TitleProps {
   children: ReactNode
 }
 
