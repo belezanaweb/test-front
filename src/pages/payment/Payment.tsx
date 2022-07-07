@@ -10,7 +10,7 @@ import { FormContainer } from './Payment.style'
 
 export const Payment = () => {
   const { setHeaderPosition } = useContext(HeaderContext)
-  const bag = useContext(BagContext)
+  const { bag } = useContext(BagContext)
   const { setFormValues } = useContext(PaymentFormContext)
   const navigate = useNavigate()
 

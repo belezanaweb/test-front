@@ -7,6 +7,7 @@ import { render, fireEvent } from '../../test-utils'
 import { Bag } from './Bag'
 import { bagResponseMock } from '../../../mock/bagResponse'
 import { belezaNaWebApi } from '../../api'
+import { BagProvider } from '../../contexts/BagContext'
 
 const navigate = jest.fn()
 
@@ -25,7 +26,12 @@ const server = setupServer(
 beforeAll(() => server.listen())
 afterAll(() => server.close())
 
-const renderComponent = () => render(<Bag />)
+const renderComponent = () =>
+  render(
+    <BagProvider>
+      <Bag />
+    </BagProvider>
+  )
 
 describe('Bag', () => {
   test('renders correctly', async () => {

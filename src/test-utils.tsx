@@ -3,7 +3,6 @@ import { render, RenderOptions } from '@testing-library/react'
 import { ThemeProvider } from 'styled-components'
 import { defaultTheme } from './global/styles/theme'
 import { HeaderProvider } from './contexts/HeaderContext'
-import { BagProvider } from './contexts/BagContext'
 import { PaymentFormProvider } from './contexts/PaymentFormContext'
 
 interface AllTheProvidersProps {
@@ -12,11 +11,9 @@ interface AllTheProvidersProps {
 
 const AllTheProviders = ({ children }: AllTheProvidersProps) => (
   <HeaderProvider>
-    <BagProvider>
-      <PaymentFormProvider>
-        <ThemeProvider theme={defaultTheme}>{children}</ThemeProvider>
-      </PaymentFormProvider>
-    </BagProvider>
+    <PaymentFormProvider>
+      <ThemeProvider theme={defaultTheme}>{children}</ThemeProvider>
+    </PaymentFormProvider>
   </HeaderProvider>
 )
 

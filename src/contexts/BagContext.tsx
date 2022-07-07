@@ -5,19 +5,15 @@ interface BagProviderProps {
   children: ReactNode
 }
 
-export const BagContext = createContext<ProductBag | undefined>({} as ProductBag)
+interface BagContextProps {
+  bag: ProductBag | undefined
+  setBag: React.Dispatch<React.SetStateAction<ProductBag | undefined>>
+}
+
+export const BagContext = createContext<BagContextProps>({} as BagContextProps)
 
 export const BagProvider = ({ children }: BagProviderProps) => {
   const [bag, setBag] = useState<ProductBag>()
 
-  useEffect(() => {
-    const loadBag = async () => {
-      const productsList = await getBag()
-      setBag(productsList)
-    }
-
-    loadBag()
-  }, [])
-
-  return <BagContext.Provider value={bag}>{children}</BagContext.Provider>
+  return <BagContext.Provider value={{ bag, setBag }}>{children}</BagContext.Provider>
 }

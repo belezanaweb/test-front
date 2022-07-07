@@ -9,7 +9,7 @@ import { PaymentFormContext } from '../../contexts/PaymentFormContext'
 
 export const Confirmation = () => {
   const { setHeaderPosition } = useContext(HeaderContext)
-  const bag = useContext(BagContext)
+  const { bag } = useContext(BagContext)
   const navigate = useNavigate()
   const {
     formValues: { cardNumber, cardName, date }
