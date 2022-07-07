@@ -15,7 +15,7 @@ type ButtonData = {
   disabled?: boolean
 }
 
-interface BagDetailsProps {
+export interface BagDetailsProps {
   bag: ProductBag
   buttonData?: ButtonData
 }
