@@ -1,4 +1,4 @@
-### Beleza na Web
+# Beleza na Web
 
 ## O projeto
 
