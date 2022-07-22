@@ -1,5 +1,4 @@
 import React from 'react'
-import './App.css'
 import loadable from '@loadable/component'
 import { Route, Routes } from 'react-router-dom'
 import { Container } from './components/Container'

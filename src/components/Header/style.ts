@@ -6,6 +6,7 @@ export const Navbar = styled.nav`
   width: 100%;
   background-color: #fff;
   box-shadow: 1px 1px 5px 0 rgba(0, 0, 29, 0.22);
+  margin-bottom: 10px;
 `
 
 export const List = styled.ul`
