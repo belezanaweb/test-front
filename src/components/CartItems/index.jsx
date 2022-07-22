@@ -1,15 +1,15 @@
 import React from 'react'
 import { Container, SectionContainer, Title } from './style'
+import { Product } from '../Product'
 
-export const CartItem = () => {
+export const CartItems = ({ products }) => {
   return (
     <SectionContainer>
       <Title>Produtos</Title>
       <Container>
-        {/* {!!chosenProducts?.length &&
-          chosenProducts.map((product) => (
-            <Product key={product.product.sku} {...product.product} />
-          ))} */}
+        {products
+          ? products.map((product) => <Product key={product?.product?.sku} {...product.product} />)
+          : ''}
       </Container>
     </SectionContainer>
   )
