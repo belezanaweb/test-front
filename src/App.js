@@ -3,6 +3,8 @@ import loadable from '@loadable/component'
 import { Route, Routes } from 'react-router-dom'
 import { Container } from './components/Container'
 import { DataProvider } from './context'
+import { ThemeProvider } from 'styled-components'
+import { defaultTheme } from './assets/styles/theme'
 
 const Cart = loadable(() => import('./pages/Cart/'), {
   resolveComponent: (components) => components.Cart
@@ -19,13 +21,15 @@ const Success = loadable(() => import('./pages/Success/'), {
 const App = () => {
   return (
     <DataProvider>
-      <Container>
-        <Routes>
-          <Route path="/" element={<Cart />} />
-          <Route path="/payment" element={<Payment />} />
-          <Route path="/success" element={<Success />} />
-        </Routes>
-      </Container>
+      <ThemeProvider theme={defaultTheme}>
+        <Container>
+          <Routes>
+            <Route path="/" element={<Cart />} />
+            <Route path="/payment" element={<Payment />} />
+            <Route path="/success" element={<Success />} />
+          </Routes>
+        </Container>
+      </ThemeProvider>
     </DataProvider>
   )
 }

@@ -4,8 +4,8 @@ export const Navbar = styled.nav`
   display: flex;
   justify-content: center;
   width: 100%;
-  background-color: #fff;
-  box-shadow: 1px 1px 5px 0 rgba(0, 0, 29, 0.22);
+  background-color: ${(props) => props.theme.colors.white};
+  box-shadow: ${(props) => props.theme.shadow};
   margin-bottom: 20px;
 `
 
@@ -19,18 +19,14 @@ export const List = styled.ul`
 `
 
 export const ListItem = styled.li`
-  color: ${(props) => (props.active ? '#ff7800' : '#ccc')};
-  background-color: #fff;
+  color: ${(props) => (props.active ? props.theme.colors.orange : props.theme.colors.lightGray)};
+  background-color: ${(props) => props.theme.colors.white};
   border: none;
-  font-size: 13px;
+  font-size: ${(props) => props.theme.fonts.header};
   font-weight: 700;
   text-transform: uppercase;
   transition: 0.3s;
-  @media screen and (min-width: 1024px) {
-    font-size: 1rem;
+  @media screen and (min-width: ${(props) => props.theme.breakpoints.desktop}) {
+    font-size: ${(props) => props.theme.fonts.desktop};
   }
-  /* &:hover {
-    color: #ff7800;
-    transition: 0.3s;
-  } */
 `

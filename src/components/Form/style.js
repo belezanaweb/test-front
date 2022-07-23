@@ -5,33 +5,32 @@ export const Section = styled.section`
 `
 
 export const Container = styled.section`
-  background-color: #fff;
-  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+  background-color: ${(props) => props.theme.colors.white};
+  box-shadow: ${(props) => props.theme.shadow};
   padding: 13px;
-  border-radius: 3px;
+  border-radius: ${(props) => props.theme.borderRadius};
   label {
     display: flex;
     flex-direction: column;
     margin-bottom: 25px;
-    color: #ccc;
-    font-size: 0.8rem;
+    color: ${(props) => props.theme.colors.lightGray};
+    font-size: ${(props) => props.theme.fonts.label};
     span {
       margin-bottom: 7px;
     }
     p {
-      color: #f30;
-      font-size: 0.8rem;
+      color: ${(props) => props.theme.colors.primary};
       padding-top: 5px;
     }
-    @media (min-width: 1024px) {
+    @media (min-width: ${(props) => props.theme.breakpoints.desktop}) {
       p {
-        font-size: 1rem;
+        font-size: ${(props) => props.theme.fonts.desktop};
       }
     }
   }
-  @media screen and (min-width: 1024px) {
+  @media screen and (min-width: ${(props) => props.theme.breakpoints.desktop}) {
     label {
-      font-size: 1rem;
+      font-size: ${(props) => props.theme.fonts.desktop};
     }
   }
 `
@@ -51,15 +50,15 @@ export const ContainerTwoCols = styled.div`
 export const Input = styled.input`
   width: 100%;
   padding: 15px;
-  border: 1px solid #e7e7e7;
-  border-radius: 3px;
-  box-shadow: 1px 0 2px rgba(0, 0, 0, 0.2);
+  border: 1px solid ${(props) => props.theme.colors.mediumGray};
+  border-radius: ${(props) => props.theme.borderRadius};
+  box-shadow: ${(props) => props.theme.shadow};
   &:focus {
     outline: ${(props) => `${props.error ? '1px solid #f30' : '1px solid #a43287'}`};
   }
   &::placeholder {
-    color: #e0e7ee;
-    font-size: 1rem;
+    color: ${(props) => props.theme.colors.ultraLightGray};
+    font-size: ${(props) => props.theme.fonts.desktop};
     letter-spacing: 1.37px;
   }
 `

@@ -7,7 +7,8 @@ export const Container = styled.section`
     display: flex;
     justify-content: center;
     .circle {
-      border: 2px solid #ff7800;
+      border: 2px solid;
+      border-color: ${(props) => props.theme.colors.orange};
       border-radius: 50%;
       width: 39px;
       height: 39px;
@@ -33,10 +34,10 @@ export const Container = styled.section`
     color: #ff7800;
     text-transform: uppercase;
     font-weight: 800;
-    font-size: 14px;
+    ${(props) => props.theme.fonts.title};
     text-align: center;
-    @media screen and (min-width: 1024px) {
-      font-size: 1rem;
+    @media screen and (min-width: ${(props) => props.theme.breakpoints.desktop}) {
+      font-size: ${(props) => props.theme.fonts.desktop};
     }
   }
 `

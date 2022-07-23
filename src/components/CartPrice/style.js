@@ -4,19 +4,16 @@ export const Container = styled.section`
   width: 100%;
   border: 1px solid #d4d4d4;
   padding: 15px;
-  border-radius: 3px;
+  border-radius: ${(props) => props.theme.borderRadius};
   margin-top: 26px;
   div {
     width: 100%;
     font-size: 0.875rem;
-    color: #212122;
+    color: ${(props) => props.theme.colors.primary};
     display: flex;
     justify-content: space-between;
     p {
       text-transform: uppercase;
-    }
-    .skeleton {
-      background: #ccc;
     }
     &:not(:last-child) {
       margin-bottom: 8px;
@@ -26,9 +23,9 @@ export const Container = styled.section`
     }
   }
   .orange {
-    color: #ff7800;
+    color: ${(props) => props.theme.colors.orange};
   }
-  @media screen and (min-width: 1024px) {
+  @media screen and (min-width: ${(props) => props.theme.breakpoints.desktop}) {
     div {
       p {
         font-size: 1.2rem;
