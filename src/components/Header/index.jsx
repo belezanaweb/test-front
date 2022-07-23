@@ -1,7 +1,22 @@
 import React from 'react'
 import { List, ListItem, Navbar } from './style'
 
-export const Header = ({ items }) => {
+export const Header = () => {
+  const items = [
+    {
+      label: 'sacola',
+      path: '/'
+    },
+    {
+      label: 'pagamento',
+      path: '/payment'
+    },
+    {
+      label: 'confirmação',
+      path: '/success'
+    }
+  ]
+
   return (
     <Navbar>
       <List>

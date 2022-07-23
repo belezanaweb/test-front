@@ -7,11 +7,16 @@ const Cart = loadable(() => import('./pages/Cart/'), {
   resolveComponent: (components) => components.Cart
 })
 
+const Payment = loadable(() => import('./pages/Payment/'), {
+  resolveComponent: (components) => components.Payment
+})
+
 const App = () => {
   return (
     <Container>
       <Routes>
         <Route path="/" element={<Cart />} />
+        <Route path="/payment" element={<Payment />} />
       </Routes>
     </Container>
   )

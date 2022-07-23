@@ -40,22 +40,7 @@ export const Cart = () => {
 
   return (
     <>
-      <Header
-        items={[
-          {
-            label: 'sacola',
-            path: '/'
-          },
-          {
-            label: 'pagamento',
-            path: '/pagamento'
-          },
-          {
-            label: 'confirmação',
-            path: '/confirmacao'
-          }
-        ]}
-      />
+      <Header />
       <Section>
         <CartItems products={products} />
       </Section>

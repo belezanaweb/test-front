@@ -1,5 +1,6 @@
 import React from 'react'
-import { Container, SectionContainer, Title } from './style'
+import { Container, SectionContainer } from './style'
+import { Title } from '../Title'
 import { Product } from '../Product'
 
 export const CartItems = ({ products }) => {
