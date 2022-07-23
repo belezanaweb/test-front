@@ -1,5 +1,6 @@
 import React from 'react'
 import { Container, ImageContainer, TextContainer, ProductTitle, Price } from './style'
+import { numberToCurrency } from '../../utils'
 
 export const Product = ({ name, priceSpecification, imageObjects }) => {
   return (
@@ -9,7 +10,7 @@ export const Product = ({ name, priceSpecification, imageObjects }) => {
       </ImageContainer>
       <TextContainer>
         <ProductTitle>{name}</ProductTitle>
-        <Price>R$ {priceSpecification.price.toFixed(2)}</Price>
+        <Price>{priceSpecification.price && numberToCurrency(priceSpecification.price)}</Price>
       </TextContainer>
     </Container>
   )

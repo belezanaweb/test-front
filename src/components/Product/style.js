@@ -24,7 +24,7 @@ export const TextContainer = styled.div`
   flex-direction: column;
   justify-content: space-between;
   align-items: flex-end;
-  font-size: 0.81rem;
+  font-size: 13px;
   line-height: 1rem;
   font-weight: 300;
   @media screen and (min-width: 1024px) {
@@ -35,6 +35,10 @@ export const TextContainer = styled.div`
 `
 export const ProductTitle = styled.p`
   font-weight: 400;
+  font-size: 13px;
+  @media screen and (min-width: 1024px) {
+    font-size: 1rem;
+  }
 `
 export const Price = styled.p`
   font-weight: 800;

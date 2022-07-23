@@ -27,6 +27,9 @@ export const ListItem = styled.li`
   text-transform: uppercase;
   cursor: pointer;
   transition: 0.3s;
+  @media screen and (min-width: 1024px) {
+    font-size: 1rem;
+  }
   &:hover {
     color: #ff7800;
     transition: 0.3s;

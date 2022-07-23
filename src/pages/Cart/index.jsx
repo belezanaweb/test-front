@@ -11,14 +11,30 @@ const CartItems = loadable(() => import('../../components/CartItems'), {
   resolveComponent: (components) => components.CartItems
 })
 
+const CartPrice = loadable(() => import('../../components/CartPrice'), {
+  resolveComponent: (components) => components.CartPrice
+})
+
 export const Cart = () => {
   const [products, setProducts] = React.useState([])
+  const [cartPrice, setCartPrice] = React.useState({
+    discount: '',
+    shippingTotal: '',
+    subTotal: '',
+    total: ''
+  })
 
   React.useEffect(() => {
     const getProducts = async () => {
       const res = await api.get('5b15c4923100004a006f3c07')
-      console.log(res.data.items)
+      console.log(res.data) //apagar depois
       setProducts(res.data.items)
+      setCartPrice({
+        discount: res.data.discount,
+        shippingTotal: res.data.shippingTotal,
+        subTotal: res.data.subTotal,
+        total: res.data.total
+      })
     }
     getProducts()
   }, [])
@@ -44,7 +60,9 @@ export const Cart = () => {
       <Section>
         <CartItems products={products} />
       </Section>
-      <Section></Section>
+      <Section>
+        <CartPrice cartPrice={cartPrice} />
+      </Section>
     </>
   )
 }
