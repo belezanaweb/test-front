@@ -15,6 +15,10 @@ const CartPrice = loadable(() => import('../../components/CartPrice'), {
   resolveComponent: (components) => components.CartPrice
 })
 
+const Button = loadable(() => import('../../components/Button'), {
+  resolveComponent: (components) => components.Button
+})
+
 export const Cart = () => {
   const [products, setProducts] = React.useState([])
   const [cartPrice, setCartPrice] = React.useState({
@@ -62,6 +66,9 @@ export const Cart = () => {
       </Section>
       <Section>
         <CartPrice cartPrice={cartPrice} />
+      </Section>
+      <Section>
+        <Button path={'/payment'} text={'Seguir para o pagamento'} />
       </Section>
     </>
   )
