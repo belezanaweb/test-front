@@ -15,6 +15,9 @@ export const Container = styled.section`
     p {
       text-transform: uppercase;
     }
+    .skeleton {
+      background: #ccc;
+    }
     &:not(:last-child) {
       margin-bottom: 8px;
     }

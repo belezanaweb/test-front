@@ -21,12 +21,7 @@ const Button = loadable(() => import('../../components/Button'), {
 
 export const Cart = () => {
   const [products, setProducts] = React.useState([])
-  const [cartPrice, setCartPrice] = React.useState({
-    discount: '',
-    shippingTotal: '',
-    subTotal: '',
-    total: ''
-  })
+  const [cartPrice, setCartPrice] = React.useState(null)
 
   React.useEffect(() => {
     const getProducts = async () => {
