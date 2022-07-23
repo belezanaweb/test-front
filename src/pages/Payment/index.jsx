@@ -6,24 +6,16 @@ const Header = loadable(() => import('../../components/Header'), {
   resolveComponent: (components) => components.Header
 })
 
-const CartPrice = loadable(() => import('../../components/CartPrice'), {
-  resolveComponent: (components) => components.CartPrice
-})
-
-const Button = loadable(() => import('../../components/Button'), {
-  resolveComponent: (components) => components.Button
+const Form = loadable(() => import('../../components/Form'), {
+  resolveComponent: (components) => components.Form
 })
 
 export const Payment = () => {
   return (
     <>
       <Header />
-      <Section></Section>
       <Section>
-        <CartPrice cartPrice={null} />
-      </Section>
-      <Section>
-        <Button path={'/success'} text={'Finalizar o pedido'} />
+        <Form />
       </Section>
     </>
   )

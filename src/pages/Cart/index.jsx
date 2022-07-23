@@ -50,6 +50,7 @@ export const Cart = () => {
       <Section>
         <Button path={'/payment'} text={'Seguir para o pagamento'} />
       </Section>
+      <br />
     </>
   )
 }
