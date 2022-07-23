@@ -3,6 +3,7 @@ import { Section, Container, Input, ContainerTwoCols } from './style'
 import { Title } from '../Title'
 import { maskCvv, maskExpiryDate, maskCard } from '../../utils'
 import loadable from '@loadable/component'
+import { DataContext } from '../../context'
 
 const CartPrice = loadable(() => import('../CartPrice'), {
   resolveComponent: (components) => components.CartPrice
@@ -13,6 +14,7 @@ const Button = loadable(() => import('../Button'), {
 })
 
 export const Form = () => {
+  const [data, setData] = React.useContext(DataContext)
   const [formData, setFormData] = React.useState({
     cardNumber: '',
     cardName: '',
@@ -37,6 +39,7 @@ export const Form = () => {
     }))
   }
 
+  // Const to check if all fields are not empty
   const isComplete =
     formData.cardNumber != '' &&
     formData.cardNumber.trim().length != 0 &&
@@ -47,8 +50,12 @@ export const Form = () => {
     formData.cvv != '' &&
     formData.cvv.trim().length != 0
 
+  // Save credit card info in context
   const handleFormData = (data) => {
-    console.log(data)
+    setData((prev) => ({
+      ...prev,
+      creditCard: formData
+    }))
   }
 
   return (
@@ -123,7 +130,7 @@ export const Form = () => {
         </Container>
       </Section>
       <Section>
-        <CartPrice cartPrice={null} />
+        <CartPrice cartPrice={data} />
       </Section>
       <Section>
         <Button

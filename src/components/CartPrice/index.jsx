@@ -4,7 +4,7 @@ import { numberToCurrency } from '../../utils'
 
 export const CartPrice = ({ cartPrice }) => {
   return (
-    <Container className={!cartPrice ? 'skeleton' : ''}>
+    <Container className={!cartPrice?.total ? 'skeleton' : ''}>
       <div>
         <p>Produtos</p>
         <p className="stripe">{cartPrice?.subTotal && numberToCurrency(cartPrice?.subTotal)}</p>

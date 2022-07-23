@@ -2,6 +2,7 @@ import React from 'react'
 import loadable from '@loadable/component'
 import { Section } from './style'
 import { api } from '../../services/api'
+import { DataContext } from '../../context'
 
 const Header = loadable(() => import('../../components/Header'), {
   resolveComponent: (components) => components.Header
@@ -20,20 +21,14 @@ const Button = loadable(() => import('../../components/Button'), {
 })
 
 export const Cart = () => {
-  const [products, setProducts] = React.useState([])
+  const [products, setProducts] = React.useContext(DataContext)
   const [cartPrice, setCartPrice] = React.useState(null)
 
   React.useEffect(() => {
     const getProducts = async () => {
       const res = await api.get('5b15c4923100004a006f3c07')
-      console.log(res.data) //apagar depois
-      setProducts(res.data.items)
-      setCartPrice({
-        discount: res.data.discount,
-        shippingTotal: res.data.shippingTotal,
-        subTotal: res.data.subTotal,
-        total: res.data.total
-      })
+      const data = res.data
+      setProducts(data)
     }
     getProducts()
   }, [])
@@ -42,10 +37,10 @@ export const Cart = () => {
     <>
       <Header />
       <Section>
-        <CartItems products={products} />
+        <CartItems products={products.items} />
       </Section>
       <Section>
-        <CartPrice cartPrice={cartPrice} />
+        <CartPrice cartPrice={products} />
       </Section>
       <Section>
         <Button path={'/payment'} text={'Seguir para o pagamento'} />
