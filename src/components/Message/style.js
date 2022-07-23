@@ -2,7 +2,7 @@ import styled from 'styled-components'
 
 export const Container = styled.section`
   width: 100%;
-  padding: 15px;
+  margin-bottom: 10px;
   .icon {
     display: flex;
     justify-content: center;

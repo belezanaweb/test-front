@@ -44,4 +44,5 @@ export const Price = styled.p`
   font-weight: 800;
   text-align: left;
   padding-top: 13px;
+  display: ${(props) => `${props.hidePrice ? 'none' : 'block'}`};
 `

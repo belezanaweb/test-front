@@ -10,7 +10,9 @@ export const Product = ({ name, priceSpecification, imageObjects }) => {
       </ImageContainer>
       <TextContainer>
         <ProductTitle>{name}</ProductTitle>
-        <Price>{priceSpecification.price && numberToCurrency(priceSpecification.price)}</Price>
+        <Price hidePrice={window.location.pathname === '/success'}>
+          {priceSpecification.price && numberToCurrency(priceSpecification.price)}
+        </Price>
       </TextContainer>
     </Container>
   )
