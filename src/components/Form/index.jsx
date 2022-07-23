@@ -41,14 +41,14 @@ export const Form = () => {
 
   // Const to check if all fields are not empty
   const isComplete =
-    formData.cardNumber != '' &&
-    formData.cardNumber.trim().length != 0 &&
-    formData.cardName != '' &&
-    formData.cardName.trim().length != 0 &&
-    formData.expiryDate != '' &&
-    formData.expiryDate.trim().length != 0 &&
-    formData.cvv != '' &&
-    formData.cvv.trim().length != 0
+    formData.cardNumber !== '' &&
+    formData.cardNumber.trim().length !== 0 &&
+    formData.cardName !== '' &&
+    formData.cardName.trim().length !== 0 &&
+    formData.expiryDate !== '' &&
+    formData.expiryDate.trim().length !== 0 &&
+    formData.cvv !== '' &&
+    formData.cvv.trim().length !== 0
 
   // Save credit card info in context
   const handleFormData = (data) => {
@@ -137,7 +137,7 @@ export const Form = () => {
           type="submit"
           handleSubmit={handleFormData}
           form="payment-form"
-          pathToGo={'/success'}
+          path={'/success'}
           text={'Finalizar o pedido'}
           disabled={!isComplete ? true : false}
         />

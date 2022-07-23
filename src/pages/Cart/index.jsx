@@ -22,7 +22,6 @@ const Button = loadable(() => import('../../components/Button'), {
 
 export const Cart = () => {
   const [products, setProducts] = React.useContext(DataContext)
-  const [cartPrice, setCartPrice] = React.useState(null)
 
   React.useEffect(() => {
     const getProducts = async () => {
@@ -31,7 +30,7 @@ export const Cart = () => {
       setProducts(data)
     }
     getProducts()
-  }, [])
+  })
 
   return (
     <>

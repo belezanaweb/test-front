@@ -12,6 +12,10 @@ const Payment = loadable(() => import('./pages/Payment/'), {
   resolveComponent: (components) => components.Payment
 })
 
+const Success = loadable(() => import('./pages/Success/'), {
+  resolveComponent: (components) => components.Success
+})
+
 const App = () => {
   return (
     <DataProvider>
@@ -19,6 +23,7 @@ const App = () => {
         <Routes>
           <Route path="/" element={<Cart />} />
           <Route path="/payment" element={<Payment />} />
+          <Route path="/success" element={<Success />} />
         </Routes>
       </Container>
     </DataProvider>
