@@ -1,9 +1,10 @@
 import React from 'react'
 import { Section, Container, Input, ContainerTwoCols } from './style'
 import { Title } from '../Title'
-import { maskCvv, maskExpiryDate, maskCard } from '../../utils'
+import { maskCvv, maskExpiryDate, maskCard, removeMask } from '../../utils'
 import loadable from '@loadable/component'
 import { DataContext } from '../../context'
+import cardValidator from 'card-validator'
 
 const CartPrice = loadable(() => import('../CartPrice'), {
   resolveComponent: (components) => components.CartPrice
@@ -39,7 +40,33 @@ export const Form = () => {
     }))
   }
 
-  // Const to check if all fields are not empty
+  const validateCard = (cardNumber) => {
+    if (removeMask(cardNumber).length >= 16) {
+      const validation = cardValidator.number(removeMask(cardNumber))
+      if (!validation.isValid) {
+        return false
+      } else {
+        return true
+      }
+    } else {
+      return true
+    }
+  }
+
+  const validateDate = (date) => {
+    if (date.trim().length >= 7) {
+      const validation = cardValidator.expirationDate(date)
+      if (!validation.isValid) {
+        return false
+      } else {
+        return true
+      }
+    } else {
+      return true
+    }
+  }
+
+  // Const to check if all fields are not empty and validated
   const isComplete =
     formData.cardNumber !== '' &&
     formData.cardNumber.trim().length !== 0 &&
@@ -48,7 +75,9 @@ export const Form = () => {
     formData.expiryDate !== '' &&
     formData.expiryDate.trim().length !== 0 &&
     formData.cvv !== '' &&
-    formData.cvv.trim().length !== 0
+    formData.cvv.trim().length !== 0 &&
+    validateDate(formData.expiryDate) &&
+    validateCard(formData.cardNumber)
 
   // Save credit card info in context
   const handleFormData = (data) => {
@@ -78,6 +107,7 @@ export const Form = () => {
                 onChange={handleChange}
                 required
               />
+              <p>{!validateCard(formData.cardNumber) && 'Invalid card number'}</p>
             </label>
             <label>
               <span>
@@ -109,6 +139,7 @@ export const Form = () => {
                   onChange={handleChange}
                   required
                 />
+                <p>{!validateDate(formData.expiryDate) && 'Invalid expiry date'}</p>
               </label>
               <label>
                 <span>
