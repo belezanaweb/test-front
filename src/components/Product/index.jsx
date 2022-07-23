@@ -5,13 +5,11 @@ export const Product = ({ name, priceSpecification, imageObjects }) => {
   return (
     <Container>
       <ImageContainer>
-        <img src={imageObjects[0]?.thumbnail} alt={name} />
+        <img src={imageObjects[0]?.thumbnail} alt={name} loading="lazy" width={50} height={50} />
       </ImageContainer>
       <TextContainer>
         <ProductTitle>{name}</ProductTitle>
-        <Price isConfirmation={window.location.pathname === '/confirmation'}>
-          R$ {priceSpecification.price.toFixed(2)}
-        </Price>
+        <Price>R$ {priceSpecification.price.toFixed(2)}</Price>
       </TextContainer>
     </Container>
   )

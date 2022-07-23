@@ -19,7 +19,7 @@ export const List = styled.ul`
 `
 
 export const ListItem = styled.li`
-  color: #ccc;
+  color: ${(props) => (props.active ? '#ff7800' : '#ccc')};
   background-color: #fff;
   border: none;
   font-size: 13px;

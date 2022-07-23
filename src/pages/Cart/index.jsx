@@ -28,19 +28,23 @@ export const Cart = () => {
       <Header
         items={[
           {
-            label: 'sacola'
+            label: 'sacola',
+            path: '/'
           },
           {
-            label: 'pagamento'
+            label: 'pagamento',
+            path: '/pagamento'
           },
           {
-            label: 'confirmação'
+            label: 'confirmação',
+            path: '/confirmacao'
           }
         ]}
       />
       <Section>
         <CartItems products={products} />
       </Section>
+      <Section></Section>
     </>
   )
 }
