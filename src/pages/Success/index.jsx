@@ -7,6 +7,10 @@ const Header = loadable(() => import('../../components/Header'), {
   resolveComponent: (components) => components.Header
 })
 
+const Message = loadable(() => import('../../components/Message'), {
+  resolveComponent: (components) => components.Message
+})
+
 const CartItems = loadable(() => import('../../components/CartItems'), {
   resolveComponent: (components) => components.CartItems
 })
@@ -15,12 +19,22 @@ const CartPrice = loadable(() => import('../../components/CartPrice'), {
   resolveComponent: (components) => components.CartPrice
 })
 
+const PaymentInfo = loadable(() => import('../../components/PaymentInfo'), {
+  resolveComponent: (components) => components.PaymentInfo
+})
+
 export const Success = () => {
-  const [products, setProducts] = React.useContext(DataContext)
+  const [products] = React.useContext(DataContext)
 
   return (
     <>
       <Header />
+      <Section>
+        <Message text={'Compra efetuada com sucesso'} />
+      </Section>
+      <Section>
+        <PaymentInfo paymentInfo={products.creditCard} />
+      </Section>
       <Section>
         <CartItems products={products.items} />
       </Section>

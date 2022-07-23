@@ -8,9 +8,8 @@ export const CartItems = ({ products }) => {
     <SectionContainer>
       <Title>Produtos</Title>
       <Container>
-        {products
-          ? products.map((product) => <Product key={product?.product?.sku} {...product.product} />)
-          : ''}
+        {products &&
+          products.map((product) => <Product key={product?.product?.sku} {...product.product} />)}
       </Container>
     </SectionContainer>
   )

@@ -54,3 +54,8 @@ export function maskExpiryDate(v) {
   }
   return v
 }
+
+export const hiddenCardNumbers = (v) => {
+  v = '****.****.****.' + v.slice(-4)
+  return v
+}

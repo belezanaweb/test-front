@@ -30,39 +30,6 @@ body {
     }
   }
 }
-.skeleton {
-  @keyframes load {
-    0% {
-      transform: translateX(-100%);
-    }
-    100% {
-      transform: translateX(200%);
-    }
-  }
-  .stripe {
-    background-color: #aeb2b5;
-    height: 20px;
-    width: 130px;
-    overflow: hidden;
-    position: relative;
-    border-radius: 10px;
-    will-change: transform;
-    &:after {
-      content: "";
-      height: 100%;
-      width: 100%;
-      display: block;
-      background: linear-gradient(
-        to right,
-        rgba(230, 230, 230, 0) 0%,
-        rgba(230, 230, 230, 0.4) 42%,
-        rgba(230, 230, 230, 0.4) 62%,
-        rgba(230, 230, 230, 0) 100%
-      );
-      animation: load 1.2s ease-out infinite;
-    }
-  }
-}
 `
 
 export default GlobalStyle

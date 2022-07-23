@@ -4,28 +4,24 @@ import { numberToCurrency } from '../../utils'
 
 export const CartPrice = ({ cartPrice }) => {
   return (
-    <Container className={!cartPrice?.total ? 'skeleton' : ''}>
+    <Container>
       <div>
         <p>Produtos</p>
-        <p className="stripe">{cartPrice?.subTotal && numberToCurrency(cartPrice?.subTotal)}</p>
+        <p>{cartPrice?.subTotal && numberToCurrency(cartPrice?.subTotal)}</p>
       </div>
       <div>
         <p>Frete</p>
-        <p className="stripe">
-          {cartPrice?.shippingTotal && numberToCurrency(cartPrice?.shippingTotal)}
-        </p>
+        <p>{cartPrice?.shippingTotal && numberToCurrency(cartPrice?.shippingTotal)}</p>
       </div>
       <div className="orange">
         <p>Desconto</p>
-        <p className="stripe">
-          {cartPrice?.discount && '- ' + numberToCurrency(cartPrice?.discount)}
-        </p>
+        <p>{cartPrice?.discount && '- ' + numberToCurrency(cartPrice?.discount)}</p>
       </div>
       <div>
         <p>
           <strong>Total</strong>
         </p>
-        <p className="stripe">
+        <p>
           <strong>{cartPrice?.total && numberToCurrency(cartPrice?.total)}</strong>
         </p>
       </div>
