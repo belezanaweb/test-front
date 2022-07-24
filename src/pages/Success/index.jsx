@@ -1,27 +1,11 @@
 import React from 'react'
-import loadable from '@loadable/component'
 import { Section } from './style'
 import { DataContext } from '../../context'
-
-const Header = loadable(() => import('../../components/Header'), {
-  resolveComponent: (components) => components.Header
-})
-
-const Message = loadable(() => import('../../components/Message'), {
-  resolveComponent: (components) => components.Message
-})
-
-const CartItems = loadable(() => import('../../components/CartItems'), {
-  resolveComponent: (components) => components.CartItems
-})
-
-const CartPrice = loadable(() => import('../../components/CartPrice'), {
-  resolveComponent: (components) => components.CartPrice
-})
-
-const PaymentInfo = loadable(() => import('../../components/PaymentInfo'), {
-  resolveComponent: (components) => components.PaymentInfo
-})
+import { Header } from '../../components/Header'
+import { Message } from '../../components/Message'
+import { CartItems } from '../../components/CartItems'
+import { CartPrice } from '../../components/CartPrice'
+import { PaymentInfo } from '../../components/PaymentInfo'
 
 export const Success = () => {
   const [products] = React.useContext(DataContext)

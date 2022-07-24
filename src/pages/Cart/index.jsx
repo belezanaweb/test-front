@@ -1,24 +1,11 @@
 import React from 'react'
-import loadable from '@loadable/component'
 import { Section } from './style'
 import { api } from '../../services/api'
 import { DataContext } from '../../context'
-
-const Header = loadable(() => import('../../components/Header'), {
-  resolveComponent: (components) => components.Header
-})
-
-const CartItems = loadable(() => import('../../components/CartItems'), {
-  resolveComponent: (components) => components.CartItems
-})
-
-const CartPrice = loadable(() => import('../../components/CartPrice'), {
-  resolveComponent: (components) => components.CartPrice
-})
-
-const Button = loadable(() => import('../../components/Button'), {
-  resolveComponent: (components) => components.Button
-})
+import { Header } from '../../components/Header'
+import { CartItems } from '../../components/CartItems'
+import { CartPrice } from '../../components/CartPrice'
+import { Button } from '../../components/Button'
 
 export const Cart = () => {
   const [products, setProducts] = React.useContext(DataContext)
