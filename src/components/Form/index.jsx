@@ -26,14 +26,16 @@ export const Form = () => {
   const handleChange = (evt) => {
     const target = evt.target
     const name = target.name
-    const value =
-      target.name === 'cvv'
-        ? maskCvv(target.value)
-        : target.name === 'expiryDate'
-        ? maskExpiryDate(target.value)
-        : target.name === 'cardNumber'
-        ? maskCard(target.value)
-        : target.value
+
+    const formDataActions = {
+      cardNumber: maskCard(target.value),
+      cardName: target.value,
+      expiryDate: maskExpiryDate(target.value),
+      cvv: maskCvv(target.value)
+    }
+
+    const value = formDataActions[name]
+
     setFormData((current) => ({
       ...current,
       [name]: value
