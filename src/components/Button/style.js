@@ -3,11 +3,10 @@ import styled from 'styled-components'
 export const Container = styled.button`
   width: 100%;
   height: 60px;
-  padding-top: 8px;
   border: none;
   border-bottom: ${(props) => `${props.disabled ? '3px solid' : '3px solid'}`};
   border-color: ${(props) =>
-    `${props.disabled ? props.theme.colors.lightGray : props.theme.colors.orange}`};
+    `${props.disabled ? props.theme.colors.lightGray : props.theme.colors.darkOrange}`};
   background-color: ${(props) =>
     `${props.disabled ? props.theme.colors.lightGray : props.theme.colors.orange}`};
   margin-top: 20px;
@@ -20,6 +19,7 @@ export const Container = styled.button`
   align-items: center;
   justify-content: center;
   transition: 0.3s;
+
   cursor: pointer;
   &:hover {
     background-color: ${(props) =>

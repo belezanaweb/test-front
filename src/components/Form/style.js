@@ -19,7 +19,7 @@ export const Container = styled.section`
       margin-bottom: 7px;
     }
     p {
-      color: ${(props) => props.theme.colors.primary};
+      color: ${(props) => props.theme.colors.red};
       padding-top: 5px;
     }
     @media (min-width: ${(props) => props.theme.breakpoints.desktop}) {
@@ -54,7 +54,12 @@ export const Input = styled.input`
   border-radius: ${(props) => props.theme.borderRadius};
   box-shadow: ${(props) => props.theme.shadow};
   &:focus {
-    outline: ${(props) => `${props.error ? '1px solid #f30' : '1px solid #a43287'}`};
+    outline: ${(props) =>
+      `${
+        props.error
+          ? '1px solid ' + props.theme.colors.red
+          : '1px solid ' + props.theme.colors.purple
+      }`};
   }
   &::placeholder {
     color: ${(props) => props.theme.colors.ultraLightGray};

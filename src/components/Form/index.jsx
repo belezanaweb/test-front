@@ -107,9 +107,10 @@ export const Form = () => {
                 maxLength={19}
                 value={formData.cardNumber}
                 onChange={handleChange}
+                error={!validateCard(formData.cardNumber) ? true : false}
                 required
               />
-              <p>{!validateCard(formData.cardNumber) && 'Invalid card number'}</p>
+              <p>{!validateCard(formData.cardNumber) && 'Número do cartão inválido'}</p>
             </label>
             <label>
               <span>
@@ -139,9 +140,10 @@ export const Form = () => {
                   maxLength={7}
                   value={formData.expiryDate}
                   onChange={handleChange}
+                  error={!validateDate(formData.expiryDate) ? true : false}
                   required
                 />
-                <p>{!validateDate(formData.expiryDate) && 'Invalid expiry date'}</p>
+                <p>{!validateDate(formData.expiryDate) && 'Data inválida'}</p>
               </label>
               <label>
                 <span>
