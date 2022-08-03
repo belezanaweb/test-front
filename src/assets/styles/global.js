@@ -10,6 +10,7 @@ html,
 body {
   width: 100%;
   min-height: 100%;
+  background-color: #e7e7e7;
 }
 body {
   font-family: 'Helvetica Neue', sans-serif;
