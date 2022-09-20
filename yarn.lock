@@ -2835,6 +2835,11 @@
   dependencies:
     "rsvp" "^4.8.4"
 
+"card-js@^1.0.13":
+  "integrity" "sha512-NLq1UatF8npzZC6fjwXCwBcnZLFONv7hBT5zDTs1wAne9CMoILx/7ceTPGJektfbAh+SHNTsbeEzHkjV9flVEg=="
+  "resolved" "https://registry.npmjs.org/card-js/-/card-js-1.0.13.tgz"
+  "version" "1.0.13"
+
 "case-sensitive-paths-webpack-plugin@2.3.0":
   "integrity" "sha512-/4YgnZS8y1UXXmC02xD5rRrBEu6T5ub+mQHLNRj0fzTRbgdBYhsNo2V5EqwgqrExjxsjtF/OpAKAMkKsxbD5XQ=="
   "resolved" "https://registry.npmjs.org/case-sensitive-paths-webpack-plugin/-/case-sensitive-paths-webpack-plugin-2.3.0.tgz"
