@@ -1,7 +1,14 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 export default class Header extends React.Component {
   render() {
-    return <>Esse é o meu header!</>
+    return (
+      <>
+        <Link to="/">Sacola</Link>
+        <Link to="/payment">Pagamento</Link>
+        <Link to="/submit">Confirmação</Link>
+      </>
+    )
   }
 }
