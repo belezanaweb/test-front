@@ -5,12 +5,36 @@ export default class Payment extends React.Component {
     subTotal: '',
     shippingTotal: '',
     discount: '',
-    total: ''
+    total: '',
+    ccn: '',
+    name: '',
+    validity: '',
+    cvv: ''
   }
 
   componentDidMount() {
     this.fetchPrices()
   }
+
+  handleChange = ({ target }) => {
+    const { name } = target
+    const value = target.type === 'checkbox' ? target.checked : target.value
+    this.setState({
+      [name]: value
+    })
+  }
+
+  handleClick = () => {
+    const { ccn, name, validity, cvv } = this.state
+    const personInfos = {
+      name,
+      ccn,
+      validity,
+      cvv
+    }
+    localStorage.setItem('Infos', JSON.stringify(personInfos))
+  }
+
   fetchPrices = () => {
     const myObj = JSON.parse(localStorage.getItem('Prices'))
     const { subTotal, shippingTotal, discount, total } = myObj
@@ -22,7 +46,7 @@ export default class Payment extends React.Component {
     })
   }
   render() {
-    const { subTotal, shippingTotal, discount, total } = this.state
+    const { subTotal, shippingTotal, discount, total, ccn, name, validity, cvv } = this.state
     return (
       <>
         Cartão de crédito
@@ -30,19 +54,39 @@ export default class Payment extends React.Component {
           {/* Box das inputs */}
           <label htmlFor="ccn">
             Número do cartão:
-            <input type="text" placeholder="XXXX-XXXX-XXXX-XXXX" id="ccn" />
+            <input
+              type="text"
+              placeholder="XXXX-XXXX-XXXX-XXXX"
+              id="ccn"
+              maxLength="16"
+              name="ccn"
+              value={ccn}
+              onChange={this.handleChange}
+            />
           </label>
           <label htmlFor="name">
             Nome do titular:
-            <input id="name" placeholder="Como no cartão" />
+            <input
+              id="name"
+              placeholder="Como no cartão"
+              name="name"
+              value={name}
+              onChange={this.handleChange}
+            />
           </label>
           <label htmlFor="validity">
             Validade:
-            <input id="validity" placeholder="__/____" />
+            <input
+              id="validity"
+              placeholder="__/____"
+              name="validity"
+              value={validity}
+              onChange={this.handleChange}
+            />
           </label>
           <label htmlFor="cvv">
             CVV:
-            <input id="cvv" placeholder="___" />
+            <input id="cvv" placeholder="___" name="cvv" value={cvv} onChange={this.handleChange} />
           </label>
           {/* Box dos preços */}
           <div>
@@ -50,7 +94,9 @@ export default class Payment extends React.Component {
             <p>Frete: R$ {shippingTotal}</p>
             <p>Desconto: R$ {discount}</p>
             <p>Total: R$ {total}</p>
-            <button>Finalizar o pedido</button>
+            <button type="button" onClick={this.handleClick}>
+              Finalizar o pedido
+            </button>
           </div>
         </form>
       </>
