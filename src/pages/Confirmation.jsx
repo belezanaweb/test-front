@@ -1,4 +1,5 @@
 import React from 'react'
+import { getStorageItems } from '../services/Utilities'
 
 export default class Confirmation extends React.Component {
   state = {
@@ -17,10 +18,8 @@ export default class Confirmation extends React.Component {
   }
 
   fetchStorage = () => {
-    const prices = JSON.parse(localStorage.getItem('Prices'))
-    const products = JSON.parse(localStorage.getItem('Products'))
-    const infos = JSON.parse(localStorage.getItem('Infos'))
-    const { subTotal, shippingTotal, discount, total } = prices
+    const [infos, prices, products] = getStorageItems(['Infos', 'Prices', 'Products'])
+    let { subTotal, shippingTotal, discount, total } = prices
     const { validity, name, ccn } = infos
     this.setState({
       subTotal,

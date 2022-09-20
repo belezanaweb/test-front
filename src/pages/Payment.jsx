@@ -55,7 +55,6 @@ export default class Payment extends React.Component {
           <label htmlFor="ccn">
             Número do cartão:
             <input
-              type="text"
               placeholder="XXXX-XXXX-XXXX-XXXX"
               id="ccn"
               maxLength="16"

@@ -1,4 +1,6 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
+import { castToBRL } from '../services/Utilities'
 
 export default class Cart extends React.Component {
   state = {
@@ -32,24 +34,42 @@ export default class Cart extends React.Component {
     if (localStoragePr && localStoragePr.some(({ name }) => name === myProducts.name)) {
       return null
     }
+
+    let newProducts = JSON.stringify(localStorageProducts)
+
     if (localStoragePr && localStoragePr.length > 0) {
-      const newProducts = [...localStorageProducts, ...localStoragePr]
-      return localStorage.setItem('Products', JSON.stringify(newProducts))
+      newProducts = [...localStorageProducts, ...localStoragePr]
+      newProducts = JSON.stringify(newProducts)
     }
-    return localStorage.setItem('Products', JSON.stringify(localStorageProducts))
+    return localStorage.setItem('Products', newProducts)
+  }
+
+  castPrice = (arr) => {
+    let item = arr.map((e) => {
+      e.product.priceSpecification.price = castToBRL({
+        price: e.product.priceSpecification.price
+      }).price
+      return e
+    })
+    return item
   }
 
   fetchCartItems = async () => {
     const url = 'http://www.mocky.io/v2/5b15c4923100004a006f3c07'
     const request = await fetch(url)
     const response = await request.json()
-    const { items, subTotal, shippingTotal, discount, total } = response
-    this.setState({
-      cartItems: items,
+    let { items, subTotal, shippingTotal, discount, total } = response
+    items = this.castPrice(items)
+    const newObj = castToBRL({
       subTotal,
       shippingTotal,
       discount,
       total
+    })
+
+    this.setState({
+      cartItems: items,
+      ...newObj
     })
     this.setStoragePrices()
   }
@@ -78,7 +98,9 @@ export default class Cart extends React.Component {
           <p>Desconto: R$ {discount}</p>
           <p>Total: R$ {total}</p>
         </div>
-        <button>Seguir para o pagamento</button>
+        <Link to="/payment">
+          <button>Seguir para o pagamento</button>
+        </Link>
       </>
     )
   }
