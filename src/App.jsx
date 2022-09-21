@@ -8,16 +8,15 @@ import Confirmation from './pages/Confirmation'
 export default class App extends React.Component {
   render() {
     return (
-      <>
+      <div className="container-fluid">
         <BrowserRouter>
-          <br />
           <Switch>
             <Route exact path="/" component={Cart} />
             <Route exact path="/payment" component={Payment} />
             <Route exact path="/submit" component={Confirmation} />
           </Switch>
         </BrowserRouter>
-      </>
+      </div>
     )
   }
 }

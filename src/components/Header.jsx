@@ -39,14 +39,16 @@ export default class Header extends React.Component {
   render() {
     const { isCart, isSubmit, isPayment } = this.state
     return (
-      <div className="header-container">
-        <Link to="/" className={`header-link ${isCart ? 'focus' : ''}`}>
-          Sacola
+      <div className="container-fluid d-flex justify-content-center bg-light shadow-sm pb-1 fixed-top">
+        <Link to="/" className="text-decoration-none">
+          <span className={`fs-3 px-2 fw-bold text-muted ${isCart ? 'focus' : ''}`}>Sacola</span>
         </Link>
-        <Link to="/payment" className={`header-link ${isPayment ? 'focus' : ''}`}>
+        <span className={`fs-3 px-2 fw-bold text-muted ${isPayment ? 'focus' : ''}`}>
           Pagamento
-        </Link>
-        <span className={`header-link ${isSubmit ? 'focus' : ''}`}>Confirmação</span>
+        </span>
+        <span className={`fs-3 px-2 fw-bold text-muted ${isSubmit ? 'focus' : ''}`}>
+          Confirmação
+        </span>
       </div>
     )
   }

@@ -5,13 +5,24 @@
   box-sizing: border-box;
 }
 
+.position {
+  position: fixed;
+  right: 0;
+}
+
+.discount-color {
+  color: #ff7800;
+}
+
+.bg-button {
+  cursor: pointer;
+  background-color: #ff7800;
+}
+
 body {
+  background-color: #eee;
   margin: 0;
   padding: 0;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-}
-
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
 }

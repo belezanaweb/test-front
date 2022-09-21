@@ -45,7 +45,7 @@ export default class Confirmation extends React.Component {
       ccn
     } = this.state
     return (
-      <>
+      <React.Fragment>
         <Header />
         Pagamento
         {/* Box onde fica as informações do pagamento */}
@@ -71,7 +71,7 @@ export default class Confirmation extends React.Component {
           <p>Desconto: R$ {discount}</p>
           <p>Total: R$ {total}</p>
         </div>
-      </>
+      </React.Fragment>
     )
   }
 }
