@@ -1,4 +1,5 @@
 import React from 'react'
+import InputMask from 'react-input-mask'
 
 export default class Payment extends React.Component {
   state = {
@@ -54,10 +55,10 @@ export default class Payment extends React.Component {
           {/* Box das inputs */}
           <label htmlFor="ccn">
             Número do cartão:
-            <input
+            <InputMask
+              mask="9999-9999-9999-9999"
               placeholder="XXXX-XXXX-XXXX-XXXX"
               id="ccn"
-              maxLength="16"
               name="ccn"
               value={ccn}
               onChange={this.handleChange}
@@ -65,7 +66,8 @@ export default class Payment extends React.Component {
           </label>
           <label htmlFor="name">
             Nome do titular:
-            <input
+            <InputMask
+              maxLength="30"
               id="name"
               placeholder="Como no cartão"
               name="name"
@@ -75,7 +77,8 @@ export default class Payment extends React.Component {
           </label>
           <label htmlFor="validity">
             Validade:
-            <input
+            <InputMask
+              mask="99/9999"
               id="validity"
               placeholder="__/____"
               name="validity"
@@ -85,7 +88,14 @@ export default class Payment extends React.Component {
           </label>
           <label htmlFor="cvv">
             CVV:
-            <input id="cvv" placeholder="___" name="cvv" value={cvv} onChange={this.handleChange} />
+            <InputMask
+              mask="999"
+              id="cvv"
+              placeholder="___"
+              name="cvv"
+              value={cvv}
+              onChange={this.handleChange}
+            />
           </label>
           {/* Box dos preços */}
           <div>
