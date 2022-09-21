@@ -6,7 +6,8 @@ import { castToBRL } from '../services/Utilities'
 export default class Cart extends React.Component {
   state = {
     cartItems: [],
-    totalPrice: ''
+    totalPrice: '',
+    isLoading: true
   }
 
   componentDidMount() {
@@ -70,35 +71,45 @@ export default class Cart extends React.Component {
 
     this.setState({
       cartItems: items,
+      isLoading: false,
       ...newObj
     })
     this.setStoragePrices()
   }
   render() {
-    const { cartItems, subTotal, shippingTotal, discount, total } = this.state
+    const { cartItems, subTotal, shippingTotal, discount, total, isLoading } = this.state
     return (
       <React.Fragment>
         <Header />
         <p className="mt-5 fs-3 text-muted fw-bold text-sm-center">Produtos</p>
-        <div className="container d-flex flex-column flex-sm-row align-items-start bg-light shadow p-3 rounded">
-          {cartItems.map(({ product }) => (
-            <div key={product.sku} className="w-75">
-              {/* Box onde os produtos serão alencados */}
-              <div className="d-flex flex-row-reverse border-start align-items-center">
-                <p className="fs-6">{product.name}</p>
-                <img src={product.imageObjects[0].small} alt="products" className="pb-5" />
-              </div>
-              <div className="d-flex justify-content-end justify-content-sm-center">
-                <p className="fw-bold">R$ {product.priceSpecification.price}</p>
-              </div>
-              {this.setStorageProducts(
-                product.imageObjects[0].small,
-                product.name,
-                product.priceSpecification.price
-              )}
+
+        {isLoading ? (
+          <div className="d-flex justify-content-center">
+            <div className="spinner-border m-5" role="status">
+              <span className="visually-hidden">Loading...</span>
             </div>
-          ))}
-        </div>
+          </div>
+        ) : (
+          <div className="container d-flex flex-column flex-sm-row align-items-start bg-light shadow p-3 rounded">
+            {cartItems.map(({ product }) => (
+              <div key={product.sku} className="w-75">
+                {/* Box onde os produtos serão alencados */}
+                <div className="d-flex flex-row-reverse border-start align-items-center">
+                  <p className="fs-6">{product.name}</p>
+                  <img src={product.imageObjects[0].small} alt="products" className="pb-5" />
+                </div>
+                <div className="d-flex justify-content-end justify-content-sm-center">
+                  <p className="fw-bold">R$ {product.priceSpecification.price}</p>
+                </div>
+                {this.setStorageProducts(
+                  product.imageObjects[0].small,
+                  product.name,
+                  product.priceSpecification.price
+                )}
+              </div>
+            ))}
+          </div>
+        )}
         <div className="container d-flex flex-column border border-muted mt-4 rounded">
           {/* Box onde o valor total vai ficar */}
           <div className="d-flex flex-column align-items-between">
