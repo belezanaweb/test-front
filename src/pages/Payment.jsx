@@ -87,69 +87,107 @@ export default class Payment extends React.Component {
       disabled
     } = this.state
     return (
-      <>
+      <React.Fragment>
         <Header />
-        Cartão de crédito
+        <p className="mt-5 fs-3 text-muted fw-bold text-sm-center">Cartão de crédito</p>
         <form>
-          {/* Box das inputs */}
-          <label htmlFor="ccn">
-            Número do cartão:
-            <InputMask
-              mask="9999.9999.9999.9999"
-              placeholder="XXXX-XXXX-XXXX-XXXX"
-              id="ccn"
-              name="ccn"
-              value={ccn}
-              onChange={this.handleChange}
-            />
-          </label>
-          <label htmlFor="name">
-            Nome do titular:
-            <InputMask
-              maxLength="30"
-              id="name"
-              placeholder="Como no cartão"
-              name="name"
-              value={name}
-              onChange={this.handleChange}
-            />
-          </label>
-          <label htmlFor="validity">
-            Validade:
-            <InputMask
-              mask="99/9999"
-              id="validity"
-              placeholder="__/____"
-              name="validity"
-              value={validity}
-              onChange={this.handleChange}
-            />
-          </label>
-          <label htmlFor="cvv">
-            CVV:
-            <InputMask
-              mask="999"
-              id="cvv"
-              placeholder="___"
-              name="cvv"
-              value={cvv}
-              onChange={this.handleChange}
-            />
-          </label>
+          <div className="container d-flex flex-column bg-light shadow p-3 rounded">
+            {/* Box das inputs */}
+            <label htmlFor="ccn">
+              <div className="d-flex flex-column mt-2">
+                <span className="fs-6 f-color">Número do cartão:</span>
+                <InputMask
+                  mask="9999.9999.9999.9999"
+                  placeholder="____.____.____.____"
+                  id="ccn"
+                  name="ccn"
+                  value={ccn}
+                  onChange={this.handleChange}
+                  className="form-control"
+                />
+              </div>
+            </label>
+            <label htmlFor="name">
+              <div className="d-flex flex-column mt-3">
+                <span className="fs-6 f-color">Nome do titular:</span>
+                <InputMask
+                  maxLength="30"
+                  id="name"
+                  placeholder="Como no cartão"
+                  name="name"
+                  value={name}
+                  onChange={this.handleChange}
+                  className="form-control"
+                />
+              </div>
+            </label>
+            <div className="d-flex mt-3 gap-3">
+              <label htmlFor="validity">
+                <span className="fs-6 f-color">Validade:</span>
+                <InputMask
+                  mask="99/9999"
+                  id="validity"
+                  placeholder="__/____"
+                  name="validity"
+                  value={validity}
+                  onChange={this.handleChange}
+                  className="form-control"
+                />
+              </label>
+              <label htmlFor="cvv">
+                <span className="fs-6 f-color">CVV:</span>
+                <InputMask
+                  mask="999"
+                  id="cvv"
+                  placeholder="___"
+                  name="cvv"
+                  value={cvv}
+                  onChange={this.handleChange}
+                  className="form-control"
+                />
+              </label>
+            </div>
+          </div>
           {/* Box dos preços */}
-          <div>
-            <p>Produtos: R$ {subTotal}</p>
-            <p>Frete: R$ {shippingTotal}</p>
-            <p>Desconto: R$ {discount}</p>
-            <p>Total: R$ {total}</p>
-            <Link to="/submit">
-              <button type="button" onClick={this.handleClick} disabled={disabled}>
+          <div className="container d-flex flex-column border border-muted mt-4 rounded">
+            {/* Box onde o valor total vai ficar */}
+            <div className="d-flex flex-column align-items-between">
+              <div className="d-flex justify-content-between">
+                <p className="fs-5">Produtos:</p>
+                <p className="fs-5">R$ {subTotal}</p>
+              </div>
+              <div className="d-flex justify-content-between">
+                <p className="fs-5">Frete:</p>
+                <p className="fs-5">R$ {shippingTotal}</p>
+              </div>
+              <div className="d-flex justify-content-between">
+                <p className="fs-5 discount-color">Desconto:</p>
+                <p className="fs-5 discount-color"> - R$ {discount}</p>
+              </div>
+              <div className="d-flex justify-content-between">
+                <p className="fs-5 fw-bold">Total:</p>
+                <p className="fs-5 fw-bold">R$ {total}</p>
+              </div>
+            </div>
+          </div>
+          <div
+            className={`container d-flex justify-content-center mt-2 pt-2 pb-2 rounded shadow mb-2 ${
+              disabled ? 'disabled-b' : 'bg-button'
+            }`}
+          >
+            <Link to="/submit" className="text-decoration-none">
+              <span
+                type="button"
+                className={`fs-2 text-light fw-bold ${disabled ? 'link-cursor' : ''}`}
+                onClick={this.handleClick}
+                disabled={disabled}
+              >
                 Finalizar o pedido
-              </button>
+              </span>
             </Link>
           </div>
         </form>
-      </>
+      </React.Fragment>
     )
   }
 }

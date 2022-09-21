@@ -3,6 +3,7 @@
   margin: 0;
   font-family: 'Roboto', sans-serif;
   box-sizing: border-box;
+  transition: all 300ms ease;
 }
 
 .position {
@@ -17,6 +18,17 @@
 .bg-button {
   cursor: pointer;
   background-color: #ff7800;
+}
+
+.f-color {
+  color: #ccc !important;
+}
+
+.disabled-b {
+  background-color: #ccc !important;
+}
+.link-cursor {
+  cursor: not-allowed !important;
 }
 
 body {

@@ -79,20 +79,20 @@ export default class Cart extends React.Component {
     return (
       <React.Fragment>
         <Header />
-        <p className="mt-5 fs-3 text-muted fw-bold">Produtos</p>
-        <div className="container d-flex flex-column align-items-center bg-light shadow p-3 rounded">
+        <p className="mt-5 fs-3 text-muted fw-bold text-sm-center">Produtos</p>
+        <div className="container d-flex flex-column flex-sm-row align-items-start bg-light shadow p-3 rounded">
           {cartItems.map(({ product }) => (
-            <div key={product.sku} className="">
+            <div key={product.sku} className="w-75">
               {/* Box onde os produtos serão alencados */}
-              <div className="d-flex flex-row-reverse border-start">
+              <div className="d-flex flex-row-reverse border-start align-items-center">
                 <p className="fs-6">{product.name}</p>
-                <img src={product.imageObjects[0].small} alt="products" />
+                <img src={product.imageObjects[0].small} alt="products" className="pb-5" />
               </div>
-              <div className="d-flex justify-content-end">
+              <div className="d-flex justify-content-end justify-content-sm-center">
                 <p className="fw-bold">R$ {product.priceSpecification.price}</p>
               </div>
               {this.setStorageProducts(
-                product.imageObjects[0].thumbnail,
+                product.imageObjects[0].small,
                 product.name,
                 product.priceSpecification.price
               )}
@@ -120,7 +120,7 @@ export default class Cart extends React.Component {
             </div>
           </div>
         </div>
-        <div className="d-flex justify-content-center mt-2 bg-button pt-2 pb-2 rounded shadow mb-2">
+        <div className="container d-flex justify-content-center mt-2 bg-button pt-2 pb-2 rounded shadow mb-2">
           <Link to="/payment" className="text-decoration-none">
             <span className="fs-2 text-light fw-bold">Seguir para o pagamento</span>
           </Link>
