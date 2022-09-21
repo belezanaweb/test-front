@@ -1,4 +1,5 @@
 import React from 'react'
+import Header from '../components/Header'
 import { Link } from 'react-router-dom'
 import { castToBRL } from '../services/Utilities'
 
@@ -77,6 +78,7 @@ export default class Cart extends React.Component {
     const { cartItems, subTotal, shippingTotal, discount, total } = this.state
     return (
       <>
+        <Header />
         <p>Produtos</p>
         {cartItems.map(({ product }) => (
           <div key={product.sku}>

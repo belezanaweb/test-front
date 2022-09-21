@@ -1,4 +1,5 @@
 import React from 'react'
+import Header from '../components/Header'
 import { getStorageItems } from '../services/Utilities'
 
 export default class Confirmation extends React.Component {
@@ -45,6 +46,7 @@ export default class Confirmation extends React.Component {
     } = this.state
     return (
       <>
+        <Header />
         Pagamento
         {/* Box onde fica as informações do pagamento */}
         <div>

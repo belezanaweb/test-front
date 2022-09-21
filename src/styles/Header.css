@@ -1,0 +1,20 @@
+.header-container {
+  display: flex;
+  justify-content: center;
+  padding-bottom: 10px;
+  background-color: #fff;
+  box-shadow: 1px 1px 5px 0 rgba(0, 0, 29, 0.22);
+}
+
+.header-link {
+  text-decoration: none;
+  font-weight: 400;
+  font-size: 1rem;
+  color: #ccc;
+  padding-right: 38px;
+  padding-left: 31px;
+}
+
+.focus {
+  color: #ff7800;
+}

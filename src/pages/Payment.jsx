@@ -1,4 +1,5 @@
 import React from 'react'
+import Header from '../components/Header'
 import InputMask from 'react-input-mask'
 import { Link } from 'react-router-dom'
 
@@ -87,6 +88,7 @@ export default class Payment extends React.Component {
     } = this.state
     return (
       <>
+        <Header />
         Cartão de crédito
         <form>
           {/* Box das inputs */}
