@@ -7,7 +7,7 @@ export default class Header extends React.Component {
       <>
         <Link to="/">Sacola</Link>
         <Link to="/payment">Pagamento</Link>
-        <Link to="/submit">Confirmação</Link>
+        <span>Confirmação</span>
       </>
     )
   }
