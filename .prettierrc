@@ -6,7 +6,8 @@
   "trailingComma": "none",
   "jsxBracketSameLine": false,
   "parser": "babel",
-  "semi": false,
+  "endOfLine": "auto",
+  "semi": true,
   "overrides": [
     {
       "files": "*.css",
