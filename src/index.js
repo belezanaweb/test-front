@@ -1,16 +1,20 @@
-import { StrictMode } from 'react';
 import ReactDOM from 'react-dom';
-import { RouterProvider } from 'react-router-dom';
+import { StrictMode } from 'react';
+import { ThemeProvider } from 'react-jss';
+
+import App from './App';
+import theme from './styles/theme';
 
 import * as serviceWorker from './serviceWorker';
-import router from './routes/router';
 
-const Strict = () => (
+const Base = () => (
   <StrictMode>
-    <RouterProvider router={router} />
+    <ThemeProvider theme={theme}>
+      <App />
+    </ThemeProvider>
   </StrictMode>
 );
 
-ReactDOM.render(<Strict />, document.getElementById('root'));
+ReactDOM.render(<Base />, document.getElementById('root'));
 
 serviceWorker.unregister();
