@@ -50,6 +50,7 @@
     ]
   },
   "devDependencies": {
+    "@types/jest": "^29.1.2",
     "commitizen": "^4.2.5",
     "cz-conventional-changelog": "3.3.0",
     "husky": "^4.3.0",
