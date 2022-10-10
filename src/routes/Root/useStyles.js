@@ -10,8 +10,15 @@ const useStyles = createUseStyles((theme) => ({
   list: {
     display: 'flex',
     padding: '12px 30px',
+    overflow: 'auto',
     '& > li + li': {
       marginLeft: '38px'
+    },
+    '@media(min-width: 576px)': {
+      justifyContent: 'center',
+      '& > li': {
+        marginLeft: '38px'
+      }
     }
   },
   link: {
@@ -24,7 +31,7 @@ const useStyles = createUseStyles((theme) => ({
   },
   active: {},
   content: {
-    padding: '10px',
+    paddingTop: '10px',
     paddingBottom: '24px',
     backgroundColor: theme.palette.background.main,
     minHeight: '100vh'
