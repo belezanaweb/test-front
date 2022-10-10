@@ -19,6 +19,7 @@ const useStyles = createUseStyles((theme) => ({
     borderRadius: '3px',
     border: `1px solid ${theme.palette.background.main}`,
     display: 'flex',
+    justifyContent: 'space-between',
     padding: '12px 10px 14px 10px',
     '& + &': {
       marginTop: '15px'
