@@ -1,7 +1,6 @@
 /**
- * Get mocked cart from {@link http://www.mocky.io/v2/5b15c4923100004a006f3c07 mocky.io}
- *
- * @returns {Promise<{
+ * Cart
+ * @typedef {{
  *   id: string;
  *   items: {
  *     quantity: number;
@@ -31,7 +30,13 @@
  *   shippingTotal: number;
  *   discount: number;
  *   total: number;
- * }>} Cart object
+ * }} Cart
+ */
+
+/**
+ * Get mocked cart from {@link http://www.mocky.io/v2/5b15c4923100004a006f3c07 mocky.io}
+ *
+ * @returns {Promise<Cart>} Cart object
  */
 
 export const getCart = async () => {

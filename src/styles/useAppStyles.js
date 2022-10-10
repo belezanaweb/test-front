@@ -7,7 +7,8 @@ const useAppStyles = createUseStyles((theme) => ({
     body: {
       fontFamily: theme.typography.font.family,
       '-webkit-font-smoothing': 'antialiased',
-      '-moz-osx-font-smoothing': 'grayscale'
+      '-moz-osx-font-smoothing': 'grayscale',
+      color: theme.palette.common.black
     }
   }
 }));

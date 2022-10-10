@@ -1,0 +1,13 @@
+{
+  "compilerOptions": {
+      "module": "es6",
+      "target": "ES2019",
+      "jsx": "react",
+      "baseUrl": "src",
+      "moduleResolution": "Node",
+      "isolatedModules": true,
+
+  },
+  "include" : ["src"],
+  "exclude": ["node_modules"]
+}

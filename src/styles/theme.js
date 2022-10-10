@@ -18,7 +18,7 @@ const theme = {
     extraLarge: {
       fontSize: '20px',
       lineHeight: '24px',
-      fontWeight: '700'
+      fontWeight: 700
     }
   },
   palette: {
