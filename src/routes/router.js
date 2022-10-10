@@ -1,4 +1,5 @@
 import { createBrowserRouter } from 'react-router-dom';
+import Cart from './Cart';
 import Root from './Root';
 
 const router = createBrowserRouter([
@@ -9,7 +10,7 @@ const router = createBrowserRouter([
     children: [
       {
         path: '/sacola',
-        element: <>Sacola de produtos</>
+        element: <Cart />
       },
       {
         path: '/pagamento',

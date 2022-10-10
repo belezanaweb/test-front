@@ -1,3 +1,11 @@
-const Cart = () => <h2>Sacola de produtos</h2>;
+import Products from 'components/Products';
+
+const Cart = () => {
+  return (
+    <div>
+      <Products />
+    </div>
+  );
+};
 
 export default Cart;
