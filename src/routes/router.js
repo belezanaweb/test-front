@@ -1,5 +1,6 @@
 import { createBrowserRouter } from 'react-router-dom';
 import Cart from './Cart';
+import Confirmation from './Confirmation';
 import Payment from './Payment';
 import Root from './Root';
 
@@ -19,7 +20,7 @@ const router = createBrowserRouter([
       },
       {
         path: '/confirmacao',
-        element: <>Compra confirmada</>
+        element: <Confirmation />
       }
     ]
   }

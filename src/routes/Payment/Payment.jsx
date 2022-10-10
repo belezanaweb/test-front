@@ -1,12 +1,15 @@
 import { Col, Form, Row } from 'react-bootstrap';
 import { yupResolver } from '@hookform/resolvers/yup';
 import { Controller, useForm } from 'react-hook-form';
-import parse from 'date-fns/parse';
+import { useNavigate } from 'react-router-dom';
+import { useContext, useMemo } from 'react';
 import isValid from 'date-fns/isValid';
+import parse from 'date-fns/parse';
 import valid from 'card-validator';
 import * as yup from 'yup';
 import clsx from 'clsx';
 
+import CartContext from 'context/CartContext';
 import Button from 'components/Button';
 import Card from 'components/Card';
 import TotalPriceSummary from 'components/TotalPriceSummary';
@@ -40,6 +43,8 @@ const schema = yup
 
 const Payment = () => {
   const classes = useStyles();
+  const { setConfirmation } = useContext(CartContext);
+  const navigate = useNavigate();
 
   const {
     register,
@@ -51,7 +56,18 @@ const Payment = () => {
     resolver: yupResolver(schema),
     mode: 'onChange'
   });
-  const onSubmit = (data) => {};
+  const disabled = useMemo(
+    () =>
+      [watch('cvv'), watch('name'), watch('cardNumber'), watch('date')].some(
+        (field) => field == null || field === ''
+      ),
+    [watch]
+  );
+  const onSubmit = (data) => {
+    setConfirmation(data);
+
+    navigate('/confirmacao');
+  };
 
   return (
     <div>
@@ -174,7 +190,9 @@ const Payment = () => {
 
         <TotalPriceSummary />
 
-        <Button type="submit">FINALIZAR O PEDIDO</Button>
+        <Button disabled={disabled} type="submit">
+          FINALIZAR O PEDIDO
+        </Button>
       </Form>
     </div>
   );

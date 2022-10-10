@@ -19,35 +19,26 @@ const Root = () => {
     <>
       <nav className={classes.nav}>
         <ul className={classes.list}>
-          <li>
-            <Link
-              className={clsx(classes.link, {
-                [classes.active]: pathname === '/sacola'
-              })}
-              to="sacola"
-            >
-              SACOLA
-            </Link>
+          <li
+            className={clsx(classes.link, {
+              [classes.active]: pathname === '/sacola'
+            })}
+          >
+            SACOLA
           </li>
-          <li>
-            <Link
-              className={clsx(classes.link, {
-                [classes.active]: pathname === '/pagamento'
-              })}
-              to="pagamento"
-            >
-              PAGAMENTO
-            </Link>
+          <li
+            className={clsx(classes.link, {
+              [classes.active]: pathname === '/pagamento'
+            })}
+          >
+            PAGAMENTO
           </li>
-          <li>
-            <Link
-              className={clsx(classes.link, {
-                [classes.active]: pathname === '/confirmacao'
-              })}
-              to="confirmacao"
-            >
-              CONFIRMAÇÃO
-            </Link>
+          <li
+            className={clsx(classes.link, {
+              [classes.active]: pathname === '/confirmacao'
+            })}
+          >
+            CONFIRMAÇÃO
           </li>
         </ul>
       </nav>

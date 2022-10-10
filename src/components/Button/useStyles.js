@@ -19,7 +19,12 @@ const useStyles = createUseStyles((theme) => ({
     }
   },
   disabled: {
-    backgroundColor: theme.palette.grey.dark
+    boxShadow: 'none',
+    backgroundColor: theme.palette.grey.dark,
+    '&:hover': {
+      boxShadow: 'none',
+      backgroundColor: theme.palette.grey.dark
+    }
   }
 }));
 

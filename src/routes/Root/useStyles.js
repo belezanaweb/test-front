@@ -25,6 +25,7 @@ const useStyles = createUseStyles((theme) => ({
   active: {},
   content: {
     padding: '10px',
+    paddingBottom: '24px',
     backgroundColor: theme.palette.background.main,
     minHeight: '100vh'
   }
