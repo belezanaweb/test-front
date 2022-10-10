@@ -9,7 +9,7 @@ const useStyles = createUseStyles((theme) => ({
     ...theme.typography.large,
     fontWeight: 700,
     color: theme.palette.grey.dark,
-    marginLeft: '11px',
+    marginLeft: '12px',
     marginBottom: '5px'
   },
   card: {

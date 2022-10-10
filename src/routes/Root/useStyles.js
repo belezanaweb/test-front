@@ -19,7 +19,7 @@ const useStyles = createUseStyles((theme) => ({
     fontWeight: '700',
     color: theme.palette.grey.main,
     '&$active': {
-      color: theme.palette.primary.main
+      color: theme.palette.primary.light
     }
   },
   active: {},

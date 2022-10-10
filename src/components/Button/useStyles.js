@@ -17,6 +17,9 @@ const useStyles = createUseStyles((theme) => ({
       boxShadow: `inset 0 -3px 0 0 ${theme.palette.primary.dark}, 0 2px 4px 0 rgba(0,0,0,0.25)`,
       backgroundColor: theme.palette.primary.dark
     }
+  },
+  disabled: {
+    backgroundColor: theme.palette.grey.dark
   }
 }));
 

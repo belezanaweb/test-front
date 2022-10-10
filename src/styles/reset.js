@@ -34,7 +34,10 @@ const reset = {
   },
   a: {
     color: 'inherit',
-    textDecoration: 'none'
+    textDecoration: 'none',
+    '&:hover': {
+      color: 'inherit'
+    }
   }
 };
 

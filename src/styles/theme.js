@@ -3,6 +3,10 @@ const theme = {
     font: {
       family: '"Helvetica Neue", Helvetica, Arial, sans-serif'
     },
+    input: {
+      fontSize: '16px',
+      lineHeight: '19px'
+    },
     small: {
       fontSize: '12px',
       lineHeight: '14px'
@@ -28,8 +32,15 @@ const theme = {
       dark: '#999'
     },
     primary: {
-      main: '#FF7800',
+      light: '#FF7800',
+      main: '#FF6C00',
       dark: '#D45A00'
+    },
+    error: {
+      main: '#F30'
+    },
+    info: {
+      main: '#A43287'
     },
     background: {
       main: '#EEE'

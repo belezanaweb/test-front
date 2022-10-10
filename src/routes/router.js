@@ -1,5 +1,6 @@
 import { createBrowserRouter } from 'react-router-dom';
 import Cart from './Cart';
+import Payment from './Payment';
 import Root from './Root';
 
 const router = createBrowserRouter([
@@ -14,7 +15,7 @@ const router = createBrowserRouter([
       },
       {
         path: '/pagamento',
-        element: <>Pagamento</>
+        element: <Payment />
       },
       {
         path: '/confirmacao',

@@ -13,7 +13,7 @@ const useStyles = createUseStyles((theme) => ({
       fontWeight: 700
     },
     '&:nth-last-child(2)': {
-      color: theme.palette.primary.main
+      color: theme.palette.primary.light
     }
   }
 }));

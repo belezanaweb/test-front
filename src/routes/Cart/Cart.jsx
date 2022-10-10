@@ -1,6 +1,6 @@
 import Button from 'components/Button';
 import Products from 'components/Products';
-import TotalPriceSummary from 'components/TotalPriceSummary/TotalPriceSummary';
+import TotalPriceSummary from 'components/TotalPriceSummary';
 import { useNavigate } from 'react-router-dom';
 
 import useStyles from './useStyles';
