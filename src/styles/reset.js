@@ -31,6 +31,10 @@ const reset = {
   button: {
     border: 0,
     textDecoration: 'none'
+  },
+  a: {
+    color: 'inherit',
+    textDecoration: 'none'
   }
 };
 

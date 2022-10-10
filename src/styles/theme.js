@@ -18,13 +18,25 @@ const theme = {
     extraLarge: {
       fontSize: '20px',
       lineHeight: '24px',
-      fontWeight: 'bold'
+      fontWeight: '700'
     }
   },
   palette: {
+    grey: {
+      light: '#E0E7EE',
+      main: '#CCC',
+      dark: '#999'
+    },
     primary: {
       main: '#FF7800',
       dark: '#D45A00'
+    },
+    background: {
+      main: '#EEE'
+    },
+    common: {
+      white: '#FFF',
+      black: '#212122'
     }
   }
 };
