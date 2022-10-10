@@ -1,8 +1,23 @@
+import Fallback from 'components/Fallback';
+import { Suspense, lazy } from 'react';
 import { createBrowserRouter } from 'react-router-dom';
-import Cart from './Cart';
-import Confirmation from './Confirmation';
-import Payment from './Payment';
 import Root from './Root';
+
+const Cart = lazy(() =>
+  Promise.all([import('./Cart'), new Promise((resolve) => setTimeout(resolve, 300))]).then(
+    ([moduleExports]) => moduleExports
+  )
+);
+const Payment = lazy(() =>
+  Promise.all([import('./Payment'), new Promise((resolve) => setTimeout(resolve, 300))]).then(
+    ([moduleExports]) => moduleExports
+  )
+);
+const Confirmation = lazy(() =>
+  Promise.all([import('./Confirmation'), new Promise((resolve) => setTimeout(resolve, 300))]).then(
+    ([moduleExports]) => moduleExports
+  )
+);
 
 const router = createBrowserRouter([
   {
@@ -12,15 +27,27 @@ const router = createBrowserRouter([
     children: [
       {
         path: '/sacola',
-        element: <Cart />
+        element: (
+          <Suspense fallback={<Fallback />}>
+            <Cart />
+          </Suspense>
+        )
       },
       {
         path: '/pagamento',
-        element: <Payment />
+        element: (
+          <Suspense fallback={<Fallback />}>
+            <Payment />
+          </Suspense>
+        )
       },
       {
         path: '/confirmacao',
-        element: <Confirmation />
+        element: (
+          <Suspense fallback={<Fallback />}>
+            <Confirmation />
+          </Suspense>
+        )
       }
     ]
   }
