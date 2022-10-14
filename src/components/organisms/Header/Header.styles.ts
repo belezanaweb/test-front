@@ -1,4 +1,4 @@
-import styled from 'styled-components'
+import styled, { css } from 'styled-components'
 
 interface Item {
   active?: boolean;
@@ -21,10 +21,10 @@ export const List = styled.ul`
 export const Item =
   styled.li <
   Item >
-  (({ active, theme }) => `
-  color: ${active ? theme.colors.primary : '#CCC'};
-  border: none;
-  font-size: 13px;
-  font-weight: 700;
-  text-transform: uppercase;
+  (({ active, theme }) => css`
+    color: ${active ? theme.colors.primary : '#CCC'};
+    border: none;
+    font-size: 13px;
+    font-weight: 700;
+    text-transform: uppercase;
   `)

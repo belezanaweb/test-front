@@ -1,10 +1,9 @@
+import { useContext } from 'react'
+import { HeaderContext } from '../../../contexts/HeaderContext'
 import * as Style from './Header.styles'
 
-interface ContainerProps {
-  activeItem?: number;
-}
-
-const Header: React.FC<ContainerProps> = ({ activeItem }) => {
+const Header: React.FC = () => {
+  const { activeItem } = useContext(HeaderContext)
   return (
     <Style.Navbar>
       <Style.List>
