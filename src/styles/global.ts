@@ -10,8 +10,7 @@ const globalStyle = createGlobalStyle`
 
     html, body {
         height: 100%;
-        background-color: #F8FDFF;
-        background-color: #ccc;
+        background-color: #EEE;
     }
 
     button {
