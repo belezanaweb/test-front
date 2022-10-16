@@ -11,7 +11,7 @@ type ProductItemProps = {
 const ProductItem: React.FC<ProductItemProps> = ({ product, showPrice, sizeType }: ProductItemProps) => {
   return (
     <Styles.Box sizeType={sizeType} >
-      <Styles.ProductImage sizeType={sizeType} src={product.imageObjects[0].thumbnail} alt={product.name} />
+      <Styles.ProductImage sizeType={sizeType} src={product.imageObjects[0].medium} alt={product.name} />
       <Styles.Details showPrice={showPrice} >
         <Styles.ProductDescription> {product.name} </Styles.ProductDescription>
         {

@@ -35,9 +35,9 @@ const Cart: React.FC = () => {
         <ProductList showPrice={true} sizeType={'big'} items={products.items} />
         <ProductPrices productCart={products} />
         <Button type="button" text="seguir para o pagamento" onClick={handleNextStep} />
-      </> : <>
+      </> :
         <Spinner />
-      </>}
+      }
 
     </Styles.Container>
   )

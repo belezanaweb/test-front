@@ -9,6 +9,9 @@ export const Container = styled.div(
       display: flex;
       gap: 15px;
       flex-direction: column;
+      @media (min-width: 768px) {
+        flex-direction: row;
+      }
       border-radius: 3px;
     `
 )

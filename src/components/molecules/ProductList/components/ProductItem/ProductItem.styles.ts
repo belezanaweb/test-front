@@ -17,6 +17,15 @@ export const Box =
       border-radius: 3px;
       display: grid;
       grid-template-columns: ${sizeType === 'big' ? '1fr 3fr' : '1fr 4fr'};
+
+      @media (min-width: 768px) {
+        width: 33%;
+        margin: auto;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 13px;
+      }
     `)
 
 export const Details =
@@ -25,19 +34,21 @@ export const Details =
   (({ showPrice }) =>
     css`
       display: grid;
-      grid-template-rows: ${showPrice ? '5fr 2fr' : '1fr'};
+      grid-template-rows: ${showPrice ? '5fr 3fr' : '1fr'};
       height: 100%;
     `)
 
 export const ProductImage =
   styled.img <
   ImageVariant >
-  (({ sizeType }) => `
-  
-  width: ${sizeType === 'big' ? '65px' : '42px'};
-  height: ${sizeType === 'big' ? '65px' : '42px'};
-  margin:  ${sizeType === 'big' ? '11px 0 14px 10px' : '11px 0 11px 11px'}; ;
-`)
+  (({ sizeType }) => css`
+    @media (min-width: 768px) {
+      width: ${sizeType === 'big' ? '130px' : '84px'};
+    }
+    width: ${sizeType === 'big' ? '65px' : '42px'};
+    height: auto;
+    margin: ${sizeType === 'big' ? '11px 0 14px 10px' : '11px 0 11px 11px'}; ;
+  `)
 
 export const ProductDescription = styled.p(
   ({ theme }) => css`
@@ -45,6 +56,10 @@ export const ProductDescription = styled.p(
     font-size: 13px;
     line-height: 16px;
     margin: 12px 10px 0 0;
+    @media (min-width: 768px) {
+      text-align: center;
+      min-height: 50px;
+    }
   `
 )
 
@@ -55,6 +70,6 @@ export const ProductPrice = styled.p(
     line-height: 17px;
     font-weight: bold;
     text-align: end;
-    padding: 0 14px 6px 0;
+    padding: 10px 14px 6px 0;
   `
 )

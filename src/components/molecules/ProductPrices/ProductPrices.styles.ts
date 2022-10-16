@@ -7,5 +7,10 @@ export const Container = styled.div(
     border-radius: 3px;
     margin-top: 20px;
     padding: 15px 13px 13px 14px;
+
+    @media (min-width: 768px) {
+      width: 50%;
+      margin: 20px auto 0;
+    }
   `
 )
