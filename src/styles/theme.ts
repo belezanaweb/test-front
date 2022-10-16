@@ -5,10 +5,11 @@ export const theme = {
     black: '#212122',
     lightBlack: '#EEEEEE',
     gray: '#999999',
-    lightGray: '#CCCCCC'
+    lightGray: '#CCCCCC',
+    red: '#F30'
   },
   button: {
     enable: '#FF6C00',
-    disable: '#D45A00',
+    disable: '#D45A00'
   }
 }

@@ -12,3 +12,11 @@ export const Container = styled.div(
       border-radius: 3px;
     `
 )
+
+export const InputsContainer = styled.div`
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px
+`
+
+export const Form = styled.form``
