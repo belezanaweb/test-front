@@ -18,4 +18,6 @@ export function inputFormatCvv(cvv: string): string {
     return cvv.replace(/[^0-9]/g, '').substring(0, 3) ?? ''
 } 
 
-
+export function anonimizateCreditCardNumber(number: string): string {
+    return '****.****.****.' + number.slice(-4);
+}

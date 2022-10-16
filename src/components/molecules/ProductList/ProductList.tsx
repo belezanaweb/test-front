@@ -14,18 +14,16 @@ const ProductList: React.FC<ProductListProps> = ({
   showPrice
 }: ProductListProps) => {
   return (
-    <>
-      <Styles.Container>
-        {items?.map(({ product }) => (
-          <ProductItem
-            sizeType={sizeType}
-            showPrice={showPrice}
-            key={product.sku}
-            product={product}
-          />
-        ))}
-      </Styles.Container>
-    </>
+    <Styles.Container>
+      {items?.map(({ product }) => (
+        <ProductItem
+          sizeType={sizeType}
+          showPrice={showPrice}
+          key={product.sku}
+          product={product}
+        />
+      ))}
+    </Styles.Container>
   )
 }
 

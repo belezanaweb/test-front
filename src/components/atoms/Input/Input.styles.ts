@@ -33,6 +33,7 @@ export const Input =
   styled.input <
   InputErrorVariant >
   (({ theme, hasError }) => css`
+    text-transform: uppercase;
     width: 100%;
     box-sizing: border-box;
     height: 45px;

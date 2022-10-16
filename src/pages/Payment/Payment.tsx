@@ -1,13 +1,15 @@
 import { useContext, useEffect } from 'react'
 import { FieldValues, useForm } from 'react-hook-form'
 import { useNavigate } from 'react-router-dom'
-import { CartContext } from '../../../contexts/CartContext'
-import { HeaderContext } from '../../../contexts/HeaderContext'
-import Button from '../../atoms/Button/Button'
-import { Title } from '../../atoms/Title/Title.styles'
-import PaymentForm from '../../molecules/PaymentForm/PaymentForm'
-import ProductPrices from '../../molecules/ProductPrices/ProductPrices'
+import { CartContext } from '../../contexts/CartContext'
+import { HeaderContext } from '../../contexts/HeaderContext'
+import Button from '../../components/atoms/Button/Button'
+import { Title } from '../../components/atoms/Title/Title.styles'
+import PaymentForm from '../../components/molecules/PaymentForm/PaymentForm'
+import ProductPrices from '../../components/molecules/ProductPrices/ProductPrices'
 import * as Style from './Payment.styles'
+import { PaymentContext } from '../../contexts/PaymentContext'
+import { Payment as PaymentInterface } from '../../interfaces/Payment.interface'
 
 const Payment: React.FC = (props) => {
 
@@ -22,12 +24,15 @@ const Payment: React.FC = (props) => {
 
   const navigate = useNavigate()
   const { setActiveItem } = useContext(HeaderContext)
+  const { setPayment } = useContext(PaymentContext)
   const { products } = useContext(CartContext)
 
   const handlerSubmit = () => {
     if (!isValid)
       return
-    console.log(getValues());
+
+    setPayment(getValues() as PaymentInterface)
+    navigate('/confirmation')
   }
 
   useEffect(() => {

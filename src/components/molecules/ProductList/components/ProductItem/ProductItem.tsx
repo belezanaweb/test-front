@@ -8,13 +8,15 @@ type ProductItemProps = {
   showPrice: boolean
 }
 
-const ProductItem: React.FC<ProductItemProps> = ({ product }: ProductItemProps) => {
+const ProductItem: React.FC<ProductItemProps> = ({ product, showPrice, sizeType }: ProductItemProps) => {
   return (
-    <Styles.Box>
-      <Styles.ProductImage src={product.imageObjects[0].thumbnail} alt={product.name} />
-      <Styles.Details>
+    <Styles.Box sizeType={sizeType} >
+      <Styles.ProductImage sizeType={sizeType} src={product.imageObjects[0].thumbnail} alt={product.name} />
+      <Styles.Details showPrice={showPrice} >
         <Styles.ProductDescription> {product.name} </Styles.ProductDescription>
-        <Styles.ProductPrice> {currencyFormat(product.priceSpecification.price)} </Styles.ProductPrice>
+        {
+          showPrice && <Styles.ProductPrice> {currencyFormat(product.priceSpecification.price)} </Styles.ProductPrice>
+        }
       </Styles.Details>
     </Styles.Box>
   )
