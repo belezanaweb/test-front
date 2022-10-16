@@ -1,4 +1,4 @@
-import * as Style from './Cart.styles'
+import * as Styles from './Cart.styles'
 import { useContext, useEffect } from 'react'
 import { getProducts } from '../../api/api'
 import { HeaderContext } from '../../contexts/HeaderContext'
@@ -9,6 +9,7 @@ import ProductList from '../../components/molecules/ProductList/ProductList'
 import ProductPrices from '../../components/molecules/ProductPrices/ProductPrices'
 import Button from '../../components/atoms/Button/Button'
 import { useNavigate } from 'react-router-dom'
+import Spinner from '../../components/organisms/Spinner/Spinner'
 
 const Cart: React.FC = () => {
   const navigate = useNavigate()
@@ -17,25 +18,28 @@ const Cart: React.FC = () => {
 
   useEffect(() => {
     setActiveItem(1)
-  }, [setActiveItem])
-
-  useEffect(() => {
     getProducts().then((products: ProductCart) => {
       setProducts(products)
     })
-  }, [setProducts])
+  }, [setProducts, setActiveItem])
 
   const handleNextStep = () => {
     navigate('/payment')
   }
 
   return (
-    <Style.Container>
-      <Title>Produtos</Title>
-      {products && <ProductList showPrice={true} sizeType={'big'} items={products.items} />}
-      {products && <ProductPrices productCart={products} />}
-      <Button type="button" text="seguir para o pagamento" onClick={handleNextStep} />
-    </Style.Container>
+    <Styles.Container>
+
+      {products ? <>
+        <Title>produtos</Title>
+        <ProductList showPrice={true} sizeType={'big'} items={products.items} />
+        <ProductPrices productCart={products} />
+        <Button type="button" text="seguir para o pagamento" onClick={handleNextStep} />
+      </> : <>
+        <Spinner />
+      </>}
+
+    </Styles.Container>
   )
 }
 
