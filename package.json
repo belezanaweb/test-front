@@ -70,7 +70,6 @@
     "husky": "^4.3.0",
     "jest-styled-components": "^7.0.8",
     "lint-staged": "^10.4.2",
-    "msw": "^0.43.1",
     "prettier": "^2.7.1"
   },
   "config": {

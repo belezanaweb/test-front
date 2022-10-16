@@ -10,7 +10,7 @@ import { HeaderContext } from '../../contexts/HeaderContext'
 import { PaymentContext } from '../../contexts/PaymentContext'
 import * as Style from './Confirmation.styles'
 
-const Confirmation: React.FC = (props) => {
+const Confirmation: React.FC = () : JSX.Element => {
   const { products } = useContext(CartContext)
   const { payment } = useContext(PaymentContext)
   const { setActiveItem } = useContext(HeaderContext)

@@ -5,23 +5,23 @@ import {
     UseFormRegister
 } from "react-hook-form";
 
-const inputErrors = {
-    required: 'Campo Requerido',
-    invalid: 'Campo Inválido'
+export const inputErrors = {
+    required: 'Campo requerido',
+    invalid: 'Campo inválido'
 }
 
-interface InputProps {
+export interface InputProps {
     id: string;
     label: string;
     maxLength: number;
     placeholder: string;
     patterValidator: RegExp;
     register: UseFormRegister<FieldValues>;
-    handlerInputValidator?: (event: string) => string;
-    error: string | undefined;
+    handlerInputValidator?: (event: string) => string | void;
+    error?: string | undefined;
 }
 
-const Input: React.FC<InputProps> = ({ id, label, patterValidator, error, maxLength, placeholder, handlerInputValidator, register, ...rest }) => {
+export const Input: React.FC<InputProps> = ({ id, label, patterValidator, error, maxLength, placeholder, handlerInputValidator, register, ...rest }) => {
     return (
         <Styles.Container>
             <Styles.Label htmlFor={id}>{label}</Styles.Label>

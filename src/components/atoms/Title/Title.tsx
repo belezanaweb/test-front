@@ -1,9 +1,9 @@
 import * as Styles from './Title.styles'
-interface TitleProps {
+export interface TitleProps {
   children: React.ReactNode;
 }
 
-const Title: React.FC<TitleProps> = ({ children }) => {
+export const Title: React.FC<TitleProps> = ({ children }) => {
   return <Styles.Title>{children}</Styles.Title>
 }
 
