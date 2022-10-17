@@ -21,7 +21,7 @@ describe('PaymentForm', () => {
     test('renders correctly', async () => {
         const { findByTestId, getByText } = renderComponent()
         const creditCardNumber = (await findByTestId('creditCardNumber')) as HTMLInputElement
-        fireEvent.change(creditCardNumber, { target: { value: '11' } })
+        fireEvent.change(creditCardNumber, { target: { value: '1111222233334' } })
         fireEvent.blur(creditCardNumber)
         waitFor(() => getByText(InputError.invalid))
         fireEvent.change(creditCardNumber, { target: { value: '1111222233334444' } })
