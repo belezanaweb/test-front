@@ -4,16 +4,17 @@ import Input from '../../atoms/Input/Input'
 import { InputHTMLAttributes } from 'react';
 import { DeepRequired, FieldErrorsImpl, FieldValues, UseFormRegister } from 'react-hook-form';
 
-interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
+export interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
   register: UseFormRegister<FieldValues>
   errors: FieldErrorsImpl<DeepRequired<FieldValues>>
 }
-const PaymentForm: React.FC<InputProps> = ({ register, errors }) => {
+export const PaymentForm: React.FC<InputProps> = ({ register, errors }) => {
 
   return (
     <Styles.Container>
       <Styles.Form>
         <Input
+          data-testid="creditCardNumber"
           id="creditCardNumber"
           label="Número do cartão:"
           maxLength={19}
@@ -25,6 +26,7 @@ const PaymentForm: React.FC<InputProps> = ({ register, errors }) => {
         />
 
         <Input
+          data-testid="creditCardName"
           id="creditCardName"
           label="Nome do Titular:"
           placeholder="Como no cartão"
@@ -36,6 +38,7 @@ const PaymentForm: React.FC<InputProps> = ({ register, errors }) => {
 
         <Styles.InputsContainer>
           <Input
+            data-testid="creditCardDate"
             id="creditCardDate"
             label="Validade (mês/ano):"
             maxLength={7}
@@ -47,6 +50,7 @@ const PaymentForm: React.FC<InputProps> = ({ register, errors }) => {
           />
 
           <Input
+            data-testid="creditCardCvv"
             id="creditCardCvv"
             label="CVV:"
             maxLength={3}
