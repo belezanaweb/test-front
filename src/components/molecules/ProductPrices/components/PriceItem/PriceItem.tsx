@@ -1,11 +1,11 @@
 import { currencyFormat } from '../../../../../utils/currency'
 import * as Styles from './PriceItem.styles'
 
-type PriceItemProps = {
-  description: string,
-  price: number,
-  isTotal?: boolean,
-  isDiscount?: boolean
+interface PriceItemProps {
+  description: string;
+  price: number;
+  isTotal?: boolean;
+  isDiscount?: boolean;
 }
 
 const PriceItem: React.FC<PriceItemProps> = ({

@@ -37,7 +37,7 @@ export const Input =
     width: 100%;
     box-sizing: border-box;
     height: 45px;
-    border-radius: 3px;
+    border-radius: ${theme.borders.radius};
     background-color: ${theme.colors.white};
     border: 1px solid #e7e7e7;
     box-shadow: inset 0 1px 2px 0 rgba(0, 0, 0, 0.2);

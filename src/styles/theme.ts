@@ -11,5 +11,8 @@ export const theme = {
   button: {
     enable: '#FF6C00',
     disable: '#D45A00'
+  },
+  borders: {
+    radius: '3px'
   }
 }

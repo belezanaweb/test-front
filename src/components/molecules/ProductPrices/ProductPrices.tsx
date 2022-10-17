@@ -2,8 +2,8 @@ import * as Styles from './ProductPrices.styles'
 import { ProductCart } from '../../../interfaces/ProductCart.interface'
 import PriceItem from './components/PriceItem/PriceItem'
 
-type ProductPricesProps = {
-  productCart: ProductCart
+interface ProductPricesProps {
+  productCart: ProductCart;
 }
 
 const ProductPrices: React.FC<ProductPricesProps> = ({ productCart }: ProductPricesProps) => {

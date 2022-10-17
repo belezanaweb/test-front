@@ -2,10 +2,10 @@ import { Item } from '../../../interfaces/ProductCart.interface'
 import ProductItem from './components/ProductItem/ProductItem'
 import * as Styles from './ProductList.styles'
 
-type ProductListProps = {
-  items: Item[],
-  sizeType: 'big' | 'small',
-  showPrice: boolean
+interface ProductListProps {
+  items: Item[];
+  sizeType: 'big' | 'small';
+  showPrice: boolean;
 }
 
 const ProductList: React.FC<ProductListProps> = ({

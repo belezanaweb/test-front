@@ -9,13 +9,13 @@ export const Container = styled.div(
       display: flex;
       flex-direction: column;
       margin-bottom: 15px;
-      border-radius: 3px;
+      border-radius: ${theme.borders.radius};
     `
 )
 
-export const Detail = styled.p(({ theme }) => css`
-    font-size: 14px;
-    line-height: 17px;
-    color: #000;
-    text-transform: uppercase;
-`)
+export const Detail = styled.p`
+  font-size: 14px;
+  line-height: 17px;
+  color: #000;
+  text-transform: uppercase;
+`

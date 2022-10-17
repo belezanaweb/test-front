@@ -12,6 +12,6 @@ export const Container = styled.div(
       @media (min-width: 768px) {
         flex-direction: row;
       }
-      border-radius: 3px;
+      border-radius: ${theme.borders.radius};
     `
 )

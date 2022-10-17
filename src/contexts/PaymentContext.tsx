@@ -1,13 +1,13 @@
 import React, { createContext, Dispatch, useState } from "react"
 import { Payment } from "../interfaces/Payment.interface"
 
-type PaymentData = {
-    payment: Payment | undefined,
-    setPayment: Dispatch<React.SetStateAction<Payment | undefined>>
+interface PaymentData {
+    payment: Payment | undefined;
+    setPayment: Dispatch<React.SetStateAction<Payment | undefined>>;
 }
 
-type PaymentContextProvider = {
-    children: React.ReactNode
+interface PaymentContextProvider {
+    children: React.ReactNode;
 }
 
 export const PaymentContext = createContext({ payment: {} as Payment } as PaymentData);

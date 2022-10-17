@@ -1,41 +1,32 @@
-## Frontend Test
 
-Faça um fork deste repositório e finalizar o teste, submeta um pull request para o repositório que nosso time será notificado.
+# Beleza na Web
 
-O teste consiste em um checkout simples contendo 3 passos (carrinho, pagamento e sucesso) [Veja o Layout](https://projects.invisionapp.com/prototype/font-test-cji0j0khf005c1t0132358e8k)
+## Um pouco sobre mim e o React
+Sou o Rodrigo,
+Trabalhei bastante com angular e esse é meu primeiro projeto em react, comecei a estudar semana passada quando me avisaram da vaga. 😨
+Não tive tempo de finalizar todos os testes unitários, foquei meus esforços em testar o formulário. Se me derem mais tempo, consigo finalizar todos.
 
-**Faça quando quiser/puder (madrugada, fim de semana, etc)**
+Espero que gostem do projeto. o/
 
-### Requerimentos
+## Iniciando a aplicação
 
-- Pixel perfect ([nesse link](https://projects.invisionapp.com/prototype/font-test-cji0j0khf005c1t0132358e8k), você pode inspecionar para ver espaçamentos, fonte, tamanho, etc)
-- A aplicação precisa ser responsiva, utilizando o conceito de mobile-first. Use sua imaginação para entregar uma experiência boa no desktop.
-- Renderize cada passo em uma URL única (lib de rotas).
+Para iniciar o projeto, basta utilizar os seguintes comandos:
 
+ -  `npm install` para instalar as dependencias
+-  `npm run start` para iniciar o projeto
 
-### Passo 1 - Carrinho:
-  - Consuma o [esse endpoint](http://www.mocky.io/v2/5b15c4923100004a006f3c07) e liste os itens do carrinho, bem como o resumo do carrinho;
-  - Persista o conteúdo do JSON para ser usado nas próximas etapas;
-
-### Passo 2 - Pagamento: 
-  - Exiba um form com campos de cartão de crédito com validação em cada campo;
-  - Habilite o botão de Finalizar Pedido apenas se o form esteja válido;
-
-### Passo 3 - Sucesso: 
-  - Todo o conteúdo deverá ser exibido a partir dos dados persistidos;
   
-### O que vamos avaliar:
-  - Organização do código;
-  - Mensagens (em inglês) e mudanças nos commits;
-  - Composição/reutilização de componentes;
-  - Testes unitários;
-  - O motivo de ter escolhido cada tech da stack;
-  - Como rodar sua aplicação ;)
+## Stacks e libs
+- typescript para facilitar com as tipagens
+- context API para facilitar o acesso dos dados em todos os componentes
+- styled-components para estilizar os componentes e css global
+- axios para consumo da API
+- react-router-dom para gerenciar as rotas
+- react-hook-form para facilitar a validação dos forms
 
-### Diferenciais:
-  - Split bundle por rota (cada step ter um bundle separado para otimizar a performance);
-  - CSS in JS;
-  - React;
+## Testes
+Utilizei @testing-library/react para os testes unitários.
 
-### Fim:
-Ao finalizar o teste, submeta um pull request para o repositório que nosso time será notificado. Se tiver alguma observação, escreva no pull request.
+Não consegui finalizar todos os testes  😔
+Maaaaas testei o form, espero que tenha ficado legal.
+Para rodar é só rodar o  `npm run test`

@@ -14,7 +14,7 @@ export const Box =
     css`
       border: solid 1px ${theme.colors.lightBlack};
       width: 100%;
-      border-radius: 3px;
+      border-radius: ${theme.borders.radius};
       display: grid;
       grid-template-columns: ${sizeType === 'big' ? '1fr 3fr' : '1fr 4fr'};
 

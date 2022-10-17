@@ -9,7 +9,7 @@ export const Container = styled.div(
       display: flex;
       gap: 15px;
       flex-direction: column;
-      border-radius: 3px;
+      border-radius: ${theme.borders.radius};
     `
 )
 
