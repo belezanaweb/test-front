@@ -40,7 +40,7 @@ const Payment: React.FC = (props) => {
     if (!products) {
       navigate('/')
     }
-  }, [products, navigate, setActiveItem])
+  }, [])
 
 
   return (

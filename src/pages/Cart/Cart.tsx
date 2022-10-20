@@ -21,7 +21,7 @@ export const Cart: React.FC = () => {
     getProducts().then((products: ProductCart) => {
       setProducts(products)
     })
-  }, [setProducts, setActiveItem])
+  }, [])
 
   const handleNextStep = () => {
     navigate('/payment')

@@ -21,7 +21,7 @@ const Confirmation: React.FC = () : JSX.Element => {
     if (!products) {
       navigate('/')
     }
-  }, [products, navigate, setActiveItem])
+  }, [])
 
   return (
     <Style.Container>
