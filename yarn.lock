@@ -2911,6 +2911,13 @@
   "resolved" "https://registry.npmjs.org/binary-extensions/-/binary-extensions-2.2.0.tgz"
   "version" "2.2.0"
 
+"biskviit@1.0.1":
+  "integrity" "sha512-VGCXdHbdbpEkFgtjkeoBN8vRlbj1ZRX2/mxhE8asCCRalUx2nBzOomLJv8Aw/nRt5+ccDb+tPKidg4XxcfGW4w=="
+  "resolved" "https://registry.npmjs.org/biskviit/-/biskviit-1.0.1.tgz"
+  "version" "1.0.1"
+  dependencies:
+    "psl" "^1.1.7"
+
 "bluebird@^3.5.5":
   "integrity" "sha512-XpNj6GDQzdfW+r2Wnn7xiSAd7TM3jzkxGXBGTtWKuSXv1xUV+azxAm8jdWZN06QTQk+2N2XB9jRDkvbmQmcRtg=="
   "resolved" "https://registry.npmjs.org/bluebird/-/bluebird-3.7.2.tgz"
@@ -4004,6 +4011,13 @@
   "resolved" "https://registry.npmjs.org/encodeurl/-/encodeurl-1.0.2.tgz"
   "version" "1.0.2"
 
+"encoding@0.1.12":
+  "integrity" "sha512-bl1LAgiQc4ZWr++pNYUdRe/alecaHFeHxIJ/pNciqGdKXghaTCOwKkbKp6ye7pKZGu/GcaSXFk8PBVhgs+dJdA=="
+  "resolved" "https://registry.npmjs.org/encoding/-/encoding-0.1.12.tgz"
+  "version" "0.1.12"
+  dependencies:
+    "iconv-lite" "~0.4.13"
+
 "end-of-stream@^1.1.0":
   "integrity" "sha512-+uw1inIHVPQoaVuHzRyXd21icM+cnt4CzD5rW+NC1wjOUSTOs+Te7FOv7AhN7vS9x/oIyhLP5PR1H+phQAHu5Q=="
   "resolved" "https://registry.npmjs.org/end-of-stream/-/end-of-stream-1.4.4.tgz"
@@ -4565,6 +4579,14 @@
   "version" "2.0.2"
   dependencies:
     "bser" "2.1.1"
+
+"fetch@^1.1.0":
+  "integrity" "sha512-5O8TwrGzoNblBG/jtK4NFuZwNCkZX6s5GfRNOaGtm+QGJEuNakSC/i2RW0R93KX6E0jVjNXm6O3CRN4Ql3K+yA=="
+  "resolved" "https://registry.npmjs.org/fetch/-/fetch-1.1.0.tgz"
+  "version" "1.1.0"
+  dependencies:
+    "biskviit" "1.0.1"
+    "encoding" "0.1.12"
 
 "figures@^3.2.0":
   "integrity" "sha512-yaduQFRKLXYOGgEn6AZau90j3ggSOyiqXU0F9JZfeXYhNa+Jk4X+s45A2zg5jns87GAFa34BBm2kXw4XpNcbdg=="
@@ -5152,6 +5174,13 @@
   "version" "0.6.3"
   dependencies:
     "safer-buffer" ">= 2.1.2 < 3.0.0"
+
+"iconv-lite@~0.4.13":
+  "integrity" "sha512-v3MXnZAcvnywkTUEZomIActle7RXXeedOR31wwl7VlyoXO4Qi9arvSenNQWne1TcRwhCL1HwLI21bEqdpj8/rA=="
+  "resolved" "https://registry.npmjs.org/iconv-lite/-/iconv-lite-0.4.24.tgz"
+  "version" "0.4.24"
+  dependencies:
+    "safer-buffer" ">= 2.1.2 < 3"
 
 "iconv-lite@0.4.24":
   "integrity" "sha512-v3MXnZAcvnywkTUEZomIActle7RXXeedOR31wwl7VlyoXO4Qi9arvSenNQWne1TcRwhCL1HwLI21bEqdpj8/rA=="
@@ -7638,7 +7667,7 @@
     "forwarded" "0.2.0"
     "ipaddr.js" "1.9.1"
 
-"psl@^1.1.33":
+"psl@^1.1.33", "psl@^1.1.7":
   "integrity" "sha512-E/ZsdU4HLs/68gYzgGTkMicWTLPdAftJLfJFlLUAAKZGkStNU72sZjT66SnMDVOfOWY/YAoiD7Jxa9iHvngcag=="
   "resolved" "https://registry.npmjs.org/psl/-/psl-1.9.0.tgz"
   "version" "1.9.0"
