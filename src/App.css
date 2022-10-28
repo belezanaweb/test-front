@@ -8,3 +8,8 @@
   font-size: calc(10px + 2vmin);
   color: white;
 }
+
+.main {
+  color: black;
+  background-color: green;
+}
