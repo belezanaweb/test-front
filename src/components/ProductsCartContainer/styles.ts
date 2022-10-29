@@ -10,7 +10,7 @@ export const Container = styled.div`
 
 export const ProductContainer = styled.div`
   display: flex;
-  border: 1px solid ${colors.borderColor};
+  border: 1px solid ${colors.borderColorLight};
   border-radius: 3px;
   padding: 14px 10px;
   img {
