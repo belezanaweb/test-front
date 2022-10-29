@@ -22,6 +22,9 @@ describe('NavBar', () => {
     act(() => {
       render(<NavBar />, container)
     })
-    expect(container.textContent).toBe('NavBar')
+
+    const steps = ['sacola', 'pagamento', 'confirmação']
+
+    expect(steps.every((step) => container.textContent.toLowerCase().includes(step))).toBe(true)
   })
 })
