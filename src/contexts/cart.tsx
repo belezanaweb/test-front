@@ -6,50 +6,12 @@ import React, {
   useEffect,
   useState,
 } from "react";
+import { ICart } from "../@types/cart";
 import { getCartData } from "../services/cart";
 
-interface CartContextInterfaceObject {
-  id?: string;
-  subTotal: number;
-  shippingTotal: number;
-  discount: number;
-  total: number;
-  items: IItem[] | null;
-}
-
-interface IProduct {
-  sku: number;
-  name: string;
-  imageObjects: IImageObject[];
-  priceSpecification: IPriceSpecification;
-}
-
-interface IImageObject {
-  featured: boolean;
-  thumbnail: string;
-  small: string;
-  medium: string;
-  large: string;
-  extraLarge: string;
-  valid: true;
-}
-
-interface IPriceSpecification {
-  sku: string;
-  price: number;
-  originalPrice: number;
-  maxPrice: number;
-  percent: number;
-  discount: number;
-}
-
-interface IItem {
-  quantity: number;
-  product: IProduct;
-}
 interface CartContextInterface {
-  cart: CartContextInterfaceObject | null;
-  setCart: Dispatch<SetStateAction<CartContextInterfaceObject>>;
+  cart: ICart;
+  setCart: Dispatch<SetStateAction<ICart>>;
 }
 
 interface Props {
@@ -57,12 +19,18 @@ interface Props {
 }
 
 export const CartContext = createContext<CartContextInterface>({
-  cart: null,
+  cart: {
+    subTotal: 0,
+    shippingTotal: 0,
+    discount: 0,
+    total: 0,
+    items: null,
+  },
   setCart: () => {},
 });
 
 export const CartProvider = (props: Props) => {
-  const [cart, setCart] = useState<CartContextInterfaceObject>({
+  const [cart, setCart] = useState<ICart>({
     subTotal: 0,
     shippingTotal: 0,
     discount: 0,
@@ -90,4 +58,3 @@ export function useCart() {
     setCart,
   };
 }
-export type { CartContextInterfaceObject };
