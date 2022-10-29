@@ -7,8 +7,8 @@
     "@emotion/styled": "^11.10.5",
     "@mui/material": "^5.10.11",
     "@mui/styled-engine-sc": "^5.10.6",
-    "@testing-library/jest-dom": "^4.2.4",
-    "@testing-library/react": "^9.3.2",
+    "@testing-library/jest-dom": "^5.16.5",
+    "@testing-library/react": "^12.1.2",
     "@testing-library/user-event": "^7.1.2",
     "@types/react": "^18.0.24",
     "axios": "^1.1.3",
@@ -16,12 +16,13 @@
     "react-dom": "^17.0.1",
     "react-scripts": "3.4.4",
     "styled-components": "^5.3.6",
+    "ts-jest": "^26.4.2",
     "typescript": "^4.8.4"
   },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test",
+    "test": "jest --watchAll",
     "coverage": "react-scripts test --coverage --watchAll=false",
     "eject": "react-scripts eject"
   },
@@ -37,6 +38,12 @@
     "hooks": {
       "pre-commit": "lint-staged"
     }
+  },
+  "jest": {
+    "transform": {
+      "^.+\\.(ts|tsx|js|jsx)$": "ts-jest"
+    },
+    "testEnvironment": "jsdom"
   },
   "browserslist": {
     "production": [
