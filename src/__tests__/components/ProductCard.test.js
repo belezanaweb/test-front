@@ -25,6 +25,7 @@ describe('ProductCard', () => {
 
     expect(container.querySelector('#price').innerHTML).toBe('R$&nbsp;2,00')
   })
+
   it('should render small title', () => {
     act(() => {
       render(
@@ -37,7 +38,8 @@ describe('ProductCard', () => {
       'Senscience Inner Restore Intensif - Máscara Capilar 50ml'
     )
   })
-  it('should cup large title', () => {
+
+  it('should shorten large title', () => {
     act(() => {
       render(
         <ProductCard
