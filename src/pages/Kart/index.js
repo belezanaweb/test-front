@@ -38,7 +38,7 @@ const Kart = () => {
           {items.map((item) => (
             <ProductCard
               image={item.product?.imageObjects[0]?.small}
-              name={item.product?.name}
+              title={item.product?.name}
               price={item.product?.priceSpecification.price}
             />
           ))}
