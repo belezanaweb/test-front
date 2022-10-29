@@ -1,40 +1,43 @@
-import React from 'react'
-import ButtonMaterial from '@mui/material/Button'
-import { createTheme, ThemeProvider } from '@mui/material/styles'
-import { colors } from '../../utils/style-config'
+import React from "react";
+import ButtonMaterial from "@mui/material/Button";
+import { createTheme, ThemeProvider } from "@mui/material/styles";
+import { colors } from "../../utils/style-config";
 
 const theme = createTheme({
   palette: {
     primary: {
       main: colors.buttonDefault,
-      contrastText: colors.textButton
-    }
+      contrastText: colors.textButton,
+    },
   },
   typography: {
-    fontFamily: ['"Helvetica Neue"', 'Helvetica', 'Arial', 'sans-serif'].join(',')
+    fontFamily: ['"Helvetica Neue"', "Helvetica", "Arial", "sans-serif"].join(
+      ","
+    ),
   },
   components: {
     MuiButton: {
       styleOverrides: {
         root: () => ({
-          '&:hover': {
-            backgroundColor: colors.buttonHover
-          }
-        })
+          "&:hover": {
+            backgroundColor: colors.buttonHover,
+          },
+        }),
       },
       variants: [
         {
-          props: { size: 'large' },
+          props: { size: "large" },
           style: {
             width: 320,
+            maxWidth: "100%",
             height: 60,
-            fontWeight: 700
-          }
-        }
-      ]
-    }
-  }
-})
+            fontWeight: 700,
+          },
+        },
+      ],
+    },
+  },
+});
 
 interface IProps {
   textContent: string;
@@ -48,7 +51,7 @@ const Button = ({ textContent, onClick }: IProps) => {
         {textContent}
       </ButtonMaterial>
     </ThemeProvider>
-  )
-}
+  );
+};
 
-export default Button
+export default Button;
