@@ -9,7 +9,7 @@ export default createGlobalStyle`
 }
 body {
   background-color: #eee;
-  color: white;
+  color: #000;
   font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", "Helvetica", "Arial", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
