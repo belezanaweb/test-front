@@ -20,10 +20,10 @@ interface Props {
 
 export const CartContext = createContext<CartContextInterface>({
   cart: {
-    subTotal: 0,
-    shippingTotal: 0,
-    discount: 0,
-    total: 0,
+    subTotal: "",
+    shippingTotal: "",
+    discount: "",
+    total: "",
     items: null,
   },
   setCart: () => {},
@@ -31,15 +31,15 @@ export const CartContext = createContext<CartContextInterface>({
 
 export const CartProvider = (props: Props) => {
   const [cart, setCart] = useState<ICart>({
-    subTotal: 0,
-    shippingTotal: 0,
-    discount: 0,
-    total: 0,
+    subTotal: "",
+    shippingTotal: "",
+    discount: "",
+    total: "",
     items: null,
   });
 
   useEffect(() => {
-    getCartData().then((res) => setCart(res.data));
+    getCartData().then((res: { data: ICart }) => setCart(res.data));
   }, []);
 
   return (

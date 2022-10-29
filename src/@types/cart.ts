@@ -2,10 +2,10 @@ import { IProduct } from "./product";
 
 export interface ICart {
   id?: string;
-  subTotal: number;
-  shippingTotal: number;
-  discount: number;
-  total: number;
+  subTotal: string;
+  shippingTotal: string;
+  discount: string;
+  total: string;
   items: IItem[] | null;
 }
 
