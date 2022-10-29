@@ -2,8 +2,7 @@ import React, { useEffect, useState } from 'react'
 import requestAPI from '../../utils/requestAPI'
 
 import NavBar from '../../components/NavBar'
-import Card from '../../components/Card'
-import ProductCard from '../../components/ProductCard'
+import ProductsList from '../../components/ProductsList'
 
 import { Container } from './styles'
 
@@ -34,15 +33,7 @@ const Kart = () => {
       <NavBar actualStep={'sacola'} />
       <Container>
         <h1>produtos</h1>
-        <Card>
-          {items.map((item) => (
-            <ProductCard
-              image={item.product?.imageObjects[0]?.small}
-              title={item.product?.name}
-              price={item.product?.priceSpecification.price}
-            />
-          ))}
-        </Card>
+        <ProductsList items={items} />
       </Container>
     </div>
   )
