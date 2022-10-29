@@ -17,7 +17,7 @@ const Kart = () => {
     <div>
       <NavBar actualStep={'sacola'} />
       <Container>
-        <h1>Kart</h1>
+        <h1>produtos</h1>
         <Card>
           <p>test</p>
         </Card>
