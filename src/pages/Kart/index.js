@@ -8,7 +8,11 @@ const Kart = () => {
     )
   }, [])
 
-  return <h1>Kart</h1>
+  return (
+    <div>
+      <h1>Kart</h1>
+    </div>
+  )
 }
 
 export default Kart
