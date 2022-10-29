@@ -21,7 +21,17 @@ const theme = createTheme({
             backgroundColor: colors.buttonHover
           }
         })
-      }
+      },
+      variants: [
+        {
+          props: { size: 'large' },
+          style: {
+            width: 320,
+            height: 60,
+            fontWeight: 'bold'
+          }
+        }
+      ]
     }
   }
 })
