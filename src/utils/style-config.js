@@ -7,4 +7,5 @@ export const colors = {
   borderColorLight: "#EEE",
   borderColorDark: "#CCC",
   specialFontColor: "#FF7800",
+  backgroundColorLight: "#FFF",
 };

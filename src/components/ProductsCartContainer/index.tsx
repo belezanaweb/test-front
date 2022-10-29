@@ -2,6 +2,7 @@ import React from "react";
 import { IItem } from "../../@types/cart";
 import { useDeviceSize } from "../../contexts/deviceSize";
 import {
+  CardsContainer,
   Container,
   PriceSpecificationContainer,
   ProductContainer,
@@ -16,25 +17,30 @@ const ProductsCartContainer = ({ items }: IProps) => {
 
   return (
     <Container>
-      {items?.map(({ product }) => (
-        <ProductContainer key={product.sku}>
-          <img
-            data-testid="productImage"
-            src={
-              size === "default"
-                ? product.imageObjects[0].thumbnail
-                : product.imageObjects[0][size]
-            }
-            alt="imagem do produto"
-          />
-          <PriceSpecificationContainer>
-            <span>{product.name}</span>
-            <span>
-              <strong>{product.priceSpecification.price}</strong>
-            </span>
-          </PriceSpecificationContainer>
-        </ProductContainer>
-      ))}
+      <h2>PRODUTOS</h2>
+      <CardsContainer>
+        {items?.map(({ product }) => (
+          <ProductContainer key={product.sku}>
+            <img
+              data-testid="productImage"
+              src={
+                size === "default"
+                  ? product.imageObjects[0].thumbnail
+                  : (product.imageObjects[0][
+                      size as keyof typeof product.imageObjects[0] // used to solve process is not defined
+                    ] as string)
+              }
+              alt="imagem do produto"
+            />
+            <PriceSpecificationContainer>
+              <span>{product.name}</span>
+              <span>
+                <strong>{product.priceSpecification.price}</strong>
+              </span>
+            </PriceSpecificationContainer>
+          </ProductContainer>
+        ))}
+      </CardsContainer>
     </Container>
   );
 };

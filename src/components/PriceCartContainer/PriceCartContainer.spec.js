@@ -3,7 +3,7 @@ import { render, screen } from "@testing-library/react";
 import PriceCartContainer from ".";
 import "@testing-library/jest-dom";
 
-describe("ProductsCartContainer", () => {
+describe("PriceCartContainer unit tests", () => {
   it("price, shipping, discount and total should be shown", () => {
     const productsPrice = "R$ 624,80";
     const shippingTotal = "R$ 5,30";
