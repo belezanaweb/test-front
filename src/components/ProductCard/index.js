@@ -2,7 +2,7 @@ import React, { useMemo } from 'react'
 
 import formatCurrencyBRL from '../../utils/formatCurrencyBRL'
 
-import { Container } from './styles'
+import { Container, Image, Content, Title, Price } from './styles'
 
 const ProductCard = ({ image, title, price }) => {
   const formatTitle = useMemo(() => {
@@ -16,9 +16,11 @@ const ProductCard = ({ image, title, price }) => {
 
   return (
     <Container>
-      <img src={image} alt={formatTitle} />
-      <p id="title">{formatTitle}</p>
-      <p id="price">{formatCurrencyBRL(price)}</p>
+      <Image src={image} alt={formatTitle} />
+      <Content>
+        <Title id="title">{formatTitle}</Title>
+        <Price id="price">{formatCurrencyBRL(price)}</Price>
+      </Content>
     </Container>
   )
 }
