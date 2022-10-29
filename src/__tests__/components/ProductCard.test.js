@@ -25,4 +25,32 @@ describe('ProductCard', () => {
 
     expect(container.querySelector('#price').innerHTML).toBe('R$&nbsp;2,00')
   })
+  it('should render small title', () => {
+    act(() => {
+      render(
+        <ProductCard title={'Senscience Inner Restore Intensif - Máscara Capilar 50ml'} />,
+        container
+      )
+    })
+
+    expect(container.querySelector('#title').innerHTML).toBe(
+      'Senscience Inner Restore Intensif - Máscara Capilar 50ml'
+    )
+  })
+  it('should cup large title', () => {
+    act(() => {
+      render(
+        <ProductCard
+          title={
+            "L'Oréal Professionnel Expert Absolut Repair Cortex Lipidium - Máscara de Reconstrução 500g"
+          }
+        />,
+        container
+      )
+    })
+
+    expect(container.querySelector('#title').innerHTML).toBe(
+      "L'Oréal Professionnel Expert Absolut Repair Cortex Lipidium"
+    )
+  })
 })
