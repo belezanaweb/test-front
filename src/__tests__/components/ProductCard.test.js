@@ -20,9 +20,9 @@ afterEach(() => {
 describe('ProductCard', () => {
   it('should render price', () => {
     act(() => {
-      render(<ProductCard price={'02.00'} />, container)
+      render(<ProductCard price={'2.00'} />, container)
     })
 
-    expect(container.querySelector('#price').innerHTML).toBe('02.00')
+    expect(container.querySelector('#price').innerHTML).toBe('R$&nbsp;2,00')
   })
 })
