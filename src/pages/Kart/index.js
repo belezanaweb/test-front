@@ -2,6 +2,7 @@ import React, { useEffect } from 'react'
 import requestAPI from '../../utils/requestAPI'
 
 import NavBar from '../../components/NavBar'
+import Card from '../../components/Card'
 
 const Kart = () => {
   useEffect(() => {
@@ -14,6 +15,9 @@ const Kart = () => {
     <div>
       <NavBar actualStep={'sacola'} />
       <h1>Kart</h1>
+      <Card>
+        <p>test</p>
+      </Card>
     </div>
   )
 }
