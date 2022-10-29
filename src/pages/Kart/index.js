@@ -12,7 +12,7 @@ const Kart = () => {
 
   return (
     <div>
-      <NavBar step={'sacola'} />
+      <NavBar actualStep={'sacola'} />
       <h1>Kart</h1>
     </div>
   )

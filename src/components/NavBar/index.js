@@ -1,14 +1,17 @@
 import React from 'react'
+import { Container, Text } from './styles'
 
 const NavBar = ({ actualStep }) => {
   const steps = ['sacola', 'pagamento', 'confirmação']
 
   return (
-    <div>
+    <Container>
       {steps.map((step) => (
-        <p key={step}>{step}</p>
+        <Text key={step} isActualStep={step === actualStep}>
+          {step}
+        </Text>
       ))}
-    </div>
+    </Container>
   )
 }
 
