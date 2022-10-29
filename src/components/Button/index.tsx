@@ -28,7 +28,7 @@ const theme = createTheme({
           style: {
             width: 320,
             height: 60,
-            fontWeight: 'bold'
+            fontWeight: 700
           }
         }
       ]
