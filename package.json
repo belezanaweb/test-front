@@ -49,6 +49,7 @@
       "last 1 safari version"
     ]
   },
+  "prettier": { "arrowParens": "always" },
   "devDependencies": {
     "@types/styled-components": "^5.1.26",
     "husky": "^4.3.0",
