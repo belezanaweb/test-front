@@ -4,6 +4,8 @@ import requestAPI from '../../utils/requestAPI'
 import NavBar from '../../components/NavBar'
 import Card from '../../components/Card'
 
+import { Container } from './styles'
+
 const Kart = () => {
   useEffect(() => {
     requestAPI({ url: 'http://www.mocky.io/v2/5b15c4923100004a006f3c07' }).then((resp) =>
@@ -14,10 +16,12 @@ const Kart = () => {
   return (
     <div>
       <NavBar actualStep={'sacola'} />
-      <h1>Kart</h1>
-      <Card>
-        <p>test</p>
-      </Card>
+      <Container>
+        <h1>Kart</h1>
+        <Card>
+          <p>test</p>
+        </Card>
+      </Container>
     </div>
   )
 }
