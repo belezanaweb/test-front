@@ -6,6 +6,7 @@ import React, {
   useEffect,
   useState,
 } from "react";
+import { getCartData } from "../services/cart";
 
 interface CartContextInterfaceObject {
   id?: string;
@@ -60,7 +61,7 @@ export const CartContext = createContext<CartContextInterface>({
   setCart: () => {},
 });
 
-export const CartUserProvider = (props: Props) => {
+export const CartProvider = (props: Props) => {
   const [cart, setCart] = useState<CartContextInterfaceObject>({
     subTotal: 0,
     shippingTotal: 0,
@@ -70,15 +71,8 @@ export const CartUserProvider = (props: Props) => {
   });
 
   useEffect(() => {
-    const data = localStorage.getItem("cart");
-    if (data && data !== "undefined") {
-      setCart(JSON.parse(data));
-    }
+    getCartData().then((res) => setCart(res.data));
   }, []);
-
-  useEffect(() => {
-    if (cart?.id) localStorage.setItem("cart", JSON.stringify(cart));
-  }, [cart]);
 
   return (
     <CartContext.Provider value={{ cart, setCart }}>
