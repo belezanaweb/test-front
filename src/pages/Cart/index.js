@@ -6,7 +6,7 @@ import ProductsList from '../../components/ProductsList'
 
 import { Container } from './styles'
 
-const Kart = () => {
+const Cart = () => {
   const [items, setItems] = useState([])
   const [generalData, setGeneralData] = useState({
     subTotal: 0,
@@ -39,4 +39,4 @@ const Kart = () => {
   )
 }
 
-export default Kart
+export default Cart

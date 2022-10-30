@@ -1,12 +1,12 @@
 import React from 'react'
 import { Routes, Route } from 'react-router-dom'
 
-import Kart from '../pages/Kart'
+import Cart from '../pages/Cart'
 
 function Router() {
   return (
     <Routes>
-      <Route path="/" element={<Kart />} />
+      <Route path="/" element={<Cart />} />
     </Routes>
   )
 }
