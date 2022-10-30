@@ -33,13 +33,38 @@ const convertToLocalCurrency = (value: number) => {
   return value.toLocaleString("pt-BR", { style: "currency", currency: "BRL" });
 };
 
-const formatCartData = (cart: IRowCart) => {
+export const formatCartData = (cart: IRowCart) => {
   return {
     ...cart,
     subTotal: convertToLocalCurrency(cart.subTotal),
     shippingTotal: convertToLocalCurrency(cart.shippingTotal),
     discount: convertToLocalCurrency(cart.discount),
     total: convertToLocalCurrency(cart.total),
+    items:
+      cart.items?.map((item) => ({
+        ...item,
+        product: {
+          ...item.product,
+          priceSpecification: {
+            ...item.product.priceSpecification,
+            price: convertToLocalCurrency(
+              item.product.priceSpecification.price
+            ),
+            originalPrice: convertToLocalCurrency(
+              item.product.priceSpecification.originalPrice
+            ),
+            maxPrice: convertToLocalCurrency(
+              item.product.priceSpecification.maxPrice
+            ),
+            percent: convertToLocalCurrency(
+              item.product.priceSpecification.percent
+            ),
+            discount: convertToLocalCurrency(
+              item.product.priceSpecification.discount
+            ),
+          },
+        },
+      })) || null,
   };
 }; // used to get better performance
 
