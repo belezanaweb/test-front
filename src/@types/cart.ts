@@ -13,3 +13,12 @@ export interface IItem {
   quantity: number;
   product: IProduct;
 }
+
+export interface IRowCart {
+  id?: string;
+  subTotal: number;
+  shippingTotal: number;
+  discount: number;
+  total: number;
+  items: IItem[] | null;
+}

@@ -26,7 +26,7 @@ const PriceCartContainer = ({
       </p>
       <p id="discount">
         <span>DESCONTO</span>
-        <span>{discount}</span>
+        <span>- {discount}</span>
       </p>
       <p>
         <span>

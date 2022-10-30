@@ -21,7 +21,7 @@ describe("PriceCartContainer unit tests", () => {
 
     expect(screen.getByText(productsPrice)).toBeInTheDocument();
     expect(screen.getByText(shippingTotal)).toBeInTheDocument();
-    expect(screen.getByText(discount)).toBeInTheDocument();
+    expect(screen.getByText("- " + discount)).toBeInTheDocument();
     expect(screen.getByText(total)).toBeInTheDocument();
   });
 });

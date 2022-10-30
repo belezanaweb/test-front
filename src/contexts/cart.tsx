@@ -6,7 +6,7 @@ import React, {
   useEffect,
   useState,
 } from "react";
-import { ICart } from "../@types/cart";
+import { ICart, IRowCart } from "../@types/cart";
 import { getCartData } from "../services/cart";
 
 interface CartContextInterface {
@@ -29,6 +29,20 @@ export const CartContext = createContext<CartContextInterface>({
   setCart: () => {},
 });
 
+const convertToLocalCurrency = (value: number) => {
+  return value.toLocaleString("pt-BR", { style: "currency", currency: "BRL" });
+};
+
+const formatCartData = (cart: IRowCart) => {
+  return {
+    ...cart,
+    subTotal: convertToLocalCurrency(cart.subTotal),
+    shippingTotal: convertToLocalCurrency(cart.shippingTotal),
+    discount: convertToLocalCurrency(cart.discount),
+    total: convertToLocalCurrency(cart.total),
+  };
+}; // used to get better performance
+
 export const CartProvider = (props: Props) => {
   const [cart, setCart] = useState<ICart>({
     subTotal: "",
@@ -39,7 +53,9 @@ export const CartProvider = (props: Props) => {
   });
 
   useEffect(() => {
-    getCartData().then((res: { data: ICart }) => setCart(res.data));
+    getCartData().then((res: { data: IRowCart }) =>
+      setCart(formatCartData(res.data))
+    );
   }, []);
 
   return (
