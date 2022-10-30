@@ -18,7 +18,12 @@ export const StyledInput = styled.input`
 
   color: #e0e7ee;
   font-size: 16px;
-  font-weight: regular;
+
+  ::placeholder {
+    color: #e0e7ee;
+    font-size: 16px;
+    letter-spacing: 1.5px;
+  }
 
   &:focus {
     border-color: #a43287;

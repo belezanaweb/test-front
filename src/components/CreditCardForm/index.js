@@ -7,16 +7,11 @@ import { Form, Warper } from './styles'
 
 const CreditCardForm = ({ formId, formSubmitted }) => {
   const [formData, setFormData] = useState({
-    number: undefined,
+    number: '____.____.____.____',
     name: undefined,
     expiry: undefined,
     cvv: undefined
   })
-
-  const handleSubmit = (e) => {
-    e.preventDefault()
-    formSubmitted()
-  }
 
   useEffect(() => {
     console.log('formData', formData)
@@ -24,18 +19,47 @@ const CreditCardForm = ({ formId, formSubmitted }) => {
 
   const handleChange = (e) => {
     e.preventDefault()
-    console.log('formData', e.target.name)
-    setFormData({ ...formData, [e.target.name]: e.target.value })
+
+    // // console.log('formData', e.target.name)
+    // setFormData({ ...formData, [e.target.name]: e.target.value })
+  }
+
+  // const validateField = (field, val) => {
+  //   switch (field) {
+  //     case 'number' :
+  //       if(val.match('[\d| ]{16,22}'))
+  //       break
+  //   }
+  // }
+
+  const handleSubmit = (e) => {
+    e.preventDefault()
+    formSubmitted()
   }
 
   return (
     <Card>
       <Form id={formId} onSubmit={handleSubmit}>
-        <Input name={'number'} label={'Número do cartão:'} onChange={handleChange} />
-        <Input name={'name'} label={'Nome do Titular:'} onChange={handleChange} />
+        <Input
+          name={'number'}
+          placeholder={'____.____.____.____'}
+          label={'Número do cartão:'}
+          onChange={handleChange}
+        />
+        <Input
+          name={'name'}
+          placeholder={'Como no cartão'}
+          label={'Nome do Titular:'}
+          onChange={handleChange}
+        />
         <Warper>
-          <Input name={'expiry'} label={'Validade (mês/ano):'} onChange={handleChange} />
-          <Input name={'cvv'} label={'CVV:'} onChange={handleChange} />
+          <Input
+            name={'expiry'}
+            placeholder={'__/____'}
+            label={'Validade (mês/ano):'}
+            onChange={handleChange}
+          />
+          <Input name={'cvv'} placeholder={'___'} label={'CVV:'} onChange={handleChange} />
         </Warper>
       </Form>
     </Card>
