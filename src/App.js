@@ -1,6 +1,17 @@
 import React from 'react'
-import './App.css'
+import { BrowserRouter } from 'react-router-dom'
 
-const App = () => <div className="App">Boa sorte! 🚀</div>
+import AppProvider from './hooks'
+import Router from './router'
+import GlobalStyle from './styles/glogal'
+
+const App = () => (
+  <BrowserRouter>
+    <AppProvider>
+      <Router />
+      <GlobalStyle />
+    </AppProvider>
+  </BrowserRouter>
+)
 
 export default App
