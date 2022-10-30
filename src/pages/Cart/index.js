@@ -31,7 +31,7 @@ const Cart = () => {
           discount={totalData.discount}
           total={totalData.total}
         />
-        <Button text={'seguir para o pagamento'} onClick={handleClick} />
+        <Button onClick={handleClick}>seguir para o pagamento</Button>
       </Container>
     </div>
   )
