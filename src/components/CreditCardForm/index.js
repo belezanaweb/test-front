@@ -25,7 +25,7 @@ const CreditCardForm = ({ formId, formSubmitted }) => {
   }
 
   const FormDataIsValid = useCallback(() => {
-    let errorObj = {}
+    let errorObj = { valid: false }
 
     Object.keys(formData).forEach((data) => {
       let isValid
@@ -46,12 +46,12 @@ const CreditCardForm = ({ formId, formSubmitted }) => {
         default:
           break
       }
-      errorObj = { ...errorObj, [data]: !isValid }
+      errorObj = { ...errorObj, [data]: !isValid, valid: isValid }
     })
 
     setError(errorObj)
 
-    console.log(errorObj)
+    return errorObj.valid
   }, [formData, setError])
 
   return (
