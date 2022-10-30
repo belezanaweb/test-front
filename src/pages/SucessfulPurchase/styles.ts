@@ -51,7 +51,6 @@ export const TitleContainer = styled.div`
   gap: 11px;
   h1 {
     color: ${colors.highLightColor};
-    font-family: "Helvetica Neue", Arial, Helvetica, sans-serif;
     font-size: 14px;
     font-weight: 700;
     line-height: 17px;
