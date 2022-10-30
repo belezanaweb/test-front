@@ -5,11 +5,11 @@ export const Container = styled.div`
   p {
     display: flex;
     justify-content: space-between;
-    margin: 0;
+    margin: 8px 0;
   }
 
   width: 100%;
-  padding: 15px;
+  padding: 7px 15px;
   border: 1px solid ${colors.borderColorDark};
   border-radius: 3px;
   #discount {

@@ -22,6 +22,7 @@ export const Container = styled.div`
 export const InputMask = styled(ReactInputMask)`
   height: 45px;
   padding: 14px;
+  width: 100%;
   border-radius: 3px;
   border: ${({ error }: { error?: boolean }) =>
     error

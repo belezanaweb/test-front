@@ -4,6 +4,10 @@ import { colors } from "../../utils/style-config";
 export const Container = styled.form`
   width: 100%;
   border-radius: 3px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
 
   h2 {
     color: ${colors.titleColor};
