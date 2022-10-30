@@ -10,9 +10,10 @@ import {
 
 interface IProps {
   items: IItem[] | null;
+  useSmallForm?: boolean;
 }
 
-const ProductsCartContainer = ({ items }: IProps) => {
+const ProductsCartContainer = ({ items, useSmallForm }: IProps) => {
   const size = useDeviceSize();
 
   return (
@@ -24,7 +25,7 @@ const ProductsCartContainer = ({ items }: IProps) => {
             <img
               data-testid="productImage"
               src={
-                size === "default"
+                size === "default" || useSmallForm
                   ? product.imageObjects[0].thumbnail
                   : (product.imageObjects[0][
                       size as keyof typeof product.imageObjects[0] // used to solve process is not defined
@@ -34,9 +35,11 @@ const ProductsCartContainer = ({ items }: IProps) => {
             />
             <PriceSpecificationContainer>
               <span>{product.name}</span>
-              <span>
-                <strong>{product.priceSpecification.price}</strong>
-              </span>
+              {!useSmallForm && (
+                <span>
+                  <strong>{product.priceSpecification.price}</strong>
+                </span>
+              )}
             </PriceSpecificationContainer>
           </ProductContainer>
         ))}

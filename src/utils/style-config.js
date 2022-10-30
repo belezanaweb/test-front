@@ -8,7 +8,7 @@ export const colors = {
   inputPlaceholder: "#E0E7EE",
   borderColorLight: "#EEE",
   borderColorDark: "#CCC",
-  specialFontColor: "#FF7800",
+  highLightColor: "#FF7800",
   backgroundColorLight: "#FFF",
   titleColor: "#999",
   errorColor: "#F30",

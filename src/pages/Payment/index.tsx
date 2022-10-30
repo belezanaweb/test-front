@@ -3,15 +3,14 @@ import React from "react";
 import Button from "../../components/Button";
 import Input from "../../components/Input";
 import PriceCartContainer from "../../components/PriceCartContainer";
-import { useCart } from "../../contexts/cart";
-import InputMask from "react-input-mask";
+import { formatCartData, useCart } from "../../contexts/cart";
 
 import { Container, DividedFields, PaymentContainer } from "./styles";
 import { validationSchema } from "./validationForm";
 import { finishPurchase } from "../../services/cart";
 
 const Payment = () => {
-  const { cart } = useCart();
+  const { cart, setCart } = useCart();
 
   const formik = useFormik({
     initialValues: {
@@ -22,7 +21,7 @@ const Payment = () => {
     },
     validationSchema: validationSchema,
     onSubmit: (values) => {
-      finishPurchase(values);
+      finishPurchase(values).then((res) => setCart(formatCartData(res.data)));
     },
   });
 
