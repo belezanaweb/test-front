@@ -23,6 +23,7 @@ export const Link = styled(NavLink)`
     selected ? colors.highLightColor : colors.inputLabelColor};
   text-decoration: none;
   font-weight: 700;
+  font-size: 13px;
   line-height: 16px;
 `;
 
