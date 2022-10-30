@@ -43,7 +43,7 @@ describe("Payment page tests", () => {
 
   it("should change cartData and redirect to sucess page when all fields are correctly filled", async () => {
     render(<Payment />);
-    fireEvent.change(screen.getByTestId("cardNumber"), {
+    fireEvent.change(screen.getByTestId("creditCardNumber"), {
       target: { value: "1111111111111111" },
     });
     fireEvent.change(screen.getByTestId("ownerName"), {

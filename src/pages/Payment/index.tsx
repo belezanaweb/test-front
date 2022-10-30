@@ -3,7 +3,7 @@ import React from "react";
 import Button from "../../components/Button";
 import Input from "../../components/Input";
 import PriceCartContainer from "../../components/PriceCartContainer";
-import { formatCartData, useCart } from "../../contexts/cart";
+import { useCart } from "../../contexts/cart";
 
 import { Container, DividedFields, PaymentContainer } from "./styles";
 import { validationSchema } from "./validationForm";
@@ -15,15 +15,15 @@ const Payment = () => {
   const navigate = useNavigate();
   const formik = useFormik({
     initialValues: {
-      cardNumber: "",
+      creditCardNumber: "",
       ownerName: "",
-      validateDate: null,
-      securityCode: null,
+      validateDate: "",
+      securityCode: "",
     },
     validationSchema: validationSchema,
     onSubmit: (values) => {
-      finishPurchase(values).then((res) => {
-        setCart(formatCartData(res.data));
+      finishPurchase({ ...values, idCart: cart.id! }).then((res) => {
+        setCart({ ...cart, paymentData: res.data });
         navigate("/sucessfullPurchase");
       });
     },
@@ -35,17 +35,20 @@ const Payment = () => {
         <h2>CARTÃO DE CRÉDITO</h2>
         <PaymentContainer>
           <Input
-            name="cardNumber"
-            dataTestId="cardNumber"
+            name="creditCardNumber"
+            dataTestId="creditCardNumber"
             label="Número do cartão:"
             mask="9999.9999.9999.9999"
             placeholder="____.____.____.____"
             onChange={formik.handleChange}
-            value={formik.values.cardNumber}
+            value={formik.values.creditCardNumber}
             error={
-              formik.touched.cardNumber && Boolean(formik.errors.cardNumber)
+              formik.touched.creditCardNumber &&
+              Boolean(formik.errors.creditCardNumber)
             }
-            helperText={formik.touched.cardNumber && formik.errors.cardNumber}
+            helperText={
+              formik.touched.creditCardNumber && formik.errors.creditCardNumber
+            }
           />
 
           <Input

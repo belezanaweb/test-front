@@ -5,6 +5,7 @@ import { useCart } from "../../contexts/cart";
 import CheckIcon from "@mui/icons-material/Check";
 import {
   CreditCardContainerData,
+  CreditCardContentData,
   Container,
   IconRoundedBorder,
   TitleContainer,
@@ -23,11 +24,11 @@ const SucessfulPurchase = () => {
       </TitleContainer>
       <CreditCardContainerData>
         <h2>PAGAMENTO</h2>
-        <p>
-          <span>{cart.paymentData?.creditCardNumber}</span>
-          <span>{cart.paymentData?.ownerName}</span>
-          <span>{cart.paymentData?.validateDate}</span>
-        </p>
+        <CreditCardContentData>
+          <p>{cart.paymentData?.creditCardNumber}</p>
+          <p>{cart.paymentData?.ownerName}</p>
+          <p>{cart.paymentData?.validateDate}</p>
+        </CreditCardContentData>
       </CreditCardContainerData>
       <ProductsCartContainer items={cart.items} useSmallForm={true} />
       <PriceCartContainer

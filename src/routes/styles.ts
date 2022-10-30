@@ -18,10 +18,21 @@ export const Tabs = styled(ShadowPaper)`
   justify-content: space-around;
 `;
 
+interface LinkProps {
+  selected?: boolean;
+  disabled?: boolean;
+}
 export const Link = styled(NavLink)`
-  color: ${({ selected }: { selected: boolean }) =>
+  color: ${({ selected }: LinkProps) =>
     selected ? colors.highLightColor : colors.inputLabelColor};
   text-decoration: none;
+  font-weight: 700;
+  font-size: 13px;
+  line-height: 16px;
+`;
+
+export const DisabledLink = styled.span`
+  color: ${colors.inputLabelColor};
   font-weight: 700;
   font-size: 13px;
   line-height: 16px;

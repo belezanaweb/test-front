@@ -6,7 +6,7 @@ interface IProps {
   label: string;
   value?: string;
   dataTestId?: string;
-  cardNumber?: string;
+  creditCardNumber?: string;
   mask?: string | RegExp[];
   placeholder?: string;
   error?: boolean;
