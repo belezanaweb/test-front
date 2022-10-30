@@ -5,10 +5,11 @@ import { StyledInput, StyledLabel, StyledError } from './styles'
 const Input = ({
   label,
   name,
+  onlyNumbers,
   placeholder,
   hasError,
   errorLabel = 'Campo inválido',
-  onChange,
+  onValueChange,
   onFocus,
   maskPattern,
   maskDivider = ''
@@ -37,7 +38,14 @@ const Input = ({
 
   const handleOnChange = (e) => {
     e.preventDefault()
-    setValue(maskPattern ? maskString(e.target.value, maskPattern) : e.target.value, maskPattern)
+
+    let str = e.target.value
+
+    if (onlyNumbers) str = str.replace(/[A-Za-z]/g, '')
+
+    const formattedStr = maskPattern ? maskString(str, maskPattern) : str
+    setValue(formattedStr)
+    onValueChange(name, formattedStr)
   }
 
   const handleOnBlur = (e) => {}

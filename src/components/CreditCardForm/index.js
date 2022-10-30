@@ -7,30 +7,15 @@ import { Form, Warper } from './styles'
 
 const CreditCardForm = ({ formId, formSubmitted }) => {
   const [formData, setFormData] = useState({
-    number: '____.____.____.____',
-    name: undefined,
-    expiry: undefined,
-    cvv: undefined
+    number: '',
+    name: '',
+    expiry: '',
+    cvv: ''
   })
 
-  useEffect(() => {
-    console.log('formData', formData)
-  }, [formData])
-
-  const handleChange = (e) => {
-    e.preventDefault()
-
-    // // console.log('formData', e.target.name)
-    // setFormData({ ...formData, [e.target.name]: e.target.value })
+  const handleChange = (name, value) => {
+    setFormData({ ...formData, [name]: value })
   }
-
-  // const validateField = (field, val) => {
-  //   switch (field) {
-  //     case 'number' :
-  //       if(val.match('[\d| ]{16,22}'))
-  //       break
-  //   }
-  // }
 
   const handleSubmit = (e) => {
     e.preventDefault()
@@ -42,33 +27,36 @@ const CreditCardForm = ({ formId, formSubmitted }) => {
       <Form id={formId} onSubmit={handleSubmit}>
         <Input
           name={'number'}
+          onlyNumbers
           placeholder={'____.____.____.____'}
           maskPattern={'#### #### #### ####'}
           maskDivider={' '}
           label={'Número do cartão:'}
-          onChange={handleChange}
+          onValueChange={handleChange}
         />
         <Input
           name={'name'}
           placeholder={'Como no cartão'}
           label={'Nome do Titular:'}
-          onChange={handleChange}
+          onValueChange={handleChange}
         />
         <Warper>
           <Input
             name={'expiry'}
+            onlyNumbers
             placeholder={'__/____'}
             maskPattern={'##/####'}
             maskDivider={'/'}
             label={'Validade (mês/ano):'}
-            onChange={handleChange}
+            onValueChange={handleChange}
           />
           <Input
             name={'cvv'}
+            onlyNumbers
             placeholder={'___'}
             maskPattern={'###'}
             label={'CVV:'}
-            onChange={handleChange}
+            onValueChange={handleChange}
           />
         </Warper>
       </Form>
