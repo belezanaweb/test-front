@@ -56,6 +56,7 @@ export const RoutesList = () => {
             </Tooltip>
           ) : (
             <Link
+              key={route.path}
               selected={params.pathname.includes(route.path)}
               to={route.path}
               disabled={!route.shouldAccess}
