@@ -53,9 +53,7 @@ export const formatCartData = (cart: IRowCart) => {
             maxPrice: convertToLocalCurrency(
               item.product.priceSpecification.maxPrice
             ),
-            percent: convertToLocalCurrency(
-              item.product.priceSpecification.percent
-            ),
+            percent: item.product.priceSpecification.percent + "%",
             discount: convertToLocalCurrency(
               item.product.priceSpecification.discount
             ),
