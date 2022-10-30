@@ -1,40 +1,33 @@
 import React from 'react'
-import { useNavigate } from 'react-router-dom'
 
 import { useCart } from '../../hooks/cart'
 
 import NavBar from '../../components/NavBar'
-import ProductsList from '../../components/ProductsList'
+import Card from '../../components/Card'
 import Total from '../../components/Total'
 import Button from '../../components/Button'
 
 import { Container } from './styles'
 
-const Cart = () => {
-  const navigate = useNavigate()
-
-  const { items, totalData } = useCart()
-
-  function handleClick() {
-    navigate('/payment')
-  }
+const Payment = () => {
+  const { totalData } = useCart()
 
   return (
     <div>
-      <NavBar actualStep={'sacola'} />
+      <NavBar actualStep={'pagamento'} />
       <Container>
-        <h1>produtos</h1>
-        <ProductsList items={items} />
+        <h1>cartão de crédito</h1>
+        <Card />
         <Total
           subTotal={totalData.subTotal}
           shipping={totalData.shippingTotal}
           discount={totalData.discount}
           total={totalData.total}
         />
-        <Button text={'seguir para o pagamento'} onClick={handleClick} />
+        <Button text={'finalizar o pedido'} />
       </Container>
     </div>
   )
 }
 
-export default Cart
+export default Payment
