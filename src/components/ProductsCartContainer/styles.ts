@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import { colors } from "../../styles/style-config";
+import { ShadowPaper } from "../ShadowPaper/styles";
 
 export const Container = styled.div`
   width: 100%;
@@ -16,11 +17,7 @@ export const Container = styled.div`
   }
 `;
 
-export const CardsContainer = styled.div`
-  padding: 12px;
-  background-color: ${colors.backgroundColorLight};
-  box-shadow: 1px 1px 5px 0 rgba(0, 0, 29, 0.22);
-  display: flex;
+export const CardsContainer = styled(ShadowPaper)`
   flex-direction: column;
   gap: 15px;
 `;

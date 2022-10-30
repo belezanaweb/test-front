@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { ShadowPaper } from "../../components/ShadowPaper/styles";
 import { colors } from "../../styles/style-config";
 
 export const Container = styled.form`
@@ -24,11 +25,7 @@ export const DividedFields = styled.div`
   display: flex;
   gap: 20px;
 `;
-export const PaymentContainer = styled.div`
-  padding: 12px;
-  background-color: ${colors.backgroundColorLight};
-  box-shadow: 1px 1px 5px 0 rgba(0, 0, 29, 0.22);
-  display: flex;
-  flex-direction: column;
+export const PaymentContainer = styled(ShadowPaper)`
   gap: 15px;
+  flex-direction: column;
 `;
