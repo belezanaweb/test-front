@@ -1,7 +1,7 @@
 import React from "react";
 import ButtonMaterial from "@mui/material/Button";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
-import { colors } from "../../utils/style-config";
+import { colors } from "../../styles/style-config";
 
 const theme = createTheme({
   palette: {

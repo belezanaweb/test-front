@@ -8,6 +8,7 @@ import React, {
 } from "react";
 import { ICart, IRowCart } from "../@types/cart";
 import { getCartData } from "../services/cart";
+import { convertToLocalCurrency } from "../utils/currencyFormatter";
 
 interface CartContextInterface {
   cart: ICart;
@@ -28,10 +29,6 @@ export const CartContext = createContext<CartContextInterface>({
   },
   setCart: () => {},
 });
-
-const convertToLocalCurrency = (value: number) => {
-  return value.toLocaleString("pt-BR", { style: "currency", currency: "BRL" });
-};
 
 export const formatCartData = (cart: IRowCart) => {
   return {
