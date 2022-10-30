@@ -22,6 +22,8 @@ const theme = createTheme({
           "&:hover": {
             backgroundColor: colors.buttonHover,
           },
+          boxShadow: `0 2px 4px 0 rgba(0, 0, 0, 0.25), inset 0 -3px 0 0 ${colors.buttonHover}`,
+          blur: "4px",
         }),
       },
       variants: [
