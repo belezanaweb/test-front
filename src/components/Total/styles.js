@@ -30,6 +30,7 @@ export const Content = styled.div`
   }
 
   &:last-of-type {
+    padding-top: 7px;
     font-weight: bold;
   }
 `
