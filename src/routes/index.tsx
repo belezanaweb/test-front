@@ -8,7 +8,7 @@ const SucessfulPurchase = React.lazy(
   () => import("../pages/SucessfulPurchase")
 );
 
-const RoutesList = () => {
+export const RoutesList = () => {
   const params = useLocation();
 
   const routes = [
