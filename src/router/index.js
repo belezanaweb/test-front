@@ -3,6 +3,7 @@ import { Routes, Route } from 'react-router-dom'
 
 const Cart = lazy(() => import('../pages/Cart'))
 const Payment = lazy(() => import('../pages/Payment'))
+const Confirmation = lazy(() => import('../pages/Confirmation'))
 
 function Router() {
   return (
@@ -10,6 +11,7 @@ function Router() {
       <Routes>
         <Route path="/" element={<Cart />} />
         <Route path="/pagamento" element={<Payment />} />
+        <Route path="/confirmacao" element={<Confirmation />} />
       </Routes>
     </Suspense>
   )
