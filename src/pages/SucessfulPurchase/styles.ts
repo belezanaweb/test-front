@@ -12,6 +12,7 @@ export const CreditCardContainerData = styled.div`
     margin: 0;
     margin-left: 10px;
     margin-bottom: 5px;
+    margin-top: 5px;
     text-align: left;
   }
 `;

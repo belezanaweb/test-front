@@ -18,6 +18,7 @@ export const Container = styled.form`
     margin: 0;
     margin-left: 10px;
     margin-bottom: 5px;
+    margin-top: 5px;
   }
 
   > div {

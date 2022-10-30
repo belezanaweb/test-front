@@ -14,6 +14,7 @@ export const Container = styled.div`
     margin: 0;
     margin-left: 10px;
     margin-bottom: 5px;
+    margin-top: 5px;
   }
 `;
 
@@ -40,7 +41,7 @@ export const PriceSpecificationContainer = styled.p`
   margin: 0;
 
   span {
-    font-size: 1.2rem;
+    font-size: 1.4rem;
   }
   span + span {
     align-self: flex-end;
