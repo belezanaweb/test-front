@@ -1,28 +1,27 @@
 import React from 'react'
 
 import Card from '../Card'
+import Input from '../Input'
 
-const CreditCardForm = ({ formId, handleSubmit }) => {
+import { Form, Warper } from './styles'
+
+const CreditCardForm = ({ formId, formSubmitted }) => {
+  const handleSubmit = (e) => {
+    e.preventDefault()
+    formSubmitted()
+    console.log('e ####', e)
+  }
+
   return (
     <Card>
-      <form id={formId} onSubmit={handleSubmit}>
-        <label>
-          Número do cartão:
-          <input type="text" />
-        </label>
-        <label>
-          Nome do Titular:
-          <input type="text" />
-        </label>
-        <label>
-          Validade (mês/ano):
-          <input type="text" />
-        </label>
-        <label>
-          CVV:
-          <input type="text" />
-        </label>
-      </form>
+      <Form id={formId} onSubmit={handleSubmit}>
+        <Input label={'Número do cartão:'} />
+        <Input label={'Nome do Titular:'} />
+        <Warper>
+          <Input label={'Validade (mês/ano):'} />
+          <Input label={'CVV:'} />
+        </Warper>
+      </Form>
     </Card>
   )
 }

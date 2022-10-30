@@ -1,8 +1,17 @@
 import styled from 'styled-components'
 
-export const Container = styled.div`
-  background: white;
-  padding: 12px;
-  border-radius: 3px;
-  box-shadow: 1px 1px 10px 1px rgb(0 0 29 / 12%);
+export const Form = styled.form`
+  label {
+    margin-bottom: 25px;
+  }
+`
+export const Warper = styled.div`
+  display: flex;
+  label {
+    margin-bottom: 0;
+
+    &:first-child {
+      margin-right: 20px;
+    }
+  }
 `

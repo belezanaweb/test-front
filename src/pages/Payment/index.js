@@ -12,9 +12,8 @@ import { Container } from './styles'
 const Payment = () => {
   const { totalData } = useCart()
 
-  const handleSubmit = (e) => {
-    e.preventDefault()
-    console.log('e ####', e)
+  const handleSubmit = () => {
+    console.log('Submitted')
   }
 
   return (
@@ -22,7 +21,7 @@ const Payment = () => {
       <NavBar actualStep={'pagamento'} />
       <Container>
         <h1>cartão de crédito</h1>
-        <CreditCardForm formId={'creditCardForm'} handleSubmit={handleSubmit} />
+        <CreditCardForm formId={'creditCardForm'} formSubmitted={handleSubmit} />
         <Total
           subTotal={totalData.subTotal}
           shipping={totalData.shippingTotal}
