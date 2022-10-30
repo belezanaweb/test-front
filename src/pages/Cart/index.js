@@ -21,7 +21,7 @@ const Cart = () => {
 
   return (
     <div>
-      <NavBar actualStep={'sacola'} />
+      <NavBar actualStep={'cart'} />
       <Container>
         <h1>produtos</h1>
         <ProductsList items={items} />

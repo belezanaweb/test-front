@@ -20,7 +20,7 @@ const Payment = () => {
 
   return (
     <div>
-      <NavBar actualStep={'pagamento'} />
+      <NavBar actualStep={'payment'} />
       <Container>
         <h1>cartão de crédito</h1>
         <CreditCardForm formId={'creditCardForm'} formSubmitted={handleSubmit} />

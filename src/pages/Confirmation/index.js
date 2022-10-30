@@ -13,7 +13,7 @@ const Confirmation = () => {
 
   return (
     <div>
-      <NavBar actualStep={'sacola'} />
+      <NavBar actualStep={'confirmation'} />
       <Container>
         <h1>pagamento</h1>
         <h1>produtos</h1>
