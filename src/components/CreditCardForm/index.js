@@ -29,8 +29,8 @@ const CreditCardForm = ({ formId, formSubmitted }) => {
           name={'number'}
           onlyNumbers
           placeholder={'____.____.____.____'}
-          maskPattern={'#### #### #### ####'}
-          maskDivider={' '}
+          maskPattern={'####.####.####.####'}
+          maskDivider={'.'}
           label={'Número do cartão:'}
           onValueChange={handleChange}
         />
