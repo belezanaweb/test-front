@@ -45,9 +45,13 @@
     }
   },
   "jest": {
+    "preset": "ts-jest",
     "transform": {
       "^.+\\.(ts|tsx|js|jsx)$": "ts-jest"
     },
+    "transformIgnorePatterns": [
+      "node_modules/(?!axios)"
+    ],
     "testEnvironment": "jsdom"
   },
   "browserslist": {
@@ -66,6 +70,8 @@
     "arrowParens": "always"
   },
   "devDependencies": {
+    "@babel/preset-env": "^7.19.4",
+    "@sheerun/mutationobserver-shim": "^0.3.3",
     "@types/styled-components": "^5.1.26",
     "husky": "^4.3.0",
     "lint-staged": "^10.4.2",

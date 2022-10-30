@@ -1024,7 +1024,7 @@
     levenary "^1.1.1"
     semver "^5.5.0"
 
-"@babel/preset-env@^7.4.5":
+"@babel/preset-env@^7.19.4", "@babel/preset-env@^7.4.5":
   version "7.19.4"
   resolved "https://registry.yarnpkg.com/@babel/preset-env/-/preset-env-7.19.4.tgz#4c91ce2e1f994f717efb4237891c3ad2d808c94b"
   integrity sha512-5QVOTXUdqTCjQuh2GGtdd7YEhoRXBMVGROAtsBeLGIbIz3obCBIfRMT1I3ZKkMgNzwkyCkftDXSSkHxnfVf4qg==
@@ -1708,6 +1708,11 @@
   version "2.11.6"
   resolved "https://registry.yarnpkg.com/@popperjs/core/-/core-2.11.6.tgz#cee20bd55e68a1720bdab363ecf0c821ded4cd45"
   integrity sha512-50/17A98tWUfQ176raKiOGXuYpLyyVMkxxG6oylzL3BPOlA6ADGdK7EYunSa4I064xerltq9TGXs8HmOk5E+vw==
+
+"@sheerun/mutationobserver-shim@^0.3.3":
+  version "0.3.3"
+  resolved "https://registry.yarnpkg.com/@sheerun/mutationobserver-shim/-/mutationobserver-shim-0.3.3.tgz#5405ee8e444ed212db44e79351f0c70a582aae25"
+  integrity sha512-DetpxZw1fzPD5xUBrIAoplLChO2VB8DlL5Gg+I1IR9b2wPqYIca2WSUxL5g1vLeR4MsQq1NeWriXAVffV+U1Fw==
 
 "@sinclair/typebox@^0.24.1":
   version "0.24.51"
