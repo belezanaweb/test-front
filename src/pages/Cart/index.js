@@ -16,7 +16,7 @@ const Cart = () => {
   const { items, totalData } = useCart()
 
   function handleClick() {
-    navigate('/payment')
+    navigate('/pagamento')
   }
 
   return (

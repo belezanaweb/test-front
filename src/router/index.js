@@ -9,7 +9,7 @@ function Router() {
     <Suspense fallback={<div>Carregando...</div>}>
       <Routes>
         <Route path="/" element={<Cart />} />
-        <Route path="/payment" element={<Payment />} />
+        <Route path="/pagamento" element={<Payment />} />
       </Routes>
     </Suspense>
   )
