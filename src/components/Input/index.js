@@ -41,7 +41,7 @@ const Input = ({
 
     let str = e.target.value
 
-    if (onlyNumbers) str = str.replace(/[A-Za-z!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?]/g, '')
+    if (onlyNumbers) str = str.replace(/[A-Za-z]/g, '')
 
     const formattedStr = maskPattern ? maskString(str, maskPattern) : str
     setValue(formattedStr)
