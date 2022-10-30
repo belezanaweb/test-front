@@ -1,9 +1,12 @@
+import { CircularProgress } from "@mui/material";
 import { NavLink } from "react-router-dom";
 import styled from "styled-components";
 import { ShadowPaper } from "../components/ShadowPaper/styles";
 import { colors } from "../styles/style-config";
 
 export const Container = styled.div`
+  display: flex;
+  justify-content: center;
   background: ${colors.backgroundColorDark};
   padding: 10px;
 `;
@@ -11,7 +14,7 @@ export const Container = styled.div`
 export const Tabs = styled(ShadowPaper)`
   border-radius: 0;
   justify-content: center;
-  justify-content: space-between;
+  justify-content: space-around;
 `;
 
 export const Link = styled(NavLink)`
@@ -20,4 +23,8 @@ export const Link = styled(NavLink)`
   text-decoration: none;
   font-weight: 700;
   line-height: 16px;
+`;
+
+export const Loading = styled(CircularProgress)`
+  color: ${colors.highLightColor} !important;
 `;

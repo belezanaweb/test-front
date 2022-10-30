@@ -1,9 +1,12 @@
-import React from "react";
+import React, { Suspense } from "react";
 import { Route, Routes, BrowserRouter, useLocation } from "react-router-dom";
-import Payment from "../pages/Payment";
-import ShoppingCart from "../pages/ShoppingCart";
-import SucessfulPurchase from "../pages/SucessfulPurchase";
-import { Container, Link, Tabs } from "./styles";
+import { Container, Link, Loading, Tabs } from "./styles";
+
+const Payment = React.lazy(() => import("../pages/Payment"));
+const ShoppingCart = React.lazy(() => import("../pages/ShoppingCart"));
+const SucessfulPurchase = React.lazy(
+  () => import("../pages/SucessfulPurchase")
+);
 
 const RoutesList = () => {
   const params = useLocation();
@@ -32,15 +35,17 @@ const RoutesList = () => {
         ))}
       </Tabs>
       <Container>
-        <Routes>
-          {routes.map((route) => (
-            <Route
-              key={route.path}
-              path={route.path}
-              element={route.component}
-            />
-          ))}
-        </Routes>
+        <Suspense fallback={<Loading />}>
+          <Routes>
+            {routes.map((route) => (
+              <Route
+                key={route.path}
+                path={route.path}
+                element={route.component}
+              />
+            ))}
+          </Routes>
+        </Suspense>
       </Container>
     </>
   );
