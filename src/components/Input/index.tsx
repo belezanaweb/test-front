@@ -5,6 +5,8 @@ interface IProps {
   name?: string;
   label: string;
   value?: string;
+  dataTestId?: string;
+  cardNumber?: string;
   mask?: string | RegExp[];
   placeholder?: string;
   error?: boolean;
@@ -15,6 +17,7 @@ interface IProps {
 const Input = ({
   name,
   label,
+  dataTestId,
   value,
   mask,
   placeholder,
@@ -26,8 +29,10 @@ const Input = ({
     <Container>
       <label>{label}</label>
       <InputMask
+        data-testid={dataTestId}
         name={name}
         mask={mask || ""}
+        value={value}
         placeholder={placeholder}
         error={error}
         onChange={onChange}

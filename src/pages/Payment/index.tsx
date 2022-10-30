@@ -8,10 +8,11 @@ import { formatCartData, useCart } from "../../contexts/cart";
 import { Container, DividedFields, PaymentContainer } from "./styles";
 import { validationSchema } from "./validationForm";
 import { finishPurchase } from "../../services/cart";
+import { useNavigate } from "react-router-dom";
 
 const Payment = () => {
   const { cart, setCart } = useCart();
-
+  const navigate = useNavigate();
   const formik = useFormik({
     initialValues: {
       cardNumber: "",
@@ -21,7 +22,10 @@ const Payment = () => {
     },
     validationSchema: validationSchema,
     onSubmit: (values) => {
-      finishPurchase(values).then((res) => setCart(formatCartData(res.data)));
+      finishPurchase(values).then((res) => {
+        setCart(formatCartData(res.data));
+        navigate("/sucessfullPurchase");
+      });
     },
   });
 
@@ -32,6 +36,7 @@ const Payment = () => {
         <PaymentContainer>
           <Input
             name="cardNumber"
+            dataTestId="cardNumber"
             label="Número do cartão:"
             mask="9999.9999.9999.9999"
             placeholder="____.____.____.____"
@@ -45,8 +50,10 @@ const Payment = () => {
 
           <Input
             name="ownerName"
+            dataTestId="ownerName"
             label="Nome do Titular:"
             placeholder="Como no cartão"
+            value={formik.values.ownerName}
             onChange={formik.handleChange}
             error={formik.touched.ownerName && Boolean(formik.errors.ownerName)}
             helperText={formik.touched.ownerName && formik.errors.ownerName}
@@ -54,10 +61,12 @@ const Payment = () => {
           <DividedFields>
             <Input
               name="validateDate"
+              dataTestId="validateDate"
               label="Validade (mês/ano):"
               placeholder="__/____"
               mask={"99/9999"}
               onChange={formik.handleChange}
+              value={formik.values.validateDate || ""}
               error={
                 formik.touched.validateDate &&
                 Boolean(formik.errors.validateDate)
@@ -68,9 +77,11 @@ const Payment = () => {
             />
             <Input
               name="securityCode"
+              dataTestId="securityCode"
               label="CVV:"
               mask={"999"}
               placeholder="___"
+              value={formik.values.securityCode || ""}
               onChange={formik.handleChange}
               error={
                 formik.touched.securityCode &&
