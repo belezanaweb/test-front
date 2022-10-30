@@ -9,6 +9,7 @@ export const Container = styled.div`
   justify-content: center;
   background: ${colors.backgroundColorDark};
   padding: 10px;
+  min-height: 700px;
 `;
 
 export const Tabs = styled(ShadowPaper)`
