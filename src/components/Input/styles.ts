@@ -5,17 +5,19 @@ import { colors } from "../../styles/style-config";
 export const Container = styled.div`
   display: flex;
   flex-direction: column;
+  width: 100% !important;
+
   label {
     font-weight: 700;
     line-height: 14px;
-    font-size: 12px;
+    font-size: 1.2rem;
     color: ${colors.inputLabelColor};
     margin-bottom: 5px;
   }
 
   span {
     color: ${colors.errorColor};
-    font-size: 12px;
+    font-size: 1.2rem;
   }
 `;
 
@@ -32,7 +34,7 @@ export const InputMask = styled(ReactInputMask)`
   outline: none;
   box-shadow: ${({ error }: { error?: boolean }) =>
     error ? "unset" : "inset 0 1px 2px 0 rgba(0, 0, 0, 0.2)"};
-  font-size: 16px;
+  font-size: 1.6rem;
   letter-spacing: 1.37px;
 
   &:focus {

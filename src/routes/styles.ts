@@ -7,15 +7,26 @@ import { colors } from "../styles/style-config";
 export const Container = styled.div`
   display: flex;
   justify-content: center;
-  background: ${colors.backgroundColorDark};
   padding: 10px;
+  height: 100%;
   min-height: 700px;
+
+  > div,
+  > form {
+    max-width: 520px;
+  }
 `;
 
 export const Tabs = styled(ShadowPaper)`
   border-radius: 0;
   justify-content: center;
-  justify-content: space-around;
+  div {
+    display: flex;
+    justify-content: center;
+    justify-content: space-around;
+    width: 100%;
+    max-width: 820px;
+  }
 `;
 
 interface LinkProps {
@@ -27,14 +38,14 @@ export const Link = styled(NavLink)`
     selected ? colors.highLightColor : colors.inputLabelColor};
   text-decoration: none;
   font-weight: 700;
-  font-size: 13px;
+  font-size: 1.3rem;
   line-height: 16px;
 `;
 
 export const DisabledLink = styled.span`
   color: ${colors.inputLabelColor};
   font-weight: 700;
-  font-size: 13px;
+  font-size: 1.3rem;
   line-height: 16px;
 `;
 

@@ -8,7 +8,7 @@ export const Container = styled.div`
 
   h2 {
     color: ${colors.titleColor};
-    font-size: 14px;
+    font-size: 1.4rem;
     line-height: 17px;
     font-weight: 700;
     margin: 0;
@@ -39,6 +39,9 @@ export const PriceSpecificationContainer = styled.p`
   justify-content: space-between;
   margin: 0;
 
+  span {
+    font-size: 1.2rem;
+  }
   span + span {
     align-self: flex-end;
   }

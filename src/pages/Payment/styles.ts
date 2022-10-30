@@ -12,12 +12,16 @@ export const Container = styled.form`
 
   h2 {
     color: ${colors.titleColor};
-    font-size: 14px;
+    font-size: 1.4rem;
     line-height: 17px;
     font-weight: 700;
     margin: 0;
     margin-left: 10px;
     margin-bottom: 5px;
+  }
+
+  > div {
+    width: 100%;
   }
 `;
 

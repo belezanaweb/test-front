@@ -12,3 +12,26 @@
   box-sizing: border-box;
   font-family: "Helvetica Neue", Arial, Helvetica, sans-serif;
 }
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background: #eee;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  height: 100vh;
+}
+
+@media (min-width: 420px) {
+  html {
+    font-size: 75%;
+  }
+}
+
+body {
+  font-size: 1.6rem;
+}

@@ -1,4 +1,5 @@
-import React, { createContext, useContext } from "react";
+import React, { createContext, useContext, useState } from "react";
+import { useEventListener } from "usehooks-ts";
 
 interface Props {
   children: JSX.Element;
@@ -16,16 +17,20 @@ export const DeviceSizeContext = createContext<string>("default");
 export const DeviceSizeProvider = (props: Props) => {
   const getWindowSize = () => {
     const width = window.innerWidth;
-    if (width <= 320) {
+    if (width <= 768) {
       return windowSize.small;
-    } else if (width > 320 && width <= 425) {
+    } else if (width > 768 && width <= 1024) {
       return windowSize.medium;
-    } else if (width > 425) {
+    } else if (width > 1024) {
       return windowSize.large;
     }
     return windowSize.default;
   };
-  const size: windowSize = getWindowSize();
+  const [size, setSize] = useState<windowSize>(getWindowSize());
+
+  useEventListener("resize", () => {
+    setSize(getWindowSize());
+  });
 
   return (
     <DeviceSizeContext.Provider value={size}>

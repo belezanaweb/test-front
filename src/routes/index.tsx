@@ -3,6 +3,7 @@ import { Route, Routes, BrowserRouter, useLocation } from "react-router-dom";
 import { useCart } from "../contexts/cart";
 import Tooltip from "@mui/material/Tooltip";
 import { Container, DisabledLink, Link, Loading, Tabs } from "./styles";
+import { Typography } from "@mui/material";
 
 const Payment = React.lazy(() => import("../pages/Payment"));
 const ShoppingCart = React.lazy(() => import("../pages/ShoppingCart"));
@@ -42,29 +43,33 @@ export const RoutesList = () => {
   return (
     <>
       <Tabs>
-        {routes.map((route) =>
-          !route.shouldAccess ? (
-            <Tooltip
-              key={route.path}
-              title={
-                route.name === "CONFIRMAÇÃO"
-                  ? "Preencha os dados de pagamento antes."
-                  : "Compra já foi finalizada."
-              }
-            >
-              <DisabledLink>{route.name}</DisabledLink>
-            </Tooltip>
-          ) : (
-            <Link
-              key={route.path}
-              selected={params.pathname.includes(route.path)}
-              to={route.path}
-              disabled={!route.shouldAccess}
-            >
-              {route.name}
-            </Link>
-          )
-        )}
+        <div>
+          {routes.map((route) =>
+            !route.shouldAccess ? (
+              <Tooltip
+                key={route.path}
+                title={
+                  <Typography fontSize={"0.85rem"}>
+                    {route.name === "CONFIRMAÇÃO"
+                      ? "Preencha os dados de pagamento antes."
+                      : "Compra já foi finalizada."}
+                  </Typography>
+                }
+              >
+                <DisabledLink>{route.name}</DisabledLink>
+              </Tooltip>
+            ) : (
+              <Link
+                key={route.path}
+                selected={params.pathname.includes(route.path)}
+                to={route.path}
+                disabled={!route.shouldAccess}
+              >
+                {route.name}
+              </Link>
+            )
+          )}
+        </div>
       </Tabs>
       <Container>
         <Suspense fallback={<Loading />}>

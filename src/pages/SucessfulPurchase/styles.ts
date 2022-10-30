@@ -6,7 +6,7 @@ export const CreditCardContainerData = styled.div`
   width: 100%;
   h2 {
     color: ${colors.titleColor};
-    font-size: 14px;
+    font-size: 1.4rem;
     line-height: 17px;
     font-weight: 700;
     margin: 0;
@@ -48,7 +48,7 @@ export const TitleContainer = styled.div`
   gap: 11px;
   h1 {
     color: ${colors.highLightColor};
-    font-size: 14px;
+    font-size: 1.4rem;
     font-weight: 700;
     line-height: 17px;
     text-align: center;

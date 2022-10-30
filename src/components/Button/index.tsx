@@ -33,6 +33,7 @@ const theme = createTheme({
             width: "100%",
             height: 60,
             fontWeight: 700,
+            fontSize: "2rem",
           },
         },
       ],

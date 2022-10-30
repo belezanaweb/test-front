@@ -27,9 +27,9 @@ const ProductsCartContainer = ({ items, useSmallForm }: IProps) => {
               src={
                 size === "default" || useSmallForm
                   ? product.imageObjects[0].thumbnail
-                  : (product.imageObjects[0][
-                      size as keyof typeof product.imageObjects[0] // used to solve process is not defined
-                    ] as string)
+                  : size === "small"
+                  ? product.imageObjects[0].small
+                  : product.imageObjects[0].medium
               }
               alt="imagem do produto"
             />
