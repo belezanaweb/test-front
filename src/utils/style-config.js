@@ -4,8 +4,12 @@ export const colors = {
   textButton: "#FFF",
   inputLabelColor: "#CCC",
   inputFocusColor: "#A43287",
+  inputBorderColor: "#E7E7E7",
+  inputPlaceholder: "#E0E7EE",
   borderColorLight: "#EEE",
   borderColorDark: "#CCC",
   specialFontColor: "#FF7800",
   backgroundColorLight: "#FFF",
+  titleColor: "#999",
+  errorColor: "#F30",
 };

@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import { colors } from "../../utils/style-config";
 
-export const Container = styled.div`
+export const Container = styled.form`
   width: 100%;
   border-radius: 3px;
 
@@ -16,33 +16,15 @@ export const Container = styled.div`
   }
 `;
 
-export const CardsContainer = styled.div`
+export const DividedFields = styled.div`
+  display: flex;
+  gap: 20px;
+`;
+export const PaymentContainer = styled.div`
   padding: 12px;
   background-color: ${colors.backgroundColorLight};
   box-shadow: 1px 1px 5px 0 rgba(0, 0, 29, 0.22);
   display: flex;
   flex-direction: column;
   gap: 15px;
-`;
-
-export const ProductContainer = styled.div`
-  display: flex;
-  border: 1px solid ${colors.borderColorLight};
-  border-radius: 3px;
-  padding: 14px 10px;
-  img {
-    object-fit: contain;
-  }
-`;
-
-export const PriceSpecificationContainer = styled.p`
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  margin: 0;
-
-  span + span {
-    align-self: flex-end;
-  }
 `;

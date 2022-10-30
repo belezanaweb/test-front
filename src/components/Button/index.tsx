@@ -40,14 +40,20 @@ const theme = createTheme({
 });
 
 interface IProps {
+  type?: "button" | "submit" | "reset";
   textContent: string;
   onClick?: () => void;
 }
 
-const Button = ({ textContent, onClick }: IProps) => {
+const Button = ({ type, textContent, onClick }: IProps) => {
   return (
     <ThemeProvider theme={theme}>
-      <ButtonMaterial size="large" variant="contained" onClick={onClick}>
+      <ButtonMaterial
+        type={type}
+        size="large"
+        variant="contained"
+        onClick={onClick}
+      >
         {textContent}
       </ButtonMaterial>
     </ThemeProvider>
