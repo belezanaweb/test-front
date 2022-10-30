@@ -2,12 +2,17 @@ import React, { useState } from 'react'
 
 import { StyledInput, StyledLabel, StyledError } from './styles'
 
-const Input = (
-  { label, name, placeholder, hasError, errorLabel = 'Campo inválido', onChange, onFocus },
-  ...props
-) => {
-  const pattern = '#### #### #### ####'
-
+const Input = ({
+  label,
+  name,
+  placeholder,
+  hasError,
+  errorLabel = 'Campo inválido',
+  onChange,
+  onFocus,
+  maskPattern,
+  maskDivider = ''
+}) => {
   const [value, setValue] = useState('')
 
   const maskString = (str, pattern) => {
@@ -15,10 +20,10 @@ const Input = (
 
     let slicePattern = pattern.slice(0, str.length)
 
-    const formattedStr = str.replaceAll(' ', '')
+    const formattedStr = str.replaceAll(maskDivider, '')
 
-    if (slicePattern.substring(slicePattern.length - 1) === ' ') {
-      if (formattedStr.length !== slicePattern.replaceAll(' ', '').length)
+    if (slicePattern.substring(slicePattern.length - 1) === maskDivider) {
+      if (formattedStr.length !== slicePattern.replaceAll(maskDivider, '').length)
         slicePattern = `${slicePattern}#`
     }
 
@@ -32,7 +37,7 @@ const Input = (
 
   const handleOnChange = (e) => {
     e.preventDefault()
-    setValue(maskString(e.target.value, pattern))
+    setValue(maskPattern ? maskString(e.target.value, maskPattern) : e.target.value, maskPattern)
   }
 
   const handleOnBlur = (e) => {}
@@ -48,7 +53,6 @@ const Input = (
         onFocus={handleOnFocus}
         onBlur={handleOnBlur}
         error={hasError}
-        {...props}
       />
       {hasError && <StyledError>{errorLabel}</StyledError>}
     </StyledLabel>

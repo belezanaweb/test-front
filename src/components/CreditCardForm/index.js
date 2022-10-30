@@ -43,6 +43,8 @@ const CreditCardForm = ({ formId, formSubmitted }) => {
         <Input
           name={'number'}
           placeholder={'____.____.____.____'}
+          maskPattern={'#### #### #### ####'}
+          maskDivider={' '}
           label={'Número do cartão:'}
           onChange={handleChange}
         />
@@ -56,10 +58,18 @@ const CreditCardForm = ({ formId, formSubmitted }) => {
           <Input
             name={'expiry'}
             placeholder={'__/____'}
+            maskPattern={'##/####'}
+            maskDivider={'/'}
             label={'Validade (mês/ano):'}
             onChange={handleChange}
           />
-          <Input name={'cvv'} placeholder={'___'} label={'CVV:'} onChange={handleChange} />
+          <Input
+            name={'cvv'}
+            placeholder={'___'}
+            maskPattern={'###'}
+            label={'CVV:'}
+            onChange={handleChange}
+          />
         </Warper>
       </Form>
     </Card>
