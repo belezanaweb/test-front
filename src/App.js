@@ -1,12 +1,16 @@
 import React from 'react'
-import Router from './router'
 import { BrowserRouter } from 'react-router-dom'
+
+import AppProvider from './hooks'
+import Router from './router'
 import GlobalStyle from './styles/glogal'
 
 const App = () => (
   <BrowserRouter>
-    <Router />
-    <GlobalStyle />
+    <AppProvider>
+      <Router />
+      <GlobalStyle />
+    </AppProvider>
   </BrowserRouter>
 )
 
