@@ -1,12 +1,13 @@
 import React from 'react'
 
-import { StyledInput, StyledLabel } from './styles'
+import { StyledInput, StyledLabel, StyledError } from './styles'
 
-const Input = ({ label }, ...props) => {
+const Input = ({ label, hasError, errorLabel = 'Campo inválido' }, ...props) => {
   return (
     <StyledLabel>
       {label}
-      <StyledInput {...props} />
+      <StyledInput {...props} error={hasError} />
+      {hasError && <StyledError>{errorLabel}</StyledError>}
     </StyledLabel>
   )
 }

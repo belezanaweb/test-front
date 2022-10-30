@@ -1,4 +1,4 @@
-import styled from 'styled-components'
+import styled, { css } from 'styled-components'
 
 export const StyledLabel = styled.label`
   display: flex;
@@ -19,4 +19,21 @@ export const StyledInput = styled.input`
   color: #e0e7ee;
   font-size: 16px;
   font-weight: regular;
+
+  &:focus {
+    border-color: #a43287;
+    color: #212121;
+  }
+
+  ${(props) =>
+    props.error &&
+    css`
+      border-color: #f30;
+    `}
+`
+export const StyledError = styled.p`
+  color: #f30;
+  font-size: 12px;
+  font-weight: lighter;
+  margin: 3px;
 `
