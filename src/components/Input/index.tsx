@@ -1,9 +1,7 @@
 import React from "react";
 import { Container, InputMask } from "./styles";
-import { InputBaseComponentProps } from "@mui/material";
 
 interface IProps {
-  as?: any;
   name?: string;
   label: string;
   value?: string;
@@ -11,7 +9,6 @@ interface IProps {
   placeholder?: string;
   error?: boolean;
   helperText?: React.ReactNode;
-  inputComponent?: React.ElementType<InputBaseComponentProps>;
   onChange: React.ChangeEventHandler<HTMLInputElement | HTMLTextAreaElement>;
 }
 

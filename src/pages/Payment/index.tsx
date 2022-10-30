@@ -42,7 +42,6 @@ const Payment = () => {
         />
 
         <Input
-          as={InputMask}
           name="ownerName"
           label="Nome do Titular:"
           placeholder="Como no cartão"
