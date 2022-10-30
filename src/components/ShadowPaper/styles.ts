@@ -6,4 +6,5 @@ export const ShadowPaper = styled.div`
   background-color: ${colors.backgroundColorLight};
   box-shadow: 1px 1px 5px 0 rgba(0, 0, 29, 0.22);
   display: flex;
+  border-radius: 3px;
 `;

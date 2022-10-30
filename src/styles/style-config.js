@@ -10,6 +10,7 @@ export const colors = {
   borderColorDark: "#CCC",
   highLightColor: "#FF7800",
   backgroundColorLight: "#FFF",
+  backgroundColorDark: "#EEE",
   titleColor: "#999",
   errorColor: "#F30",
 };
