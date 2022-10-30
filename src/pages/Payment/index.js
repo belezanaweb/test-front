@@ -1,4 +1,5 @@
 import React from 'react'
+import { useNavigate } from 'react-router-dom'
 
 import { useCart } from '../../hooks/cart'
 
@@ -10,10 +11,11 @@ import Button from '../../components/Button'
 import { Container } from './styles'
 
 const Payment = () => {
+  const navigate = useNavigate()
   const { totalData } = useCart()
 
   const handleSubmit = () => {
-    console.log('Submitted')
+    navigate('/confirmacao')
   }
 
   return (
