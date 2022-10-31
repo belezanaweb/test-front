@@ -8,10 +8,8 @@ const Input = ({
   label,
   name,
   onlyNumbers,
-  placeholder,
   hasError,
   errorLabel = 'Campo inválido',
-  onFocus,
   maskPattern,
   maskDivider = '',
   ...props
@@ -57,7 +55,6 @@ const Input = ({
       <StyledInput
         name={name}
         value={value[name]}
-        placeholder={placeholder}
         onChange={handleOnChange}
         onFocus={handleOnFocus}
         onBlur={handleOnBlur}
