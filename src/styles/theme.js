@@ -1,3 +1,5 @@
+import styled from 'styled-components'
+
 const theme = {
   light: {
     colors: {
@@ -25,4 +27,40 @@ const theme = {
   }
 }
 
-export default theme
+const ThemeRoot = styled.div`
+  background-color: ${theme.light.colors['--c-background']};
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  align-items: center;
+`
+
+const ThemeContainer = styled.div`
+  display: flex;
+  flex: 1;
+  @media (min-width: 450px) {
+    align-items: center;
+    justify-content: center;
+  }
+`
+
+const ThemeContent = styled.div`
+  padding: 12px;
+  max-width: 450px;
+  background-color: ${theme.light.colors['--c-background']};
+  h1 {
+    text-transform: uppercase;
+    font-weight: bold;
+    color: ${theme.light.colors['--c-four']};
+    margin-left: 12px;
+    margin-bottom: 8px;
+    font-size: ${theme.fontSizes.mediumLarge};
+  }
+
+  @media (min-width: 450px) {
+    border-radius: 3px;
+    box-shadow: 1px 1px 10px 1px rgb(0 0 29 / 12%);
+  }
+`
+
+export { theme, ThemeRoot, ThemeContainer, ThemeContent }

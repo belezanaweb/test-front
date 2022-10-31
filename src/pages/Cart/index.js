@@ -8,7 +8,7 @@ import ProductsList from '../../components/ProductsList'
 import Total from '../../components/Total'
 import Button from '../../components/Button'
 
-import { Container } from './styles'
+import { Root, Container, Content } from './styles'
 
 const Cart = () => {
   const navigate = useNavigate()
@@ -20,20 +20,22 @@ const Cart = () => {
   }
 
   return (
-    <div>
+    <Root>
       <NavBar actualStep={'cart'} />
       <Container>
-        <h1>produtos</h1>
-        <ProductsList items={items} />
-        <Total
-          subTotal={totalData.subTotal}
-          shipping={totalData.shippingTotal}
-          discount={totalData.discount}
-          total={totalData.total}
-        />
-        <Button onClick={handleClick}>seguir para o pagamento</Button>
+        <Content>
+          <h1>produtos</h1>
+          <ProductsList items={items} />
+          <Total
+            subTotal={totalData.subTotal}
+            shipping={totalData.shippingTotal}
+            discount={totalData.discount}
+            total={totalData.total}
+          />
+          <Button onClick={handleClick}>seguir para o pagamento</Button>
+        </Content>
       </Container>
-    </div>
+    </Root>
   )
 }
 

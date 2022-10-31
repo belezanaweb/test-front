@@ -1,5 +1,5 @@
 import React from 'react'
-import { Container, Text } from './styles'
+import { Container, Content, Text } from './styles'
 
 const NavBar = ({ actualStep }) => {
   const steps = [
@@ -10,11 +10,13 @@ const NavBar = ({ actualStep }) => {
 
   return (
     <Container>
-      {steps.map((step) => (
-        <Text key={step[0]} isActualStep={step[0] === actualStep}>
-          {step[1]}
-        </Text>
-      ))}
+      <Content>
+        {steps.map((step) => (
+          <Text key={step[0]} isActualStep={step[0] === actualStep}>
+            {step[1]}
+          </Text>
+        ))}
+      </Content>
     </Container>
   )
 }
