@@ -3,7 +3,7 @@ import { BrowserRouter } from 'react-router-dom'
 
 import AppProvider from './hooks'
 import Router from './router'
-import GlobalStyle from './styles/glogal'
+import GlobalStyle from './styles/global'
 
 const App = () => (
   <BrowserRouter>
