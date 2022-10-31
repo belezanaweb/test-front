@@ -14,15 +14,28 @@ interface TotalData {
     total: number
 }
 
+interface Image {
+  small: string
+}
+
+interface Item {
+  product: {
+    name: string
+    imageObjects: [Image]
+    priceSpecification: {
+      price: {}
+    }
+  }
+}
 interface UseCart {
   totalData: TotalData
-  items: {}
+  items: [Item] | []
 }
 
 const CartContext = createContext<UseCart>({} as UseCart)
 
 const CartProvider: React.FC<Props> = ({ children }) => {
-  const [items, setItems] = useState([])
+  const [items, setItems] = useState<[Item] | []>([])
   const [totalData, setTotalData] = useState<TotalData>({
     subTotal: 0,
     shippingTotal: 0,

@@ -10,7 +10,7 @@ import Button from '../../components/Button'
 
 import { Root, Container, Content } from './styles'
 
-const Cart = () => {
+const Cart: React.FC = () => {
   const navigate = useNavigate()
 
   const { items, totalData } = useCart()
