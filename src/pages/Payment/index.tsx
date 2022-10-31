@@ -9,9 +9,18 @@ import { validationSchema } from "./validationForm";
 import { finishPurchase } from "../../services/cart";
 import { useNavigate } from "react-router-dom";
 import { useForm } from "react-hook-form";
+import { useError } from "../../contexts/error";
+
+interface IFormValues {
+  creditCardNumber: string;
+  ownerName: string;
+  validateDate: string;
+  securityCode: string;
+}
 
 const Payment = () => {
   const { cart, setCart } = useCart();
+  const { setError } = useError();
   const navigate = useNavigate();
 
   const {
@@ -40,15 +49,21 @@ const Payment = () => {
     };
   };
 
+  const onSubmit = (values: IFormValues) => {
+    finishPurchase({ ...values, idCart: cart.id! })
+      .then((res) => {
+        setCart({ ...cart, paymentData: res.data });
+        navigate("/sucessfullPurchase");
+      })
+      .catch(() => {
+        setError(
+          "Ocorreu um erro na solicitação! Por favor, valide os dados do cartão e tente novamente."
+        );
+      });
+  };
+
   return (
-    <Container
-      onSubmit={handleSubmit((values) => {
-        finishPurchase({ ...values, idCart: cart.id! }).then((res) => {
-          setCart({ ...cart, paymentData: res.data });
-          navigate("/sucessfullPurchase");
-        });
-      })}
-    >
+    <Container onSubmit={handleSubmit(onSubmit)}>
       <div>
         <h2>CARTÃO DE CRÉDITO</h2>
         <PaymentContainer>

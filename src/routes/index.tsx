@@ -2,8 +2,10 @@ import React, { Suspense } from "react";
 import { Route, Routes, BrowserRouter, useLocation } from "react-router-dom";
 import { useCart } from "../contexts/cart";
 import Tooltip from "@mui/material/Tooltip";
+import Alert from "@mui/material/Alert";
 import { Container, DisabledLink, Link, Loading, Tabs } from "./styles";
 import { Typography } from "@mui/material";
+import { useError } from "../contexts/error";
 
 const Payment = React.lazy(() => import("../pages/Payment"));
 const ShoppingCart = React.lazy(() => import("../pages/ShoppingCart"));
@@ -14,6 +16,7 @@ const SucessfulPurchase = React.lazy(
 export const RoutesList = () => {
   const { cart } = useCart();
   const params = useLocation();
+  const { error, setError } = useError();
 
   const routes = [
     {
@@ -42,6 +45,11 @@ export const RoutesList = () => {
 
   return (
     <>
+      {error && (
+        <Alert severity="error" onClick={() => setError(null)}>
+          {error}
+        </Alert>
+      )}
       <Tabs>
         <div>
           {routes.map((route) =>
