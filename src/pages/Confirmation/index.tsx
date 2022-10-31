@@ -12,7 +12,7 @@ import Success from '../../assets/success.png'
 
 import { Root, Container, Content, Warper, SuccessWarper, PaymentContainer } from './styles'
 
-const Confirmation = () => {
+const Confirmation: React.FC = () => {
   const { formData } = useCreditCard()
   const { items, totalData } = useCart()
 

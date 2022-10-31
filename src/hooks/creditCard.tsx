@@ -1,8 +1,22 @@
 import React, { createContext, useContext, useState } from 'react'
 
-const CreditCardContext = createContext({})
+interface Props {
+  children: React.ReactNode
+}
 
-const CreditCardProvider = ({ children }) => {
+interface UseCreditCard {
+  formData: {
+    number: string
+    name: string
+    expiry: string
+    cvv: string
+  }
+  handleChange: (name: string, value: string) => void
+}
+
+const CreditCardContext = createContext<UseCreditCard>({} as UseCreditCard)
+
+const CreditCardProvider: React.FC<Props> = ({ children }) => {
   const [formData, setFormData] = useState({
     number: '',
     name: '',
@@ -10,7 +24,7 @@ const CreditCardProvider = ({ children }) => {
     cvv: ''
   })
 
-  const handleChange = (name, value) => {
+  const handleChange = (name: string, value: string) => {
     setFormData({ ...formData, [name]: value })
   }
 
