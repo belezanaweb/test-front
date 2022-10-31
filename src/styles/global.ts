@@ -8,8 +8,8 @@ export default createGlobalStyle`
   outline: 0;
 }
 body {
-  background-color: ${(props) => props.theme.light.colors['--c-background']};
-  color: ${(props) => props.theme.light.colors['--c-base-contrast-two']};
+  background-color: #fff;
+  color: #000;
   font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", "Helvetica", "Arial", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
