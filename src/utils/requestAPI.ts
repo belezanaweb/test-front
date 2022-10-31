@@ -1,6 +1,6 @@
 import axios from 'axios'
 
-const requestAPI = async ({ url, headers, params }) => {
+const requestAPI = async ({ url, headers, params }: { url: string, headers: {}, params: {} }) => {
   let res = undefined
 
   try {
