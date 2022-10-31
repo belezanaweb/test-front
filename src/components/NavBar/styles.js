@@ -8,13 +8,13 @@ export const Container = styled.div`
   box-shadow: 5px 0 4px 1px rgba(0, 0, 29, 0.12);
 `
 export const Text = styled.p`
-  font-size: 13px;
+  font-size: ${(props) => props.theme.fontSizes.medium};
   font-weight: bold;
   text-transform: uppercase;
-  color: #ccc;
+  color: ${(props) => props.theme.light.colors['--c-one']};
   ${(props) =>
     props.isActualStep &&
     css`
-      color: #ff7800;
+      color: ${(props) => props.theme.light.colors['--c-contrast-one']};
     `}
 `

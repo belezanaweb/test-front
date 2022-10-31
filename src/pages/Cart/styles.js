@@ -5,9 +5,9 @@ export const Container = styled.div`
   h1 {
     text-transform: uppercase;
     font-weight: bold;
-    color: #999;
+    color: ${(props) => props.theme.light.colors['--c-four']};
     margin-left: 12px;
     margin-bottom: 8px;
-    font-size: 14px;
+    font-size: ${(props) => props.theme.fontSizes.mediumLarge};
   }
 `

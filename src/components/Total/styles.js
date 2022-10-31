@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 
 export const Container = styled.div`
-  border: 1px solid #ccc;
+  border: 1px solid ${(props) => props.theme.light.colors['--c-one']};
   border-radius: 3px;
   padding: 15px 13px 15px 14px;
   margin: 20px 0;
@@ -15,13 +15,13 @@ export const Content = styled.div`
     text-transform: uppercase;
     font-weight: regular;
     line-height: 17px;
-    font-size: 14px;
+    font-size: ${(props) => props.theme.fontSizes.mediumLarge};
     color: #212122;
   }
 
   &.orange {
     p {
-      color: #ff7800;
+      color: ${(props) => props.theme.light.colors['--c-contrast-one']};
     }
   }
 

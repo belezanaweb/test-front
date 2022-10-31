@@ -5,10 +5,10 @@ export const Container = styled.div`
   h1 {
     text-transform: uppercase;
     font-weight: bold;
-    color: #999;
+    color: ${(props) => props.theme.light.colors['--c-four']};
     margin-left: 12px;
     margin-bottom: 8px;
-    font-size: 14px;
+    font-size: ${(props) => props.theme.fontSizes.mediumLarge};
   }
 `
 export const SuccessWarper = styled.div`
@@ -24,18 +24,18 @@ export const SuccessWarper = styled.div`
   }
   p {
     text-transform: uppercase;
-    font-size: 14px;
+    font-size: ${(props) => props.theme.fontSizes.mediumLarge};
     text-align: center;
     font-weight: bold;
-    color: #ff7800;
+    color: ${(props) => props.theme.light.colors['--c-contrast-one']};
   }
 `
 
 export const PaymentContainer = styled.div`
   margin-bottom: 20px;
   p {
-    color: #000;
-    font-size: 14px;
+    color: ${(props) => props.theme.light.colors['--c-base-contrast-two']};
+    font-size: ${(props) => props.theme.fontSizes.mediumLarge};
     text-transform: uppercase;
   }
 `
