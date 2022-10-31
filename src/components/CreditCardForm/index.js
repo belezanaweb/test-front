@@ -35,7 +35,10 @@ const CreditCardForm = ({ formId, formSubmitted }) => {
           isValid = formData.name?.match(/^[a-zA-Z]{2,30}$/g)
           break
         case 'expiry':
-          isValid = formData.expiry?.match(/[0-9/]{7}/g)
+          const today = new Date()
+          isValid =
+            formData.expiry?.match(/^((0[1-9])|(1[0-2]))\/(\d{4})$/g) &&
+            new Date(`01/${formData.expiry}`).getTime() > today.getTime()
           break
         case 'cvv':
           isValid = formData.cvv?.match(/\d{3}/g)
