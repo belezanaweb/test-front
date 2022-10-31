@@ -10,6 +10,13 @@ import { finishPurchase } from "../../services/cart";
 import { useNavigate } from "react-router-dom";
 import { useForm } from "react-hook-form";
 
+interface IFormProps {
+  creditCardNumber: string;
+  ownerName: string;
+  validateDate: string;
+  securityCode: string;
+}
+
 const Payment = () => {
   const { cart, setCart } = useCart();
   const navigate = useNavigate();
@@ -20,10 +27,18 @@ const Payment = () => {
     setValue,
     formState: { errors },
   } = useForm({
+    defaultValues: {
+      creditCardNumber: "",
+      ownerName: "",
+      validateDate: "",
+      securityCode: "",
+    },
     resolver: yupResolver(validationSchema),
   });
 
-  const inputProps = (name: string) => {
+  const inputProps = (
+    name: "creditCardNumber" | "ownerName" | "validateDate" | "securityCode"
+  ) => {
     return {
       ...register(name),
       innerRef: register(name).ref,
@@ -35,7 +50,7 @@ const Payment = () => {
   return (
     <Container
       onSubmit={handleSubmit((values) => {
-        finishPurchase({ ...values, idCart: cart.id! } as any).then((res) => {
+        finishPurchase({ ...values, idCart: cart.id! }).then((res) => {
           setCart({ ...cart, paymentData: res.data });
           navigate("/sucessfullPurchase");
         });

@@ -11,8 +11,10 @@ export const validationSchema = object({
       exclusive: false,
       message: "Número do cartão inválido.",
       params: {},
-      test: function (value: any) {
-        return creditCardNumberValidation.test(value?.replace(/[^\d]/g, ""));
+      test: function (value) {
+        return creditCardNumberValidation.test(
+          value?.replace(/[^\d]/g, "") as string
+        );
       },
     })
     .required("Número do cartão é obrigatório."),
@@ -24,8 +26,10 @@ export const validationSchema = object({
       exclusive: false,
       message: "Número do cartão inválido.",
       params: {},
-      test: function (value: any) {
-        return validateDateValidation.test(value?.replace(/[^\d]/g, ""));
+      test: function (value) {
+        return validateDateValidation.test(
+          value?.replace(/[^\d]/g, "") as string
+        );
       },
     }),
   securityCode: string()
