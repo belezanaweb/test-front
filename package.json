@@ -10,7 +10,7 @@
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
     "react-router-dom": "^6.4.2",
-    "react-scripts": "3.4.4",
+    "react-scripts": "^5.0.1",
     "styled-components": "^5.3.6",
     "yup": "^0.32.11"
   },
@@ -52,6 +52,8 @@
     "@types/react-dom": "^18.0.8",
     "@types/react-router-dom": "^5.3.3",
     "@types/styled-components": "^5.1.26",
+    "@typescript-eslint/eslint-plugin": "^5.42.0",
+    "@typescript-eslint/parser": "^5.42.0",
     "husky": "^4.3.0",
     "lint-staged": "^10.4.2",
     "prettier": "^2.1.2",

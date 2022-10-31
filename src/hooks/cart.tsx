@@ -21,7 +21,7 @@ interface Image {
 interface Item {
   product: {
     name: string
-    imageObjects: [Image]
+    imageObjects: Image[]
     priceSpecification: {
       price: {}
     }
@@ -29,13 +29,23 @@ interface Item {
 }
 interface UseCart {
   totalData: TotalData
-  items: [Item] | []
+  items: Item[]
+}
+
+interface Resp {
+  data?: {
+    subTotal: number
+    shippingTotal: number
+    discount: number
+    total: number
+    items?: Item[]
+  }
 }
 
 const CartContext = createContext<UseCart>({} as UseCart)
 
 const CartProvider: React.FC<Props> = ({ children }) => {
-  const [items, setItems] = useState<[Item] | []>([])
+  const [items, setItems] = useState<Item[]>([])
   const [totalData, setTotalData] = useState<TotalData>({
     subTotal: 0,
     shippingTotal: 0,
@@ -44,7 +54,7 @@ const CartProvider: React.FC<Props> = ({ children }) => {
   })
 
   useEffect(() => {
-    requestAPI({ url: 'http://www.mocky.io/v2/5b15c4923100004a006f3c07' }).then((resp) => {
+    requestAPI({ url: 'http://www.mocky.io/v2/5b15c4923100004a006f3c07' }).then((resp: Resp | undefined) => {
       if (resp?.data) {
         setItems(resp?.data?.items || [])
         setTotalData({

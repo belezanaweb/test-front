@@ -10,7 +10,7 @@ interface Image {
 interface Item {
   product: {
     name: string
-    imageObjects: [Image]
+    imageObjects: Image[]
     priceSpecification: {
       price: {}
     }
@@ -18,7 +18,7 @@ interface Item {
 }
 
 interface Props {
-  items: [Item] | []
+  items: Item[]
   noPrice?: boolean
 }
 
