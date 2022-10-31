@@ -1,5 +1,11 @@
 import React, { Suspense } from "react";
-import { Route, Routes, BrowserRouter, useLocation } from "react-router-dom";
+import {
+  Route,
+  Routes,
+  BrowserRouter,
+  useLocation,
+  Navigate,
+} from "react-router-dom";
 import { useCart } from "../contexts/cart";
 import Tooltip from "@mui/material/Tooltip";
 import Alert from "@mui/material/Alert";
@@ -91,6 +97,9 @@ export const RoutesList = () => {
                     element={route.component}
                   />
                 )
+            )}
+            {!cart.paymentData && (
+              <Route path={"*"} element={<Navigate to="/shoppingCart" />} />
             )}
           </Routes>
         </Suspense>
