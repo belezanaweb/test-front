@@ -1,11 +1,29 @@
 import React, { createContext, useContext, useState, useEffect } from 'react'
 import requestAPI from '../utils/requestAPI'
 
-const CartContext = createContext({})
 
-const CartProvider = ({ children }) => {
+
+interface Props {
+  children: React.ReactNode
+}
+
+interface TotalData {
+    subTotal: number
+    shippingTotal: number
+    discount: number
+    total: number
+}
+
+interface UseCart {
+  totalData: TotalData
+  items: {}
+}
+
+const CartContext = createContext<UseCart>({} as UseCart)
+
+const CartProvider: React.FC<Props> = ({ children }) => {
   const [items, setItems] = useState([])
-  const [totalData, setTotalData] = useState({
+  const [totalData, setTotalData] = useState<TotalData>({
     subTotal: 0,
     shippingTotal: 0,
     discount: 0,
@@ -14,14 +32,15 @@ const CartProvider = ({ children }) => {
 
   useEffect(() => {
     requestAPI({ url: 'http://www.mocky.io/v2/5b15c4923100004a006f3c07' }).then((resp) => {
-      console.log(resp.data)
-      setItems(resp.data.items)
-      setTotalData({
-        subTotal: resp.data.subTotal,
-        shippingTotal: resp.data.shippingTotal,
-        discount: resp.data.discount,
-        total: resp.data.total
-      })
+      if (resp?.data) {
+        setItems(resp?.data?.items || [])
+        setTotalData({
+          subTotal: resp?.data.subTotal,
+          shippingTotal: resp?.data.shippingTotal,
+          discount: resp?.data.discount,
+          total: resp?.data.total
+        })
+      }
     })
   }, [])
 

@@ -7,7 +7,7 @@ import { CreditCardProvider } from './creditCard'
 import { theme } from '../styles/theme'
 
 interface Props {
-  children: React.ReactNode;
+  children: React.ReactNode
 }
 
 const AppProvider: React.FC<Props> = ({ children }) => (

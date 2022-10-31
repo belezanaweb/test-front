@@ -10,8 +10,9 @@ import Button from '../../components/Button'
 
 import { Root, Container, Content } from './styles'
 
-const Payment = () => {
+const Payment: React.FC = () => {
   const navigate = useNavigate()
+
   const { totalData } = useCart()
 
   const handleSubmit = () => {
