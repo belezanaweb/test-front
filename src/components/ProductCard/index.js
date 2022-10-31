@@ -16,10 +16,10 @@ const ProductCard = ({ image, title, price }) => {
 
   return (
     <Container>
-      <Image src={image} alt={formatTitle} />
+      <Image src={image} alt={formatTitle} noPrice={!price} />
       <Content>
         <Title id="title">{formatTitle}</Title>
-        <Price id="price">{formatCurrencyBRL(price)}</Price>
+        {price && <Price id="price">{formatCurrencyBRL(price)}</Price>}
       </Content>
     </Container>
   )

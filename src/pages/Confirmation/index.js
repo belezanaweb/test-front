@@ -17,7 +17,7 @@ const Confirmation = () => {
       <Container>
         <h1>pagamento</h1>
         <h1>produtos</h1>
-        <ProductsList items={items} />
+        <ProductsList items={items} noPrice />
         <Total
           subTotal={totalData.subTotal}
           shipping={totalData.shippingTotal}

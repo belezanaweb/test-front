@@ -1,4 +1,4 @@
-import styled from 'styled-components'
+import styled, { css } from 'styled-components'
 
 export const Container = styled.div`
   display: flex;
@@ -13,9 +13,15 @@ export const Container = styled.div`
 export const Image = styled.img`
   height: 64px;
   width: 64px;
+  ${(props) =>
+    props.noPrice &&
+    css`
+      height: 44px;
+      width: 44px;
+    `}
 `
 
-export const Content = styled.p`
+export const Content = styled.div`
   margin-left: 11px;
   display: flex;
   flex-direction: column;
