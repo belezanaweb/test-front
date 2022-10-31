@@ -4,7 +4,13 @@ import formatCurrencyBRL from '../../utils/formatCurrencyBRL'
 
 import { Container, Image, Content, Title, Price } from './styles'
 
-const ProductCard = ({ image, title, price }) => {
+interface Props {
+  image: string
+  title: string
+  price?: string | boolean
+}
+
+const ProductCard: React.FC<Props> = ({ image, title, price = false }) => {
   const formatTitle = useMemo(() => {
     const threshold = 70
     let formattedTitle = title
@@ -19,7 +25,7 @@ const ProductCard = ({ image, title, price }) => {
       <Image src={image} alt={formatTitle} noPrice={!price} />
       <Content>
         <Title id="title">{formatTitle}</Title>
-        {price && <Price id="price">{formatCurrencyBRL(parseFloat(price))}</Price>}
+        {price && <Price id="price">{formatCurrencyBRL(parseFloat(price as string))}</Price>}
       </Content>
     </Container>
   )

@@ -13,7 +13,7 @@ export const Container = styled.div`
 export const Image = styled.img`
   height: 64px;
   width: 64px;
-  ${(props) =>
+  ${(props: {noPrice: boolean}) =>
     props.noPrice &&
     css`
       height: 44px;
