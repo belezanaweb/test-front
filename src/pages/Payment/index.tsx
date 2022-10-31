@@ -41,12 +41,17 @@ const Payment = () => {
   const inputProps = (
     name: "creditCardNumber" | "ownerName" | "validateDate" | "securityCode"
   ) => {
-    return {
-      ...register(name),
-      innerRef: register(name).ref,
+    const innerRef = register(name).ref;
+    const registerProps: any = register(name); // used to solve warnings of ref prop
+    delete registerProps.ref; // used to solve warnings of ref prop
+    const props = {
+      ...registerProps,
+      innerRef,
       error: Boolean(errors[name]?.message),
       helperText: errors[name]?.message as string,
     };
+
+    return props;
   };
 
   const onSubmit = (values: IFormValues) => {

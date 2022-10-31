@@ -45,7 +45,7 @@ describe("ProductsCartContainer unit tests", () => {
 
     expect(screen.getByTestId("productImage")).toHaveAttribute(
       "src",
-      mockedData[0].product.imageObjects[0].thumbnail
+      mockedData[0].product.imageObjects[0].small
     );
     expect(
       screen.getByText(mockedData[0].product.priceSpecification.price)

@@ -37,7 +37,7 @@ const Input = ({
         mask={mask}
         value={value}
         placeholder={placeholder}
-        error={error}
+        error={error || undefined}
         onChange={onChange}
         ref={innerRef}
       />

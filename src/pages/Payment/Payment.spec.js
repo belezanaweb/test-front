@@ -1,11 +1,5 @@
 import React from "react";
-import {
-  act,
-  render,
-  screen,
-  waitFor,
-  fireEvent,
-} from "@testing-library/react";
+import { act, render, screen, waitFor } from "@testing-library/react";
 import Payment from ".";
 import "@testing-library/jest-dom";
 import userEvent from "@testing-library/user-event";

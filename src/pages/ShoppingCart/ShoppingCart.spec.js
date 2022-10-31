@@ -73,7 +73,7 @@ describe("ShoppingCart page tests", () => {
     await waitFor(() => {
       expect(screen.getByTestId("productImage")).toHaveAttribute(
         "src",
-        mockedData.items[0].product.imageObjects[0].thumbnail
+        mockedData.items[0].product.imageObjects[0].small
       );
       expect(
         screen.getByText(mockedData.items[0].product.priceSpecification.price)
