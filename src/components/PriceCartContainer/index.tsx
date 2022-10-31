@@ -1,11 +1,13 @@
 import React from "react";
 import { Container } from "./styles";
+import Skeleton from "react-loading-skeleton";
 
 interface IProps {
   subTotal: string;
   shippingTotal: string;
   discount: string;
   total: string;
+  isLoading?: boolean;
 }
 
 const PriceCartContainer = ({
@@ -13,8 +15,11 @@ const PriceCartContainer = ({
   shippingTotal,
   subTotal,
   total,
+  isLoading,
 }: IProps) => {
-  return (
+  return isLoading ? (
+    <Skeleton height={300} />
+  ) : (
     <Container>
       <p>
         <span>PRODUTOS</span>

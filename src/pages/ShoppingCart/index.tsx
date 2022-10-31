@@ -11,12 +11,13 @@ const ShoppingCart = () => {
   const { cart } = useCart();
   return (
     <Container>
-      <ProductsCartContainer items={cart?.items} />
+      <ProductsCartContainer items={cart?.items} isLoading={cart.isLoading} />
       <PriceCartContainer
         discount={cart.discount}
         shippingTotal={cart.shippingTotal}
         subTotal={cart.subTotal}
         total={cart.total}
+        isLoading={cart.isLoading}
       />
       <Button
         textContent="Seguir para o pagamento"

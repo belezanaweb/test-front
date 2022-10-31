@@ -11,7 +11,7 @@ import { getCartData } from "../services/cart";
 import { convertToLocalCurrency } from "../utils/currencyFormatter";
 
 interface CartContextInterface {
-  cart: ICart;
+  cart: ICartContext;
   setCart: Dispatch<SetStateAction<ICart>>;
 }
 
@@ -63,19 +63,26 @@ export const formatCartData = (cart: IRowCart) => {
   };
 }; // used to get better performance
 
+interface ICartContext extends ICart {
+  isLoading?: boolean;
+}
+
 export const CartProvider = (props: Props) => {
-  const [cart, setCart] = useState<ICart>({
+  const [cart, setCart] = useState<ICartContext>({
     subTotal: "",
     shippingTotal: "",
     discount: "",
     total: "",
     items: null,
+    isLoading: false,
   });
 
   useEffect(() => {
+    setCart({ ...cart, isLoading: true });
     getCartData().then((res: { data: IRowCart }) =>
-      setCart(formatCartData(res.data))
+      setCart({ ...formatCartData(res.data), isLoading: false })
     );
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (
