@@ -28,8 +28,11 @@ export const ProductContainer = styled.div`
   border: 1px solid ${colors.borderColorLight};
   border-radius: 3px;
   padding: 14px 10px;
+  gap: 10px;
   img {
     object-fit: contain;
+    width: ${({ useSmallForm }: { useSmallForm?: boolean }) =>
+      useSmallForm && "42px"};
   }
 `;
 
@@ -41,7 +44,7 @@ export const PriceSpecificationContainer = styled.p`
   margin: 0;
 
   span {
-    font-size: 1.4rem;
+    font-size: 1.3rem;
   }
   span + span {
     align-self: flex-end;

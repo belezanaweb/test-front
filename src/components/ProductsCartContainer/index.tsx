@@ -21,13 +21,11 @@ const ProductsCartContainer = ({ items, useSmallForm }: IProps) => {
       <h2>PRODUTOS</h2>
       <CardsContainer>
         {items?.map(({ product }) => (
-          <ProductContainer key={product.sku}>
+          <ProductContainer key={product.sku} useSmallForm={useSmallForm}>
             <img
               data-testid="productImage"
               src={
-                size === "default" || useSmallForm
-                  ? product.imageObjects[0].thumbnail
-                  : size === "small"
+                ["default", "small"].includes(size) || useSmallForm
                   ? product.imageObjects[0].small
                   : product.imageObjects[0].medium
               }
