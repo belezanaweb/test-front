@@ -4,10 +4,10 @@ const CreditCardContext = createContext({})
 
 const CreditCardProvider = ({ children }) => {
   const [formData, setFormData] = useState({
-    number: '',
-    name: '',
-    expiry: '',
-    cvv: ''
+    number: '2222.2222.2222.2222',
+    name: 'test tets',
+    expiry: '22/2222',
+    cvv: '333'
   })
 
   const handleChange = (name, value) => {
