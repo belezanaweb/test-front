@@ -5,7 +5,7 @@ const Cart = lazy(() => import('../pages/Cart'))
 const Payment = lazy(() => import('../pages/Payment'))
 const Confirmation = lazy(() => import('../pages/Confirmation'))
 
-function Router() {
+const Router = () => {
   return (
     <Suspense fallback={<div>Carregando...</div>}>
       <Routes>
