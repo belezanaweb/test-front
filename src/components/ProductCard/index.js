@@ -19,7 +19,7 @@ const ProductCard = ({ image, title, price }) => {
       <Image src={image} alt={formatTitle} noPrice={!price} />
       <Content>
         <Title id="title">{formatTitle}</Title>
-        {price && <Price id="price">{formatCurrencyBRL(price)}</Price>}
+        {price && <Price id="price">{formatCurrencyBRL(parseFloat(price))}</Price>}
       </Content>
     </Container>
   )
