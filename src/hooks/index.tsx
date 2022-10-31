@@ -6,7 +6,11 @@ import { CreditCardProvider } from './creditCard'
 
 import { theme } from '../styles/theme'
 
-const AppProvider = ({ children }) => (
+interface Props {
+  children: React.ReactNode;
+}
+
+const AppProvider: React.FC<Props> = ({ children }) => (
   <ThemeProvider theme={theme}>
     <CreditCardProvider>
       <CartProvider>{children}</CartProvider>
