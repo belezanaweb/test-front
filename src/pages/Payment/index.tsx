@@ -53,25 +53,26 @@ const Payment = () => {
         <h2>CARTÃO DE CRÉDITO</h2>
         <PaymentContainer>
           <Input
+            {...inputProps("creditCardNumber")}
             dataTestId="creditCardNumber"
             label="Número do cartão:"
             mask="9999.9999.9999.9999"
             placeholder="____.____.____.____"
-            {...inputProps("creditCardNumber")}
           />
 
           <Input
+            {...inputProps("ownerName")}
             dataTestId="ownerName"
             label="Nome do Titular:"
             mask=""
             placeholder="Como no cartão"
-            {...inputProps("ownerName")}
             onChange={(event) => {
               setValue("ownerName", event.target.value);
             }}
           />
           <DividedFields>
             <Input
+              {...inputProps("validateDate")}
               dataTestId="validateDate"
               label="Validade (mês/ano):"
               placeholder="__/____"
@@ -79,11 +80,11 @@ const Payment = () => {
               {...inputProps("validateDate")}
             />
             <Input
+              {...inputProps("securityCode")}
               dataTestId="securityCode"
               label="CVV:"
               mask={"999"}
               placeholder="___"
-              {...inputProps("securityCode")}
             />
           </DividedFields>
         </PaymentContainer>

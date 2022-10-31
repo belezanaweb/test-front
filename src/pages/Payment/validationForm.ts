@@ -6,6 +6,7 @@ const validateDateValidation = /^\d{6,}/;
 
 export const validationSchema = object({
   creditCardNumber: string()
+    .required("Número do cartão é obrigatório.")
     .test({
       name: "cardNumber",
       exclusive: false,
@@ -16,15 +17,14 @@ export const validationSchema = object({
           value?.replace(/[^\d]/g, "") as string
         );
       },
-    })
-    .required("Número do cartão é obrigatório."),
+    }),
   ownerName: string().required("Nome do titular é obrigatório."),
   validateDate: string()
     .required("Data de validade é obrigatória.")
     .test({
       name: "cardNumber",
       exclusive: false,
-      message: "Número do cartão inválido.",
+      message: "Data de validade inválida.",
       params: {},
       test: function (value) {
         return validateDateValidation.test(

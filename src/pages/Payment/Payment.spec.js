@@ -9,6 +9,8 @@ import {
 import Payment from ".";
 import "@testing-library/jest-dom";
 import userEvent from "@testing-library/user-event";
+import TestUtils from "react-dom/test-utils";
+
 import MutationObserver from "@sheerun/mutationobserver-shim";
 window.MutationObserver = MutationObserver;
 
@@ -43,17 +45,20 @@ describe("Payment page tests", () => {
 
   it("should change cartData and redirect to sucess page when all fields are correctly filled", async () => {
     render(<Payment />);
-    fireEvent.change(screen.getByTestId("creditCardNumber"), {
-      target: { value: "1111111111111111" },
+    act(() => {
+      changeInputMaskValue(
+        screen.getByTestId("creditCardNumber"),
+        "1111111111111111"
+      );
     });
-    fireEvent.change(screen.getByTestId("ownerName"), {
-      target: { value: "Teste nome" },
+    act(() => {
+      changeInputMaskValue(screen.getByTestId("ownerName"), "Teste nome");
     });
-    fireEvent.change(screen.getByTestId("validateDate"), {
-      target: { value: "01/2001" },
+    act(() => {
+      changeInputMaskValue(screen.getByTestId("validateDate"), "01/2001");
     });
-    fireEvent.change(screen.getByTestId("securityCode"), {
-      target: { value: "111" },
+    act(() => {
+      changeInputMaskValue(screen.getByTestId("securityCode"), "111");
     });
 
     act(() => {
@@ -65,3 +70,9 @@ describe("Payment page tests", () => {
     });
   });
 });
+
+function changeInputMaskValue(element, value) {
+  element.value = value;
+  element.selectionStart = element.selectionEnd = value.length;
+  TestUtils.Simulate.change(element);
+}
