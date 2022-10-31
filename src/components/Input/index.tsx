@@ -1,4 +1,5 @@
 import React from "react";
+import ReactInputMask from "react-input-mask";
 import { Container, InputMask } from "./styles";
 
 interface IProps {
@@ -7,10 +8,11 @@ interface IProps {
   value?: string;
   dataTestId?: string;
   creditCardNumber?: string;
-  mask?: string | RegExp[];
+  mask: string | RegExp[];
   placeholder?: string;
   error?: boolean;
   helperText?: React.ReactNode;
+  innerRef?: React.Ref<ReactInputMask>;
   onChange: React.ChangeEventHandler<HTMLInputElement | HTMLTextAreaElement>;
 }
 
@@ -23,6 +25,7 @@ const Input = ({
   placeholder,
   error,
   helperText,
+  innerRef,
   onChange,
 }: IProps) => {
   return (
@@ -31,11 +34,12 @@ const Input = ({
       <InputMask
         data-testid={dataTestId}
         name={name}
-        mask={mask || ""}
+        mask={mask}
         value={value}
         placeholder={placeholder}
         error={error}
         onChange={onChange}
+        ref={innerRef}
       />
       <span>{helperText}</span>
     </Container>
