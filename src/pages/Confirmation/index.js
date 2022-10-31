@@ -3,6 +3,7 @@ import React from 'react'
 import { useCart } from '../../hooks/cart'
 
 import NavBar from '../../components/NavBar'
+import Card from '../../components/Card'
 import ProductsList from '../../components/ProductsList'
 import Total from '../../components/Total'
 
@@ -16,6 +17,7 @@ const Confirmation = () => {
       <NavBar actualStep={'confirmation'} />
       <Container>
         <h1>pagamento</h1>
+        <Card>test</Card>
         <h1>produtos</h1>
         <ProductsList items={items} noPrice />
         <Total

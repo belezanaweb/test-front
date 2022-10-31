@@ -1,5 +1,7 @@
 import React, { useState } from 'react'
 
+import { useCreditCard } from '../../hooks/creditCard'
+
 import { StyledInput, StyledLabel, StyledError } from './styles'
 
 const Input = ({
@@ -9,12 +11,11 @@ const Input = ({
   placeholder,
   hasError,
   errorLabel = 'Campo inválido',
-  onValueChange,
   onFocus,
   maskPattern,
   maskDivider = ''
 }) => {
-  const [value, setValue] = useState('')
+  const { formData: value, handleChange } = useCreditCard()
 
   const maskString = (str, pattern) => {
     let i = 0
@@ -44,8 +45,7 @@ const Input = ({
     if (onlyNumbers) str = str.replace(/[A-Za-z]/g, '')
 
     const formattedStr = maskPattern ? maskString(str, maskPattern) : str
-    setValue(formattedStr)
-    onValueChange(name, formattedStr)
+    handleChange(name, formattedStr)
   }
 
   const handleOnBlur = (e) => {}
@@ -55,7 +55,7 @@ const Input = ({
       {label}
       <StyledInput
         name={name}
-        value={value}
+        value={value[name]}
         placeholder={placeholder}
         onChange={handleOnChange}
         onFocus={handleOnFocus}
