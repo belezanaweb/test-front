@@ -28,7 +28,7 @@ const CreditCardForm = ({ formId, formSubmitted }) => {
           isValid = formData.number?.replaceAll('.', '').match(/\d{16}/g)
           break
         case 'name':
-          isValid = formData.name?.match(/^[a-zA-Z]*$/g)
+          isValid = formData.name?.match(/^[a-zA-Z ]{2,30}$/g)
           break
         case 'expiry':
           isValid = formData.expiry?.match(/[0-9/]{7}/g)
