@@ -13,7 +13,8 @@ const Input = ({
   errorLabel = 'Campo inválido',
   onFocus,
   maskPattern,
-  maskDivider = ''
+  maskDivider = '',
+  ...props
 }) => {
   const { formData: value, handleChange } = useCreditCard()
 
@@ -61,6 +62,7 @@ const Input = ({
         onFocus={handleOnFocus}
         onBlur={handleOnBlur}
         error={hasError}
+        {...props}
       />
       {hasError && <StyledError>{errorLabel}</StyledError>}
     </StyledLabel>
