@@ -10,13 +10,6 @@ import { finishPurchase } from "../../services/cart";
 import { useNavigate } from "react-router-dom";
 import { useForm } from "react-hook-form";
 
-interface IFormProps {
-  creditCardNumber: string;
-  ownerName: string;
-  validateDate: string;
-  securityCode: string;
-}
-
 const Payment = () => {
   const { cart, setCart } = useCart();
   const navigate = useNavigate();
