@@ -51,7 +51,7 @@ const Input: React.FC<Props> = ({
 
     let str = e.target.value
 
-    if (onlyNumbers) str = str.replace(/[A-Za-z]/g, '')
+    if (onlyNumbers && str.length > value[name].length && !str.match(/[0-9]$/)) return
 
     const formattedStr = maskPattern ? maskString(str, maskPattern) : str
     handleChange(name, formattedStr)
