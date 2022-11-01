@@ -20,7 +20,7 @@ export const Text = styled.p`
   font-weight: bold;
   text-transform: uppercase;
   color: ${(props) => props.theme.light.colors['--c-one']};
-  ${(props) =>
+  ${(props: { isActualStep: boolean }) =>
     props.isActualStep &&
     css`
       color: ${(props) => props.theme.light.colors['--c-contrast-one']};

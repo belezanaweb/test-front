@@ -30,7 +30,7 @@ export const StyledInput = styled.input`
     color: ${(props) => props.theme.light.colors['--c-base-contrast']};
   }
 
-  ${(props) =>
+  ${(props: { error: boolean }) =>
     props.error &&
     css`
       border-color: ${(props) => props.theme.light.colors['--c-contrast-hover']};

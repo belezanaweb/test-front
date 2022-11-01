@@ -7,13 +7,22 @@ import Input from '../Input'
 
 import { Form, Warper } from './styles'
 
-const CreditCardForm = ({ formId, formSubmitted }) => {
+interface Props {
+  formId: string
+  formSubmitted: () => void
+}
+
+interface Error {
+  [key: string]: any
+}
+
+const CreditCardForm: React.FC<Props>= ({ formId, formSubmitted }) => {
   const { formData } = useCreditCard()
 
-  const [error, setError] = useState({})
+  const [error, setError] = useState<Error>({})
 
-  const handleSubmit = (e) => {
-    e.preventDefault()
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement> | undefined) => {
+    e?.preventDefault()
     if (FormDataIsValid()) formSubmitted()
   }
 
@@ -46,7 +55,7 @@ const CreditCardForm = ({ formId, formSubmitted }) => {
         default:
           break
       }
-      errorObj = { ...errorObj, [data]: !isValid, valid: isValid }
+      errorObj = { ...errorObj, [data]: !isValid, valid: !!isValid }
     })
 
     setError(errorObj)

@@ -1,7 +1,11 @@
 import React from 'react'
 import { Container, Content, Text } from './styles'
 
-const NavBar = ({ actualStep }) => {
+interface Props {
+  actualStep: string
+}
+
+const NavBar: React.FC<Props> = ({ actualStep }) => {
   const steps = [
     ['cart', 'sacola'],
     ['payment', 'pagamento'],

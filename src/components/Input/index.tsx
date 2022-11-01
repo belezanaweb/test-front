@@ -1,22 +1,32 @@
-import React from 'react'
+import React, { InputHTMLAttributes } from 'react'
 
 import { useCreditCard } from '../../hooks/creditCard'
 
 import { StyledInput, StyledLabel, StyledError } from './styles'
 
-const Input = ({
+interface Props extends InputHTMLAttributes<HTMLInputElement> {
+  label: string
+  name: string
+  onlyNumbers?: boolean
+  hasError: boolean
+  errorLabel?: string
+  maskPattern?: string
+  maskDivider?: string
+}
+
+const Input: React.FC<Props> = ({
   label,
   name,
-  onlyNumbers,
+  onlyNumbers = false,
   hasError,
   errorLabel = 'Campo inválido',
   maskPattern,
   maskDivider = '',
   ...props
 }) => {
-  const { formData: value, handleChange } = useCreditCard()
+  const { formData: value, handleChange }:{ formData: { [char: string]: string }, handleChange: (name: string, value: string) => void} = useCreditCard()
 
-  const maskString = (str, pattern) => {
+  const maskString = (str: string, pattern: string) => {
     let i = 0
 
     let slicePattern = pattern.slice(0, str.length)
@@ -36,7 +46,7 @@ const Input = ({
 
   const handleOnFocus = () => {}
 
-  const handleOnChange = (e) => {
+  const handleOnChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     e.preventDefault()
 
     let str = e.target.value
@@ -47,8 +57,6 @@ const Input = ({
     handleChange(name, formattedStr)
   }
 
-  const handleOnBlur = (e) => {}
-
   return (
     <StyledLabel>
       {label}
@@ -57,7 +65,6 @@ const Input = ({
         value={value[name]}
         onChange={handleOnChange}
         onFocus={handleOnFocus}
-        onBlur={handleOnBlur}
         error={hasError}
         {...props}
       />
