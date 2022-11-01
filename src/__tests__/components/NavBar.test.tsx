@@ -4,7 +4,7 @@ import { act } from 'react-dom/test-utils'
 
 import NavBar from '../../components/NavBar'
 
-let container = null
+let container: HTMLDivElement
 
 beforeEach(() => {
   container = document.createElement('div')
@@ -14,17 +14,16 @@ beforeEach(() => {
 afterEach(() => {
   unmountComponentAtNode(container)
   container.remove()
-  container = null
 })
 
 describe('NavBar', () => {
   it('renders steps', () => {
     act(() => {
-      render(<NavBar />, container)
+      render(<NavBar actualStep={'cart'} />, container)
     })
 
     const steps = ['sacola', 'pagamento', 'confirmação']
 
-    expect(steps.every((step) => container.textContent.toLowerCase().includes(step))).toBe(true)
+    expect(steps.every((step) => container?.textContent?.toLowerCase().includes(step))).toBe(true)
   })
 })

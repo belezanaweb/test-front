@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom'
 import App from './App'
 import * as serviceWorker from './serviceWorker'
 
-const Strict = () => (
+const Strict: React.FC = () => (
   <StrictMode>
     <App />
   </StrictMode>
