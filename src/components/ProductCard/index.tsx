@@ -7,10 +7,11 @@ import { Container, Image, Content, Title, Price } from './styles'
 interface Props {
   image: string
   title: string
-  price?: string | boolean
+  price?: number
+  noPrice?: boolean
 }
 
-const ProductCard: React.FC<Props> = ({ image, title, price = false }) => {
+const ProductCard: React.FC<Props> = ({ image, title, price = 0.0, noPrice = false }) => {
   const formatTitle = useMemo(() => {
     const threshold = 70
     let formattedTitle = title
@@ -25,7 +26,7 @@ const ProductCard: React.FC<Props> = ({ image, title, price = false }) => {
       <Image src={image} alt={formatTitle} noPrice={!price} />
       <Content>
         <Title id="title">{formatTitle}</Title>
-        {price && <Price id="price">{formatCurrencyBRL(parseFloat(price as string))}</Price>}
+        {!noPrice && <Price id="price">{formatCurrencyBRL(price)}</Price>}
       </Content>
     </Container>
   )

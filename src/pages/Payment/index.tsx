@@ -6,7 +6,7 @@ import { useCart } from '../../hooks/cart'
 import NavBar from '../../components/NavBar'
 import CreditCardForm from '../../components/CreditCardForm'
 import Total from '../../components/Total'
-import Button from '../../components/Button'
+import { Button } from '../../components/Button'
 
 import { Root, Container, Content } from './styles'
 

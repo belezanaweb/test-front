@@ -12,7 +12,7 @@ interface Item {
     name: string
     imageObjects: Image[]
     priceSpecification: {
-      price: {}
+      price: number
     }
   }
 }
@@ -30,7 +30,8 @@ const ProductsList: React.FC<Props> = ({ items, noPrice = false }) => {
           key={index}
           image={item.product?.imageObjects[0]?.small}
           title={item.product?.name}
-          price={!noPrice ?? item.product?.priceSpecification.price}
+          price={item.product?.priceSpecification.price}
+          noPrice={noPrice}
         />
       ))}
     </Card>

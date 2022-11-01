@@ -6,7 +6,7 @@ import { useCart } from '../../hooks/cart'
 import NavBar from '../../components/NavBar'
 import ProductsList from '../../components/ProductsList'
 import Total from '../../components/Total'
-import Button from '../../components/Button'
+import { Button } from '../../components/Button'
 
 import { Root, Container, Content } from './styles'
 
@@ -15,7 +15,7 @@ const Cart: React.FC = () => {
 
   const { items, totalData } = useCart()
 
-  function handleClick() {
+  const handleClick = () => {
     navigate('/pagamento')
   }
 

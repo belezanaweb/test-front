@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 
-export const StyledButton = styled.button`
+export const Button = styled.button`
   width: 100%;
   background-color: ${(props) => props.theme.light.colors['--c-contrast-two']};
   border: none;

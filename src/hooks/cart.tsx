@@ -23,7 +23,7 @@ interface Item {
     name: string
     imageObjects: Image[]
     priceSpecification: {
-      price: {}
+      price: number
     }
   }
 }
