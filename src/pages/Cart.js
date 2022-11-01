@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from 'react'
 // import MyContext from '../Context/MyContext'
 import Product from '../Components/Product'
+import Header from '../Components/Header'
+import Total from '../Components/Total'
 
 function Cart() {
   const [cart, setCart] = useState(null)
@@ -15,8 +17,6 @@ function Cart() {
     cart()
   }, [])
 
-  // console.log(cart.items[0].product.name);
-
   if (!cart) {
     return <div>Loading</div>
   }
@@ -24,22 +24,22 @@ function Cart() {
   return (
     <div>
       <header>
-        <nav>
-          <ul>
-            <li>Sacola</li>
-            <li>Pagamento</li>
-            <li>Confirmação</li>
-          </ul>
-        </nav>
+        <Header />
       </header>
       <main>
-        {cart.items.map((item) => (
-          <Product name={item.product.name} image={item.product.imageObjects[0].thumbnail} />
-        ))}
+        <div>
+          PRODUTOS
+          {cart.items.map((item) => (
+            <Product
+              name={item.product.name}
+              image={item.product.imageObjects[0].thumbnail}
+              price={`R$ ${item.product.priceSpecification.price}`}
+            />
+          ))}
+        </div>
+        <Total />
+        <button>SEGUIR PARA O PAGAMENTO</button>
       </main>
-      {/* <ul>
-        { aqui.map((dado) => <li key={ dado.id }>{dado}</li>)}
-      </ul> */}
     </div>
   )
 }

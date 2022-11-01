@@ -1,18 +1,19 @@
 import Header from '../Components/Header'
+import Product from '../Components/Product'
 import Total from '../Components/Total'
 
-export default function Payment() {
+export default function Confirmation9() {
   return (
     <div>
       <header>
         <Header />
       </header>
       <section>
-        CARTÃO DE CRÉDITO
-        <form></form>
+        <Product />
       </section>
-      <Total />
-      <button>FINALIZAR O PEDIDO</button>
+      <section>
+        <Total />
+      </section>
     </div>
   )
 }

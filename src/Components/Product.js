@@ -1,9 +1,10 @@
-function Product({ name, image }) {
+function Product({ name, image, price }) {
   console.log(name)
   return (
     <div>
       <p>{name} </p>
       <img alt={name} src={image} />
+      <p>{price}</p>
     </div>
   )
 }
