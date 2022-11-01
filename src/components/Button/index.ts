@@ -1,4 +1,4 @@
-import styled from 'styled-components'
+import styled, { css } from 'styled-components'
 
 export const Button = styled.button`
   width: 100%;
@@ -16,4 +16,14 @@ export const Button = styled.button`
   text-transform: uppercase;
   text-decoration: none;
   text-align: center;
+
+  &:hover {
+    background-color: ${(props) => props.theme.light.colors['--c-contrast-tree']};
+  }
+
+  ${(props: { disabled?: boolean }) =>
+    props.disabled &&
+    css`
+      background-color: ${(props) => props.theme.light.colors['--c-contrast-tree']};
+    `}
 `
