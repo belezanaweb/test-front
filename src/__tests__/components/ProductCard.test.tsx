@@ -2,6 +2,8 @@ import React from 'react'
 import { render, unmountComponentAtNode } from 'react-dom'
 import { act } from 'react-dom/test-utils'
 
+import { TestProvider } from '../../hooks'
+
 import ProductCard from '../../components/ProductCard'
 
 let container: HTMLDivElement
@@ -12,14 +14,19 @@ beforeEach(() => {
 })
 
 afterEach(() => {
-  unmountComponentAtNode(container as HTMLDivElement)
+  unmountComponentAtNode(container)
   container.remove()
 })
 
 describe('ProductCard', () => {
   it('should render price', () => {
     act(() => {
-      render(<ProductCard image={'test'} title={'test'} price={'2.00'} />, container)
+      render(
+        <TestProvider>
+          <ProductCard image={'test'} title={'test'} price={'2.00'} />
+        </TestProvider>,
+        container
+      )
     })
 
     expect(container?.querySelector('#price')?.innerHTML).toBe('R$&nbsp;2,00')
@@ -28,7 +35,13 @@ describe('ProductCard', () => {
   it('should render small title', () => {
     act(() => {
       render(
-        <ProductCard title={'Senscience Inner Restore Intensif - Máscara Capilar 50ml'} image={'test'} />,
+        <TestProvider>
+          <ProductCard
+            title={'Senscience Inner Restore Intensif - Máscara Capilar 50ml'}
+            image={'test'}
+          />
+          ,
+        </TestProvider>,
         container
       )
     })
@@ -41,12 +54,14 @@ describe('ProductCard', () => {
   it('should shorten large title', () => {
     act(() => {
       render(
-        <ProductCard
-          title={
-            "L'Oréal Professionnel Expert Absolut Repair Cortex Lipidium - Máscara de Reconstrução 500g"
-          }
-          image={'test'}
-        />,
+        <TestProvider>
+          <ProductCard
+            title={
+              "L'Oréal Professionnel Expert Absolut Repair Cortex Lipidium - Máscara de Reconstrução 500g"
+            }
+            image={'test'}
+          />
+        </TestProvider>,
         container
       )
     })

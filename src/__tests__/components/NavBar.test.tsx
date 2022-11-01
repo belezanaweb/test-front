@@ -2,6 +2,8 @@ import React from 'react'
 import { render, unmountComponentAtNode } from 'react-dom'
 import { act } from 'react-dom/test-utils'
 
+import { TestProvider } from '../../hooks'
+
 import NavBar from '../../components/NavBar'
 
 let container: HTMLDivElement
@@ -19,7 +21,12 @@ afterEach(() => {
 describe('NavBar', () => {
   it('renders steps', () => {
     act(() => {
-      render(<NavBar actualStep={'cart'} />, container)
+      render(
+        <TestProvider>
+          <NavBar actualStep={'cart'} />
+        </TestProvider>,
+        container
+      )
     })
 
     const steps = ['sacola', 'pagamento', 'confirmação']
