@@ -54,7 +54,7 @@ const CartProvider: React.FC<Props> = ({ children }) => {
   })
 
   useEffect(() => {
-    requestAPI({ url: 'http://www.mocky.io/v2/5b15c4923100004a006f3c07' }).then((resp: Resp | undefined) => {
+    requestAPI({ url: process.env.GB_URL as string }).then((resp: Resp | undefined) => {
       if (resp?.data) {
         setItems(resp?.data?.items || [])
         setTotalData({
