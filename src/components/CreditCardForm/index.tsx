@@ -57,7 +57,7 @@ const CreditCardForm: React.FC<Props> = ({ formId, formSubmitted }) => {
           isValid = cardBrands.some((regex) => formattedStr.match(regex[1]))
           break
         case 'name':
-          isValid = formData.name?.match(/^[a-zA-Z]{2,30}$/g)
+          isValid = formData.name?.match(/^[a-zA-Z ]{2,30}$/g)
           break
         case 'expiry':
           const today = new Date()
