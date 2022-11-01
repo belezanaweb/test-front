@@ -13,7 +13,7 @@ interface Props {
 }
 
 interface Error {
-  [key: string]: any
+  [key: string]: boolean
 }
 
 const CreditCardForm: React.FC<Props>= ({ formId, formSubmitted }) => {
@@ -27,7 +27,7 @@ const CreditCardForm: React.FC<Props>= ({ formId, formSubmitted }) => {
   }
 
   const FormDataIsValid = useCallback(() => {
-    let errorObj = { valid: false }
+    let errorObj = { valid: true }
 
     Object.keys(formData).forEach((data) => {
       let isValid
@@ -55,7 +55,7 @@ const CreditCardForm: React.FC<Props>= ({ formId, formSubmitted }) => {
         default:
           break
       }
-      errorObj = { ...errorObj, [data]: !isValid, valid: !!isValid }
+      errorObj = { ...errorObj, [data]: !isValid, valid: errorObj.valid && !!isValid }
     })
 
     setError(errorObj)
