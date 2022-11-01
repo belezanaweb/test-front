@@ -8,22 +8,23 @@ import ProductCard from '../../components/ProductCard'
 
 let container: HTMLDivElement
 
-beforeEach(() => {
-  container = document.createElement('div')
-  document.body.appendChild(container)
-})
-
-afterEach(() => {
-  unmountComponentAtNode(container)
-  container.remove()
-})
-
 describe('ProductCard', () => {
+
+  beforeEach(() => {
+    container = document.createElement('div')
+    document.body.appendChild(container)
+  })
+
+  afterEach(() => {
+    unmountComponentAtNode(container)
+    container.remove()
+  })
+
   it('should render price', () => {
     act(() => {
       render(
         <TestProvider>
-          <ProductCard image={'test'} title={'test'} price={'2.00'} />
+          <ProductCard image={'test'} title={'test'} price={2.00} />
         </TestProvider>,
         container
       )

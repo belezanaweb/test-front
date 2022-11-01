@@ -58,7 +58,7 @@ const Input: React.FC<Props> = ({
   }
 
   return (
-    <StyledLabel>
+    <StyledLabel id={'label'}>
       {label}
       <StyledInput
         name={name}

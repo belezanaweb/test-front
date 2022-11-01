@@ -8,17 +8,18 @@ import NavBar from '../../components/NavBar'
 
 let container: HTMLDivElement
 
-beforeEach(() => {
-  container = document.createElement('div')
-  document.body.appendChild(container)
-})
-
-afterEach(() => {
-  unmountComponentAtNode(container)
-  container.remove()
-})
-
 describe('NavBar', () => {
+
+  beforeEach(() => {
+    container = document.createElement('div')
+    document.body.appendChild(container)
+  })
+
+  afterEach(() => {
+    unmountComponentAtNode(container)
+    container.remove()
+  })
+
   it('renders steps', () => {
     act(() => {
       render(

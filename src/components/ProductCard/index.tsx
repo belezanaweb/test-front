@@ -25,7 +25,7 @@ const ProductCard: React.FC<Props> = ({ image, title, price = 0.0, noPrice = fal
     <Container>
       <Image src={image} alt={formatTitle} noPrice={!price} />
       <Content>
-        <Title id="title">{formatTitle}</Title>
+        <Title id={'title'}>{formatTitle}</Title>
         {!noPrice && <Price id="price">{formatCurrencyBRL(price)}</Price>}
       </Content>
     </Container>
