@@ -3,8 +3,9 @@ import React, { useEffect, useState } from 'react'
 import Product from '../Components/Product'
 import Header from '../Components/Header'
 import Total from '../Components/Total'
+import { useNavigate } from 'react-router-dom'
 
-function Cart() {
+export default function Cart() {
   const [cart, setCart] = useState(null)
 
   useEffect(() => {
@@ -16,6 +17,11 @@ function Cart() {
     }
     cart()
   }, [])
+
+  const navigate = useNavigate()
+  const goToPayment = () => {
+    navigate('/payment')
+  }
 
   if (!cart) {
     return <div>Loading</div>
@@ -38,10 +44,8 @@ function Cart() {
           ))}
         </div>
         <Total />
-        <button>SEGUIR PARA O PAGAMENTO</button>
+        <button onClick={goToPayment}>SEGUIR PARA O PAGAMENTO</button>
       </main>
     </div>
   )
 }
-
-export default Cart

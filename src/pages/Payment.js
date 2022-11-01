@@ -1,7 +1,12 @@
+import { useNavigate } from 'react-router-dom'
 import Header from '../Components/Header'
 import Total from '../Components/Total'
 
 export default function Payment() {
+  const navigate = useNavigate()
+  const goToConfirmation = () => {
+    navigate('/confirmation')
+  }
   return (
     <div>
       <header>
@@ -12,7 +17,7 @@ export default function Payment() {
         <form></form>
       </section>
       <Total />
-      <button>FINALIZAR O PEDIDO</button>
+      <button onClick={goToConfirmation}>FINALIZAR O PEDIDO</button>
     </div>
   )
 }
