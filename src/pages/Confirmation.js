@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
-import Header from '../Components/Header'
 import Product from '../Components/Product'
 import Total from '../Components/Total'
+import styles from './Confirmation.module.css'
 
 export default function Confirmation() {
   const [product, setProduct] = useState(null)
@@ -22,7 +22,11 @@ export default function Confirmation() {
   return (
     <div>
       <header>
-        <Header />
+        <ul className={styles.header}>
+          <li>SACOLA</li>
+          <li>PAGAMENTO</li>
+          <li className={styles.cart}>CONFIRMAÇÃO</li>
+        </ul>
       </header>
       <main>
         <div>COMPRA EFETUADA COM SUCESSO</div>

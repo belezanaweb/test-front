@@ -75,3 +75,19 @@ body {
 .total {
   margin-bottom: 10px;
 }
+
+.header {
+  background-color: #ffffff;
+  font-size: 15px;
+  font-weight: bold;
+  color: #cccccc;
+  display: flex;
+  justify-content: space-around;
+  list-style: none;
+  padding: 12px;
+  box-shadow: 0.5px 0.5px 15px #999898;
+}
+
+.cart {
+  color: #ff7800;
+}

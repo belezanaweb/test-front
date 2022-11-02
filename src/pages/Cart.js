@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react'
 import Product from '../Components/Product'
-import Header from '../Components/Header'
 import Total from '../Components/Total'
 import { useNavigate } from 'react-router-dom'
 import styles from './Cart.module.css'
@@ -29,7 +28,11 @@ export default function Cart() {
   return (
     <div>
       <header>
-        <Header />
+        <ul className={styles.header}>
+          <li className={styles.cart}>SACOLA</li>
+          <li>PAGAMENTO</li>
+          <li>CONFIRMAÇÃO</li>
+        </ul>
       </header>
       <main className={styles.main}>
         <p className={styles.title}>PRODUTOS</p>

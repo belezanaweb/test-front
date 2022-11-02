@@ -1,5 +1,4 @@
 import { useNavigate } from 'react-router-dom'
-import Header from '../Components/Header'
 import Total from '../Components/Total'
 import styles from './Payment.module.css'
 
@@ -12,7 +11,11 @@ export default function Payment() {
   return (
     <div>
       <header>
-        <Header />
+        <ul className={styles.header}>
+          <li>SACOLA</li>
+          <li className={styles.cart}>PAGAMENTO</li>
+          <li>CONFIRMAÇÃO</li>
+        </ul>
       </header>
       <p className={styles.title}>CARTÃO DE CRÉDITO</p>
       <form className={styles.form}>
