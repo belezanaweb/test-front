@@ -41,6 +41,14 @@ const CreditCardProvider: React.FC<Props> = ({ children }) => {
     setFormData({ ...formData, [name]: value })
   }
 
+  useEffect(() => {
+    const localStorageData = localStorage.getItem('@test:formData');
+
+    if(localStorageData) {
+      setFormData(JSON.parse(localStorageData) )
+    }
+  }, [])
+
   const cardBrands = useMemo(() => [
     ["Amex Card", /^3[47][0-9]{13}$/],
     ["BCGlobal", /^(6541|6556)[0-9]{12}$/],
@@ -95,6 +103,7 @@ const CreditCardProvider: React.FC<Props> = ({ children }) => {
 
     setFormIsValid(isFormValid)
     setError(errorObj)
+    localStorage.setItem('@test:formData', JSON.stringify(formData));
   }, [formData])
 
   return (
