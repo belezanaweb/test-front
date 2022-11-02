@@ -40,6 +40,8 @@ No seu navegador acesse: [http://localhost:3000/](http://localhost:3000/)
 
   - A aplicação foi desenvolvida seguindo todos os valores de cores, tamanhos de fonte e espaçamentos presentes no Handoff.
 
+  - Atenção aos detalhes. Por exemplo o componente que exibe os produtos tem o testo encurtado quando ultrapassa um determinado tamanho.
+
 
 ✅ A aplicação responsiva, utilizando o conceito de mobile-first. 
 
@@ -75,7 +77,7 @@ No seu navegador acesse: [http://localhost:3000/](http://localhost:3000/)
 
   - A tela de confirmação/sucesso só é exibida caso os dados do formulário sejam válidos. Caso contrário o usuário é redirecionado para a página de pagamento;
   
-### Diferenciais:
+### ✅ Diferenciais:
   - ✅ Código limpo e organizado por atribuições;
   - ✅ Mensagens e commits em inglês. Trabalho feito com micro commits;
   - ✅ Componentes reutilizáveis;
@@ -83,4 +85,8 @@ No seu navegador acesse: [http://localhost:3000/](http://localhost:3000/)
   - ✅ Split bundle por rota com React Lazy loading;
   - ✅ CSS in JS com a biblioteca styled-components;
   - ✅ React;
+
+### PLUS!:
   - ✅ TypeScript;
+  - ✅ ENV para armazenar as variáveis de ambiente;
+  - ✅ Tema de cores e reaproveitamento de estilos usando styled-components;
