@@ -86,7 +86,7 @@ No seu navegador acesse: [http://localhost:3000/](http://localhost:3000/)
   - ✅ CSS in JS com a biblioteca styled-components;
   - ✅ React;
 
-### PLUS!:
-  - ✅ TypeScript;
+### 🔥 PLUS!:
+  - 💙 TypeScript;
   - ✅ ENV para armazenar as variáveis de ambiente;
   - ✅ Tema de cores e reaproveitamento de estilos usando styled-components;
