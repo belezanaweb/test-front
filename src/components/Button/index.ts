@@ -1,4 +1,4 @@
-import styled, { css } from 'styled-components'
+import styled from 'styled-components'
 
 export const Button = styled.button`
   width: 100%;
@@ -21,9 +21,7 @@ export const Button = styled.button`
     background-color: ${(props) => props.theme.light.colors['--c-contrast-tree']};
   }
 
-  ${(props: { disabled?: boolean }) =>
-    props.disabled &&
-    css`
-      background-color: ${(props) => props.theme.light.colors['--c-contrast-tree']};
-    `}
+  &:disabled {
+    background-color: ${(props) => props.theme.light.colors['--c-contrast-tree']};
+  }
 `
