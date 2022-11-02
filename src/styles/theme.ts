@@ -39,8 +39,8 @@ const ThemeContainer = styled.div`
   display: flex;
   flex: 1;
   @media (min-width: 450px) {
-    align-items: center;
     justify-content: center;
+    padding: 30px;
   }
 `
 
