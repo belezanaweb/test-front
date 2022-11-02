@@ -1,14 +1,24 @@
-import React, { useContext } from 'react'
+import React, { useState, useEffect } from 'react'
 import Header from '../Components/Header'
 import Product from '../Components/Product'
 import Total from '../Components/Total'
-import Context from '../Context/Context'
-// import PropTypes from 'prop-types'
 
 export default function Confirmation() {
-  const { cart } = useContext(Context)
+  const [product, setProduct] = useState(null)
 
-  console.log(cart)
+  useEffect(() => {
+    const product = async () => {
+      const url = await fetch('http://www.mocky.io/v2/5b15c4923100004a006f3c07')
+      const data = await url.json()
+      setProduct(data)
+    }
+    product()
+  }, [])
+
+  if (!product) {
+    return <div>Loading</div>
+  }
+
   return (
     <div>
       <header>
@@ -22,12 +32,9 @@ export default function Confirmation() {
         </div>
         <div>
           PRODUTOS {<Product />}
-          {/* {cart.items.map((item) => (
-                        <Product
-                            name={item.product.name}
-                            image={item.product.imageObjects[0].thumbnail}
-                        />
-                    ))} */}
+          {product.items.map((item) => (
+            <Product name={item.product.name} image={item.product.imageObjects[0].thumbnail} />
+          ))}
         </div>
         <section>
           <Total />
@@ -36,5 +43,3 @@ export default function Confirmation() {
     </div>
   )
 }
-
-// Confirmation.propTypes = { cart: PropTypes.isRequired }

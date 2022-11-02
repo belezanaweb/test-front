@@ -1,0 +1,14 @@
+* {
+  /* background-color: #EEEEEE; */
+}
+
+.produtos {
+  padding: 30px;
+  margin-top: 10px;
+  align-items: center;
+  border: solid black;
+}
+
+.produto {
+  border: red;
+}

@@ -1,17 +1,17 @@
-import React, { useState } from 'react'
-// import Context from '../Context/Context';
+import React from 'react'
 
 export default function Total() {
-  // const { cart } = useContext(Context);
-  const teste = useState(10)
-  // console.log(cart.items);
+  const price = 'R$ 624,80'
+  const frete = 'R$ 5,30'
+  const desconto = '-R$ 30,00'
+  const total = 'R$ 600,10'
 
   return (
     <section>
-      <p>PRODUTOS</p>
-      <p>FRETE</p>
-      <p>DESCONTO</p>
-      <p>TOTAL{teste} </p>
+      <p>PRODUTOS {price}</p>
+      <p>FRETE {frete}</p>
+      <p>DESCONTO {desconto}</p>
+      <p>TOTAL {total}</p>
     </section>
   )
 }
