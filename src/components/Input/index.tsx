@@ -44,8 +44,6 @@ const Input: React.FC<Props> = ({
     return padded
   }
 
-  const handleOnFocus = () => {}
-
   const handleOnChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     e.preventDefault()
 
@@ -65,7 +63,6 @@ const Input: React.FC<Props> = ({
         name={name}
         value={value[name]}
         onChange={handleOnChange}
-        onFocus={handleOnFocus}
         error={hasError}
         {...props}
       />
