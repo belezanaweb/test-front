@@ -1,5 +1,6 @@
 ## Frontend Test - Antonio Thiele
 
+🚀 Projeto disponível em [https://market-checkout.netlify.app/](https://market-checkout.netlify.app/)
 ## 💻 Configurando o projeto
 
 > 💡 Esse projeto depende do Node 16.17.0
