@@ -20,6 +20,7 @@ const Confirmation: React.FC = () => {
 
   useEffect(() => {
     if(!formIsValid) navigate('/pagamento')
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 
   return (
