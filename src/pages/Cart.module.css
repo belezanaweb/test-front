@@ -1,22 +1,44 @@
 * {
-  /* background-color: #EEEEEE; */
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: #eeeeee;
 }
 
 .produtos {
   padding: 0px;
-  margin: 10px;
+  margin: 0 auto;
+  width: 90%;
+  margin-bottom: 20px;
+  justify-content: center;
   align-items: center;
-  border: solid black;
+  border: solid #eeeeeefa;
   border-radius: 5px;
+  background-color: #ffffff;
+  box-shadow: 1px 3px 5px #c2c0c0fa;
 }
 
 .produto {
-  border: red;
+  margin: 1 auto;
+  font-size: 13px;
+  display: flex;
+  /* margin: 10px; */
+  width: 100%;
+  padding: 0px;
+  justify-content: center;
+  background-color: #ffffff;
+  display: inline-flex;
 }
 
 .title {
   padding-top: 15px;
-  padding-left: 20px;
+  padding-left: 40px;
+  margin: 0 auto;
+  justify-content: center;
+  /* display: flex; */
+  /* margin: 10px; */
   /* margin-bottom: 10px; */
   font-weight: bolder;
   color: #999999;
@@ -24,15 +46,32 @@
 
 .button {
   padding: 20px;
+  /* margin-top: 10px; */
+  margin: 0 auto;
+  margin-bottom: 30px;
+  /* align-items: center; */
   font-weight: bolder;
   border-style: outset;
   font-size: 20px;
-  margin: 10px;
   display: flex;
   background-color: #ff6c00;
   color: #fff6ef;
-  width: 94%;
+  width: 90%;
   justify-content: center;
   border: none;
   border-radius: 3px;
+  box-shadow: 0.5px 0.5px 10px #999898;
+}
+
+/* .btn {
+  padding: 10px;
+  margin: 10px;
+  align-items: center;
+  border: solid black;
+  border-radius: 5px;
+  width: 90%;
+} */
+
+.total {
+  margin-bottom: 10px;
 }

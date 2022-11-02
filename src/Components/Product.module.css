@@ -2,7 +2,8 @@
   padding: 10px;
   width: 85%;
   margin: 10px;
-  background-color: white;
-  border: solid grey;
-  border-radius: 5px;
+  background-color: #ffffff;
+  border: solid #eeeeeefa;
+  border-radius: 3px;
+  border-width: 1px;
 }

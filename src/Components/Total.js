@@ -17,11 +17,11 @@ export default function Total() {
         <p>FRETE</p>
         <p>{frete}</p>
       </div>
-      <div className={styles.product}>
+      <div className={styles.discount}>
         <p>DESCONTO</p>
         <p>{desconto}</p>
       </div>
-      <div className={styles.product}>
+      <div className={styles.subtotal}>
         <p>TOTAL</p>
         <p>{total}</p>
       </div>

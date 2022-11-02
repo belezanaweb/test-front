@@ -31,7 +31,7 @@ export default function Cart() {
       <header>
         <Header />
       </header>
-      <main>
+      <main className={styles.main}>
         <p className={styles.title}>PRODUTOS</p>
         <div className={styles.produtos}>
           <label>
@@ -46,10 +46,15 @@ export default function Cart() {
             ))}
           </label>
         </div>
-        <Total />
-        <button className={styles.button} onClick={goToPayment}>
-          SEGUIR PARA O PAGAMENTO
-        </button>
+        <div className={styles.total}>
+          <Total />
+        </div>
+        <div>
+          <button className={styles.button} onClick={goToPayment}>
+            SEGUIR PARA O PAGAMENTO
+          </button>
+        </div>
+        <footer className={styles.footer}></footer>
       </main>
     </div>
   )
