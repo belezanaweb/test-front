@@ -37,7 +37,6 @@ interface Resp {
     subTotal: number
     shippingTotal: number
     discount: number
-    total: number
     items?: Item[]
   }
 }
@@ -53,6 +52,10 @@ const CartProvider: React.FC<Props> = ({ children }) => {
     total: 0
   })
 
+  const calcTotalData = (subTotal: number, shipping: number, discount: number) => {
+    return (subTotal + shipping) - discount
+  }
+
   useEffect(() => {
     requestAPI({ url: process.env.REACT_APP_GB_URL as string }).then((resp: Resp | undefined) => {
       if (resp?.data) {
@@ -61,7 +64,7 @@ const CartProvider: React.FC<Props> = ({ children }) => {
           subTotal: resp?.data.subTotal,
           shippingTotal: resp?.data.shippingTotal,
           discount: resp?.data.discount,
-          total: resp?.data.total
+          total: calcTotalData(resp?.data.subTotal, resp?.data.shippingTotal, resp?.data.discount)
         })
       }
     })
