@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react'
-// import MyContext from '../Context/MyContext'
 import Product from '../Components/Product'
 import Header from '../Components/Header'
 import Total from '../Components/Total'
@@ -12,7 +11,7 @@ export default function Cart() {
     const cart = async () => {
       const url = await fetch('http://www.mocky.io/v2/5b15c4923100004a006f3c07')
       const data = await url.json()
-      console.log(data)
+      // console.log(data)
       setCart(data)
     }
     cart()
@@ -22,7 +21,7 @@ export default function Cart() {
   const goToPayment = () => {
     navigate('/payment')
   }
-
+  // console.log(cart);
   if (!cart) {
     return <div>Loading</div>
   }
@@ -43,6 +42,7 @@ export default function Cart() {
             />
           ))}
         </div>
+        {/* <p>{dados1}</p> */}
         <Total />
         <button onClick={goToPayment}>SEGUIR PARA O PAGAMENTO</button>
       </main>

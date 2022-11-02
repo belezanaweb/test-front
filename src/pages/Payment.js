@@ -7,15 +7,13 @@ export default function Payment() {
   const goToConfirmation = () => {
     navigate('/confirmation')
   }
+
   return (
     <div>
       <header>
         <Header />
       </header>
-      <section>
-        CARTÃO DE CRÉDITO
-        <form></form>
-      </section>
+      <section>CARTÃO DE CRÉDITO</section>
       <Total />
       <button onClick={goToConfirmation}>FINALIZAR O PEDIDO</button>
     </div>

@@ -2,11 +2,11 @@ import React, { useContext } from 'react'
 import Header from '../Components/Header'
 import Product from '../Components/Product'
 import Total from '../Components/Total'
-import MyContext from '../Context/MyContext'
-import PropTypes from 'prop-types'
+import Context from '../Context/Context'
+// import PropTypes from 'prop-types'
 
 export default function Confirmation() {
-  const { cart } = useContext(MyContext)
+  const { cart } = useContext(Context)
 
   console.log(cart)
   return (
@@ -37,4 +37,4 @@ export default function Confirmation() {
   )
 }
 
-Confirmation.propTypes = { cart: PropTypes.isRequired }
+// Confirmation.propTypes = { cart: PropTypes.isRequired }
