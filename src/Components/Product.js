@@ -1,6 +1,6 @@
 import styles from './Product.module.css'
 function Product({ name, image, price }) {
-  console.log(name)
+  // console.log(name)
   return (
     <div className={styles.div}>
       <p>{name} </p>

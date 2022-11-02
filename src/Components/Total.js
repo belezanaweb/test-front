@@ -9,10 +9,22 @@ export default function Total() {
 
   return (
     <section className={styles.total}>
-      <p>PRODUTOS {price}</p>
-      <p>FRETE {frete}</p>
-      <p>DESCONTO {desconto}</p>
-      <p>TOTAL {total}</p>
+      <div className={styles.product}>
+        <p>PRODUTOS</p>
+        <p>{price}</p>
+      </div>
+      <div className={styles.product}>
+        <p>FRETE</p>
+        <p>{frete}</p>
+      </div>
+      <div className={styles.product}>
+        <p>DESCONTO</p>
+        <p>{desconto}</p>
+      </div>
+      <div className={styles.product}>
+        <p>TOTAL</p>
+        <p>{total}</p>
+      </div>
     </section>
   )
 }

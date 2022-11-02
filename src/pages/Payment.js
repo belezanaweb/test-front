@@ -1,6 +1,7 @@
 import { useNavigate } from 'react-router-dom'
 import Header from '../Components/Header'
 import Total from '../Components/Total'
+import styles from './Payment.module.css'
 
 export default function Payment() {
   const navigate = useNavigate()
@@ -13,11 +14,12 @@ export default function Payment() {
       <header>
         <Header />
       </header>
-      <section>CARTÃO DE CRÉDITO</section>
-      <form>
-        <label>
+      <p className={styles.title}>CARTÃO DE CRÉDITO</p>
+      <form className={styles.form}>
+        <label className={styles.cardName}>
           Número do cartão
           <input
+            className={styles.input}
             id="numero"
             name="numero"
             placeholder="_ _ _ _ - _ _ _ _ - _ _ _ _ - _ _ _ _ "
@@ -25,20 +27,27 @@ export default function Payment() {
         </label>
         <label>
           Nome do Titular
-          <input id="nome" name="nome" placeholder="Como no cartão"></input>
+          <input
+            className={styles.input}
+            id="nome"
+            name="nome"
+            placeholder="Como no cartão"
+          ></input>
         </label>
         <label>
           Validade (mês/ano)
-          <input id="data" name="data" placeholder="_ _ / _ _ _ _"></input>
+          <input className={styles.input} id="data" name="data" placeholder="_ _ / _ _ _ _"></input>
         </label>
         <label>
           CVV:
-          <input id="numero" name="numero" placeholder="_ _ _"></input>
+          <input className={styles.input} id="numero" name="numero" placeholder="_ _ _"></input>
         </label>
       </form>
-      <p>PRODUTOS</p>
+      {/* <p>PRODUTOS</p> */}
       <Total />
-      <button onClick={goToConfirmation}>FINALIZAR O PEDIDO</button>
+      <button className={styles.button} onClick={goToConfirmation}>
+        FINALIZAR O PEDIDO
+      </button>
     </div>
   )
 }

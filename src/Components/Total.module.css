@@ -3,4 +3,10 @@
   padding: 10px;
   margin: 10px;
   border-radius: 5px;
+  width: 88%;
+}
+
+.product {
+  display: flex;
+  justify-content: space-between;
 }
