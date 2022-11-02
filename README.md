@@ -11,7 +11,6 @@ nvm use 16
 Clone o projeto
 ```
 git clone https://github.com/antoniocarlos/test-front.git
-
 ```
 Acesse a pasta do projeto
 ``` 
@@ -33,22 +32,22 @@ Rodando o projeto
 yarn start
 ```
 
-No seu navegador acesse: http://localhost:3000/
-Se estiver com preguiça clique ([aqui](http://localhost:3000/) 
+No seu navegador acesse: [http://localhost:3000/](http://localhost:3000/) 
 
 ### ✅ Requerimentos
 
-✅ Pixel perfect ([nesse link](https://projects.invisionapp.com/prototype/font-test-cji0j0khf005c1t0132358e8k) 
+✅ Pixel perfect [Handoff](https://projects.invisionapp.com/prototype/font-test-cji0j0khf005c1t0132358e8k) 
 
-A aplicação foi desenvolvida seguindo todos os valores de cores, tamanhos de fonte e espaçamentos presentes no Handoff.
+  - A aplicação foi desenvolvida seguindo todos os valores de cores, tamanhos de fonte e espaçamentos presentes no Handoff.
+
 
 ✅ A aplicação responsiva, utilizando o conceito de mobile-first. 
 
-Por meio de media queries o layout se ajusta para telas maiores.
+  - Por meio de media queries o layout se ajusta para telas maiores.
 
 ✅ Renderize cada passo em uma URL única (lib de rotas).
 
-Usando o recurso de lazy loading do React os componentes tem o seu carregamento dividido por rotas.
+  - Usando o recurso de lazy loading do React os componentes tem o seu carregamento dividido por rotas.
 
 ### ✅ Passo 1 - Carrinho:
 
@@ -78,10 +77,17 @@ Usando o recurso de lazy loading do React os componentes tem o seu carregamento 
   
 ### Diferenciais:
   ✅ Código limpo e organizado por atribuições;
+
   ✅ Mensagens e commits em inglês. Trabalho feito com micro commits;
+
   ✅ Componentes reutilizáveis;
+
   ✅ Testes unitários;
-  ✅ Split bundle por rota com React Lazy loading
-  ✅ CSS in JS com a biblioteca styled-components
-  ✅ React
-  ✅ TypeScript
+
+  ✅ Split bundle por rota com React Lazy loading;
+
+  ✅ CSS in JS com a biblioteca styled-components;
+
+  ✅ React;
+
+  ✅ TypeScript;
