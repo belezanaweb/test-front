@@ -1,4 +1,5 @@
-import React from 'react'
+import React, { useEffect } from 'react'
+import { useNavigate } from 'react-router-dom'
 
 import { useCreditCard } from '../../hooks/creditCard'
 import { useCart } from '../../hooks/cart'
@@ -13,8 +14,13 @@ import Success from '../../assets/success.png'
 import { Root, Container, Content, Warper, SuccessWarper, PaymentContainer } from './styles'
 
 const Confirmation: React.FC = () => {
-  const { formData } = useCreditCard()
+  const navigate = useNavigate()
+  const { formData, formIsValid } = useCreditCard()
   const { items, totalData } = useCart()
+
+  useEffect(() => {
+    if(!formIsValid) navigate('/pagamento')
+  }, [])
 
   return (
     <Root>
