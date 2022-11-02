@@ -34,7 +34,7 @@ export default function Cart() {
           <li>CONFIRMAÇÃO</li>
         </ul>
       </header>
-      <main className={styles.main}>
+      <main>
         <p className={styles.title}>PRODUTOS</p>
         <div className={styles.produtos}>
           <label>

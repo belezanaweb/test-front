@@ -8,28 +8,38 @@
 
 .button {
   padding: 20px;
+  /* margin-top: 10px; */
+  margin: 0 auto;
+  margin-bottom: 15px;
+  /* align-items: center; */
   font-weight: bolder;
   border-style: outset;
   font-size: 20px;
-  margin: 10px;
   display: flex;
   background-color: #ff6c00;
   color: #fff6ef;
-  width: 94%;
+  width: 90%;
   justify-content: center;
   border: none;
   border-radius: 3px;
+  box-shadow: 0.5px 0.5px 10px #999898;
 }
 
 .form {
 }
 
 .form {
-  padding: 10px;
-  margin: 10px;
+  padding: 0px;
+  margin: 0 auto;
+  width: 90%;
   align-items: center;
-  border: solid black;
+  border: solid #eeeeeefa;
   border-radius: 5px;
+  height: 45vh;
+  align-content: space-between;
+  background-color: #ffffff;
+  box-shadow: 1px 3px 5px #c2c0c0fa;
+  margin-bottom: 25px;
   /* display: inline-block; */
 }
 
@@ -37,8 +47,25 @@
   /* display: inline-block; */
 }
 
-.input {
+.Card {
+  margin-bottom: 20px;
+}
+
+.input,
+.inputName {
   display: block;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: solid #d6d5d5fa;
+  border-width: 1px;
+  /* align-content: space-between; */
+  width: 90%;
+  margin: 0 auto;
+  color: #cccccc;
+}
+
+::placeholder {
+  color: #cccccc;
 }
 
 .header {
@@ -55,4 +82,21 @@
 
 .cart {
   color: #ff7800;
+}
+
+.cardNumber,
+.cardName,
+.cardYear,
+.cardCVV {
+  color: #999999;
+  font-size: 13px;
+  padding-left: 2%;
+}
+
+.total {
+  margin-bottom: 20px;
+}
+
+.validationCVV {
+  background-color: red;
 }

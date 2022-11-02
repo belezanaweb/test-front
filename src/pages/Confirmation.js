@@ -29,20 +29,31 @@ export default function Confirmation() {
         </ul>
       </header>
       <main>
-        <div>COMPRA EFETUADA COM SUCESSO</div>
         <div>
-          PAGAMENTO
+          <p className={styles.success}>COMPRA EFETUADA COM SUCESSO</p>
+        </div>
+        <div>
+          <p className={styles.title}>PAGAMENTO</p>
           <p>dados do pagamento</p>
         </div>
         <div>
-          PRODUTOS {<Product />}
-          {product.items.map((item) => (
-            <Product name={item.product.name} image={item.product.imageObjects[0].thumbnail} />
-          ))}
+          <p className={styles.title}>PRODUTOS</p>
+          <div className={styles.produtos}>
+            <label>
+              {product.items.map((item) => (
+                <div className={styles.produto}>
+                  <Product
+                    name={item.product.name}
+                    image={item.product.imageObjects[0].thumbnail}
+                  />
+                </div>
+              ))}
+            </label>
+          </div>
         </div>
-        <section>
+        <div className={styles.total}>
           <Total />
-        </section>
+        </div>
       </main>
     </div>
   )

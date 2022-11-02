@@ -27,13 +27,15 @@
 .total {
   padding: 0px;
   margin-bottom: 10px;
+  font-size: medium;
   /* margin-left: px; */
   margin: auto;
   /* align-items: center; */
   border: solid #cccccc;
   border-width: 1px;
   border-radius: 3px;
-  width: 90%;
+  /* width: 90%; */
+  max-width: 90%;
   align-items: center;
   justify-content: space-between;
   display: block;
