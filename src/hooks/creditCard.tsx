@@ -62,6 +62,7 @@ const CreditCardProvider: React.FC<Props> = ({ children }) => {
 
   useEffect(() => {
     let errorObj = { ...error }
+    let isFormValid = true
 
     Object.keys(formData).forEach((data) => {
       let isValid
@@ -88,9 +89,11 @@ const CreditCardProvider: React.FC<Props> = ({ children }) => {
       }
 
       errorObj[data] = !(formData[data] === '' ) && !isValid
-      setFormIsValid(!!isValid)
+
+      isFormValid = !!(isFormValid && isValid)
     })
 
+    setFormIsValid(isFormValid)
     setError(errorObj)
   }, [formData])
 
