@@ -32,21 +32,24 @@ export default function Cart() {
         <Header />
       </header>
       <main>
-        <label className={styles.produtos}>
-          PRODUTOS
-          {cart.items.map((item) => (
-            <div className={styles.produto}>
-              <Product
-                name={item.product.name}
-                image={item.product.imageObjects[0].thumbnail}
-                price={`R$ ${item.product.priceSpecification.price}`}
-              />
-            </div>
-          ))}
-        </label>
-        {/* <p>{dados1}</p> */}
+        <p className={styles.title}>PRODUTOS</p>
+        <div className={styles.produtos}>
+          <label>
+            {cart.items.map((item) => (
+              <div className={styles.produto}>
+                <Product
+                  name={item.product.name}
+                  image={item.product.imageObjects[0].thumbnail}
+                  price={`R$ ${item.product.priceSpecification.price.toFixed(2)}`}
+                />
+              </div>
+            ))}
+          </label>
+        </div>
         <Total />
-        <button onClick={goToPayment}>SEGUIR PARA O PAGAMENTO</button>
+        <button className={styles.button} onClick={goToPayment}>
+          SEGUIR PARA O PAGAMENTO
+        </button>
       </main>
     </div>
   )

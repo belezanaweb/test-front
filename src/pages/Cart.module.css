@@ -3,12 +3,34 @@
 }
 
 .produtos {
-  padding: 30px;
-  margin-top: 10px;
+  padding: 0px;
+  margin: 10px;
   align-items: center;
   border: solid black;
+  border-radius: 5px;
 }
 
 .produto {
   border: red;
+}
+
+.title {
+  padding-top: 10px;
+  padding-left: 10px;
+  margin-bottom: 0px;
+}
+
+.button {
+  padding: 20px;
+  font-weight: bolder;
+  border-style: outset;
+  font-size: 20px;
+  margin: 10px;
+  display: flex;
+  background-color: #ff6c00;
+  color: #fff6ef;
+  width: 94%;
+  justify-content: center;
+  border: none;
+  border-radius: 3px;
 }

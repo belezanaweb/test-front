@@ -1,4 +1,5 @@
 import React from 'react'
+import styles from './Total.module.css'
 
 export default function Total() {
   const price = 'R$ 624,80'
@@ -7,7 +8,7 @@ export default function Total() {
   const total = 'R$ 600,10'
 
   return (
-    <section>
+    <section className={styles.total}>
       <p>PRODUTOS {price}</p>
       <p>FRETE {frete}</p>
       <p>DESCONTO {desconto}</p>
