@@ -40,16 +40,16 @@ No seu navegador acesse: [http://localhost:3000/](http://localhost:3000/)
 
   - A aplicação foi desenvolvida seguindo todos os valores de cores, tamanhos de fonte e espaçamentos presentes no Handoff.
 
-  - Atenção aos detalhes. Por exemplo o componente que exibe os produtos tem o testo encurtado quando ultrapassa um determinado tamanho.
+  - Atenção aos detalhes. Por exemplo, o componente que exibe os produtos tem o texto encurtado quando ultrapassa um determinado tamanho.
 
 
 ✅ A aplicação responsiva, utilizando o conceito de mobile-first. 
 
-  - Por meio de media queries o layout se ajusta para telas maiores.
+  - Por meio de media queries, o layout se ajusta para telas maiores.
 
 ✅ Renderize cada passo em uma URL única (lib de rotas).
 
-  - Usando o recurso de lazy loading do React os componentes tem o seu carregamento dividido por rotas.
+  - Usando o recurso de lazy loading do React, os componentes têm o seu carregamento dividido por rotas.
 
 ### ✅ Passo 1 - Carrinho:
 
@@ -75,11 +75,11 @@ No seu navegador acesse: [http://localhost:3000/](http://localhost:3000/)
 
   - Todo o conteúdo é exibido a partir dos dados persistidos em hooks customizados ou no localStorage;
 
-  - A tela de confirmação/sucesso só é exibida caso os dados do formulário sejam válidos. Caso contrário o usuário é redirecionado para a página de pagamento;
+  - A tela de confirmação/sucesso só é exibida caso os dados do formulário sejam válidos. Caso contrário, o usuário é redirecionado para a página de pagamento;
   
 ### ✅ Diferenciais:
   - ✅ Código limpo e organizado por atribuições;
-  - ✅ Mensagens e commits em inglês. Trabalho feito com micro commits;
+  - ✅ Mensagens e commits em inglês. Trabalho feito com micro-commits;
   - ✅ Componentes reutilizáveis;
   - ✅ Testes unitários;
   - ✅ Split bundle por rota com React Lazy loading;
