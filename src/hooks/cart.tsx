@@ -54,7 +54,8 @@ const CartProvider: React.FC<Props> = ({ children }) => {
   })
 
   useEffect(() => {
-    requestAPI({ url: process.env.GB_URL as string }).then((resp: Resp | undefined) => {
+    console.log(process.env.REACT_APP_GB_URL)
+    requestAPI({ url: process.env.REACT_APP_GB_URL as string }).then((resp: Resp | undefined) => {
       if (resp?.data) {
         setItems(resp?.data?.items || [])
         setTotalData({
