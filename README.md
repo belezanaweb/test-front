@@ -1,41 +1,87 @@
-## Frontend Test
+## Frontend Test - Antonio Thiele
 
-Faça um fork deste repositório e finalizar o teste, submeta um pull request para o repositório que nosso time será notificado.
+## 💻 Configurando o projeto
 
-O teste consiste em um checkout simples contendo 3 passos (carrinho, pagamento e sucesso) [Veja o Layout](https://projects.invisionapp.com/prototype/font-test-cji0j0khf005c1t0132358e8k)
+> 💡 Esse projeto depende do Node 16
+``` 
+nvm install 16
+nvm use 16
+```
 
-**Faça quando quiser/puder (madrugada, fim de semana, etc)**
+Clone o projeto
+```
+git clone https://github.com/antoniocarlos/test-front.git
 
-### Requerimentos
+```
+Acesse a pasta do projeto
+``` 
+cd test-front
+```
 
-- Pixel perfect ([nesse link](https://projects.invisionapp.com/prototype/font-test-cji0j0khf005c1t0132358e8k), você pode inspecionar para ver espaçamentos, fonte, tamanho, etc)
-- A aplicação precisa ser responsiva, utilizando o conceito de mobile-first. Use sua imaginação para entregar uma experiência boa no desktop.
-- Renderize cada passo em uma URL única (lib de rotas).
+Copie e renomeando o arquivo de variáveis de ambiente
+```
+cp .env_example .env
+```
 
+Execute
+```
+yarn
+```
 
-### Passo 1 - Carrinho:
-  - Consuma o [esse endpoint](http://www.mocky.io/v2/5b15c4923100004a006f3c07) e liste os itens do carrinho, bem como o resumo do carrinho;
-  - Persista o conteúdo do JSON para ser usado nas próximas etapas;
+Rodando o projeto
+```
+yarn start
+```
 
-### Passo 2 - Pagamento: 
-  - Exiba um form com campos de cartão de crédito com validação em cada campo;
-  - Habilite o botão de Finalizar Pedido apenas se o form esteja válido;
+No seu navegador acesse: http://localhost:3000/
+Se estiver com preguiça clique ([aqui](http://localhost:3000/) 
 
-### Passo 3 - Sucesso: 
-  - Todo o conteúdo deverá ser exibido a partir dos dados persistidos;
+### ✅ Requerimentos
+
+✅ Pixel perfect ([nesse link](https://projects.invisionapp.com/prototype/font-test-cji0j0khf005c1t0132358e8k) 
+
+A aplicação foi desenvolvida seguindo todos os valores de cores, tamanhos de fonte e espaçamentos presentes no Handoff.
+
+✅ A aplicação responsiva, utilizando o conceito de mobile-first. 
+
+Por meio de media queries o layout se ajusta para telas maiores.
+
+✅ Renderize cada passo em uma URL única (lib de rotas).
+
+Usando o recurso de lazy loading do React os componentes tem o seu carregamento dividido por rotas.
+
+### ✅ Passo 1 - Carrinho:
+
+  - Endpoint: /
+
+  - O [endpoint](http://www.mocky.io/v2/5b15c4923100004a006f3c07) é consumido via Axios;
+
+  - A persistência dos dados é feita por um hook customizado usando React context. As informações são baixadas uma vez durante o fluxo ou caso a tela seja recarregada;
+
+### ✅ Passo 2 - Pagamento: 
+
+  - Endpoint: /pagamento
+
+  - Os dados do formulário são armazenados no local storage;
+
+  - Os campos são validados durante o seu preenchimento;
+
+  - O botão de finalizar o pedido só é liberado com o preenchimento correto de todo o formulário;
+
+### ✅ Passo 3 - Sucesso: 
+
+  - Endpoint: /confirmacao
+
+  - Todo o conteúdo é exibido a partir dos dados persistidos em hooks customizados ou no localStorage;
+
+  - A tela de confirmação/sucesso só é exibida caso os dados do formulário sejam válidos. Caso contrário o usuário é redirecionado para a página de pagamento;
   
-### O que vamos avaliar:
-  - Organização do código;
-  - Mensagens (em inglês) e mudanças nos commits;
-  - Composição/reutilização de componentes;
-  - Testes unitários;
-  - O motivo de ter escolhido cada tech da stack;
-  - Como rodar sua aplicação ;)
-
 ### Diferenciais:
-  - Split bundle por rota (cada step ter um bundle separado para otimizar a performance);
-  - CSS in JS;
-  - React;
-
-### Fim:
-Ao finalizar o teste, submeta um pull request para o repositório que nosso time será notificado. Se tiver alguma observação, escreva no pull request.
+  ✅ Código limpo e organizado por atribuições;
+  ✅ Mensagens e commits em inglês. Trabalho feito com micro commits;
+  ✅ Componentes reutilizáveis;
+  ✅ Testes unitários;
+  ✅ Split bundle por rota com React Lazy loading
+  ✅ CSS in JS com a biblioteca styled-components
+  ✅ React
+  ✅ TypeScript
