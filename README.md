@@ -76,18 +76,11 @@ No seu navegador acesse: [http://localhost:3000/](http://localhost:3000/)
   - A tela de confirmação/sucesso só é exibida caso os dados do formulário sejam válidos. Caso contrário o usuário é redirecionado para a página de pagamento;
   
 ### Diferenciais:
-  ✅ Código limpo e organizado por atribuições;
-
-  ✅ Mensagens e commits em inglês. Trabalho feito com micro commits;
-
-  ✅ Componentes reutilizáveis;
-
-  ✅ Testes unitários;
-
-  ✅ Split bundle por rota com React Lazy loading;
-
-  ✅ CSS in JS com a biblioteca styled-components;
-
-  ✅ React;
-
-  ✅ TypeScript;
+  - ✅ Código limpo e organizado por atribuições;
+  - ✅ Mensagens e commits em inglês. Trabalho feito com micro commits;
+  - ✅ Componentes reutilizáveis;
+  - ✅ Testes unitários;
+  - ✅ Split bundle por rota com React Lazy loading;
+  - ✅ CSS in JS com a biblioteca styled-components;
+  - ✅ React;
+  - ✅ TypeScript;
