@@ -2,7 +2,7 @@
 
 ## 💻 Configurando o projeto
 
-> 💡 Esse projeto depende do Node 16
+> 💡 Esse projeto depende do Node 16.17.0
 ``` 
 nvm install 16.17.0
 nvm use 16.17.0
