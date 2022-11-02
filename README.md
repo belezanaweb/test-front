@@ -4,8 +4,8 @@
 
 > 💡 Esse projeto depende do Node 16
 ``` 
-nvm install 16
-nvm use 16
+nvm install 16.17.0
+nvm use 16.17.0
 ```
 
 Clone o projeto
