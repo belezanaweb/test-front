@@ -1,10 +1,15 @@
 import React, { useState, useEffect } from 'react'
+import { useContext } from 'react'
 import Product from '../Components/Product'
 import Total from '../Components/Total'
 import styles from './Confirmation.module.css'
+import Context from '../Context/Context'
 
 export default function Confirmation() {
   const [product, setProduct] = useState(null)
+  const { cardNumber } = useContext(Context)
+
+  console.log(cardNumber)
 
   useEffect(() => {
     const product = async () => {

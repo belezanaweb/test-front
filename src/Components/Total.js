@@ -13,7 +13,7 @@ export default function Total() {
         <p>PRODUTOS</p>
         <p>{price}</p>
       </div>
-      <div className={styles.product}>
+      <div className={styles.freight}>
         <p>FRETE</p>
         <p>{frete}</p>
       </div>

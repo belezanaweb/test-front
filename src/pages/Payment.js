@@ -1,12 +1,46 @@
 import { useNavigate } from 'react-router-dom'
+import { useContext } from 'react'
 import Total from '../Components/Total'
 import styles from './Payment.module.css'
+import Context from '../Context/Context'
 
 export default function Payment() {
   const navigate = useNavigate()
   const goToConfirmation = () => {
     navigate('/confirmation')
   }
+
+  const { cardNumber } = useContext(Context)
+  // const { name, setName } = useContext(Context);
+  // const { date, setDate } = useContext(Context);
+  // const { CVV, setCVV } = useContext(Context);
+
+  console.log(cardNumber)
+
+  // const [cardNumber, setCardNumber] = useState();
+  // const [name, setName] = useState();
+  // const [date, setDate] = useState();
+  // const [CVV, setCVV] = useState();
+
+  // const handleChangeCardNumber = (e) =>  {
+  //   setCardNumber(e.target.value)
+  //   console.log(cardNumber);
+  // }
+
+  // const handleChangeName = (e) =>  {
+  //   setName(e.target.value)
+  //   console.log(name);
+  // }
+
+  // const handleChangeDate = (e) =>  {
+  //   setDate(e.target.value)
+  //   console.log(date);
+  // }
+
+  // const handleChangeCvv = (e) =>  {
+  //   setCVV(e.target.value)
+  //   console.log(CVV);
+  // }
 
   return (
     <div>
@@ -24,6 +58,7 @@ export default function Payment() {
             <label className={styles.cardNumber}>
               Número do cartão
               <input
+                // onChange={handleChangeCardNumber}
                 className={styles.input}
                 id="numero"
                 name="numero"
@@ -39,6 +74,7 @@ export default function Payment() {
                 id="nome"
                 name="nome"
                 placeholder="Como no cartão"
+                // onChange={handleChangeName}
               ></input>
             </label>
           </div>
@@ -47,6 +83,7 @@ export default function Payment() {
             <label className={styles.cardYear}>
               Validade (mês/ano)
               <input
+                // onChange={handleChangeDate}
                 className={styles.input}
                 id="data"
                 name="data"
@@ -56,7 +93,13 @@ export default function Payment() {
           </div>
           <label className={styles.cardCVV}>
             CVV:
-            <input className={styles.input} id="numero" name="numero" placeholder="_ _ _"></input>
+            <input
+              // onChange={handleChangeCvv}
+              className={styles.input}
+              id="numero"
+              name="numero"
+              placeholder="_ _ _"
+            ></input>
           </label>
         </form>
         <div className={styles.total}>

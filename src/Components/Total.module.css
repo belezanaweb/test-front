@@ -7,12 +7,23 @@
 } */
 
 .product,
+.freight,
 .discount,
 .subtotal {
   display: flex;
   justify-content: space-between;
-  align-content: space-between;
+  /* align-content: space-between; */
   margin-bottom: 5px;
+  padding: 0.5px 15px 0.5px;
+  /* padding-top: 10px; */
+}
+
+.product {
+  padding-top: 15px;
+}
+
+.subtotal {
+  padding-bottom: 10px;
 }
 
 .discount {
