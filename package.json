@@ -8,6 +8,7 @@
     "@testing-library/user-event": "^7.1.2",
     "card-validator": "^8.1.1",
     "fetch": "^1.1.0",
+    "history": "^5.3.0",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
     "react-router-dom": "^6.4.2",

@@ -20,7 +20,6 @@ export default function Cart() {
   const goToPayment = () => {
     navigate('/payment')
   }
-  // console.log(cart);
   if (!cart) {
     return <div>Loading</div>
   }
@@ -29,7 +28,9 @@ export default function Cart() {
     <div>
       <header>
         <ul className={styles.header}>
-          <li className={styles.cart}>SACOLA</li>
+          <li data-testid="cart" className={styles.cart}>
+            SACOLA
+          </li>
           <li>PAGAMENTO</li>
           <li>CONFIRMAÇÃO</li>
         </ul>

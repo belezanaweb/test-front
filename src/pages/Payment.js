@@ -53,7 +53,7 @@ export default function Payment() {
       </header>
       <main>
         <p className={styles.title}>CARTÃO DE CRÉDITO</p>
-        <form className={styles.form}>
+        <form data-testid="payment-form" className={styles.form}>
           <div className={styles.Card}>
             <label className={styles.cardNumber}>
               Número do cartão

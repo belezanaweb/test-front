@@ -35,7 +35,9 @@ export default function Confirmation() {
       </header>
       <main>
         <div>
-          <p className={styles.success}>COMPRA EFETUADA COM SUCESSO</p>
+          <p data-testId="success-msg" className={styles.success}>
+            COMPRA EFETUADA COM SUCESSO
+          </p>
         </div>
         <div>
           <p className={styles.title}>PAGAMENTO</p>
