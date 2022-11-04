@@ -55,16 +55,18 @@ export default function Payment() {
         <p className={styles.title}>CARTÃO DE CRÉDITO</p>
         <form data-testid="payment-form" className={styles.form}>
           <div className={styles.Card}>
-            <label className={styles.cardNumber}>
-              Número do cartão
-              <input
-                // onChange={handleChangeCardNumber}
-                className={styles.input}
-                id="numero"
-                name="numero"
-                placeholder="_ _ _ _ - _ _ _ _ - _ _ _ _ - _ _ _ _ "
-              ></input>
-            </label>
+            <div className={styles.card}>
+              <label className={styles.cardNumber}>
+                Número do cartão
+                <input
+                  // onChange={handleChangeCardNumber}
+                  className={styles.input}
+                  id="numero"
+                  name="numero"
+                  placeholder="_ _ _ _ - _ _ _ _ - _ _ _ _ - _ _ _ _ "
+                ></input>
+              </label>
+            </div>
           </div>
           <div className={styles.Card}>
             <label className={styles.cardName}>
@@ -80,27 +82,27 @@ export default function Payment() {
           </div>
           <div className={styles.Card}>
             {/* <div className={styles.validationCVV}> */}
-            <label className={styles.cardYear}>
+            <div className={styles.cardYear}>
               Validade (mês/ano)
               <input
                 // onChange={handleChangeDate}
-                className={styles.input}
+                className={styles.inputVal}
                 id="data"
                 name="data"
                 placeholder="_ _ / _ _ _ _"
               ></input>
-            </label>
+            </div>
           </div>
-          <label className={styles.cardCVV}>
+          <div className={styles.cardCVV}>
             CVV:
             <input
               // onChange={handleChangeCvv}
-              className={styles.input}
+              className={styles.inputVal}
               id="numero"
               name="numero"
               placeholder="_ _ _"
             ></input>
-          </label>
+          </div>
         </form>
         <div className={styles.total}>
           <Total />

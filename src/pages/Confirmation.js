@@ -50,8 +50,8 @@ export default function Confirmation() {
               {product.items.map((item) => (
                 <div className={styles.produto}>
                   <Product
-                    name={item.product.name}
                     image={item.product.imageObjects[0].thumbnail}
+                    name={item.product.name}
                   />
                 </div>
               ))}

@@ -30,13 +30,15 @@
 .produto {
   margin: 1 auto;
   font-size: 13px;
-  display: flex;
-  /* margin: 10px; */
   width: 100%;
   padding: 0px;
   justify-content: center;
   background-color: #ffffff;
-  display: inline-flex;
+  display: flex;
+}
+
+#name {
+  float: left;
 }
 
 .title {
