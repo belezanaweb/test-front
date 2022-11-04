@@ -1,4 +1,5 @@
 .div {
+  display: flex;
   padding: 10px;
   width: 85%;
   margin: 10px;
@@ -6,4 +7,15 @@
   border: solid #d6d5d5fa;
   border-radius: 3px;
   border-width: 1px;
+}
+
+.cart {
+  display: flex;
+  flex-direction: column;
+  /* border: solid red; */
+}
+
+.price {
+  align-self: end;
+  font-weight: bolder;
 }

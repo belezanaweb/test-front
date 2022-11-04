@@ -7,9 +7,10 @@ import Context from '../Context/Context'
 
 export default function Confirmation() {
   const [product, setProduct] = useState(null)
-  const { cardNumber } = useContext(Context)
+  const { cart } = useContext(Context)
 
-  console.log(cardNumber)
+  console.log(Context)
+  console.log(cart)
 
   useEffect(() => {
     const product = async () => {

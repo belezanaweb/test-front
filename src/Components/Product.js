@@ -3,9 +3,11 @@ function Product({ name, image, price }) {
   // console.log(name)
   return (
     <div className={styles.div}>
-      <p>{name} </p>
       <img alt={name} src={image} />
-      <p>{price}</p>
+      <div className={styles.cart}>
+        <p>{name} </p>
+        <p className={styles.price}>{price}</p>
+      </div>
     </div>
   )
 }

@@ -10,37 +10,13 @@ export default function Payment() {
     navigate('/confirmation')
   }
 
-  const { cardNumber } = useContext(Context)
+  const test = useContext(Context)
   // const { name, setName } = useContext(Context);
   // const { date, setDate } = useContext(Context);
   // const { CVV, setCVV } = useContext(Context);
 
-  console.log(cardNumber)
-
-  // const [cardNumber, setCardNumber] = useState();
-  // const [name, setName] = useState();
-  // const [date, setDate] = useState();
-  // const [CVV, setCVV] = useState();
-
-  // const handleChangeCardNumber = (e) =>  {
-  //   setCardNumber(e.target.value)
-  //   console.log(cardNumber);
-  // }
-
-  // const handleChangeName = (e) =>  {
-  //   setName(e.target.value)
-  //   console.log(name);
-  // }
-
-  // const handleChangeDate = (e) =>  {
-  //   setDate(e.target.value)
-  //   console.log(date);
-  // }
-
-  // const handleChangeCvv = (e) =>  {
-  //   setCVV(e.target.value)
-  //   console.log(CVV);
-  // }
+  // console.log(cardNumber)
+  console.log(test)
 
   return (
     <div>
