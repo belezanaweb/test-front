@@ -11,6 +11,7 @@ body {
   padding: 0px;
   margin: 0 auto;
   width: 90%;
+  max-width: 600px;
   margin-bottom: 20px;
   justify-content: center;
   align-items: center;
@@ -48,6 +49,7 @@ body {
   padding: 20px;
   /* margin-top: 10px; */
   margin: 0 auto;
+  margin-top: 20px;
   margin-bottom: 15px;
   /* align-items: center; */
   font-weight: bolder;
@@ -57,6 +59,7 @@ body {
   background-color: #ff6c00;
   color: #fff6ef;
   width: 90%;
+  max-width: 600px;
   justify-content: center;
   border: none;
   border-radius: 3px;
@@ -73,7 +76,10 @@ body {
 } */
 
 .total {
-  margin-bottom: 10px;
+  margin-bottom: 20px;
+  margin: 0 auto;
+  width: 90%;
+  max-width: 600px;
 }
 
 .header {

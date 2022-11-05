@@ -7,9 +7,11 @@
 }
 
 .button {
+  max-width: 600px;
   padding: 20px;
   /* margin-top: 10px; */
   margin: 0 auto;
+  margin-top: 20px;
   margin-bottom: 15px;
   /* align-items: center; */
   font-weight: bolder;
@@ -26,12 +28,10 @@
 }
 
 .form {
-}
-
-.form {
   padding: 0px;
   margin: 0 auto;
   width: 90%;
+  max-width: 600px;
   align-items: center;
   border: solid #eeeeeefa;
   border-radius: 5px;
@@ -41,10 +41,6 @@
   background-color: #ffffff;
   box-shadow: 1px 3px 5px #c2c0c0fa;
   margin-bottom: 25px;
-  /* display: inline-block; */
-}
-
-.cardName {
   /* display: inline-block; */
 }
 
@@ -126,6 +122,9 @@
 
 .total {
   margin-bottom: 20px;
+  margin: 0 auto;
+  width: 90%;
+  max-width: 600px;
 }
 
 .validationCVV {

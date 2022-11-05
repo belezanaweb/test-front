@@ -8,17 +8,6 @@ import Context from '../Context/Context'
 export default function Cart() {
   const { cart } = useContext(Context)
 
-  // const [cart, setCart] = useState(null)
-
-  // useEffect(() => {
-  //   const cart = async () => {
-  //     const url = await fetch('http://www.mocky.io/v2/5b15c4923100004a006f3c07')
-  //     const data = await url.json()
-  //     setCart(data)
-  //   }
-  //   cart()
-  // }, [])
-
   const navigate = useNavigate()
   const goToPayment = () => {
     navigate('/payment')

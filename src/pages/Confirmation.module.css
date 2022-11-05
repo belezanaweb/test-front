@@ -18,6 +18,7 @@
   padding: 0px;
   margin: 0 auto;
   width: 90%;
+  max-width: 600px;
   margin-bottom: 20px;
   justify-content: center;
   align-items: center;
@@ -43,7 +44,7 @@
 
 .title {
   padding-top: 15px;
-  padding-left: 40px;
+  padding-left: 10%;
   margin: 0 auto;
   justify-content: center;
   /* display: flex; */
@@ -56,13 +57,16 @@
 .success {
   color: #ff7800;
   font-weight: bolder;
-  display: block;
+  display: flex;
   padding: 30px;
   justify-content: center;
   align-items: center;
 }
 
 .total {
+  margin: 0 auto;
+  width: 90%;
+  max-width: 600px;
   margin-bottom: 40px;
 }
 
@@ -70,6 +74,7 @@
   padding: 0px;
   margin: 0 auto;
   width: 90%;
+  max-width: 600px;
   margin-bottom: 20px;
   justify-content: center;
   align-items: center;

@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import Context from './Context'
-import PropTypes from 'prop-types'
+// import PropTypes from 'prop-types'
 
 export default function Provider({ children }) {
   const [cart, setCart] = useState(null)
@@ -11,7 +11,7 @@ export default function Provider({ children }) {
 
   const handleChangeNumber = (e) => {
     setNumber(e.target.value)
-    console.log(number)
+    // console.log(number)
   }
 
   const handleChangeName = (e) => {
@@ -52,6 +52,6 @@ export default function Provider({ children }) {
   )
 }
 
-Provider.propTypes = {
-  children: PropTypes.objectOf
-}.isRequired
+// Provider.propTypes = {
+//   children: PropTypes.objectOf
+// }.isRequired

@@ -15,17 +15,32 @@ export default function Payment() {
   const { handleChangeNumber } = useContext(Context)
   const { handleChangeName } = useContext(Context)
   const { handleChangeDate } = useContext(Context)
-  const [isDisable, setIsDisable] = useState(true)
-  const { number, name, date, cvv } = useContext(Context)
+  const cardValidation = /^[0-9]{16}$/i
+  const [isDisable, setIsDisable] = useState(false)
+  const { number } = useContext(Context)
 
-  if (
-    typeof number !== 'number' ||
-    typeof name !== 'string' ||
-    typeof date !== 'number' ||
-    typeof cvv !== 'number'
-  ) {
-    // setIsDisable(true)
-    console.log('ERRRRAAADOO')
+  // if (
+  //   typeof number !== 'number' ||
+  //   typeof name !== 'string' ||
+  //   typeof date !== 'number' ||
+  //   typeof cvv !== 'number'
+  // ) {
+  //   // setIsDisable(true)
+  //   console.log('ERRRRAAADOO')
+  // }
+  console.log(number)
+
+  const handleValidation = () => {
+    if (number.match(cardValidation)) {
+      setIsDisable(false)
+    } else if (!number.match(cardValidation)) {
+      setIsDisable(true)
+    }
+  }
+
+  const doubleFunction = () => {
+    handleChangeNumber()
+    handleValidation()
   }
 
   return (
@@ -47,7 +62,7 @@ export default function Payment() {
                 <input
                   // type="number"
                   maxLength="16"
-                  onChange={handleChangeNumber}
+                  onChange={doubleFunction}
                   className={styles.input}
                   id="number"
                   name="number"

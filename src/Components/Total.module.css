@@ -47,9 +47,10 @@
   border-radius: 3px;
   /* width: 90%; */
   max-width: 90%;
+  max-width: 600px;
   align-items: center;
   justify-content: space-between;
-  display: block;
+  /* display: inline-block; */
   /* flex-direction: row; */
   /* justify-content: center; */
 }
