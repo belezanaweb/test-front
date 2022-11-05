@@ -4,10 +4,8 @@ import '@testing-library/jest-dom'
 import App from '../App'
 import { BrowserRouter } from 'react-router-dom'
 import mockApi from './Mocks'
-// import renderWithRouter from './renderWithRouter'
-// import Cart from '../pages/Cart';
 
-describe('Testing buttons at the application', () => {
+describe('Testing the Cart component', () => {
   beforeEach(() => {
     global.fetch = jest.fn((url) =>
       Promise.resolve({
@@ -23,28 +21,26 @@ describe('Testing buttons at the application', () => {
     const button = screen.getByText(/sacola/i)
     expect(button).toBeInTheDocument()
   })
-  it('Verify it there is a payment form', () => {
-    const form = screen.getByTestId('payment-form')
-    expect(form).toBeInTheDocument()
-  })
-  it('Verify is there is an image on the screen', () => {
-    const img = screen.getByRole('img')
+  it('Verify is there is a mask image on the screen', () => {
+    const img = screen.getByRole('img', {
+      name: /l'oréal professionnel expert absolut repair cortex lipidium /i
+    })
     expect(img).toBeInTheDocument()
   })
+  it('Verify is there is a perfume image on the screen', () => {
+    const shoeImg = screen.getByRole('img', {
+      name: /good girl carolina herrera eau de parfum \- perfume feminino 30ml/i
+    })
+    expect(shoeImg).toBeInTheDocument()
+  })
+  it('Verify is there is an another mask image on the screen', () => {
+    const maskImg = screen.getByRole('img', {
+      name: /senscience inner restore intensif \- máscara capilar 50ml/i
+    })
+    expect(maskImg).toBeInTheDocument()
+  })
+  it('Verify is there is a button on the screen', () => {
+    const btn = screen.getByRole('button', { name: /seguir para o pagamento/i })
+    expect(btn).toBeInTheDocument()
+  })
 })
-
-// describe('Testing text messages at the application', () => {
-//   beforeEach(() => renderWithRouter(<App />))
-//   it('Verify is there is a text SACOLA', () => {
-//     const text = screen.getByTestId('cart')
-//     expect(text).toBeInTheDocument()
-//   })
-//   it('Verify it there is a button with text FINALIZAR O PEDIDO', () => {
-//     const btn = screen.getByRole('button', { name: /finalizar o pedido/i })
-//     expect(btn).toBeInTheDocument()
-//   })
-//   it('Verify is there is a text COMPRA EFETUADA COM SUCESSO', () => {
-//     const text = screen.getByTestId('success-msg')
-//     expect(text).toBeInTheDocument()
-//   })
-// })
