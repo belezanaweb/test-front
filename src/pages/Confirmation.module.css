@@ -65,3 +65,21 @@
 .total {
   margin-bottom: 40px;
 }
+
+.pay {
+  padding: 0px;
+  margin: 0 auto;
+  width: 90%;
+  margin-bottom: 20px;
+  justify-content: center;
+  align-items: center;
+  border: solid #eeeeeefa;
+  border-radius: 5px;
+  background-color: #ffffff;
+  box-shadow: 1px 3px 5px #c2c0c0fa;
+}
+
+.item {
+  padding: 5px;
+  font-size: 15px;
+}

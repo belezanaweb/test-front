@@ -5,22 +5,7 @@ import styles from './Confirmation.module.css'
 import Context from '../Context/Context'
 
 export default function Confirmation() {
-  // const [product, setProduct] = useState(null)
-  // const { number } = useContext(Context)
-
-  const { cart } = useContext(Context)
-
-  // console.log(Context)
-  // console.log(number)
-
-  // useEffect(() => {
-  //   const product = async () => {
-  //     const url = await fetch('http://www.mocky.io/v2/5b15c4923100004a006f3c07')
-  //     const data = await url.json()
-  //     setProduct(data)
-  //   }
-  //   product()
-  // }, [])
+  const { cart, number, name, date } = useContext(Context)
 
   if (!cart) {
     return <div>Loading</div>
@@ -43,7 +28,11 @@ export default function Confirmation() {
         </div>
         <div>
           <p className={styles.title}>PAGAMENTO</p>
-          <p>O numero do cartão é: {}</p>
+          <div className={styles.pay}>
+            <p className={styles.item}>{number}</p>
+            <p className={styles.item}>{name}</p>
+            <p className={styles.item}>{date}</p>
+          </div>
         </div>
         <div>
           <p className={styles.title}>PRODUTOS</p>

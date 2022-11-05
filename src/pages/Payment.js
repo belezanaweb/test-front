@@ -1,25 +1,35 @@
 import { useNavigate } from 'react-router-dom'
-// import { useState } from 'react'
+import { useContext, useState } from 'react'
 import Total from '../Components/Total'
 import styles from './Payment.module.css'
-// import Context from '../Context/Context'
+import Context from '../Context/Context'
 
-export default function Payment({ children }) {
+export default function Payment() {
   const navigate = useNavigate()
   const goToConfirmation = () => {
     navigate('/confirmation')
   }
 
-  // const [ number, setNumber ] = useState();
+  // const MIN_LENGTH = 15;
 
-  // const handleChangeNumber = (e) => {
-  //   setNumber(e.target.value)
-  //   console.log(number);
-  // }
+  const { handleChangeNumber } = useContext(Context)
+  const { handleChangeName } = useContext(Context)
+  const { handleChangeDate } = useContext(Context)
+  const [isDisable, setIsDisable] = useState(true)
+  const { number, name, date, cvv } = useContext(Context)
+
+  if (
+    typeof number !== 'number' ||
+    typeof name !== 'string' ||
+    typeof date !== 'number' ||
+    typeof cvv !== 'number'
+  ) {
+    // setIsDisable(true)
+    console.log('ERRRRAAADOO')
+  }
 
   return (
     <div>
-      {/* <Context.Provider value={number}>{children} */}
       <header>
         <ul className={styles.header}>
           <li>SACOLA</li>
@@ -35,10 +45,12 @@ export default function Payment({ children }) {
               <label className={styles.cardNumber}>
                 Número do cartão
                 <input
-                  // onChange={handleChangeNumber}
+                  // type="number"
+                  maxLength="16"
+                  onChange={handleChangeNumber}
                   className={styles.input}
-                  id="numero"
-                  name="numero"
+                  id="number"
+                  name="number"
                   placeholder="_ _ _ _ - _ _ _ _ - _ _ _ _ - _ _ _ _ "
                 ></input>
               </label>
@@ -48,11 +60,12 @@ export default function Payment({ children }) {
             <label className={styles.cardName}>
               Nome do Titular
               <input
+                type="text"
+                onChange={handleChangeName}
                 className={styles.inputName}
                 id="nome"
                 name="nome"
                 placeholder="Como no cartão"
-                // onChange={handleChangeName}
               ></input>
             </label>
           </div>
@@ -61,7 +74,9 @@ export default function Payment({ children }) {
             <div className={styles.cardYear}>
               Validade (mês/ano)
               <input
-                // onChange={handleChangeDate}
+                maxLength="7"
+                // type="number"
+                onChange={handleChangeDate}
                 className={styles.inputVal}
                 id="data"
                 name="data"
@@ -72,6 +87,8 @@ export default function Payment({ children }) {
           <div className={styles.cardCVV}>
             CVV:
             <input
+              // type="number"
+              maxLength="3"
               // onChange={handleChangeCvv}
               className={styles.inputVal}
               id="numero"
@@ -83,11 +100,15 @@ export default function Payment({ children }) {
         <div className={styles.total}>
           <Total />
         </div>
-        <button className={styles.button} onClick={goToConfirmation}>
+        <button
+          type="submit"
+          disabled={isDisable}
+          className={styles.button}
+          onClick={goToConfirmation}
+        >
           FINALIZAR O PEDIDO
         </button>
       </main>
-      {/* </Context.Provider> */}
     </div>
   )
 }

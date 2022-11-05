@@ -19,3 +19,7 @@
   align-self: end;
   font-weight: bolder;
 }
+
+img {
+  padding: 5px;
+}
