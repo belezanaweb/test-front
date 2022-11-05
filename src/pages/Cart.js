@@ -1,20 +1,23 @@
-import React, { useEffect, useState } from 'react'
+import React, { useContext } from 'react'
 import Product from '../Components/Product'
 import Total from '../Components/Total'
 import { useNavigate } from 'react-router-dom'
 import styles from './Cart.module.css'
+import Context from '../Context/Context'
 
 export default function Cart() {
-  const [cart, setCart] = useState(null)
+  const { cart } = useContext(Context)
 
-  useEffect(() => {
-    const cart = async () => {
-      const url = await fetch('http://www.mocky.io/v2/5b15c4923100004a006f3c07')
-      const data = await url.json()
-      setCart(data)
-    }
-    cart()
-  }, [])
+  // const [cart, setCart] = useState(null)
+
+  // useEffect(() => {
+  //   const cart = async () => {
+  //     const url = await fetch('http://www.mocky.io/v2/5b15c4923100004a006f3c07')
+  //     const data = await url.json()
+  //     setCart(data)
+  //   }
+  //   cart()
+  // }, [])
 
   const navigate = useNavigate()
   const goToPayment = () => {

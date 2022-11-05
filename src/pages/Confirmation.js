@@ -1,27 +1,28 @@
-import React, { useState, useEffect } from 'react'
-import { useContext } from 'react'
+import React, { useContext } from 'react'
 import Product from '../Components/Product'
 import Total from '../Components/Total'
 import styles from './Confirmation.module.css'
 import Context from '../Context/Context'
 
 export default function Confirmation() {
-  const [product, setProduct] = useState(null)
+  // const [product, setProduct] = useState(null)
+  // const { number } = useContext(Context)
+
   const { cart } = useContext(Context)
 
-  console.log(Context)
-  console.log(cart)
+  // console.log(Context)
+  // console.log(number)
 
-  useEffect(() => {
-    const product = async () => {
-      const url = await fetch('http://www.mocky.io/v2/5b15c4923100004a006f3c07')
-      const data = await url.json()
-      setProduct(data)
-    }
-    product()
-  }, [])
+  // useEffect(() => {
+  //   const product = async () => {
+  //     const url = await fetch('http://www.mocky.io/v2/5b15c4923100004a006f3c07')
+  //     const data = await url.json()
+  //     setProduct(data)
+  //   }
+  //   product()
+  // }, [])
 
-  if (!product) {
+  if (!cart) {
     return <div>Loading</div>
   }
 
@@ -42,13 +43,13 @@ export default function Confirmation() {
         </div>
         <div>
           <p className={styles.title}>PAGAMENTO</p>
-          <p>dados do pagamento</p>
+          <p>O numero do cartão é: {}</p>
         </div>
         <div>
           <p className={styles.title}>PRODUTOS</p>
           <div className={styles.produtos}>
             <label>
-              {product.items.map((item) => (
+              {cart.items.map((item) => (
                 <div className={styles.produto}>
                   <Product
                     image={item.product.imageObjects[0].thumbnail}

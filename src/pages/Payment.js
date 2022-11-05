@@ -1,25 +1,25 @@
 import { useNavigate } from 'react-router-dom'
-import { useContext } from 'react'
+// import { useState } from 'react'
 import Total from '../Components/Total'
 import styles from './Payment.module.css'
-import Context from '../Context/Context'
+// import Context from '../Context/Context'
 
-export default function Payment() {
+export default function Payment({ children }) {
   const navigate = useNavigate()
   const goToConfirmation = () => {
     navigate('/confirmation')
   }
 
-  const test = useContext(Context)
-  // const { name, setName } = useContext(Context);
-  // const { date, setDate } = useContext(Context);
-  // const { CVV, setCVV } = useContext(Context);
+  // const [ number, setNumber ] = useState();
 
-  // console.log(cardNumber)
-  console.log(test)
+  // const handleChangeNumber = (e) => {
+  //   setNumber(e.target.value)
+  //   console.log(number);
+  // }
 
   return (
     <div>
+      {/* <Context.Provider value={number}>{children} */}
       <header>
         <ul className={styles.header}>
           <li>SACOLA</li>
@@ -35,7 +35,7 @@ export default function Payment() {
               <label className={styles.cardNumber}>
                 Número do cartão
                 <input
-                  // onChange={handleChangeCardNumber}
+                  // onChange={handleChangeNumber}
                   className={styles.input}
                   id="numero"
                   name="numero"
@@ -87,6 +87,7 @@ export default function Payment() {
           FINALIZAR O PEDIDO
         </button>
       </main>
+      {/* </Context.Provider> */}
     </div>
   )
 }

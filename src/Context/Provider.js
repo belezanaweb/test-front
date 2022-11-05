@@ -1,9 +1,9 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import Context from './Context'
 // import PropTypes from 'prop-types'
 
 export default function Provider({ children }) {
-  const [cardNumber] = useState(10)
+  // const [cardNumber] = useState(10)
   // const [name, setName] = useState();
   // const [date, setDate] = useState();
   // const [CVV, setCVV] = useState();
@@ -15,13 +15,24 @@ export default function Provider({ children }) {
   //   CVV, setCVV
   // }
 
-  const state = {
-    cardNumber
+  const [cart, setCart] = useState(null)
+
+  const data = {
+    cart,
+    setCart
   }
+  useEffect(() => {
+    const cart = async () => {
+      const url = await fetch('http://www.mocky.io/v2/5b15c4923100004a006f3c07')
+      const data = await url.json()
+      setCart(data)
+    }
+    cart()
+  }, [])
 
   return (
     <div>
-      <Context.Provider value={state}>{children}</Context.Provider>
+      <Context.Provider value={data}>{children}</Context.Provider>
     </div>
   )
 }
