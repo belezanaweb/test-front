@@ -5,6 +5,7 @@ import App from '../App'
 import { BrowserRouter } from 'react-router-dom'
 import mockApi from './Mocks'
 import Payment from '../pages/Payment'
+import Confirmation from '../pages/Confirmation'
 
 describe('Testing the Cart page', () => {
   beforeEach(() => {
@@ -77,5 +78,23 @@ describe('Testing the Payment page', () => {
   it('Verify if there is a DESCONTO text', () => {
     const discount = screen.getByText(/desconto/i)
     expect(discount).toBeInTheDocument()
+  })
+})
+
+describe('Testing the Confirmation page', () => {
+  beforeEach(() => {
+    global.fetch = jest.fn((url) =>
+      Promise.resolve({
+        json: () => {
+          if (url === 'http://www.mocky.io/v2/5b15c4923100004a006f3c07')
+            return Promise.resolve(mockApi)
+        }
+      })
+    )
+    render(<Confirmation />, { wrapper: BrowserRouter })
+  })
+  it('Verify if there is a Loading text', () => {
+    const loading = screen.getByText(/loading/i)
+    expect(loading).toBeInTheDocument()
   })
 })
