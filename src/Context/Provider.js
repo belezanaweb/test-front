@@ -7,6 +7,10 @@ export default function Provider({ children }) {
   const [number, setNumber] = useState()
   const [name, setName] = useState()
   const [date, setDate] = useState()
+  const [cvv, setCvv] = useState()
+  // const [isDisable, setIsDisable] = useState(true)
+  // const cardValidation = /^[0-9]{16}$/i
+  // const cardValidation = 4444444444444444
   // const { setIsDisable } = useContext(Context);
 
   const handleChangeNumber = (e) => {
@@ -22,6 +26,23 @@ export default function Provider({ children }) {
     setDate(e.target.value)
   }
 
+  const handleChangeCvv = (e) => {
+    setCvv(e.target.value)
+  }
+
+  // const handleValidation = () => {
+  //   if (number === cardValidation) {
+  //     setIsDisable(false)
+  //   } else if (!number.match(cardValidation)) {
+  //     setIsDisable(true)
+  //   }
+  // }
+
+  // const doubleFunction = () => {
+  //   handleChangeNumber()
+  //   handleValidation()
+  // }
+
   const data = {
     cart,
     setCart,
@@ -31,9 +52,16 @@ export default function Provider({ children }) {
     setName,
     date,
     setDate,
+    cvv,
+    setCvv,
+    // isDisable,
+    // setIsDisable,
     handleChangeNumber,
     handleChangeName,
-    handleChangeDate
+    handleChangeDate,
+    handleChangeCvv
+    // doubleFunction,
+    // handleValidation,
   }
 
   useEffect(() => {

@@ -4,8 +4,9 @@ import '@testing-library/jest-dom'
 import App from '../App'
 import { BrowserRouter } from 'react-router-dom'
 import mockApi from './Mocks'
+import Payment from '../pages/Payment'
 
-describe('Testing the Cart component', () => {
+describe('Testing the Cart page', () => {
   beforeEach(() => {
     global.fetch = jest.fn((url) =>
       Promise.resolve({
@@ -42,5 +43,39 @@ describe('Testing the Cart component', () => {
   it('Verify is there is a button on the screen', () => {
     const btn = screen.getByRole('button', { name: /seguir para o pagamento/i })
     expect(btn).toBeInTheDocument()
+  })
+})
+
+describe('Testing the Payment page', () => {
+  beforeEach(() => {
+    global.fetch = jest.fn((url) =>
+      Promise.resolve({
+        json: () => {
+          if (url === 'http://www.mocky.io/v2/5b15c4923100004a006f3c07')
+            return Promise.resolve(mockApi)
+        }
+      })
+    )
+    render(<Payment />, { wrapper: BrowserRouter })
+  })
+  it('Verify credit card form', () => {
+    const creditCard = screen.getByText(/cartão de crédito/i)
+    expect(creditCard).toBeInTheDocument()
+  })
+  it('Verify is there is a button on the screen', () => {
+    const btn = screen.getByRole('button', { name: /finalizar o pedido/i })
+    expect(btn).toBeInTheDocument()
+  })
+  it('Verify if there is a PRODUTOS text', () => {
+    const product = screen.getByText(/produtos/i)
+    expect(product).toBeInTheDocument()
+  })
+  it('Verify if there is a FRETE text', () => {
+    const frete = screen.getByText(/frete/i)
+    expect(frete).toBeInTheDocument()
+  })
+  it('Verify if there is a DESCONTO text', () => {
+    const discount = screen.getByText(/desconto/i)
+    expect(discount).toBeInTheDocument()
   })
 })

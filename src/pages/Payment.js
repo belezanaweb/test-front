@@ -15,9 +15,13 @@ export default function Payment() {
   const { handleChangeNumber } = useContext(Context)
   const { handleChangeName } = useContext(Context)
   const { handleChangeDate } = useContext(Context)
-  const cardValidation = /^[0-9]{16}$/i
+  const { handleChangeCvv } = useContext(Context)
+  // const { isDisable, setIsDisable } = useContext(Context)
+  // const { doubleFunction } = useContext(Context)
+  // const cardValidation = /^[0-9]{16}$/i
+  const cardValidation = 4444444444444444
   const [isDisable, setIsDisable] = useState(false)
-  const { number } = useContext(Context)
+  const { number, cvv } = useContext(Context)
 
   // if (
   //   typeof number !== 'number' ||
@@ -29,19 +33,21 @@ export default function Payment() {
   //   console.log('ERRRRAAADOO')
   // }
   console.log(number)
+  // console.log(cvv)
 
   const handleValidation = () => {
-    if (number.match(cardValidation)) {
-      setIsDisable(false)
-    } else if (!number.match(cardValidation)) {
-      setIsDisable(true)
-    }
+    console.log('number esta passando')
+    // if (number.test(cardValidation)) {
+    //   setIsDisable(false)
+    // } else if (!number.match(cardValidation)) {
+    //   setIsDisable(true)
+    // }
   }
 
-  const doubleFunction = () => {
-    handleChangeNumber()
-    handleValidation()
-  }
+  // const doubleFunction = () => {
+  //   handleChangeNumber();
+  //   handleValidation();
+  // }
 
   return (
     <div>
@@ -62,7 +68,7 @@ export default function Payment() {
                 <input
                   // type="number"
                   maxLength="16"
-                  onChange={doubleFunction}
+                  onChange={handleChangeNumber}
                   className={styles.input}
                   id="number"
                   name="number"
@@ -104,7 +110,7 @@ export default function Payment() {
             <input
               // type="number"
               maxLength="3"
-              // onChange={handleChangeCvv}
+              onChange={handleChangeCvv}
               className={styles.inputVal}
               id="numero"
               name="numero"
@@ -116,7 +122,7 @@ export default function Payment() {
           <Total />
         </div>
         <button
-          type="submit"
+          type="button"
           disabled={isDisable}
           className={styles.button}
           onClick={goToConfirmation}
