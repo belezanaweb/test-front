@@ -12,7 +12,6 @@
 .cart {
   display: flex;
   flex-direction: column;
-  /* border: solid red; */
 }
 
 .price {

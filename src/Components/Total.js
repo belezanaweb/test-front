@@ -2,24 +2,24 @@ import React from 'react'
 import styles from './Total.module.css'
 
 export default function Total() {
-  const price = 'R$ 624,80'
-  const frete = 'R$ 5,30'
-  const desconto = '-R$ 30,00'
+  const products = 'R$ 624,80'
+  const freight = 'R$ 5,30'
+  const discount = '-R$ 30,00'
   const total = 'R$ 600,10'
 
   return (
     <section className={styles.total}>
       <div className={styles.product}>
         <p>PRODUTOS</p>
-        <p>{price}</p>
+        <p>{products}</p>
       </div>
       <div className={styles.freight}>
         <p>FRETE</p>
-        <p>{frete}</p>
+        <p>{freight}</p>
       </div>
       <div className={styles.discount}>
         <p>DESCONTO</p>
-        <p>{desconto}</p>
+        <p>{discount}</p>
       </div>
       <div className={styles.subtotal}>
         <p>TOTAL</p>

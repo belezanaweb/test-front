@@ -39,3 +39,22 @@ O teste consiste em um checkout simples contendo 3 passos (carrinho, pagamento e
 
 ### Fim:
 Ao finalizar o teste, submeta um pull request para o repositório que nosso time será notificado. Se tiver alguma observação, escreva no pull request.
+
+
+### Motivo de ter escolhido a stack;
+  - Javascript pela familiaridade com o linguagem, pois é a mesma que estou estudando atualmente na Trybe;
+  - React para simplificar e otimizar melhor o código;
+  - React Router Dom para navegar entre as rotas;
+  - Context API para gerenciamento de estado;
+  - Module.CSS para estilização das páginas;
+  - RTL para testar a aplicação;
+### Como rodar a aplicação:
+  - Acessar o diretório;
+  - No terminal rodar: npm start;
+  - Clicar em seguir para  pagamento;
+  - Na página PAGAMENTO digitar:
+    - no campo NÚMERO DO CARTÃO: 444;
+    - no campo NOME DO TITULAR: rr;
+    - no campo VALIDADE: 11;
+    - no campo CVV: 55;
+  - Clicar em FINALIZAR O PEDIDO

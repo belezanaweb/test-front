@@ -1,7 +1,6 @@
 .title {
   padding-top: 15px;
   padding-left: 20px;
-  /* margin-bottom: 10px; */
   font-weight: bolder;
   color: #999999;
 }
@@ -9,11 +8,9 @@
 .button {
   max-width: 600px;
   padding: 20px;
-  /* margin-top: 10px; */
   margin: 0 auto;
   margin-top: 20px;
   margin-bottom: 15px;
-  /* align-items: center; */
   font-weight: bolder;
   border-style: outset;
   font-size: 20px;
@@ -35,13 +32,11 @@
   align-items: center;
   border: solid #eeeeeefa;
   border-radius: 5px;
-  /* height: 100%; */
   height: 275px;
   align-content: space-between;
   background-color: #ffffff;
   box-shadow: 1px 3px 5px #c2c0c0fa;
   margin-bottom: 25px;
-  /* display: inline-block; */
 }
 
 .Card {
@@ -57,7 +52,6 @@
   margin-bottom: 10px;
   border: solid #d6d5d5fa;
   border-width: 1px;
-  /* align-content: space-between; */
   width: 90%;
   margin: 0 auto;
   color: #cccccc;
@@ -91,7 +85,6 @@
 .cardName,
 .cardYear,
 .cardCVV {
-  /* padding-top: 10px; */
   color: #cccccc;
   font-size: 13px;
   font-weight: bolder;

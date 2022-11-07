@@ -1,5 +1,5 @@
 import { useNavigate } from 'react-router-dom'
-import { useContext, useState } from 'react'
+import { useContext } from 'react'
 import Total from '../Components/Total'
 import styles from './Payment.module.css'
 import Context from '../Context/Context'
@@ -10,44 +10,11 @@ export default function Payment() {
     navigate('/confirmation')
   }
 
-  // const MIN_LENGTH = 15;
-
   const { handleChangeNumber } = useContext(Context)
   const { handleChangeName } = useContext(Context)
   const { handleChangeDate } = useContext(Context)
   const { handleChangeCvv } = useContext(Context)
-  // const { isDisable, setIsDisable } = useContext(Context)
-  // const { doubleFunction } = useContext(Context)
-  // const cardValidation = /^[0-9]{16}$/i
-  const cardValidation = 4444444444444444
-  const [isDisable, setIsDisable] = useState(false)
-  const { number, cvv } = useContext(Context)
-
-  // if (
-  //   typeof number !== 'number' ||
-  //   typeof name !== 'string' ||
-  //   typeof date !== 'number' ||
-  //   typeof cvv !== 'number'
-  // ) {
-  //   // setIsDisable(true)
-  //   console.log('ERRRRAAADOO')
-  // }
-  console.log(number)
-  // console.log(cvv)
-
-  const handleValidation = () => {
-    console.log('number esta passando')
-    // if (number.test(cardValidation)) {
-    //   setIsDisable(false)
-    // } else if (!number.match(cardValidation)) {
-    //   setIsDisable(true)
-    // }
-  }
-
-  // const doubleFunction = () => {
-  //   handleChangeNumber();
-  //   handleValidation();
-  // }
+  const { isDisable } = useContext(Context)
 
   return (
     <div>
@@ -68,7 +35,7 @@ export default function Payment() {
                 <input
                   // type="number"
                   maxLength="16"
-                  onChange={handleChangeNumber}
+                  onInput={handleChangeNumber}
                   className={styles.input}
                   id="number"
                   name="number"
@@ -91,7 +58,6 @@ export default function Payment() {
             </label>
           </div>
           <div className={styles.Card}>
-            {/* <div className={styles.validationCVV}> */}
             <div className={styles.cardYear}>
               Validade (mês/ano)
               <input

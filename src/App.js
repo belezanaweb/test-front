@@ -3,7 +3,6 @@ import { Routes, Route } from 'react-router-dom'
 import Cart from './pages/Cart'
 import Payment from './pages/Payment'
 import Confirmation from './pages/Confirmation'
-import './App.css'
 import styles from './App.module.css'
 import Provider from './Context/Provider'
 
@@ -12,7 +11,6 @@ import Provider from './Context/Provider'
 export default function App() {
   return (
     <div className={styles.app}>
-      {/* <BrowserRouter> */}
       <Provider>
         <Routes>
           <Route element={<Cart />} path="/" />
@@ -20,7 +18,6 @@ export default function App() {
           <Route element={<Confirmation />} path="/confirmation" />
         </Routes>
       </Provider>
-      {/* </BrowserRouter> */}
     </div>
   )
 }

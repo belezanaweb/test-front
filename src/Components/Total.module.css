@@ -1,21 +1,11 @@
-/* .total {
-  border: solid black;
-  padding: 10px;
-  margin: 10px;
-  border-radius: 5px;
-  width: 90%;
-} */
-
 .product,
 .freight,
 .discount,
 .subtotal {
   display: flex;
   justify-content: space-between;
-  /* align-content: space-between; */
   margin-bottom: 5px;
   padding: 0.5px 15px 0.5px;
-  /* padding-top: 10px; */
 }
 
 .product {
@@ -39,18 +29,12 @@
   padding: 0px;
   margin-bottom: 10px;
   font-size: medium;
-  /* margin-left: px; */
   margin: auto;
-  /* align-items: center; */
   border: solid #cccccc;
   border-width: 1px;
   border-radius: 3px;
-  /* width: 90%; */
   max-width: 90%;
   max-width: 600px;
   align-items: center;
   justify-content: space-between;
-  /* display: inline-block; */
-  /* flex-direction: row; */
-  /* justify-content: center; */
 }

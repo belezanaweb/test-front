@@ -1,47 +1,56 @@
 import React, { useState, useEffect } from 'react'
 import Context from './Context'
-// import PropTypes from 'prop-types'
+import PropTypes from 'prop-types'
 
 export default function Provider({ children }) {
   const [cart, setCart] = useState(null)
   const [number, setNumber] = useState()
-  const [name, setName] = useState()
-  const [date, setDate] = useState()
-  const [cvv, setCvv] = useState()
-  // const [isDisable, setIsDisable] = useState(true)
-  // const cardValidation = /^[0-9]{16}$/i
-  // const cardValidation = 4444444444444444
-  // const { setIsDisable } = useContext(Context);
+  const [name, setName] = useState('')
+  const [date, setDate] = useState(0)
+  const [cvv, setCvv] = useState(0)
+  const [isDisable, setIsDisable] = useState(true)
+  // const cardValidation = /^[0-9]{5}$/
+  // const nameValidation = /^[a-z ,.'-]+$/i
+  const cardValidation = 44
+  const nameValidation = 'r'
+  const dateValidation = 1
+  const cvvValidation = 5
 
   const handleChangeNumber = (e) => {
-    setNumber(e.target.value)
-    // console.log(number)
+    setNumber(Number(e.target.value))
+    if (number === Number(cardValidation)) {
+      setIsDisable(false)
+    } else {
+      setIsDisable(true)
+    }
   }
 
   const handleChangeName = (e) => {
     setName(e.target.value)
+    if (name === nameValidation) {
+      setIsDisable(false)
+    } else {
+      setIsDisable(true)
+    }
   }
 
   const handleChangeDate = (e) => {
-    setDate(e.target.value)
+    setDate(Number(e.target.value))
+    if (date === dateValidation) {
+      setIsDisable(false)
+    } else {
+      setIsDisable(true)
+    }
   }
 
   const handleChangeCvv = (e) => {
-    setCvv(e.target.value)
+    setCvv(Number(e.target.value))
+    if (cvv === cvvValidation) {
+      setIsDisable(false)
+    } else {
+      setIsDisable(true)
+    }
   }
-
-  // const handleValidation = () => {
-  //   if (number === cardValidation) {
-  //     setIsDisable(false)
-  //   } else if (!number.match(cardValidation)) {
-  //     setIsDisable(true)
-  //   }
-  // }
-
-  // const doubleFunction = () => {
-  //   handleChangeNumber()
-  //   handleValidation()
-  // }
 
   const data = {
     cart,
@@ -54,14 +63,12 @@ export default function Provider({ children }) {
     setDate,
     cvv,
     setCvv,
-    // isDisable,
-    // setIsDisable,
+    isDisable,
+    setIsDisable,
     handleChangeNumber,
     handleChangeName,
     handleChangeDate,
     handleChangeCvv
-    // doubleFunction,
-    // handleValidation,
   }
 
   useEffect(() => {
@@ -80,6 +87,6 @@ export default function Provider({ children }) {
   )
 }
 
-// Provider.propTypes = {
-//   children: PropTypes.objectOf
-// }.isRequired
+Provider.propTypes = {
+  children: PropTypes.objectOf
+}.isRequired

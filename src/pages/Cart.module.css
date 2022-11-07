@@ -25,7 +25,6 @@ body {
   margin: 1 auto;
   font-size: 13px;
   display: flex;
-  /* margin: 10px; */
   width: 100%;
   padding: 0px;
   justify-content: center;
@@ -38,20 +37,15 @@ body {
   padding-left: 40px;
   margin: 0 auto;
   justify-content: center;
-  /* display: flex; */
-  /* margin: 10px; */
-  /* margin-bottom: 10px; */
   font-weight: bolder;
   color: #999999;
 }
 
 .button {
   padding: 20px;
-  /* margin-top: 10px; */
   margin: 0 auto;
   margin-top: 20px;
   margin-bottom: 15px;
-  /* align-items: center; */
   font-weight: bolder;
   border-style: outset;
   font-size: 20px;
@@ -65,15 +59,6 @@ body {
   border-radius: 3px;
   box-shadow: 0.5px 0.5px 10px #999898;
 }
-
-/* .btn {
-  padding: 10px;
-  margin: 10px;
-  align-items: center;
-  border: solid black;
-  border-radius: 5px;
-  width: 90%;
-} */
 
 .total {
   margin-bottom: 20px;
