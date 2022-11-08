@@ -31,8 +31,8 @@ export default function Cart() {
         <p className={styles.title}>PRODUTOS</p>
         <div className={styles.produtos}>
           <label>
-            {cart.items.map((item) => (
-              <div className={styles.produto}>
+            {cart.items.map((item, index) => (
+              <div className={styles.produto} key={index}>
                 <Product
                   name={item.product.name}
                   image={item.product.imageObjects[0].thumbnail}
