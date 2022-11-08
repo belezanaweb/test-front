@@ -7,7 +7,7 @@ import { BrowserRouter } from 'react-router-dom'
 
 const Strict = () => (
   <React.StrictMode>
-    <BrowserRouter basename={process.env.PUBLIC_URL}>
+    <BrowserRouter>
       <App />
     </BrowserRouter>
   </React.StrictMode>
