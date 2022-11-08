@@ -14,7 +14,7 @@ O teste consiste em um checkout simples contendo 3 passos (carrinho, pagamento e
 
 
 ### Passo 1 - Carrinho:
-  - Consuma o [esse endpoint](http://www.mocky.io/v2/5b15c4923100004a006f3c07) e liste os itens do carrinho, bem como o resumo do carrinho;
+  - Consuma o [esse endpoint](https://www.mocky.io/v2/5b15c4923100004a006f3c07) e liste os itens do carrinho, bem como o resumo do carrinho;
   - Persista o conteúdo do JSON para ser usado nas próximas etapas;
 
 ### Passo 2 - Pagamento: 
