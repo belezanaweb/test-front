@@ -1,5 +1,23 @@
-import './App.css'
+import React from 'react';
+import GlobalStyle from './styles/global';
+import {
+  BrowserRouter,
+  Routes,
+  Route,
+} from "react-router-dom";
 
-export default function App() {
-  return <div className="wrapper">Boa sorte! 🚀</div>
-}
+import Checkout from './pages/checkout';
+
+const GlobalStyleProxy: any = GlobalStyle;
+const App: React.FC = () => (
+  <>
+    <BrowserRouter>
+        <Routes>
+            <Route path="/" element={<Checkout />} />
+        </Routes>
+    </BrowserRouter>
+    <GlobalStyleProxy />
+  </>
+);
+
+export default App;
