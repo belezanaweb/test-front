@@ -6,14 +6,14 @@ import {
   Route,
 } from "react-router-dom";
 
-import Checkout from './pages/checkout';
+import Basket from './pages/basket';
 
 const GlobalStyleProxy: any = GlobalStyle;
 const App: React.FC = () => (
   <>
     <BrowserRouter>
         <Routes>
-            <Route path="/" element={<Checkout />} />
+            <Route path="/" element={<Basket />} />
         </Routes>
     </BrowserRouter>
     <GlobalStyleProxy />
