@@ -3,12 +3,12 @@ import styled from 'styled-components';
 import Header from '../../components/header';
 import ProductList from '../../components/product-list';
 import PaymentDescription from '../../components/payment-description';
-import { useFetchBasket } from '../../services/basket/hooks';
 import SuccessMessage from '../../components/success-message';
 import PaymentUserInfo from '../../components/payment-user-info';
+import { useRedirectRouterInvalid } from '../../services/common/hooks';
 
 const Confirmation: React.FC = () => {
-    useFetchBasket();
+    useRedirectRouterInvalid()
     return (
         <>
             <Header itemSelected={2} />

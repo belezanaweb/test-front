@@ -2,10 +2,10 @@ import React, { useEffect } from 'react';
 import styled from 'styled-components';
 import Header from '../../components/header';
 import CreditCardForm from '../../components/credit-card-form';
-import { useFetchBasket } from '../../services/basket/hooks';
+import { useRedirectRouterInvalid } from '../../services/common/hooks';
 
 const Payment: React.FC = () => {
-    useFetchBasket();
+    useRedirectRouterInvalid()
     return (
         <>
             <Header itemSelected={1} />

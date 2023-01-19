@@ -1,12 +1,29 @@
-import React, { HTMLAttributes } from 'react';
+import React, { MouseEvent, LinkHTMLAttributes } from 'react';
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
+import { useCreditCard } from '../../services/payment/hooks';
+import { useBasket } from '../../services/basket/hooks';
+import { useNavigate } from 'react-router-dom';
 
 interface MenuProps {
   itemSelected: number;
 };
 
 const Menu: React.FC<MenuProps> = ({ itemSelected }) => {
+  const navigate = useNavigate()
+  const { basket } = useBasket();
+  const {creditCard} = useCreditCard();
+
+  const handlerPayment = (event: MouseEvent) => {
+    if (!basket) {
+      event.preventDefault();
+    }
+  }
+  const handlerConfirmation = (event: MouseEvent) => {
+    if(!creditCard.number) {
+      event.preventDefault();
+    }
+  }
   return (
     <MenuUI>
       <MenuItem>
@@ -15,12 +32,12 @@ const Menu: React.FC<MenuProps> = ({ itemSelected }) => {
         </MenuLink>
       </MenuItem>
       <MenuItem>
-        <MenuLink to="/payment" itemSelected={itemSelected === 1}>
+        <MenuLink onClick={handlerPayment} to="/payment" itemSelected={itemSelected === 1}>
             PAGAMENTO
         </MenuLink>
       </MenuItem>
       <MenuItem>
-        <MenuLink to="/confirmation" itemSelected={itemSelected === 2}>
+        <MenuLink onClick={handlerConfirmation} to="/confirmation" itemSelected={itemSelected === 2}>
             CONFIRMAÇÃO
         </MenuLink>
       </MenuItem>

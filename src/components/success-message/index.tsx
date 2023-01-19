@@ -34,9 +34,6 @@ const CheckIcon = styled(FontAwesomeIcon)`
 const Container = styled.div`
   margin: 20px 0;
 `
-
-const Img = styled.img``
-
 const Message = styled.p`
   color: #FF7800;
   font-size: 14px;
