@@ -4,8 +4,8 @@ import Title from '../title';
 import ProductCard from '../product-card';
 import { useBasket } from '../../services/basket/hooks';
 interface props {
-  sizeImage: string,
-  isShowPrice: boolean
+  sizeImage?: string,
+  isShowPrice?: boolean
 }
 interface productPrice {
   priceSpecification: {
