@@ -3,12 +3,12 @@ import styled from 'styled-components';
 import Menu from './menu';
 
 interface TitleProps {
-  text: string;
+  children: any; //Todo
 }
 
-const Title: React.FC<TitleProps> = ({ text }) => {
+const Title: React.FC<TitleProps> = ({ children }) => {
   return (
-    <TitleUI>{text}</TitleUI>
+    <TitleUI>{children}</TitleUI>
   );
 };
 

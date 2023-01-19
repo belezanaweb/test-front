@@ -3,18 +3,17 @@ import styled from 'styled-components';
 import Header from '../../components/header';
 import ProductList from '../../components/product-list';
 import PaymentDescription from '../../components/payment-description';
-import ButtonNextStepBasket from '../../components/buttons/basket';
-
+import ButtonNextStepPayment from '../../components/buttons/payment';
 import { useFetchBasket } from '../../services/basket/hooks';
-const Basket: React.FC = () => {
+
+const Payment: React.FC = () => {
     useFetchBasket();
     return (
         <>
-            <Header itemSelected={0} />
+            <Header itemSelected={1} />
             <PageContainer>
-                <ProductList />
                 <PaymentDescription />
-                <ButtonNextStepBasket />
+                <ButtonNextStepPayment />
             </PageContainer>
         </>
     )
@@ -24,4 +23,4 @@ const PageContainer = styled.section`
     padding: 0 10px;
 `;
 
-export default Basket
+export default Payment

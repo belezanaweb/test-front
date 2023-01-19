@@ -1,10 +1,9 @@
-import React from 'react';
+import React, {ButtonHTMLAttributes} from 'react';
 import styled from 'styled-components';
 
-
-const Button: React.FC = ({ children }) => {
+const Button: React.FC<ButtonHTMLAttributes<HTMLButtonElement>> = ({ children, disabled, onClick }) => {
   return (
-    <ButtonUI>
+    <ButtonUI onClick={onClick} disabled={disabled}>
         { children }
     </ButtonUI>
   );

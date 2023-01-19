@@ -15,12 +15,12 @@ const Menu: React.FC<MenuProps> = ({ itemSelected }) => {
         </MenuLink>
       </MenuItem>
       <MenuItem>
-        <MenuLink to="/payment-confirmation" itemSelected={itemSelected === 1}>
+        <MenuLink to="/payment" itemSelected={itemSelected === 1}>
             PAGAMENTO
         </MenuLink>
       </MenuItem>
       <MenuItem>
-        <MenuLink to="/payment-success" itemSelected={itemSelected === 2}>
+        <MenuLink to="/confirmation" itemSelected={itemSelected === 2}>
             CONFIRMAÇÃO
         </MenuLink>
       </MenuItem>

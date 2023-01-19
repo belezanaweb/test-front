@@ -2,28 +2,41 @@ import React from 'react';
 import styled from 'styled-components';
 import Title from '../title';
 import ProductCard from '../product-card';
+import { useBasket } from '../../services/basket/hooks';
+interface props {
+  sizeImage: string,
+  isShowPrice: boolean
+}
+interface productPrice {
+  priceSpecification: {
+    price: number;
+  }
+}
 
-const ProductList: React.FC = () => {
+const ProductList: React.FC<props> = ({sizeImage = "small", isShowPrice = true}) => {
+  const { basket }  = useBasket();
   return (
     <>
-    <Title text="PRODUTOS" />
+    <Title>PRODUTOS</Title>
     <Container>
-        <ProductCard />
-        <ProductCard />
-        <ProductCard />
+      {basket?.items?.map(item => {
+        return <ProductCard {...item.product} sizeImage={sizeImage} isShowPrice={isShowPrice} />
+      })}
     </Container>
     </>
   );
 };
 
-const Container = styled.header`
-    height: 325px;
+const Container = styled.div`
     width: 341px;
     border-radius: 3px;
     background-color: #FFF;
     box-shadow: 1px 1px 5px 0 rgba(0,0,29,0.22);
     padding: 12px;
     margin: 0 0 20px;
+    div:last-child {
+      margin: 0
+    }
 `;
 
 

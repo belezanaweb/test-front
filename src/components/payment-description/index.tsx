@@ -1,27 +1,42 @@
 import React from 'react';
+import { useAsyncValue } from 'react-router-dom';
 import styled from 'styled-components';
+import { useBasket } from '../../services/basket/hooks';
+import { getTotalBasket } from '../../services/basket/helpers';
+
 
 const PaymentDescription: React.FC = () => {
-  return (
+  const { basket }  = useBasket()
+
+  if (!basket) {
+    return null;
+  }
+
+  const total = getTotalBasket(basket);
+  const discount = basket?.discount;
+  const { shippingTotal } = basket;
+  const totalWithDiscount = total + shippingTotal - discount;
+
+  return(
     <Container>
             <Line>
                 <Item>PRODUTOS</Item>
-                <Item> R$ 624,80</Item>
+                <Item> R$ {total.toFixed(2)}</Item>
             </Line>
             <Line>
                 <Item>FRETE</Item>
-                <Item> R$ 5,30</Item>
+                <Item> R$ {basket?.shippingTotal?.toFixed(2)}</Item>
             </Line>
             <Line>
                 <ItemHighlighted>DESCONTO</ItemHighlighted>
-                <ItemHighlighted> - R$ 30,00</ItemHighlighted>
+                <ItemHighlighted> - R$ {discount.toFixed(2)}</ItemHighlighted>
             </Line>
             <Line>
                 <ItemTotal>TOTAL</ItemTotal>
-                <ItemTotal> R$ 600,10</ItemTotal>
+                <ItemTotal> R$ {totalWithDiscount.toFixed(2)}</ItemTotal>
             </Line>
     </Container>
-  );
+  )
 };
 
 
