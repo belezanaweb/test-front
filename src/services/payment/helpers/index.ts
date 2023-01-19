@@ -42,3 +42,8 @@ export const isCVVValid = (cvv: string | null) => {
 export const removeMasking = (value: string) => {
     return value.replace(/[^0-9]+/g, "")
 }
+
+export const lastNumbersCard = (value: string) => {
+   const arrayNumbers = value.split(".")
+   return arrayNumbers[arrayNumbers.length - 1]
+}

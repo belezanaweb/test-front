@@ -4,6 +4,8 @@ import Header from '../../components/header';
 import ProductList from '../../components/product-list';
 import PaymentDescription from '../../components/payment-description';
 import { useFetchBasket } from '../../services/basket/hooks';
+import SuccessMessage from '../../components/success-message';
+import PaymentUserInfo from '../../components/payment-user-info';
 
 const Confirmation: React.FC = () => {
     useFetchBasket();
@@ -11,6 +13,8 @@ const Confirmation: React.FC = () => {
         <>
             <Header itemSelected={2} />
             <PageContainer>
+                <SuccessMessage />
+                <PaymentUserInfo />
                 <ProductList sizeImage='thumbnail' isShowPrice={false} />
                 <PaymentDescription />
             </PageContainer>

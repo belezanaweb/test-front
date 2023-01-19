@@ -41,12 +41,11 @@ const PaymentDescription: React.FC = () => {
 
 
 const Container = styled.div`
-box-sizing: border-box;
-border-radius: 3px;
-border: 1px solid #CCC;
-padding: 15px 14px 5px;
-margin: 0 0 20px;
-
+    box-sizing: border-box;
+    border-radius: 3px;
+    border: 1px solid #CCC;
+    padding: 15px 14px 5px;
+    margin: 0 0 20px;
 `;
 
 const Line = styled.p`

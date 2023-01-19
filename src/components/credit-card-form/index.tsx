@@ -72,7 +72,7 @@ console.log("creditCard:::::::> ", creditCard)
           <FormInput
             label="Número do cartão:"
             name="number"
-            mask="9999,9999,9999,9999"
+            mask="9999.9999.9999.9999"
             type="text" 
             placeholder='____.____.____.____'
             error={validation.number}
