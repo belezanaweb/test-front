@@ -10,7 +10,8 @@ export const useRedirectRouterInvalid = () => {
     const {creditCard} = useCreditCard();
     useEffect(()=> {
         if(!basket) {
-            navigate("/")
+            navigate("/");
+            return;
         }
         if(!creditCard.number) {
             navigate("/payment")

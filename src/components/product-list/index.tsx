@@ -15,7 +15,7 @@ interface productPrice {
 
 const ProductList: React.FC<props> = ({sizeImage = "small", isShowPrice = true}) => {
   const { basket }  = useBasket();
-  return (
+  return !!basket ? (
     <>
     <Title>PRODUTOS</Title>
     <Container>
@@ -24,7 +24,7 @@ const ProductList: React.FC<props> = ({sizeImage = "small", isShowPrice = true})
       })}
     </Container>
     </>
-  );
+  ): null;
 };
 
 const Container = styled.div`
