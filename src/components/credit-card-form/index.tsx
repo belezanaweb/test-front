@@ -1,16 +1,18 @@
-import React, { useState } from 'react';
+import React, { FormEvent, useState } from 'react';
 import styled from 'styled-components';
 import Title from '../title';
 
 import PaymentDescription from '../../components/payment-description';
 
 import Button from '../buttons/default';
-import Input from '../input';
+import FormInput from '../FormInput';
 
 import { isNumberValid, isNameValid, isDateValid, isCVVValid } from '../../services/payment/helpers'
-
+import { useCreditCard } from '../../services/payment/hooks';
 const CreditCardForm: React.FC = () => {
 
+const { creditCard, setCreditCard }  = useCreditCard();
+console.log("creditCard:::::::> ", creditCard)
   const [validation, setValidation] = useState({
     number: {
       isError: false,
@@ -30,10 +32,8 @@ const CreditCardForm: React.FC = () => {
     }
   });
 
-  const handlerOnSubmit = (event) => {
+  const handlerOnSubmit = (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-    console.log(event)
-    debugger;
     let hasFormError = false;
 
     const formData = new FormData(event.currentTarget);
@@ -56,7 +56,12 @@ const CreditCardForm: React.FC = () => {
     });
 
     if (!hasFormError) {
-        alert("sucesso")
+        setCreditCard({   
+            number: formData?.get("number"),
+            name: formData?.get("name") ,
+            date: formData?.get("date"),
+            cvv: formData?.get("cvv")
+        })
     }
   }
   return (
@@ -64,35 +69,39 @@ const CreditCardForm: React.FC = () => {
       <Title>CARTÃO DE CRÉDITO</Title>
       <Form onSubmit={handlerOnSubmit}>
         <Container>
-          <Input
+          <FormInput
             label="Número do cartão:"
             name="number"
             mask="9999,9999,9999,9999"
             type="text" 
             placeholder='____.____.____.____'
-            error={validation.number} />
-          <Input
+            error={validation.number}
+            defaultValue={creditCard.number} />
+          <FormInput
             label="Nome do Titular:"
             name="name"
             mask=""
             type="text" 
             placeholder='Como no cartão'
-            error={validation.name}  />
+            error={validation.name}
+            defaultValue={creditCard.name}  />
           <ContainerCardData>
-                <Input
-                  label="Validade (mês/ano):"
-                  name="date"
-                  mask="99/9999"
-                  type="text" 
-                  placeholder='__/____'
-                  error={validation.date} />
-                <Input
-                  label="CVV:"
-                  name="cvv"
-                  mask="999"
-                  type="text" 
-                  placeholder='___'
-                  error={validation.cvv} />
+            <FormInput
+                label="Validade (mês/ano):"
+                name="date"
+                mask="99/9999"
+                type="text" 
+                placeholder='__/____'
+                error={validation.date}
+                defaultValue={creditCard.date} />
+            <FormInput
+                label="CVV:"
+                name="cvv"
+                mask="999"
+                type="text" 
+                placeholder='___'
+                error={validation.cvv}
+                defaultValue={creditCard.cvv}  />
           </ContainerCardData>
         </Container>
 

@@ -14,7 +14,7 @@ interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
 interface ErrorProps {
     isError: boolean
 }
-const Input: React.FC<InputProps> = ({label, id, name, mask, type, placeholder, error}) => {
+const FormInput: React.FC<InputProps> = ({label, id, name, mask, type, placeholder, error, defaultValue}) => {
     return (
         <Container>
             <Label htmlFor={id}>{label}</Label>    
@@ -24,7 +24,8 @@ const Input: React.FC<InputProps> = ({label, id, name, mask, type, placeholder, 
                 mask={mask}
                 type={type} 
                 placeholder={placeholder}
-                isError={!!error?.isError} />
+                isError={!!error?.isError}
+                defaultValue={defaultValue} />
             
             <Error isError={!!error?.isError}>{error?.errorMessage}</Error>
         </Container>
@@ -78,4 +79,4 @@ const Error = styled.span<ErrorProps>`
     ${props => (props.isError ? `display: block` : `display: none`)};
 `
 
-export default Input;
+export default FormInput;
