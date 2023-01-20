@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import styled from 'styled-components';
 import Header from '../../components/header';
 import ProductList from '../../components/product-list';
@@ -6,26 +6,21 @@ import PaymentDescription from '../../components/payment-description';
 import SuccessMessage from '../../components/success-message';
 import PaymentUserInfo from '../../components/payment-user-info';
 import { useRedirectRouterInvalid } from '../../services/common/hooks';
+import Wrapper from '../../components/wrapper';
 
 const Confirmation: React.FC = () => {
     useRedirectRouterInvalid()
     return (
         <>
             <Header itemSelected={2} />
-            <PageContainer>
+            <Wrapper>
                 <SuccessMessage />
                 <PaymentUserInfo />
                 <ProductList sizeImage='thumbnail' isShowPrice={false} />
                 <PaymentDescription />
-            </PageContainer>
+            </Wrapper>
         </>
     )
 }
-
-const PageContainer = styled.section`
-    padding: 0 10px;
-    max-width: 960px;
-    margin: 0 auto;
-`;
 
 export default Confirmation

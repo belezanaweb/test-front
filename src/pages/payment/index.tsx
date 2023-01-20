@@ -3,23 +3,18 @@ import styled from 'styled-components';
 import Header from '../../components/header';
 import CreditCardForm from '../../components/credit-card-form';
 import { useRedirectRouterInvalid } from '../../services/common/hooks';
+import Wrapper from '../../components/wrapper';
 
 const Payment: React.FC = () => {
     useRedirectRouterInvalid()
     return (
         <>
             <Header itemSelected={1} />
-            <PageContainer>
+            <Wrapper>
                 <CreditCardForm />
-            </PageContainer>
+            </Wrapper>
         </>
     )
 }
-
-const PageContainer = styled.section`
-    padding: 0 10px;
-    max-width: 960px;
-    margin: 0 auto;
-`;
 
 export default Payment

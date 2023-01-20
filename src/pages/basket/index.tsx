@@ -3,29 +3,25 @@ import styled from 'styled-components';
 import Header from '../../components/header';
 import ProductList from '../../components/product-list';
 import PaymentDescription from '../../components/payment-description';
-import ButtonNextStepBasket from '../../components/buttons/basket';
 import Loading from '../../components/loading';
-
+import { useNavigate } from 'react-router-dom';
+import Button from '../../components/button';
+import Wrapper from '../../components/wrapper';
 import { useBasket, useFetchBasket } from '../../services/basket/hooks';
 const Basket: React.FC = () => {
     const { basket } = useBasket();
+    const navigate = useNavigate()
     useFetchBasket();
     return (
         <>
             <Header itemSelected={0} />
-            {!!basket ? <PageContainer>
+            {!!basket ? <Wrapper>
                 <ProductList />
                 <PaymentDescription />
-                <ButtonNextStepBasket />
-            </PageContainer> : <Loading />}
+                <Button onClick={()=> navigate('/payment')}>SEGUIR PARA O PAGAMENTO</Button>
+            </Wrapper> : <Loading />}
         </>
     )
 }
-
-const PageContainer = styled.section`
-    padding: 0 10px;
-    max-width: 960px;
-    margin: 0 auto;
-`;
 
 export default Basket

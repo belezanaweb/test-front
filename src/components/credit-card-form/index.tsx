@@ -4,7 +4,7 @@ import Title from '../title';
 
 import PaymentDescription from '../../components/payment-description';
 
-import Button from '../buttons/default';
+import Button from '../button';
 import FormInput from '../FormInput';
 
 import { isNumberValid, isNameValid, isDateValid, isCVVValid } from '../../services/payment/helpers'
