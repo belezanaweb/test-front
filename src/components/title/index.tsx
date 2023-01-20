@@ -11,17 +11,9 @@ const Title: React.FC<TitleProps> = ({ children }) => {
     <TitleUI>{children}</TitleUI>
   );
 };
-
-const Container = styled.header`
-  border-radius: 3px;
-  background-color: #FFF;
-  box-shadow: 1px 1px 5px 0 rgba(0,0,29,0.22);
-  padding: 12px 16px;
-`;
-
 const TitleUI = styled.h1`
     color: #999;
-    font-size: 14px;
+    font-size: ${({theme}) => theme.fontSizes.h1};
     font-weight: 700;
     text-align: left;
     line-height: 17px;

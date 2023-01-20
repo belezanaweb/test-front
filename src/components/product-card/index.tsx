@@ -26,7 +26,7 @@ const ProductionDescription = styled.div`
 `
 const Container = styled.div`
     box-sizing: border-box;
-    border-radius: 3px;
+    border-radius: ${({theme}) => theme.border.radius};
     border: 1px solid #EEE;
     display: flex;
     margin: 0 0 15px;
@@ -36,8 +36,8 @@ const Container = styled.div`
 
 const Title = styled.h2`
     color: #212122;
-    font-size: 13px;
-    line-height: 16px;
+    font-size: ${({theme}) => theme.fontSizes.medium};
+    line-height: ${({theme}) => theme.fontSizes.large};
 `
 const Price = styled.p`
     color: #212122;

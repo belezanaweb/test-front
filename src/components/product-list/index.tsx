@@ -29,9 +29,9 @@ const ProductList: React.FC<props> = ({sizeImage = "small", isShowPrice = true})
 };
 
 const Container = styled.div`
-    border-radius: 3px;
-    background-color: #FFF;
-    box-shadow: 1px 1px 5px 0 rgba(0,0,29,0.22);
+    border-radius: ${({theme}) => theme.border.radius};
+    background-color: ${({theme}) => theme.colors.box};
+    box-shadow: ${({theme}) => theme.border.shadow};
     padding: 12px;
     margin: 0 0 20px;
     div:last-child {

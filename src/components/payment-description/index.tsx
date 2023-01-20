@@ -42,7 +42,7 @@ const PaymentDescription: React.FC = () => {
 
 const Container = styled.div`
     box-sizing: border-box;
-    border-radius: 3px;
+    border-radius: ${({theme}) => theme.border.radius};
     border: 1px solid #CCC;
     padding: 15px 14px 5px;
     margin: 0 0 20px;
@@ -55,13 +55,13 @@ const Line = styled.p`
 `
 
 const Item = styled.span`
-    color: #212122;
+    color: ${({theme}) => theme.colors.default};
     font-size: 14px;
     line-height: 17px;
 `
 
 const ItemHighlighted = styled.span`
-    color: #FF7800;
+    color: ${({theme}) => theme.colors.highlight};
     font-size: 14px;
     line-height: 17px;
 `

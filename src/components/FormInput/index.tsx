@@ -37,7 +37,7 @@ const Container = styled.div`
 `;
 const Label = styled.label`
     color: #CCC;
-    font-size: 12px;
+    font-size: ${({theme}) => theme.fontSizes.small};
     font-weight: 700;
     line-height: 14px;
     display: block;
@@ -46,35 +46,33 @@ const Label = styled.label`
 
 const InputUI = styled(InputMask)<ErrorProps>`
     box-sizing: border-box;
-    border-radius: 3px;
+    border-radius: ${({theme}) => theme.border.radius};
     background-color: #FFF;
-    box-shadow: inset 0 1px 2px 0 rgba(0,0,0,0.2)
+    box-shadow: ${({theme}) => theme.input.boxShadow};
     display: block;
     width: 100%;
     height: 45px;
     line-height: 45px;
     padding: 0 13px;
     color: #212121;
-    font-size: 16px;
-    font-family: "Helvetica Neue";
-    ${props => (props.isError ? `  border: 1px solid #F30;
-    ` : `border: 1px solid #E7E7E7;`)};
+    font-size: ${({theme}) => theme.fontSizes.large};
+    ${props => (props.isError ? `border: 1px solid #F30;` : `border: 1px solid #E7E7E7;`)};
     ::placeholder {
-      color: #E0E7EE;
-      font-size: 16px;
+      color: ${({theme}) => theme.colors.placeholder};
+      font-size: ${({theme}) => theme.fontSizes.large};
       letter-spacing: 1.37px;
       line-height: 19px;
     }
 
     &:focus {
-      border: 1px solid #A43287;
+      ${({theme}) => `border: 1px solid ${theme.input.borderFocus}`};
     }
 
 `;
 
 const Error = styled.span<ErrorProps>`
     color: #F30;
-    font-size: 12px;
+    font-size: ${({theme}) => theme.fontSizes.small};
     margin: 3px 0 0;
     ${props => (props.isError ? `display: block` : `display: none`)};
 `

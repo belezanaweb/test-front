@@ -62,9 +62,9 @@ const MenuItem = styled.li`
 const MenuLink = styled(Link)<{ itemSelected: boolean }>`
     color: #ccc;
     text-decoration: none;
-    font-size: 13px;
+    font-size: ${({theme}) => theme.fontSizes.medium};
     font-weight: 700;
-    line-height: 16px;
+    line-height: ${({theme}) => theme.fontSizes.large};
     text-align: center;
     ${({ itemSelected }) => itemSelected && 'color: #FF7800;font-weight: bold;'};
 `;

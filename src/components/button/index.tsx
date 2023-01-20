@@ -12,8 +12,8 @@ const Button: React.FC<ButtonHTMLAttributes<HTMLButtonElement>> = ({ children, d
 const ButtonUI = styled.button`
     height: 60px;
     width: 100%;
-    border-radius: 3px;
-    background-color: #FF6C00;
+    border-radius: ${({theme}) => theme.border.radius};
+    background-color: ${({theme}) => theme.button.default};
     box-shadow: inset 0 -3px 0 0 #D45A00, 0 2px 4px 0 rgba(0,0,0,0.25);
     border: 0;
     color: #FFF;
@@ -24,7 +24,7 @@ const ButtonUI = styled.button`
     text-align: center;
     padding: 0 10px;
     &:hover {
-        background-color: #D45A00;
+        background-color: ${({theme}) => theme.button.default};
     }
 `;
 
