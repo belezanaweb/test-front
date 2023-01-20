@@ -74,38 +74,38 @@ const CreditCardForm: React.FC = () => {
             <Form onSubmit={handlerOnSubmit}>
             <Container>
                 <FormInput
-                label="Número do cartão:"
-                name="number"
-                mask="9999.9999.9999.9999"
-                type="text" 
-                placeholder='____.____.____.____'
-                error={validation.number}
-                defaultValue={creditCard.number} />
+                    label="Número do cartão:"
+                    name="number"
+                    mask="9999.9999.9999.9999"
+                    type="text" 
+                    placeholder='____.____.____.____'
+                    error={validation.number}
+                    defaultValue={creditCard.number} />
                 <FormInput
-                label="Nome do Titular:"
-                name="name"
-                mask=""
-                type="text" 
-                placeholder='Como no cartão'
-                error={validation.name}
-                defaultValue={creditCard.name}  />
+                    label="Nome do Titular:"
+                    name="name"
+                    mask=""
+                    type="text" 
+                    placeholder='Como no cartão'
+                    error={validation.name}
+                    defaultValue={creditCard.name}  />
                 <ContainerCardData>
-                <FormInput
-                    label="Validade (mês/ano):"
-                    name="date"
-                    mask="99/9999"
-                    type="text" 
-                    placeholder='__/____'
-                    error={validation.date}
-                    defaultValue={creditCard.date} />
-                <FormInput
-                    label="CVV:"
-                    name="cvv"
-                    mask="999"
-                    type="text" 
-                    placeholder='___'
-                    error={validation.cvv}
-                    defaultValue={creditCard.cvv}  />
+                    <FormInput
+                        label="Validade (mês/ano):"
+                        name="date"
+                        mask="99/9999"
+                        type="text" 
+                        placeholder='__/____'
+                        error={validation.date}
+                        defaultValue={creditCard.date} />
+                    <FormInput
+                        label="CVV:"
+                        name="cvv"
+                        mask="999"
+                        type="text" 
+                        placeholder='___'
+                        error={validation.cvv}
+                        defaultValue={creditCard.cvv}  />
                 </ContainerCardData>
             </Container>
 
@@ -142,8 +142,5 @@ const ContainerCardData = styled.div`
   }
 
 `;
-
-const DivCardData = styled.div``;
-
 
 export default CreditCardForm;

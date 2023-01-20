@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import Title from '../title';
 import ProductCard from '../product-card';
 import { useBasket } from '../../services/basket/hooks';
+
 interface props {
   sizeImage?: string,
   isShowPrice?: boolean
@@ -14,17 +15,17 @@ interface productPrice {
 }
 
 const ProductList: React.FC<props> = ({sizeImage = "small", isShowPrice = true}) => {
-  const { basket }  = useBasket();
-  return !!basket ? (
-    <>
-    <Title>PRODUTOS</Title>
-    <Container>
-      {basket?.items?.map(item => {
-        return <ProductCard {...item.product} sizeImage={sizeImage} isShowPrice={isShowPrice} />
-      })}
-    </Container>
-    </>
-  ): null;
+    const { basket }  = useBasket();
+    return (
+        <>
+            <Title>PRODUTOS</Title>
+            <Container>
+                {basket?.items?.map(item => {
+                    return <ProductCard {...item.product} sizeImage={sizeImage} isShowPrice={isShowPrice} />
+                })}
+            </Container>
+        </>
+    )
 };
 
 const Container = styled.div`
