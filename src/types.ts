@@ -1,9 +1,22 @@
-import { MouseEvent, ReactNode } from "react";
+import { Dispatch, MouseEvent, ReactNode, SetStateAction } from "react";
 
 export interface ButtonProps {
   children: ReactNode;
   to: string;
   onClick?: (e: MouseEvent<HTMLAnchorElement>) => void;
+}
+
+export interface InputProps {
+  label: string;
+  name: string;
+  type: string;
+  placeholder: string;
+  inputMaskChange: Dispatch<SetStateAction<string>>;
+  value: string;
+  validationLength?: number;
+  isValidated: boolean,
+  setFormValidation: (returned: UpdateFormValidationType) => void;
+  mask?: (value: string) => string;
 }
 
 export interface CartItemsProps {
@@ -18,6 +31,11 @@ export interface CartInfoProps {
   total?: number;
 }
 
+export interface PaymentFormProps {
+  isFormTriggered: boolean;
+  handleFormDataChange: (data: Record<string, string>) => void;
+}
+
 export type ThemeType = {
   device: Record<string, string>;
   colors: Record<string, string>;
@@ -25,6 +43,18 @@ export type ThemeType = {
 
 export type HeaderItemType = {
   isHighlighted?: boolean;
+}
+
+export type FormValidationType = {
+  cardNumber?: boolean;
+  cardName?: boolean;
+  cardValidThrough?: boolean;
+  cardCVV?: boolean;
+}
+
+export type UpdateFormValidationType = {
+  reference: string;
+  value: boolean;
 }
 
 export type CartItemType = {
@@ -84,4 +114,8 @@ export type CardType = {
 
 export type ColumnType = {
   flex: number;
+}
+
+export type InputType = {
+  isValidated: boolean;
 }
