@@ -2,7 +2,7 @@ import { render } from '@testing-library/react'
 
 import Image from '.'
 
-describe('Button component', () => {
+describe('Image component', () => {
 
     beforeEach(() =>{
         render(<Image imageObjects={[{
