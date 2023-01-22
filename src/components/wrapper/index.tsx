@@ -1,18 +1,12 @@
 import React, {BaseHTMLAttributes} from 'react';
-import styled from 'styled-components';
+import * as S from './styles'
 
 const Wrapper: React.FC<BaseHTMLAttributes<HTMLDivElement>> = ({ children }) => {
   return (
-    <WrapperUI>
+    <S.Wrapper>
         { children }
-    </WrapperUI>
+    </S.Wrapper>
   );
 };
-
-const WrapperUI = styled.section`
-    padding: 0 10px;
-    max-width: 960px;
-    margin: 0 auto;
-`;
 
 export default Wrapper;
