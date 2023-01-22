@@ -1,8 +1,7 @@
 import React from 'react';
-import { useAsyncValue } from 'react-router-dom';
-import styled from 'styled-components';
 import { useBasket } from '../../services/basket/hooks';
 import { getTotalBasket } from '../../services/basket/helpers';
+import * as S from './styles'
 
 
 const PaymentDescription: React.FC = () => {
@@ -18,57 +17,26 @@ const PaymentDescription: React.FC = () => {
   const totalWithDiscount = total + shippingTotal - discount;
 
   return(
-    <Container>
-            <Line>
-                <Item>PRODUTOS</Item>
-                <Item> R$ {total.toFixed(2)}</Item>
-            </Line>
-            <Line>
-                <Item>FRETE</Item>
-                <Item> R$ {basket?.shippingTotal?.toFixed(2)}</Item>
-            </Line>
-            <Line>
-                <ItemHighlighted>DESCONTO</ItemHighlighted>
-                <ItemHighlighted> - R$ {discount.toFixed(2)}</ItemHighlighted>
-            </Line>
-            <Line>
-                <ItemTotal>TOTAL</ItemTotal>
-                <ItemTotal> R$ {totalWithDiscount.toFixed(2)}</ItemTotal>
-            </Line>
-    </Container>
+    <S.Container>
+            <S.Line>
+                <S.Item>PRODUTOS</S.Item>
+                <S.Item data-testid="total">R$ {total.toFixed(2)}</S.Item>
+            </S.Line>
+            <S.Line>
+                <S.Item>FRETE</S.Item>
+                <S.Item data-testid="frete">R$ {basket?.shippingTotal?.toFixed(2)}</S.Item>
+            </S.Line>
+            <S.Line>
+                <S.ItemHighlighted>DESCONTO</S.ItemHighlighted>
+                <S.ItemHighlighted data-testid="discount">- R$ {discount.toFixed(2)}</S.ItemHighlighted>
+            </S.Line>
+            <S.Line>
+                <S.ItemTotal>TOTAL</S.ItemTotal>
+                <S.ItemTotal data-testid="totalWithDiscount">R$ {totalWithDiscount.toFixed(2)}</S.ItemTotal>
+            </S.Line>
+    </S.Container>
   )
 };
-
-
-const Container = styled.div`
-    box-sizing: border-box;
-    border-radius: ${({theme}) => theme.border.radius};
-    border: 1px solid #CCC;
-    padding: 15px 14px 5px;
-    margin: 0 0 20px;
-`;
-
-const Line = styled.p`
-  display: flex;
-  justify-content: space-between;
-  margin: 0 0 10px;
-`
-
-const Item = styled.span`
-    color: ${({theme}) => theme.colors.default};
-    font-size: 14px;
-    line-height: 17px;
-`
-
-const ItemHighlighted = styled.span`
-    color: ${({theme}) => theme.colors.highlight};
-    font-size: 14px;
-    line-height: 17px;
-`
-
-const ItemTotal = styled.span`
-    font-weight: bold;
-`
 
 
 export default PaymentDescription;
