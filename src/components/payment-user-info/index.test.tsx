@@ -1,17 +1,14 @@
 import { ThemeProvider } from 'styled-components';
-import { render, screen } from '@testing-library/react'
+import { render } from '@testing-library/react'
 import Theme from '../../theme';
 
 import * as ReactRouter from "react-router-dom"
 import * as CreditCardHooks from '../../services/payment/hooks';
 
 import PaymentUserInfo from '.'
+import { mockCreditCardData } from './mock';
 
-const mockCreditCardData =   {
-    number: "2222.2222.2222.2222",
-    name: "Jose da Silva",
-    date: "022024"
-}
+
 describe('Payment user info component', () => {
 
     it('should render component', () => {

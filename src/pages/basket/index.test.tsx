@@ -19,7 +19,7 @@ vi.mock('react-router-dom', async () => {
 });
 describe('Basket page component', () => {
 
-    it('shoul render component and switch to payment', () => { 
+    it('should render component and switch to payment', () => { 
         vi.spyOn(BasketHooks, 'useFetchBasket').mockReturnValue({} as BasketType)
         render(
             <ThemeProvider theme={Theme}>

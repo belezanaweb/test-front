@@ -34,7 +34,7 @@ export const isCVVValid = (cvv: string | null) => {
     const isError = !cvv || removeMasking(cvv).length < 3;
     return {
         isError,
-        errorMessage: isError ? "insira o cvv" : "" 
+        errorMessage: isError ? "insira um cvv válido" : "" 
     }
     
 }

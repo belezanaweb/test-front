@@ -1,22 +1,11 @@
 import { ThemeProvider } from 'styled-components';
-import { render } from '@testing-library/react'
+import { render } from '@testing-library/react';
 import Theme from '../../theme';
-import * as ReactRouter from "react-router-dom"
+import * as ReactRouter from "react-router-dom";
 
-import ProductCard from '.'
+import ProductCard from '.';
+import { mockData } from './mock';
 
-const mockData =   {
-    imageObjects:[{
-        thumbnail: "thumbnail",
-        small: "small"
-    }], 
-    name: "Jose da Silva", 
-    priceSpecification: {
-        price: 10
-    }, 
-    sizeImage: "small", 
-    isShowPrice: true
-}
 describe('Product card component', () => {
 
     it('should render component', () => {
