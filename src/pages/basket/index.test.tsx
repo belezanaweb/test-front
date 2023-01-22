@@ -19,6 +19,18 @@ vi.mock('react-router-dom', async () => {
 });
 describe('Basket page component', () => {
 
+    it('should render component loading', () => { 
+        vi.spyOn(BasketHooks, 'useFetchBasket').mockReturnValue(null)
+        const { container } =  render(
+            <ThemeProvider theme={Theme}>
+                <ReactRouter.BrowserRouter>
+                    <Basket />
+                </ReactRouter.BrowserRouter>
+            </ThemeProvider>
+        ); 
+        expect(container.querySelector(".lds-ring")).toBeDefined();
+    });
+
     it('should render component and switch to payment', () => { 
         vi.spyOn(BasketHooks, 'useFetchBasket').mockReturnValue({} as BasketType)
         render(
