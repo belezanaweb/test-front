@@ -1,5 +1,4 @@
 import React, { FormEvent, useState } from 'react';
-import styled from 'styled-components';
 import Title from '../title';
 
 import PaymentDescription from '../../components/payment-description';
@@ -10,6 +9,7 @@ import FormInput from '../FormInput';
 import { isNumberValid, isNameValid, isDateValid, isCVVValid } from '../../services/payment/helpers'
 import { useCreditCard } from '../../services/payment/hooks';
 import { useNavigate } from 'react-router-dom';
+import * as S from './styles'
 
 const CreditCardForm: React.FC = () => {
 
@@ -39,15 +39,17 @@ const CreditCardForm: React.FC = () => {
         event.preventDefault();
         let hasFormError = false;
 
-        const formData = new FormData(event.currentTarget);
+        const form = event.currentTarget;
 
-        if (!formData) {
-            return
-        }
-        const number = isNumberValid(formData?.get("number") as string);
-        const name =  isNameValid(formData.get("name") as string);
-        const date = isDateValid(formData.get("date") as string)
-        const cvv = isCVVValid(formData.get("cvv") as string);
+        const numberInput = form?.querySelector("#credit-card-form-number") as HTMLInputElement;
+        const nameInput = form?.querySelector("#credit-card-form-name") as HTMLInputElement;
+        const dateInput = form?.querySelector("#credit-card-form-date") as HTMLInputElement;
+        const cvvInput = form?.querySelector("#credit-card-form-cvv") as HTMLInputElement;
+
+        const number = isNumberValid(numberInput?.value);
+        const name =  isNameValid(nameInput?.value);
+        const date = isDateValid(dateInput?.value)
+        const cvv = isCVVValid(cvvInput?.value);
 
         hasFormError = number.isError || name.isError || date.isError || cvv.isError
 
@@ -57,90 +59,69 @@ const CreditCardForm: React.FC = () => {
             date,
             cvv
         });
-
         if (!hasFormError) {
             setCreditCard({   
-                number: formData?.get("number"),
-                name: formData?.get("name") ,
-                date: formData?.get("date"),
-                cvv: formData?.get("cvv")
+                number: numberInput.value,
+                name: nameInput?.value,
+                date: dateInput?.value,
+                cvv: cvvInput?.value
             })
+            
             navigate("/confirmation")
         }
     }
     return (
         <>
             <Title>CARTÃO DE CRÉDITO</Title>
-            <Form onSubmit={handlerOnSubmit}>
-            <Container>
-                <FormInput
-                    label="Número do cartão:"
-                    name="number"
-                    mask="9999.9999.9999.9999"
-                    type="text" 
-                    placeholder='____.____.____.____'
-                    error={validation.number}
-                    defaultValue={creditCard.number} />
-                <FormInput
-                    label="Nome do Titular:"
-                    name="name"
-                    mask=""
-                    type="text" 
-                    placeholder='Como no cartão'
-                    error={validation.name}
-                    defaultValue={creditCard.name}  />
-                <ContainerCardData>
+            <S.Form onSubmit={handlerOnSubmit}>
+                <S.Container>
                     <FormInput
-                        label="Validade (mês/ano):"
-                        name="date"
-                        mask="99/9999"
+                        label="Número do cartão:"
+                        id="credit-card-form-number"
+                        name="number"
+                        mask="9999.9999.9999.9999"
                         type="text" 
-                        placeholder='__/____'
-                        error={validation.date}
-                        defaultValue={creditCard.date} />
+                        placeholder='____.____.____.____'
+                        error={validation.number}
+                        defaultValue={creditCard.number} />
                     <FormInput
-                        label="CVV:"
-                        name="cvv"
-                        mask="999"
+                        label="Nome do Titular:"
+                        id="credit-card-form-name"
+                        name="name"
+                        mask=""
                         type="text" 
-                        placeholder='___'
-                        error={validation.cvv}
-                        defaultValue={creditCard.cvv}  />
-                </ContainerCardData>
-            </Container>
+                        placeholder='Como no cartão'
+                        error={validation.name}
+                        defaultValue={creditCard.name}  />
+                    <S.ContainerCardData>
+                        <FormInput
+                            label="Validade (mês/ano):"
+                            id="credit-card-form-date"
+                            name="date"
+                            mask="99/9999"
+                            type="text" 
+                            placeholder='__/____'
+                            error={validation.date}
+                            defaultValue={creditCard.date} />
+                        <FormInput
+                            id="credit-card-form-cvv"
+                            label="CVV:"
+                            name="cvv"
+                            mask="999"
+                            type="text" 
+                            placeholder='___'
+                            error={validation.cvv}
+                            defaultValue={creditCard.cvv}  />
+                    </S.ContainerCardData>
+                </S.Container>
 
-            <PaymentDescription />
-            <Button>FINALIZAR O PEDIDO</Button>
-            </Form>
+                <PaymentDescription />
+                <Button type="submit">FINALIZAR O PEDIDO</Button>
+            </S.Form>
         </>
     );
 };
 
 
-const Form = styled.form`
-`
-
-const Container = styled.div`
-    border-radius: ${({theme}) => theme.border.radius};
-    background-color: ${({theme}) => theme.colors.box};
-    box-shadow: ${({theme}) => theme.border.shadow};
-    padding: 10px;
-    margin: 0 0 20px;
-`;
-
-const ContainerCardData = styled.div`
-  display: flex;
-  justify-content: space-between;
-  
-  div:nth-child(1) {
-    width: 53.3%;
-    margin: 0 20px 0 0;
-  }
-
-  div:nth-child(2) {
-    width: 46.7%;
-  }
-
-`;
 
 export default CreditCardForm;
