@@ -1,13 +1,9 @@
 import React from 'react';
-import styled from 'styled-components';
+import * as S from './styles'
 
 interface ImageProps {
     imageObjects: imageObjects[],
-    sizeImage: string
-}
-interface ImgProps {
-    src: string,
-    sizeImage: string
+    sizeImage?: string
 }
 
 interface imageObjects {
@@ -16,10 +12,7 @@ interface imageObjects {
 }
 
 const Image: React.FC<ImageProps> = ({imageObjects, sizeImage = "small"}) => 
-    <Img src={imageObjects?.[0]?.[sizeImage as keyof imageObjects]} sizeImage={sizeImage} />;
+    <S.Img src={imageObjects?.[0]?.[sizeImage as keyof imageObjects]} sizeImage={sizeImage} />;
 
-const Img = styled.img<ImgProps>`
-    margin: 0 10px 0 0;
-    ${props => (props.sizeImage === "thumbnail" ? `width: 42px;` : `width: 65px;`)};
-`
+
 export default Image;
