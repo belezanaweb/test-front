@@ -7,11 +7,10 @@ import Loading from '../../components/loading';
 import { useNavigate } from 'react-router-dom';
 import Button from '../../components/button';
 import Wrapper from '../../components/wrapper';
-import { useBasket, useFetchBasket } from '../../services/basket/hooks';
+import { useFetchBasket } from '../../services/basket/hooks';
 const Basket: React.FC = () => {
-    const { basket } = useBasket();
-    const navigate = useNavigate()
-    useFetchBasket();
+    const basket = useFetchBasket();
+    const navigate = useNavigate();
     return (
         <>
             <Header itemSelected={0} />

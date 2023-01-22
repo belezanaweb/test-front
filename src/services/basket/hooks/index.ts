@@ -17,11 +17,12 @@ export const useBasket = create<BasketResponse>((set, get) => ({
 }))
 
 
-export const useFetchBasket =  () => {
+export const useFetchBasket=  () => {
   const { basket, fetch } = useBasket();
   useEffect(() => {
       if(!basket) {
           fetch()
       }
   },[]);
+  return basket;
 }
