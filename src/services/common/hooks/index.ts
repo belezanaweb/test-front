@@ -7,7 +7,7 @@ import { useEffect } from 'react';
 export const useRedirectRouterInvalid = () => {
     const navigate = useNavigate()
     const { basket } = useBasket();
-    const {creditCard} = useCreditCard();
+    const { creditCard } = useCreditCard();
     useEffect(()=> {
         if(!basket) {
             navigate("/");
