@@ -1,14 +1,12 @@
-import { ThemeProvider } from 'styled-components';
 import { fireEvent, render } from '@testing-library/react'
-import Theme from '../../theme';
-
 import FormInput from '.'
+import { renderWithTheme } from '../../utils/helpers';
 
 
 describe('FormInput component', () => {
     it('should render component', () => {
         const { getByLabelText, getByText, debug } = render(
-            <ThemeProvider theme={Theme}>
+            renderWithTheme(
                 <FormInput  
                     mask=""
                     label="teste"
@@ -16,7 +14,7 @@ describe('FormInput component', () => {
                     name="teste"
                     type="text" 
                     placeholder='digite aqui'/>
-            </ThemeProvider>
+            )
         ); 
         const Label = getByText("teste");
         const Input = getByLabelText("teste");
@@ -31,7 +29,7 @@ describe('FormInput component', () => {
 
     it('should render component with masking', () => {
         const { getByLabelText } = render(
-            <ThemeProvider theme={Theme}>
+            renderWithTheme(
                 <FormInput  
                     mask="9999.9999.9999.9999"
                     label="teste"
@@ -39,7 +37,7 @@ describe('FormInput component', () => {
                     name="teste"
                     type="text" 
                     placeholder='digite aqui'/>
-            </ThemeProvider>
+            )
         ); 
 
         const Input = getByLabelText("teste");
@@ -50,7 +48,7 @@ describe('FormInput component', () => {
 
     it('should render component with error', () => {
         const { getByText } = render(
-            <ThemeProvider theme={Theme}>
+            renderWithTheme(
                 <FormInput  
                     mask="9999.9999.9999.9999"
                     label="teste"
@@ -59,7 +57,7 @@ describe('FormInput component', () => {
                     type="text" 
                     placeholder='digite aqui'
                     error={{isError: true, errorMessage: "esta com erro"}}/>
-            </ThemeProvider>
+            )
         ); 
         const errorMessage = getByText("esta com erro");
         expect(errorMessage).toBeDefined()

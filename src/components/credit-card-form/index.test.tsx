@@ -1,7 +1,4 @@
-import { ThemeProvider } from 'styled-components';
 import { fireEvent, render,screen } from '@testing-library/react'
-import Theme from '../../theme';
-
 import { vi } from 'vitest'
 
 const mockNavigateClick = vi.fn();
@@ -12,6 +9,7 @@ vi.mock('react-router-dom', () => {
 });
 
 import CreditCardForm from '.'
+import { renderWithTheme } from '../../utils/helpers';
 
 describe('Credit Card Form component', () => {
 
@@ -20,21 +18,13 @@ describe('Credit Card Form component', () => {
     })
 
     it('should render component', () => {
-        const { container } = render(
-            <ThemeProvider theme={Theme}>
-                <CreditCardForm />
-            </ThemeProvider>
-        ); 
+        const { container } = render(renderWithTheme(<CreditCardForm />));
         const form = container.querySelector("form");
         expect(form).toBeDefined();
     });
     
     it('should change to next page', async () => {
-        const { container, getByText } = render(
-            <ThemeProvider theme={Theme}>
-                <CreditCardForm />
-            </ThemeProvider>
-        ); 
+        const { container } = render(renderWithTheme(<CreditCardForm />));
 
         const inputNumber = screen.getByLabelText("Número do cartão:");
         const inputName = screen.getByLabelText("Nome do Titular:");
@@ -52,11 +42,7 @@ describe('Credit Card Form component', () => {
     });
 
     it('shouldn`t change page when number length minor then 16', async () => {
-        const { getByLabelText, container } = render(
-            <ThemeProvider theme={Theme}>
-                <CreditCardForm />
-            </ThemeProvider>
-        ); 
+        const { getByLabelText, container } = render(renderWithTheme(<CreditCardForm />));
         
         const inputNumber = getByLabelText("Número do cartão:");
         const inputName = getByLabelText("Nome do Titular:");
@@ -74,11 +60,7 @@ describe('Credit Card Form component', () => {
     });
 
     it('shouldn`t change page when date length minor then 6', async () => {
-        const { getByLabelText, container } = render(
-            <ThemeProvider theme={Theme}>
-                <CreditCardForm />
-            </ThemeProvider>
-        ); 
+        const { getByLabelText, container } = render(renderWithTheme(<CreditCardForm />));
         
         const inputNumber = getByLabelText("Número do cartão:");
         const inputName = getByLabelText("Nome do Titular:");
@@ -96,11 +78,7 @@ describe('Credit Card Form component', () => {
     });
 
     it('shouldn`t change page when cvv length minor then 3', async () => {
-        const { getByLabelText, container } = render(
-            <ThemeProvider theme={Theme}>
-                <CreditCardForm />
-            </ThemeProvider>
-        ); 
+        const { getByLabelText, container } = render(renderWithTheme(<CreditCardForm />));
         
         const inputNumber = getByLabelText("Número do cartão:");
         const inputName = getByLabelText("Nome do Titular:");
@@ -118,11 +96,7 @@ describe('Credit Card Form component', () => {
     });
 
     it('shouldn`t change page when number empty', async () => {
-        const { getByLabelText, container } = render(
-            <ThemeProvider theme={Theme}>
-                <CreditCardForm />
-            </ThemeProvider>
-        ); 
+        const { getByLabelText, container } = render(renderWithTheme(<CreditCardForm />));
 
         const inputNumber = getByLabelText("Número do cartão:");
         const inputName = getByLabelText("Nome do Titular:");
@@ -139,11 +113,7 @@ describe('Credit Card Form component', () => {
     });
 
     it('shouldn`t change page when name empty', async () => {
-        const { getByLabelText, getByText, container } = render(
-            <ThemeProvider theme={Theme}>
-                <CreditCardForm />
-            </ThemeProvider>
-        ); 
+        const { getByLabelText, getByText, container } = render(renderWithTheme(<CreditCardForm />));
 
         const inputNumber = getByLabelText("Número do cartão:");
         const inputName = getByLabelText("Nome do Titular:");
@@ -160,11 +130,7 @@ describe('Credit Card Form component', () => {
     });
 
     it('shouldn`t change page when date empty', async () => {
-        const { getByLabelText, getByText, container } = render(
-            <ThemeProvider theme={Theme}>
-                <CreditCardForm />
-            </ThemeProvider>
-        ); 
+        const { getByLabelText, getByText, container } = render(renderWithTheme(<CreditCardForm />));
 
         const inputNumber = getByLabelText("Número do cartão:");
         const inputName = getByLabelText("Nome do Titular:");
@@ -182,11 +148,7 @@ describe('Credit Card Form component', () => {
     });
 
     it('shouldn`t change page when cvv null', async () => {
-        const { getByLabelText, getByText, container } = render(
-            <ThemeProvider theme={Theme}>
-                <CreditCardForm />
-            </ThemeProvider>
-        ); 
+        const { getByLabelText, container } = render(renderWithTheme(<CreditCardForm />));
 
         const inputNumber = getByLabelText("Número do cartão:");
         const inputName = getByLabelText("Nome do Titular:");

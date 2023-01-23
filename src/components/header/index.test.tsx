@@ -1,6 +1,4 @@
-import { ThemeProvider } from 'styled-components';
 import { fireEvent, render, screen } from '@testing-library/react'
-import Theme from '../../theme';
 
 import * as ReactRouter from "react-router-dom"
 import * as BasketHooks from '../../services/basket/hooks';
@@ -8,6 +6,7 @@ import * as CreditCardHooks from '../../services/payment/hooks';
 
 import Header from '.'
 import { describe } from 'vitest';
+import { renderWithTheme } from '../../utils/helpers';
 
 let mockNavigateClick = vi.fn();
 vi.mock('react-router-dom', async () => {
@@ -21,11 +20,11 @@ describe('Header component', () => {
 
     it('should render component', () => {
         render(
-            <ThemeProvider theme={Theme}>
+            renderWithTheme(
                 <ReactRouter.BrowserRouter>
                     <Header itemSelected={0} />
                 </ReactRouter.BrowserRouter>
-            </ThemeProvider>
+            )
         );
         expect(screen.getByText("SACOLA")).toBeDefined();
         expect(screen.getByText("PAGAMENTO")).toBeDefined();
@@ -38,11 +37,11 @@ describe('Header component', () => {
             }
         });
         render(
-            <ThemeProvider theme={Theme}>
+            renderWithTheme(
                 <ReactRouter.BrowserRouter>
                     <Header itemSelected={0} />
                 </ReactRouter.BrowserRouter>
-            </ThemeProvider>
+            )
         ); 
         fireEvent.click(screen.getByText("PAGAMENTO"))
         expect(mockNavigateClick).not.toHaveBeenCalled();
@@ -58,11 +57,11 @@ describe('Header component', () => {
             }
         });
         render(
-            <ThemeProvider theme={Theme}>
+            renderWithTheme(
                 <ReactRouter.BrowserRouter>
                     <Header itemSelected={0} />
                 </ReactRouter.BrowserRouter>
-            </ThemeProvider>
+            )
         );
         fireEvent.click(screen.getByText("CONFIRMAÇÃO"))
         expect(mockNavigateClick).not.toHaveBeenCalled();
@@ -84,11 +83,11 @@ describe('Header component', () => {
             }
         });
         render(
-            <ThemeProvider theme={Theme}>
+            renderWithTheme(
                 <ReactRouter.BrowserRouter>
                     <Header itemSelected={0} />
                 </ReactRouter.BrowserRouter>
-            </ThemeProvider>
+            )
         ); 
         fireEvent.click(screen.getByText("PAGAMENTO"))
         expect(mockNavigateClick).toHaveBeenCalledWith("/payment");
@@ -103,11 +102,11 @@ describe('Header component', () => {
             }
         });
         render(
-            <ThemeProvider theme={Theme}>
+            renderWithTheme(
                 <ReactRouter.BrowserRouter>
                     <Header itemSelected={0} />
                 </ReactRouter.BrowserRouter>
-            </ThemeProvider>
+            )
         );
         fireEvent.click(screen.getByText("CONFIRMAÇÃO"))
         expect(mockNavigateClick).toHaveBeenCalledWith("/confirmation");

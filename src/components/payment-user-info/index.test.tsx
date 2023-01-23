@@ -1,12 +1,10 @@
-import { ThemeProvider } from 'styled-components';
 import { render } from '@testing-library/react'
-import Theme from '../../theme';
-
 import * as ReactRouter from "react-router-dom"
 import * as CreditCardHooks from '../../services/payment/hooks';
 
 import PaymentUserInfo from '.'
 import { mockCreditCardData } from './mock';
+import { renderWithTheme } from '../../utils/helpers';
 
 
 describe('Payment user info component', () => {
@@ -18,11 +16,11 @@ describe('Payment user info component', () => {
             }
         });
        const { getByTestId, debug } = render(
-            <ThemeProvider theme={Theme}>
+            renderWithTheme(
                 <ReactRouter.BrowserRouter>
                     <PaymentUserInfo />
                 </ReactRouter.BrowserRouter>
-            </ThemeProvider>
+            )
         ); 
         expect(getByTestId("PaymentUserInfo-info-user").innerHTML).toEqual("****.****.****.2222 <br>JOSE DA SILVA<br>022024");
 

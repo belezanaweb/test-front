@@ -1,7 +1,4 @@
-import { ThemeProvider } from 'styled-components';
-import { render, screen } from '@testing-library/react'
-import Theme from '../../theme';
-
+import { render } from '@testing-library/react'
 import * as ReactRouter from "react-router-dom"
 import * as BasketHooks from '../../services/basket/hooks';
 
@@ -9,6 +6,7 @@ import ProductList from '.'
 import { describe } from 'vitest';
 
 import { mockBasketData } from './mock';
+import { renderWithTheme } from '../../utils/helpers';
 describe('ProductList component', () => {
 
     it('should render component with price', () => {
@@ -18,11 +16,11 @@ describe('ProductList component', () => {
             }
         });
        const { getByText } = render(
-            <ThemeProvider theme={Theme}>
+            renderWithTheme(
                 <ReactRouter.BrowserRouter>
                     <ProductList />
                 </ReactRouter.BrowserRouter>
-            </ThemeProvider>
+            )
         ); 
         expect(getByText("R$ 225.90")).toBeDefined()
     });

@@ -1,6 +1,4 @@
-import { ThemeProvider } from 'styled-components';
 import { fireEvent, render, screen } from '@testing-library/react'
-import Theme from '../../theme';
 
 import * as ReactRouter from "react-router-dom"
 import * as BasketHooks from '../../services/basket/hooks';
@@ -8,6 +6,7 @@ import * as BasketHooks from '../../services/basket/hooks';
 import { Basket as BasketType } from '../../services/basket/types';
 import Basket from '.'
 import { describe } from 'vitest';
+import { renderWithTheme } from '../../utils/helpers';
 
 let mockNavigateClick = vi.fn();
 vi.mock('react-router-dom', async () => {
@@ -22,11 +21,11 @@ describe('Basket page component', () => {
     it('should render component loading', () => { 
         vi.spyOn(BasketHooks, 'useFetchBasket').mockReturnValue(null)
         const { container } =  render(
-            <ThemeProvider theme={Theme}>
+            renderWithTheme(
                 <ReactRouter.BrowserRouter>
                     <Basket />
                 </ReactRouter.BrowserRouter>
-            </ThemeProvider>
+            )
         ); 
         expect(container.querySelector(".lds-ring")).toBeDefined();
     });
@@ -34,11 +33,11 @@ describe('Basket page component', () => {
     it('should render component and switch to payment', () => { 
         vi.spyOn(BasketHooks, 'useFetchBasket').mockReturnValue({} as BasketType)
         render(
-            <ThemeProvider theme={Theme}>
+            renderWithTheme(
                 <ReactRouter.BrowserRouter>
                     <Basket />
                 </ReactRouter.BrowserRouter>
-            </ThemeProvider>
+            )
         ); 
         fireEvent.click(screen.getByText("SEGUIR PARA O PAGAMENTO"))
         expect(mockNavigateClick).toHaveBeenCalled();

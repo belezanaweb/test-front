@@ -1,19 +1,17 @@
-import { ThemeProvider } from 'styled-components';
 import { render } from '@testing-library/react'
-import Theme from '../../theme';
-
 import * as ReactRouter from "react-router-dom";
 import Payment from '.'
+import { renderWithTheme } from '../../utils/helpers';
 
 describe('Payment page component', () => {
 
     it('should render component', () => { 
         const {container} = render(
-            <ThemeProvider theme={Theme}>
+            renderWithTheme(
                 <ReactRouter.BrowserRouter>
                     <Payment />
                 </ReactRouter.BrowserRouter>
-            </ThemeProvider>
+            )
         ); 
         expect(container).toBeInTheDocument();
     });
