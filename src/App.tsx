@@ -20,9 +20,9 @@ const App: React.FC = () => (
             <>
                 <BrowserRouter>
                     <Routes>
-                        <Route path="/" element={<React.Suspense><Basket /></React.Suspense>} />
-                        <Route path="/payment" element={<React.Suspense><Payment /></React.Suspense>} />
-                        <Route path="/confirmation" element={<React.Suspense><Confirmation /></React.Suspense>} />
+                        <Route path="/" element={<Basket />} />
+                        <Route path="/payment" element={<Payment />} />
+                        <Route path="/confirmation" element={<Confirmation />} />
                     </Routes>
                 </BrowserRouter>
                 <GlobalStyleProxy />

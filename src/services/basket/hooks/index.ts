@@ -2,6 +2,7 @@
 import { useEffect } from 'react';
 import { Basket } from '../types'
 import { create } from 'zustand'
+import config from '../../../config/json/config.json';
 
 export type BasketResponse = {
   basket: Basket | null,
@@ -11,7 +12,7 @@ export type BasketResponse = {
 export const useBasket = create<BasketResponse>(set => ({
   basket: null,
   fetch: async () => {
-    const response = await fetch('https://www.mocky.io/v2/5b15c4923100004a006f3c07');
+    const response = await fetch(config.ENDPOINT_BASKET);
     set({ basket: await response.json() as Basket })
   },
 }))
