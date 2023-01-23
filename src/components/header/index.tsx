@@ -1,4 +1,4 @@
-import React, { MouseEvent, useEffect } from 'react';
+import React, { MouseEvent } from 'react';
 import { useCreditCard } from '../../services/payment/hooks';
 import { useBasket } from '../../services/basket/hooks';
 import {  useNavigate } from 'react-router-dom';
