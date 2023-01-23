@@ -27,7 +27,7 @@ describe('Common hooks component', () => {
                 }
             }
         });
-        renderHook(() => useRedirectRouterInvalid());
+        renderHook(() => useRedirectRouterInvalid("payment"));
         expect(mockNavigateClick).toHaveBeenCalledWith("/")
     });
 
@@ -44,7 +44,7 @@ describe('Common hooks component', () => {
                 }
             }
         });
-        renderHook(() => useRedirectRouterInvalid());
+        renderHook(() => useRedirectRouterInvalid("confirmation"));
         expect(mockNavigateClick).toHaveBeenCalledWith("/payment")
     });
 

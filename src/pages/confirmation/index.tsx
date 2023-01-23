@@ -9,8 +9,7 @@ import { useRedirectRouterInvalid } from '../../services/common/hooks';
 import Wrapper from '../../components/wrapper';
 
 const Confirmation: React.FC = () => {
-    useRedirectRouterInvalid()
-    return (
+    return useRedirectRouterInvalid("confirmation") ? (
         <>
             <Header itemSelected={2} />
             <Wrapper>
@@ -20,7 +19,7 @@ const Confirmation: React.FC = () => {
                 <PaymentDescription />
             </Wrapper>
         </>
-    )
+    ) : null;
 }
 
 export default Confirmation

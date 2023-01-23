@@ -1,20 +1,18 @@
-import React, { useEffect } from 'react';
-import styled from 'styled-components';
+import React from 'react';
 import Header from '../../components/header';
 import CreditCardForm from '../../components/credit-card-form';
 import { useRedirectRouterInvalid } from '../../services/common/hooks';
 import Wrapper from '../../components/wrapper';
 
 const Payment: React.FC = () => {
-    useRedirectRouterInvalid()
-    return (
+    return useRedirectRouterInvalid("payment") ? (
         <>
             <Header itemSelected={1} />
             <Wrapper>
                 <CreditCardForm />
             </Wrapper>
         </>
-    )
+    ) : null;
 }
 
 export default Payment
