@@ -11,7 +11,7 @@ interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
     }
 }
 
-const FormInput: React.FC<InputProps> = ({label, id, name, mask, type, placeholder, error, defaultValue}) => {
+const FormInput: React.FC<InputProps> = ({label, id, name, mask, type, placeholder, error, defaultValue, onChange}) => {
     return (
         <S.Container>
             <S.Label htmlFor={id}>{label}</S.Label>    
@@ -22,7 +22,8 @@ const FormInput: React.FC<InputProps> = ({label, id, name, mask, type, placehold
                 type={type} 
                 placeholder={placeholder}
                 isError={!!error?.isError}
-                defaultValue={defaultValue} />
+                defaultValue={defaultValue}
+                onChange={onChange} />
             
             <S.Error isError={!!error?.isError}>{error?.errorMessage}</S.Error>
         </S.Container>

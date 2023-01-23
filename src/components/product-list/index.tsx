@@ -17,7 +17,7 @@ const ProductList: React.FC<props> = ({sizeImage = "small", isShowPrice = true})
     <Title>PRODUTOS</Title>
     <S.Container>
       {basket?.items?.map(item => {
-        return <ProductCard {...item.product} sizeImage={sizeImage} isShowPrice={isShowPrice} />
+        return <ProductCard key={item?.product?.sku} {...item.product} sizeImage={sizeImage} isShowPrice={isShowPrice} />
       })}
     </S.Container>
     </>

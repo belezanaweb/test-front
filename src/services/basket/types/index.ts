@@ -1,21 +1,21 @@
-export type Basket = {
+export interface Basket {
     items: Product[],
     shippingTotal: number,
     discount: number,
 }
 
-export type Product = {
+export interface Product {
     product: ProductBasketItems
 }
 
-export type ProductBasketItems = {
+export interface ProductBasketItems {
     name: string,
     priceSpecification: PriceSpecification,
     imageObjects: imageObjects[]
     sku: string;
 }
 
-export type PriceSpecification = {
+export interface PriceSpecification {
     discount: number,
     maxPrice: number,
     originalPrice: number,
@@ -24,7 +24,7 @@ export type PriceSpecification = {
     sku: string,
 }
 
-export type imageObjects = {
+export interface imageObjects {
     extraLarge: string,
     large: string,
     medium: string,

@@ -6,12 +6,12 @@ import {
   Route,
 } from "react-router-dom";
 
-import Basket from './pages/basket';
-import Payment from './pages/payment';
-import Confirmation from './pages/confirmation';
 import Theme from './theme';
 import { ThemeProvider} from "styled-components";
 
+const Basket = React.lazy(() => import ('./pages/basket'));
+const Payment = React.lazy(() => import ('./pages/payment'));
+const Confirmation = React.lazy(() => import ('./pages/confirmation'));
 
 const GlobalStyleProxy: any = GlobalStyle;
 const App: React.FC = () => (
@@ -20,9 +20,9 @@ const App: React.FC = () => (
     <ThemeProvider theme={Theme}>
         <BrowserRouter>
             <Routes>
-                <Route path="/" element={<Basket />} />
-                <Route path="/payment" element={<Payment />} />
-                <Route path="/confirmation" element={<Confirmation />} />
+                <Route path="/" element={<React.Suspense><Basket /></React.Suspense>} />
+                <Route path="/payment" element={<React.Suspense><Payment /></React.Suspense>} />
+                <Route path="/confirmation" element={<React.Suspense><Confirmation /></React.Suspense>} />
             </Routes>
         </BrowserRouter>
         <GlobalStyleProxy />

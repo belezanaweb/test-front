@@ -1,4 +1,4 @@
-import React, { FormEvent, useState } from 'react';
+import React, { FormEvent, useState, useCallback, ChangeEvent } from 'react';
 import Title from '../title';
 
 import PaymentDescription from '../../components/payment-description';
@@ -15,7 +15,7 @@ const CreditCardForm: React.FC = () => {
 
     const navigate = useNavigate()
     const { creditCard, setCreditCard }  = useCreditCard();
-
+    const { number, name, date, cvv } = creditCard; 
     const [validation, setValidation] = useState({
         number: {
             isError: false,
@@ -39,37 +39,41 @@ const CreditCardForm: React.FC = () => {
         event.preventDefault();
         let hasFormError = false;
 
-        const form = event.currentTarget;
+        const validationNumber = isNumberValid(number);
+        const validationName =  isNameValid(name);
+        const validationDate = isDateValid(date)
+        const validationCvv = isCVVValid(cvv);
 
-        const numberInput = form?.querySelector("#credit-card-form-number") as HTMLInputElement;
-        const nameInput = form?.querySelector("#credit-card-form-name") as HTMLInputElement;
-        const dateInput = form?.querySelector("#credit-card-form-date") as HTMLInputElement;
-        const cvvInput = form?.querySelector("#credit-card-form-cvv") as HTMLInputElement;
-
-        const number = isNumberValid(numberInput?.value);
-        const name =  isNameValid(nameInput?.value);
-        const date = isDateValid(dateInput?.value)
-        const cvv = isCVVValid(cvvInput?.value);
-
-        hasFormError = number.isError || name.isError || date.isError || cvv.isError
+        hasFormError = validationNumber.isError || validationName.isError || validationDate.isError || validationCvv.isError
 
         setValidation({   
-            number,
-            name,
-            date,
-            cvv
+            number: validationNumber,
+            name: validationName,
+            date: validationDate,
+            cvv: validationCvv
         });
+        
         if (!hasFormError) {
-            setCreditCard({   
-                number: numberInput.value,
-                name: nameInput?.value,
-                date: dateInput?.value,
-                cvv: cvvInput?.value
-            })
-            
             navigate("/confirmation")
         }
     }
+
+    const handleCardNumberChange = useCallback((e: ChangeEvent<HTMLInputElement>) => {
+        setCreditCard({number: e.target.value})
+    }, [])
+
+    const handleNameChange = useCallback((e: ChangeEvent<HTMLInputElement>) => {
+        setCreditCard({name: e.target.value})
+    }, []);
+
+    const handleDateChange = useCallback((e: ChangeEvent<HTMLInputElement>) => {
+        setCreditCard({date: e.target.value})
+    }, []);
+
+    const handleCvvChange = useCallback((e: ChangeEvent<HTMLInputElement>) => {
+        setCreditCard({cvv: e.target.value})
+    }, []);
+
     return (
         <>
             <Title>CARTÃO DE CRÉDITO</Title>
@@ -83,7 +87,8 @@ const CreditCardForm: React.FC = () => {
                         type="text" 
                         placeholder='____.____.____.____'
                         error={validation.number}
-                        defaultValue={creditCard.number} />
+                        onChange={handleCardNumberChange}
+                        defaultValue={number} />
                     <FormInput
                         label="Nome do Titular:"
                         id="credit-card-form-name"
@@ -92,7 +97,8 @@ const CreditCardForm: React.FC = () => {
                         type="text" 
                         placeholder='Como no cartão'
                         error={validation.name}
-                        defaultValue={creditCard.name}  />
+                        defaultValue={name}
+                        onChange={handleNameChange}  />
                     <S.ContainerCardData>
                         <FormInput
                             label="Validade (mês/ano):"
@@ -102,7 +108,8 @@ const CreditCardForm: React.FC = () => {
                             type="text" 
                             placeholder='__/____'
                             error={validation.date}
-                            defaultValue={creditCard.date} />
+                            defaultValue={date}
+                            onChange={handleDateChange}  />
                         <FormInput
                             id="credit-card-form-cvv"
                             label="CVV:"
@@ -111,7 +118,8 @@ const CreditCardForm: React.FC = () => {
                             type="text" 
                             placeholder='___'
                             error={validation.cvv}
-                            defaultValue={creditCard.cvv}  />
+                            defaultValue={cvv}
+                            onChange={handleCvvChange}   />
                     </S.ContainerCardData>
                 </S.Container>
 

@@ -1,5 +1,4 @@
 
-import React, { useEffect } from 'react';
 import { CreditCard } from '../types'
 import { create } from 'zustand'
 
@@ -15,5 +14,12 @@ export const useCreditCard = create<CreditCardResponse>((set, get) => ({
     date: "",
     cvv: ""
   },
-  setCreditCard: (newCreditCard: CreditCard) => set(() => ({ creditCard: newCreditCard })),
+  setCreditCard: (newCreditCard: CreditCard) => set((state) => {
+    return { 
+      creditCard: {
+        ...state.creditCard,
+        ...newCreditCard 
+      }
+    }
+  }),
 }))

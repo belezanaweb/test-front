@@ -27,7 +27,10 @@ describe('Payment hooks component', () => {
             })
         })
         expect(result.current.creditCard).toEqual({
-            "number": "1111.1111.1111.111"
+            "number": "1111.1111.1111.111",
+            "cvv": "",
+            "date": "",
+            "name": ""
         });
     });
 

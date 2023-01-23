@@ -1,4 +1,4 @@
-export type CreditCard = {
+export interface CreditCard {
     number: string,
     name: string,
     date: string,

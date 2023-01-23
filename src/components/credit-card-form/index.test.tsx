@@ -30,7 +30,7 @@ describe('Credit Card Form component', () => {
     });
     
     it('should change to next page', async () => {
-        const { container } = render(
+        const { container, getByText } = render(
             <ThemeProvider theme={Theme}>
                 <CreditCardForm />
             </ThemeProvider>
@@ -46,6 +46,7 @@ describe('Credit Card Form component', () => {
         fireEvent.change(inputDate, {target: {value: '022024'}})
         fireEvent.change(inputCCV, {target: {value: '123'}})
         fireEvent.submit(container.querySelector("form") as Element);
+
 
         expect(mockNavigateClick).toHaveBeenCalledWith("/confirmation");
     });
