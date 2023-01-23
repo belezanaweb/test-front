@@ -2,10 +2,6 @@
 import { renderHook, act } from '@testing-library/react';
 import { useCreditCard } from ".";
 
-global.fetch = vi.fn(() => Promise.resolve({
-    json: () => Promise.resolve("Testing something!")
-}));
-
 describe('Payment hooks component', () => {
 
     it('should return payment data null', () => { 

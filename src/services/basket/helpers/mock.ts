@@ -3,7 +3,6 @@ import { Basket } from '../types';
 
 export const mockBasketData: Basket =   {
     "items": [{
-            "quantity": 1,
             "product": {
                 "sku": "24410",
                 "name": "L'Oréal Professionnel Expert Absolut Repair Cortex Lipidium - Máscara de Reconstrução 500g",
@@ -22,12 +21,10 @@ export const mockBasketData: Basket =   {
                   "medium": "https://res.cloudinary.com/beleza-na-web/image/upload/f_auto,fl_progressive,q_auto:best/v1/imagens/6/senscience-inner-restore-intesif-deep-repairing-masque-mascara-de-tratamento-50ml-3019-7903251722539384904.png",
                   "large": "https://res.cloudinary.com/beleza-na-web/image/upload/f_auto,fl_progressive,q_auto:best/v1/imagens/4/senscience-inner-restore-intesif-deep-repairing-masque-mascara-de-tratamento-50ml-3019-7903251722539384904.png",
                   "extraLarge": "https://res.cloudinary.com/beleza-na-web/image/upload/f_auto,fl_progressive,q_auto:best/v1/imagens/5/senscience-inner-restore-intesif-deep-repairing-masque-mascara-de-tratamento-50ml-3019-7903251722539384904.png",
-                  "valid": true
                 }
               ],
         }},
         {
-            "quantity": 1,
             "product": {
                 "sku": "38273",
                 "name": "Good Girl Carolina Herrera Eau de Parfum - Perfume Feminino 30ml",
@@ -38,8 +35,7 @@ export const mockBasketData: Basket =   {
                     "maxPrice": 299,
                     "percent": 0,
                     "discount": 0
-                }
-            },
+                },
             "imageObjects": [
                 {
                   "thumbnail": "https://res.cloudinary.com/beleza-na-web/image/upload/f_auto,fl_progressive,q_auto:best/v1/imagens/1/senscience-inner-restore-intesif-deep-repairing-masque-mascara-de-tratamento-50ml-3019-7903251722539384904.png",
@@ -47,9 +43,9 @@ export const mockBasketData: Basket =   {
                   "medium": "https://res.cloudinary.com/beleza-na-web/image/upload/f_auto,fl_progressive,q_auto:best/v1/imagens/6/senscience-inner-restore-intesif-deep-repairing-masque-mascara-de-tratamento-50ml-3019-7903251722539384904.png",
                   "large": "https://res.cloudinary.com/beleza-na-web/image/upload/f_auto,fl_progressive,q_auto:best/v1/imagens/4/senscience-inner-restore-intesif-deep-repairing-masque-mascara-de-tratamento-50ml-3019-7903251722539384904.png",
                   "extraLarge": "https://res.cloudinary.com/beleza-na-web/image/upload/f_auto,fl_progressive,q_auto:best/v1/imagens/5/senscience-inner-restore-intesif-deep-repairing-masque-mascara-de-tratamento-50ml-3019-7903251722539384904.png",
-                  "valid": true
                 }
-              ], 
+              ],
+            } 
     }],
     "subTotal": 624.8,
     "shippingTotal": 5.3,

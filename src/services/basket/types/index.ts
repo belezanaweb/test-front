@@ -2,6 +2,8 @@ export interface Basket {
     items: Product[],
     shippingTotal: number,
     discount: number,
+    total: number,
+    subTotal: number
 }
 
 export interface Product {
@@ -11,8 +13,8 @@ export interface Product {
 export interface ProductBasketItems {
     name: string,
     priceSpecification: PriceSpecification,
-    imageObjects: imageObjects[]
-    sku: string;
+    imageObjects: imageObjects[],
+    sku?: string;
 }
 
 export interface PriceSpecification {

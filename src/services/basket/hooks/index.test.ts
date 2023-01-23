@@ -4,10 +4,6 @@ import * as BasketHooks from '.';
 
 import { useBasket, useFetchBasket } from ".";
 
-global.fetch = vi.fn(() => Promise.resolve({
-    json: () => Promise.resolve("Testing something!")
-}));
-
 describe('Basket hooks component', () => {
 
     it('should return basket data null', () => { 
