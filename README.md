@@ -1,17 +1,18 @@
 ## Teste de Frontend
 
-O teste consiste em um checkout simples contendo 3 passos (carrinho, pagamento e sucesso) [Veja o Layout](https://projects.invisionapp.com/prototype/font-test-cji0j0khf005c1t0132358e8k)
+O teste consiste em um checkout simples contendo 3 passos (carrinho, pagamento e sucesso) [Veja o Layout](https://www.figma.com/proto/VAOqGCWUNg13WE1t05I7xy/TestFront?page-id=15211%3A254388&node-id=15212%3A255342&viewport=415%2C484%2C0.66&scaling=min-zoom&starting-point-node-id=15212%3A254392&show-proto-sidebar=1)
 
 
 ### Requerimentos:
 
-- Pixel perfect ([nesse link](https://projects.invisionapp.com/prototype/font-test-cji0j0khf005c1t0132358e8k), você pode inspecionar para ver espaçamentos, fonte, tamanho, etc)
+
+- Pixel perfect ([nesse link](https://www.figma.com/file/VAOqGCWUNg13WE1t05I7xy/TestFront?node-id=15211%3A254388&t=2A5yzAbeVSPYi4sw-1), você pode inspecionar para ver espaçamentos, fonte, tamanho, etc)
 - A aplicação precisa ser responsiva, utilizando o conceito de mobile-first. Use sua imaginação para entregar uma experiência boa no desktop.
 
 ### Observações: 
 
 1. Carrinho:
-    - Consuma o [esse endpoint](https://www.mocky.io/v2/5b15c4923100004a006f3c07) e liste os itens, bem como o resumo;
+    - Consuma o [esse endpoint](https://run.mocky.io/v3/d6e9a93f-9741-4494-b81e-637a8e9b8ddd) e liste os itens, bem como o resumo;
 
 2. Pagamento: 
     - Exiba um form com campos de cartão de crédito com validação em cada campo;
