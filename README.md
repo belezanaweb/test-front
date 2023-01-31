@@ -1,6 +1,6 @@
 ## Teste de Frontend
 
-O teste consiste em um checkout simples contendo 3 passos (carrinho, pagamento e sucesso) [Veja o Layout](https://www.figma.com/proto/VAOqGCWUNg13WE1t05I7xy/TestFront?node-id=15212%3A254392&scaling=min-zoom&page-id=15211%3A254388&starting-point-node-id=15212%3A254392&show-proto-sidebar=1)
+O teste consiste em um checkout simples contendo 3 passos (carrinho, pagamento e sucesso) [Veja o Layout](https://www.figma.com/proto/VAOqGCWUNg13WE1t05I7xy/TestFront?page-id=15211%3A254388&node-id=15212%3A255342&viewport=415%2C484%2C0.66&scaling=min-zoom&starting-point-node-id=15212%3A254392&show-proto-sidebar=1)
 
 
 ### Requerimentos:
@@ -12,7 +12,7 @@ O teste consiste em um checkout simples contendo 3 passos (carrinho, pagamento e
 ### Observações: 
 
 1. Carrinho:
-    - Consuma o [esse endpoint](https://www.mocky.io/v2/5b15c4923100004a006f3c07) e liste os itens, bem como o resumo;
+    - Consuma o [esse endpoint](https://run.mocky.io/v3/d6e9a93f-9741-4494-b81e-637a8e9b8ddd) e liste os itens, bem como o resumo;
 
 2. Pagamento: 
     - Exiba um form com campos de cartão de crédito com validação em cada campo;
