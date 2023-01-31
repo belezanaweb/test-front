@@ -1,11 +1,12 @@
 ## Teste de Frontend
 
-O teste consiste em um checkout simples contendo 3 passos (carrinho, pagamento e sucesso) [Veja o Layout](https://projects.invisionapp.com/prototype/font-test-cji0j0khf005c1t0132358e8k)
+O teste consiste em um checkout simples contendo 3 passos (carrinho, pagamento e sucesso) [Veja o Layout](https://www.figma.com/proto/VAOqGCWUNg13WE1t05I7xy/TestFront?node-id=15212%3A254392&scaling=min-zoom&page-id=15211%3A254388&starting-point-node-id=15212%3A254392&show-proto-sidebar=1)
 
 
 ### Requerimentos:
 
-- Pixel perfect ([nesse link](https://projects.invisionapp.com/prototype/font-test-cji0j0khf005c1t0132358e8k), você pode inspecionar para ver espaçamentos, fonte, tamanho, etc)
+
+- Pixel perfect ([nesse link](https://www.figma.com/file/VAOqGCWUNg13WE1t05I7xy/TestFront?node-id=15211%3A254388&t=2A5yzAbeVSPYi4sw-1), você pode inspecionar para ver espaçamentos, fonte, tamanho, etc)
 - A aplicação precisa ser responsiva, utilizando o conceito de mobile-first. Use sua imaginação para entregar uma experiência boa no desktop.
 
 ### Observações: 
