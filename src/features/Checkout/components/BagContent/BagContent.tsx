@@ -1,3 +1,4 @@
+import { Currency } from '../../../../components/Currency'
 import './style.scss'
 import { Product } from './types'
 
@@ -25,11 +26,11 @@ export function BagContent({ products }: BagContentProps) {
                   { 
                     maxPrice && 
                     <span data-testid={`product-${product.sku}-max-price`}>
-                      {maxPrice.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' })}
+                      <Currency>{maxPrice}</Currency>
                     </span> 
                   }
                   <span data-testid={`product-${product.sku}-price`}>
-                    {price.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' })}
+                    <Currency>{price}</Currency>
                   </span>
                 </span>
               </article>
