@@ -1,0 +1,39 @@
+@mixin tipografy-base() {
+  font-family: 'Helvetica Neue';
+  font-style: normal;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 16px;
+  letter-spacing: 0.26923081278800964px;
+  color: #000000;
+}
+
+.billing-summary {
+  @include tipografy-base();
+  background-color: #fff;
+  padding: 24px 20px;
+}
+
+.products-row {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 16px;
+}
+
+.shipping-row {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 16px;
+}
+
+.discount-row {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 16px;
+}
+
+.subtotal-row {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 16px;
+}
