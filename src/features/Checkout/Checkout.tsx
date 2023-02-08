@@ -5,11 +5,8 @@ import { PaymentStep } from './PaymentStep'
 import { useBagContent } from './hooks/useBagContent'
 import { getBilling } from './utils/getBilling'
 import { getProducts } from './utils/getProducts'
+import { SuccessStep } from './SuccessStep'
 import './style.scss'
-
-const Section3 = () => {
-  return <section>Seção 3</section>
-}
 
 export function Checkout() {
   const [selected, setSelected] = useState("Sacola")
@@ -25,7 +22,7 @@ export function Checkout() {
   
   const finalizeOrderHandler = (formValues: any) => {
     setOrderPayload({
-      billing: formValues,
+      payment: formValues,
       products,
     })
     setSelected("Confirmação")
@@ -41,7 +38,12 @@ export function Checkout() {
         key="Pagamento" 
         billing={billing} 
         finalizeOrderHandler={finalizeOrderHandler} />
-      <Section3 key="Confirmação" />
+      <SuccessStep 
+        key="Confirmação"
+        payload={orderPayload?.payment}
+        products={products} 
+        billing={billing} 
+        goToNextHandler={() => setSelected('Sacola')} />
     </Tabs>
   )
 }

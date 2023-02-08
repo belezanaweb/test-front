@@ -1,0 +1,11 @@
+.bag-step {
+  padding: 20px 6.53px 0;
+  height: calc(100vh - 65px);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.scrollable-content {
+  overflow-y: scroll;
+}

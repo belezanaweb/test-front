@@ -13,7 +13,7 @@ export function PaymentStep({ billing, finalizeOrderHandler }: PaymentStepProps)
   const { control, formState: { isValid }, handleSubmit } = useForm({
     mode: 'onChange',
     reValidateMode: 'onChange',
-  });
+  })
   return (
     <form className='payment-step' onSubmit={handleSubmit(finalizeOrderHandler)}>
       <CreditCardInput control={control} />
