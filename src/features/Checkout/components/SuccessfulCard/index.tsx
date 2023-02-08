@@ -1,0 +1,1 @@
+export { SuccessfulCard } from './SuccessfulCard'

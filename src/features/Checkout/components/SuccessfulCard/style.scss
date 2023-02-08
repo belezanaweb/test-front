@@ -1,0 +1,54 @@
+@mixin tipografy-base() {
+  font-family: Arial;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 16px;
+  letter-spacing: 0.26923081278800964px;
+  color: #000000;
+}
+
+@mixin box-base() {
+  display: flex;
+  padding: 24px 12px;
+  border: 1px solid #CCCCCC;
+  border-radius: 4px;
+  background: #FFFFFF;
+}
+
+@mixin list-base() {
+  list-style-type: none;
+  list-style-position: inside;
+  flex-direction: column;
+}
+
+.success-card {
+  @include box-base();
+  @include list-base();
+  @include tipografy-base();
+  max-width: 600px;
+  margin: 0;
+  margin-bottom: 20px;
+  & h1 {
+    margin: 0;
+    margin-bottom: 8px;
+    font-family: 'Arial';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 22px;
+    line-height: 28px;
+    text-align: center;
+    color: #000000;
+  }
+  & p {
+    margin: 0;
+    margin-bottom: 8px;
+    text-align: center;
+    font-family: 'Arial';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 20px;
+    text-align: center;
+    color: #515151;
+  }
+}
