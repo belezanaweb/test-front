@@ -1,0 +1,36 @@
+.payment-step {
+  padding: 20px 6.53px 0;
+  height: calc(100vh - 65px);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.checkout-button {
+  width: 100%;
+  padding: 16px 8px;
+  border-radius: 4px;
+  border: 0;
+  background: #9222DC;
+  font-family: 'Arial';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 16px;
+  color: #FFFFFF;
+}
+
+.checkout-button-disabled {
+  width: 100%;
+  padding: 16px 8px;
+  border-radius: 4px;
+  border: 0;
+  background: #bb6bf0;
+  opacity: 0.7;
+  font-family: 'Arial';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 16px;
+  color: #FFFFFF;
+}

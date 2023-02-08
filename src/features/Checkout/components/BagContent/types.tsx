@@ -26,3 +26,10 @@ export interface Product {
     imageObjects: ImageObjects[]
   }
 }
+
+export interface Billing {
+  shippingTotal: number
+  subTotal: number
+  discount: number
+  total: number
+}

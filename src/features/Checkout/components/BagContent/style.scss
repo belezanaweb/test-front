@@ -28,6 +28,7 @@
     @include list-base();
     @include tipografy-base();
     max-width: 600px;
+    margin: 0;
   }
 
   &-item {

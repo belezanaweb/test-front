@@ -10,8 +10,7 @@
 
 .billing-summary {
   @include tipografy-base();
-  background-color: #fff;
-  padding: 24px 20px;
+  padding: 24px 0;
 }
 
 .products-row {
@@ -35,5 +34,4 @@
 .subtotal-row {
   display: flex;
   justify-content: space-between;
-  margin-bottom: 16px;
 }

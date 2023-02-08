@@ -5,16 +5,12 @@
   background: #FFFFFF;
 }
 
-.cred-card-inputs {
+fieldset {
   @include box-base();
-  margin: 20px 6.53px;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-column-gap: 12px;
-  grid-row-gap: 20px;
   position: relative;
   font-style: normal;
   font-family: 'Arial';
+  margin: 0;
   & legend {
     position: absolute;
     top: 16px;
@@ -24,6 +20,13 @@
     line-height: 24px;
     color: #000000;
   }
+}
+
+.cred-card-inputs {
+  display: grid;
+  grid-template-columns: repeat(1, 140px);;
+  grid-column-gap: 12px;
+  grid-row-gap: 20px;
   & label {
     display: flex;
     flex-direction: column;
