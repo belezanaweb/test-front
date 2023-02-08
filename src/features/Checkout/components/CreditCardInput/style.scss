@@ -1,0 +1,72 @@
+@mixin box-base() {
+  padding: 56px 12px 40px;
+  border: 1px solid #CCCCCC;
+  border-radius: 4px;
+  background: #FFFFFF;
+}
+
+.cred-card-inputs {
+  @include box-base();
+  margin: 20px 6.53px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-column-gap: 12px;
+  grid-row-gap: 20px;
+  position: relative;
+  font-style: normal;
+  font-family: 'Arial';
+  & legend {
+    position: absolute;
+    top: 16px;
+    left: 10px;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 24px;
+    color: #000000;
+  }
+  & label {
+    display: flex;
+    flex-direction: column;
+    font-family: 'Arial';
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 16px;
+    & input {
+      box-sizing: border-box;
+      height: 44px;
+      margin-top: 5px;
+      padding: 14px 13.89px;
+      border: 1px solid #CCCCCC;
+      border-radius: 4px;
+      font-size: 14px;
+      line-height: 16px;
+      background: #FFFFFF;
+      color: #000000;
+      &::placeholder {
+        color: #CCCCCC;
+      }
+    }
+    & .input-error {
+      border: 1px solid #DE1616;
+    }
+    & .error-message {
+      margin: 0;
+      font-family: 'Arial';
+      font-style: normal;
+      font-weight: 400;
+      font-size: 12px;
+      line-height: 16px;
+      color: #DE1616;
+    }
+  }
+}
+
+.cred-card-number {
+  grid-column-start: 1;
+  grid-column-end: 3;
+}
+
+.name {
+  grid-column-start: 1;
+  grid-column-end: 3;
+}
