@@ -18,7 +18,7 @@ export function CreditCardInput({ control }: CreditCardInputProps) {
           <Controller 
             control={control}
             name="creditCardNumber"
-            rules={{ required: true, validate: v => v.length === 16 }}
+            rules={{ required: true, validate: v => v.length >= 16 }}
             render={({ field: { onChange, name, value }, formState: { errors } }) => {
               return (
               <>
@@ -29,7 +29,10 @@ export function CreditCardInput({ control }: CreditCardInputProps) {
                   placeholder='0000 0000 0000 0000'
                   name={name}
                   value={value}
-                  onChange={event => onChange(event.target.value.replace(/\s/g, ""))}
+                  onChange={event => {
+                    const value = event.target.value.replace(/\s/g, "")
+                    onChange(value.length < 16 ? value : event.target.value)
+                  }}
                 />
                 <ErrorMessage
                   errors={errors}

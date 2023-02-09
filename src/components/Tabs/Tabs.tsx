@@ -4,15 +4,16 @@ import './style.scss'
 type TabsProps = {
   children: JSX.Element[]
   selected: string
+  fixed?: boolean
   disabled?: CheckoutStep[]
   onChange: (selected: CheckoutStep) => void
 }
 
-export function Tabs({ children, selected, disabled = [], onChange  }: TabsProps) {
+export function Tabs({ children, selected, fixed = false, disabled = [], onChange  }: TabsProps) {
   const sections = children
   return (
     <div className='tabs'>
-      <nav className='tabs-bar'>
+      <nav className={fixed ? 'tabs-bar-fixed' : 'tabs-bar'}>
         { 
           children.map(section => 
             <button 
@@ -25,7 +26,7 @@ export function Tabs({ children, selected, disabled = [], onChange  }: TabsProps
           ) 
         }
       </nav>
-      <main className='tab-content'>
+      <main className={fixed ? 'tab-content-fixed' : 'tab-content'}>
         { sections.find(section => section.key === selected) }
       </main>
     </div>

@@ -10,6 +10,8 @@
   @include tipografy-base(14px);
   font-family: 'Helvetica Neue';
   padding: 24px 0;
+  width: 100%;
+  max-width: 600px;
 }
 
 .products-row {

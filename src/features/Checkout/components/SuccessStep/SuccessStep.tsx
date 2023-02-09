@@ -14,14 +14,12 @@ interface BagStepProps {
 export function SuccessStep({ payload, products, billing, goToNextHandler }: BagStepProps) {
   return (
     <div className='success-step'>
-      <div className="scrollable-content">
-        {payload && <SuccessfulCard payload={payload}  />}
-        <BagContent
-          key="Sacola" 
-          title='Produtos' 
-          products={products}
-          showPrices={false} />
-      </div>
+      {payload && <SuccessfulCard payload={payload}  />}
+      <BagContent
+        key="Sacola" 
+        title='Produtos' 
+        products={products}
+        showPrices={false} />
       <section className='success-action'>
         <BillingSummary 
           shippingTotal={billing.shippingTotal}

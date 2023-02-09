@@ -1,22 +1,23 @@
 @import '../../sass/mixins.scss';
 
 .success-step {
-  padding: 20px 6.53px 0;
-  height: calc(100vh - 65px);
+  padding: 20px 6.53px 323px;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
   max-width: 600px;
-}
-
-.scrollable-content {
-  overflow-y: scroll;
 }
 
 .success-action {
   margin: 0 -6.53px;
   padding: 0 20px 24px;
   background-color: #fff;
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .success-button {
