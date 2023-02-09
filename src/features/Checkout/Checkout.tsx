@@ -1,11 +1,11 @@
 import { useState } from 'react'
 import { Tabs } from '../../components/Tabs/Tabs'
-import { BagStep } from './BagStep'
-import { PaymentStep } from './PaymentStep'
+import { BagStep } from './components/BagStep'
+import { PaymentStep } from './components/PaymentStep'
 import { useBagContent } from './hooks/useBagContent'
 import { getBilling } from './utils/getBilling'
 import { getProducts } from './utils/getProducts'
-import { SuccessStep } from './SuccessStep'
+import { SuccessStep } from './components/SuccessStep'
 import './style.scss'
 
 export function Checkout() {

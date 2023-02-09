@@ -1,27 +1,18 @@
-import { BagContent } from "../components/BagContent"
-import { Billing, Product } from "../components/BagContent/types"
-import { BillingSummary } from "../components/BillingSummary"
-import { SuccessfulCard } from "../components/SuccessfulCard"
+import { BagContent } from "../BagContent"
+import { Billing, Product } from "../BagContent/types"
+import { BillingSummary } from "../BillingSummary"
 import './style.scss'
 
 interface BagStepProps { 
-  payload: any
   products: Product[]
   billing: Billing,
   goToNextHandler: () => void
 }
 
-export function SuccessStep({ payload, products, billing, goToNextHandler }: BagStepProps) {
+export function BagStep({ products, billing, goToNextHandler }: BagStepProps) {
   return (
     <div className='bag-step'>
-      <div className="scrollable-content">
-        <SuccessfulCard payload={payload}  />
-        <BagContent
-          key="Sacola" 
-          title='Produtos' 
-          products={products}
-          showPrices={false} />
-      </div>
+      <BagContent key="Sacola" products={products} />
       <section className='summary-action'>
         <BillingSummary 
           shippingTotal={billing.shippingTotal}

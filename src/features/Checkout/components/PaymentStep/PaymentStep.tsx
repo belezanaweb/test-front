@@ -1,7 +1,7 @@
 import { useForm } from "react-hook-form"
-import { Billing, Product } from "../components/BagContent/types"
-import { BillingSummary } from "../components/BillingSummary"
-import { CreditCardInput } from "../components/CreditCardInput"
+import { Billing, Product } from "../BagContent/types"
+import { BillingSummary } from "../BillingSummary"
+import { CreditCardInput } from "../CreditCardInput"
 import './style.scss'
 
 interface PaymentStepProps { 
