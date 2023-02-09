@@ -46,4 +46,7 @@
 .tab-content {
   box-sizing: border-box;
   background-color: #F5F5F5;
+  display: flex;
+  justify-content: center;
+  max-width: 100%;
 }

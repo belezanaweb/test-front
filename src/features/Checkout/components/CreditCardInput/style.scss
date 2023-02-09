@@ -20,9 +20,10 @@ fieldset {
 
 .cred-card-inputs {
   display: grid;
-  grid-template-columns: repeat(1, 140px);;
+  grid-template-columns: repeat(1, 1fr);;
   grid-column-gap: 12px;
   grid-row-gap: 20px;
+  width: 100%;
   & label {
     @include tipografy-base(14px);
     display: flex;
