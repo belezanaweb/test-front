@@ -1,28 +1,6 @@
-@mixin tipografy-base() {
-  font-family: Arial;
-  font-size: 12px;
-  font-weight: 400;
-  line-height: 16px;
-  letter-spacing: 0.26923081278800964px;
-  color: #000000;
-}
+@import '../../sass/mixins.scss';
 
-@mixin box-base() {
-  display: flex;
-  padding: 24px 12px 0;
-  border: 1px solid #CCCCCC;
-  border-radius: 4px;
-  background: #FFFFFF;
-}
-
-@mixin list-base() {
-  list-style-type: none;
-  list-style-position: inside;
-  flex-direction: column;
-}
-
-.product {
-  &-list {
+.product-list {
     @include box-base();
     @include list-base();
     @include tipografy-base();
@@ -39,55 +17,50 @@
       line-height: 24px;
       color: #000000;
     }
-  }
+}
 
-  &-item {
-    & > article {
-      display: flex;
-      justify-content: space-between;
-      margin-bottom: 40px;
-      & p {
-        margin: 5px 0 0;
-      }
+.product-item {
+  & > article {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 40px;
+    & p {
+      margin: 5px 0 0;
     }
   }
+}
 
-  &-left-box {
-    display: flex;
+.product-left-box {
+  display: flex;
+}
+
+.product-img-box {
+  width: 60px;
+  height: 60px;
+  margin-right: 15px;
+  flex-grow: 0;
+  flex-shrink: 0;
+  border-radius: 6px;
+  overflow: hidden;
+  display: flex;
+  align-items: end;
+}
+
+.product-price-box {
+  min-width: 69px;
+  margin-left: 10px;
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: right;
+  @include tipografy-base(14px);
+  & span:not(:last-child) {
+    color: #9B9B9B;
+    text-decoration: line-through;
   }
-
-  &-img-box {
-    width: 60px;
-    height: 60px;
-    margin-right: 15px;
-    flex-grow: 0;
-    flex-shrink: 0;
-    border-radius: 6px;
-    overflow: hidden;
-    display: flex;
-    align-items: end;
-  }
-
-  &-price-box {
-    min-width: 69px;
-    margin-left: 10px;
-    flex-shrink: 0;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    font-family: 'Arial';
-    font-style: normal;
-    font-size: 14px;
-    line-height: 16px;
-    text-align: right;
-    letter-spacing: 0.269231px;
-    & span:not(:last-child) {
-      color: #9B9B9B;
-      text-decoration: line-through;
-    }
-    & span:last-child {
-      font-weight: 700;
-      color: #000000;
-    }
+  & span:last-child {
+    font-weight: 700;
+    color: #000000;
   }
 }

@@ -1,0 +1,23 @@
+@mixin tipografy-base($size: 12px) {
+  font-family: Arial;
+  font-style: normal;
+  font-size: $size;
+  font-weight: 400;
+  line-height: 16px;
+  letter-spacing: 0.26923081278800964px;
+  color: #000000;
+}
+
+@mixin box-base() {
+  display: flex;
+  padding: 24px 12px 0;
+  border-radius: 4px;
+  border: 1px solid #CCCCCC;
+  background: #FFFFFF;
+}
+
+@mixin list-base() {
+  list-style-type: none;
+  list-style-position: inside;
+  flex-direction: column;
+}

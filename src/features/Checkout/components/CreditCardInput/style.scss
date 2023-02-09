@@ -1,12 +1,8 @@
-@mixin box-base() {
-  padding: 56px 12px 40px;
-  border: 1px solid #CCCCCC;
-  border-radius: 4px;
-  background: #FFFFFF;
-}
+@import '../../sass/mixins.scss';
 
 fieldset {
   @include box-base();
+  padding: 56px 12px 40px;
   position: relative;
   font-style: normal;
   font-family: 'Arial';
@@ -28,23 +24,18 @@ fieldset {
   grid-column-gap: 12px;
   grid-row-gap: 20px;
   & label {
+    @include tipografy-base(14px);
     display: flex;
     flex-direction: column;
-    font-family: 'Arial';
-    font-weight: 400;
-    font-size: 14px;
-    line-height: 16px;
     & input {
+      @include tipografy-base(14px);
       box-sizing: border-box;
       height: 44px;
       margin-top: 5px;
       padding: 14px 13.89px;
       border: 1px solid #CCCCCC;
       border-radius: 4px;
-      font-size: 14px;
-      line-height: 16px;
       background: #FFFFFF;
-      color: #000000;
       &::placeholder {
         color: #CCCCCC;
       }
