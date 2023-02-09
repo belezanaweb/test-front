@@ -7,7 +7,7 @@ function getRandomArbitrary(min: number, max: number) {
   return Math.random() * (max - min) + min;
 }
 
-const makeProductMock = (length: number): Product[] => {
+export const makeProductMock = (length: number): Product[] => {
   return new Array(length).fill(null).map((_, index) => {
     return {
       quantity: 1,

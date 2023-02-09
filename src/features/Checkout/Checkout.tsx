@@ -14,7 +14,6 @@ export function Checkout() {
   const { data } = useBagContent()
   const products = getProducts(data)
   const billing = getBilling(data)
-  console.log(orderPayload)
 
   const handleChangeTab = (section: string) => {
     setSelected(section)

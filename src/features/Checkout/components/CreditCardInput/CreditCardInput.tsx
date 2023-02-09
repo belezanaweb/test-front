@@ -48,7 +48,7 @@ export function CreditCardInput({ control }: { control: Control<any>}) {
                   type='text' 
                   placeholder='Nome impresso no cartão' 
                   name={name}
-                  value={value}
+                  value={value || ''}
                   onChange={onChange}
                 />
                 <ErrorMessage
