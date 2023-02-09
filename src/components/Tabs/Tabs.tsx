@@ -4,10 +4,11 @@ import './style.scss'
 type TabsProps = {
   children: JSX.Element[]
   selected: string
+  disabled?: CheckoutStep[]
   onChange: (selected: CheckoutStep) => void
 }
 
-export function Tabs({ children, selected, onChange  }: TabsProps) {
+export function Tabs({ children, selected, disabled = [], onChange  }: TabsProps) {
   const sections = children
   return (
     <div className='tabs'>
@@ -16,7 +17,9 @@ export function Tabs({ children, selected, onChange  }: TabsProps) {
           children.map(section => 
             <button 
               className={section?.key === selected ? 'tab-button-selected' : 'tab-button'} 
-              key={section?.key} onClick={() => onChange(section?.key as CheckoutStep)}>
+              key={section?.key} 
+              disabled={disabled.some(step => step === section?.key)}
+              onClick={() => onChange(section?.key as CheckoutStep)}>
                 {section?.key}
             </button>
           ) 

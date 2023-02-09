@@ -29,7 +29,7 @@ export function Checkout() {
   }
 
   return (
-    <Tabs selected={selected} onChange={handleChangeTab}>
+    <Tabs selected={selected} disabled={[CheckoutStep.Success]} onChange={handleChangeTab}>
       <BagStep 
         key="Sacola" 
         products={products} 

@@ -18,8 +18,9 @@ export function CreditCardInput({ control }: CreditCardInputProps) {
           <Controller 
             control={control}
             name="creditCardNumber"
-            rules={{ required: 'insira um número de cartão válido' }}
-            render={({ field: { onChange, name, value }, formState: { errors } }) => (
+            rules={{ required: true, validate: v => v.length === 16 }}
+            render={({ field: { onChange, name, value }, formState: { errors } }) => {
+              return (
               <>
                 <PatternFormat
                   className={errors?.creditCardNumber && 'input-error'}
@@ -28,15 +29,19 @@ export function CreditCardInput({ control }: CreditCardInputProps) {
                   placeholder='0000 0000 0000 0000'
                   name={name}
                   value={value}
-                  onChange={onChange}
+                  onChange={event => onChange(event.target.value.replace(/\s/g, ""))}
                 />
                 <ErrorMessage
                   errors={errors}
                   name={name}
-                  render={({ message }) => <p role="alert" className="error-message">{message}</p>}
+                  render={() => (
+                    <p role="alert" className="error-message">
+                      insira um número de cartão válido
+                    </p>
+                  )}
                 />
               </>
-            )}
+            )}}
           />
         </label>
         <label className="name">
@@ -70,7 +75,7 @@ export function CreditCardInput({ control }: CreditCardInputProps) {
           <Controller 
             control={control}
             name="expirationDate"
-            rules={{ required: 'insira uma data válida' }}
+            rules={{ required: true, validate: v => v.length === 5 }}
             render={({ field: { onChange, name, value }, formState: { errors } }) => (
               <>
                 <PatternFormat
@@ -80,12 +85,12 @@ export function CreditCardInput({ control }: CreditCardInputProps) {
                   placeholder='MM/AA'
                   name={name}
                   value={value}
-                  onChange={onChange}
+                  onChange={event => onChange(event.target.value.replace(/\s/g, ""))}
                 />
                 <ErrorMessage
                   errors={errors}
                   name={name}
-                  render={({ message }) => <p role="alert" className="error-message">{message}</p>}
+                  render={() => <p role="alert" className="error-message">insira uma data válida</p>}
                 />
               </>
             )}
@@ -96,7 +101,7 @@ export function CreditCardInput({ control }: CreditCardInputProps) {
           <Controller 
             control={control}
             name="cvvCode"
-            rules={{ required: 'insira um cvv válido' }}
+            rules={{ required: 'insira um cvv válido', validate: v => v.length === 3 }}
             render={({ field: { onChange, name, value }, formState: { errors } }) => (
               <>
                 <PatternFormat
@@ -106,12 +111,12 @@ export function CreditCardInput({ control }: CreditCardInputProps) {
                   placeholder='000'
                   name={name}
                   value={value}
-                  onChange={onChange}
+                  onChange={event => onChange(event.target.value.replace(/\s/g, ""))}
                 />
                 <ErrorMessage
                   errors={errors}
                   name={name}
-                  render={({ message }) => <p role="alert" className="error-message">{message}</p>}
+                  render={() => <p role="alert" className="error-message">insira um cvv válido</p>}
                 />
               </>
             )}
