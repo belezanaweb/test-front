@@ -10,7 +10,7 @@ import tsconfigPaths from 'vite-tsconfig-paths'
 export default defineConfig({
   plugins: [
     react(), 
-    ssr(), 
+    ssr({ prerender: true }), 
     eslint(), 
     tsconfigPaths()
   ],
