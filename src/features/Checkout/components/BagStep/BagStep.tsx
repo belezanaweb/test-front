@@ -1,5 +1,5 @@
 import { BagContent } from "../BagContent"
-import { Billing, Product } from "../BagContent/types"
+import { Billing, Product } from "../../types"
 import { BillingSummary } from "../BillingSummary"
 import './style.scss'
 

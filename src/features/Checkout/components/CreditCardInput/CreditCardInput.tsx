@@ -2,8 +2,13 @@ import { Controller, Control } from "react-hook-form"
 import { PatternFormat } from 'react-number-format'
 import { ErrorMessage } from '@hookform/error-message'
 import './style.scss'
+import { PaymentFormValues } from "../../types"
 
-export function CreditCardInput({ control }: { control: Control<any>}) {
+interface CreditCardInputProps { 
+  control: Control<PaymentFormValues>
+}
+
+export function CreditCardInput({ control }: CreditCardInputProps) {
   return (
     <fieldset>
       <legend>Cartão de crédito</legend>

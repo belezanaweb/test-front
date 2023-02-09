@@ -4,7 +4,7 @@ import { describe } from 'vitest'
 import userEvent from '@testing-library/user-event'
 import nock from 'nock'
 import { Checkout } from './Checkout'
-import { makeProductMock } from './components/BagContent/BagContent.test'
+import { makeProductMock } from '../../test/mocks/makeProductMock'
 
 const queryClient =  new QueryClient({
   defaultOptions: {
@@ -36,19 +36,19 @@ describe(`
         subTotal: 560,
         discount: 30.5,
         items,
-      });
+      })
+
+    render(
+      <QueryClientProvider client={queryClient}>
+        <Checkout />
+      </QueryClientProvider>
+    )
   })
 
   test(`
     when the user accesses the page
     then should show the bag contents 
     `, async () => {
-    render(
-      <QueryClientProvider client={queryClient}>
-        <Checkout />
-      </QueryClientProvider>
-    )
-
     expect(await screen.findByText(items[0].product.name)).toBeInTheDocument()
     expect(screen.getByText(items[1].product.name)).toBeInTheDocument()
     expect(screen.getByText(items[2].product.name)).toBeInTheDocument()
@@ -64,12 +64,6 @@ describe(`
     when the user does not enter all required fields
     then disable submit button 
     `, async () => {
-    render(
-      <QueryClientProvider client={queryClient}>
-        <Checkout />
-      </QueryClientProvider>
-    )
-
     await userEvent.click(screen.getByRole('button', {  name: /seguir para o pagamento/i}))
 
     expect(screen.getByRole('button', {  name: /finalizar pedido/i})).toBeDisabled()
@@ -90,12 +84,6 @@ describe(`
     when the user enters valid credit card details
     then show success message 
     `, async () => {
-    render(
-      <QueryClientProvider client={queryClient}>
-        <Checkout />
-      </QueryClientProvider>
-    )
-
     await userEvent.click(screen.getByRole('button', {  name: /seguir para o pagamento/i}))
 
     await userEvent.type(screen.getByRole('textbox', { name: /número/i}), '1234567809876543')

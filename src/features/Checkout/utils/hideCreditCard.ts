@@ -1,4 +1,4 @@
-export const hideCreditCard = (cardNumber: string) => {
+export const hideCreditCard = (cardNumber: string): string => {
   let hideNum = [];
 	for(let i = 0; i < cardNumber.length; i++){
     if (i < cardNumber.length-4) {

@@ -8,5 +8,5 @@ export const getBagContentResolve = async () => {
 export const bagContentQueryKey = ['bag-content']
 
 export const useBagContent = () => {
-  return useQuery<any>({ queryKey: bagContentQueryKey, queryFn: getBagContentResolve })
+  return useQuery({ queryKey: bagContentQueryKey, queryFn: getBagContentResolve })
 }

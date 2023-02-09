@@ -6,33 +6,35 @@ import { useBagContent } from './hooks/useBagContent'
 import { getBilling } from './utils/getBilling'
 import { getProducts } from './utils/getProducts'
 import { SuccessStep } from './components/SuccessStep'
+import { CheckoutStep, OrderPayload, PaymentFormValues } from './types'
 import './style.scss'
 
 export function Checkout() {
-  const [selected, setSelected] = useState("Sacola")
-  const [orderPayload, setOrderPayload] = useState<any>(null)
+  const [selected, setSelected] = useState(CheckoutStep.Bag)
+  const [orderPayload, setOrderPayload] = useState<OrderPayload>()
   const { data } = useBagContent()
   const products = getProducts(data)
   const billing = getBilling(data)
 
-  const handleChangeTab = (section: string) => {
+  const handleChangeTab = (section: CheckoutStep) => {
     setSelected(section)
   }
   
-  const finalizeOrderHandler = (formValues: any) => {
+  const finalizeOrderHandler = (formValues: PaymentFormValues) => {
     setOrderPayload({
-      payment: formValues,
+      creditCardPayment: formValues,
       products,
     })
-    setSelected("Confirmação")
+    setSelected(CheckoutStep.Success)
   }
+
   return (
     <Tabs selected={selected} onChange={handleChangeTab}>
       <BagStep 
         key="Sacola" 
         products={products} 
         billing={billing} 
-        goToNextHandler={() => setSelected('Pagamento')} />
+        goToNextHandler={() => setSelected(CheckoutStep.Payment)} />
       <PaymentStep 
         key="Pagamento" 
         products={products} 
@@ -40,10 +42,10 @@ export function Checkout() {
         finalizeOrderHandler={finalizeOrderHandler} />
       <SuccessStep 
         key="Confirmação"
-        payload={orderPayload?.payment}
+        payload={orderPayload}
         products={products} 
         billing={billing} 
-        goToNextHandler={() => setSelected('Sacola')} />
+        goToNextHandler={() => setSelected(CheckoutStep.Bag)} />
     </Tabs>
   )
 }

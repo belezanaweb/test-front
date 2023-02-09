@@ -1,3 +1,21 @@
+export enum CheckoutStep {
+  Bag = 'Sacola',
+  Payment = 'Pagamento',
+  Success = 'Confirmação'
+}
+
+export interface PaymentFormValues {
+  creditCardNumber: string
+  name: string
+  expirationDate: string
+  cvvCode: string
+}
+
+export interface OrderPayload {
+  creditCardPayment: PaymentFormValues,
+  products: Product[],
+}
+
 export interface PriceSpecification {
   discount: number
   maxPrice: number
@@ -32,4 +50,12 @@ export interface Billing {
   subTotal: number
   discount: number
   total: number
+}
+
+export interface CheckoutData {
+  shippingTotal: number,
+  subTotal: number,
+  discount: number,
+  total: number,
+  items: Product[]
 }

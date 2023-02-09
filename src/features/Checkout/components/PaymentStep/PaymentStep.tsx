@@ -1,5 +1,5 @@
 import { useForm } from "react-hook-form"
-import { Billing, Product } from "../BagContent/types"
+import { Billing, PaymentFormValues, Product } from "../../types"
 import { BillingSummary } from "../BillingSummary"
 import { CreditCardInput } from "../CreditCardInput"
 import './style.scss'
@@ -7,14 +7,15 @@ import './style.scss'
 interface PaymentStepProps { 
   billing: Billing,
   products: Product[]
-  finalizeOrderHandler: (value: any) => void
+  finalizeOrderHandler: (value: PaymentFormValues) => void
 }
 
 export function PaymentStep({ products, billing, finalizeOrderHandler }: PaymentStepProps) {
-  const { control, formState: { isValid }, handleSubmit } = useForm({
+  const { control, formState: { isValid }, handleSubmit } = useForm<PaymentFormValues>({
     mode: 'onChange',
     reValidateMode: 'onChange',
   })
+
   return (
     <form className='payment-step' onSubmit={handleSubmit(finalizeOrderHandler)}>
       <CreditCardInput control={control} />

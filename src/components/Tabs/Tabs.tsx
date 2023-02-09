@@ -1,9 +1,10 @@
+import { CheckoutStep } from '../../features/Checkout/types'
 import './style.scss'
 
 type TabsProps = {
-  children: any[]
+  children: JSX.Element[]
   selected: string
-  onChange: (selected: string) => void
+  onChange: (selected: CheckoutStep) => void
 }
 
 export function Tabs({ children, selected, onChange  }: TabsProps) {
@@ -15,7 +16,7 @@ export function Tabs({ children, selected, onChange  }: TabsProps) {
           children.map(section => 
             <button 
               className={section?.key === selected ? 'tab-button-selected' : 'tab-button'} 
-              key={section?.key} onClick={() => onChange(section?.key)}>
+              key={section?.key} onClick={() => onChange(section?.key as CheckoutStep)}>
                 {section?.key}
             </button>
           ) 

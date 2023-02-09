@@ -2,10 +2,11 @@ import { render, screen } from '@testing-library/react'
 import userEvent from '@testing-library/user-event'
 import { useForm } from 'react-hook-form'
 import { describe } from 'vitest'
+import { PaymentFormValues } from '../../types'
 import { CreditCardInput } from './CreditCardInput'
 
 const CreditCardForm = () => {
-  const { control } = useForm({
+  const { control } = useForm<PaymentFormValues>({
     mode: 'onChange',
     reValidateMode: 'onChange',
   })
