@@ -36,6 +36,7 @@ export function Checkout() {
         goToNextHandler={() => setSelected('Pagamento')} />
       <PaymentStep 
         key="Pagamento" 
+        products={products} 
         billing={billing} 
         finalizeOrderHandler={finalizeOrderHandler} />
       <SuccessStep 

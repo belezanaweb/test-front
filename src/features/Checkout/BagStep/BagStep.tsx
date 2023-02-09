@@ -19,6 +19,7 @@ export function BagStep({ products, billing, goToNextHandler }: BagStepProps) {
           subTotal={billing.subTotal}
           discount={billing.discount}
           total={billing.total}
+          qntItems={products.length}
         />
         <button 
           className='checkout-button' 

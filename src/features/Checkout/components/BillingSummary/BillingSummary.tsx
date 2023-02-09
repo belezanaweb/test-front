@@ -6,13 +6,14 @@ interface BillingSummaryProps {
   subTotal: number
   discount: number
   total: number
+  qntItems: number
 }
 
-export function BillingSummary({ subTotal, shippingTotal, discount, total }: BillingSummaryProps) {
+export function BillingSummary({ subTotal, shippingTotal, discount, total, qntItems }: BillingSummaryProps) {
   return (
     <section className='billing-summary'>
       <div className='products-row'>
-        <span>Produtos:</span>
+        <span>Produtos: {qntItems && `(${qntItems} itens)`}</span>
         <span><Currency>{subTotal}</Currency></span>
       </div>
       <div className='shipping-row'>

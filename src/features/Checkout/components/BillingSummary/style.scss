@@ -29,9 +29,14 @@
   display: flex;
   justify-content: space-between;
   margin-bottom: 16px;
+  & span:last-child {
+    font-weight: 700;
+    color: #9222DC;
+  }
 }
 
 .subtotal-row {
   display: flex;
   justify-content: space-between;
+  font-weight: 700;
 }
