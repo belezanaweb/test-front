@@ -13,7 +13,7 @@ interface BagStepProps {
 
 export function SuccessStep({ payload, products, billing, goToNextHandler }: BagStepProps) {
   return (
-    <div className='bag-step'>
+    <div className='success-step'>
       <div className="scrollable-content">
         {payload && <SuccessfulCard payload={payload}  />}
         <BagContent
@@ -22,7 +22,7 @@ export function SuccessStep({ payload, products, billing, goToNextHandler }: Bag
           products={products}
           showPrices={false} />
       </div>
-      <section className='summary-action'>
+      <section className='success-action'>
         <BillingSummary 
           shippingTotal={billing.shippingTotal}
           subTotal={billing.subTotal}
@@ -31,8 +31,8 @@ export function SuccessStep({ payload, products, billing, goToNextHandler }: Bag
           qntItems={products.length}
         />
         <button 
-          className='checkout-button' 
-          onClick={goToNextHandler}>Seguir para o pagamento</button>
+          className='success-button' 
+          onClick={goToNextHandler}>Voltar ao inicio do protótipo</button>
       </section>
     </div>
   )

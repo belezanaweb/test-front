@@ -19,7 +19,7 @@ export function PaymentStep({ products, billing, finalizeOrderHandler }: Payment
   return (
     <form className='payment-step' onSubmit={handleSubmit(finalizeOrderHandler)}>
       <CreditCardInput control={control} />
-      <section className='summary-action'>
+      <section className='payment-action'>
         <BillingSummary 
           shippingTotal={billing.shippingTotal}
           subTotal={billing.subTotal}
@@ -29,7 +29,7 @@ export function PaymentStep({ products, billing, finalizeOrderHandler }: Payment
         />
         <button 
           type="submit"
-          className={isValid ? 'checkout-button': 'checkout-button-disabled'}
+          className={isValid ? 'payment-button': 'payment-button-disabled'}
           disabled={!isValid}>Finalizar pedido</button>
       </section>
     </form>

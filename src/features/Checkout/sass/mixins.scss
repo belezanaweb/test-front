@@ -21,3 +21,18 @@
   list-style-position: inside;
   flex-direction: column;
 }
+
+@mixin checkout-button() {
+  width: 100%;
+  padding: 16px 8px;
+  border-radius: 4px;
+  border: 0;
+  background: #9222DC;
+  font-family: 'Arial';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 16px;
+  color: #FFFFFF;
+  cursor: pointer;
+}

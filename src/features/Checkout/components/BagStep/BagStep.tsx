@@ -13,7 +13,7 @@ export function BagStep({ products, billing, goToNextHandler }: BagStepProps) {
   return (
     <div className='bag-step'>
       <BagContent key="Sacola" products={products} />
-      <section className='summary-action'>
+      <section className='bag-action'>
         <BillingSummary 
           shippingTotal={billing.shippingTotal}
           subTotal={billing.subTotal}
@@ -22,7 +22,7 @@ export function BagStep({ products, billing, goToNextHandler }: BagStepProps) {
           qntItems={products.length}
         />
         <button 
-          className='checkout-button' 
+          className='bag-button' 
           onClick={goToNextHandler}>Seguir para o pagamento</button>
       </section>
     </div>

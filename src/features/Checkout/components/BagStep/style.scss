@@ -1,3 +1,5 @@
+@import '../../sass/mixins.scss';
+
 .bag-step {
   padding: 20px 6.53px 0;
   height: calc(100vh - 65px);
@@ -8,8 +10,12 @@
   max-width: 600px;
 }
 
-.summary-action {
+.bag-action {
   margin: 0 -6.53px;
   padding: 0 20px 24px;
   background-color: #fff;
+}
+
+.bag-button {
+  @include checkout-button();
 }

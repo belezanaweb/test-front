@@ -1,16 +1,4 @@
-@mixin checkout-button() {
-  width: 100%;
-  padding: 16px 8px;
-  border-radius: 4px;
-  border: 0;
-  background: #9222DC;
-  font-family: 'Arial';
-  font-style: normal;
-  font-weight: 700;
-  font-size: 18px;
-  line-height: 16px;
-  color: #FFFFFF;
-}
+@import '../../sass/mixins.scss';
 
 .payment-step {
   padding: 20px 6.53px 0;
@@ -22,16 +10,16 @@
   max-width: 600px;
 }
 
-.checkout-button {
+.payment-button {
   @include checkout-button();
 }
 
-.checkout-button-disabled {
+.payment-button-disabled {
   @include checkout-button();
   opacity: 0.7;
 }
 
-.summary-action {
+.payment-action {
   margin: 0 -6.53px;
   padding: 0 20px 24px;
   background-color: #fff;
