@@ -6,6 +6,11 @@ import {
 import { useState } from 'react'
 import { Checkout } from "../../features/Checkout"
 
+export const documentProps = {
+  title: 'Beleza na Web | Checkout Page',
+  description: 'Finalização do seu pedido'
+}
+
 export function Page(props: any) {
   const [queryClient] = useState(() => new QueryClient({
     defaultOptions: {
