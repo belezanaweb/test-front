@@ -1,6 +1,6 @@
-import { BagContent } from "../BagContent"
-import { Billing, Product } from "../../types"
-import { BillingSummary } from "../BillingSummary"
+import { BagContent } from '../BagContent'
+import { Billing, Product } from '../../types'
+import { BillingSummary } from '../BillingSummary'
 import './style.scss'
 
 interface BagStepProps { 

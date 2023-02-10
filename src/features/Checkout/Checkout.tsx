@@ -12,15 +12,15 @@ import './style.scss'
 export function Checkout() {
   const [selected, setSelected] = useState(CheckoutStep.Bag)
   const [orderPayload, setOrderPayload] = useState<OrderPayload>()
-  const { data } = useBagContent()
-  const products = getProducts(data)
-  const billing = getBilling(data)
+  const { data: bagContent } = useBagContent()
+  const products = getProducts(bagContent)
+  const billing = getBilling(bagContent)
 
   const handleChangeTab = (section: CheckoutStep) => {
     setSelected(section)
   }
   
-  const finalizeOrderHandler = (formValues: PaymentFormValues) => {
+  const handleFinalizeOrder = (formValues: PaymentFormValues) => {
     setOrderPayload({
       creditCardPayment: formValues,
       products,
@@ -39,7 +39,7 @@ export function Checkout() {
         key="Pagamento" 
         products={products} 
         billing={billing} 
-        finalizeOrderHandler={finalizeOrderHandler} />
+        finalizeOrderHandler={handleFinalizeOrder} />
       <SuccessStep 
         key="Confirmação"
         payload={orderPayload}

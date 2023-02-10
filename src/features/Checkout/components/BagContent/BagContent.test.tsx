@@ -1,6 +1,6 @@
 import { render, screen } from '@testing-library/react'
 import { describe } from 'vitest';
-import { makeProductMock } from '../../../../test/mocks/makeProductMock';
+import { makeProductMock } from '../../../../test/mocks/makeProductMock'
 import { BagContent } from './BagContent'
 
 const productsMock = makeProductMock(3)

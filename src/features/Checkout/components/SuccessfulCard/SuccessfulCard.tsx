@@ -7,11 +7,13 @@ interface SuccessfulCardProps {
 }
 
 export function SuccessfulCard({ payload }: SuccessfulCardProps) {
-  const { creditCardPayment: { 
-    creditCardNumber,
-    name,
-    expirationDate
-  } } = payload
+  const { 
+    creditCardPayment: { 
+      creditCardNumber,
+      name,
+      expirationDate
+    }
+  } = payload
 
   return (
     <section className='success-card'>

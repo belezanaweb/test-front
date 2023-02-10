@@ -1,7 +1,7 @@
-import { BagContent } from "../BagContent"
-import { Billing, OrderPayload, Product } from "../../types"
-import { BillingSummary } from "../BillingSummary"
-import { SuccessfulCard } from "../SuccessfulCard"
+import { BagContent } from '../BagContent'
+import { Billing, OrderPayload, Product } from '../../types'
+import { BillingSummary } from '../BillingSummary'
+import { SuccessfulCard } from '../SuccessfulCard'
 import './style.scss'
 
 interface BagStepProps { 
@@ -16,7 +16,7 @@ export function SuccessStep({ payload, products, billing, goToNextHandler }: Bag
     <div className='success-step'>
       {payload && <SuccessfulCard payload={payload}  />}
       <BagContent
-        key="Sacola" 
+        key='Sacola' 
         title='Produtos' 
         products={products}
         showPrices={false} />

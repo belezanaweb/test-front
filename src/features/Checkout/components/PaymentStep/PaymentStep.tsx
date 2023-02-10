@@ -1,7 +1,7 @@
-import { useForm } from "react-hook-form"
-import { Billing, PaymentFormValues, Product } from "../../types"
-import { BillingSummary } from "../BillingSummary"
-import { CreditCardInput } from "../CreditCardInput"
+import { useForm } from 'react-hook-form'
+import { Billing, PaymentFormValues, Product } from '../../types'
+import { BillingSummary } from '../BillingSummary'
+import { CreditCardInput } from '../CreditCardInput'
 import './style.scss'
 
 interface PaymentStepProps { 
@@ -28,7 +28,7 @@ export function PaymentStep({ products, billing, finalizeOrderHandler }: Payment
           qntItems={products.length}
         />
         <button 
-          type="submit"
+          type='submit'
           className={isValid ? 'payment-button': 'payment-button-disabled'}
           disabled={!isValid}>Finalizar pedido</button>
       </section>

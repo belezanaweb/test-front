@@ -1,6 +1,6 @@
 import { Currency } from '../../../../components/Currency'
-import './style.scss'
 import { Product } from '../../types'
+import './style.scss'
 
 interface BagContentProps {
   title?: string

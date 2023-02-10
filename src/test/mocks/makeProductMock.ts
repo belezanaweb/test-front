@@ -1,4 +1,4 @@
-import { Product } from "../../features/Checkout/types";
+import { Product } from '../../features/Checkout/types'
 
 function getRandomArbitrary(min: number, max: number) {
   return Math.random() * (max - min) + min;

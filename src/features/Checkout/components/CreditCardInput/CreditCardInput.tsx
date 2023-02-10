@@ -1,8 +1,8 @@
-import { Controller, Control } from "react-hook-form"
+import { Controller, Control } from 'react-hook-form'
 import { PatternFormat } from 'react-number-format'
 import { ErrorMessage } from '@hookform/error-message'
+import { PaymentFormValues } from '../../types'
 import './style.scss'
-import { PaymentFormValues } from "../../types"
 
 interface CreditCardInputProps { 
   control: Control<PaymentFormValues>
@@ -13,24 +13,24 @@ export function CreditCardInput({ control }: CreditCardInputProps) {
     <fieldset>
       <legend>Cartão de crédito</legend>
       <div className='cred-card-inputs'>
-        <label className="cred-card-number">
+        <label className='cred-card-number'>
           Número
           <Controller 
             control={control}
-            name="creditCardNumber"
+            name='creditCardNumber'
             rules={{ required: true, validate: v => v.length >= 16 }}
             render={({ field: { onChange, name, value }, formState: { errors } }) => {
               return (
               <>
                 <PatternFormat
                   className={errors?.creditCardNumber && 'input-error'}
-                  aria-invalid={errors?.creditCardNumber ? "true" : "false"}
-                  format="#### #### #### ####"
+                  aria-invalid={errors?.creditCardNumber ? 'true' : 'false'}
+                  format='#### #### #### ####'
                   placeholder='0000 0000 0000 0000'
                   name={name}
                   value={value}
                   onChange={event => {
-                    const value = event.target.value.replace(/\s/g, "")
+                    const value = event.target.value.replace(/\s/g, '')
                     onChange(value.length < 16 ? value : event.target.value)
                   }}
                 />
@@ -38,7 +38,7 @@ export function CreditCardInput({ control }: CreditCardInputProps) {
                   errors={errors}
                   name={name}
                   render={() => (
-                    <p role="alert" className="error-message">
+                    <p role='alert' className='error-message'>
                       insira um número de cartão válido
                     </p>
                   )}
@@ -47,17 +47,17 @@ export function CreditCardInput({ control }: CreditCardInputProps) {
             )}}
           />
         </label>
-        <label className="name">
+        <label className='name'>
           Nome do titular do cartão
           <Controller 
             control={control}
-            name="name"
+            name='name'
             rules={{ required: 'insira um nome válido' }}
             render={({ field: { onChange, name, value }, formState: { errors } }) => (
               <>
                 <input 
                   className={errors?.name && 'input-error'}
-                  aria-invalid={errors?.name ? "true" : "false"}
+                  aria-invalid={errors?.name ? 'true' : 'false'}
                   type='text' 
                   placeholder='Nome impresso no cartão' 
                   name={name}
@@ -67,7 +67,7 @@ export function CreditCardInput({ control }: CreditCardInputProps) {
                 <ErrorMessage
                   errors={errors}
                   name={name}
-                  render={({ message }) => <p role="alert" className="error-message">{message}</p>}
+                  render={({ message }) => <p role='alert' className='error-message'>{message}</p>}
                 />
               </>
             )}
@@ -77,23 +77,23 @@ export function CreditCardInput({ control }: CreditCardInputProps) {
           Data de validade
           <Controller 
             control={control}
-            name="expirationDate"
+            name='expirationDate'
             rules={{ required: true, validate: v => v.length === 5 }}
             render={({ field: { onChange, name, value }, formState: { errors } }) => (
               <>
                 <PatternFormat
                   className={errors?.expirationDate && 'input-error'}
-                  aria-invalid={errors?.expirationDate ? "true" : "false"}
-                  format="##/##"
+                  aria-invalid={errors?.expirationDate ? 'true' : 'false'}
+                  format='##/##'
                   placeholder='MM/AA'
                   name={name}
                   value={value}
-                  onChange={event => onChange(event.target.value.replace(/\s/g, ""))}
+                  onChange={event => onChange(event.target.value.replace(/\s/g, ''))}
                 />
                 <ErrorMessage
                   errors={errors}
                   name={name}
-                  render={() => <p role="alert" className="error-message">insira uma data válida</p>}
+                  render={() => <p role='alert' className='error-message'>insira uma data válida</p>}
                 />
               </>
             )}
@@ -103,23 +103,23 @@ export function CreditCardInput({ control }: CreditCardInputProps) {
           Código CVV:
           <Controller 
             control={control}
-            name="cvvCode"
+            name='cvvCode'
             rules={{ required: 'insira um cvv válido', validate: v => v.length === 3 }}
             render={({ field: { onChange, name, value }, formState: { errors } }) => (
               <>
                 <PatternFormat
                   className={errors?.cvvCode && 'input-error'}
-                  aria-invalid={errors?.cvvCode ? "true" : "false"}
-                  format="###"
+                  aria-invalid={errors?.cvvCode ? 'true' : 'false'}
+                  format='###'
                   placeholder='000'
                   name={name}
                   value={value}
-                  onChange={event => onChange(event.target.value.replace(/\s/g, ""))}
+                  onChange={event => onChange(event.target.value.replace(/\s/g, ''))}
                 />
                 <ErrorMessage
                   errors={errors}
                   name={name}
-                  render={() => <p role="alert" className="error-message">insira um cvv válido</p>}
+                  render={() => <p role='alert' className='error-message'>insira um cvv válido</p>}
                 />
               </>
             )}

@@ -1,7 +1,7 @@
 import { CheckoutStep } from '../../features/Checkout/types'
 import './style.scss'
 
-type TabsProps = {
+interface TabsProps {
   children: JSX.Element[]
   selected: string
   fixed?: boolean
