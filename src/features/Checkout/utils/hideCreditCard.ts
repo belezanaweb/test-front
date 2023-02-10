@@ -1,15 +1,17 @@
 export const hideCreditCard = (cardNumber: string): string => {
-  let hideNum = [];
-	for(let i = 0; i < cardNumber.length; i++){
-    if (i < cardNumber.length-4) {
-      if(cardNumber[i] === ' '){
-        hideNum.push(".");
+  const cardNumberArray: string[] = cardNumber.split('')
+
+  const hiddenCardNumberArray = cardNumberArray.map((char, index) => {
+    if (index < cardNumber.length - 4) {
+      if (char === ' '){
+        return '.'
       } else {
-        hideNum.push("*");
+        return '*'
       }
-    }else{
-      hideNum.push(cardNumber[i]);
+    } else {
+      return char
     }
-  }
-  return hideNum.join("");
+  })
+
+  return hiddenCardNumberArray.join('');
 }
