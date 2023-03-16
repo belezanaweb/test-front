@@ -1,7 +1,8 @@
+import Checkout from './components/Checkout/index';
 import './App.css'
 
 export default function App() {
   return (
-    <h1>Leonidas</h1>
+    <Checkout />
   )
 }
