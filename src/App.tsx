@@ -1,8 +1,11 @@
 import Checkout from './components/Checkout/index';
 import './App.css'
+import CartProvider from './context/CartContext';
 
 export default function App() {
   return (
-    <Checkout />
+    <CartProvider>
+      <Checkout />
+    </CartProvider>
   )
 }

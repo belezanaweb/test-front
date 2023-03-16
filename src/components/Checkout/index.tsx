@@ -41,7 +41,7 @@ const Checkout: FC = () => {
     <BrowserRouter>
       <Menu step={step} items={menuItems}/>
       <Routes>
-        <Route path="/" element={<Cart navigation={goToPayment} />} />
+        <Route path="/" element={<Cart />} />
         <Route path="/payment" element={<Payment navigation={confirmPayment} />} />
         <Route path="/confirmation" element={<Confirmation navigation={goToCart} />} />
       </Routes>

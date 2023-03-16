@@ -1,0 +1,22 @@
+$primary-color: #007bff;
+$secondary-color: #6c757d;
+$success-color: #28a745;
+$danger-color: #dc3545;
+$warning-color: #ffc107;
+$info-color: #17a2b8;
+$light-color: #fff;
+$dark-color: #000;
+
+// Tamanhos de fonte
+$font-size-base: 16px;
+$font-size-lg: $font-size-base * 1.25; // 20px
+$font-size-sm: $font-size-base * 0.875; // 14px
+
+// Espaçamento
+$spacing-unit: 1rem;
+$padding-unit: $spacing-unit / 2;
+$margin-unit: $spacing-unit / 2;
+
+// Bordas
+$border-width: 1px;
+$border-radius: 4px;

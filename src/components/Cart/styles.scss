@@ -1,0 +1,41 @@
+@use '/src/styles/variables.scss' as var;
+@use '/src/styles/mixins.scss' as mixin;
+
+.cart {
+  background-color: var.$light-color;
+  margin: 8px;
+  border-radius: var.$border-radius;
+  @include mixin.flex(column, center, flex-start);
+  .cart__item {
+    display: grid;
+    grid-template-columns: 1fr 3fr 1fr;
+    grid-gap: 8px;
+    padding: 0 var.$padding-unit;
+    margin: 10px 0;
+    font-size: clamp(12px, 1vw, 16px);
+    .cart__item__image {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .cart__item__description {
+
+    }
+
+    .cart__item__price {
+      @include mixin.flex(column, center, center);
+      font-size: 14px;
+      text-align: right;
+      &-old {
+        text-decoration: line-through;
+        color: #9B9B9B;
+      }
+      &-current {
+        font-weight: bold;
+        color: var.$dark-color;
+      }
+    }
+
+  }
+}
