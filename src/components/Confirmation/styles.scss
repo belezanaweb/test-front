@@ -1,0 +1,16 @@
+@use '../../styles/variables.scss' as var;
+@use '../../styles/mixins.scss' as mixin;
+
+.confirmation {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  margin: var.$margin-unit;
+  background-color: var.$light-color;
+  @include mixin.border();
+  > * {
+    margin: var.$margin-unit;
+  }
+}

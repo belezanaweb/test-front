@@ -1,5 +1,4 @@
 import { FC, useContext } from "react"
-import { useLocation, useNavigate } from "react-router-dom";
 import { CartContext } from "../../context/CartContext";
 import formatCurrency from "../../utils/converters/formatCurrency";
 import Button from "../ui/Button";
@@ -10,8 +9,6 @@ import './styles.scss'
 const OrderSummary: FC<IOrderSummary> = ({text, onClick}) => {
 
   const { cartItems } = useContext(CartContext);
-  const { pathname } = useLocation();
-  const navigate = useNavigate();
 
   return (
     <div className="orderSummary">

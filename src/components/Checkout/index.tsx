@@ -4,6 +4,7 @@ import Payment from "../Payment";
 import Confirmation from "../Confirmation";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Menu from "../Menu";
+import { Icheckout } from "./Checkout.interface";
 
 
 

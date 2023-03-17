@@ -1,3 +1,4 @@
+@use './variables.scss' as var;
 
 @mixin displayGrid($columns: 12, $gutter: 1rem) {
   display: grid;
@@ -10,4 +11,9 @@
   flex-direction: $direction;
   justify-content: $justify;
   align-items: $align;
+}
+
+@mixin border() {
+  border: 1px solid var.$border-color;
+  border-radius: var.$border-radius;
 }

@@ -17,8 +17,10 @@ const Payment: FC = () => {
 
   const { handleSubmit } = methods;
 
-  const onSubmit = (data: any) => navigate('/confirmation');
+  const onSubmit = (data: any) => {
 
+    navigate('/confirmation', {state:{formData: data}});
+  }
   return (
     <>
       <div className="payment">
@@ -35,7 +37,7 @@ const Payment: FC = () => {
 
         </FormProvider>
       </div>
-      <OrderSummary text="Finalizar pedido" onClick={handleSubmit(onSubmit)}/>
+      <OrderSummary text="Finalizar pedido" onClick={handleSubmit(onSubmit)} />
 
     </>
   );

@@ -4,13 +4,13 @@
 .cart {
   background-color: var.$light-color;
   margin: 8px;
-  border-radius: var.$border-radius;
+  padding: 0 var.$padding-unit;
   @include mixin.flex(column, center, flex-start);
+  @include mixin.border();
   .cart__item {
     display: grid;
     grid-template-columns: 1fr 3fr 1fr;
     grid-gap: 8px;
-    padding: 0 var.$padding-unit;
     margin: 10px 0;
     font-size: clamp(12px, 1vw, 16px);
     .cart__item__image {
