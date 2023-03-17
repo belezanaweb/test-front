@@ -5,5 +5,4 @@ export interface IMenuItem {
 
 export interface IMenu {
   items: IMenuItem[];
-  step: number;
 }

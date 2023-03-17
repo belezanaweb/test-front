@@ -2,10 +2,11 @@
 @use '/src/styles/mixins.scss' as mixin;
 
 .cart {
+  display: grid;
+  grid-template-columns: 1fr;
   background-color: var.$light-color;
   margin: 8px;
   padding: 0 var.$padding-unit;
-  @include mixin.flex(column, center, flex-start);
   @include mixin.border();
   .cart__item {
     display: grid;
@@ -32,6 +33,5 @@
         color: var.$dark-color;
       }
     }
-
   }
 }

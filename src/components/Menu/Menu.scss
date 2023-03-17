@@ -1,17 +1,65 @@
+@use '../../styles/variables' as var;
+@use '../../styles/mixins' as mixin;
+
+
 .menu {
   max-width: 100%;
-  display: flex;
-  justify-content: space-between;
-  margin: 0 8px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  background-color: #fff;
+  margin-bottom: 12px;
+  padding: 0 4rem;
 
   &__items {
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    align-items: center;
     text-decoration: none;
-    color: #000;
+    color: #878787;
     font-size: 14px;
     line-height: 24px;
-    padding: 8px 0;
+    padding: 8px 12px;
+    transition: all 0.3s ease-in-out;
+
+    &::before {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      display: block;
+      width: 100%;
+      height: 1px;
+      background-color: #000;
+    }
+    &::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      display: block;
+      width: 0;
+      height: 4px;
+      background-color: var.$dark-color;
+      margin-top: 4px;
+      transition: all 0.3s ease-in-out;
+    }
   }
-  .active{
-    color: blue;
+
+  .active {
+    color: var.$dark-color;
+    font-weight: bold;
+    transition: all 0.3s ease-in-out;
+
+    &::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      display: block;
+      width: 100%;
+      height: 4px;
+      background-color: var.$dark-color;
+      margin-top: 4px;
+      transition: all 0.3s ease-in-out;
+
+    }
   }
 }

@@ -12,7 +12,7 @@ const Confirmation: FC = () => {
   const navigate = useNavigate();
 
   useEffect(() => {
-    if (!formData || !formData.cardNumber) {
+    if (!formData) {
       navigate("/payment")
     }
   }, [formData, navigate])
