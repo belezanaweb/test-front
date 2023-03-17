@@ -1,5 +1,6 @@
-const useCurrencyFormat = (value: number) => {
+const formatCurrency = (value: number | undefined) => {
   const currency = 'BRL';
+  if(!value) {return}
 
   return new Intl.NumberFormat('pt-br', {
     style: 'currency',
@@ -7,4 +8,4 @@ const useCurrencyFormat = (value: number) => {
   }).format(value);
 }
 
-export default useCurrencyFormat;
+export default formatCurrency;
