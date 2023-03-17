@@ -1,13 +1,17 @@
 import { FC, useContext } from "react"
-import {CartContext} from "../../context/CartContext";
+import { useLocation, useNavigate } from "react-router-dom";
+import { CartContext } from "../../context/CartContext";
 import formatCurrency from "../../utils/converters/formatCurrency";
 import Button from "../ui/Button";
+import { IOrderSummary } from "./OrderSummary.interface";
 
 import './styles.scss'
 
-const OrderSummary: FC = () => {
+const OrderSummary: FC<IOrderSummary> = ({text, onClick}) => {
 
   const { cartItems } = useContext(CartContext);
+  const { pathname } = useLocation();
+  const navigate = useNavigate();
 
   return (
     <div className="orderSummary">
@@ -27,7 +31,7 @@ const OrderSummary: FC = () => {
         <span>Subtotal</span>
         <span>{formatCurrency(cartItems?.total)}</span>
       </div>
-      <Button text="Seguir para o pagamento" />
+      <Button onClick={onClick} text={text}  />
     </div>
   )
 }

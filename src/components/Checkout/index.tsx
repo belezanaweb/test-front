@@ -2,13 +2,13 @@ import { FC, useState } from "react";
 import Cart from "../Cart";
 import Payment from "../Payment";
 import Confirmation from "../Confirmation";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Menu from "../Menu";
-import OrderSummary from "../OrderSummary";
+
 
 
 const Checkout: FC = () => {
-  const [step, setStep] = useState(0);
+  const [step] = useState(0);
 
   const menuItems = [
     {
@@ -25,29 +25,15 @@ const Checkout: FC = () => {
     },
   ];
 
-
-  function goToPayment() {
-    setStep(1);
-  }
-
-  function confirmPayment() {
-    setStep(2);
-  }
-
-  function goToCart() {
-    setStep(0);
-  }
-
-  return (
-    <BrowserRouter>
-      <Menu step={step} items={menuItems}/>
+   return (
+    <Router>
+      <Menu step={step} items={menuItems} />
       <Routes>
         <Route path="/" element={<Cart />} />
-        <Route path="/payment" element={<Payment navigation={confirmPayment} />} />
-        <Route path="/confirmation" element={<Confirmation navigation={goToCart} />} />
+        <Route path="/payment" element={<Payment />} />
+        <Route path="/confirmation" element={<Confirmation />} />
       </Routes>
-      <OrderSummary/>
-    </BrowserRouter>
+    </Router>
   );
 }
 
