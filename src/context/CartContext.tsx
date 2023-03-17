@@ -26,7 +26,7 @@ const CartProvider: FC<ICartProvider> = ({ children }) => {
         setCartItems(response.data)
 
       })
-      .catch(error => console.log(error))
+      .catch(error => console.error(error))
   }, [])
 
   return (

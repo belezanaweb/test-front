@@ -14,10 +14,16 @@
     grid-gap: 8px;
     margin: 10px 0;
     font-size: clamp(12px, 1vw, 16px);
-    .cart__item__image {
+    &__image {
       width: 100%;
       height: 100%;
       object-fit: cover;
+    }
+    &__description {
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      font-size: var.$font-size-base;
     }
 
     .cart__item__price {

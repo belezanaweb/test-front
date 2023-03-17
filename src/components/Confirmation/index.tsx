@@ -23,7 +23,7 @@ const Confirmation: FC = () => {
   }
 
   return (
-    <>
+    <div className="container">
       {
         formData &&
         <div className="confirmation">
@@ -36,7 +36,7 @@ const Confirmation: FC = () => {
       <Cart />
       <OrderSummary text="Voltar ao inicio" onClick={handleClick} />
 
-    </>
+    </div>
   )
 }
 

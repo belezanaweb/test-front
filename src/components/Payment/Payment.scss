@@ -1,10 +1,11 @@
 @use '/src/styles/variables' as var;
-
+@use '/src/styles/mixins' as mixin;
 
 .payment {
   background-color: #fff;
-  margin: 0 8px;
-  padding: var.$spacing-unit ;
+  margin: 8px;
+  padding: var.$spacing-unit;
+  @include mixin.border();
   .payment_title {
     font-size: var.$font-size-lg;
     font-weight: 400;

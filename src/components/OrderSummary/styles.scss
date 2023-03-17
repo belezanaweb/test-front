@@ -3,7 +3,9 @@
 
 .orderSummary {
   @include mixin.displayGrid(1, 1rem);
-  margin: 20px 0;
+  @include mixin.border();
+  font-size: var.$font-size-lg;
+  margin: 8px;
   background-color: var.$light-color;
   padding: 28px;
   &__item {

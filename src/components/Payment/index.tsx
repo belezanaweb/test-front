@@ -7,8 +7,9 @@ import { handleCardNumberMask, handleCvcMask, handleDateMonthYear } from '../../
 import './Payment.scss'
 import OrderSummary from "../OrderSummary";
 import { useNavigate } from "react-router-dom";
+import { IPayment } from "./Payment.interface";
 
-const Payment: FC = () => {
+const Payment: FC<IPayment> = () => {
 
   const navigate = useNavigate();
   const methods = useForm({
@@ -22,7 +23,7 @@ const Payment: FC = () => {
     navigate('/confirmation', {state:{formData: data}});
   }
   return (
-    <>
+    <div className="container">
       <div className="payment">
         <h1>Cartão de crédito</h1>
         <FormProvider {...methods}>
@@ -39,7 +40,7 @@ const Payment: FC = () => {
       </div>
       <OrderSummary text="Finalizar pedido" onClick={handleSubmit(onSubmit)} />
 
-    </>
+    </div>
   );
 };
 

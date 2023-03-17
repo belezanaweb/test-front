@@ -1,3 +1,3 @@
 import '@testing-library/jest-dom/extend-expect'
 
-import '../index.css'
+import '../index.scss'
