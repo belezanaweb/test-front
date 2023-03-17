@@ -1,5 +1,6 @@
-
-
 export interface IPayment {
-  navigation: () => void;
+  cardNumber: string;
+  cardName: string;
+  cardExpiration: string;
+  cardCvc: string;
 }

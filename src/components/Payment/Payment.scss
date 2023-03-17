@@ -1,0 +1,17 @@
+@use '/src/styles/variables' as var;
+
+
+.payment {
+  background-color: #fff;
+  margin: 0 8px;
+  padding: var.$spacing-unit ;
+  .payment_title {
+    font-size: var.$font-size-lg;
+    font-weight: 400;
+  }
+  .payment_creditCard {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+  }
+}

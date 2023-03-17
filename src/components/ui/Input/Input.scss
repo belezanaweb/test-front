@@ -1,0 +1,25 @@
+@use '/src/styles/variables' as var;
+
+.input {
+  // @include flex(column, flex-start, flex-start);
+
+  margin: 10px 0;
+
+  .input_label {
+
+  }
+  .input_field {
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    padding: 14px 1rem;
+    box-sizing: border-box;
+    width: 100%;
+  }
+  .input_error {
+    border: 1px solid var.$danger-color;
+  }
+  .input_error_message {
+    color: var.$danger-color;
+    font-size: 0.8rem;
+  }
+}
