@@ -4,6 +4,7 @@ import Payment from "../Payment";
 import Confirmation from "../Confirmation";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Menu from "../Menu";
+import OrderSummary from "../OrderSummary";
 
 
 const Checkout: FC = () => {
@@ -45,6 +46,7 @@ const Checkout: FC = () => {
         <Route path="/payment" element={<Payment navigation={confirmPayment} />} />
         <Route path="/confirmation" element={<Confirmation navigation={goToCart} />} />
       </Routes>
+      <OrderSummary/>
     </BrowserRouter>
   );
 }

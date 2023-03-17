@@ -1,0 +1,12 @@
+@use 'src/styles/variables' as var;
+@use 'src/styles/mixins' as mixin;
+
+.orderSummary {
+  @include mixin.displayGrid(1, 1rem);
+  margin: 20px 0;
+  background-color: var.$light-color;
+  padding: 28px;
+  &__item {
+    @include mixin.flex(row, space-between, center);
+  }
+}

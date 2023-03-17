@@ -6,13 +6,17 @@ interface ICartContext {
   cartItems?: ICart;
 }
 
+interface ICartProvider {
+  children: React.ReactNode;
+}
+
 export const CartContext = createContext<ICartContext>({
   cartItems: {
     items: [],
   }
 });
 
-const CartProvider: FC = ({ children }: any) => {
+const CartProvider: FC<ICartProvider> = ({ children }) => {
 
   const [cartItems, setCartItems] = useState<ICart>({items: []});
 

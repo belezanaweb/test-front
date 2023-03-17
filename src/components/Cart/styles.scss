@@ -19,10 +19,6 @@
       object-fit: cover;
     }
 
-    .cart__item__description {
-
-    }
-
     .cart__item__price {
       @include mixin.flex(column, center, center);
       font-size: 14px;

@@ -1,0 +1,10 @@
+@use './variables.scss' as var;
+
+
+.font-primary {
+  color: var.$primary-color;
+}
+
+.font-bold {
+  font-weight: bold;
+}
