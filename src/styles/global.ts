@@ -16,5 +16,6 @@ export const GlobalStyle = createGlobalStyle`
   body {
     -webkit-font-smoothing: antialiased;
     font-family: 'Arial', sans-serif;
+    background-color: ${(props) => props.theme['gray-50']};
   }
 `
