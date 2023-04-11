@@ -13,5 +13,16 @@ export const theme = {
     small: '1rem',
     medium: '2rem',
     large: '3rem'
+  },
+  fontSizes: {
+    extraSmall: '12px',
+    small: '14px',
+    medium: '16px',
+    large: '18px',
+    extraLarge: '20px'
+  },
+  fontFamilies: {
+    primary: "'Arial',sans-serif",
+    secondary: "'Helvetica Neue', sans-serif"
   }
 }

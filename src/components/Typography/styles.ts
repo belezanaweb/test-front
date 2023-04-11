@@ -35,5 +35,6 @@ export const TextBody = styled('span')<TypographyProps>`
     color: ${theme.colors[color]};
     font-family: ${theme.fontFamilies[fontFamily]};
     font-weight: ${fontWeight};
+    line-height: 16px;
   `}
 `
