@@ -1,5 +1,3 @@
-import { NavLink } from 'react-router-dom'
-
 import { CustomNavLink, HeaderContainer } from './styles'
 
 export function Header() {
