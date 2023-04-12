@@ -13,13 +13,13 @@ const summaryMock = {
   totalItems: 2
 }
 
-test('Summary component', () => {
+describe('Summary component', () => {
   it('renders correctly', () => {
     render(<Summary summary={summaryMock} />)
 
-    expect(/total value/i).toBeInTheDocument()
-    expect(/shipping value/i).toBeInTheDocument()
-    expect(/discount value/i).toBeInTheDocument()
-    expect(/subtotal value/i).toBeInTheDocument()
+    expect(screen.getByText('R$ 350,00')).toBeInTheDocument()
+    expect(screen.getByText('R$ 5,40')).toBeInTheDocument()
+    expect(screen.getByText('R$ 20,00')).toBeInTheDocument()
+    expect(screen.getByText('R$ 300,00')).toBeInTheDocument()
   })
 })

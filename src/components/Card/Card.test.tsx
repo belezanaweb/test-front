@@ -5,10 +5,10 @@ import { Card } from '.'
 
 import 'jest-styled-components'
 
-describe('Button component', () => {
+describe('Card component', () => {
   it('should render a card', () => {
     render(<Card>CardChildren</Card>)
     const card = screen.getByText('CardChildren')
-    expect(card).toHaveStyle({ border: '1px solid #ccc' })
+    expect(card).toHaveStyle({ border: '1px solid #CCCCCC' })
   })
 })

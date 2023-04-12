@@ -18,5 +18,6 @@ export const ButtonWrapper =
   margin-top: 24px;
   color: ${props => props.theme.colors.white};
 	border: none;
+  cursor: pointer;
   background-color: ${props => props.variant === 'primary' ? props.theme.colors.primary : props.theme.colors.black}
 `

@@ -9,7 +9,7 @@ type SummaryBilling = {
   totalItems: number
 }
 
-type Product = {
+export type Product = {
   name: string,
   image: string,
   sku: string,
@@ -46,7 +46,7 @@ export async function getData(): Promise<Bag> {
         product: {
           sku: item.product.sku,
           name: item.product.name,
-          image: item.product.imageObjects[0].medium,
+          image: item.product.imageObjects[0].small,
           price: item.product.priceSpecification.price,
           maxPrice: item.product.priceSpecification.maxPrice
         }
