@@ -12,6 +12,7 @@ export const SummaryContainer = styled.section`
     position: fixed;
     bottom: 0;
     width: 100%;
+    box-shadow: 0px -2px 4px rgba(0, 0, 0, 0.1);
   }
 `
 

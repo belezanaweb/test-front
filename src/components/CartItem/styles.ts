@@ -8,7 +8,7 @@ export const CartItemContainer = styled.div`
   gap: 15px;
   margin: 20px 0;
 
-  @media (${device.laptop}) {
+  @media (${device.tablet}) {
     justify-content: space-between;
   }
 `

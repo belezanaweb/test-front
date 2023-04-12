@@ -12,7 +12,7 @@ const Input = styled.input.attrs(({ minlength, maxlength }: AttrsProps) => {
   }
 })`
   background: ${({ theme }) => theme.colors.white};
-  border: 2px solid
+  border: 1px solid
     ${({ theme, error }) => {
       if (error) {
         return theme.colors.error
@@ -26,8 +26,9 @@ const Input = styled.input.attrs(({ minlength, maxlength }: AttrsProps) => {
   font-size: ${({ theme }) => theme.fontSizes.small}px;
   margin-top: 8px;
   outline: none;
-  padding: 15px;
+  padding: 14px;
   width: 100%;
+  height: 44px;
 
   &:focus {
     border-color: ${({ theme }) => theme.colors.black} !important;
@@ -66,7 +67,7 @@ const Wrapper =
 
 const Error = styled.span`
   color: ${({ theme }) => theme.colors.error};
-  font-size: 14px;
+  font-size: 12px;
   margin-top: 8px;
 `
 

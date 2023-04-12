@@ -12,7 +12,7 @@ export type TypographyProps = {
 export const Heading = styled('h1')<TypographyProps>`
   ${({
     color = 'black',
-    size = 'medium',
+    size = 'extraLarge',
     fontWeight = 700,
     fontFamily = 'primary'
   }) => css`
@@ -20,8 +20,7 @@ export const Heading = styled('h1')<TypographyProps>`
     color: ${theme.colors[color]};
     font-family: ${theme.fontFamilies[fontFamily]};
     font-weight: ${fontWeight};
-    margin-block-start: 0;
-    margin-block-end: 0;
+    font-style: normal;
   `}
 `
 
