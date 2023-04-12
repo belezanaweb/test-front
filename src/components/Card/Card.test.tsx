@@ -3,8 +3,6 @@ import { render } from '../../utils/test-utils'
 
 import { Card } from '.'
 
-import 'jest-styled-components'
-
 describe('Card component', () => {
   it('should render a card', () => {
     render(<Card>CardChildren</Card>)
