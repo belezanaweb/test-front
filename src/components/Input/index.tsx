@@ -5,6 +5,7 @@ import { Input as InputStyled, Label, Wrapper, Error } from './styles'
 
 export interface InputProps {
   label: string;
+  name?: string;
   initial?: string;
   type?: string;
   placeholder?: string;
