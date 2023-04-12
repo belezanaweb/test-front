@@ -34,7 +34,7 @@ export function useData() {
   })
 }
 
-export async function getData(): Promise<Bag> {
+async function getData(): Promise<Bag> {
   const { data } = await api.get('d6e9a93f-9741-4494-b81e-637a8e9b8ddd')
   let totalItems = 0
 

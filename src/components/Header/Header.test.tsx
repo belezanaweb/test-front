@@ -5,7 +5,6 @@ import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
 import { render } from '../../utils/test-utils'
 
 import { Header } from '.'
-import * as routerDom from 'react-router'
 
 const mockNavigate = jest.fn()
 
@@ -14,7 +13,12 @@ jest.mock('react-router', () => ({
   useNavigate: () => mockNavigate
 }))
 
-const mockUseLocation = jest.spyOn(routerDom, 'useLocation')
+const mockUseLocationComplement = {
+  preventScrollReset: undefined,
+  relative: undefined,
+  replace: false,
+  state: undefined
+}
 
 const renderComponent = () => {
   const queryClient = new QueryClient()
@@ -48,6 +52,6 @@ describe('Header component', () => {
     fireEvent.click(btn)
 
     expect(mockNavigate).toHaveBeenCalled()
-    expect(mockNavigate).toHaveBeenCalledWith(path)
+    expect(mockNavigate).toHaveBeenCalledWith(path, mockUseLocationComplement)
   })
 })
