@@ -11,12 +11,15 @@
     "coverage": "vitest run --coverage"
   },
   "dependencies": {
+    "@hookform/resolvers": "^3.0.1",
     "@tanstack/react-query": "^4.29.1",
     "axios": "^1.3.5",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "react-hook-form": "^7.43.9",
     "react-router-dom": "^6.3.0",
-    "styled-components": "^5.3.9"
+    "styled-components": "^5.3.9",
+    "zod": "^3.21.4"
   },
   "devDependencies": {
     "@babel/core": "^7.19.3",
