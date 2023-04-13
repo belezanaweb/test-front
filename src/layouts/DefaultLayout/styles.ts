@@ -7,7 +7,7 @@ export const LayoutContainer = styled.div`
 export const ContentContainer = styled.main`
   height: calc(100vh - 260px);
   overflow-y: scroll;
-  @media (${device.laptop}) {
+  @media (${device.tablet}) {
     height: calc(100vh - 37px);
     width: calc(100% - 320px);
     overflow-y: hidden;

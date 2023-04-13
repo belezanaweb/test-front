@@ -5,18 +5,21 @@ import { Router } from './Router'
 
 import { GlobalStyle } from './styles/global'
 import { theme } from './styles/theme'
+import { PaymentContextProvider } from './hooks/usePayment'
 
 const queryClient = new QueryClient()
 
 export function App() {
   return (
     <QueryClientProvider client={queryClient}>
-      <ThemeProvider theme={theme}>
-        <GlobalStyle />
-        <BrowserRouter>
-          <Router />
-        </BrowserRouter>
-      </ThemeProvider>
+      <PaymentContextProvider>
+        <ThemeProvider theme={theme}>
+          <GlobalStyle />
+          <BrowserRouter>
+            <Router />
+          </BrowserRouter>
+        </ThemeProvider>
+      </PaymentContextProvider>
     </QueryClientProvider>
   )
 }

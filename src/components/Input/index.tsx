@@ -1,59 +1,45 @@
-import { useState, useEffect } from 'react'
+import { InputHTMLAttributes } from 'react'
+import { useFormContext } from 'react-hook-form'
 
 // Components
 import { Input as InputStyled, Label, Wrapper, Error } from './styles'
 
-export interface InputProps {
+function get(obj: Record<any, any>, path: string) {
+  const travel = (regexp: RegExp) =>
+    String.prototype.split
+      .call(path, regexp)
+      .filter(Boolean)
+      .reduce((res, key) => (res !== null && res !== undefined ? res[key] : res), obj)
+
+  const result = travel(/[,[\]]+?/) || travel(/[,[\].]+?/)
+
+  return result
+}
+
+interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
   label: string;
-  name?: string;
-  initial?: string;
-  type?: string;
-  placeholder?: string;
+  name: string;
   error?: any;
-  onChange: (event: any) => any;
-  autocomplete?: string;
   width?: string;
+  onChange?: (event: any) => void;
   minlength?: string | number;
   maxlength?: string | number;
 }
 
-export function Input({
-  label,
-  initial = '',
-  placeholder = '',
-  autocomplete = '',
-  type = 'text',
-  onChange,
-  width = '100%',
-  ...other
-}: InputProps) {
-  // State
-  const [value, setValue] = useState(initial)
+export function Input({ name, label, onChange, width = '100%', ...other }: InputProps) {
+  const {
+    register,
+    formState: { errors }
+  } = useFormContext()
 
-  useEffect(() => {
-    setValue(initial)
-  }, [initial])
+  const fieldError = get(errors, name)
 
   return (
     <Wrapper width={width}>
-      <Label>{label}</Label>
-      <InputStyled
-        type={type}
-        value={value}
-        onChange={(e: any) => {
-          const val = onChange(e.target.value)
+      <Label htmlFor={name}>{label}</Label>
+      <InputStyled id={name} {...register(name)} onChange={onChange} {...other} />
 
-          if (val) {
-            setValue(val)
-          } else {
-            setValue(e.target.value)
-          }
-        }}
-        placeholder={placeholder}
-        autoComplete={autocomplete}
-        {...other}
-      />
-      <Error>{other.error ? other.error.message : ''}</Error>
+      <Error>{fieldError ? fieldError.message?.toString() : ''}</Error>
     </Wrapper>
   )
 }

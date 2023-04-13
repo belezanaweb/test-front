@@ -9,12 +9,12 @@ export const SummaryContainer = styled.section`
   position: absolute;
   bottom: 0;
   width: 100%;
+  box-shadow: 0px -2px 4px rgba(0, 0, 0, 0.1);
 
-  @media (${device.laptop}) {
+  @media (${device.tablet}) {
     right: 0;
     top: 37px;
     width: 320px;
-    box-shadow: 0px -2px 4px rgba(0, 0, 0, 0.1);
     height: 100%;
   }
 `

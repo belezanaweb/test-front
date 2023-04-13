@@ -5,11 +5,12 @@ interface ButtonProps {
   children: ReactNode;
   variant?: 'primary' | undefined;
   onClick?: () => void;
+  disabled?: boolean;
 }
 
-export function Button({ children, variant, onClick }: ButtonProps) {
+export function Button({ children, variant, onClick, disabled = false }: ButtonProps) {
   return (
-    <ButtonWrapper variant={variant} onClick={onClick}>
+    <ButtonWrapper variant={variant} onClick={onClick} disabled={disabled}>
       {children}
     </ButtonWrapper>
   )
