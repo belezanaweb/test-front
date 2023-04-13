@@ -20,7 +20,8 @@ export const theme = {
     small: '14px',
     medium: '16px',
     large: '18px',
-    extraLarge: '20px'
+    xLarge: '20px',
+    xxLarge: '22px'
   },
   fontFamilies: {
     primary: "'Arial',sans-serif",
