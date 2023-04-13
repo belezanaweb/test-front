@@ -40,22 +40,18 @@ export function Confirmation() {
         </Column>
       </Card>
 
-      {data && !isLoading ? (
-        <>
-          <Card>
-            <Heading size="xLarge">Produtos</Heading>
-            {data.items.map((item) => (
-              <CartItem key={item.product.sku} {...item.product} />
-            ))}
-          </Card>
-          <Summary summary={data.summary}>
-            <Button onClick={toBagPage} aria-label="Start again">
-              Voltar ao inicio do protótipo
-            </Button>
-          </Summary>
-        </>
-      ) : (
-        <Spinner />
+      <Card loading={isLoading}>
+        <Heading size="xLarge">Produtos</Heading>
+        {data?.items.map((item) => (
+          <CartItem key={item.product.sku} {...item.product} />
+        ))}
+      </Card>
+      {data && !isLoading && (
+        <Summary summary={data.summary}>
+          <Button onClick={toBagPage} aria-label="Start again">
+            Voltar ao inicio do protótipo
+          </Button>
+        </Summary>
       )}
     </>
   )

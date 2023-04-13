@@ -16,22 +16,21 @@ export function Bag() {
     navigate('/payment')
   }
 
-  if (data && !isLoading) {
-    return (
-      <>
-        <Card>
-          {data.items.map((item) => (
-            <CartItem key={item.product.sku} showPrice {...item.product} />
-          ))}
-        </Card>
-        <Summary summary={data.summary}>
+  return (
+    <>
+      <Card loading={isLoading}>
+        {data?.items.map((item) => (
+          <CartItem key={item.product.sku} showPrice {...item.product} />
+        ))}
+      </Card>
+
+      {data && !isLoading && (
+        <Summary summary={data?.summary}>
           <Button variant="primary" onClick={toPaymentPage} aria-label="Follow Payment">
             Seguir para o pagamento
           </Button>
         </Summary>
-      </>
-    )
-  } else {
-    return <Spinner />
-  }
+      )}
+    </>
+  )
 }
