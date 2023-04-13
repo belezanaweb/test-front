@@ -8,6 +8,10 @@ export const HeaderContainer = styled.header`
   height: 37px;
   background-color: ${(props) => props.theme.colors.white};
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+  position: sticky;
+  top: 0;
+  z-index: 1100;
+  width: 100%;
   nav {
     display: flex;
     flex-direction: row;

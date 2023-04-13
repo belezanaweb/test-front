@@ -6,13 +6,16 @@ export const SummaryContainer = styled.section`
   flex-direction: column;
   background-color: ${(props) => props.theme.colors.white};
   padding: 28px 12px;
-  margin-top: 20px;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
 
   @media (${device.laptop}) {
-    position: fixed;
-    bottom: 0;
-    width: 100%;
+    right: 0;
+    top: 37px;
+    width: 320px;
     box-shadow: 0px -2px 4px rgba(0, 0, 0, 0.1);
+    height: 100%;
   }
 `
 
