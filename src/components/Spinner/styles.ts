@@ -7,7 +7,7 @@ export const SpinnerWrapper = styled.svg`
   height: 50px;
 
   & .path {
-    stroke: #5652bf;
+    stroke: ${({ theme }) => theme.colors.primary};
     stroke-linecap: round;
     animation: dash 1.5s ease-in-out infinite;
   }
@@ -31,4 +31,13 @@ export const SpinnerWrapper = styled.svg`
       stroke-dashoffset: -124;
     }
   }
+`
+
+export const SpinnerContainer = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 80px;
+  width: 100%;
+  height: auto;
 `

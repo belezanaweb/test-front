@@ -5,6 +5,7 @@ import { CartItem } from '../../components/CartItem'
 import { Summary } from '../../components/Summary'
 
 import { useData } from '../../services/hooks/useData'
+import Spinner from '../../components/Spinner'
 
 export function Bag() {
   const { data, isLoading } = useData()
@@ -14,24 +15,22 @@ export function Bag() {
     navigate('/payment')
   }
 
-  return (
-    <>
-      <Card>
-        {data && !isLoading && (
-          <>
-            {data.items.map((item) => (
-              <CartItem key={item.product.sku} showPrice {...item.product} />
-            ))}
-          </>
-        )}
-      </Card>
-      {data && !isLoading && (
+  if (data && !isLoading) {
+    return (
+      <>
+        <Card>
+          {data.items.map((item) => (
+            <CartItem key={item.product.sku} showPrice {...item.product} />
+          ))}
+        </Card>
         <Summary summary={data.summary}>
           <Button variant="primary" onClick={toPaymentPage} aria-label="Follow Payment">
             Seguir para o pagamento
           </Button>
         </Summary>
-      )}
-    </>
-  )
+      </>
+    )
+  } else {
+    return <Spinner />
+  }
 }
