@@ -18,7 +18,16 @@ export const HeaderContainer = styled.header`
     flex: 0 0 auto;
   }
 `
-export const CustomNavLink = styled(NavLink)`
+
+interface NavLinkProps {
+  disabled?: boolean;
+}
+
+export const CustomNavLink = styled(NavLink).attrs(({ disabled }: NavLinkProps) => {
+  return {
+    disabled: disabled || false
+  }
+})`
   display: flex;
   align-items: center;
   color: ${(props) => props.theme.colors['gray-300']};
@@ -29,7 +38,7 @@ export const CustomNavLink = styled(NavLink)`
   line-height: 24px;
   border-bottom: 1px solid ${(props) => props.theme.colors['gray-300']};
   padding: 0 8px;
-
+  pointer-events: ${({ disabled }) => (disabled ? 'none' : 'auto')};
   &:hover {
     border-bottom: 4px solid ${(props) => props.theme.colors.black};
   }

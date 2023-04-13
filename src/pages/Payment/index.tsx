@@ -16,12 +16,26 @@ import { Row } from '../../components/Row/styles'
 import { usePayment } from '../../hooks/usePayment'
 
 import { formatCardExpirationDate, formatCardNum } from '../../utils/format'
+import { isExpirationDateValid, isNameValid } from '../../utils/validate'
+import { useNavigate } from 'react-router-dom'
 
 const createPaymentFormSchema = z.object({
-  cardNumber: z.string().nonempty({ message: 'Campo obrigatório' }),
-  cardHolderName: z.string().nonempty({ message: 'Campo obrigatório' }),
-  cardExpirationDate: z.string().nonempty({ message: 'Campo obrigatório' }),
-  cardCvv: z.string().nonempty({ message: 'Campo obrigaório' }).min(3, {
+  cardNumber: z.string().nonempty({ message: 'Campo obrigatório' }).min(19, {
+    message: 'Insira um número de cartão válido'
+  }),
+  cardHolderName: z
+    .string()
+    .nonempty({ message: 'Campo obrigatório' })
+    .refine((value) => {
+      return isNameValid(value)
+    }, 'Insira uma nome válido'),
+  cardExpirationDate: z
+    .string()
+    .nonempty({ message: 'Campo obrigatório' })
+    .refine((value) => {
+      return isExpirationDateValid(value)
+    }, 'Insira uma data válida'),
+  cardCvv: z.string().nonempty({ message: 'Campo obrigatório' }).min(3, {
     message: 'CVV precisa ter 3 números'
   })
 })
@@ -31,6 +45,7 @@ export type CreatePaymentFormData = z.infer<typeof createPaymentFormSchema>
 export function Payment() {
   const { data, isLoading } = useData()
   const { createPayment, payment, isPaid } = usePayment()
+  const navigate = useNavigate()
 
   console.log(payment, isPaid)
 
@@ -41,11 +56,13 @@ export function Payment() {
 
   function handlePayment(data: CreatePaymentFormData) {
     createPayment(data)
+    navigate('/confirmation')
   }
 
   const {
     handleSubmit,
-    formState: { isSubmitting }
+    formState: { isSubmitting },
+    setValue
   } = createPaymentForm
 
   return (
@@ -61,7 +78,7 @@ export function Payment() {
                 maxlength={19}
                 onChange={(event) => {
                   const { value } = event.target
-                  event.target.value = formatCardNum(value)
+                  setValue('cardNumber', formatCardNum(value))
                 }}
                 name="cardNumber"
               />
@@ -80,6 +97,7 @@ export function Payment() {
                 maxlength={5}
                 onChange={(event) => {
                   const { value } = event.target
+
                   event.target.value = formatCardExpirationDate(value)
                 }}
                 name="cardExpirationDate"
