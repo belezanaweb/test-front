@@ -9,6 +9,13 @@ describe('Button component', () => {
     const button = screen.getByRole('button')
     expect(button).toHaveStyle({ backgroundColor: '#000000' })
   })
+
+  // it('should render button with onClick', () => {
+  //   render(<Button onClick={() => }>Test</Button>)
+  //   const button = screen.getByRole('button')
+  //   expect(button).toHaveStyle({ backgroundColor: '#000000', color: '#ffffff' })
+  // })
+
   it('should render a button with primary styles', async () => {
     render(<Button variant="primary">Test</Button>)
     const primaryButton = screen.getByRole('button')

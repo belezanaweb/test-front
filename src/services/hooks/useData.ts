@@ -27,13 +27,6 @@ type Bag = {
   items: BagItem[]
 }
 
-export function useData() {
-  return useQuery({
-    queryKey: ['checkout-data'],
-    queryFn: getData
-  })
-}
-
 async function getData(): Promise<Bag> {
   const { data } = await api.get('d6e9a93f-9741-4494-b81e-637a8e9b8ddd')
   let totalItems = 0
@@ -66,4 +59,11 @@ async function getData(): Promise<Bag> {
   }
 
   return bag
+}
+
+export function useData() {
+  return useQuery({
+    queryKey: ['checkout-data'],
+    queryFn: getData
+  })
 }

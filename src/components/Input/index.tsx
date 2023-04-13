@@ -38,7 +38,6 @@ export function Input({ name, label, onChange, width = '100%', ...other }: Input
     <Wrapper width={width}>
       <Label htmlFor={name}>{label}</Label>
       <InputStyled id={name} {...register(name)} onChange={onChange} {...other} />
-
       <Error>{fieldError ? fieldError.message?.toString() : ''}</Error>
     </Wrapper>
   )

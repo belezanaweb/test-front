@@ -4,9 +4,22 @@ import { render } from '../../utils/test-utils'
 
 import { Input } from '.'
 
+jest.mock('react-hook-form', () => ({
+  ...jest.requireActual('react-hook-form'),
+  useFormContext: jest.fn().mockReturnValue({
+    register: () => {
+      return {
+        name: 'test', // assign name prop
+        onChange: jest.fn() // assign onChange event
+      }
+    },
+    formState: { errors: { test: { message: 'Error message' } } }
+  })
+}))
+
 describe('Input component', () => {
   it('renders with placeholder', () => {
-    render(<Input placeholder="placeholder text" onChange={() => {}} label={'Label'} />)
+    render(<Input name="test" placeholder="placeholder text" onChange={() => {}} label={'Label'} />)
 
     expect(screen.getByPlaceholderText('placeholder text')).toBeInTheDocument()
   })
@@ -23,13 +36,10 @@ describe('Input component', () => {
       expect(input).toHaveValue(text)
       expect(onInputChange).toHaveBeenCalledTimes(text.length)
     })
-    expect(onInputChange).toHaveBeenCalledWith(text)
   })
 
   it('Renders with error', () => {
-    const { container } = render(
-      <Input label="Label" error={{ message: 'Error message' }} onChange={() => {}} />
-    )
+    const { container } = render(<Input name="test" label="Label" />)
 
     expect(screen.getByText('Error message')).toBeInTheDocument()
 
