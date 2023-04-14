@@ -1,5 +1,7 @@
 import { Product } from '../../services/hooks/useData'
+
 import { CurrencyText } from '../Typography/CurrencyText'
+
 import { TextBody } from '../Typography/styles'
 import { CartItemContainer, CarItemImage, PriceWrapper } from './styles'
 

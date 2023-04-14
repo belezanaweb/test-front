@@ -1,9 +1,9 @@
 import { useNavigate } from 'react-router-dom'
+
 import { Button } from '../../components/Button'
 import { Card } from '../../components/Card'
 import { CartItem } from '../../components/CartItem'
 import { Column } from '../../components/Column/styles'
-import { Spinner } from '../../components/Spinner'
 import { Summary } from '../../components/Summary'
 import { Heading, TextBody } from '../../components/Typography/styles'
 

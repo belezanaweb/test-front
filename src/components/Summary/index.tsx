@@ -1,7 +1,9 @@
 import { ReactNode } from 'react'
+
+import { CurrencyText } from '../Typography/CurrencyText'
+
 import { TextBody } from '../Typography/styles'
 import { SummaryContainer, SummaryRow } from './styles'
-import { CurrencyText } from '../Typography/CurrencyText'
 
 interface SummaryProps {
   children?: ReactNode;

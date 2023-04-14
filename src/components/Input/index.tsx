@@ -1,7 +1,6 @@
 import { InputHTMLAttributes } from 'react'
 import { useFormContext } from 'react-hook-form'
 
-// Components
 import { Input as InputStyled, Label, Wrapper, Error } from './styles'
 
 function get(obj: Record<any, any>, path: string) {

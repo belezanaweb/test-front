@@ -4,7 +4,6 @@ import { Button } from '../../components/Button'
 import { Card } from '../../components/Card'
 import { CartItem } from '../../components/CartItem'
 import { Summary } from '../../components/Summary'
-import { Spinner } from '../../components/Spinner'
 
 import { useData } from '../../services/hooks/useData'
 

@@ -1,4 +1,5 @@
 import { useForm, FormProvider } from 'react-hook-form'
+import { useNavigate } from 'react-router-dom'
 import { z } from 'zod'
 import { zodResolver } from '@hookform/resolvers/zod'
 
@@ -17,7 +18,6 @@ import { usePayment } from '../../hooks/usePayment'
 
 import { formatCardExpirationDate, formatCardNum } from '../../utils/format'
 import { isExpirationDateValid, isNameValid } from '../../utils/validate'
-import { useNavigate } from 'react-router-dom'
 
 const createPaymentFormSchema = z.object({
   cardNumber: z.string().nonempty({ message: 'Campo obrigatório' }).min(19, {

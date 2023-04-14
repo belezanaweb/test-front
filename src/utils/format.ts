@@ -1,6 +1,6 @@
 export function formatCardNum(value: string): string {
-  const formatted = value.replace(/\D/g, '') // remove non-digit characters
-  const groups = formatted.match(/.{1,4}/g) // split into groups of 4 digits
+  const formatted = value.replace(/\D/g, '')
+  const groups = formatted.match(/.{1,4}/g)
   return groups ? groups.join(' ') : formatted
 }
 

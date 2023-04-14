@@ -22,10 +22,3 @@ export const CarItemImage = styled.img`
   height: 60px;
   width: 60px;
 `
-
-// export const SummaryRow = styled.div`
-//   display: flex;
-//   flex-direction: row;
-//   justify-content: space-between;
-//   margin-top: 8px;
-// `

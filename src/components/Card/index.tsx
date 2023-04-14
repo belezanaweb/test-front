@@ -1,7 +1,8 @@
 import { ReactNode } from 'react'
 
-import { CardContainer } from './styles'
 import { Spinner } from '../Spinner'
+
+import { CardContainer } from './styles'
 
 interface CardProps {
   children: ReactNode;
