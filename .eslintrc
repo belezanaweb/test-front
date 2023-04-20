@@ -1,0 +1,42 @@
+{
+  "extends": [
+    "eslint:recommended",
+    "plugin:@typescript-eslint/eslint-recommended",
+    "plugin:@typescript-eslint/recommended",
+    "plugin:@typescript-eslint/recommended-requiring-type-checking",
+    "prettier",
+    "plugin:react/jsx-runtime"
+  ],
+  "parser": "@typescript-eslint/parser",
+  "plugins": ["jest", "prettier", "import", "@typescript-eslint"],
+  "env": {
+    "browser": true,
+    "es2021": true,
+    "es6": true,
+    "jest": true,
+    "node": true
+  },
+  "parserOptions": {
+    "project": "./tsconfig.json",
+    "createDefaultProgram": true,
+    "sourceType": "module"
+  },
+  "rules": {
+    "semi": ["error", "never"],
+    "react/jsx-filename-extension": [2, { "extensions": [".js", ".jsx", ".ts", ".tsx"] }],
+    "@typescript-eslint/no-misused-promises": ["error", { "checksVoidReturn": false }],
+    "react/react-in-jsx-scope": "off",
+    "@typescript-eslint/no-empty-interface": "off"
+  },
+  "settings": {
+    "import/parsers": {
+      "@typescript-eslint/parser": [".ts", ".tsx"]
+    },
+    "import/resolver": {
+      "typescript": {
+        "alwaysTryTypes": true
+      }
+    }
+  },
+  "ignorePatterns": ["src/utils/setupTests.js"]
+}
