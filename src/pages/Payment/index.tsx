@@ -32,6 +32,9 @@ const createPaymentFormSchema = z.object({
   cardExpirationDate: z
     .string()
     .nonempty({ message: 'Campo obrigatório' })
+    .min(5, {
+      message: 'Insira uma data válida'
+    })
     .refine((value) => {
       return isExpirationDateValid(value)
     }, 'Insira uma data válida'),
@@ -106,6 +109,11 @@ export function Payment() {
                 label="Código CVV:"
                 placeholder="000"
                 maxlength={3}
+                onChange={(event) => {
+                  const { value } = event.target
+                  const v = value.replace(/\D/g, '')
+                  event.target.value = v
+                }}
                 name="cardCvv"
                 pattern="[0-9]*"
               />

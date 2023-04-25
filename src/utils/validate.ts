@@ -4,7 +4,7 @@ export function isExpirationDateValid(value: string): boolean {
   const currentYear = now.getFullYear() % 100
   const currentMonth = now.getMonth() + 1
 
-  if (year < currentYear || (year === currentYear && month < currentMonth)) {
+  if (year < currentYear || (year === currentYear && month < currentMonth) || month > 12) {
     return false
   }
 
