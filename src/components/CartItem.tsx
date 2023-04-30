@@ -17,7 +17,7 @@ export default function CartItem({
         <p className="text-xs leading-4 text-clip ">{product.name}</p>
       </div>
       {showPrice && (
-        <div className="col-span-3 flex flex-col text-sm">
+        <div className="col-span-3 flex flex-col">
           <PriceTag priceSpecification={product.priceSpecification} />
         </div>
       )}

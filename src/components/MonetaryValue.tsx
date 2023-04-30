@@ -10,7 +10,7 @@ export default function MonetaryValue({
   isDiscount?: boolean
 }) {
   return (
-    <div className={`${className} text-xs text-ellipsis text-end`}>
+    <div className={`${className} text-sm text-ellipsis text-end`}>
       <span>R$ </span>
       <span className={isDiscount ? 'line-through' : ''}>{formatMoney(value)}</span>
     </div>

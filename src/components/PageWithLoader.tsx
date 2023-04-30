@@ -1,5 +1,6 @@
 import { ReactNode, Suspense } from 'react'
+import Spinner from './Spinner'
 
 export default function PageWithLoader({ renderPage }: { renderPage: () => ReactNode }) {
-  return <Suspense fallback={<h1>Carregando...</h1>}>{renderPage()}</Suspense>
+  return <Suspense fallback={<Spinner />}>{renderPage()}</Suspense>
 }

@@ -30,7 +30,7 @@ interface CartItem {
 }
 
 interface Cart {
-  id: string;
+  id: string | null;
   items: CartItem[];
   subTotal: number;
   shippingTotal: number;

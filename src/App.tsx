@@ -1,7 +1,7 @@
 import { Route, Routes } from 'react-router-dom'
 import Root from './pages/_root'
 import NotFoundPage from './pages/_404'
-import React from 'react'
+import React, { useState } from 'react'
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
 import PageWithLoader from './components/PageWithLoader'
 
