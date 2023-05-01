@@ -8,11 +8,15 @@ function SummaryRow({ children }: PropsWithChildren) {
 }
 
 export default function Summary({ renderAction }: { renderAction: () => ReactNode }) {
-  const { data, isLoading } = useCart()
+  const { data, isLoading, isError } = useCart()
+
   return (
     <section className="w-full bg-white px-5 py-7 fixed bottom-0">
       {isLoading && <Spinner />}
-      {!isLoading && data && (
+      {!isLoading && (isError || !data) && (
+        <div className="text-sm">Não foi possível carregar as informações do carrinho.</div>
+      )}
+      {!isLoading && !isError && data && (
         <div className="text-sm">
           <SummaryRow>
             <span>Produtos: ({data.items.length} itens)</span>
