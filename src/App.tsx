@@ -18,8 +18,11 @@ export default function App() {
         <Routes>
           <Route index element={<Bag />} />
           <Route path="pagamento/" element={<PageWithLoader renderPage={() => <Payment />} />} />
-          <Route path="pedido/" element={<PageWithLoader renderPage={() => <OrderPlaced />} />} />
-          <Route path="*" element={<PageWithLoader renderPage={() => <NotFoundPage />} />} />
+          <Route
+            path="finaliza-pedido/"
+            element={<PageWithLoader renderPage={() => <OrderPlaced />} />}
+          />
+          <Route path="*" element={<NotFoundPage />} />
         </Routes>
       </Root>
     </QueryClientProvider>

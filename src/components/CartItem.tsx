@@ -13,7 +13,9 @@ export default function CartItem({
       <div className="col-span-2 h-[60px] min-w-[60px]">
         <ProductPicture imageObject={product.imageObjects[0]} alt={product.name} />
       </div>
-      <div className="col-span-7 overflow-hidden max-h-[50px] pl-4">
+      <div
+        className={`${showPrice ? 'col-span-7' : 'col-span-10'} overflow-hidden max-h-[50px] pl-4`}
+      >
         <p className="text-xs leading-4 text-clip ">{product.name}</p>
       </div>
       {showPrice && (

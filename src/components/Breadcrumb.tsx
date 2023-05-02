@@ -1,4 +1,4 @@
-import { useLocation } from 'react-router-dom'
+import { useLocation, useNavigate } from 'react-router-dom'
 import BreadcrumbItem from './BreadcrumbItem'
 
 const isBreadcrumbActive = (pathname: string, navItem: string) => {
@@ -7,16 +7,23 @@ const isBreadcrumbActive = (pathname: string, navItem: string) => {
 
 function Breadcrumb() {
   const location = useLocation()
+  const navigate = useNavigate()
   return (
     <nav className="flex justify-center">
       <ul className="w-fit flex justify-center h-10 border-b border-black">
-        <BreadcrumbItem isActive={isBreadcrumbActive(location.pathname, '/')}>
+        <BreadcrumbItem
+          isActive={isBreadcrumbActive(location.pathname, '/')}
+          onClick={() => navigate('/')}
+        >
           Sacola
         </BreadcrumbItem>
-        <BreadcrumbItem isActive={isBreadcrumbActive(location.pathname, 'pagamento')}>
+        <BreadcrumbItem
+          isActive={isBreadcrumbActive(location.pathname, 'pagamento')}
+          onClick={() => navigate('/pagamento')}
+        >
           Pagamento
         </BreadcrumbItem>
-        <BreadcrumbItem isActive={isBreadcrumbActive(location.pathname, 'pedido')}>
+        <BreadcrumbItem isActive={isBreadcrumbActive(location.pathname, 'finaliza-pedido')}>
           Confirmação
         </BreadcrumbItem>
       </ul>

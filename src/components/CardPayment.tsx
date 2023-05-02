@@ -40,7 +40,7 @@ export default function CardPayment({
           name="cardExpirationDate"
           hasError={errorArray.includes('cardExpirationDate')}
           placeholder="MM/AA"
-          mask="99/99"
+          mask="99/9999"
           value={state.cardExpirationDate}
           onChange={handleFormChange}
           errorMessage="insira uma data válida"

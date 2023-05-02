@@ -12,6 +12,9 @@ function getVariantStyles(variant: string) {
     case 'main':
       return 'bg-fuschia'
 
+    case 'black':
+      return 'bg-black'
+
     default:
       return 'bg-black'
   }
