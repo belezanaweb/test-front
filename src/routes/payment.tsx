@@ -14,6 +14,7 @@ import { Label } from '@/components/ui/label'
 import { Input } from '@/components/ui/input'
 import { delay, validateCartExpirationDate } from '@/lib/utils'
 import { useCartItems } from '@/hooks/use-cart-items'
+import { useCheckoutStore } from '@/store/use-checkout'
 
 const formSchema = z.object({
   cartNumber: z.string().length(16, 'Insira um número de cartão válido'),
@@ -44,6 +45,7 @@ const defaultValues = {
 export type PaymentFormProps = z.infer<typeof formSchema>
 
 export const PaymentPage = () => {
+  const store = useCheckoutStore()
   const { data: cartData } = useCartItems()
   const navigate = useNavigate()
   const cartNumberRef = useRef<HTMLInputElement | null>(null)
@@ -65,7 +67,11 @@ export const PaymentPage = () => {
   const onSubmit = async (data: PaymentFormProps) => {
     await delay()
 
+    if (cartData?.id) {
+      store.setCartId(cartData.id)
+    }
 
+    store.setPaymentData(data)
     navigate('/confirmation')
   }
 

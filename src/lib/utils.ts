@@ -19,3 +19,11 @@ export const validateCartExpirationDate = (value: string): boolean => {
 
   return true
 }
+
+export const maskCardNumber = (cardNumber: string) => {
+  if (cardNumber.length < 16) return ''
+
+  const digits = cardNumber.match(/(\d{4})\s*$/)?.[1]
+
+  return `****.****.****.${digits}`
+}
