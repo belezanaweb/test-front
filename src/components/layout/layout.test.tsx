@@ -10,7 +10,7 @@ test('renders default state', () => {
   expect(container).toMatchInlineSnapshot(`
     <div>
       <header
-        class="flex flex-col items-center justify-center bg-white shadow-sm mb-5"
+        class="mb-5 flex flex-col items-center justify-center bg-white shadow-sm"
       >
         <nav
           class="flex"
@@ -19,30 +19,30 @@ test('renders default state', () => {
             class="flex gap-6 border-b border-gray"
           >
             <li
-              class="flex -mb-px"
+              class="-mb-px flex"
             >
               <a
-                class="text-sm md:text-lg px-3 py-2 text-black"
+                class="px-3 py-2 text-sm text-black md:text-lg"
                 href="/"
               >
                 Sacola
               </a>
             </li>
             <li
-              class="flex -mb-px"
+              class="-mb-px flex"
             >
               <a
-                class="text-sm md:text-lg px-3 py-2 text-black"
+                class="px-3 py-2 text-sm text-black md:text-lg"
                 href="/payment"
               >
                 Pagamento
               </a>
             </li>
             <li
-              class="flex -mb-px"
+              class="-mb-px flex"
             >
               <a
-                class="text-sm md:text-lg px-3 py-2 text-black"
+                class="px-3 py-2 text-sm text-black md:text-lg"
                 href="/confirmation"
               >
                 Confirmação
@@ -52,7 +52,7 @@ test('renders default state', () => {
         </nav>
       </header>
       <main
-        class="container flex flex-col mx-auto"
+        class="container mx-auto flex flex-col"
       />
     </div>
   `)

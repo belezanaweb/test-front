@@ -36,7 +36,7 @@ test('renders loading spinner variant', () => {
       class="w-full rounded px-2 py-4 text-white text-lg flex justify-center text-center font-bold disabled:opacity-50 disabled:pointer-events-none bg-brand"
     >
       <svg
-        class="animate-spin -ml-1 mr-3 w-7 h-7 text-white"
+        class="-ml-1 mr-3 animate-spin h-7 w-7 text-white"
         fill="none"
         viewBox="0 0 24 24"
         xmlns="http://www.w3.org/2000/svg"

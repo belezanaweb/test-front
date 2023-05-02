@@ -8,7 +8,7 @@ test('renders default state', () => {
   expect(container).toMatchInlineSnapshot(`
     <div>
       <svg
-        class="animate-spin -ml-1 mr-3"
+        class="-ml-1 mr-3 animate-spin"
         fill="none"
         viewBox="0 0 24 24"
         xmlns="http://www.w3.org/2000/svg"

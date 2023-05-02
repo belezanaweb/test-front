@@ -12,7 +12,7 @@ test('renders children components', () => {
   expect(container).toMatchInlineSnapshot(`
     <div>
       <div
-        class="rounded border border-gray-light bg-white p-2 px-3 mx-2"
+        class="mx-2 rounded border border-gray-light bg-white p-2 px-3"
       >
         <p>
           Children

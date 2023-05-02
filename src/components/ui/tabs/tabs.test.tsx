@@ -19,7 +19,7 @@ describe('<Tabs />', () => {
             class="flex gap-6 border-b border-gray"
           >
             <li
-              class="flex -mb-px"
+              class="-mb-px flex"
             >
               Children
             </li>

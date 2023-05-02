@@ -7,7 +7,7 @@ test('renders default state', () => {
 
   expect(getByRole('textbox')).toMatchInlineSnapshot(`
     <input
-      class="border border-gray-light text-sm rounded focus:ring-brand focus:border-brand block w-full p-3 placeholder-gray-light"
+      class="block w-full rounded border border-gray-light p-3 text-sm placeholder-gray-light focus:border-brand focus:ring-brand"
       type="text"
     />
   `)

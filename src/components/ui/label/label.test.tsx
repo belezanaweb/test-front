@@ -8,7 +8,7 @@ test('renders default state', () => {
   expect(container).toMatchInlineSnapshot(`
     <div>
       <label
-        class="block mb-[5px] text-sm font-medium text-gray-dark"
+        class="mb-[5px] block text-sm font-medium text-gray-dark"
       >
         children
       </label>

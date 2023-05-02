@@ -12,7 +12,7 @@ test('renders default state', () => {
   expect(container).toMatchInlineSnapshot(`
     <div>
       <header
-        class="flex flex-col items-center justify-center bg-white shadow-sm mb-5"
+        class="mb-5 flex flex-col items-center justify-center bg-white shadow-sm"
       >
         <p>
           Children
