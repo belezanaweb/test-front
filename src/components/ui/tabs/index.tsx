@@ -21,8 +21,8 @@ const Tabs = ({ children }: TabsProps) => {
 const TabsList = ({ active = false, children, ...props }: TabsListProps) => {
   return (
     <li
-      className={clsx('flex -mb-px', {
-        'border-black border-b-4': active
+      className={clsx('-mb-px flex', {
+        'border-b-4 border-black': active
       })}
       {...props}
     >

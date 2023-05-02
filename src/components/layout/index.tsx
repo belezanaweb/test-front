@@ -32,7 +32,7 @@ export const Layout = () => {
         <Tabs>
           {routes.map((link) => (
             <Tabs.List key={link.to} active={location.pathname === link.to}>
-              <Link className="text-sm md:text-lg px-3 py-2 text-black" to={link.to}>
+              <Link className="px-3 py-2 text-sm text-black md:text-lg" to={link.to}>
                 {link.name}
               </Link>
             </Tabs.List>
@@ -40,7 +40,7 @@ export const Layout = () => {
         </Tabs>
       </Header>
 
-      <main className="container flex flex-col mx-auto">
+      <main className="container mx-auto flex flex-col">
         <Outlet />
       </main>
     </>

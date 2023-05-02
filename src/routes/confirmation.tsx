@@ -30,8 +30,8 @@ export const ConfirmationPage = () => {
   if (isLoading) {
     return (
       <Paper>
-        <div className="flex justify-center items-center">
-          <LoadingSpinner className="w-10 h-10" />
+        <div className="flex items-center justify-center">
+          <LoadingSpinner className="h-10 w-10" />
         </div>
       </Paper>
     )
@@ -40,7 +40,7 @@ export const ConfirmationPage = () => {
   return (
     <div className="space-y-5">
       <Paper>
-        <div className="flex flex-col py-3 justify-center text-center gap-2">
+        <div className="flex flex-col justify-center gap-2 py-3 text-center">
           <h2 className="text-[22px] leading-7 text-black">Compra efetuada com sucesso</h2>
           <p className="text-base text-gray-dark">{maskCardNumber(store.cartNumber)}</p>
           <p className="text-base text-gray-dark">{store.cartOwnerName}</p>
@@ -48,7 +48,7 @@ export const ConfirmationPage = () => {
         </div>
       </Paper>
 
-      <div className="grid sm:grid-cols-2 lg:grid-cols-3 space-y-5 sm:space-y-0">
+      <div className="grid space-y-5 sm:grid-cols-2 sm:space-y-0 lg:grid-cols-3">
         <Paper className="col-span-1 lg:col-span-2" title="Produtos">
           <div className="flex flex-col gap-10 py-6">
             {data?.items.map((item, index) => (

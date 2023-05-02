@@ -26,7 +26,7 @@ test('should complete a checkout successfully', async ({ page }) => {
   await page
     .getByRole('textbox', { name: /Data de validade/i })
     .fill(paymentFormData.cartExpirationDate)
-  await page.getByRole('textbox', { name: /Código CVV/i }).fill(paymentFormData.cartCVV!)
+  await page.getByRole('textbox', { name: /Código CVV/i }).fill(paymentFormData.cartCVV as string)
 
   const checkoutButton = page.getByRole('button', { name: /Finalizar pedido/i })
 

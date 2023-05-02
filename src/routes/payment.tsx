@@ -77,7 +77,7 @@ export const PaymentPage = () => {
 
   return (
     <form
-      className="grid sm:grid-cols-2 lg:grid-cols-3 space-y-5 sm:space-y-0"
+      className="grid space-y-5 sm:grid-cols-2 sm:space-y-0 lg:grid-cols-3"
       onSubmit={handleSubmit(onSubmit)}
     >
       <Paper className="col-span-1 lg:col-span-2" title="Cartão de Crédito">
@@ -110,7 +110,7 @@ export const PaymentPage = () => {
             <fieldset>
               <Label
                 htmlFor="cartOwnerName"
-                className="block mb-[5px] text-sm font-medium text-gray-dark"
+                className="mb-[5px] block text-sm font-medium text-gray-dark"
               >
                 Nome do titular do cartão
               </Label>
@@ -134,7 +134,7 @@ export const PaymentPage = () => {
               <fieldset>
                 <Label
                   htmlFor="cartExpirationDate"
-                  className="block mb-[5px] text-sm font-medium text-gray-dark"
+                  className="mb-[5px] block text-sm font-medium text-gray-dark"
                 >
                   Data de validade
                 </Label>
@@ -163,7 +163,7 @@ export const PaymentPage = () => {
               <fieldset>
                 <Label
                   htmlFor="cartCVV"
-                  className="block mb-[5px] text-sm font-medium text-gray-dark"
+                  className="mb-[5px] block text-sm font-medium text-gray-dark"
                 >
                   Código CVV:
                 </Label>

@@ -37,22 +37,22 @@ export const ProductItem = ({ showPrice = true, product }: ProductItemProps) => 
   return (
     <div className="flex items-center gap-4">
       <img
-        className="w-16 h-16"
+        className="h-16 w-16"
         loading="lazy"
         src={product.imageObjects[0]?.thumbnail}
         srcSet={sizes}
         alt={product.name}
       />
-      <p className="text-xs lg:text-base flex-1">{name}</p>
+      <p className="flex-1 text-xs lg:text-base">{name}</p>
 
       {showPrice && (
         <div className="flex flex-col">
           {!!discount && (
-            <s className="text-sm lg:text-base text-[#9B9B9B]" data-testid="product-discount-price">
+            <s className="text-sm text-[#9B9B9B] lg:text-base" data-testid="product-discount-price">
               {formatCurrency(maxPrice)}
             </s>
           )}
-          <p className="text-sm lg:text-base text-black font-bold" data-testid="product-price">
+          <p className="text-sm font-bold text-black lg:text-base" data-testid="product-price">
             {formatCurrency(price)}
           </p>
         </div>

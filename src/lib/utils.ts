@@ -5,7 +5,7 @@ export function classnames(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs))
 }
 
-export const delay = (ms: number = 1000) => new Promise((resolve) => setTimeout(resolve, ms))
+export const delay = (ms = 1000) => new Promise((resolve) => setTimeout(resolve, ms))
 
 export const validateCartExpirationDate = (value: string): boolean => {
   const now = new Date()

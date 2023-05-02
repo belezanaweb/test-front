@@ -28,7 +28,7 @@ export type ButtonProps = {
 export const Button = ({ variant, isLoading, className, children, ...props }: ButtonProps) => {
   return (
     <button className={classnames(buttonVariants({ variant, className }))} {...props}>
-      {isLoading ? <LoadingSpinner className="w-7 h-7 text-white" /> : children}
+      {isLoading ? <LoadingSpinner className="h-7 w-7 text-white" /> : children}
     </button>
   )
 }

@@ -16,7 +16,7 @@ export const Input = React.forwardRef<HTMLInputElement | null, InputProps>(
           type={type}
           {...props}
           className={classnames(
-            'border border-gray-light text-sm rounded focus:ring-brand focus:border-brand block w-full p-3 placeholder-gray-light',
+            'block w-full rounded border border-gray-light p-3 text-sm placeholder-gray-light focus:border-brand focus:ring-brand',
             {
               'border-error': isError
             }
@@ -27,3 +27,5 @@ export const Input = React.forwardRef<HTMLInputElement | null, InputProps>(
     )
   }
 )
+
+Input.displayName = 'Input'

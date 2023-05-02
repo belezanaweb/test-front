@@ -11,7 +11,7 @@ export const CheckoutSummary = ({ handleNextStep }: { handleNextStep: React.Reac
 
   useEffect(() => {
     // calculate total items in the cart
-    let total = data?.items.reduce((acc: number, item) => acc + item.quantity, 0)
+    const total = data?.items.reduce((acc: number, item) => acc + item.quantity, 0)
 
     setTotalItems(total || 0)
   }, [data])
@@ -19,20 +19,20 @@ export const CheckoutSummary = ({ handleNextStep }: { handleNextStep: React.Reac
   if (isLoading) {
     return (
       <Paper>
-        <div className="flex justify-center items-center">
-          <LoadingSpinner className="w-10 h-10" data-testid="loading-spinner" />
+        <div className="flex items-center justify-center">
+          <LoadingSpinner className="h-10 w-10" data-testid="loading-spinner" />
         </div>
       </Paper>
     )
   }
 
   return (
-    <aside className="mt-auto p-4 bg-white self-start">
+    <aside className="mt-auto self-start bg-white p-4">
       <div className="flex flex-col gap-1 pb-4 sm:h-full">
-        <table className="w-full text-sm lg:text-base text-left text-gray-500 mb-6 sm:flex-1">
+        <table className="text-gray-500 mb-6 w-full text-left text-sm sm:flex-1 lg:text-base">
           <tbody>
             <tr>
-              <th scope="row" className="py-2 font-medium text-gray-900 whitespace-nowrape">
+              <th scope="row" className="text-gray-900 whitespace-nowrape py-2 font-medium">
                 Produtos: {!!totalItems && `(${totalItems} ${totalItems < 1 ? 'item' : 'items'})`}
               </th>
               <td className="py-2 text-right text-sm lg:text-base" data-testid="checkout-price">
@@ -40,7 +40,7 @@ export const CheckoutSummary = ({ handleNextStep }: { handleNextStep: React.Reac
               </td>
             </tr>
             <tr>
-              <th scope="row" className="py-2 font-medium text-gray-900 whitespace-nowrape">
+              <th scope="row" className="text-gray-900 whitespace-nowrape py-2 font-medium">
                 Frete:
               </th>
               <td
@@ -52,11 +52,11 @@ export const CheckoutSummary = ({ handleNextStep }: { handleNextStep: React.Reac
             </tr>
             {data?.discount && (
               <tr>
-                <th scope="row" className="py-2 font-medium text-gray-900 whitespace-nowrape">
+                <th scope="row" className="text-gray-900 whitespace-nowrape py-2 font-medium">
                   Desconto:
                 </th>
                 <td
-                  className="py-2 text-right text-sm lg:text-base font-bold text-brand"
+                  className="py-2 text-right text-sm font-bold text-brand lg:text-base"
                   data-testid="checkout-discount-price"
                 >
                   {formatCurrency(data?.discount)}
@@ -65,7 +65,7 @@ export const CheckoutSummary = ({ handleNextStep }: { handleNextStep: React.Reac
             )}
           </tbody>
           <tfoot>
-            <tr className="font-semibold text-gray-900">
+            <tr className="text-gray-900 font-semibold">
               <th scope="row" className="py-2 text-base">
                 Subtotal
               </th>

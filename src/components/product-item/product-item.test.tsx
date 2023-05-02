@@ -61,7 +61,7 @@ test('renders without price data', () => {
 })
 
 test('renders without the discount price', () => {
-  let product = apiMockData.items[0].product
+  const product = apiMockData.items[0].product
 
   product.priceSpecification.discount = 0
 

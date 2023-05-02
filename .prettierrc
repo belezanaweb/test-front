@@ -4,5 +4,8 @@
   "tabWidth": 2,
   "singleQuote": true,
   "trailingComma": "none",
-  "semi": false
+  "semi": false,
+  "plugins": [
+    "prettier-plugin-tailwindcss"
+  ]
 }
