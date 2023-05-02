@@ -6,6 +6,7 @@ import { Fragment } from 'react'
 import Summary from '../components/Summary'
 import Button from '../components/Button'
 import { useNavigate } from 'react-router-dom'
+import Spinner from '../components/Spinner'
 
 function BagPage() {
   const { data, isLoading } = useCart()
@@ -13,8 +14,8 @@ function BagPage() {
 
   return (
     <GenericPage>
-      <Card>
-        {isLoading && <h1>Carregando...</h1>}
+      <Card className="m:m-[10px] md:mt-[10vh]">
+        {isLoading && <Spinner height={'72'} />}
         {!isLoading &&
           data?.items.map(({ product }) => (
             <Fragment key={`bag-product:${product.sku}`}>

@@ -16,8 +16,8 @@ function Payment() {
 
   return (
     <GenericPage>
-      <form className="flex flex-col items-center" action="#" onSubmit={onSubmit}>
-        <Card>
+      <form className="flex flex-col items-center w-full" action="#" onSubmit={onSubmit}>
+        <Card className="md:mt-[10vh]">
           <PaymentOptions formState={state} Component={Component} actions={actions} />
         </Card>
         <Summary renderAction={() => <Button type="submit">Finalizar pedido</Button>} />

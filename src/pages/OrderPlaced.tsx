@@ -14,7 +14,7 @@ function OrderPlaced() {
   const navigate = useNavigate()
   return (
     <GenericPage>
-      <Card className="text-center pt-5">
+      <Card className="text-center pt-5 md:mt-[10vh]">
         <h1 className="text-2xl leading-6">Compra efetuada com sucesso</h1>
         <div className="text-base text-neutral-700 leading-5">
           <p className="pt-2">{state.cardNumber}</p>
