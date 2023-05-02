@@ -1,19 +1,12 @@
 import { afterEach, describe, it, vi } from 'vitest'
-import PaymentOptions from './PaymentOptions'
+import PaymentOptions from '.'
 import { render, screen } from '@testing-library/react'
-import { mockFormState } from '../test/setup-test'
+import { mockFormState } from '../../test/setup-test'
 import userEvent from '@testing-library/user-event'
 
-vi.mock('../reducers/form', () => ({
+vi.mock('../../reducers/form', () => ({
   paymentOptions: { card: { name: 'Cartão' }, pix: { name: 'Pix' } }
 }))
-
-const mockState = {
-  cardNumber: '',
-  cardOwner: '',
-  cardExpirationDate: '',
-  cardSecurityCode: ''
-}
 
 const handleChangeSelectedOption = vi.fn()
 

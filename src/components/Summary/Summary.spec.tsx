@@ -1,14 +1,14 @@
 import { Mock, describe, it, vi } from 'vitest'
-import Summary from './Summary'
+import Summary from '.'
 import { render, screen } from '@testing-library/react'
-import useCart from '../hooks/useCart'
-import { mockCart } from '../test/setup-test'
-import { formatMoney } from '../utils'
+import useCart from '../../hooks/useCart'
+import { mockCart } from '../../test/setup-test'
+import { formatMoney } from '../../utils'
 
 
 const mockActions = vi.fn().mockImplementation(() => <div>abla</div>)
 
-vi.mock('../hooks/useCart', () => ({
+vi.mock('../../hooks/useCart', () => ({
   default: vi.fn().mockImplementation(() => ({ data: mockCart, isLoading: true }))
 }))
 

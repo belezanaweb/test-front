@@ -1,7 +1,7 @@
 import { afterEach, describe, it, vi } from 'vitest'
-import CartItem from './CartItem'
+import CartItem from '.'
 import { render, screen } from '@testing-library/react'
-import { mockProduct } from '../test/setup-test'
+import { mockProduct } from '../../test/setup-test'
 
 describe('Testing the CarItem component', () => {
   afterEach(() => {

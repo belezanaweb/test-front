@@ -1,4 +1,4 @@
-import { formatMoney } from '../utils'
+import { formatMoney } from '../../utils'
 
 export default function MonetaryValue({
   value,

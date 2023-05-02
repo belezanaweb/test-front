@@ -1,4 +1,4 @@
-import MonetaryValue from './MonetaryValue'
+import MonetaryValue from '../MonetaryValue'
 
 export default function PriceTag({
   priceSpecification
