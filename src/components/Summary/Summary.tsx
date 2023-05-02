@@ -11,13 +11,13 @@ export default function Summary({ renderAction }: { renderAction: () => ReactNod
   const { data, isLoading, isError } = useCart()
 
   return (
-    <section className="w-full shadow-md bg-white px-5 py-7 fixed bottom-0">
+    <section className="w-full shadow-md bg-white px-5 py-7 fixed bottom-0 md:static md:w-[25%]">
       {isLoading && <Spinner />}
       {!isLoading && (isError || !data) && (
         <div className="text-sm">Não foi possível carregar as informações do carrinho.</div>
       )}
       {!isLoading && !isError && data && (
-        <div className="text-sm">
+        <div className="text-sm md:text-base">
           <SummaryRow>
             <span>Produtos: ({data.items.length} itens)</span>
             <MonetaryValue value={data.subTotal} />

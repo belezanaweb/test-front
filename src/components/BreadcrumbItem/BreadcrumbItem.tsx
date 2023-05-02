@@ -14,7 +14,7 @@ const BreadcrumbItem = ({
   return (
     <li
       onClick={onClick}
-      className={`leading-none text-sm px-3 pb-2 pt-3 block h-full text-neutral-500 ${activeClasses}`}
+      className={`leading-none text-sm md:text-base px-3 pb-2 pt-3 block h-full text-neutral-500 ${activeClasses}`}
     >
       {children}
     </li>
