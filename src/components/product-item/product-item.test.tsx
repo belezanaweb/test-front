@@ -15,10 +15,12 @@ test('renders children components', () => {
         <img
           alt="L'Oréal Professionnel Expert Absolut Repair Cortex Lipidium - Máscara de Reconstrução 500g"
           class="w-16 h-16"
+          loading="lazy"
           src="https://res.cloudinary.com/beleza-na-web/image/upload/f_auto,fl_progressive,q_auto:best/v1/imagens/1/loreal-professionnel-expert-absolut-repair-cortex-lipidium-mascara-de-reconstrucao-500g-24410-963234120108391775.png"
+          srcset="https://res.cloudinary.com/beleza-na-web/image/upload/f_auto,fl_progressive,q_auto:best/v1/imagens/1/loreal-professionnel-expert-absolut-repair-cortex-lipidium-mascara-de-reconstrucao-500g-24410-963234120108391775.png 375w,https://res.cloudinary.com/beleza-na-web/image/upload/f_auto,fl_progressive,q_auto:best/v1/imagens/2/loreal-professionnel-expert-absolut-repair-cortex-lipidium-mascara-de-reconstrucao-500g-24410-963234120108391775.png 640w,https://res.cloudinary.com/beleza-na-web/image/upload/f_auto,fl_progressive,q_auto:best/v1/imagens/6/loreal-professionnel-expert-absolut-repair-cortex-lipidium-mascara-de-reconstrucao-500g-24410-963234120108391775.png 768w,https://res.cloudinary.com/beleza-na-web/image/upload/f_auto,fl_progressive,q_auto:best/v1/imagens/4/loreal-professionnel-expert-absolut-repair-cortex-lipidium-mascara-de-reconstrucao-500g-24410-963234120108391775.png 1024w,https://res.cloudinary.com/beleza-na-web/image/upload/f_auto,fl_progressive,q_auto:best/v1/imagens/5/loreal-professionnel-expert-absolut-repair-cortex-lipidium-mascara-de-reconstrucao-500g-24410-963234120108391775.png 1280w"
         />
         <p
-          class="text-xs flex-1"
+          class="text-xs lg:text-base flex-1"
         >
           L'Oréal Professionnel Expert Absolut Repair Cortex Lipidium - Máscara de Reconstrução 500g
         </p>
@@ -26,13 +28,13 @@ test('renders children components', () => {
           class="flex flex-col"
         >
           <s
-            class="text-sm text-[#9B9B9B]"
+            class="text-sm lg:text-base text-[#9B9B9B]"
             data-testid="product-discount-price"
           >
             R$ 243,90
           </s>
           <p
-            class="text-sm text-black font-bold"
+            class="text-sm lg:text-base text-black font-bold"
             data-testid="product-price"
           >
             R$ 225,90
