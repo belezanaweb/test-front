@@ -24,20 +24,15 @@ export default function usePaymentForm() {
       return errors
     }
     try {
-      await mutation.mutateAsync(formState)
+      const state = await mutation.mutateAsync(formState)
+      navigate('/finaliza-pedido', {
+        state: {
+          ...state
+        }
+      })
     } catch (error) {
       console.error(mutation)
     }
-
-    navigate('/pedido', {
-      state: {
-        ...formState,
-        error: {
-          hasError: mutation.isError,
-          message: mutation.failureReason
-        }
-      }
-    })
   }
 
   const { Component, actions } = selectedPayment
