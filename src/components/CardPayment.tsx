@@ -5,7 +5,6 @@ export default function CardPayment({
   actions,
   errorArray = []
 }: PaymentOptionComponentProps) {
-  console.log({ errorArray })
   const { handleFormChange } = actions
   //this is a little hacky, but needed to the card to fit when has error in small devices
   const margin = errorArray.length > 3 ? '2' : '4'

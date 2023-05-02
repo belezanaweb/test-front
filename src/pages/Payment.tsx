@@ -7,20 +7,18 @@ import Summary from '../components/Summary'
 import usePaymentForm from '../hooks/usePaymentForm'
 
 function Payment() {
-  const { sendForm, state, dispatch } = usePaymentForm()
+  const { sendForm, state, Component, actions } = usePaymentForm()
 
   const onSubmit = (e: SyntheticEvent) => {
     e.preventDefault()
     sendForm()
   }
 
-  console.log({ state })
-
   return (
     <GenericPage>
       <form className="flex flex-col items-center" action="#" onSubmit={onSubmit}>
         <Card>
-          <PaymentOptions formState={state} dispatch={dispatch} />
+          <PaymentOptions formState={state} Component={Component} actions={actions} />
         </Card>
         <Summary renderAction={() => <Button type="submit">Finalizar pedido</Button>} />
       </form>

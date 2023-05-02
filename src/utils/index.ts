@@ -6,7 +6,7 @@ export function maskCardNumber(cardNumber: string) {
   return cardNumber
     .split(' ')
     .map((digits, i) => {
-      if (i < 2) {
+      if (i > 2) {
         return digits
       }
       return '****'

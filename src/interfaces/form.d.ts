@@ -1,4 +1,4 @@
-type FormState = Record<string, string>
+type FormState = Record<string, any>
 
 type ActionDict = Record<string, (...args: string[]) => FormAction>
 
@@ -18,7 +18,8 @@ type OptionsDict = Record<string, {
   Component: (props: PaymentOptionComponentProps) => JSX.Element
   actions: ActionDict,
   obligatoryFields: string[],
-  validate: (state: FormState) => false | string[]
+  validate: (state: FormState) => false | string[],
+  initialState: MultiplePaymentOptionsState
 }>
 
 interface CardForm extends FormState {

@@ -13,10 +13,11 @@ export default function usePaymentForm() {
       return sendPaymentData(state)
     }
   })
+  const selectedPayment = paymentOptions[state.selectedPayment]
 
+  //this function has too many responsibilities
   const sendForm = async () => {
     const formState = state.options[state.selectedPayment]
-    const selectedPayment = paymentOptions[state.selectedPayment]
     const errors = selectedPayment.validate(formState)
     if (errors) {
       dispatch(handleFormError(errors))
@@ -39,10 +40,19 @@ export default function usePaymentForm() {
     })
   }
 
+  const { Component, actions } = selectedPayment
+
+  const actionsWithDispatch = Object.keys(actions).reduce((stack: Record<string, any>, key) => {
+    stack[key] = (...e: any[]) => dispatch(actions[key](...e))
+    return stack
+  }, {})
+
   return {
     state,
     sendForm,
     dispatch,
-    isSending: mutation.isLoading
+    isSending: mutation.isLoading,
+    Component,
+    actions: actionsWithDispatch
   }
 }

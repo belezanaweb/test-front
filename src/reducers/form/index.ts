@@ -1,6 +1,7 @@
 import CardPayment from '../../components/CardPayment'
 import { ActionKind, updateCardForm } from './actions'
 const obligatoryFields = ['cardNumber', 'cardOwner', 'cardExpirationDate', 'cardSecurityCode']
+// we can add new payment Options here
 export const paymentOptions: OptionsDict = {
   card: {
     name: 'Cartão de Crédito',
@@ -16,11 +17,16 @@ export const paymentOptions: OptionsDict = {
         }
         return stack
       }, [])
-      console.log(errors)
       if (errors.length > 0) {
         return errors
       }
       return false
+    },
+    initialState: {
+      cardNumber: '',
+      cardOwner: '',
+      cardExpirationDate: '',
+      cardSecurityCode: ''
     }
   }
 }
@@ -29,19 +35,13 @@ export const formInitialState: PaymentState = {
   selectedPayment: 'card',
   options: {
     //other payment forms will have separated objects here
-    card: {
-      cardNumber: '',
-      cardOwner: '',
-      cardExpirationDate: '',
-      cardSecurityCode: ''
-    }
+    card: paymentOptions['card'].initialState
   },
   errorArray: []
 }
 //this reducer became too complex, refactor it in the future
 export default function formReducer(state = formInitialState, action: FormAction) {
   const { type, payload } = action
-  console.log({ action })
   switch (type) {
     case ActionKind.UPDATE_CARD_FORM:
       return {
