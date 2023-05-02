@@ -10,7 +10,11 @@ export default defineConfig({
   test: {
     globals: true,
     environment: 'happy-dom',
-    setupFiles: ['./src/test/setup-test.ts']
+    setupFiles: ['./src/test/setup-test.ts'],
+    exclude: ['node_modules'],
+    coverage: {
+      exclude: ['/src/test/**', '/src/mocks/**']
+    }
   },
   server: {
     port: 3000
