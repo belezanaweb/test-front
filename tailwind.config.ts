@@ -15,7 +15,11 @@ export default {
       indigo: colors.indigo,
       yellow: colors.yellow,
       fuschia: '#9222DC',
-      neutral: colors.neutral
+      neutral: colors.neutral,
+      red: {
+        ...colors.red,
+        500: '#DE1616'
+      }
     }
   },
   plugins: []

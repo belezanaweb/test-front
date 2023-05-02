@@ -2,7 +2,7 @@ import { PropsWithChildren } from 'react'
 
 function Card({ children }: PropsWithChildren) {
   return (
-    <section className="rounded m-5 px-2 pt-5 pb-10 w-[95%] max-w-md bg-white border border-neutral-300">
+    <section className="rounded m-5 p-2 pb-4 w-[95%] max-w-md bg-white border border-neutral-300">
       {children}
     </section>
   )
