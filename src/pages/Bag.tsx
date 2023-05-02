@@ -5,9 +5,11 @@ import CartItem from '../components/CartItem'
 import { Fragment } from 'react'
 import Summary from '../components/Summary'
 import Button from '../components/Button'
+import { useNavigate } from 'react-router-dom'
 
 function BagPage() {
   const { data, isLoading } = useCart()
+  const navigate = useNavigate()
 
   return (
     <GenericPage>
@@ -20,7 +22,11 @@ function BagPage() {
             </Fragment>
           ))}
       </Card>
-      <Summary renderAction={() => <Button>Seguir para o pagamento</Button>} />
+      <Summary
+        renderAction={() => (
+          <Button onClick={() => navigate('/pagamento')}>Seguir para o pagamento</Button>
+        )}
+      />
     </GenericPage>
   )
 }

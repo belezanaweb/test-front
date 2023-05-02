@@ -34,3 +34,17 @@ export const mockCart: Cart = {
   discount: 1,
   total: 12
 }
+
+export const mockFormState: PaymentState = {
+  selectedPayment: 'card',
+  options: {
+    //other payment forms will have separated objects here
+    card: {
+      cardNumber: '',
+      cardOwner: '',
+      cardExpirationDate: '',
+      cardSecurityCode: ''
+    }
+  },
+  errorArray: []
+}

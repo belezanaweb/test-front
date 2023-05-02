@@ -2,7 +2,7 @@ import { useLocation } from 'react-router-dom'
 import BreadcrumbItem from './BreadcrumbItem'
 
 const isBreadcrumbActive = (pathname: string, navItem: string) => {
-  return (pathname === '/' && navItem === '/') || pathname.includes(navItem)
+  return (pathname === '/' && navItem === '/') || (navItem != '/' && pathname.includes(navItem))
 }
 
 function Breadcrumb() {

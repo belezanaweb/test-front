@@ -9,7 +9,7 @@ export default function CartItem({
   showPrice?: boolean
 }) {
   return (
-    <div className="grid grid-cols-12 gap-3.5 justify-between content-center items-center mb-9 last:mb-0">
+    <div className="grid grid-cols-12 gap-3.5 justify-between content-center items-center mb-9 last:mb-6 first:mt-3">
       <div className="col-span-2 h-[60px] min-w-[60px]">
         <ProductPicture imageObject={product.imageObjects[0]} alt={product.name} />
       </div>
