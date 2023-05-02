@@ -1,7 +1,7 @@
 import { PropsWithChildren, ReactNode } from 'react'
-import useCart from '../hooks/useCart'
-import Spinner from './Spinner'
-import MonetaryValue from './MonetaryValue'
+import useCart from '../../hooks/useCart'
+import Spinner from '../Spinner'
+import MonetaryValue from '../MonetaryValue'
 
 function SummaryRow({ children }: PropsWithChildren) {
   return <div className="flex justify-between mb-2">{children}</div>

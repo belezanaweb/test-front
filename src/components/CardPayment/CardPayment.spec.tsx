@@ -1,5 +1,5 @@
 import { afterEach, describe, it, vi } from 'vitest'
-import CardPayment from './CardPayment'
+import CardPayment from '.'
 import { render, screen } from '@testing-library/react'
 import userEvent from '@testing-library/user-event'
 

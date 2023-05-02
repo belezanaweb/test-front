@@ -1,4 +1,4 @@
-import TextInput from './TextInput'
+import TextInput from '../TextInput'
 
 export default function CardPayment({
   state,

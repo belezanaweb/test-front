@@ -1,6 +1,6 @@
 //this component only exists in case, in the future, we need to add new payment
 //options so we have only one point of change, as the O in SOLID
-import { paymentOptions } from '../reducers/form'
+import { paymentOptions } from '../../reducers/form'
 
 interface PaymentOptionsProps {
   formState: PaymentState;

@@ -1,4 +1,4 @@
-import { useLocation } from 'react-router-dom'
+import { useLocation, useNavigate } from 'react-router-dom'
 import GenericPage from '../components/GenericPage'
 import Card from '../components/Card'
 import Summary from '../components/Summary'
@@ -11,6 +11,7 @@ import CartItem from '../components/CartItem'
 function OrderPlaced() {
   const { state } = useLocation()
   const { data, isLoading } = useCart()
+  const navigate = useNavigate()
   return (
     <GenericPage>
       <Card className="text-center pt-5">
@@ -32,7 +33,11 @@ function OrderPlaced() {
           ))}
       </Card>
       <Summary
-        renderAction={() => <Button variant="black">Voltar ao inicio do protótipo</Button>}
+        renderAction={() => (
+          <Button onClick={() => navigate('/')} variant="black">
+            Voltar ao inicio do protótipo
+          </Button>
+        )}
       />
     </GenericPage>
   )

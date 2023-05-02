@@ -1,5 +1,5 @@
-import PriceTag from './PriceTag'
-import ProductPicture from './ProductPicture'
+import PriceTag from '../PriceTag'
+import ProductPicture from '../ProductPicture'
 
 export default function CartItem({
   product,

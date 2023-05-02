@@ -1,5 +1,5 @@
 import { useLocation, useNavigate } from 'react-router-dom'
-import BreadcrumbItem from './BreadcrumbItem'
+import BreadcrumbItem from '../BreadcrumbItem/'
 
 const isBreadcrumbActive = (pathname: string, navItem: string) => {
   return (pathname === '/' && navItem === '/') || (navItem != '/' && pathname.includes(navItem))
