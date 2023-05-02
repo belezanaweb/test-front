@@ -1,6 +1,17 @@
 import CardPayment from '../../components/CardPayment'
 import { ActionKind, updateCardForm } from './actions'
 const obligatoryFields = ['cardNumber', 'cardOwner', 'cardExpirationDate', 'cardSecurityCode']
+
+const validations: Record<string, (s: string) => boolean> = {
+  cardNumber: (s: string) => false,
+  cardOwner: (s: string) => !/^([A-zÀ-ú]|-|\s)+$/.test(s) || s.length > 50,
+  cardExpirationDate: (s: string) => {
+    const currentYear = new Date().getFullYear
+    const [month, year] = s.split('/')
+    return Number(month) < 1 || Number(month) > 12 || Number(year) < Number(currentYear)
+  },
+  cardSecurityCode: (s: string) => false
+}
 // we can add new payment Options here
 export const paymentOptions: OptionsDict = {
   card: {
@@ -12,9 +23,10 @@ export const paymentOptions: OptionsDict = {
     obligatoryFields,
     validate: (state: FormState) => {
       const errors = Object.keys(state).reduce((stack: string[], key: string) => {
-        if (obligatoryFields.includes(key) && state[key] === '') {
+        if ((obligatoryFields.includes(key) && state[key] === '') || validations[key](state[key])) {
           stack.push(key)
         }
+
         return stack
       }, [])
       if (errors.length > 0) {
