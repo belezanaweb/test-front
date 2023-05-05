@@ -1,0 +1,8 @@
+{
+  "extends": "tsconfig/vite.json",
+  "compilerOptions": {
+    "types": ["vitest/globals", "@testing-library/jest-dom"]
+  },
+  "include": ["src"],
+  "references": [{ "path": "./tsconfig.node.json" }]
+}
