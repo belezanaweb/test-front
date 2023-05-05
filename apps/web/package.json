@@ -5,13 +5,14 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build",
-    "lint": "tsc",
+    "lint": "eslint \"**/*.ts*\" && tsc",
     "preview": "vite preview",
     "test": "vitest run",
     "test-watch": "vitest",
     "coverage": "vitest run --coverage"
   },
   "dependencies": {
+    "eslint": "^8.39.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
   },
@@ -22,11 +23,12 @@
     "@types/react-dom": "^18.0.9",
     "@vitejs/plugin-react": "^3.0.0",
     "@vitest/coverage-c8": "^0.25.8",
+    "eslint-config-custom": "*",
     "happy-dom": "^8.1.0",
+    "tsconfig": "*",
     "typescript": "^4.9.4",
     "vite": "^4.0.1",
     "vite-tsconfig-paths": "^4.0.3",
-    "vitest": "^0.25.8",
-    "tsconfig": "*"
+    "vitest": "^0.25.8"
   }
 }
