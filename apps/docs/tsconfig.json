@@ -1,0 +1,12 @@
+{
+  "extends": "tsconfig/vite.json",
+  "compilerOptions": {
+    "moduleResolution": "bundler",
+    "allowImportingTsExtensions": true,
+    "resolveJsonModule": true,
+    "noEmit": true,
+    "jsx": "react-jsx"
+  },
+  "include": ["."],
+  "references": [{ "path": "./tsconfig.node.json" }]
+}
