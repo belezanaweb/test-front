@@ -4,7 +4,7 @@ type Props = ButtonHTMLAttributes<HTMLButtonElement>
 
 export function Button(props: Props) {
   return (
-    <button style={{ backgroundColor: 'palevioletred', padding: '10px' }} {...props}>
+    <button className="ui-bg-purple-500 ui-text-lg" {...props}>
       click me
     </button>
   )

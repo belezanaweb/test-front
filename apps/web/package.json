@@ -13,18 +13,23 @@
   },
   "dependencies": {
     "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react-dom": "^18.2.0",
+    "ui": "*"
   },
   "devDependencies": {
-    "eslint": "^8.39.0",
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^13.4.0",
     "@types/react": "^18.0.26",
     "@types/react-dom": "^18.0.9",
     "@vitejs/plugin-react": "^3.0.0",
     "@vitest/coverage-c8": "^0.25.8",
+    "autoprefixer": "^10.4.14",
+    "eslint": "^8.39.0",
     "eslint-config-custom": "*",
     "happy-dom": "^8.1.0",
+    "postcss": "^8.4.23",
+    "tailwind-config": "*",
+    "tailwindcss": "^3.3.2",
     "tsconfig": "*",
     "typescript": "^4.9.4",
     "vite": "^4.0.1",
