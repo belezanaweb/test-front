@@ -62,6 +62,7 @@ export default function Cart() {
               <div className="flex flex-col gap-8 rounded border border-neutral-500 bg-white">
                 <ProductItem />
                 <ProductItem />
+                <ProductItem />
               </div>
             </Tabs.Content>
             <Tabs.Content tabKey="pagamento">content 2</Tabs.Content>
@@ -75,7 +76,7 @@ export default function Cart() {
               quantity={3}
               total={600.1}
             />
-            <Button>Seguir para o pagamento</Button>
+            <Button onClick={() => tabs.setTabKey('pagamento')}>Seguir para o pagamento</Button>
           </CartInfo.Root>
         </div>
       </Tabs.Root>
