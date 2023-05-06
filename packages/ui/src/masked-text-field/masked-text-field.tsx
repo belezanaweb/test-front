@@ -6,7 +6,6 @@ export type MaskedTextFieldProps = {
   onChange: (event: { target: { name: string; value: string; maskedValue: string } }) => void
   name: string
   mask: string
-  lazy?: boolean
 } & Pick<InputHTMLAttributes<HTMLInputElement>, 'id' | 'value' | 'placeholder'>
 
 const Input = IMaskMixin(({ inputRef, ...props }) => <TextField {...props} ref={inputRef as any} />)

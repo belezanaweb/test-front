@@ -8,7 +8,6 @@ export const CreditCardTextField = (props: Props) => {
       {...props}
       mask="0000 0000 0000 0000"
       placeholder="0000 0000 0000 0000"
-      lazy={false}
     />
   )
 }

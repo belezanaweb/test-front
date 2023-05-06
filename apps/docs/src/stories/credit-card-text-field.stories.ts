@@ -3,7 +3,7 @@ import type { Meta, StoryObj } from '@storybook/react'
 import { CreditCardTextField } from 'ui'
 
 const meta = {
-  title: 'Components/CreditCardTextField',
+  title: 'Components/CreditCard TextField',
   component: CreditCardTextField,
   tags: ['autodocs']
 } satisfies Meta<typeof CreditCardTextField>
@@ -13,7 +13,7 @@ type Story = StoryObj<typeof meta>
 
 export const Default: Story = {
   args: {
-    name: 'creditCard',
+    name: 'dueDate',
     onChange: (e) => console.log(e)
   }
 }
