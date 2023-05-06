@@ -1,6 +1,4 @@
 {
-  "name": "test-front",
-  "version": "0.0.0",
   "private": true,
   "workspaces": [
     "apps/*",
@@ -14,7 +12,6 @@
     "format": "prettier --write \"**/*.{ts,tsx,md}\""
   },
   "devDependencies": {
-    "eslint-config-custom": "*",
     "prettier": "latest",
     "prettier-plugin-tailwindcss": "^0.2.8",
     "turbo": "latest"
@@ -22,5 +19,5 @@
   "engines": {
     "node": ">=16.0.0"
   },
-  "packageManager": "yarn@1.22.19"
+  "packageManager": "npm@9.6.3"
 }
