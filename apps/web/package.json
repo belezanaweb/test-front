@@ -12,9 +12,14 @@
     "coverage": "vitest run --coverage"
   },
   "dependencies": {
+    "@tanstack/react-query": "^4.29.5",
+    "jotai": "^2.1.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "ui": "*"
+    "react-hook-form": "^7.43.9",
+    "react-router-dom": "^6.11.1",
+    "ui": "*",
+    "zod": "^3.21.4"
   },
   "devDependencies": {
     "@testing-library/jest-dom": "^5.16.5",
