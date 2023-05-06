@@ -15,5 +15,21 @@ export default meta
 type Story = StoryObj<typeof meta>
 
 export const Primary: Story = {
-  args: {}
+  args: {
+    children: 'Seguir para o pagamento'
+  }
+}
+
+export const Black: Story = {
+  args: {
+    children: 'Seguir para o pagamento',
+    color: 'black'
+  }
+}
+
+export const Loading: Story = {
+  args: {
+    children: 'Seguir para o pagamento',
+    isLoading: true
+  }
 }

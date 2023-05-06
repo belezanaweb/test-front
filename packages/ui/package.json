@@ -25,6 +25,7 @@
     "vitest": "^0.31.0"
   },
   "dependencies": {
+    "class-variance-authority": "^0.6.0",
     "react-imask": "^6.6.1"
   }
 }
