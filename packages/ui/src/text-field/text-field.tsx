@@ -29,7 +29,7 @@ export const TextField = forwardRef<HTMLInputElement, Props>(
     return (
       <>
         {label && (
-          <label className="text-sm text-neutral-700" htmlFor={id}>
+          <label className="text-sm text-neutral-800" htmlFor={id}>
             {label}
           </label>
         )}

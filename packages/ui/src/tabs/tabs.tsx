@@ -62,20 +62,17 @@ export function TabsList({ children, className }: TabsListProps) {
 // TABS TRIGGER
 
 const tabsTriggerStyles = cva(
-  'text-sm relative p-3 border-b border-b-1 border-b-neutral-600 disabled:cursor-not-allowed',
+  'text-sm relative p-3 border-b border-b-1 border-b-neutral-700 disabled:cursor-not-allowed disabled:text-neutral-500',
   {
     variants: {
       isSelected: {
         true: "text-black after:absolute after:content-[''] after:left-0 after:bottom-0 after:w-full after:h-1 after:bg-black"
-      },
-      isDisabled: {
-        true: 'text-neutral-500'
       }
     },
     compoundVariants: [
       {
         isSelected: false,
-        class: 'text-neutral-600'
+        class: 'text-neutral-700'
       }
     ],
     defaultVariants: {
@@ -110,7 +107,7 @@ export function TabsTrigger({
 
   return (
     <button
-      className={cx(tabsTriggerStyles({ isSelected, isDisabled }), className)}
+      className={cx(tabsTriggerStyles({ isSelected }), className)}
       onClick={handleClick}
       disabled={isDisabled}
     >

@@ -8,10 +8,10 @@ const buttonStyles = cva('rounded border text-lg font-bold cursor-pointer disabl
       black: null
     },
     disabled: {
-      true: 'bg-neutral-500 text-neutral-700 border-transparent'
+      true: 'bg-neutral-500 text-neutral-800 border-transparent'
     },
     isLoading: {
-      true: 'bg-neutral-500 text-neutral-600 border-transparent'
+      true: 'bg-neutral-500 text-neutral-700 border-transparent'
     }
   },
   compoundVariants: [
