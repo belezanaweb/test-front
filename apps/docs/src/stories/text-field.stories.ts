@@ -24,6 +24,13 @@ export const Invalid: Story = {
   }
 }
 
+export const Label: Story = {
+  args: {
+    id: 'nomeImpresso',
+    label: 'Nome impresso no cartão'
+  }
+}
+
 export const HelperText: Story = {
   args: {
     isInvalid: true,

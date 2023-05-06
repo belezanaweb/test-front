@@ -7,17 +7,15 @@ describe('CreditCardDueDateTextField', () => {
     function Component() {
       const [value, setValue] = useState('')
       return (
-        <>
-          <label htmlFor="dueData">Due Date</label>
-          <CreditCardDueDateTextField
-            id="dueData"
-            name="dueData"
-            value={value}
-            onChange={(e: any) => {
-              setValue(e.target.maskedValue)
-            }}
-          />
-        </>
+        <CreditCardDueDateTextField
+          id="dueData"
+          label="Due Date"
+          name="dueData"
+          value={value}
+          onChange={(e: any) => {
+            setValue(e.target.maskedValue)
+          }}
+        />
       )
     }
 

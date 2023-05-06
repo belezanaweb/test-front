@@ -20,14 +20,20 @@ const textFieldStyles = cva('w-full rounded border p-3.5 text-sm text-black focu
 
 type Props = {
   helperText?: string
+  label?: string
 } & InputHTMLAttributes<HTMLInputElement> &
   VariantProps<typeof textFieldStyles>
 
 export const TextField = forwardRef<HTMLInputElement, Props>(
-  ({ isInvalid, helperText, ...props }, ref) => {
+  ({ isInvalid, helperText, label, id, ...props }, ref) => {
     return (
       <>
-        <input {...props} ref={ref} className={textFieldStyles({ isInvalid })} />
+        {label && (
+          <label className="text-sm text-neutral-700" htmlFor={id}>
+            {label}
+          </label>
+        )}
+        <input {...props} ref={ref} id={id} className={textFieldStyles({ isInvalid })} />
         {helperText && <p className="text-xs text-red-500">{helperText}</p>}
       </>
     )

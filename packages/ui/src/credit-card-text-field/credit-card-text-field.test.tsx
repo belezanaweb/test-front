@@ -7,17 +7,15 @@ describe('CreditCardTextField', () => {
     function Component() {
       const [value, setValue] = useState('')
       return (
-        <>
-          <label htmlFor="creditCard">Credit Card</label>
-          <CreditCardTextField
-            id="creditCard"
-            name="creditCardNumber"
-            value={value}
-            onChange={(e: any) => {
-              setValue(e.target.maskedValue)
-            }}
-          />
-        </>
+        <CreditCardTextField
+          id="creditCard"
+          label="Credit Card"
+          name="creditCardNumber"
+          value={value}
+          onChange={(e: any) => {
+            setValue(e.target.maskedValue)
+          }}
+        />
       )
     }
 

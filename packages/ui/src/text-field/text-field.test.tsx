@@ -7,4 +7,10 @@ describe('Button', () => {
 
     expect(screen.getByText('nome inválido')).toBeInTheDocument()
   })
+
+  it('should show a label', () => {
+    setup(<TextField id="nome" label='Nome' />)
+
+    expect(screen.getByLabelText('Nome')).toBeInTheDocument()
+  })
 })

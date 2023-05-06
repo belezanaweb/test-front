@@ -7,17 +7,15 @@ describe('CreditCardCvvTextField', () => {
     function Component() {
       const [value, setValue] = useState('')
       return (
-        <>
-          <label htmlFor="cvv">CVV</label>
-          <CreditCardCvvTextField
-            id="cvv"
-            name="cvv"
-            value={value}
-            onChange={(e: any) => {
-              setValue(e.target.maskedValue)
-            }}
-          />
-        </>
+        <CreditCardCvvTextField
+          id="cvv"
+          label="CVV"
+          name="cvv"
+          value={value}
+          onChange={(e: any) => {
+            setValue(e.target.maskedValue)
+          }}
+        />
       )
     }
 
