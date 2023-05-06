@@ -1,6 +1,5 @@
 import { Button, Tabs, useTabs } from 'ui'
-import { CartInfo, CartTab, ConfirmationTab } from '@/components'
-import { PaymentTab } from '@/components/payment-tab/payment-tab'
+import { CartInfo, CartTab, ConfirmationTab, PaymentTab } from '@/components'
 
 const tabsTriggersList = [
   {
@@ -49,13 +48,7 @@ export default function Cart() {
             </Tabs.Content>
           </div>
           <CartInfo.Root>
-            <CartInfo.Data
-              discount={30}
-              subTotal={624.8}
-              shippingTotal={5.3}
-              quantity={3}
-              total={600.1}
-            />
+            <CartInfo.Data />
             {tabs.tabKey === 'cart' && (
               <Button onClick={() => tabs.setTabKey('payment')}>Seguir para o pagamento</Button>
             )}

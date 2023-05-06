@@ -5,9 +5,7 @@ import { ReactNode } from 'react'
 
 export function CartProductItemRoot({ children }: { children: ReactNode }) {
   return (
-    <div className="flex items-center gap-3 px-2 py-2 first:pt-6 last:pb-6 md:pr-7">
-      {children}
-    </div>
+    <div className="flex items-center gap-3 px-2 py-2 first:pt-6 last:pb-6 md:pr-7">{children}</div>
   )
 }
 
@@ -35,15 +33,17 @@ export function CartProductItemInfo({ description, imgSrc }: CartProductItemInfo
 
 type CartProductItemPriceProps = {
   price: number
-  maxPrice: number
+  maxPrice?: number | false
 }
 
 export function CartProductItemPrice({ price, maxPrice }: CartProductItemPriceProps) {
   return (
     <div className="flex flex-col gap-1">
-      <span className="text-sm text-neutral-600 line-through">
-        {moneyFormatter.format(maxPrice)}
-      </span>
+      {maxPrice && (
+        <span className="text-sm text-neutral-600 line-through">
+          {moneyFormatter.format(maxPrice)}
+        </span>
+      )}
       <span className="text-sm font-bold">{moneyFormatter.format(price)}</span>
     </div>
   )
