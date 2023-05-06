@@ -27,7 +27,7 @@ type Props = {
 export const TextField = forwardRef<HTMLInputElement, Props>(
   ({ isInvalid, helperText, label, id, ...props }, ref) => {
     return (
-      <>
+      <div className="flex w-full flex-col gap-1">
         {label && (
           <label className="text-sm text-neutral-800" htmlFor={id}>
             {label}
@@ -35,7 +35,7 @@ export const TextField = forwardRef<HTMLInputElement, Props>(
         )}
         <input {...props} ref={ref} id={id} className={textFieldStyles({ isInvalid })} />
         {helperText && <p className="text-xs text-red-500">{helperText}</p>}
-      </>
+      </div>
     )
   }
 )

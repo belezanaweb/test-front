@@ -1,2 +1,6 @@
 export * from './cart-info'
 export * from './cart-product-item'
+export * from './card'
+export * from './cart-tab'
+export * from './payment-tab'
+export * from './confirmation-tab'

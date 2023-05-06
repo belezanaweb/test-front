@@ -5,7 +5,7 @@ import { ReactNode } from 'react'
 
 export function CartProductItemRoot({ children }: { children: ReactNode }) {
   return (
-    <div className="flex items-center gap-3 px-2 py-2 first:pt-6 last:pb-10 md:pr-7">
+    <div className="flex items-center gap-3 px-2 py-2 first:pt-6 last:pb-6 md:pr-7">
       {children}
     </div>
   )
