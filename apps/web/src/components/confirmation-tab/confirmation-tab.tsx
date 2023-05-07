@@ -10,7 +10,7 @@ export function ConfirmationTab() {
 
   return (
     <div className="flex flex-col gap-5">
-      <Card className="flex flex-col items-center gap-2">
+      <Card className="flex flex-col items-center text-center gap-2">
         <h1 className="text-[1.375rem]">Compra efetuada com sucesso</h1>
         <p className="text-neutral-800">****.****.****.{lastFourCardNumbers}</p>
         <p className="text-neutral-800">{getValues('name')}</p>
