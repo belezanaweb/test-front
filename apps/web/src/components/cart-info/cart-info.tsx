@@ -1,6 +1,7 @@
 import { useFetchCart } from '@/hooks'
 import { moneyFormatter } from '@/utils'
 import { ReactNode } from 'react'
+import { Skeleton } from '../skeleton'
 
 // ROOT
 
@@ -18,7 +19,11 @@ export function CartInfoData() {
   const { data, isLoading } = useFetchCart()
 
   if (isLoading) {
-    return <>Carrengando...</>
+    return (
+      <div className="flex flex-col gap-4">
+        <Skeleton className="h-5 first:mt-4 last:mb-4" quantity={3} />
+      </div>
+    )
   }
 
   const quantity = data?.items.reduce((acc, curr) => acc + curr.quantity, 0)

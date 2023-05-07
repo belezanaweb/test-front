@@ -6,8 +6,10 @@ import './index.css'
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
 import Cart from './pages/cart'
 
+const FIVE_MIN = 5 * 60 * 1000
+
 const queryClient = new QueryClient({
-  defaultOptions: { queries: { refetchOnWindowFocus: false } }
+  defaultOptions: { queries: { refetchOnWindowFocus: false, staleTime: FIVE_MIN } }
 })
 
 const router = createBrowserRouter([

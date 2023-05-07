@@ -1,9 +1,18 @@
 import { useFetchCart } from '@/hooks'
 import { Card } from '../card'
 import { CartProductItem } from '../cart-product-item'
+import { Skeleton } from '../skeleton'
 
 export function CartTab() {
-  const { data } = useFetchCart()
+  const { data, isLoading } = useFetchCart()
+
+  if (isLoading) {
+    return (
+      <Card className="gap-4 px-2 py-2">
+        <Skeleton className="h-10 first:mt-4 last:mb-4" quantity={3} />
+      </Card>
+    )
+  }
 
   return (
     <Card className="gap-8">
