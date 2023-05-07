@@ -1,13 +1,27 @@
+import { ReactNode, SyntheticEvent } from 'react'
+import { FormProvider, useForm, useFormContext } from 'react-hook-form'
+import { z } from 'zod'
+import { zodResolver } from '@hookform/resolvers/zod'
 import {
   CreditCardCvvTextField,
   CreditCardDueDateTextField,
   CreditCardTextField,
-  TextField
+  TextField,
+  useTabsContext
 } from 'ui'
 import { Card } from '../card'
-import { SyntheticEvent } from 'react'
-import { useTabsContext } from 'ui'
-import { useFormContext } from 'react-hook-form'
+
+const paymentFormValidation = z.object({
+  cardNumber: z.string().min(16, { message: 'insira um número de cartão válido' }),
+  name: z.string().min(1, { message: 'insira um nome válido' }),
+  dueDate: z.string().min(4, { message: 'insira uma data válida' }),
+  cvv: z.string().min(3, { message: 'insira um cvv válido' })
+})
+
+export function PaymentTabFormProvider({ children }: { children: ReactNode }) {
+  const methods = useForm({ resolver: zodResolver(paymentFormValidation), mode: 'onTouched' })
+  return <FormProvider {...methods}>{children}</FormProvider>
+}
 
 export const PAYMENT_TAB_FORM_ID = 'paymentTabForm'
 
