@@ -12,7 +12,7 @@ import { Card } from '../card'
 
 export function CartInfoRoot({ children }: { children: ReactNode }) {
   return (
-    <Card className="h-fit border-transparent md:mx-2 md:my-10 md:min-w-[320px] md:border-neutral-500">
+    <Card className="h-fit gap-6 border-transparent md:mx-2 md:my-10 md:min-w-[320px] md:border-neutral-500">
       {children}
     </Card>
   )
