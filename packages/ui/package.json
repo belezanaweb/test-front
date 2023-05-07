@@ -16,7 +16,7 @@
     "@types/react": "^18.2.5",
     "eslint": "^8.39.0",
     "eslint-config-custom": "*",
-    "happy-dom": "^9.10.9",
+    "jsdom": "^22.0.0",
     "postcss": "^8.4.23",
     "react": "^18.2.0",
     "tailwind-config": "*",

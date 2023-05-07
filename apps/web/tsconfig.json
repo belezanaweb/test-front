@@ -6,6 +6,6 @@
       "@/*": ["./src/*"]
     }
   },
-  "include": ["src"],
+  "include": ["src", "../../packages/ui/src/skeleton"],
   "references": [{ "path": "./tsconfig.node.json" }]
 }
