@@ -60,8 +60,14 @@ export function CartInfoSubmit() {
   const { isLoading } = useFetchCart()
   const tabs = useTabsContext()
   const {
+    reset,
     formState: { isValid }
   } = useFormContext()
+
+  function onResetForm() {
+    reset()
+    tabs.setTabKey('cart')
+  }
 
   if (isLoading) {
     return <Skeleton className="h-14" />
@@ -85,7 +91,7 @@ export function CartInfoSubmit() {
 
   return (
     <>
-      <Button color="black" onClick={() => tabs.setTabKey('cart')}>
+      <Button color="black" onClick={onResetForm}>
         Voltar ao início do protótipo
       </Button>
     </>

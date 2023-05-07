@@ -20,7 +20,6 @@ export function PaymentTab() {
 
   function handleSubmit(e: SyntheticEvent) {
     e.preventDefault()
-    console.log('submit')
     tabs.setTabKey('confirmation')
   }
 
