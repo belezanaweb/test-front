@@ -1,10 +1,41 @@
-## Executando o projeto
-TODO
+## Start the project
+1. Install dependencies
+
+```
+npm i
+```
+
+2. Run in dev mode
+
+```
+npm run dev
+```
 
 ## Tech Stack
-TODO
+- typescript
+- turbo repo
+- vite
+- tailwind (mobile-first)
+- tanstack query
+- storybook
+- react-hook-form
+- context api
+- zod
+- testing-library
+- msw
+- github actions
 
-## Descrição do Challenge
+## Talwind Intellisense
+
+- Go to your VS Code settings and add the following Tailwind class regex config
+
+```json
+"tailwindCSS.experimental.classRegex": [
+  ["cva\\(([^)]*)\\)", "[\"'`]([^\"'`]*).*?[\"'`]"]
+]
+```
+
+## Challenge Description (pt-br)
 
 O teste consiste em um checkout simples contendo 3 passos (carrinho, pagamento e sucesso) [Veja o Layout](https://www.figma.com/proto/VAOqGCWUNg13WE1t05I7xy/TestFront?page-id=15211%3A254388&node-id=15212%3A255342&viewport=415%2C484%2C0.66&scaling=min-zoom&starting-point-node-id=15212%3A254392&show-proto-sidebar=1)
 
