@@ -13,7 +13,7 @@ import { Card } from '../card'
 
 const paymentFormValidation = z.object({
   cardNumber: z.string().min(16, { message: 'insira um número de cartão válido' }),
-  name: z.string().min(1, { message: 'insira um nome válido' }),
+  name: z.string().trim().min(1, { message: 'insira um nome válido' }),
   dueDate: z.string().min(4, { message: 'insira uma data válida' }),
   cvv: z.string().min(3, { message: 'insira um cvv válido' })
 })
