@@ -1,6 +1,7 @@
 import { screen, setup, waitForElementToBeRemoved, wrapper } from '@/test/utils'
 import { CartInfo } from '.'
 import { Tabs } from 'ui'
+import { FormProvider, useForm } from 'react-hook-form'
 
 describe('CartInfo', () => {
   it('should render properly', async () => {
@@ -27,12 +28,18 @@ describe('CartInfo', () => {
   })
 
   it('should render the cart tab button', async () => {
-    setup(
-      <Tabs.Root tabKey="cart" setTabKey={() => undefined}>
-        <CartInfo.Submit />
-      </Tabs.Root>,
-      { wrapper }
-    )
+    function Component() {
+      const methods = useForm()
+      return (
+        <Tabs.Root tabKey="cart" setTabKey={() => undefined}>
+          <FormProvider {...methods}>
+            <CartInfo.Submit />
+          </FormProvider>
+        </Tabs.Root>
+      )
+    }
+
+    setup(<Component />, { wrapper })
 
     await waitForElementToBeRemoved(() => screen.queryAllByTestId('skeleton'))
 
@@ -40,12 +47,18 @@ describe('CartInfo', () => {
   })
 
   it('should render the payment tab button', async () => {
-    setup(
-      <Tabs.Root tabKey="payment" setTabKey={() => undefined}>
-        <CartInfo.Submit />
-      </Tabs.Root>,
-      { wrapper }
-    )
+    function Component() {
+      const methods = useForm()
+      return (
+        <Tabs.Root tabKey="payment" setTabKey={() => undefined}>
+          <FormProvider {...methods}>
+            <CartInfo.Submit />
+          </FormProvider>
+        </Tabs.Root>
+      )
+    }
+
+    setup(<Component />, { wrapper })
 
     await waitForElementToBeRemoved(() => screen.queryAllByTestId('skeleton'))
 
@@ -53,12 +66,18 @@ describe('CartInfo', () => {
   })
 
   it('should render the confirmation tab button', async () => {
-    setup(
-      <Tabs.Root tabKey="confirmation" setTabKey={() => undefined}>
-        <CartInfo.Submit />
-      </Tabs.Root>,
-      { wrapper }
-    )
+    function Component() {
+      const methods = useForm()
+      return (
+        <Tabs.Root tabKey="confirmation" setTabKey={() => undefined}>
+          <FormProvider {...methods}>
+            <CartInfo.Submit />
+          </FormProvider>
+        </Tabs.Root>
+      )
+    }
+
+    setup(<Component />, { wrapper })
 
     await waitForElementToBeRemoved(() => screen.queryAllByTestId('skeleton'))
 

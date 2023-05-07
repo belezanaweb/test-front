@@ -24,9 +24,9 @@ describe('CreditCardDueDateTextField', () => {
     const fieldElement = screen.getByLabelText('Due Date') as any
 
     await act(async () => {
-      await user.type(fieldElement, '102023')
+      await user.type(fieldElement, '1023')
     })
 
-    expect(fieldElement.value).toBe('10/2023')
+    expect(fieldElement.value).toBe('10/23')
   })
 })

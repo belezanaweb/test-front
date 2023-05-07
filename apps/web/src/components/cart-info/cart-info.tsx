@@ -5,6 +5,7 @@ import { Skeleton } from 'ui'
 import { useTabsContext } from 'ui'
 import { Button } from 'ui'
 import { PAYMENT_TAB_FORM_ID } from '../payment-tab'
+import { useFormContext } from 'react-hook-form'
 
 // ROOT
 
@@ -58,6 +59,9 @@ export function CartInfoData() {
 export function CartInfoSubmit() {
   const { isLoading } = useFetchCart()
   const tabs = useTabsContext()
+  const {
+    formState: { isValid }
+  } = useFormContext()
 
   if (isLoading) {
     return <Skeleton className="h-14" />
@@ -73,7 +77,7 @@ export function CartInfoSubmit() {
 
   if (tabs.tabKey === 'payment') {
     return (
-      <Button key="payment" type="submit" form={PAYMENT_TAB_FORM_ID}>
+      <Button key="payment" type="submit" form={PAYMENT_TAB_FORM_ID} disabled={!isValid}>
         Finalizar pedido
       </Button>
     )

@@ -7,6 +7,7 @@ export type MaskedTextFieldProps = {
   name: string
   mask: string
   label?: string
+  helperText?: string | false
 } & Pick<InputHTMLAttributes<HTMLInputElement>, 'id' | 'value' | 'placeholder'>
 
 const Input = IMaskMixin(({ inputRef, ...props }) => <TextField {...props} ref={inputRef as any} />)

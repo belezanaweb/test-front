@@ -7,10 +7,15 @@ import {
 import { Card } from '../card'
 import { SyntheticEvent } from 'react'
 import { useTabsContext } from 'ui'
+import { useFormContext } from 'react-hook-form'
 
 export const PAYMENT_TAB_FORM_ID = 'paymentTabForm'
 
 export function PaymentTab() {
+  const {
+    register,
+    formState: { errors }
+  } = useFormContext()
   const tabs = useTabsContext()
 
   function handleSubmit(e: SyntheticEvent) {
@@ -25,29 +30,29 @@ export function PaymentTab() {
       <form id={PAYMENT_TAB_FORM_ID} onSubmit={handleSubmit}>
         <div className="flex flex-col gap-5">
           <CreditCardTextField
+            {...register('cardNumber')}
             id="cardNumber"
-            name="cardNumber"
             label="Número"
-            onChange={(e) => console.log(e)}
+            helperText={errors.cardNumber?.message?.toString()}
           />
           <TextField
+            {...register('name')}
             id="name"
-            name="name"
             label="Nome do titular do cartão"
-            onChange={(e) => console.log(e.target.value)}
+            helperText={errors.name?.message?.toString()}
           />
           <div className="flex gap-5">
             <CreditCardDueDateTextField
+              {...register('dueDate')}
               id="dueDate"
-              name="dueDate"
               label="Data de validade"
-              onChange={(e) => console.log(e)}
+              helperText={errors.dueDate?.message?.toString()}
             />
             <CreditCardCvvTextField
+              {...register('cvv')}
               id="cvv"
-              name="cvv"
               label="Código CVV"
-              onChange={(e) => console.log(e)}
+              helperText={errors.cvv?.message?.toString()}
             />
           </div>
         </div>
