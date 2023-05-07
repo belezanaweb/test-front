@@ -21,6 +21,12 @@ npm i
 npm run dev
 ```
 
+Run tests
+
+```
+npm run test
+```
+
 ## Tech Stack
 - typescript
 - turbo repo
