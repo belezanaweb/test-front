@@ -19,6 +19,7 @@ export function CartTab() {
       {data?.items.map((item, i) => {
         const showMaxPrice =
           item.product.priceSpecification.maxPrice !== item.product.priceSpecification.price
+
         return (
           <CartProductItem.Root key={i}>
             <CartProductItem.Info

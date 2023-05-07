@@ -6,13 +6,13 @@ import { useFormContext } from 'react-hook-form'
 export function ConfirmationTab() {
   const { data } = useFetchCart()
   const { getValues } = useFormContext()
-  const lastFourdcardNumbers = getValues('cardNumber').slice(-4)
+  const lastFourCardNumbers = getValues('cardNumber').slice(-4)
 
   return (
     <div className="flex flex-col gap-5">
       <Card className="flex flex-col items-center gap-2 px-5 py-5">
         <h1 className="text-[1.375rem]">Compra efetuada com sucesso</h1>
-        <p className="text-neutral-800">****.****.****.{lastFourdcardNumbers}</p>
+        <p className="text-neutral-800">****.****.****.{lastFourCardNumbers}</p>
         <p className="text-neutral-800">{getValues('name')}</p>
         <p className="text-neutral-800">{getValues('dueDate')}</p>
       </Card>
