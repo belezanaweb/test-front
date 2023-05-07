@@ -1,5 +1,5 @@
 import * as TabsComponent from './tabs'
-export { useTabs } from './tabs'
+export { useTabs, useTabsContext } from './tabs'
 
 export const Tabs = {
   Root: TabsComponent.TabsRoot,

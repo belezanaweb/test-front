@@ -6,7 +6,7 @@ import {
 } from 'ui'
 import { Card } from '../card'
 import { SyntheticEvent } from 'react'
-import { useTabsContext } from 'ui/src/tabs/tabs'
+import { useTabsContext } from 'ui'
 
 export const PAYMENT_TAB_FORM_ID = 'paymentTabForm'
 
@@ -15,6 +15,7 @@ export function PaymentTab() {
 
   function handleSubmit(e: SyntheticEvent) {
     e.preventDefault()
+    console.log('submit')
     tabs.setTabKey('confirmation')
   }
 

@@ -1,7 +1,7 @@
 import { useFetchCart } from '@/hooks'
 import { Card } from '../card'
 import { CartProductItem } from '../cart-product-item'
-import { Skeleton } from '../skeleton'
+import { Skeleton } from 'ui'
 
 export function CartTab() {
   const { data, isLoading } = useFetchCart()

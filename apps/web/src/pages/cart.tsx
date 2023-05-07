@@ -1,13 +1,5 @@
-import { Button, Tabs, useTabs } from 'ui'
-import {
-  CartInfo,
-  CartTab,
-  ConfirmationTab,
-  PAYMENT_TAB_FORM_ID,
-  PaymentTab,
-  Skeleton
-} from '@/components'
-import { useFetchCart } from '@/hooks'
+import { Tabs, useTabs } from 'ui'
+import { CartInfo, CartTab, ConfirmationTab, PaymentTab } from '@/components'
 
 const tabsTriggersList = [
   {
@@ -26,7 +18,6 @@ const tabsTriggersList = [
 ]
 
 export default function Cart() {
-  const { isLoading } = useFetchCart()
   const tabs = useTabs({ tabKey: 'cart' })
 
   return (
@@ -58,25 +49,7 @@ export default function Cart() {
           </div>
           <CartInfo.Root>
             <CartInfo.Data />
-            {isLoading ? (
-              <Skeleton className="h-14" />
-            ) : (
-              <>
-                {tabs.tabKey === 'cart' && (
-                  <Button onClick={() => tabs.setTabKey('payment')}>Seguir para o pagamento</Button>
-                )}
-                {tabs.tabKey === 'payment' && (
-                  <Button type="submit" form={PAYMENT_TAB_FORM_ID}>
-                    Finalizar pedido
-                  </Button>
-                )}
-                {tabs.tabKey === 'confirmation' && (
-                  <Button color="black" onClick={() => tabs.setTabKey('cart')}>
-                    Voltar ao início do protótipo
-                  </Button>
-                )}
-              </>
-            )}
+            <CartInfo.Submit />
           </CartInfo.Root>
         </div>
       </Tabs.Root>

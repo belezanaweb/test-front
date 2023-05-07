@@ -1,7 +1,10 @@
 import { useFetchCart } from '@/hooks'
 import { moneyFormatter } from '@/utils'
 import { ReactNode } from 'react'
-import { Skeleton } from '../skeleton'
+import { Skeleton } from 'ui'
+import { useTabsContext } from 'ui'
+import { Button } from 'ui'
+import { PAYMENT_TAB_FORM_ID } from '../payment-tab'
 
 // ROOT
 
@@ -47,5 +50,40 @@ export function CartInfoData() {
         <span className="font-bold">{moneyFormatter.format(data!.subTotal)}</span>
       </li>
     </ul>
+  )
+}
+
+// SUBMIT
+
+export function CartInfoSubmit() {
+  const { isLoading } = useFetchCart()
+  const tabs = useTabsContext()
+
+  if (isLoading) {
+    return <Skeleton className="h-14" />
+  }
+
+  if (tabs.tabKey === 'cart') {
+    return (
+      <Button type="button" onClick={() => tabs.setTabKey('payment')}>
+        Seguir para o pagamento
+      </Button>
+    )
+  }
+
+  if (tabs.tabKey === 'payment') {
+    return (
+      <Button key="payment" type="submit" form={PAYMENT_TAB_FORM_ID}>
+        Finalizar pedido
+      </Button>
+    )
+  }
+
+  return (
+    <>
+      <Button color="black" onClick={() => tabs.setTabKey('cart')}>
+        Voltar ao início do protótipo
+      </Button>
+    </>
   )
 }

@@ -1,6 +1,7 @@
-import * as CartInfoComponent from './cart-info'
+import { CartInfoData, CartInfoRoot, CartInfoSubmit } from './cart-info'
 
 export const CartInfo = {
-  Root: CartInfoComponent.CartInfoRoot,
-  Data: CartInfoComponent.CartInfoData
+  Root: CartInfoRoot,
+  Data: CartInfoData,
+  Submit: CartInfoSubmit
 }
