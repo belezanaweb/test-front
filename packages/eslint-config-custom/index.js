@@ -10,14 +10,13 @@ module.exports = {
     'plugin:storybook/recommended',
     'prettier'
   ],
-  plugins: ['@typescript-eslint', 'react-refresh'],
+  plugins: ['@typescript-eslint'],
   parserOptions: {
     sourceType: 'module',
     ecmaVersion: 2020
   },
   rules: {
     'react/react-in-jsx-scope': 'off',
-    'react-refresh/only-export-components': 'warn',
     '@typescript-eslint/no-explicit-any': 'off',
     '@typescript-eslint/no-non-null-assertion': 'off'
   },
