@@ -44,7 +44,7 @@ export function PaymentTab() {
   }
 
   return (
-    <Card className="gap-8 px-5 py-5">
+    <Card className="gap-8">
       <h1 className="text-xl">Cartão de crédito</h1>
       <form id={PAYMENT_TAB_FORM_ID} onSubmit={handleSubmit}>
         <div className="flex flex-col gap-5">

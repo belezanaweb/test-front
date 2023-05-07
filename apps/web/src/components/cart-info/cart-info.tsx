@@ -6,14 +6,15 @@ import { useTabsContext } from 'ui'
 import { Button } from 'ui'
 import { PAYMENT_TAB_FORM_ID } from '../payment-tab'
 import { useFormContext } from 'react-hook-form'
+import { Card } from '../card'
 
 // ROOT
 
 export function CartInfoRoot({ children }: { children: ReactNode }) {
   return (
-    <div className="h-fit rounded border border-transparent bg-white px-5 pb-6 md:mx-2 md:my-10 md:min-w-[320px] md:border-neutral-500">
+    <Card className="h-fit border-transparent md:mx-2 md:my-10 md:min-w-[320px] md:border-neutral-500">
       {children}
-    </div>
+    </Card>
   )
 }
 
@@ -33,7 +34,7 @@ export function CartInfoData() {
   const quantity = data?.items.reduce((acc, curr) => acc + curr.quantity, 0)
 
   return (
-    <ul className="mb-7 mt-6 flex flex-col gap-2">
+    <ul className="flex flex-col gap-2">
       <li className="flex justify-between text-sm">
         <label>Produtos: ({quantity} itens)</label>
         <span>{moneyFormatter.format(data!.total)}</span>

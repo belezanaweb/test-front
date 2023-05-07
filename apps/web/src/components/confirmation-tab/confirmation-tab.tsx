@@ -10,13 +10,13 @@ export function ConfirmationTab() {
 
   return (
     <div className="flex flex-col gap-5">
-      <Card className="flex flex-col items-center gap-2 px-5 py-5">
+      <Card className="flex flex-col items-center gap-2">
         <h1 className="text-[1.375rem]">Compra efetuada com sucesso</h1>
         <p className="text-neutral-800">****.****.****.{lastFourCardNumbers}</p>
         <p className="text-neutral-800">{getValues('name')}</p>
         <p className="text-neutral-800">{getValues('dueDate')}</p>
       </Card>
-      <Card className="px-5 py-5">
+      <Card>
         <h2 className="text-xl">Produtos</h2>
         {data?.items.map((item, i) => (
           <CartProductItem.Root key={i}>
