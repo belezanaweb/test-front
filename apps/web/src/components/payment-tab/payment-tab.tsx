@@ -19,7 +19,13 @@ const paymentFormValidation = z.object({
 })
 
 export function PaymentTabFormProvider({ children }: { children: ReactNode }) {
-  const methods = useForm({ resolver: zodResolver(paymentFormValidation), mode: 'onTouched' })
+  const methods = useForm({
+    resolver: zodResolver(paymentFormValidation),
+    mode: 'onTouched',
+    defaultValues: {
+      cardNumber: ''
+    }
+  })
   return <FormProvider {...methods}>{children}</FormProvider>
 }
 
