@@ -1,4 +1,5 @@
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
+import Router from './Router';
 import Theme from './theme';
 
 export default function App() {
@@ -7,7 +8,7 @@ export default function App() {
   return (
     <Theme>
       <QueryClientProvider client={client}>
-        <div></div>
+        <Router />
       </QueryClientProvider>
     </Theme>
   );

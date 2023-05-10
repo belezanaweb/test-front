@@ -21,6 +21,8 @@
     "paths": {
       "_test/*": ["test/*"],
       "_types/*": ["src/@types/*"],
+      "_components/*": ["src/components/*"],
+      "_hooks/*": ["src/hooks/*"],
       "_services/*": ["src/services/*"],
       "_theme/*": ["src/theme/*"],
     }

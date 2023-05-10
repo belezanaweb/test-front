@@ -1,7 +1,7 @@
 import React from 'react';
 import { screen, act } from '@testing-library/react';
-import { renderWithQueryClientProvider } from '_test/render';
-import { useFetchBag } from '.';
+import { customRender } from '_test/render';
+import { useFetchBag } from './useFetchBag';
 
 jest.mock('axios', () => ({
   default: {
@@ -17,7 +17,7 @@ const Component: React.FC = (): React.ReactElement => {
 
 describe('Hooks :: useFetchBag', () => {
   it('should be create service fetch', async () => {
-    await act(async () => renderWithQueryClientProvider(<Component />));
+    await act(async () => customRender(<Component />));
 
     const fetching = screen.getByText(/true/i);
     expect(fetching).toBeInTheDocument();
