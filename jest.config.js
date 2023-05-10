@@ -29,6 +29,7 @@ module.exports = {
     // Handle TypeScript path aliases
     "^_test/(.*)$": "<rootDir>/test/$1",
     "^_types/(.*)$": "<rootDir>/src/@types/$1",
+    "^_services/(.*)$": "<rootDir>/src/services/$1",
     "^_theme/(.*)$": "<rootDir>/src/theme/$1",
   },
   verbose: true,
