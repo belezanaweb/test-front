@@ -14,8 +14,7 @@ export const Input = styled(InputMask)`
   border-radius: 4px;
 
   &::placeholder,
-  &::-webkit-input-placeholder,
-  &::-moz-placeholder {
+  &::-webkit-input-placeholder {
     color: ${(props) => props.theme.colors.gray01};
   }
 `

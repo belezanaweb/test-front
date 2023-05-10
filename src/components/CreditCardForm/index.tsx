@@ -1,39 +1,68 @@
 import { Card } from 'components/Card'
 import * as S from './styles'
 import { Input } from 'components/Input'
+import { Controller, useFormContext } from 'react-hook-form'
 
 export const CreditCardForm = () => {
+  const { control } = useFormContext()
+
   return (
     <Card title="Cartão de crédito">
       <S.Container>
-        <Input
-          label="Número"
-          mask="9999 9999 9999 9999"
-          placeholder="0000 0000 0000 0000"
+        <Controller
+          control={control}
           name="cardNumber"
-          error="insira um número de cartão válido"
+          render={({ field, fieldState }) => (
+            <Input
+              label="Número"
+              mask="9999 9999 9999 9999"
+              placeholder="0000 0000 0000 0000"
+              error={fieldState.error?.message}
+              onChange={field.onChange}
+            />
+          )}
         />
-        <Input
-          label="Nome do titular do cartão"
-          placeholder="Nome impresso no cartão"
+
+        <Controller
+          control={control}
           name="cardName"
-          error="insira um nome válido"
+          render={({ field, fieldState }) => (
+            <Input
+              label="Nome do titular do cartão"
+              placeholder="Nome impresso no cartão"
+              error={fieldState.error?.message}
+              onChange={field.onChange}
+            />
+          )}
         />
 
         <S.InputGroup>
-          <Input
-            label="Data de validade"
-            mask="99/99"
-            placeholder="MM/AA"
+          <Controller
+            control={control}
             name="cardExpiration"
-            error="insira uma data válida"
+            render={({ field, fieldState }) => (
+              <Input
+                label="Data de validade"
+                mask="99/99"
+                placeholder="MM/AA"
+                error={fieldState.error?.message}
+                onChange={field.onChange}
+              />
+            )}
           />
-          <Input
-            label="Código CVV"
-            mask="999"
-            placeholder="000"
+
+          <Controller
+            control={control}
             name="cardCvv"
-            error="insira um cvv válido"
+            render={({ field, fieldState }) => (
+              <Input
+                label="Código CVV"
+                mask="999"
+                placeholder="000"
+                error={fieldState.error?.message}
+                onChange={field.onChange}
+              />
+            )}
           />
         </S.InputGroup>
       </S.Container>

@@ -11,6 +11,7 @@
     "coverage": "vitest run --coverage"
   },
   "dependencies": {
+    "@hookform/resolvers": "^3.1.0",
     "axios": "^1.4.0",
     "lucide-react": "^0.215.0",
     "react": "^18.2.0",
@@ -21,7 +22,8 @@
     "react-query": "^3.39.3",
     "react-router-dom": "^6.11.1",
     "styled-components": "^6.0.0-rc.1",
-    "styled-media-query": "^2.1.2"
+    "styled-media-query": "^2.1.2",
+    "zod": "^3.21.4"
   },
   "devDependencies": {
     "@testing-library/jest-dom": "^5.16.5",
