@@ -50,3 +50,5 @@ export const standard = {
     },
   },
 };
+
+export type Colors = keyof typeof standard.colors;
