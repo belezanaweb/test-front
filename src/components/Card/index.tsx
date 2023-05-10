@@ -9,6 +9,6 @@ type CardProps = {
 export const Card: FC<CardProps> = ({ title, children }) => (
   <S.Container>
     {title && <S.Title>{title}</S.Title>}
-    {children}
+    <S.Content>{children}</S.Content>
   </S.Container>
 )

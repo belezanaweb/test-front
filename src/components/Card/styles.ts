@@ -7,7 +7,13 @@ export const Container = styled.section`
   background-color: ${(props) => props.theme.colors.white};
 `
 
+export const Content = styled.div`
+  display: flex;
+  flex-direction: column;
+`
+
 export const Title = styled.h2`
   font-size: ${(props) => props.theme.font.size.xlarge};
   margin-bottom: 16px;
+  font-weight: normal;
 `

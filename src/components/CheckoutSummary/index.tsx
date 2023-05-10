@@ -4,20 +4,22 @@ import { FC } from 'react'
 import { currencyFormatter } from 'utils/format'
 
 type Props = {
-  itemsTotal: number
-  subTotal: number
-  shippingTotal: number
-  discount: number
-  total: number
+  itemsTotal?: number
+  subTotal?: number
+  shippingTotal?: number
+  discount?: number
+  total?: number
+  buttonTitle: string
   action: () => void
 }
 
 export const CheckoutSummary: FC<Props> = ({
-  itemsTotal,
-  subTotal,
-  shippingTotal,
-  discount,
-  total,
+  itemsTotal = 0,
+  subTotal = 0,
+  shippingTotal = 0,
+  discount = 0,
+  total = 0,
+  buttonTitle,
   action
 }) => {
   const itemsTotalDescription = `(${itemsTotal} ${
@@ -44,9 +46,11 @@ export const CheckoutSummary: FC<Props> = ({
         <S.TextTotal>Subtotal</S.TextTotal>
         <S.TextTotal>{currencyFormatter(total)}</S.TextTotal>
       </S.Row>
-      <S.ButtonWrapper>
-        <Button onClick={() => action()} title="Seguir para o pagamento" />
-      </S.ButtonWrapper>
+      {buttonTitle && (
+        <S.ButtonWrapper>
+          <Button onClick={() => action()} title={buttonTitle} />
+        </S.ButtonWrapper>
+      )}
     </S.Container>
   )
 }
