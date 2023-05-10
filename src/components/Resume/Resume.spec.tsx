@@ -1,11 +1,11 @@
 import Resume from '.';
 import { screen } from '@testing-library/react';
 import { customRender } from '_test/render';
-import { mock } from '_test/mock';
+import { responseBag } from '_test/mock';
 
 describe('Components :: Resume', () => {
   it('should be render with data', () => {
-    customRender(<Resume {...mock} action={<small>action</small>} />);
+    customRender(<Resume {...responseBag} action={<small>action</small>} />);
 
     const subTotal = screen.getByText(/R\$ 202,20/i);
     expect(subTotal).toBeInTheDocument();

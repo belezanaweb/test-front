@@ -8,5 +8,5 @@ export const fetchBag = async () =>
 export const useFetchBag = () =>
   useQuery({
     queryKey: ['bag'],
-    queryFn: fetchBag
+    queryFn: fetchBag,
   });

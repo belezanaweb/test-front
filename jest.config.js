@@ -30,6 +30,7 @@ module.exports = {
     "^_test/(.*)$": "<rootDir>/test/$1",
     "^_types/(.*)$": "<rootDir>/src/@types/$1",
     "^_components/(.*)$": "<rootDir>/src/components/$1",
+    "^_context/(.*)$": "<rootDir>/src/context/$1",
     "^_hooks/(.*)$": "<rootDir>/src/hooks/$1",
     "^_modules/(.*)$": "<rootDir>/src/modules/$1",
     "^_pages/(.*)$": "<rootDir>/src/pages/$1",

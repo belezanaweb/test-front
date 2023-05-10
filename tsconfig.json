@@ -22,6 +22,7 @@
       "_test/*": ["test/*"],
       "_types/*": ["src/@types/*"],
       "_components/*": ["src/components/*"],
+      "_context/*": ["src/context/*"],
       "_hooks/*": ["src/hooks/*"],
       "_modules/*": ["src/modules/*"],
       "_pages/*": ["src/pages/*"],

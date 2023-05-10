@@ -1,4 +1,4 @@
-export const mock = {
+export const responseBag = {
   id: '1',
   items: [{
     quantity: 1,
@@ -28,4 +28,11 @@ export const mock = {
   total: 202.2,
   subTotal: 102.2,
   discount: 100,
+};
+
+export const payment = {
+  paymentName: 'name',
+  paymentNumber: 'number',
+  paymentValid: 'valid',
+  paymentCvv: 'cvv',
 };

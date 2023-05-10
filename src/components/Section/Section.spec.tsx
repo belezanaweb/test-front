@@ -7,7 +7,7 @@ describe('Components :: Section', () => {
     customRender(<Section align='center'><small>center</small></Section>);
 
     const element = screen.getByText('center');
-    const section = screen.getByTestId('section');
+    const section = screen.getByTestId('component-section');
     const styles = getComputedStyle(section);
 
     expect(element).toBeInTheDocument();
@@ -18,7 +18,7 @@ describe('Components :: Section', () => {
     customRender(<Section align='start'><small>start</small></Section>);
 
     const element = screen.getByText('start');
-    const section = screen.getByTestId('section');
+    const section = screen.getByTestId('component-section');
     const styles = getComputedStyle(section);
 
     expect(element).toBeInTheDocument();
@@ -29,7 +29,7 @@ describe('Components :: Section', () => {
     customRender(<Section align='end'><small>end</small></Section>);
 
     const element = screen.getByText('end');
-    const section = screen.getByTestId('section');
+    const section = screen.getByTestId('component-section');
     const styles = getComputedStyle(section);
 
     expect(element).toBeInTheDocument();

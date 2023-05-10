@@ -27,7 +27,7 @@ describe('Template', () => {
     }));
     customRender(<span>outlet</span>, <Template />);
 
-    const element = screen.getAllByTestId('typography');
+    const element = screen.getAllByTestId('component-typography');
     expect(element[0]).toHaveClass('selected');
   });
 
@@ -41,7 +41,7 @@ describe('Template', () => {
     }));
     customRender(<span>outlet</span>, <Template />);
 
-    const element = screen.getAllByTestId('typography');
+    const element = screen.getAllByTestId('component-typography');
     expect(element[1]).toHaveClass('selected');
   });
 
@@ -55,7 +55,7 @@ describe('Template', () => {
     }));
     customRender(<span>outlet</span>, <Template />);
 
-    const element = screen.getAllByTestId('typography');
+    const element = screen.getAllByTestId('component-typography');
     expect(element[2]).toHaveClass('selected');
   });
 });

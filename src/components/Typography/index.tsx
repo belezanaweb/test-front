@@ -19,7 +19,7 @@ const Typography: React.FC<Props> = ({
   const Element = S[type];
 
   return (
-    <Element align={align} className={className} data-testid='typography'>
+    <Element align={align} className={className} data-testid='component-typography'>
       {currency ? format(value as number) : value.toString()}
     </Element>
   );

@@ -1,13 +1,21 @@
-import React from 'react';
+import React, { useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 import Section from '_components/Section';
 import Card from '_components/Card';
 import Resume from '_components/Resume';
 import Button from '_components/Button';
 import Typography from '_components/Typography';
 import { useFetchBag } from '_hooks/useFetchBag';
+import { useBagContext } from '_context/BagContext/hooks/useBagContext';
 
 const Bag: React.FC = (): React.ReactElement => {
   const { isLoading, data } = useFetchBag();
+  const { actions } = useBagContext();
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    actions.setResponseBagData(data?.data ?? {});
+  }, [data]);
 
   return (
     <>
