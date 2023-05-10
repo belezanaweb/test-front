@@ -31,6 +31,8 @@ module.exports = {
     "^_types/(.*)$": "<rootDir>/src/@types/$1",
     "^_components/(.*)$": "<rootDir>/src/components/$1",
     "^_hooks/(.*)$": "<rootDir>/src/hooks/$1",
+    "^_modules/(.*)$": "<rootDir>/src/modules/$1",
+    "^_pages/(.*)$": "<rootDir>/src/pages/$1",
     "^_services/(.*)$": "<rootDir>/src/services/$1",
     "^_theme/(.*)$": "<rootDir>/src/theme/$1",
   },
