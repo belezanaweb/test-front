@@ -6,6 +6,7 @@ export const Container = styled.nav`
   align-items: center;
   justify-content: center;
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+  background-color: ${(props) => props.theme.colors.white};
 `
 
 export const Menu = styled.ul`
