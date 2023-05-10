@@ -12,6 +12,7 @@ export default defineConfig({
     alias: {
       "_test": fileURLToPath(new URL("./test", import.meta.url)),
       "_types": fileURLToPath(new URL("./src/@types", import.meta.url)),
+      "_theme": fileURLToPath(new URL("./src/theme", import.meta.url)),
     },
   },
   server: {

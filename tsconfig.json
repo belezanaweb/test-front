@@ -21,6 +21,7 @@
     "paths": {
       "_test/*": ["test/*"],
       "_types/*": ["src/@types/*"],
+      "_theme/*": ["src/theme/*"],
     }
   },
   "include": ["src", "jest.setup.ts", "vite.config.ts"],
