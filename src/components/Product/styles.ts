@@ -17,6 +17,7 @@ export const Title = styled.h3`
 
 export const PriceContainer = styled.div`
   display: flex;
+  flex: 1 0 74px;
   flex-direction: column;
   justify-content: center;
   margin-left: auto;
@@ -24,6 +25,7 @@ export const PriceContainer = styled.div`
 
 export const Price = styled.strong`
   font-size: ${(props) => props.theme.font.size.small};
+  text-align: right;
 `
 
 export const Discount = styled(Price)`

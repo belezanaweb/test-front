@@ -1,3 +1,5 @@
+import { FC } from 'react'
+import { EmptyCart } from 'components/EmptyCart'
 import { Card } from '../Card'
 import { Product } from '../Product'
 import { Loader } from './Loader'
@@ -5,7 +7,6 @@ import { Loader } from './Loader'
 import { CartItem } from 'types/api'
 
 import * as S from './styles'
-import { FC } from 'react'
 
 type Props = {
   isLoading: boolean
@@ -17,8 +18,8 @@ export const ProductsList: FC<Props> = ({ isLoading, products }) => {
     return <Loader />
   }
 
-  if (!products) {
-    return <div>Sacola vazia</div>
+  if (!products?.length) {
+    return <EmptyCart />
   }
 
   return (
