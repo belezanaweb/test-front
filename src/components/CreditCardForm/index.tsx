@@ -43,8 +43,8 @@ export const CreditCardForm = () => {
             render={({ field, fieldState }) => (
               <Input
                 label="Data de validade"
-                mask="99/99"
-                placeholder="MM/AA"
+                mask="99/9999"
+                placeholder="MM/AAAA"
                 error={fieldState.error?.message}
                 onChange={field.onChange}
               />

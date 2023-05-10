@@ -5,10 +5,12 @@ import { currencyFormatter } from 'utils/format'
 
 type Props = {
   product: ProductType
+  showPrice?: boolean
 }
 
 export const Product: FC<Props> = ({
-  product: { imageObjects, name, priceSpecification }
+  product: { imageObjects, name, priceSpecification },
+  showPrice = true
 }) => (
   <S.Container>
     <S.Image
@@ -18,13 +20,15 @@ export const Product: FC<Props> = ({
       alt={name}
     />
     <S.Title>{name}</S.Title>
-    <S.PriceContainer>
-      {!!priceSpecification.discount && (
-        <S.Discount>
-          {currencyFormatter(priceSpecification.maxPrice)}
-        </S.Discount>
-      )}
-      <S.Price>{currencyFormatter(priceSpecification.price)}</S.Price>
-    </S.PriceContainer>
+    {showPrice && (
+      <S.PriceContainer>
+        {!!priceSpecification.discount && (
+          <S.Discount>
+            {currencyFormatter(priceSpecification.maxPrice)}
+          </S.Discount>
+        )}
+        <S.Price>{currencyFormatter(priceSpecification.price)}</S.Price>
+      </S.PriceContainer>
+    )}
   </S.Container>
 )

@@ -11,7 +11,7 @@ import { ContentWrapper } from 'components/ContentWrapper'
 
 export const Bag = () => {
   const { setCart } = useCart()
-  const { data, isLoading, isError, error } = useGetCart()
+  const { data, isLoading } = useGetCart()
   const navigate = useNavigate()
 
   console.log(data)

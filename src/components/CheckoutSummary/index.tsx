@@ -10,6 +10,7 @@ type Props = {
   discount?: number
   total?: number
   buttonTitle: string
+  buttonType?: 'default' | 'primary'
   action: () => void
 }
 
@@ -20,8 +21,13 @@ export const CheckoutSummary: FC<Props> = ({
   discount = 0,
   total = 0,
   buttonTitle,
+  buttonType,
   action
 }) => {
+  if (!itemsTotal) {
+    return null
+  }
+
   const itemsTotalDescription = `(${itemsTotal} ${
     itemsTotal > 1 ? 'itens' : 'item'
   })`
@@ -48,7 +54,11 @@ export const CheckoutSummary: FC<Props> = ({
       </S.Row>
       {buttonTitle && (
         <S.ButtonWrapper>
-          <Button onClick={() => action()} title={buttonTitle} />
+          <Button
+            onClick={() => action()}
+            title={buttonTitle}
+            type={buttonType}
+          />
         </S.ButtonWrapper>
       )}
     </S.Container>

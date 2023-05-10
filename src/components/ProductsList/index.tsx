@@ -9,11 +9,18 @@ import { CartItem } from 'types/api'
 import * as S from './styles'
 
 type Props = {
-  isLoading: boolean
+  title?: string
+  showPrice?: boolean
+  isLoading?: boolean
   products?: CartItem[]
 }
 
-export const ProductsList: FC<Props> = ({ isLoading, products }) => {
+export const ProductsList: FC<Props> = ({
+  title,
+  showPrice,
+  isLoading,
+  products
+}) => {
   if (isLoading && !products) {
     return <Loader />
   }
@@ -23,10 +30,14 @@ export const ProductsList: FC<Props> = ({ isLoading, products }) => {
   }
 
   return (
-    <Card>
+    <Card title={title}>
       <S.Container>
         {products.map((item) => (
-          <Product key={item.product.sku} product={item.product} />
+          <Product
+            key={item.product.sku}
+            product={item.product}
+            showPrice={showPrice}
+          />
         ))}
       </S.Container>
     </Card>
