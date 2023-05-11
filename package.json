@@ -40,6 +40,7 @@
     "eslint-config-prettier": "^8.8.0",
     "eslint-plugin-prettier": "^4.2.1",
     "happy-dom": "^8.1.0",
+    "jest-styled-components": "^7.1.1",
     "typescript": "^5.0.4",
     "vite": "^4.0.1",
     "vite-tsconfig-paths": "^4.0.3",
