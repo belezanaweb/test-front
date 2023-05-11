@@ -12,6 +12,7 @@ export const Container = styled.button<Props>`
   width: 100%;
   border: none;
   border-radius: 4px;
+  cursor: pointer;
   background-color: ${({ $type, theme }) =>
     $type === 'default' ? theme.colors.black : theme.colors.purple};
   color: ${(props) => props.theme.colors.white};
