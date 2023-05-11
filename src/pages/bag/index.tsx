@@ -14,8 +14,6 @@ export const Bag = () => {
   const { data, isLoading } = useGetCart()
   const navigate = useNavigate()
 
-  console.log(data)
-
   useEffect(() => {
     if (!isLoading && data) {
       setCart(data)

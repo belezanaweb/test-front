@@ -45,9 +45,10 @@ export const Payment = () => {
 
   const handleSaveCreditCard = () => {
     methods.handleSubmit((data) => {
-      console.log(data)
+      console.log('Do something with the data', data)
     })()
   }
+
   if (!cart.items.length) {
     return <Navigate to="/" replace={true} />
   }
