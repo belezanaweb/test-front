@@ -1,5 +1,5 @@
-import { ResponseBag } from '../../@types/responses/bag';
-import { Payment } from '../../@types/form/payment';
+import { ResponseBag } from '_types/responses/bag';
+import { Payment } from '_types/form/payment';
 
 export enum TypeEnum {
   SET_BAG_DATA = 'SET_BAG_DATA',

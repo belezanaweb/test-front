@@ -20,7 +20,10 @@ export const customRender = (
         <BrowserRouter>
           <Routes>
             <Route path="/" element={template}>
-              <Route index element={children} />
+              <Route index path="/" element={children} />
+              <Route path="/bag" element={children} />
+              <Route path="/payment" element={children} />
+              <Route path="/confirmation" element={children} />
             </Route>
           </Routes>
         </BrowserRouter>

@@ -1,8 +1,8 @@
 import React, { useEffect } from 'react';
 import { act, render, screen } from '@testing-library/react';
+import { responseBag, payment } from '_test/mock';
 import { useBagContext } from '../hooks/useBagContext';
 import BagContextProvider from '..';
-import { responseBag, payment } from '_test/mock';
 
 const MakeSut: React.FC<{ spySetMyState: jest.Mock<any, any> }> = ({ spySetMyState }): React.ReactElement => {
   const { state, actions } = useBagContext();

@@ -1,9 +1,9 @@
 import React, { useReducer, useCallback } from 'react';
+import { ResponseBag } from '_types/responses/bag';
+import { Payment } from '_types/form/payment';
 import BagContext from './context';
 import { reducer } from './reducer';
 import { actionSetResponseBagData, actionSetPaymentData } from './actions';
-import { ResponseBag } from '../../@types/responses/bag';
-import { Payment } from '../../@types/form/payment';
 
 const BagContextProvider: React.FC<React.PropsWithChildren> = ({ children }): React.ReactElement => {
   const [state, dispatch] = useReducer(reducer, { responseBag: {}, payment: {}});

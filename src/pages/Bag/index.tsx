@@ -26,7 +26,7 @@ const Bag: React.FC = (): React.ReactElement => {
 
       <Resume
         {...data?.data}
-        action={<Button color='primary'>Seguir para o pagamento</Button>}
+        action={<Button color='primary' onClick={() => navigate('/payment')}>Seguir para o pagamento</Button>}
       />
     </>
   );

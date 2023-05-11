@@ -1,5 +1,5 @@
-import { ResponseBag } from '../../@types/responses/bag';
-import { Payment } from '../../@types/form/payment';
+import { ResponseBag } from '_types/responses/bag';
+import { Payment } from '_types/form/payment';
 import { TypeEnum, State, Action } from './types';
 
 export const reducer = (state: State, action: Action): State => {
