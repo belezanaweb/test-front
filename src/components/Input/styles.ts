@@ -5,6 +5,7 @@ type Props = {
   $error?: boolean
 }
 
+// @ts-ignore
 export const Input = styled(InputMask)`
   width: 100%;
   height: 44px;

@@ -2,14 +2,14 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import { QueryClient, QueryClientProvider } from 'react-query'
 import { ThemeProvider } from 'styled-components'
 
-import { Bag } from './pages/Bag'
-import { Payment } from './pages/Payment'
-import { Confirmation } from './pages/Confirmation'
+import { Bag } from 'pages/Bag'
+import { Payment } from 'pages/Payment'
+import { Confirmation } from 'pages/Confirmation'
 
-import { Checkout } from './components/Checkout'
+import { Checkout } from 'components/Checkout'
 
-import { theme } from './utils/theme'
-import { CartContext, CartProvider } from './context/Cart'
+import { theme } from 'utils/theme'
+import { CartProvider } from 'context/Cart'
 
 import { GlobalStyles } from './GlobalStyles'
 
