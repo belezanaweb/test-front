@@ -1,10 +1,12 @@
 import React from 'react';
+import Router from './Routes';
 import { Container } from './App.styled';
 
 
 const App = (): JSX.Element => {
   return (
     <Container>
+      <Router />
     </Container>
   );
 }
