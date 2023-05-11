@@ -12,9 +12,15 @@ export const reducer = (state: State, action: Action): State => {
         responseBag: payload as ResponseBag,
       };
     case TypeEnum.SET_PAYMENT_DATA:
+      const payment = payload as Payment;
+      const paymentNumber = payment.paymentNumber?.split(' ').fill('***', 0, 3).join(' ');
+
       return {
         ...state,
-        payment: payload as Payment,
+        payment: {
+          ...payment,
+          paymentNumber,
+        },
       };
     default:
       return state;

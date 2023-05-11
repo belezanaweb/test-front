@@ -1,0 +1,133 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`App should match component snapshot 1`] = `
+<div>
+  <div
+    class="sc-fbJfA hWpYvs"
+  >
+    <div
+      class="sc-brKeYL YcfNH"
+    >
+      <span
+        class="sc-dmqHEX dWMFDN selected"
+        data-testid="component-typography"
+      >
+        Sacola
+      </span>
+    </div>
+    <div
+      class="sc-brKeYL iihIFG"
+    >
+      <span
+        class="sc-hLseeU buSXld"
+        data-testid="component-typography"
+      >
+        Pagamento
+      </span>
+    </div>
+    <div
+      class="sc-brKeYL iihIFG"
+    >
+      <span
+        class="sc-hLseeU buSXld"
+        data-testid="component-typography"
+      >
+        Confirmação
+      </span>
+    </div>
+  </div>
+  <div
+    class="sc-csCMJt kHhBg"
+  >
+    <div
+      class="sc-ktEKTO hKXYXf"
+      data-testid="component-section"
+    >
+      <span
+        class="sc-hLseeU Oyjme"
+        data-testid="component-typography"
+      >
+        carregando...
+      </span>
+    </div>
+    <div
+      class="sc-blLsxD jkYaNW"
+    >
+      <div
+        class="sc-ieZDjg klRGl"
+      >
+        <div
+          class="sc-dKfzgJ kqLjzv"
+        >
+          <span
+            class="sc-gLDzan fwpATO"
+            data-testid="component-typography"
+          >
+            Produtos: (0 itens)
+          </span>
+          <span
+            class="sc-fsQiph gxXJmE"
+            data-testid="component-typography"
+          >
+            R$ 0,00
+          </span>
+        </div>
+        <div
+          class="sc-dKfzgJ kqLjzv"
+        >
+          <span
+            class="sc-gLDzan fwpATO"
+            data-testid="component-typography"
+          >
+            Frete:
+          </span>
+          <span
+            class="sc-fsQiph gxXJmE"
+            data-testid="component-typography"
+          >
+            R$ 0,00
+          </span>
+        </div>
+        <div
+          class="sc-dKfzgJ kqLjzv"
+        >
+          <span
+            class="sc-gLDzan fwpATO"
+            data-testid="component-typography"
+          >
+            Desconto:
+          </span>
+          <span
+            class="sc-irTswW sErQa"
+            data-testid="component-typography"
+          >
+            R$ 0,00
+          </span>
+        </div>
+        <div
+          class="sc-dKfzgJ kqLjzv"
+        >
+          <span
+            class="sc-iAEyYk cLLWkL"
+            data-testid="component-typography"
+          >
+            Subtotal
+          </span>
+          <span
+            class="sc-kFuwaP cNduwC"
+            data-testid="component-typography"
+          >
+            R$ 0,00
+          </span>
+        </div>
+      </div>
+      <button
+        class="sc-hIqOWS gMSTOa"
+        color="primary"
+      >
+        Seguir para o pagamento
+      </button>
+    </div>
+  </div>
+</div>
+`;

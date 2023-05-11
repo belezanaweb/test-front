@@ -32,7 +32,7 @@ export const responseBag = {
 
 export const payment = {
   paymentName: 'name',
-  paymentNumber: 'number',
+  paymentNumber: '***',
   paymentValid: 'valid',
   paymentCvv: 'cvv',
 };
