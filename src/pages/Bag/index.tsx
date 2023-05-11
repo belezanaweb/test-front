@@ -21,7 +21,7 @@ const Bag: React.FC = (): React.ReactElement => {
     <>
       <Section>
         {isLoading && <Typography align='center' type='MenuDisabled' value='carregando...' />}
-        {!!data && data.data.items?.map((item) => <Card key={item.product.sku} {...item.product} />)}
+        {!!data && data.data.items?.map((item) => <Card showValues key={item.product.sku} {...item.product} />)}
       </Section>
 
       <Resume
