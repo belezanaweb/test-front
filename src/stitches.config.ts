@@ -7,7 +7,7 @@ export const { styled, css } = createStitches({
             secondary: 'gray',
         },
         fonts: {
-            body: 'sans-serif',
+            body: 'Arial',
         },
         fontSizes: {
             1: '16px',
@@ -23,6 +23,34 @@ export const { styled, css } = createStitches({
     },
 });
 
+export const AppContainer = styled('div', {
+    background: '#F5F5F5',
+});
+
+export const Base = styled('div', {
+    display: 'flex',
+    flexDirection: 'column',
+    padding: '20px 0',
+
+    '@tablet': {
+        maxWidth: '900px',
+        margin: '0 auto',
+    },
+});
+
+export const BackgroundSection = styled('div', {
+    margin: '0 8px',
+    padding: '10px',
+    backgroundColor: '#FFFFFF',
+    border: '1px solid #CCCCCC',
+    borderRadius: '4px',
+});
+
+export const TotalResult = styled('div', {
+    width: '100%',
+    padding: '10px',
+    backgroundColor: '#FFFFFF',
+});
 
 
 export const globalStyles = globalCss({
@@ -33,8 +61,12 @@ export const globalStyles = globalCss({
         margin: 0,
         lineHeight: '1.5em',
         height: '100%',
-        background: '#F5F5F5',
+        background: '#FFFFFF',
     },
+
+    '*': {
+        boxSizing: 'border-box',
+    }
 });
 
 globalStyles();

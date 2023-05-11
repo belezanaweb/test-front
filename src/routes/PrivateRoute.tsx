@@ -5,6 +5,6 @@ type PrivateRouteProps = {
     emptyCart: boolean;
 } & RouteProps;
 
-export const PrivateRoute = ({ emptyCart, children }: PrivateRouteProps) => {
+export const PrivateRoute = ({ emptyCart }: PrivateRouteProps) => {
     return !emptyCart ? <Outlet /> : <Navigate to="/carrinho" replace />;
 }
