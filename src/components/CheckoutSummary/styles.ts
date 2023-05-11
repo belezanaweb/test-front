@@ -1,11 +1,17 @@
 import styled from 'styled-components'
+import media from 'styled-media-query'
 
 export const Container = styled.section`
+  width: 100%;
   display: flex;
   flex-direction: column;
   gap: 10px;
   padding: 28px 20px;
   background-color: ${(props) => props.theme.colors.white};
+
+  ${media.greaterThan('medium')`
+    max-width: 320px;
+  `}
 `
 
 export const Row = styled.div`
