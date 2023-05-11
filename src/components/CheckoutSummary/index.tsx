@@ -53,7 +53,7 @@ export const CheckoutSummary: FC<Props> = ({
         <S.TextTotal>{currencyFormatter(total)}</S.TextTotal>
       </S.Row>
       {buttonTitle && (
-        <S.ButtonWrapper>
+        <S.ButtonWrapper data-testid="checkout-summary-button-wrapper">
           <Button
             onClick={() => action()}
             title={buttonTitle}
