@@ -1,11 +1,10 @@
 import { useState } from 'react';
 import { useNavigate } from "react-router-dom";
-
-
-
 import ProductItem, { ProductItemProps } from '../../components/product-item/product-item';
 import { TotalContainer } from '../../components/total-container/total-container';
 import { BackgroundSection, Base, TotalResult } from '../../stitches.config';
+import { Button } from '../../components/button/button.styled';
+import { ButtonContainer, WrapperBodySession, WrapperFooterSession } from './cart.styled';
 
 const productsListMock: ProductItemProps[] = [
     {
@@ -33,7 +32,7 @@ const Cart = (): JSX.Element => {
 
     return (
         <>
-            <Base>
+            <WrapperBodySession>
                 <BackgroundSection>
                     {products.map(({ imageSrc, name, discountPrice, price }: ProductItemProps, index: number) => (
                         <ProductItem
@@ -45,18 +44,20 @@ const Cart = (): JSX.Element => {
                         />
                     ))}
                 </BackgroundSection>
-            </Base>
+            </WrapperBodySession>
             <TotalResult>
-                <Base>
+                <WrapperFooterSession>
                     <TotalContainer
                         items={products.length}
                         productsTotal={0}
                         shippingTotal={0}
                         discountTotal={0}
                         subtotal={0}
-                        navigate={navigate}
                     />
-                </Base>
+                    <ButtonContainer>
+                        <Button disabled={!products.length} onClick={() => navigate('/checkout')}>Seguir para o pagamento</Button>
+                    </ButtonContainer>
+                </WrapperFooterSession>
             </TotalResult>
         </>
     );

@@ -30,7 +30,7 @@ export const AppContainer = styled('div', {
 export const Base = styled('div', {
     display: 'flex',
     flexDirection: 'column',
-    padding: '20px 0',
+    margin: '0 5px',
 
     '@tablet': {
         maxWidth: '900px',
@@ -39,7 +39,6 @@ export const Base = styled('div', {
 });
 
 export const BackgroundSection = styled('div', {
-    margin: '0 8px',
     padding: '10px',
     backgroundColor: '#FFFFFF',
     border: '1px solid #CCCCCC',
@@ -48,7 +47,6 @@ export const BackgroundSection = styled('div', {
 
 export const TotalResult = styled('div', {
     width: '100%',
-    padding: '10px',
     backgroundColor: '#FFFFFF',
 });
 

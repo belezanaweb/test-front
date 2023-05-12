@@ -1,6 +1,4 @@
-import { NavigateFunction } from "react-router-dom";
-import { Button } from "../button/button.styled";
-import { Container, RowContainer, RowContainerSubTotal, RowContainerDiscount, ButtonContainer } from "./total-container.styled";
+import { Container, RowContainer, RowContainerSubTotal, RowContainerDiscount } from "./total-container.styled";
 
 interface ITotalContainer {
     items: number;
@@ -8,10 +6,9 @@ interface ITotalContainer {
     shippingTotal: number;
     discountTotal: number;
     subtotal: number;
-    navigate: NavigateFunction;
 }
 
-export const TotalContainer = ({ items, productsTotal, shippingTotal, discountTotal, subtotal, navigate }: ITotalContainer) => {
+export const TotalContainer = ({ items, productsTotal, shippingTotal, discountTotal, subtotal }: ITotalContainer) => {
     const itemDescription = items === 1 ? `item` : 'itens';
     const formatCurrency = (value: number) => new Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'BRL' }).format(value);
 
@@ -33,9 +30,6 @@ export const TotalContainer = ({ items, productsTotal, shippingTotal, discountTo
                 <div>Subtotal:</div>
                 <div>{formatCurrency(subtotal)}</div>
             </RowContainerSubTotal>
-            <ButtonContainer>
-                <Button onClick={() => navigate('/checkout')}>Seguir para o pagamento</Button>
-            </ButtonContainer>
         </Container>
     );
 };

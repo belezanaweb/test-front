@@ -5,7 +5,6 @@ export const Container = styled('div', {
     flexDirection: 'column',
     gap: '10px',
     padding: '0 10px',
-    backgroundColor: '#FFFFFF',
 });
 
 export const RowContainer = styled('div', {
@@ -28,10 +27,5 @@ export const RowContainerSubTotal = styled('div', {
 
 export const RowContainerDiscount = styled('div', {
     color: '#9222DC',
-});
-
-export const ButtonContainer = styled('div', {
-    display: 'flex',
-    marginTop: '24px',
 });
 
