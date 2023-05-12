@@ -86,7 +86,7 @@ export async function getCart(): Promise<ICartModel> {
                 // resolve(response.data);
                 setTimeout(() => {
                     resolve(mockResponse)
-                }, 3000);
+                }, 1000);
             })
             .catch((err) => {
                 reject(err);
