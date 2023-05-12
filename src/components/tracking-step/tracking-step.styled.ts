@@ -1,6 +1,5 @@
 
 import { styled } from '../../stitches.config';
-import { NavLink } from 'react-router-dom';
 
 export const Container = styled('div', {
     display: 'flex',
@@ -17,7 +16,7 @@ export const Steps = styled('ul', {
     listStyleType: 'none',
 });
 
-export const Step = styled('li', {
+export const StepWrapper = styled('li', {
     fontSize: '0.875rem',
 
     '@tablet': {
@@ -25,7 +24,7 @@ export const Step = styled('li', {
     }
 });
 
-export const StyledNavLink = styled(NavLink, {
+export const Step = styled('div', {
     display: 'block',
     padding: '10px 12px 8px',
     textDecoration: 'none',
@@ -33,8 +32,8 @@ export const StyledNavLink = styled(NavLink, {
     borderBottom: '1px solid #878787',
 
     '&.active': {
-        color: '#000000',
         paddingBottom: '5px',
+        color: '#000000',
         borderBottom: '4px solid #000000',
     },
 

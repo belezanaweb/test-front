@@ -23,13 +23,7 @@ const Checkout: React.FC = () => {
             </WrapperBodySession>
             <TotalResult>
                 <WrapperFooterSession>
-                    <TotalContainer
-                        items={3}
-                        productsTotal={0}
-                        shippingTotal={0}
-                        discountTotal={0}
-                        subtotal={0}
-                    />
+                    <TotalContainer />
                     <ButtonContainer>
                         <Button type="submit" form="credit-cart-form" disabled={!isFormValid}>Finalizar pedido</Button>
                     </ButtonContainer>

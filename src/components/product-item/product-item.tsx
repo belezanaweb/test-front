@@ -1,25 +1,20 @@
+import { ICartItemViewModel } from "../../types/cart.types";
 import { DiscountPrice, DiscountPriceLineThrough, Price, PriceWrapper, ProductImage, ProductItemWrapper, ProductName } from "./product-item.styled";
 
 export interface ProductItemProps {
-    imageSrc: string;
-    name: string;
-    price: number;
-    discountPrice?: number;
+    item: ICartItemViewModel;
 }
 
-const ProductItem: React.FC<ProductItemProps> = ({
-    imageSrc,
-    name,
-    price,
-    discountPrice,
-}) => {
+const ProductItem: React.FC<ProductItemProps> = ({ item }) => {
+    const { product: { imageObjects, name, priceSpecification: { discount, price } } } = item;
+
     return (
         <ProductItemWrapper>
-            <ProductImage src={imageSrc} alt={name} />
+            <ProductImage src={imageObjects[0].thumbnail} alt={name} />
             <ProductName>{name}</ProductName>
             <PriceWrapper>
-                {discountPrice && (
-                    <DiscountPrice>R$ <DiscountPriceLineThrough>{discountPrice.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' })}</DiscountPriceLineThrough></DiscountPrice>
+                {discount && (
+                    <DiscountPrice>R$ <DiscountPriceLineThrough>{discount.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' })}</DiscountPriceLineThrough></DiscountPrice>
                 )}
                 <Price>R$ {price.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' })}</Price>
             </PriceWrapper>

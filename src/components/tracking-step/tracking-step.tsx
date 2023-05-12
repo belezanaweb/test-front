@@ -1,5 +1,6 @@
 import { useState } from 'react';
-import { Container, Steps, Step, StyledNavLink } from './tracking-step.styled';
+import { useLocation } from 'react-router-dom';
+import { Container, Steps, Step, StepWrapper } from './tracking-step.styled';
 
 export interface ITrackingStepProps {
     name: string;
@@ -9,30 +10,29 @@ export interface ITrackingStepProps {
 const stepsList: ITrackingStepProps[] = [
     {
         name: 'Sacola',
-        url: 'carrinho',
+        url: '/carrinho',
     },
     {
         name: 'Pagamento',
-        url: 'checkout',
+        url: '/checkout',
     },
     {
         name: 'Confirmação',
-        url: 'confirmacao',
+        url: '/confirmacao',
     }
 ];
 
 const TrackingStep = () => {
     const [steps] = useState(stepsList);
+    const { pathname } = useLocation();
 
     return (
         <Container>
             <Steps>
                 {steps.map(({ name, url }: ITrackingStepProps) => (
-                    <Step key={name}>
-                        <StyledNavLink to={`/${url}`}>
-                            {name}
-                        </StyledNavLink>
-                    </Step>
+                    <StepWrapper key={name}>
+                        <Step className={pathname === url ? 'active' : ''}>{name}</Step>
+                    </StepWrapper>
                 ))}
             </Steps>
         </Container>

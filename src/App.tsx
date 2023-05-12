@@ -1,11 +1,13 @@
-import React from 'react';
 import Router from './routes/Routes';
 import { Container } from './App.styled';
+import { CartProvider } from './context/cart.context';
 
 const App = (): JSX.Element => {
   return (
     <Container>
-      <Router />
+      <CartProvider>
+        <Router />
+      </CartProvider>
     </Container>
   );
 }
