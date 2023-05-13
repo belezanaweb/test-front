@@ -1,12 +1,26 @@
 
 import { styled } from '../../stitches.config';
 
+export const TrackingStepContainer = styled('div', {
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'flex-end',
+    backgroundColor: '$white',
+    boxShadow: '0px 2px 4px rgba(0, 0, 0, 0.1)',
+
+    '@tablet': {
+        width: '100%',
+    }
+});
+
 export const Container = styled('div', {
     display: 'flex',
     justifyContent: 'center',
     alignItems: 'flex-end',
-    backgroundColor: '#FFF',
-    boxShadow: '0px 2px 4px rgba(0, 0, 0, 0.1)',
+
+    '@tablet': {
+        width: '100%',
+    }
 });
 
 export const Steps = styled('ul', {
@@ -34,16 +48,17 @@ export const Step = styled('div', {
     display: 'block',
     padding: '10px 12px 8px',
     textDecoration: 'none',
-    color: '#878787',
-    borderBottom: '1px solid #878787',
+    color: '$darkGray',
+    borderBottom: '1px solid darkGray',
 
     '&.active': {
         paddingBottom: '5px',
-        color: '#000000',
-        borderBottom: '4px solid #000000',
+        color: '$black',
+        borderBottom: '4px solid black',
     },
 
     '@tablet': {
         padding: '30px 25px 8px',
     }
 });
+

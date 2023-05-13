@@ -46,12 +46,12 @@ export const Label = styled('label', {
     marginBottom: '5px',
     fontSize: '14px',
     lineHeight: '16px',
-    color: '#515151',
+    color: '$darkerGray',
 });
 
 export const Input = styled('input', {
     width: '100%',
-    background: '#FFFFFF',
+    background: '$white',
     border: '1px solid #CCCCCC',
     borderRadius: '4px',
     padding: '14px',

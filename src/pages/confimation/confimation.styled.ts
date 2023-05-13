@@ -5,7 +5,7 @@ export const Title = styled('h1', {
     margin: '8px 0px',
     fontSize: '22px',
     fontWeight: '400',
-    color: '#000000',
+    color: '$black',
 });
 
 export const InfoContainer = styled(Base, {
@@ -16,7 +16,7 @@ export const Info = styled('p', {
     fontSize: '16px',
     marginTop: '0',
     marginBottom: '8px',
-    color: '#515151'
+    color: '$darkerGray'
 });
 
 export const WrapperBodySession = styled(Base, {

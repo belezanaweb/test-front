@@ -9,11 +9,6 @@ export const LoaderOverlay = styled(motion.div, {
   display: "flex",
   width: "100%",
   height: "100%",
-  backgroundColor: "#7312b3",
+  backgroundColor: "$primaryHover",
   zIndex: 1000,
 });
-
-
-
-
-

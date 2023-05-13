@@ -14,7 +14,7 @@ export const RowContainer = styled('div', {
     paddingBottom: '5px',
 
     '@tablet': {
-        borderBottom: '2px solid #e3e3e3',
+        borderBottom: '1px solid $customGray',
     },
 });
 
@@ -26,6 +26,5 @@ export const RowContainerSubTotal = styled('div', {
 });
 
 export const RowContainerDiscount = styled('div', {
-    color: '#9222DC',
+    color: '$primary',
 });
-

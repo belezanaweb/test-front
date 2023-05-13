@@ -57,7 +57,7 @@ const Cart = (): JSX.Element => {
                             <>
                                 <TotalContainer />
                                 <ButtonContainer>
-                                    <Button disabled={!cart.items.length} onClick={() => navigate('/checkout')}>Seguir para o pagamento</Button>
+                                    <Button color={'primary'} disabled={!cart.items.length} onClick={() => navigate('/checkout')}>Seguir para o pagamento</Button>
                                 </ButtonContainer>
                             </>
                         )}

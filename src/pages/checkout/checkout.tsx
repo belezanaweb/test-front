@@ -51,7 +51,7 @@ const Checkout: React.FC = () => {
                     <WrapperFooterSession>
                         <TotalContainer />
                         <ButtonContainer>
-                            <Button type="submit" form="credit-cart-form" disabled={!isFormValid}>Finalizar pedido</Button>
+                            <Button color={"primary"} type="submit" form="credit-cart-form" disabled={!isFormValid}>Finalizar pedido</Button>
                         </ButtonContainer>
                     </WrapperFooterSession>
                 </TotalResult>

@@ -1,10 +1,5 @@
 import { Base, styled } from "../../stitches.config";
 
-export const ButtonContainer = styled('div', {
-    display: 'flex',
-    marginTop: '24px',
-});
-
 export const WrapperBodySession = styled(Base, {
     padding: '20px 0'
 });
@@ -28,4 +23,9 @@ export const EmptyCartTitle = styled('h2', {
 export const EmptyCartDescription = styled('p', {
     fontSize: '14px',
     margin: '0',
+});
+
+export const ButtonContainer = styled('div', {
+    display: 'flex',
+    marginTop: '24px',
 });

@@ -18,7 +18,8 @@ export const WrapperFooterSession = styled(Base, {
 
 export const ButtonContainer = styled('div', {
     display: 'flex',
-    justifyContent: 'center',
+    justifyContent: 'flex-end',
     marginTop: '28px'
 });
+
 

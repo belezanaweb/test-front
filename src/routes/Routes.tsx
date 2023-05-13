@@ -7,16 +7,19 @@ import TrackingStep from '../components/tracking-step/tracking-step';
 import { AppContainer, Base } from '../stitches.config';
 import { useCart } from '../context/cart.context';
 import { ConfirmationRoute } from './ConfirmationRoute';
+import { TrackingStepContainer } from '../components/tracking-step/tracking-step.styled';
 
 const Router = () => {
     const { cart } = useCart();
 
     return (
         <BrowserRouter>
-            <Base>
-                <TrackingStep />
-            </Base>
             <AppContainer>
+                <TrackingStepContainer>
+                    <Base>
+                        <TrackingStep />
+                    </Base>
+                </TrackingStepContainer>
                 <Routes>
                     <Route index element={<Cart />} />
                     <Route path="/carrinho" element={<Cart />} />

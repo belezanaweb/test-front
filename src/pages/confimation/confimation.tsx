@@ -74,7 +74,7 @@ const ConfirmationOrder = () => {
                 <WrapperFooterSession>
                     <TotalContainer />
                     <ButtonContainer>
-                        <Button onClick={() => goToInitial()}>Voltar ao inicio da Loja</Button>
+                        <Button color={'secondary'} onClick={() => goToInitial()}>Voltar ao inicio da Loja</Button>
                     </ButtonContainer>
                 </WrapperFooterSession>
             </TotalResult>
