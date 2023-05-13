@@ -1,14 +1,24 @@
 import Router from './routes/Routes';
-import { Container } from './App.styled';
 import { CartProvider } from './context/cart.context';
+import { AppContainer, Base } from './stitches.config';
+import { TrackingStepContainer } from './components/tracking-step/tracking-step.styled';
+import TrackingStep from './components/tracking-step/tracking-step';
+import { BrowserRouter } from 'react-router-dom';
 
 const App = (): JSX.Element => {
   return (
-    <Container>
-      <CartProvider>
-        <Router />
-      </CartProvider>
-    </Container>
+    <CartProvider>
+      <BrowserRouter>
+        <AppContainer>
+          <TrackingStepContainer>
+            <Base>
+              <TrackingStep />
+            </Base>
+          </TrackingStepContainer>
+          <Router />
+        </AppContainer>
+      </BrowserRouter>
+    </CartProvider>
   );
 }
 
