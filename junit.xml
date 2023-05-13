@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites name="jest tests" tests="4" failures="0" errors="0" time="2.001">
+  <testsuite name="ProductItem" errors="0" failures="0" skipped="0" timestamp="2023-05-13T20:15:34" time="1.725" tests="4">
+    <testcase classname="ProductItem should render the product name" name="ProductItem should render the product name" time="0.02">
+    </testcase>
+    <testcase classname="ProductItem should render the product price and discount price" name="ProductItem should render the product price and discount price" time="0.003">
+    </testcase>
+    <testcase classname="ProductItem should render the product price only" name="ProductItem should render the product price only" time="0.002">
+    </testcase>
+    <testcase classname="ProductItem should render the product image" name="ProductItem should render the product image" time="0.002">
+    </testcase>
+  </testsuite>
+</testsuites>

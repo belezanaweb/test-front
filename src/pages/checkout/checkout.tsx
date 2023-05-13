@@ -4,7 +4,7 @@ import { useNavigate } from "react-router";
 import { BackgroundSection, TotalResult } from "../../stitches.config";
 import { CreditCardForm, FormProps } from "../../forms/credit-card/credit-card";
 import { ButtonContainer, Title, WrapperBodySession, WrapperFooterSession } from "./checkout.styled";
-import { TotalContainer } from "../../components/total-container/total-container";
+import { TotalContainer } from "../../components/total-container/total-container.component";
 import { Button } from "../../components/button/button.styled";
 import { Loader } from "../../components/loader/loader.component";
 import { generateRandomString } from "../../services/random-string.service";

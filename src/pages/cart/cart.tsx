@@ -1,7 +1,7 @@
 import { useCallback, useEffect, useMemo, useState } from 'react';
 import { useNavigate } from "react-router-dom";
-import ProductItem from '../../components/product-item/product-item';
-import { TotalContainer } from '../../components/total-container/total-container';
+import ProductItem from '../../components/product-item/product-item.component';
+import { TotalContainer } from '../../components/total-container/total-container.component';
 import { BackgroundSection, TotalResult } from '../../stitches.config';
 import { Button } from '../../components/button/button.styled';
 import { ButtonContainer, EmptyCartContainer, EmptyCartDescription, EmptyCartTitle, WrapperBodySession, WrapperFooterSession } from './cart.styled';

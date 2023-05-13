@@ -1,11 +1,11 @@
 import { useNavigate } from 'react-router';
 import { Button } from '../../components/button/button.styled';
-import { TotalContainer } from '../../components/total-container/total-container';
+import { TotalContainer } from '../../components/total-container/total-container.component';
 import { BackgroundSection, TotalResult } from '../../stitches.config';
 import { ButtonContainer, WrapperBodySession, WrapperFooterSession, Space, Title, InfoContainer, Info } from './confimation.styled';
 import { useEffect, useMemo, useState } from 'react';
 import { ICartItemViewModel, ICreditCart } from '../../types/cart.types';
-import ProductItem from '../../components/product-item/product-item';
+import ProductItem from '../../components/product-item/product-item.component';
 
 const ConfirmationOrder = () => {
     const navigate = useNavigate();

@@ -13,15 +13,15 @@ export async function getCartService(): Promise<ICartViewModel> {
     })
 }
 
-function cartModelToViewModel(model: ICartModel): ICartViewModel {
+export function cartModelToViewModel(model: ICartModel): ICartViewModel {
     return {
-        items: model.items.map(({ product: { sku, name, imageObjects, priceSpecification }, quantity }: ICartItemModel) => {
+        items: model?.items?.map(({ product: { sku, name, imageObjects, priceSpecification }, quantity }: ICartItemModel) => {
             return {
                 quantity: quantity,
                 product: {
                     sku: sku,
                     name: name,
-                    imageObjects: imageObjects.map(({ thumbnail, small, valid }: ICartImageModel) => {
+                    imageObjects: imageObjects?.map(({ thumbnail, small, valid }: ICartImageModel) => {
                         return {
                             thumbnail: thumbnail,
                             small: small,

@@ -1,6 +1,6 @@
 import { useLocation } from "react-router-dom";
 import { useCart } from "../../context/cart.context";
-import { Container, RowContainer, RowContainerSubTotal, RowContainerDiscount } from "./total-container.styled";
+import { Container, RowContainer, RowContainerSubTotal, RowContainerDiscount } from "./total-container.component.styled";
 
 
 export const TotalContainer = () => {
