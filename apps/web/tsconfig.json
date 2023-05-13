@@ -1,0 +1,11 @@
+{
+  "extends": "@test-front/tsconfig/vite.json",
+  "compilerOptions": {
+    "types": ["vitest/globals"],
+    "paths": {
+      "@/*": ["./src/*"]
+    }
+  },
+  "include": ["src"],
+  "references": [{ "path": "./tsconfig.node.json" }]
+}

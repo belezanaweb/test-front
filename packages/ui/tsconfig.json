@@ -1,0 +1,5 @@
+{
+  "extends": "@test-front/tsconfig/react-library.json",
+  "include": ["."],
+  "exclude": ["dist", "build", "node_modules"]
+}

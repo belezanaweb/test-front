@@ -1,0 +1,9 @@
+{
+  "name": "@test-front/tailwind",
+  "version": "0.0.0",
+  "private": true,
+  "license": "MIT",
+  "devDependencies": {
+    "tailwindcss": "^3.3.2"
+  }
+}
