@@ -1,6 +1,6 @@
 import { ICartImageViewModel, ICartItemViewModel, ICartPriceViewModel, ICartViewModel } from "../types/cart.types";
 
-export const mockCartData: ICartViewModel = {
+export const mockCartDataView: ICartViewModel = {
   items: [{
     quantity: 1,
     product: {
