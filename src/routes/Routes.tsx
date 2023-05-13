@@ -6,6 +6,7 @@ import { PrivateRoute } from './PrivateRoute';
 import TrackingStep from '../components/tracking-step/tracking-step';
 import { AppContainer } from '../stitches.config';
 import { useCart } from '../context/cart.context';
+import { ConfirmationRoute } from './ConfirmationRoute';
 
 const Router = () => {
     const { cart } = useCart();
@@ -20,7 +21,7 @@ const Router = () => {
                     <Route path="/checkout" element={<PrivateRoute emptyCart={!cart.items.length} />}>
                         <Route path="" element={<Checkout />} />
                     </Route>
-                    <Route path="/confirmacao" element={<PrivateRoute emptyCart={!cart.items.length} />}>
+                    <Route path="/confirmacao" element={<ConfirmationRoute />}>
                         <Route path="" element={<ConfirmationOrder />} />
                     </Route>
                 </Routes>

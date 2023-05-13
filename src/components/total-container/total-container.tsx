@@ -1,9 +1,11 @@
+import { useLocation } from "react-router-dom";
 import { useCart } from "../../context/cart.context";
 import { Container, RowContainer, RowContainerSubTotal, RowContainerDiscount } from "./total-container.styled";
 
 
 export const TotalContainer = () => {
     const { cart } = useCart();
+    const { pathname } = useLocation();
 
     const { items, discount, subTotal, shippingTotal, total } = cart;
 
@@ -14,7 +16,7 @@ export const TotalContainer = () => {
         <Container>
             <RowContainer>
                 <div>Produtos: ({`${items.length} ${itemDescription}`})</div>
-                <div>{formatCurrency(total)}</div>
+                <div>{formatCurrency(subTotal)}</div>
             </RowContainer>
             <RowContainer>
                 <div>Frete:</div>
@@ -25,8 +27,8 @@ export const TotalContainer = () => {
                 <RowContainerDiscount><div>{formatCurrency(discount)}</div></RowContainerDiscount>
             </RowContainer>
             <RowContainerSubTotal>
-                <div>Subtotal:</div>
-                <div>{formatCurrency(subTotal)}</div>
+                <div>{pathname !== '/confirmacao' ? 'Subtotal' : 'Total'}:</div>
+                <div>{formatCurrency(total)}</div>
             </RowContainerSubTotal>
         </Container>
     );

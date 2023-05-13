@@ -38,6 +38,7 @@ export const ProductName = styled('h3', {
 
 export const PriceWrapper = styled('div', {
     display: 'flex',
+    textAlign: 'right',
     flexDirection: 'column',
 });
 

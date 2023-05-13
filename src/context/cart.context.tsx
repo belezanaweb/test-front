@@ -1,4 +1,4 @@
-import React, { createContext, useContext, useState } from "react";
+import React, { createContext, useContext, useEffect, useState } from "react";
 import { ICartViewModel } from "../types/cart.types";
 
 type CartContextProps = {
@@ -43,13 +43,17 @@ type CartProviderProps = {
 };
 
 export const CartProvider = ({ children }: CartProviderProps) => {
-    const [cart, setCart] = useState<ICartViewModel>({
-        items: [],
-        subTotal: 0,
-        shippingTotal: 0,
-        discount: 0,
-        total: 0,
+    const [cart, setCart] = useState<ICartViewModel>(() => {
+        const data = localStorage.getItem("cart");
+        if (data) {
+            return JSON.parse(data);
+        }
+        return { items: [], subTotal: 0, shippingTotal: 0, discount: 0, total: 0 };
     });
+
+    useEffect(() => {
+        localStorage.setItem("cart", JSON.stringify(cart));
+    }, [cart]);
 
     return (
         <CartContext.Provider value={{ cart, setCart }}>

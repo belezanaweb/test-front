@@ -5,7 +5,7 @@ import { yupResolver } from '@hookform/resolvers/yup';
 import { CreditCardRow, CreditCardWrapper, WrapperDate, WrapperCvv, Label, Input, ErrorMessage } from './credit-card.styled';
 import { withHookFormMask } from 'use-mask-input';
 
-type FormProps = {
+export type FormProps = {
     cardNumber: string;
     cardName: string;
     expirationDate: string;
@@ -14,6 +14,7 @@ type FormProps = {
 
 interface CreditCardFormProps {
     onValid: (isValid: boolean) => void;
+    onSend: (data: FormProps) => void;
 }
 
 const schema = yup.object({
@@ -32,9 +33,9 @@ const schema = yup.object({
         .required("O código CVV é obrigatório"),
 });
 
-export const CreditCardForm: React.FC<CreditCardFormProps> = ({ onValid }: CreditCardFormProps) => {
+export const CreditCardForm: React.FC<CreditCardFormProps> = ({ onValid, onSend }: CreditCardFormProps) => {
     const { register, handleSubmit, formState: { errors, isValid } } = useForm<FormProps>({ resolver: yupResolver(schema) });
-    const onSubmit: SubmitHandler<FormProps> = data => console.log(data);
+    const onSubmit: SubmitHandler<FormProps> = data => onSend(data);
 
     const [cardName] = useState('');
     const [cardNumber] = useState('');
