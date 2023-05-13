@@ -6,8 +6,6 @@ import { CreditCardForm, FormProps } from "../../forms/credit-card/credit-card";
 import { ButtonContainer, Title, WrapperBodySession, WrapperFooterSession } from "./checkout.styled";
 import { TotalContainer } from "../../components/total-container/total-container";
 import { Button } from "../../components/button/button.styled";
-import { localStorageService } from "../../services/local-storage.service";
-import { useCart } from "../../context/cart.context";
 import { Loader } from "../../components/loader/loader.component";
 import { generateRandomString } from "../../services/random-string.service";
 
@@ -15,7 +13,6 @@ const Checkout: React.FC = () => {
     const navigate = useNavigate();
     const [isFormValid, setIsFormValid] = useState(false);
     const [isLoading, setIsLoading] = useState<boolean>(false);
-    const { cart } = useCart();
 
     const handleFormValidity = (isValid: boolean) => {
         setIsFormValid(isValid);
@@ -31,9 +28,8 @@ const Checkout: React.FC = () => {
 
 
         setTimeout(() => {
-            localStorageService.set('userData', JSON.stringify(data))
-            localStorageService.set('cart', JSON.stringify(cart))
-            localStorageService.set('order-number', JSON.stringify(id))
+            localStorage.setItem('client-data', JSON.stringify(data))
+            localStorage.setItem('order-number', JSON.stringify(id))
             navigate(`/confirmacao?${params.toString()}`);
             setIsLoading(false);
         }, 2000);

@@ -2,10 +2,21 @@
 import { Base, styled } from '../../stitches.config';
 
 export const Title = styled('h1', {
-    margin: '6px 0px 16px 0px',
+    margin: '8px 0px',
+    fontSize: '22px',
     fontWeight: '400',
-    fontSize: '20px',
-    lineHeight: '24px',
+    color: '#000000',
+});
+
+export const InfoContainer = styled(Base, {
+    textAlign: 'center',
+});
+
+export const Info = styled('p', {
+    fontSize: '16px',
+    marginTop: '0',
+    marginBottom: '8px',
+    color: '#515151'
 });
 
 export const WrapperBodySession = styled(Base, {

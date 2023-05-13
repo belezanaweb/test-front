@@ -69,3 +69,10 @@ export interface ICartPriceViewModel {
     percent: number;
     discount: number;
 }
+
+export interface ICreditCart {
+    cardNumber: string;
+    cardName: string;
+    expirationDate: string;
+    cvv: string;
+}

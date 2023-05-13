@@ -14,12 +14,18 @@ export const Steps = styled('ul', {
     padding: '0',
     margin: '0',
     listStyleType: 'none',
+
+    '@tablet': {
+        width: '100%',
+    }
 });
 
 export const StepWrapper = styled('li', {
     fontSize: '0.875rem',
 
     '@tablet': {
+        width: '100%',
+        textAlign: 'center',
         fontSize: '1rem',
     }
 });

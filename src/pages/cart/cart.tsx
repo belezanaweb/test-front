@@ -14,7 +14,7 @@ const Cart = (): JSX.Element => {
     const navigate = useNavigate();
     const [isLoading, setIsLoading] = useState<boolean>(true);
     const { cart, setCart } = useCart();
-    const showFooter = cart.items.length > 1;
+    const showFooter = cart?.items?.length > 1;
 
     const onInit = useCallback(async () => {
         const cartResponse = await getCartService();
@@ -27,7 +27,7 @@ const Cart = (): JSX.Element => {
     }, [onInit]);
 
     const productsList = useMemo(() => {
-        return cart.items.map((item: ICartItemViewModel, index: number) => (
+        return cart?.items?.map((item: ICartItemViewModel, index: number) => (
             <ProductItem key={index} item={item} />
         ));
     }, [cart.items]);

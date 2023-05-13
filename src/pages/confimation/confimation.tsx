@@ -2,42 +2,72 @@ import { useNavigate } from 'react-router';
 import { Button } from '../../components/button/button.styled';
 import { TotalContainer } from '../../components/total-container/total-container';
 import { BackgroundSection, TotalResult } from '../../stitches.config';
-import { ButtonContainer, WrapperBodySession, WrapperFooterSession, Space } from './confimation.styled';
-import { useEffect } from 'react';
-import { localStorageService } from '../../services/local-storage.service';
+import { ButtonContainer, WrapperBodySession, WrapperFooterSession, Space, Title, InfoContainer, Info } from './confimation.styled';
+import { useEffect, useMemo, useState } from 'react';
+import { ICartItemViewModel, ICreditCart } from '../../types/cart.types';
+import ProductItem from '../../components/product-item/product-item';
 
 const ConfirmationOrder = () => {
     const navigate = useNavigate();
+    const [items, setItems] = useState<ICartItemViewModel[]>([]);
+    const [creditCart, setCreditCart] = useState<ICreditCart>();
 
     useEffect(() => {
-        window.addEventListener('beforeunload', onDestroy);
+        const cartString = localStorage.getItem('cart');
+        const cart = cartString ? JSON.parse(cartString) : null;
 
-        return () => {
-            window.removeEventListener('beforeunload', onDestroy);
+        const creditCartString = localStorage.getItem('client-data');
+        const creditCart = creditCartString ? JSON.parse(creditCartString) : null;
+
+        if (cart) {
+            setItems(cart.items);
         }
-    }, []);
+
+        if (creditCart) {
+            setCreditCart(creditCart);
+        }
+    }, [setItems]);
 
     const goToInitial = () => {
+        localStorage.removeItem('client-data');
+        localStorage.removeItem('cart');
+        localStorage.removeItem('order-number');
         navigate('/carrinho');
     };
 
-    const onDestroy = () => {
-        localStorageService.remove('userData');
-        localStorageService.remove('cart');
-        localStorageService.remove('order-number');
+    const productsList = useMemo(() => {
+        return items?.map((item: ICartItemViewModel, index: number) => (
+            <ProductItem key={index} item={item} />
+        ));
+    }, [items]);
+
+    const getLastFourDigits = (creditNumber: string | undefined) => {
+        if (creditNumber) {
+            return creditNumber.substring(creditNumber.length - 4);
+        }
+    };
+
+    const getExpirationDate = (date: string | undefined) => {
+        if (date) {
+            const [month, year] = date.split('/');
+            return `${month}/20${year}`;
+        }
     };
 
     return (
         <>
             <WrapperBodySession>
                 <BackgroundSection>
-                    <h1>ConfirmationOrder</h1>
-                    <p>Aqui fica o conteúdo do ConfirmationOrder.</p>
+                    <InfoContainer>
+                        <Title>Compra efetuada com sucesso</Title>
+                        <Info>{`****.****.****.${getLastFourDigits(creditCart?.cardNumber)}`}</Info>
+                        <Info>{creditCart?.cardName} </Info>
+                        <Info>{getExpirationDate(creditCart?.expirationDate)}</Info>
+                    </InfoContainer>
                 </BackgroundSection>
                 <Space />
                 <BackgroundSection>
-                    <h1>ConfirmationOrder</h1>
-                    <p>Aqui fica o conteúdo do ConfirmationOrder.</p>
+                    {productsList}
                 </BackgroundSection>
             </WrapperBodySession>
             <TotalResult>
