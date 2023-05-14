@@ -1,9 +1,8 @@
-// eslint-disable-next-line @typescript-eslint/no-var-requires
 const { fontFamily } = require('tailwindcss/defaultTheme')
 
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  content: ['./index.html', 'src/**/*.{js,ts,jsx,tsx}', '../../ui/**/*.{js,ts,jsx,tsx}'],
+  content: ['../../packages/common-ui/**/*.{tsx,ts}', 'src/**/*.{tsx,ts}'],
   theme: {
     colors: {
       transparent: 'transparent',

@@ -1,11 +1,14 @@
 {
-  "name": "@test-front/ui",
+  "name": "@test-front/common-ui",
   "version": "0.0.0",
   "main": "./src/index.ts",
   "types": "./src/index.ts",
   "license": "MIT",
   "scripts": {
     "lint": "eslint \"**/*.ts*\""
+  },
+  "dependencies": {
+    "class-variance-authority": "^0.6.0"
   },
   "devDependencies": {
     "@types/react": "^18.2.0",
@@ -15,8 +18,9 @@
     "typescript": "^4.5.2",
     "postcss": "^8.4.23",
     "autoprefixer": "^10.4.14",
-    "@test-front/tsconfig": "*",
+    "tailwindcss": "^3.3.2",
     "@test-front/tailwind": "*",
+    "@test-front/tsconfig": "*",
     "eslint-config-custom": "*"
   }
 }

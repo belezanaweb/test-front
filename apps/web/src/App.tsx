@@ -1,10 +1,9 @@
-import { Button } from '@test-front/ui'
+import { Button } from '@test-front/common-ui'
 
 export default function App() {
   return (
-    <div className="bg-primary h-screen text-lg text-gray-100">
-      <Button />
-      <h1>Test front</h1>
+    <div className="h-screen bg-black p-5">
+      <Button>Prosseguir para o pagamento</Button>
     </div>
   )
 }
