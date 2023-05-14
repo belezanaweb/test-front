@@ -7,14 +7,18 @@ module.exports = {
     colors: {
       transparent: 'transparent',
       current: 'currentColor',
-      primary: '#9222DC',
+      primary: {
+        100: '#9222DC',
+        200: '#560789'
+      },
       black: '#000000',
-      surface: '#FFFFFF',
-      background: '#F5F5F5',
+      white: '#FFFFFF',
       gray: {
-        100: '#CCCCCC',
-        200: '#515151',
-        300: '#878787'
+        100: '#F5F5F5',
+        200: '#CCCCCC',
+        300: '#9B9B9B',
+        400: '#878787',
+        500: '#515151'
       }
     },
     fontFamily: {
