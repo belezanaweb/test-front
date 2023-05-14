@@ -4,7 +4,7 @@ import { SubmitHandler, useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
 import { CreditCardRow, CreditCardWrapper, WrapperDate, WrapperCvv, Label, Input, ErrorMessage } from './credit-card.styled';
 import { withHookFormMask } from 'use-mask-input';
-import { format, parse } from 'date-fns';
+import { parse } from 'date-fns';
 
 
 export type FormProps = {
@@ -45,7 +45,7 @@ const schema = yup.object({
 });
 
 export const CreditCardForm: React.FC<CreditCardFormProps> = ({ onValid, onSend }: CreditCardFormProps) => {
-    const { register, handleSubmit, formState: { errors, isValid } } = useForm<FormProps>({ resolver: yupResolver(schema) });
+    const { register, handleSubmit, formState: { errors, isValid }, trigger } = useForm<FormProps>({ resolver: yupResolver(schema) });
     const onSubmit: SubmitHandler<FormProps> = data => onSend(data);
 
     const [cardName] = useState('');
@@ -65,6 +65,7 @@ export const CreditCardForm: React.FC<CreditCardFormProps> = ({ onValid, onSend 
                     {...withHookFormMask(register('cardNumber'), ['9999 9999 9999 9999', '9999 9999 9999 9999'], { required: true })}
                     defaultValue={cardNumber}
                     placeholder='0000 0000 0000 0000'
+                    onBlur={() => trigger('cardNumber')}
                 />
                 <ErrorMessage>{errors.cardNumber?.message}</ErrorMessage>
             </CreditCardWrapper>
@@ -76,6 +77,7 @@ export const CreditCardForm: React.FC<CreditCardFormProps> = ({ onValid, onSend 
                     {...register('cardName', { required: true })}
                     defaultValue={cardName}
                     placeholder='Nome impresso no cartão'
+                    onBlur={() => trigger('cardName')}
                 />
                 <ErrorMessage>{errors.cardName?.message}</ErrorMessage>
             </CreditCardWrapper>
@@ -87,6 +89,7 @@ export const CreditCardForm: React.FC<CreditCardFormProps> = ({ onValid, onSend 
                         {...withHookFormMask(register('expirationDate'), ['99/99', '99/99'], { required: true })}
                         defaultValue={expirationDate}
                         placeholder='MM/AA'
+                        onBlur={() => trigger('expirationDate')}
                     />
                     <ErrorMessage>{errors.expirationDate?.message}</ErrorMessage>
                 </WrapperDate>
@@ -96,6 +99,7 @@ export const CreditCardForm: React.FC<CreditCardFormProps> = ({ onValid, onSend 
                         {...withHookFormMask(register('cvv'), ['999', '999'], { required: true })}
                         defaultValue={cvv}
                         placeholder='000'
+                        onBlur={() => trigger('cvv')}
                     />
                     <ErrorMessage>{errors.cvv?.message}</ErrorMessage>
                 </WrapperCvv>

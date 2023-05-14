@@ -4,23 +4,31 @@ import { Container, Steps, Step, StepWrapper } from './tracking-step.styled';
 
 export interface ITrackingStepProps {
     name: string;
-    url: string;
+    stepTitle: string;
+    urls: string[];
 }
 
 const stepsList: ITrackingStepProps[] = [
     {
-        name: 'Sacola',
-        url: '/carrinho',
+        name: 'carrinho',
+        stepTitle: 'Sacola',
+        urls: ['/carrinho', '/'],
     },
     {
-        name: 'Pagamento',
-        url: '/checkout',
+        name: 'checkout',
+        stepTitle: 'Pagamento',
+        urls: ['/checkout'],
     },
     {
-        name: 'Confirmação',
-        url: '/confirmacao',
+        name: 'confirmacao',
+        stepTitle: 'Confirmação',
+        urls: ['/confirmacao'],
     }
 ];
+
+const activeStep = (pathname: string, urls: string[]): boolean => {
+    return urls.includes(pathname);
+};
 
 const TrackingStep = () => {
     const [steps] = useState(stepsList);
@@ -29,9 +37,9 @@ const TrackingStep = () => {
     return (
         <Container>
             <Steps>
-                {steps.map(({ name, url }: ITrackingStepProps) => (
+                {steps.map(({ stepTitle, name, urls }: ITrackingStepProps) => (
                     <StepWrapper key={name}>
-                        <Step className={pathname === url ? 'active' : ''}>{name}</Step>
+                        <Step className={activeStep(pathname, urls) ? 'active' : ''}>{stepTitle}</Step>
                     </StepWrapper>
                 ))}
             </Steps>
