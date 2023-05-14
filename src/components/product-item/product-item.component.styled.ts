@@ -53,7 +53,7 @@ export const Price = styled('span', {
 
 export const DiscountPrice = styled('span', {
   fontSize: '14px',
-  color: '$gray',
+  color: '$disabled',
   margin: 0,
 });
 

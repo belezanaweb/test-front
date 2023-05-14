@@ -1,6 +1,7 @@
 import { useLocation } from "react-router-dom";
 import { useCart } from "../../context/cart.context";
 import { Container, RowContainer, RowContainerSubTotal, RowContainerDiscount } from "./total-container.component.styled";
+import { formatCurrency } from "../../utils/format-currency.utils";
 
 
 export const TotalContainer = () => {
@@ -8,9 +9,7 @@ export const TotalContainer = () => {
     const { pathname } = useLocation();
 
     const { items, discount, subTotal, shippingTotal, total } = cart;
-
     const itemDescription = items.length === 1 ? `item` : 'itens';
-    const formatCurrency = (value: number) => new Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'BRL' }).format(value);
 
     return (
         <Container>

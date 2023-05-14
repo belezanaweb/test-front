@@ -4,6 +4,8 @@ import { SubmitHandler, useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
 import { CreditCardRow, CreditCardWrapper, WrapperDate, WrapperCvv, Label, Input, ErrorMessage } from './credit-card.styled';
 import { withHookFormMask } from 'use-mask-input';
+import { format, parse } from 'date-fns';
+
 
 export type FormProps = {
     cardNumber: string;
@@ -27,6 +29,15 @@ const schema = yup.object({
             /^(0[1-9]|1[0-2])\/?([0-9]{4}|[0-9]{2})$/,
             "insira uma data válida"
         )
+        .test('expiration', 'A data de validade deve ser a partir do ano atual', function (value) {
+            if (!value) {
+                return false;
+            }
+
+            const currentYear = new Date().getFullYear();
+            const expirationYear = parse(value, 'MM/yy', new Date()).getFullYear();
+            return expirationYear >= currentYear;
+        })
         .required("A data de validade é obrigatória"),
     cvv: yup.string()
         .matches(/^[0-9]{3}$/, "insira um cvv válido")

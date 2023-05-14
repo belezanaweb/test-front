@@ -1,5 +1,6 @@
 
 import { ICartItemViewModel } from "../../types/cart.types";
+import { formatCurrency } from "../../utils/format-currency.utils";
 import { DiscountPrice, DiscountPriceLineThrough, Price, PriceWrapper, ProductImage, ProductItemWrapper, ProductName } from "./product-item.component.styled";
 
 export interface ProductItemProps {
@@ -8,7 +9,7 @@ export interface ProductItemProps {
 
 export const testId = 'product-item';
 const ProductItem: React.FC<ProductItemProps> = ({ item }) => {
-    const { product: { imageObjects, name, priceSpecification: { discount, price } } } = item;
+    const { product: { imageObjects, name, priceSpecification: { discount, price, maxPrice } } } = item;
 
     return (
         <ProductItemWrapper data-testid="product-item">
@@ -16,9 +17,9 @@ const ProductItem: React.FC<ProductItemProps> = ({ item }) => {
             <ProductName data-testid={`${testId}-name`}>{name}</ProductName>
             <PriceWrapper>
                 {discount ? (
-                    <DiscountPrice data-testid={`${testId}-discount-price`}>R$ <DiscountPriceLineThrough data-testid="discount-price-line-through">{discount.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' })}</DiscountPriceLineThrough></DiscountPrice>
+                    <DiscountPrice data-testid={`${testId}-discount-price`}><DiscountPriceLineThrough data-testid="discount-price-line-through">{formatCurrency(maxPrice)}</DiscountPriceLineThrough></DiscountPrice>
                 ) : <></>}
-                <Price data-testid={`${testId}-price`}>R$ {price.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' })}</Price>
+                <Price data-testid={`${testId}-price`}>{formatCurrency(price)}</Price>
             </PriceWrapper>
         </ProductItemWrapper>
     );
