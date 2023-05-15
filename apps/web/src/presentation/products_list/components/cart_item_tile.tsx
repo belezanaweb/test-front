@@ -1,3 +1,4 @@
+import { currencyFormatter } from '@/core'
 import { Item } from '@/domain'
 
 type CartItemTileProps = {
@@ -7,8 +8,8 @@ type CartItemTileProps = {
 export default function CartItemTile({ item }: CartItemTileProps) {
   const product = item.product
   const productImage = product.imageObjects[0].small
-  const maxPrice = product.priceSpecification.maxPrice
-  const currentPrice = product.priceSpecification.price
+  const maxPrice = currencyFormatter.format(product.priceSpecification.maxPrice)
+  const currentPrice = currencyFormatter.format(product.priceSpecification.price)
   const hasDiscount = product.priceSpecification.discount > 0
 
   return (

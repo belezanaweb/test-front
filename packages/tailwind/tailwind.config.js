@@ -2,7 +2,7 @@ const { fontFamily } = require('tailwindcss/defaultTheme')
 
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  content: ['../../packages/common-ui/**/*.{tsx,ts}', 'src/**/*.{tsx,ts}'],
+  content: ['index.html', '../../packages/common-ui/**/*.{tsx,ts}', 'src/**/*.{tsx,ts}'],
   theme: {
     colors: {
       transparent: 'transparent',
@@ -24,6 +24,11 @@ module.exports = {
     },
     fontFamily: {
       sans: ['Arial', ...fontFamily.sans]
+    },
+    extend: {
+      boxShadow: {
+        '3xl': '0 35px 60px -15px rgba(0, 0, 0, 0.3)'
+      }
     }
   },
   plugins: [require('tailwindcss-radix')]

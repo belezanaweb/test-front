@@ -3,6 +3,7 @@
 import { useGetCartDataUseCase } from '@/core'
 import BottomPaymentInformation from '@/core/ui/components/bottom_payment_information'
 import { GetCartDataUseCase } from '@/domain'
+import { TabContent } from '@test-front/common-ui/src/components/tabs'
 import Tabs from '@test-front/common-ui/src/components/tabs/Tabs'
 import { useMemo } from 'react'
 import { CartItemsContainer } from './components'
@@ -18,28 +19,37 @@ export default function ProductsListPage({ useCase }: ProductsListPageProps) {
     () => [
       {
         title: 'Sacola',
-        value: 'bag',
-        content: <CartItemsContainer items={cartData.items} />
+        value: 'bag'
       },
       {
         title: 'Pagamento',
-        value: 'checkout',
-        content: <>hello 2</>
+        value: 'checkout'
       },
       {
         title: 'Confirmação',
-        value: 'confirmation',
-        content: <>hello 3</>
+        value: 'confirmation'
       }
     ],
-    [cartData]
+    []
   )
 
   return (
-    <div>
-      <Tabs tabs={tabsData} />
-      <span className="mt-2"></span>
-      <BottomPaymentInformation cartData={cartData} />
+    <div className="bg-gray-100">
+      {cartData?.items?.length && (
+        <>
+          <Tabs tabs={tabsData}>
+            <TabContent keyValue="bag">
+              {cartData?.items?.length && <CartItemsContainer items={cartData.items} />}
+            </TabContent>
+
+            <TabContent keyValue="checkout">checkout</TabContent>
+
+            <TabContent keyValue="confirmation">confirmation</TabContent>
+          </Tabs>
+
+          <BottomPaymentInformation cartData={cartData} />
+        </>
+      )}
     </div>
   )
 }

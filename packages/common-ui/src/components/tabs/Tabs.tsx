@@ -4,20 +4,20 @@ import * as TabsPrimitive from '@radix-ui/react-tabs'
 import { clsx } from 'clsx'
 import { ReactNode } from 'react'
 
-interface Tab {
-  title: string;
-  value: string;
-  content: ReactNode;
+type TabsProps = {
+  tabs: {
+    title: string,
+    value: string
+  }[],
+  children: ReactNode
 }
 
-interface TabsProps {
-  tabs: Tab[];
-}
-
-const Tabs = ({ tabs }: TabsProps) => {
+const Tabs = ({ tabs, children }: TabsProps) => {
   return (
-    <TabsPrimitive.Root defaultValue="tab1">
-      <TabsPrimitive.List className={clsx('flex w-full items-center justify-center shadow-md')}>
+    <TabsPrimitive.Root defaultValue="bag">
+      <TabsPrimitive.List
+        className={clsx('mb-5 flex w-full items-center justify-center bg-white shadow-md')}
+      >
         {tabs.map(({ title, value }) => (
           <TabsPrimitive.Trigger
             key={`tab-trigger-${value}`}
@@ -39,15 +39,7 @@ const Tabs = ({ tabs }: TabsProps) => {
           </TabsPrimitive.Trigger>
         ))}
       </TabsPrimitive.List>
-      {tabs.map(({ value, content }) => (
-        <TabsPrimitive.Content
-          key={`tab-content-${value}`}
-          value={value}
-          className={clsx('rounded-b-lg bg-white px-6 py-4')}
-        >
-          {content}
-        </TabsPrimitive.Content>
-      ))}
+      {children}
     </TabsPrimitive.Root>
   )
 }

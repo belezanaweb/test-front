@@ -1,3 +1,5 @@
+'use client'
+
 import { CCartRepository } from '@/data/repositories/c_cart_repository'
 import { CHttpClient } from '../http/c_http_client'
 
