@@ -8,19 +8,23 @@
     "lint": "eslint \"**/*.ts*\""
   },
   "dependencies": {
-    "class-variance-authority": "^0.6.0"
+    "@radix-ui/react-tabs": "^1.0.3",
+    "class-variance-authority": "^0.6.0",
+    "react-input-mask": "^2.0.4",
+    "clsx": "^1.2.1"
   },
   "devDependencies": {
-    "@types/react": "^18.2.0",
-    "@types/react-dom": "^18.2.0",
-    "eslint": "^8.40.0",
-    "react": "^17.0.2",
-    "typescript": "^4.5.2",
-    "postcss": "^8.4.23",
-    "autoprefixer": "^10.4.14",
-    "tailwindcss": "^3.3.2",
     "@test-front/tailwind": "*",
     "@test-front/tsconfig": "*",
-    "eslint-config-custom": "*"
+    "@types/react": "^18.2.0",
+    "@types/react-dom": "^18.2.0",
+    "@types/react-input-mask": "^3.0.2",
+    "autoprefixer": "^10.4.14",
+    "eslint": "^8.40.0",
+    "eslint-config-custom": "*",
+    "postcss": "^8.4.23",
+    "react": "^17.0.2",
+    "tailwindcss": "^3.3.2",
+    "typescript": "^4.5.2"
   }
 }

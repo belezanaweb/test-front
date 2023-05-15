@@ -19,11 +19,12 @@ module.exports = {
         300: '#9B9B9B',
         400: '#878787',
         500: '#515151'
-      }
+      },
+      error: '#DE1616'
     },
     fontFamily: {
       sans: ['Open Sans', ...fontFamily.sans]
     }
   },
-  plugins: []
+  plugins: [require('tailwindcss-radix')]
 }
