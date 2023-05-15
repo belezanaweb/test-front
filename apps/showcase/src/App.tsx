@@ -42,21 +42,20 @@ export default function App() {
         tabs={[
           {
             title: 'Inbox',
-            value: 'tab1',
-            content: <>hello</>
+            value: 'tab1'
           },
           {
             title: 'Today',
-            value: 'tab2',
-            content: <>hello 2</>
+            value: 'tab2'
           },
           {
             title: 'Upcoming',
-            value: 'tab3',
-            content: <>hello 3</>
+            value: 'tab3'
           }
         ]}
-      />
+      >
+        <h1>test</h1>
+      </Tabs>
     </div>
   )
 }

@@ -20,7 +20,7 @@ export default function InputField({
   ...props
 }: InputFieldProps) {
   return (
-    <div className="flex flex-col gap-1.5">
+    <div className="flex w-full flex-col gap-1.5">
       {label && (
         <label htmlFor={id} className="text-sm text-gray-500">
           {label}

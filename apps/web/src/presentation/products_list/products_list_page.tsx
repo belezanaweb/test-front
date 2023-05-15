@@ -6,6 +6,8 @@ import { GetCartDataUseCase } from '@/domain'
 import { TabContent } from '@test-front/common-ui/src/components/tabs'
 import Tabs from '@test-front/common-ui/src/components/tabs/Tabs'
 import { useMemo } from 'react'
+import { Confirmation } from '../confirmation'
+import PaymentForm from '../payment_form/PaymentForm'
 import { CartItemsContainer } from './components'
 
 export type ProductsListPageProps = {
@@ -42,9 +44,13 @@ export default function ProductsListPage({ useCase }: ProductsListPageProps) {
               {cartData?.items?.length && <CartItemsContainer items={cartData.items} />}
             </TabContent>
 
-            <TabContent keyValue="checkout">checkout</TabContent>
+            <TabContent keyValue="checkout">
+              <PaymentForm />
+            </TabContent>
 
-            <TabContent keyValue="confirmation">confirmation</TabContent>
+            <TabContent keyValue="confirmation">
+              {cartData?.items?.length && <Confirmation items={cartData.items} />}
+            </TabContent>
           </Tabs>
 
           <BottomPaymentInformation cartData={cartData} />
