@@ -23,7 +23,7 @@ module.exports = {
       error: '#DE1616'
     },
     fontFamily: {
-      sans: ['Open Sans', ...fontFamily.sans]
+      sans: ['Arial', ...fontFamily.sans]
     }
   },
   plugins: [require('tailwindcss-radix')]

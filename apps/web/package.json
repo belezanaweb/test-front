@@ -11,26 +11,28 @@
     "coverage": "vitest run --coverage"
   },
   "dependencies": {
+    "@test-front/common-ui": "*",
+    "axios": "^1.4.0",
     "react": "^18.2.0",
-    "react-dom": "^18.2.0",
-    "@test-front/common-ui": "*"
+    "react-dom": "^18.2.0"
   },
   "devDependencies": {
+    "@test-front/tailwind": "*",
+    "@test-front/tsconfig": "*",
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^13.4.0",
     "@types/react": "^18.0.26",
     "@types/react-dom": "^18.0.9",
     "@vitejs/plugin-react": "^3.0.0",
     "@vitest/coverage-c8": "^0.25.8",
+    "autoprefixer": "^10.4.14",
+    "eslint-config-custom": "*",
     "happy-dom": "^8.1.0",
+    "postcss": "^8.4.23",
+    "react-error-overlay": "6.0.9",
     "typescript": "^4.9.4",
     "vite": "^4.0.1",
     "vite-tsconfig-paths": "^4.0.3",
-    "vitest": "^0.25.8",
-    "@test-front/tsconfig": "*",
-    "eslint-config-custom": "*",
-    "postcss": "^8.4.23",
-    "autoprefixer": "^10.4.14",
-    "@test-front/tailwind": "*"
+    "vitest": "^0.25.8"
   }
 }
