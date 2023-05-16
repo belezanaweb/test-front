@@ -7,10 +7,9 @@
   "scripts": {
     "lint": "eslint \"**/*.ts*\"",
     "test": "vitest run",
-    "test:w": "vitest"
+    "test:watch": "vitest"
   },
   "dependencies": {
-    "@radix-ui/react-tabs": "^1.0.3",
     "class-variance-authority": "^0.6.0",
     "clsx": "^1.2.1",
     "react-input-mask": "^2.0.4"
