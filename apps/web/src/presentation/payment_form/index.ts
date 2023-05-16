@@ -1,1 +1,1 @@
-export * from './PaymentForm'
+export * from './payment_form';
