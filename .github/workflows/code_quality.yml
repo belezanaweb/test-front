@@ -1,9 +1,10 @@
-name: Pull Request CI
+name: Code Quality CI
 
 on:
   push:
-    branches: ['main']
+    branches: ["main"]
   pull_request:
+    types: [opened, synchronize]
 
 jobs:
   build:
@@ -23,10 +24,16 @@ jobs:
           cache: 'yarn'
 
       - name: Run install
-        run: install
+        uses: borales/actions-yarn@v4
+        with:
+          cmd: install
 
       - name: Build production bundle
-        run: build
+        uses: borales/actions-yarn@v4
+        with:
+          cmd: build
 
       - name: Test
-        run: test
+        uses: borales/actions-yarn@v4
+        with:
+          cmd: test
