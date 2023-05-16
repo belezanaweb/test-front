@@ -1,12 +1,15 @@
+'use client'
+
 import { currencyFormatter } from '@/core'
 import { CartResponse } from '@/domain'
-import { Button } from '@test-front/common-ui'
+import { ReactNode } from 'react'
 
 type BottomPaymentInformationProps = {
-  cartData: CartResponse
+  cartData: CartResponse,
+  children: ReactNode
 }
 
-export default function BottomPaymentInformation({ cartData }: BottomPaymentInformationProps) {
+export default function BottomPaymentInformation({ cartData, children }: BottomPaymentInformationProps) {
   const quantity = cartData?.items?.reduce((acc, curr) => acc + curr.quantity, 0)
 
   return (
@@ -35,9 +38,7 @@ export default function BottomPaymentInformation({ cartData }: BottomPaymentInfo
         </li>
       </ul>
 
-      <Button type="button" className="mt-6">
-        Seguir para o pagamento
-      </Button>
+      {children}
     </div>
   )
 }

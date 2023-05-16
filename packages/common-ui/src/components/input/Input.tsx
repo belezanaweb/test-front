@@ -1,5 +1,5 @@
 import { VariantProps } from 'class-variance-authority'
-import { InputHTMLAttributes } from 'react'
+import { InputHTMLAttributes, forwardRef } from 'react'
 import InputMask from 'react-input-mask'
 
 import { inputFieldStyles } from './styles'
@@ -7,20 +7,22 @@ import { inputFieldStyles } from './styles'
 export type InputFieldProps = {
   errorText?: string,
   label?: string,
-  mask?: string
+  mask?: string,
 } & InputHTMLAttributes<HTMLInputElement> &
   VariantProps<typeof inputFieldStyles>
 
-export default function InputField({
-  errorText,
-  label,
-  mask = '',
-  id,
-  hasError,
-  ...props
-}: InputFieldProps) {
-  return (
-    <div className="flex w-full flex-col gap-1.5">
+export const InputField = forwardRef<HTMLInputElement, InputFieldProps>(
+  ({
+    errorText,
+    label,
+    mask = '',
+    id,
+    ...props
+  }, reference) => {
+    const hasError = !!errorText?.length;
+
+    return (
+      <div className="flex w-full flex-col gap-1.5">
       {label && (
         <label htmlFor={id} className="text-sm text-gray-500">
           {label}
@@ -29,6 +31,7 @@ export default function InputField({
 
       <InputMask
         mask={mask}
+        inputRef={reference}
         maskChar={null}
         className={inputFieldStyles({ hasError })}
         id={id}
@@ -36,7 +39,10 @@ export default function InputField({
         onChange={props.onChange}
         {...props}
       />
-      {errorText && <span className="text-error text-xs">{errorText}</span>}
+
+      {hasError && <span className="text-error text-xs">{errorText}</span>}
     </div>
-  )
-}
+    )
+  }
+)
+
