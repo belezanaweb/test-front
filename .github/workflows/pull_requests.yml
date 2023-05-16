@@ -13,6 +13,8 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v3
+        with:
+          fetch-depth: 2
 
       - name: Setup Node 19
         uses: actions/setup-node@v3
@@ -21,16 +23,10 @@ jobs:
           cache: 'yarn'
 
       - name: Run install
-        uses: borales/actions-yarn@v4
-        with:
-          cmd: install
+        run: install
 
       - name: Build production bundle
-        uses: borales/actions-yarn@v4
-        with:
-          cmd: build
+        run: build
 
       - name: Test
-        uses: borales/actions-yarn@v4
-        with:
-          cmd: test
+        run: test
