@@ -1,4 +1,4 @@
-import { render, screen } from '../test/utils'
+import { render, screen } from 'common-test-config'
 import { InputField } from './input'
 
 describe('InputFieldComponent', () => {

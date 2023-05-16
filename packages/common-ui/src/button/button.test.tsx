@@ -1,10 +1,7 @@
 import { vi } from 'vitest'
 
-import { screen } from '@testing-library/react'
-import { render, userEvent } from '../test/utils'
+import { render, screen, userEvent } from 'common-test-config'
 import { Button } from './button'
-
-import '../test/setup-test'
 
 describe('Button', () => {
   let buttonElement: HTMLElement

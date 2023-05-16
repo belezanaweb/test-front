@@ -1,4 +1,4 @@
-import { render, screen } from "../test/utils";
+import { render, screen } from 'common-test-config';
 import { Card } from "./card";
 
 describe('CardComponent', () => {

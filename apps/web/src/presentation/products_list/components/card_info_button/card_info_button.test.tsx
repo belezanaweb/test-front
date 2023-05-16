@@ -1,3 +1,5 @@
+import { vi } from 'vitest'
+
 import { PaymentFormProvider } from '@/presentation/payment_form'
 import { render, screen, userEvent } from 'common-test-config'
 import { CartInfoButton } from './card_info_button'
@@ -11,18 +13,17 @@ const mockUseFormContext = {
 }
 
 vi.mock('react-hook-form', async () => ({
-  ...(await vi.importActual<any>('react-hook-form')),
+  ...await vi.importActual<any>('react-hook-form'),
   useFormContext: () => mockUseFormContext
 }))
 
 describe('BottomPaymentInformation', () => {
   let component: HTMLElement
-  let onCallToAction: () => void
 
   describe('[Button] on bag Tab', () => {
-    beforeEach(() => {
-      onCallToAction = vi.fn()
+    const onCallToAction = vi.fn()
 
+    beforeEach(() => {
       render(
         <PaymentFormProvider>
           <CartInfoButton tabKey="bag" onCallToAction={onCallToAction} />
@@ -43,9 +44,9 @@ describe('BottomPaymentInformation', () => {
   })
 
   describe('[Button] on payment Tab', () => {
-    beforeEach(() => {
-      onCallToAction = vi.fn()
+    const onCallToAction = vi.fn()
 
+    beforeEach(() => {
       render(
         <PaymentFormProvider>
           <CartInfoButton tabKey="payment" onCallToAction={onCallToAction} />
@@ -66,7 +67,7 @@ describe('BottomPaymentInformation', () => {
   })
 
   describe('[Button] on confirmation Tab', () => {
-    onCallToAction = vi.fn()
+    const onCallToAction = vi.fn()
 
     beforeEach(() => {
       render(

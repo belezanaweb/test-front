@@ -4,15 +4,14 @@ import BottomPaymentInformation from './bottom_payment_information'
 import { render, screen } from 'common-test-config'
 
 describe('BottomPaymentInformation', () => {
-  let component: HTMLElement | null
+  let element: HTMLElement | null
 
   beforeEach(() => {
     render(<BottomPaymentInformation cartData={fakeCartModel}>test</BottomPaymentInformation>)
-
-    component = screen.queryByTestId('bottom-payment-information')
+    element = screen.queryByTestId('bottom-payment-information')
   })
 
   it('should render component correctly', () => {
-    expect(component).toBeInTheDocument()
+    expect(element).toBeInTheDocument()
   })
 })
