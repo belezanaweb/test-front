@@ -1,8 +1,6 @@
-import { Button } from '@test-front/common-ui'
+import { Button, InputField } from '@test-front/common-ui'
 
 import Card from '@test-front/common-ui/src/components/card/Card'
-import InputField from '@test-front/common-ui/src/components/input/Input'
-import Tabs from '@test-front/common-ui/src/components/tabs/Tabs'
 
 export default function App() {
   return (
@@ -37,25 +35,6 @@ export default function App() {
       <InputField label="CVV" placeholder="000" mask="999" />
 
       <br />
-      <br />
-      <Tabs
-        tabs={[
-          {
-            title: 'Inbox',
-            value: 'tab1'
-          },
-          {
-            title: 'Today',
-            value: 'tab2'
-          },
-          {
-            title: 'Upcoming',
-            value: 'tab3'
-          }
-        ]}
-      >
-        <h1>test</h1>
-      </Tabs>
     </div>
   )
 }
