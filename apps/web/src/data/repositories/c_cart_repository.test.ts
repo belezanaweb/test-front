@@ -9,13 +9,15 @@ describe('CCartRepository', () => {
   let httpClient: HttpClient
   let repository: CartRepository
 
-  beforeAll(() => {
+  beforeEach(() => {
     httpClient = new MockHttpClient()
-    repository = new CCartRepository('fake.url', httpClient)
+    repository = new CCartRepository('http://fake.api', httpClient)
   })
 
-  it('should call fetchCartData with success', async () => {
+  it('should call fetchCartData() with success', async () => {
     await repository.fetchCartData()
+
     expect(httpClient.get).toHaveBeenCalledTimes(1)
+    expect(httpClient.get).toBeCalledWith('http://fake.api')
   })
 })

@@ -1,14 +1,15 @@
-import { render, RenderOptions } from '@testing-library/react';
-import userEvent from '@testing-library/user-event';
+/* eslint-disable import/export */
+import { render } from '@testing-library/react'
 
-import { ReactElement } from 'react';
-
-export function customRender(ui: ReactElement, options?: Omit<RenderOptions, 'wrapper'>) {
-  return {
-    ...render(ui, options)
-  }
+function customRender(ui: React.ReactElement, options = {}) {
+  return render(ui, {
+    // wrap provider(s) here if needed
+    wrapper: ({ children }) => children,
+    ...options,
+  })
 }
 
-export const user = userEvent.setup();
-
-export * from '@testing-library/react';
+export * from '@testing-library/react'
+export { default as userEvent } from '@testing-library/user-event'
+// override render export
+export { customRender as render }

@@ -7,7 +7,7 @@ import { buttonStyles } from './styles'
 
 type ButtonProps = ButtonHTMLAttributes<HTMLButtonElement> & VariantProps<typeof buttonStyles>
 
-export function Button({ intent, className, disabled, ...props }: ButtonProps) {
+export function Button({ intent, className, disabled, children, ...props }: ButtonProps) {
   return (
     <button
       className={clsx(
@@ -19,6 +19,8 @@ export function Button({ intent, className, disabled, ...props }: ButtonProps) {
       )}
       disabled={disabled}
       {...props}
-    />
+    >
+      {children}
+    </button>
   )
 }

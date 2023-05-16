@@ -1,6 +1,6 @@
 import { screen } from '@testing-library/react'
 import { vi } from 'vitest'
-import { customRender, user } from '../test/utils'
+import { render, userEvent } from '../test/utils'
 import { Button } from './button'
 
 describe('Button', () => {
@@ -8,10 +8,10 @@ describe('Button', () => {
     const onClick = vi.fn()
     const element = screen.getByText('button test')
 
-    customRender(<Button onClick={onClick}>button test</Button>)
+    render(<Button onClick={onClick}>button test</Button>)
     expect(element).toBeInTheDocument()
 
-    await user.click(element)
+    await userEvent.click(element)
     expect(onClick).toHaveBeenCalledTimes(1)
   })
 })
