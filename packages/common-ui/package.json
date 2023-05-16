@@ -5,7 +5,9 @@
   "types": "./src/index.ts",
   "license": "MIT",
   "scripts": {
-    "lint": "eslint \"**/*.ts*\""
+    "lint": "eslint \"**/*.ts*\"",
+    "test": "vitest run",
+    "test:w": "vitest"
   },
   "dependencies": {
     "@radix-ui/react-tabs": "^1.0.3",

@@ -22,25 +22,25 @@ export const InputField = forwardRef<HTMLInputElement, InputFieldProps>(
     const hasError = !!errorText?.length;
 
     return (
-      <div className="flex w-full flex-col gap-1.5">
-      {label && (
-        <label htmlFor={id} className="text-sm text-gray-500">
-          {label}
-        </label>
-      )}
+      <div data-testid="common-ui-input" className="flex w-full flex-col gap-1.5">
+        {label && (
+          <label data-testid="common-ui-input-label" htmlFor={id} className="text-sm text-gray-500">
+            {label}
+          </label>
+        )}
 
-      <InputMask
-        mask={mask}
-        inputRef={reference}
-        maskChar={null}
-        className={inputFieldStyles({ hasError })}
-        id={id}
-        value={props.value}
-        onChange={props.onChange}
-        {...props}
-      />
+        <InputMask
+          mask={mask}
+          inputRef={reference}
+          maskChar={null}
+          className={inputFieldStyles({ hasError })}
+          id={id}
+          value={props.value}
+          onChange={props.onChange}
+          {...props}
+        />
 
-      {hasError && <span className="text-error text-xs">{errorText}</span>}
+        {hasError && <span className="text-error text-xs">{errorText}</span>}
     </div>
     )
   }

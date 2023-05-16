@@ -1,17 +1,26 @@
-import { screen } from '@testing-library/react'
 import { vi } from 'vitest'
+
+import { screen } from '@testing-library/react'
 import { render, userEvent } from '../test/utils'
 import { Button } from './button'
 
+import '../test/setup-test'
+
 describe('Button', () => {
-  it('should render Button with success and mock user click behavior', async () => {
-    const onClick = vi.fn()
-    const element = screen.getByText('button test')
+  let buttonElement: HTMLElement
+  const onClickFn = vi.fn()
 
-    render(<Button onClick={onClick}>button test</Button>)
-    expect(element).toBeInTheDocument()
+  beforeEach(() => {
+    render(<Button onClick={onClickFn}>Next</Button>)
+    buttonElement = screen.getByTestId('common-ui-button')
+  })
 
-    await userEvent.click(element)
-    expect(onClick).toHaveBeenCalledTimes(1)
+  it('should render element correctly', () => {
+    expect(buttonElement).toBeInTheDocument()
+  })
+
+  it('should call onClick() event when user touch on button', async () => {
+    await userEvent.click(buttonElement)
+    expect(onClickFn).toHaveBeenCalledTimes(1)
   })
 })

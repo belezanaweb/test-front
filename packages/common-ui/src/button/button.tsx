@@ -10,6 +10,7 @@ type ButtonProps = ButtonHTMLAttributes<HTMLButtonElement> & VariantProps<typeof
 export function Button({ intent, className, disabled, children, ...props }: ButtonProps) {
   return (
     <button
+      data-testid="common-ui-button"
       className={clsx(
         buttonStyles({
           intent,

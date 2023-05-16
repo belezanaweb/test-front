@@ -8,5 +8,9 @@ interface CardProps {
 }
 
 export function Card({ children }: CardProps) {
-  return <div className={cardStyles()}>{children}</div>
+  return (
+    <div data-testid="common-ui-card" className={cardStyles()}>
+      {children}
+    </div>
+  )
 }
