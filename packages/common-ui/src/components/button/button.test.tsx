@@ -1,7 +1,7 @@
 import { screen } from '@testing-library/react'
 import { vi } from 'vitest'
 import { customRender, user } from '../../test/utils'
-import { Button } from './Button'
+import { Button } from './button'
 
 describe('Button', () => {
   it('should render Button with success and mock user click behavior', async () => {

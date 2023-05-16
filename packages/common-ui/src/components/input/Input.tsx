@@ -4,7 +4,7 @@ import InputMask from 'react-input-mask'
 
 import { inputFieldStyles } from './styles'
 
-export type InputFieldProps = {
+type InputFieldProps = {
   errorText?: string,
   label?: string,
   mask?: string,
@@ -45,4 +45,5 @@ export const InputField = forwardRef<HTMLInputElement, InputFieldProps>(
     )
   }
 )
+
 
