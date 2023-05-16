@@ -10,12 +10,14 @@
   "dependencies": {
     "@radix-ui/react-tabs": "^1.0.3",
     "class-variance-authority": "^0.6.0",
-    "react-input-mask": "^2.0.4",
-    "clsx": "^1.2.1"
+    "clsx": "^1.2.1",
+    "react-input-mask": "^2.0.4"
   },
   "devDependencies": {
     "@test-front/tailwind": "*",
     "@test-front/tsconfig": "*",
+    "@testing-library/react": "^14.0.0",
+    "@testing-library/user-event": "^14.4.3",
     "@types/react": "^18.2.0",
     "@types/react-dom": "^18.2.0",
     "@types/react-input-mask": "^3.0.2",

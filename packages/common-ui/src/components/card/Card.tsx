@@ -1,6 +1,6 @@
-import { ReactNode } from 'react'
+import { ReactNode } from 'react';
 
-import { cardStyles } from './styles'
+import { cardStyles } from './styles';
 
 export interface CardProps {
   children: ReactNode;
