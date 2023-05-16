@@ -1,6 +1,6 @@
 import { screen } from '@testing-library/react'
 import { vi } from 'vitest'
-import { customRender, user } from '../../test/utils'
+import { customRender, user } from '../test/utils'
 import { Button } from './button'
 
 describe('Button', () => {
