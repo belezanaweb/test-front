@@ -50,6 +50,7 @@ Dentro do diretório `:apps` temos todas as aplicações disponíveis no projeto
 ## Recursos Técnicos
 
 - CI Workflow com GitHub Actions
+- Padronização de commits com `Husky` e `Commitlint`
 - Clean Architecture e conceitos de SOLID
 - Abordagem de Modularização utilizando mono-repo
 - Gerenciamento do mono-repo com `Turbo Repo`

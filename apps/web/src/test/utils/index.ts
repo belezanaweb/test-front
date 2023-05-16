@@ -6,7 +6,7 @@ import { fakeCartResponse } from '../mocks'
 export const cartData = fakeCartResponse
 
 export const handlers = [
-  rest.get('http://fake.api', (req, res, ctx) => {
+  rest.get('http://fake.api', (_, res, ctx) => {
     return res(ctx.status(200), ctx.json(cartData))
   }),
 ]
