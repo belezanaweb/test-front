@@ -19,7 +19,7 @@ export function CartInfoButton({ tabKey, onCallToAction }: CartInfoButtonProps) 
 
   if (tabKey === 'bag') {
     return (
-      <Button type="button" onClick={() => onCallToAction('payment')}>
+      <Button className="mt-4" type="button" onClick={() => onCallToAction('payment')}>
         Seguir para o pagamento
       </Button>
     )
@@ -28,6 +28,7 @@ export function CartInfoButton({ tabKey, onCallToAction }: CartInfoButtonProps) 
   if (tabKey === 'payment') {
     return (
       <Button
+        className="mt-4"
         onClick={ handleSubmit((e) => {
           console.log(e)
           handleConfirmOrder()
@@ -41,7 +42,7 @@ export function CartInfoButton({ tabKey, onCallToAction }: CartInfoButtonProps) 
 
   return (
     <>
-      <Button intent="secondary" onClick={() => onCallToAction('bag')}>
+      <Button  className="mt-4" intent="secondary" onClick={() => onCallToAction('bag')}>
         Voltar ao início do protótipo
       </Button>
     </>
