@@ -32,4 +32,4 @@ jobs:
       - name: Test
         uses: borales/actions-yarn@v4
         with:
-          cmd: test
+          cmd: vitest
