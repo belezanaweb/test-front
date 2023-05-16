@@ -1,4 +1,4 @@
-import Card from '@test-front/common-ui/src/components/card/Card'
+import { Card } from '@test-front/common-ui'
 import { CartItemsContainer, CartItemsContainerProps } from '../products_list/components'
 
 export function Confirmation({ items }: CartItemsContainerProps) {

@@ -1,6 +1,5 @@
 import { usePaymentForm } from '@/core'
-import { InputField } from '@test-front/common-ui'
-import Card from '@test-front/common-ui/src/components/card/Card'
+import { Card, InputField } from '@test-front/common-ui'
 import { ReactNode } from 'react'
 import { FormProvider, useFormContext } from 'react-hook-form'
 

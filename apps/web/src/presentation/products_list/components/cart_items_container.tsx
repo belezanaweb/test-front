@@ -1,5 +1,5 @@
 import { Item } from '@/domain'
-import Card from '@test-front/common-ui/src/components/card/Card'
+import { Card } from '@test-front/common-ui'
 import CartItemTile from './cart_item_tile'
 
 export type CartItemsContainerProps = {
