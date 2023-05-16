@@ -5,8 +5,9 @@ import { PaymentFormProvider } from '@/presentation/payment_form'
 import PaymentForm from '@/presentation/payment_form/PaymentForm'
 import * as TabsPrimitive from '@radix-ui/react-tabs'
 import { useCallback, useMemo, useState } from 'react'
-import { CartInfoButton } from './card_info_button'
-import { CartItemsContainer } from './cart_items_container'
+import { CartItemsContainer } from '../cart_item/cart_items_container'
+
+import { CartInfoButton, CartTabKeysType } from '../card_info_button/card_info_button'
 import MainContainer from './main_container'
 
 type TabsPrimitiveCompProps = {
@@ -14,7 +15,7 @@ type TabsPrimitiveCompProps = {
 }
 
 export function TabNavigation({ cartData }: TabsPrimitiveCompProps) {
-  const [tabKey, setTabKey] = useState('bag')
+  const [tabKey, setTabKey] = useState<CartTabKeysType>('bag')
 
   const tabsData = useMemo(
     () => [
@@ -34,7 +35,7 @@ export function TabNavigation({ cartData }: TabsPrimitiveCompProps) {
     []
   )
 
-  const onChangeTab = useCallback((tabKey: string) => {
+  const onChangeTab = useCallback((tabKey: CartTabKeysType) => {
     setTabKey(tabKey)
   }, [])
 
@@ -47,8 +48,7 @@ export function TabNavigation({ cartData }: TabsPrimitiveCompProps) {
               <TabsPrimitive.Trigger
                 key={`tab-trigger-${value}`}
                 value={value}
-                className="radix-state-active:border-b-black radix-state-active:border-b-4 relative border-b border-b-gray-200 p-3 text-sm disabled:cursor-not-allowed disabled:text-neutral-500"
-              >
+                className="radix-state-active:border-b-black radix-state-active:border-b-4 relative border-b border-b-gray-200 p-3 text-sm disabled:cursor-not-allowed disabled:text-neutral-500">
                 <span className="radix-state-active:text-black radix-state-inactive:text-gray-200 text-sm font-normal">
                   {title}
                 </span>

@@ -1,7 +1,7 @@
 import { Card } from '@test-front/common-ui'
 import { useFormContext } from 'react-hook-form'
 import { PaymentFormValues } from '../payment_form'
-import { CartItemsContainer, CartItemsContainerProps } from '../products_list/components/cart_items_container'
+import { CartItemsContainer, CartItemsContainerProps } from '../products_list/components/cart_item/cart_items_container'
 
 export default function Confirmation({ items }: CartItemsContainerProps) {
   const { getValues } = useFormContext<PaymentFormValues>()

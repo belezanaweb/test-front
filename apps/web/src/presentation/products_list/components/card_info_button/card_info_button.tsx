@@ -5,9 +5,11 @@ import { Button } from "@test-front/common-ui";
 import { useCallback } from "react";
 import { useFormContext } from "react-hook-form";
 
+export type CartTabKeysType = 'bag' | 'payment' | 'confirmation';
+
 type CartInfoButtonProps = {
-  tabKey: string,
-  onCallToAction: (tabName: string) => void
+  tabKey: CartTabKeysType
+  onCallToAction: (tabName: CartTabKeysType) => void
 }
 
 export function CartInfoButton({ tabKey, onCallToAction }: CartInfoButtonProps) {
@@ -34,6 +36,7 @@ export function CartInfoButton({ tabKey, onCallToAction }: CartInfoButtonProps) 
     return (
       <Button
         className="mt-6"
+        type="button"
         onClick={handleSubmit(() => {
           onConfirmOrder()
         })}
@@ -45,10 +48,8 @@ export function CartInfoButton({ tabKey, onCallToAction }: CartInfoButtonProps) 
   }
 
   return (
-    <>
-      <Button  className="mt-6" intent="secondary" onClick={onFinishOrder}>
-        Voltar ao início do protótipo
-      </Button>
-    </>
+    <Button type="button" className="mt-6" intent="secondary" onClick={onFinishOrder}>
+      Voltar ao início do protótipo
+    </Button>
   )
 }

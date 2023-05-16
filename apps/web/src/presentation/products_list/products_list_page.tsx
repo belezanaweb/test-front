@@ -1,7 +1,7 @@
 'use client'
 import { useGetCartDataUseCase } from '@/core'
 import { GetCartDataUseCase } from '@/domain'
-import { TabNavigation } from './components/tab_navigation'
+import { TabNavigation } from './components/main_layout/tab_navigation'
 
 export type ProductsListPageProps = {
   useCase: GetCartDataUseCase

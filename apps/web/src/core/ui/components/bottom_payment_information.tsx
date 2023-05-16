@@ -19,7 +19,10 @@ export default function BottomPaymentInformation({
   )
 
   return (
-    <div className="h-fit gap-6 border-transparent bg-white px-5 py-7 md:rounded">
+    <div
+      data-testid="bottom-payment-information"
+      className="h-fit gap-6 border-transparent bg-white px-5 py-7 md:rounded"
+    >
       <ul className="flex flex-col gap-2">
         <li className="flex justify-between text-sm">
           <label>Produtos: ({quantity} itens)</label>
