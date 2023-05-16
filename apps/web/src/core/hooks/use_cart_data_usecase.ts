@@ -1,8 +1,8 @@
-import { CartResponse, GetCartDataUseCase } from "@/domain";
+import { CartModel, GetCartDataUseCase } from "@/domain";
 import { useEffect, useState } from "react";
 
-export function useGetCartDataUseCase(useCase: GetCartDataUseCase) : CartResponse {
-  const [cartData, setCardData] = useState({} as CartResponse)
+export function useGetCartDataUseCase(useCase: GetCartDataUseCase) : CartModel {
+  const [cartData, setCardData] = useState({} as CartModel)
 
   useEffect(() => {
     async function handleGetData() {

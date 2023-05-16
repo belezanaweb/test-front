@@ -1,7 +1,7 @@
 'use client'
 import { useGetCartDataUseCase } from '@/core'
 import { GetCartDataUseCase } from '@/domain'
-import { TabsPrimitiveComp } from './components/main_tabs'
+import { TabNavigation } from './components/tab_navigation'
 
 export type ProductsListPageProps = {
   useCase: GetCartDataUseCase
@@ -12,7 +12,7 @@ export default function ProductsListPage({ useCase }: ProductsListPageProps) {
 
   return (
     <div className="bg-gray-100">
-      {cartData?.items?.length && <TabsPrimitiveComp cartData={cartData} />}
+      {cartData?.items?.length && <TabNavigation cartData={cartData} />}
     </div>
   )
 }

@@ -1,4 +1,4 @@
-export const fakeCartResponse = {
+export const fakeCartModel = {
   id: '123',
   items: [
     {

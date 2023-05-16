@@ -18,9 +18,7 @@ export function PaymentFormProvider({ children }: { children: ReactNode }) {
 }
 
 export default function PaymentForm() {
-
-  const { register,
-    formState: {errors}  } = useFormContext<PaymentFormValues>();
+  const { register, formState: {errors}  } = useFormContext<PaymentFormValues>();
 
   return (
     <Card className="gap-8">
@@ -45,6 +43,7 @@ export default function PaymentForm() {
             {...register('holderName')}
             id="name"
             label="Nome do titular do cartão"
+            placeholder="Nome impresso no cartão"
             errorText={errors.holderName?.message}
           />
 
@@ -54,12 +53,14 @@ export default function PaymentForm() {
               id="dueDate"
               label="Data de validade"
               mask="99/99"
+              placeholder='MM/AA'
               errorText={errors.dueDate?.message}
             />
             <InputField
               {...register('cvv')}
               id="cvv"
               label="Código CVV"
+              placeholder='000'
               mask="999"
               errorText={errors.cvv?.message}
             />

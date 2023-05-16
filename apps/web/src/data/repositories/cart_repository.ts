@@ -1,5 +1,5 @@
-import { CartResponse } from '@/domain/models/cart'
+import { CartModel } from '@/domain/models/cart';
 
 export interface CartRepository {
-  fetchCartData(): Promise<CartResponse>;
+  fetchCartData(): Promise<CartModel>;
 }

@@ -1,6 +1,6 @@
 import { CartRepository } from '@/data/repositories/cart_repository'
 import { MockCartRepository } from '@/test/mocks'
-import { CartResponse } from '../models'
+import { CartModel } from '../models'
 import { GetCartDataUseCase } from './get_cart_data_usecase'
 
 describe('GetCartDataUseCase', () => {
@@ -19,6 +19,6 @@ describe('GetCartDataUseCase', () => {
 
   it('should invoke usecase method and returns value with success', async () => {
     const data = await useCase.invoke()
-    expect(data).toEqual({} as CartResponse)
+    expect(data).toEqual({} as CartModel)
   })
 })

@@ -1,4 +1,4 @@
-export interface CartResponse {
+export interface CartModel {
   id: string;
   items: Item[];
   subTotal: number;

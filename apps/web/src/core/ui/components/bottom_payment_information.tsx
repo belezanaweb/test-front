@@ -1,19 +1,25 @@
 'use client'
 
 import { currencyFormatter } from '@/core'
-import { CartResponse } from '@/domain'
-import { ReactNode } from 'react'
+import { CartModel } from '@/domain'
+import { ReactNode, useMemo } from 'react'
 
 type BottomPaymentInformationProps = {
-  cartData: CartResponse,
+  cartData: CartModel,
   children: ReactNode
 }
 
-export default function BottomPaymentInformation({ cartData, children }: BottomPaymentInformationProps) {
-  const quantity = cartData?.items?.reduce((acc, curr) => acc + curr.quantity, 0)
+export default function BottomPaymentInformation({
+  cartData,
+  children
+}: BottomPaymentInformationProps) {
+  const quantity = useMemo(
+    () => cartData?.items?.reduce((acc, curr) => acc + curr.quantity, 0),
+    [cartData?.items]
+  )
 
   return (
-    <div className="h-fit gap-6 border-transparent bg-white px-5 py-7 md:mx-2 md:my-10 md:min-w-[320px] md:border-gray-500">
+    <div className="h-fit gap-6 border-transparent bg-white px-5 py-7 md:rounded">
       <ul className="flex flex-col gap-2">
         <li className="flex justify-between text-sm">
           <label>Produtos: ({quantity} itens)</label>

@@ -2,6 +2,7 @@
 
 import { PaymentFormValues } from "@/presentation/payment_form";
 import { Button } from "@test-front/common-ui";
+import { useCallback } from "react";
 import { useFormContext } from "react-hook-form";
 
 type CartInfoButtonProps = {
@@ -10,16 +11,20 @@ type CartInfoButtonProps = {
 }
 
 export function CartInfoButton({ tabKey, onCallToAction }: CartInfoButtonProps) {
-  const { handleSubmit, formState, reset  } = useFormContext<PaymentFormValues>();
+  const { handleSubmit, formState, reset } = useFormContext<PaymentFormValues>();
 
-  function handleConfirmOrder() {
+  const onConfirmOrder = useCallback(() => {
     onCallToAction('confirmation')
+  }, [onCallToAction])
+
+  const onFinishOrder = useCallback(() => {
+    onCallToAction('bag')
     reset()
-  }
+  }, [onCallToAction, reset])
 
   if (tabKey === 'bag') {
     return (
-      <Button className="mt-4" type="button" onClick={() => onCallToAction('payment')}>
+      <Button className="mt-6" type="button" onClick={() => onCallToAction('payment')}>
         Seguir para o pagamento
       </Button>
     )
@@ -28,10 +33,9 @@ export function CartInfoButton({ tabKey, onCallToAction }: CartInfoButtonProps) 
   if (tabKey === 'payment') {
     return (
       <Button
-        className="mt-4"
-        onClick={ handleSubmit((e) => {
-          console.log(e)
-          handleConfirmOrder()
+        className="mt-6"
+        onClick={handleSubmit(() => {
+          onConfirmOrder()
         })}
         disabled={!formState.isValid}
       >
@@ -42,7 +46,7 @@ export function CartInfoButton({ tabKey, onCallToAction }: CartInfoButtonProps) 
 
   return (
     <>
-      <Button  className="mt-4" intent="secondary" onClick={() => onCallToAction('bag')}>
+      <Button  className="mt-6" intent="secondary" onClick={onFinishOrder}>
         Voltar ao início do protótipo
       </Button>
     </>
