@@ -1,9 +1,9 @@
 ## Teste de Frontend
 
-_Confira as instruções para o Confira as instruções para o [desafio aqui](https://github.com/WillACosta/test-front/tree/main/docs/instructions)._
+_Confira as instruções para o [desafio aqui](https://github.com/WillACosta/test-front/tree/main/docs/instructions)._
 <br><br>
 
-Aplicação desenvolvida para o teste de frontend, consiste em um fluxo de compras de alguns produtos em uma página web, passando por alguns steps como, carrinho, pagamento e checkout. Aqui você poderá encontrar algumas informações para executar o projeto e também uma demonstração do resultado final.
+Aplicação desenvolvida para o teste de frontend, aqui você poderá encontrar algumas informações para executar o projeto e também uma demonstração do resultado final.
 
 ## Índice
 
@@ -50,7 +50,7 @@ Dentro do diretório `:apps` temos todas as aplicações disponíveis no projeto
 
 ## Recursos Técnicos
 
-- CI Workflow com GitHub Actions
+- CI Workflow com `GitHub Actions`
 - Padronização de commits com `Husky` e `Commitlint`
 - Clean Architecture e conceitos de SOLID
 - Abordagem de Modularização utilizando mono-repo
@@ -59,11 +59,11 @@ Dentro do diretório `:apps` temos todas as aplicações disponíveis no projeto
 - Utilização de `Storybook` como documentação dos componentes
 - `Radix UI` e `Tailwind CSS`
 - Validações de formulários com `Yup` e `React Hook Form`
-- Testes unitários do domínio da aplicação
+- Testes unitários utilizando `Vitest` e `Testing Library`
 
 ## Executando
 
-Certifique-se de ter no Node instalado em sua máquina.
+Certifique-se de ter no Node.js instalado em sua máquina.
 
 1. Clone este repositório
 ```shell
