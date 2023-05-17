@@ -13,7 +13,8 @@
   "dependencies": {
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "react-router-dom": "^6.11.1"
+    "react-router-dom": "^6.11.1",
+    "styled-components": "^6.0.0-rc.1"
   },
   "devDependencies": {
     "@testing-library/jest-dom": "^5.16.5",
