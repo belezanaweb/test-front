@@ -5,8 +5,7 @@ const CheckoutCart = () => {
 
   return (
     <div>
-      { JSON.stringify(checkout?.items)}
-      carrinho de compras
+      carrasdasd
     </div>
   )
 }
