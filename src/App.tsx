@@ -1,12 +1,18 @@
 import MyRoutes from './routers'
+import { ThemeProvider } from 'styled-components'
+
 import { CheckoutProvider } from './stores/Checkout/Checkout.store'
 
-import './App.css'
+import GlobalStyle from './styles/global'
+import Theme from "./styles/Theme"
 
 export default function App() {
   return (
-    <CheckoutProvider>
-      <MyRoutes />
-    </CheckoutProvider>
+    <ThemeProvider theme={Theme}>
+      <GlobalStyle />
+      <CheckoutProvider>
+        <MyRoutes />
+      </CheckoutProvider>
+    </ThemeProvider>
   )
 }
