@@ -1,0 +1,38 @@
+{
+  "name": "docs",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "storybook dev -p 6006",
+    "build": "storybook build",
+    "lint": "eslint \"**/*.ts*\""
+  },
+  "dependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "@test-front/common-ui": "*"
+  },
+  "devDependencies": {
+    "@storybook/addon-essentials": "^7.0.12",
+    "@storybook/addon-interactions": "^7.0.12",
+    "@storybook/addon-links": "^7.0.12",
+    "@storybook/blocks": "^7.0.12",
+    "@storybook/react": "^7.0.12",
+    "@storybook/react-vite": "^7.0.12",
+    "@storybook/testing-library": "^0.0.14-next.2",
+    "@types/react": "^18.0.28",
+    "@types/react-dom": "^18.0.11",
+    "@vitejs/plugin-react": "^4.0.0",
+    "eslint": "^8.38.0",
+    "prop-types": "^15.8.1",
+    "storybook": "^7.0.12",
+    "vite": "^4.3.2",
+    "vite-tsconfig-paths": "^4.2.0",
+    "autoprefixer": "^10.4.14",
+    "postcss": "^8.4.23",
+    "eslint-config-custom": "*",
+    "@test-front/tailwind": "*",
+    "@test-front/tsconfig": "*"
+  }
+}
