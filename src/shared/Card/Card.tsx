@@ -1,9 +1,9 @@
-const Card = ({ children = '' }) => {
+import { CardContainer } from "./Card.styled"
+
+export const Card = ({ children = '' }) => {
   return (
-    <div>
+    <CardContainer>
       {children}
-    </div>
+    </CardContainer>
   )
 }
-
-export default Card
