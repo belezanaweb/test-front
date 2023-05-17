@@ -1,5 +1,12 @@
+import MyRoutes from './routers'
+import { CheckoutProvider } from './stores/Checkout/Checkout.store'
+
 import './App.css'
 
 export default function App() {
-  return <div className="wrapper">Boa sorte! 🚀</div>
+  return (
+    <CheckoutProvider>
+      <MyRoutes />
+    </CheckoutProvider>
+  )
 }
