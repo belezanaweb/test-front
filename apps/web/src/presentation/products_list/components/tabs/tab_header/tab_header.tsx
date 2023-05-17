@@ -13,7 +13,7 @@ export function TabHeader({tabKey, title}: TabHeaderProps) {
       value={tabKey}
       className="radix-state-active:border-b-black radix-state-active:border-b-4 relative border-b border-b-gray-200 p-3 text-sm disabled:cursor-not-allowed disabled:text-neutral-500"
     >
-      <span className="radix-state-active:text-black radix-state-inactive:text-gray-200 text-sm font-normal">
+      <span className="radix-state-active:text-black radix-state-inactive:text-gray-300 text-sm font-normal">
         {title}
       </span>
     </TabsPrimitive.Trigger>

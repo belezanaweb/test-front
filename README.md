@@ -16,7 +16,7 @@ Aplicação desenvolvida para o teste de frontend, consiste em um fluxo de compr
 ## Funcionalidades
 
 A aplicação consiste em uma representação de um fluxo de compras em um site, utilizando o conceito de mobile first para fornecer
-uma melhor experiência de utilização. Temos aqui, basicamente três _features_, `carrinho`, `checkout` e `confirmação`.
+uma melhor experiência de utilização. Temos aqui, basicamente três _features_, `carrinho`, `pagamento` e `confirmação`.
 
 ## Screenshots
 
@@ -35,9 +35,10 @@ Dentro do diretório `:apps` temos todas as aplicações disponíveis no projeto
 ```
   .
   |__apps
+  |  |
   |  |__ showcase
   |  |__ web
-  |  |__ ...
+  |  |__ docs
   |
   |__packages
   |  |
@@ -55,7 +56,8 @@ Dentro do diretório `:apps` temos todas as aplicações disponíveis no projeto
 - Abordagem de Modularização utilizando mono-repo
 - Gerenciamento do mono-repo com `Turbo Repo`
 - Especificação de componentes de Design System
-- Radix UI e Tailwind CSS
+- Utilização de `Storybook` como documentação dos componentes
+- `Radix UI` e `Tailwind CSS`
 - Validações de formulários com `Yup` e `React Hook Form`
 - Testes unitários do domínio da aplicação
 
@@ -83,4 +85,4 @@ yarn dev
 yarn test
 ```
 
-Mais detalhes, ver arquivo `package.json` na raiz do projeto.
+Para mais detalhes, veja o arquivo `package.json` na raiz do projeto.
