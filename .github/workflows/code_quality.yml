@@ -3,8 +3,8 @@ name: Code Quality CI
 on:
   push:
     branches: ["main"]
+
   pull_request:
-    types: [opened, synchronize]
 
 jobs:
   build:
@@ -14,8 +14,6 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v3
-        with:
-          fetch-depth: 2
 
       - name: Setup Node 19
         uses: actions/setup-node@v3
@@ -23,17 +21,14 @@ jobs:
           node-version: 19
           cache: 'yarn'
 
+      - name: Install Yarn
+        run: npm i -g yarn
+
       - name: Run install
-        uses: borales/actions-yarn@v4
-        with:
-          cmd: install
+        run: yarn
 
       - name: Build production bundle
-        uses: borales/actions-yarn@v4
-        with:
-          cmd: build
+        run: yarn build
 
-      - name: Test
-        uses: borales/actions-yarn@v4
-        with:
-          cmd: test
+      - name: Run Tests
+        run: yarn test
