@@ -1,12 +1,13 @@
 import { useCheckout } from '../../stores'
+import { Card } from '../../shared'
 
 const CheckoutCart = () => {
   const { checkout } = useCheckout()
 
   return (
-    <div>
-      carrasdasd
-    </div>
+    <Card>
+      asdasd
+    </Card>
   )
 }
 

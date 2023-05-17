@@ -2,6 +2,9 @@ import styled from 'styled-components';
 import { TabItemProps, TabPanelProps } from './Tabs.types';
 
 export const TabsContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
 `;
 
 export const TabList = styled.div`
@@ -35,16 +38,24 @@ export const TabItem = styled.div<TabItemProps>`
     border: 2px solid transparent;
     margin: 5px auto;
     img {
-      background-color: #000;
+      background-color: #878787;
       width: 25px;
     }
-    ${({ isActive }) => isActive &&`
+  }
+  .title {
+    color: #878787;
+  }
+  ${({ isActive }) => isActive &&`
+    .icon {
       border: 2px solid #9222DC;
       img {
         background-color: #9222DC;
       }
-    `}
-  }
+    }
+    .title {
+      color: #000;
+    }
+  `}
 `;
 
 export const Tab = styled.div`
