@@ -1,9 +1,12 @@
-const Button = ({ children = '' }) => {
+import { PropsWithChildren } from 'react'
+
+import { ButtonStyled } from './Button.Styled'
+import { ButtonsProps } from './Button.types'
+
+export const Button = ({ onClick, form, variant = 'primary', children }: PropsWithChildren<ButtonsProps>) => {
   return (
-    <button>
+    <ButtonStyled onClick={onClick} form={form} variant={variant}>
       {children}
-    </button>
+    </ButtonStyled>
   )
 }
-
-export default Button
