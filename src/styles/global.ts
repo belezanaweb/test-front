@@ -1,6 +1,6 @@
 import { createGlobalStyle } from 'styled-components';
 
-export default createGlobalStyle`
+export const GlobalStyle = createGlobalStyle`
   * {
     margin: 0;
     padding: 0;
@@ -9,10 +9,16 @@ export default createGlobalStyle`
     font-family: sans-serif;
   }
 
-  button {
-    cursor: pointer;
+  h2, h3 {
+    font-weight: 400;
   }
-
+  h2 {
+    font-size: 22px;
+  },
+  h3 {
+    font-size: 20px;
+  }
+  
   body {
     margin: 0;
     padding: 0;

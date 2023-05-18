@@ -9,5 +9,7 @@ export const theme = {
     background: "#F5F5F5",
     primary: "#9222DC",
     secondary: "#000000",
+    
+    danger: '#DE1616'
   }
 }

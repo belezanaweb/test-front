@@ -1,7 +1,8 @@
-import { ContainerStyled } from "./Container.styled"
-import { ContainerProps } from './Container.types'
+import { PropsWithChildren } from 'react'
 
-export const Container = ({ children }: ContainerProps) => {
+import { ContainerStyled } from "./Container.styled"
+
+export const Container = ({ children }: PropsWithChildren) => {
   return (
     <ContainerStyled>
       {children}
