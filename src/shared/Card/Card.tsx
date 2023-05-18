@@ -1,8 +1,11 @@
-import { CardContainer } from "./Card.styled"
+import { PropsWithChildren } from 'react'
 
-export const Card = ({ children = '' }) => {
+import { CardContainer } from './Card.styled'
+import { CardProps } from './Card.types'
+
+export const Card = ({ children, centered }: PropsWithChildren<CardProps>) => {
   return (
-    <CardContainer>
+    <CardContainer centered={centered}>
       {children}
     </CardContainer>
   )
