@@ -1,20 +1,21 @@
 import { createGlobalStyle } from 'styled-components';
 
 export const GlobalStyle = createGlobalStyle`
-  * {
-    margin: 0;
-    padding: 0;
+  *,
+  *::after,
+  *::before {
     box-sizing: border-box;
     outline: 0;
-    font-family: sans-serif;
   }
-
+  
   h2, h3 {
     font-weight: 400;
+    margin-top: 0;
+    margin-bottom: 20px;
   }
   h2 {
     font-size: 22px;
-  },
+  }
   h3 {
     font-size: 20px;
   }
@@ -23,8 +24,7 @@ export const GlobalStyle = createGlobalStyle`
     margin: 0;
     padding: 0;
     background: ${props => props.theme.colors.background};
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu',
-    'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+    font-family: ${props => props.theme.typography.body.fontFamily};
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
   }
