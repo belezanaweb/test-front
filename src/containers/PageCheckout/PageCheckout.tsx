@@ -4,11 +4,7 @@ import { useCheckout } from '../../stores'
 
 import { PageCheckoutContainer } from './PageCheckout.styled'
 
-import {
-  CheckoutCart,
-  CheckoutPayment,
-  CheckoutConfirm,
-} from '../../components'
+import { CheckoutCart, CheckoutPayment, CheckoutConfirm } from '../../components'
 import { Tabs } from '../../shared'
 
 import BagIcon from '../../assets/images/masks/bag-mask.svg'
@@ -16,7 +12,7 @@ import CardMask from '../../assets/images/masks/card-mask.svg'
 import CheckIcon from '../../assets/images/masks/check-mask.svg'
 
 export interface PageCheckoutProps {
-  className?: string
+  className?: string;
 }
 
 export const PageCheckout: React.FC<PageCheckoutProps> = () => {
@@ -25,28 +21,29 @@ export const PageCheckout: React.FC<PageCheckoutProps> = () => {
   const { checkout } = useCheckout()
 
   const active = locate.pathname.toString()
-  const isCheckoutPaymentDisabled = !checkout || Object.values(checkout.card).some((value) => !value)
+  const isCheckoutPaymentDisabled =
+    !checkout || Object.values(checkout.card).some((value) => !value)
 
   const items = [
     {
       key: '/',
       title: 'Sacola',
       icon: BagIcon,
-      children: <CheckoutCart onPayment={() => navigateTo('payment')} />,
+      children: <CheckoutCart onPayment={() => navigateTo('payment')} />
     },
     {
       key: '/payment',
       title: 'Pagamento',
       icon: CardMask,
-      children: <CheckoutPayment />,
+      children: <CheckoutPayment />
     },
     {
       key: '/confirm',
       title: 'Confirmação',
       icon: CheckIcon,
       children: <CheckoutConfirm />,
-      disabled: isCheckoutPaymentDisabled,
-    },
+      disabled: isCheckoutPaymentDisabled
+    }
   ]
 
   const navigateTo = (value: string) => {

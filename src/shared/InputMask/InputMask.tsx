@@ -5,7 +5,10 @@ import { InputMaskProps } from './InputMask.types'
 
 import { ReactInputMask } from 'react-input-mask'
 
-const MaskInput = ({ onChange, mask = '', value, label, placeholder, error, ...props }: InputMaskProps, ref: Ref<ReactInputMask>) => {
+const MaskInput = (
+  { onChange, mask = '', value, label, placeholder, error, ...props }: InputMaskProps,
+  ref: Ref<ReactInputMask>
+) => {
   return (
     <InputContainer>
       {label && <InputLabel>{label}</InputLabel>}
@@ -26,4 +29,3 @@ const MaskInput = ({ onChange, mask = '', value, label, placeholder, error, ...p
 }
 
 export const InputMask = forwardRef(MaskInput)
-

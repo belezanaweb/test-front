@@ -3,7 +3,10 @@ import { Ref, forwardRef } from 'react'
 import { InputContainer, InputStyled, InputLabel, InputFeedback } from './Input.styled'
 import { InputProps } from './Input.types'
 
-const BaseInput = ({ onChange, value, label, placeholder, error, ...props }: InputProps, ref: Ref<HTMLInputElement>) => {
+const BaseInput = (
+  { onChange, value, label, placeholder, error, ...props }: InputProps,
+  ref: Ref<HTMLInputElement>
+) => {
   return (
     <InputContainer>
       {label && <InputLabel>{label}</InputLabel>}
@@ -22,4 +25,3 @@ const BaseInput = ({ onChange, value, label, placeholder, error, ...props }: Inp
 }
 
 export const Input = forwardRef(BaseInput)
-

@@ -1,24 +1,24 @@
 export const theme = {
   borderRadius: '4px',
   breakpoints: {
-    mobile: "768px",
-    tablet: "992px",
-    desktop: "1200px"
+    mobile: '768px',
+    tablet: '992px',
+    desktop: '1200px'
   },
   colors: {
-    background: "#F5F5F5",
+    background: '#F5F5F5',
 
     light: '#FFF',
     dark: '#000',
 
     primary: {
-      main: "#9222DC",
-      as: "#560789"
+      main: '#9222DC',
+      as: '#560789'
     },
-    
-    secondary: "#66d1e3",
-    
-    danger: "#DE1616",
+
+    secondary: '#66d1e3',
+
+    danger: '#DE1616',
 
     gray: {
       100: '#CCC',
@@ -34,5 +34,5 @@ export const theme = {
     heading: {
       fontFamily: "'Jost', Arial, sans-serif"
     }
-  },
+  }
 }

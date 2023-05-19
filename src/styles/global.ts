@@ -1,4 +1,4 @@
-import { createGlobalStyle } from 'styled-components';
+import { createGlobalStyle } from 'styled-components'
 
 export const GlobalStyle = createGlobalStyle`
   *,
@@ -23,9 +23,9 @@ export const GlobalStyle = createGlobalStyle`
   body {
     margin: 0;
     padding: 0;
-    background: ${props => props.theme.colors.background};
-    font-family: ${props => props.theme.typography.body.fontFamily};
+    background: ${(props) => props.theme.colors.background};
+    font-family: ${(props) => props.theme.typography.body.fontFamily};
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
   }
-`;
+`

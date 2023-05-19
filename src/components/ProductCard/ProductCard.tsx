@@ -6,7 +6,8 @@ import {
   ProductCardTitle,
   ProductCardPrice,
   ProductCardPriceFrom,
-  ProductCardPriceTo } from './ProductCard.styled'
+  ProductCardPriceTo
+} from './ProductCard.styled'
 import { ProductCardProps } from './ProductCard.types'
 
 import { formatToBRL } from '../../utils/formatCurrency'
@@ -18,9 +19,7 @@ export const ProductCard = (props: Product & ProductCardProps) => {
         <img src={props.imageObjects[0].small} alt="" />
       </ProductCardThumb>
 
-      <ProductCardTitle>
-        {props.name}
-      </ProductCardTitle>
+      <ProductCardTitle>{props.name}</ProductCardTitle>
 
       {!props.hideProductPrice && (
         <ProductCardPrice>

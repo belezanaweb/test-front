@@ -7,9 +7,12 @@ export const OrderSummaryContainer = styled.div`
   display: flex;
   flex-direction: column;
   gap: 12px;
-`;
+`
 
-export const OrderSummaryItem = styled.div<OrderSummaryProps>`
+export const OrderSummaryItem =
+  styled.div <
+  OrderSummaryProps >
+  `
   display: flex;
   justify-content: space-between;
   font-size: 14px;
@@ -17,14 +20,18 @@ export const OrderSummaryItem = styled.div<OrderSummaryProps>`
   &:first-child {
     ${theme.typography.body}
   }
-  ${({ $highlight }) => $highlight &&`
+  ${({ $highlight }) =>
+    $highlight &&
+    `
     font-weight: 800;
     font-size: 16px;
   `}
-  ${({ $discount }) => $discount &&`
+  ${({ $discount }) =>
+    $discount &&
+    `
     .result {
       color: ${theme.colors.primary.main};
       font-weight: 800;
     }
   `}
-`;
+`

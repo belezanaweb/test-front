@@ -11,23 +11,20 @@ export const ProductList = ({ title }: ProductListProps) => {
 
   return (
     <ProductListStyled>
-      {title && (
-        <ProductListHeading>
-          {title}
-        </ProductListHeading>
-      )}
+      {title && <ProductListHeading>{title}</ProductListHeading>}
 
-      {loadingCheckout && (
-        [...Array(3)].map(() => ( 
+      {loadingCheckout &&
+        [...Array(3)].map(() => (
           <ContentLoader height={70}>
             <rect x="0" y="0" rx="5" ry="5" width="60" height="60" />
             <rect x="80" y="0" rx="4" ry="4" width="100%" height="8" />
             <rect x="80" y="20" rx="3" ry="3" width="100%" height="8" />
           </ContentLoader>
-        ))
-      )}
+        ))}
 
-      {checkout?.items.map(item => <ProductCard key={item.product.sku} {...item.product} />)}
+      {checkout?.items.map((item) => (
+        <ProductCard key={item.product.sku} {...item.product} />
+      ))}
     </ProductListStyled>
   )
 }

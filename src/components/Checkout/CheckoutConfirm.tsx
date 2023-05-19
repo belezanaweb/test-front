@@ -38,7 +38,9 @@ export const CheckoutConfirm = () => {
       <CheckoutCardDetails>
         <CheckoutCardDetailsContainer>
           <OrderSummary />
-          <Button onClick={() => navigate('/')} $block variant="dark">Voltar ao início do protótipo</Button>
+          <Button onClick={() => navigate('/')} $block variant="dark">
+            Voltar ao início do protótipo
+          </Button>
         </CheckoutCardDetailsContainer>
       </CheckoutCardDetails>
     </CheckoutCardContainer>

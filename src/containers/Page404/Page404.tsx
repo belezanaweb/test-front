@@ -12,9 +12,7 @@ export const Page404: React.FC = () => {
       <NotFoundTitle>
         <strong>Ops!</strong> Não encontramos essa página.
       </NotFoundTitle>
-      <Button onClick={() => navigate('/')}>
-        Ir para carrinho
-      </Button>
+      <Button onClick={() => navigate('/')}>Ir para carrinho</Button>
     </NotFound>
   )
 }

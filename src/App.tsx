@@ -8,7 +8,7 @@ const App = () => {
   return (
     <ThemeProvider theme={theme}>
       <GlobalStyle />
-      
+
       <CheckoutProvider>
         <Router />
       </CheckoutProvider>

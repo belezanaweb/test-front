@@ -1,13 +1,13 @@
-import styled from 'styled-components';
+import styled from 'styled-components'
 
 import { theme } from '../../styles'
-import { TabItemProps, TabPanelProps } from './Tabs.types';
-import { ContainerStyled } from '../Container/Container.styled';
+import { TabItemProps, TabPanelProps } from './Tabs.types'
+import { ContainerStyled } from '../Container/Container.styled'
 
 export const TabsContainer = styled.div`
   display: flex;
   flex-direction: column;
-`;
+`
 
 export const TabList = styled(ContainerStyled)`
   background-color: #fff;
@@ -15,14 +15,14 @@ export const TabList = styled(ContainerStyled)`
   margin-bottom: 20px;
   display: flex;
   height: 40px;
-  
+
   @media (min-width: ${theme.breakpoints.tablet}) {
     background-color: transparent;
     box-shadow: none;
     align-items: center;
     height: auto;
   }
-`;
+`
 
 export const TabNav = styled.div`
   margin: 0 auto;
@@ -35,9 +35,12 @@ export const TabNav = styled.div`
     max-width: 490px;
     justify-content: space-between;
   }
-`;
+`
 
-export const TabItem = styled.div<TabItemProps>`
+export const TabItem =
+  styled.div <
+  TabItemProps >
+  `
   padding: 10px 10px;
   font-size: 14px;
   display: flex;
@@ -61,7 +64,9 @@ export const TabItem = styled.div<TabItemProps>`
     bottom: 0;
   }
 
-  ${({ $isActive }) => $isActive &&`
+  ${({ $isActive }) =>
+    $isActive &&
+    `
     &::before {
       border-color: ${theme.colors.dark};
     }
@@ -70,7 +75,7 @@ export const TabItem = styled.div<TabItemProps>`
     }
   `}
 
-  @media (min-width: ${props => props.theme.breakpoints.tablet}) {
+  @media (min-width: ${(props) => props.theme.breakpoints.tablet}) {
     border-bottom: 0;
     &:last-child {
       &::before {
@@ -80,7 +85,7 @@ export const TabItem = styled.div<TabItemProps>`
     &::before {
       width: 170px;
       border-color: transparent;
-      background: ${props => props.theme.colors.gray[100]};
+      background: ${(props) => props.theme.colors.gray[100]};
       top: 40px;
       left: 60px;
       bottom: auto;
@@ -106,7 +111,9 @@ export const TabItem = styled.div<TabItemProps>`
     .tab-title {
       font-size: 12px;
     }
-    ${({ $done }) => $done &&`
+    ${({ $done }) =>
+      $done &&
+      `
       &::before {
         width: 170px;
         border-color: transparent;
@@ -122,7 +129,9 @@ export const TabItem = styled.div<TabItemProps>`
       }
     `}
 
-    ${({ $isActive }) => $isActive &&`
+    ${({ $isActive }) =>
+      $isActive &&
+      `
       &::before {
         border-color: transparent;
       }
@@ -134,19 +143,24 @@ export const TabItem = styled.div<TabItemProps>`
       }
     `}
   }
-`;
+`
 
 export const Tab = styled.div`
   cursor: pointer;
   text-align: center;
-`;
+`
 
-export const TabContent = styled.div``;
+export const TabContent = styled.div``
 
-export const TabPanel = styled.div<TabPanelProps>`
+export const TabPanel =
+  styled.div <
+  TabPanelProps >
+  `
   display: none;
   
-  ${({ $isActive }) => $isActive && `
+  ${({ $isActive }) =>
+    $isActive &&
+    `
     display: block;
   `}
 `
