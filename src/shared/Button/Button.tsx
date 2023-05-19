@@ -11,7 +11,7 @@ export const Button = ({
   children
 }: PropsWithChildren<ButtonsProps>) => {
   return (
-    <ButtonStyled onClick={onClick} $block={$block} form={form} variant={variant}>
+    <ButtonStyled data-testid="test-button" onClick={onClick} $block={$block} form={form} variant={variant}>
       {children}
     </ButtonStyled>
   )
