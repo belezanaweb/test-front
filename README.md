@@ -2,12 +2,24 @@
 
 O teste consiste em um checkout simples contendo 3 passos (carrinho, pagamento e sucesso) [Veja o Layout](https://www.figma.com/proto/VAOqGCWUNg13WE1t05I7xy/TestFront?page-id=15211%3A254388&node-id=15212%3A255342&viewport=415%2C484%2C0.66&scaling=min-zoom&starting-point-node-id=15212%3A254392&show-proto-sidebar=1)
 
+![Beleza na Web](https://res.cloudinary.com/beleza-na-web/image/upload/f_svg,fl_progressive,q_auto:eco/v1/blz/assets-store/0.0.420/images/store/1/logo.svg)
 
-### Requerimentos:
+### Features:
+- Validação de formulario com `zod` e `react-hook-form`
+- Estilização de components com `styled-components`
+- Testes `Jest` e `Jest`
 
+### Installation:
 
-- Pixel perfect ([nesse link](https://www.figma.com/file/VAOqGCWUNg13WE1t05I7xy/TestFront?node-id=15211%3A254388&t=2A5yzAbeVSPYi4sw-1), você pode inspecionar para ver espaçamentos, fonte, tamanho, etc)
-- A aplicação precisa ser responsiva, utilizando o conceito de mobile-first. Use sua imaginação para entregar uma experiência boa no desktop.
+```sh
+npm install
+#or
+yarn add
+```
+
+```sh
+yarn dev
+```
 
 ### Observações: 
 
@@ -20,15 +32,3 @@ O teste consiste em um checkout simples contendo 3 passos (carrinho, pagamento e
 
 3. Sucesso: 
     - Todo o conteúdo deverá ser exibido a partir dos dados persistidos;
-  
-### O que iremos avaliar:
-  - Organização do código;
-  - Mensagens e mudanças nos commits;
-  - Composição/reutilização de componentes;
-  - Testes unitários;
-  - O motivo de ter escolhido cada tech da stack;
-
-### Fim:
-Ao finalizar o teste, **publique o seu projet em alguma url (vercel, netlify, surge, etc)** e crie pull request para o repositório que nosso time será notificado. Se tiver alguma observação, escreva no corpo pull request, por favor.
-
-Boa sorte! 🚀
