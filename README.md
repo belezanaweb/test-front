@@ -24,6 +24,5 @@ yarn dev
 
 ### Observações: 
 
-1. Biblioteca de estilo:
-    - Pensando em mostrar meu conhecimento em css foi adicionado a lib `styled-components` para estilização do mesmo.
-    - Tenho preferências em outra lib por exemplo: `tailwind`, mas notei que não é utilizado em [Beleza na Web](https://belezanaweb.com.br)
+- Pensando em mostrar meu conhecimento em css foi adicionado a lib `styled-components` para estilização do mesmo.
+- Pensei em utilizar `tailwind` como lib para estilzação baseada em classes, mas vi que não foi utilizado na loja oficial [Beleza na Web](https://belezanaweb.com.br)
