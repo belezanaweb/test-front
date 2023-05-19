@@ -6,6 +6,7 @@ export const GlobalStyle = createGlobalStyle`
   *::before {
     box-sizing: border-box;
     outline: 0;
+    -webkit-tap-highlight-color: transparent;
   }
   
   h2, h3 {
