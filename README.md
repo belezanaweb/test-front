@@ -2,6 +2,8 @@
 
 ![](https://res.cloudinary.com/beleza-na-web/image/upload/f_svg,fl_progressive,q_auto:eco/v1/blz/assets-store/0.0.420/images/store/1/logo.svg)
 
+Link da demo: [Demo](https://test-front-blz.vercel.app/)
+
 ### Features:
 - Configuração de rotas `react-router-dom`
 - Validação de formulario `zod` e `react-hook-form`
