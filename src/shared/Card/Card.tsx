@@ -5,7 +5,7 @@ import { CardProps } from './Card.types'
 
 export const Card = ({ children, centered }: PropsWithChildren<CardProps>) => {
   return (
-    <CardContainer centered={centered}>
+    <CardContainer $centered={centered}>
       {children}
     </CardContainer>
   )
