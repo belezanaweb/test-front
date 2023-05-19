@@ -11,11 +11,7 @@ import BagIcon from '../../assets/images/masks/bag-mask.svg'
 import CardMask from '../../assets/images/masks/card-mask.svg'
 import CheckIcon from '../../assets/images/masks/check-mask.svg'
 
-export interface PageCheckoutProps {
-  className?: string;
-}
-
-export const PageCheckout: React.FC<PageCheckoutProps> = () => {
+export const PageCheckout = () => {
   const navigate = useNavigate()
   const locate = useLocation()
   const { checkout } = useCheckout()
