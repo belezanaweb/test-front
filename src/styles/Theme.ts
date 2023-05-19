@@ -12,8 +12,8 @@ export const theme = {
     dark: '#000',
 
     primary: {
-      main: '#9222DC',
-      as: '#560789'
+      100: '#9222DC',
+      200: '#560789'
     },
 
     secondary: '#66d1e3',

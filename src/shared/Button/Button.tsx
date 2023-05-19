@@ -1,6 +1,6 @@
 import { PropsWithChildren } from 'react'
 
-import { ButtonStyled } from './Button.Styled'
+import { ButtonStyled } from './Button.styled'
 import { ButtonsProps } from './Button.types'
 
 export const Button = ({

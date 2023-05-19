@@ -30,7 +30,7 @@ export const OrderSummaryItem =
     $discount &&
     `
     .result {
-      color: ${theme.colors.primary.main};
+      color: ${theme.colors.primary[100]};
       font-weight: 800;
     }
   `}

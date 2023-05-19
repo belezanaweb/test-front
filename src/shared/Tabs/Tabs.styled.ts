@@ -136,9 +136,9 @@ export const TabItem =
         border-color: transparent;
       }
       .tab-icon {
-        border: 2px solid ${theme.colors.primary.main};
+        border: 2px solid ${theme.colors.primary[100]};
         img {
-          background-color: ${theme.colors.primary.main};
+          background-color: ${theme.colors.primary[100]};
         }
       }
     `}
