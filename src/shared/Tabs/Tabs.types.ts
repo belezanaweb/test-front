@@ -2,6 +2,7 @@ export type TabItem = {
   key: string;
   title: string;
   icon: string;
+  disabled?: boolean;
   children: React.ReactNode;
 };
 
@@ -12,9 +13,10 @@ export type TabsProps = {
 };
 
 export type TabItemProps = {
-  isActive?: boolean;
-};
+  $isActive?: boolean
+  $done?: boolean
+}
 
 export type TabPanelProps = {
-  isActive?: boolean;
-};
+  $isActive?: boolean
+}
