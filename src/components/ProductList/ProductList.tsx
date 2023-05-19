@@ -14,8 +14,8 @@ export const ProductList = ({ title }: ProductListProps) => {
       {title && <ProductListHeading>{title}</ProductListHeading>}
 
       {loadingCheckout &&
-        [...Array(3)].map(() => (
-          <ContentLoader height={70}>
+        [1, 2, 3].map((item) => (
+          <ContentLoader key={item} height={70}>
             <rect x="0" y="0" rx="5" ry="5" width="60" height="60" />
             <rect x="80" y="0" rx="4" ry="4" width="100%" height="8" />
             <rect x="80" y="20" rx="3" ry="3" width="100%" height="8" />
