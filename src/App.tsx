@@ -1,18 +1,19 @@
-import MyRoutes from './routers'
 import { ThemeProvider } from 'styled-components'
 
-import { CheckoutProvider } from './stores/Checkout/Checkout.store'
+import { CheckoutProvider } from './stores'
+import { Router } from './routes'
+import { GlobalStyle, theme } from './styles'
 
-import GlobalStyle from './styles/global'
-import Theme from "./styles/Theme"
-
-export default function App() {
+const App = () => {
   return (
-    <ThemeProvider theme={Theme}>
+    <ThemeProvider theme={theme}>
       <GlobalStyle />
+      
       <CheckoutProvider>
-        <MyRoutes />
+        <Router />
       </CheckoutProvider>
     </ThemeProvider>
   )
 }
+
+export default App
