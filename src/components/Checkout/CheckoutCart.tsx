@@ -1,14 +1,34 @@
-import { useCheckout } from '../../stores'
-import { Card } from '../../shared'
+import { Card, Button } from '../../shared'
 
-const CheckoutCart = () => {
-  const { checkout } = useCheckout()
+import {
+  CheckoutCardContainer,
+  CheckoutCardContent,
+  CheckoutCardDetails,
+  CheckoutCardDetailsContainer
+} from './Checkout.styled'
 
-  return (
-    <Card>
-      asdasd
-    </Card>
-  )
+import { OrderSummary } from '../OrderSummary'
+import { ProductList } from '../ProductList'
+
+export type CheckoutCartProps = {
+  onPayment?: () => void
 }
 
-export default CheckoutCart;
+export const CheckoutCart = ({ onPayment }: CheckoutCartProps) => {
+  return (
+    <CheckoutCardContainer>
+      <CheckoutCardContent>
+        <Card>
+          <ProductList />
+        </Card>
+      </CheckoutCardContent>
+
+      <CheckoutCardDetails>
+        <CheckoutCardDetailsContainer>
+          <OrderSummary />
+          <Button onClick={onPayment}>Seguir para pagamento</Button>
+        </CheckoutCardDetailsContainer>
+      </CheckoutCardDetails>
+    </CheckoutCardContainer>
+  )
+}
