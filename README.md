@@ -10,7 +10,7 @@ Link da demo: [Demo](https://test-front-blz.vercel.app/)
 - Estilização de components `styled-components`
 - Componente mascara de entrada `react-input-mask`
 - Componente loading de espaço reservado `react-content-loader`
-- Teste unitário `Jest`
+- Teste unitário `vitest`
 
 ### Installation:
 

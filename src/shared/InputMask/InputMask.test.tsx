@@ -1,3 +1,4 @@
+import { test } from 'vitest'
 import { render } from '../../utils/test'
 import { InputMask } from './InputMask'
 

@@ -1,4 +1,4 @@
-import { expect } from 'vitest'
+import { expect, test } from 'vitest'
 import { render, screen } from '../../utils/test'
 import { Container } from './Container'
 
@@ -10,5 +10,3 @@ test('Should be able to render based on the children prop', () => {
   renderComponent()
   expect(screen.getByText('Children')).toBeDefined()
 })
-
-

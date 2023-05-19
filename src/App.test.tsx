@@ -1,12 +1,10 @@
-import { render } from '@testing-library/react'
-import App from './App'
+import { expect, test, describe } from 'vitest';
+import { render } from '@testing-library/react';
+import App from './App';
 
-const renderComponent = () => {
-  return render(<App />)
-}
-
-describe('App', () => {
-  it('renders without errors', () => {
-    renderComponent()
-  })
+describe("App", () => {
+  test('Renders main page correctly', () => {
+    render(<App />);
+    expect(true).toBeTruthy();
+  });
 })

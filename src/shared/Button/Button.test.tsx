@@ -1,4 +1,4 @@
-import { expect } from 'vitest'
+import { expect, test } from 'vitest'
 import { render, screen } from '../../utils/test'
 import { Button } from './Button'
 
