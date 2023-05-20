@@ -11,8 +11,17 @@
     "coverage": "vitest run --coverage"
   },
   "dependencies": {
+    "@chakra-ui/react": "^2.6.1",
+    "@chakra-ui/theme-tools": "^2.0.17",
+    "@emotion/react": "^11.11.0",
+    "@emotion/styled": "^11.11.0",
+    "@hookform/resolvers": "2.9.10",
+    "framer-motion": "^10.12.12",
     "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react-dom": "^18.2.0",
+    "react-hook-form": "^7.43.9",
+    "react-router-dom": "^6.11.2",
+    "yup": "^1.1.1"
   },
   "devDependencies": {
     "@testing-library/jest-dom": "^5.16.5",

@@ -1,0 +1,19 @@
+.container {
+  background-color: rgb(248, 209, 209);
+  display: flex;
+  height: 40px;
+  width: '100%';
+  padding: 6;
+  justify-content: 'center';
+  align-items: 'center';
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.nav-menu {
+  /* width: 450px; */
+  background-color: 'red';
+  width: '100%';
+  display: flex;
+  justify-content: 'center';
+  align-items: 'center';
+}

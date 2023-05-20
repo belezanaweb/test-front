@@ -8,3 +8,12 @@
   font-size: calc(10px + 2vmin);
   color: white;
 }
+
+.app {
+  max-width: 1480px;
+  display: flex;
+  
+  @media screen and (max-width: 600px) {
+    display: block;
+  }
+}
