@@ -1,4 +1,3 @@
-import data from '../../../data.json'
 import { Box, Flex, Grid, GridItem, Text } from '@chakra-ui/react'
 import { Card } from '../Card'
 
@@ -39,7 +38,7 @@ export default function ProductItem({
       </Text>
 
       {showPrice && (
-        <>
+        <Flex gap={'4px'} flexDir={'column'}>
           {isPromotionalPrice && (
             <Text
               fontFamily={'Helvetica'}
@@ -53,7 +52,7 @@ export default function ProductItem({
           <Text letterSpacing="0.27px" fontSize="14px" lineHeight="16px" fontWeight={700}>
             {Intl.NumberFormat('pt-br', { style: 'currency', currency: 'BRL' }).format(maxPrice)}
           </Text>
-        </>
+        </Flex>
       )}
     </Flex>
   )
