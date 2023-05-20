@@ -8,7 +8,7 @@ export const Card = (props: FlexProps) => (
       flexDir={'column'}
       borderRadius={'4px'}
       color="black"
-      px={'8px'}
+      p={'20px 8px 40px 8px'}
       {...props}
     />
   </Box>

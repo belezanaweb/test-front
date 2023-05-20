@@ -10,22 +10,11 @@ import { PaymentContextProvider } from './contexts/payment'
 import { Router } from './Router'
 
 export default function App() {
-  console.log('data', data)
   return (
-    // <Flex h="100vh" bg="#F5F5F5" gap={'20px'} flexDir={'column'}>
-    //   <Navbar />
-    //   <BrowserRouter>
-    //     <Routes>
-    //       <Route path="/" element={<Bag />} />
-    //       <Route path="/payment" element={<Payment />} />
-    //     </Routes>
-    //   </BrowserRouter>
-    // </Flex>
-
-    <PaymentContextProvider>
-      <BrowserRouter>
+    <BrowserRouter>
+      <PaymentContextProvider>
         <Router />
-      </BrowserRouter>
-    </PaymentContextProvider>
+      </PaymentContextProvider>
+    </BrowserRouter>
   )
 }

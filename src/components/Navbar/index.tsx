@@ -9,8 +9,9 @@ export default function Navbar() {
       bg="white"
       display="flex"
       justifyContent="center"
-      alignContent={'center'}
       flexDir={'row'}
+      
+      alignItems="stretch"
       h="40px"
       boxShadow={'0px 2px 4px rgba(0, 0, 0, 0.1)'}
     >

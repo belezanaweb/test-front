@@ -16,7 +16,7 @@ interface PaymentContextProviderProps {
 }
 
 export function PaymentContextProvider({ children }: PaymentContextProviderProps) {
-  //const navigate = useNavigate()
+  const navigate = useNavigate()
   const [payment, setPayment] = useState<PaymentFormData>({
     credit_card_number:'',
     name:'',
@@ -32,7 +32,7 @@ export function PaymentContextProvider({ children }: PaymentContextProviderProps
       cvv:'',
       valid_date:'',
     })
-    //navigate('/bag')
+    navigate('/bag')
   }
 
 console.log('setPayment', payment)

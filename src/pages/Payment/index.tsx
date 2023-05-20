@@ -81,7 +81,7 @@ const {setPayment} = useContext(PaymentContext)
 
               <Flex gap={'14px'}>
                 <Input
-                 maxLength={5}
+                 maxLength={7}
                   placeholder="MM/AA"
                   label="Data de validade:"
                   {...register('valid_date')}

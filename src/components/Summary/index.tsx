@@ -1,8 +1,9 @@
 import { Card } from '../Card'
 
-import { Flex, Text, Button } from '@chakra-ui/react'
+import { Flex, Text, Button, Box } from '@chakra-ui/react'
 import data from '../../../data.json'
 import { Link } from 'react-router-dom'
+import Item from './Item/item'
 
 interface CardFooterProps {
   path: string;
@@ -12,55 +13,26 @@ interface CardFooterProps {
 
 export default function Summary({ path, text, children }: CardFooterProps) {
   return (
-    <Flex
+    <Box
       w="100%"
       bg="white"
       color="black"
       justifyContent={'center'}
-      align={'center'}
-      flexDir={'row'}
+      padding="28px 20px"
+      minH={'238px'}
     >
       <Flex
         flexDir={'column'}
-        p={'8px'}
         w="100%"
-        fontSize={'14px'}
-        fontWeight={'400'}
-        letterSpacing="0.269231px"
-        fontFamily={'Helvetica'}
+        gap={'8px'}
+      
       >
-        <Flex justifyContent={'space-between'} w="100%" fontFamily={'Arial'}>
-          <Text>Produtos: {`(${data.items.length} items)`}</Text>
-          <Text>
-            {Intl.NumberFormat('pt-br', { style: 'currency', currency: 'BRL' }).format(
-              data.subTotal
-            )}
-          </Text>
-        </Flex>
-        <Flex justifyContent={'space-between'} w="100%">
-          <Text>Frete:</Text>
-          <Text>
-            {Intl.NumberFormat('pt-br', { style: 'currency', currency: 'BRL' }).format(
-              data.shippingTotal
-            )}
-          </Text>
-        </Flex>
-        <Flex justifyContent={'space-between'} w="100%">
-          <Text>Desconto:</Text>
-          <Text fontWeight={700} color="#9222DC">
-            {Intl.NumberFormat('pt-br', { style: 'currency', currency: 'BRL' }).format(
-              data.discount
-            )}
-          </Text>
-        </Flex>
-        <Flex justifyContent={'space-between'} w="100%" fontWeight={700}>
-          <Text>SubTotal:</Text>
-          <Text>
-            {Intl.NumberFormat('pt-br', { style: 'currency', currency: 'BRL' }).format(data.total)}
-          </Text>
-        </Flex>
-        {children}
+        <Item text={`Produtos: (${data.items.length} items)`} value={data.subTotal} />
+        <Item text={'Frete:'} value={data.shippingTotal} />
+        <Item text={'Desconto:'} value={data.discount} color="#9222DC" discount={true}  />
+        <Item text={'SubTotal:'} value={data.total} color="#9222DC" fontWeight={700} fontSize='16px'/>
       </Flex>
-    </Flex>
+      {children}
+    </Box>
   )
 }

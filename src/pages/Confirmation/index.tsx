@@ -23,7 +23,6 @@ export default function Confirmation() {
           }}
           type="submit"
           colorScheme="purple"
-          w="100%"
           p="16px, 8px, 16px, 8px"
           bg="#9222DC"
           color="white"

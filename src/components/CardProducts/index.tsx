@@ -1,6 +1,6 @@
 import './styles.css'
 import data from '../../../data.json'
-import { Box, Flex } from '@chakra-ui/react'
+import { Box, Flex, Grid, GridItem, Text } from '@chakra-ui/react'
 import { Card } from '../Card'
 
 type CardProductsProps = {
@@ -9,45 +9,54 @@ type CardProductsProps = {
 
 export default function CardProducts({ showPrice = true }: CardProductsProps) {
   return (
-    <Card>
+    <Card h="324px">
       {data.items.map((product) => {
         return (
           <Flex
-            gap={'10px'}
+            w={'100%'}
+            gap={'15px'}
             flexDir={'row'}
             key={product.product.sku}
             justifyContent={'space-between'}
             align={'center'}
+            fontFamily={'Arial'}
+            fontStyle={'normal'}
+            fontWeight={400}
+            lineHeight={'16px'}
+            color="black"
           >
-            <img
-              src={
-                'https://res.cloudinary.com/beleza-na-web/image/upload/f_auto,fl_progressive,q_auto:best/v1/imagens/2/good-girl-carolina-herrera-eau-de-parfum-perfume-feminino-30ml-38273-1960525940762131267.jpg'
-              }
-              width={60}
-              height={60}
-            />
-            <p className="p">{product.product.name}</p>
+            <img src={product.product.imageObjects[0].small} width={60} height={60} />
+
+            <Text letterSpacing="0.27px" fontSize="12px" lineHeight="16px">
+              {product.product.name}
+            </Text>
+
             {showPrice && (
               <>
                 {product.product.priceSpecification.discount > 0 ? (
                   <div>
-                    <p className="discount-price">
+                    <Text
+                      fontFamily={'Helvetica'}
+                      color={'#9B9B9B'}
+                      textDecoration={'line-through'}
+                      fontSize="14px"
+                    >
                       {Intl.NumberFormat('pt-br', { style: 'currency', currency: 'BRL' }).format(
                         product.product.priceSpecification.maxPrice
                       )}
-                    </p>
-                    <p>
+                    </Text>
+                    <Text letterSpacing="0.27px" fontSize="14px" lineHeight="16px" fontWeight={700}>
                       {Intl.NumberFormat('pt-br', { style: 'currency', currency: 'BRL' }).format(
                         product.product.priceSpecification.originalPrice
                       )}
-                    </p>
+                    </Text>
                   </div>
                 ) : (
-                  <p className="p">
+                  <Text letterSpacing="0.27px" fontSize="14px" lineHeight="16px" fontWeight={700}>
                     {Intl.NumberFormat('pt-br', { style: 'currency', currency: 'BRL' }).format(
                       product.product.priceSpecification.maxPrice
                     )}
-                  </p>
+                  </Text>
                 )}
               </>
             )}

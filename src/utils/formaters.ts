@@ -10,7 +10,7 @@ export function expirationDateFormatter(value: string): string {
     if (!value) return '';
     const v = value.replace(/\D/g, '')
     const month = v.slice(0, 2)
-    const year = v.slice(2, 4)
+    const year = v.slice(2, 6)
     console.log('year', year)
     console.log('month', month)
     return `${month}/${year}`

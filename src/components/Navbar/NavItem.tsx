@@ -20,15 +20,16 @@ export default function NavItem({ name = '', url }: NavItem) {
     <Flex
       display="flex"
       alignItems="center"
-      justifyContent={'center'}
+   
       fontFamily="Arial"
-      fontStyle=" normal"
+      fontStyle="normal"
       fontWeight="400"
       fontSize="14px"
       lineHeight="24px"
-    //   borderBottom={'1px solid gray'}
+      color={isActive ? '#000000' : '#878787'}
+      //   borderBottom={'1px solid gray'}
       borderBottom={isActive ? '4px solid black' : '1px solid gray'}
-      padding=" 0 8px"
+      padding="0 8px"
       // borderBottom={'4px solid black'}
     >
       {name}

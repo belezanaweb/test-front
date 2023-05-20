@@ -5,6 +5,6 @@ const config: ThemeConfig = {
   useSystemColorMode: false
 }
 
-const theme = extendTheme({ config })
+const theme = extendTheme({ config, fonts: {body: 'Arial', Heading: 'Arial'} })
 
 export default theme
