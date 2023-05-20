@@ -6,7 +6,7 @@ type ItemProps = {
   fontWeight?: number,
   color?: string,
   discount?: boolean,
-  size?: string
+  fontSize?: string
 }
 
 export default function Item({
@@ -15,7 +15,7 @@ export default function Item({
   fontWeight,
   color,
   discount,
-  size = '14px'
+  fontSize = '14px'
 }: ItemProps) {
   return (
     <Flex
@@ -24,7 +24,7 @@ export default function Item({
       h='22px'
       fontFamily={'Helvetica'}
       fontWeight={fontWeight}
-      fontSize={size}
+      fontSize={fontSize}
       lineHeight={'16px'}
       fontStyle={'normal'}
       letterSpacing="0.269231px"

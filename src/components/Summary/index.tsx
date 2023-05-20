@@ -6,33 +6,33 @@ import { Link } from 'react-router-dom'
 import Item from './Item/item'
 
 interface CardFooterProps {
-  path: string;
-  text: string;
   children: React.ReactNode;
 }
 
-export default function Summary({ path, text, children }: CardFooterProps) {
+export default function Summary({ children }: CardFooterProps) {
   return (
-    <Box
+    <Flex
       w="100%"
-      bg="white"
+      flexDirection={'column'}
       color="black"
-      justifyContent={'center'}
+      bg="white"
       padding="28px 20px"
       minH={'238px'}
+      maxW="600px"
     >
-      <Flex
-        flexDir={'column'}
-        w="100%"
-        gap={'8px'}
-      
-      >
+      <Flex flexDir={'column'} w="100%" gap={'8px'}>
         <Item text={`Produtos: (${data.items.length} items)`} value={data.subTotal} />
         <Item text={'Frete:'} value={data.shippingTotal} />
-        <Item text={'Desconto:'} value={data.discount} color="#9222DC" discount={true}  />
-        <Item text={'SubTotal:'} value={data.total} color="#9222DC" fontWeight={700} fontSize='16px'/>
+        <Item text={'Desconto:'} value={data.discount} color="#9222DC" discount={true} />
+        <Item
+          text={'SubTotal:'}
+          value={data.total}
+          color="#9222DC"
+          fontWeight={700}
+          fontSize="16px"
+        />
       </Flex>
       {children}
-    </Box>
+    </Flex>
   )
 }

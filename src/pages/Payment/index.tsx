@@ -5,13 +5,13 @@ import { yupResolver } from '@hookform/resolvers/yup'
 import {
   Box,
   Breadcrumb,
-  Button,
   Divider,
   Flex,
   HStack,
   Heading,
   Radio,
   SimpleGrid,
+  Text,
   VStack
 } from '@chakra-ui/react'
 import { SubmitHandler, useForm } from 'react-hook-form'
@@ -26,6 +26,7 @@ import { Container } from '../../components/Container'
 import Navbar from '../../components/Navbar'
 import { useContext } from 'react'
 import { PaymentContext } from '../../contexts/payment'
+import { Button } from '../../components/Button'
 
 export type PaymentFormData = {
   name: string,
@@ -45,24 +46,26 @@ export default function Payment() {
 
 const {setPayment} = useContext(PaymentContext)
   const handlePayment: SubmitHandler<PaymentFormData> = async (values) => {
-    console.log('Values => ', values)
+   
     setPayment(values);
     navigate('/confirmation')
   }
 
   return (
     <Container as="form" onSubmit={handleSubmit(handlePayment)}>
-      <Navbar/>
-      <Card>
-        <VStack spacing={'14px'} w="100%">
+     <Navbar/>
+   
+     
+      <Card   p={' 16px 8px'}  >
+      <VStack spacing="20px" w="100%" >
           <Flex direction={'column'} w="100%">
-            <Heading size="lg">Cartão de Credito</Heading>
+            <Text fontSize={'20px'} lineHeight={'24px'}>Cartão de crédito</Text>
           </Flex>
-          <Box p={'8px'} w="100%">
-            <VStack spacing="8" w="100%" h="100%">
+         
+           
               <Input
                  maxLength={19}
-                label="Número:"
+                label="Número"
                 placeholder="0000 0000 0000 0000"
                 {...register('credit_card_number', {
                   onChange(event) {
@@ -73,17 +76,17 @@ const {setPayment} = useContext(PaymentContext)
               />
               <Input
                
-                label="Nome do titular do cartão:"
+                label="Nome do titular do cartão"
                 placeholder="Nome impresso no cartão"
                 {...register('name')}
                 error={formState.errors.name}
               />
 
-              <Flex gap={'14px'}>
+              <Flex gap={'14px'} w='100%'>
                 <Input
                  maxLength={7}
                   placeholder="MM/AA"
-                  label="Data de validade:"
+                  label="Data de validade"
                   {...register('valid_date')}
                   {...register('valid_date', {
                     onChange(event) {
@@ -95,31 +98,23 @@ const {setPayment} = useContext(PaymentContext)
                 <Input
                  maxLength={3}
                   placeholder="000"
-                  label="Código CVV:"
+                  label="Código CVV"
                   {...register('cvv')}
                   error={formState.errors.cvv}
                 />
               </Flex>
             </VStack>
-          </Box>
-        </VStack>
+       
+       
       </Card>
-      <Summary path="/payment" text="Pagamento">
+      <Summary >
         <Button
-          size="lg"
-          colorScheme="purple"
-          type="submit"
-          w="100%"
-          p="16px, 8px, 16px, 8px"
-          bg="#9222DC"
-          color="white"
-          fontFamily={'Arial'}
-          mt={'24px'}
-          borderRadius={'4px'}
+         type='submit'
         >
           Finalizar pedido
         </Button>
       </Summary>
+      
     </Container>
   )
 }

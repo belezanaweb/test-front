@@ -35,7 +35,7 @@ export function PaymentContextProvider({ children }: PaymentContextProviderProps
     navigate('/bag')
   }
 
-console.log('setPayment', payment)
+
  
 
   return <PaymentContext.Provider value={{ payment, setPayment, resetPayment}}>{children}</PaymentContext.Provider>
