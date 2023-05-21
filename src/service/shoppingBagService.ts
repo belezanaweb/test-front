@@ -32,7 +32,7 @@ type ShoppingBagResponse = {
   total: number
 }
 
-type ItemShoppingBagFormated = {
+export type ItemShoppingBagFormated = {
   quantity: number,
   sku: string,
   name: string,
@@ -47,7 +47,7 @@ type ItemShoppingBagFormated = {
   }
 }
 
-type CartShopFormated = {
+export type CartShopFormated = {
   id: string,
   items: ItemShoppingBagFormated[],
   subTotal: string,
