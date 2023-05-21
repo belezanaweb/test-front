@@ -30,3 +30,5 @@ Abra [http://localhost:3000](http://localhost:3000) com o seu browser para ver o
 - yup: validações do form.
 - react-router-dom: controlador de rotas da aplicação;
 - chakra-ui: responsável pelo estilo dos componentes, css global, responsividade e definição do tema da aplicação;
+
+Veja este projeto clicando [aqui](https://test-front-lucasrozalem.vercel.app).
