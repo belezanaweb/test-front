@@ -1,6 +1,6 @@
 import './App.css'
-import CartShop from './pages/CartShop'
+import ShoppingBag from './pages/ShoppingBag'
 
 export default function App() {
-  return <CartShop />
+  return <ShoppingBag />
 }

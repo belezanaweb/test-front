@@ -1,5 +1,5 @@
 import { assert, describe, it } from 'vitest'
-import { formatCartServiceData } from './cartShopService'
+import { formatShoppingBagServiceData } from './shoppingBagService'
 
 describe('CartShopService', () => {
   describe('formatCartServiceData', () => {
@@ -103,7 +103,7 @@ describe('CartShopService', () => {
         "total": "R$ 600,10",
         "totalItens": 2
       }
-      const result = formatCartServiceData(data)
+      const result = formatShoppingBagServiceData(data)
       expect(result).toEqual(dataFormated)
     })
   })

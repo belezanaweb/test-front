@@ -1,4 +1,4 @@
-type ItemCartShopResponse = {
+type ItemShoppingBagResponse = {
   quantity: number,
   product: {
     sku: string,
@@ -23,16 +23,16 @@ type ItemCartShopResponse = {
   }
 }
 
-type CartShopResponse = {
+type ShoppingBagResponse = {
   id: string,
-  items: ItemCartShopResponse[],
+  items: ItemShoppingBagResponse[],
   subTotal: number,
   shippingTotal: number,
   discount: number,
   total: number
 }
 
-type ItemCartShopFormated = {
+type ItemShoppingBagFormated = {
   quantity: number,
   sku: string,
   name: string,
@@ -49,7 +49,7 @@ type ItemCartShopFormated = {
 
 type CartShopFormated = {
   id: string,
-  items: ItemCartShopFormated[],
+  items: ItemShoppingBagFormated[],
   subTotal: string,
   shippingTotal: string,
   discount: string,
@@ -61,13 +61,13 @@ function formatMoney(value: number): string {
   return value.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'})
 }
 
-function countItens(itensResponse: ItemCartShopResponse[]): number {
+function countItens(itensResponse: ItemShoppingBagResponse[]): number {
   const quantityInitial = 0
   return itensResponse.reduce((accumulator, item) => accumulator + item.quantity, quantityInitial)
 }
 
-function formatedItem(itemResponse: ItemCartShopResponse): ItemCartShopFormated {
-  const item: ItemCartShopFormated = {
+function formatedItem(itemResponse: ItemShoppingBagResponse): ItemShoppingBagFormated {
+  const item: ItemShoppingBagFormated = {
     quantity: itemResponse.quantity,
     sku: itemResponse.product.sku,
     name: itemResponse.product.name,
@@ -84,7 +84,7 @@ function formatedItem(itemResponse: ItemCartShopResponse): ItemCartShopFormated 
   return item
 }
 
-export function formatCartServiceData(data: CartShopResponse): CartShopFormated {
+export function formatShoppingBagServiceData(data: ShoppingBagResponse): CartShopFormated {
   const cartShopFormated: CartShopFormated = {
     id: data.id,
     items: data.items.map(item => formatedItem(item)),
