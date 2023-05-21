@@ -3,9 +3,6 @@ import { ReactNode, createContext, useContext, useEffect, useState } from 'react
 import { PaymentFormData  } from '../pages/Payment';
 import { useNavigate } from 'react-router-dom';
 
-
-
-
 interface Product {
   name: string;
   image: string;
@@ -33,6 +30,7 @@ interface PaymentContextData {
   setPayment: (payment: PaymentFormData) => void;
   resetPayment: () => void;
   data: CartProps | any;
+  isLoading: boolean;
 }
  export const PaymentContext = createContext<PaymentContextData>({
   
@@ -44,8 +42,18 @@ interface PaymentContextProviderProps {
 
 export function PaymentContextProvider({ children }: PaymentContextProviderProps) {
   const navigate = useNavigate()
+  const [data, setData] = useState<CartProps>()
+const [isLoading, setIsLoading] = useState<boolean>(true);
+  const [payment, setPayment] = useState<PaymentFormData>({
+    credit_card_number:'',
+    name:'',
+    cvv:'',
+    valid_date:'',
+  })
+
 
 useEffect(()=>{
+  setIsLoading(true);
   fetch('https://run.mocky.io/v3/d6e9a93f-9741-4494-b81e-637a8e9b8ddd')
     .then((response) => response.json())
     .then((data) => {
@@ -69,19 +77,10 @@ useEffect(()=>{
       }),
       amountItems: amountItems,
      }
+     setIsLoading(false);
      return setData(cart)
     })
 },[])
-
-  const [data, setData] = useState<CartProps>()
-console.log('dataaaaa', data)
-  const [payment, setPayment] = useState<PaymentFormData>({
-    credit_card_number:'',
-    name:'',
-    cvv:'',
-    valid_date:'',
-  })
-
 
   function resetPayment() {
     setPayment({
@@ -96,5 +95,5 @@ console.log('dataaaaa', data)
 
  
 
-  return <PaymentContext.Provider value={{ data, payment, setPayment, resetPayment}}>{children}</PaymentContext.Provider>
+  return <PaymentContext.Provider value={{ data,isLoading, payment, setPayment, resetPayment}}>{children}</PaymentContext.Provider>
 }

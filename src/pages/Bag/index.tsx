@@ -1,16 +1,15 @@
-
 import { Link } from 'react-router-dom'
 import Summary from '../../components/Summary'
 import { Container } from '../../components/Container'
 import Navbar from '../../components/Navbar'
 import { Button } from '../../components/Button'
-import { Flex, Text } from '@chakra-ui/react'
+import { Flex, Spinner, Text } from '@chakra-ui/react'
 import { Card } from '../../components/Card'
 import ProductItem from '../../components/ProductItem'
 import { useContext } from 'react'
 import { PaymentContext } from '../../contexts/payment'
 export default function Bag() {
-  const { data } = useContext(PaymentContext)
+  const { data, isLoading } = useContext(PaymentContext)
 
   console.log('data', data?.items)
   return (
@@ -23,17 +22,23 @@ export default function Bag() {
         gap={'20px'}
       > */}
       <Card gap={'40px'} p={'20px 8px 40px 8px'}>
-        {data?.items.map((item: any) => {
-          return (
-            <ProductItem
-              key={item.product.sku}
-              image={item.product.image}
-              maxPrice={item.product.maxPrice}
-              price={item.product.price}
-              name={item.product.name}
-            />
-          )
-        })}
+        {!isLoading ? (
+          data.items.map((item: any) => {
+            return (
+              <ProductItem
+                key={item.product.sku}
+                image={item.product.image}
+                maxPrice={item.product.maxPrice}
+                price={item.product.price}
+                name={item.product.name}
+              />
+            )
+          })
+        ) : (
+          <Flex justifyContent={'center'}>
+            <Spinner />
+          </Flex>
+        )}
       </Card>
       <Summary>
         <Link to={'/payment'}>

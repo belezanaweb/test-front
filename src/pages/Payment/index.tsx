@@ -38,13 +38,10 @@ export default function Payment() {
   //   resolver: yupResolver(paymentFormSchema)
   // })
   const navigate = useNavigate()
-  const { register, handleSubmit, formState, setValue, control, reset, watch } =
-    useForm <
-    PaymentFormData >
-    {
-      resolver: yupResolver(paymentFormSchema)
-    }
-
+ 
+ const { register, handleSubmit, formState, setValue, control, reset, watch } = useForm<PaymentFormData>({
+    resolver: yupResolver(paymentFormSchema)
+  })
   const { setPayment } = useContext(PaymentContext)
   const handlePayment: SubmitHandler<PaymentFormData> = async (values) => {
     setPayment(values)

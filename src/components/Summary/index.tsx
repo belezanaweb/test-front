@@ -1,5 +1,5 @@
 import { Card } from '../Card'
-import { Flex, Text, Button, Box } from '@chakra-ui/react'
+import { Flex, Text, Button, Box, Spinner } from '@chakra-ui/react'
 import { Link } from 'react-router-dom'
 import Item from './Item/item'
 import { useContext } from 'react'
@@ -10,7 +10,7 @@ interface CardFooterProps {
 }
 
 export default function Summary({ children }: CardFooterProps) {
-  const { data } = useContext(PaymentContext);
+  const { data, isLoading } = useContext(PaymentContext)
 
   return (
     <Flex
@@ -23,16 +23,24 @@ export default function Summary({ children }: CardFooterProps) {
       maxW="600px"
     >
       <Flex flexDir={'column'} w="100%" gap={'8px'}>
-        <Item text={`Produtos: (${data.amountItems} items)`} value={data.subTotal} />
-        <Item text={'Frete:'} value={data.shippingTotal} />
-        <Item text={'Desconto:'} value={data.discount} color="#9222DC" discount={true} />
-        <Item
-          text={'SubTotal:'}
-          value={data.total}
-          color="#9222DC"
-          fontWeight={700}
-          fontSize="16px"
-        />
+        {!isLoading ? (
+          <>
+            <Item text={`Produtos: (${data.amountItems} items)`} value={data.subTotal} />
+            <Item text={'Frete:'} value={data.shippingTotal} />
+            <Item text={'Desconto:'} value={data.discount} color="#9222DC" discount={true} />
+            <Item
+              text={'SubTotal:'}
+              value={data.total}
+              color="#9222DC"
+              fontWeight={700}
+              fontSize="16px"
+            />
+          </>
+        ) : (
+          <Flex justifyContent={'center'}>
+            <Spinner />
+          </Flex>
+        )}
       </Flex>
       {children}
     </Flex>

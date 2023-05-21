@@ -1,5 +1,4 @@
-
-import { Box, Flex, Text } from '@chakra-ui/react'
+import { Box, Flex, Spinner, Text } from '@chakra-ui/react'
 
 import { Link } from 'react-router-dom'
 import Summary from '../../components/Summary'
@@ -13,7 +12,7 @@ import { Button } from '../../components/Button'
 import ProductItem from '../../components/ProductItem'
 export default function Confirmation() {
   const { resetPayment } = useContext(PaymentContext)
-  const { payment, data } = useContext(PaymentContext)
+  const { payment, data, isLoading } = useContext(PaymentContext)
   return (
     <Container>
       <Navbar />
@@ -38,18 +37,24 @@ export default function Confirmation() {
         <Text p={0} fontSize={'20px'} lineHeight={'24px'} fontFamily={'Jost'}>
           Produtos
         </Text>
-        {data?.items.map((item: any) => {
-          return (
-            <ProductItem
-              key={item.product.sku}
-              image={item.product.image}
-              maxPrice={item.product.maxPrice}
-              price={item.product.price}
-              name={item.product.name}
-              showPrice={false}
-            />
-          )
-        })}
+        {!isLoading ? (
+          data.items.map((item: any) => {
+            return (
+              <ProductItem
+                key={item.product.sku}
+                image={item.product.image}
+                maxPrice={item.product.maxPrice}
+                price={item.product.price}
+                name={item.product.name}
+                showPrice={false}
+              />
+            )
+          })
+        ) : (
+          <Flex justifyContent={'center'}>
+            <Spinner />
+          </Flex>
+        )}
       </Card>
 
       <Summary>
