@@ -47,7 +47,7 @@ export type ItemShoppingBagFormated = {
   }
 }
 
-export type CartShopFormated = {
+export type ShoppingBagFormated = {
   id: string,
   items: ItemShoppingBagFormated[],
   subTotal: string,
@@ -84,8 +84,8 @@ function formatedItem(itemResponse: ItemShoppingBagResponse): ItemShoppingBagFor
   return item
 }
 
-export function formatShoppingBagServiceData(data: ShoppingBagResponse): CartShopFormated {
-  const cartShopFormated: CartShopFormated = {
+export function formatShoppingBagServiceData(data: ShoppingBagResponse): ShoppingBagFormated {
+  const cartShopFormated: ShoppingBagFormated = {
     id: data.id,
     items: data.items.map(item => formatedItem(item)),
     subTotal: formatMoney(data.subTotal),
