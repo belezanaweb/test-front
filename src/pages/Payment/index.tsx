@@ -28,9 +28,9 @@ import { Button } from '../../components/Button'
 
 export type PaymentFormData = {
   name: string,
-  credit_card_number: string,
+  creditCardNumber: string,
   cvv: string,
-  valid_date: string
+  expirationDate: string
 }
 
 export default function Payment() {
@@ -38,10 +38,11 @@ export default function Payment() {
   //   resolver: yupResolver(paymentFormSchema)
   // })
   const navigate = useNavigate()
- 
- const { register, handleSubmit, formState, setValue, control, reset, watch } = useForm<PaymentFormData>({
+
+  const { register, handleSubmit, formState, setValue, control, reset, watch } = useForm<PaymentFormData>({
     resolver: yupResolver(paymentFormSchema)
   })
+
   const { setPayment } = useContext(PaymentContext)
   const handlePayment: SubmitHandler<PaymentFormData> = async (values) => {
     setPayment(values)
@@ -64,12 +65,12 @@ export default function Payment() {
             maxLength={19}
             label="Número"
             placeholder="0000 0000 0000 0000"
-            {...register('credit_card_number', {
+            {...register('creditCardNumber', {
               onChange(event) {
-                setValue('credit_card_number', cardNumberFormatter(event.target.value))
+                setValue('creditCardNumber', cardNumberFormatter(event.target.value))
               }
             })}
-            error={formState.errors.credit_card_number}
+            error={formState.errors.creditCardNumber}
           />
           <Input
             label="Nome do titular do cartão"
@@ -83,19 +84,23 @@ export default function Payment() {
               maxLength={7}
               placeholder="MM/AA"
               label="Data de validade"
-              {...register('valid_date')}
-              {...register('valid_date', {
+              {...register('expirationDate')}
+              {...register('expirationDate', {
                 onChange(event) {
-                  setValue('valid_date', expirationDateFormatter(event.target.value))
+                  setValue('expirationDate', expirationDateFormatter(event.target.value))
                 }
               })}
-              error={formState.errors.valid_date}
+              error={formState.errors.expirationDate}
             />
             <Input
               maxLength={3}
               placeholder="000"
               label="Código CVV"
-              {...register('cvv')}
+              {...register('cvv', {
+                onChange(event) {
+                  setValue('cvv', event.target.value.replace(/\D/g, ''))
+                }
+              })}
               error={formState.errors.cvv}
             />
           </Flex>

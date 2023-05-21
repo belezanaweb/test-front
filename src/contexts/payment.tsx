@@ -45,10 +45,10 @@ export function PaymentContextProvider({ children }: PaymentContextProviderProps
   const [data, setData] = useState<CartProps>()
 const [isLoading, setIsLoading] = useState<boolean>(true);
   const [payment, setPayment] = useState<PaymentFormData>({
-    credit_card_number:'',
+    creditCardNumber:'',
     name:'',
     cvv:'',
-    valid_date:'',
+    expirationDate:'',
   })
 
 
@@ -84,10 +84,10 @@ useEffect(()=>{
 
   function resetPayment() {
     setPayment({
-      credit_card_number:'',
+      creditCardNumber:'',
       name:'',
       cvv:'',
-      valid_date:'',
+      expirationDate:'',
     })
     navigate('/bag')
   }

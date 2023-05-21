@@ -28,9 +28,9 @@ export default function Confirmation() {
         <Text fontSize={'22px'} lineHeight={'28px'} color="#000000">
           Compra efetuada com sucesso
         </Text>
-        <Text>{`****.****.****.${payment.credit_card_number.slice(-4)}`}</Text>
+        <Text>{`****.****.****.${payment.creditCardNumber.slice(-4)}`}</Text>
         <Text>{payment.name}</Text>
-        <Text>{payment.valid_date}</Text>
+        <Text>{payment.expirationDate}</Text>
       </Card>
 
       <Card gap={'40px'} p={'20px 8px 40px 8px'}>

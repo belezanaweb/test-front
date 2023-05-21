@@ -11,7 +11,6 @@ import { PaymentContext } from '../../contexts/payment'
 export default function Bag() {
   const { data, isLoading } = useContext(PaymentContext)
 
-  console.log('data', data?.items)
   return (
     <Container>
       <Navbar />
