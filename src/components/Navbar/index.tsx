@@ -1,12 +1,9 @@
 import { Card } from '../Card'
 import NavItem from './NavItem'
-import './styles.css'
-import { Box, Flex, Text } from '@chakra-ui/react'
+import { Flex } from '@chakra-ui/react'
 
 export default function Navbar() {
   return (
-   
-  
     <Flex
       bg="white"
       display="flex"
@@ -21,6 +18,5 @@ export default function Navbar() {
       <NavItem name="Pagamento" url="/payment" />
       <NavItem name="Confirmação" url="/confirmation" />
     </Flex>
-   
   )
 }

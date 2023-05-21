@@ -15,7 +15,7 @@ export const paymentFormSchema = yup.object().shape({
       const year = value.slice(-4)
       const currentYear = new Date().getFullYear()
 
-      return Number(month) <= 12 && Number(year) >= currentYear - 1
+      return Number(month) <= 12 && Number(year) >= currentYear
     }),
   cvv: yup.string().required('insira um cvv válido').min(3, 'insira um cvv válido')
 })

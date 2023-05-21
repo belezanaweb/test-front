@@ -1,25 +1,17 @@
 import { Link } from 'react-router-dom'
 import Summary from '../../components/Summary'
-import { Container } from '../../components/Container'
-import Navbar from '../../components/Navbar'
 import { Button } from '../../components/Button'
-import { Flex, Spinner, Text } from '@chakra-ui/react'
+import { Flex, Spinner } from '@chakra-ui/react'
 import { Card } from '../../components/Card'
 import ProductItem from '../../components/ProductItem'
 import { useContext } from 'react'
-import { PaymentContext } from '../../contexts/payment'
+import { CheckoutContext } from '../../contexts/Checkout'
+
 export default function Bag() {
-  const { data, isLoading } = useContext(PaymentContext)
+  const { data, isLoading } = useContext(CheckoutContext)
 
   return (
-    <Container>
-      <Navbar />
-      {/* <Flex
-       
-        justifyContent={'space-between'}
-        flexDirection={['column', 'row']}
-        gap={'20px'}
-      > */}
+    <>
       <Card gap={'40px'} p={'20px 8px 40px 8px'}>
         {!isLoading ? (
           data.items.map((item: any) => {
@@ -44,7 +36,6 @@ export default function Bag() {
           <Button>Seguir para pagamento</Button>
         </Link>
       </Summary>
-      {/* </Flex> */}
-    </Container>
+    </>
   )
 }

@@ -1,14 +1,12 @@
 import { useLocation } from 'react-router-dom'
-import { Card } from '../Card'
-import './styles.css'
-import { Box, Flex, Text } from '@chakra-ui/react'
+import { Flex } from '@chakra-ui/react'
 
 interface NavItem {
   name: string;
   url: string;
 }
 
-export default function NavItem({ name = '', url }: NavItem) {
+export default function NavItem({ name, url }: NavItem) {
   const { pathname } = useLocation()
 
   let isActive = false
@@ -20,7 +18,6 @@ export default function NavItem({ name = '', url }: NavItem) {
     <Flex
       display="flex"
       alignItems="center"
-   
       fontFamily="Arial"
       fontStyle="normal"
       fontWeight="400"

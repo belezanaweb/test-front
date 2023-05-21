@@ -1,22 +1,16 @@
-import { Box, Flex, Spinner, Text } from '@chakra-ui/react'
-
-import { Link } from 'react-router-dom'
+import { Flex, Spinner, Text } from '@chakra-ui/react'
 import Summary from '../../components/Summary'
-import { Container } from '../../components/Container'
-import Navbar from '../../components/Navbar'
 import { useContext } from 'react'
-import { PaymentContext } from '../../contexts/payment'
+import { CheckoutContext } from '../../contexts/Checkout'
 import { Card } from '../../components/Card'
 import { Button } from '../../components/Button'
-
 import ProductItem from '../../components/ProductItem'
-export default function Confirmation() {
-  const { resetPayment } = useContext(PaymentContext)
-  const { payment, data, isLoading } = useContext(PaymentContext)
-  return (
-    <Container>
-      <Navbar />
 
+export default function Confirmation() {
+  const { resetPayment, payment, data, isLoading } = useContext(CheckoutContext)
+
+  return (
+    <>
       <Card
         p={'16px 20px'}
         align={'center'}
@@ -67,6 +61,6 @@ export default function Confirmation() {
           Voltar ao início do protótipo
         </Button>
       </Summary>
-    </Container>
+    </>
   )
 }

@@ -1,4 +1,4 @@
-import { ReactNode, createContext, useContext, useEffect, useState } from 'react'
+import { ReactNode, createContext, useEffect, useState } from 'react'
 
 import { PaymentFormData  } from '../pages/Payment';
 import { useNavigate } from 'react-router-dom';
@@ -25,32 +25,34 @@ interface CartProps{
   items: Item[]
 }
 
-interface PaymentContextData {
+interface CheckoutContextData {
   payment: PaymentFormData;
   setPayment: (payment: PaymentFormData) => void;
   resetPayment: () => void;
   data: CartProps | any;
   isLoading: boolean;
 }
- export const PaymentContext = createContext<PaymentContextData>({
+ export const CheckoutContext = createContext<CheckoutContextData>({
   
- } as PaymentContextData)
+ } as CheckoutContextData)
 
-interface PaymentContextProviderProps {
+interface CheckoutContextProviderProps {
   children: ReactNode;
 }
 
-export function PaymentContextProvider({ children }: PaymentContextProviderProps) {
+export function CheckoutContextProvider({ children }: CheckoutContextProviderProps) {
   const navigate = useNavigate()
+
   const [data, setData] = useState<CartProps>()
-const [isLoading, setIsLoading] = useState<boolean>(true);
+
+  const [isLoading, setIsLoading] = useState<boolean>(true);
+  
   const [payment, setPayment] = useState<PaymentFormData>({
     creditCardNumber:'',
     name:'',
     cvv:'',
     expirationDate:'',
   })
-
 
 useEffect(()=>{
   setIsLoading(true);
@@ -95,5 +97,5 @@ useEffect(()=>{
 
  
 
-  return <PaymentContext.Provider value={{ data,isLoading, payment, setPayment, resetPayment}}>{children}</PaymentContext.Provider>
+  return <CheckoutContext.Provider value={{ data, isLoading, payment, setPayment, resetPayment}}>{children}</CheckoutContext.Provider>
 }

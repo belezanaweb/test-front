@@ -43,7 +43,6 @@ const InputBase: ForwardRefRenderFunction<HTMLInputElement, InputProps> = (
         variant="outline"
         borderRadius={'4px'}
         {...rest}
-        color="gray.800"
       />
       {!!error && (
         <FormErrorMessage>{typeof error?.message === 'string' && error?.message}</FormErrorMessage>

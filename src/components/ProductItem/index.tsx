@@ -1,5 +1,4 @@
-import { Box, Flex, Grid, GridItem, Text } from '@chakra-ui/react'
-import { Card } from '../Card'
+import { Flex, Text } from '@chakra-ui/react'
 
 type ProductItemProps = {
   showPrice?: boolean,
@@ -23,7 +22,7 @@ export default function ProductItem({
       w={'100%'}
       gap={'15px'}
       flexDir={'row'}
-      justifyContent={'space-between'}
+      justifyContent={['space-between', showPrice ? 'space-between' : 'flex-start']}
       align={'center'}
       fontFamily={'Arial'}
       fontStyle={'normal'}

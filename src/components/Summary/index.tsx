@@ -1,16 +1,14 @@
-import { Card } from '../Card'
-import { Flex, Text, Button, Box, Spinner } from '@chakra-ui/react'
-import { Link } from 'react-router-dom'
+import { Flex, Spinner } from '@chakra-ui/react'
 import Item from './Item/item'
 import { useContext } from 'react'
-import { PaymentContext } from '../../contexts/payment'
+import { CheckoutContext } from '../../contexts/Checkout'
 
 interface CardFooterProps {
   children: React.ReactNode;
 }
 
 export default function Summary({ children }: CardFooterProps) {
-  const { data, isLoading } = useContext(PaymentContext)
+  const { data, isLoading } = useContext(CheckoutContext)
 
   return (
     <Flex
@@ -22,9 +20,9 @@ export default function Summary({ children }: CardFooterProps) {
       minH={'238px'}
       maxW="600px"
     >
-      <Flex flexDir={'column'} w="100%" gap={'8px'}>
-        {!isLoading ? (
-          <>
+      {!isLoading ? (
+        <>
+          <Flex flexDir={'column'} w="100%" gap={'8px'}>
             <Item text={`Produtos: (${data.amountItems} items)`} value={data.subTotal} />
             <Item text={'Frete:'} value={data.shippingTotal} />
             <Item text={'Desconto:'} value={data.discount} color="#9222DC" discount={true} />
@@ -35,14 +33,14 @@ export default function Summary({ children }: CardFooterProps) {
               fontWeight={700}
               fontSize="16px"
             />
-          </>
-        ) : (
-          <Flex justifyContent={'center'}>
-            <Spinner />
           </Flex>
-        )}
-      </Flex>
-      {children}
+          {children}
+        </>
+      ) : (
+        <Flex justifyContent={'center'}>
+          <Spinner />
+        </Flex>
+      )}
     </Flex>
   )
 }

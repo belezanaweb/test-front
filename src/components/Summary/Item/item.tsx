@@ -30,7 +30,7 @@ export default function Item({
       letterSpacing="0.269231px"
     >
       <Text>{text}</Text>
-      <Text color={discount && color} fontWeight={discount && 700}>
+      <Text color={discount ? color : ''} fontWeight={discount ? 700 : ''}>
         {Intl.NumberFormat('pt-br', { style: 'currency', currency: 'BRL' }).format(value)}
       </Text>
     </Flex>
