@@ -1,32 +1,41 @@
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import { useQuery } from "react-query"
 import { formatShoppingBagServiceData, ShoppingBagFormated } from "../../service/shoppingBagService"
 import { getShoppingBag } from "../../store/getShoppingBag"
 import Bag from "./Bag"
-import CompletedSuccess from "./CompletedSuccess"
+import CompletedSuccess, { DataPayement } from "./CompletedSuccess"
 import Payment from "./payment"
 
 const STEP_BAG = 'bag'
 const STEP_PAYMENT = 'payment'
 const STEP_COMPLETED = 'completed'
+const DATA_PAYMENT_INITAL_SATATE: DataPayement = { numberCard: '', name: '', birthDate: '' }
 
 export default function () {
   const { isLoading, data, error } = useQuery('Cart', getShoppingBag)
-  const [currentState, setCurrentState] = useState(STEP_BAG)
+  const [currentStep, setCurrentStep] = useState(STEP_BAG)
+  const [dataPayment, setDataPayment] = useState<DataPayement>(DATA_PAYMENT_INITAL_SATATE)
+
+  useEffect(() => {
+    if(currentStep === STEP_BAG) setDataPayment(DATA_PAYMENT_INITAL_SATATE)
+  },[currentStep])
 
   if (isLoading) return <div>loading </div>
   if (error) return <div>error</div>
   const dataFormated: ShoppingBagFormated = formatShoppingBagServiceData(data)
 
-  const changeStep = (newState: string) => setCurrentState(newState)
-
+  const changeStep = (newState: string) => setCurrentStep(newState)
+  const updatDataPayment = (newDataPAyment: DataPayement) => setDataPayment(newDataPAyment)
   const showState = () => {
-    if (currentState === STEP_PAYMENT) return <div><Payment dataBag={dataFormated} nextStep={() => changeStep(STEP_COMPLETED)} /></div>
-    if (currentState === STEP_COMPLETED) return <div><CompletedSuccess dataBag={dataFormated} nextStep={() => changeStep(STEP_BAG)} dataPayment={{
-      numberCard: "****.****.****.4545",
-      name: "Bruce Wayne",
-      birthDate: "02/2027"
-    }} /> </div>
+    if (currentStep === STEP_PAYMENT) return <div><Payment 
+    dataBag={dataFormated} 
+    nextStep={() => changeStep(STEP_COMPLETED)} 
+    updatDataPayment={updatDataPayment}
+    /></div>
+    if (currentStep === STEP_COMPLETED) return <div><CompletedSuccess
+      dataBag={dataFormated}
+      nextStep={() => changeStep(STEP_BAG)}
+      dataPayment={dataPayment} /> </div>
     return <div><Bag dataBag={dataFormated} nextStep={() => changeStep(STEP_PAYMENT)} /></div>
   }
 
@@ -36,7 +45,7 @@ export default function () {
       <div>
         <button onClick={() => changeStep(STEP_BAG)}>Sacola</button>
         <button onClick={() => changeStep(STEP_PAYMENT)}>Pagamento</button>
-        <button onClick={() => changeStep(STEP_COMPLETED)}>Confirmaçâo</button>
+        <button onClick={() => changeStep(STEP_COMPLETED)} disabled={currentStep === STEP_COMPLETED}>Confirmaçâo</button>
       </div>
       <div>
         {showState()}

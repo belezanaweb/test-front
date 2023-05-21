@@ -2,19 +2,26 @@ import { FormProvider, useForm } from "react-hook-form"
 import CardInputPayment from "../../../components/CardInputPayment"
 import InfoPrices from "../../../components/InfoPrices"
 import { ShoppingBagFormated } from "../../../service/shoppingBagService"
+import { DataPayement } from "../CompletedSuccess"
 
 type PaymentProps = {
   dataBag: ShoppingBagFormated
   nextStep: () => void
+  updatDataPayment: (newDataPAyment: DataPayement) => void
 }
 
 const LABEL_BUTTON = 'Finalizar pedido'
 
-export default function payment({ dataBag, nextStep }: PaymentProps) {
+export default function payment({ dataBag, nextStep, updatDataPayment }: PaymentProps) {
 
   const methods = useForm();
   const onSubmit = (data: any) => {
     console.log(data)
+    updatDataPayment({
+      numberCard: data.numberCard,
+      name: data.name,
+      birthDate: data.birthDate
+    })
     nextStep()
   };
 
