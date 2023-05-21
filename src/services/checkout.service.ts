@@ -24,10 +24,10 @@ export const checkoutService = async (): Promise<any> => {
       }
 
       return cart
-    }).catch(()=>{
-        return null
     })
- 
+    .catch(() => {
+      return null
+    })
 
   return data
 }

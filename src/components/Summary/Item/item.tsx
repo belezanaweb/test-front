@@ -21,7 +21,7 @@ export default function Item({
     <Flex
       justifyContent={'space-between'}
       w="100%"
-      h='22px'
+      h="22px"
       fontFamily={'Helvetica'}
       fontWeight={fontWeight}
       fontSize={fontSize}
