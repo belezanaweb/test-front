@@ -5,6 +5,7 @@ import { getShoppingBag } from "../../store/getShoppingBag"
 import Bag from "./Bag"
 import CompletedSuccess, { DataPayement } from "./CompletedSuccess"
 import Payment from "./payment"
+import { HeaderTab, TabOption } from "./ShoppingBag.style"
 
 const STEP_BAG = 'bag'
 const STEP_PAYMENT = 'payment'
@@ -42,11 +43,11 @@ export default function () {
 
   return (
     <div>
-      <div>
-        <button onClick={() => changeStep(STEP_BAG)}>Sacola</button>
-        <button onClick={() => changeStep(STEP_PAYMENT)}>Pagamento</button>
-        <button onClick={() => changeStep(STEP_COMPLETED)} disabled={currentStep === STEP_COMPLETED}>Confirmaçâo</button>
-      </div>
+      <HeaderTab>
+        <TabOption onClick={() => changeStep(STEP_BAG)}>Sacola</TabOption>
+        <TabOption onClick={() => changeStep(STEP_PAYMENT)}>Pagamento</TabOption>
+        <TabOption onClick={() => changeStep(STEP_COMPLETED)} disabled={currentStep !== STEP_COMPLETED}>Confirmaçâo</TabOption>
+      </HeaderTab>
       <div>
         {showState()}
       </div>

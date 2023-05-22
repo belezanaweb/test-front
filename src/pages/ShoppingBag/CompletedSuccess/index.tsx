@@ -20,7 +20,7 @@ const LABEL_BUTTON = 'Voltar ao inicio do protótipo'
 export default function completedSuccess({ dataBag, nextStep, dataPayment }: CompletedSuccessProps) {
   return <div>
     <CardSuccessPayment numberCard={dataPayment.numberCard} name={dataPayment.name} birthDate={dataPayment.birthDate} />
-    <CardProduct products={dataBag.items} />
+    <CardProduct products={dataBag.items} showHeader/>
     <InfoPrices
       subTotal={dataBag.subTotal}
       shippingTotal={dataBag.shippingTotal}

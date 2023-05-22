@@ -1,3 +1,5 @@
+import { Button, ContainerButton, Discount, LabelValue, Products, Shipping, SubTotal } from "./infoPrices.style"
+
 type InfoPRicesPorps = {
   subTotal: string,
   shippingTotal: string,
@@ -10,21 +12,21 @@ type InfoPRicesPorps = {
 
 function showLabelValue(label: string, value: string) {
   return (
-    <div>
+    <LabelValue>
       <div>{label}</div>
       <div>{value}</div>
-    </div>
+    </LabelValue>
   )
 }
 
 export default function infoPrices(props: InfoPRicesPorps) {
   return (
     <div>
-      <div>{showLabelValue(`Produtos: (${props.totalItens}) itens`, props.subTotal)}</div>
-      <div>{showLabelValue('Frete:', props.shippingTotal)}</div>
-      <div>{showLabelValue('Desconto', props.discount)}</div>
-      <div>{showLabelValue('Subtotal', props.total)}</div>
-      <div>{ props.handleClick ? <button onClick={props.handleClick} >{props.labelButton}</button> : <button type="submit" >{props.labelButton}</button>}</div>   
+      <Products>{showLabelValue(`Produtos: (${props.totalItens}) itens`, props.subTotal)}</Products>
+      <Shipping>{showLabelValue('Frete:', props.shippingTotal)}</Shipping>
+      <Discount>{showLabelValue('Desconto', props.discount)}</Discount>
+      <SubTotal>{showLabelValue('Subtotal', props.total)}</SubTotal>
+      <ContainerButton>{ props.handleClick ? <Button onClick={props.handleClick} >{props.labelButton}</Button> : <Button type="submit" >{props.labelButton}</Button>}</ContainerButton>   
     </div>
   )
 }

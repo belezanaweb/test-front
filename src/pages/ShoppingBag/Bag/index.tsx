@@ -11,7 +11,7 @@ const LABEL_BUTTON = 'Seguir para o pagamento'
 
 export default function bag({ dataBag, nextStep }: BagProps) {
   return <div>
-    <CardProduct products={dataBag.items} />
+    <CardProduct products={dataBag.items}showPrices />
     <InfoPrices
       subTotal={dataBag.subTotal}
       shippingTotal={dataBag.shippingTotal}

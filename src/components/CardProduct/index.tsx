@@ -1,4 +1,5 @@
 import { ItemShoppingBagFormated } from "../../service/shoppingBagService"
+import { Container, ContainerProduct, MaxPrice, PriceOriginal, ProductDescritpion } from "./cardProduct.style"
 
 type CardProductProps = {
   products: ItemShoppingBagFormated[],
@@ -8,32 +9,32 @@ type CardProductProps = {
 
 function cardProductItemPrices(originalPrice: string, maxPrice: string, showPrices: boolean){
   if(!showPrices) return null
-  if(originalPrice === maxPrice) return <div>{originalPrice}</div>
+  if(originalPrice === maxPrice) return <PriceOriginal>{originalPrice}</PriceOriginal>
   return (
     <div>
-      <div>{maxPrice}</div>
-      <div>{originalPrice}</div>
+      <MaxPrice>{maxPrice}</MaxPrice>
+      <PriceOriginal>{originalPrice}</PriceOriginal>
     </div>
   )
 }
 
 function cardProductItem(product: ItemShoppingBagFormated, showPrices: boolean) {
   return (
-    <div key={`cardProductItem${product.sku}`}>
+    <ContainerProduct key={`cardProductItem${product.sku}`}>
       <div><img src={product.images.thumbnail} alt="Product image" /></div>
-      <div>{product.name}</div>
+      <ProductDescritpion>{product.name}</ProductDescritpion>
       {cardProductItemPrices(product.originalPrice, product.maxPrice, showPrices)}
-    </div>
+    </ContainerProduct>
   )
 }
 
 export default function cardProduct({products, showHeader = false, showPrices = false }: CardProductProps) {
   return (
-    <div>
+    <Container>
       {showHeader && <div>Produtos</div>}
       <div>
         {products.map(product => cardProductItem(product, showPrices))}
       </div>
-    </div>
+    </Container>
   )
 }
