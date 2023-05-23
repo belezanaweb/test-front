@@ -1,3 +1,4 @@
+import { Box, CircularProgress, Tabs } from "@mui/material"
 import { useEffect, useState } from "react"
 import { useQuery } from "react-query"
 import { formatShoppingBagServiceData, ShoppingBagFormated } from "../../service/shoppingBagService"
@@ -5,7 +6,7 @@ import { getShoppingBag } from "../../store/getShoppingBag"
 import Bag from "./Bag"
 import CompletedSuccess, { DataPayement } from "./CompletedSuccess"
 import Payment from "./payment"
-import { HeaderTab, TabOption } from "./ShoppingBag.style"
+import { ContainerShoppingBag, ContainerTabs, TabBag } from "./ShoppingBag.style"
 
 const STEP_BAG = 'bag'
 const STEP_PAYMENT = 'payment'
@@ -18,39 +19,57 @@ export default function () {
   const [dataPayment, setDataPayment] = useState<DataPayement>(DATA_PAYMENT_INITAL_SATATE)
 
   useEffect(() => {
-    if(currentStep === STEP_BAG) setDataPayment(DATA_PAYMENT_INITAL_SATATE)
-  },[currentStep])
+    if (currentStep === STEP_BAG) setDataPayment(DATA_PAYMENT_INITAL_SATATE)
+  }, [currentStep])
 
-  if (isLoading) return <div>loading </div>
+  if (isLoading) return <div><CircularProgress color="inherit" /> </div>
   if (error) return <div>error</div>
+  
   const dataFormated: ShoppingBagFormated = formatShoppingBagServiceData(data)
 
   const changeStep = (newState: string) => setCurrentStep(newState)
+  const handleChange = (event: React.SyntheticEvent, newState: string) => {
+    setCurrentStep(newState)
+  };
   const updatDataPayment = (newDataPAyment: DataPayement) => setDataPayment(newDataPAyment)
+  
   const showState = () => {
-    if (currentStep === STEP_PAYMENT) return <div><Payment 
-    dataBag={dataFormated} 
-    nextStep={() => changeStep(STEP_COMPLETED)} 
-    updatDataPayment={updatDataPayment}
-    /></div>
-    if (currentStep === STEP_COMPLETED) return <div><CompletedSuccess
-      dataBag={dataFormated}
-      nextStep={() => changeStep(STEP_BAG)}
-      dataPayment={dataPayment} /> </div>
-    return <div><Bag dataBag={dataFormated} nextStep={() => changeStep(STEP_PAYMENT)} /></div>
+    if (currentStep === STEP_PAYMENT) return (
+      <Payment
+        dataBag={dataFormated}
+        nextStep={() => changeStep(STEP_COMPLETED)}
+        updatDataPayment={updatDataPayment}
+      />
+    )
+    if (currentStep === STEP_COMPLETED) return (
+      <CompletedSuccess
+        dataBag={dataFormated}
+        nextStep={() => changeStep(STEP_BAG)}
+        dataPayment={dataPayment}
+      />
+    )
+    return (
+      <Bag
+        dataBag={dataFormated}
+        nextStep={() => changeStep(STEP_PAYMENT)}
+      />
+    )
   }
 
 
   return (
-    <div>
-      <HeaderTab>
-        <TabOption onClick={() => changeStep(STEP_BAG)}>Sacola</TabOption>
-        <TabOption onClick={() => changeStep(STEP_PAYMENT)}>Pagamento</TabOption>
-        <TabOption onClick={() => changeStep(STEP_COMPLETED)} disabled={currentStep !== STEP_COMPLETED}>Confirmaçâo</TabOption>
-      </HeaderTab>
-      <div>
+    <ContainerShoppingBag>
+      <ContainerTabs>
+
+      <Tabs value={currentStep} TabIndicatorProps={{ style: { background: '#000000' } }} onChange={handleChange} >
+        <TabBag label="Sacola" value={STEP_BAG} />
+        <TabBag label="Pagamento" value={STEP_PAYMENT} />
+        <TabBag label="Confirmaçâo" value={STEP_COMPLETED} disabled={currentStep !== STEP_COMPLETED} />
+      </Tabs>
+      </ContainerTabs>
+      <Box>
         {showState()}
-      </div>
-    </div>
+      </Box>
+    </ContainerShoppingBag>
   )
 }

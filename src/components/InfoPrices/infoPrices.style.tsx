@@ -1,5 +1,10 @@
 import styled from "styled-components";
 
+export const Container = styled.div`
+  background: #ffffff;
+  padding: 28px 20px;
+`
+
 export const LabelValue = styled.div`
   display: flex;
   flex-direction: row;
@@ -74,5 +79,5 @@ export const Button = styled.button`
 export const ContainerButton = styled.div`
   display: flex; 
   align-items: center;
-  text-align: center;
+  justify-content: center;
 `

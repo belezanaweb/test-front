@@ -1,29 +1,29 @@
-import styled from "styled-components";
+import { Paper, styled, Tab } from "@mui/material";
 
-export const HeaderTab = styled.div`
-display: flex;
-background: #FFFFFF;
-padding: 8px;
-justify-content: center;
-margin-bottom: 24px;
-`
+export const TabBag = styled(Tab, {})({
+  fontFamily: 'Arial',
+  fontStyle: 'normal',
+  fontWeight: 400,
+  fontSize: '14px',
+  lineHeight: '24px',
+  color: 'color: #878787',
+  borderBottom: '1px solid #878787',
+  "&.Mui-selected": {
+    color: '#000000',
+    borderBottom: '4px solid #000000'
+  },
+  tabpanel: {
+    marginLeft: "auto",
+    marginRight: "auto"
+  }
+})
 
-export const TabOption = styled.button `
-display: flex;
-flex-direction: column;
-align-items: flex-start;
-padding: 0px 16px;
-gap: 8px;
+export const ContainerTabs = styled(Paper, {}) ({
+  backgroundColor: '#FFFFFFF',
+  display: 'flex',
+  justifyContent: 'center',
+})
 
-font-family: 'Arial';
-font-style: normal;
-font-weight: 400;
-font-size: 14px;
-line-height: 24px;
-background: none;
-border: none;
-border-bottom: 4px solid #000000;
-font-feature-settings: 'liga' off;
-
-color: #878787;
-`
+export const ContainerShoppingBag = styled(Paper, {}) ({
+  background: '#F5F5F5',
+})

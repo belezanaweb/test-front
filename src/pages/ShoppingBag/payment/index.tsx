@@ -3,6 +3,7 @@ import CardInputPayment from "../../../components/CardInputPayment"
 import InfoPrices from "../../../components/InfoPrices"
 import { ShoppingBagFormated } from "../../../service/shoppingBagService"
 import { DataPayement } from "../CompletedSuccess"
+import { ContainerPayment } from "./Payment.style"
 
 type PaymentProps = {
   dataBag: ShoppingBagFormated
@@ -29,7 +30,7 @@ export default function payment({ dataBag, nextStep, updatDataPayment }: Payment
     <div>
       <FormProvider {...methods} >
         <form onSubmit={methods.handleSubmit(onSubmit)}>
-          <div><CardInputPayment /></div>
+          <ContainerPayment><CardInputPayment /></ContainerPayment>
           <div><InfoPrices
             subTotal={dataBag.subTotal}
             shippingTotal={dataBag.shippingTotal}
