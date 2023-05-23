@@ -15,7 +15,15 @@ export default function cardInputPayment() {
             maxLength: {
               value: 16,
               message: "O número do cartão tem 16 caractes."
-            }
+            },
+            minLength: {
+              value: 16,
+              message: "O número do cartão tem 16 caractes."
+            },
+            pattern:{
+              value: /^(0|[1-9]\d*)(\.\d+)?$/,
+              message: 'Campo deve conter apenas números'
+           },
           })} id='numberCard' type='text' placeholder="0000 0000 0000 0000" />
           <ContainerErrorMessage>
             <ErrorMessage errors={errors} name="numberCard" />
@@ -36,7 +44,15 @@ export default function cardInputPayment() {
             maxLength: {
               value: 7,
               message: "A data deve ter 7 caracteres."
-            }
+            },
+            minLength: {
+              value: 7,
+              message: "A data deve ter 7 caracteres."
+            },
+            pattern:{
+              value: /(0[1-9]|10|11|12)\/20[0-9]{2}$/,
+              message: "insira uma data válida"
+           },
           
             })}
             id='birthDate' type='text' placeholder="MM/AAAA" />
@@ -51,7 +67,15 @@ export default function cardInputPayment() {
             maxLength: {
               value: 3,
               message: "O código CVV é um número de 3 caracteres."
-            }
+            }, 
+            minLength: {
+              value: 3,
+              message: "O código CVV é um número de 3 caracteres."
+            },
+            pattern:{
+              value: /^(0|[1-9]\d*)(\.\d+)?$/,
+              message: 'Campo deve conter apenas números'
+           },
           })}
             id='code' type='text' placeholder="000" />
           <ContainerErrorMessage>
