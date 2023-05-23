@@ -1,5 +1,5 @@
 import { assert, describe, it } from 'vitest'
-import { formatShoppingBagServiceData } from './shoppingBagService'
+import { formatShoppingBagServiceData, maskNumberCard } from './shoppingBagService'
 
 describe('CartShopService', () => {
   describe('formatCartServiceData', () => {
@@ -105,6 +105,18 @@ describe('CartShopService', () => {
       }
       const result = formatShoppingBagServiceData(data)
       expect(result).toEqual(dataFormated)
+    })
+  })
+
+  describe('maskNumberCard', () => {
+    it('Should return initial mask when string input have less 4 caracters', () => {
+      const result = maskNumberCard('123')
+      expect(result).toEqual('**** **** **** ')
+    })
+
+    it('Should return initial mask and last of 4 numbers when string input have more 4 caracters', () => {
+      const result = maskNumberCard('12345')
+      expect(result).toEqual('**** **** **** 2345')
     })
   })
 })

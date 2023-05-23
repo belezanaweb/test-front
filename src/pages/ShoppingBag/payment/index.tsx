@@ -17,7 +17,6 @@ export default function payment({ dataBag, nextStep, updatDataPayment }: Payment
 
   const methods = useForm();
   const onSubmit = (data: any) => {
-    console.log(data)
     updatDataPayment({
       numberCard: data.numberCard,
       name: data.name,

@@ -96,3 +96,11 @@ export function formatShoppingBagServiceData(data: ShoppingBagResponse): Shoppin
   }
   return cartShopFormated
 }
+
+const INITIAL_MASK = '**** **** **** '
+
+export function maskNumberCard(numbercard: string): string {
+  if (numbercard.length < 4) return INITIAL_MASK
+  const lastNumbers = numbercard.substring(numbercard.length - 4, numbercard.length)
+  return INITIAL_MASK + lastNumbers 
+}

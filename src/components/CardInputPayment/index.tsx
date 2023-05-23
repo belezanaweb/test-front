@@ -31,7 +31,14 @@ export default function cardInputPayment() {
         </ContainerField>
         <ContainerField>
           <Label htmlFor='birthDate' >Data de validade</Label>
-          <Input {...register('birthDate', { required: "insira uma data válida" })}
+          <Input {...register('birthDate', { 
+            required: "insira uma data válida",
+            maxLength: {
+              value: 7,
+              message: "A data deve ter 7 caracteres."
+            }
+          
+            })}
             id='birthDate' type='text' placeholder="MM/AAAA" />
           <ContainerErrorMessage>
             <ErrorMessage errors={errors} name="birthDate" />

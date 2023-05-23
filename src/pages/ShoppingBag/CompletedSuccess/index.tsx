@@ -3,6 +3,7 @@ import CardSuccessPayment from "../../../components/CardSuccessPayment";
 import InfoPrices from "../../../components/InfoPrices";
 import { ShoppingBagFormated } from "../../../service/shoppingBagService";
 import { ContainerCardProduct, ContainerCardSuccesPayment } from "./CompletedSuccess.style";
+import { maskNumberCard } from '../../../service/shoppingBagService';
 
 export type DataPayement = {
   numberCard: string
@@ -19,9 +20,10 @@ type CompletedSuccessProps = {
 const LABEL_BUTTON = 'Voltar ao inicio do protótipo'
 
 export default function completedSuccess({ dataBag, nextStep, dataPayment }: CompletedSuccessProps) {
+  const maskedNumberCard: string = maskNumberCard(dataPayment.numberCard)
   return <div>
     <ContainerCardSuccesPayment>
-      <CardSuccessPayment numberCard={dataPayment.numberCard} name={dataPayment.name} birthDate={dataPayment.birthDate} />
+      <CardSuccessPayment numberCard={maskedNumberCard} name={dataPayment.name} birthDate={dataPayment.birthDate} />
     </ContainerCardSuccesPayment>
     <ContainerCardProduct>
       <CardProduct products={dataBag.items} showHeader />
