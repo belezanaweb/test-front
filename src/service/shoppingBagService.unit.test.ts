@@ -1,4 +1,4 @@
-import { assert, describe, it } from 'vitest'
+import { describe, it } from 'vitest'
 import { formatShoppingBagServiceData, maskNumberCard } from './shoppingBagService'
 
 describe('CartShopService', () => {
