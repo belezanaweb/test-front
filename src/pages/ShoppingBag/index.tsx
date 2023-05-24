@@ -6,7 +6,7 @@ import { getShoppingBag } from "../../store/getShoppingBag"
 import Bag from "./Bag"
 import CompletedSuccess, { DataPayement } from "./CompletedSuccess"
 import Payment from "./payment"
-import { ContainerShoppingBag, ContainerTabs, TabBag } from "./ShoppingBag.style"
+import { ContainerCircular, ContainerShoppingBag, ContainerTabs, TabBag } from "./ShoppingBag.style"
 
 const STEP_BAG = 'bag'
 const STEP_PAYMENT = 'payment'
@@ -22,15 +22,13 @@ export default function () {
     if (currentStep === STEP_BAG) setDataPayment(DATA_PAYMENT_INITAL_SATATE)
   }, [currentStep])
 
-  if (isLoading) return <div><CircularProgress color="inherit" /> </div>
+  if (isLoading) return <ContainerCircular><CircularProgress color="inherit" /> </ContainerCircular>
   if (error) return <div>error</div>
   
   const dataFormated: ShoppingBagFormated = formatShoppingBagServiceData(data)
 
   const changeStep = (newState: string) => setCurrentStep(newState)
-  const handleChange = (event: React.SyntheticEvent, newState: string) => {
-    setCurrentStep(newState)
-  };
+  const handleChange = (event: React.SyntheticEvent, newState: string) => setCurrentStep(newState);
   const updatDataPayment = (newDataPAyment: DataPayement) => setDataPayment(newDataPAyment)
   
   const showState = () => {

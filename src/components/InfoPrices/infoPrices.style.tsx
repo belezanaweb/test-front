@@ -58,8 +58,11 @@ export const SubTotal = styled.div`
 
   color: #000000;
 `
+type ButtonStyledProps = {
+  black?: boolean;
+}
 
-export const Button = styled.button`
+export const Button = styled.button<ButtonStyledProps>`
   font-family: 'Arial';
   font-style: normal;
   font-weight: 700;
@@ -70,14 +73,16 @@ export const Button = styled.button`
   text-align: center;
   font-feature-settings: 'liga' off;
   color: #FFFFFF;
-
+  justify-content: center;
   padding: 16px 8px;
-  background: #9222DC;
+  background:  ${props => props.black ? "#000000" : "#9222DC"};
   border-radius: 4px;
+  width: 100%
 `
 
 export const ContainerButton = styled.div`
   display: flex; 
   align-items: center;
   justify-content: center;
+  width: 100%
 `

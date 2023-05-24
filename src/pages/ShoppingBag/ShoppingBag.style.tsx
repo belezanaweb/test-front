@@ -1,4 +1,4 @@
-import { Paper, styled, Tab } from "@mui/material";
+import { containerClasses, Paper, styled, Tab } from "@mui/material";
 
 export const TabBag = styled(Tab, {})({
   fontFamily: 'Arial',
@@ -26,4 +26,13 @@ export const ContainerTabs = styled(Paper, {}) ({
 
 export const ContainerShoppingBag = styled(Paper, {}) ({
   background: '#F5F5F5',
+  maxWidth: '1080px',
+  margin: 'auto',
+})
+
+export const ContainerCircular = styled(Paper, {}) ({
+  height: '100vh',
+  display: 'flex',
+  alignItems: 'center',
+  justifyContent: 'center',
 })

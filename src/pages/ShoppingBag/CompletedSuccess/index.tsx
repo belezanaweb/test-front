@@ -35,6 +35,7 @@ export default function completedSuccess({ dataBag, nextStep, dataPayment }: Com
       total={dataBag.total}
       totalItens={dataBag.totalItens}
       labelButton={LABEL_BUTTON}
+      backGroundBlack
       handleClick={nextStep} />
   </div>
 }

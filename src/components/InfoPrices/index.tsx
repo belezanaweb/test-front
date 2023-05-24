@@ -7,6 +7,7 @@ type InfoPRicesPorps = {
   total: string
   totalItens: number
   labelButton: string
+  backGroundBlack?: boolean
   handleClick?: () => void
 }
 
@@ -26,7 +27,7 @@ export default function infoPrices(props: InfoPRicesPorps) {
       <Shipping>{showLabelValue('Frete:', props.shippingTotal)}</Shipping>
       <Discount>{showLabelValue('Desconto', props.discount)}</Discount>
       <SubTotal>{showLabelValue('Subtotal', props.total)}</SubTotal>
-      <ContainerButton>{ props.handleClick ? <Button onClick={props.handleClick} >{props.labelButton}</Button> : <Button type="submit" >{props.labelButton}</Button>}</ContainerButton>   
+      <ContainerButton>{ props.handleClick ? <Button onClick={props.handleClick} black={props.backGroundBlack}>{props.labelButton}</Button> : <Button type="submit" >{props.labelButton}</Button>}</ContainerButton>   
     </Container>
   )
 }

@@ -45,7 +45,8 @@ align-items: center;
 font-feature-settings: 'liga' off;
 margin-top: 5px;
 padding: 14px;
-width: 98%;
+width: 97%;
+margin-right: 24px;
 color: #000000;
 `
 
