@@ -1,5 +1,7 @@
 import './App.css'
 
+import Bag from './pages/Bag'
+
 export default function App() {
-  return <div className="wrapper">Boa sorte! 🚀</div>
+  return <Bag />
 }
