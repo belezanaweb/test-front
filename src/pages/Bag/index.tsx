@@ -1,10 +1,12 @@
 import { Tabs, TabsProps } from 'antd'
 
+import CartTab from '../../components/CartTab'
+
 const items: TabsProps['items'] = [
   {
     key: '1',
     label: `Sacola`,
-    children: `Content of Sacola`
+    children: <CartTab />
   },
   {
     key: '2',
