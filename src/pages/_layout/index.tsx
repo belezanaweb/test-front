@@ -15,8 +15,7 @@ const contentStyle: React.CSSProperties = {
   textAlign: 'center',
   minHeight: 120,
   lineHeight: '120px',
-  color: '#fff',
-  backgroundColor: '#108ee9'
+  color: '#fff'
 }
 
 type Props = {
@@ -25,7 +24,8 @@ type Props = {
 const DefaultLayout: React.FC<Props> = ({ children }) => (
   <Space direction="vertical" style={{ width: '100%' }} size={[0, 48]}>
     <Layout>
-      <Content style={contentStyle}>Content</Content>
+      <Content style={contentStyle}>{children}</Content>
     </Layout>
   </Space>
 )
+export default DefaultLayout

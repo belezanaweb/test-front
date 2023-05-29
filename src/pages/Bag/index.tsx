@@ -1,6 +1,8 @@
 import { Tabs, TabsProps } from 'antd'
 
+import { CartInfo } from '../../components/CartInfo'
 import CartTab from '../../components/CartTab'
+import { useState } from 'react'
 
 const items: TabsProps['items'] = [
   {
@@ -20,6 +22,16 @@ const items: TabsProps['items'] = [
   }
 ]
 const Bag: React.FC = () => {
-  return <Tabs defaultActiveKey="1" centered items={items} />
+  const [activeTab, setActiveTab] = useState('1')
+
+  const handleActiveTab = (key: string) => {
+    setActiveTab(key)
+  }
+  return (
+    <>
+      <Tabs defaultActiveKey="1" onChange={handleActiveTab} centered items={items} />
+      <CartInfo activeTab={activeTab} />
+    </>
+  )
 }
 export default Bag

@@ -2,7 +2,8 @@ import { useQuery } from "react-query"
 
 export const BASE_URL = 'https://run.mocky.io/v3/d6e9a93f-9741-4494-b81e-637a8e9b8ddd'
 
-async function getCartService() {
+
+const getData = async () => {
   const result = await fetch(BASE_URL)
   return await result.json()
 }
@@ -26,7 +27,7 @@ type FetchCart = {
 }
 
 const  useCart = () => {
-  return useQuery<FetchCart>({ queryKey: ['cart'], queryFn: getCartService })
+  return useQuery<FetchCart>({ queryKey: ['cart'], queryFn: getData })
 }
 
 export default useCart

@@ -8,3 +8,8 @@
   font-size: calc(10px + 2vmin);
   color: white;
 }
+
+.pull-right {
+  display: flex;
+  justify-content: flex-end;
+}
