@@ -34,7 +34,7 @@ export const CartInfo: React.FC<CardInfoType> = ({activeTab, handleSeguirPagamen
 
   return (
     <>
-    <Card>
+    <Card className="cart-info">
     <Row gutter={[16,16]}>
       <Col span={12}>
         <Text>Produtos: ({quantity} itens)</Text>

@@ -14,6 +14,12 @@
   justify-content: flex-end;
 }
 
+.pull-left {
+  display: flex;
+  justify-content: flex-start;
+}
+
+
 .tab-button {
   width: 100%;
   border: none;
@@ -35,4 +41,8 @@
 }
 .ant-tabs-tab-active .ant-tabs-tab-btn {
   color: #000000!important
+}
+
+.cart-info {
+  margin-top: 60px;
 }
