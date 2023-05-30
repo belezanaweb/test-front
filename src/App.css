@@ -29,3 +29,10 @@
 .tab-button span {
   padding-bottom: 10px;
 }
+
+.ant-tabs-ink-bar {
+  border-bottom:  3px solid #000000;
+}
+.ant-tabs-tab-active .ant-tabs-tab-btn {
+  color: #000000!important
+}
