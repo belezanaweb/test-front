@@ -25,12 +25,20 @@ const Bag: React.FC = () => {
   const [activeTab, setActiveTab] = useState('1')
 
   const handleActiveTab = (key: string) => {
+    console.log(key)
     setActiveTab(key)
   }
+
   return (
     <>
-      <Tabs defaultActiveKey="1" onChange={handleActiveTab} centered items={items} />
-      <CartInfo activeTab={activeTab} />
+      <Tabs
+        defaultActiveKey="1"
+        activeKey={activeTab}
+        onChange={handleActiveTab}
+        centered
+        items={items}
+      />
+      <CartInfo activeTab={activeTab} handleSeguirPagamento={handleActiveTab} />
     </>
   )
 }

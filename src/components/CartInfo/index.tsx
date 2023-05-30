@@ -5,17 +5,20 @@ import { moneyFormatter } from "../../utils/money"
 import useCart from "../../hooks/useCart"
 
 const { Text } = Typography;
-export function CartInfoRoot({ children }: { children: ReactNode }) {
-  return (
-    <Card className="h-fit gap-6 border-transparent md:mx-2 md:my-10 md:min-w-[320px] md:border-neutral-500">
-      {children}
-    </Card>
-  )
+
+type CardInfoType = {
+  activeTab: string,
+  handleSeguirPagamento: (tab: string) => void
 }
 
-// INFO DATA
 
-export function CartInfo(props: any) {
+const buttonLabelTab: Record<string, string> = {
+  "1": 'Seguir para pagamento',
+  "2": 'Finalizar pedido',
+
+};
+
+export const CartInfo: React.FC<CardInfoType> = ({activeTab, handleSeguirPagamento}) => {
   const { data, isLoading } = useCart()
 
   if (isLoading) {
@@ -27,6 +30,7 @@ export function CartInfo(props: any) {
   }
 
   const quantity = data?.items.reduce((acc, curr) => acc + curr.quantity, 0)
+
 
   return (
     <>
@@ -63,7 +67,14 @@ export function CartInfo(props: any) {
         <Text strong >{moneyFormatter.format(data!.subTotal)}</Text>
       </Col>
     </Row>
-
+    <Row gutter={[16,16]}>
+      <Col></Col>
+      <Col span={24}  >
+        <Button  block onClick={() => handleSeguirPagamento("2")} size="large" style={{backgroundColor: '#9222DC', color: '#fff'}} >
+          <Text strong style={{color: '#fff'}} >{buttonLabelTab[activeTab]}</Text>
+        </Button>
+      </Col>
+    </Row>
     </Card>
     </>
   )

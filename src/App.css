@@ -13,3 +13,19 @@
   display: flex;
   justify-content: flex-end;
 }
+
+.tab-button {
+  width: 100%;
+  border: none;
+  padding: 1rem;
+  margin-bottom: 10px;
+  border-radius: 4px;
+  color: #fff;
+  font-size: clamp(12px, 1.5vw, 16px);
+  font-weight: bold;
+  background-color: #9222DC;
+}
+
+.tab-button span {
+  padding-bottom: 10px;
+}
