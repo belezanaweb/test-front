@@ -1,0 +1,19 @@
+name: Close stale PRs
+
+on:
+  schedule:
+  - cron: 0 0 * * *
+
+jobs:
+  stale:
+    runs-on: [self-hosted, devsecops]
+    permissions:
+      issues: write
+      pull-requests: write
+
+    steps:
+    - uses: actions/stale@v8
+      with:
+        repo-token: ${{ secrets.GITHUB_TOKEN }}
+        close-pr-message: 'Pull Request fechado após 2 semanas sem interação.'
+        days-before-pr-close: 14
