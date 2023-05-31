@@ -17,10 +17,12 @@ type FetchCart = {
     quantity: number
     product: {
       name: string
-      imageObjects: Array<{ small: string }>
+      imageObjects: Array<{ small: string, thumbnail: string }>
       priceSpecification: {
         price: number
         maxPrice: number
+        discount: number
+        originalPrice: number
       }
     }
   }>

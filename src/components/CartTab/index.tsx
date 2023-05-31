@@ -1,5 +1,3 @@
-import * as Styled from './styled'
-
 import { Card, Col, Row, Space, Typography } from 'antd'
 
 import { moneyFormatter } from '../../utils/money'
