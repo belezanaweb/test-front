@@ -10,8 +10,6 @@ const { Text } = Typography
 export function CartTab() {
   const { data } = useCart()
 
-  console.log(data)
-
   return (
     <Row gutter={16}>
       <Col span={24}>

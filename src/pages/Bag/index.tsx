@@ -10,7 +10,6 @@ const Bag: React.FC = () => {
   const [activeTab, setActiveTab] = useState('1')
   const [form] = Form.useForm()
   const handleActiveTab = (key: string) => {
-    console.log(key)
     setActiveTab(key)
   }
   const items: TabsProps['items'] = [
