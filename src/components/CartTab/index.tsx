@@ -8,7 +8,7 @@ import useCart from '../../hooks/useCart'
 const { Text } = Typography
 
 export function CartTab() {
-  const { data, isLoading } = useCart()
+  const { data } = useCart()
 
   console.log(data)
 

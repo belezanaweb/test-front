@@ -46,3 +46,15 @@
 .cart-info {
   margin-top: 60px;
 }
+
+
+.resume-button {
+  background-color: rgb(146, 34, 220);
+  color: rgb(255, 255, 255);
+}
+
+.resume-button:disabled {
+  border: 1px solid #999999;
+  background-color: #cccccc;
+  color: #000000;
+}

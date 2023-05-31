@@ -1,6 +1,6 @@
-import { Button, Card, Col, Row, Skeleton, Typography } from "antd"
+import { Button, Card, Col, FormInstance, Row, Skeleton, Typography } from "antd"
+import { ReactNode, useEffect, useState } from "react"
 
-import { ReactNode } from "react"
 import { moneyFormatter } from "../../utils/money"
 import useCart from "../../hooks/useCart"
 
@@ -8,7 +8,8 @@ const { Text } = Typography;
 
 type CardInfoType = {
   activeTab: string,
-  handleSeguirPagamento: (tab: string) => void
+  handleSeguirPagamento: (tab: string) => void,
+  form: FormInstance
 }
 
 
@@ -18,9 +19,9 @@ const buttonLabelTab: Record<string, string> = {
 
 };
 
-export const CartInfo: React.FC<CardInfoType> = ({activeTab, handleSeguirPagamento}) => {
+export const CartInfo: React.FC<CardInfoType> = ({activeTab, handleSeguirPagamento, form}) => {
   const { data, isLoading } = useCart()
-
+  const [disableButton, setDisableButton] = useState(true)
   if (isLoading) {
     return (
       <div>
@@ -30,6 +31,7 @@ export const CartInfo: React.FC<CardInfoType> = ({activeTab, handleSeguirPagamen
   }
 
   const quantity = data?.items.reduce((acc, curr) => acc + curr.quantity, 0)
+
 
 
   return (
@@ -70,9 +72,18 @@ export const CartInfo: React.FC<CardInfoType> = ({activeTab, handleSeguirPagamen
     <Row gutter={[16,16]}>
       <Col></Col>
       <Col span={24}  >
-        <Button  block onClick={() => handleSeguirPagamento("2")} size="large" style={{backgroundColor: '#9222DC', color: '#fff'}} >
+        {activeTab === "1" && (
+           <Button  form='payment-form'   block onClick={() => handleSeguirPagamento("2")} size="large" style={{backgroundColor: '#9222DC', color: '#fff'}} >
+           <Text strong style={{color: '#fff'}} >{buttonLabelTab[activeTab]}</Text>
+         </Button>
+        )
+        }
+        {activeTab === "2" && (
+          <Button className="resume-button" form='payment-form'  htmlType="submit"  block onClick={() => handleSeguirPagamento("2")} size="large" style={{backgroundColor: '#9222DC', color: '#fff'}} >
           <Text strong style={{color: '#fff'}} >{buttonLabelTab[activeTab]}</Text>
         </Button>
+        )}
+
       </Col>
     </Row>
     </Card>

@@ -1,33 +1,39 @@
-import { Tabs, TabsProps } from 'antd'
+import { Card, Form, Tabs, TabsProps } from 'antd'
 
 import { CartInfo } from '../../components/CartInfo'
 import CartTab from '../../components/CartTab'
+import ConfirmationTab from '../../components/ConfirmationTab'
+import PaymentTab from '../../components/PaymentTab'
 import { useState } from 'react'
 
-const items: TabsProps['items'] = [
-  {
-    key: '1',
-    label: `Sacola`,
-    children: <CartTab />
-  },
-  {
-    key: '2',
-    label: `Pagamento`,
-    children: `Content of Pagamento`
-  },
-  {
-    key: '3',
-    label: `Confirmação`,
-    children: `Content of Confirmação`
-  }
-]
 const Bag: React.FC = () => {
   const [activeTab, setActiveTab] = useState('1')
-
+  const [form] = Form.useForm()
   const handleActiveTab = (key: string) => {
     console.log(key)
     setActiveTab(key)
   }
+  const items: TabsProps['items'] = [
+    {
+      key: '1',
+      label: `Sacola`,
+      children: <CartTab />
+    },
+    {
+      key: '2',
+      label: `Pagamento`,
+      children: <PaymentTab handleFinalizar={handleActiveTab} form={form} />
+    },
+    {
+      key: '3',
+      label: `Confirmação`,
+      children: (
+        <>
+          <ConfirmationTab form={form} />
+        </>
+      )
+    }
+  ]
 
   return (
     <>
@@ -38,7 +44,7 @@ const Bag: React.FC = () => {
         centered
         items={items}
       />
-      <CartInfo activeTab={activeTab} handleSeguirPagamento={handleActiveTab} />
+      <CartInfo activeTab={activeTab} handleSeguirPagamento={handleActiveTab} form={form} />
     </>
   )
 }
