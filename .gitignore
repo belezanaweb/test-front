@@ -24,3 +24,6 @@ build
 *.njsproj
 *.sln
 *.sw?
+.env
+tmp_*
+.vercel
