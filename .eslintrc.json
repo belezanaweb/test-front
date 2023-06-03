@@ -1,3 +1,91 @@
 {
-  "extends": "next/core-web-vitals"
+	"env": {
+  	"browser": true,
+    "es2021": true,
+    "node": true,
+    "jest": true
+  },
+  "extends": [
+		"eslint:recommended",
+    "next/core-web-vitals"
+  ],
+	"plugins": [
+		"react",
+    "import",
+		"prettier"
+	],
+  "settings": {
+		"react": {
+			"version": "detect"
+		}
+	},
+	"parserOptions": {
+		"ecmaFeatures": {
+			"jsx": true
+		},
+		"ecmaVersion": "latest",
+		"sourceType": "module"
+	},
+	"rules": {
+    "prefer-const": "error",
+		"linebreak-style": [
+			"error",
+      "unix"
+    ],
+    "semi": [
+    	"error",
+      "always"
+    ],
+    "no-console": [
+    	"error",
+      {
+        "allow": [
+        	"warn",
+          "error",
+          "info"
+        ]
+      }
+    ],
+		"max-lines-per-function": [
+			"error",
+			{
+				"max": 70,
+				"skipBlankLines": true,
+				"skipComments": true
+			}
+		],
+		"max-statements": [
+      "error",
+      15
+    ],
+    "react/prop-types": "off",
+		"arrow-parens": [
+      "error",
+      "as-needed"
+    ],
+    "import/first": [
+      "error"
+    ],
+    "import/newline-after-import": [
+      "error"
+    ],
+		"prettier/prettier": [
+    	"error",
+      {
+      	"printWidth": 80,
+        "trailingComma": "all",
+        "tabWidth": 2,
+        "singleQuote": true,
+        "arrowParens": "avoid"
+      }
+    ],
+		"no-multiple-empty-lines": [
+      "error",
+      {
+        "max": 1,
+        "maxBOF": 1,
+        "maxEOF": 1
+      }
+    ]
+  }
 }
