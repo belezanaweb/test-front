@@ -1,3 +1,5 @@
+import Text from '../components/shared/Text';
+
 export default function Home() {
-  return <p>Beleza na web</p>;
+  return <Text>Default</Text>;
 }

@@ -1,0 +1,29 @@
+import React from 'react';
+import { render } from '@testing-library/react';
+import Text from './Text';
+
+describe('<Text /> component', () => {
+  it('renders with default props', () => {
+    const { getByText } = render(<Text>Hello World</Text>);
+    const textElement = getByText(/Hello World/i);
+    expect(textElement).toBeInTheDocument();
+    expect(textElement).toHaveStyle('color: #000000');
+    expect(textElement).toHaveStyle('font-size: 16px');
+    expect(textElement).toHaveStyle('font-weight: 400');
+    expect(textElement.tagName).toMatch(/p/i);
+  });
+
+  it('renders with custom props', () => {
+    const { getByText } = render(
+      <Text color="secondary" size="large" weight="bold" component="h1">
+        Hello World
+      </Text>,
+    );
+    const textElement = getByText(/Hello World/i);
+    expect(textElement).toBeInTheDocument();
+    expect(textElement).toHaveStyle('color: #515151');
+    expect(textElement).toHaveStyle('font-size: 18px');
+    expect(textElement).toHaveStyle('font-weight: 700');
+    expect(textElement.tagName).toMatch(/h1/i);
+  });
+});
