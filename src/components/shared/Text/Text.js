@@ -26,8 +26,8 @@ const Text = props => {
   } = props;
 
   const styles = {
-    color: colors[color] || color,
-    fontSize: sizes[size] || size,
+    color: colors[color],
+    fontSize: sizes[size],
     fontWeight: weights[weight],
   };
 
