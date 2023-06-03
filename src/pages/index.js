@@ -1,5 +1,5 @@
-import Text from '../components/shared/Text';
+import Product from '../components/Product';
 
 export default function Home() {
-  return <Text>Default</Text>;
+  return <Product />;
 }
