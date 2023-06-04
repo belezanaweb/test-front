@@ -6,14 +6,20 @@ const colors = {
 };
 
 const sizes = {
-  small: '14px',
-  regular: '16px',
-  large: '18px',
+  small: '12px',
+  regular: '14px',
+  large: '16px',
+  xlarge: '20px',
 };
 
 const weights = {
   bold: '700',
   regular: '400',
+};
+
+const decorations = {
+  none: 'none',
+  scratch: 'line-through',
 };
 
 const Text = props => {
@@ -22,16 +28,23 @@ const Text = props => {
     color = 'primary',
     size = 'regular',
     weight = 'regular',
+    decoration = 'none',
     component: Component = 'p',
+    className,
   } = props;
 
   const styles = {
     color: colors[color],
     fontSize: sizes[size],
     fontWeight: weights[weight],
+    textDecoration: decorations[decoration],
   };
 
-  return <Component style={styles}>{children}</Component>;
+  return (
+    <Component className={className} style={styles}>
+      {children}
+    </Component>
+  );
 };
 
 export default Text;

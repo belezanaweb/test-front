@@ -7,6 +7,9 @@ const nextConfig = {
   publicRuntimeConfig: {
     serviceCartUrl: process.env.SERVICE_CART_URL,
   },
+  images: {
+    domains: ['res.cloudinary.com'],
+  },
 };
 
 module.exports = nextConfig;
