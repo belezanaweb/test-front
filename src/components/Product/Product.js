@@ -1,32 +1,17 @@
 import Text from '../shared/Text/Text';
-import { useQuery } from '@tanstack/react-query';
-import { fetchCartProducts } from '@/services/cart';
 import styles from './Product.module.css';
 import Image from 'next/image';
 
-const Product = () => {
-  const { data } = useQuery({
-    queryKey: ['cart'],
-    queryFn: fetchCartProducts,
-  });
-
-  const maxPrice = data.items[0].product.priceSpecification.maxPrice;
-  const price = data.items[0].product.priceSpecification.price;
-
+const Product = ({ imageUrl, productName, price, maxPrice }) => {
   return (
     <div className={styles.Container}>
-      <Image
-        src={data.items[0].product.imageObjects[0].small}
-        width={60}
-        height={60}
-        alt="product image"
-      />
+      <Image src={imageUrl} width={60} height={60} alt="product image" />
       <Text className={styles.ProductName} size="small">
-        {data.items[0].product.name}
+        {productName}
       </Text>
       <div className={styles.PriceContainer}>
         {price !== maxPrice && (
-          <Text color="secondary" decoration="scratch">
+          <Text color="secondary" decoration="scratch" data-testid="max-price">
             R${maxPrice}
           </Text>
         )}
