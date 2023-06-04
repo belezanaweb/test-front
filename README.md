@@ -5,5 +5,5 @@ First of all, you'll need to set SERVICE_CART_URL environment variable in a .env
 Then:
 
 ```bash
-make dev
+make start
 ```
