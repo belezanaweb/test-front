@@ -1,14 +1,9 @@
-import Text from '../components/shared/Text';
+import Product from '@/components/Product/Product';
 import { fetchCartProducts } from '@/services/cart';
-import { useQuery, dehydrate, QueryClient } from '@tanstack/react-query';
+import { dehydrate, QueryClient } from '@tanstack/react-query';
 
 export default function Cart() {
-  const { data } = useQuery({
-    queryKey: ['cart'],
-    queryFn: fetchCartProducts,
-  });
-
-  return <Text>{data.subTotal}</Text>;
+  return <Product />;
 }
 
 export async function getServerSideProps() {

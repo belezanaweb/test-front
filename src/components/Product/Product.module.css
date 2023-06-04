@@ -1,3 +1,18 @@
-.Container {
+.Container,
+.PriceContainer {
   display: flex;
+  align-items: center;
+}
+
+.Container {
+  justify-content: space-around;
+}
+
+.PriceContainer {
+  flex-direction: column;
+}
+
+.ProductName {
+  width: 180px;
+  line-height: 16px;
 }
