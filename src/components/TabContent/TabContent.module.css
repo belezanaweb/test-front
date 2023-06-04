@@ -1,0 +1,11 @@
+.Background {
+ background-color: #F5F5F5;
+ padding: 20px 8px;
+}
+
+.ContentContainer {
+  padding: 24px 0 0;
+  border-radius: 4px;
+  border: 1px solid #CCCCCC;
+  background-color: #FFFFFF;
+}

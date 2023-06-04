@@ -1,13 +1,15 @@
-import { fetchCartProducts } from '../services/cart';
 import { dehydrate, QueryClient } from '@tanstack/react-query';
+import { fetchCartProducts } from '../services/cart';
 import Tabs from '../components/Tabs';
 import Tab from '../components/Tabs/Tab';
 import Products from '../components/Products';
+import TabContent from '../components/TabContent';
+import CartResume from '../components/CartResume';
 import { checkoutTabs } from '../enums/checkoutTabs';
 
 const { BAG_TAB, PAYMENT_TAB, CONFIRMATION_TAB } = checkoutTabs;
 
-export default function Cart() {
+export default function Checkout() {
   return (
     <>
       <Tabs value={BAG_TAB}>
@@ -15,7 +17,10 @@ export default function Cart() {
         <Tab value={PAYMENT_TAB}>Pagamento</Tab>
         <Tab value={CONFIRMATION_TAB}>Confirmação</Tab>
       </Tabs>
-      <Products />
+      <TabContent>
+        <Products />
+      </TabContent>
+      <CartResume />
     </>
   );
 }
