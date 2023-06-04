@@ -1,9 +1,9 @@
-import Product from '@/components/Product/Product';
-import { fetchCartProducts } from '@/services/cart';
+import Products from '../components/Products';
+import { fetchCartProducts } from '../services/cart';
 import { dehydrate, QueryClient } from '@tanstack/react-query';
 
 export default function Cart() {
-  return <Product />;
+  return <Products />;
 }
 
 export async function getServerSideProps() {

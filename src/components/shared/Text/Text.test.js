@@ -2,7 +2,7 @@ import { render } from '@testing-library/react';
 import Text from './Text';
 
 describe('<Text /> component', () => {
-  it('renders with default props', () => {
+  it('should render with default props', () => {
     const { getByText } = render(<Text>Hello World</Text>);
     const textElement = getByText(/Hello World/i);
     expect(textElement).toBeInTheDocument();
@@ -12,7 +12,7 @@ describe('<Text /> component', () => {
     expect(textElement.tagName).toMatch(/p/i);
   });
 
-  it('renders with custom props', () => {
+  it('should render with custom props', () => {
     const { getByText } = render(
       <Text color="secondary" size="large" weight="bold" component="h1">
         Hello World
