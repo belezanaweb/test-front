@@ -1,10 +1,9 @@
-import { useTabsContext } from '../TabsContext';
+import { useTabsContext } from '../../TabsContext';
 import styles from './Tab.module.css';
 
-const Tab = ({ value, setActiveTab, children }) => {
-  const currentValue = useTabsContext();
-  const tabClass =
-    currentValue === value ? styles.ActiveTabButton : styles.TabButton;
+const Tab = ({ value, children }) => {
+  const { currentValue, setActiveTab } = useTabsContext();
+  const tabClass = currentValue === value ? styles.ActiveTab : styles.Tab;
 
   const handleTabClick = value => {
     setActiveTab(value);

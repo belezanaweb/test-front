@@ -1,14 +1,14 @@
-.TabButton {
+.Tab {
   border: none;
   height: inherit;
   padding: 0 12px;
   font-size: 14px;
   color: #878787;
   background-color: transparent;
-  border-bottom: 1px solid #000;
+  border-bottom: 1px solid #878787;
 }
 
-.ActiveTabButton {
+.ActiveTab {
   border: none;
   color: #000;
   height: inherit;
