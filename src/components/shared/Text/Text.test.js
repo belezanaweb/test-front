@@ -7,7 +7,7 @@ describe('<Text /> component', () => {
     const textElement = getByText(/Hello World/i);
     expect(textElement).toBeInTheDocument();
     expect(textElement).toHaveStyle('color: #000000');
-    expect(textElement).toHaveStyle('font-size: 16px');
+    expect(textElement).toHaveStyle('font-size: 14px');
     expect(textElement).toHaveStyle('font-weight: 400');
     expect(textElement.tagName).toMatch(/p/i);
   });
@@ -21,7 +21,7 @@ describe('<Text /> component', () => {
     const textElement = getByText(/Hello World/i);
     expect(textElement).toBeInTheDocument();
     expect(textElement).toHaveStyle('color: #515151');
-    expect(textElement).toHaveStyle('font-size: 18px');
+    expect(textElement).toHaveStyle('font-size: 16px');
     expect(textElement).toHaveStyle('font-weight: 700');
     expect(textElement.tagName).toMatch(/h1/i);
   });
