@@ -1,9 +1,9 @@
-import { normalizeCartData } from './index';
+import { normalizeProductData } from './index';
 
-describe('normalizeCartData function', () => {
+describe('normalizeProductData function', () => {
   it('should return an empty array when passed an empty array', () => {
     const data = { items: [] };
-    const result = normalizeCartData(data);
+    const result = normalizeProductData(data);
     expect(result).toEqual([]);
   });
 
@@ -26,19 +26,19 @@ describe('normalizeCartData function', () => {
         },
       ],
     };
-    const result = normalizeCartData(data);
+    const result = normalizeProductData(data);
     expect(result).toEqual([
       {
         imageUrl: 'image1.jpg',
         productName: 'Product 1',
-        price: 10,
-        maxPrice: 20,
+        price: '10,00',
+        maxPrice: '20,00',
       },
       {
         imageUrl: 'image2.jpg',
         productName: 'Product 2',
-        price: 15,
-        maxPrice: 25,
+        price: '15,00',
+        maxPrice: '25,00',
       },
     ]);
   });

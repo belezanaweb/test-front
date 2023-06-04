@@ -1,10 +1,10 @@
 import { render, screen } from '@testing-library/react';
 import { useQuery } from '@tanstack/react-query';
 import Products from './Products';
-import { normalizeCartData } from './utils';
+import { normalizeProductData } from './utils';
 
 jest.mock('./utils', () => ({
-  normalizeCartData: jest.fn(),
+  normalizeProductData: jest.fn(),
 }));
 
 jest.mock('@tanstack/react-query', () => ({
@@ -68,7 +68,7 @@ describe('<Products /> component', () => {
     useQuery.mockImplementationOnce(() => ({
       data: mockData,
     }));
-    normalizeCartData.mockImplementationOnce(() => [...mockNormalizedData]);
+    normalizeProductData.mockImplementationOnce(() => [...mockNormalizedData]);
 
     render(<Products />);
 

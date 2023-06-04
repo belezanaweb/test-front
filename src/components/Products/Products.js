@@ -1,7 +1,7 @@
 import { useQuery } from '@tanstack/react-query';
 import { fetchCartProducts } from '../../services/cart';
 import Product from '../Product';
-import { normalizeCartData } from './utils';
+import { normalizeProductData } from './utils';
 
 const Products = () => {
   const { data } = useQuery({
@@ -9,7 +9,7 @@ const Products = () => {
     queryFn: fetchCartProducts,
   });
 
-  const cartProducts = normalizeCartData(data);
+  const cartProducts = normalizeProductData(data);
 
   return (
     <>
