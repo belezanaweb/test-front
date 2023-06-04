@@ -3,6 +3,7 @@ import { fetchCartProducts } from '../../services/cart';
 import Text from '../shared/Text/Text';
 import { normalizeCartData } from './utils';
 import styles from './CartResume.module.css';
+import Button from '../Button/Button';
 
 const CartResume = () => {
   const { data } = useQuery({
@@ -37,6 +38,7 @@ const CartResume = () => {
           R$ {total}
         </Text>
       </div>
+      <Button>Seguir para o pagamento</Button>
     </div>
   );
 };
