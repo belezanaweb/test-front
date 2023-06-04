@@ -1,0 +1,10 @@
+.CartResumeContainer {
+  padding: 28px 20px 0;
+}
+
+.ResumeItem {
+  height: 22px;
+  display: flex;
+  margin-bottom: 8px;
+  justify-content: space-between;
+}
