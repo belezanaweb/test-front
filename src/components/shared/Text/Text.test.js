@@ -2,27 +2,40 @@ import { render } from '@testing-library/react';
 import Text from './Text';
 
 describe('<Text /> component', () => {
-  it('should render with default props', () => {
+  it('should render children without any error', () => {
     const { getByText } = render(<Text>Hello World</Text>);
-    const textElement = getByText(/Hello World/i);
-    expect(textElement).toBeInTheDocument();
-    expect(textElement).toHaveStyle('color: #000000');
-    expect(textElement).toHaveStyle('font-size: 14px');
-    expect(textElement).toHaveStyle('font-weight: 400');
-    expect(textElement.tagName).toMatch(/p/i);
+    expect(getByText('Hello World')).toBeInTheDocument();
   });
 
-  it('should render with custom props', () => {
+  it('should apply default styles', () => {
+    const { getByText } = render(<Text>Hello World</Text>);
+    expect(getByText('Hello World')).toHaveClass('colorTextPrimary');
+    expect(getByText('Hello World')).toHaveClass('fontSizeMedium');
+    expect(getByText('Hello World')).toHaveClass('fontWeightNormal');
+    expect(getByText('Hello World')).toHaveClass('defaultTextDecoration');
+  });
+
+  it('should apply custom styles', () => {
     const { getByText } = render(
-      <Text color="secondary" size="large" weight="bold" component="h1">
+      <Text
+        color="secondary"
+        size="large"
+        weight="bold"
+        decoration="scratch"
+        className="custom-class"
+      >
         Hello World
       </Text>,
     );
-    const textElement = getByText(/Hello World/i);
-    expect(textElement).toBeInTheDocument();
-    expect(textElement).toHaveStyle('color: #515151');
-    expect(textElement).toHaveStyle('font-size: 16px');
-    expect(textElement).toHaveStyle('font-weight: 700');
-    expect(textElement.tagName).toMatch(/h1/i);
+    expect(getByText('Hello World')).toHaveClass('colorTextSecondary');
+    expect(getByText('Hello World')).toHaveClass('fontSizeLarge');
+    expect(getByText('Hello World')).toHaveClass('fontWeightBold');
+    expect(getByText('Hello World')).toHaveClass('scratchTextDecoration');
+    expect(getByText('Hello World')).toHaveClass('custom-class');
+  });
+
+  it('should render as a different component', () => {
+    const { container } = render(<Text component="h1">Hello World</Text>);
+    expect(container.querySelector('h1')).toBeInTheDocument();
   });
 });

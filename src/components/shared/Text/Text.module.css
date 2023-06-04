@@ -1,0 +1,47 @@
+.colorTextPrimary {
+  color: #000000;
+}
+
+.colorTextSecondary {
+  color: #515151;
+}
+
+.colorTextEmphasis {
+  color: #9222DC;
+}
+
+.colorTextError {
+  color: #DE1616;
+}
+
+.fontSizeSmall {
+  font-size: 12px;
+}
+
+.fontSizeMedium {
+  font-size: 14px;
+}
+
+.fontSizeLarge {
+  font-size: 16px;
+}
+
+.fontSizeXlarge {
+  font-size: 20px;
+}
+
+.fontWeightBold {
+  font-weight: 700;
+}
+
+.fontWeightNormal {
+  font-weight: 400;
+}
+
+.defaultTextDecoration {
+  text-decoration: none;
+}
+
+.scratchTextDecoration {
+  text-decoration: line-through;
+}
