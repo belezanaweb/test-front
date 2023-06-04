@@ -1,4 +1,4 @@
-import { useTabsContext } from '../../TabsContext';
+import { useTabsContext } from '../TabsContext';
 import styles from './Tab.module.css';
 
 const Tab = ({ value, children }) => {

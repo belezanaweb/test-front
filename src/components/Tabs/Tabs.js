@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import TabsContext from '../TabsContext';
+import TabsContext from './TabsContext';
 import styles from './Tabs.module.css';
 
 const Tabs = ({ value, children }) => {
