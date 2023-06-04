@@ -5,6 +5,7 @@
 }
 
 .Container {
+  margin-bottom: 40px;
   justify-content: space-around;
 }
 
