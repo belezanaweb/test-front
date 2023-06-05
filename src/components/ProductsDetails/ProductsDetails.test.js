@@ -1,6 +1,6 @@
 import { render, screen } from '@testing-library/react';
 import { useQuery } from '@tanstack/react-query';
-import Products from './Products';
+import ProductsDetails from './ProductsDetails';
 import { normalizeProductData } from './utils';
 
 jest.mock('./utils', () => ({
@@ -70,7 +70,7 @@ describe('<Products /> component', () => {
     }));
     normalizeProductData.mockImplementationOnce(() => [...mockNormalizedData]);
 
-    render(<Products />);
+    render(<ProductsDetails />);
 
     const product1 = await screen.findByText('Product 1');
     const product2 = await screen.findByText('Product 2');

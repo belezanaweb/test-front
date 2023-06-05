@@ -3,7 +3,7 @@ import { fetchCartProducts } from '../../services/cart';
 import Product from '../Product';
 import { normalizeProductData } from './utils';
 
-const Products = () => {
+const ProductsDetails = () => {
   const { data } = useQuery({
     queryKey: ['cart'],
     queryFn: fetchCartProducts,
@@ -26,4 +26,4 @@ const Products = () => {
   );
 };
 
-export default Products;
+export default ProductsDetails;

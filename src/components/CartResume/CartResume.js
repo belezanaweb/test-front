@@ -1,11 +1,13 @@
 import { useQuery } from '@tanstack/react-query';
 import { fetchCartProducts } from '../../services/cart';
 import Text from '../shared/Text/Text';
-import { normalizeCartData } from './utils';
+import { normalizeCartData, buttonContent } from './utils';
 import styles from './CartResume.module.css';
 import Button from '../Button/Button';
+import { useCheckoutContext } from '../../contexts';
 
 const CartResume = () => {
+  const { currentTab } = useCheckoutContext();
   const { data } = useQuery({
     queryKey: ['cart'],
     queryFn: fetchCartProducts,
@@ -38,7 +40,9 @@ const CartResume = () => {
           R$ {total}
         </Text>
       </div>
-      <Button>Seguir para o pagamento</Button>
+      <Button onClick={buttonContent[currentTab].onClick}>
+        {buttonContent[currentTab].text}
+      </Button>
     </div>
   );
 };
