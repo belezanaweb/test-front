@@ -1,8 +1,7 @@
 export const formatCardNumber = value => {
   return value
-    .replace(/\s/g, '')
-    .match(/.{1,4}/g)
-    ?.join(' ')
+    .replace(/\D/g, '')
+    .replace(/(\d{4})(?=\d)/g, '$1 ')
     .substr(0, 19);
 };
 
