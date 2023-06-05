@@ -6,7 +6,7 @@
 
 .Container {
   margin-bottom: 40px;
-  justify-content: space-around;
+  justify-content: space-between;
 }
 
 .PriceContainer {

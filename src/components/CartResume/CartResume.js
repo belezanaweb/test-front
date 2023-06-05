@@ -13,7 +13,10 @@ const CartResume = () => {
     queryFn: fetchCartProducts,
   });
 
-  const { buttonText, nextStep } = getButtonState(currentTab, setCurrentTab);
+  const { type, form, buttonText, nextStep } = getButtonState(
+    currentTab,
+    setCurrentTab,
+  );
   const { productsQuantity, subTotal, shipping, discount, total } =
     normalizeCartData(data);
 
@@ -41,7 +44,9 @@ const CartResume = () => {
           R$ {total}
         </Text>
       </div>
-      <Button onClick={nextStep}>{buttonText}</Button>
+      <Button type={type} form={form} onClick={nextStep}>
+        {buttonText}
+      </Button>
     </div>
   );
 };
