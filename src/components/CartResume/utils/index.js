@@ -16,23 +16,24 @@ export const getButtonState = (currentTab, setCurrentTab) => {
   switch (currentTab) {
     case BAG_TAB:
       return {
+        type: 'button',
+        form: '',
         buttonText: 'Seguir para o pagamento',
         nextStep: () => setCurrentTab(PAYMENT_TAB),
       };
     case PAYMENT_TAB:
       return {
+        type: 'submit',
+        form: 'payment-form',
         buttonText: 'Finalizar pedido',
-        nextStep: () => setCurrentTab(CONFIRMATION_TAB),
+        nextStep: () => {},
       };
     case CONFIRMATION_TAB:
       return {
+        type: 'button',
+        form: '',
         buttonText: 'Voltar ao início',
         nextStep: () => setCurrentTab(BAG_TAB),
-      };
-    default:
-      return {
-        buttonText: 'Seguir para o pagamento',
-        nextStep: () => setCurrentTab(PAYMENT_TAB),
       };
   }
 };

@@ -1,0 +1,13 @@
+.Form {
+  display: flex;
+  flex-direction: column;
+}
+
+.ContentTitle {
+  margin-bottom: 16px;
+}
+
+.ShortCardInformations {
+  display: flex;
+  gap: 14px;
+}
