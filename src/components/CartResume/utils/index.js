@@ -12,17 +12,27 @@ export const normalizeCartData = data => {
   };
 };
 
-export const buttonContent = {
-  [BAG_TAB]: {
-    text: 'Seguir para o pagamento',
-    onClick: () => {},
-  },
-  [PAYMENT_TAB]: {
-    text: 'Finalizar pedido',
-    onClick: () => {},
-  },
-  [CONFIRMATION_TAB]: {
-    text: 'Voltar ao início',
-    onClick: () => {},
-  },
+export const getButtonState = (currentTab, setCurrentTab) => {
+  switch (currentTab) {
+    case BAG_TAB:
+      return {
+        buttonText: 'Seguir para o pagamento',
+        nextStep: () => setCurrentTab(PAYMENT_TAB),
+      };
+    case PAYMENT_TAB:
+      return {
+        buttonText: 'Finalizar pedido',
+        nextStep: () => setCurrentTab(CONFIRMATION_TAB),
+      };
+    case CONFIRMATION_TAB:
+      return {
+        buttonText: 'Voltar ao início',
+        nextStep: () => setCurrentTab(BAG_TAB),
+      };
+    default:
+      return {
+        buttonText: 'Seguir para o pagamento',
+        nextStep: () => setCurrentTab(PAYMENT_TAB),
+      };
+  }
 };
