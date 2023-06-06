@@ -2,18 +2,18 @@
   border: none;
   height: inherit;
   padding: 0 12px;
-  font-size: 14px;
-  color: #878787;
+  font-size: var(--font-size-small);
+  color: var(--color-text-disabled);
   background-color: transparent;
-  border-bottom: 1px solid #878787;
+  border-bottom: 1px solid var(--color-border-disabled);
 }
 
 .ActiveTab {
   border: none;
-  color: #000;
+  color: var(--color-text-primary);
   height: inherit;
   padding: 0 12px;
-  font-size: 14px;
+  font-size: var(--font-size-small);
   background-color: transparent;
-  border-bottom: 4px solid #000;
+  border-bottom: 4px solid var(--color-border-active);
 }

@@ -2,10 +2,10 @@
   width: 100%;
   padding: 16px 0;
   border: none;
-  font-size: 18px;
-  color: #FFFFFF;
+  font-size: var(--font-size-large);
+  color: var(--color-text-contrast);
   margin-top: 16px;
-  font-weight: 700;
-  border-radius: 4px;
-  background-color: #9222DC;
+  font-weight: var(--font-weight-bold);
+  border-radius: var(--border-radius-small);
+  background-color: var(--color-button-primary);
 }

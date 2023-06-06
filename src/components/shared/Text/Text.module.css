@@ -1,47 +1,63 @@
 .colorTextPrimary {
-  color: #000000;
+  color: var(--color-text-primary);
 }
 
 .colorTextSecondary {
-  color: #515151;
+  color: var(--color-text-secondary);
 }
 
 .colorTextEmphasis {
-  color: #9222DC;
+  color: var(--color-text-emphasis);
+}
+
+.colorTextDisabled {
+  color: var(--color-text-disabled);
+}
+
+.colorTextSubtle {
+  color: var(--color-text-subtle);
+}
+
+.colorTextNeutral {
+  color: var(--color-text-neutral);
 }
 
 .colorTextError {
-  color: #DE1616;
+  color: var(--color-text-error);
+}
+
+.fontSizeXsmall {
+  font-size: var(--font-size-xsmall);
 }
 
 .fontSizeSmall {
-  font-size: 12px;
+  font-size: var(--font-size-small);
 }
 
 .fontSizeMedium {
-  font-size: 14px;
+  font-size: var(--font-size-medium);
 }
 
 .fontSizeLarge {
-  font-size: 16px;
+  font-size: var(--font-size-large);
 }
 
 .fontSizeXlarge {
-  font-size: 20px;
+  font-size: var(--font-size-xlarge);
 }
 
 .fontWeightBold {
-  font-weight: 700;
+  font-weight: var(--font-weight-bold);
 }
 
 .fontWeightNormal {
-  font-weight: 400;
+  font-weight: var(--font-weight-normal);
 }
 
 .defaultTextDecoration {
-  text-decoration: none;
+  text-decoration: var(--default-text-decoration);
 }
 
 .scratchTextDecoration {
-  text-decoration: line-through;
+  text-decoration: var(--scratch-text-decoration);
 }

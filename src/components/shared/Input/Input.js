@@ -8,7 +8,9 @@ const Input = props => {
 
   return (
     <label className={styles.Label}>
-      <Text className={styles.LabelText}>{label}</Text>
+      <Text size="small" color="secondary" className={styles.LabelText}>
+        {label}
+      </Text>
       <input
         type={type}
         name={name}
@@ -18,7 +20,7 @@ const Input = props => {
         className={`${styles.Input} ${errorClass}`}
       />
       {errorMessage && (
-        <Text size="small" color="error">
+        <Text size="xsmall" color="error">
           {errorMessage}
         </Text>
       )}

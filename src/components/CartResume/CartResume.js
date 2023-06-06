@@ -23,24 +23,26 @@ const CartResume = () => {
   return (
     <div className={styles.CartResumeContainer}>
       <div className={styles.ResumeItem}>
-        <Text>Produtos: ({productsQuantity} itens)</Text>
-        <Text>R$ {subTotal}</Text>
+        <Text size="small">Produtos: ({productsQuantity} itens)</Text>
+        <Text component="span" size="small">
+          R$ {subTotal}
+        </Text>
       </div>
       <div className={styles.ResumeItem}>
-        <Text>Frete:</Text>
-        <Text>R$ {shipping}</Text>
+        <Text size="small">Frete:</Text>
+        <Text component="span" size="small">
+          R$ {shipping}
+        </Text>
       </div>
       <div className={styles.ResumeItem}>
-        <Text>Desconto:</Text>
-        <Text weight="bold" color="emphasis">
+        <Text size="small">Desconto:</Text>
+        <Text component="span" size="small" weight="bold" color="emphasis">
           R$ {discount}
         </Text>
       </div>
       <div className={styles.ResumeItem}>
-        <Text size="large" weight="bold">
-          Subtotal
-        </Text>
-        <Text size="large" weight="bold">
+        <Text weight="bold">Subtotal</Text>
+        <Text component="span" weight="bold">
           R$ {total}
         </Text>
       </div>
