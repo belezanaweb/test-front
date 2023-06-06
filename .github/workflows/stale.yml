@@ -6,7 +6,7 @@ on:
 
 jobs:
   stale:
-    runs-on: [self-hosted, devsecops]
+    runs-on: ubuntu-latest
     permissions:
       issues: write
       pull-requests: write
