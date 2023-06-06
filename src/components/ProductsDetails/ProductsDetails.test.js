@@ -1,81 +1,36 @@
-import { render, screen } from '@testing-library/react';
-import { useQuery } from '@tanstack/react-query';
+import { render } from '@testing-library/react';
+import { useOrder } from '../../hooks';
 import ProductsDetails from './ProductsDetails';
-import { normalizeProductData } from './utils';
 
-jest.mock('./utils', () => ({
-  normalizeProductData: jest.fn(),
+jest.mock('../../hooks', () => ({
+  useOrder: jest.fn(),
 }));
 
-jest.mock('@tanstack/react-query', () => ({
-  useQuery: jest.fn(),
-}));
-
-jest.mock('../../services/cart', () => ({
-  fetchCartProducts: jest.fn(),
-}));
-
-const mockData = {
-  items: [
-    {
-      product: {
-        name: 'Product 1',
-        priceSpecification: {
-          maxPrice: 20,
-          price: 15,
-        },
-        imageObjects: [
-          {
-            small: 'https://fakeurl.com/image.jpg',
-          },
-        ],
-      },
-    },
-    {
-      product: {
-        name: 'Product 2',
-        priceSpecification: {
-          maxPrice: 20,
-          price: 15,
-        },
-        imageObjects: [
-          {
-            small: 'https://fakeurl.com/image.jpg',
-          },
-        ],
-      },
-    },
-  ],
-};
-
-const mockNormalizedData = [
+const productListData = [
   {
-    imageUrl: 'https://fakeurl.com/image.jpg',
+    imageUrl: 'https://fakeurl.com/image1.jpg',
     productName: 'Product 1',
-    price: 15,
-    maxPrice: 20,
+    price: '10,00',
+    maxPrice: '20.00',
   },
   {
-    imageUrl: 'https://fakeurl.com/image.jpg',
+    imageUrl: 'https://fakeurl.com/image2.jpg',
     productName: 'Product 2',
-    price: 15,
-    maxPrice: 20,
+    price: '15,00',
+    maxPrice: '25.00',
   },
 ];
 
-describe('<Products /> component', () => {
-  it('should render the products without any error', async () => {
-    useQuery.mockImplementationOnce(() => ({
-      data: mockData,
-    }));
-    normalizeProductData.mockImplementationOnce(() => [...mockNormalizedData]);
+describe('<ProductsDetails /> component', () => {
+  it('should render without any error', () => {
+    useOrder.mockReturnValue({ productListData });
+    const { getByText } = render(<ProductsDetails />);
 
-    render(<ProductsDetails />);
-
-    const product1 = await screen.findByText('Product 1');
-    const product2 = await screen.findByText('Product 2');
-
-    expect(product1).toBeInTheDocument();
-    expect(product2).toBeInTheDocument();
+    expect(getByText('Product 1')).toBeInTheDocument();
+    expect(getByText('R$10,00')).toBeInTheDocument();
+    expect(getByText('R$20.00')).toBeInTheDocument();
+    expect(getByText('Product 2')).toBeInTheDocument();
+    expect(getByText('R$15,00')).toBeInTheDocument();
+    expect(getByText('R$25.00')).toBeInTheDocument();
   });
 });

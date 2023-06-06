@@ -1,24 +1,19 @@
-import { useQuery } from '@tanstack/react-query';
-import { fetchCartProducts } from '../../services/cart';
 import Text from '../shared/Text/Text';
-import { normalizeCartData, getButtonState } from './utils';
+import { getButtonState } from './utils';
 import styles from './CartResume.module.css';
 import Button from '../shared/Button';
+import { useOrder } from '../../hooks';
 import { useCheckoutContext } from '../../contexts';
 
 const CartResume = () => {
   const { currentTab, setCurrentTab } = useCheckoutContext();
-  const { data } = useQuery({
-    queryKey: ['cart'],
-    queryFn: fetchCartProducts,
-  });
-
+  const {
+    cartData: { productsQuantity, subTotal, shipping, discount, total },
+  } = useOrder();
   const { type, form, buttonText, nextStep } = getButtonState(
     currentTab,
     setCurrentTab,
   );
-  const { productsQuantity, subTotal, shipping, discount, total } =
-    normalizeCartData(data);
 
   return (
     <div className={styles.CartResumeContainer}>

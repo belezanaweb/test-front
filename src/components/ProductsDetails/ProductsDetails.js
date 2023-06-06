@@ -1,19 +1,12 @@
-import { useQuery } from '@tanstack/react-query';
-import { fetchCartProducts } from '../../services/cart';
 import Product from '../Product';
-import { normalizeProductData } from './utils';
+import { useOrder } from '../../hooks';
 
 const ProductsDetails = () => {
-  const { data } = useQuery({
-    queryKey: ['cart'],
-    queryFn: fetchCartProducts,
-  });
-
-  const cartProducts = normalizeProductData(data);
+  const { productListData } = useOrder();
 
   return (
     <>
-      {cartProducts.map(product => (
+      {productListData.map(product => (
         <Product
           key={product.productName}
           imageUrl={product.imageUrl}
