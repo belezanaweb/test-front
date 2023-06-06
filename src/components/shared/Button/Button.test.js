@@ -1,6 +1,12 @@
 import { render, fireEvent } from '@testing-library/react';
 import Button from './Button';
 
+jest.mock('../../../contexts', () => ({
+  useCheckoutContext: jest.fn(() => ({
+    currentTab: 'currentTab',
+  })),
+}));
+
 describe('<Button /> component', () => {
   it('should render children prop', () => {
     const buttonText = 'Click me';

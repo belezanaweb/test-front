@@ -1,11 +1,19 @@
 .Button {
   width: 100%;
-  padding: 16px 0;
   border: none;
+  padding: 16px 0;
+  margin-top: 16px;
+  margin-bottom: 26px;
   font-size: var(--font-size-large);
   color: var(--color-text-contrast);
-  margin-top: 16px;
   font-weight: var(--font-weight-bold);
   border-radius: var(--border-radius-small);
-  background-color: var(--color-button-primary);
+}
+
+.Normal {
+  background-color: var(--backgroundColor-button-primary);
+}
+
+.Confirmation {
+  background-color: var(--backgroundColor-button-success);
 }
