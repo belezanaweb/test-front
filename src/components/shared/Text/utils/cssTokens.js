@@ -16,6 +16,7 @@ export const sizes = {
   medium: styles.fontSizeMedium,
   large: styles.fontSizeLarge,
   xlarge: styles.fontSizeXlarge,
+  xxlarge: styles.fontSizeXxlarge,
 };
 
 export const weights = {
