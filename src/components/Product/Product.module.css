@@ -9,9 +9,17 @@
   justify-content: space-between;
 }
 
+.Container:first-child {
+  margin-top: 8px;
+}
+
 .PriceContainer {
   margin-left: 15px;
   flex-direction: column;
+}
+
+.MaxPrice {
+  margin-bottom: 4px;
 }
 
 .ProductImage {
