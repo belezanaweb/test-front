@@ -50,10 +50,16 @@ const validateCreditCard = cardNumber => {
   return sum % 10 === 0;
 };
 
+const dateIsValid = dateString => {
+  const today = new Date();
+  const [month, year] = dateString.split('/');
+  const userDate = new Date(Number(year), Number(month) - 1);
+
+  return userDate < new Date(today.getFullYear(), today.getMonth());
+};
+
 export const validateForm = state => {
   const errors = {};
-  const isGreaterThanDecember =
-    Number(state.expirationDate.substring(0, 2)) > 12;
 
   if (!validateCreditCard(state.cardNumber)) {
     errors.cardNumber = 'insira um número de cartão válido';
@@ -63,7 +69,7 @@ export const validateForm = state => {
     errors.cardHolderName = 'insira um nome válido';
   }
 
-  if (state.expirationDate.length < 7 || isGreaterThanDecember) {
+  if (state.expirationDate.length < 7 || dateIsValid(state.expirationDate)) {
     errors.expirationDate = 'insira uma data válida';
   }
 
