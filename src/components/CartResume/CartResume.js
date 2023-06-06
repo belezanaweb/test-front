@@ -3,7 +3,7 @@ import { fetchCartProducts } from '../../services/cart';
 import Text from '../shared/Text/Text';
 import { normalizeCartData, getButtonState } from './utils';
 import styles from './CartResume.module.css';
-import Button from '../Button/Button';
+import Button from '../shared/Button';
 import { useCheckoutContext } from '../../contexts';
 
 const CartResume = () => {
