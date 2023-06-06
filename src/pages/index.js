@@ -13,10 +13,10 @@ import { checkoutTabs } from '../enums/checkoutTabs';
 const { BAG_TAB, PAYMENT_TAB, CONFIRMATION_TAB } = checkoutTabs;
 
 const Checkout = () => {
-  const [activeTab, setCurrentTab] = useState(BAG_TAB);
+  const [currentTab, setCurrentTab] = useState(BAG_TAB);
 
   const checkoutContextValue = {
-    currentTab: activeTab,
+    currentTab,
     setCurrentTab,
   };
 
@@ -28,8 +28,8 @@ const Checkout = () => {
         <Tab value={CONFIRMATION_TAB}>Confirmação</Tab>
       </Tabs>
       <TabContent>
-        {activeTab === BAG_TAB && <ProductsDetails />}
-        {activeTab === PAYMENT_TAB && <PaymentForm />}
+        {currentTab === BAG_TAB && <ProductsDetails />}
+        {currentTab === PAYMENT_TAB && <PaymentForm />}
       </TabContent>
       <CartResume />
     </CheckoutContext.Provider>
