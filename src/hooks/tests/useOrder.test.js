@@ -35,7 +35,7 @@ const mockResponse = {
 };
 
 const cartDataNormalized = {
-  productsQuantity: 2,
+  productsQuantity: '2',
   subTotal: '10,50',
   shipping: '2,50',
   discount: '1.50',
