@@ -12,7 +12,6 @@
   },
   "dependencies": {
     "@tanstack/react-query": "^4.29.12",
-    "@testing-library/react-hooks": "^8.0.1",
     "eslint": "8.42.0",
     "eslint-config-next": "13.4.4",
     "next": "13.4.4",
