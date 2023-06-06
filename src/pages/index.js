@@ -22,7 +22,7 @@ const Checkout = () => {
 
   return (
     <CheckoutContext.Provider value={checkoutContextValue}>
-      <Tabs value={BAG_TAB}>
+      <Tabs>
         <Tab value={BAG_TAB}>Sacola</Tab>
         <Tab value={PAYMENT_TAB}>Pagamento</Tab>
         <Tab value={CONFIRMATION_TAB}>Confirmação</Tab>
