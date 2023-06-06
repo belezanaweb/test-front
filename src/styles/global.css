@@ -12,6 +12,7 @@
   --font-size-medium: 16px;
   --font-size-large: 18px;
   --font-size-xlarge: 20px;
+  --font-size-xxlarge: 22px;
   --font-weight-bold: 700;
   --font-weight-normal: 400;
   --default-text-decoration: none;
@@ -22,7 +23,8 @@
   --color-border-default: #CCCCCC;
   --color-border-active: #000000;
   --color-border-disabled: #878787;
-  --color-button-primary: #9222DC;
+  --backgroundColor-button-primary: #9222DC;
+  --backgroundColor-button-success: #000000;
 }
 
 * {
