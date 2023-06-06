@@ -10,10 +10,14 @@
 }
 
 .PriceContainer {
+  margin-left: 15px;
   flex-direction: column;
 }
 
+.ProductImage {
+  margin-right: 15px;
+}
+
 .ProductName {
-  width: 180px;
   line-height: 16px;
 }
