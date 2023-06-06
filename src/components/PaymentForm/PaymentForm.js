@@ -1,12 +1,17 @@
 import { useReducer } from 'react';
+import { useCheckoutContext } from '../../contexts';
+import { validateForm } from './utils';
 import Text from '../shared/Text/Text';
 import Input from '../shared/Input/Input';
 import { initialState, reducer } from './reducer';
-import { validateForm } from './utils';
+import { checkoutTabs } from '../../enums/checkoutTabs';
 import styles from './PaymentForm.module.css';
+
+const { CONFIRMATION_TAB } = checkoutTabs;
 
 const PaymentForm = () => {
   const [state, dispatch] = useReducer(reducer, initialState);
+  const { setCurrentTab } = useCheckoutContext();
 
   const handleInputChange = event => {
     const { name, value } = event.target;
@@ -17,6 +22,10 @@ const PaymentForm = () => {
     event.preventDefault();
     const errors = validateForm(state);
     dispatch({ type: 'updateErrors', errors });
+
+    if (!Object.keys(errors).length) {
+      setCurrentTab(CONFIRMATION_TAB);
+    }
   };
 
   return (
