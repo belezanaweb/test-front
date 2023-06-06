@@ -5,6 +5,7 @@ import Tabs from '../components/Tabs';
 import Tab from '../components/Tabs/Tab';
 import ProductsDetails from '../components/ProductsDetails';
 import PaymentForm from '../components/PaymentForm';
+import OrderConfirmation from '../components/OrderConfirmation';
 import TabContent from '../components/TabContent';
 import CartResume from '../components/CartResume';
 import CheckoutContext from '../contexts';
@@ -27,10 +28,26 @@ const Checkout = () => {
         <Tab value={PAYMENT_TAB}>Pagamento</Tab>
         <Tab value={CONFIRMATION_TAB}>Confirmação</Tab>
       </Tabs>
-      <TabContent>
-        {currentTab === BAG_TAB && <ProductsDetails />}
-        {currentTab === PAYMENT_TAB && <PaymentForm />}
-      </TabContent>
+      {currentTab === BAG_TAB && (
+        <TabContent>
+          <ProductsDetails />
+        </TabContent>
+      )}
+      {currentTab === PAYMENT_TAB && (
+        <TabContent>
+          <PaymentForm />
+        </TabContent>
+      )}
+      {currentTab === CONFIRMATION_TAB && (
+        <>
+          <TabContent>
+            <OrderConfirmation />
+          </TabContent>
+          <TabContent>
+            <ProductsDetails isConfirmationStep />
+          </TabContent>
+        </>
+      )}
       <CartResume />
     </CheckoutContext.Provider>
   );
