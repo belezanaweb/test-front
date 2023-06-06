@@ -14,12 +14,9 @@
 }
 
 .PriceContainer {
+  gap: 4px;
   margin-left: 15px;
   flex-direction: column;
-}
-
-.MaxPrice {
-  margin-bottom: 4px;
 }
 
 .ProductImage {

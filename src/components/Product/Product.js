@@ -25,7 +25,6 @@ const Product = props => {
               component="span"
               decoration="scratch"
               data-testid="max-price"
-              className={styles.MaxPrice}
             >
               R${maxPrice}
             </Text>
