@@ -32,6 +32,10 @@ export const useOrder = () => {
     queryFn: fetchCartProducts,
   });
 
+  if (!data.items) {
+    return { isError: data.isError };
+  }
+
   const cartData = normalizeCartData(data);
   const productListData = normalizeProductData(data);
 

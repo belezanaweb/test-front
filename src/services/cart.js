@@ -9,9 +9,9 @@ export const fetchCartProducts = async () => {
     const response = await fetch(cartUrl);
     const data = await response.json();
 
-    return data;
+    return { ...data, isError: false };
   } catch (error) {
     console.error(error);
-    throw new Error('Failed to fetch cart products.');
+    return { isError: true };
   }
 };
