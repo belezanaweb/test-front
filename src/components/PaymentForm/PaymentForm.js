@@ -1,8 +1,8 @@
 import { useReducer } from 'react';
 import { useCheckoutContext } from '../../contexts';
 import { validateForm } from './utils';
-import Text from '../shared/Text/Text';
-import Input from '../shared/Input/Input';
+import Text from '../shared/Text';
+import Input from '../shared/Input';
 import { initialState, reducer } from './reducer';
 import { checkoutTabs } from '../../enums/checkoutTabs';
 import styles from './PaymentForm.module.css';
@@ -29,7 +29,12 @@ const PaymentForm = () => {
   };
 
   return (
-    <form id="payment-form" className={styles.Form} onSubmit={handleSubmit}>
+    <form
+      id="payment-form"
+      className={styles.Form}
+      onSubmit={handleSubmit}
+      data-testid="payment-form"
+    >
       <Text component="h2" className={styles.ContentTitle} size="xlarge">
         Cartão de crédito
       </Text>
