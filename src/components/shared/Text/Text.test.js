@@ -1,22 +1,24 @@
-import { render } from '@testing-library/react';
+import { render, screen } from '@testing-library/react';
 import Text from './Text';
 
 describe('<Text /> component', () => {
   it('should render children without any error', () => {
-    const { getByText } = render(<Text>Hello World</Text>);
-    expect(getByText('Hello World')).toBeInTheDocument();
+    render(<Text>Hello World</Text>);
+    expect(screen.getByText('Hello World')).toBeInTheDocument();
   });
 
   it('should apply default styles', () => {
-    const { getByText } = render(<Text>Hello World</Text>);
-    expect(getByText('Hello World')).toHaveClass('colorTextPrimary');
-    expect(getByText('Hello World')).toHaveClass('fontSizeMedium');
-    expect(getByText('Hello World')).toHaveClass('fontWeightNormal');
-    expect(getByText('Hello World')).toHaveClass('defaultTextDecoration');
+    render(<Text>Hello World</Text>);
+    expect(screen.getByText('Hello World')).toHaveClass('colorTextPrimary');
+    expect(screen.getByText('Hello World')).toHaveClass('fontSizeMedium');
+    expect(screen.getByText('Hello World')).toHaveClass('fontWeightNormal');
+    expect(screen.getByText('Hello World')).toHaveClass(
+      'defaultTextDecoration',
+    );
   });
 
   it('should apply custom styles', () => {
-    const { getByText } = render(
+    render(
       <Text
         color="secondary"
         size="large"
@@ -27,11 +29,13 @@ describe('<Text /> component', () => {
         Hello World
       </Text>,
     );
-    expect(getByText('Hello World')).toHaveClass('colorTextSecondary');
-    expect(getByText('Hello World')).toHaveClass('fontSizeLarge');
-    expect(getByText('Hello World')).toHaveClass('fontWeightBold');
-    expect(getByText('Hello World')).toHaveClass('scratchTextDecoration');
-    expect(getByText('Hello World')).toHaveClass('custom-class');
+    expect(screen.getByText('Hello World')).toHaveClass('colorTextSecondary');
+    expect(screen.getByText('Hello World')).toHaveClass('fontSizeLarge');
+    expect(screen.getByText('Hello World')).toHaveClass('fontWeightBold');
+    expect(screen.getByText('Hello World')).toHaveClass(
+      'scratchTextDecoration',
+    );
+    expect(screen.getByText('Hello World')).toHaveClass('custom-class');
   });
 
   it('should render as a different component', () => {
