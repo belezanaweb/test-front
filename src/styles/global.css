@@ -27,6 +27,26 @@
   --backgroundColor-button-success: #000000;
 }
 
+@media (min-width: 768px) {
+  :root {
+    --font-size-xsmall: 14px;
+    --font-size-small: 16px;
+    --font-size-medium: 18px;
+    --font-size-large: 20px;
+    --font-size-xlarge: 22px;
+    --font-size-xxlarge: 24px;
+  }
+
+  body {
+    display: flex;
+    justify-content: center;
+  }
+
+  body #__next {
+    max-width: 500px;
+  }
+}
+
 * {
   margin: 0;
   padding: 0;
