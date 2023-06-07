@@ -10,6 +10,8 @@ Ponto importante: a aplicação utiliza o algoritmo de Luhn para validação do 
 
 Utilize esta aplicação prioritariamente em dispositivos móveis ou simuladores. Infelizmente não houve tempo hábil para adequar a aplicação de forma satisfatória para desktops.
 
+Veja a aplicação em produção [clicanco aqui](https://beleza-na-web-challenge.vercel.app/).
+
 ### Para rodar em modo de desenvolvimento:
 
 ```bash
