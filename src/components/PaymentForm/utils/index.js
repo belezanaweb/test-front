@@ -82,3 +82,10 @@ export const validateForm = state => {
 
   return errors;
 };
+
+export const maskCreditCardNumber = cardNumber => {
+  const lastFourDigits = cardNumber.slice(-4);
+  const maskedNumber = '****.****.****.' + lastFourDigits;
+
+  return maskedNumber;
+};

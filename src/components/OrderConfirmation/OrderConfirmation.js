@@ -1,11 +1,26 @@
+import { useCheckoutContext } from '../../contexts';
 import Text from '../shared/Text/Text';
 import styles from './OrderConfirmation.module.css';
 
 const OrderConfirmation = () => {
+  const { paymentInfo } = useCheckoutContext();
+  const { cardNumber, cardHolderName, expirationDate } = paymentInfo;
+
   return (
-    <Text className={styles.ConfirmationMessage} size="xxlarge">
-      Compra efetuada com sucesso
-    </Text>
+    <div className={styles.PaymentInfoContainer}>
+      <Text className={styles.PaymentField} size="xxlarge">
+        Compra efetuada com sucesso
+      </Text>
+      <Text className={styles.PaymentField} color="secondary" size="medium">
+        {cardNumber}
+      </Text>
+      <Text className={styles.PaymentField} color="secondary" size="medium">
+        {cardHolderName}
+      </Text>
+      <Text className={styles.PaymentField} color="secondary" size="medium">
+        {expirationDate}
+      </Text>
+    </div>
   );
 };
 

@@ -19,7 +19,10 @@ describe('<PaymentForm />', () => {
   let setCurrentTab;
   beforeEach(() => {
     setCurrentTab = jest.fn();
-    useCheckoutContext.mockReturnValue({ setCurrentTab });
+    useCheckoutContext.mockReturnValue({
+      setCurrentTab,
+      setPaymentInfo: jest.fn(),
+    });
   });
 
   afterEach(() => {

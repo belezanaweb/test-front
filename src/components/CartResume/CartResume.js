@@ -7,9 +7,9 @@ import { useCheckoutContext } from '../../contexts';
 
 const CartResume = () => {
   const { currentTab, setCurrentTab } = useCheckoutContext();
-  const {
-    cartData: { productsQuantity, subTotal, shipping, discount, total },
-  } = useOrder();
+  const { cartData } = useOrder();
+  const { productsQuantity, subTotal, shipping, discount, total } = cartData;
+
   const { type, form, buttonText, nextStep } = getButtonState(
     currentTab,
     setCurrentTab,

@@ -1,6 +1,6 @@
 import { useReducer } from 'react';
 import { useCheckoutContext } from '../../contexts';
-import { validateForm } from './utils';
+import { validateForm, maskCreditCardNumber } from './utils';
 import Text from '../shared/Text';
 import Input from '../shared/Input';
 import { initialState, reducer } from './reducer';
@@ -11,19 +11,23 @@ const { CONFIRMATION_TAB } = checkoutTabs;
 
 const PaymentForm = () => {
   const [state, dispatch] = useReducer(reducer, initialState);
-  const { setCurrentTab } = useCheckoutContext();
+  const { setCurrentTab, setPaymentInfo } = useCheckoutContext();
 
   const handleInputChange = event => {
     const { name, value } = event.target;
     dispatch({ type: name, field: name, value });
   };
 
-  const handleSubmit = event => {
+  const handleSubmit = async event => {
     event.preventDefault();
     const errors = validateForm(state);
     dispatch({ type: 'updateErrors', errors });
 
     if (!Object.keys(errors).length) {
+      setPaymentInfo({
+        ...state,
+        cardNumber: maskCreditCardNumber(state.cardNumber),
+      });
       setCurrentTab(CONFIRMATION_TAB);
     }
   };

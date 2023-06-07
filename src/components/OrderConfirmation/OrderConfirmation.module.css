@@ -1,3 +1,10 @@
-.ConfirmationMessage {
-  text-align: center;
+.PaymentInfoContainer {
+  display: flex;
+  align-items: center;
+  padding-bottom: 16px;
+  flex-direction: column;
+}
+
+.PaymentField {
+  margin-bottom: 8px;
 }
