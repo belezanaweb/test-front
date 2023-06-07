@@ -2,7 +2,8 @@ name: Close stale PRs
 
 on:
   schedule:
-  - cron: 0 0 * * *
+    - cron: 0 0 * * *
+  workflow_dispatch:
 
 jobs:
   stale:
@@ -15,5 +16,6 @@ jobs:
     - uses: actions/stale@v8
       with:
         repo-token: ${{ secrets.GITHUB_TOKEN }}
-        close-pr-message: 'Pull Request fechado após 2 semanas sem interação.'
-        days-before-pr-close: 14
+        days-before-pr-stale: 14
+        days-before-pr-close: 1
+        stale-pr-label: 'Inativo'
