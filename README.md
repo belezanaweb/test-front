@@ -10,12 +10,12 @@ Ponto importante: a aplicação utiliza o algoritmo de Luhn para validação do 
 
 Utilize esta aplicação prioritariamente em dispositivos móveis ou simuladores. Infelizmente não houve tempo hábil para adequar a aplicação de forma satisfatória para desktops.
 
-# Para rodar em modo de desenvolvimento:
+### Para rodar em modo de desenvolvimento:
 
 ```bash
 make dev
 ```
-# Para buildar a imagem de produção e rodar o projeto:
+### Para buildar a imagem de produção e rodar o projeto:
 
 ```bash
 make start
