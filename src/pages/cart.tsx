@@ -2,7 +2,7 @@ import { useContext, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import { ActionContext } from '../contexts/ActionContext'
 import useLoadCart from '../hooks/useLoadCart'
-import { ListItem } from '../components/cart/Item'
+import { ListItem } from '../components/cart/ListItem'
 
 const Cart = () => {
   const { setActionElement } = useContext(ActionContext)
