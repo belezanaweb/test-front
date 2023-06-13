@@ -1,20 +1,21 @@
-import { Link } from 'react-router-dom'
+import { NavLink } from 'react-router-dom'
+import { Nav } from './styles'
 
 const Navigation = () => {
   return (
-    <nav>
+    <Nav>
       <ul>
         <li>
-          <Link to="/">Home</Link>
+          <NavLink to="/">Sacola</NavLink>
         </li>
         <li>
-          <Link to="/payment">About</Link>
+          <NavLink to="payment">Pagamento</NavLink>
         </li>
         <li>
-          <a>Dashboard</a>
+          <NavLink to="confirmation" className="non-clickable">Confirmação</NavLink>
         </li>
       </ul>
-    </nav>
+    </Nav>
   )
 }
 
