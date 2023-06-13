@@ -7,7 +7,7 @@ const useLoadCart = (): Cart | null => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetch('https://run.mocky.io/v3/d6e9a93f-9741-4494-b81e-637a8e9b8ddd');
+        const response = await fetch('https://run.mocky.io/v3/d6e9a93f-9741-4494-b81e-637a8e9b8ddd', { cache: "force-cache" });
         const responseData = await response.json();
         setData(responseData);
       } catch (error) {
