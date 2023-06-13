@@ -1,9 +1,9 @@
 import { NavLink } from 'react-router-dom'
-import { Nav } from './styles'
+import * as Styled from './styles'
 
 const Navigation = () => {
   return (
-    <Nav>
+    <Styled.Navigation>
       <ul>
         <li>
           <NavLink to="/">Sacola</NavLink>
@@ -15,7 +15,7 @@ const Navigation = () => {
           <NavLink to="confirmation" className="non-clickable">Confirmação</NavLink>
         </li>
       </ul>
-    </Nav>
+    </Styled.Navigation>
   )
 }
 
