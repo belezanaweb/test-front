@@ -1,5 +1,5 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
-import { Cart, Confirmation, Payment, NotFound } from './pages'
+import { CartPage, ConfirmationPage, PaymentPage, NotFoundPage } from './pages'
 import { Layout } from './pages/layout'
 
 export default function App() {
@@ -7,11 +7,11 @@ export default function App() {
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<Layout />}>
-          <Route index element={<Cart />} />
-          <Route path="payment" element={<Payment />} />
-          <Route path="confirmation" element={<Confirmation />} />
+          <Route index element={<CartPage />} />
+          <Route path="payment" element={<PaymentPage />} />
+          <Route path="confirmation" element={<ConfirmationPage />} />
         </Route>
-        <Route path="*" element={<NotFound />} />
+        <Route path="*" element={<NotFoundPage />} />
       </Routes>
     </BrowserRouter>
   )

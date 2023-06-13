@@ -2,7 +2,7 @@ import { useContext, useEffect } from "react"
 import { Link } from "react-router-dom"
 import { ActionContext } from "../contexts/ActionContext"
 
-const Confirmation = () => {
+const ConfirmationPage = () => {
   const { setActionElement } = useContext(ActionContext);
 
   useEffect(() => {
@@ -12,4 +12,4 @@ const Confirmation = () => {
   return <div>confirmation</div>
 }
 
-export { Confirmation }
+export { ConfirmationPage }

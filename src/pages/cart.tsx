@@ -1,10 +1,10 @@
 import { useContext, useEffect } from 'react'
 import { ActionContext } from '../contexts/ActionContext'
 import useLoadCart from '../hooks/useLoadCart'
-import { ListItem } from '../components/cart'
 import { LinkButton } from '../components/styles/Footer'
+import { Cart } from '../components/cart'
 
-const Cart = () => {
+const CartPage = () => {
   const { setActionElement, setSummary } = useContext(ActionContext)
   const cart = useLoadCart()
 
@@ -27,19 +27,9 @@ const Cart = () => {
   return (
     <div>
       {!cart && <div>carregando...</div>}
-
-      {cart &&
-        cart.items.map((item) => (
-          <ListItem
-            key={item.product.sku}
-            name={item.product.name}
-            image={item.product.imageObjects[0].thumbnail}
-            oldPrice={item.product.priceSpecification.maxPrice}
-            price={item.product.priceSpecification.price}
-          />
-        ))}
+      {cart && <Cart items={cart.items} />}
     </div>
   )
 }
 
-export { Cart }
+export { CartPage }
