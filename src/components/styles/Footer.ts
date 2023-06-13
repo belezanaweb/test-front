@@ -1,4 +1,4 @@
-import styled from 'styled-components'
+import styled, { css } from 'styled-components'
 import { Link } from 'react-router-dom'
 
 export const Footer = styled.footer`
@@ -6,7 +6,7 @@ export const Footer = styled.footer`
   padding: 1.75rem 1.25rem;
 `
 
-export const LinkButton = styled(Link)`
+const button = css`
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -17,4 +17,16 @@ export const LinkButton = styled(Link)`
   font-size: 1rem;
   font-weight: 700;
   text-decoration: none;
+`
+
+export const LinkButton = styled(Link)`
+  ${button}
+`
+
+export const SubmitButton = styled.button`
+  ${button}
+  border: none;
+  outline: none;
+  width: 100%;
+  cursor: pointer;
 `
