@@ -1,23 +1,25 @@
 import { Outlet } from 'react-router-dom'
 import { Navigation } from '../components/navigation'
-import { Summary } from '../components/summary/Summary'
+import { Summary } from '../components/summary'
 import { ActionContextProvider } from '../contexts/ActionContext'
+import * as Styled from '../components/styles'
 
 const Layout = () => {
   return (
-    <div>
-      <ActionContextProvider>
+    <ActionContextProvider>
+      <Styled.GlobalStyle />
+      <Styled.Container>
         <header>
           <Navigation />
         </header>
         <main>
           <Outlet />
         </main>
-        <footer>
-          <Summary />
-        </footer>
-      </ActionContextProvider>
-    </div>
+      </Styled.Container>
+      <Styled.Footer>
+        <Summary />
+      </Styled.Footer>
+    </ActionContextProvider>
   )
 }
 
