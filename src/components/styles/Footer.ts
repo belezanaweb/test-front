@@ -11,7 +11,6 @@ const button = css`
   flex-direction: column;
   align-items: center;
   padding: 16px 8px;
-  background: #9222dc;
   border-radius: 4px;
   color: #ffffff;
   font-size: 1rem;
@@ -19,14 +18,16 @@ const button = css`
   text-decoration: none;
 `
 
-export const LinkButton = styled(Link)`
+export const LinkButton = styled(Link)<{$variant?: string}>`
   ${button}
+  background-color: ${(props) => props.$variant === "secondary" ? "#000000" : "#9222dc"}
 `
 
-export const SubmitButton = styled.button`
+export const SubmitButton = styled.button<{$variant?: string}>`
   ${button}
   border: none;
   outline: none;
   width: 100%;
   cursor: pointer;
+  background-color: ${(props) => props.$variant === "secondary" ? "#000000" : "#9222dc"}
 `

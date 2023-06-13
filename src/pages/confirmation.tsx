@@ -1,12 +1,12 @@
 import { useContext, useEffect } from "react"
-import { Link } from "react-router-dom"
 import { ActionContext } from "../contexts/ActionContext"
+import { LinkButton } from "../components/styles";
 
 const ConfirmationPage = () => {
   const { setActionElement } = useContext(ActionContext);
 
   useEffect(() => {
-    setActionElement(<Link to="/">Voltar para o início</Link>)
+    setActionElement(<LinkButton $variant="secondary" to="/">Voltar para o início</LinkButton>)
   }, [])
 
   return <div>confirmation</div>
