@@ -1,9 +1,5 @@
 import React, { createContext, useState, ReactElement } from 'react';
-import { Cart } from '../models/cart';
-
-type SummaryDataType = {
-  quantity: number
-} & Omit<Cart, "items" | "id">;
+import { SummaryDataType } from '../components/summary/models';
 
 type ActionContextType = {
   summary: SummaryDataType | null;
