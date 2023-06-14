@@ -29,6 +29,7 @@ const PaymentPage = () => {
   }, [cart])
 
   const onSubmit = (data: FormDataType) => {
+    localforage.setItem('cartItems', cart?.items);
     localforage.setItem('formData', data);
     localforage.setItem('summary', {
       quantity: cart?.items.length,
