@@ -3,20 +3,27 @@ import { ListItem } from "./ListItem"
 import { CartContainer } from "./styles"
 
 type CartType = {
-  items: Item[]
+  items: Item[],
+  hidePrices?: boolean
 }
 
-const Cart = ({ items }: CartType) => {
+const Cart = ({ items, hidePrices }: CartType) => {
   return <CartContainer>
-    {items.map((item) => (
-      <ListItem
-        key={item.product.sku}
-        name={item.product.name}
-        image={item.product.imageObjects[0].thumbnail}
-        oldPrice={item.product.priceSpecification.maxPrice}
-        price={item.product.priceSpecification.price}
-      />
-    ))}
+    {items.map((item) => {
+      let prices = hidePrices ? {} : {
+        oldPrice: item.product.priceSpecification.maxPrice,
+        price: item.product.priceSpecification.price
+      }
+
+      return (
+        <ListItem
+          key={item.product.sku}
+          name={item.product.name}
+          image={item.product.imageObjects[0].thumbnail}
+          {...prices}
+        />
+      )
+    })}
   </CartContainer>
 }
 

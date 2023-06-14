@@ -34,6 +34,12 @@ export const CartContainer = styled.div`
     &::after {
       clear: both;
     }
+
+    &.hide-price {
+      .details {
+        width: 84%;
+      }
+    }
   }
 
   .details {

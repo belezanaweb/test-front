@@ -37,7 +37,7 @@ const ConfirmationPage = () => {
   }, [])
 
   return <div>
-    {cartItems && <Cart items={cartItems} />}
+    {cartItems && <Cart hidePrices={true} items={cartItems} />}
   </div>
 }
 
