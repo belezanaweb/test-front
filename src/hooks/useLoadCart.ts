@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { Cart } from '../models/cart';
+import { Cart } from '../models/Cart';
 
 const useLoadCart = (): Cart | null => {
   const [data, setData] = useState<Cart | null>(null);
