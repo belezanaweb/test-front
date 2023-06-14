@@ -1,22 +1,17 @@
 import styled from 'styled-components'
 
 export const CartContainer = styled.div`
-  background: #ffffff;
-  border: 1px solid #cccccc;
-  border-radius: 4px;
-  margin: 20px 8px;
-
   .image {
     float: left;
     width: 20%;
   }
   .details {
     float: left;
-    width: 55%;
+    width: 60%;
   }
   .price {
     float: right;
-    width: 25%;
+    width: 20%;
   }
 
   .image {
@@ -43,7 +38,7 @@ export const CartContainer = styled.div`
 
   .details {
     .description {
-      margin: 0 15px;
+      margin: 0 5px;
       font-size: 0.75rem;
       line-height: 1rem;
     }

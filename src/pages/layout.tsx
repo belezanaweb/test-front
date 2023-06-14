@@ -12,9 +12,9 @@ const Layout = () => {
         <header>
           <Navigation />
         </header>
-        <main>
+        <Styled.Main>
           <Outlet />
-        </main>
+        </Styled.Main>
       </Styled.Container>
       <Styled.Footer>
         <Summary />

@@ -9,11 +9,3 @@ ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
     <App />
   </React.StrictMode>
 )
-
-//configure bootstrap css
-//create cart row item component
-//refactor context to handle cart data
-
-//add react hook forms to validate form
-//validate credit cart number
-//control to avoid loading confirmation page directly
