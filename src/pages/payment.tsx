@@ -1,6 +1,6 @@
 import { useContext, useEffect } from "react"
 import { ActionContext } from "../contexts/ActionContext"
-import { SubmitButton } from "../components/styles";
+import { Box, SubmitButton } from "../components/styles";
 import { Form } from "../components/form/Form";
 import useLoadCart from "../hooks/useLoadCart";
 import { FormDataType } from "../components/form/model";
@@ -42,8 +42,10 @@ const PaymentPage = () => {
   }
 
   return <>
-    <h1>Cartão de crédito</h1>
-    <Form onSubmit={onSubmit} />
+    <Box>
+      <h1>Cartão de crédito</h1>
+      <Form onSubmit={onSubmit} />
+    </Box>
   </>
 }
 

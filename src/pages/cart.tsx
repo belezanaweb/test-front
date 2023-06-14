@@ -3,6 +3,7 @@ import { ActionContext } from '../contexts/ActionContext'
 import useLoadCart from '../hooks/useLoadCart'
 import { LinkButton } from '../components/styles/Footer'
 import { Cart } from '../components/cart'
+import { Box } from '../components/styles'
 
 const CartPage = () => {
   const { setActionElement, setSummary } = useContext(ActionContext)
@@ -26,8 +27,10 @@ const CartPage = () => {
 
   return (
     <div>
-      {!cart && <div>carregando...</div>}
-      {cart && <Cart items={cart.items} />}
+      <Box>
+        {!cart && <div>carregando...</div>}
+        {cart && <Cart items={cart.items} />}
+      </Box>
     </div>
   )
 }
