@@ -21,16 +21,12 @@ export const Navigation = styled.nav`
         display: inline-flex;
         text-decoration: none;
         color: #878787;
-        cursor: pointer;
+        cursor: default;
+        pointer-events: none;
 
         &.active {
           border-bottom: 4px solid #000000;
           color: #000000;
-        }
-
-        &.non-clickable {
-          cursor: default;
-          pointer-events: none;
         }
       }
     }
