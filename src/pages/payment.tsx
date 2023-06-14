@@ -13,7 +13,8 @@ const PaymentPage = () => {
   const navigate = useNavigate();
 
   useEffect(() => {
-    setActionElement(<SubmitButton form="payment-form">Finalizar pedido</SubmitButton>)
+    setActionElement(<SubmitButton form="payment-form">Finalizar pedido</SubmitButton>);
+    localforage.clear();
   }, [])
 
   useEffect(() => {

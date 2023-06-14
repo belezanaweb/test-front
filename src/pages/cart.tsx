@@ -4,13 +4,15 @@ import useLoadCart from '../hooks/useLoadCart'
 import { LinkButton } from '../components/styles/Footer'
 import { Cart } from '../components/cart'
 import { Box } from '../components/styles'
+import localforage from 'localforage'
 
 const CartPage = () => {
   const { setActionElement, setSummary } = useContext(ActionContext)
   const cart = useLoadCart()
 
   useEffect(() => {
-    setActionElement(<LinkButton to="/payment">Seguir para o pagamento</LinkButton>)
+    setActionElement(<LinkButton to="/payment">Seguir para o pagamento</LinkButton>);
+    localforage.clear();
   }, [])
 
   useEffect(() => {
