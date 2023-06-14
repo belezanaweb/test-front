@@ -1,3 +1,5 @@
+import { NumberFormat } from "../../helpers/numberFormat"
+
 type ListItemType = {
   name: string,
   image: string,
@@ -15,8 +17,8 @@ const ListItem = ({ image, name, oldPrice, price }: ListItemType) => {
         <p className="description">{name}</p>
       </div>
       <div className="price">
-        {oldPrice !== price && <span className="covered">{oldPrice}</span>}
-        <span>{price}</span>
+        {oldPrice !== price && <span className="covered">{NumberFormat(oldPrice)}</span>}
+        <span>{NumberFormat(price)}</span>
       </div>
     </div>
   )

@@ -3,7 +3,7 @@ import styled from 'styled-components'
 export const CartContainer = styled.div`
   .image {
     float: left;
-    width: 20%;
+    width: 16%;
   }
   .details {
     float: left;
@@ -11,7 +11,7 @@ export const CartContainer = styled.div`
   }
   .price {
     float: right;
-    width: 20%;
+    width: 24%;
   }
 
   .image {
@@ -52,7 +52,6 @@ export const CartContainer = styled.div`
 
     span {
       display: block;
-      margin-right: 10px;
 
       &.covered {
         color: #9b9b9b;
