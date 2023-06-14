@@ -42,7 +42,7 @@ const ConfirmationPage = () => {
   })();
 
   useEffect(() => {
-    setActionElement(<LinkButton $variant="secondary" to="/">Voltar para o início</LinkButton>)
+    setActionElement(<LinkButton $variant="secondary" to="/">Voltar para o início</LinkButton>);
   }, [])
 
   return <div>

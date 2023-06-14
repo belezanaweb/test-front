@@ -6,15 +6,18 @@ import useLoadCart from "../hooks/useLoadCart";
 import { FormDataType } from "../components/form/model";
 import localforage from "localforage";
 import { useNavigate } from "react-router-dom";
+import { AuthContext } from "../contexts/AuthContext";
 
 const PaymentPage = () => {
-  const { setActionElement, setSummary } = useContext(ActionContext)
-  const cart = useLoadCart()
+  const { setActionElement, setSummary } = useContext(ActionContext);
+  const { setIsAuthenticated } = useContext(AuthContext);
+  const cart = useLoadCart();
   const navigate = useNavigate();
 
   useEffect(() => {
     setActionElement(<SubmitButton form="payment-form">Finalizar pedido</SubmitButton>);
     localforage.clear();
+    setIsAuthenticated(false);
   }, [])
 
   useEffect(() => {
@@ -39,6 +42,7 @@ const PaymentPage = () => {
       discount: cart?.discount,
       total: cart?.total
     });
+    setIsAuthenticated(true);
     navigate("/confirmation");
   }
 

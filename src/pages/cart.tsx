@@ -5,14 +5,17 @@ import { LinkButton } from '../components/styles/Footer'
 import { Cart } from '../components/cart'
 import { Box } from '../components/styles'
 import localforage from 'localforage'
+import { AuthContext } from '../contexts/AuthContext'
 
 const CartPage = () => {
-  const { setActionElement, setSummary } = useContext(ActionContext)
-  const cart = useLoadCart()
+  const { setActionElement, setSummary } = useContext(ActionContext);
+  const { setIsAuthenticated } = useContext(AuthContext);
+  const cart = useLoadCart();
 
   useEffect(() => {
     setActionElement(<LinkButton to="/payment">Seguir para o pagamento</LinkButton>);
     localforage.clear();
+    setIsAuthenticated(false);
   }, [])
 
   useEffect(() => {
