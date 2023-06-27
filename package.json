@@ -4,5 +4,9 @@
   "main": "index.js",
   "repository": "git@github.com:douglasgomes98/checkout-mfe-wp5.git",
   "author": "Douglas Gomes <douglasgomes.rr@gmail.com>",
-  "license": "MIT"
+  "license": "MIT",
+  "private": true,
+  "workspaces": [
+    "apps/*"
+  ]
 }
