@@ -1,5 +1,6 @@
 import { CartInformation } from "./components/CartInformation";
+import { Header } from "./components/Header";
 
 export function App() {
-  return <CartInformation></CartInformation>;
+  return <Header></Header>;
 }
