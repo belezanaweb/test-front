@@ -1,3 +1,5 @@
+import { Button } from "./components/Button";
+
 export function App() {
-  return <h1 className="text-3xl font-bold underline">Hello from Cart</h1>;
+  return <Button color="secondary">Seguir para o pagamento</Button>;
 }
