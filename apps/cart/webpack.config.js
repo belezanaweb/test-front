@@ -1,11 +1,14 @@
 const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
-const { ModuleFederationPlugin } = require("webpack").container;
-const { name, dependencies } = require("./package.json");
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+const ReactRefreshWebpackPlugin = require("@pmmmwh/react-refresh-webpack-plugin");
+
+const isProductionMode = process.env.NODE_ENV === "production";
 
 module.exports = {
   entry: "./index.tsx",
   target: "web",
+  mode: isProductionMode ? "production" : "development",
   output: {
     path: path.resolve(__dirname, "dist"),
     filename: "[name].bundle.js",
@@ -16,6 +19,7 @@ module.exports = {
       directory: path.resolve(__dirname, "dist"),
     },
     port: 3001,
+    hot: true,
   },
   module: {
     rules: [
@@ -33,6 +37,14 @@ module.exports = {
           },
         },
       },
+      {
+        test: /\.css$/i,
+        use: [
+          isProductionMode ? MiniCssExtractPlugin.loader : "style-loader",
+          "css-loader",
+          "postcss-loader",
+        ],
+      },
     ],
   },
   resolve: {
@@ -42,5 +54,9 @@ module.exports = {
     new HtmlWebpackPlugin({
       template: "./index.html",
     }),
-  ],
+    new MiniCssExtractPlugin({
+      filename: isProductionMode ? "[name].[contenthash].css" : "[name].css",
+    }),
+    !isProductionMode && new ReactRefreshWebpackPlugin(),
+  ].filter(Boolean),
 };
