@@ -1,4 +1,6 @@
+import { HTMLAttributes } from "react";
 import { tv } from "tailwind-variants";
+import { twMerge } from "tailwind-merge";
 
 const styles = tv({
   slots: {
@@ -32,9 +34,17 @@ function Tab({ label, isSelected }: TabProps) {
   );
 }
 
-export function Header() {
+export type HeaderProps = HTMLAttributes<HTMLHeadingElement>;
+
+export function Header({ className, ...props }: HeaderProps) {
   return (
-    <header className="h-10 bg-white shadow flex justify-center items-center">
+    <header
+      className={twMerge(
+        "h-10 bg-white shadow flex justify-center items-center shrink-0",
+        className
+      )}
+      {...props}
+    >
       <nav className="border-b border-zinc-500 h-full">
         <ul className="flex h-full">
           <Tab label="Sacola" isSelected />
