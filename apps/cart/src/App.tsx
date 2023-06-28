@@ -1,5 +1,5 @@
-import { Button } from "./components/Button";
+import { CartInformation } from "./components/CartInformation";
 
 export function App() {
-  return <Button color="secondary">Seguir para o pagamento</Button>;
+  return <CartInformation></CartInformation>;
 }
