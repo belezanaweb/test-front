@@ -9,6 +9,7 @@ module.exports = {
   entry: "./index.tsx",
   target: "web",
   mode: isProductionMode ? "production" : "development",
+  devtool: isProductionMode ? "source-map" : "eval-cheap-module-source-map",
   output: {
     path: path.resolve(__dirname, "dist"),
     filename: "[name].bundle.js",
@@ -20,6 +21,7 @@ module.exports = {
     },
     port: 3001,
     hot: true,
+    historyApiFallback: true,
   },
   module: {
     rules: [

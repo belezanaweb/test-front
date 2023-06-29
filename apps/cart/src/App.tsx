@@ -1,19 +1,22 @@
-import { CartInformation } from "./components/CartInformation";
-import { Header } from "./components/Header";
+import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom";
+import { Layout } from "./Layout";
 import { ListProducts } from "./components/ListProducts";
 
 export function App() {
   return (
-    <div className="flex flex-col">
-      <Header className="fixed top-0 w-full" />
+    <BrowserRouter>
+      <Routes>
+        <Route path="/*" element={<Layout></Layout>}>
+          <Route path="cart" element={<ListProducts></ListProducts>}></Route>
+          <Route path="payment" element={<h1>payment</h1>}></Route>
+          <Route path="information" element={<h1>information</h1>}></Route>
+        </Route>
 
-      <main className="flex py-6 px-2 overflow-auto mt-10 mb-52">
-        <ListProducts />
-      </main>
-
-      <footer className="fixed bottom-0 w-full">
-        <CartInformation></CartInformation>
-      </footer>
-    </div>
+        <Route
+          path="/"
+          element={<Navigate to="/cart" replace={true} />}
+        ></Route>
+      </Routes>
+    </BrowserRouter>
   );
 }
