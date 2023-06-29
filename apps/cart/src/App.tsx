@@ -4,19 +4,22 @@ import { Layout } from './components/Layout';
 import { ListProducts } from './components/ListProducts';
 import { CreditCardForm } from './components/CreditCardForm';
 import { PaymentInformation } from './components/PaymentInformation';
+import { CartProvider } from './contexts/CartContext';
 
 export function App() {
   return (
     <BrowserRouter>
-      <Routes>
-        <Route path="/*" element={<Layout />}>
-          <Route path="cart" element={<ListProducts />} />
-          <Route path="payment" element={<CreditCardForm />} />
-          <Route path="information" element={<PaymentInformation />} />
-        </Route>
+      <CartProvider>
+        <Routes>
+          <Route path="/*" element={<Layout />}>
+            <Route path="cart" element={<ListProducts />} />
+            <Route path="payment" element={<CreditCardForm />} />
+            <Route path="information" element={<PaymentInformation />} />
+          </Route>
 
-        <Route path="/" element={<Navigate to="/cart" replace />} />
-      </Routes>
+          <Route path="/" element={<Navigate to="/cart" replace />} />
+        </Routes>
+      </CartProvider>
     </BrowserRouter>
   );
 }
