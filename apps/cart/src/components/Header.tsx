@@ -1,4 +1,5 @@
 import { HTMLAttributes } from 'react';
+import { useMatch } from 'react-router-dom';
 
 import { tv } from 'tailwind-variants';
 import { twMerge } from 'tailwind-merge';
@@ -38,6 +39,10 @@ function Tab({ label, isSelected }: TabProps) {
 export type HeaderProps = HTMLAttributes<HTMLHeadingElement>;
 
 export function Header({ className, ...props }: HeaderProps) {
+  const matchedCard = useMatch('cart');
+  const matchedPayment = useMatch('payment');
+  const matchedInformation = useMatch('information');
+
   return (
     <header
       className={twMerge(
@@ -48,9 +53,9 @@ export function Header({ className, ...props }: HeaderProps) {
     >
       <nav className="border-b border-zinc-500 h-full">
         <ul className="flex h-full">
-          <Tab label="Sacola" isSelected />
-          <Tab label="Pagamento" />
-          <Tab label="Confirmação" />
+          <Tab label="Sacola" isSelected={!!matchedCard} />
+          <Tab label="Pagamento" isSelected={!!matchedPayment} />
+          <Tab label="Confirmação" isSelected={!!matchedInformation} />
         </ul>
       </nav>
     </header>
