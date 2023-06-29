@@ -1,3 +1,4 @@
+/* eslint-disable no-nested-ternary */
 import { tv } from 'tailwind-variants';
 
 import { formatCurrency } from '../helpers/formatCurrency';
@@ -30,7 +31,6 @@ type RowProps = {
 
 function Row({ label, amount, isDiscount = false, isTotal = false }: RowProps) {
   const { labelStyles, amountStyles } = styles({
-    // eslint-disable-next-line no-nested-ternary
     type: isDiscount ? 'isDiscount' : isTotal ? 'isTotal' : undefined,
   });
 
