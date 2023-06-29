@@ -1,17 +1,18 @@
-import { HTMLAttributes } from "react";
-import { tv } from "tailwind-variants";
-import { twMerge } from "tailwind-merge";
+import { HTMLAttributes } from 'react';
+
+import { tv } from 'tailwind-variants';
+import { twMerge } from 'tailwind-merge';
 
 const styles = tv({
   slots: {
-    tabStyles: "flex justify-center items-center px-4",
-    labelStyles: "text-zinc-500",
+    tabStyles: 'flex justify-center items-center px-4',
+    labelStyles: 'text-zinc-500',
   },
   variants: {
     type: {
       isSelected: {
-        tabStyles: "border-b-[4px] border-black",
-        labelStyles: "text-black mt-1",
+        tabStyles: 'border-b-[4px] border-black',
+        labelStyles: 'text-black mt-1',
       },
     },
   },
@@ -24,7 +25,7 @@ type TabProps = {
 
 function Tab({ label, isSelected }: TabProps) {
   const { tabStyles, labelStyles } = styles({
-    type: isSelected ? "isSelected" : undefined,
+    type: isSelected ? 'isSelected' : undefined,
   });
 
   return (
@@ -40,8 +41,8 @@ export function Header({ className, ...props }: HeaderProps) {
   return (
     <header
       className={twMerge(
-        "h-10 bg-white shadow flex justify-center items-center shrink-0",
-        className
+        'h-10 bg-white shadow flex justify-center items-center shrink-0',
+        className,
       )}
       {...props}
     >

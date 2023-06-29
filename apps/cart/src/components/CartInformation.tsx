@@ -1,20 +1,21 @@
-import { formatCurrency } from "../helpers/formatCurrency";
-import { Button } from "./Button";
-import { tv } from "tailwind-variants";
+import { tv } from 'tailwind-variants';
+
+import { formatCurrency } from '../helpers/formatCurrency';
+import { Button } from './Button';
 
 const styles = tv({
   slots: {
-    labelStyles: "text-black text-sm font-normal leading-none tracking-wide",
-    amountStyles: "text-black text-sm font-normal leading-none tracking-wide",
+    labelStyles: 'text-black text-sm font-normal leading-none tracking-wide',
+    amountStyles: 'text-black text-sm font-normal leading-none tracking-wide',
   },
   variants: {
     type: {
       isDiscount: {
-        amountStyles: "text-purple-600 font-bold",
+        amountStyles: 'text-purple-600 font-bold',
       },
       isTotal: {
-        amountStyles: "font-bold",
-        labelStyles: "font-bold",
+        amountStyles: 'font-bold',
+        labelStyles: 'font-bold',
       },
     },
   },
@@ -29,7 +30,8 @@ type RowProps = {
 
 function Row({ label, amount, isDiscount = false, isTotal = false }: RowProps) {
   const { labelStyles, amountStyles } = styles({
-    type: isDiscount ? "isDiscount" : isTotal ? "isTotal" : undefined,
+    // eslint-disable-next-line no-nested-ternary
+    type: isDiscount ? 'isDiscount' : isTotal ? 'isTotal' : undefined,
   });
 
   return (
@@ -44,10 +46,10 @@ export function CartInformation() {
   return (
     <div className="px-5 py-7 bg-white flex-col gap-6 flex">
       <div className="gap-2 flex flex-col">
-        <Row label="Produtos: (3 itens)" amount={624.8}></Row>
-        <Row label="Frete:" amount={5.3}></Row>
-        <Row label="Desconto:" amount={30} isDiscount></Row>
-        <Row label="Subtotal:" amount={600.1} isTotal></Row>
+        <Row label="Produtos: (3 itens)" amount={624.8} />
+        <Row label="Frete:" amount={5.3} />
+        <Row label="Desconto:" amount={30} isDiscount />
+        <Row label="Subtotal:" amount={600.1} isTotal />
       </div>
 
       <Button>Seguir para o pagamento</Button>

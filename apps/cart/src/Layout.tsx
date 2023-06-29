@@ -1,6 +1,7 @@
-import { Outlet } from "react-router-dom";
-import { CartInformation } from "./components/CartInformation";
-import { Header } from "./components/Header";
+import { Outlet } from 'react-router-dom';
+
+import { CartInformation } from './components/CartInformation';
+import { Header } from './components/Header';
 
 export function Layout() {
   return (
@@ -12,7 +13,7 @@ export function Layout() {
       </main>
 
       <footer className="fixed bottom-0 w-full">
-        <CartInformation></CartInformation>
+        <CartInformation />
       </footer>
     </div>
   );

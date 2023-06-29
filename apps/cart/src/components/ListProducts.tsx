@@ -1,4 +1,4 @@
-import { Product } from "./Product";
+import { Product } from './Product';
 
 export function ListProducts() {
   return (
@@ -14,17 +14,13 @@ export function ListProducts() {
 
       <Product
         image="https://res.cloudinary.com/beleza-na-web/image/upload/f_auto,fl_progressive,q_auto:best/v1/imagens/2/good-girl-carolina-herrera-eau-de-parfum-perfume-feminino-30ml-38273-1960525940762131267.jpg"
-        description={
-          "Good Girl Carolina Herrera Eau de Parfum - Perfume Feminino 30ml"
-        }
+        description="Good Girl Carolina Herrera Eau de Parfum - Perfume Feminino 30ml"
         price={299}
       />
 
       <Product
         image="https://res.cloudinary.com/beleza-na-web/image/upload/f_auto,fl_progressive,q_auto:best/v1/imagens/2/senscience-inner-restore-intesif-deep-repairing-masque-mascara-de-tratamento-50ml-3019-7903251722539384904.png"
-        description={
-          "Good Girl Carolina Herrera Eau de Parfum - Perfume Feminino 30ml"
-        }
+        description="Good Girl Carolina Herrera Eau de Parfum - Perfume Feminino 30ml"
         price={99.9}
       />
     </div>
