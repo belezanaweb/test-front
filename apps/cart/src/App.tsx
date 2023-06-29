@@ -1,6 +1,6 @@
 import { BrowserRouter, Navigate, Route, Routes } from 'react-router-dom';
 
-import { Layout } from './Layout';
+import { Layout } from './components/Layout';
 import { ListProducts } from './components/ListProducts';
 import { CreditCardForm } from './components/CreditCardForm';
 import { PaymentInformation } from './components/PaymentInformation';
