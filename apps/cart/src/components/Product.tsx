@@ -12,7 +12,7 @@ export function Product({
   image,
   description,
   price,
-  discount,
+  discount = 0,
   hiddenPrices,
 }: ProductProps) {
   return (
@@ -29,7 +29,7 @@ export function Product({
 
       {!hiddenPrices && (
         <div className="w-16 justify-center flex flex-col">
-          {discount && (
+          {discount > 0 && (
             <p className="text-sm text-neutral-400 line-through">
               {formatCurrency(discount)}
             </p>
