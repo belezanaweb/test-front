@@ -6,7 +6,16 @@
   "author": "Douglas Gomes <douglasgomes.rr@gmail.com>",
   "license": "MIT",
   "private": true,
+  "scripts": {
+    "dev": "concurrently --kill-others \"cd apps/cart && yarn dev\" \"cd apps/payment && yarn dev\"",
+    "build": "concurrently --kill-others \"cd apps/cart && yarn build\" \"cd apps/payment && yarn build\"",
+    "lint": "concurrently --kill-others \"cd apps/cart && yarn lint\" \"cd apps/payment && yarn lint\"",
+    "clean": "concurrently --kill-others \"cd apps/cart && yarn clean\" \"cd apps/payment && yarn clean\""
+  },
   "workspaces": [
     "apps/*"
-  ]
+  ],
+  "devDependencies": {
+    "concurrently": "^8.2.0"
+  }
 }
