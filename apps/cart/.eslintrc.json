@@ -66,7 +66,13 @@
     "react/jsx-props-no-spreading": "off",
     "react/require-default-props": "off",
     "no-param-reassign": "off",
-    "default-param-last": "off"
+    "default-param-last": "off",
+    "import/no-unresolved": [
+      2,
+      {
+        "ignore": ["^payment/", "^cart/"]
+      }
+    ]
   },
   "settings": {
     "react": {

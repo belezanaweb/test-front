@@ -1,23 +1,15 @@
-import { BrowserRouter, Navigate, Route, Routes } from 'react-router-dom';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
 
-import Layout from './components/Layout';
-import ListProducts from './components/ListProducts';
+import CartProvider from 'cart/CartProvider';
+
 import CreditCardForm from './components/CreditCardForm';
-import PaymentInformation from './components/PaymentInformation';
-import CartProvider from './contexts/CartContext';
 
 export default function App() {
   return (
     <BrowserRouter>
       <CartProvider>
         <Routes>
-          <Route path="/*" element={<Layout />}>
-            <Route path="cart" element={<ListProducts />} />
-            <Route path="payment" element={<CreditCardForm />} />
-            <Route path="information" element={<PaymentInformation />} />
-          </Route>
-
-          <Route path="/" element={<Navigate to="/cart" replace />} />
+          <Route path="/" element={<CreditCardForm />} />
         </Routes>
       </CartProvider>
     </BrowserRouter>

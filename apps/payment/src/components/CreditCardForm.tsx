@@ -2,14 +2,13 @@ import { Controller, useForm } from 'react-hook-form';
 import { useNavigate } from 'react-router-dom';
 
 import { yupResolver } from '@hookform/resolvers/yup';
+import useCartProvider, { CreditCard } from 'cart/useCartProvider';
+import Input from 'cart/Input';
+import Button from 'cart/Button';
+import Layout from 'cart/Layout';
+import CartInformation from 'cart/CartInformation';
 
-import useCartProvider from '../hooks/useCartProvider';
-import { CreditCard } from '../models/CreditCard';
-import Button from './Button';
-import CartInformation from './CartInformation';
-import Input from './Input';
 import InputMasked from './InputMasked';
-import Layout from './Layout';
 import schema from './schema';
 
 export type FormFields = CreditCard;

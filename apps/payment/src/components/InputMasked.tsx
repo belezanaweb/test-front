@@ -5,7 +5,7 @@ import NumberFormat, {
   NumberFormatPropsBase,
 } from 'react-number-format';
 
-import Input, { InputProps } from './Input';
+import Input, { InputProps } from 'cart/Input';
 
 type CustomInput = Omit<InputProps, 'value' | 'onChange' | 'ref'>;
 
