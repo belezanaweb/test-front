@@ -28,7 +28,7 @@ export type InputProps = HTMLAttributes<HTMLInputElement> & {
   error?: string;
 };
 
-export const Input = forwardRef<HTMLInputElement, InputProps>(
+const Input = forwardRef<HTMLInputElement, InputProps>(
   ({ id, label, error, className, ...props }, ref) => {
     const { containerStyle, labelStyle, inputStyle, errorStyle } = styles({
       color: error ? 'error' : undefined,
@@ -47,3 +47,5 @@ export const Input = forwardRef<HTMLInputElement, InputProps>(
     );
   },
 );
+
+export default Input;

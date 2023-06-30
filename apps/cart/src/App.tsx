@@ -1,12 +1,12 @@
 import { BrowserRouter, Navigate, Route, Routes } from 'react-router-dom';
 
-import { Layout } from './components/Layout';
-import { ListProducts } from './components/ListProducts';
-import { CreditCardForm } from './components/CreditCardForm';
-import { PaymentInformation } from './components/PaymentInformation';
-import { CartProvider } from './contexts/CartContext';
+import Layout from './components/Layout';
+import ListProducts from './components/ListProducts';
+import CreditCardForm from './components/CreditCardForm';
+import PaymentInformation from './components/PaymentInformation';
+import CartProvider from './contexts/CartContext';
 
-export function App() {
+export default function App() {
   return (
     <BrowserRouter>
       <CartProvider>

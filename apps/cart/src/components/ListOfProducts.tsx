@@ -1,7 +1,7 @@
-import { useCartProvider } from '../contexts/CartContext';
-import { Product } from './Product';
+import useCartProvider from '../hooks/useCartProvider';
+import Product from './Product';
 
-export function ListOfProducts() {
+export default function ListOfProducts() {
   const { cart } = useCartProvider();
 
   return (
@@ -17,6 +17,7 @@ export function ListOfProducts() {
           description={item.product.name}
           price={item.product.priceSpecification?.price}
           discount={item.product.priceSpecification.discount}
+          maxPrice={item.product.priceSpecification.maxPrice}
           hiddenPrices
         />
       ))}

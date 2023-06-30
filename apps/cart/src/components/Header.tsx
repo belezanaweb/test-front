@@ -38,7 +38,7 @@ function Tab({ label, isSelected }: TabProps) {
 
 export type HeaderProps = HTMLAttributes<HTMLHeadingElement>;
 
-export function Header({ className, ...props }: HeaderProps) {
+export default function Header({ className, ...props }: HeaderProps) {
   const matchedCard = useMatch('cart');
   const matchedPayment = useMatch('payment');
   const matchedInformation = useMatch('information');

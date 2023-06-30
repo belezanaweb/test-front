@@ -1,6 +1,6 @@
 import { useLayoutEffect, useRef } from 'react';
 
-export function usePortalElement(id: string) {
+export default function usePortalElement(id: string) {
   const rootElemRef = useRef(document.createElement('div'));
 
   useLayoutEffect(() => {

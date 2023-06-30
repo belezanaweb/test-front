@@ -4,7 +4,7 @@ import { ReactNode } from 'react';
 
 import { tv } from 'tailwind-variants';
 
-import { formatCurrency } from '../helpers/formatCurrency';
+import formatCurrency from '../helpers/formatCurrency';
 
 const styles = tv({
   slots: {
@@ -53,7 +53,7 @@ export type CartInformationProps = {
   children: ReactNode;
 };
 
-export function CartInformation({
+export default function CartInformation({
   subtotal,
   productsCount,
   shipping,

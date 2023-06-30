@@ -26,7 +26,12 @@ export type ButtonProps = HTMLAttributes<HTMLButtonElement> &
     disabled?: boolean;
   };
 
-export function Button({ className, color, disabled, ...props }: ButtonProps) {
+export default function Button({
+  className,
+  color,
+  disabled,
+  ...props
+}: ButtonProps) {
   return (
     <button
       className={styles({

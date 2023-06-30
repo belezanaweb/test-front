@@ -3,18 +3,18 @@ import { useNavigate } from 'react-router-dom';
 
 import { yupResolver } from '@hookform/resolvers/yup';
 
-import { useCartProvider } from '../contexts/CartContext';
+import useCartProvider from '../hooks/useCartProvider';
 import { CreditCard } from '../models/CreditCard';
-import { Button } from './Button';
-import { CartInformation } from './CartInformation';
-import { Input } from './Input';
-import { InputMasked } from './InputMasked';
-import { Layout } from './Layout';
-import { schema } from './schema';
+import Button from './Button';
+import CartInformation from './CartInformation';
+import Input from './Input';
+import InputMasked from './InputMasked';
+import Layout from './Layout';
+import schema from './schema';
 
 export type FormFields = CreditCard;
 
-export function CreditCardForm() {
+export default function CreditCardForm() {
   const navigate = useNavigate();
   const { cart, setCreditCard } = useCartProvider();
 

@@ -22,7 +22,7 @@ const validCreditCard = {
   cvv,
 };
 
-export const schema = object().shape({
+const schema = object().shape({
   number: string()
     .required('O número do cartão é obrigatório.')
     .test('isValid', 'O número do cartão é inválido.', value => {
@@ -53,3 +53,5 @@ export const schema = object().shape({
     })
     .trim(),
 });
+
+export default schema;

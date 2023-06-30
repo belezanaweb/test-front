@@ -5,7 +5,7 @@ import NumberFormat, {
   NumberFormatPropsBase,
 } from 'react-number-format';
 
-import { Input, InputProps } from './Input';
+import Input, { InputProps } from './Input';
 
 type CustomInput = Omit<InputProps, 'value' | 'onChange' | 'ref'>;
 
@@ -23,7 +23,7 @@ export type InputMaskedProps = CustomInputMaskedProps &
   CustomInput &
   CustomNumberFormatProps;
 
-export const InputMasked = forwardRef<HTMLInputElement, InputMaskedProps>(
+const InputMasked = forwardRef<HTMLInputElement, InputMaskedProps>(
   ({ onChange, value, ...props }, ref) => {
     const handleValueChange = useCallback(
       (values: NumberFormatValues) => {
@@ -47,3 +47,5 @@ export const InputMasked = forwardRef<HTMLInputElement, InputMaskedProps>(
     );
   },
 );
+
+export default InputMasked;

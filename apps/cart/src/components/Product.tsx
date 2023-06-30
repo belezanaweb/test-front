@@ -1,4 +1,4 @@
-import { formatCurrency } from '../helpers/formatCurrency';
+import formatCurrency from '../helpers/formatCurrency';
 
 export type ProductProps = {
   image: string;
@@ -9,7 +9,7 @@ export type ProductProps = {
   hiddenPrices?: boolean;
 };
 
-export function Product({
+export default function Product({
   image,
   description,
   price,

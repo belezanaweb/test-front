@@ -2,15 +2,14 @@ import {
   ReactNode,
   createContext,
   useCallback,
-  useContext,
   useEffect,
   useMemo,
   useState,
 } from 'react';
 
-import { api } from '../services/api';
 import { Cart } from '../models/Cart';
 import { CreditCard } from '../models/CreditCard';
+import { api } from '../services/api';
 
 export type CartContextProps = {
   cart?: Cart;
@@ -22,9 +21,9 @@ export type CartProviderProps = {
   children: ReactNode;
 };
 
-const CartContext = createContext({} as CartContextProps);
+export const CartContext = createContext({} as CartContextProps);
 
-export function CartProvider({ children }: CartProviderProps) {
+export default function CartProvider({ children }: CartProviderProps) {
   const [cart, setCart] = useState<Cart>();
   const [creditCard, setCreditCard] = useState<CreditCard>();
 
@@ -45,14 +44,4 @@ export function CartProvider({ children }: CartProviderProps) {
   );
 
   return <CartContext.Provider value={value}>{children}</CartContext.Provider>;
-}
-
-export function useCartProvider() {
-  const context = useContext(CartContext);
-
-  if (Object.keys(context).length === 0) {
-    throw new Error('useCartProvider must be used within an CartProvider');
-  }
-
-  return context;
 }

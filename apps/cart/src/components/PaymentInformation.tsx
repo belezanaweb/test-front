@@ -1,14 +1,14 @@
 import { useCallback } from 'react';
 import { useNavigate } from 'react-router-dom';
 
-import { useCartProvider } from '../contexts/CartContext';
-import { Button } from './Button';
-import { CartInformation } from './CartInformation';
-import { Layout } from './Layout';
-import { ListOfProducts } from './ListOfProducts';
-import { SuccessfullyPaymentCard } from './SuccessfullyPaymentCard';
+import Button from './Button';
+import CartInformation from './CartInformation';
+import Layout from './Layout';
+import ListOfProducts from './ListOfProducts';
+import SuccessfullyPaymentCard from './SuccessfullyPaymentCard';
+import useCartProvider from '../hooks/useCartProvider';
 
-export function PaymentInformation() {
+export default function PaymentInformation() {
   const navigate = useNavigate();
   const { cart } = useCartProvider();
 

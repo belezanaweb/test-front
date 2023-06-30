@@ -2,8 +2,8 @@ import { Outlet } from 'react-router-dom';
 import { ReactNode } from 'react';
 import { createPortal } from 'react-dom';
 
-import { Header } from './Header';
-import { usePortalElement } from '../hooks/usePortalElement';
+import Header from './Header';
+import usePortalElement from '../hooks/usePortalElement';
 
 export type FooterProps = {
   children: ReactNode;
@@ -19,7 +19,7 @@ function Footer({ children }: FooterProps) {
   return null;
 }
 
-export function Layout() {
+export default function Layout() {
   return (
     <div className="flex flex-col">
       <Header className="fixed top-0 w-full" />
