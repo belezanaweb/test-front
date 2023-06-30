@@ -69,14 +69,15 @@ module.exports = {
       remotes: {
         payment: 'payment@http://localhost:3002/remoteEntry.js',
         cart: 'cart@http://localhost:3001/remoteEntry.js',
+        information: 'information@http://localhost:3003/remoteEntry.js',
       },
       exposes: {
         './CartProvider': './src/contexts/CartContext',
         './useCartProvider': './src/hooks/useCartProvider',
-        './Input': './src/components/Input',
         './Layout': './src/components/Layout',
         './CartInformation': './src/components/CartInformation',
         './Button': './src/components/Button',
+        './Product': './src/components/Product',
       },
       shared: {
         ...dependencies,

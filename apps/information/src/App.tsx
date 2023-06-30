@@ -2,14 +2,14 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom';
 
 import CartProvider from 'cart/CartProvider';
 
-import CreditCardForm from './components/CreditCardForm';
+import PaymentInformation from './components/PaymentInformation';
 
 export default function App() {
   return (
     <BrowserRouter>
       <CartProvider>
         <Routes>
-          <Route path="/" element={<CreditCardForm />} />
+          <Route path="/" element={<PaymentInformation />} />
         </Routes>
       </CartProvider>
     </BrowserRouter>

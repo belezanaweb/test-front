@@ -1,11 +1,12 @@
 import { useNavigate } from 'react-router-dom';
 import { useCallback } from 'react';
 
+import useCartProvider from 'cart/useCartProvider';
+
 import Layout from './Layout';
 import Product from './Product';
 import CartInformation from './CartInformation';
 import Button from './Button';
-import useCartProvider from '../hooks/useCartProvider';
 
 export default function ListProducts() {
   const navigate = useNavigate();

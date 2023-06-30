@@ -1,12 +1,13 @@
 import { useCallback } from 'react';
 import { useNavigate } from 'react-router-dom';
 
-import Button from './Button';
-import CartInformation from './CartInformation';
-import Layout from './Layout';
+import Button from 'cart/Button';
+import CartInformation from 'cart/CartInformation';
+import Layout from 'cart/Layout';
+import useCartProvider from 'cart/useCartProvider';
+
 import ListOfProducts from './ListOfProducts';
 import SuccessfullyPaymentCard from './SuccessfullyPaymentCard';
-import useCartProvider from '../hooks/useCartProvider';
 
 export default function PaymentInformation() {
   const navigate = useNavigate();

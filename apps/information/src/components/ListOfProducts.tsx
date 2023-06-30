@@ -1,5 +1,5 @@
-import useCartProvider from '../hooks/useCartProvider';
-import Product from './Product';
+import useCartProvider from 'cart/useCartProvider';
+import Product from 'cart/Product';
 
 export default function ListOfProducts() {
   const { cart } = useCartProvider();

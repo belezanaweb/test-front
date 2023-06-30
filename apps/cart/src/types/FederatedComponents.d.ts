@@ -70,3 +70,7 @@ declare module 'cart/useCartProvider' {
 
   export default function useCartProvider(): CartContextProps;
 }
+
+declare module 'information/PaymentInformation' {
+  export default function PaymentInformation(): JSX.Element;
+}

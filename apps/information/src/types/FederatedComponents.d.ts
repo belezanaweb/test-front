@@ -138,3 +138,29 @@ declare module 'cart/CartInformation' {
     children,
   }: CartInformationProps): React.JSX.Element;
 }
+
+declare module 'cart/Product' {
+  export type ProductProps = {
+    image: string;
+    description: string;
+    price: number;
+    discount: number;
+    maxPrice: number;
+    hiddenPrices?: boolean;
+  };
+
+  export default function Product({
+    image,
+    description,
+    price,
+    discount,
+    maxPrice,
+    hiddenPrices,
+  }: ProductProps): React.JSX.Element;
+}
+
+declare module 'payment/obfuscateCreditCardNumber' {
+  export default function obfuscateCreditCardNumber(
+    creditCardNumber?: string,
+  ): string;
+}

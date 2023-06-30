@@ -5,7 +5,7 @@ import CartProvider from 'cart/CartProvider';
 import CreditCardFormFederated from './components/CreditCardFormFederated';
 import Layout from './components/Layout';
 import ListProducts from './components/ListProducts';
-import PaymentInformation from './components/PaymentInformation';
+import PaymentInformationFederated from './components/PaymentInformationFederated';
 
 export default function App() {
   return (
@@ -15,7 +15,10 @@ export default function App() {
           <Route path="/*" element={<Layout />}>
             <Route path="cart" element={<ListProducts />} />
             <Route path="payment" element={<CreditCardFormFederated />} />
-            <Route path="information" element={<PaymentInformation />} />
+            <Route
+              path="information"
+              element={<PaymentInformationFederated />}
+            />
           </Route>
 
           <Route path="/" element={<Navigate to="/cart" replace />} />

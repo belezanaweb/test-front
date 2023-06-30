@@ -68,26 +68,6 @@ declare module 'cart/useCartProvider' {
   export default function useCartProvider(): CartContextProps;
 }
 
-declare module 'cart/Input' {
-  export type InputProps = React.HTMLAttributes<HTMLInputElement> & {
-    id: string;
-    label: string;
-    placeholder: string;
-    error?: string;
-  };
-
-  const Input: React.ForwardRefExoticComponent<
-    React.HTMLAttributes<HTMLInputElement> & {
-      id: string;
-      label: string;
-      placeholder: string;
-      error?: string | undefined;
-    } & React.RefAttributes<HTMLInputElement>
-  >;
-
-  export default Input;
-}
-
 declare module 'cart/Button' {
   type ButtonVariants = {
     color?: 'primary' | 'secondary' | undefined;

@@ -70,7 +70,7 @@
     "import/no-unresolved": [
       2,
       {
-        "ignore": ["^payment/", "^cart/"]
+        "ignore": ["^payment/", "^cart/", "^information/"]
       }
     ]
   },

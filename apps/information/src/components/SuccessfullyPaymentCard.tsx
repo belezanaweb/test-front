@@ -1,5 +1,5 @@
-import useCartProvider from '../hooks/useCartProvider';
-import obfuscateCreditCardNumber from '../helpers/obfuscateCreditCardNumber';
+import useCartProvider from 'cart/useCartProvider';
+import obfuscateCreditCardNumber from 'payment/obfuscateCreditCardNumber';
 
 export default function SuccessfullyPaymentCard() {
   const { creditCard } = useCartProvider();

@@ -3,11 +3,11 @@ import { useNavigate } from 'react-router-dom';
 
 import { yupResolver } from '@hookform/resolvers/yup';
 import useCartProvider, { CreditCard } from 'cart/useCartProvider';
-import Input from 'cart/Input';
 import Button from 'cart/Button';
 import Layout from 'cart/Layout';
 import CartInformation from 'cart/CartInformation';
 
+import Input from './Input';
 import InputMasked from './InputMasked';
 import schema from './schema';
 

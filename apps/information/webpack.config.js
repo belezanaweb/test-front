@@ -68,8 +68,11 @@ module.exports = {
       filename: 'remoteEntry.js',
       remotes: {
         cart: 'cart@http://localhost:3001/remoteEntry.js',
+        payment: 'payment@http://localhost:3002/remoteEntry.js',
       },
-      exposes: {},
+      exposes: {
+        './PaymentInformation': './src/components/PaymentInformation',
+      },
       shared: {
         ...dependencies,
         react: {
