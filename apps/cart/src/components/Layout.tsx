@@ -24,7 +24,7 @@ export function Layout() {
     <div className="flex flex-col">
       <Header className="fixed top-0 w-full" />
 
-      <main className="flex py-6 px-2 overflow-auto mt-10 mb-52">
+      <main className="flex py-6 px-2 overflow-auto mt-10 mb-52 lg:max-w-4xl lg:m-auto lg:mt-10 lg:w-full">
         <Outlet />
       </main>
 

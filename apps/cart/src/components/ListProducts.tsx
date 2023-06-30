@@ -17,7 +17,7 @@ export function ListProducts() {
 
   return (
     <>
-      <div className="flex flex-col bg-white rounded-lg border border-stone-300 py-8 px-2 gap-10">
+      <div className="flex flex-col bg-white rounded-lg border border-stone-300 py-8 px-2 gap-10 w-full">
         {cart?.items.map(item => (
           <Product
             key={item.product.sku}
@@ -25,6 +25,7 @@ export function ListProducts() {
             description={item.product.name}
             price={item.product.priceSpecification?.price}
             discount={item.product.priceSpecification.discount}
+            maxPrice={item.product.priceSpecification.maxPrice}
           />
         ))}
       </div>

@@ -62,15 +62,17 @@ export function CartInformation({
   children,
 }: CartInformationProps) {
   return (
-    <div className="px-5 py-7 bg-white flex-col gap-6 flex">
-      <div className="gap-2 flex flex-col">
-        <Row label={`Produtos: (${productsCount} itens)`} amount={subtotal} />
-        <Row label="Frete:" amount={shipping} />
-        <Row label="Desconto:" amount={discount} isDiscount />
-        <Row label="Subtotal:" amount={total} isTotal />
-      </div>
+    <div className="px-5 py-7 bg-white flex-col flex">
+      <div className="flex flex-col gap-6 lg:max-w-4xl lg:m-auto lg:w-full">
+        <div className="gap-2 flex flex-col">
+          <Row label={`Produtos: (${productsCount} itens)`} amount={subtotal} />
+          <Row label="Frete:" amount={shipping} />
+          <Row label="Desconto:" amount={discount} isDiscount />
+          <Row label="Subtotal:" amount={total} isTotal />
+        </div>
 
-      {children}
+        {children}
+      </div>
     </div>
   );
 }

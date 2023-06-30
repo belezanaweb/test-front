@@ -4,7 +4,8 @@ export type ProductProps = {
   image: string;
   description: string;
   price: number;
-  discount?: number;
+  discount: number;
+  maxPrice: number;
   hiddenPrices?: boolean;
 };
 
@@ -13,6 +14,7 @@ export function Product({
   description,
   price,
   discount = 0,
+  maxPrice,
   hiddenPrices,
 }: ProductProps) {
   return (
@@ -23,7 +25,7 @@ export function Product({
         </div>
       </div>
 
-      <div className="items-center flex">
+      <div className="items-center flex flex-1">
         <p className="text-black text-xs">{description}</p>
       </div>
 
@@ -31,7 +33,7 @@ export function Product({
         <div className="w-16 justify-center flex flex-col">
           {discount > 0 && (
             <p className="text-sm text-neutral-400 line-through">
-              {formatCurrency(discount)}
+              {formatCurrency(maxPrice)}
             </p>
           )}
           <span className="text-sm text-black font-bold">

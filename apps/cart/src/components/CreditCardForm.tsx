@@ -83,6 +83,7 @@ export function CreditCardForm() {
                 value={field.value}
                 onChange={field.onChange}
                 error={fieldState.error?.message}
+                className="w-full"
               />
             )}
           />
@@ -99,6 +100,7 @@ export function CreditCardForm() {
                 value={field.value}
                 onChange={field.onChange}
                 error={fieldState.error?.message}
+                className="w-full"
               />
             )}
           />
