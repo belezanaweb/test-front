@@ -1,11 +1,6 @@
 import cardValidator from 'card-validator';
 import { object, string } from 'yup';
 
-function cardholderName(value: string) {
-  const { isValid, isPotentiallyValid } = cardValidator.cardholderName(value);
-  return isValid && isPotentiallyValid;
-}
-
 function number(value: string) {
   const { isValid, isPotentiallyValid } = cardValidator.number(value);
   return isValid && isPotentiallyValid;
@@ -23,7 +18,6 @@ function cvv(value: string) {
 
 const validCreditCard = {
   number,
-  cardholderName,
   expirationDate,
   cvv,
 };
@@ -38,7 +32,10 @@ export const schema = object().shape({
     .trim(),
   holder: string()
     .required('O nome do titular é obrigatório.')
-    .matches(/^[a-zA-Z\s]*$/, 'O nome do titular é inválido.')
+    .matches(
+      /^(?!\s)([a-zA-Z]+(?:\s[a-zA-Z]+)+)$/,
+      'O nome do titular é inválido.',
+    )
     .trim(),
   expireDate: string()
     .required('A data de validade é obrigatória.')
