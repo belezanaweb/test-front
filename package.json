@@ -7,10 +7,10 @@
   "license": "MIT",
   "private": true,
   "scripts": {
-    "dev": "concurrently --kill-others \"cd apps/cart && yarn dev\" \"cd apps/payment && yarn dev\"",
-    "build": "concurrently --kill-others \"cd apps/cart && yarn build\" \"cd apps/payment && yarn build\"",
-    "lint": "concurrently --kill-others \"cd apps/cart && yarn lint\" \"cd apps/payment && yarn lint\"",
-    "clean": "concurrently --kill-others \"cd apps/cart && yarn clean\" \"cd apps/payment && yarn clean\""
+    "dev": "concurrently --kill-others \"cd apps/cart && yarn dev\" \"cd apps/payment && yarn dev\" \"cd apps/information && yarn dev\"",
+    "build": "concurrently --kill-others \"cd apps/cart && yarn build\" \"cd apps/payment && yarn build\" \"cd apps/information && yarn build\"",
+    "lint": "concurrently --kill-others \"cd apps/cart && yarn lint\" \"cd apps/payment && yarn lint\" \"cd apps/information && yarn lint\"",
+    "clean": "concurrently --kill-others \"cd apps/cart && yarn clean\" \"cd apps/payment && yarn clean\" \"cd apps/information && yarn clean\""
   },
   "workspaces": [
     "apps/*"

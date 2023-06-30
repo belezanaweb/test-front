@@ -3,3 +3,4 @@
 [] - Deploy
 [] - Constants de rotas, variáveis de ambiente, e endereço dos MFE's
 [] - Criar MFE's
+[] - Resolver bug de extract css
