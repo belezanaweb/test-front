@@ -94,47 +94,6 @@ module.exports = {
           singleton: true,
           eager: true,
         },
-        // TODO: remove this
-        // 'react-router-dom': {
-        //   requiredVersion: dependencies['react-router-dom'],
-        //   singleton: true,
-        //   eager: true,
-        // },
-        // 'react-hook-form': {
-        //   requiredVersion: dependencies['react-hook-form'],
-        //   singleton: true,
-        //   eager: true,
-        // },
-        // '@hookform/resolvers': {
-        //   requiredVersion: dependencies['@hookform/resolvers'],
-        //   singleton: true,
-        //   eager: true,
-        // },
-        // 'tailwind-variants': {
-        //   requiredVersion: dependencies['tailwind-variants'],
-        //   singleton: true,
-        //   eager: true,
-        // },
-        // 'tailwind-merge': {
-        //   requiredVersion: dependencies['tailwind-merge'],
-        //   singleton: true,
-        //   eager: true,
-        // },
-        // 'react-number-format': {
-        //   requiredVersion: dependencies['react-number-format'],
-        //   singleton: true,
-        //   eager: true,
-        // },
-        // 'card-validator': {
-        //   requiredVersion: dependencies['card-validator'],
-        //   singleton: true,
-        //   eager: true,
-        // },
-        // yup: {
-        //   requiredVersion: dependencies.yup,
-        //   singleton: true,
-        //   eager: true,
-        // },
       },
     }),
   ].filter(Boolean),
