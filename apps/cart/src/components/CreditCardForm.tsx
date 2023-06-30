@@ -69,39 +69,40 @@ export function CreditCardForm() {
           error={errors.holder?.message}
         />
 
-        <Controller
-          name="expireDate"
-          control={control}
-          render={({ fieldState, field }) => (
-            <InputMasked
-              id="expireDate"
-              label="Data de validade"
-              placeholder="MM/AA"
-              className="mb-5"
-              format="##/##"
-              mask={['M', 'M', 'Y', 'Y']}
-              value={field.value}
-              onChange={field.onChange}
-              error={fieldState.error?.message}
-            />
-          )}
-        />
+        <div className="flex flex-1 mb-5 gap-4">
+          <Controller
+            name="expireDate"
+            control={control}
+            render={({ fieldState, field }) => (
+              <InputMasked
+                id="expireDate"
+                label="Data de validade"
+                placeholder="MM/AAAA"
+                format="##/####"
+                mask={['M', 'M', 'Y', 'Y', 'Y', 'Y']}
+                value={field.value}
+                onChange={field.onChange}
+                error={fieldState.error?.message}
+              />
+            )}
+          />
 
-        <Controller
-          name="cvv"
-          control={control}
-          render={({ fieldState, field }) => (
-            <InputMasked
-              id="cvv"
-              label="Código CVV:"
-              placeholder="000"
-              format="###"
-              value={field.value}
-              onChange={field.onChange}
-              error={fieldState.error?.message}
-            />
-          )}
-        />
+          <Controller
+            name="cvv"
+            control={control}
+            render={({ fieldState, field }) => (
+              <InputMasked
+                id="cvv"
+                label="Código CVV:"
+                placeholder="000"
+                format="###"
+                value={field.value}
+                onChange={field.onChange}
+                error={fieldState.error?.message}
+              />
+            )}
+          />
+        </div>
       </form>
 
       <Layout.Footer>

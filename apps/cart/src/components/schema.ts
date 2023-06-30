@@ -29,6 +29,7 @@ export const schema = object().shape({
       if (!value) return false;
       return validCreditCard.number(value);
     })
+    .transform(value => value?.replace(/\s/g, ''))
     .trim(),
   holder: string()
     .required('O nome do titular é obrigatório.')

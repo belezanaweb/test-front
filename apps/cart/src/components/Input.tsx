@@ -8,7 +8,7 @@ const styles = tv({
     containerStyle: 'flex flex-col',
     labelStyle: 'text-neutral-600 leading-none text-sm mb-1',
     inputStyle:
-      'h-11 rounded shadow-inner border border-stone-300 px-4 text-black text-sm leading-none outline-none',
+      'w-full h-11 rounded shadow-inner border border-stone-300 px-4 text-black text-sm leading-none outline-none',
     errorStyle: 'text-red-600 text-xs leading-none mt-1',
   },
 
