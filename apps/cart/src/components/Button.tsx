@@ -29,7 +29,7 @@ export type ButtonProps = HTMLAttributes<HTMLButtonElement> &
 export default function Button({
   className,
   color,
-  disabled,
+  disabled = false,
   ...props
 }: ButtonProps) {
   return (

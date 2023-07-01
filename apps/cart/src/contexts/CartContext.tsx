@@ -7,8 +7,8 @@ import {
   useState,
 } from 'react';
 
-import { Cart } from '../models/Cart';
-import { CreditCard } from '../models/CreditCard';
+import { Cart, CreditCard } from 'cart/useCartProvider';
+
 import { api } from '../services/api';
 
 export type CartContextProps = {

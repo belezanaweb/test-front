@@ -1,3 +1,4 @@
+/* eslint-disable */
 /// <reference types="react" />
 
 declare module 'payment/CreditCardForm' {
@@ -73,4 +74,75 @@ declare module 'cart/useCartProvider' {
 
 declare module 'information/PaymentInformation' {
   export default function PaymentInformation(): JSX.Element;
+}
+
+declare module 'cart/Layout' {
+  export type FooterProps = {
+    children: React.ReactNode;
+  };
+
+  function Footer({ children }: FooterProps): React.ReactPortal | null;
+
+  export default function Layout(): React.JSX.Element;
+
+  Layout.Footer = ({ children }: FooterProps) => React.ReactPortal | null;
+}
+
+declare module 'cart/Button' {
+  type ButtonVariants = {
+    color?: 'primary' | 'secondary' | undefined;
+  };
+  export type ButtonProps = React.HTMLAttributes<HTMLButtonElement> &
+    ButtonVariants & {
+      type?: 'button' | 'submit' | 'reset';
+      form?: string;
+      disabled?: boolean;
+    };
+
+  export default function Button({
+    className,
+    color,
+    disabled,
+    ...props
+  }: ButtonProps): React.JSX.Element;
+}
+
+declare module 'cart/CartInformation' {
+  export type CartInformationProps = {
+    subtotal: number;
+    productsCount: number;
+    shipping: number;
+    discount: number;
+    total: number;
+    children: React.ReactNode;
+  };
+
+  export default function CartInformation({
+    subtotal,
+    productsCount,
+    shipping,
+    discount,
+    total,
+    children,
+  }: CartInformationProps): React.JSX.Element;
+}
+
+declare module 'cart/Product' {
+  export type ProductProps = {
+    image: string;
+    description: string;
+    price: number;
+    discount: number;
+    maxPrice: number;
+    hiddenPrices?: boolean;
+  };
+
+  export default function Product({
+    image,
+    description,
+    price,
+    discount,
+    maxPrice,
+    hiddenPrices,
+  }: ProductProps): React.JSX.Element;
 }

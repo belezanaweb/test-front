@@ -1,4 +1,4 @@
-import { Cart } from '../models/Cart';
+import { Cart } from 'cart/useCartProvider';
 
 function getCurrentCart(): Promise<Cart> {
   return fetch('https://run.mocky.io/v3/d6e9a93f-9741-4494-b81e-637a8e9b8ddd', {
