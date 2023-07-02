@@ -40,6 +40,7 @@ jobs:
           run: SpicyPizza/create-envfile@v2.0
           with:
             envkey_DEBUG: false
+            directory: ./apps/cart
             envkey_API_URL: ${{ secrets.API_URL }}    
             envkey_PAYMENT_APP_URL: ${{ secrets.PAYMENT_APP_URL }}    
             envkey_CART_APP_URL: ${{ secrets.CART_APP_URL }}    
