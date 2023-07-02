@@ -58,7 +58,11 @@
     "import/no-extraneous-dependencies": [
       "error",
       {
-        "devDependencies": ["**/*.spec.tsx", "**/setupTests.ts"]
+        "devDependencies": [
+          "**/*.spec.tsx",
+          "**/setupTests.ts",
+          "**/webpack.config.js"
+        ]
       }
     ],
     "no-shadow": "off",
@@ -73,7 +77,8 @@
         "ignore": ["^payment/", "^cart/", "^information/"]
       }
     ],
-    "@typescript-eslint/no-explicit-any": "off"
+    "@typescript-eslint/no-explicit-any": "off",
+    "@typescript-eslint/no-var-requires": "off"
   },
   "settings": {
     "react": {

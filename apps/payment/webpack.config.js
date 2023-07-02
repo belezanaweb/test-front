@@ -1,8 +1,11 @@
+require('dotenv/config');
+
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const ReactRefreshWebpackPlugin = require('@pmmmwh/react-refresh-webpack-plugin');
 const { ModuleFederationPlugin } = require('webpack').container;
+const DotEnvPlugin = require('dotenv-webpack');
 
 const { name, dependencies } = require('./package.json');
 
@@ -67,7 +70,7 @@ module.exports = {
       name,
       filename: 'remoteEntry.js',
       remotes: {
-        cart: 'cart@http://localhost:3001/remoteEntry.js',
+        cart: process.env.CART_APP_URL,
       },
       exposes: {
         './CreditCardForm': './src/components/CreditCardForm',
@@ -90,6 +93,9 @@ module.exports = {
           eager: true,
         },
       },
+    }),
+    new DotEnvPlugin({
+      allowEmptyValues: true,
     }),
   ].filter(Boolean),
 };

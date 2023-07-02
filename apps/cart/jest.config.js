@@ -2,8 +2,10 @@
  * For a detailed explanation regarding each configuration property, visit:
  * https://jestjs.io/docs/configuration
  */
+const { name } = require('./package.json');
 
 module.exports = {
+  displayName: name,
   roots: ['<rootDir>/src'],
   coverageDirectory: 'coverage',
   collectCoverage: true,

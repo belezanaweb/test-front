@@ -1,8 +1,11 @@
+require('dotenv/config');
+
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const ReactRefreshWebpackPlugin = require('@pmmmwh/react-refresh-webpack-plugin');
 const { ModuleFederationPlugin } = require('webpack').container;
+const DotEnvPlugin = require('dotenv-webpack');
 
 const { name, dependencies } = require('./package.json');
 
@@ -67,9 +70,9 @@ module.exports = {
       name,
       filename: 'remoteEntry.js',
       remotes: {
-        payment: 'payment@http://localhost:3002/remoteEntry.js',
-        cart: 'cart@http://localhost:3001/remoteEntry.js',
-        information: 'information@http://localhost:3003/remoteEntry.js',
+        payment: process.env.PAYMENT_APP_URL,
+        cart: process.env.CART_APP_URL,
+        information: process.env.INFORMATION_APP_URL,
       },
       exposes: {
         './CartProvider': './src/contexts/CartContext',
@@ -95,6 +98,9 @@ module.exports = {
           eager: true,
         },
       },
+    }),
+    new DotEnvPlugin({
+      allowEmptyValues: true,
     }),
   ].filter(Boolean),
 };
