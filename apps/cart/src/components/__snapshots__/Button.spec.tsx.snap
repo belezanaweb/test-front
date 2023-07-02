@@ -1,0 +1,29 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Button should render the button correctly with custom props 1`] = `
+<button
+  class="h-12 px-2 py-4 rounded font-bold text-base w-full flex justify-center items-center bg-black text-white"
+  type="button"
+>
+  Click me
+</button>
+`;
+
+exports[`Button should render the button correctly with default props 1`] = `
+<button
+  class="h-12 px-2 py-4 rounded font-bold text-base w-full flex justify-center items-center bg-purple-600 text-white"
+  type="button"
+>
+  Click me
+</button>
+`;
+
+exports[`Button should render the button correctly with disabled prop 1`] = `
+<button
+  class="h-12 px-2 py-4 rounded font-bold text-base w-full flex justify-center items-center bg-gray-300 text-gray-500 cursor-not-allowed"
+  disabled=""
+  type="button"
+>
+  Click me
+</button>
+`;

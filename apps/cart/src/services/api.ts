@@ -9,6 +9,8 @@ function getCurrentCart(): Promise<Cart> {
   }).then(res => res.json());
 }
 
-export const api = {
+const api = {
   getCurrentCart,
 };
+
+export default api;

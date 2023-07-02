@@ -1,0 +1,127 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Header should render the header correctly with active tab is cart 1`] = `
+<header
+  class="h-10 bg-white shadow flex justify-center items-center shrink-0"
+>
+  <nav
+    class="border-b border-zinc-500 h-full"
+  >
+    <ul
+      class="flex h-full"
+    >
+      <li
+        class="flex justify-center items-center px-4 border-b-[4px] border-black"
+      >
+        <p
+          class="text-black mt-1"
+        >
+          Sacola
+        </p>
+      </li>
+      <li
+        class="flex justify-center items-center px-4"
+      >
+        <p
+          class="text-zinc-500"
+        >
+          Pagamento
+        </p>
+      </li>
+      <li
+        class="flex justify-center items-center px-4"
+      >
+        <p
+          class="text-zinc-500"
+        >
+          Confirmação
+        </p>
+      </li>
+    </ul>
+  </nav>
+</header>
+`;
+
+exports[`Header should render the header correctly with active tab is information 1`] = `
+<header
+  class="h-10 bg-white shadow flex justify-center items-center shrink-0"
+>
+  <nav
+    class="border-b border-zinc-500 h-full"
+  >
+    <ul
+      class="flex h-full"
+    >
+      <li
+        class="flex justify-center items-center px-4"
+      >
+        <p
+          class="text-zinc-500"
+        >
+          Sacola
+        </p>
+      </li>
+      <li
+        class="flex justify-center items-center px-4"
+      >
+        <p
+          class="text-zinc-500"
+        >
+          Pagamento
+        </p>
+      </li>
+      <li
+        class="flex justify-center items-center px-4 border-b-[4px] border-black"
+      >
+        <p
+          class="text-black mt-1"
+        >
+          Confirmação
+        </p>
+      </li>
+    </ul>
+  </nav>
+</header>
+`;
+
+exports[`Header should render the header correctly with active tab is payment 1`] = `
+<header
+  class="h-10 bg-white shadow flex justify-center items-center shrink-0"
+>
+  <nav
+    class="border-b border-zinc-500 h-full"
+  >
+    <ul
+      class="flex h-full"
+    >
+      <li
+        class="flex justify-center items-center px-4"
+      >
+        <p
+          class="text-zinc-500"
+        >
+          Sacola
+        </p>
+      </li>
+      <li
+        class="flex justify-center items-center px-4 border-b-[4px] border-black"
+      >
+        <p
+          class="text-black mt-1"
+        >
+          Pagamento
+        </p>
+      </li>
+      <li
+        class="flex justify-center items-center px-4"
+      >
+        <p
+          class="text-zinc-500"
+        >
+          Confirmação
+        </p>
+      </li>
+    </ul>
+  </nav>
+</header>
+`;

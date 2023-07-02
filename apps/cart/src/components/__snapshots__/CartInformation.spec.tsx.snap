@@ -1,0 +1,73 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`CartInformation should render cart information correctly 1`] = `
+<div
+  class="px-5 py-7 bg-white flex-col flex"
+>
+  <div
+    class="flex flex-col gap-6 lg:max-w-4xl lg:m-auto lg:w-full"
+  >
+    <div
+      class="gap-2 flex flex-col"
+    >
+      <div
+        class="flex justify-between items-start gap-4"
+      >
+        <p
+          class="text-black text-sm font-normal leading-none tracking-wide"
+        >
+          Produtos: (3 itens)
+        </p>
+        <p
+          class="text-black text-sm font-normal leading-none tracking-wide"
+        >
+          R$ 100,00
+        </p>
+      </div>
+      <div
+        class="flex justify-between items-start gap-4"
+      >
+        <p
+          class="text-black text-sm font-normal leading-none tracking-wide"
+        >
+          Frete:
+        </p>
+        <p
+          class="text-black text-sm font-normal leading-none tracking-wide"
+        >
+          R$ 10,00
+        </p>
+      </div>
+      <div
+        class="flex justify-between items-start gap-4"
+      >
+        <p
+          class="text-black text-sm font-normal leading-none tracking-wide"
+        >
+          Desconto:
+        </p>
+        <p
+          class="text-sm leading-none tracking-wide text-purple-600 font-bold"
+        >
+          R$ 20,00
+        </p>
+      </div>
+      <div
+        class="flex justify-between items-start gap-4"
+      >
+        <p
+          class="text-black text-sm leading-none tracking-wide font-bold"
+        >
+          Subtotal:
+        </p>
+        <p
+          class="text-black text-sm leading-none tracking-wide font-bold"
+        >
+          R$ 90,00
+        </p>
+      </div>
+    </div>
+    Content
+  </div>
+</div>
+`;

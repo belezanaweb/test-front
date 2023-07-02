@@ -1,0 +1,30 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ListProducts should call handleGoNextStep when the button is clicked 1`] = `
+<div
+  class="flex flex-col bg-white rounded-lg border border-stone-300 py-8 px-2 gap-10 w-full"
+/>
+`;
+
+exports[`ListProducts should render one list of products 1`] = `
+<div
+  class="flex flex-col bg-white rounded-lg border border-stone-300 py-8 px-2 gap-10 w-full"
+/>
+`;
+
+exports[`ListProducts should render the products list 1`] = `
+<div>
+  <div
+    class="flex flex-col bg-white rounded-lg border border-stone-300 py-8 px-2 gap-10 w-full"
+  />
+  <footer>
+    <div>
+      <button
+        type="button"
+      >
+        Seguir para o pagamento
+      </button>
+    </div>
+  </footer>
+</div>
+`;

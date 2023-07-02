@@ -9,7 +9,7 @@ import {
 
 import { Cart, CreditCard } from 'cart/useCartProvider';
 
-import { api } from '../services/api';
+import api from '../services/api';
 
 export type CartContextProps = {
   cart?: Cart;

@@ -1,0 +1,60 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Layout should render children and footer content 1`] = `
+<div
+  class="flex flex-col"
+>
+  <header
+    class="h-10 bg-white shadow flex justify-center items-center shrink-0 fixed top-0 w-full"
+  >
+    <nav
+      class="border-b border-zinc-500 h-full"
+    >
+      <ul
+        class="flex h-full"
+      >
+        <li
+          class="flex justify-center items-center px-4"
+        >
+          <p
+            class="text-zinc-500"
+          >
+            Sacola
+          </p>
+        </li>
+        <li
+          class="flex justify-center items-center px-4"
+        >
+          <p
+            class="text-zinc-500"
+          >
+            Pagamento
+          </p>
+        </li>
+        <li
+          class="flex justify-center items-center px-4"
+        >
+          <p
+            class="text-zinc-500"
+          >
+            Confirmação
+          </p>
+        </li>
+      </ul>
+    </nav>
+  </header>
+  <main
+    class="flex py-6 px-2 overflow-auto mt-10 mb-52 lg:max-w-4xl lg:m-auto lg:mt-10 lg:w-full"
+  />
+  <footer
+    class="fixed bottom-0 w-full"
+    id="footer-content"
+  >
+    <div>
+      <div>
+        Footer Content
+      </div>
+    </div>
+  </footer>
+</div>
+`;

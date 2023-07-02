@@ -1,0 +1,102 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Product should render the product with discounted price 1`] = `
+<div
+  class="flex justify-between gap-4"
+>
+  <div
+    class="h-16 w-16 shrink-0"
+  >
+    <div>
+      <img
+        alt="Product description"
+        src="image.jpg"
+      />
+    </div>
+  </div>
+  <div
+    class="items-center flex flex-1"
+  >
+    <p
+      class="text-black text-xs"
+    >
+      Product description
+    </p>
+  </div>
+  <div
+    class="w-16 justify-center flex flex-col"
+  >
+    <p
+      class="text-sm text-neutral-400 line-through"
+    >
+      R$ 12,00
+    </p>
+    <span
+      class="text-sm text-black font-bold"
+    >
+      R$ 10,00
+    </span>
+  </div>
+</div>
+`;
+
+exports[`Product should render the product with hidden prices 1`] = `
+<div
+  class="flex justify-between gap-4"
+>
+  <div
+    class="h-16 w-16 shrink-0"
+  >
+    <div>
+      <img
+        alt="Product description"
+        src="image.jpg"
+      />
+    </div>
+  </div>
+  <div
+    class="items-center flex flex-1"
+  >
+    <p
+      class="text-black text-xs"
+    >
+      Product description
+    </p>
+  </div>
+</div>
+`;
+
+exports[`Product should render the product without discounted price 1`] = `
+<div
+  class="flex justify-between gap-4"
+>
+  <div
+    class="h-16 w-16 shrink-0"
+  >
+    <div>
+      <img
+        alt="Product description"
+        src="image.jpg"
+      />
+    </div>
+  </div>
+  <div
+    class="items-center flex flex-1"
+  >
+    <p
+      class="text-black text-xs"
+    >
+      Product description
+    </p>
+  </div>
+  <div
+    class="w-16 justify-center flex flex-col"
+  >
+    <span
+      class="text-sm text-black font-bold"
+    >
+      R$ 10,00
+    </span>
+  </div>
+</div>
+`;

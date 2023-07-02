@@ -12,11 +12,7 @@ export type FooterProps = {
 function Footer({ children }: FooterProps) {
   const target = usePortalElement('footer-content');
 
-  if (target) {
-    return createPortal(children, target);
-  }
-
-  return null;
+  return createPortal(children, target);
 }
 
 export default function Layout() {
