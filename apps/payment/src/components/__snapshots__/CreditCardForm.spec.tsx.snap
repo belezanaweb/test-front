@@ -1,0 +1,369 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`CreditCardForm should form validate the fields correctly 1`] = `
+<form
+  class="flex flex-col bg-white rounded-lg border border-stone-300 p-4 w-full"
+  id="credit-card-form"
+>
+  <h1
+    class="text-black text-xl mb-4"
+  >
+    Cartão de crédito
+  </h1>
+  <div
+    class="flex flex-col mb-5"
+  >
+    <label
+      class="text-neutral-600 text-sm mb-1"
+      for="number"
+    >
+      Número
+    </label>
+    <input
+      class="w-full h-11 rounded shadow-inner border px-4 text-black text-sm leading-none outline-none border-red-600"
+      id="number"
+      inputmode="numeric"
+      placeholder="0000 0000 0000 0000"
+      type="text"
+      value="1234 5678 9012 3456"
+    />
+    <span
+      class="text-red-600 text-xs leading-none mt-1"
+    >
+      O número do cartão é inválido.
+    </span>
+  </div>
+  <div
+    class="flex flex-col mb-5"
+  >
+    <label
+      class="text-neutral-600 text-sm mb-1"
+      for="holder"
+    >
+      Nome do titular do cartão
+    </label>
+    <input
+      class="w-full h-11 rounded shadow-inner border px-4 text-black text-sm leading-none outline-none border-red-600"
+      id="holder"
+      name="holder"
+      placeholder="Nome impresso no cartão"
+    />
+    <span
+      class="text-red-600 text-xs leading-none mt-1"
+    >
+      O nome do titular é inválido.
+    </span>
+  </div>
+  <div
+    class="flex flex-1 mb-5 gap-4"
+  >
+    <div
+      class="flex flex-col w-full"
+    >
+      <label
+        class="text-neutral-600 text-sm mb-1"
+        for="expireDate"
+      >
+        Data de validade
+      </label>
+      <input
+        class="w-full h-11 rounded shadow-inner border px-4 text-black text-sm leading-none outline-none border-red-600"
+        id="expireDate"
+        inputmode="numeric"
+        placeholder="MM/AAAA"
+        type="text"
+        value="12/24YY"
+      />
+      <span
+        class="text-red-600 text-xs leading-none mt-1"
+      >
+        A data de validade é inválida.
+      </span>
+    </div>
+    <div
+      class="flex flex-col w-full"
+    >
+      <label
+        class="text-neutral-600 text-sm mb-1"
+        for="cvv"
+      >
+        Código CVV:
+      </label>
+      <input
+        class="w-full h-11 rounded shadow-inner border px-4 text-black text-sm leading-none outline-none border-red-600"
+        id="cvv"
+        inputmode="numeric"
+        placeholder="000"
+        type="text"
+        value="13 "
+      />
+      <span
+        class="text-red-600 text-xs leading-none mt-1"
+      >
+        O código de segurança é inválido.
+      </span>
+    </div>
+  </div>
+</form>
+`;
+
+exports[`CreditCardForm should form validate the fields correctly 2`] = `
+<form
+  class="flex flex-col bg-white rounded-lg border border-stone-300 p-4 w-full"
+  id="credit-card-form"
+>
+  <h1
+    class="text-black text-xl mb-4"
+  >
+    Cartão de crédito
+  </h1>
+  <div
+    class="flex flex-col mb-5"
+  >
+    <label
+      class="text-neutral-600 text-sm mb-1"
+      for="number"
+    >
+      Número
+    </label>
+    <input
+      class="w-full h-11 rounded shadow-inner border border-stone-300 px-4 text-black text-sm leading-none outline-none"
+      id="number"
+      inputmode="numeric"
+      placeholder="0000 0000 0000 0000"
+      type="text"
+      value="4444 3333 2222 1111"
+    />
+  </div>
+  <div
+    class="flex flex-col mb-5"
+  >
+    <label
+      class="text-neutral-600 text-sm mb-1"
+      for="holder"
+    >
+      Nome do titular do cartão
+    </label>
+    <input
+      class="w-full h-11 rounded shadow-inner border border-stone-300 px-4 text-black text-sm leading-none outline-none"
+      id="holder"
+      name="holder"
+      placeholder="Nome impresso no cartão"
+    />
+  </div>
+  <div
+    class="flex flex-1 mb-5 gap-4"
+  >
+    <div
+      class="flex flex-col w-full"
+    >
+      <label
+        class="text-neutral-600 text-sm mb-1"
+        for="expireDate"
+      >
+        Data de validade
+      </label>
+      <input
+        class="w-full h-11 rounded shadow-inner border border-stone-300 px-4 text-black text-sm leading-none outline-none"
+        id="expireDate"
+        inputmode="numeric"
+        placeholder="MM/AAAA"
+        type="text"
+        value="12/2024"
+      />
+    </div>
+    <div
+      class="flex flex-col w-full"
+    >
+      <label
+        class="text-neutral-600 text-sm mb-1"
+        for="cvv"
+      >
+        Código CVV:
+      </label>
+      <input
+        class="w-full h-11 rounded shadow-inner border border-stone-300 px-4 text-black text-sm leading-none outline-none"
+        id="cvv"
+        inputmode="numeric"
+        placeholder="000"
+        type="text"
+        value="123"
+      />
+    </div>
+  </div>
+</form>
+`;
+
+exports[`CreditCardForm should form validate the fields correctly 3`] = `
+<form
+  class="flex flex-col bg-white rounded-lg border border-stone-300 p-4 w-full"
+  id="credit-card-form"
+>
+  <h1
+    class="text-black text-xl mb-4"
+  >
+    Cartão de crédito
+  </h1>
+  <div
+    class="flex flex-col mb-5"
+  >
+    <label
+      class="text-neutral-600 text-sm mb-1"
+      for="number"
+    >
+      Número
+    </label>
+    <input
+      class="w-full h-11 rounded shadow-inner border border-stone-300 px-4 text-black text-sm leading-none outline-none"
+      id="number"
+      inputmode="numeric"
+      placeholder="0000 0000 0000 0000"
+      type="text"
+      value="4444 3333 2222 1111"
+    />
+  </div>
+  <div
+    class="flex flex-col mb-5"
+  >
+    <label
+      class="text-neutral-600 text-sm mb-1"
+      for="holder"
+    >
+      Nome do titular do cartão
+    </label>
+    <input
+      class="w-full h-11 rounded shadow-inner border border-stone-300 px-4 text-black text-sm leading-none outline-none"
+      id="holder"
+      name="holder"
+      placeholder="Nome impresso no cartão"
+    />
+  </div>
+  <div
+    class="flex flex-1 mb-5 gap-4"
+  >
+    <div
+      class="flex flex-col w-full"
+    >
+      <label
+        class="text-neutral-600 text-sm mb-1"
+        for="expireDate"
+      >
+        Data de validade
+      </label>
+      <input
+        class="w-full h-11 rounded shadow-inner border border-stone-300 px-4 text-black text-sm leading-none outline-none"
+        id="expireDate"
+        inputmode="numeric"
+        placeholder="MM/AAAA"
+        type="text"
+        value="12/2024"
+      />
+    </div>
+    <div
+      class="flex flex-col w-full"
+    >
+      <label
+        class="text-neutral-600 text-sm mb-1"
+        for="cvv"
+      >
+        Código CVV:
+      </label>
+      <input
+        class="w-full h-11 rounded shadow-inner border border-stone-300 px-4 text-black text-sm leading-none outline-none"
+        id="cvv"
+        inputmode="numeric"
+        placeholder="000"
+        type="text"
+        value="123"
+      />
+    </div>
+  </div>
+</form>
+`;
+
+exports[`CreditCardForm should render the form fields correctly 1`] = `
+<form
+  class="flex flex-col bg-white rounded-lg border border-stone-300 p-4 w-full"
+  id="credit-card-form"
+>
+  <h1
+    class="text-black text-xl mb-4"
+  >
+    Cartão de crédito
+  </h1>
+  <div
+    class="flex flex-col mb-5"
+  >
+    <label
+      class="text-neutral-600 text-sm mb-1"
+      for="number"
+    >
+      Número
+    </label>
+    <input
+      class="w-full h-11 rounded shadow-inner border border-stone-300 px-4 text-black text-sm leading-none outline-none"
+      id="number"
+      inputmode="numeric"
+      placeholder="0000 0000 0000 0000"
+      type="text"
+      value=""
+    />
+  </div>
+  <div
+    class="flex flex-col mb-5"
+  >
+    <label
+      class="text-neutral-600 text-sm mb-1"
+      for="holder"
+    >
+      Nome do titular do cartão
+    </label>
+    <input
+      class="w-full h-11 rounded shadow-inner border border-stone-300 px-4 text-black text-sm leading-none outline-none"
+      id="holder"
+      name="holder"
+      placeholder="Nome impresso no cartão"
+    />
+  </div>
+  <div
+    class="flex flex-1 mb-5 gap-4"
+  >
+    <div
+      class="flex flex-col w-full"
+    >
+      <label
+        class="text-neutral-600 text-sm mb-1"
+        for="expireDate"
+      >
+        Data de validade
+      </label>
+      <input
+        class="w-full h-11 rounded shadow-inner border border-stone-300 px-4 text-black text-sm leading-none outline-none"
+        id="expireDate"
+        inputmode="numeric"
+        placeholder="MM/AAAA"
+        type="text"
+        value=""
+      />
+    </div>
+    <div
+      class="flex flex-col w-full"
+    >
+      <label
+        class="text-neutral-600 text-sm mb-1"
+        for="cvv"
+      >
+        Código CVV:
+      </label>
+      <input
+        class="w-full h-11 rounded shadow-inner border border-stone-300 px-4 text-black text-sm leading-none outline-none"
+        id="cvv"
+        inputmode="numeric"
+        placeholder="000"
+        type="text"
+        value=""
+      />
+    </div>
+  </div>
+</form>
+`;

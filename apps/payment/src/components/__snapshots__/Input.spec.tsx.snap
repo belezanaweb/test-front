@@ -1,0 +1,42 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Input should display error message 1`] = `
+<div
+  class="flex flex-col"
+>
+  <label
+    class="text-neutral-600 text-sm mb-1"
+    for="test-input"
+  >
+    Test Label
+  </label>
+  <input
+    class="w-full h-11 rounded shadow-inner border px-4 text-black text-sm leading-none outline-none border-red-600"
+    id="test-input"
+    placeholder="Test Placeholder"
+  />
+  <span
+    class="text-red-600 text-xs leading-none mt-1"
+  >
+    Error message
+  </span>
+</div>
+`;
+
+exports[`Input should render successfully 1`] = `
+<div
+  class="flex flex-col"
+>
+  <label
+    class="text-neutral-600 text-sm mb-1"
+    for="test-input"
+  >
+    Test Label
+  </label>
+  <input
+    class="w-full h-11 rounded shadow-inner border border-stone-300 px-4 text-black text-sm leading-none outline-none"
+    id="test-input"
+    placeholder="Test Placeholder"
+  />
+</div>
+`;
