@@ -36,7 +36,6 @@ jobs:
           run: yarn test
 
         - name: Make ENV file
-          working-directory: ./apps/cart
           run: SpicyPizza/create-envfile@v2.0
           with:
             envkey_DEBUG: false
