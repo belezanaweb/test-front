@@ -72,7 +72,8 @@
       {
         "ignore": ["^cart/", "^payment/"]
       }
-    ]
+    ],
+    "@typescript-eslint/no-explicit-any": "off"
   },
   "settings": {
     "react": {

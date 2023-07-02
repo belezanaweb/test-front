@@ -1,0 +1,69 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`PaymentInformation should render successfully 1`] = `
+<div
+  class="flex flex-col w-full gap-5"
+>
+  <div
+    class="flex flex-col bg-white rounded-lg border border-stone-300 w-full gap-2 pt-4 pb-6 px-6 items-center"
+  >
+    <h1
+      class="text-black text-[1.375rem] font-normal leading-7"
+    >
+      Compra efetuada com sucesso
+    </h1>
+    <p
+      class="text-neutral-600 text-base"
+    />
+    <p
+      class="text-neutral-600 text-base"
+    />
+    <p
+      class="text-neutral-600 text-base"
+    />
+  </div>
+  <div
+    class="flex flex-col bg-white rounded-lg border border-stone-300 w-full px-2 pt-6 pb-8 gap-7"
+  >
+    <h1
+      class="text-black text-xl font-normal leading-7"
+    >
+      Lista de Produtos
+    </h1>
+  </div>
+</div>
+`;
+
+exports[`PaymentInformation should render successfully when cart exists 1`] = `
+<div
+  class="flex flex-col w-full gap-5"
+>
+  <div
+    class="flex flex-col bg-white rounded-lg border border-stone-300 w-full gap-2 pt-4 pb-6 px-6 items-center"
+  >
+    <h1
+      class="text-black text-[1.375rem] font-normal leading-7"
+    >
+      Compra efetuada com sucesso
+    </h1>
+    <p
+      class="text-neutral-600 text-base"
+    />
+    <p
+      class="text-neutral-600 text-base"
+    />
+    <p
+      class="text-neutral-600 text-base"
+    />
+  </div>
+  <div
+    class="flex flex-col bg-white rounded-lg border border-stone-300 w-full px-2 pt-6 pb-8 gap-7"
+  >
+    <h1
+      class="text-black text-xl font-normal leading-7"
+    >
+      Lista de Produtos
+    </h1>
+  </div>
+</div>
+`;

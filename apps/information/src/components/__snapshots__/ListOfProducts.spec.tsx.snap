@@ -1,0 +1,25 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ListOfProducts should render one list of products 1`] = `
+<div
+  class="flex flex-col bg-white rounded-lg border border-stone-300 w-full px-2 pt-6 pb-8 gap-7"
+>
+  <h1
+    class="text-black text-xl font-normal leading-7"
+  >
+    Lista de Produtos
+  </h1>
+</div>
+`;
+
+exports[`ListOfProducts should render successfully 1`] = `
+<div
+  class="flex flex-col bg-white rounded-lg border border-stone-300 w-full px-2 pt-6 pb-8 gap-7"
+>
+  <h1
+    class="text-black text-xl font-normal leading-7"
+  >
+    Lista de Produtos
+  </h1>
+</div>
+`;

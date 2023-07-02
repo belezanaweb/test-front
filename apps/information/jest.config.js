@@ -19,6 +19,10 @@ module.exports = {
     '^cart/useCartProvider$': '<rootDir>/src/__mocks__/useCartProvider.ts',
     '^payment/obfuscateCreditCardNumber$':
       '<rootDir>/src/__mocks__/obfuscateCreditCardNumber.ts',
+    '^cart/Product$': '<rootDir>/src/__mocks__/Product.tsx',
+    '^cart/Button$': '<rootDir>/src/__mocks__/Button.tsx',
+    '^cart/CartInformation$': '<rootDir>/src/__mocks__/CartInformation.tsx',
+    '^cart/Layout$': '<rootDir>/src/__mocks__/Layout.tsx',
   },
   moduleFileExtensions: ['js', 'ts', 'tsx'],
 };
