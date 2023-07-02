@@ -1,9 +1,5 @@
 name: Deploy Apps
 
-env:
-  VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
-  VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID }}
-
 on:
   push:
     branches:
@@ -13,6 +9,10 @@ jobs:
   deploy-cart:
       name: Deploy Cart App 
       runs-on: ubuntu-latest
+
+      env:
+       VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
+       VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID }}
 
       steps:
         - name: Checkout
@@ -34,6 +34,16 @@ jobs:
         - name: Tests
           working-directory: ./apps/cart
           run: yarn test
+
+        - name: Make ENV file
+          working-directory: ./apps/cart
+          run: SpicyPizza/create-envfile@v2.0
+          with:
+            envkey_DEBUG: false
+            envkey_API_URL: ${{ secrets.API_URL }}    
+            envkey_PAYMENT_APP_URL: ${{ secrets.PAYMENT_APP_URL }}    
+            envkey_CART_APP_URL: ${{ secrets.CART_APP_URL }}    
+            envkey_INFORMATION_APP_URL: ${{ secrets.INFORMATION_APP_URL }}
 
         - name: Install Vercel CLI
           working-directory: ./apps/cart
