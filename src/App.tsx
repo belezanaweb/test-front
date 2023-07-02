@@ -1,5 +1,13 @@
-import './App.css'
+import { ThemeProvider } from 'styled-components'
+import { GlobalStyle } from './global'
+import theme from './theme'
+import Cart from './pages/Cart'
 
 export default function App() {
-  return <div className="wrapper">Boa sorte! 🚀</div>
+  return (
+    <ThemeProvider theme={theme}>
+      <GlobalStyle />
+      <Cart />
+    </ThemeProvider>
+  )
 }
