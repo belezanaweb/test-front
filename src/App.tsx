@@ -6,7 +6,12 @@ import Cart from './pages/Cart'
 export default function App() {
   return (
     <ThemeProvider theme={theme}>
-      <GlobalStyle />
+      <GlobalStyle
+        font={theme.font}
+        border={theme.border}
+        spacings={theme.spacings}
+        colors={theme.colors}
+      />
       <Cart />
     </ThemeProvider>
   )
