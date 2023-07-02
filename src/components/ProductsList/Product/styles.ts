@@ -3,8 +3,9 @@ import styled, { css } from 'styled-components'
 export const ProductWrapper = styled.div`
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
   gap: 20px;
+  width: 100%;
 `
 
 export const ImageWrapper = styled.div`
@@ -26,4 +27,7 @@ export const PriceWrapper = styled.div`
   align-items: center;
   justify-content: center;
   flex-direction: column;
+`
+export const TextWrapper = styled.div`
+  width: 100%;
 `

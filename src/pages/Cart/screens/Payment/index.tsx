@@ -18,6 +18,7 @@ const Payment = () => {
   return (
     <PaymentForm onSubmit={handleSubmitForm}>
       <PaymentResume
+        rowStart={1}
         buttonLable="Finalizar pedido"
         discount={bag.discount}
         itemsQuantity={bag.items.length}

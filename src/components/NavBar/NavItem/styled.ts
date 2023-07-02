@@ -13,5 +13,6 @@ export const NavItemWrapper =
     border-bottom: ${selected ? '4px' : '1px'} solid
       ${selected ? theme.colors.black : theme.colors.mediumGray};
     height: 100%;
+    cursor: pointer;
   `}
 `

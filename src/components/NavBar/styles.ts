@@ -9,5 +9,12 @@ export const NavHeader = styled.div`
     width: 100%;
     box-shadow: 0 3px 10px rgb(0 0 0 / 0.1);
     height: 40px;
+    @media screen and (min-width: 480px) {
+      height: 50px;
+    }
+    @media screen and (min-width: 768px) {
+      grid-column-start: 1;
+      grid-column-end: 3;
+    }
   `}
 `

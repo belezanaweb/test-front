@@ -39,16 +39,19 @@ const Confirmation = () => {
     navigate('Sacola')
   }
 
+  const purchaseResumeHeight = 'auto'
+  const productListHeight = '100%'
+
   return (
     <>
-      <MainContent>
+      <MainContent height={productListHeight}>
         <PurchaseResume
           cardNumber={form.cardNumber}
           cardOwner={form.cardOwner}
           expirationDate={form.expirationDate}
         />
       </MainContent>
-      <MainContent title="Produtos">
+      <MainContent title="Produtos" height={purchaseResumeHeight}>
         <ProductsList products={products} />
       </MainContent>
       <PaymentResume

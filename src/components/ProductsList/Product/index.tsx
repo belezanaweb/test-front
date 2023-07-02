@@ -1,5 +1,5 @@
 import React from 'react'
-import { ImageWrapper, PriceWrapper, ProductImage, ProductWrapper } from './styles'
+import { ImageWrapper, PriceWrapper, ProductImage, ProductWrapper, TextWrapper } from './styles'
 import Text from '../../Text'
 import { moneyConvert } from '../../../utils/priceUtils'
 
@@ -16,16 +16,18 @@ const Product = ({ image, name, originalPrice, price }: productProps) => {
       <ImageWrapper>
         <ProductImage alt="product image" src={image} />
       </ImageWrapper>
-      <Text
-        color="black"
-        fontSize="small"
-        lineHeight="medium"
-        textAlign="left"
-        fontWeight="normal"
-        letterSpacing="0.27px"
-      >
-        {name}
-      </Text>
+      <TextWrapper>
+        <Text
+          color="black"
+          fontSize="small"
+          lineHeight="medium"
+          textAlign="left"
+          fontWeight="normal"
+          letterSpacing="0.27px"
+        >
+          {name}
+        </Text>
+      </TextWrapper>
       {(originalPrice || price) && (
         <PriceWrapper>
           {originalPrice && price && price < originalPrice && (

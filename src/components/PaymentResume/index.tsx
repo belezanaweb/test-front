@@ -5,7 +5,7 @@ import Text from '../Text'
 import { moneyConvert } from '../../utils/priceUtils'
 import theme from '../../theme'
 
-type paymentResumeProps = {
+export type paymentResumeProps = {
   itemsQuantity: number,
   total: number,
   shippingTotal: number,
@@ -13,6 +13,7 @@ type paymentResumeProps = {
   subTotal: number,
   buttonLable: string,
   buttonColor?: keyof typeof theme.colors,
+  rowStart?: number,
   onClick?: () => void
 }
 
@@ -24,10 +25,11 @@ const PaymentResume = ({
   total,
   buttonLable,
   buttonColor,
+  rowStart,
   onClick
 }: paymentResumeProps) => {
   return (
-    <ContentWrap>
+    <ContentWrap rowStart={rowStart}>
       <ResumeWrapper>
         <Text
           color="black"

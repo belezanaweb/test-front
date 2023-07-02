@@ -2,14 +2,15 @@ import React, { ReactNode } from 'react'
 import { Content } from './styles'
 import Text from '../Text'
 
-type MainContentProps = {
+export type MainContentProps = {
   children: ReactNode,
-  title?: string
+  title?: string,
+  height?: string
 }
 
-const MainContent = ({ title, children }: MainContentProps) => {
+const MainContent = ({ title, height, children }: MainContentProps) => {
   return (
-    <Content>
+    <Content height={height}>
       {title && (
         <Text
           color="black"

@@ -7,6 +7,7 @@ export const FormWrapper = styled.div`
     grid-template-columns: 1fr 1fr;
     align-items: flex-start;
     justify-content: center;
+    width: 100%;
   `}
 `
 
@@ -16,6 +17,15 @@ export const Form = styled.form`
   justify-content: center;
   flex-direction: column;
   gap: 20px;
+
+  @media screen and (min-width: 768px) {
+    display: grid;
+    width: 100%;
+    grid-column-end: 3;
+    grid-column-start: 1;
+    grid-template-columns: 1fr 2fr;
+    align-items: flex-start;
+  }
 `
 
 const inputWrapper = css`

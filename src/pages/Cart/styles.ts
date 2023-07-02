@@ -10,5 +10,10 @@ export const PageWrapper = styled.main`
     background: ${theme.colors.lightGray};
     height: 100%;
     gap: 20px;
+    @media screen and (min-width: 768px) {
+      display: grid;
+      grid-template-columns: 1fr 2fr;
+      align-items: flex-start;
+    }
   `}
 `
