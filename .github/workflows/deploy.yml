@@ -11,8 +11,8 @@ jobs:
       runs-on: ubuntu-latest
 
       env:
-       VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
-       VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID }}
+       VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID_CART }}
+       VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID_CART }}
 
       steps:
         - name: Checkout
@@ -59,4 +59,59 @@ jobs:
         
         - name: Deploy Project Artifacts to Vercel
           working-directory: ./apps/cart
-          run: vercel deploy --prebuilt --prod --token=${{ secrets.VERCEL_TOKEN }}          
+          run: vercel deploy --prebuilt --prod --token=${{ secrets.VERCEL_TOKEN }}
+
+  deploy-payment:
+      name: Deploy Payment App 
+      runs-on: ubuntu-latest
+
+      env:
+       VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID_PAYMENT }}
+       VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID_PAYMENT }}
+
+      steps:
+        - name: Checkout
+          uses: actions/checkout@v3
+
+        - name: Set NodeJs
+          uses: actions/setup-node@v2
+          with:
+            node-version: '16.x'
+            cache: 'yarn'
+
+        - name: Install Dependencies
+          run: yarn install
+
+        - name: Lint files
+          working-directory: ./apps/payment
+          run: yarn lint
+
+        - name: Tests
+          working-directory: ./apps/payment
+          run: yarn test
+
+        - name: Make ENV file
+          uses: SpicyPizza/create-envfile@v2.0
+          with:
+            envkey_DEBUG: false
+            directory: ./apps/payment
+            envkey_API_URL: ${{ secrets.API_URL }}    
+            envkey_PAYMENT_APP_URL: ${{ secrets.PAYMENT_APP_URL }}    
+            envkey_CART_APP_URL: ${{ secrets.CART_APP_URL }}    
+            envkey_INFORMATION_APP_URL: ${{ secrets.INFORMATION_APP_URL }}
+
+        - name: Install Vercel CLI
+          working-directory: ./apps/payment
+          run: yarn global add vercel
+
+        - name: Pull Vercel Environment Information
+          working-directory: ./apps/payment
+          run: vercel pull --yes --environment=production --token=${{ secrets.VERCEL_TOKEN }}
+        
+        - name: Build Project Artifacts
+          working-directory: ./apps/payment
+          run: vercel build --prod --token=${{ secrets.VERCEL_TOKEN }}
+        
+        - name: Deploy Project Artifacts to Vercel
+          working-directory: ./apps/payment
+          run: vercel deploy --prebuilt --prod --token=${{ secrets.VERCEL_TOKEN }}      
