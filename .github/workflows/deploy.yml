@@ -1,0 +1,52 @@
+name: Deploy Apps
+
+env:
+  VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
+  VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID }}
+
+on:
+  push:
+    branches:
+      - feat/add-implementation
+
+jobs:
+  deploy-cart:
+      name: Deploy Cart App 
+      runs-on: ubuntu-latest
+
+      steps:
+        - name: Checkout
+          uses: actions/checkout@v3
+
+        - name: Set NodeJs
+          uses: actions/setup-node@v2
+          with:
+            node-version: '16.x'
+            cache: 'yarn'
+
+        - name: Install Dependencies
+          run: yarn install
+
+        - name: Lint files
+          working-directory: ./apps/cart
+          run: yarn lint
+
+        - name: Tests
+          working-directory: ./apps/cart
+          run: yarn test
+
+        - name: Install Vercel CLI
+          working-directory: ./apps/cart
+          run: yarn global add vercel
+
+        - name: Pull Vercel Environment Information
+          working-directory: ./apps/cart
+          run: vercel pull --yes --environment=production --token=${{ secrets.VERCEL_TOKEN }}
+        
+        - name: Build Project Artifacts
+          working-directory: ./apps/cart
+          run: vercel build --prod --token=${{ secrets.VERCEL_TOKEN }}
+        
+        - name: Deploy Project Artifacts to Vercel
+          working-directory: ./apps/cart
+          run: vercel deploy --prebuilt --prod --token=${{ secrets.VERCEL_TOKEN }}          
