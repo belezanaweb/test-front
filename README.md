@@ -42,13 +42,28 @@ $ yarn install
 
 ## Executar o Projeto
 
-Para executar o projeto localmente rode o comando:
+-   ### Local
 
-```
-$ yarn dev
-```
+    ```
+    $ yarn dev
+    ```
 
-A aplicação estará disponível no endereço [http://localhost:3000](http://localhost:3000)
+    A aplicação estará disponível no endereço [http://localhost:3000](http://localhost:3000)
+
+-   ### produção 
+
+    ```
+    $ yarn build
+    ```
+    Para gerar a build do projeto
+
+    ```
+    $ yarn preview
+    ```
+    Para gerar a versão de produção
+
+    A aplicação estará disponível no endereço [http://localhost:4173](http://localhost:4173)
+
 
 ---
 
