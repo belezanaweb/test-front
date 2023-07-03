@@ -35,8 +35,8 @@ const PaymentResume = ({
           color="black"
           fontSize="medium"
           fontWeight="normal"
-          textAlign="left"
-          lineHeight="medium"
+          textalign="left"
+          lineheight="medium"
           letterSpacing="0.27px"
         >
           {`Produtos: (${itemsQuantity} items)`}
@@ -45,8 +45,8 @@ const PaymentResume = ({
           color="black"
           fontSize="medium"
           fontWeight="normal"
-          textAlign="right"
-          lineHeight="medium"
+          textalign="right"
+          lineheight="medium"
           letterSpacing="0.27px"
         >
           {moneyConvert(total)}
@@ -55,8 +55,8 @@ const PaymentResume = ({
           color="black"
           fontSize="medium"
           fontWeight="normal"
-          textAlign="left"
-          lineHeight="medium"
+          textalign="left"
+          lineheight="medium"
           letterSpacing="0.27px"
         >
           Frete:
@@ -65,8 +65,8 @@ const PaymentResume = ({
           color="black"
           fontSize="medium"
           fontWeight="normal"
-          textAlign="right"
-          lineHeight="medium"
+          textalign="right"
+          lineheight="medium"
           letterSpacing="0.27px"
         >
           {moneyConvert(shippingTotal)}
@@ -75,8 +75,8 @@ const PaymentResume = ({
           color="black"
           fontSize="medium"
           fontWeight="normal"
-          textAlign="left"
-          lineHeight="medium"
+          textalign="left"
+          lineheight="medium"
           letterSpacing="0.27px"
         >
           Desconto:
@@ -85,8 +85,8 @@ const PaymentResume = ({
           color="purple"
           fontSize="medium"
           fontWeight="bold"
-          textAlign="right"
-          lineHeight="medium"
+          textalign="right"
+          lineheight="medium"
           letterSpacing="0.27px"
         >
           {moneyConvert(discount)}
@@ -95,8 +95,8 @@ const PaymentResume = ({
           color="black"
           fontSize="xmedium"
           fontWeight="bold"
-          textAlign="left"
-          lineHeight="medium"
+          textalign="left"
+          lineheight="medium"
           letterSpacing="0.27px"
         >
           Subtotal
@@ -105,8 +105,8 @@ const PaymentResume = ({
           color="black"
           fontSize="xmedium"
           fontWeight="bold"
-          textAlign="right"
-          lineHeight="medium"
+          textalign="right"
+          lineheight="medium"
           letterSpacing="0.27px"
         >
           {moneyConvert(subTotal)}
@@ -117,8 +117,8 @@ const PaymentResume = ({
           color="white"
           fontSize="large"
           fontWeight="bold"
-          textAlign="center"
-          lineHeight="medium"
+          textalign="center"
+          lineheight="medium"
         >
           {buttonLable}
         </Text>

@@ -18,8 +18,8 @@ const PurchaseResume = ({ cardNumber, cardOwner, expirationDate }: purchaseResum
         color="black"
         fontSize="xxlarge"
         fontWeight="normal"
-        lineHeight="xlarge"
-        textAlign="center"
+        lineheight="xlarge"
+        textalign="center"
       >
         Compra efetuada com sucesso
       </Text>
@@ -27,8 +27,8 @@ const PurchaseResume = ({ cardNumber, cardOwner, expirationDate }: purchaseResum
         color="darkGray"
         fontWeight="normal"
         fontSize="xmedium"
-        lineHeight="xmedium"
-        textAlign="center"
+        lineheight="xmedium"
+        textalign="center"
       >
         {cardCensored(cardNumber)}
       </Text>
@@ -36,8 +36,8 @@ const PurchaseResume = ({ cardNumber, cardOwner, expirationDate }: purchaseResum
         color="darkGray"
         fontWeight="normal"
         fontSize="xmedium"
-        lineHeight="xmedium"
-        textAlign="center"
+        lineheight="xmedium"
+        textalign="center"
       >
         {cardOwner}
       </Text>
@@ -45,8 +45,8 @@ const PurchaseResume = ({ cardNumber, cardOwner, expirationDate }: purchaseResum
         color="darkGray"
         fontWeight="normal"
         fontSize="xmedium"
-        lineHeight="xmedium"
-        textAlign="center"
+        lineheight="xmedium"
+        textalign="center"
       >
         {expirationDate}
       </Text>

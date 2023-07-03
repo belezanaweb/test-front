@@ -16,8 +16,8 @@ const MainContent = ({ title, height, children }: MainContentProps) => {
           color="black"
           fontSize="xlarge"
           fontWeight="normal"
-          textAlign="left"
-          lineHeight="large"
+          textalign="left"
+          lineheight="large"
         >
           {title}
         </Text>

@@ -38,7 +38,7 @@ const NavBar = () => {
       {routes.map((view) => {
         return (
           <NavItem key={view} selected={view === screen} onClick={() => handleClick(view)}>
-            <Text color="mediumGray" fontSize="medium" fontWeight="normal" textAlign="center">
+            <Text color="mediumGray" fontSize="medium" fontWeight="normal" textalign="center">
               {view}
             </Text>
           </NavItem>

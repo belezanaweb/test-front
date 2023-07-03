@@ -20,8 +20,8 @@ const Product = ({ image, name, originalPrice, price }: productProps) => {
         <Text
           color="black"
           fontSize="small"
-          lineHeight="medium"
-          textAlign="left"
+          lineheight="medium"
+          textalign="left"
           fontWeight="normal"
           letterSpacing="0.27px"
         >
@@ -34,8 +34,8 @@ const Product = ({ image, name, originalPrice, price }: productProps) => {
             <Text
               color="mediumGray"
               fontSize="medium"
-              lineHeight="medium"
-              textAlign="right"
+              lineheight="medium"
+              textalign="right"
               fontWeight="normal"
               textDecoration="line-through"
               letterSpacing="0.27px"
@@ -47,8 +47,8 @@ const Product = ({ image, name, originalPrice, price }: productProps) => {
             <Text
               color="black"
               fontSize="medium"
-              lineHeight="medium"
-              textAlign="right"
+              lineheight="medium"
+              textalign="right"
               fontWeight="bold"
               letterSpacing="0.27px"
             >

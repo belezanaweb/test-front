@@ -12,8 +12,8 @@ export const Typography =
     color,
     fontSize,
     fontWeight,
-    textAlign,
-    lineHeight,
+    textalign,
+    lineheight,
     textDecoration,
     letterSpacing
   }) => css`
@@ -21,8 +21,8 @@ export const Typography =
     font-size: ${theme.font.sizes[fontSize]};
     font-weight: ${theme.font.Weight[fontWeight]};
     color: ${theme.colors[color]};
-    text-align: ${textAlign || 'left'};
-    line-height: ${lineHeight && theme.spacings[lineHeight]};
+    text-align: ${textalign || 'left'};
+    line-height: ${lineheight && theme.spacings[lineheight]};
     text-decoration: ${textDecoration || 'none'};
     letter-spacing: ${letterSpacing && letterSpacing};
   `}
