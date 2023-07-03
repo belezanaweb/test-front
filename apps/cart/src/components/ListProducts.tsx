@@ -1,5 +1,5 @@
 import { useNavigate } from 'react-router-dom';
-import { useCallback } from 'react';
+import { Fragment, useCallback } from 'react';
 
 import useCartProvider from 'cart/useCartProvider';
 import Layout from 'cart/Layout';
@@ -16,7 +16,7 @@ export default function ListProducts() {
   }, [navigate]);
 
   return (
-    <>
+    <Fragment>
       <div className="flex flex-col bg-white rounded-lg border border-stone-300 py-8 px-2 gap-10 w-full">
         {cart?.items.map(item => (
           <Product
@@ -41,6 +41,6 @@ export default function ListProducts() {
           <Button onClick={handleGoNextStep}>Seguir para o pagamento</Button>
         </CartInformation>
       </Layout.Footer>
-    </>
+    </Fragment>
   );
 }
