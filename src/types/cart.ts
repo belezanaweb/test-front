@@ -1,8 +1,8 @@
-import { IItems } from "."
+import { IItems } from '.'
 
 export interface ICart {
   id: string
-  items: IItems
+  items: IItems[]
   subTotal: number
   shippingTotal: number
   discount: number

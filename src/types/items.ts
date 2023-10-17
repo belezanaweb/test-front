@@ -1,4 +1,4 @@
-import { IProduct } from "."
+import { IProduct } from '.'
 
 export interface IItems {
   quantity: number
