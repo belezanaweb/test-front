@@ -1,11 +1,5 @@
 {
-  "extends": ["@rocketseat/eslint-config/react", "prettier"],
-  "parser": "@babel/eslint-parser",
-  "parserOptions": {
-    "babelOptions": {
-       "presets": ["@babel/preset-react"]
-    }
-   },
+  "extends": ["@rocketseat/eslint-config/react"],
   "rules": {
     "prettier/prettier": ["error", { "endOfLine": "auto" }],
     "import/order": [
