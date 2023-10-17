@@ -43,7 +43,6 @@ export const Header: React.FC<HeaderProps> = ({ children }) => {
           value={tab.value}
           className="h-full w-screen mt-0"
         >
-          {/* {tab.label} */}
           {children}
         </TabsContent>
       ))}
