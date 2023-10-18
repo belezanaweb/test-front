@@ -11,7 +11,7 @@ interface ConfirmationProps {
 
 export const Confirmation: React.FC<ConfirmationProps> = ({ data }) => {
   return (
-    <ScrollArea className="h-full p-4 bg-light-gray pb-72">
+    <ScrollArea className="h-full p-4 bg-light-gray">
       <div className="w-full space-y-5">
         <ConfirmPaymentBox />
         <Products items={data?.items} />

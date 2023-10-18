@@ -6,7 +6,7 @@ import { PaymentForm } from '@/components/Payment'
 
 export const Payment = () => {
   return (
-    <ScrollArea className="h-full p-4 bg-light-gray pb-72">
+    <ScrollArea className="h-full p-4 bg-light-gray pb-72 pt-11">
       <div className="w-full">
         <PaymentForm />
       </div>

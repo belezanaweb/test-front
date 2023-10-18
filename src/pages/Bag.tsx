@@ -11,7 +11,7 @@ interface BagProps {
 
 export const Bag: React.FC<BagProps> = ({ data }) => {
   return (
-    <ScrollArea className="h-full p-4 bg-light-gray pb-72">
+    <ScrollArea className="p-4 bg-light-gray pb-72 pt-11">
       <div className="w-full">
         <Products items={data?.items} />
       </div>
