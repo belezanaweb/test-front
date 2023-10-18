@@ -19,8 +19,11 @@ export const Header: React.FC<HeaderProps> = ({ children }) => {
   ]
 
   return (
-    <Tabs value={tabActive} className="fixed top-0 left-0 w-full h-full">
-      <TabsList className="flex justify-between bg-white items-center rounded-none shadow-md p-4 space-x-0">
+    <Tabs
+      value={tabActive}
+      className="fixed top-0 left-0 w-full h-full bg-light-gray"
+    >
+      <TabsList className="flex justify-between bg-white items-center rounded-none shadow-md p-4 space-x-0 xl:px-96">
         {tabs.map((tab) => (
           <TabsTrigger
             key={tab.value}
@@ -47,7 +50,7 @@ export const Header: React.FC<HeaderProps> = ({ children }) => {
         <TabsContent
           key={tab.value}
           value={tab.value}
-          className="h-full w-screen mt-0"
+          className="h-full w-screen mt-0 pb-72 xl:px-96"
         >
           {children}
         </TabsContent>

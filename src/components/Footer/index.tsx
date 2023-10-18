@@ -34,9 +34,9 @@ export const Footer: React.FC<FooterProps> = ({ data, buttonTitle }) => {
   const { items, subTotal, shippingTotal, discount, total } = data || {}
 
   return (
-    <div className="bg-white px-5 py-7 fixed bottom-0 left-0 w-full gap-6 flex flex-col">
+    <div className="bg-white px-5 py-4 fixed bottom-0 left-0 w-full gap-6 flex flex-col">
       {data ? (
-        <div className="space-y-2">
+        <div className="space-y-2 xl:px-96">
           <DetailRow
             label={`Produtos (${items?.length} itens)`}
             value={subTotal}
@@ -64,7 +64,7 @@ export const Footer: React.FC<FooterProps> = ({ data, buttonTitle }) => {
           setFormData(null)
           goToNextTab()
         }}
-        className={`w-full rounded text-lg font-bold text-white ${
+        className={`w-full rounded text-lg font-bold text-white xl:mx-auto xl:max-w-2xl ${
           buttonTitle === 'confirmation' ? 'bg-black' : 'bg-purple'
         }`}
         disabled={buttonTitle === 'payment' && !isFormValid}
