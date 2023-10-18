@@ -10,7 +10,7 @@ interface HeaderProps {
 }
 
 export const Header: React.FC<HeaderProps> = ({ children }) => {
-  const { tabActive, setTabActive } = useDataContext()
+  const { tabActive, setTabActive, isFormValid } = useDataContext()
 
   const tabs: { value: TABS; label: string }[] = [
     { value: 'bag', label: 'Sacola' },
@@ -30,7 +30,13 @@ export const Header: React.FC<HeaderProps> = ({ children }) => {
                 : 'border-b-2 border-gray-400 rounded-none bottom-[-3px]'
             }`}
             value={tab.value}
-            onClick={() => setTabActive(tab.value)}
+            onClick={() => {
+              if (tab.value === 'confirmation' && !isFormValid) {
+                setTabActive('payment')
+              } else {
+                setTabActive(tab.value)
+              }
+            }}
           >
             {tab.label}
           </TabsTrigger>

@@ -2,6 +2,7 @@ import React from 'react'
 
 import { ConfirmPaymentBox } from '@/components/Payment/ConfirmPaymentBox'
 import { Products } from '@/components/Products'
+import { ScrollArea } from '@/components/ui/scroll-area'
 import { ICart } from '@/types'
 
 interface ConfirmationProps {
@@ -10,9 +11,11 @@ interface ConfirmationProps {
 
 export const Confirmation: React.FC<ConfirmationProps> = ({ data }) => {
   return (
-    <div className="bg-light-gray h-full w-full p-4">
-      <ConfirmPaymentBox />
-      <Products items={data?.items} />
-    </div>
+    <ScrollArea className="h-full p-4 bg-light-gray pb-72">
+      <div className="w-full space-y-5">
+        <ConfirmPaymentBox />
+        <Products items={data?.items} />
+      </div>
+    </ScrollArea>
   )
 }

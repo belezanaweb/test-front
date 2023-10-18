@@ -18,51 +18,54 @@ export const Products: React.FC<ProductsProps> = ({ items }) => {
     <div className="h-auto bg-white rounded border border-[#CCC] px-2 py-6">
       {hasConfirmationTab && <h1>Produtos</h1>}
       <div className="space-y-12">
-        {/* // TODO change null to load items */}
-        {items ? null : <SkeletonProduct />}
-        {items?.map((item) => {
-          const {
-            product: { sku, name, imageObjects, priceSpecification },
-            quantity,
-          } = item
+        {items ? (
+          items?.map((item) => {
+            const {
+              product: { sku, name, imageObjects, priceSpecification },
+              quantity,
+            } = item
 
-          const image: IImageObjects['small'] = imageObjects?.[0]?.small
-          const price: IPriceSpecification['price'] = priceSpecification?.price
-          const discount = priceSpecification?.discount
+            const image: IImageObjects['small'] = imageObjects?.[0]?.small
+            const price: IPriceSpecification['price'] =
+              priceSpecification?.price
+            const discount = priceSpecification?.discount
 
-          return (
-            <div
-              key={sku}
-              className="flex flex-row justify-between items-center gap-[15px]"
-            >
-              <div>
-                {quantity > 1 && (
-                  <span className="text-[10px] bg-purple/90 text-white rounded-full p-1">
-                    {quantity.toString().padStart(2, '0')}
-                  </span>
-                )}
-                <img src={image} alt={name} className="w-[60px] h-[60px]" />
-              </div>
-              <span
-                className={`${
-                  !hasConfirmationTab ? 'w-[180px]' : 'w-[250px]'
-                } text-xs`}
+            return (
+              <div
+                key={sku}
+                className="flex flex-row justify-between items-center gap-[15px]"
               >
-                {name}
-              </span>
-              {!hasConfirmationTab && (
-                <div className="flex flex-col font-bold">
-                  {discount > 0 && (
-                    <span className="text-gray-400 font-normal line-through">
-                      {formatCurrency(priceSpecification?.maxPrice)}
+                <div>
+                  {quantity > 1 && (
+                    <span className="text-[10px] bg-purple/90 text-white rounded-full p-1">
+                      {quantity.toString().padStart(2, '0')}
                     </span>
                   )}
-                  {price && <span>{formatCurrency(price)}</span>}
+                  <img src={image} alt={name} className="w-[60px] h-[60px]" />
                 </div>
-              )}
-            </div>
-          )
-        })}
+                <span
+                  className={`${
+                    !hasConfirmationTab ? 'w-[180px]' : 'w-[250px]'
+                  } text-xs`}
+                >
+                  {name}
+                </span>
+                {!hasConfirmationTab && (
+                  <div className="flex flex-col font-bold">
+                    {discount > 0 && (
+                      <span className="text-gray-400 font-normal line-through">
+                        {formatCurrency(priceSpecification?.maxPrice)}
+                      </span>
+                    )}
+                    {price && <span>{formatCurrency(price)}</span>}
+                  </div>
+                )}
+              </div>
+            )
+          })
+        ) : (
+          <SkeletonProduct />
+        )}
       </div>
     </div>
   )

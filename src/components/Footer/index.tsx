@@ -29,7 +29,7 @@ const DetailRow: React.FC<{ label: string; value?: number }> = ({
 )
 
 export const Footer: React.FC<FooterProps> = ({ data, buttonTitle }) => {
-  const { goToNextTab, submitForm } = useDataContext()
+  const { goToNextTab, submitForm, isFormValid } = useDataContext()
   const currentButtonTitle = buttonTitles[buttonTitle]
   const { items, subTotal, shippingTotal, discount, total } = data || {}
 
@@ -66,6 +66,7 @@ export const Footer: React.FC<FooterProps> = ({ data, buttonTitle }) => {
         className={`w-full rounded text-lg font-bold text-white ${
           buttonTitle === 'confirmation' ? 'bg-black' : 'bg-purple'
         }`}
+        disabled={buttonTitle === 'payment' && !isFormValid}
       >
         {currentButtonTitle}
       </Button>

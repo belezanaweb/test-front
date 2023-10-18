@@ -29,6 +29,8 @@ interface IDataContext {
   >
   submitForm: (() => void) | null
   setSubmitForm: (submitFunction: (() => void) | null) => void
+  isFormValid: boolean
+  setIsFormValid: (valid: boolean) => void
 }
 
 const DataContext = createContext({} as IDataContext)
@@ -42,6 +44,7 @@ export const DataProvider: React.FC<DataProviderProps> = ({ children }) => {
     typeof CreditCardSchema
   > | null>(null)
   const [submitForm, setSubmitForm] = useState<(() => void) | null>(null)
+  const [isFormValid, setIsFormValid] = useState(false)
 
   const fetchData = useCallback(async () => {
     try {
@@ -64,10 +67,7 @@ export const DataProvider: React.FC<DataProviderProps> = ({ children }) => {
         break
       case 'payment':
         if (formData) {
-          // Aqui você pode adicionar a validação do formulário
-          // Se o formulário estiver válido:
           setTabActive('confirmation')
-          // Senão, exiba uma mensagem de erro ou algo similar
         }
         break
       case 'confirmation':
@@ -88,6 +88,8 @@ export const DataProvider: React.FC<DataProviderProps> = ({ children }) => {
       setFormData,
       submitForm,
       setSubmitForm,
+      isFormValid,
+      setIsFormValid,
     }),
     [
       data,
@@ -98,6 +100,8 @@ export const DataProvider: React.FC<DataProviderProps> = ({ children }) => {
       setFormData,
       submitForm,
       setSubmitForm,
+      isFormValid,
+      setIsFormValid,
     ]
   )
 
