@@ -19,7 +19,7 @@ export const Header: React.FC<HeaderProps> = ({ children }) => {
   ]
 
   return (
-    <Tabs defaultValue="bag" className="fixed top-0 left-0 w-full">
+    <Tabs value={tabActive} className="fixed top-0 left-0 w-full h-full">
       <TabsList className="flex justify-between bg-white items-center rounded-none shadow-md p-4 space-x-0">
         {tabs.map((tab) => (
           <TabsTrigger

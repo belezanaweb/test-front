@@ -4,6 +4,8 @@ import { useDataContext } from '@/context/dataContext'
 import { IImageObjects, IItems, IPriceSpecification } from '@/types'
 import { formatCurrency } from '@/utils/formatCurrency'
 
+import { SkeletonProduct } from '../Skeleton'
+
 interface ProductsProps {
   items: IItems[] | undefined
 }
@@ -11,10 +13,13 @@ interface ProductsProps {
 export const Products: React.FC<ProductsProps> = ({ items }) => {
   const { tabActive } = useDataContext()
   const hasConfirmationTab = tabActive === 'confirmation'
+
   return (
     <div className="h-auto bg-white rounded border border-[#CCC] px-2 py-6">
       {hasConfirmationTab && <h1>Produtos</h1>}
       <div className="space-y-12">
+        {/* // TODO change null to load items */}
+        {items ? null : <SkeletonProduct />}
         {items?.map((item) => {
           const {
             product: { sku, name, imageObjects, priceSpecification },

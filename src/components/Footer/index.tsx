@@ -1,8 +1,10 @@
 import React from 'react'
 
+import { useDataContext } from '@/context/dataContext'
 import { ICart, TABS } from '@/types'
 import { formatCurrency } from '@/utils/formatCurrency'
 
+import { Skeleton } from '../Skeleton'
 import { Button } from '../ui/button'
 
 interface FooterProps {
@@ -27,29 +29,40 @@ const DetailRow: React.FC<{ label: string; value?: number }> = ({
 )
 
 export const Footer: React.FC<FooterProps> = ({ data, buttonTitle }) => {
+  const { goToNextTab, submitForm } = useDataContext()
   const currentButtonTitle = buttonTitles[buttonTitle]
   const { items, subTotal, shippingTotal, discount, total } = data || {}
 
   return (
     <div className="bg-white px-5 py-7 fixed bottom-0 left-0 w-full gap-6 flex flex-col">
-      <div className="space-y-2">
-        <DetailRow
-          label={`Produtos (${items?.length} itens)`}
-          value={subTotal}
-        />
-        <DetailRow label="Frete" value={shippingTotal} />
-        <div className="flex justify-between">
-          <span className="text-sm ">Desconto:</span>
-          <span className="font-bold text-purple">
-            {formatCurrency(discount)}
-          </span>
+      {data ? (
+        <div className="space-y-2">
+          <DetailRow
+            label={`Produtos (${items?.length} itens)`}
+            value={subTotal}
+          />
+          <DetailRow label="Frete" value={shippingTotal} />
+          <div className="flex justify-between">
+            <span className="text-sm ">Desconto:</span>
+            <span className="font-bold text-purple">
+              {formatCurrency(discount)}
+            </span>
+          </div>
+          <div className="flex justify-between">
+            <span className="font-bold text-base">Subtotal:</span>
+            <span className="font-bold text-base">{formatCurrency(total)}</span>
+          </div>
         </div>
-        <div className="flex justify-between">
-          <span className="font-bold text-base">Subtotal:</span>
-          <span className="font-bold text-base">{formatCurrency(total)}</span>
-        </div>
-      </div>
+      ) : (
+        <Skeleton />
+      )}
       <Button
+        onClick={() => {
+          if (buttonTitle === 'payment' && submitForm) {
+            submitForm()
+          }
+          goToNextTab()
+        }}
         className={`w-full rounded text-lg font-bold text-white ${
           buttonTitle === 'confirmation' ? 'bg-black' : 'bg-purple'
         }`}
