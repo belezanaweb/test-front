@@ -70,7 +70,6 @@ export const PaymentForm = () => {
       ) : isPaymentSuccessful ? (
         <div className="flex flex-col justify-center items-center h-full">
           <LottieComponent animationData={confirmationAnimationData} />
-          <p className="mt-4">Pagamento efetuado com sucesso</p>
         </div>
       ) : (
         <>

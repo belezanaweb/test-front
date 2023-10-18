@@ -50,7 +50,9 @@ export const Header: React.FC<HeaderProps> = ({ children }) => {
         <TabsContent
           key={tab.value}
           value={tab.value}
-          className="h-full w-screen mt-0 pb-72 xl:px-96"
+          className={`h-full w-screen mt-0 ${
+            tabActive === 'confirmation' ? 'pb-64' : 'pb-72'
+          } xl:px-96`}
         >
           {children}
         </TabsContent>

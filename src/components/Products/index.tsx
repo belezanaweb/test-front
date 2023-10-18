@@ -16,7 +16,7 @@ export const Products: React.FC<ProductsProps> = ({ items }) => {
 
   return (
     <div className="h-auto bg-white rounded border border-[#CCC] px-2 py-6">
-      {hasConfirmationTab && <h1>Produtos</h1>}
+      {hasConfirmationTab && <h1 className="text-xl mb-5">Produtos</h1>}
       <div className="space-y-12">
         {items ? (
           items?.map((item) => {
@@ -33,7 +33,9 @@ export const Products: React.FC<ProductsProps> = ({ items }) => {
             return (
               <div
                 key={sku}
-                className="flex flex-row justify-between items-center gap-[15px]"
+                className={`flex flex-row ${
+                  hasConfirmationTab ? 'justify-start' : 'justify-between'
+                } items-center gap-[15px]`}
               >
                 <div>
                   {quantity > 1 && (
@@ -45,7 +47,7 @@ export const Products: React.FC<ProductsProps> = ({ items }) => {
                 </div>
                 <span
                   className={`${
-                    !hasConfirmationTab ? 'w-[180px]' : 'w-[250px]'
+                    !hasConfirmationTab ? 'w-[180px]' : 'w-[250px] lg:w-auto'
                   } text-xs`}
                 >
                   {name}
