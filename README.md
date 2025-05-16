@@ -12,7 +12,7 @@ O teste consiste em um checkout simples contendo 3 passos (carrinho, pagamento e
 ### Observações: 
 
 1. Carrinho:
-    - Consuma o [esse endpoint](https://run.mocky.io/v3/d6e9a93f-9741-4494-b81e-637a8e9b8ddd) e liste os itens, bem como o resumo;
+    - Consuma o [esse endpoint](https://run.mocky.io/v3/50d82eaa-3c0a-4d1e-aa19-c4a7e64cdef3) e liste os itens, bem como o resumo;
 
 2. Pagamento: 
     - Exiba um form com campos de cartão de crédito com validação em cada campo;
