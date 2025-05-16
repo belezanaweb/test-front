@@ -1,0 +1,19 @@
+metadata:
+  tags:
+    - ecomm
+  name: test-front
+  description: "Frontend test"
+  annotations:
+    backstage.io/techdocs-ref: dir:.
+    github.com/project-slug: belezanaweb/test-front
+    github.com/team-slug: belezanaweb/engenharia
+    sonarqube.org/project-key: belezanaweb_test-front
+  namespace: belezanaweb
+spec:
+  lifecycle: experimental
+  type: service
+  owner: engenharia
+  system: engenharia
+  domain: ecomm
+apiVersion: backstage.io/v1alpha1
+kind: Component
