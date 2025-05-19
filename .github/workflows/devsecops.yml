@@ -1,0 +1,12 @@
+run-name: DevSecOps
+name: DevSecOps
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - main
+  pull_request:
+    types: [opened, synchronize, reopened]
+jobs:
+  devsecops:
+    uses: grupoboticario/actions-devsecops-workflows/.github/workflows/devsecops.yml@v0
