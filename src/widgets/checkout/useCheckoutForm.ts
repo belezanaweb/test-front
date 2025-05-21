@@ -26,20 +26,20 @@ export const creditCardSchema = z.object({
   payment:  z.object({
     cardNumber: z
       .string()
-      .min(19, 'Número do cartão incompleto')
+      .min(19, 'Insira um número de cartão válido')
       .regex(/^(\d{4} ){3}\d{4}$/, 'Formato inválido'),
 
     cardHolder: z
       .string()
-      .min(2, 'Nome do titular é obrigatório'),
+      .min(2, 'Insira um nome válido'),
 
     expiryDate: z
       .string()
-      .regex(/^(0[1-9]|1[0-2])\/\d{2}$/, 'Data inválida (MM/AA)'),
+      .regex(/^(0[1-9]|1[0-2])\/\d{2}$/, 'Insira uma data válida'),
 
     cvv: z
       .string()
-      .length(3, 'CVV deve conter 3 dígitos')
+      .length(3, 'Insira um cvv válido')
       .regex(/^\d{3}$/, 'Apenas números'),
   })
 })
