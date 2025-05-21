@@ -1,0 +1,61 @@
+.confirmation_title {
+  font-family: Arial;
+  font-weight: 400;
+  font-size: 22px;
+  line-height: 28px;
+  letter-spacing: 0px;
+  text-align: center;
+}
+
+.confirmation_description {
+  font-family: Arial;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 20px;
+  letter-spacing: 0px;
+  color: #515151;
+  text-align: center;
+  margin-bottom: 8px;
+}
+
+.payer-info {
+  justify-items: center;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  width: 100%;
+}
+
+.label {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 16px;
+  font-size: 14px;
+  color: #333;
+}
+
+.input {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 14px;
+  margin-top: 6px;
+}
+
+.row {
+  display: flex;
+  gap: 16px;
+}
+
+.error {
+  color: #de1616;
+  font-family: Arial;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 16px;
+  letter-spacing: 0%;
+}
+
+.input.error {
+  border: 1px solid #de1616;
+}

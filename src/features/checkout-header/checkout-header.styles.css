@@ -1,0 +1,13 @@
+.header {
+  background-color: #ffffff;
+  padding: 0 36px;
+  margin-bottom: 36px;
+}
+
+.header-container {
+  display: flex;
+  justify-content: space-evenly;
+  margin: auto;
+  max-width: 780px;
+  border-bottom: 1px solid #878787;
+}
