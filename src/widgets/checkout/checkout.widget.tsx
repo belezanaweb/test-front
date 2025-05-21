@@ -4,12 +4,8 @@ import { useWatch } from 'react-hook-form';
 import { CheckoutStepEnum, useCheckoutForm } from './useCheckoutForm';
 import { CheckoutHeader } from '../../features/checkout-header/checkout-header.component';
 import { CheckoutFooter } from '../../features/checkout-footer/checkout-footer.component';
-import { useGetBagProducts } from '../../services/bag-products/use-get-bag-products.services.hook';
-import { BagProductList } from '../../features/bag-product-list/bag-product-list.component';
-import { BagProductResponse } from '../../services/bag-products/bag-products.services.types';
-import { PaymenteForm } from '../../features/payment-form/payment-form.component';
-import { Confirmation } from '../../features/confirmation/confirmation.component';
-
+import { useGetBagProducts, BagProductResponse } from '../../services';
+import { BagProductList, PaymenteForm, Confirmation } from '../../features';
 
 const STEP_COMPONENTS: Record<CheckoutStepEnum, React.FC<BaseStepProps>> = {
   [CheckoutStepEnum.CART]: BagProductList,

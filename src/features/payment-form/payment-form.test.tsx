@@ -22,7 +22,7 @@ const WrapperWithForm = ({ children }: { children: React.ReactNode }) => {
 }
 
 describe('PaymenteForm', () => {
-  it('deve renderizar os campos do formulário de cartão', () => {
+  it('should render the card form fields', () => {
     render(<PaymenteForm bag={MOCK_BAG} />, {
       wrapper: WrapperWithForm,
     })

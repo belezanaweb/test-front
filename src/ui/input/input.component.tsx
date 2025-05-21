@@ -1,6 +1,6 @@
 import { Control, Controller } from 'react-hook-form';
 import InputMask from 'react-input-mask';
-import { CreditCardFormData } from '../../widgets/checkout/useCheckoutForm';
+import { CreditCardFormData } from '../../widgets';
 import clsx from 'clsx';
 import "./input.styles.css"
 

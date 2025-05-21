@@ -1,5 +1,5 @@
-import { CheckoutStepEnum, CheckoutSteps } from "../../widgets/checkout/useCheckoutForm";
-import { TabItem } from "../../ui/tab-item/tab-item.component";
+import { CheckoutStepEnum, CheckoutSteps } from "../../widgets";
+import { TabItem } from "../../ui";
 
 import './checkout-header.styles.css'
 

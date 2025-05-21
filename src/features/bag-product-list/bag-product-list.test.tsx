@@ -6,17 +6,17 @@ import { MOCK_BAG } from '../../test/mocks/bag-products.mock';
 
 describe('BagProductList', () => {
 
-  it('renderiza o título "Produtos" se hidePrices for true', () => {
+  it('renders the title "Products" if hidePrices is true', () => {
     render(<BagProductList bag={MOCK_BAG} hidePrices />);
     expect(screen.getByText('Produtos')).toBeInTheDocument();
   });
 
-  it('não renderiza o título se hidePrices for false', () => {
+  it('does not render title if hidePrices is false', () => {
     render(<BagProductList bag={MOCK_BAG} />);
     expect(screen.queryByText('Produtos')).not.toBeInTheDocument();
   });
 
-  it('renderiza os produtos corretamente', () => {
+  it('renders products correctly', () => {
     const spy = vi.spyOn(ProductItemModule, 'ProductItem').mockImplementation(({ product }) => {
       return <div>{product.name}</div>;
     });

@@ -11,7 +11,7 @@ describe('CheckoutHeader', () => {
     vi.clearAllMocks();
   });
 
-  it('renderiza todos os passos com os rótulos corretos', () => {
+  it('renders all steps with correct labels', () => {
     render(
       <CheckoutHeader
         currentStep={CheckoutStepEnum.CART}
@@ -24,7 +24,7 @@ describe('CheckoutHeader', () => {
     expect(screen.getByText('Confirmação')).toBeInTheDocument();
   });
 
-  it('destaca a aba atual corretamente', () => {
+  it('highlights the current tab correctly', () => {
     const { container } = render(
       <CheckoutHeader
         currentStep={CheckoutStepEnum.PAYMENT}
@@ -36,7 +36,7 @@ describe('CheckoutHeader', () => {
     expect(activeTab).toHaveTextContent('Pagamento');
   });
 
-  it('chama handleTab com o valor correto ao clicar em uma aba', () => {
+  it('calls handleTab with the correct value when clicking on a tab', () => {
     render(
       <CheckoutHeader
         currentStep={CheckoutStepEnum.CART}

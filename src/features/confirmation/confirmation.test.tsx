@@ -4,7 +4,7 @@ import { Confirmation } from './confirmation.component';
 import { MOCK_BAG } from '../../test/mocks/bag-products.mock';
 
 describe('Confirmation component', () => {
-  it('deve renderizar as informações do pagamento e a lista de produtos', () => {
+  it('must render payment information and product list', () => {
     render(
       <Confirmation
         bag={MOCK_BAG}
@@ -21,7 +21,7 @@ describe('Confirmation component', () => {
     expect(screen.getByText('Produto 1')).toBeTruthy();
   });
 
-  it('deve mostrar máscara padrão se cardNumber tiver menos de 4 dígitos', () => {
+  it('should show default mask if cardNumber is less than 4 digits', () => {
     render(
       <Confirmation
         bag={MOCK_BAG}
@@ -34,7 +34,7 @@ describe('Confirmation component', () => {
     expect(screen.getByText('****.****.****.123')).toBeTruthy();
   });
 
-  it('deve lidar com cardNumber undefined sem quebrar', () => {
+  it('should handle cardNumber undefined without breaking', () => {
     render(
       <Confirmation
         bag={MOCK_BAG}

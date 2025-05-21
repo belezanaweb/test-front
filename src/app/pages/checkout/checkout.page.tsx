@@ -1,5 +1,4 @@
-import { CheckoutWidget } from "../../../widgets/checkout/checkout.widget";
-
+import { CheckoutWidget } from "../../../widgets";
 
 export default function CheckoutPage() {
   return <CheckoutWidget />;

@@ -1,5 +1,5 @@
-import { BagProductResponse } from '../../services/bag-products/bag-products.services.types';
-import { ProductItem } from '../../ui/product-item/product-item.component';
+import { BagProductResponse } from '../../services';
+import { ProductItem } from '../../ui';
 import './bag-product-list.styles.css';
 
 interface BagProductListProps {

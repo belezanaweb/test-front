@@ -1,12 +1,12 @@
 import { describe, it, expect, vi, beforeEach } from 'vitest';
-import { BagProductsService } from './bag-products.services';
+import { BagProductsService, ENDPOINT_PATH } from './bag-products.services';
 
 describe('BagProductsService', () => {
   beforeEach(() => {
     vi.restoreAllMocks();
   });
 
-  it('deve retornar os produtos quando a requisição for bem sucedida', async () => {
+  it('must return the products when the request is successful', async () => {
     const mockResponse = {
       items: [
         { product: { sku: '123', name: 'Produto Teste' } }
@@ -22,11 +22,11 @@ describe('BagProductsService', () => {
 
     const result = await BagProductsService.getBagProducts();
 
-    expect(fetch).toHaveBeenCalledWith('https://run.mocky.io/v3/50d82eaa-3c0a-4d1e-aa19-c4a7e64cdef3');
+    expect(fetch).toHaveBeenCalledWith(ENDPOINT_PATH);
     expect(result).toEqual(mockResponse);
   });
 
-  it('deve lançar erro quando a resposta não for ok', async () => {
+  it('should throw error when response is not ok', async () => {
     global.fetch = vi.fn(() =>
       Promise.resolve({
         ok: false,

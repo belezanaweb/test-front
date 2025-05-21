@@ -1,4 +1,4 @@
-import { ProductDetail } from '../../services/bag-products/bag-products.services.types';
+import { ProductDetail } from '../../services';
 import "./product-item.styles.css"
 
 export const ProductItem = ({ product, hidePrices }: { product: ProductDetail, hidePrices?: boolean }) => {

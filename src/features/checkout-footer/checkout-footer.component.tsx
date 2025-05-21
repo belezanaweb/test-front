@@ -1,7 +1,7 @@
-import { PriceItem } from '../../ui/price-item/price-item.component';
+import clsx from 'clsx';
+import { PriceItem } from '../../ui';
 import { CheckoutStepEnum, CheckoutSteps } from '../../widgets/checkout/useCheckoutForm';
 import './checkout-footer.styles.css';
-import clsx from 'clsx';
 
 interface CheckoutSummaryProps {
   totalWithoutFreight: number;

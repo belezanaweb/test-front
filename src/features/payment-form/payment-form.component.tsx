@@ -1,7 +1,7 @@
-import { BagProductResponse } from '../../services/bag-products/bag-products.services.types';
+import { BagProductResponse } from '../../services';
 
-import { CreditCardFormData } from '../../widgets/checkout/useCheckoutForm';
-import { ControlledInput } from '../../ui/input/input.component';
+import { CreditCardFormData } from '../../widgets';
+import { ControlledInput } from '../../ui';
 
 import { useFormContext } from 'react-hook-form';
 

@@ -1,5 +1,5 @@
-import { BagProductResponse } from '../../services/bag-products/bag-products.services.types';
-import { BagProductList } from '../bag-product-list/bag-product-list.component';
+import { BagProductResponse } from '../../services';
+import { BagProductList } from '../';
 
 import './confirmation.styles.css';
 

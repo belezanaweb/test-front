@@ -1,5 +1,5 @@
 import { render, screen } from '@testing-library/react';
-import { ProductDetail } from '../../services/bag-products/bag-products.services.types';
+import { ProductDetail } from '../../services';
 import { ProductItem } from './product-item.component';
 
 const baseProduct: ProductDetail = {

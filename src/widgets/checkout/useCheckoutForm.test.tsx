@@ -12,8 +12,8 @@ const createFormWrapper = () => {
   return wrapper;
 };
 
-describe('useCheckoutForm (com contexto)', () => {
-  it('deve iniciar com valores default corretos', () => {
+describe('useCheckoutForm', () => {
+  it('must start with correct default values', () => {
     const { result } = renderHook(() => useCheckoutForm(), {
       wrapper: createFormWrapper(),
     });
@@ -30,7 +30,7 @@ describe('useCheckoutForm (com contexto)', () => {
   });
 
 
-  it('deve validar corretamente dados válidos', async () => {
+  it('must correctly validate valid data', async () => {
     const { result } = renderHook(() => useCheckoutForm(), {
       wrapper: createFormWrapper(),
     });

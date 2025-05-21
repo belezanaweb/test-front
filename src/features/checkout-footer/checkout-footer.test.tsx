@@ -12,9 +12,7 @@ describe('CheckoutFooter', () => {
     vi.clearAllMocks();
   });
 
-  it('exibe os valores formatados corretamente', () => {
-
-
+  it('displays correctly formatted values', () => {
     render(
       <CheckoutFooter
         totalWithoutFreight={200}
@@ -37,7 +35,7 @@ describe('CheckoutFooter', () => {
     expect(screen.getByText('R$ 210.00')).toBeInTheDocument();
   });
 
-  it('exibe o botão com o label correto conforme o step', () => {
+  it('displays the button with the correct label according to the step', () => {
 
     render(
       <CheckoutFooter
@@ -54,7 +52,7 @@ describe('CheckoutFooter', () => {
     expect(screen.getByRole('button', { name: /finalizar pedido/i })).toBeInTheDocument();
   });
 
-  it('adiciona a classe confirmation quando o step é CONFIRMATION', () => {
+  it('adds confirmation class when step is CONFIRMATION', () => {
 
     render(
       <CheckoutFooter
@@ -72,7 +70,7 @@ describe('CheckoutFooter', () => {
     expect(button).toHaveClass('confirmation');
   });
 
-  it('chama onProceed ao clicar no botão', () => {
+  it('calls onProceed when button is clicked', () => {
     const handleClick = vi.fn();
 
     render(

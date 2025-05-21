@@ -1,4 +1,4 @@
-import { BagProductResponse } from '../../services/bag-products/bag-products.services.types'
+import { BagProductResponse } from '../../services'
 
 export const MOCK_BAG: BagProductResponse = {
   items: [
