@@ -1,7 +1,8 @@
 import { Control, Controller } from 'react-hook-form';
 import InputMask from 'react-input-mask';
-import { CreditCardFormData } from '../../widgets';
 import clsx from 'clsx';
+import { CreditCardFormData } from '../../widgets';
+
 import "./input.styles.css"
 
 type PaymentFieldName =

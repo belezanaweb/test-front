@@ -1,6 +1,6 @@
 import { FormProvider } from 'react-hook-form';
-
 import { useWatch } from 'react-hook-form';
+
 import { CheckoutStepEnum, useCheckoutForm } from './useCheckoutForm';
 import { CheckoutHeader } from '../../features/checkout-header/checkout-header.component';
 import { CheckoutFooter } from '../../features/checkout-footer/checkout-footer.component';

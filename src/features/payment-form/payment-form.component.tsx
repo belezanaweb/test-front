@@ -1,9 +1,8 @@
+import { useFormContext } from 'react-hook-form';
 import { BagProductResponse } from '../../services';
 
 import { CreditCardFormData } from '../../widgets';
 import { ControlledInput } from '../../ui';
-
-import { useFormContext } from 'react-hook-form';
 
 import './payment-form.styles.css';
 
