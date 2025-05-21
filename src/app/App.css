@@ -1,0 +1,24 @@
+.wrapper {
+  background-color:#F5F5F5;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  font-size: calc(10px + 2vmin);
+  width: 100%;
+}
+
+.container {
+  display: flex;
+  height: 100%;
+  flex-direction: column;
+  overflow: auto;
+  width: 100%;
+  flex: 1;
+  margin: auto;
+  gap: 16px
+}
+@media (min-width: 780px) {
+  .container {
+    width: 780px;
+  }
+}

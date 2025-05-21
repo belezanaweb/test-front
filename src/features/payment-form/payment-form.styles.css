@@ -1,0 +1,30 @@
+.card {
+  background: white;
+  padding: 16px;
+  border-radius: 8px;
+  border: 1px solid #e0e0e0;
+  margin: 8px;
+}
+
+@media (min-width: 780px) {
+  .card {
+      margin: 0px;
+  }
+}
+
+.title {
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 12px;
+  font-family: Arial;
+  font-weight: 400;
+  line-height: 24px;
+  letter-spacing: 0%;
+}
+
+.row {
+  display: flex;
+  gap: 16px;
+  width: 100%;
+}
+

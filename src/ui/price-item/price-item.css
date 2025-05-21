@@ -1,0 +1,10 @@
+.row {
+  display: flex;
+  justify-content: space-between;
+  font-size: 14px;
+}
+
+.discount {
+  color: #9222dc;
+  font-weight: bold;
+}

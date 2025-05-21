@@ -1,0 +1,19 @@
+.stepItem {
+  font-family: Arial, sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 24px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  color: #a3a3a3;
+  cursor: pointer;
+  text-decoration: none;
+  background: none;
+  border: none;
+}
+
+.stepItem.active {
+  color: #000;
+  border-bottom: 2px solid #000;
+}
